@@ -1,0 +1,22 @@
+{
+  "name": "hicks-consulting-canonical",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Canonical static site for Hicks Consulting, PLLC",
+  "scripts": {
+    "build": "node scripts/build/build.js",
+    "validate:preflight": "node _ops/validators/validate_preflight.js",
+    "validate:canonical": "node _ops/validators/validate_canonical_url_contract.js",
+    "validate:crawl": "node _ops/validators/validate_crawl_contract.js",
+    "validate:sitemap": "node _ops/validators/validate_sitemap_page_parity.js",
+    "validate:links": "node _ops/validators/validate_internal_links.js",
+    "validate:queries": "node _ops/validators/validate_query_traceability.js",
+    "validate:abovefold": "node _ops/validators/validate_above_fold.js",
+    "validate:entities": "node _ops/validators/validate_entity_coverage.js",
+    "validate:publish": "node _ops/validators/validate_publish_state.js",
+    "validate:policy": "node _ops/validators/validate_policy_compliance.js",
+    "validate:all": "npm run validate:preflight && npm run validate:canonical && npm run validate:crawl && npm run validate:sitemap && npm run validate:links && npm run validate:queries && npm run validate:abovefold && npm run validate:entities && npm run validate:publish && npm run validate:policy && npm run validate:workflows",
+    "validate:workflows": "node _ops/validators/validate_workflows.js",
+    "publish:content": "node scripts/publishing/process_manifest.js"
+  }
+}

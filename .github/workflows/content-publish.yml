@@ -1,0 +1,35 @@
+name: Content Publish
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '17 13 * * *'
+concurrency:
+  group: hicks-consulting-publish
+  cancel-in-progress: false
+permissions:
+  contents: write
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: npm ci
+      - run: npm run publish:content
+      - run: npm run validate:all
+      - run: npm run build
+      - name: Commit published status changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if [[ -n "$(git status --porcelain)" ]]; then
+            git add -A
+            git commit -m "Auto-publish approved content"
+            git push
+          else
+            echo "No publish changes to commit."
+          fi
