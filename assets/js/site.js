@@ -24,10 +24,18 @@ async function renderPublishedResources(containerId) {
   const items = await loadManifest();
   items.sort((a, b) => String(b.publishAt || '').localeCompare(String(a.publishAt || '')));
   if (!items.length) {
-    container.innerHTML = '<article class="card resource-card"><h3>Fresh resources are on the way.</h3><p class="muted small">Approved content will appear here automatically after it is published.</p></article>';
+    container.innerHTML = '<article class="resource-card" data-animate="zoom"><span class="badge">Resources</span><h3>Fresh resources are on the way.</h3><p class="muted small">Approved content will appear here automatically after it is published.</p></article>';
     return;
   }
-  container.innerHTML = items.map(item => `<article class="card resource-card"><span class="badge">${escapeHtml(item.type)}</span><h3><a href="${escapeHtml(item.slug)}">${escapeHtml(item.title)}</a></h3><p class="muted small">Track: ${escapeHtml(item.track)} · ${escapeHtml((item.publishAt || '').slice(0,10))}</p></article>`).join('');
+  container.innerHTML = items.map(item => `
+    <article class="resource-card" data-animate="zoom">
+      <span class="badge">${escapeHtml(item.type)}</span>
+      <h3><a href="${escapeHtml(item.slug)}">${escapeHtml(item.title)}</a></h3>
+      <p class="muted small">Track: ${escapeHtml(item.track)} · ${escapeHtml((item.publishAt || '').slice(0,10))}</p>
+      <p><a class="eyebrow-link" href="${escapeHtml(item.slug)}">Read more →</a></p>
+    </article>
+  `).join('');
+  wireAnimations();
 }
 
 async function wireFormLinks() {
@@ -49,9 +57,28 @@ async function wireFormLinks() {
   });
 }
 
+function wireAnimations() {
+  const items = document.querySelectorAll('[data-animate]');
+  if (!items.length) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    items.forEach(item => item.classList.add('is-visible'));
+    return;
+  }
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: .14, rootMargin: '0px 0px -30px 0px' });
+  items.forEach(item => observer.observe(item));
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   renderPublishedResources('published-resources');
   wireFormLinks();
+  wireAnimations();
 });
 
 window.wireFormLinks = wireFormLinks;
