@@ -79,6 +79,70 @@ document.addEventListener('DOMContentLoaded', () => {
   renderPublishedResources('published-resources');
   wireFormLinks();
   wireAnimations();
+  wireMobileNav();
+  wireThemeToggle();
 });
 
 window.wireFormLinks = wireFormLinks;
+
+function wireMobileNav() {
+  const toggle = document.querySelector('.nav-toggle');
+  const nav = document.getElementById('site-navigation');
+  if (!toggle || !nav) return;
+
+  const closeNav = () => {
+    toggle.setAttribute('aria-expanded', 'false');
+    toggle.setAttribute('aria-label', 'Open navigation');
+    nav.classList.remove('is-open');
+    document.body.classList.remove('nav-open');
+  };
+
+  const openNav = () => {
+    toggle.setAttribute('aria-expanded', 'true');
+    toggle.setAttribute('aria-label', 'Close navigation');
+    nav.classList.add('is-open');
+    document.body.classList.add('nav-open');
+  };
+
+  toggle.addEventListener('click', () => {
+    const isOpen = toggle.getAttribute('aria-expanded') === 'true';
+    if (isOpen) closeNav();
+    else openNav();
+  });
+
+  nav.querySelectorAll('a').forEach(link => link.addEventListener('click', closeNav));
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 760) closeNav();
+  });
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') closeNav();
+  });
+}
+
+
+function wireThemeToggle() {
+  const toggle = document.querySelector('.theme-toggle');
+  if (!toggle) return;
+
+  const setTheme = (theme) => {
+    const isDark = theme === 'dark';
+    document.documentElement.setAttribute('data-theme', isDark ? 'dark' : 'light');
+    toggle.setAttribute('aria-pressed', String(isDark));
+    toggle.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+    const icon = toggle.querySelector('.theme-icon');
+    const text = toggle.querySelector('.theme-text');
+    if (icon) icon.textContent = isDark ? '☼' : '☾';
+    if (text) text.textContent = isDark ? 'Light' : 'Dark';
+    try { localStorage.setItem('hicks-theme', isDark ? 'dark' : 'light'); } catch (e) {}
+  };
+
+  let stored = 'light';
+  try { stored = localStorage.getItem('hicks-theme') || 'light'; } catch (e) {}
+  setTheme(stored === 'dark' ? 'dark' : 'light');
+
+  toggle.addEventListener('click', () => {
+    const current = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+    setTheme(current === 'dark' ? 'light' : 'dark');
+  });
+}
+
