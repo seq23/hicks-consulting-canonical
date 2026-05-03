@@ -4,7 +4,13 @@ function walk(dir, arr=[]){ for(const e of fs.readdirSync(dir)){ const p=path.jo
 for(const file of walk(path.join(process.cwd(),'pages'))){ const rel='/' + path.relative(path.join(process.cwd(),'pages'), path.dirname(file)).replace(/\\/g,'/'); routes.add(rel==='/'?'/':rel+'/'); }
 const allowedExternalPrefixes = [
   'https://www.hicksconsulting.org',
-  'https://www.linkedin.com/'
+  'https://www.linkedin.com/',
+  'https://www.instagram.com/',
+  'https://www.facebook.com/',
+  'https://www.psychologytoday.com/',
+  'https://providers.therapyforblackgirls.com',
+  'https://memphisvoyager.com/',
+  'https://monika-hicks.clientsecure.me/'
 ];
 for(const file of walk(path.join(process.cwd(),'pages'))){
   const html=fs.readFileSync(file,'utf8');

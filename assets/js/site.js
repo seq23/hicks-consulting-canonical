@@ -7,6 +7,17 @@ function escapeHtml(value) {
     .replaceAll("'", '&#039;');
 }
 
+
+function resourceTypeLabel(type) {
+  const map = {
+    daily: 'Insight',
+    weekly: 'Article',
+    monthly: 'Guide',
+    quarterly: 'White Paper'
+  };
+  return map[String(type || '').toLowerCase()] || type || 'Resource';
+}
+
 async function fetchJson(url) {
   const res = await fetch(url).catch(() => null);
   if (!res || !res.ok) return null;
@@ -29,7 +40,7 @@ async function renderPublishedResources(containerId) {
   }
   container.innerHTML = items.map(item => `
     <article class="resource-card" data-animate="zoom">
-      <span class="badge">${escapeHtml(item.type)}</span>
+      <span class="badge">${escapeHtml(resourceTypeLabel(item.type))}</span>
       <h3><a href="${escapeHtml(item.slug)}">${escapeHtml(item.title)}</a></h3>
       <p class="muted small">Track: ${escapeHtml(item.track)} · ${escapeHtml((item.publishAt || '').slice(0,10))}</p>
       <p><a class="eyebrow-link" href="${escapeHtml(item.slug)}">Read more →</a></p>
@@ -44,7 +55,7 @@ async function wireFormLinks() {
   document.querySelectorAll('[data-form-key]').forEach(el => {
     const key = el.getAttribute('data-form-key');
     const url = forms[key] || '';
-    const valid = /^https:\/\/forms\.gle\/.+/i.test(url);
+    const valid = /^https:\/\/(forms\.gle|monika-hicks\.clientsecure\.me)\/?/i.test(url) || /^mailto:/i.test(url);
     if (valid) {
       el.setAttribute('href', url);
       el.setAttribute('target', '_blank');
