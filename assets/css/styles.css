@@ -411,6 +411,9 @@ p { margin: 0 0 1rem; }
   font-weight: 600;
   box-shadow: var(--shadow-soft);
 }
+.trust-band a.value-pill { text-decoration: none; color: inherit; }
+.trust-band a.value-pill:focus-visible { outline: 2px solid var(--gold); outline-offset: 4px; }
+
 .social-badge svg,
 .social-icon { width: 16px; height: 16px; fill: currentColor; flex: 0 0 auto; }
 .social-badge { backdrop-filter: blur(10px); }
@@ -1060,6 +1063,10 @@ footer {
 .verify-card { display: flex; flex-direction: column; gap: .3rem; padding: 1rem; text-decoration: none; }
 .verify-card strong { font-family: 'Playfair Display', Georgia, serif; font-size: 1.25rem; color: var(--olive-ink); }
 .verify-card span { color: var(--muted); font-size: .92rem; }
+.verify-card.verify-card-logo { justify-content: space-between; min-height: 190px; }
+.verify-logo { display:block; width:100%; height:auto; object-fit:contain; object-position:center; border-radius: 16px; }
+.verify-logo-psychologytoday { max-width: 100%; max-height: 92px; }
+.verify-logo-tfbg { max-width: 100%; max-height: 148px; }
 .resource-taxonomy { grid-template-columns: repeat(4, minmax(0, 1fr)); }
 .resource-type-card { padding: 1.25rem; }
 .resource-type-card h2 { margin-top: .35rem; font-size: clamp(1.35rem, 2vw, 1.75rem); }
