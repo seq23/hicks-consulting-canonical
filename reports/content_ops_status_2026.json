@@ -1,0 +1,23 @@
+{
+  "generatedAt": "2026-05-03T00:00:00.000Z",
+  "footerStatus": "All source page footers normalized to the intake-quiz footer markup.",
+  "contentThrough": "2026-12-31",
+  "manifestCounts": {
+    "weekly": 37,
+    "daily": 177,
+    "monthly": 9,
+    "quarterly": 4
+  },
+  "plannedCounts": {
+    "daily": 175,
+    "weekly": 35,
+    "monthly": 8,
+    "quarterly": 3
+  },
+  "queryIngestionRule": "From 2027-01-01 onward, no-auth public/social query ingestion feeds normalized query clusters, atlas expansion, fan-out surfaces, and scheduled content drafting.",
+  "socialIngestion": "Scaffolded as scripts/ingestion/social_signal_ingest.js with graceful degraded mode and fallback seed queries; not scheduled in CI yet.",
+  "fanoutAtlas": "Scaffolded in data/atlas/llm_atlas.json and pages/llm-atlas/index.html; not primary navigation.",
+  "legacyPreserved": 6,
+  "socialIngestionRun": "Executed in container; external sources degraded to fallback mode and generated data/intake/social_signals.json plus data/intake/query_signals_post_2027.json.",
+  "wordCountValidation": "Installed soft-warning validator with 25% margin. Latest run clean: no warnings across 227 resource pages."
+}

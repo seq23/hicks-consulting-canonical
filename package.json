@@ -15,8 +15,11 @@
     "validate:entities": "node _ops/validators/validate_entity_coverage.js",
     "validate:publish": "node _ops/validators/validate_publish_state.js",
     "validate:policy": "node _ops/validators/validate_policy_compliance.js",
-    "validate:all": "npm run validate:preflight && npm run validate:canonical && npm run validate:crawl && npm run validate:sitemap && npm run validate:links && npm run validate:queries && npm run validate:abovefold && npm run validate:entities && npm run validate:publish && npm run validate:policy && npm run validate:workflows",
+    "validate:all": "npm run validate:preflight && npm run validate:canonical && npm run validate:crawl && npm run validate:sitemap && npm run validate:links && npm run validate:queries && npm run validate:abovefold && npm run validate:entities && npm run validate:publish && npm run validate:policy && npm run validate:content-plan && npm run validate:word-counts && npm run validate:workflows",
     "validate:workflows": "node _ops/validators/validate_workflows.js",
-    "publish:content": "node scripts/publishing/process_manifest.js"
+    "publish:content": "node scripts/publishing/process_manifest.js",
+    "validate:content-plan": "node _ops/validators/validate_content_plan_2026.js",
+    "validate:word-counts": "node _ops/validators/validate_resource_word_counts.js",
+    "ingest:social": "node scripts/ingestion/social_signal_ingest.js"
   }
 }

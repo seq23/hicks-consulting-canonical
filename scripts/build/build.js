@@ -57,7 +57,7 @@ for (const item of manifest.filter(item => item.slug.startsWith('/resources/') &
 
 const staticPublicRoutes = [
   '/', '/therapy/', '/coaching/', '/groups/', '/corporate-speaking/', '/about/', '/resources/', '/contact/',
-  '/intake-quiz/', '/request-consult/', '/book-discovery-call/', '/faq/', '/privacy-policy/', '/cookie-policy/', '/disclaimer/',
+  '/intake-quiz/', '/llm-atlas/', '/resources/insights/', '/resources/articles/', '/resources/guides/', '/resources/white-papers/', '/request-consult/', '/book-discovery-call/', '/faq/', '/privacy-policy/', '/cookie-policy/', '/disclaimer/',
   '/terms/', '/good-faith-estimate/', '/emergency-crisis-notice/'
 ];
 const urls = [...staticPublicRoutes, ...Array.from(publishedResourceSlugs)].map(route => `${canonicalDomain}${route}`);

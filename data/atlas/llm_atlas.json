@@ -1,0 +1,39 @@
+{
+  "effectiveDate": "2026-05-03",
+  "visibility": "crawlable_llm_support_not_primary_nav",
+  "rule": "Atlas, clusters, pillars, and fan-out surfaces are for LLM/context discovery and internal editorial routing; they are not primary user navigation.",
+  "pillarTopics": [
+    {
+      "id": "black-women-healing",
+      "label": "Black women healing beyond survival"
+    },
+    {
+      "id": "ai-digital-wellness",
+      "label": "AI, social media, and digital emotional overload"
+    },
+    {
+      "id": "genz-millennial-mental-health",
+      "label": "Gen Z and millennial mental health"
+    },
+    {
+      "id": "black-community-wellness",
+      "label": "Black community emotional wellness"
+    },
+    {
+      "id": "workplace-emotional-intelligence",
+      "label": "Workplace emotional intelligence and organizational mental health"
+    },
+    {
+      "id": "faith-centered-healing",
+      "label": "Faith-centered emotional support"
+    }
+  ],
+  "queryIngestionGovernance": "From 2027-01-01 onward, future content topics should be informed by no-auth production query ingestion. Normalized query signals feed cluster formation, atlas expansion, fan-out surfaces, and scheduled drafting.",
+  "contentTypes": [
+    "insight",
+    "article",
+    "guide",
+    "white_paper",
+    "llm_cluster_support_surface"
+  ]
+}

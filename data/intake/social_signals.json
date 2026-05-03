@@ -1,0 +1,86 @@
+{
+  "generatedAt": "2026-05-03T16:02:58.692Z",
+  "productionRule": "No-auth ingestion must degrade gracefully. HTTP 403 or source failure is logged as degraded and must not break production builds.",
+  "post2027Use": "Signals should feed normalized query clusters, atlas expansion, fan-out surfaces, and scheduled content drafting after 2027-01-01.",
+  "sourceHealth": [
+    {
+      "id": "reddit_rss_blackwomen",
+      "url": "https://www.reddit.com/search.rss?q=Black%20women%20burnout%20therapy&sort=new",
+      "status": "degraded",
+      "error": "fetch failed",
+      "startedAt": "2026-05-03T16:02:58.542Z",
+      "finishedAt": "2026-05-03T16:02:58.685Z"
+    },
+    {
+      "id": "reddit_rss_ai_wellness",
+      "url": "https://www.reddit.com/search.rss?q=AI%20anxiety%20mental%20health&sort=new",
+      "status": "degraded",
+      "error": "fetch failed",
+      "startedAt": "2026-05-03T16:02:58.685Z",
+      "finishedAt": "2026-05-03T16:02:58.689Z"
+    },
+    {
+      "id": "reddit_rss_genz_mental_health",
+      "url": "https://www.reddit.com/search.rss?q=Gen%20Z%20mental%20health%20therapy&sort=new",
+      "status": "degraded",
+      "error": "fetch failed",
+      "startedAt": "2026-05-03T16:02:58.689Z",
+      "finishedAt": "2026-05-03T16:02:58.692Z"
+    }
+  ],
+  "signals": [
+    {
+      "title": "Black women burnout and boundaries",
+      "source": "seed_query_fallback",
+      "tags": [
+        "black_women",
+        "burnout"
+      ]
+    },
+    {
+      "title": "AI anxiety and emotional wellness",
+      "source": "seed_query_fallback",
+      "tags": [
+        "ai_digital_wellness"
+      ]
+    },
+    {
+      "title": "Gen Z therapy language and mental health",
+      "source": "seed_query_fallback",
+      "tags": [
+        "genz_millennial"
+      ]
+    },
+    {
+      "title": "millennial women burnout motherhood work",
+      "source": "seed_query_fallback",
+      "tags": [
+        "genz_millennial",
+        "burnout",
+        "workplace_emotional_intelligence"
+      ]
+    },
+    {
+      "title": "Black community emotional wellness and healing",
+      "source": "seed_query_fallback",
+      "tags": [
+        "general_emotional_wellness"
+      ]
+    },
+    {
+      "title": "faith centered therapy emotional healing",
+      "source": "seed_query_fallback",
+      "tags": [
+        "ai_digital_wellness"
+      ]
+    },
+    {
+      "title": "workplace emotional intelligence mental health training",
+      "source": "seed_query_fallback",
+      "tags": [
+        "ai_digital_wellness",
+        "workplace_emotional_intelligence"
+      ]
+    }
+  ]
+}
