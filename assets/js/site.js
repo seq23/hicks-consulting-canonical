@@ -86,12 +86,43 @@ function wireAnimations() {
   items.forEach(item => observer.observe(item));
 }
 
+
+async function wireAnalytics() {
+  const config = await fetchJson('/data/system/config.json');
+  const analytics = config?.analytics || {};
+  const measurementId = String(analytics.measurementId || '').trim();
+  const enabled = analytics.enabled === true && /^G-[A-Z0-9]+$/i.test(measurementId);
+  if (!enabled || document.querySelector('script[data-ga4-loader="true"]')) return;
+
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){ window.dataLayer.push(arguments); }
+  window.gtag = window.gtag || gtag;
+  gtag('js', new Date());
+  gtag('config', measurementId, { anonymize_ip: true });
+
+  const external = document.createElement('script');
+  external.async = true;
+  external.src = `https://www.googletagmanager.com/gtag/js?id=${encodeURIComponent(measurementId)}`;
+  external.setAttribute('data-ga4-loader', 'true');
+  document.head.appendChild(external);
+}
+
+function wireBrowserCompatibility() {
+  document.documentElement.style.setProperty('color-scheme', document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light');
+  document.querySelectorAll('img').forEach((img) => {
+    if (!img.hasAttribute('loading')) img.setAttribute('loading', 'lazy');
+    if (!img.hasAttribute('decoding')) img.setAttribute('decoding', 'async');
+  });
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   renderPublishedResources('published-resources');
   wireFormLinks();
   wireAnimations();
   wireMobileNav();
   wireThemeToggle();
+  wireBrowserCompatibility();
+  wireAnalytics();
 });
 
 window.wireFormLinks = wireFormLinks;
@@ -145,6 +176,7 @@ function wireThemeToggle() {
     if (icon) icon.textContent = isDark ? '☼' : '☾';
     if (text) text.textContent = isDark ? 'Light' : 'Dark';
     try { localStorage.setItem('hicks-theme', isDark ? 'dark' : 'light'); } catch (e) {}
+    document.documentElement.style.setProperty('color-scheme', isDark ? 'dark' : 'light');
   };
 
   let stored = 'light';

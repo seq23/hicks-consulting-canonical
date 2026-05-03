@@ -11,6 +11,11 @@
     "corporate": "mailto:info@hicksconsulting.org?subject=Organizational%20Training%20Inquiry",
     "groups": "mailto:info@hicksconsulting.org?subject=Interest%20in%20Virtual%20Support%20Groups"
   },
+  "analytics": {
+    "provider": "ga4",
+    "enabled": false,
+    "measurementId": ""
+  },
   "admin": {
     "path": "/admin/",
     "passwordHint": "Configured for launch gate; rotate before production hardening."
