@@ -1,6 +1,6 @@
 # Hicks Consulting Canonical
 
-Static canonical site scaffold for Hicks Consulting, PLLC.
+Static canonical site scaffold for Hicks Consulting.
 
 ## What this repo includes
 - Public site for therapy, coaching, groups, corporate speaking, resources, and legal pages
@@ -24,13 +24,13 @@ npm run validate:all
 2. Push the contents of this repo
 3. Connect the repo to Cloudflare Pages
 4. Set the production domain to `www.hicksconsulting.org`
-5. Add the Google Form endpoints in `data/system/config.json`
+5. Confirm the booking, coaching, and training inquiry endpoints in `data/system/config.json`
 6. Replace the admin password placeholder hash strategy as desired before production use
 
-## Publishing model
-- Launch seed content is marked `published`
-- Other content can be marked `draft`, `approved`, `published`, or `revoked`
-- Public rendering in this scaffold is driven by content manifest data and front-end status handling
+## Content workflow
+- Current live resources are marked `published`
+- Other resources can be marked `draft`, `ready_for_approval`, `approved`, `published`, or `revoked`
+- The static build ships only published resource pages
 
 ## Validators
 Hard-fail validators cover:

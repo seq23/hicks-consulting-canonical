@@ -18,6 +18,11 @@ function resourceTypeLabel(type) {
   return map[String(type || '').toLowerCase()] || type || 'Resource';
 }
 
+function resourceTypeKey(type) {
+  const map = { daily: 'insights', weekly: 'articles', monthly: 'guides', quarterly: 'white-papers' };
+  return map[String(type || '').toLowerCase()] || '';
+}
+
 async function fetchJson(url) {
   const res = await fetch(url).catch(() => null);
   if (!res || !res.ok) return null;
@@ -29,13 +34,28 @@ async function loadManifest() {
   return (fallback || []).filter(item => item.validationPassed === true && item.status === 'published');
 }
 
+
+async function renderPublishedResourcesList(containerId, typeKey) {
+  const container = document.getElementById(containerId);
+  if (!container) return;
+  const items = await loadManifest();
+  const filtered = items
+    .filter(item => resourceTypeKey(item.type) === typeKey)
+    .sort((a, b) => String(b.publishAt || '').localeCompare(String(a.publishAt || '')));
+  if (!filtered.length) {
+    container.innerHTML = '<li class="muted">No published resources are live in this section yet.</li>';
+    return;
+  }
+  container.innerHTML = filtered.map(item => `<li><a href="${escapeHtml(item.slug)}">${escapeHtml(item.title)}</a><span class="muted small"> — ${escapeHtml((item.publishAt || '').slice(0,10))}</span></li>`).join('');
+}
+
 async function renderPublishedResources(containerId) {
   const container = document.getElementById(containerId);
   if (!container) return;
   const items = await loadManifest();
   items.sort((a, b) => String(b.publishAt || '').localeCompare(String(a.publishAt || '')));
   if (!items.length) {
-    container.innerHTML = '<article class="resource-card" data-animate="zoom"><span class="badge">Resources</span><h3>Fresh resources are on the way.</h3><p class="muted small">Approved content will appear here automatically after it is published.</p></article>';
+    container.innerHTML = '<article class="resource-card" data-animate="zoom"><span class="badge">Resources</span><h3>Fresh resources are on the way.</h3><p class="muted small">New resources will appear here as they are released.</p></article>';
     return;
   }
   container.innerHTML = items.map(item => `
@@ -117,6 +137,10 @@ function wireBrowserCompatibility() {
 
 document.addEventListener('DOMContentLoaded', () => {
   renderPublishedResources('published-resources');
+  renderPublishedResourcesList('insights-published', 'insights');
+  renderPublishedResourcesList('articles-published', 'articles');
+  renderPublishedResourcesList('guides-published', 'guides');
+  renderPublishedResourcesList('white-papers-published', 'white-papers');
   wireFormLinks();
   wireAnimations();
   wireMobileNav();
