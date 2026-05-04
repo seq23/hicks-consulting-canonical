@@ -35,12 +35,48 @@ function slugToDistPath(slug) {
   return path.join(dist, clean);
 }
 
+function sourcePathForRoute(route) {
+  const clean = route.replace(/^\//, '').replace(/\/$/, '');
+  return path.join(pages, clean, 'index.html');
+}
+
+function previewDistPathForRoute(route) {
+  const clean = route.replace(/^\//, '').replace(/\/$/, '');
+  return path.join(dist, 'preview', clean, 'index.html');
+}
+
+function preparePreviewHtml(html, item) {
+  let out = html;
+  if (!/name=["']robots["']/i.test(out)) {
+    out = out.replace('<head>', '<head><meta name="robots" content="noindex,nofollow"/>');
+  }
+  out = out.replace(/<link href="https:\/\/www\.hicksconsulting\.org[^"]*" rel="canonical"\/>/, `<link href="${canonicalDomain}${item.publicPath || item.slug}" rel="canonical"/>`);
+  const banner = `<div class="notice preview-notice"><strong>Preview mode.</strong> This content is loaded for admin review and may not be publicly listed yet. Status: ${item.status}.</div>`;
+  out = out.replace('<main', `${banner}<main`);
+  return out;
+}
+
+function copyPreviewForItem(item) {
+  const route = item.publicPath || item.slug;
+  if (!route || !route.startsWith('/resources/')) return;
+  const src = sourcePathForRoute(route);
+  if (!fs.existsSync(src)) return;
+  const dest = previewDistPathForRoute(route);
+  fs.mkdirSync(path.dirname(dest), { recursive: true });
+  const html = fs.readFileSync(src, 'utf8');
+  fs.writeFileSync(dest, preparePreviewHtml(html, item));
+}
+
 copyRecursive(pages, dist);
 copyRecursive(path.join(root, 'assets'), path.join(dist, 'assets'));
 copyRecursive(path.join(root, 'data'), path.join(dist, 'data'));
 ['robots.txt','_headers','_redirects','llms.txt','answers.json','coverage.json'].forEach(file => {
   copyRecursive(path.join(root, file), path.join(dist, file));
 });
+
+for (const item of manifest.filter(item => item.validationPassed === true && item.status !== 'published' && item.slug.startsWith('/resources/'))) {
+  copyPreviewForItem(item);
+}
 
 const publishedResourceSlugs = new Set(
   manifest

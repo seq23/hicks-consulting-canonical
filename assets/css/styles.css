@@ -649,6 +649,13 @@ input[type='password'], input[type='text'], input[type='email'], textarea, selec
 .callout-grid { display:grid; grid-template-columns: repeat(auto-fit,minmax(260px,1fr)); gap:1rem; margin:1rem 0 1.5rem; }
 .soft-panel { background: rgba(255,251,244,.9); border:1px solid rgba(79,88,65,.10); border-radius: 22px; }
 .admin-stats .card strong { font-size: 2rem; font-family: 'Playfair Display', Georgia, serif; color: var(--olive-ink); }
+.admin-filters { padding: 1.15rem; margin: 1.35rem 0; }
+.admin-filter-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: .85rem; align-items:end; }
+.admin-filter-grid label { font-size: .82rem; font-weight: 700; color: var(--olive-ink); letter-spacing: .02em; }
+.admin-filter-grid input, .admin-filter-grid select { margin-top: .35rem; }
+.filter-shortcuts { display:flex; flex-wrap:wrap; gap:.5rem; margin-top: .85rem; }
+.small-button { display:inline-flex; align-items:center; justify-content:center; gap:.35rem; margin:.18rem .18rem .18rem 0; padding:.48rem .7rem; border-radius:999px; font-size:.78rem; line-height:1.1; }
+
 
 footer {
   margin-top: 3rem;
