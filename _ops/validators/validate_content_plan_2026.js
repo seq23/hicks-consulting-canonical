@@ -16,9 +16,9 @@ for (const [type, n] of Object.entries(expected)) {
     process.exit(1);
   }
 }
-const lastPublish = manifest.map(i => i.publishAt).filter(Boolean).sort().at(-1) || '';
+const lastPublish = manifest.map(i => i.scheduledAt).filter(Boolean).sort().at(-1) || '';
 if (lastPublish < '2026-12-31') {
-  console.error(`CONTENT PLAN FAIL: latest publishAt ${lastPublish} does not reach 2026-12-31`);
+  console.error(`CONTENT PLAN FAIL: latest scheduledAt ${lastPublish} does not reach 2026-12-31`);
   process.exit(1);
 }
-console.log(`2026 content plan loaded: daily=${counts.daily}, weekly=${counts.weekly}, monthly=${counts.monthly}, quarterly=${counts.quarterly}. Latest publishAt=${lastPublish}`);
+console.log(`2026 content plan loaded: daily=${counts.daily}, weekly=${counts.weekly}, monthly=${counts.monthly}, quarterly=${counts.quarterly}. Latest scheduledAt=${lastPublish}`);

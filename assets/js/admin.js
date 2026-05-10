@@ -32,7 +32,7 @@ function typeLabel(item) {
 
 function statusInstruction(item) {
   if (item.status === 'ready_for_approval') return `Change status for ${item.id} from ready_for_approval to approved in the manifest.`;
-  if (item.status === 'approved') return `Approved items auto-publish when publishAt is reached. Edit only if you need to delay or revoke.`;
+  if (item.status === 'approved') return `Approved items auto-publish when scheduledAt is reached. Edit only if you need to delay or revoke.`;
   if (item.status === 'published') return `Change status for ${item.id} from published to revoked in the manifest.`;
   if (item.status === 'revoked') return `Change status for ${item.id} from revoked to approved when you want it to go live again.`;
   return '';
@@ -80,7 +80,7 @@ function getFilters() {
     type: document.getElementById('type-filter')?.value || 'all',
     from: document.getElementById('date-from')?.value || '',
     to: document.getElementById('date-to')?.value || '',
-    sort: document.getElementById('sort-filter')?.value || 'publishAt-asc'
+    sort: document.getElementById('sort-filter')?.value || 'scheduledAt-asc'
   };
 }
 
@@ -89,8 +89,8 @@ function filterItems(items) {
   let out = items.filter(item => item.validationPassed === true && ['ready_for_approval','approved','published','revoked'].includes(item.status));
   if (filters.status !== 'all') out = out.filter(item => item.status === filters.status);
   if (filters.type !== 'all') out = out.filter(item => (item.contentType || '') === filters.type);
-  if (filters.from) out = out.filter(item => !item.publishAt || formatDate(item.publishAt) >= filters.from);
-  if (filters.to) out = out.filter(item => !item.publishAt || formatDate(item.publishAt) <= filters.to);
+  if (filters.from) out = out.filter(item => !item.scheduledAt || formatDate(item.scheduledAt) >= filters.from);
+  if (filters.to) out = out.filter(item => !item.scheduledAt || formatDate(item.scheduledAt) <= filters.to);
   if (filters.q) {
     out = out.filter(item => [item.id, item.title, item.slug, item.publicPath, item.previewPath, item.status, item.contentType, item.type]
       .some(value => String(value || '').toLowerCase().includes(filters.q)));
@@ -99,7 +99,7 @@ function filterItems(items) {
   out.sort((a, b) => {
     let av = field === 'type' ? typeLabel(a) : (a[field] || '');
     let bv = field === 'type' ? typeLabel(b) : (b[field] || '');
-    if (field === 'publishAt') { av = av || '9999-12-31'; bv = bv || '9999-12-31'; }
+    if (field === 'scheduledAt') { av = av || '9999-12-31'; bv = bv || '9999-12-31'; }
     return direction === 'desc' ? String(bv).localeCompare(String(av)) : String(av).localeCompare(String(bv));
   });
   return out;
@@ -115,7 +115,7 @@ function renderRows(items, config) {
       <td>${escapeHtml(typeLabel(item))}</td>
       <td>${escapeHtml(item.track)}</td>
       <td><span class="badge">${escapeHtml(item.status.replaceAll('_', ' '))}</span></td>
-      <td>${escapeHtml(formatDate(item.publishAt))}</td>
+      <td>${escapeHtml(formatDate(item.scheduledAt))}</td>
       <td>${item.validationPassed ? 'Passed' : 'No'}</td>
       <td>${item.requiresFooter ? 'Yes' : 'No'}</td>
       <td class="small">${escapeHtml(statusInstruction(item))}</td>

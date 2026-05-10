@@ -52,5 +52,5 @@ This repo uses a GitHub-backed approval model. The source of truth is `data/admi
 - `/admin/` is a same-domain operator dashboard
 - only validation-passed items appear there
 - approval and revoke happen by editing the manifest in GitHub
-- scheduled workflows auto-publish approved items when `publishAt` is reached
+- scheduled workflows auto-publish approved items when `scheduledAt` is reached
 - the static build only ships published resource pages

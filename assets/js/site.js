@@ -35,25 +35,33 @@ async function loadManifest() {
 }
 
 
+function publicReleaseDate(item) {
+  return String(item?.publishedAt || item?.scheduledAt || '');
+}
+
+function publicReleaseDateLabel(item) {
+  return publicReleaseDate(item).slice(0, 10);
+}
+
 async function renderPublishedResourcesList(containerId, typeKey) {
   const container = document.getElementById(containerId);
   if (!container) return;
   const items = await loadManifest();
   const filtered = items
     .filter(item => resourceTypeKey(item.type) === typeKey)
-    .sort((a, b) => String(b.publishAt || '').localeCompare(String(a.publishAt || '')));
+    .sort((a, b) => publicReleaseDate(b).localeCompare(publicReleaseDate(a)));
   if (!filtered.length) {
     container.innerHTML = '<li class="muted">No published resources are live in this section yet.</li>';
     return;
   }
-  container.innerHTML = filtered.map(item => `<li><a href="${escapeHtml(item.slug)}">${escapeHtml(item.title)}</a><span class="muted small"> — ${escapeHtml((item.publishAt || '').slice(0,10))}</span></li>`).join('');
+  container.innerHTML = filtered.map(item => `<li><a href="${escapeHtml(item.slug)}">${escapeHtml(item.title)}</a><span class="muted small"> — ${escapeHtml(publicReleaseDateLabel(item))}</span></li>`).join('');
 }
 
 async function renderPublishedResources(containerId) {
   const container = document.getElementById(containerId);
   if (!container) return;
   const items = await loadManifest();
-  items.sort((a, b) => String(b.publishAt || '').localeCompare(String(a.publishAt || '')));
+  items.sort((a, b) => publicReleaseDate(b).localeCompare(publicReleaseDate(a)));
   if (!items.length) {
     container.innerHTML = '<article class="resource-card" data-animate="zoom"><span class="badge">Resources</span><h3>Fresh resources are on the way.</h3><p class="muted small">New resources will appear here as they are released.</p></article>';
     return;
@@ -62,7 +70,7 @@ async function renderPublishedResources(containerId) {
     <article class="resource-card" data-animate="zoom">
       <span class="badge">${escapeHtml(resourceTypeLabel(item.type))}</span>
       <h3><a href="${escapeHtml(item.slug)}">${escapeHtml(item.title)}</a></h3>
-      <p class="muted small">Track: ${escapeHtml(item.track)} · ${escapeHtml((item.publishAt || '').slice(0,10))}</p>
+      <p class="muted small">Track: ${escapeHtml(item.track)} · ${escapeHtml(publicReleaseDateLabel(item))}</p>
       <p><a class="eyebrow-link" href="${escapeHtml(item.slug)}">Read more →</a></p>
     </article>
   `).join('');
