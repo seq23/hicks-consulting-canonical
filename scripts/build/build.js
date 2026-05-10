@@ -92,7 +92,7 @@ for (const item of manifest.filter(item => item.slug.startsWith('/resources/') &
 }
 
 const staticPublicRoutes = [
-  '/', '/therapy/', '/coaching/', '/groups/', '/corporate-speaking/', '/about/', '/resources/', '/contact/',
+  '/', '/therapy/', '/coaching/', '/groups/', '/corporate-speaking/', '/about/', '/resources/', '/contact/', '/organizational-training-inquiry/',
   '/intake-quiz/', '/llm-atlas/', '/resources/insights/', '/resources/articles/', '/resources/guides/', '/resources/white-papers/', '/request-consult/', '/book-discovery-call/', '/faq/', '/privacy-policy/', '/cookie-policy/', '/disclaimer/',
   '/terms/', '/good-faith-estimate/', '/emergency-crisis-notice/'
 ];
