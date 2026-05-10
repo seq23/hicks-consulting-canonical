@@ -1113,6 +1113,7 @@ footer {
 
 .about-portrait-card { display: grid; gap: 1rem; }
 .portrait-quote {
+  display: block;
   margin: 0;
   padding: 1rem 1.1rem;
   border-left: 3px solid var(--gold);
@@ -1121,8 +1122,12 @@ footer {
   color: var(--olive-ink);
   font-size: .98rem;
   line-height: 1.75;
+  max-height: none;
+  overflow: visible;
+  white-space: normal;
 }
-.portrait-quote cite { display: inline-block; margin-top: .5rem; font-style: normal; font-weight: 700; }
+.portrait-quote .quote-text { display: block; }
+.portrait-quote .quote-attribution { display: inline-block; margin-top: .5rem; font-style: normal; font-weight: 700; }
 .inquiry-card { padding: clamp(1.2rem, 3vw, 2rem); }
 .inquiry-form { display: grid; gap: 1rem; }
 .form-grid { display: grid; gap: 1rem; }
