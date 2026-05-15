@@ -2,6 +2,8 @@ const ADMIN_PASSWORD_HASH = 'c7ef3319e6cf6aab9035156df95f18dfec2ba2178f733940eda
 const SESSION_KEY = 'hc_admin_unlocked';
 let ADMIN_ITEMS = [];
 let ADMIN_CONFIG = {};
+let GENERATED_CANDIDATES = [];
+let PUBLISH_QUEUE_ITEMS = [];
 
 async function sha256(value) {
   const bytes = new TextEncoder().encode(value);
@@ -26,8 +28,8 @@ async function fetchJson(url) {
 
 function typeLabel(item) {
   const value = item.contentType || '';
-  const labels = { 'insights': 'Insight', 'articles': 'Article', 'guides': 'Guide', 'white-papers': 'White Paper' };
-  return labels[value] || String(item.type || '').replaceAll('-', ' ');
+  const labels = { 'insights': 'Insight', 'articles': 'Article', 'guides': 'Guide', 'white-papers': 'White Paper', insight: 'Insight', article: 'Article', guide: 'Guide', whitepaper: 'White Paper', faq: 'FAQ', fanout: 'Fanout' };
+  return labels[value] || String(item.type || value || '').replaceAll('-', ' ');
 }
 
 function statusInstruction(item) {
@@ -124,6 +126,47 @@ function renderRows(items, config) {
   `).join('');
 }
 
+function candidateWarnings(candidate) {
+  const warnings = [];
+  if (!candidate.llmPrompt || candidate.llmPrompt.length < 300) warnings.push('prompt too short');
+  if (!Array.isArray(candidate.humanizationChecklist) || candidate.humanizationChecklist.length < 4) warnings.push('humanization checklist incomplete');
+  if (!candidate.minimumWords || !candidate.targetWords) warnings.push('word floors missing');
+  if (candidate.publicOnlyAfterApproval !== true) warnings.push('approval gate missing');
+  return warnings;
+}
+
+function renderGeneratedCandidates() {
+  const tbody = document.getElementById('generated-candidates-tbody');
+  if (!tbody) return;
+  const warnings = GENERATED_CANDIDATES.reduce((sum, item) => sum + candidateWarnings(item).length, 0);
+  const candidateCount = document.getElementById('candidate-count');
+  const queueCount = document.getElementById('queue-count');
+  const warningCount = document.getElementById('candidate-warning-count');
+  if (candidateCount) candidateCount.textContent = String(GENERATED_CANDIDATES.length);
+  if (queueCount) queueCount.textContent = String(PUBLISH_QUEUE_ITEMS.length);
+  if (warningCount) warningCount.textContent = String(warnings);
+  if (!GENERATED_CANDIDATES.length) {
+    tbody.innerHTML = `<tr><td colspan="7" class="muted">No generated candidates are queued. Run npm run ingest:all to refresh social/query-derived briefs.</td></tr>`;
+    return;
+  }
+  tbody.innerHTML = GENERATED_CANDIDATES.map(item => {
+    const itemWarnings = candidateWarnings(item);
+    const promptBlock = item.llmPrompt ? `<details><summary>LLM draft prompt</summary><pre class="small">${escapeHtml(item.llmPrompt)}</pre></details>` : '';
+    const route = item.suggestedRoute || '';
+    const words = `${item.minimumWords || '?'} min / ${item.targetWords || '?'} target`;
+    const status = item.approvalStatus || item.status || 'queued_for_owner_approval';
+    return `<tr>
+      <td><strong>${escapeHtml(item.title)}</strong><div class="muted small">${escapeHtml(route)}</div>${promptBlock}</td>
+      <td>${escapeHtml(typeLabel(item))}</td>
+      <td>${escapeHtml(item.clusterTitle || item.clusterId || '')}</td>
+      <td>${escapeHtml(words)}</td>
+      <td>${escapeHtml(item.sourceSignalCount || 0)}</td>
+      <td><span class="badge">${escapeHtml(status.replaceAll('_', ' '))}</span>${itemWarnings.length ? `<div class="muted small">Warnings: ${escapeHtml(itemWarnings.join(', '))}</div>` : `<div class="muted small">Prewrite gate ready</div>`}</td>
+      <td class="small">Approve by changing this item in <code>data/social/publish_queue.json</code> from queued_for_owner_approval to approved_for_drafting, then run the draft/prewrite loop. This does not publish automatically.</td>
+    </tr>`;
+  }).join('');
+}
+
 function renderFilteredAdmin() {
   const counts = statusCounts(ADMIN_ITEMS.filter(item => item.validationPassed === true));
   document.getElementById('ready-count').textContent = String(counts.ready_for_approval || 0);
@@ -134,6 +177,7 @@ function renderFilteredAdmin() {
   document.getElementById('content-tbody').innerHTML = renderRows(filtered, ADMIN_CONFIG);
   const summary = document.getElementById('filter-summary');
   if (summary) summary.textContent = `Showing ${filtered.length} of ${ADMIN_ITEMS.length} validation-passed content items.`;
+  renderGeneratedCandidates();
 }
 
 function bindFilters() {
@@ -152,9 +196,11 @@ function bindFilters() {
 }
 
 async function renderAdmin() {
-  const [manifest, config] = await Promise.all([
+  const [manifest, config, briefPayload, publishQueue] = await Promise.all([
     fetchJson('/data/admin/content_manifest.json'),
-    fetchJson('/data/system/config.json')
+    fetchJson('/data/system/config.json'),
+    fetchJson('/data/intake/content_brief_candidates.json'),
+    fetchJson('/data/social/publish_queue.json')
   ]);
   if (!manifest || !config) {
     document.getElementById('admin-message').textContent = 'Admin data failed to load.';
@@ -162,6 +208,8 @@ async function renderAdmin() {
   }
   ADMIN_ITEMS = manifest;
   ADMIN_CONFIG = config;
+  GENERATED_CANDIDATES = Array.isArray(briefPayload?.candidates) ? briefPayload.candidates : [];
+  PUBLISH_QUEUE_ITEMS = Array.isArray(publishQueue?.items) ? publishQueue.items : [];
   document.getElementById('manifest-link').href = config.repo?.manifestViewUrl || '#';
   document.getElementById('manifest-edit-link').href = config.repo?.manifestEditUrl || '#';
   bindFilters();

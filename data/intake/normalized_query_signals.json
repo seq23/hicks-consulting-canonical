@@ -1,9 +1,8 @@
 {
-  "generatedAt": "2026-05-15T14:53:25.860Z",
-  "querySignals": [
+  "generatedAt": "2026-05-15T14:53:26.095Z",
+  "signals": [
     {
       "id": "seed-black-women-burnout-and-boundaries",
-      "title": "Black women burnout and boundaries",
       "query": "Black women burnout and boundaries",
       "source": "seed_query_fallback",
       "sourceType": "seed",
@@ -11,33 +10,42 @@
         "black_women",
         "burnout"
       ],
-      "collectedAt": "2026-05-15T14:53:25.859Z"
+      "intent": "informational",
+      "audience": "Black women",
+      "contentType": "answer",
+      "status": "candidate",
+      "generatedAt": "2026-05-15T14:53:25.860Z"
     },
     {
       "id": "seed-ai-anxiety-and-emotional-wellness",
-      "title": "AI anxiety and emotional wellness",
       "query": "AI anxiety and emotional wellness",
       "source": "seed_query_fallback",
       "sourceType": "seed",
       "tags": [
         "ai_digital_wellness"
       ],
-      "collectedAt": "2026-05-15T14:53:25.860Z"
+      "intent": "informational",
+      "audience": "Clients seeking emotional wellness support",
+      "contentType": "answer",
+      "status": "candidate",
+      "generatedAt": "2026-05-15T14:53:25.860Z"
     },
     {
       "id": "seed-gen-z-therapy-language-and-mental-health",
-      "title": "Gen Z therapy language and mental health",
       "query": "Gen Z therapy language and mental health",
       "source": "seed_query_fallback",
       "sourceType": "seed",
       "tags": [
         "genz_millennial"
       ],
-      "collectedAt": "2026-05-15T14:53:25.860Z"
+      "intent": "commercial",
+      "audience": "Gen Z and millennial clients",
+      "contentType": "service",
+      "status": "candidate",
+      "generatedAt": "2026-05-15T14:53:25.860Z"
     },
     {
       "id": "seed-millennial-women-burnout-motherhood-work",
-      "title": "millennial women burnout motherhood work",
       "query": "millennial women burnout motherhood work",
       "source": "seed_query_fallback",
       "sourceType": "seed",
@@ -46,22 +54,28 @@
         "burnout",
         "workplace_emotional_intelligence"
       ],
-      "collectedAt": "2026-05-15T14:53:25.860Z"
+      "intent": "commercial",
+      "audience": "Gen Z and millennial clients",
+      "contentType": "service",
+      "status": "candidate",
+      "generatedAt": "2026-05-15T14:53:25.860Z"
     },
     {
       "id": "seed-black-community-emotional-wellness-and-healing",
-      "title": "Black community emotional wellness and healing",
       "query": "Black community emotional wellness and healing",
       "source": "seed_query_fallback",
       "sourceType": "seed",
       "tags": [
         "general_emotional_wellness"
       ],
-      "collectedAt": "2026-05-15T14:53:25.860Z"
+      "intent": "informational",
+      "audience": "Clients seeking emotional wellness support",
+      "contentType": "answer",
+      "status": "candidate",
+      "generatedAt": "2026-05-15T14:53:25.860Z"
     },
     {
       "id": "seed-faith-centered-therapy-emotional-healing",
-      "title": "faith centered therapy emotional healing",
       "query": "faith centered therapy emotional healing",
       "source": "seed_query_fallback",
       "sourceType": "seed",
@@ -69,11 +83,14 @@
         "ai_digital_wellness",
         "faith_centered_support"
       ],
-      "collectedAt": "2026-05-15T14:53:25.860Z"
+      "intent": "commercial",
+      "audience": "Clients seeking emotional wellness support",
+      "contentType": "service",
+      "status": "candidate",
+      "generatedAt": "2026-05-15T14:53:25.860Z"
     },
     {
       "id": "seed-workplace-emotional-intelligence-mental-health-training",
-      "title": "workplace emotional intelligence mental health training",
       "query": "workplace emotional intelligence mental health training",
       "source": "seed_query_fallback",
       "sourceType": "seed",
@@ -81,7 +98,11 @@
         "ai_digital_wellness",
         "workplace_emotional_intelligence"
       ],
-      "collectedAt": "2026-05-15T14:53:25.860Z"
+      "intent": "commercial",
+      "audience": "Organizations and teams",
+      "contentType": "service",
+      "status": "candidate",
+      "generatedAt": "2026-05-15T14:53:25.860Z"
     }
   ]
 }

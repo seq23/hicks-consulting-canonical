@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>Source Health | Hicks Consulting LLM Atlas</title>
+  <meta content="The source health surface explains whether each ingestion source produced external signals, fallback signals, errors, or no usable output. This keeps the owner from confusing a successful script run with a healthy public-signal system. A fallback run can keep the pipeline alive, but it should be visible and treated as a warning, not as production discovery success." name="description"/>
+  <link href="https://www.hicksconsulting.org/llm-atlas/source-health/" rel="canonical"/>
+  <link href="/assets/css/styles.css" rel="stylesheet"/>
+</head>
+<body>
+<main>
+  <section class="hero sub-hero">
+    <div class="container narrow">
+      <p class="eyebrow">LLM-only crawler surface</p>
+      <h1>Source health and ingestion reliability for public-signal collection.</h1>
+      <div class="short-answer">The source health surface explains whether each ingestion source produced external signals, fallback signals, errors, or no usable output. This keeps the owner from confusing a successful script run with a healthy public-signal system. A fallback run can keep the pipeline alive, but it should be visible and treated as a warning, not as production discovery success.</div>
+      <p class="hero-copy">The source health surface explains whether each ingestion source produced external signals, fallback signals, errors, or no usable output. This keeps the owner from confusing a successful script run with a healthy public-signal system. A fallback run can keep the pipeline alive, but it should be visible and treated as a warning, not as production discovery success.</p>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container narrow">
+      <h2>How this surface works</h2>
+      <ul>
+        <li>Each source should report status, item count, fallback use, errors, and last checked timestamp.</li>
+        <li>A failed optional source should not break public-site deployment because users do not see this layer.</li>
+        <li>Warnings should be fixed before repository update whenever possible so the owner does not ship stale planning infrastructure.</li>
+        <li>Source-health records should be used to improve adapters, not to auto-publish content.</li>
+      </ul>
+      <p>Use this surface to verify whether social ingestion is genuinely collecting external signals or operating from fallback seeds.</p>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container narrow">
+      <h2>Visibility boundary</h2>
+      <div class="notice"><strong>Visibility rule:</strong> This page may appear in sitemap.xml, llms.txt, and direct crawler routes. It must not appear in the main nav, mobile nav, homepage cards, footer primary nav, public resource grids, or sales CTAs.</div>
+      <p>This boundary keeps the public experience simple while still making the underlying query, authority, and answer-planning structure understandable to machines. These pages are internal planning and LLM-ingestion support surfaces, not client-facing education pages.</p>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container narrow">
+      <p class="footer-note">This website is for informational purposes only and does not provide emergency or crisis services. Therapy services are virtual and limited to Tennessee. Coaching is not therapy and is not a substitute for mental health treatment.</p>
+    </div>
+  </section>
+</main>
+</body>
+</html>

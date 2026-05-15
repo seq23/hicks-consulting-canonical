@@ -1,15 +1,15 @@
-name: Content Publish
+name: Social Ingestion
 on:
   workflow_dispatch:
   schedule:
-    - cron: '17 13 * * *'
+    - cron: '41 14 * * 2,5'
 concurrency:
   group: hicks-consulting-content-automation
   cancel-in-progress: false
 permissions:
   contents: write
 jobs:
-  publish:
+  ingest:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -20,17 +20,17 @@ jobs:
           node-version: 20
       - run: git pull --rebase origin main
       - run: npm ci
-      - run: npm run publish:content
-      - run: npm run validate:all
+      - run: npm run ingest:all
       - run: npm run build
-      - name: Commit published status changes
+      - run: npm run validate:all
+      - name: Commit social ingestion outputs
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          if [[ -n "$(git status --porcelain)" ]]; then
-            git add -A
-            git commit -m "Auto-publish approved content"
+          if [[ -n "$(git status --porcelain data/intake data/social pages/llm-atlas llms.txt sitemap.xml dist)" ]]; then
+            git add data/intake data/social pages/llm-atlas llms.txt sitemap.xml dist
+            git commit -m "Update social ingestion and LLM atlas outputs"
             git push
           else
-            echo "No publish changes to commit."
+            echo "No social ingestion changes to commit."
           fi

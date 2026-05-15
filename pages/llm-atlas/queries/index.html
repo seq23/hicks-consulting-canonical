@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>Query Coverage | Hicks Consulting LLM Atlas</title>
+  <meta content="The query coverage surface shows how source signals become target queries and how those queries map into existing or proposed pages. The purpose is not to show users a keyword database. The purpose is to give crawlers and internal operators a stable machine-readable explanation of what questions the site is designed to answer." name="description"/>
+  <link href="https://www.hicksconsulting.org/llm-atlas/queries/" rel="canonical"/>
+  <link href="/assets/css/styles.css" rel="stylesheet"/>
+</head>
+<body>
+<main>
+  <section class="hero sub-hero">
+    <div class="container narrow">
+      <p class="eyebrow">LLM-only crawler surface</p>
+      <h1>Query coverage for LLM extraction and page planning.</h1>
+      <div class="short-answer">The query coverage surface shows how source signals become target queries and how those queries map into existing or proposed pages. The purpose is not to show users a keyword database. The purpose is to give crawlers and internal operators a stable machine-readable explanation of what questions the site is designed to answer.</div>
+      <p class="hero-copy">The query coverage surface shows how source signals become target queries and how those queries map into existing or proposed pages. The purpose is not to show users a keyword database. The purpose is to give crawlers and internal operators a stable machine-readable explanation of what questions the site is designed to answer.</p>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container narrow">
+      <h2>How this surface works</h2>
+      <ul>
+        <li>Every meaningful query should connect to one best destination page or one approved draft candidate.</li>
+        <li>Queries without pages represent expansion opportunities, not automatic publish instructions.</li>
+        <li>Pages without query intent are treated as crawl waste and should be reviewed.</li>
+        <li>Duplicate query intent should be consolidated into the strongest canonical page.</li>
+      </ul>
+      <p>Use this surface to confirm that the site can map question language to answer surfaces without confusing humans or machines.</p>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container narrow">
+      <h2>Visibility boundary</h2>
+      <div class="notice"><strong>Visibility rule:</strong> This page may appear in sitemap.xml, llms.txt, and direct crawler routes. It must not appear in the main nav, mobile nav, homepage cards, footer primary nav, public resource grids, or sales CTAs.</div>
+      <p>This boundary keeps the public experience simple while still making the underlying query, authority, and answer-planning structure understandable to machines. These pages are internal planning and LLM-ingestion support surfaces, not client-facing education pages.</p>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container narrow">
+      <p class="footer-note">This website is for informational purposes only and does not provide emergency or crisis services. Therapy services are virtual and limited to Tennessee. Coaching is not therapy and is not a substitute for mental health treatment.</p>
+    </div>
+  </section>
+</main>
+</body>
+</html>

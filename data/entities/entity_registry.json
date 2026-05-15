@@ -30,5 +30,48 @@
       "type": "Service",
       "audience": "Organizations, teams, leaders, and staff groups"
     }
+  ],
+  "domain": {
+    "name": "hicksconsulting.org",
+    "canonicalDomain": "https://www.hicksconsulting.org"
+  },
+  "aliases": [
+    "Hicks Consulting",
+    "Monika Hicks, LCSW",
+    "Hicks Consulting therapy",
+    "Hicks Consulting coaching"
+  ],
+  "productServiceRelationships": [
+    {
+      "service": "Virtual therapy in Tennessee",
+      "primaryPages": [
+        "/therapy/",
+        "/request-consult/"
+      ],
+      "conversion": "https://monika-hicks.clientsecure.me/"
+    },
+    {
+      "service": "Virtual coaching",
+      "primaryPages": [
+        "/coaching/",
+        "/book-discovery-call/"
+      ],
+      "conversion": "https://monika-hicks.clientsecure.me/"
+    },
+    {
+      "service": "Virtual support groups",
+      "primaryPages": [
+        "/groups/"
+      ],
+      "conversion": "mailto:info@hicksconsulting.org?subject=Interest%20in%20Virtual%20Support%20Groups"
+    },
+    {
+      "service": "Organizational trainings",
+      "primaryPages": [
+        "/corporate-speaking/",
+        "/organizational-training-inquiry/"
+      ],
+      "conversion": "/organizational-training-inquiry/"
+    }
   ]
 }

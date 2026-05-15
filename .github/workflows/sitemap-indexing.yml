@@ -1,0 +1,21 @@
+name: Sitemap Indexing Check
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+concurrency:
+  group: hicks-consulting-sitemap-indexing
+  cancel-in-progress: false
+jobs:
+  sitemap-indexing:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: npm ci
+      - run: npm run build
+      - run: npm run validate:sitemap
+      - run: npm run validate:hidden-llm-surfaces
+      - run: npm run validate:llm-ingestion-routes

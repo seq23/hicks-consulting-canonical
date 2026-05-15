@@ -1,27 +1,51 @@
 # Hicks Consulting
 
-Hicks Consulting helps our clients heal beyond survival, break unhealthy cycles, and build healthier, more fulfilling lives through virtual therapy, coaching, consulting, and mental health support.
+Hicks Consulting helps clients heal beyond survival through virtual therapy, coaching, support groups, consulting, and organizational training.
 
-Hicks Consulting was created with Black women in mind and specializes in supporting Black women, while also serving clients of all ethnicities through virtual therapy, coaching, groups, consulting, and organizational training.
-
-Monika Hicks is a Licensed Clinical Social Worker and mental health consultant. I am a purpose-driven mental health consultant who empowers others to heal beyond survival, break generational cycles, and intentionally choose healthier, more fulfilling ways of living.
-
-Primary routes:
+Primary public routes:
+- /
 - /therapy/
 - /coaching/
 - /groups/
 - /corporate-speaking/
+- /about/
 - /resources/
 - /contact/
+- /organizational-training-inquiry/
+- /intake-quiz/
+- /resources/insights/
+- /resources/articles/
+- /resources/guides/
+- /resources/white-papers/
+- /request-consult/
+- /book-discovery-call/
+- /faq/
+- /privacy-policy/
+- /cookie-policy/
+- /disclaimer/
+- /terms/
+- /good-faith-estimate/
+- /emergency-crisis-notice/
 
-Booking:
+LLM-only crawler-discoverable routes, intentionally excluded from user navigation:
+- /llm-atlas/
+- /llm-atlas/fanouts/
+- /llm-atlas/queries/
+- /llm-atlas/pillars/
+- /llm-atlas/clusters/
+- /llm-atlas/social-signals/
+- /llm-atlas/source-health/
+- /llm-atlas/answer-surfaces/
+
+Machine-readable files:
+- /answers.json
+- /coverage.json
+- /data/query_coverage_map.json
+- /data/query_metadata.json
+- /data/internal_authority_graph.json
+- /data/entities/entity_registry.json
+
+Conversion paths:
 - Therapy and coaching consults: https://monika-hicks.clientsecure.me/
-- Organizational training inquiries: info@hicksconsulting.org
-
-Key entities:
-- Hicks Consulting
-- Monika Hicks, LCSW
-- Virtual therapy in Tennessee
-- Virtual coaching
-- Virtual support groups
-- In-person organizational trainings
+- Organizational training: /organizational-training-inquiry/
+- Groups: mailto:info@hicksconsulting.org?subject=Interest%20in%20Virtual%20Support%20Groups

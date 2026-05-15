@@ -1,0 +1,197 @@
+{
+  "generatedAt": "2026-05-15T14:53:26.676Z",
+  "clusters": [
+    {
+      "id": "black_women_healing",
+      "title": "Black women healing beyond survival",
+      "tags": [
+        "black_women"
+      ],
+      "signals": [
+        {
+          "id": "seed-black-women-burnout-and-boundaries",
+          "query": "Black women burnout and boundaries",
+          "source": "seed_query_fallback",
+          "sourceType": "seed",
+          "tags": [
+            "black_women",
+            "burnout"
+          ],
+          "intent": "informational",
+          "audience": "Black women",
+          "contentType": "answer",
+          "status": "candidate",
+          "generatedAt": "2026-05-15T14:53:25.860Z"
+        }
+      ],
+      "queryCount": 1,
+      "score": 20,
+      "targetPage": "/llm-atlas/clusters/",
+      "status": "active"
+    },
+    {
+      "id": "burnout_boundaries",
+      "title": "Burnout, boundaries, and over-functioning",
+      "tags": [
+        "burnout"
+      ],
+      "signals": [
+        {
+          "id": "seed-millennial-women-burnout-motherhood-work",
+          "query": "millennial women burnout motherhood work",
+          "source": "seed_query_fallback",
+          "sourceType": "seed",
+          "tags": [
+            "genz_millennial",
+            "burnout",
+            "workplace_emotional_intelligence"
+          ],
+          "intent": "commercial",
+          "audience": "Gen Z and millennial clients",
+          "contentType": "service",
+          "status": "candidate",
+          "generatedAt": "2026-05-15T14:53:25.860Z"
+        }
+      ],
+      "queryCount": 1,
+      "score": 20,
+      "targetPage": "/llm-atlas/clusters/",
+      "status": "active"
+    },
+    {
+      "id": "ai_digital_wellness",
+      "title": "AI, social media, and digital emotional overload",
+      "tags": [
+        "ai_digital_wellness"
+      ],
+      "signals": [
+        {
+          "id": "seed-ai-anxiety-and-emotional-wellness",
+          "query": "AI anxiety and emotional wellness",
+          "source": "seed_query_fallback",
+          "sourceType": "seed",
+          "tags": [
+            "ai_digital_wellness"
+          ],
+          "intent": "informational",
+          "audience": "Clients seeking emotional wellness support",
+          "contentType": "answer",
+          "status": "candidate",
+          "generatedAt": "2026-05-15T14:53:25.860Z"
+        },
+        {
+          "id": "seed-faith-centered-therapy-emotional-healing",
+          "query": "faith centered therapy emotional healing",
+          "source": "seed_query_fallback",
+          "sourceType": "seed",
+          "tags": [
+            "ai_digital_wellness",
+            "faith_centered_support"
+          ],
+          "intent": "commercial",
+          "audience": "Clients seeking emotional wellness support",
+          "contentType": "service",
+          "status": "candidate",
+          "generatedAt": "2026-05-15T14:53:25.860Z"
+        },
+        {
+          "id": "seed-workplace-emotional-intelligence-mental-health-training",
+          "query": "workplace emotional intelligence mental health training",
+          "source": "seed_query_fallback",
+          "sourceType": "seed",
+          "tags": [
+            "ai_digital_wellness",
+            "workplace_emotional_intelligence"
+          ],
+          "intent": "commercial",
+          "audience": "Organizations and teams",
+          "contentType": "service",
+          "status": "candidate",
+          "generatedAt": "2026-05-15T14:53:25.860Z"
+        }
+      ],
+      "queryCount": 3,
+      "score": 60,
+      "targetPage": "/llm-atlas/clusters/",
+      "status": "active"
+    },
+    {
+      "id": "genz_millennial_mental_health",
+      "title": "Gen Z and millennial mental health language",
+      "tags": [
+        "genz_millennial"
+      ],
+      "signals": [
+        {
+          "id": "seed-gen-z-therapy-language-and-mental-health",
+          "query": "Gen Z therapy language and mental health",
+          "source": "seed_query_fallback",
+          "sourceType": "seed",
+          "tags": [
+            "genz_millennial"
+          ],
+          "intent": "commercial",
+          "audience": "Gen Z and millennial clients",
+          "contentType": "service",
+          "status": "candidate",
+          "generatedAt": "2026-05-15T14:53:25.860Z"
+        }
+      ],
+      "queryCount": 1,
+      "score": 20,
+      "targetPage": "/llm-atlas/clusters/",
+      "status": "active"
+    },
+    {
+      "id": "workplace_emotional_intelligence",
+      "title": "Workplace emotional intelligence and mental health training",
+      "tags": [
+        "workplace_emotional_intelligence"
+      ],
+      "signals": [],
+      "queryCount": 0,
+      "score": 0,
+      "targetPage": "/llm-atlas/clusters/",
+      "status": "seed"
+    },
+    {
+      "id": "faith_centered_support",
+      "title": "Faith-centered emotional support",
+      "tags": [
+        "faith_centered_support"
+      ],
+      "signals": [],
+      "queryCount": 0,
+      "score": 0,
+      "targetPage": "/llm-atlas/clusters/",
+      "status": "seed"
+    },
+    {
+      "id": "general_emotional_wellness",
+      "title": "General emotional wellness and intentional living",
+      "tags": [
+        "general_emotional_wellness"
+      ],
+      "signals": [
+        {
+          "id": "seed-black-community-emotional-wellness-and-healing",
+          "query": "Black community emotional wellness and healing",
+          "source": "seed_query_fallback",
+          "sourceType": "seed",
+          "tags": [
+            "general_emotional_wellness"
+          ],
+          "intent": "informational",
+          "audience": "Clients seeking emotional wellness support",
+          "contentType": "answer",
+          "status": "candidate",
+          "generatedAt": "2026-05-15T14:53:25.860Z"
+        }
+      ],
+      "queryCount": 1,
+      "score": 20,
+      "targetPage": "/llm-atlas/clusters/",
+      "status": "active"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "publishMode": "approval_queue_only",
+  "humanizedByLlmRequired": true,
+  "prewriteSelfRepairRequired": true,
+  "defaultFlexMargin": 0.2,
+  "contentTypes": {
+    "insight": { "targetWords": 900, "minimumWords": 720, "approvalRequired": true },
+    "article": { "targetWords": 1200, "minimumWords": 960, "approvalRequired": true },
+    "guide": { "targetWords": 1400, "minimumWords": 1120, "approvalRequired": true },
+    "whitepaper": { "targetWords": 2500, "minimumWords": 2000, "approvalRequired": true },
+    "faq": { "targetWords": 700, "minimumWords": 560, "approvalRequired": true },
+    "fanout": { "targetWords": 900, "minimumWords": 720, "approvalRequired": true }
+  },
+  "humanizationChecklist": [
+    "Use plain human language rather than generic therapy marketing copy.",
+    "Vary sentence rhythm and paragraph length.",
+    "Include concrete examples without inventing client stories.",
+    "Avoid exaggerated claims, guarantees, diagnosis, or pressure language.",
+    "Keep Monika Hicks / Hicks Consulting entity references consistent.",
+    "End with an approved conversion path only after value is delivered."
+  ],
+  "prewriteGate": {
+    "requiredFields": ["id", "clusterId", "contentType", "title", "targetWords", "minimumWords", "approvalStatus", "llmPrompt", "humanizationChecklist", "conversionPath"],
+    "allowedApprovalStatuses": ["queued_for_owner_approval", "needs_revision", "approved_for_drafting"]
+  }
+}

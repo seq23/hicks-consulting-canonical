@@ -1,0 +1,148 @@
+{
+  "sources": [
+    {
+      "id": "reddit_rss_blackwomen",
+      "name": "Reddit RSS - Black women burnout therapy",
+      "family": "reddit",
+      "kind": "rss",
+      "enabled": true,
+      "url": "https://www.reddit.com/search.rss?q=Black%20women%20burnout%20therapy&sort=new",
+      "allowedQueryTypes": [
+        "burnout",
+        "boundaries",
+        "therapy"
+      ],
+      "destinationContentType": "llm_ingestion_signal",
+      "maxItemsPerRun": 25
+    },
+    {
+      "id": "reddit_rss_ai_wellness",
+      "name": "Reddit RSS - AI anxiety mental health",
+      "family": "reddit",
+      "kind": "rss",
+      "enabled": true,
+      "url": "https://www.reddit.com/search.rss?q=AI%20anxiety%20mental%20health&sort=new",
+      "allowedQueryTypes": [
+        "ai_digital_wellness",
+        "anxiety",
+        "mental_health"
+      ],
+      "destinationContentType": "llm_ingestion_signal",
+      "maxItemsPerRun": 25
+    },
+    {
+      "id": "reddit_rss_genz_mental_health",
+      "name": "Reddit RSS - Gen Z mental health therapy",
+      "family": "reddit",
+      "kind": "rss",
+      "enabled": true,
+      "url": "https://www.reddit.com/search.rss?q=Gen%20Z%20mental%20health%20therapy&sort=new",
+      "allowedQueryTypes": [
+        "genz_millennial",
+        "therapy",
+        "mental_health"
+      ],
+      "destinationContentType": "llm_ingestion_signal",
+      "maxItemsPerRun": 25
+    },
+    {
+      "id": "youtube_rss_blackwomen_burnout",
+      "name": "YouTube public feed - Black women burnout therapy",
+      "family": "youtube",
+      "kind": "rss",
+      "enabled": true,
+      "url": "https://www.youtube.com/feeds/videos.xml?search_query=Black%20women%20burnout%20therapy",
+      "allowedQueryTypes": [
+        "burnout",
+        "black_women",
+        "therapy"
+      ],
+      "destinationContentType": "llm_ingestion_signal",
+      "maxItemsPerRun": 15
+    },
+    {
+      "id": "google_news_workplace_mental_health",
+      "name": "Google News RSS - workplace mental health training",
+      "family": "news_social_web",
+      "kind": "rss",
+      "enabled": true,
+      "url": "https://news.google.com/rss/search?q=workplace%20mental%20health%20training%20emotional%20intelligence",
+      "allowedQueryTypes": [
+        "workplace_emotional_intelligence",
+        "organizational_training"
+      ],
+      "destinationContentType": "llm_ingestion_signal",
+      "maxItemsPerRun": 15
+    },
+    {
+      "id": "google_news_faith_centered_therapy",
+      "name": "Google News RSS - faith centered therapy emotional healing",
+      "family": "news_social_web",
+      "kind": "rss",
+      "enabled": true,
+      "url": "https://news.google.com/rss/search?q=faith%20centered%20therapy%20emotional%20healing",
+      "allowedQueryTypes": [
+        "faith_centered_support",
+        "therapy"
+      ],
+      "destinationContentType": "llm_ingestion_signal",
+      "maxItemsPerRun": 15
+    },
+    {
+      "id": "stackexchange_interpersonal_forum",
+      "name": "Interpersonal Skills forum RSS - relationship and communication questions",
+      "family": "public_forum",
+      "kind": "rss",
+      "enabled": true,
+      "url": "https://interpersonal.stackexchange.com/feeds",
+      "allowedQueryTypes": [
+        "boundaries",
+        "communication",
+        "relationships",
+        "emotional_wellness"
+      ],
+      "destinationContentType": "llm_ingestion_signal",
+      "maxItemsPerRun": 15
+    },
+    {
+      "id": "quora_public_research_lane",
+      "name": "Quora public questions - research lane only",
+      "family": "quora",
+      "kind": "research_lane",
+      "enabled": false,
+      "reasonDisabled": "No stable no-auth RSS/API endpoint approved for scheduled production ingestion. Keep as manual research lane until adapter exists.",
+      "allowedQueryTypes": [
+        "questions",
+        "therapy",
+        "burnout"
+      ],
+      "destinationContentType": "manual_research_signal"
+    },
+    {
+      "id": "x_twitter_public_research_lane",
+      "name": "X/Twitter public posts - research lane only",
+      "family": "x_twitter",
+      "kind": "research_lane",
+      "enabled": false,
+      "reasonDisabled": "No no-auth production-safe source. Requires API/secrets or manual research; not used in cron.",
+      "allowedQueryTypes": [
+        "social_language",
+        "trend_scan"
+      ],
+      "destinationContentType": "manual_research_signal"
+    },
+    {
+      "id": "tiktok_public_research_lane",
+      "name": "TikTok public posts - research lane only",
+      "family": "tiktok",
+      "kind": "research_lane",
+      "enabled": false,
+      "reasonDisabled": "No approved no-auth scheduled ingestion endpoint. Keep as manual trend review lane.",
+      "allowedQueryTypes": [
+        "shortform_language",
+        "trend_scan"
+      ],
+      "destinationContentType": "manual_research_signal"
+    }
+  ]
+}

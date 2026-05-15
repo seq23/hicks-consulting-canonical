@@ -93,12 +93,52 @@ for (const item of manifest.filter(item => item.slug.startsWith('/resources/') &
 
 const staticPublicRoutes = [
   '/', '/therapy/', '/coaching/', '/groups/', '/corporate-speaking/', '/about/', '/resources/', '/contact/', '/organizational-training-inquiry/',
-  '/intake-quiz/', '/llm-atlas/', '/resources/insights/', '/resources/articles/', '/resources/guides/', '/resources/white-papers/', '/request-consult/', '/book-discovery-call/', '/faq/', '/privacy-policy/', '/cookie-policy/', '/disclaimer/',
+  '/intake-quiz/', '/resources/insights/', '/resources/articles/', '/resources/guides/', '/resources/white-papers/', '/request-consult/', '/book-discovery-call/', '/faq/', '/privacy-policy/', '/cookie-policy/', '/disclaimer/',
   '/terms/', '/good-faith-estimate/', '/emergency-crisis-notice/'
 ];
-const urls = [...staticPublicRoutes, ...Array.from(publishedResourceSlugs)].map(route => `${canonicalDomain}${route}`);
+
+const llmOnlyRoutes = [
+  '/llm-atlas/',
+  '/llm-atlas/fanouts/',
+  '/llm-atlas/queries/',
+  '/llm-atlas/pillars/',
+  '/llm-atlas/clusters/',
+  '/llm-atlas/social-signals/',
+  '/llm-atlas/source-health/',
+  '/llm-atlas/answer-surfaces/'
+];
+
+const urls = [...staticPublicRoutes, ...llmOnlyRoutes, ...Array.from(publishedResourceSlugs)].map(route => `${canonicalDomain}${route}`);
 const sitemap = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">', ...urls.map(url => `  <url><loc>${url}</loc></url>`), '</urlset>'].join('\n');
 fs.writeFileSync(path.join(root, 'sitemap.xml'), sitemap + '\n');
 fs.writeFileSync(path.join(dist, 'sitemap.xml'), sitemap + '\n');
+
+const llms = [
+  '# Hicks Consulting',
+  '',
+  'Hicks Consulting helps clients heal beyond survival through virtual therapy, coaching, support groups, consulting, and organizational training.',
+  '',
+  'Primary public routes:',
+  ...staticPublicRoutes.map(route => `- ${route}`),
+  '',
+  'LLM-only crawler-discoverable routes, intentionally excluded from user navigation:',
+  ...llmOnlyRoutes.map(route => `- ${route}`),
+  '',
+  'Machine-readable files:',
+  '- /answers.json',
+  '- /coverage.json',
+  '- /data/query_coverage_map.json',
+  '- /data/query_metadata.json',
+  '- /data/internal_authority_graph.json',
+  '- /data/entities/entity_registry.json',
+  '',
+  'Conversion paths:',
+  `- Therapy and coaching consults: ${siteConfig.forms?.therapy || 'https://monika-hicks.clientsecure.me/'}`,
+  `- Organizational training: ${siteConfig.forms?.corporate || '/organizational-training-inquiry/'}`,
+  `- Groups: ${siteConfig.forms?.groups || 'mailto:info@hicksconsulting.org'}`
+].join('\n');
+fs.writeFileSync(path.join(root, 'llms.txt'), llms + '\n');
+fs.writeFileSync(path.join(dist, 'llms.txt'), llms + '\n');
+
 
 console.log('Build complete:', dist);
