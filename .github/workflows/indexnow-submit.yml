@@ -1,0 +1,42 @@
+name: IndexNow Submit
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+concurrency:
+  group: hicks-consulting-indexnow
+  cancel-in-progress: false
+jobs:
+  indexnow-submit:
+    runs-on: ubuntu-latest
+    env:
+      SITE_URL: https://www.hicksconsulting.org
+      INDEXNOW_KEY: ${{ secrets.INDEXNOW_KEY }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: npm ci
+      - run: npm run build
+      - run: npm run validate:all
+      - run: npm run indexnow:emit
+      - run: npm run validate:indexnow
+      - name: Submit IndexNow live
+        if: ${{ env.INDEXNOW_KEY != '' }}
+        run: npm run indexnow:submit
+      - name: Write IndexNow dry-run report when key is not configured
+        if: ${{ env.INDEXNOW_KEY == '' }}
+        run: INDEXNOW_DRY_RUN=1 npm run indexnow:submit
+      - run: npm run gsc:reindex-queue
+      - name: Upload IndexNow and GSC reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: hicks-consulting-indexnow-reports
+          path: |
+            reports/indexnow-priority.txt
+            reports/indexnow-batch.txt
+            reports/indexnow-manifest.json
+            reports/indexnow-submit-report.json
+            reports/search-reindex-queue.json

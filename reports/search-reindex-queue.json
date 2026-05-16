@@ -1,0 +1,102 @@
+{
+  "repo": "hicks-consulting-canonical",
+  "generatedAt": "2026-05-16T15:55:36.867Z",
+  "note": "Google Search Console URL Inspection API can be used for status checks, but ordinary Request Indexing remains a manual GSC UI action. This queue identifies the small priority set to inspect/request manually after deploy.",
+  "gscSitemapSubmission": {
+    "recommended": true,
+    "sitemapUrl": "https://www.hicksconsulting.org/sitemap.xml",
+    "automationStatus": "not-configured-in-this-pass"
+  },
+  "priorityUrls": [
+    {
+      "url": "https://www.hicksconsulting.org/",
+      "changedReason": "priority public page included in current IndexNow priority set",
+      "indexNowSubmitted": false,
+      "indexNowStatus": "dry-run",
+      "gscSitemapSubmitted": false,
+      "urlInspectionStatus": "unknown",
+      "manualRequestIndexingRecommended": true
+    },
+    {
+      "url": "https://www.hicksconsulting.org/therapy/",
+      "changedReason": "priority public page included in current IndexNow priority set",
+      "indexNowSubmitted": false,
+      "indexNowStatus": "dry-run",
+      "gscSitemapSubmitted": false,
+      "urlInspectionStatus": "unknown",
+      "manualRequestIndexingRecommended": true
+    },
+    {
+      "url": "https://www.hicksconsulting.org/coaching/",
+      "changedReason": "priority public page included in current IndexNow priority set",
+      "indexNowSubmitted": false,
+      "indexNowStatus": "dry-run",
+      "gscSitemapSubmitted": false,
+      "urlInspectionStatus": "unknown",
+      "manualRequestIndexingRecommended": true
+    },
+    {
+      "url": "https://www.hicksconsulting.org/corporate-speaking/",
+      "changedReason": "priority public page included in current IndexNow priority set",
+      "indexNowSubmitted": false,
+      "indexNowStatus": "dry-run",
+      "gscSitemapSubmitted": false,
+      "urlInspectionStatus": "unknown",
+      "manualRequestIndexingRecommended": true
+    },
+    {
+      "url": "https://www.hicksconsulting.org/organizational-training-inquiry/",
+      "changedReason": "priority public page included in current IndexNow priority set",
+      "indexNowSubmitted": false,
+      "indexNowStatus": "dry-run",
+      "gscSitemapSubmitted": false,
+      "urlInspectionStatus": "unknown",
+      "manualRequestIndexingRecommended": true
+    },
+    {
+      "url": "https://www.hicksconsulting.org/contact/",
+      "changedReason": "priority public page included in current IndexNow priority set",
+      "indexNowSubmitted": false,
+      "indexNowStatus": "dry-run",
+      "gscSitemapSubmitted": false,
+      "urlInspectionStatus": "unknown",
+      "manualRequestIndexingRecommended": true
+    },
+    {
+      "url": "https://www.hicksconsulting.org/resources/",
+      "changedReason": "priority public page included in current IndexNow priority set",
+      "indexNowSubmitted": false,
+      "indexNowStatus": "dry-run",
+      "gscSitemapSubmitted": false,
+      "urlInspectionStatus": "unknown",
+      "manualRequestIndexingRecommended": true
+    },
+    {
+      "url": "https://www.hicksconsulting.org/resources/insights/",
+      "changedReason": "priority public page included in current IndexNow priority set",
+      "indexNowSubmitted": false,
+      "indexNowStatus": "dry-run",
+      "gscSitemapSubmitted": false,
+      "urlInspectionStatus": "unknown",
+      "manualRequestIndexingRecommended": true
+    },
+    {
+      "url": "https://www.hicksconsulting.org/resources/articles/",
+      "changedReason": "priority public page included in current IndexNow priority set",
+      "indexNowSubmitted": false,
+      "indexNowStatus": "dry-run",
+      "gscSitemapSubmitted": false,
+      "urlInspectionStatus": "unknown",
+      "manualRequestIndexingRecommended": true
+    },
+    {
+      "url": "https://www.hicksconsulting.org/resources/guides/",
+      "changedReason": "priority public page included in current IndexNow priority set",
+      "indexNowSubmitted": false,
+      "indexNowStatus": "dry-run",
+      "gscSitemapSubmitted": false,
+      "urlInspectionStatus": "unknown",
+      "manualRequestIndexingRecommended": true
+    }
+  ]
+}

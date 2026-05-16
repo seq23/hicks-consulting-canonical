@@ -1,0 +1,28 @@
+{
+  "repo": "hicks-consulting-canonical",
+  "host": "www.hicksconsulting.org",
+  "endpoint": "https://api.indexnow.org/indexnow",
+  "keyLocation": "https://www.hicksconsulting.org/indexnow.txt",
+  "submittedAt": "2026-05-16T15:55:36.588Z",
+  "dryRun": true,
+  "priorityCount": 15,
+  "batchCount": 35,
+  "status": "dry-run",
+  "failures": [],
+  "results": [
+    {
+      "label": "priority",
+      "attempted": false,
+      "count": 15,
+      "status": "dry-run",
+      "httpStatus": null
+    },
+    {
+      "label": "batch",
+      "attempted": false,
+      "count": 35,
+      "status": "dry-run",
+      "httpStatus": null
+    }
+  ]
+}
