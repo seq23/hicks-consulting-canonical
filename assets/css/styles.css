@@ -122,21 +122,22 @@ a:hover { color: var(--olive-deep); }
   max-width: 440px;
 }
 .brand-mark {
-  width: 58px;
-  height: 58px;
-  flex: 0 0 58px;
+  width: 74px;
+  height: 50px;
+  flex: 0 0 74px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border-radius: 999px;
+  border-radius: 18px;
   overflow: hidden;
-  background: rgba(255,255,255,.75);
+  background: rgba(255,255,255,.78);
   box-shadow: 0 10px 22px rgba(37,35,30,.08);
+  padding: .3rem;
 }
 .brand-mark img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   display: block;
 }
 .brand-copy {
@@ -827,7 +828,7 @@ footer {
   .brand { max-width: calc(100% - 112px); }
   .brand strong { font-size: 1.1rem; }
   .brand-copy > span { font-size: .56rem; letter-spacing: .08em; white-space: nowrap; }
-  .brand-mark { width: 46px; height: 46px; flex-basis: 46px; }
+  .brand-mark { width: 62px; height: 42px; flex-basis: 62px; padding: .22rem; }
   .nav-toggle { display: inline-flex; flex-direction: column; }
   .main-nav {
     position: absolute;
@@ -962,22 +963,22 @@ footer {
   z-index: 3;
   top: 1.1rem;
   right: 1.1rem;
-  width: clamp(96px, 13vw, 148px);
-  aspect-ratio: 1 / 1;
+  width: clamp(132px, 17vw, 196px);
+  aspect-ratio: 1.42 / 1;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, .72);
+  border-radius: 26px;
+  background: rgba(255, 255, 255, .78);
   box-shadow: 0 18px 42px rgba(37,35,30,.12);
   backdrop-filter: blur(10px);
   animation: heroLogoFade 1.65s cubic-bezier(.22,.61,.36,1) .95s both;
+  padding: .55rem;
 }
 .hero-logo-medallion img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  border-radius: 999px;
+  object-fit: contain;
   display: block;
 }
 @keyframes heroLogoFade { from { opacity:0; } to { opacity:1; } }
@@ -1051,7 +1052,7 @@ footer {
   .about-grid-v2,
   .resource-tease { grid-template-columns: 1fr; }
   .hero-v2 .hero-image-main { min-height: 520px; }
-  .hero-logo-medallion { width: 92px; top: .85rem; right: .85rem; }
+  .hero-logo-medallion { width: 120px; top: .85rem; right: .85rem; }
 }
 @media (max-width: 640px) {
   .hero-line.soft { font-size: 1rem; }
@@ -1164,4 +1165,52 @@ footer {
 @media (max-width: 640px) {
   .hero-copy, .section-head, .narrow { width: 100%; }
   .quote-card, .section-card-flat, .service-panel { padding: 1.1rem; }
+}
+
+
+/* Client 5/14 content and layout updates */
+@media (min-width: 981px) {
+  .trust-grid,
+  .quiz-feature,
+  .service-split,
+  .feature-grid,
+  .resource-tease,
+  .about-grid-v2,
+  .groups-visual-grid { align-items: stretch; }
+  .trust-grid > *,
+  .quiz-feature > *,
+  .service-split > *,
+  .feature-grid > *,
+  .resource-tease > *,
+  .about-grid-v2 > *,
+  .groups-visual-grid > * { height: 100%; }
+}
+.hero-statement {
+  margin: 1rem 0 0;
+  padding: 1rem 1.15rem;
+  border-left: 4px solid var(--gold);
+  border-radius: 18px;
+  background: rgba(255, 251, 244, .68);
+  color: var(--olive-ink);
+  font-weight: 700;
+  box-shadow: 0 14px 30px rgba(37,35,30,.05);
+}
+.portrait-quote {
+  background: transparent !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  padding: .35rem 0 .35rem 1rem !important;
+}
+.resource-shell h3 { margin-top: .35rem; }
+.groups-visual-grid { display: grid; grid-template-columns: 1.08fr .92fr; gap: 2rem; align-items: center; }
+.groups-visual-card { margin: 0; border-radius: 34px; overflow: hidden; box-shadow: var(--shadow-soft); border: 1px solid var(--line); background: var(--card); }
+.groups-visual-image { width: 100%; min-height: 420px; object-fit: cover; }
+.credential-list { margin-top: 1.25rem; padding-top: 1rem; border-top: 1px solid var(--line); }
+.credential-list h3 { margin-bottom: .4rem; }
+.faq-page .faq-section { margin-top: 2.2rem; }
+.faq-page .faq-section:first-of-type { margin-top: 1.4rem; }
+.faq-page .faq-section h2 { margin-bottom: .85rem; }
+@media (max-width: 980px) {
+  .groups-visual-grid { grid-template-columns: 1fr; }
+  .groups-visual-image { min-height: 300px; }
 }
