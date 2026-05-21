@@ -116,7 +116,7 @@ if (!fs.existsSync(path.join(process.cwd(), 'functions', 'api', 'groups-inquiry.
 const advancedWorkerPath = path.join(process.cwd(), 'worker', '_worker.js');
 if (!fs.existsSync(advancedWorkerPath)) fail('Cloudflare Advanced Mode worker missing: worker/_worker.js');
 const advancedWorker = fs.readFileSync(advancedWorkerPath, 'utf8');
-for (const marker of ['/api/training-inquiry', '/api/groups-inquiry', 'TRAINING_INQUIRY_WEBHOOK_URL', 'TRAINING_INQUIRY_SECRET', 'env.ASSETS.fetch(request)']) {
+for (const marker of ['/api/training-inquiry', '/api/groups-inquiry', 'TRAINING_INQUIRY_WEBHOOK_URL', 'TRAINING_INQUIRY_SECRET', 'INQUIRY_SHARED_SECRET', 'env.ASSETS.fetch(request)']) {
   if (!advancedWorker.includes(marker)) fail(`Cloudflare Advanced Mode worker missing marker: ${marker}`);
 }
 const buildSource = read('scripts/build/build.js');

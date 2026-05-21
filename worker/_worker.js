@@ -45,7 +45,7 @@ async function handleInquiry(request, env, inquiryType) {
   }
 
   const webhookUrl = env.TRAINING_INQUIRY_WEBHOOK_URL;
-  const sharedSecret = env.TRAINING_INQUIRY_SECRET;
+  const sharedSecret = env.TRAINING_INQUIRY_SECRET || env.INQUIRY_SHARED_SECRET;
 
   if (!webhookUrl || !sharedSecret) {
     return jsonResponse({ ok: false, error: 'Inquiry endpoint is not configured.' }, 503);
