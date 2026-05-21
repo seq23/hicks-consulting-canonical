@@ -70,7 +70,7 @@ async function renderPublishedResources(containerId) {
     <article class="resource-card" data-animate="zoom">
       <span class="badge">${escapeHtml(resourceTypeLabel(item.type))}</span>
       <h3><a href="${escapeHtml(item.slug)}">${escapeHtml(item.title)}</a></h3>
-      <p class="muted small">Track: ${escapeHtml(item.track)} · ${escapeHtml(publicReleaseDateLabel(item))}</p>
+      <p class="muted small">Author: Monika Hicks, LCSW · ${escapeHtml(publicReleaseDateLabel(item))}</p>
       <p><a class="eyebrow-link" href="${escapeHtml(item.slug)}">Read more →</a></p>
     </article>
   `).join('');
@@ -93,6 +93,156 @@ async function wireFormLinks() {
     }
     el.setAttribute('href', '/contact/');
     el.setAttribute('aria-disabled', 'true');
+  });
+}
+
+
+
+
+function wireTrainingInquiryForm() {
+  const form = document.getElementById('training-inquiry-form');
+  if (!form) return;
+
+  const status = document.getElementById('training-inquiry-status');
+  const submit = form.querySelector('button[type="submit"]');
+  const endpoint = form.getAttribute('data-endpoint') || form.getAttribute('action') || '/api/training-inquiry';
+  const lockedFieldNames = [
+    'firstName',
+    'lastName',
+    'company',
+    'email',
+    'services',
+    'eventDate',
+    'honorarium',
+    'referral',
+    'eventDetails'
+  ];
+
+  const setStatus = (message, type) => {
+    if (!status) return;
+    status.textContent = message;
+    status.className = `form-status ${type || ''}`.trim();
+  };
+
+  form.addEventListener('submit', async (event) => {
+    event.preventDefault();
+
+    const formData = new FormData(form);
+    const payload = {
+      sourcePage: window.location.pathname,
+      submittedAtClient: new Date().toISOString()
+    };
+
+    lockedFieldNames.forEach((name) => {
+      payload[name] = String(formData.get(name) || '').trim();
+    });
+
+    if (!payload.firstName || !payload.lastName || !payload.company || !payload.email || !payload.services || !payload.eventDetails) {
+      setStatus('Please complete the required fields before submitting.', 'error');
+      return;
+    }
+
+    const originalText = submit ? submit.textContent : '';
+    if (submit) {
+      submit.disabled = true;
+      submit.textContent = 'Submitting…';
+    }
+    setStatus('', '');
+
+    try {
+      const response = await fetch(endpoint, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+      const result = await response.json().catch(() => ({}));
+      if (!response.ok || result.ok !== true) {
+        throw new Error(result.error || 'Submission failed');
+      }
+
+      form.reset();
+      form.hidden = true;
+      setStatus('Thank you. Your inquiry has been received. Hicks Consulting will review your information and follow up as appropriate.', 'success');
+    } catch (error) {
+      setStatus('We could not submit the form just now. Please try again, or email info@hicksconsulting.org.', 'error');
+      if (submit) {
+        submit.disabled = false;
+        submit.textContent = originalText || 'Submit Inquiry';
+      }
+    }
+  });
+}
+
+
+function wireGroupsInquiryForm() {
+  const form = document.getElementById('group-inquiry-form');
+  if (!form) return;
+
+  const status = document.getElementById('group-inquiry-status');
+  const submit = form.querySelector('button[type="submit"]');
+  const endpoint = form.getAttribute('data-endpoint') || form.getAttribute('action') || '/api/groups-inquiry';
+  const lockedFieldNames = [
+    'firstName',
+    'lastName',
+    'email',
+    'groupInterest',
+    'preferredAvailability',
+    'referral',
+    'message'
+  ];
+
+  const setStatus = (message, type) => {
+    if (!status) return;
+    status.textContent = message;
+    status.className = `form-status ${type || ''}`.trim();
+  };
+
+  form.addEventListener('submit', async (event) => {
+    event.preventDefault();
+
+    const formData = new FormData(form);
+    const payload = {
+      sourcePage: window.location.pathname,
+      submittedAtClient: new Date().toISOString()
+    };
+
+    lockedFieldNames.forEach((name) => {
+      payload[name] = String(formData.get(name) || '').trim();
+    });
+
+    if (!payload.firstName || !payload.lastName || !payload.email || !payload.groupInterest || !payload.message) {
+      setStatus('Please complete the required fields before submitting.', 'error');
+      return;
+    }
+
+    const originalText = submit ? submit.textContent : '';
+    if (submit) {
+      submit.disabled = true;
+      submit.textContent = 'Submitting…';
+    }
+    setStatus('', '');
+
+    try {
+      const response = await fetch(endpoint, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+      const result = await response.json().catch(() => ({}));
+      if (!response.ok || result.ok !== true) {
+        throw new Error(result.error || 'Submission failed');
+      }
+
+      form.reset();
+      form.hidden = true;
+      setStatus('Thank you. Your group inquiry has been received. Hicks Consulting will review your information and follow up as appropriate.', 'success');
+    } catch (error) {
+      setStatus('We could not submit the form just now. Please try again, or email info@hicksconsulting.org.', 'error');
+      if (submit) {
+        submit.disabled = false;
+        submit.textContent = originalText || 'Submit Group Inquiry';
+      }
+    }
   });
 }
 
@@ -150,6 +300,8 @@ document.addEventListener('DOMContentLoaded', () => {
   renderPublishedResourcesList('guides-published', 'guides');
   renderPublishedResourcesList('white-papers-published', 'white-papers');
   wireFormLinks();
+  wireTrainingInquiryForm();
+  wireGroupsInquiryForm();
   wireAnimations();
   wireMobileNav();
   wireThemeToggle();

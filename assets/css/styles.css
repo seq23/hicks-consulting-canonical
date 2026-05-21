@@ -350,6 +350,18 @@ p { margin: 0 0 1rem; }
   border: 1px solid rgba(79,88,65,.12);
   box-shadow: inset 0 1px 0 rgba(255,255,255,.72);
 }
+.hero-statement.transparent-statement {
+  margin: 1.05rem 0 1.4rem;
+  padding-left: 1rem;
+  border-left: 3px solid var(--gold);
+  background: transparent;
+  border-radius: 0;
+  box-shadow: none;
+  color: #3b382f;
+  max-width: 62ch;
+  font-size: 1.03rem;
+  line-height: 1.75;
+}
 .hero-intro::before,
 .short-answer::before,
 .editorial-intro::before {
@@ -1125,8 +1137,8 @@ footer {
   margin: 0;
   padding: 1rem 1.1rem;
   border-left: 3px solid var(--gold);
-  background: rgba(255,255,255,.5);
-  border-radius: 18px;
+  background: transparent;
+  border-radius: 0;
   color: var(--olive-ink);
   font-size: .98rem;
   line-height: 1.75;
@@ -1165,4 +1177,19 @@ footer {
 @media (max-width: 640px) {
   .hero-copy, .section-head, .narrow { width: 100%; }
   .quote-card, .section-card-flat, .service-panel { padding: 1.1rem; }
+}
+
+.groups-photo-card {
+  display: grid;
+  gap: .75rem;
+  padding: 1rem;
+}
+.groups-photo-card img {
+  max-height: 520px;
+  object-fit: contain;
+  background: #fff;
+}
+.resource-byline {
+  margin: -.35rem 0 1.2rem;
+  letter-spacing: .02em;
 }
