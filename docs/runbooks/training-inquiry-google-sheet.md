@@ -390,3 +390,52 @@ eventDetails
 ```
 
 Both forms use the same Cloudflare → Apps Script → Google Sheet notification architecture. The backend distinguishes them with `inquiryType: 'training'` or `inquiryType: 'groups'`.
+
+## Groups inquiry field contract
+
+Groups uses a separate, user-led field contract from Training. It still uses the same Cloudflare Worker → Apps Script → Google Sheet/email notification pipeline.
+
+Groups frontend/backend fields:
+
+```txt
+firstName
+lastName
+email
+phone
+groupInterest
+supportNeed
+availability
+message
+```
+
+Required Groups fields:
+
+```txt
+firstName
+lastName
+email
+groupInterest
+supportNeed
+```
+
+Recommended Groups sheet headers:
+
+```txt
+Submitted At
+Status
+First Name
+Last Name
+Email
+Phone
+Group Support Interest
+What Would Make It Useful
+Availability / Scheduling Preferences
+Additional Notes
+Source Page
+User Agent
+Submission ID
+Notes
+Follow-Up Owner
+Follow-Up Date
+Outcome
+```

@@ -1,4 +1,4 @@
-const SHARED_FIELDS = [
+const TRAINING_FIELDS = [
   'firstName',
   'lastName',
   'company',
@@ -10,7 +10,7 @@ const SHARED_FIELDS = [
   'eventDetails'
 ];
 
-const REQUIRED_FIELDS = [
+const TRAINING_REQUIRED_FIELDS = [
   'firstName',
   'lastName',
   'company',
@@ -19,6 +19,25 @@ const REQUIRED_FIELDS = [
   'eventDate',
   'honorarium',
   'eventDetails'
+];
+
+const GROUPS_FIELDS = [
+  'firstName',
+  'lastName',
+  'email',
+  'phone',
+  'groupInterest',
+  'supportNeed',
+  'availability',
+  'message'
+];
+
+const GROUPS_REQUIRED_FIELDS = [
+  'firstName',
+  'lastName',
+  'email',
+  'groupInterest',
+  'supportNeed'
 ];
 
 function jsonResponse(body, status = 200) {
@@ -58,12 +77,15 @@ async function handleInquiry(request, env, inquiryType) {
     return jsonResponse({ ok: false, error: 'Invalid JSON payload.' }, 400);
   }
 
+  const fields = inquiryType === 'groups' ? GROUPS_FIELDS : TRAINING_FIELDS;
+  const requiredFields = inquiryType === 'groups' ? GROUPS_REQUIRED_FIELDS : TRAINING_REQUIRED_FIELDS;
+
   const payload = {};
-  for (const field of SHARED_FIELDS) {
+  for (const field of fields) {
     payload[field] = clean(incoming[field]);
   }
 
-  const missing = REQUIRED_FIELDS.filter((field) => !payload[field]);
+  const missing = requiredFields.filter((field) => !payload[field]);
   if (missing.length) {
     return jsonResponse({ ok: false, error: `Missing required fields: ${missing.join(', ')}` }, 400);
   }

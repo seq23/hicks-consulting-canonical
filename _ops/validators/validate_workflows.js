@@ -25,3 +25,38 @@ for (const file of files) {
 }
 if (writeWorkflows.length < 2) fail('Expected content-publish and social-ingestion writer workflows to be present.');
 console.log(`Workflow contracts OK (${files.length} workflows, ${writeWorkflows.length} writer workflows traced).`);
+
+{
+  const fsWorkflow = require('fs');
+  const workflowText = fsWorkflow.readFileSync('.github/workflows/content-publish.yml', 'utf8');
+  function workflowFail(message) {
+    console.error(`Workflow contract failed: ${message}`);
+    process.exit(1);
+  }
+
+  for (const marker of ['push:', 'branches:', '- main', 'paths:', "data/admin/content_manifest.json"]) {
+    if (!workflowText.includes(marker)) workflowFail(`content-publish.yml missing manifest push trigger marker: ${marker}`);
+  }
+
+  if (!workflowText.includes('permissions:') || !workflowText.includes('contents: write')) {
+    workflowFail('content-publish.yml must grant contents: write permission.');
+  }
+
+  if (!workflowText.includes('concurrency:')) {
+    workflowFail('content-publish.yml must define concurrency.');
+  }
+
+  const publishIndex = workflowText.indexOf('npm run publish:content');
+  const buildIndex = workflowText.indexOf('npm run build');
+  const validateIndex = workflowText.indexOf('npm run validate:all');
+  const commitIndex = workflowText.indexOf('Commit published status changes');
+
+  if (publishIndex === -1) workflowFail('content-publish.yml missing npm run publish:content.');
+  if (buildIndex === -1) workflowFail('content-publish.yml missing npm run build.');
+  if (validateIndex === -1) workflowFail('content-publish.yml missing npm run validate:all.');
+  if (commitIndex === -1) workflowFail('content-publish.yml missing Commit published status changes step.');
+
+  if (!(publishIndex < buildIndex && buildIndex < validateIndex && validateIndex < commitIndex)) {
+    workflowFail('content-publish.yml must run publish:content before build before validate:all before commit.');
+  }
+}

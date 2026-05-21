@@ -1,5 +1,5 @@
-const LOCKED_FIELDS = ["firstName", "lastName", "company", "email", "services", "eventDate", "honorarium", "referral", "eventDetails"];
-const REQUIRED_FIELDS = ["firstName", "lastName", "company", "email", "services", "eventDate", "honorarium", "eventDetails"];
+const LOCKED_FIELDS = ["firstName", "lastName", "email", "phone", "groupInterest", "supportNeed", "availability", "message"];
+const REQUIRED_FIELDS = ["firstName", "lastName", "email", "groupInterest", "supportNeed"];
 
 function jsonResponse(body, status = 200) {
   return new Response(JSON.stringify(body), {

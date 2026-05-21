@@ -3,6 +3,11 @@ on:
   workflow_dispatch:
   schedule:
     - cron: '17 13 * * *'
+  push:
+    branches:
+      - main
+    paths:
+      - 'data/admin/content_manifest.json'
 concurrency:
   group: hicks-consulting-content-automation
   cancel-in-progress: false
@@ -21,8 +26,8 @@ jobs:
       - run: git pull --rebase origin main
       - run: npm ci
       - run: npm run publish:content
-      - run: npm run validate:all
       - run: npm run build
+      - run: npm run validate:all
       - name: Commit published status changes
         run: |
           git config user.name "github-actions[bot]"

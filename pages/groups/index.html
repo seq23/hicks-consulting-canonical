@@ -10,40 +10,19 @@
 <span class="section-label">Group inquiry</span>
 <h2>Inquire about virtual support groups</h2>
 </div>
-<p>Use the same inquiry structure as organizational training so Hicks Consulting receives the details needed to follow up clearly.</p>
+<p>Share what kind of group support you’re looking for. You do not need to know the exact group name or format yet — Hicks Consulting will review your inquiry and follow up with next steps.</p>
 </div>
 <form action="/api/groups-inquiry" class="inquiry-form" data-endpoint="/api/groups-inquiry" id="group-inquiry-form" method="POST">
 <div class="form-grid two-up">
 <label><span>First Name</span><input name="firstName" required="" type="text"/></label>
 <label><span>Last Name</span><input name="lastName" required="" type="text"/></label>
 </div>
-<label><span>Company/Organization Name</span><input name="company" required="" type="text"/></label>
 <label><span>Email</span><input name="email" required="" type="email"/></label>
-<label><span>What services are you interested in?</span>
-<select name="services" required="">
-<option value="">Select an option</option>
-<option>Virtual Support Group</option>
-<option>Panel Guest</option>
-<option>Keynote Speaker</option>
-<option>Conference Speaker</option>
-<option>Podcast Guest</option>
-</select>
-</label>
-<div class="form-grid two-up">
-<label><span>Event Date</span><input name="eventDate" required="" type="date"/></label>
-<label><span>Speaking Honorarium Amount</span><input name="honorarium" required="" type="text"/></label>
-</div>
-<label><span>How did you hear about us?</span>
-<select name="referral">
-<option value="">Select an option</option>
-<option>Social Media</option>
-<option>Word of Mouth</option>
-<option>Website</option>
-</select>
-</label>
-<label><span>Briefly describe your event and expectations of speaker.</span>
-<textarea name="eventDetails" required="" rows="6"></textarea>
-</label>
+<label><span>Phone Number</span><input name="phone" type="tel"/></label>
+<label><span>What kind of group support are you interested in?</span><textarea name="groupInterest" required="" rows="4"></textarea></label>
+<label><span>What would make a group feel useful or supportive for you right now?</span><textarea name="supportNeed" required="" rows="5"></textarea></label>
+<label><span>Do you have any scheduling preferences or availability constraints?</span><textarea name="availability" rows="3"></textarea></label>
+<label><span>Is there anything Hicks Consulting should know before following up?</span><textarea name="message" rows="4"></textarea></label>
 <div class="hero-actions">
 <button class="button" type="submit">Submit Group Inquiry</button>
 </div>

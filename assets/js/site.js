@@ -200,8 +200,8 @@ function wireGroupsInquiryForm() {
     statusId: 'group-inquiry-status',
     endpoint: '/api/groups-inquiry',
     submitLabel: 'Submit Group Inquiry',
-    fields: ['firstName', 'lastName', 'company', 'email', 'services', 'eventDate', 'honorarium', 'referral', 'eventDetails'],
-    required: ['firstName', 'lastName', 'company', 'email', 'services', 'eventDate', 'honorarium', 'eventDetails'],
+    fields: ['firstName', 'lastName', 'email', 'phone', 'groupInterest', 'supportNeed', 'availability', 'message'],
+    required: ['firstName', 'lastName', 'email', 'groupInterest', 'supportNeed'],
     successMessage: 'Thank you. Your group inquiry has been received. Hicks Consulting will review your information and follow up as appropriate.',
     errorMessage: 'We could not submit the form just now. Please try again, or email info@hicksconsulting.org.'
   });
