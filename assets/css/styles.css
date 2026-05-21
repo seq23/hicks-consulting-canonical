@@ -1252,3 +1252,14 @@ footer {
     flex-basis: 150px !important;
   }
 }
+
+
+/* Emergency rendering guard: content must never depend on JS animation to be visible. */
+[data-animate] {
+  opacity: 1 !important;
+  transform: none !important;
+}
+[data-animate].is-visible {
+  opacity: 1 !important;
+  transform: none !important;
+}

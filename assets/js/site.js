@@ -82,15 +82,25 @@ async function wireFormLinks() {
   const forms = config?.forms || {};
   document.querySelectorAll('[data-form-key]').forEach(el => {
     const key = el.getAttribute('data-form-key');
-    const url = forms[key] || '';
-    const valid = /^https:\/\/(forms\.gle|monika-hicks\.clientsecure\.me)\/?/i.test(url) || /^mailto:/i.test(url);
-    if (valid) {
+    const currentHref = el.getAttribute('href') || '';
+    const url = forms[key] || currentHref || '';
+    const validInternal = /^\/[A-Za-z0-9/_#?.=&%-]*$/.test(url);
+    const validExternal = /^https:\/\/(forms\.gle|monika-hicks\.clientsecure\.me)\/?/i.test(url);
+    const validMailto = /^mailto:/i.test(url) && key !== 'groups';
+
+    if (validInternal || validExternal || validMailto) {
       el.setAttribute('href', url);
-      el.setAttribute('target', '_blank');
-      el.setAttribute('rel', 'noopener noreferrer');
+      if (validExternal || validMailto) {
+        el.setAttribute('target', '_blank');
+        el.setAttribute('rel', 'noopener noreferrer');
+      } else {
+        el.removeAttribute('target');
+        el.removeAttribute('rel');
+      }
       el.removeAttribute('aria-disabled');
       return;
     }
+
     el.setAttribute('href', '/contact/');
     el.setAttribute('aria-disabled', 'true');
   });
@@ -99,6 +109,14 @@ async function wireFormLinks() {
 
 
 
+
+async function submitInquiryPayload(endpoint, payload) {
+  return fetch(endpoint, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(payload)
+  });
+}
 
 function wireInquiryForm(config) {
   const form = document.getElementById(config.formId);
@@ -141,11 +159,7 @@ function wireInquiryForm(config) {
     setStatus('', '');
 
     try {
-      const response = await fetch(endpoint, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload)
-      });
+      const response = await submitInquiryPayload(endpoint, payload);
       const result = await response.json().catch(() => ({}));
       if (!response.ok || result.ok !== true) {
         throw new Error(result.error || 'Submission failed');
@@ -186,12 +200,13 @@ function wireGroupsInquiryForm() {
     statusId: 'group-inquiry-status',
     endpoint: '/api/groups-inquiry',
     submitLabel: 'Submit Group Inquiry',
-    fields: ['firstName', 'lastName', 'email', 'groupInterest', 'preferredAvailability', 'referral', 'message'],
-    required: ['firstName', 'lastName', 'email', 'groupInterest', 'message'],
+    fields: ['firstName', 'lastName', 'company', 'email', 'services', 'eventDate', 'honorarium', 'referral', 'eventDetails'],
+    required: ['firstName', 'lastName', 'company', 'email', 'services', 'eventDate', 'honorarium', 'eventDetails'],
     successMessage: 'Thank you. Your group inquiry has been received. Hicks Consulting will review your information and follow up as appropriate.',
     errorMessage: 'We could not submit the form just now. Please try again, or email info@hicksconsulting.org.'
   });
 }
+
 
 function wireBrowserCompatibility() {
   document.documentElement.style.setProperty('color-scheme', document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light');

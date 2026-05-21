@@ -4,6 +4,19 @@ const js = read('assets/js/site.js');
 const config = JSON.parse(read('data/system/config.json'));
 const build = read('scripts/build/build.js');
 const homepage = read('pages/index.html');
+const css = read('assets/css/styles.css');
+
+const sharedFields = [
+  'firstName',
+  'lastName',
+  'company',
+  'email',
+  'services',
+  'eventDate',
+  'honorarium',
+  'referral',
+  'eventDetails'
+];
 
 const contracts = [
   {
@@ -13,23 +26,7 @@ const contracts = [
     statusId: 'training-inquiry-status',
     endpoint: '/api/training-inquiry',
     fnPath: path.join(process.cwd(), 'functions', 'api', 'training-inquiry.js'),
-    fields: [
-      'firstName',
-      'lastName',
-      'company',
-      'email',
-      'services',
-      'eventDate',
-      'honorarium',
-      'referral',
-      'eventDetails'
-    ],
-    requiredBackendMarkers: [
-      'TRAINING_INQUIRY_WEBHOOK_URL',
-      'TRAINING_INQUIRY_SECRET',
-      "inquiryType: 'training'",
-      'secret: sharedSecret'
-    ],
+    inquiryType: "inquiryType: 'training'",
     successCopy: 'Your organizational training inquiry has been received'
   },
   {
@@ -39,21 +36,7 @@ const contracts = [
     statusId: 'group-inquiry-status',
     endpoint: '/api/groups-inquiry',
     fnPath: path.join(process.cwd(), 'functions', 'api', 'groups-inquiry.js'),
-    fields: [
-      'firstName',
-      'lastName',
-      'email',
-      'groupInterest',
-      'preferredAvailability',
-      'referral',
-      'message'
-    ],
-    requiredBackendMarkers: [
-      'TRAINING_INQUIRY_WEBHOOK_URL',
-      'TRAINING_INQUIRY_SECRET',
-      "inquiryType: 'groups'",
-      'secret: sharedSecret'
-    ],
+    inquiryType: "inquiryType: 'groups'",
     successCopy: 'Your group inquiry has been received'
   }
 ];
@@ -71,30 +54,54 @@ for (const contract of contracts) {
   if (!endpointPattern.test(html)) fail(`${contract.label} form must post to ${contract.endpoint}.`);
   if (!/method=["']POST["']/i.test(html)) fail(`${contract.label} form method must be POST.`);
 
-  for (const field of contract.fields) {
+  const formFields = Array.from(html.matchAll(/name=["']([^"']+)["']/g)).map(match => match[1]).filter(name => sharedFields.includes(name));
+  const uniqueFields = [...new Set(formFields)];
+  if (JSON.stringify(uniqueFields) !== JSON.stringify(sharedFields)) fail(`${contract.label} must expose the shared inquiry fields in order: ${uniqueFields.join(', ')}`);
+
+  for (const field of sharedFields) {
     const fieldPattern = new RegExp(`name=["']${field}["']`);
     if (!fieldPattern.test(html)) fail(`${contract.label} frontend field missing: ${field}`);
     if (!js.includes(`'${field}'`) && !js.includes(`"${field}"`)) fail(`${contract.label} JS payload mapping missing: ${field}`);
-    if (!fn.includes(`'${field}'`) && !fn.includes(`"${field}"`)) fail(`${contract.label} backend mapping missing: ${field}`);
+    if (!fn.includes(`"${field}"`) && !fn.includes(`'${field}'`)) fail(`${contract.label} backend mapping missing: ${field}`);
     fieldCount += 1;
   }
 
   if (!new RegExp(`id=["']${contract.statusId}["']`).test(html)) fail(`${contract.label} status message region missing.`);
   if (/<form[^>]+action=["']mailto:/i.test(html)) fail(`${contract.label} form must not use mailto action.`);
-  if (!js.includes('fetch(endpoint')) fail(`${contract.label} JS must submit through fetch.`);
+  if (!js.includes('submitInquiryPayload(endpoint, payload)')) fail(`${contract.label} JS must submit through explicit POST helper.`);
   if (!js.includes('form.hidden = true')) fail(`${contract.label} success behavior must hide the form.`);
   if (!js.includes(contract.successCopy)) fail(`${contract.label} success thank-you copy missing from JS.`);
-
-  for (const marker of contract.requiredBackendMarkers) {
-    if (!fn.includes(marker)) fail(`${contract.label} backend marker missing: ${marker}`);
-  }
+  if (!fn.includes('TRAINING_INQUIRY_WEBHOOK_URL')) fail(`${contract.label} must forward to Apps Script webhook URL.`);
+  if (!fn.includes('TRAINING_INQUIRY_SECRET')) fail(`${contract.label} must use shared Apps Script secret.`);
+  if (!fn.includes(contract.inquiryType)) fail(`${contract.label} backend inquiryType marker missing.`);
+  if (!fn.includes('secret: sharedSecret')) fail(`${contract.label} backend must forward shared secret to Apps Script.`);
 }
 
-if (config.forms?.groups && String(config.forms.groups).startsWith('mailto:')) fail('Groups config must not route to mailto.');
+if (config.forms?.groups !== '/groups/#group-inquiry-form') fail('Groups config must route to /groups/#group-inquiry-form.');
+if (String(config.forms?.groups || '').startsWith('mailto:')) fail('Groups config must not route to mailto.');
+if (!js.includes('validInternal')) fail('wireFormLinks must recognize internal paths like /groups/#group-inquiry-form.');
+if (!js.includes("key !== 'groups'")) fail('wireFormLinks must not allow Groups CTA to resolve to mailto.');
 if (build.includes("Groups: ${siteConfig.forms?.groups || 'mailto:")) fail('Build llms fallback must not route groups to mailto.');
+
 if (/hero-logo-medallion/.test(homepage)) fail('Homepage hero must not include logo overlay on green blazer photo.');
 if (!homepage.includes('/assets/hicks-consulting-logo-full.png')) fail('Homepage header must use full Hicks Consulting logo.');
 if (!homepage.includes('/assets/monika-primary.jpg')) fail('Homepage must keep green blazer hero photo.');
-if (!homepage.includes('/assets/headshot-logo.png')) fail('Homepage must keep clean colorful suit portrait in Meet Monika section.');
+if (!homepage.includes('/assets/headshot-logo.png')) fail('Homepage must keep clean white-background / colorful-suit Meet Monika portrait.');
+if (!css.includes('content must never depend on JS animation') || !css.includes('opacity: 1 !important')) fail('Animated sections must fail open so homepage content remains visible without JS.');
 
-console.log(`Inquiry and visual contracts OK (${contracts.length} forms, ${fieldCount} locked fields traced frontend → JS → backend).`);
+const articleRoot = path.join(process.cwd(), 'pages', 'resources', 'articles');
+const articleDirs = fs.readdirSync(articleRoot).filter(name => fs.existsSync(path.join(articleRoot, name, 'index.html')));
+const missingArticleCredits = articleDirs
+  .filter(name => name !== 'articles')
+  .filter(name => !fs.readFileSync(path.join(articleRoot, name, 'index.html'), 'utf8').includes('Author: Monika Hicks, LCSW'));
+if (missingArticleCredits.length) fail(`Article author credit missing on ${missingArticleCredits.length} article pages: ${missingArticleCredits.slice(0, 10).join(', ')}`);
+
+
+const runbook = read('docs/runbooks/training-inquiry-google-sheet.md');
+if (!js.includes('form.hidden = true')) fail('Successful inquiry submission must hide the submitted form.');
+if (!js.includes('Your organizational training inquiry has been received')) fail('Training form must show thank-you confirmation after successful submit.');
+if (!js.includes('Your group inquiry has been received')) fail('Groups form must show thank-you confirmation after successful submit.');
+if (!runbook.includes('NOTIFY_EMAIL = info@hicksconsulting.org')) fail('Apps Script runbook must require notification email info@hicksconsulting.org.');
+if (!runbook.includes('MailApp.sendEmail(notifyEmail, subject, body)')) fail('Apps Script runbook must send notification email with MailApp.');
+
+console.log(`Inquiry, visual, and edit-audit contracts OK (${contracts.length} forms, ${fieldCount} locked fields traced frontend → JS → backend).`);

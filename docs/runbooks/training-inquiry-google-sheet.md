@@ -362,3 +362,31 @@ npm run validate:all
 - These forms are not therapy intake forms.
 - Do not ask for diagnosis, symptoms, insurance information, clinical history, crisis details, or protected health information here.
 - Therapy/client intake should remain in SimplePractice or another appropriate client-care platform.
+
+
+
+
+
+## Groups form routing
+
+Groups has its own public form at:
+
+```txt
+/groups/#group-inquiry-form
+```
+
+The Groups form intentionally uses the same visible field structure as the Organizational Training Inquiry form:
+
+```txt
+firstName
+lastName
+company
+email
+services
+eventDate
+honorarium
+referral
+eventDetails
+```
+
+Both forms use the same Cloudflare → Apps Script → Google Sheet notification architecture. The backend distinguishes them with `inquiryType: 'training'` or `inquiryType: 'groups'`.

@@ -1,0 +1,110 @@
+[
+  {
+    "key": "5/20 hero statement exact",
+    "status": "PASS",
+    "evidence": "Exact requested hero statement present",
+    "file": "pages/index.html"
+  },
+  {
+    "key": "5/20 hero transparent/no overlay",
+    "status": "PASS",
+    "evidence": "No hero card/medallion tokens",
+    "file": "pages/index.html"
+  },
+  {
+    "key": "5/20 Meet Monika image",
+    "status": "PASS",
+    "evidence": "Homepage references /assets/headshot-logo.png",
+    "file": "pages/index.html"
+  },
+  {
+    "key": "5/20 contact hours chronological",
+    "status": "PASS",
+    "evidence": "Sunday\u2192Monday\u2192Wednesday\u2192Thursday\u2192Friday",
+    "file": "pages/contact/index.html"
+  },
+  {
+    "key": "5/20 footer hours chronological",
+    "status": "PASS",
+    "evidence": "Sunday\u2192Monday\u2192Wednesday\u2192Thursday\u2192Friday",
+    "file": "pages/index.html"
+  },
+  {
+    "key": "5/20 Sunday limited availability",
+    "status": "PASS",
+    "evidence": "Sunday limited availability present",
+    "file": "contact/footer"
+  },
+  {
+    "key": "5/20 author credit every article",
+    "status": "PASS",
+    "evidence": "37 checked; missing=0",
+    "file": "pages/resources/articles/**"
+  },
+  {
+    "key": "5/20 Groups image replaced",
+    "status": "PASS",
+    "evidence": "No animated women SVG; real image present",
+    "file": "pages/groups/index.html"
+  },
+  {
+    "key": "5/20 About copy",
+    "status": "PASS",
+    "evidence": "missing=[]",
+    "file": "pages/about/index.html"
+  },
+  {
+    "key": "5/20 GFE deletion",
+    "status": "PASS",
+    "evidence": "Line absent",
+    "file": "pages/good-faith-estimate/index.html"
+  },
+  {
+    "key": "5/20 FAQ complete",
+    "status": "PASS",
+    "evidence": "missing=[]",
+    "file": "pages/faq/index.html"
+  },
+  {
+    "key": "Training form identical fields",
+    "status": "PASS",
+    "evidence": "fields=['firstName', 'lastName', 'company', 'email', 'services', 'eventDate', 'honorarium', 'referral', 'eventDetails']",
+    "file": "pages/organizational-training-inquiry/index.html"
+  },
+  {
+    "key": "Training posts to Apps Script flow",
+    "status": "PASS",
+    "evidence": "action=/api/training-inquiry",
+    "file": "pages/organizational-training-inquiry/index.html"
+  },
+  {
+    "key": "Groups form identical fields",
+    "status": "PASS",
+    "evidence": "fields=['firstName', 'lastName', 'company', 'email', 'services', 'eventDate', 'honorarium', 'referral', 'eventDetails']",
+    "file": "pages/groups/index.html"
+  },
+  {
+    "key": "Groups posts to Apps Script flow",
+    "status": "PASS",
+    "evidence": "action=/api/groups-inquiry",
+    "file": "pages/groups/index.html"
+  },
+  {
+    "key": "NEW clarified: Groups has own identical form CTA",
+    "status": "PASS",
+    "evidence": "group_links=[('Ask About Virtual Groups', '#group-inquiry-form', 'groups'), ('Ask About Virtual Groups', '#group-inquiry-form', 'groups')]; config=/groups/#group-inquiry-form",
+    "file": "pages/groups/index.html"
+  },
+  {
+    "key": "Homepage render fail-open",
+    "status": "PASS",
+    "evidence": "sections=8",
+    "file": "pages/index.html/assets/css/styles.css"
+  },
+  {
+    "key": "Logo contract",
+    "status": "PASS",
+    "evidence": "No hero overlay; full logo present",
+    "file": "pages/index.html"
+  }
+]
