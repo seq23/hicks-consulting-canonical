@@ -135,7 +135,7 @@ const llms = [
   'Conversion paths:',
   `- Therapy and coaching consults: ${siteConfig.forms?.therapy || 'https://monika-hicks.clientsecure.me/'}`,
   `- Organizational training: ${siteConfig.forms?.corporate || '/organizational-training-inquiry/'}`,
-  `- Groups: ${siteConfig.forms?.groups || 'mailto:info@hicksconsulting.org'}`
+  `- Groups: ${siteConfig.forms?.groups || '/groups/#group-inquiry-form'}`
 ].join('\n');
 fs.writeFileSync(path.join(root, 'llms.txt'), llms + '\n');
 fs.writeFileSync(path.join(dist, 'llms.txt'), llms + '\n');

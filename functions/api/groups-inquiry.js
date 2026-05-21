@@ -1,20 +1,5 @@
-const LOCKED_FIELDS = [
-  'firstName',
-  'lastName',
-  'email',
-  'groupInterest',
-  'preferredAvailability',
-  'referral',
-  'message'
-];
-
-const REQUIRED_FIELDS = [
-  'firstName',
-  'lastName',
-  'email',
-  'groupInterest',
-  'message'
-];
+const LOCKED_FIELDS = ["firstName", "lastName", "email", "groupInterest", "preferredAvailability", "referral", "message"];
+const REQUIRED_FIELDS = ["firstName", "lastName", "email", "groupInterest", "message"];
 
 function jsonResponse(body, status = 200) {
   return new Response(JSON.stringify(body), {
@@ -78,9 +63,7 @@ export async function onRequestPost({ request, env }) {
   try {
     upstream = await fetch(webhookUrl, {
       method: 'POST',
-      headers: {
-        'content-type': 'application/json'
-      },
+      headers: { 'content-type': 'application/json' },
       body: JSON.stringify(forwardPayload)
     });
   } catch (error) {

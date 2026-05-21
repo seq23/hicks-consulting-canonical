@@ -1,23 +1,5 @@
-const LOCKED_FIELDS = [
-  'firstName',
-  'lastName',
-  'company',
-  'email',
-  'services',
-  'eventDate',
-  'honorarium',
-  'referral',
-  'eventDetails'
-];
-
-const REQUIRED_FIELDS = [
-  'firstName',
-  'lastName',
-  'company',
-  'email',
-  'services',
-  'eventDetails'
-];
+const LOCKED_FIELDS = ["firstName", "lastName", "company", "email", "services", "eventDate", "honorarium", "referral", "eventDetails"];
+const REQUIRED_FIELDS = ["firstName", "lastName", "company", "email", "services", "eventDate", "honorarium", "eventDetails"];
 
 function jsonResponse(body, status = 200) {
   return new Response(JSON.stringify(body), {
@@ -81,10 +63,7 @@ export async function onRequestPost({ request, env }) {
   try {
     upstream = await fetch(webhookUrl, {
       method: 'POST',
-      headers: {
-        'content-type': 'application/json',
-        'x-hicks-training-secret': sharedSecret
-      },
+      headers: { 'content-type': 'application/json' },
       body: JSON.stringify(forwardPayload)
     });
   } catch (error) {

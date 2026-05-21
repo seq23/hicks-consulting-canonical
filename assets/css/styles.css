@@ -1193,3 +1193,62 @@ footer {
   margin: -.35rem 0 1.2rem;
   letter-spacing: .02em;
 }
+
+
+/* Regression guard: full logo header, no cropped medallion */
+.brand-mark {
+  width: clamp(170px, 17vw, 260px) !important;
+  height: clamp(54px, 7vw, 86px) !important;
+  flex: 0 0 clamp(170px, 17vw, 260px) !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  overflow: visible !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
+}
+.brand-mark img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
+  object-position: left center !important;
+  display: block !important;
+}
+.brand-copy {
+  display: none !important;
+}
+.hero-logo-medallion {
+  display: none !important;
+}
+.hero-v2 .hero-copy .lead,
+.hero-v2 .hero-copy p,
+.transparent-quote,
+.portrait-quote {
+  background: transparent !important;
+  box-shadow: none !important;
+}
+.form-status.success {
+  margin-top: 1rem;
+  padding: 1rem 1.1rem;
+  border-radius: 18px;
+  background: rgba(79, 112, 69, .12);
+  color: var(--olive-ink);
+  font-weight: 700;
+}
+.form-status.error {
+  margin-top: 1rem;
+  padding: 1rem 1.1rem;
+  border-radius: 18px;
+  background: rgba(130, 47, 47, .10);
+  color: #7a2727;
+  font-weight: 700;
+}
+@media (max-width: 760px) {
+  .brand-mark {
+    width: 150px !important;
+    height: 54px !important;
+    flex-basis: 150px !important;
+  }
+}

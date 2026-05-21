@@ -99,24 +99,14 @@ async function wireFormLinks() {
 
 
 
-function wireTrainingInquiryForm() {
-  const form = document.getElementById('training-inquiry-form');
+
+function wireInquiryForm(config) {
+  const form = document.getElementById(config.formId);
   if (!form) return;
 
-  const status = document.getElementById('training-inquiry-status');
+  const status = document.getElementById(config.statusId);
   const submit = form.querySelector('button[type="submit"]');
-  const endpoint = form.getAttribute('data-endpoint') || form.getAttribute('action') || '/api/training-inquiry';
-  const lockedFieldNames = [
-    'firstName',
-    'lastName',
-    'company',
-    'email',
-    'services',
-    'eventDate',
-    'honorarium',
-    'referral',
-    'eventDetails'
-  ];
+  const endpoint = form.getAttribute('data-endpoint') || form.getAttribute('action') || config.endpoint;
 
   const setStatus = (message, type) => {
     if (!status) return;
@@ -133,11 +123,12 @@ function wireTrainingInquiryForm() {
       submittedAtClient: new Date().toISOString()
     };
 
-    lockedFieldNames.forEach((name) => {
+    config.fields.forEach((name) => {
       payload[name] = String(formData.get(name) || '').trim();
     });
 
-    if (!payload.firstName || !payload.lastName || !payload.company || !payload.email || !payload.services || !payload.eventDetails) {
+    const missingRequired = config.required.filter((name) => !payload[name]);
+    if (missingRequired.length) {
       setStatus('Please complete the required fields before submitting.', 'error');
       return;
     }
@@ -162,127 +153,44 @@ function wireTrainingInquiryForm() {
 
       form.reset();
       form.hidden = true;
-      setStatus('Thank you. Your inquiry has been received. Hicks Consulting will review your information and follow up as appropriate.', 'success');
+      setStatus(config.successMessage, 'success');
+      if (status) status.focus?.();
     } catch (error) {
-      setStatus('We could not submit the form just now. Please try again, or email info@hicksconsulting.org.', 'error');
+      setStatus(config.errorMessage, 'error');
       if (submit) {
         submit.disabled = false;
-        submit.textContent = originalText || 'Submit Inquiry';
+        submit.textContent = originalText || config.submitLabel;
       }
     }
   });
 }
+
+function wireTrainingInquiryForm() {
+  wireInquiryForm({
+    formId: 'training-inquiry-form',
+    statusId: 'training-inquiry-status',
+    endpoint: '/api/training-inquiry',
+    submitLabel: 'Submit Inquiry',
+    fields: ['firstName', 'lastName', 'company', 'email', 'services', 'eventDate', 'honorarium', 'referral', 'eventDetails'],
+    required: ['firstName', 'lastName', 'company', 'email', 'services', 'eventDate', 'honorarium', 'eventDetails'],
+    successMessage: 'Thank you. Your organizational training inquiry has been received. Hicks Consulting will review your information and follow up as appropriate.',
+    errorMessage: 'We could not submit the form just now. Please try again, or email info@hicksconsulting.org.'
+  });
+}
+
 
 
 function wireGroupsInquiryForm() {
-  const form = document.getElementById('group-inquiry-form');
-  if (!form) return;
-
-  const status = document.getElementById('group-inquiry-status');
-  const submit = form.querySelector('button[type="submit"]');
-  const endpoint = form.getAttribute('data-endpoint') || form.getAttribute('action') || '/api/groups-inquiry';
-  const lockedFieldNames = [
-    'firstName',
-    'lastName',
-    'email',
-    'groupInterest',
-    'preferredAvailability',
-    'referral',
-    'message'
-  ];
-
-  const setStatus = (message, type) => {
-    if (!status) return;
-    status.textContent = message;
-    status.className = `form-status ${type || ''}`.trim();
-  };
-
-  form.addEventListener('submit', async (event) => {
-    event.preventDefault();
-
-    const formData = new FormData(form);
-    const payload = {
-      sourcePage: window.location.pathname,
-      submittedAtClient: new Date().toISOString()
-    };
-
-    lockedFieldNames.forEach((name) => {
-      payload[name] = String(formData.get(name) || '').trim();
-    });
-
-    if (!payload.firstName || !payload.lastName || !payload.email || !payload.groupInterest || !payload.message) {
-      setStatus('Please complete the required fields before submitting.', 'error');
-      return;
-    }
-
-    const originalText = submit ? submit.textContent : '';
-    if (submit) {
-      submit.disabled = true;
-      submit.textContent = 'Submitting…';
-    }
-    setStatus('', '');
-
-    try {
-      const response = await fetch(endpoint, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload)
-      });
-      const result = await response.json().catch(() => ({}));
-      if (!response.ok || result.ok !== true) {
-        throw new Error(result.error || 'Submission failed');
-      }
-
-      form.reset();
-      form.hidden = true;
-      setStatus('Thank you. Your group inquiry has been received. Hicks Consulting will review your information and follow up as appropriate.', 'success');
-    } catch (error) {
-      setStatus('We could not submit the form just now. Please try again, or email info@hicksconsulting.org.', 'error');
-      if (submit) {
-        submit.disabled = false;
-        submit.textContent = originalText || 'Submit Group Inquiry';
-      }
-    }
+  wireInquiryForm({
+    formId: 'group-inquiry-form',
+    statusId: 'group-inquiry-status',
+    endpoint: '/api/groups-inquiry',
+    submitLabel: 'Submit Group Inquiry',
+    fields: ['firstName', 'lastName', 'email', 'groupInterest', 'preferredAvailability', 'referral', 'message'],
+    required: ['firstName', 'lastName', 'email', 'groupInterest', 'message'],
+    successMessage: 'Thank you. Your group inquiry has been received. Hicks Consulting will review your information and follow up as appropriate.',
+    errorMessage: 'We could not submit the form just now. Please try again, or email info@hicksconsulting.org.'
   });
-}
-
-function wireAnimations() {
-  const items = document.querySelectorAll('[data-animate]');
-  if (!items.length) return;
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    items.forEach(item => item.classList.add('is-visible'));
-    return;
-  }
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('is-visible');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: .14, rootMargin: '0px 0px -30px 0px' });
-  items.forEach(item => observer.observe(item));
-}
-
-
-async function wireAnalytics() {
-  const config = await fetchJson('/data/system/config.json');
-  const analytics = config?.analytics || {};
-  const measurementId = String(analytics.measurementId || '').trim();
-  const enabled = analytics.enabled === true && /^G-[A-Z0-9]+$/i.test(measurementId);
-  if (!enabled || document.querySelector('script[data-ga4-loader="true"]')) return;
-
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){ window.dataLayer.push(arguments); }
-  window.gtag = window.gtag || gtag;
-  gtag('js', new Date());
-  gtag('config', measurementId, { anonymize_ip: true });
-
-  const external = document.createElement('script');
-  external.async = true;
-  external.src = `https://www.googletagmanager.com/gtag/js?id=${encodeURIComponent(measurementId)}`;
-  external.setAttribute('data-ga4-loader', 'true');
-  document.head.appendChild(external);
 }
 
 function wireBrowserCompatibility() {

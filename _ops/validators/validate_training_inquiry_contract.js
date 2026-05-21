@@ -1,6 +1,9 @@
 const { fs, path, read, fail } = require('./util');
 
 const js = read('assets/js/site.js');
+const config = JSON.parse(read('data/system/config.json'));
+const build = read('scripts/build/build.js');
+const homepage = read('pages/index.html');
 
 const contracts = [
   {
@@ -26,7 +29,8 @@ const contracts = [
       'TRAINING_INQUIRY_SECRET',
       "inquiryType: 'training'",
       'secret: sharedSecret'
-    ]
+    ],
+    successCopy: 'Your organizational training inquiry has been received'
   },
   {
     label: 'Groups inquiry',
@@ -49,7 +53,8 @@ const contracts = [
       'TRAINING_INQUIRY_SECRET',
       "inquiryType: 'groups'",
       'secret: sharedSecret'
-    ]
+    ],
+    successCopy: 'Your group inquiry has been received'
   }
 ];
 
@@ -78,10 +83,18 @@ for (const contract of contracts) {
   if (/<form[^>]+action=["']mailto:/i.test(html)) fail(`${contract.label} form must not use mailto action.`);
   if (!js.includes('fetch(endpoint')) fail(`${contract.label} JS must submit through fetch.`);
   if (!js.includes('form.hidden = true')) fail(`${contract.label} success behavior must hide the form.`);
+  if (!js.includes(contract.successCopy)) fail(`${contract.label} success thank-you copy missing from JS.`);
 
   for (const marker of contract.requiredBackendMarkers) {
     if (!fn.includes(marker)) fail(`${contract.label} backend marker missing: ${marker}`);
   }
 }
 
-console.log(`Inquiry contracts OK (${contracts.length} forms, ${fieldCount} locked fields traced frontend → JS → backend).`);
+if (config.forms?.groups && String(config.forms.groups).startsWith('mailto:')) fail('Groups config must not route to mailto.');
+if (build.includes("Groups: ${siteConfig.forms?.groups || 'mailto:")) fail('Build llms fallback must not route groups to mailto.');
+if (/hero-logo-medallion/.test(homepage)) fail('Homepage hero must not include logo overlay on green blazer photo.');
+if (!homepage.includes('/assets/hicks-consulting-logo-full.png')) fail('Homepage header must use full Hicks Consulting logo.');
+if (!homepage.includes('/assets/monika-primary.jpg')) fail('Homepage must keep green blazer hero photo.');
+if (!homepage.includes('/assets/headshot-logo.png')) fail('Homepage must keep clean colorful suit portrait in Meet Monika section.');
+
+console.log(`Inquiry and visual contracts OK (${contracts.length} forms, ${fieldCount} locked fields traced frontend → JS → backend).`);
