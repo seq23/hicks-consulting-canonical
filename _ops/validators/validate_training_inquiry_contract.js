@@ -113,6 +113,13 @@ if (!wranglerToml.includes('pages_build_output_dir = "dist"')) fail('wrangler.to
 if (!/compatibility_date\s*=\s*"20\d{2}-\d{2}-\d{2}"/.test(wranglerToml)) fail('wrangler.toml must set compatibility_date.');
 if (!fs.existsSync(path.join(process.cwd(), 'functions', 'api', 'training-inquiry.js'))) fail('Pages Function missing: functions/api/training-inquiry.js');
 if (!fs.existsSync(path.join(process.cwd(), 'functions', 'api', 'groups-inquiry.js'))) fail('Pages Function missing: functions/api/groups-inquiry.js');
-if (fs.existsSync(path.join(process.cwd(), 'worker', '_worker.js'))) fail('Do not add worker/_worker.js for this site unless explicitly approved; use Pages Functions first.');
+const advancedWorkerPath = path.join(process.cwd(), 'worker', '_worker.js');
+if (!fs.existsSync(advancedWorkerPath)) fail('Cloudflare Advanced Mode worker missing: worker/_worker.js');
+const advancedWorker = fs.readFileSync(advancedWorkerPath, 'utf8');
+for (const marker of ['/api/training-inquiry', '/api/groups-inquiry', 'TRAINING_INQUIRY_WEBHOOK_URL', 'TRAINING_INQUIRY_SECRET', 'env.ASSETS.fetch(request)']) {
+  if (!advancedWorker.includes(marker)) fail(`Cloudflare Advanced Mode worker missing marker: ${marker}`);
+}
+const buildSource = read('scripts/build/build.js');
+if (!buildSource.includes("path.join(root, 'worker', '_worker.js')") || !buildSource.includes("path.join(dist, '_worker.js')")) fail('Build must copy worker/_worker.js to dist/_worker.js.');
 
 console.log(`Inquiry, visual, and edit-audit contracts OK (${contracts.length} forms, ${fieldCount} locked fields traced frontend → JS → backend).`);

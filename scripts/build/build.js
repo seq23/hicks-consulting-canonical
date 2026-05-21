@@ -141,4 +141,9 @@ fs.writeFileSync(path.join(root, 'llms.txt'), llms + '\n');
 fs.writeFileSync(path.join(dist, 'llms.txt'), llms + '\n');
 
 
+const workerSource = path.join(root, 'worker', '_worker.js');
+if (fs.existsSync(workerSource)) {
+  fs.copyFileSync(workerSource, path.join(dist, '_worker.js'));
+}
+
 console.log('Build complete:', dist);
