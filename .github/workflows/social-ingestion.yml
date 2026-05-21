@@ -27,8 +27,8 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          if [[ -n "$(git status --porcelain data/intake data/social pages/llm-atlas llms.txt sitemap.xml)" ]]; then
-            git add data/intake data/social pages/llm-atlas llms.txt sitemap.xml
+          if [[ -n "$(git status --porcelain data/intake data/social pages/llm-atlas llms.txt sitemap.xml dist)" ]]; then
+            git add data/intake data/social pages/llm-atlas llms.txt sitemap.xml dist
             git commit -m "Update social ingestion and LLM atlas outputs"
             git push
           else

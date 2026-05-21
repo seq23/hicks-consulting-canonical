@@ -11,9 +11,8 @@ const updated = manifest.map(item => {
     const publishAt = item.publishAt ? new Date(item.publishAt) : now;
     if (!Number.isNaN(publishAt.valueOf()) && publishAt <= now) {
       changed = true;
-      const { previewPath, ...publishedItem } = item;
       return {
-        ...publishedItem,
+        ...item,
         status: 'published',
         publishedAt: now.toISOString()
       };

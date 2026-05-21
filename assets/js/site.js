@@ -70,6 +70,7 @@ async function renderPublishedResources(containerId) {
     <article class="resource-card" data-animate="zoom">
       <span class="badge">${escapeHtml(resourceTypeLabel(item.type))}</span>
       <h3><a href="${escapeHtml(item.slug)}">${escapeHtml(item.title)}</a></h3>
+      <p class="muted small">Track: ${escapeHtml(item.track)} · ${escapeHtml(publicReleaseDateLabel(item))}</p>
       <p><a class="eyebrow-link" href="${escapeHtml(item.slug)}">Read more →</a></p>
     </article>
   `).join('');

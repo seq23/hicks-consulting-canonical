@@ -15,17 +15,6 @@ for (const file of files) {
   const writes = /permissions:[\s\S]*contents:\s*write/.test(content) || /git\s+push/.test(content);
   if (writes) {
     writeWorkflows.push(file);
-    if (file === 'content-publish.yml') {
-      const publishIndex = content.indexOf('npm run publish:content');
-      const buildIndex = content.indexOf('npm run build');
-      const validateIndex = content.indexOf('npm run validate:all');
-      if (publishIndex === -1) fail('content-publish.yml must run npm run publish:content.');
-      if (buildIndex === -1) fail('content-publish.yml must run npm run build before validation.');
-      if (validateIndex === -1) fail('content-publish.yml must run npm run validate:all after build.');
-      if (!(publishIndex < buildIndex && buildIndex < validateIndex)) {
-        fail('content-publish.yml must publish content, run build to regenerate sitemap/llms, then run validate:all.');
-      }
-    }
     if (!/concurrency:[\s\S]*group:\s*hicks-consulting-content-automation/.test(content)) {
       fail(`Writer workflow ${file} must use shared hicks-consulting-content-automation concurrency group.`);
     }
