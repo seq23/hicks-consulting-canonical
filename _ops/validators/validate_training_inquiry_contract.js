@@ -5,6 +5,8 @@ const config = JSON.parse(read('data/system/config.json'));
 const build = read('scripts/build/build.js');
 const homepage = read('pages/index.html');
 const css = read('assets/css/styles.css');
+const wranglerPath = path.join(process.cwd(), 'wrangler.toml');
+const wranglerToml = fs.existsSync(wranglerPath) ? fs.readFileSync(wranglerPath, 'utf8') : '';
 
 const sharedFields = [
   'firstName',
@@ -103,5 +105,14 @@ if (!js.includes('Your organizational training inquiry has been received')) fail
 if (!js.includes('Your group inquiry has been received')) fail('Groups form must show thank-you confirmation after successful submit.');
 if (!runbook.includes('NOTIFY_EMAIL = info@hicksconsulting.org')) fail('Apps Script runbook must require notification email info@hicksconsulting.org.');
 if (!runbook.includes('MailApp.sendEmail(notifyEmail, subject, body)')) fail('Apps Script runbook must send notification email with MailApp.');
+
+
+// Cloudflare Pages Functions deployment contract.
+if (!fs.existsSync(wranglerPath)) fail('wrangler.toml is required so Cloudflare Pages uses the explicit repo deployment contract.');
+if (!wranglerToml.includes('pages_build_output_dir = "dist"')) fail('wrangler.toml must set pages_build_output_dir = "dist".');
+if (!/compatibility_date\s*=\s*"20\d{2}-\d{2}-\d{2}"/.test(wranglerToml)) fail('wrangler.toml must set compatibility_date.');
+if (!fs.existsSync(path.join(process.cwd(), 'functions', 'api', 'training-inquiry.js'))) fail('Pages Function missing: functions/api/training-inquiry.js');
+if (!fs.existsSync(path.join(process.cwd(), 'functions', 'api', 'groups-inquiry.js'))) fail('Pages Function missing: functions/api/groups-inquiry.js');
+if (fs.existsSync(path.join(process.cwd(), 'worker', '_worker.js'))) fail('Do not add worker/_worker.js for this site unless explicitly approved; use Pages Functions first.');
 
 console.log(`Inquiry, visual, and edit-audit contracts OK (${contracts.length} forms, ${fieldCount} locked fields traced frontend → JS → backend).`);
