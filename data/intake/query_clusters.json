@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-15T14:53:26.676Z",
+  "generatedAt": "2026-05-22T16:29:08.509Z",
   "clusters": [
     {
       "id": "black_women_healing",
@@ -9,19 +9,19 @@
       ],
       "signals": [
         {
-          "id": "seed-black-women-burnout-and-boundaries",
-          "query": "Black women burnout and boundaries",
-          "source": "seed_query_fallback",
-          "sourceType": "seed",
+          "id": "reddit_rss_blackwomen-reddit-com-search-results-black-women-burnout-therapy",
+          "query": "reddit.com: search results - Black women burnout therapy",
+          "source": "reddit_rss_blackwomen",
+          "sourceType": "rss",
           "tags": [
             "black_women",
             "burnout"
           ],
-          "intent": "informational",
+          "intent": "commercial",
           "audience": "Black women",
-          "contentType": "answer",
+          "contentType": "service",
           "status": "candidate",
-          "generatedAt": "2026-05-15T14:53:25.860Z"
+          "generatedAt": "2026-05-22T16:29:08.062Z"
         }
       ],
       "queryCount": 1,
@@ -37,24 +37,79 @@
       ],
       "signals": [
         {
-          "id": "seed-millennial-women-burnout-motherhood-work",
-          "query": "millennial women burnout motherhood work",
-          "source": "seed_query_fallback",
-          "sourceType": "seed",
+          "id": "reddit_rss_ai_wellness-got-sexually-harassed-but-i-m-overwhelmed-by-other-people-taking-it-seriously",
+          "query": "Got sexually harassed but I'm overwhelmed by other people taking it seriously",
+          "source": "reddit_rss_ai_wellness",
+          "sourceType": "rss",
           "tags": [
-            "genz_millennial",
+            "burnout"
+          ],
+          "intent": "informational",
+          "audience": "Clients seeking emotional wellness support",
+          "contentType": "answer",
+          "status": "candidate",
+          "generatedAt": "2026-05-22T16:29:08.062Z"
+        },
+        {
+          "id": "reddit_rss_ai_wellness-i-m-tired-of-being-a-childfree-parent",
+          "query": "I'm tired of being a childfree parent...",
+          "source": "reddit_rss_ai_wellness",
+          "sourceType": "rss",
+          "tags": [
+            "burnout"
+          ],
+          "intent": "informational",
+          "audience": "Clients seeking emotional wellness support",
+          "contentType": "answer",
+          "status": "candidate",
+          "generatedAt": "2026-05-22T16:29:08.062Z"
+        },
+        {
+          "id": "reddit_rss_genz_mental_health-got-sexually-harassed-but-i-m-overwhelmed-by-other-people-taking-it-seriously",
+          "query": "Got sexually harassed but I'm overwhelmed by other people taking it seriously",
+          "source": "reddit_rss_genz_mental_health",
+          "sourceType": "rss",
+          "tags": [
+            "burnout"
+          ],
+          "intent": "informational",
+          "audience": "Clients seeking emotional wellness support",
+          "contentType": "answer",
+          "status": "candidate",
+          "generatedAt": "2026-05-22T16:29:08.062Z"
+        },
+        {
+          "id": "reddit_rss_genz_mental_health-i-m-tired-of-being-a-childfree-parent",
+          "query": "I'm tired of being a childfree parent...",
+          "source": "reddit_rss_genz_mental_health",
+          "sourceType": "rss",
+          "tags": [
+            "burnout"
+          ],
+          "intent": "informational",
+          "audience": "Clients seeking emotional wellness support",
+          "contentType": "answer",
+          "status": "candidate",
+          "generatedAt": "2026-05-22T16:29:08.062Z"
+        },
+        {
+          "id": "google_news_workplace_mental_health-the-emotional-recession-global-declines-in-emotional-intelligence-and-its-impact",
+          "query": "The Emotional Recession: global declines in emotional intelligence and its impact on organizational retention, burnout, and workforce resilience - Frontiers",
+          "source": "google_news_workplace_mental_health",
+          "sourceType": "rss",
+          "tags": [
             "burnout",
             "workplace_emotional_intelligence"
           ],
           "intent": "commercial",
-          "audience": "Gen Z and millennial clients",
+          "audience": "Organizations and teams",
           "contentType": "service",
           "status": "candidate",
-          "generatedAt": "2026-05-15T14:53:25.860Z"
+          "generatedAt": "2026-05-22T16:29:08.062Z"
         }
       ],
-      "queryCount": 1,
-      "score": 20,
+      "queryCount": 5,
+      "score": 100,
       "targetPage": "/llm-atlas/clusters/",
       "status": "active"
     },
@@ -66,39 +121,10 @@
       ],
       "signals": [
         {
-          "id": "seed-ai-anxiety-and-emotional-wellness",
-          "query": "AI anxiety and emotional wellness",
-          "source": "seed_query_fallback",
-          "sourceType": "seed",
-          "tags": [
-            "ai_digital_wellness"
-          ],
-          "intent": "informational",
-          "audience": "Clients seeking emotional wellness support",
-          "contentType": "answer",
-          "status": "candidate",
-          "generatedAt": "2026-05-15T14:53:25.860Z"
-        },
-        {
-          "id": "seed-faith-centered-therapy-emotional-healing",
-          "query": "faith centered therapy emotional healing",
-          "source": "seed_query_fallback",
-          "sourceType": "seed",
-          "tags": [
-            "ai_digital_wellness",
-            "faith_centered_support"
-          ],
-          "intent": "commercial",
-          "audience": "Clients seeking emotional wellness support",
-          "contentType": "service",
-          "status": "candidate",
-          "generatedAt": "2026-05-15T14:53:25.860Z"
-        },
-        {
-          "id": "seed-workplace-emotional-intelligence-mental-health-training",
-          "query": "workplace emotional intelligence mental health training",
-          "source": "seed_query_fallback",
-          "sourceType": "seed",
+          "id": "reddit_rss_blackwomen-aitah-for-not-thanking-my-husband-for-doing-work-around-the-house",
+          "query": "AITAH for not thanking my husband for doing work around the house?",
+          "source": "reddit_rss_blackwomen",
+          "sourceType": "rss",
           "tags": [
             "ai_digital_wellness",
             "workplace_emotional_intelligence"
@@ -107,11 +133,138 @@
           "audience": "Organizations and teams",
           "contentType": "service",
           "status": "candidate",
-          "generatedAt": "2026-05-15T14:53:25.860Z"
+          "generatedAt": "2026-05-22T16:29:08.062Z"
+        },
+        {
+          "id": "reddit_rss_blackwomen-postmodernism-and-poststructuralism-in-the-age-of-ai",
+          "query": "Postmodernism and Poststructuralism in the Age of AI",
+          "source": "reddit_rss_blackwomen",
+          "sourceType": "rss",
+          "tags": [
+            "ai_digital_wellness"
+          ],
+          "intent": "informational",
+          "audience": "Clients seeking emotional wellness support",
+          "contentType": "answer",
+          "status": "candidate",
+          "generatedAt": "2026-05-22T16:29:08.062Z"
+        },
+        {
+          "id": "reddit_rss_blackwomen-the-plague-doctor-book-2-chapter-66-hot-air",
+          "query": "The Plague Doctor Book 2 Chapter 66 (Hot Air)",
+          "source": "reddit_rss_blackwomen",
+          "sourceType": "rss",
+          "tags": [
+            "ai_digital_wellness"
+          ],
+          "intent": "commercial",
+          "audience": "Clients seeking emotional wellness support",
+          "contentType": "service",
+          "status": "candidate",
+          "generatedAt": "2026-05-22T16:29:08.062Z"
+        },
+        {
+          "id": "reddit_rss_ai_wellness-reddit-com-search-results-ai-anxiety-mental-health",
+          "query": "reddit.com: search results - AI anxiety mental health",
+          "source": "reddit_rss_ai_wellness",
+          "sourceType": "rss",
+          "tags": [
+            "ai_digital_wellness"
+          ],
+          "intent": "informational",
+          "audience": "Clients seeking emotional wellness support",
+          "contentType": "answer",
+          "status": "candidate",
+          "generatedAt": "2026-05-22T16:29:08.062Z"
+        },
+        {
+          "id": "reddit_rss_ai_wellness-how-to-use-google-search-console-and-gemini-ai-for-page-level-content-gap-analys",
+          "query": "How to use Google Search Console and Gemini AI for Page-Level Content Gap Analysis (Boost traffic up to 35%)",
+          "source": "reddit_rss_ai_wellness",
+          "sourceType": "rss",
+          "tags": [
+            "ai_digital_wellness"
+          ],
+          "intent": "informational",
+          "audience": "Clients seeking emotional wellness support",
+          "contentType": "answer",
+          "status": "candidate",
+          "generatedAt": "2026-05-22T16:29:08.062Z"
+        },
+        {
+          "id": "reddit_rss_ai_wellness-constant-chest-pains-all-the-time-please-can-anyone-help-do-i-need-to-wait-for-m",
+          "query": "Constant chest pains all the time!! Please can anyone help? Do I need to wait for my anxiety meds to kick in???",
+          "source": "reddit_rss_ai_wellness",
+          "sourceType": "rss",
+          "tags": [
+            "ai_digital_wellness"
+          ],
+          "intent": "informational",
+          "audience": "Clients seeking emotional wellness support",
+          "contentType": "answer",
+          "status": "candidate",
+          "generatedAt": "2026-05-22T16:29:08.062Z"
+        },
+        {
+          "id": "reddit_rss_ai_wellness-ios-29-99-yr-free-lifetime-affirmations-ai-ai-writes-personal-affirmations-for-y",
+          "query": "[iOS] [$29.99/yr → Free Lifetime] Affirmations AI — AI writes personal affirmations for you, not generic copy-paste ones",
+          "source": "reddit_rss_ai_wellness",
+          "sourceType": "rss",
+          "tags": [
+            "ai_digital_wellness"
+          ],
+          "intent": "informational",
+          "audience": "Clients seeking emotional wellness support",
+          "contentType": "answer",
+          "status": "candidate",
+          "generatedAt": "2026-05-22T16:29:08.062Z"
+        },
+        {
+          "id": "reddit_rss_genz_mental_health-stage-4-endometriosis-years-long-wait-lists-and-being-dismissed-over-hormonal-tr",
+          "query": "Stage 4 endometriosis, years long wait lists, and being dismissed over hormonal treatment concerns - how do people cope?",
+          "source": "reddit_rss_genz_mental_health",
+          "sourceType": "rss",
+          "tags": [
+            "ai_digital_wellness"
+          ],
+          "intent": "informational",
+          "audience": "Clients seeking emotional wellness support",
+          "contentType": "answer",
+          "status": "candidate",
+          "generatedAt": "2026-05-22T16:29:08.062Z"
+        },
+        {
+          "id": "google_news_workplace_mental_health-workplace-mental-health-training-emotional-intelligence-google-news",
+          "query": "\"workplace mental health training emotional intelligence\" - Google News",
+          "source": "google_news_workplace_mental_health",
+          "sourceType": "rss",
+          "tags": [
+            "ai_digital_wellness",
+            "workplace_emotional_intelligence"
+          ],
+          "intent": "commercial",
+          "audience": "Organizations and teams",
+          "contentType": "service",
+          "status": "candidate",
+          "generatedAt": "2026-05-22T16:29:08.062Z"
+        },
+        {
+          "id": "google_news_workplace_mental_health-emotional-intelligence-training-improves-stress-regulation-and-performance-in-hi",
+          "query": "Emotional intelligence training improves stress regulation and performance in high-stress occupations - Nature",
+          "source": "google_news_workplace_mental_health",
+          "sourceType": "rss",
+          "tags": [
+            "ai_digital_wellness"
+          ],
+          "intent": "informational",
+          "audience": "Clients seeking emotional wellness support",
+          "contentType": "answer",
+          "status": "candidate",
+          "generatedAt": "2026-05-22T16:29:08.062Z"
         }
       ],
-      "queryCount": 3,
-      "score": 60,
+      "queryCount": 10,
+      "score": 100,
       "targetPage": "/llm-atlas/clusters/",
       "status": "active"
     },
@@ -123,10 +276,10 @@
       ],
       "signals": [
         {
-          "id": "seed-gen-z-therapy-language-and-mental-health",
-          "query": "Gen Z therapy language and mental health",
-          "source": "seed_query_fallback",
-          "sourceType": "seed",
+          "id": "reddit_rss_genz_mental_health-reddit-com-search-results-gen-z-mental-health-therapy",
+          "query": "reddit.com: search results - Gen Z mental health therapy",
+          "source": "reddit_rss_genz_mental_health",
+          "sourceType": "rss",
           "tags": [
             "genz_millennial"
           ],
@@ -134,7 +287,7 @@
           "audience": "Gen Z and millennial clients",
           "contentType": "service",
           "status": "candidate",
-          "generatedAt": "2026-05-15T14:53:25.860Z"
+          "generatedAt": "2026-05-22T16:29:08.062Z"
         }
       ],
       "queryCount": 1,
@@ -148,11 +301,124 @@
       "tags": [
         "workplace_emotional_intelligence"
       ],
-      "signals": [],
-      "queryCount": 0,
-      "score": 0,
+      "signals": [
+        {
+          "id": "reddit_rss_blackwomen-after-thousands-of-hours-of-counseling-sessions-i-have-picked-up-insight-into-wh",
+          "query": "After thousands of hours of counseling sessions, I have picked up insight into what works well...",
+          "source": "reddit_rss_blackwomen",
+          "sourceType": "rss",
+          "tags": [
+            "workplace_emotional_intelligence"
+          ],
+          "intent": "informational",
+          "audience": "Organizations and teams",
+          "contentType": "answer",
+          "status": "candidate",
+          "generatedAt": "2026-05-22T16:29:08.062Z"
+        },
+        {
+          "id": "reddit_rss_blackwomen-the-ultimate-backpack-buying-guide-2026-best-travel-carry-on-work-packable-anti-",
+          "query": "The Ultimate Backpack Buying Guide (2026): Best Travel, Carry-On, Work,Packable & Anti-Theft Backpacks Compared",
+          "source": "reddit_rss_blackwomen",
+          "sourceType": "rss",
+          "tags": [
+            "workplace_emotional_intelligence"
+          ],
+          "intent": "comparison",
+          "audience": "Organizations and teams",
+          "contentType": "comparison",
+          "status": "candidate",
+          "generatedAt": "2026-05-22T16:29:08.062Z"
+        },
+        {
+          "id": "reddit_rss_blackwomen-lovevook-laptop-backpack-for-women-with-giant-tumbler-holder-15-6-inch-designer-",
+          "query": "LOVEVOOK Laptop Backpack for Women with Giant Tumbler Holder 15.6 inch,Designer Travel Backpack Laptop Bag College Backpack,Quilted Work Nurse Teacher Backpack Purse Computer Bag Casual Daypack, Black",
+          "source": "reddit_rss_blackwomen",
+          "sourceType": "rss",
+          "tags": [
+            "workplace_emotional_intelligence"
+          ],
+          "intent": "commercial",
+          "audience": "Organizations and teams",
+          "contentType": "service",
+          "status": "candidate",
+          "generatedAt": "2026-05-22T16:29:08.062Z"
+        },
+        {
+          "id": "reddit_rss_blackwomen-idk-if-this-is-an-introvert-thing-or-just-a-me-thing-or-what-but-my-coworkers-di",
+          "query": "IDK if this is an introvert thing, or just a me thing, or what, but my coworkers discovered my private social media and were watching me on it without my knowledge for at least a year and i can't move past the humiliation i feel. looking for any and all advice or words of comfort.",
+          "source": "reddit_rss_blackwomen",
+          "sourceType": "rss",
+          "tags": [
+            "workplace_emotional_intelligence"
+          ],
+          "intent": "informational",
+          "audience": "Organizations and teams",
+          "contentType": "answer",
+          "status": "candidate",
+          "generatedAt": "2026-05-22T16:29:08.062Z"
+        },
+        {
+          "id": "reddit_rss_ai_wellness-5-minutes-of-your-time-could-change-how-college-works",
+          "query": "5 Minutes of Your Time Could Change How College Works",
+          "source": "reddit_rss_ai_wellness",
+          "sourceType": "rss",
+          "tags": [
+            "workplace_emotional_intelligence"
+          ],
+          "intent": "informational",
+          "audience": "Organizations and teams",
+          "contentType": "answer",
+          "status": "candidate",
+          "generatedAt": "2026-05-22T16:29:08.062Z"
+        },
+        {
+          "id": "reddit_rss_ai_wellness-debilitating-work-anxiety",
+          "query": "Debilitating work anxiety",
+          "source": "reddit_rss_ai_wellness",
+          "sourceType": "rss",
+          "tags": [
+            "workplace_emotional_intelligence"
+          ],
+          "intent": "commercial",
+          "audience": "Organizations and teams",
+          "contentType": "service",
+          "status": "candidate",
+          "generatedAt": "2026-05-22T16:29:08.062Z"
+        },
+        {
+          "id": "reddit_rss_genz_mental_health-5-minutes-of-your-time-could-change-how-college-works",
+          "query": "5 Minutes of Your Time Could Change How College Works",
+          "source": "reddit_rss_genz_mental_health",
+          "sourceType": "rss",
+          "tags": [
+            "workplace_emotional_intelligence"
+          ],
+          "intent": "informational",
+          "audience": "Organizations and teams",
+          "contentType": "answer",
+          "status": "candidate",
+          "generatedAt": "2026-05-22T16:29:08.062Z"
+        },
+        {
+          "id": "google_news_workplace_mental_health-emotional-intelligence-and-ems-leadership-caring-for-mental-health-after-a-tough",
+          "query": "Emotional Intelligence and EMS Leadership: Caring for Mental Health After a Tough Call - HMP Global Learning Network",
+          "source": "google_news_workplace_mental_health",
+          "sourceType": "rss",
+          "tags": [
+            "workplace_emotional_intelligence"
+          ],
+          "intent": "commercial",
+          "audience": "Organizations and teams",
+          "contentType": "service",
+          "status": "candidate",
+          "generatedAt": "2026-05-22T16:29:08.062Z"
+        }
+      ],
+      "queryCount": 8,
+      "score": 100,
       "targetPage": "/llm-atlas/clusters/",
-      "status": "seed"
+      "status": "active"
     },
     {
       "id": "faith_centered_support",
@@ -174,10 +440,10 @@
       ],
       "signals": [
         {
-          "id": "seed-black-community-emotional-wellness-and-healing",
-          "query": "Black community emotional wellness and healing",
-          "source": "seed_query_fallback",
-          "sourceType": "seed",
+          "id": "reddit_rss_blackwomen-r-blackwomens",
+          "query": "/r/BlackWomens",
+          "source": "reddit_rss_blackwomen",
+          "sourceType": "rss",
           "tags": [
             "general_emotional_wellness"
           ],
@@ -185,11 +451,697 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-05-15T14:53:25.860Z"
+          "generatedAt": "2026-05-22T16:29:08.062Z"
+        },
+        {
+          "id": "reddit_rss_blackwomen-blackgirlshealing",
+          "query": "blackgirlshealing",
+          "source": "reddit_rss_blackwomen",
+          "sourceType": "rss",
+          "tags": [
+            "general_emotional_wellness"
+          ],
+          "intent": "informational",
+          "audience": "Clients seeking emotional wellness support",
+          "contentType": "answer",
+          "status": "candidate",
+          "generatedAt": "2026-05-22T16:29:08.062Z"
+        },
+        {
+          "id": "reddit_rss_blackwomen-most-suffering-is-abuse-inequality-let-s-end-the-violence-harmful-labels-hardcor",
+          "query": "Most suffering is abuse/inequality. Let's end the violence, harmful labels, & hardcore drug-pushing.",
+          "source": "reddit_rss_blackwomen",
+          "sourceType": "rss",
+          "tags": [
+            "general_emotional_wellness"
+          ],
+          "intent": "informational",
+          "audience": "Clients seeking emotional wellness support",
+          "contentType": "answer",
+          "status": "candidate",
+          "generatedAt": "2026-05-22T16:29:08.062Z"
+        },
+        {
+          "id": "reddit_rss_blackwomen-very-lonely",
+          "query": "Very lonely",
+          "source": "reddit_rss_blackwomen",
+          "sourceType": "rss",
+          "tags": [
+            "general_emotional_wellness"
+          ],
+          "intent": "informational",
+          "audience": "Clients seeking emotional wellness support",
+          "contentType": "answer",
+          "status": "candidate",
+          "generatedAt": "2026-05-22T16:29:08.062Z"
+        },
+        {
+          "id": "reddit_rss_blackwomen-the-echo-of-the-walls-in-irbid",
+          "query": "The Echo of the Walls in Irbid",
+          "source": "reddit_rss_blackwomen",
+          "sourceType": "rss",
+          "tags": [
+            "general_emotional_wellness"
+          ],
+          "intent": "informational",
+          "audience": "Clients seeking emotional wellness support",
+          "contentType": "answer",
+          "status": "candidate",
+          "generatedAt": "2026-05-22T16:29:08.062Z"
+        },
+        {
+          "id": "reddit_rss_blackwomen-intro-advice-needed",
+          "query": "Intro/advice needed",
+          "source": "reddit_rss_blackwomen",
+          "sourceType": "rss",
+          "tags": [
+            "general_emotional_wellness"
+          ],
+          "intent": "informational",
+          "audience": "Clients seeking emotional wellness support",
+          "contentType": "answer",
+          "status": "candidate",
+          "generatedAt": "2026-05-22T16:29:08.062Z"
+        },
+        {
+          "id": "reddit_rss_blackwomen-same-thing-abel-s-been-doing-to-bella",
+          "query": "Same thing Abel’s been doing to Bella",
+          "source": "reddit_rss_blackwomen",
+          "sourceType": "rss",
+          "tags": [
+            "general_emotional_wellness"
+          ],
+          "intent": "informational",
+          "audience": "Clients seeking emotional wellness support",
+          "contentType": "answer",
+          "status": "candidate",
+          "generatedAt": "2026-05-22T16:29:08.062Z"
+        },
+        {
+          "id": "reddit_rss_blackwomen-left-my-boyfriend-of-5-years",
+          "query": "Left my boyfriend of 5 years",
+          "source": "reddit_rss_blackwomen",
+          "sourceType": "rss",
+          "tags": [
+            "general_emotional_wellness"
+          ],
+          "intent": "informational",
+          "audience": "Clients seeking emotional wellness support",
+          "contentType": "answer",
+          "status": "candidate",
+          "generatedAt": "2026-05-22T16:29:08.062Z"
+        },
+        {
+          "id": "reddit_rss_blackwomen-i-24f-have-been-in-a-relationship-with-my-boyfriend-27m-for-around-7-years-and-i",
+          "query": "I 24F have been in a relationship with my boyfriend 27M for around 7 years, and I genuinely don’t know whether I should go back to him or walk away for good.",
+          "source": "reddit_rss_blackwomen",
+          "sourceType": "rss",
+          "tags": [
+            "general_emotional_wellness"
+          ],
+          "intent": "informational",
+          "audience": "Clients seeking emotional wellness support",
+          "contentType": "answer",
+          "status": "candidate",
+          "generatedAt": "2026-05-22T16:29:08.062Z"
+        },
+        {
+          "id": "reddit_rss_blackwomen-medication-at-30",
+          "query": "Medication at 30.",
+          "source": "reddit_rss_blackwomen",
+          "sourceType": "rss",
+          "tags": [
+            "general_emotional_wellness"
+          ],
+          "intent": "informational",
+          "audience": "Clients seeking emotional wellness support",
+          "contentType": "answer",
+          "status": "candidate",
+          "generatedAt": "2026-05-22T16:29:08.062Z"
+        },
+        {
+          "id": "reddit_rss_blackwomen-need-words-of-wisdom",
+          "query": "Need Words of Wisdom",
+          "source": "reddit_rss_blackwomen",
+          "sourceType": "rss",
+          "tags": [
+            "general_emotional_wellness"
+          ],
+          "intent": "informational",
+          "audience": "Clients seeking emotional wellness support",
+          "contentType": "answer",
+          "status": "candidate",
+          "generatedAt": "2026-05-22T16:29:08.062Z"
+        },
+        {
+          "id": "reddit_rss_blackwomen-at-this-point-why-does-something-like-gambling-feel-easier-and-more-fun-than-dat",
+          "query": "At this point, why does something like gambling feel easier and more fun than dating in this generation?",
+          "source": "reddit_rss_blackwomen",
+          "sourceType": "rss",
+          "tags": [
+            "general_emotional_wellness"
+          ],
+          "intent": "informational",
+          "audience": "Clients seeking emotional wellness support",
+          "contentType": "answer",
+          "status": "candidate",
+          "generatedAt": "2026-05-22T16:29:08.062Z"
+        },
+        {
+          "id": "reddit_rss_blackwomen-covid-era-white-masc-lesbians",
+          "query": "Covid era white masc lesbians?",
+          "source": "reddit_rss_blackwomen",
+          "sourceType": "rss",
+          "tags": [
+            "general_emotional_wellness"
+          ],
+          "intent": "informational",
+          "audience": "Clients seeking emotional wellness support",
+          "contentType": "answer",
+          "status": "candidate",
+          "generatedAt": "2026-05-22T16:29:08.062Z"
+        },
+        {
+          "id": "reddit_rss_blackwomen-any-late-diagnosed-audhd-women-in-the-20s-or-30s-in-nyc-want-to-maybe-meet-up-at",
+          "query": "Any late diagnosed Audhd women in the 20s or 30s in nyc want to maybe meet up at a café?",
+          "source": "reddit_rss_blackwomen",
+          "sourceType": "rss",
+          "tags": [
+            "general_emotional_wellness"
+          ],
+          "intent": "informational",
+          "audience": "Clients seeking emotional wellness support",
+          "contentType": "answer",
+          "status": "candidate",
+          "generatedAt": "2026-05-22T16:29:08.062Z"
+        },
+        {
+          "id": "reddit_rss_blackwomen-dimir-tempo-5-0-league-with-adapted-sideboard-post-oops-nerf",
+          "query": "Dimir Tempo 5-0 League with adapted sideboard post Oops nerf",
+          "source": "reddit_rss_blackwomen",
+          "sourceType": "rss",
+          "tags": [
+            "general_emotional_wellness"
+          ],
+          "intent": "informational",
+          "audience": "Clients seeking emotional wellness support",
+          "contentType": "answer",
+          "status": "candidate",
+          "generatedAt": "2026-05-22T16:29:08.062Z"
+        },
+        {
+          "id": "reddit_rss_blackwomen-im-ctfu-what-is-this",
+          "query": "Im ctfu, what is this?😭😭😭",
+          "source": "reddit_rss_blackwomen",
+          "sourceType": "rss",
+          "tags": [
+            "general_emotional_wellness"
+          ],
+          "intent": "informational",
+          "audience": "Clients seeking emotional wellness support",
+          "contentType": "answer",
+          "status": "candidate",
+          "generatedAt": "2026-05-22T16:29:08.062Z"
+        },
+        {
+          "id": "reddit_rss_ai_wellness-health-anxiety",
+          "query": "Health Anxiety",
+          "source": "reddit_rss_ai_wellness",
+          "sourceType": "rss",
+          "tags": [
+            "general_emotional_wellness"
+          ],
+          "intent": "informational",
+          "audience": "Clients seeking emotional wellness support",
+          "contentType": "answer",
+          "status": "candidate",
+          "generatedAt": "2026-05-22T16:29:08.062Z"
+        },
+        {
+          "id": "reddit_rss_ai_wellness-social-anxiety",
+          "query": "Social Anxiety",
+          "source": "reddit_rss_ai_wellness",
+          "sourceType": "rss",
+          "tags": [
+            "general_emotional_wellness"
+          ],
+          "intent": "informational",
+          "audience": "Clients seeking emotional wellness support",
+          "contentType": "answer",
+          "status": "candidate",
+          "generatedAt": "2026-05-22T16:29:08.062Z"
+        },
+        {
+          "id": "reddit_rss_ai_wellness-anxiety-disorders",
+          "query": "Anxiety Disorders",
+          "source": "reddit_rss_ai_wellness",
+          "sourceType": "rss",
+          "tags": [
+            "general_emotional_wellness"
+          ],
+          "intent": "informational",
+          "audience": "Clients seeking emotional wellness support",
+          "contentType": "answer",
+          "status": "candidate",
+          "generatedAt": "2026-05-22T16:29:08.062Z"
+        },
+        {
+          "id": "reddit_rss_ai_wellness-repost-academic-digital-media-internet-technology-use-and-mental-health-survey-a",
+          "query": "[Repost, Academic] Digital Media/Internet/Technology Use and Mental Health Survey (ages 18-25, Amazon gift card raffle!)",
+          "source": "reddit_rss_ai_wellness",
+          "sourceType": "rss",
+          "tags": [
+            "general_emotional_wellness"
+          ],
+          "intent": "informational",
+          "audience": "Clients seeking emotional wellness support",
+          "contentType": "answer",
+          "status": "candidate",
+          "generatedAt": "2026-05-22T16:29:08.062Z"
+        },
+        {
+          "id": "reddit_rss_ai_wellness-what-do-i-do-with-my-life",
+          "query": "What do I do with my life?",
+          "source": "reddit_rss_ai_wellness",
+          "sourceType": "rss",
+          "tags": [
+            "general_emotional_wellness"
+          ],
+          "intent": "informational",
+          "audience": "Clients seeking emotional wellness support",
+          "contentType": "answer",
+          "status": "candidate",
+          "generatedAt": "2026-05-22T16:29:08.062Z"
+        },
+        {
+          "id": "reddit_rss_ai_wellness-think-long-term-to-supersize-you-day-142",
+          "query": "Think Long Term To Supersize You! Day 142!",
+          "source": "reddit_rss_ai_wellness",
+          "sourceType": "rss",
+          "tags": [
+            "general_emotional_wellness"
+          ],
+          "intent": "informational",
+          "audience": "Clients seeking emotional wellness support",
+          "contentType": "answer",
+          "status": "candidate",
+          "generatedAt": "2026-05-22T16:29:08.062Z"
+        },
+        {
+          "id": "reddit_rss_ai_wellness-how-to-cope-with-leaving-behind-my-soul-dog",
+          "query": "How to cope with leaving behind my soul dog",
+          "source": "reddit_rss_ai_wellness",
+          "sourceType": "rss",
+          "tags": [
+            "general_emotional_wellness"
+          ],
+          "intent": "informational",
+          "audience": "Clients seeking emotional wellness support",
+          "contentType": "answer",
+          "status": "candidate",
+          "generatedAt": "2026-05-22T16:29:08.062Z"
+        },
+        {
+          "id": "reddit_rss_ai_wellness-how-do-you-and-your-partner-cope-with-hellworld",
+          "query": "How do you and your partner cope with Hellworld?",
+          "source": "reddit_rss_ai_wellness",
+          "sourceType": "rss",
+          "tags": [
+            "general_emotional_wellness"
+          ],
+          "intent": "informational",
+          "audience": "Clients seeking emotional wellness support",
+          "contentType": "answer",
+          "status": "candidate",
+          "generatedAt": "2026-05-22T16:29:08.062Z"
+        },
+        {
+          "id": "reddit_rss_ai_wellness-let-s-crowd-source-new-m-a-a-a-playform",
+          "query": "Let's crowd source new M.A.A.A. playform",
+          "source": "reddit_rss_ai_wellness",
+          "sourceType": "rss",
+          "tags": [
+            "general_emotional_wellness"
+          ],
+          "intent": "informational",
+          "audience": "Clients seeking emotional wellness support",
+          "contentType": "answer",
+          "status": "candidate",
+          "generatedAt": "2026-05-22T16:29:08.062Z"
+        },
+        {
+          "id": "reddit_rss_ai_wellness-this-is-what-grok-predicted-analyzing-cbse-s-shameless-and-irresponsible-behavio",
+          "query": "This is what grok predicted analyzing CBSE's shameless and irresponsible behavior",
+          "source": "reddit_rss_ai_wellness",
+          "sourceType": "rss",
+          "tags": [
+            "general_emotional_wellness"
+          ],
+          "intent": "informational",
+          "audience": "Clients seeking emotional wellness support",
+          "contentType": "answer",
+          "status": "candidate",
+          "generatedAt": "2026-05-22T16:29:08.062Z"
+        },
+        {
+          "id": "reddit_rss_ai_wellness-i-want-to-just-get-this-off-my-chest-and-i-am-just-angry-and-bitter",
+          "query": "I want to just get this off my chest and I am just angry and bitter",
+          "source": "reddit_rss_ai_wellness",
+          "sourceType": "rss",
+          "tags": [
+            "general_emotional_wellness"
+          ],
+          "intent": "informational",
+          "audience": "Clients seeking emotional wellness support",
+          "contentType": "answer",
+          "status": "candidate",
+          "generatedAt": "2026-05-22T16:29:08.062Z"
+        },
+        {
+          "id": "reddit_rss_ai_wellness-i-feel-hopeless-at-this-point",
+          "query": "I feel hopeless at this point",
+          "source": "reddit_rss_ai_wellness",
+          "sourceType": "rss",
+          "tags": [
+            "general_emotional_wellness"
+          ],
+          "intent": "informational",
+          "audience": "Clients seeking emotional wellness support",
+          "contentType": "answer",
+          "status": "candidate",
+          "generatedAt": "2026-05-22T16:29:08.062Z"
+        },
+        {
+          "id": "reddit_rss_ai_wellness-otowa-is-a-terrible-coach",
+          "query": "Otowa is a terrible coach",
+          "source": "reddit_rss_ai_wellness",
+          "sourceType": "rss",
+          "tags": [
+            "general_emotional_wellness"
+          ],
+          "intent": "commercial",
+          "audience": "Clients seeking emotional wellness support",
+          "contentType": "service",
+          "status": "candidate",
+          "generatedAt": "2026-05-22T16:29:08.062Z"
+        },
+        {
+          "id": "reddit_rss_ai_wellness-today-was-a-good-day",
+          "query": "today was a good day",
+          "source": "reddit_rss_ai_wellness",
+          "sourceType": "rss",
+          "tags": [
+            "general_emotional_wellness"
+          ],
+          "intent": "informational",
+          "audience": "Clients seeking emotional wellness support",
+          "contentType": "answer",
+          "status": "candidate",
+          "generatedAt": "2026-05-22T16:29:08.062Z"
+        },
+        {
+          "id": "reddit_rss_ai_wellness-the-things-people-don-t-usually-talk-about-when-making-a-tcg-ccg",
+          "query": "The things people don’t usually talk about when making a TCG/CCG",
+          "source": "reddit_rss_ai_wellness",
+          "sourceType": "rss",
+          "tags": [
+            "general_emotional_wellness"
+          ],
+          "intent": "informational",
+          "audience": "Clients seeking emotional wellness support",
+          "contentType": "answer",
+          "status": "candidate",
+          "generatedAt": "2026-05-22T16:29:08.062Z"
+        },
+        {
+          "id": "reddit_rss_genz_mental_health-mentalhealththerapy",
+          "query": "MentalHealthTherapy",
+          "source": "reddit_rss_genz_mental_health",
+          "sourceType": "rss",
+          "tags": [
+            "general_emotional_wellness"
+          ],
+          "intent": "commercial",
+          "audience": "Clients seeking emotional wellness support",
+          "contentType": "service",
+          "status": "candidate",
+          "generatedAt": "2026-05-22T16:29:08.062Z"
+        },
+        {
+          "id": "reddit_rss_genz_mental_health-patient-perspectives-on-psychotherapy",
+          "query": "Patient perspectives on psychotherapy.",
+          "source": "reddit_rss_genz_mental_health",
+          "sourceType": "rss",
+          "tags": [
+            "general_emotional_wellness"
+          ],
+          "intent": "commercial",
+          "audience": "Clients seeking emotional wellness support",
+          "contentType": "service",
+          "status": "candidate",
+          "generatedAt": "2026-05-22T16:29:08.062Z"
+        },
+        {
+          "id": "reddit_rss_genz_mental_health-a-subreddit-for-cognitive-behavioral-therapy",
+          "query": "A Subreddit for Cognitive Behavioral Therapy",
+          "source": "reddit_rss_genz_mental_health",
+          "sourceType": "rss",
+          "tags": [
+            "general_emotional_wellness"
+          ],
+          "intent": "commercial",
+          "audience": "Clients seeking emotional wellness support",
+          "contentType": "service",
+          "status": "candidate",
+          "generatedAt": "2026-05-22T16:29:08.062Z"
+        },
+        {
+          "id": "reddit_rss_genz_mental_health-repost-academic-digital-media-internet-technology-use-and-mental-health-survey-a",
+          "query": "[Repost, Academic] Digital Media/Internet/Technology Use and Mental Health Survey (ages 18-25, Amazon gift card raffle!)",
+          "source": "reddit_rss_genz_mental_health",
+          "sourceType": "rss",
+          "tags": [
+            "general_emotional_wellness"
+          ],
+          "intent": "informational",
+          "audience": "Clients seeking emotional wellness support",
+          "contentType": "answer",
+          "status": "candidate",
+          "generatedAt": "2026-05-22T16:29:08.062Z"
+        },
+        {
+          "id": "reddit_rss_genz_mental_health-what-do-i-do-with-my-life",
+          "query": "What do I do with my life?",
+          "source": "reddit_rss_genz_mental_health",
+          "sourceType": "rss",
+          "tags": [
+            "general_emotional_wellness"
+          ],
+          "intent": "informational",
+          "audience": "Clients seeking emotional wellness support",
+          "contentType": "answer",
+          "status": "candidate",
+          "generatedAt": "2026-05-22T16:29:08.062Z"
+        },
+        {
+          "id": "reddit_rss_genz_mental_health-think-long-term-to-supersize-you-day-142",
+          "query": "Think Long Term To Supersize You! Day 142!",
+          "source": "reddit_rss_genz_mental_health",
+          "sourceType": "rss",
+          "tags": [
+            "general_emotional_wellness"
+          ],
+          "intent": "informational",
+          "audience": "Clients seeking emotional wellness support",
+          "contentType": "answer",
+          "status": "candidate",
+          "generatedAt": "2026-05-22T16:29:08.062Z"
+        },
+        {
+          "id": "reddit_rss_genz_mental_health-i-suspect-i-have-bipolar-ii-and-don-t-know-if-i-should-see-someone-or-not-yet-i-",
+          "query": "I suspect I have bipolar II and don’t know if I should see someone or not yet. I don’t want to.",
+          "source": "reddit_rss_genz_mental_health",
+          "sourceType": "rss",
+          "tags": [
+            "general_emotional_wellness"
+          ],
+          "intent": "informational",
+          "audience": "Clients seeking emotional wellness support",
+          "contentType": "answer",
+          "status": "candidate",
+          "generatedAt": "2026-05-22T16:29:08.062Z"
+        },
+        {
+          "id": "reddit_rss_genz_mental_health-how-to-cope-with-leaving-behind-my-soul-dog",
+          "query": "How to cope with leaving behind my soul dog",
+          "source": "reddit_rss_genz_mental_health",
+          "sourceType": "rss",
+          "tags": [
+            "general_emotional_wellness"
+          ],
+          "intent": "informational",
+          "audience": "Clients seeking emotional wellness support",
+          "contentType": "answer",
+          "status": "candidate",
+          "generatedAt": "2026-05-22T16:29:08.062Z"
+        },
+        {
+          "id": "reddit_rss_genz_mental_health-how-do-you-and-your-partner-cope-with-hellworld",
+          "query": "How do you and your partner cope with Hellworld?",
+          "source": "reddit_rss_genz_mental_health",
+          "sourceType": "rss",
+          "tags": [
+            "general_emotional_wellness"
+          ],
+          "intent": "informational",
+          "audience": "Clients seeking emotional wellness support",
+          "contentType": "answer",
+          "status": "candidate",
+          "generatedAt": "2026-05-22T16:29:08.062Z"
+        },
+        {
+          "id": "reddit_rss_genz_mental_health-this-is-what-grok-predicted-analyzing-cbse-s-shameless-and-irresponsible-behavio",
+          "query": "This is what grok predicted analyzing CBSE's shameless and irresponsible behavior",
+          "source": "reddit_rss_genz_mental_health",
+          "sourceType": "rss",
+          "tags": [
+            "general_emotional_wellness"
+          ],
+          "intent": "informational",
+          "audience": "Clients seeking emotional wellness support",
+          "contentType": "answer",
+          "status": "candidate",
+          "generatedAt": "2026-05-22T16:29:08.062Z"
+        },
+        {
+          "id": "reddit_rss_genz_mental_health-i-want-to-just-get-this-off-my-chest-and-i-am-just-angry-and-bitter",
+          "query": "I want to just get this off my chest and I am just angry and bitter",
+          "source": "reddit_rss_genz_mental_health",
+          "sourceType": "rss",
+          "tags": [
+            "general_emotional_wellness"
+          ],
+          "intent": "informational",
+          "audience": "Clients seeking emotional wellness support",
+          "contentType": "answer",
+          "status": "candidate",
+          "generatedAt": "2026-05-22T16:29:08.062Z"
+        },
+        {
+          "id": "reddit_rss_genz_mental_health-otowa-is-a-terrible-coach",
+          "query": "Otowa is a terrible coach",
+          "source": "reddit_rss_genz_mental_health",
+          "sourceType": "rss",
+          "tags": [
+            "general_emotional_wellness"
+          ],
+          "intent": "commercial",
+          "audience": "Clients seeking emotional wellness support",
+          "contentType": "service",
+          "status": "candidate",
+          "generatedAt": "2026-05-22T16:29:08.062Z"
+        },
+        {
+          "id": "reddit_rss_genz_mental_health-today-was-a-good-day",
+          "query": "today was a good day",
+          "source": "reddit_rss_genz_mental_health",
+          "sourceType": "rss",
+          "tags": [
+            "general_emotional_wellness"
+          ],
+          "intent": "informational",
+          "audience": "Clients seeking emotional wellness support",
+          "contentType": "answer",
+          "status": "candidate",
+          "generatedAt": "2026-05-22T16:29:08.062Z"
+        },
+        {
+          "id": "reddit_rss_genz_mental_health-psychologist-sibling-is-a-hypocrite",
+          "query": "Psychologist sibling is a hypocrite",
+          "source": "reddit_rss_genz_mental_health",
+          "sourceType": "rss",
+          "tags": [
+            "general_emotional_wellness"
+          ],
+          "intent": "informational",
+          "audience": "Clients seeking emotional wellness support",
+          "contentType": "answer",
+          "status": "candidate",
+          "generatedAt": "2026-05-22T16:29:08.062Z"
+        },
+        {
+          "id": "reddit_rss_genz_mental_health-bertie-speaking-in-favour-of-the-tuc-motion-on-mental-health-employers-must-reco",
+          "query": "Bertie speaking in favour of the TUC motion on mental health: “Employers must recognise their responsibility for the mental wellbeing of their employees”. The motion was passed unanimously.",
+          "source": "reddit_rss_genz_mental_health",
+          "sourceType": "rss",
+          "tags": [
+            "general_emotional_wellness"
+          ],
+          "intent": "informational",
+          "audience": "Clients seeking emotional wellness support",
+          "contentType": "answer",
+          "status": "candidate",
+          "generatedAt": "2026-05-22T16:29:08.062Z"
+        },
+        {
+          "id": "reddit_rss_genz_mental_health-28-f4m-finland-europe-asexual-looking-for-romance",
+          "query": "28 [F4M] #Finland #Europe – Asexual looking for romance",
+          "source": "reddit_rss_genz_mental_health",
+          "sourceType": "rss",
+          "tags": [
+            "general_emotional_wellness"
+          ],
+          "intent": "informational",
+          "audience": "Clients seeking emotional wellness support",
+          "contentType": "answer",
+          "status": "candidate",
+          "generatedAt": "2026-05-22T16:29:08.062Z"
+        },
+        {
+          "id": "reddit_rss_genz_mental_health-how-do-you-deal-with-being-so-tapped-in",
+          "query": "How do you deal with being so tapped in?",
+          "source": "reddit_rss_genz_mental_health",
+          "sourceType": "rss",
+          "tags": [
+            "general_emotional_wellness"
+          ],
+          "intent": "informational",
+          "audience": "Clients seeking emotional wellness support",
+          "contentType": "answer",
+          "status": "candidate",
+          "generatedAt": "2026-05-22T16:29:08.062Z"
+        },
+        {
+          "id": "reddit_rss_genz_mental_health-looking-for-a-few-positive-mission-driven-ambassadors-us-based-only-thank-you",
+          "query": "Looking for a few positive, mission-driven ambassadors US Based Only - thank you!",
+          "source": "reddit_rss_genz_mental_health",
+          "sourceType": "rss",
+          "tags": [
+            "general_emotional_wellness"
+          ],
+          "intent": "informational",
+          "audience": "Clients seeking emotional wellness support",
+          "contentType": "answer",
+          "status": "candidate",
+          "generatedAt": "2026-05-22T16:29:08.062Z"
+        },
+        {
+          "id": "google_news_workplace_mental_health-google-news",
+          "query": "Google News",
+          "source": "google_news_workplace_mental_health",
+          "sourceType": "rss",
+          "tags": [
+            "general_emotional_wellness"
+          ],
+          "intent": "informational",
+          "audience": "Clients seeking emotional wellness support",
+          "contentType": "answer",
+          "status": "candidate",
+          "generatedAt": "2026-05-22T16:29:08.062Z"
         }
       ],
-      "queryCount": 1,
-      "score": 20,
+      "queryCount": 50,
+      "score": 100,
       "targetPage": "/llm-atlas/clusters/",
       "status": "active"
     }

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-15T14:53:27.179Z",
+  "generatedAt": "2026-05-22T16:29:08.812Z",
   "candidates": [
     {
       "id": "fanout-black_women_healing",
@@ -20,8 +20,8 @@
       "candidateRoute": "/llm-atlas/fanouts/burnout-boundaries-and-over-functioning/",
       "destinationType": "llm_ingestion_only_candidate",
       "publishMode": "queued",
-      "queryCount": 1,
-      "score": 20,
+      "queryCount": 5,
+      "score": 100,
       "userNavExposure": false,
       "crawlerDiscoverable": true
     },
@@ -32,8 +32,8 @@
       "candidateRoute": "/llm-atlas/fanouts/ai-social-media-and-digital-emotional-overload/",
       "destinationType": "llm_ingestion_only_candidate",
       "publishMode": "queued",
-      "queryCount": 3,
-      "score": 60,
+      "queryCount": 10,
+      "score": 100,
       "userNavExposure": false,
       "crawlerDiscoverable": true
     },
@@ -50,14 +50,26 @@
       "crawlerDiscoverable": true
     },
     {
+      "id": "fanout-workplace_emotional_intelligence",
+      "clusterId": "workplace_emotional_intelligence",
+      "title": "Workplace emotional intelligence and mental health training",
+      "candidateRoute": "/llm-atlas/fanouts/workplace-emotional-intelligence-and-mental-health-training/",
+      "destinationType": "llm_ingestion_only_candidate",
+      "publishMode": "queued",
+      "queryCount": 8,
+      "score": 100,
+      "userNavExposure": false,
+      "crawlerDiscoverable": true
+    },
+    {
       "id": "fanout-general_emotional_wellness",
       "clusterId": "general_emotional_wellness",
       "title": "General emotional wellness and intentional living",
       "candidateRoute": "/llm-atlas/fanouts/general-emotional-wellness-and-intentional-living/",
       "destinationType": "llm_ingestion_only_candidate",
       "publishMode": "queued",
-      "queryCount": 1,
-      "score": 20,
+      "queryCount": 50,
+      "score": 100,
       "userNavExposure": false,
       "crawlerDiscoverable": true
     }

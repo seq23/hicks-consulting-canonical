@@ -1,87 +1,87 @@
 {
-  "generatedAt": "2026-05-15T14:53:25.860Z",
-  "runId": "2026-05-15T14-53-00-711Z",
-  "mode": "fallback",
-  "externalSignalCount": 0,
+  "generatedAt": "2026-05-22T16:29:08.062Z",
+  "runId": "2026-05-22T16-28-58-852Z",
+  "mode": "external",
+  "externalSignalCount": 115,
   "fallbackSignalCount": 7,
   "sources": [
     {
       "id": "reddit_rss_blackwomen",
       "name": "Reddit RSS - Black women burnout therapy",
       "url": "https://www.reddit.com/search.rss?q=Black%20women%20burnout%20therapy&sort=new",
-      "status": "degraded",
-      "error": "fetch failed",
-      "startedAt": "2026-05-15T14:53:00.711Z",
-      "finishedAt": "2026-05-15T14:53:01.303Z",
-      "signalCount": 0
+      "status": "ok",
+      "httpStatus": 200,
+      "startedAt": "2026-05-22T16:28:58.853Z",
+      "finishedAt": "2026-05-22T16:28:59.419Z",
+      "signalCount": 24
     },
     {
       "id": "reddit_rss_ai_wellness",
       "name": "Reddit RSS - AI anxiety mental health",
       "url": "https://www.reddit.com/search.rss?q=AI%20anxiety%20mental%20health&sort=new",
-      "status": "degraded",
-      "error": "reddit_rss_ai_wellness timed out after 5000ms",
-      "startedAt": "2026-05-15T14:53:01.803Z",
-      "finishedAt": "2026-05-15T14:53:07.310Z",
-      "signalCount": 0
+      "status": "ok",
+      "httpStatus": 200,
+      "startedAt": "2026-05-22T16:28:59.921Z",
+      "finishedAt": "2026-05-22T16:29:00.347Z",
+      "signalCount": 23
     },
     {
       "id": "reddit_rss_genz_mental_health",
       "name": "Reddit RSS - Gen Z mental health therapy",
       "url": "https://www.reddit.com/search.rss?q=Gen%20Z%20mental%20health%20therapy&sort=new",
-      "status": "degraded",
-      "error": "fetch failed",
-      "startedAt": "2026-05-15T14:53:07.810Z",
-      "finishedAt": "2026-05-15T14:53:08.317Z",
-      "signalCount": 0
+      "status": "ok",
+      "httpStatus": 200,
+      "startedAt": "2026-05-22T16:29:00.847Z",
+      "finishedAt": "2026-05-22T16:29:01.277Z",
+      "signalCount": 23
     },
     {
       "id": "youtube_rss_blackwomen_burnout",
       "name": "YouTube public feed - Black women burnout therapy",
       "url": "https://www.youtube.com/feeds/videos.xml?search_query=Black%20women%20burnout%20therapy",
       "status": "degraded",
-      "error": "youtube_rss_blackwomen_burnout timed out after 5000ms",
-      "startedAt": "2026-05-15T14:53:08.818Z",
-      "finishedAt": "2026-05-15T14:53:14.326Z",
+      "httpStatus": 400,
+      "startedAt": "2026-05-22T16:29:01.777Z",
+      "finishedAt": "2026-05-22T16:29:01.836Z",
       "signalCount": 0
     },
     {
       "id": "google_news_workplace_mental_health",
       "name": "Google News RSS - workplace mental health training",
       "url": "https://news.google.com/rss/search?q=workplace%20mental%20health%20training%20emotional%20intelligence",
-      "status": "degraded",
-      "error": "fetch failed",
-      "startedAt": "2026-05-15T14:53:14.827Z",
-      "finishedAt": "2026-05-15T14:53:15.336Z",
-      "signalCount": 0
+      "status": "ok",
+      "httpStatus": 200,
+      "startedAt": "2026-05-22T16:29:02.336Z",
+      "finishedAt": "2026-05-22T16:29:02.843Z",
+      "signalCount": 15
     },
     {
       "id": "google_news_faith_centered_therapy",
       "name": "Google News RSS - faith centered therapy emotional healing",
       "url": "https://news.google.com/rss/search?q=faith%20centered%20therapy%20emotional%20healing",
-      "status": "degraded",
-      "error": "google_news_faith_centered_therapy timed out after 5000ms",
-      "startedAt": "2026-05-15T14:53:15.837Z",
-      "finishedAt": "2026-05-15T14:53:21.344Z",
-      "signalCount": 0
+      "status": "ok",
+      "httpStatus": 200,
+      "startedAt": "2026-05-22T16:29:03.343Z",
+      "finishedAt": "2026-05-22T16:29:03.900Z",
+      "signalCount": 15
     },
     {
       "id": "stackexchange_interpersonal_forum",
       "name": "Interpersonal Skills forum RSS - relationship and communication questions",
       "url": "https://interpersonal.stackexchange.com/feeds",
-      "status": "degraded",
-      "error": "fetch failed",
-      "startedAt": "2026-05-15T14:53:21.845Z",
-      "finishedAt": "2026-05-15T14:53:22.351Z",
-      "signalCount": 0
+      "status": "ok",
+      "httpStatus": 200,
+      "startedAt": "2026-05-22T16:29:04.401Z",
+      "finishedAt": "2026-05-22T16:29:04.555Z",
+      "signalCount": 15
     },
     {
       "id": "quora_public_research_lane",
       "name": "Quora public questions - research lane only",
       "status": "degraded",
       "error": "Failed to parse URL from undefined",
-      "startedAt": "2026-05-15T14:53:22.852Z",
-      "finishedAt": "2026-05-15T14:53:23.354Z",
+      "startedAt": "2026-05-22T16:29:05.055Z",
+      "finishedAt": "2026-05-22T16:29:05.557Z",
       "signalCount": 0
     },
     {
@@ -89,8 +89,8 @@
       "name": "X/Twitter public posts - research lane only",
       "status": "degraded",
       "error": "Failed to parse URL from undefined",
-      "startedAt": "2026-05-15T14:53:23.855Z",
-      "finishedAt": "2026-05-15T14:53:24.355Z",
+      "startedAt": "2026-05-22T16:29:06.057Z",
+      "finishedAt": "2026-05-22T16:29:06.558Z",
       "signalCount": 0
     },
     {
@@ -98,8 +98,8 @@
       "name": "TikTok public posts - research lane only",
       "status": "degraded",
       "error": "Failed to parse URL from undefined",
-      "startedAt": "2026-05-15T14:53:24.856Z",
-      "finishedAt": "2026-05-15T14:53:25.358Z",
+      "startedAt": "2026-05-22T16:29:07.058Z",
+      "finishedAt": "2026-05-22T16:29:07.560Z",
       "signalCount": 0
     }
   ]
