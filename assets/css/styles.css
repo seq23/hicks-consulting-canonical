@@ -1266,11 +1266,18 @@ footer {
 
 /* 2026-05-26 requested fixes: global theme parity, mobile tap reliability, and requested visual placements. */
 .home-white-statement {
+  color: var(--olive-ink) !important;
+  text-shadow: none;
+}
+.hero-v2 .home-white-statement,
+:root[data-theme='light'] .home-white-statement {
+  color: var(--olive-ink) !important;
+}
+.dark-surface .home-white-statement,
+.green-surface .home-white-statement,
+.surface-dark .home-white-statement {
   color: #fff !important;
   text-shadow: 0 2px 12px rgba(0,0,0,.28);
-}
-:root[data-theme='light'] .home-white-statement {
-  color: #fff !important;
 }
 .therapy-heading-image,
 .groups-photo-card {
@@ -1381,6 +1388,7 @@ footer {
 }
 :root[data-theme='dark'] .home-white-statement {
   color: #fff !important;
+  text-shadow: 0 2px 12px rgba(0,0,0,.28);
 }
 :root[data-theme='dark'] .hero-intro,
 :root[data-theme='dark'] .short-answer,

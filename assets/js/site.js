@@ -216,20 +216,49 @@ function wireBrowserCompatibility() {
   });
 }
 
+function wireAnimations() {
+  const animated = Array.from(document.querySelectorAll('[data-animate]'));
+  if (!animated.length) return;
+
+  if (!('IntersectionObserver' in window)) {
+    animated.forEach((el) => el.classList.add('is-visible'));
+    return;
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add('is-visible');
+      observer.unobserve(entry.target);
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+
+  animated.forEach((el) => observer.observe(el));
+}
+
+function wireAnalytics() {
+  document.documentElement.setAttribute('data-js-ready', 'true');
+}
+
+function runSafely(fn) {
+  try { fn(); } catch (error) { console.error('[Hicks site]', error); }
+}
+
 document.addEventListener('DOMContentLoaded', () => {
-  renderPublishedResources('published-resources');
-  renderPublishedResourcesList('insights-published', 'insights');
-  renderPublishedResourcesList('articles-published', 'articles');
-  renderPublishedResourcesList('guides-published', 'guides');
-  renderPublishedResourcesList('white-papers-published', 'white-papers');
-  wireFormLinks();
-  wireTrainingInquiryForm();
-  wireGroupsInquiryForm();
-  wireAnimations();
-  wireMobileNav();
-  wireThemeToggle();
-  wireBrowserCompatibility();
-  wireAnalytics();
+  // Theme and navigation must wire first. If a content widget fails later, the core controls still work.
+  runSafely(wireThemeToggle);
+  runSafely(wireMobileNav);
+  runSafely(wireBrowserCompatibility);
+  runSafely(wireAnimations);
+  runSafely(wireAnalytics);
+  runSafely(() => renderPublishedResources('published-resources'));
+  runSafely(() => renderPublishedResourcesList('insights-published', 'insights'));
+  runSafely(() => renderPublishedResourcesList('articles-published', 'articles'));
+  runSafely(() => renderPublishedResourcesList('guides-published', 'guides'));
+  runSafely(() => renderPublishedResourcesList('white-papers-published', 'white-papers'));
+  runSafely(wireFormLinks);
+  runSafely(wireTrainingInquiryForm);
+  runSafely(wireGroupsInquiryForm);
 });
 
 window.wireFormLinks = wireFormLinks;
