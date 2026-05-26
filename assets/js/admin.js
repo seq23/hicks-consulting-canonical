@@ -1,3 +1,69 @@
+
+function applyHicksTheme(theme) {
+  const isDark = theme === 'dark';
+  document.documentElement.setAttribute('data-theme', isDark ? 'dark' : 'light');
+  document.documentElement.style.setProperty('color-scheme', isDark ? 'dark' : 'light');
+  document.querySelectorAll('.theme-toggle').forEach((toggle) => {
+    toggle.setAttribute('aria-pressed', String(isDark));
+    toggle.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+    const icon = toggle.querySelector('.theme-icon');
+    const text = toggle.querySelector('.theme-text');
+    if (icon) icon.textContent = isDark ? '☼' : '☾';
+    if (text) text.textContent = isDark ? 'Light' : 'Dark';
+  });
+}
+
+function wireThemeToggle() {
+  const toggles = Array.from(document.querySelectorAll('.theme-toggle'));
+  if (!toggles.length) return;
+  let stored = 'light';
+  try { stored = localStorage.getItem('hicks-theme') || 'light'; } catch (e) {}
+  applyHicksTheme(stored === 'dark' ? 'dark' : 'light');
+  toggles.forEach((toggle) => {
+    toggle.addEventListener('click', (event) => {
+      event.preventDefault();
+      const current = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+      const nextTheme = current === 'dark' ? 'light' : 'dark';
+      try { localStorage.setItem('hicks-theme', nextTheme); } catch (e) {}
+      applyHicksTheme(nextTheme);
+    });
+  });
+}
+
+function wireMobileNav() {
+  const toggles = Array.from(document.querySelectorAll('.nav-toggle'));
+  const nav = document.getElementById('site-navigation');
+  if (!toggles.length || !nav) return;
+  const setNavState = (isOpen) => {
+    toggles.forEach((toggle) => {
+      toggle.setAttribute('aria-expanded', String(isOpen));
+      toggle.setAttribute('aria-label', isOpen ? 'Close navigation' : 'Open navigation');
+    });
+    nav.classList.toggle('is-open', isOpen);
+    document.body.classList.toggle('nav-open', isOpen);
+  };
+  toggles.forEach((toggle) => {
+    toggle.addEventListener('click', (event) => {
+      event.preventDefault();
+      event.stopPropagation();
+      const isOpen = toggle.getAttribute('aria-expanded') === 'true';
+      setNavState(!isOpen);
+    });
+  });
+  nav.querySelectorAll('a, button').forEach((item) => item.addEventListener('click', () => setNavState(false)));
+  document.addEventListener('click', (event) => {
+    if (!document.body.classList.contains('nav-open')) return;
+    if (nav.contains(event.target) || toggles.some((toggle) => toggle.contains(event.target))) return;
+    setNavState(false);
+  });
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 760) setNavState(false);
+  });
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') setNavState(false);
+  });
+}
+
 const ADMIN_PASSWORD_HASH = 'c7ef3319e6cf6aab9035156df95f18dfec2ba2178f733940eda688758805708b';
 const SESSION_KEY = 'hc_admin_unlocked';
 let ADMIN_ITEMS = [];
@@ -241,5 +307,7 @@ window.unlockAdmin = unlockAdmin;
 window.lockAdmin = lockAdmin;
 
 document.addEventListener('DOMContentLoaded', async () => {
+  wireMobileNav();
+  wireThemeToggle();
   if (sessionStorage.getItem(SESSION_KEY) === 'true') await renderAdmin();
 });

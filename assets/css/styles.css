@@ -1263,3 +1263,142 @@ footer {
   opacity: 1 !important;
   transform: none !important;
 }
+
+/* 2026-05-26 requested fixes: global theme parity, mobile tap reliability, and requested visual placements. */
+.home-white-statement {
+  color: #fff !important;
+  text-shadow: 0 2px 12px rgba(0,0,0,.28);
+}
+:root[data-theme='light'] .home-white-statement {
+  color: #fff !important;
+}
+.therapy-heading-image,
+.groups-photo-card {
+  margin: 1.35rem 0 0;
+}
+.therapy-heading-image img,
+.groups-photo-card img {
+  width: 100%;
+  border-radius: 28px;
+  box-shadow: var(--shadow-soft);
+  border: 1px solid var(--line);
+  object-fit: cover;
+}
+.therapy-heading-image img {
+  max-height: 420px;
+  object-position: center;
+}
+.groups-photo-card img {
+  max-height: 520px;
+  object-position: center;
+}
+.brand-mark,
+.hero-logo-medallion {
+  background: transparent !important;
+  box-shadow: none;
+}
+.brand-mark img,
+.hero-logo-medallion img {
+  background: transparent !important;
+}
+.nav-toggle,
+.theme-toggle {
+  position: relative;
+  z-index: 80;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+.theme-toggle {
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+@media (max-width: 760px) {
+  .site-header { z-index: 100; }
+  .nav-wrap {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 48px 48px;
+    align-items: center;
+    gap: .55rem;
+  }
+  .brand {
+    max-width: none;
+    min-width: 0;
+    grid-column: 1;
+  }
+  .nav-toggle { grid-column: 2; grid-row: 1; }
+  .theme-toggle {
+    grid-column: 3;
+    grid-row: 1;
+    width: 48px;
+    height: 48px;
+    min-height: 48px;
+    padding: 0;
+  }
+  .main-nav {
+    grid-column: 1 / -1;
+    top: calc(100% + .45rem);
+    z-index: 70;
+    max-height: calc(100vh - 96px);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+  }
+  .main-nav a {
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+  }
+  body.nav-open .main-nav { display: flex; }
+}
+@media (max-width: 480px) {
+  .nav-wrap { width: min(100% - 1rem, 1180px); }
+  .brand strong { font-size: 1rem; }
+  .brand-copy > span { font-size: .49rem; }
+  .brand-mark { width: 52px; height: 38px; flex-basis: 52px; }
+  .therapy-heading-image img,
+  .groups-photo-card img { max-height: 340px; }
+}
+:root[data-theme='dark'] .subhero,
+:root[data-theme='dark'] main,
+:root[data-theme='dark'] .section,
+:root[data-theme='dark'] .section.section-quiet {
+  color: var(--charcoal);
+}
+:root[data-theme='dark'] .lead,
+:root[data-theme='dark'] p,
+:root[data-theme='dark'] li,
+:root[data-theme='dark'] summary,
+:root[data-theme='dark'] label,
+:root[data-theme='dark'] .faq-list details,
+:root[data-theme='dark'] .article-body,
+:root[data-theme='dark'] .hero-copy,
+:root[data-theme='dark'] .footer-grid p {
+  color: #d8cfb9;
+}
+:root[data-theme='dark'] .hero-statement.transparent-statement:not(.home-white-statement) {
+  color: #e9ddc1;
+}
+:root[data-theme='dark'] .home-white-statement {
+  color: #fff !important;
+}
+:root[data-theme='dark'] .hero-intro,
+:root[data-theme='dark'] .short-answer,
+:root[data-theme='dark'] .editorial-intro,
+:root[data-theme='dark'] .hero-statement.transparent-statement,
+:root[data-theme='dark'] .section-card-flat,
+:root[data-theme='dark'] .service-panel,
+:root[data-theme='dark'] .soft-panel,
+:root[data-theme='dark'] .admin-table,
+:root[data-theme='dark'] .faq-list details,
+:root[data-theme='dark'] .inquiry-form,
+:root[data-theme='dark'] .groups-photo-card {
+  background: rgba(20, 29, 19, .78);
+  border-color: rgba(234,217,180,.16);
+}
+:root[data-theme='dark'] .hero-v2 .short-answer,
+:root[data-theme='dark'] .hero-v2 .short-answer p {
+  color: #e9ddc1;
+}
+:root[data-theme='dark'] .form-status.success { color: #dff2cf; }
+:root[data-theme='dark'] .form-status.error { color: #ffd6c9; }

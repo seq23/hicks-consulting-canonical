@@ -235,64 +235,72 @@ document.addEventListener('DOMContentLoaded', () => {
 window.wireFormLinks = wireFormLinks;
 
 function wireMobileNav() {
-  const toggle = document.querySelector('.nav-toggle');
+  const toggles = Array.from(document.querySelectorAll('.nav-toggle'));
   const nav = document.getElementById('site-navigation');
-  if (!toggle || !nav) return;
+  if (!toggles.length || !nav) return;
 
-  const closeNav = () => {
-    toggle.setAttribute('aria-expanded', 'false');
-    toggle.setAttribute('aria-label', 'Open navigation');
-    nav.classList.remove('is-open');
-    document.body.classList.remove('nav-open');
+  const setNavState = (isOpen) => {
+    toggles.forEach((toggle) => {
+      toggle.setAttribute('aria-expanded', String(isOpen));
+      toggle.setAttribute('aria-label', isOpen ? 'Close navigation' : 'Open navigation');
+    });
+    nav.classList.toggle('is-open', isOpen);
+    document.body.classList.toggle('nav-open', isOpen);
   };
 
-  const openNav = () => {
-    toggle.setAttribute('aria-expanded', 'true');
-    toggle.setAttribute('aria-label', 'Close navigation');
-    nav.classList.add('is-open');
-    document.body.classList.add('nav-open');
-  };
-
-  toggle.addEventListener('click', () => {
-    const isOpen = toggle.getAttribute('aria-expanded') === 'true';
-    if (isOpen) closeNav();
-    else openNav();
+  toggles.forEach((toggle) => {
+    toggle.addEventListener('click', (event) => {
+      event.preventDefault();
+      event.stopPropagation();
+      const isOpen = toggle.getAttribute('aria-expanded') === 'true';
+      setNavState(!isOpen);
+    });
   });
 
-  nav.querySelectorAll('a').forEach(link => link.addEventListener('click', closeNav));
+  nav.querySelectorAll('a, button').forEach((item) => item.addEventListener('click', () => setNavState(false)));
+  document.addEventListener('click', (event) => {
+    if (!document.body.classList.contains('nav-open')) return;
+    if (nav.contains(event.target) || toggles.some((toggle) => toggle.contains(event.target))) return;
+    setNavState(false);
+  });
   window.addEventListener('resize', () => {
-    if (window.innerWidth > 760) closeNav();
+    if (window.innerWidth > 760) setNavState(false);
   });
   document.addEventListener('keydown', (event) => {
-    if (event.key === 'Escape') closeNav();
+    if (event.key === 'Escape') setNavState(false);
   });
 }
 
 
-function wireThemeToggle() {
-  const toggle = document.querySelector('.theme-toggle');
-  if (!toggle) return;
-
-  const setTheme = (theme) => {
-    const isDark = theme === 'dark';
-    document.documentElement.setAttribute('data-theme', isDark ? 'dark' : 'light');
+function applyHicksTheme(theme) {
+  const isDark = theme === 'dark';
+  document.documentElement.setAttribute('data-theme', isDark ? 'dark' : 'light');
+  document.documentElement.style.setProperty('color-scheme', isDark ? 'dark' : 'light');
+  document.querySelectorAll('.theme-toggle').forEach((toggle) => {
     toggle.setAttribute('aria-pressed', String(isDark));
     toggle.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
     const icon = toggle.querySelector('.theme-icon');
     const text = toggle.querySelector('.theme-text');
     if (icon) icon.textContent = isDark ? '☼' : '☾';
     if (text) text.textContent = isDark ? 'Light' : 'Dark';
-    try { localStorage.setItem('hicks-theme', isDark ? 'dark' : 'light'); } catch (e) {}
-    document.documentElement.style.setProperty('color-scheme', isDark ? 'dark' : 'light');
-  };
-
-  let stored = 'light';
-  try { stored = localStorage.getItem('hicks-theme') || 'light'; } catch (e) {}
-  setTheme(stored === 'dark' ? 'dark' : 'light');
-
-  toggle.addEventListener('click', () => {
-    const current = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
-    setTheme(current === 'dark' ? 'light' : 'dark');
   });
 }
 
+function wireThemeToggle() {
+  const toggles = Array.from(document.querySelectorAll('.theme-toggle'));
+  if (!toggles.length) return;
+
+  let stored = 'light';
+  try { stored = localStorage.getItem('hicks-theme') || 'light'; } catch (e) {}
+  applyHicksTheme(stored === 'dark' ? 'dark' : 'light');
+
+  toggles.forEach((toggle) => {
+    toggle.addEventListener('click', (event) => {
+      event.preventDefault();
+      const current = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+      const nextTheme = current === 'dark' ? 'light' : 'dark';
+      try { localStorage.setItem('hicks-theme', nextTheme); } catch (e) {}
+      applyHicksTheme(nextTheme);
+    });
+  });
+}
