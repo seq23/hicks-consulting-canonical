@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-05-22T16:29:08.062Z",
-  "runId": "2026-05-22T16-28-58-852Z",
+  "generatedAt": "2026-05-26T16:01:05.003Z",
+  "runId": "2026-05-26T16-00-52-897Z",
   "mode": "external",
   "productionRule": "No-auth ingestion must degrade gracefully. Source failure is logged as degraded and must not break local builds. Strict scheduled mode may fail on fallback-only output.",
   "post2027Use": "Signals feed normalized query clusters, atlas expansion, fan-out surfaces, and scheduled drafting after 2027-01-01.",
@@ -11,9 +11,9 @@
       "url": "https://www.reddit.com/search.rss?q=Black%20women%20burnout%20therapy&sort=new",
       "status": "ok",
       "httpStatus": 200,
-      "startedAt": "2026-05-22T16:28:58.853Z",
-      "finishedAt": "2026-05-22T16:28:59.419Z",
-      "signalCount": 24
+      "startedAt": "2026-05-26T16:00:52.898Z",
+      "finishedAt": "2026-05-26T16:00:54.404Z",
+      "signalCount": 25
     },
     {
       "id": "reddit_rss_ai_wellness",
@@ -21,9 +21,9 @@
       "url": "https://www.reddit.com/search.rss?q=AI%20anxiety%20mental%20health&sort=new",
       "status": "ok",
       "httpStatus": 200,
-      "startedAt": "2026-05-22T16:28:59.921Z",
-      "finishedAt": "2026-05-22T16:29:00.347Z",
-      "signalCount": 23
+      "startedAt": "2026-05-26T16:00:54.905Z",
+      "finishedAt": "2026-05-26T16:00:56.043Z",
+      "signalCount": 22
     },
     {
       "id": "reddit_rss_genz_mental_health",
@@ -31,9 +31,9 @@
       "url": "https://www.reddit.com/search.rss?q=Gen%20Z%20mental%20health%20therapy&sort=new",
       "status": "ok",
       "httpStatus": 200,
-      "startedAt": "2026-05-22T16:29:00.847Z",
-      "finishedAt": "2026-05-22T16:29:01.277Z",
-      "signalCount": 23
+      "startedAt": "2026-05-26T16:00:56.543Z",
+      "finishedAt": "2026-05-26T16:00:57.815Z",
+      "signalCount": 25
     },
     {
       "id": "youtube_rss_blackwomen_burnout",
@@ -41,8 +41,8 @@
       "url": "https://www.youtube.com/feeds/videos.xml?search_query=Black%20women%20burnout%20therapy",
       "status": "degraded",
       "httpStatus": 400,
-      "startedAt": "2026-05-22T16:29:01.777Z",
-      "finishedAt": "2026-05-22T16:29:01.836Z",
+      "startedAt": "2026-05-26T16:00:58.315Z",
+      "finishedAt": "2026-05-26T16:00:58.409Z",
       "signalCount": 0
     },
     {
@@ -51,8 +51,8 @@
       "url": "https://news.google.com/rss/search?q=workplace%20mental%20health%20training%20emotional%20intelligence",
       "status": "ok",
       "httpStatus": 200,
-      "startedAt": "2026-05-22T16:29:02.336Z",
-      "finishedAt": "2026-05-22T16:29:02.843Z",
+      "startedAt": "2026-05-26T16:00:58.909Z",
+      "finishedAt": "2026-05-26T16:00:59.583Z",
       "signalCount": 15
     },
     {
@@ -61,8 +61,8 @@
       "url": "https://news.google.com/rss/search?q=faith%20centered%20therapy%20emotional%20healing",
       "status": "ok",
       "httpStatus": 200,
-      "startedAt": "2026-05-22T16:29:03.343Z",
-      "finishedAt": "2026-05-22T16:29:03.900Z",
+      "startedAt": "2026-05-26T16:01:00.083Z",
+      "finishedAt": "2026-05-26T16:01:00.675Z",
       "signalCount": 15
     },
     {
@@ -71,8 +71,8 @@
       "url": "https://interpersonal.stackexchange.com/feeds",
       "status": "ok",
       "httpStatus": 200,
-      "startedAt": "2026-05-22T16:29:04.401Z",
-      "finishedAt": "2026-05-22T16:29:04.555Z",
+      "startedAt": "2026-05-26T16:01:01.175Z",
+      "finishedAt": "2026-05-26T16:01:01.497Z",
       "signalCount": 15
     },
     {
@@ -80,8 +80,8 @@
       "name": "Quora public questions - research lane only",
       "status": "degraded",
       "error": "Failed to parse URL from undefined",
-      "startedAt": "2026-05-22T16:29:05.055Z",
-      "finishedAt": "2026-05-22T16:29:05.557Z",
+      "startedAt": "2026-05-26T16:01:01.997Z",
+      "finishedAt": "2026-05-26T16:01:02.497Z",
       "signalCount": 0
     },
     {
@@ -89,8 +89,8 @@
       "name": "X/Twitter public posts - research lane only",
       "status": "degraded",
       "error": "Failed to parse URL from undefined",
-      "startedAt": "2026-05-22T16:29:06.057Z",
-      "finishedAt": "2026-05-22T16:29:06.558Z",
+      "startedAt": "2026-05-26T16:01:02.998Z",
+      "finishedAt": "2026-05-26T16:01:03.500Z",
       "signalCount": 0
     },
     {
@@ -98,8 +98,8 @@
       "name": "TikTok public posts - research lane only",
       "status": "degraded",
       "error": "Failed to parse URL from undefined",
-      "startedAt": "2026-05-22T16:29:07.058Z",
-      "finishedAt": "2026-05-22T16:29:07.560Z",
+      "startedAt": "2026-05-26T16:01:04.000Z",
+      "finishedAt": "2026-05-26T16:01:04.501Z",
       "signalCount": 0
     }
   ],
@@ -114,7 +114,7 @@
         "black_women",
         "burnout"
       ],
-      "collectedAt": "2026-05-22T16:28:59.419Z"
+      "collectedAt": "2026-05-26T16:00:54.404Z"
     },
     {
       "id": "reddit_rss_blackwomen-r-blackwomens",
@@ -125,7 +125,7 @@
       "tags": [
         "general_emotional_wellness"
       ],
-      "collectedAt": "2026-05-22T16:28:59.419Z"
+      "collectedAt": "2026-05-26T16:00:54.404Z"
     },
     {
       "id": "reddit_rss_blackwomen-blackgirlshealing",
@@ -136,7 +136,7 @@
       "tags": [
         "general_emotional_wellness"
       ],
-      "collectedAt": "2026-05-22T16:28:59.419Z"
+      "collectedAt": "2026-05-26T16:00:54.404Z"
     },
     {
       "id": "reddit_rss_blackwomen-most-suffering-is-abuse-inequality-let-s-end-the-violence-harmful-labels-hardcor",
@@ -147,228 +147,239 @@
       "tags": [
         "general_emotional_wellness"
       ],
-      "collectedAt": "2026-05-22T16:28:59.419Z"
+      "collectedAt": "2026-05-26T16:00:54.404Z"
     },
     {
-      "id": "reddit_rss_blackwomen-aitah-for-not-thanking-my-husband-for-doing-work-around-the-house",
-      "title": "AITAH for not thanking my husband for doing work around the house?",
-      "query": "AITAH for not thanking my husband for doing work around the house?",
-      "source": "reddit_rss_blackwomen",
-      "sourceType": "rss",
-      "tags": [
-        "ai_digital_wellness",
-        "workplace_emotional_intelligence"
-      ],
-      "collectedAt": "2026-05-22T16:28:59.419Z"
-    },
-    {
-      "id": "reddit_rss_blackwomen-very-lonely",
-      "title": "Very lonely",
-      "query": "Very lonely",
+      "id": "reddit_rss_blackwomen-understimulated-while-physically-disabled",
+      "title": "understimulated while physically disabled",
+      "query": "understimulated while physically disabled",
       "source": "reddit_rss_blackwomen",
       "sourceType": "rss",
       "tags": [
         "general_emotional_wellness"
       ],
-      "collectedAt": "2026-05-22T16:28:59.419Z"
+      "collectedAt": "2026-05-26T16:00:54.404Z"
     },
     {
-      "id": "reddit_rss_blackwomen-after-thousands-of-hours-of-counseling-sessions-i-have-picked-up-insight-into-wh",
-      "title": "After thousands of hours of counseling sessions, I have picked up insight into what works well...",
-      "query": "After thousands of hours of counseling sessions, I have picked up insight into what works well...",
-      "source": "reddit_rss_blackwomen",
-      "sourceType": "rss",
-      "tags": [
-        "workplace_emotional_intelligence"
-      ],
-      "collectedAt": "2026-05-22T16:28:59.419Z"
-    },
-    {
-      "id": "reddit_rss_blackwomen-the-echo-of-the-walls-in-irbid",
-      "title": "The Echo of the Walls in Irbid",
-      "query": "The Echo of the Walls in Irbid",
+      "id": "reddit_rss_blackwomen-what-if-the-mental-health-crisis-is-actually-a-spiritual-crisis",
+      "title": "What If the Mental Health Crisis Is Actually a Spiritual Crisis?",
+      "query": "What If the Mental Health Crisis Is Actually a Spiritual Crisis?",
       "source": "reddit_rss_blackwomen",
       "sourceType": "rss",
       "tags": [
         "general_emotional_wellness"
       ],
-      "collectedAt": "2026-05-22T16:28:59.419Z"
+      "collectedAt": "2026-05-26T16:00:54.404Z"
     },
     {
-      "id": "reddit_rss_blackwomen-intro-advice-needed",
-      "title": "Intro/advice needed",
-      "query": "Intro/advice needed",
+      "id": "reddit_rss_blackwomen-please-don-t-tell-me-to-go-to-therapy",
+      "title": "please don't tell me to go to therapy",
+      "query": "please don't tell me to go to therapy",
       "source": "reddit_rss_blackwomen",
       "sourceType": "rss",
       "tags": [
         "general_emotional_wellness"
       ],
-      "collectedAt": "2026-05-22T16:28:59.419Z"
+      "collectedAt": "2026-05-26T16:00:54.404Z"
     },
     {
-      "id": "reddit_rss_blackwomen-the-ultimate-backpack-buying-guide-2026-best-travel-carry-on-work-packable-anti-",
-      "title": "The Ultimate Backpack Buying Guide (2026): Best Travel, Carry-On, Work,Packable & Anti-Theft Backpacks Compared",
-      "query": "The Ultimate Backpack Buying Guide (2026): Best Travel, Carry-On, Work,Packable & Anti-Theft Backpacks Compared",
-      "source": "reddit_rss_blackwomen",
-      "sourceType": "rss",
-      "tags": [
-        "workplace_emotional_intelligence"
-      ],
-      "collectedAt": "2026-05-22T16:28:59.419Z"
-    },
-    {
-      "id": "reddit_rss_blackwomen-lovevook-laptop-backpack-for-women-with-giant-tumbler-holder-15-6-inch-designer-",
-      "title": "LOVEVOOK Laptop Backpack for Women with Giant Tumbler Holder 15.6 inch,Designer Travel Backpack Laptop Bag College Backpack,Quilted Work Nurse Teacher Backpack Purse Computer Bag Casual Daypack, Black",
-      "query": "LOVEVOOK Laptop Backpack for Women with Giant Tumbler Holder 15.6 inch,Designer Travel Backpack Laptop Bag College Backpack,Quilted Work Nurse Teacher Backpack Purse Computer Bag Casual Daypack, Black",
-      "source": "reddit_rss_blackwomen",
-      "sourceType": "rss",
-      "tags": [
-        "workplace_emotional_intelligence"
-      ],
-      "collectedAt": "2026-05-22T16:28:59.419Z"
-    },
-    {
-      "id": "reddit_rss_blackwomen-same-thing-abel-s-been-doing-to-bella",
-      "title": "Same thing Abel’s been doing to Bella",
-      "query": "Same thing Abel’s been doing to Bella",
+      "id": "reddit_rss_blackwomen-how-would-you-navigate-entitled-in-laws",
+      "title": "How would you navigate entitled in laws",
+      "query": "How would you navigate entitled in laws",
       "source": "reddit_rss_blackwomen",
       "sourceType": "rss",
       "tags": [
         "general_emotional_wellness"
       ],
-      "collectedAt": "2026-05-22T16:28:59.419Z"
+      "collectedAt": "2026-05-26T16:00:54.404Z"
     },
     {
-      "id": "reddit_rss_blackwomen-left-my-boyfriend-of-5-years",
-      "title": "Left my boyfriend of 5 years",
-      "query": "Left my boyfriend of 5 years",
+      "id": "reddit_rss_blackwomen-how-can-we-achieve-internationalism",
+      "title": "How can we achieve Internationalism?",
+      "query": "How can we achieve Internationalism?",
       "source": "reddit_rss_blackwomen",
       "sourceType": "rss",
       "tags": [
         "general_emotional_wellness"
       ],
-      "collectedAt": "2026-05-22T16:28:59.419Z"
+      "collectedAt": "2026-05-26T16:00:54.404Z"
     },
     {
-      "id": "reddit_rss_blackwomen-i-24f-have-been-in-a-relationship-with-my-boyfriend-27m-for-around-7-years-and-i",
-      "title": "I 24F have been in a relationship with my boyfriend 27M for around 7 years, and I genuinely don’t know whether I should go back to him or walk away for good.",
-      "query": "I 24F have been in a relationship with my boyfriend 27M for around 7 years, and I genuinely don’t know whether I should go back to him or walk away for good.",
+      "id": "reddit_rss_blackwomen-cmv-if-you-re-a-man-under-22-dating-is-objectively-not-worth-it",
+      "title": "CMV: If You're a Man under ~22, Dating Is Objectively Not Worth It",
+      "query": "CMV: If You're a Man under ~22, Dating Is Objectively Not Worth It",
       "source": "reddit_rss_blackwomen",
       "sourceType": "rss",
       "tags": [
         "general_emotional_wellness"
       ],
-      "collectedAt": "2026-05-22T16:28:59.419Z"
+      "collectedAt": "2026-05-26T16:00:54.404Z"
     },
     {
-      "id": "reddit_rss_blackwomen-medication-at-30",
-      "title": "Medication at 30.",
-      "query": "Medication at 30.",
+      "id": "reddit_rss_blackwomen-a-bachelor-s-degree-doesn-t-close-the-gender-or-racial-income-gap",
+      "title": "A bachelor's degree doesn't close the gender or racial income gap",
+      "query": "A bachelor's degree doesn't close the gender or racial income gap",
       "source": "reddit_rss_blackwomen",
       "sourceType": "rss",
       "tags": [
         "general_emotional_wellness"
       ],
-      "collectedAt": "2026-05-22T16:28:59.419Z"
+      "collectedAt": "2026-05-26T16:00:54.404Z"
     },
     {
-      "id": "reddit_rss_blackwomen-need-words-of-wisdom",
-      "title": "Need Words of Wisdom",
-      "query": "Need Words of Wisdom",
+      "id": "reddit_rss_blackwomen-i-need-hope",
+      "title": "I need hope",
+      "query": "I need hope",
       "source": "reddit_rss_blackwomen",
       "sourceType": "rss",
       "tags": [
         "general_emotional_wellness"
       ],
-      "collectedAt": "2026-05-22T16:28:59.419Z"
+      "collectedAt": "2026-05-26T16:00:54.404Z"
     },
     {
-      "id": "reddit_rss_blackwomen-postmodernism-and-poststructuralism-in-the-age-of-ai",
-      "title": "Postmodernism and Poststructuralism in the Age of AI",
-      "query": "Postmodernism and Poststructuralism in the Age of AI",
+      "id": "reddit_rss_blackwomen-us-ny-h-omnis-epics-tpb-some-rare-or-oop-w-paypal",
+      "title": "[US-NY] [H] Omnis, Epics, TPB, some rare or OOP [W] Paypal",
+      "query": "[US-NY] [H] Omnis, Epics, TPB, some rare or OOP [W] Paypal",
+      "source": "reddit_rss_blackwomen",
+      "sourceType": "rss",
+      "tags": [
+        "general_emotional_wellness"
+      ],
+      "collectedAt": "2026-05-26T16:00:54.404Z"
+    },
+    {
+      "id": "reddit_rss_blackwomen-st-loris",
+      "title": "St. Loris",
+      "query": "St. Loris",
+      "source": "reddit_rss_blackwomen",
+      "sourceType": "rss",
+      "tags": [
+        "general_emotional_wellness"
+      ],
+      "collectedAt": "2026-05-26T16:00:54.404Z"
+    },
+    {
+      "id": "reddit_rss_blackwomen-cod-david-vonderhaar-talks-about-treyarch-call-of-duty-burnout-and-leaving-activ",
+      "title": "[COD] David Vonderhaar talks about Treyarch, Call of Duty burnout, and leaving Activision in rare interview",
+      "query": "[COD] David Vonderhaar talks about Treyarch, Call of Duty burnout, and leaving Activision in rare interview",
+      "source": "reddit_rss_blackwomen",
+      "sourceType": "rss",
+      "tags": [
+        "burnout"
+      ],
+      "collectedAt": "2026-05-26T16:00:54.404Z"
+    },
+    {
+      "id": "reddit_rss_blackwomen-helen-malacostrica-s-giant-isopod-seafood-chef",
+      "title": "Helen, Malacostrica's Giant Isopod seafood chef!",
+      "query": "Helen, Malacostrica's Giant Isopod seafood chef!",
+      "source": "reddit_rss_blackwomen",
+      "sourceType": "rss",
+      "tags": [
+        "general_emotional_wellness"
+      ],
+      "collectedAt": "2026-05-26T16:00:54.404Z"
+    },
+    {
+      "id": "reddit_rss_blackwomen-mom-s-abusive-relationship-for-the-past-10-years-has-drained-me",
+      "title": "Mom's abusive relationship for the past 10 years has drained me",
+      "query": "Mom's abusive relationship for the past 10 years has drained me",
       "source": "reddit_rss_blackwomen",
       "sourceType": "rss",
       "tags": [
         "ai_digital_wellness"
       ],
-      "collectedAt": "2026-05-22T16:28:59.419Z"
+      "collectedAt": "2026-05-26T16:00:54.404Z"
     },
     {
-      "id": "reddit_rss_blackwomen-the-plague-doctor-book-2-chapter-66-hot-air",
-      "title": "The Plague Doctor Book 2 Chapter 66 (Hot Air)",
-      "query": "The Plague Doctor Book 2 Chapter 66 (Hot Air)",
-      "source": "reddit_rss_blackwomen",
-      "sourceType": "rss",
-      "tags": [
-        "ai_digital_wellness"
-      ],
-      "collectedAt": "2026-05-22T16:28:59.419Z"
-    },
-    {
-      "id": "reddit_rss_blackwomen-at-this-point-why-does-something-like-gambling-feel-easier-and-more-fun-than-dat",
-      "title": "At this point, why does something like gambling feel easier and more fun than dating in this generation?",
-      "query": "At this point, why does something like gambling feel easier and more fun than dating in this generation?",
+      "id": "reddit_rss_blackwomen-how-to-navigate-my-mom-f-55-repeatedly-going-back-to-her-emotionally-abusive-m-5",
+      "title": "How to navigate my mom (F 55) repeatedly going back to her emotionally abusive (M 58) boyfriend for 10 years?",
+      "query": "How to navigate my mom (F 55) repeatedly going back to her emotionally abusive (M 58) boyfriend for 10 years?",
       "source": "reddit_rss_blackwomen",
       "sourceType": "rss",
       "tags": [
         "general_emotional_wellness"
       ],
-      "collectedAt": "2026-05-22T16:28:59.419Z"
+      "collectedAt": "2026-05-26T16:00:54.404Z"
     },
     {
-      "id": "reddit_rss_blackwomen-covid-era-white-masc-lesbians",
-      "title": "Covid era white masc lesbians?",
-      "query": "Covid era white masc lesbians?",
+      "id": "reddit_rss_blackwomen-coco-berthmann-plagiarised-most-of-her-instagram-writings-from-black-and-brown-w",
+      "title": "Coco Berthmann plagiarised most of her Instagram writings from Black and Brown women and counted on her whiteness shielding her and it did..... until now!",
+      "query": "Coco Berthmann plagiarised most of her Instagram writings from Black and Brown women and counted on her whiteness shielding her and it did..... until now!",
       "source": "reddit_rss_blackwomen",
       "sourceType": "rss",
       "tags": [
         "general_emotional_wellness"
       ],
-      "collectedAt": "2026-05-22T16:28:59.419Z"
+      "collectedAt": "2026-05-26T16:00:54.404Z"
     },
     {
-      "id": "reddit_rss_blackwomen-any-late-diagnosed-audhd-women-in-the-20s-or-30s-in-nyc-want-to-maybe-meet-up-at",
-      "title": "Any late diagnosed Audhd women in the 20s or 30s in nyc want to maybe meet up at a café?",
-      "query": "Any late diagnosed Audhd women in the 20s or 30s in nyc want to maybe meet up at a café?",
+      "id": "reddit_rss_blackwomen-help-needed-with-uncontrollable-crying",
+      "title": "help needed with uncontrollable crying",
+      "query": "help needed with uncontrollable crying",
       "source": "reddit_rss_blackwomen",
       "sourceType": "rss",
       "tags": [
         "general_emotional_wellness"
       ],
-      "collectedAt": "2026-05-22T16:28:59.419Z"
+      "collectedAt": "2026-05-26T16:00:54.404Z"
     },
     {
-      "id": "reddit_rss_blackwomen-idk-if-this-is-an-introvert-thing-or-just-a-me-thing-or-what-but-my-coworkers-di",
-      "title": "IDK if this is an introvert thing, or just a me thing, or what, but my coworkers discovered my private social media and were watching me on it without my knowledge for at least a year and i can't move past the humiliation i feel. looking for any and all advice or words of comfort.",
-      "query": "IDK if this is an introvert thing, or just a me thing, or what, but my coworkers discovered my private social media and were watching me on it without my knowledge for at least a year and i can't move past the humiliation i feel. looking for any and all advice or words of comfort.",
+      "id": "reddit_rss_blackwomen-struggling-with-my-mom-s-financial-stress-poor-choices-from-abusive-relationship",
+      "title": "Struggling with my Mom's Financial Stress/ Poor Choices from Abusive Relationship",
+      "query": "Struggling with my Mom's Financial Stress/ Poor Choices from Abusive Relationship",
       "source": "reddit_rss_blackwomen",
       "sourceType": "rss",
       "tags": [
+        "general_emotional_wellness"
+      ],
+      "collectedAt": "2026-05-26T16:00:54.404Z"
+    },
+    {
+      "id": "reddit_rss_blackwomen-uncontrollable-pee-leak-when-stopping-running-when-it-s-hot-weather",
+      "title": "Uncontrollable pee leak when stopping running when it’s hot weather",
+      "query": "Uncontrollable pee leak when stopping running when it’s hot weather",
+      "source": "reddit_rss_blackwomen",
+      "sourceType": "rss",
+      "tags": [
+        "general_emotional_wellness"
+      ],
+      "collectedAt": "2026-05-26T16:00:54.404Z"
+    },
+    {
+      "id": "reddit_rss_blackwomen-autistic-burnout-masking-work",
+      "title": "Autistic burnout & masking & work.",
+      "query": "Autistic burnout & masking & work.",
+      "source": "reddit_rss_blackwomen",
+      "sourceType": "rss",
+      "tags": [
+        "burnout",
         "workplace_emotional_intelligence"
       ],
-      "collectedAt": "2026-05-22T16:28:59.419Z"
+      "collectedAt": "2026-05-26T16:00:54.404Z"
     },
     {
-      "id": "reddit_rss_blackwomen-dimir-tempo-5-0-league-with-adapted-sideboard-post-oops-nerf",
-      "title": "Dimir Tempo 5-0 League with adapted sideboard post Oops nerf",
-      "query": "Dimir Tempo 5-0 League with adapted sideboard post Oops nerf",
+      "id": "reddit_rss_blackwomen-maga-can-t-have-it-both-ways-they-can-t-suppress-voting-so-their-felon-king-wins",
+      "title": "MAGA can't have it both ways. They can't suppress voting so their felon king wins with just a third of America voting for him and then pretend the majority of Americans can't stand the criminal predator they put in our White House",
+      "query": "MAGA can't have it both ways. They can't suppress voting so their felon king wins with just a third of America voting for him and then pretend the majority of Americans can't stand the criminal predator they put in our White House",
       "source": "reddit_rss_blackwomen",
       "sourceType": "rss",
       "tags": [
         "general_emotional_wellness"
       ],
-      "collectedAt": "2026-05-22T16:28:59.419Z"
+      "collectedAt": "2026-05-26T16:00:54.404Z"
     },
     {
-      "id": "reddit_rss_blackwomen-im-ctfu-what-is-this",
-      "title": "Im ctfu, what is this?😭😭😭",
-      "query": "Im ctfu, what is this?😭😭😭",
+      "id": "reddit_rss_blackwomen-dominicans-are-not-culturally-black",
+      "title": "DOMINICANS ARE NOT CULTURALLY BLACK",
+      "query": "DOMINICANS ARE NOT CULTURALLY BLACK",
       "source": "reddit_rss_blackwomen",
       "sourceType": "rss",
       "tags": [
         "general_emotional_wellness"
       ],
-      "collectedAt": "2026-05-22T16:28:59.419Z"
+      "collectedAt": "2026-05-26T16:00:54.404Z"
     },
     {
       "id": "reddit_rss_ai_wellness-reddit-com-search-results-ai-anxiety-mental-health",
@@ -379,7 +390,7 @@
       "tags": [
         "ai_digital_wellness"
       ],
-      "collectedAt": "2026-05-22T16:29:00.347Z"
+      "collectedAt": "2026-05-26T16:00:56.043Z"
     },
     {
       "id": "reddit_rss_ai_wellness-health-anxiety",
@@ -390,7 +401,7 @@
       "tags": [
         "general_emotional_wellness"
       ],
-      "collectedAt": "2026-05-22T16:29:00.347Z"
+      "collectedAt": "2026-05-26T16:00:56.043Z"
     },
     {
       "id": "reddit_rss_ai_wellness-social-anxiety",
@@ -401,227 +412,216 @@
       "tags": [
         "general_emotional_wellness"
       ],
-      "collectedAt": "2026-05-22T16:29:00.347Z"
+      "collectedAt": "2026-05-26T16:00:56.043Z"
     },
     {
-      "id": "reddit_rss_ai_wellness-anxiety-disorders",
-      "title": "Anxiety Disorders",
-      "query": "Anxiety Disorders",
+      "id": "reddit_rss_ai_wellness-mentalhealthuk",
+      "title": "MentalHealthUK",
+      "query": "MentalHealthUK",
       "source": "reddit_rss_ai_wellness",
       "sourceType": "rss",
       "tags": [
         "general_emotional_wellness"
       ],
-      "collectedAt": "2026-05-22T16:29:00.347Z"
+      "collectedAt": "2026-05-26T16:00:56.043Z"
     },
     {
-      "id": "reddit_rss_ai_wellness-repost-academic-digital-media-internet-technology-use-and-mental-health-survey-a",
-      "title": "[Repost, Academic] Digital Media/Internet/Technology Use and Mental Health Survey (ages 18-25, Amazon gift card raffle!)",
-      "query": "[Repost, Academic] Digital Media/Internet/Technology Use and Mental Health Survey (ages 18-25, Amazon gift card raffle!)",
-      "source": "reddit_rss_ai_wellness",
-      "sourceType": "rss",
-      "tags": [
-        "general_emotional_wellness"
-      ],
-      "collectedAt": "2026-05-22T16:29:00.347Z"
-    },
-    {
-      "id": "reddit_rss_ai_wellness-what-do-i-do-with-my-life",
-      "title": "What do I do with my life?",
-      "query": "What do I do with my life?",
-      "source": "reddit_rss_ai_wellness",
-      "sourceType": "rss",
-      "tags": [
-        "general_emotional_wellness"
-      ],
-      "collectedAt": "2026-05-22T16:29:00.347Z"
-    },
-    {
-      "id": "reddit_rss_ai_wellness-think-long-term-to-supersize-you-day-142",
-      "title": "Think Long Term To Supersize You! Day 142!",
-      "query": "Think Long Term To Supersize You! Day 142!",
-      "source": "reddit_rss_ai_wellness",
-      "sourceType": "rss",
-      "tags": [
-        "general_emotional_wellness"
-      ],
-      "collectedAt": "2026-05-22T16:29:00.347Z"
-    },
-    {
-      "id": "reddit_rss_ai_wellness-how-to-use-google-search-console-and-gemini-ai-for-page-level-content-gap-analys",
-      "title": "How to use Google Search Console and Gemini AI for Page-Level Content Gap Analysis (Boost traffic up to 35%)",
-      "query": "How to use Google Search Console and Gemini AI for Page-Level Content Gap Analysis (Boost traffic up to 35%)",
+      "id": "reddit_rss_ai_wellness-most-of-my-health-anxiety-came-from-never-having-anything-to-compare-against",
+      "title": "Most of my health anxiety came from never having anything to compare against",
+      "query": "Most of my health anxiety came from never having anything to compare against",
       "source": "reddit_rss_ai_wellness",
       "sourceType": "rss",
       "tags": [
         "ai_digital_wellness"
       ],
-      "collectedAt": "2026-05-22T16:29:00.347Z"
+      "collectedAt": "2026-05-26T16:00:56.043Z"
     },
     {
-      "id": "reddit_rss_ai_wellness-5-minutes-of-your-time-could-change-how-college-works",
-      "title": "5 Minutes of Your Time Could Change How College Works",
-      "query": "5 Minutes of Your Time Could Change How College Works",
+      "id": "reddit_rss_ai_wellness-toughest-challenge-and-struggling",
+      "title": "Toughest Challenge and Struggling",
+      "query": "Toughest Challenge and Struggling",
+      "source": "reddit_rss_ai_wellness",
+      "sourceType": "rss",
+      "tags": [
+        "general_emotional_wellness"
+      ],
+      "collectedAt": "2026-05-26T16:00:56.043Z"
+    },
+    {
+      "id": "reddit_rss_ai_wellness-had-anyone-ever-had-hormonal-birth-control-positively-impact-their-mental-wellbe",
+      "title": "Had anyone ever had hormonal birth control positively impact their mental wellbeing?",
+      "query": "Had anyone ever had hormonal birth control positively impact their mental wellbeing?",
+      "source": "reddit_rss_ai_wellness",
+      "sourceType": "rss",
+      "tags": [
+        "general_emotional_wellness"
+      ],
+      "collectedAt": "2026-05-26T16:00:56.043Z"
+    },
+    {
+      "id": "reddit_rss_ai_wellness-remote-job-power-digital-marketing-seo-specialist-healthcare",
+      "title": "Remote Job - Power Digital Marketing - SEO Specialist, Healthcare",
+      "query": "Remote Job - Power Digital Marketing - SEO Specialist, Healthcare",
       "source": "reddit_rss_ai_wellness",
       "sourceType": "rss",
       "tags": [
         "workplace_emotional_intelligence"
       ],
-      "collectedAt": "2026-05-22T16:29:00.347Z"
+      "collectedAt": "2026-05-26T16:00:56.043Z"
     },
     {
-      "id": "reddit_rss_ai_wellness-constant-chest-pains-all-the-time-please-can-anyone-help-do-i-need-to-wait-for-m",
-      "title": "Constant chest pains all the time!! Please can anyone help? Do I need to wait for my anxiety meds to kick in???",
-      "query": "Constant chest pains all the time!! Please can anyone help? Do I need to wait for my anxiety meds to kick in???",
+      "id": "reddit_rss_ai_wellness-im-unsure-of-who-ive-become-my-life-is-disfigured",
+      "title": "im unsure of who ive become; my life is disfigured.",
+      "query": "im unsure of who ive become; my life is disfigured.",
+      "source": "reddit_rss_ai_wellness",
+      "sourceType": "rss",
+      "tags": [
+        "general_emotional_wellness"
+      ],
+      "collectedAt": "2026-05-26T16:00:56.043Z"
+    },
+    {
+      "id": "reddit_rss_ai_wellness-advice-for-new-devs",
+      "title": "Advice for New Devs",
+      "query": "Advice for New Devs",
+      "source": "reddit_rss_ai_wellness",
+      "sourceType": "rss",
+      "tags": [
+        "general_emotional_wellness"
+      ],
+      "collectedAt": "2026-05-26T16:00:56.043Z"
+    },
+    {
+      "id": "reddit_rss_ai_wellness-i-did-the-same-30-second-clip-in-early-2024-and-again-last-week-the-gap-is-wild",
+      "title": "I did the same 30 second clip in early 2024 and again last week. the gap is WILD",
+      "query": "I did the same 30 second clip in early 2024 and again last week. the gap is WILD",
       "source": "reddit_rss_ai_wellness",
       "sourceType": "rss",
       "tags": [
         "ai_digital_wellness"
       ],
-      "collectedAt": "2026-05-22T16:29:00.347Z"
+      "collectedAt": "2026-05-26T16:00:56.043Z"
     },
     {
-      "id": "reddit_rss_ai_wellness-how-to-cope-with-leaving-behind-my-soul-dog",
-      "title": "How to cope with leaving behind my soul dog",
-      "query": "How to cope with leaving behind my soul dog",
+      "id": "reddit_rss_ai_wellness-vent-advice-anyone-relate",
+      "title": "Vent/advice/anyone relate?",
+      "query": "Vent/advice/anyone relate?",
       "source": "reddit_rss_ai_wellness",
       "sourceType": "rss",
       "tags": [
         "general_emotional_wellness"
       ],
-      "collectedAt": "2026-05-22T16:29:00.347Z"
+      "collectedAt": "2026-05-26T16:00:56.043Z"
     },
     {
-      "id": "reddit_rss_ai_wellness-got-sexually-harassed-but-i-m-overwhelmed-by-other-people-taking-it-seriously",
-      "title": "Got sexually harassed but I'm overwhelmed by other people taking it seriously",
-      "query": "Got sexually harassed but I'm overwhelmed by other people taking it seriously",
-      "source": "reddit_rss_ai_wellness",
-      "sourceType": "rss",
-      "tags": [
-        "burnout"
-      ],
-      "collectedAt": "2026-05-22T16:29:00.347Z"
-    },
-    {
-      "id": "reddit_rss_ai_wellness-debilitating-work-anxiety",
-      "title": "Debilitating work anxiety",
-      "query": "Debilitating work anxiety",
-      "source": "reddit_rss_ai_wellness",
-      "sourceType": "rss",
-      "tags": [
-        "workplace_emotional_intelligence"
-      ],
-      "collectedAt": "2026-05-22T16:29:00.347Z"
-    },
-    {
-      "id": "reddit_rss_ai_wellness-how-do-you-and-your-partner-cope-with-hellworld",
-      "title": "How do you and your partner cope with Hellworld?",
-      "query": "How do you and your partner cope with Hellworld?",
-      "source": "reddit_rss_ai_wellness",
-      "sourceType": "rss",
-      "tags": [
-        "general_emotional_wellness"
-      ],
-      "collectedAt": "2026-05-22T16:29:00.347Z"
-    },
-    {
-      "id": "reddit_rss_ai_wellness-let-s-crowd-source-new-m-a-a-a-playform",
-      "title": "Let's crowd source new M.A.A.A. playform",
-      "query": "Let's crowd source new M.A.A.A. playform",
-      "source": "reddit_rss_ai_wellness",
-      "sourceType": "rss",
-      "tags": [
-        "general_emotional_wellness"
-      ],
-      "collectedAt": "2026-05-22T16:29:00.347Z"
-    },
-    {
-      "id": "reddit_rss_ai_wellness-this-is-what-grok-predicted-analyzing-cbse-s-shameless-and-irresponsible-behavio",
-      "title": "This is what grok predicted analyzing CBSE's shameless and irresponsible behavior",
-      "query": "This is what grok predicted analyzing CBSE's shameless and irresponsible behavior",
-      "source": "reddit_rss_ai_wellness",
-      "sourceType": "rss",
-      "tags": [
-        "general_emotional_wellness"
-      ],
-      "collectedAt": "2026-05-22T16:29:00.347Z"
-    },
-    {
-      "id": "reddit_rss_ai_wellness-i-want-to-just-get-this-off-my-chest-and-i-am-just-angry-and-bitter",
-      "title": "I want to just get this off my chest and I am just angry and bitter",
-      "query": "I want to just get this off my chest and I am just angry and bitter",
-      "source": "reddit_rss_ai_wellness",
-      "sourceType": "rss",
-      "tags": [
-        "general_emotional_wellness"
-      ],
-      "collectedAt": "2026-05-22T16:29:00.347Z"
-    },
-    {
-      "id": "reddit_rss_ai_wellness-ios-29-99-yr-free-lifetime-affirmations-ai-ai-writes-personal-affirmations-for-y",
-      "title": "[iOS] [$29.99/yr → Free Lifetime] Affirmations AI — AI writes personal affirmations for you, not generic copy-paste ones",
-      "query": "[iOS] [$29.99/yr → Free Lifetime] Affirmations AI — AI writes personal affirmations for you, not generic copy-paste ones",
+      "id": "reddit_rss_ai_wellness-m-decine-dentaire-ou-g-nie-lectrique",
+      "title": "Médecine Dentaire ou Génie Électrique?",
+      "query": "Médecine Dentaire ou Génie Électrique?",
       "source": "reddit_rss_ai_wellness",
       "sourceType": "rss",
       "tags": [
         "ai_digital_wellness"
       ],
-      "collectedAt": "2026-05-22T16:29:00.347Z"
+      "collectedAt": "2026-05-26T16:00:56.043Z"
     },
     {
-      "id": "reddit_rss_ai_wellness-i-feel-hopeless-at-this-point",
-      "title": "I feel hopeless at this point",
-      "query": "I feel hopeless at this point",
+      "id": "reddit_rss_ai_wellness-free-concept-a-conceptual-anomaly-that-hacks-the-amygdala-cross-link-with-an-imm",
+      "title": "[Free Concept] A conceptual anomaly that hacks the amygdala + Cross-link with an immortal Slavic OC. Anyone wants to write this?",
+      "query": "[Free Concept] A conceptual anomaly that hacks the amygdala + Cross-link with an immortal Slavic OC. Anyone wants to write this?",
       "source": "reddit_rss_ai_wellness",
       "sourceType": "rss",
       "tags": [
         "general_emotional_wellness"
       ],
-      "collectedAt": "2026-05-22T16:29:00.347Z"
+      "collectedAt": "2026-05-26T16:00:56.043Z"
     },
     {
-      "id": "reddit_rss_ai_wellness-otowa-is-a-terrible-coach",
-      "title": "Otowa is a terrible coach",
-      "query": "Otowa is a terrible coach",
+      "id": "reddit_rss_ai_wellness-that-is-load-bearing",
+      "title": "That is load-bearing.",
+      "query": "That is load-bearing.",
       "source": "reddit_rss_ai_wellness",
       "sourceType": "rss",
       "tags": [
         "general_emotional_wellness"
       ],
-      "collectedAt": "2026-05-22T16:29:00.347Z"
+      "collectedAt": "2026-05-26T16:00:56.043Z"
     },
     {
-      "id": "reddit_rss_ai_wellness-i-m-tired-of-being-a-childfree-parent",
-      "title": "I'm tired of being a childfree parent...",
-      "query": "I'm tired of being a childfree parent...",
+      "id": "reddit_rss_ai_wellness-ai-note-generator-recs",
+      "title": "AI note generator recs",
+      "query": "AI note generator recs",
       "source": "reddit_rss_ai_wellness",
       "sourceType": "rss",
       "tags": [
-        "burnout"
+        "ai_digital_wellness"
       ],
-      "collectedAt": "2026-05-22T16:29:00.347Z"
+      "collectedAt": "2026-05-26T16:00:56.043Z"
     },
     {
-      "id": "reddit_rss_ai_wellness-today-was-a-good-day",
-      "title": "today was a good day",
-      "query": "today was a good day",
-      "source": "reddit_rss_ai_wellness",
-      "sourceType": "rss",
-      "tags": [
-        "general_emotional_wellness"
-      ],
-      "collectedAt": "2026-05-22T16:29:00.347Z"
-    },
-    {
-      "id": "reddit_rss_ai_wellness-the-things-people-don-t-usually-talk-about-when-making-a-tcg-ccg",
-      "title": "The things people don’t usually talk about when making a TCG/CCG",
-      "query": "The things people don’t usually talk about when making a TCG/CCG",
+      "id": "reddit_rss_ai_wellness-what-if-the-mental-health-crisis-is-actually-a-spiritual-crisis",
+      "title": "What If the Mental Health Crisis Is Actually a Spiritual Crisis?",
+      "query": "What If the Mental Health Crisis Is Actually a Spiritual Crisis?",
       "source": "reddit_rss_ai_wellness",
       "sourceType": "rss",
       "tags": [
         "general_emotional_wellness"
       ],
-      "collectedAt": "2026-05-22T16:29:00.347Z"
+      "collectedAt": "2026-05-26T16:00:56.043Z"
+    },
+    {
+      "id": "reddit_rss_ai_wellness-should-normal-people-be-scared-of-mythos",
+      "title": "Should normal people be scared of mythos?",
+      "query": "Should normal people be scared of mythos?",
+      "source": "reddit_rss_ai_wellness",
+      "sourceType": "rss",
+      "tags": [
+        "general_emotional_wellness"
+      ],
+      "collectedAt": "2026-05-26T16:00:56.043Z"
+    },
+    {
+      "id": "reddit_rss_ai_wellness-first-zoids-kit",
+      "title": "First Zoids kit!",
+      "query": "First Zoids kit!",
+      "source": "reddit_rss_ai_wellness",
+      "sourceType": "rss",
+      "tags": [
+        "general_emotional_wellness"
+      ],
+      "collectedAt": "2026-05-26T16:00:56.043Z"
+    },
+    {
+      "id": "reddit_rss_ai_wellness-49-m-having-strong-feelings-of-regret",
+      "title": "49/M having strong feelings of regret",
+      "query": "49/M having strong feelings of regret",
+      "source": "reddit_rss_ai_wellness",
+      "sourceType": "rss",
+      "tags": [
+        "general_emotional_wellness"
+      ],
+      "collectedAt": "2026-05-26T16:00:56.043Z"
+    },
+    {
+      "id": "reddit_rss_ai_wellness-my-25m-gf-24f-mental-health-issues-are-draining-me",
+      "title": "My (25M) GF(24F) Mental Health Issues Are Draining Me",
+      "query": "My (25M) GF(24F) Mental Health Issues Are Draining Me",
+      "source": "reddit_rss_ai_wellness",
+      "sourceType": "rss",
+      "tags": [
+        "ai_digital_wellness"
+      ],
+      "collectedAt": "2026-05-26T16:00:56.043Z"
+    },
+    {
+      "id": "reddit_rss_ai_wellness-i-can-t-tell-if-they-re-intrusive-thoughts-or-if-i-m-just-evil-with-impulsive-th",
+      "title": "I can’t tell if they’re intrusive thoughts or if I’m just evil with impulsive thoughts and urges (TW: Brief mention of verbal abuse, cruelty, and slurs.)",
+      "query": "I can’t tell if they’re intrusive thoughts or if I’m just evil with impulsive thoughts and urges (TW: Brief mention of verbal abuse, cruelty, and slurs.)",
+      "source": "reddit_rss_ai_wellness",
+      "sourceType": "rss",
+      "tags": [
+        "general_emotional_wellness"
+      ],
+      "collectedAt": "2026-05-26T16:00:56.043Z"
     },
     {
       "id": "reddit_rss_genz_mental_health-reddit-com-search-results-gen-z-mental-health-therapy",
@@ -632,7 +632,7 @@
       "tags": [
         "genz_millennial"
       ],
-      "collectedAt": "2026-05-22T16:29:01.277Z"
+      "collectedAt": "2026-05-26T16:00:57.815Z"
     },
     {
       "id": "reddit_rss_genz_mental_health-mentalhealththerapy",
@@ -643,7 +643,7 @@
       "tags": [
         "general_emotional_wellness"
       ],
-      "collectedAt": "2026-05-22T16:29:01.277Z"
+      "collectedAt": "2026-05-26T16:00:57.815Z"
     },
     {
       "id": "reddit_rss_genz_mental_health-patient-perspectives-on-psychotherapy",
@@ -654,7 +654,7 @@
       "tags": [
         "general_emotional_wellness"
       ],
-      "collectedAt": "2026-05-22T16:29:01.277Z"
+      "collectedAt": "2026-05-26T16:00:57.815Z"
     },
     {
       "id": "reddit_rss_genz_mental_health-a-subreddit-for-cognitive-behavioral-therapy",
@@ -665,216 +665,238 @@
       "tags": [
         "general_emotional_wellness"
       ],
-      "collectedAt": "2026-05-22T16:29:01.277Z"
+      "collectedAt": "2026-05-26T16:00:57.815Z"
     },
     {
-      "id": "reddit_rss_genz_mental_health-repost-academic-digital-media-internet-technology-use-and-mental-health-survey-a",
-      "title": "[Repost, Academic] Digital Media/Internet/Technology Use and Mental Health Survey (ages 18-25, Amazon gift card raffle!)",
-      "query": "[Repost, Academic] Digital Media/Internet/Technology Use and Mental Health Survey (ages 18-25, Amazon gift card raffle!)",
+      "id": "reddit_rss_genz_mental_health-feeling-okay",
+      "title": "Feeling okay?",
+      "query": "Feeling okay?",
       "source": "reddit_rss_genz_mental_health",
       "sourceType": "rss",
       "tags": [
         "general_emotional_wellness"
       ],
-      "collectedAt": "2026-05-22T16:29:01.277Z"
+      "collectedAt": "2026-05-26T16:00:57.815Z"
     },
     {
-      "id": "reddit_rss_genz_mental_health-what-do-i-do-with-my-life",
-      "title": "What do I do with my life?",
-      "query": "What do I do with my life?",
+      "id": "reddit_rss_genz_mental_health-toughest-challenge-and-struggling",
+      "title": "Toughest Challenge and Struggling",
+      "query": "Toughest Challenge and Struggling",
       "source": "reddit_rss_genz_mental_health",
       "sourceType": "rss",
       "tags": [
         "general_emotional_wellness"
       ],
-      "collectedAt": "2026-05-22T16:29:01.277Z"
+      "collectedAt": "2026-05-26T16:00:57.815Z"
     },
     {
-      "id": "reddit_rss_genz_mental_health-think-long-term-to-supersize-you-day-142",
-      "title": "Think Long Term To Supersize You! Day 142!",
-      "query": "Think Long Term To Supersize You! Day 142!",
+      "id": "reddit_rss_genz_mental_health-had-anyone-ever-had-hormonal-birth-control-positively-impact-their-mental-wellbe",
+      "title": "Had anyone ever had hormonal birth control positively impact their mental wellbeing?",
+      "query": "Had anyone ever had hormonal birth control positively impact their mental wellbeing?",
       "source": "reddit_rss_genz_mental_health",
       "sourceType": "rss",
       "tags": [
         "general_emotional_wellness"
       ],
-      "collectedAt": "2026-05-22T16:29:01.277Z"
+      "collectedAt": "2026-05-26T16:00:57.815Z"
     },
     {
-      "id": "reddit_rss_genz_mental_health-5-minutes-of-your-time-could-change-how-college-works",
-      "title": "5 Minutes of Your Time Could Change How College Works",
-      "query": "5 Minutes of Your Time Could Change How College Works",
-      "source": "reddit_rss_genz_mental_health",
-      "sourceType": "rss",
-      "tags": [
-        "workplace_emotional_intelligence"
-      ],
-      "collectedAt": "2026-05-22T16:29:01.277Z"
-    },
-    {
-      "id": "reddit_rss_genz_mental_health-i-suspect-i-have-bipolar-ii-and-don-t-know-if-i-should-see-someone-or-not-yet-i-",
-      "title": "I suspect I have bipolar II and don’t know if I should see someone or not yet. I don’t want to.",
-      "query": "I suspect I have bipolar II and don’t know if I should see someone or not yet. I don’t want to.",
+      "id": "reddit_rss_genz_mental_health-time-off-for-breakup-divorce-ish",
+      "title": "Time off for breakup (divorce-ish)",
+      "query": "Time off for breakup (divorce-ish)",
       "source": "reddit_rss_genz_mental_health",
       "sourceType": "rss",
       "tags": [
         "general_emotional_wellness"
       ],
-      "collectedAt": "2026-05-22T16:29:01.277Z"
+      "collectedAt": "2026-05-26T16:00:57.815Z"
     },
     {
-      "id": "reddit_rss_genz_mental_health-how-to-cope-with-leaving-behind-my-soul-dog",
-      "title": "How to cope with leaving behind my soul dog",
-      "query": "How to cope with leaving behind my soul dog",
+      "id": "reddit_rss_genz_mental_health-im-unsure-of-who-ive-become-my-life-is-disfigured",
+      "title": "im unsure of who ive become; my life is disfigured.",
+      "query": "im unsure of who ive become; my life is disfigured.",
       "source": "reddit_rss_genz_mental_health",
       "sourceType": "rss",
       "tags": [
         "general_emotional_wellness"
       ],
-      "collectedAt": "2026-05-22T16:29:01.277Z"
+      "collectedAt": "2026-05-26T16:00:57.815Z"
     },
     {
-      "id": "reddit_rss_genz_mental_health-got-sexually-harassed-but-i-m-overwhelmed-by-other-people-taking-it-seriously",
-      "title": "Got sexually harassed but I'm overwhelmed by other people taking it seriously",
-      "query": "Got sexually harassed but I'm overwhelmed by other people taking it seriously",
-      "source": "reddit_rss_genz_mental_health",
-      "sourceType": "rss",
-      "tags": [
-        "burnout"
-      ],
-      "collectedAt": "2026-05-22T16:29:01.277Z"
-    },
-    {
-      "id": "reddit_rss_genz_mental_health-how-do-you-and-your-partner-cope-with-hellworld",
-      "title": "How do you and your partner cope with Hellworld?",
-      "query": "How do you and your partner cope with Hellworld?",
+      "id": "reddit_rss_genz_mental_health-advice-for-new-devs",
+      "title": "Advice for New Devs",
+      "query": "Advice for New Devs",
       "source": "reddit_rss_genz_mental_health",
       "sourceType": "rss",
       "tags": [
         "general_emotional_wellness"
       ],
-      "collectedAt": "2026-05-22T16:29:01.277Z"
+      "collectedAt": "2026-05-26T16:00:57.815Z"
     },
     {
-      "id": "reddit_rss_genz_mental_health-this-is-what-grok-predicted-analyzing-cbse-s-shameless-and-irresponsible-behavio",
-      "title": "This is what grok predicted analyzing CBSE's shameless and irresponsible behavior",
-      "query": "This is what grok predicted analyzing CBSE's shameless and irresponsible behavior",
+      "id": "reddit_rss_genz_mental_health-someone-with-the-same-scenario",
+      "title": "Someone with the same scenario?",
+      "query": "Someone with the same scenario?",
       "source": "reddit_rss_genz_mental_health",
       "sourceType": "rss",
       "tags": [
         "general_emotional_wellness"
       ],
-      "collectedAt": "2026-05-22T16:29:01.277Z"
+      "collectedAt": "2026-05-26T16:00:57.815Z"
     },
     {
-      "id": "reddit_rss_genz_mental_health-i-want-to-just-get-this-off-my-chest-and-i-am-just-angry-and-bitter",
-      "title": "I want to just get this off my chest and I am just angry and bitter",
-      "query": "I want to just get this off my chest and I am just angry and bitter",
+      "id": "reddit_rss_genz_mental_health-the-generations-are-different",
+      "title": "The generations are different",
+      "query": "The generations are different",
       "source": "reddit_rss_genz_mental_health",
       "sourceType": "rss",
       "tags": [
         "general_emotional_wellness"
       ],
-      "collectedAt": "2026-05-22T16:29:01.277Z"
+      "collectedAt": "2026-05-26T16:00:57.815Z"
     },
     {
-      "id": "reddit_rss_genz_mental_health-otowa-is-a-terrible-coach",
-      "title": "Otowa is a terrible coach",
-      "query": "Otowa is a terrible coach",
-      "source": "reddit_rss_genz_mental_health",
-      "sourceType": "rss",
-      "tags": [
-        "general_emotional_wellness"
-      ],
-      "collectedAt": "2026-05-22T16:29:01.277Z"
-    },
-    {
-      "id": "reddit_rss_genz_mental_health-i-m-tired-of-being-a-childfree-parent",
-      "title": "I'm tired of being a childfree parent...",
-      "query": "I'm tired of being a childfree parent...",
-      "source": "reddit_rss_genz_mental_health",
-      "sourceType": "rss",
-      "tags": [
-        "burnout"
-      ],
-      "collectedAt": "2026-05-22T16:29:01.277Z"
-    },
-    {
-      "id": "reddit_rss_genz_mental_health-today-was-a-good-day",
-      "title": "today was a good day",
-      "query": "today was a good day",
-      "source": "reddit_rss_genz_mental_health",
-      "sourceType": "rss",
-      "tags": [
-        "general_emotional_wellness"
-      ],
-      "collectedAt": "2026-05-22T16:29:01.277Z"
-    },
-    {
-      "id": "reddit_rss_genz_mental_health-psychologist-sibling-is-a-hypocrite",
-      "title": "Psychologist sibling is a hypocrite",
-      "query": "Psychologist sibling is a hypocrite",
-      "source": "reddit_rss_genz_mental_health",
-      "sourceType": "rss",
-      "tags": [
-        "general_emotional_wellness"
-      ],
-      "collectedAt": "2026-05-22T16:29:01.277Z"
-    },
-    {
-      "id": "reddit_rss_genz_mental_health-bertie-speaking-in-favour-of-the-tuc-motion-on-mental-health-employers-must-reco",
-      "title": "Bertie speaking in favour of the TUC motion on mental health: “Employers must recognise their responsibility for the mental wellbeing of their employees”. The motion was passed unanimously.",
-      "query": "Bertie speaking in favour of the TUC motion on mental health: “Employers must recognise their responsibility for the mental wellbeing of their employees”. The motion was passed unanimously.",
-      "source": "reddit_rss_genz_mental_health",
-      "sourceType": "rss",
-      "tags": [
-        "general_emotional_wellness"
-      ],
-      "collectedAt": "2026-05-22T16:29:01.277Z"
-    },
-    {
-      "id": "reddit_rss_genz_mental_health-28-f4m-finland-europe-asexual-looking-for-romance",
-      "title": "28 [F4M] #Finland #Europe – Asexual looking for romance",
-      "query": "28 [F4M] #Finland #Europe – Asexual looking for romance",
-      "source": "reddit_rss_genz_mental_health",
-      "sourceType": "rss",
-      "tags": [
-        "general_emotional_wellness"
-      ],
-      "collectedAt": "2026-05-22T16:29:01.277Z"
-    },
-    {
-      "id": "reddit_rss_genz_mental_health-how-do-you-deal-with-being-so-tapped-in",
-      "title": "How do you deal with being so tapped in?",
-      "query": "How do you deal with being so tapped in?",
-      "source": "reddit_rss_genz_mental_health",
-      "sourceType": "rss",
-      "tags": [
-        "general_emotional_wellness"
-      ],
-      "collectedAt": "2026-05-22T16:29:01.277Z"
-    },
-    {
-      "id": "reddit_rss_genz_mental_health-looking-for-a-few-positive-mission-driven-ambassadors-us-based-only-thank-you",
-      "title": "Looking for a few positive, mission-driven ambassadors US Based Only - thank you!",
-      "query": "Looking for a few positive, mission-driven ambassadors US Based Only - thank you!",
-      "source": "reddit_rss_genz_mental_health",
-      "sourceType": "rss",
-      "tags": [
-        "general_emotional_wellness"
-      ],
-      "collectedAt": "2026-05-22T16:29:01.277Z"
-    },
-    {
-      "id": "reddit_rss_genz_mental_health-stage-4-endometriosis-years-long-wait-lists-and-being-dismissed-over-hormonal-tr",
-      "title": "Stage 4 endometriosis, years long wait lists, and being dismissed over hormonal treatment concerns - how do people cope?",
-      "query": "Stage 4 endometriosis, years long wait lists, and being dismissed over hormonal treatment concerns - how do people cope?",
+      "id": "reddit_rss_genz_mental_health-i-did-the-same-30-second-clip-in-early-2024-and-again-last-week-the-gap-is-wild",
+      "title": "I did the same 30 second clip in early 2024 and again last week. the gap is WILD",
+      "query": "I did the same 30 second clip in early 2024 and again last week. the gap is WILD",
       "source": "reddit_rss_genz_mental_health",
       "sourceType": "rss",
       "tags": [
         "ai_digital_wellness"
       ],
-      "collectedAt": "2026-05-22T16:29:01.277Z"
+      "collectedAt": "2026-05-26T16:00:57.815Z"
+    },
+    {
+      "id": "reddit_rss_genz_mental_health-vent-advice-anyone-relate",
+      "title": "Vent/advice/anyone relate?",
+      "query": "Vent/advice/anyone relate?",
+      "source": "reddit_rss_genz_mental_health",
+      "sourceType": "rss",
+      "tags": [
+        "general_emotional_wellness"
+      ],
+      "collectedAt": "2026-05-26T16:00:57.815Z"
+    },
+    {
+      "id": "reddit_rss_genz_mental_health-m-decine-dentaire-ou-g-nie-lectrique",
+      "title": "Médecine Dentaire ou Génie Électrique?",
+      "query": "Médecine Dentaire ou Génie Électrique?",
+      "source": "reddit_rss_genz_mental_health",
+      "sourceType": "rss",
+      "tags": [
+        "ai_digital_wellness"
+      ],
+      "collectedAt": "2026-05-26T16:00:57.815Z"
+    },
+    {
+      "id": "reddit_rss_genz_mental_health-that-is-load-bearing",
+      "title": "That is load-bearing.",
+      "query": "That is load-bearing.",
+      "source": "reddit_rss_genz_mental_health",
+      "sourceType": "rss",
+      "tags": [
+        "general_emotional_wellness"
+      ],
+      "collectedAt": "2026-05-26T16:00:57.815Z"
+    },
+    {
+      "id": "reddit_rss_genz_mental_health-what-if-the-mental-health-crisis-is-actually-a-spiritual-crisis",
+      "title": "What If the Mental Health Crisis Is Actually a Spiritual Crisis?",
+      "query": "What If the Mental Health Crisis Is Actually a Spiritual Crisis?",
+      "source": "reddit_rss_genz_mental_health",
+      "sourceType": "rss",
+      "tags": [
+        "general_emotional_wellness"
+      ],
+      "collectedAt": "2026-05-26T16:00:57.815Z"
+    },
+    {
+      "id": "reddit_rss_genz_mental_health-wts-pc-i3-12100f-16gb-ram-gtx-1650-ssd-512gb",
+      "title": "Wts pc i3 12100f 16gb ram gtx 1650 ssd 512gb",
+      "query": "Wts pc i3 12100f 16gb ram gtx 1650 ssd 512gb",
+      "source": "reddit_rss_genz_mental_health",
+      "sourceType": "rss",
+      "tags": [
+        "general_emotional_wellness"
+      ],
+      "collectedAt": "2026-05-26T16:00:57.815Z"
+    },
+    {
+      "id": "reddit_rss_genz_mental_health-first-zoids-kit",
+      "title": "First Zoids kit!",
+      "query": "First Zoids kit!",
+      "source": "reddit_rss_genz_mental_health",
+      "sourceType": "rss",
+      "tags": [
+        "general_emotional_wellness"
+      ],
+      "collectedAt": "2026-05-26T16:00:57.815Z"
+    },
+    {
+      "id": "reddit_rss_genz_mental_health-49-m-having-strong-feelings-of-regret",
+      "title": "49/M having strong feelings of regret",
+      "query": "49/M having strong feelings of regret",
+      "source": "reddit_rss_genz_mental_health",
+      "sourceType": "rss",
+      "tags": [
+        "general_emotional_wellness"
+      ],
+      "collectedAt": "2026-05-26T16:00:57.815Z"
+    },
+    {
+      "id": "reddit_rss_genz_mental_health-my-25m-gf-24f-mental-health-issues-are-draining-me",
+      "title": "My (25M) GF(24F) Mental Health Issues Are Draining Me",
+      "query": "My (25M) GF(24F) Mental Health Issues Are Draining Me",
+      "source": "reddit_rss_genz_mental_health",
+      "sourceType": "rss",
+      "tags": [
+        "ai_digital_wellness"
+      ],
+      "collectedAt": "2026-05-26T16:00:57.815Z"
+    },
+    {
+      "id": "reddit_rss_genz_mental_health-i-can-t-tell-if-they-re-intrusive-thoughts-or-if-i-m-just-evil-with-impulsive-th",
+      "title": "I can’t tell if they’re intrusive thoughts or if I’m just evil with impulsive thoughts and urges (TW: Brief mention of verbal abuse, cruelty, and slurs.)",
+      "query": "I can’t tell if they’re intrusive thoughts or if I’m just evil with impulsive thoughts and urges (TW: Brief mention of verbal abuse, cruelty, and slurs.)",
+      "source": "reddit_rss_genz_mental_health",
+      "sourceType": "rss",
+      "tags": [
+        "general_emotional_wellness"
+      ],
+      "collectedAt": "2026-05-26T16:00:57.815Z"
+    },
+    {
+      "id": "reddit_rss_genz_mental_health-am-i-cooked-kasi-me-myself-concerned-nako-trigger-alert",
+      "title": "Am i cooked? kasi me myself concerned nako. (Trigger Alert)",
+      "query": "Am i cooked? kasi me myself concerned nako. (Trigger Alert)",
+      "source": "reddit_rss_genz_mental_health",
+      "sourceType": "rss",
+      "tags": [
+        "general_emotional_wellness"
+      ],
+      "collectedAt": "2026-05-26T16:00:57.815Z"
+    },
+    {
+      "id": "reddit_rss_genz_mental_health-anyone-has-parents-that-dont-allow-you-to-grow-up",
+      "title": "anyone has parents that dont allow you to grow up",
+      "query": "anyone has parents that dont allow you to grow up",
+      "source": "reddit_rss_genz_mental_health",
+      "sourceType": "rss",
+      "tags": [
+        "general_emotional_wellness"
+      ],
+      "collectedAt": "2026-05-26T16:00:57.815Z"
+    },
+    {
+      "id": "reddit_rss_genz_mental_health-am-i-wrong-for-feeling-like-my-fiance-sister-emotionally-manipulated-me-to-have-",
+      "title": "Am I wrong for feeling like my fiance sister emotionally manipulated me to have my daughter?",
+      "query": "Am I wrong for feeling like my fiance sister emotionally manipulated me to have my daughter?",
+      "source": "reddit_rss_genz_mental_health",
+      "sourceType": "rss",
+      "tags": [
+        "general_emotional_wellness"
+      ],
+      "collectedAt": "2026-05-26T16:00:57.815Z"
     },
     {
       "id": "google_news_workplace_mental_health-workplace-mental-health-training-emotional-intelligence-google-news",
@@ -886,7 +908,7 @@
         "ai_digital_wellness",
         "workplace_emotional_intelligence"
       ],
-      "collectedAt": "2026-05-22T16:29:02.843Z"
+      "collectedAt": "2026-05-26T16:00:59.583Z"
     },
     {
       "id": "google_news_workplace_mental_health-google-news",
@@ -897,7 +919,7 @@
       "tags": [
         "general_emotional_wellness"
       ],
-      "collectedAt": "2026-05-22T16:29:02.843Z"
+      "collectedAt": "2026-05-26T16:00:59.583Z"
     },
     {
       "id": "google_news_workplace_mental_health-emotional-intelligence-training-improves-stress-regulation-and-performance-in-hi",
@@ -908,30 +930,7 @@
       "tags": [
         "ai_digital_wellness"
       ],
-      "collectedAt": "2026-05-22T16:29:02.843Z"
-    },
-    {
-      "id": "google_news_workplace_mental_health-emotional-intelligence-and-ems-leadership-caring-for-mental-health-after-a-tough",
-      "title": "Emotional Intelligence and EMS Leadership: Caring for Mental Health After a Tough Call - HMP Global Learning Network",
-      "query": "Emotional Intelligence and EMS Leadership: Caring for Mental Health After a Tough Call - HMP Global Learning Network",
-      "source": "google_news_workplace_mental_health",
-      "sourceType": "rss",
-      "tags": [
-        "workplace_emotional_intelligence"
-      ],
-      "collectedAt": "2026-05-22T16:29:02.843Z"
-    },
-    {
-      "id": "google_news_workplace_mental_health-the-emotional-recession-global-declines-in-emotional-intelligence-and-its-impact",
-      "title": "The Emotional Recession: global declines in emotional intelligence and its impact on organizational retention, burnout, and workforce resilience - Frontiers",
-      "query": "The Emotional Recession: global declines in emotional intelligence and its impact on organizational retention, burnout, and workforce resilience - Frontiers",
-      "source": "google_news_workplace_mental_health",
-      "sourceType": "rss",
-      "tags": [
-        "burnout",
-        "workplace_emotional_intelligence"
-      ],
-      "collectedAt": "2026-05-22T16:29:02.843Z"
+      "collectedAt": "2026-05-26T16:00:59.583Z"
     }
   ]
 }
