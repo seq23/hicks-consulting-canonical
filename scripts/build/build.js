@@ -70,7 +70,7 @@ function copyPreviewForItem(item) {
 copyRecursive(pages, dist);
 copyRecursive(path.join(root, 'assets'), path.join(dist, 'assets'));
 copyRecursive(path.join(root, 'data'), path.join(dist, 'data'));
-['robots.txt','_headers','_redirects','llms.txt','answers.json','coverage.json','indexnow.txt','a8f4c9e2b71d43f0a6c5e9b2d8f137ac.txt'].forEach(file => {
+['robots.txt','_headers','_redirects','llms.txt','answers.json','coverage.json','indexnow.txt','0ccfc65ebb714f0a804be19ff50c9be4.txt'].forEach(file => {
   copyRecursive(path.join(root, file), path.join(dist, file));
 });
 
