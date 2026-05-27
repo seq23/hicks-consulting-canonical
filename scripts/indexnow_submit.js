@@ -11,6 +11,7 @@ const endpoint = process.env.INDEXNOW_ENDPOINT || 'https://api.indexnow.org/inde
 const key = process.env.INDEXNOW_KEY || '';
 const keyLocation = process.env.INDEXNOW_KEY_LOCATION || `${canonicalDomain}/indexnow.txt`;
 const dryRun = process.env.INDEXNOW_DRY_RUN === '1' || process.env.INDEXNOW_DRY_RUN === 'true';
+const allowExternalFailure = process.env.INDEXNOW_ALLOW_EXTERNAL_FAILURE === '1' || process.env.INDEXNOW_ALLOW_EXTERNAL_FAILURE === 'true';
 const priorityFile = process.env.INDEXNOW_PRIORITY_FILE || path.join(reportsDir, 'indexnow-priority.txt');
 const batchFile = process.env.INDEXNOW_BATCH_FILE || path.join(reportsDir, 'indexnow-batch.txt');
 function readUrls(file) {
@@ -67,14 +68,17 @@ async function submit(urls, label) {
   results.push(await submit(priorityUrls, 'priority'));
   results.push(await submit(batchUrls, 'batch'));
   for (const r of results) if (r.status === 'failed') failures.push(`${r.label}: ${r.error || `HTTP ${r.httpStatus}`}`);
-  const status = failures.length ? 'failed' : (dryRun ? 'dry-run' : 'success');
+  const externalAuthBlocked = results.some((r) => r.status === 'failed' && (r.httpStatus === 403 || /UserForbiddedToAccessSite|unauthorized/i.test(String(r.response || r.error || ''))));
+  const toleratedExternalFailure = allowExternalFailure && externalAuthBlocked;
+  const status = failures.length ? (toleratedExternalFailure ? 'external-blocked' : 'failed') : (dryRun ? 'dry-run' : 'success');
   const report = {
     repo: 'hicks-consulting-canonical', host, endpoint, keyLocation, submittedAt: new Date().toISOString(), dryRun,
     priorityCount: priorityUrls.length, batchCount: batchUrls.length, status, failures, results
   };
   fs.writeFileSync(path.join(reportsDir, 'indexnow-submit-report.json'), JSON.stringify(report, null, 2) + '\n');
   console.log(`IndexNow submit report written: ${status}`);
-  if (failures.length) process.exit(1);
+  if (toleratedExternalFailure) console.warn('IndexNow external authorization failure tolerated so deploy workflow can continue. Repo verification remains enforced by validate:indexnow.');
+  if (failures.length && !toleratedExternalFailure) process.exit(1);
 })().catch(err => {
   fs.mkdirSync(reportsDir, { recursive: true });
   const report = { repo: 'hicks-consulting-canonical', host, endpoint, keyLocation, submittedAt: new Date().toISOString(), dryRun, status: 'failed', failures: [err.message], results: [] };

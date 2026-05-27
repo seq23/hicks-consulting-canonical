@@ -24,7 +24,7 @@ jobs:
       - run: npm run validate:indexnow
       - name: Submit IndexNow live
         if: ${{ env.INDEXNOW_KEY != '' }}
-        run: npm run indexnow:submit
+        run: INDEXNOW_ALLOW_EXTERNAL_FAILURE=1 npm run indexnow:submit
       - name: Write IndexNow dry-run report when key is not configured
         if: ${{ env.INDEXNOW_KEY == '' }}
         run: INDEXNOW_DRY_RUN=1 npm run indexnow:submit
