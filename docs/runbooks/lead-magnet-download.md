@@ -18,29 +18,26 @@ The landing page form collects:
 
 - first name
 - email
-- optional broad stress context
+- optional stress context
 - consent checkbox
 - hidden lead magnet key: `stress-management-made-simple`
 
-After local validation succeeds, the API queues the FORM DATABASE webhook dispatch in the background and reveals the PDF download link. The visitor must not be blocked by Google Apps Script redirect/runtime instability.
+After a successful submission, the page reveals the PDF download link. The API must fail closed: the download link is only returned after the webhook receiver returns JSON with `ok: true`.
 
-## FORM DATABASE receiver
+## FORM DATABASE Google Sheet receiver
 
-The lead magnet uses the unified FORM DATABASE pipeline documented in:
+The client uses one existing Google Sheet named `FORM DATABASE` for all inquiry storage. The lead magnet should append to a third tab in that spreadsheet named:
 
-```text
-docs/runbooks/form-database-webhook.md
-```
+- `Lead Magnet Leads`
 
-It does not need a separate spreadsheet, separate Apps Script deployment, or separate webhook lane.
+Existing tabs:
 
-The lead magnet routes as:
+- `Training Inquiries`
+- `Group Inquiries`
 
-```text
-/api/lead-magnet → inquiryType: lead-magnet → Lead Magnet Leads
-```
+The Apps Script deployment must route payloads with `inquiryType: lead-magnet` into `Lead Magnet Leads`.
 
-## Required Lead Magnet Leads tab headers
+Required lead magnet tab headers:
 
 - `Submitted At`
 - `Status`
@@ -57,22 +54,35 @@ The lead magnet routes as:
 - `Follow-Up Date`
 - `Outcome`
 
+The Apps Script response must return JSON shaped like:
+
+```json
+{ "ok": true, "submissionId": "..." }
+```
+
+If Apps Script returns `{ "ok": false }`, invalid JSON, an HTTP failure, or an empty response, the site must not reveal the download link.
+
 ## Environment variables
 
-Preferred canonical Cloudflare variables:
+Preferred dedicated variables:
 
-- `FORM_DATABASE_WEBHOOK_URL`
-- `FORM_DATABASE_SHARED_SECRET`
+- `LEAD_MAGNET_WEBHOOK_URL`
+- `LEAD_MAGNET_SHARED_SECRET`
 
-Legacy fallbacks retained during transition:
+Fallback variables, if the same webhook system is intentionally reused:
 
 - `TRAINING_INQUIRY_WEBHOOK_URL`
 - `TRAINING_INQUIRY_SECRET`
 - `INQUIRY_SHARED_SECRET`
-- `LEAD_MAGNET_WEBHOOK_URL`
-- `LEAD_MAGNET_SHARED_SECRET`
 
-Do not create a new webhook URL for every new spreadsheet tab.
+For the current v1 setup, Cloudflare should use:
+
+- `LEAD_MAGNET_WEBHOOK_URL`: the Google Apps Script `/exec` URL for the `FORM DATABASE` receiver.
+- `LEAD_MAGNET_SHARED_SECRET`: the same value as the existing `TRAINING_INQUIRY_SECRET`, unless the client intentionally creates a separate lead magnet secret.
+
+Apps Script should either define `LEAD_MAGNET_SHARED_SECRET` with the same value or fall back to `TRAINING_INQUIRY_SECRET`.
+
+Do not put real webhook URLs or secrets in source files.
 
 ## Webhook payload
 
@@ -80,7 +90,6 @@ The endpoint forwards:
 
 - `secret`
 - `inquiryType: lead-magnet`
-- `formType: lead-magnet`
 - `leadMagnet`
 - `submissionId`
 - `submittedAt`
@@ -88,16 +97,13 @@ The endpoint forwards:
 - `userAgent`
 - `fields`
 
-The dispatch is backgrounded with `waitUntil` when available. Apps Script should return `{ "ok": true }` for observability, but the user-facing response does not wait on Apps Script.
-
 ## Updating the PDF
 
 1. Replace `assets/downloads/stress-management-made-simple.pdf` with the new PDF.
 2. Keep the filename stable unless the validator and config are updated together.
 3. Run `npm run build`.
 4. Run `npm run validate:lead-magnet`.
-5. Run `npm run validate:form-database`.
-6. Run `npm run validate:all`.
+5. Run `npm run validate:all`.
 
 ## Copy and compliance boundaries
 
@@ -123,7 +129,6 @@ Do not promise:
 - Homepage links to the landing page.
 - Resources page links to the landing page.
 - Form blocks missing first name, email, or consent.
-- Successful submission records a row in `Lead Magnet Leads`.
 - Successful submission reveals the download panel.
 - PDF opens.
-- Existing training and group inquiry forms still submit through the same FORM DATABASE lane.
+- Existing therapy, training, and group inquiry links still work.

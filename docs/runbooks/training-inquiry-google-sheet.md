@@ -439,24 +439,3 @@ Follow-Up Owner
 Follow-Up Date
 Outcome
 ```
-
-## Unified FORM DATABASE migration note
-
-Training and Groups now use the same FORM DATABASE webhook architecture as the Lead Magnet form.
-
-Preferred Cloudflare variables:
-
-```txt
-FORM_DATABASE_WEBHOOK_URL = [Apps Script Web App URL]
-FORM_DATABASE_SHARED_SECRET = [same long random secret]
-```
-
-Legacy variables remain supported during transition:
-
-```txt
-TRAINING_INQUIRY_WEBHOOK_URL
-TRAINING_INQUIRY_SECRET
-INQUIRY_SHARED_SECRET
-```
-
-Do not create separate Apps Script deployments for new tabs. Add new tabs through `docs/runbooks/form-database-webhook.md`.

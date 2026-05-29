@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-29T16:00:47.034Z",
+  "generatedAt": "2026-05-26T16:01:06.042Z",
   "policy": "approval_queue_only_llm_humanized_prewrite_validated",
   "candidates": [
     {
@@ -11,13 +11,13 @@
       "suggestedRoute": "/resources/white-papers/ai-social-media-and-digital-emotional-overload-whitepaper/",
       "targetWords": 2500,
       "minimumWords": 2000,
-      "sourceSignalCount": 9,
+      "sourceSignalCount": 12,
       "score": 100,
       "publishMode": "approval_queue_only",
       "approvalStatus": "queued_for_owner_approval",
       "llmGeneratedRequired": true,
       "publicOnlyAfterApproval": true,
-      "createdAt": "2026-05-29T16:00:47.034Z",
+      "createdAt": "2026-05-26T16:01:06.041Z",
       "humanizationChecklist": [
         "Use plain human language rather than generic therapy marketing copy.",
         "Vary sentence rhythm and paragraph length.",
@@ -48,13 +48,13 @@
       "suggestedRoute": "/resources/guides/general-emotional-wellness-and-intentional-living-guide/",
       "targetWords": 1400,
       "minimumWords": 1120,
-      "sourceSignalCount": 63,
+      "sourceSignalCount": 58,
       "score": 100,
       "publishMode": "approval_queue_only",
       "approvalStatus": "queued_for_owner_approval",
       "llmGeneratedRequired": true,
       "publicOnlyAfterApproval": true,
-      "createdAt": "2026-05-29T16:00:47.034Z",
+      "createdAt": "2026-05-26T16:01:06.042Z",
       "humanizationChecklist": [
         "Use plain human language rather than generic therapy marketing copy.",
         "Vary sentence rhythm and paragraph length.",
@@ -75,12 +75,12 @@
       "llmPrompt": "Create a humanized guide draft for Hicks Consulting.\nTitle: General emotional wellness and intentional living: what people are asking and what to do next\nCluster: General emotional wellness and intentional living\nMinimum words: 1120. Target words: 1400.\nWrite in a warm, grounded, specific voice. Do not diagnose. Do not guarantee outcomes. Do not invent client stories.\nInclude these sections: Short answer; Who this is for; Why this matters; Decision criteria; Common mistakes; Next step.\nApproved conversion path after value is delivered: https://monika-hicks.clientsecure.me/"
     },
     {
-      "id": "brief-black_women_healing-insight",
-      "clusterId": "black_women_healing",
-      "clusterTitle": "Black women healing beyond survival",
+      "id": "brief-burnout_boundaries-insight",
+      "clusterId": "burnout_boundaries",
+      "clusterTitle": "Burnout, boundaries, and over-functioning",
       "contentType": "insight",
-      "title": "Black women healing beyond survival: what people are asking and what to do next",
-      "suggestedRoute": "/resources/insights/black-women-healing-beyond-survival-insight/",
+      "title": "Burnout, boundaries, and over-functioning: what people are asking and what to do next",
+      "suggestedRoute": "/resources/insights/burnout-boundaries-and-over-functioning-insight/",
       "targetWords": 900,
       "minimumWords": 720,
       "sourceSignalCount": 2,
@@ -89,7 +89,7 @@
       "approvalStatus": "queued_for_owner_approval",
       "llmGeneratedRequired": true,
       "publicOnlyAfterApproval": true,
-      "createdAt": "2026-05-29T16:00:47.034Z",
+      "createdAt": "2026-05-26T16:01:06.042Z",
       "humanizationChecklist": [
         "Use plain human language rather than generic therapy marketing copy.",
         "Vary sentence rhythm and paragraph length.",
@@ -107,24 +107,24 @@
         "Common mistakes",
         "Next step"
       ],
-      "llmPrompt": "Create a humanized insight draft for Hicks Consulting.\nTitle: Black women healing beyond survival: what people are asking and what to do next\nCluster: Black women healing beyond survival\nMinimum words: 720. Target words: 900.\nWrite in a warm, grounded, specific voice. Do not diagnose. Do not guarantee outcomes. Do not invent client stories.\nInclude these sections: Short answer; Who this is for; Why this matters; Decision criteria; Common mistakes; Next step.\nApproved conversion path after value is delivered: https://monika-hicks.clientsecure.me/"
+      "llmPrompt": "Create a humanized insight draft for Hicks Consulting.\nTitle: Burnout, boundaries, and over-functioning: what people are asking and what to do next\nCluster: Burnout, boundaries, and over-functioning\nMinimum words: 720. Target words: 900.\nWrite in a warm, grounded, specific voice. Do not diagnose. Do not guarantee outcomes. Do not invent client stories.\nInclude these sections: Short answer; Who this is for; Why this matters; Decision criteria; Common mistakes; Next step.\nApproved conversion path after value is delivered: https://monika-hicks.clientsecure.me/"
     },
     {
-      "id": "brief-genz_millennial_mental_health-faq",
-      "clusterId": "genz_millennial_mental_health",
-      "clusterTitle": "Gen Z and millennial mental health language",
-      "contentType": "faq",
-      "title": "Gen Z and millennial mental health language: what people are asking and what to do next",
-      "suggestedRoute": "/resources/insights/gen-z-and-millennial-mental-health-language-faq/",
-      "targetWords": 700,
-      "minimumWords": 560,
+      "id": "brief-black_women_healing-article",
+      "clusterId": "black_women_healing",
+      "clusterTitle": "Black women healing beyond survival",
+      "contentType": "article",
+      "title": "Black women healing beyond survival: what people are asking and what to do next",
+      "suggestedRoute": "/resources/articles/black-women-healing-beyond-survival-article/",
+      "targetWords": 1200,
+      "minimumWords": 960,
       "sourceSignalCount": 1,
       "score": 20,
       "publishMode": "approval_queue_only",
       "approvalStatus": "queued_for_owner_approval",
       "llmGeneratedRequired": true,
       "publicOnlyAfterApproval": true,
-      "createdAt": "2026-05-29T16:00:47.034Z",
+      "createdAt": "2026-05-26T16:01:06.042Z",
       "humanizationChecklist": [
         "Use plain human language rather than generic therapy marketing copy.",
         "Vary sentence rhythm and paragraph length.",
@@ -136,12 +136,83 @@
       "conversionPath": "https://monika-hicks.clientsecure.me/",
       "sections": [
         "Short answer",
-        "Question set",
+        "Who this is for",
+        "Why this matters",
         "Decision criteria",
-        "When to seek support",
-        "Approved next step"
+        "Common mistakes",
+        "Next step"
       ],
-      "llmPrompt": "Create a humanized faq draft for Hicks Consulting.\nTitle: Gen Z and millennial mental health language: what people are asking and what to do next\nCluster: Gen Z and millennial mental health language\nMinimum words: 560. Target words: 700.\nWrite in a warm, grounded, specific voice. Do not diagnose. Do not guarantee outcomes. Do not invent client stories.\nInclude these sections: Short answer; Question set; Decision criteria; When to seek support; Approved next step.\nApproved conversion path after value is delivered: https://monika-hicks.clientsecure.me/"
+      "llmPrompt": "Create a humanized article draft for Hicks Consulting.\nTitle: Black women healing beyond survival: what people are asking and what to do next\nCluster: Black women healing beyond survival\nMinimum words: 960. Target words: 1200.\nWrite in a warm, grounded, specific voice. Do not diagnose. Do not guarantee outcomes. Do not invent client stories.\nInclude these sections: Short answer; Who this is for; Why this matters; Decision criteria; Common mistakes; Next step.\nApproved conversion path after value is delivered: https://monika-hicks.clientsecure.me/"
+    },
+    {
+      "id": "brief-genz_millennial_mental_health-fanout",
+      "clusterId": "genz_millennial_mental_health",
+      "clusterTitle": "Gen Z and millennial mental health language",
+      "contentType": "fanout",
+      "title": "Gen Z and millennial mental health language: what people are asking and what to do next",
+      "suggestedRoute": "/resources/insights/gen-z-and-millennial-mental-health-language-fanout/",
+      "targetWords": 900,
+      "minimumWords": 720,
+      "sourceSignalCount": 1,
+      "score": 20,
+      "publishMode": "approval_queue_only",
+      "approvalStatus": "queued_for_owner_approval",
+      "llmGeneratedRequired": true,
+      "publicOnlyAfterApproval": true,
+      "createdAt": "2026-05-26T16:01:06.042Z",
+      "humanizationChecklist": [
+        "Use plain human language rather than generic therapy marketing copy.",
+        "Vary sentence rhythm and paragraph length.",
+        "Include concrete examples without inventing client stories.",
+        "Avoid exaggerated claims, guarantees, diagnosis, or pressure language.",
+        "Keep Monika Hicks / Hicks Consulting entity references consistent.",
+        "End with an approved conversion path only after value is delivered."
+      ],
+      "conversionPath": "https://monika-hicks.clientsecure.me/",
+      "sections": [
+        "Short answer",
+        "Who this is for",
+        "Why this matters",
+        "Decision criteria",
+        "Common mistakes",
+        "Next step"
+      ],
+      "llmPrompt": "Create a humanized fanout draft for Hicks Consulting.\nTitle: Gen Z and millennial mental health language: what people are asking and what to do next\nCluster: Gen Z and millennial mental health language\nMinimum words: 720. Target words: 900.\nWrite in a warm, grounded, specific voice. Do not diagnose. Do not guarantee outcomes. Do not invent client stories.\nInclude these sections: Short answer; Who this is for; Why this matters; Decision criteria; Common mistakes; Next step.\nApproved conversion path after value is delivered: https://monika-hicks.clientsecure.me/"
+    },
+    {
+      "id": "brief-workplace_emotional_intelligence-guide",
+      "clusterId": "workplace_emotional_intelligence",
+      "clusterTitle": "Workplace emotional intelligence and mental health training",
+      "contentType": "guide",
+      "title": "Workplace emotional intelligence and mental health training: what people are asking and what to do next",
+      "suggestedRoute": "/resources/guides/workplace-emotional-intelligence-and-mental-health-training-guide/",
+      "targetWords": 1400,
+      "minimumWords": 1120,
+      "sourceSignalCount": 1,
+      "score": 20,
+      "publishMode": "approval_queue_only",
+      "approvalStatus": "queued_for_owner_approval",
+      "llmGeneratedRequired": true,
+      "publicOnlyAfterApproval": true,
+      "createdAt": "2026-05-26T16:01:06.042Z",
+      "humanizationChecklist": [
+        "Use plain human language rather than generic therapy marketing copy.",
+        "Vary sentence rhythm and paragraph length.",
+        "Include concrete examples without inventing client stories.",
+        "Avoid exaggerated claims, guarantees, diagnosis, or pressure language.",
+        "Keep Monika Hicks / Hicks Consulting entity references consistent.",
+        "End with an approved conversion path only after value is delivered."
+      ],
+      "conversionPath": "https://monika-hicks.clientsecure.me/",
+      "sections": [
+        "Short answer",
+        "Who this is for",
+        "Why this matters",
+        "Decision criteria",
+        "Common mistakes",
+        "Next step"
+      ],
+      "llmPrompt": "Create a humanized guide draft for Hicks Consulting.\nTitle: Workplace emotional intelligence and mental health training: what people are asking and what to do next\nCluster: Workplace emotional intelligence and mental health training\nMinimum words: 1120. Target words: 1400.\nWrite in a warm, grounded, specific voice. Do not diagnose. Do not guarantee outcomes. Do not invent client stories.\nInclude these sections: Short answer; Who this is for; Why this matters; Decision criteria; Common mistakes; Next step.\nApproved conversion path after value is delivered: https://monika-hicks.clientsecure.me/"
     }
   ]
 }
