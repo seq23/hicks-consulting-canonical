@@ -201,7 +201,20 @@ async function handleFormDatabaseSubmission(request, env, formType) {
   for (const field of form.fields) {
     fields[field] = clean(incoming[field]);
   }
-  if (form.defaultLeadMagnet && !fields.leadMagnet) fields.leadMagnet = form.defaultLeadMagnet;
+  if (incoming && incoming.diagnostic === 'cloudflare-runtime') {
+    const { webhookUrl, sharedSecret } = getFormDatabaseConfig(env, formType);
+    return jsonResponse({
+      ok: true,
+      diagnostic: {
+        runtimeReached: true,
+        file: 'worker/_worker.js',
+        formType,
+        hasWebhookUrl: Boolean(webhookUrl),
+        webhookHost: webhookUrl ? new URL(webhookUrl).host : null,
+        hasSharedSecret: Boolean(sharedSecret)
+      }
+    });
+  }
 
   const missing = form.required.filter((field) => !fields[field]);
   if (missing.length) {
