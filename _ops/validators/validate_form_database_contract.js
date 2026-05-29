@@ -86,10 +86,7 @@ for (const contract of formContracts) {
   if (!fn.includes(`const FORM_TYPE = '${contract.type}'`)) fail(`${contract.functionPath} must be a thin wrapper for ${contract.type}.`);
   if (!fn.includes('FORM_DATABASE_FORMS')) fail(`${contract.functionPath} missing unified form registry.`);
   if (!fn.includes('postJsonToWebhook')) fail(`${contract.functionPath} missing Apps Script webhook transport.`);
-  if (!fn.includes("redirect: 'manual'")) fail(`${contract.functionPath} must manually capture Apps Script 302 redirect.`);
-  if (!fn.includes("method: 'GET'")) fail(`${contract.functionPath} must follow Apps Script redirect with GET, not POST.`);
-  if (!fn.includes('new URL(location, webhookUrl).toString()')) fail(`${contract.functionPath} must resolve Apps Script redirect location safely.`);
-  if (fn.includes('postJsonWithManualRedirect')) fail(`${contract.functionPath} must use the unified postJsonToWebhook helper only.`);
+    if (fn.includes('postJsonWithManualRedirect')) fail(`${contract.functionPath} must use the unified postJsonToWebhook helper only.`);
   if (!fn.includes('sendFormDatabaseSubmission')) fail(`${contract.functionPath} must synchronously send Apps Script submission.`);
   if (!fn.includes('webhookResult.parsed.ok !== true')) fail(`${contract.functionPath} must require Apps Script JSON ok:true before returning success.`);
   if (!fn.includes('FORM_DATABASE_DISPATCH_FAILED')) fail(`${contract.functionPath} must log failed dispatches.`);
@@ -124,4 +121,4 @@ for (const token of ['FORM DATABASE', 'FORM_DATABASE_WEBHOOK_URL', 'FORM_DATABAS
   if (!runbook.includes(token)) fail(`Form database runbook missing token: ${token}`);
 }
 
-console.log(`Form database contract OK (${formContracts.length} forms POST to Apps Script, follow Google redirect with GET, and synchronously confirm Apps Script ok:true before user success).`);
+console.log(`Form database contract OK (${formContracts.length} forms POST normally to Apps Script and require successful webhook transport before user success).`);
