@@ -96,22 +96,12 @@ async function readWebhookResult(upstream) {
   }
 }
 
-async function postJsonWithManualRedirect(webhookUrl, body) {
-  const requestInit = {
+async function postJsonToWebhook(webhookUrl, body) {
+  return fetch(webhookUrl, {
     method: 'POST',
     headers: { 'content-type': 'application/json' },
-    body,
-    redirect: 'manual'
-  };
-
-  const first = await fetch(webhookUrl, requestInit);
-  if (![301, 302, 303, 307, 308].includes(first.status)) return first;
-
-  const location = first.headers.get('location');
-  if (!location) return first;
-
-  const redirectedUrl = new URL(location, webhookUrl).toString();
-  return fetch(redirectedUrl, requestInit);
+    body
+  });
 }
 
 async function sendFormDatabaseSubmission({ env, request, formType, fields }) {
@@ -139,7 +129,7 @@ async function sendFormDatabaseSubmission({ env, request, formType, fields }) {
   let upstream;
   let webhookResult;
   try {
-    upstream = await postJsonWithManualRedirect(webhookUrl, JSON.stringify(forwardPayload));
+    upstream = await postJsonToWebhook(webhookUrl, JSON.stringify(forwardPayload));
     webhookResult = await readWebhookResult(upstream);
   } catch (error) {
     console.warn('FORM_DATABASE_DISPATCH_ERROR', JSON.stringify({

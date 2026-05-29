@@ -46,8 +46,7 @@ for (const token of [
   'FORM_DATABASE_SHARED_SECRET',
   'TRAINING_INQUIRY_WEBHOOK_URL',
   'INQUIRY_SHARED_SECRET',
-  'postJsonWithManualRedirect',
-  "redirect: 'manual'",
+  'postJsonToWebhook',
   'sendFormDatabaseSubmission',
   'FORM_DATABASE_DISPATCH_FAILED',
   'FORM_DATABASE_DISPATCH_ERROR',
@@ -86,7 +85,8 @@ for (const contract of formContracts) {
   if (!worker.includes(`'${contract.type}':`) && !worker.includes(`${contract.type}:`)) fail(`Worker registry missing form type ${contract.type}.`);
   if (!fn.includes(`const FORM_TYPE = '${contract.type}'`)) fail(`${contract.functionPath} must be a thin wrapper for ${contract.type}.`);
   if (!fn.includes('FORM_DATABASE_FORMS')) fail(`${contract.functionPath} missing unified form registry.`);
-  if (!fn.includes('postJsonWithManualRedirect')) fail(`${contract.functionPath} missing Apps Script redirect-safe poster.`);
+  if (!fn.includes('postJsonToWebhook')) fail(`${contract.functionPath} missing normal webhook POST transport.`);
+  if (fn.includes("redirect: 'manual'") || fn.includes('redirect: "manual"') || fn.includes('postJsonWithManualRedirect')) fail(`${contract.functionPath} must not use manual redirect transport for Apps Script webhooks.`);
   if (!fn.includes('sendFormDatabaseSubmission')) fail(`${contract.functionPath} must synchronously send Apps Script submission.`);
   if (!fn.includes('webhookResult.parsed.ok !== true')) fail(`${contract.functionPath} must require Apps Script JSON ok:true before returning success.`);
   if (!fn.includes('FORM_DATABASE_DISPATCH_FAILED')) fail(`${contract.functionPath} must log failed dispatches.`);
@@ -121,4 +121,4 @@ for (const token of ['FORM DATABASE', 'FORM_DATABASE_WEBHOOK_URL', 'FORM_DATABAS
   if (!runbook.includes(token)) fail(`Form database runbook missing token: ${token}`);
 }
 
-console.log(`Form database contract OK (${formContracts.length} forms synchronously confirm Apps Script ok:true before user success).`);
+console.log(`Form database contract OK (${formContracts.length} forms use normal webhook POST transport and synchronously confirm Apps Script ok:true before user success).`);

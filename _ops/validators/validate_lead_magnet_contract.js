@@ -65,8 +65,7 @@ for (const token of [
   'FORM_DATABASE_SHARED_SECRET',
   'TRAINING_INQUIRY_WEBHOOK_URL',
   'LEAD_MAGNET_WEBHOOK_URL',
-  'postJsonWithManualRedirect',
-  "redirect: 'manual'",
+  'postJsonToWebhook',
   'sendFormDatabaseSubmission',
   'FORM_DATABASE_DISPATCH_FAILED',
   'Consent is required',
@@ -77,6 +76,7 @@ for (const token of [
 
 
 if (!fn.includes("webhookUrl: env.LEAD_MAGNET_WEBHOOK_URL || env.FORM_DATABASE_WEBHOOK_URL || env.TRAINING_INQUIRY_WEBHOOK_URL")) fail('Lead magnet function must prefer LEAD_MAGNET_WEBHOOK_URL before legacy training webhook URL.');
+if (fn.includes("redirect: 'manual'") || fn.includes('redirect: "manual"') || fn.includes('postJsonWithManualRedirect')) fail('Lead magnet function must not use manual redirect transport for Apps Script webhooks.');
 if (!fn.includes('webhookResult.parsed.ok !== true')) fail('Lead magnet function must require Apps Script JSON ok:true before revealing download.');
 if (fn.includes('context.waitUntil') || fn.includes('queueFormDatabaseSubmission')) fail('Lead magnet function must not background-queue spreadsheet capture.');
 
@@ -87,7 +87,7 @@ for (const token of [
   'FORM_DATABASE_FORMS',
   'LEAD_MAGNET_DOWNLOAD_PATH',
   'FORM_DATABASE_WEBHOOK_URL',
-  'postJsonWithManualRedirect',
+  'postJsonToWebhook',
   'sendFormDatabaseSubmission'
 ]) {
   if (!worker.includes(token)) fail(`Worker missing token: ${token}`);
