@@ -177,11 +177,24 @@ async function handleFormDatabaseSubmission(request, env, formType) {
 
 export default {
   async fetch(request, env, ctx) {
-    const url = new URL(request.url);
-    const entry = Object.entries(FORM_DATABASE_FORMS).find(([, form]) => form.route === url.pathname);
-    if (entry) {
-      return handleFormDatabaseSubmission(request, env, entry[0]);
+    try {
+      const url = new URL(request.url);
+      const entry = Object.entries(FORM_DATABASE_FORMS).find(([, form]) => form.route === url.pathname);
+      if (entry) {
+        return handleFormDatabaseSubmission(request, env, entry[0]);
+      }
+
+      if (env.ASSETS && typeof env.ASSETS.fetch === 'function') {
+        return env.ASSETS.fetch(request);
+      }
+
+      return jsonResponse({ ok: false, error: 'Static asset binding is not available.' }, 500);
+    } catch (error) {
+      return jsonResponse({
+        ok: false,
+        error: 'Worker runtime error.',
+        message: error && error.message ? String(error.message).slice(0, 240) : 'Unknown runtime error.'
+      }, 500);
     }
-    return env.ASSETS.fetch(request);
   }
 };
