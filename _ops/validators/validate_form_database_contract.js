@@ -68,8 +68,8 @@ if (!worker.includes('LEAD_MAGNET_WEBHOOK_URL') || !worker.includes('LEAD_MAGNET
 if (!worker.includes("webhookUrl: env.LEAD_MAGNET_WEBHOOK_URL || env.FORM_DATABASE_WEBHOOK_URL || env.TRAINING_INQUIRY_WEBHOOK_URL")) {
   fail('Worker must prefer LEAD_MAGNET_WEBHOOK_URL for lead-magnet submissions.');
 }
-if (!worker.includes("sharedSecret: env.LEAD_MAGNET_SHARED_SECRET || env.FORM_DATABASE_SHARED_SECRET || env.TRAINING_INQUIRY_SECRET || env.INQUIRY_SHARED_SECRET")) {
-  fail('Worker must prefer LEAD_MAGNET_SHARED_SECRET for lead-magnet submissions.');
+if (!worker.includes("sharedSecret: env.FORM_DATABASE_SHARED_SECRET || env.TRAINING_INQUIRY_SECRET || env.INQUIRY_SHARED_SECRET || env.LEAD_MAGNET_SHARED_SECRET")) {
+  fail('Worker must prefer shared form secrets before LEAD_MAGNET_SHARED_SECRET for lead-magnet submissions.');
 }
 if (worker.includes('context.waitUntil') || worker.includes('queueFormDatabaseSubmission')) {
   fail('Worker must not background-queue form submissions because users would see success without confirmed spreadsheet capture.');

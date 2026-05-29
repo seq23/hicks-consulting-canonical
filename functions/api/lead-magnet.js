@@ -193,21 +193,6 @@ async function handleFormDatabaseSubmission({ request, env, formType }) {
   for (const field of form.fields) {
     fields[field] = clean(incoming[field]);
   }
-  if (incoming && incoming.diagnostic === 'cloudflare-runtime') {
-    const { webhookUrl, sharedSecret } = getFormDatabaseConfig(env, formType);
-    return jsonResponse({
-      ok: true,
-      diagnostic: {
-        runtimeReached: true,
-        file: 'functions/api/lead-magnet.js',
-        formType,
-        hasWebhookUrl: Boolean(webhookUrl),
-        webhookHost: webhookUrl ? new URL(webhookUrl).host : null,
-        hasSharedSecret: Boolean(sharedSecret)
-      }
-    });
-  }
-
   const missing = form.required.filter((field) => !fields[field]);
   if (missing.length) {
     return jsonResponse({ ok: false, error: `Missing required fields: ${missing.join(', ')}` }, 400);

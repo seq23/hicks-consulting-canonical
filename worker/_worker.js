@@ -201,21 +201,6 @@ async function handleFormDatabaseSubmission(request, env, formType) {
   for (const field of form.fields) {
     fields[field] = clean(incoming[field]);
   }
-  if (incoming && incoming.diagnostic === 'cloudflare-runtime') {
-    const { webhookUrl, sharedSecret } = getFormDatabaseConfig(env, formType);
-    return jsonResponse({
-      ok: true,
-      diagnostic: {
-        runtimeReached: true,
-        file: 'worker/_worker.js',
-        formType,
-        hasWebhookUrl: Boolean(webhookUrl),
-        webhookHost: webhookUrl ? new URL(webhookUrl).host : null,
-        hasSharedSecret: Boolean(sharedSecret)
-      }
-    });
-  }
-
   const missing = form.required.filter((field) => !fields[field]);
   if (missing.length) {
     return jsonResponse({ ok: false, error: `Missing required fields: ${missing.join(', ')}` }, 400);
@@ -229,50 +214,6 @@ async function handleFormDatabaseSubmission(request, env, formType) {
     return jsonResponse({ ok: false, error: 'Consent is required before sending this download.' }, 400);
   }
 
-  if (incoming && incoming.diagnostic === 'apps-script-roundtrip') {
-    const form = FORM_DATABASE_FORMS[formType];
-    const { webhookUrl, sharedSecret } = getFormDatabaseConfig(env, formType);
-    const forwardFields = normalizeForwardFields(formType, fields);
-    const forwardPayload = {
-      secret: sharedSecret,
-      inquiryType: formType,
-      formType,
-      leadMagnet: forwardFields.leadMagnet || form.defaultLeadMagnet || '',
-      submissionId: `diagnostic-${Date.now()}`,
-      submittedAt: new Date().toISOString(),
-      sourcePage: clean(fields.sourcePage || form.sourcePage),
-      userAgent: clean(request.headers.get('user-agent') || ''),
-      fields: forwardFields
-    };
-
-    try {
-      const upstream = await postJsonToWebhook(webhookUrl, JSON.stringify(forwardPayload));
-      const webhookResult = await readWebhookResult(upstream);
-      return jsonResponse({
-        ok: true,
-        diagnostic: {
-          runtimeReached: true,
-          file: 'worker/_worker.js',
-          formType,
-          upstreamOk: upstream.ok,
-          upstreamStatus: upstream.status,
-          upstreamContentType: upstream.headers.get('content-type'),
-          parsed: webhookResult.parsed,
-          raw: webhookResult.raw.slice(0, 500)
-        }
-      });
-    } catch (error) {
-      return jsonResponse({
-        ok: false,
-        diagnostic: {
-          runtimeReached: true,
-          file: 'worker/_worker.js',
-          formType,
-          errorMessage: error && error.message ? String(error.message).slice(0, 500) : 'Unknown error'
-        }
-      }, 502);
-    }
-  }
 
   const result = await sendFormDatabaseSubmission({ env, request, formType, fields });
   if (!result.ok) return jsonResponse(result.body, result.status);
