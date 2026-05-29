@@ -55,7 +55,7 @@ function getFormDatabaseConfig(env, formType) {
   if (formType === 'lead-magnet') {
     return {
       webhookUrl: env.LEAD_MAGNET_WEBHOOK_URL || env.FORM_DATABASE_WEBHOOK_URL || env.TRAINING_INQUIRY_WEBHOOK_URL,
-      sharedSecret: env.LEAD_MAGNET_SHARED_SECRET || env.FORM_DATABASE_SHARED_SECRET || env.TRAINING_INQUIRY_SECRET || env.INQUIRY_SHARED_SECRET
+      sharedSecret: env.FORM_DATABASE_SHARED_SECRET || env.TRAINING_INQUIRY_SECRET || env.INQUIRY_SHARED_SECRET || env.LEAD_MAGNET_SHARED_SECRET
     };
   }
 
