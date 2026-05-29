@@ -16,7 +16,7 @@ const contracts = [
     statusId: 'training-inquiry-status',
     endpoint: '/api/training-inquiry',
     fnPath: path.join(process.cwd(), 'functions', 'api', 'training-inquiry.js'),
-    inquiryType: "inquiryType: 'training'",
+    formType: "const FORM_TYPE = 'training'",
     successCopy: 'Your organizational training inquiry has been received',
     fields: ['firstName', 'lastName', 'company', 'email', 'services', 'eventDate', 'honorarium', 'referral', 'eventDetails']
   },
@@ -27,7 +27,7 @@ const contracts = [
     statusId: 'group-inquiry-status',
     endpoint: '/api/groups-inquiry',
     fnPath: path.join(process.cwd(), 'functions', 'api', 'groups-inquiry.js'),
-    inquiryType: "inquiryType: 'groups'",
+    formType: "const FORM_TYPE = 'groups'",
     successCopy: 'Your group inquiry has been received',
     fields: ['firstName', 'lastName', 'email', 'phone', 'groupInterest', 'supportNeed', 'availability', 'message'],
     forbiddenFields: ['company', 'services', 'eventDate', 'honorarium', 'eventDetails']
@@ -47,7 +47,7 @@ for (const contract of contracts) {
   if (!endpointPattern.test(html)) fail(`${contract.label} form must post to ${contract.endpoint}.`);
   if (!/method=["']POST["']/i.test(html)) fail(`${contract.label} form method must be POST.`);
 
-  const formBlockMatch = html.match(new RegExp(String.raw`<form[^>]+id=["\']${contract.formId}["\'][^>]*>[\s\S]*?<\/form>`, "i"));
+  const formBlockMatch = html.match(new RegExp(String.raw`<form[^>]+id=["\']${contract.formId}["\'][^>]*>[\s\S]*?<\/form>`, 'i'));
   if (!formBlockMatch) fail(`${contract.label} form block missing.`);
   const formBlock = formBlockMatch[0];
   const formFields = Array.from(formBlock.matchAll(/name=["']([^"']+)["']/g)).map(match => match[1]);
@@ -65,7 +65,7 @@ for (const contract of contracts) {
     const fieldPattern = new RegExp(`name=["']${field}["']`);
     if (!fieldPattern.test(formBlock)) fail(`${contract.label} frontend field missing: ${field}`);
     if (!js.includes(`'${field}'`) && !js.includes(`"${field}"`)) fail(`${contract.label} JS payload mapping missing: ${field}`);
-    if (!fn.includes(`"${field}"`) && !fn.includes(`'${field}'`)) fail(`${contract.label} backend mapping missing: ${field}`);
+    if (!fn.includes(`'${field}'`) && !fn.includes(`"${field}"`)) fail(`${contract.label} backend registry missing: ${field}`);
     fieldCount += 1;
   }
 
@@ -74,10 +74,11 @@ for (const contract of contracts) {
   if (!js.includes('submitInquiryPayload(endpoint, payload)')) fail(`${contract.label} JS must submit through explicit POST helper.`);
   if (!js.includes('form.hidden = true')) fail(`${contract.label} success behavior must hide the form.`);
   if (!js.includes(contract.successCopy)) fail(`${contract.label} success thank-you copy missing from JS.`);
-  if (!fn.includes('TRAINING_INQUIRY_WEBHOOK_URL')) fail(`${contract.label} must forward to Apps Script webhook URL.`);
-  if (!fn.includes('TRAINING_INQUIRY_SECRET') && !fn.includes('INQUIRY_SHARED_SECRET')) fail(`${contract.label} must use shared Apps Script secret.`);
-  if (!fn.includes(contract.inquiryType)) fail(`${contract.label} backend inquiryType marker missing.`);
+  if (!fn.includes(contract.formType)) fail(`${contract.label} backend form type marker missing.`);
+  if (!fn.includes('FORM_DATABASE_WEBHOOK_URL') || !fn.includes('FORM_DATABASE_SHARED_SECRET')) fail(`${contract.label} must support canonical form database env vars.`);
+  if (!fn.includes('TRAINING_INQUIRY_WEBHOOK_URL') || !fn.includes('INQUIRY_SHARED_SECRET')) fail(`${contract.label} must keep legacy webhook fallback variables.`);
   if (!fn.includes('secret: sharedSecret')) fail(`${contract.label} backend must forward shared secret to Apps Script.`);
+  if (!fn.includes('webhookResult.parsed.ok !== true')) fail(`${contract.label} backend must require Apps Script ok:true.`);
 }
 
 if (config.forms?.groups !== '/groups/#group-inquiry-form') fail('Groups config must route to /groups/#group-inquiry-form.');
@@ -97,13 +98,13 @@ if (!css.includes('content must never depend on JS animation') || !css.includes(
 
 if (!fs.existsSync(wranglerPath)) fail('wrangler.toml is required so Cloudflare Pages uses the explicit repo deployment contract.');
 if (!wranglerToml.includes('pages_build_output_dir = "dist"')) fail('wrangler.toml must set pages_build_output_dir = "dist".');
-if (!wranglerToml.includes('TRAINING_INQUIRY_WEBHOOK_URL')) fail('wrangler.toml must provide TRAINING_INQUIRY_WEBHOOK_URL for the deployed worker.');
-if (!wranglerToml.includes('INQUIRY_SHARED_SECRET')) fail('wrangler.toml must provide INQUIRY_SHARED_SECRET fallback for the deployed worker.');
+if (!wranglerToml.includes('TRAINING_INQUIRY_WEBHOOK_URL')) fail('wrangler.toml must retain legacy TRAINING_INQUIRY_WEBHOOK_URL fallback during form database migration.');
+if (!wranglerToml.includes('INQUIRY_SHARED_SECRET')) fail('wrangler.toml must retain legacy INQUIRY_SHARED_SECRET fallback during form database migration.');
 
 const advancedWorkerPath = path.join(process.cwd(), 'worker', '_worker.js');
 if (!fs.existsSync(advancedWorkerPath)) fail('Cloudflare Advanced Mode worker missing: worker/_worker.js');
 const advancedWorker = fs.readFileSync(advancedWorkerPath, 'utf8');
-for (const marker of ['/api/training-inquiry', '/api/groups-inquiry', 'TRAINING_INQUIRY_WEBHOOK_URL', 'INQUIRY_SHARED_SECRET', 'env.ASSETS.fetch(request)', 'GROUPS_FIELDS', 'TRAINING_FIELDS']) {
+for (const marker of ['/api/training-inquiry', '/api/groups-inquiry', 'FORM_DATABASE_FORMS', 'FORM_DATABASE_WEBHOOK_URL', 'FORM_DATABASE_SHARED_SECRET', 'TRAINING_INQUIRY_WEBHOOK_URL', 'INQUIRY_SHARED_SECRET', 'env.ASSETS.fetch(request)']) {
   if (!advancedWorker.includes(marker)) fail(`Cloudflare Advanced Mode worker missing marker: ${marker}`);
 }
 const buildSource = read('scripts/build/build.js');
@@ -111,6 +112,7 @@ if (!buildSource.includes("path.join(root, 'worker', '_worker.js')") || !buildSo
 
 const runbook = read('docs/runbooks/training-inquiry-google-sheet.md');
 if (!runbook.includes('Groups inquiry field contract')) fail('Runbook must document Groups inquiry field contract.');
+if (!runbook.includes('FORM_DATABASE_WEBHOOK_URL')) fail('Training runbook must point to the unified form database env vars.');
 if (!js.includes('Your organizational training inquiry has been received')) fail('Training form must show thank-you confirmation after successful submit.');
 if (!js.includes('Your group inquiry has been received')) fail('Groups form must show thank-you confirmation after successful submit.');
 

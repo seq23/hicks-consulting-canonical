@@ -18,26 +18,29 @@ The landing page form collects:
 
 - first name
 - email
-- optional stress context
+- optional broad stress context
 - consent checkbox
 - hidden lead magnet key: `stress-management-made-simple`
 
-After a successful submission, the page reveals the PDF download link. The API must fail closed: the download link is only returned after the webhook receiver returns JSON with `ok: true`.
+After a successful submission, the page reveals the PDF download link. The API must fail closed: the download link is only returned after the FORM DATABASE webhook receiver returns JSON with `ok: true`.
 
-## FORM DATABASE Google Sheet receiver
+## FORM DATABASE receiver
 
-The client uses one existing Google Sheet named `FORM DATABASE` for all inquiry storage. The lead magnet should append to a third tab in that spreadsheet named:
+The lead magnet uses the unified FORM DATABASE pipeline documented in:
 
-- `Lead Magnet Leads`
+```text
+docs/runbooks/form-database-webhook.md
+```
 
-Existing tabs:
+It does not need a separate spreadsheet, separate Apps Script deployment, or separate webhook lane.
 
-- `Training Inquiries`
-- `Group Inquiries`
+The lead magnet routes as:
 
-The Apps Script deployment must route payloads with `inquiryType: lead-magnet` into `Lead Magnet Leads`.
+```text
+/api/lead-magnet → inquiryType: lead-magnet → Lead Magnet Leads
+```
 
-Required lead magnet tab headers:
+## Required Lead Magnet Leads tab headers
 
 - `Submitted At`
 - `Status`
@@ -54,35 +57,22 @@ Required lead magnet tab headers:
 - `Follow-Up Date`
 - `Outcome`
 
-The Apps Script response must return JSON shaped like:
-
-```json
-{ "ok": true, "submissionId": "..." }
-```
-
-If Apps Script returns `{ "ok": false }`, invalid JSON, an HTTP failure, or an empty response, the site must not reveal the download link.
-
 ## Environment variables
 
-Preferred dedicated variables:
+Preferred canonical Cloudflare variables:
 
-- `LEAD_MAGNET_WEBHOOK_URL`
-- `LEAD_MAGNET_SHARED_SECRET`
+- `FORM_DATABASE_WEBHOOK_URL`
+- `FORM_DATABASE_SHARED_SECRET`
 
-Fallback variables, if the same webhook system is intentionally reused:
+Legacy fallbacks retained during transition:
 
 - `TRAINING_INQUIRY_WEBHOOK_URL`
 - `TRAINING_INQUIRY_SECRET`
 - `INQUIRY_SHARED_SECRET`
+- `LEAD_MAGNET_WEBHOOK_URL`
+- `LEAD_MAGNET_SHARED_SECRET`
 
-For the current v1 setup, Cloudflare should use:
-
-- `LEAD_MAGNET_WEBHOOK_URL`: the Google Apps Script `/exec` URL for the `FORM DATABASE` receiver.
-- `LEAD_MAGNET_SHARED_SECRET`: the same value as the existing `TRAINING_INQUIRY_SECRET`, unless the client intentionally creates a separate lead magnet secret.
-
-Apps Script should either define `LEAD_MAGNET_SHARED_SECRET` with the same value or fall back to `TRAINING_INQUIRY_SECRET`.
-
-Do not put real webhook URLs or secrets in source files.
+Do not create a new webhook URL for every new spreadsheet tab.
 
 ## Webhook payload
 
@@ -90,6 +80,7 @@ The endpoint forwards:
 
 - `secret`
 - `inquiryType: lead-magnet`
+- `formType: lead-magnet`
 - `leadMagnet`
 - `submissionId`
 - `submittedAt`
@@ -103,7 +94,8 @@ The endpoint forwards:
 2. Keep the filename stable unless the validator and config are updated together.
 3. Run `npm run build`.
 4. Run `npm run validate:lead-magnet`.
-5. Run `npm run validate:all`.
+5. Run `npm run validate:form-database`.
+6. Run `npm run validate:all`.
 
 ## Copy and compliance boundaries
 
@@ -129,6 +121,7 @@ Do not promise:
 - Homepage links to the landing page.
 - Resources page links to the landing page.
 - Form blocks missing first name, email, or consent.
+- Successful submission records a row in `Lead Magnet Leads`.
 - Successful submission reveals the download panel.
 - PDF opens.
-- Existing therapy, training, and group inquiry links still work.
+- Existing training and group inquiry forms still submit through the same FORM DATABASE lane.

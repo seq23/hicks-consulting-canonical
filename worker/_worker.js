@@ -1,62 +1,28 @@
-const TRAINING_FIELDS = [
-  'firstName',
-  'lastName',
-  'company',
-  'email',
-  'services',
-  'eventDate',
-  'honorarium',
-  'referral',
-  'eventDetails'
-];
-
-const TRAINING_REQUIRED_FIELDS = [
-  'firstName',
-  'lastName',
-  'company',
-  'email',
-  'services',
-  'eventDate',
-  'honorarium',
-  'eventDetails'
-];
-
-const LEAD_MAGNET_FIELDS = [
-  'firstName',
-  'email',
-  'leadMagnet',
-  'stressContext',
-  'consent',
-  'sourcePage',
-  'submittedAtClient'
-];
-
-const LEAD_MAGNET_REQUIRED_FIELDS = [
-  'firstName',
-  'email',
-  'consent'
-];
-
 const LEAD_MAGNET_DOWNLOAD_PATH = '/assets/downloads/stress-management-made-simple.pdf';
 
-const GROUPS_FIELDS = [
-  'firstName',
-  'lastName',
-  'email',
-  'phone',
-  'groupInterest',
-  'supportNeed',
-  'availability',
-  'message'
-];
-
-const GROUPS_REQUIRED_FIELDS = [
-  'firstName',
-  'lastName',
-  'email',
-  'groupInterest',
-  'supportNeed'
-];
+const FORM_DATABASE_FORMS = {
+  training: {
+    route: '/api/training-inquiry',
+    sourcePage: '/organizational-training-inquiry/',
+    fields: ['firstName', 'lastName', 'company', 'email', 'services', 'eventDate', 'honorarium', 'referral', 'eventDetails'],
+    required: ['firstName', 'lastName', 'company', 'email', 'services', 'eventDate', 'honorarium', 'eventDetails']
+  },
+  groups: {
+    route: '/api/groups-inquiry',
+    sourcePage: '/groups/',
+    fields: ['firstName', 'lastName', 'email', 'phone', 'groupInterest', 'supportNeed', 'availability', 'message'],
+    required: ['firstName', 'lastName', 'email', 'groupInterest', 'supportNeed']
+  },
+  'lead-magnet': {
+    route: '/api/lead-magnet',
+    sourcePage: '/stress-management-worksheet/',
+    fields: ['firstName', 'email', 'leadMagnet', 'stressContext', 'consent', 'sourcePage', 'submittedAtClient'],
+    required: ['firstName', 'email', 'consent'],
+    defaultLeadMagnet: 'stress-management-made-simple',
+    downloadPath: LEAD_MAGNET_DOWNLOAD_PATH,
+    requireConsent: true
+  }
+};
 
 function jsonResponse(body, status = 200) {
   return new Response(JSON.stringify(body), {
@@ -82,8 +48,14 @@ function createSubmissionId() {
       return globalThis.crypto.randomUUID();
     }
   } catch (error) {}
+  return `form_${Date.now()}_${Math.random().toString(36).slice(2, 12)}`;
+}
 
-  return `lead_${Date.now()}_${Math.random().toString(36).slice(2, 12)}`;
+function getFormDatabaseConfig(env) {
+  return {
+    webhookUrl: env.FORM_DATABASE_WEBHOOK_URL || env.TRAINING_INQUIRY_WEBHOOK_URL || env.LEAD_MAGNET_WEBHOOK_URL,
+    sharedSecret: env.FORM_DATABASE_SHARED_SECRET || env.TRAINING_INQUIRY_SECRET || env.INQUIRY_SHARED_SECRET || env.LEAD_MAGNET_SHARED_SECRET
+  };
 }
 
 async function readWebhookResult(upstream) {
@@ -96,169 +68,120 @@ async function readWebhookResult(upstream) {
   }
 }
 
-async function handleInquiry(request, env, inquiryType) {
-  if (request.method !== 'POST') {
-    return jsonResponse({ ok: false, error: 'Method not allowed.' }, 405);
-  }
-
-  const webhookUrl = env.TRAINING_INQUIRY_WEBHOOK_URL;
-  const sharedSecret = env.TRAINING_INQUIRY_SECRET || env.INQUIRY_SHARED_SECRET;
-
-  if (!webhookUrl || !sharedSecret) {
-    return jsonResponse({ ok: false, error: 'Inquiry endpoint is not configured.' }, 503);
-  }
-
-  let incoming;
-  try {
-    incoming = await request.json();
-  } catch (error) {
-    return jsonResponse({ ok: false, error: 'Invalid JSON payload.' }, 400);
-  }
-
-  const fields = inquiryType === 'groups' ? GROUPS_FIELDS : TRAINING_FIELDS;
-  const requiredFields = inquiryType === 'groups' ? GROUPS_REQUIRED_FIELDS : TRAINING_REQUIRED_FIELDS;
-
-  const payload = {};
-  for (const field of fields) {
-    payload[field] = clean(incoming[field]);
-  }
-
-  const missing = requiredFields.filter((field) => !payload[field]);
-  if (missing.length) {
-    return jsonResponse({ ok: false, error: `Missing required fields: ${missing.join(', ')}` }, 400);
-  }
-
-  if (!isValidEmail(payload.email)) {
-    return jsonResponse({ ok: false, error: 'Invalid email address.' }, 400);
-  }
-
-  const submissionId = createSubmissionId();
-  const sourcePage = inquiryType === 'groups' ? '/groups/' : '/organizational-training-inquiry/';
-  const forwardPayload = {
-    secret: sharedSecret,
-    inquiryType,
-    submissionId,
-    submittedAt: new Date().toISOString(),
-    sourcePage: clean(incoming.sourcePage || sourcePage),
-    userAgent: clean(request.headers.get('user-agent') || ''),
-    fields: payload
+async function postJsonWithManualRedirect(webhookUrl, body) {
+  const requestInit = {
+    method: 'POST',
+    headers: { 'content-type': 'application/json' },
+    body,
+    redirect: 'manual'
   };
 
-  let upstream;
-  try {
-    upstream = await fetch(webhookUrl, {
-      method: 'POST',
-      headers: { 'content-type': 'application/json' },
-      body: JSON.stringify(forwardPayload)
-    });
-  } catch (error) {
-    return jsonResponse({ ok: false, error: 'Submission service unavailable.' }, 502);
-  }
+  const first = await fetch(webhookUrl, requestInit);
+  if (![301, 302, 303, 307, 308].includes(first.status)) return first;
 
-  if (!upstream.ok) {
-    const upstreamText = await upstream.text().catch(() => '');
-    return jsonResponse({
-      ok: false,
-      error: 'Submission could not be recorded.',
-      upstreamStatus: upstream.status,
-      upstreamMessage: upstreamText.slice(0, 240)
-    }, 502);
-  }
+  const location = first.headers.get('location');
+  if (!location) return first;
 
-  return jsonResponse({ ok: true, submissionId });
+  const redirectedUrl = new URL(location, webhookUrl).toString();
+  return fetch(redirectedUrl, requestInit);
 }
 
-async function handleLeadMagnet(request, env) {
-  if (request.method !== 'POST') {
-    return jsonResponse({ ok: false, error: 'Method not allowed.' }, 405);
-  }
+async function submitToFormDatabase({ env, request, formType, fields }) {
+  const form = FORM_DATABASE_FORMS[formType];
+  const { webhookUrl, sharedSecret } = getFormDatabaseConfig(env);
 
-  let incoming;
-  try {
-    incoming = await request.json();
-  } catch (error) {
-    return jsonResponse({ ok: false, error: 'Invalid JSON payload.' }, 400);
-  }
-
-  const payload = {};
-  for (const field of LEAD_MAGNET_FIELDS) {
-    payload[field] = clean(incoming[field]);
-  }
-  payload.leadMagnet = payload.leadMagnet || 'stress-management-made-simple';
-
-  const missing = LEAD_MAGNET_REQUIRED_FIELDS.filter((field) => !payload[field]);
-  if (missing.length) {
-    return jsonResponse({ ok: false, error: `Missing required fields: ${missing.join(', ')}` }, 400);
-  }
-
-  if (!isValidEmail(payload.email)) {
-    return jsonResponse({ ok: false, error: 'Invalid email address.' }, 400);
-  }
-
-  if (payload.consent !== 'yes') {
-    return jsonResponse({ ok: false, error: 'Consent is required before sending this download.' }, 400);
+  if (!webhookUrl || !sharedSecret) {
+    return { ok: false, status: 503, body: { ok: false, error: 'Form database endpoint is not configured.' } };
   }
 
   const submissionId = createSubmissionId();
-  const webhookUrl = env.LEAD_MAGNET_WEBHOOK_URL || env.TRAINING_INQUIRY_WEBHOOK_URL;
-  const sharedSecret = env.LEAD_MAGNET_SHARED_SECRET || env.TRAINING_INQUIRY_SECRET || env.INQUIRY_SHARED_SECRET;
-
-  if (!webhookUrl || !sharedSecret) {
-    return jsonResponse({ ok: false, error: 'Lead magnet endpoint is not configured.' }, 503);
-  }
-
   const forwardPayload = {
     secret: sharedSecret,
-    inquiryType: 'lead-magnet',
-    leadMagnet: payload.leadMagnet,
+    inquiryType: formType,
+    formType,
+    leadMagnet: fields.leadMagnet || form.defaultLeadMagnet || '',
     submissionId,
     submittedAt: new Date().toISOString(),
-    sourcePage: clean(payload.sourcePage || '/stress-management-worksheet/'),
+    sourcePage: clean(fields.sourcePage || form.sourcePage),
     userAgent: clean(request.headers.get('user-agent') || ''),
-    fields: payload
+    fields
   };
 
   let upstream;
   try {
-    upstream = await fetch(webhookUrl, {
-      method: 'POST',
-      headers: { 'content-type': 'application/json' },
-      body: JSON.stringify(forwardPayload)
-    });
+    upstream = await postJsonWithManualRedirect(webhookUrl, JSON.stringify(forwardPayload));
   } catch (error) {
-    return jsonResponse({ ok: false, error: 'Submission service unavailable.' }, 502);
+    return { ok: false, status: 502, body: { ok: false, error: 'Submission service unavailable.' } };
   }
 
   const webhookResult = await readWebhookResult(upstream);
-
   if (!upstream.ok || !webhookResult.parsed || webhookResult.parsed.ok !== true) {
-    return jsonResponse({
+    return {
       ok: false,
-      error: 'Submission could not be recorded.',
-      upstreamStatus: upstream.status,
-      upstreamMessage: webhookResult.raw.slice(0, 240)
-    }, 502);
+      status: 502,
+      body: {
+        ok: false,
+        error: 'Submission could not be recorded.',
+        upstreamStatus: upstream.status,
+        upstreamMessage: webhookResult.raw.slice(0, 240)
+      }
+    };
   }
 
-  return jsonResponse({ ok: true, submissionId, downloadPath: LEAD_MAGNET_DOWNLOAD_PATH });
+  return { ok: true, submissionId };
+}
+
+async function handleFormDatabaseSubmission(request, env, formType) {
+  if (request.method !== 'POST') {
+    return jsonResponse({ ok: false, error: 'Method not allowed.' }, 405);
+  }
+
+  const form = FORM_DATABASE_FORMS[formType];
+  if (!form) {
+    return jsonResponse({ ok: false, error: 'Unknown form type.' }, 404);
+  }
+
+  let incoming;
+  try {
+    incoming = await request.json();
+  } catch (error) {
+    return jsonResponse({ ok: false, error: 'Invalid JSON payload.' }, 400);
+  }
+
+  const fields = {};
+  for (const field of form.fields) {
+    fields[field] = clean(incoming[field]);
+  }
+  if (form.defaultLeadMagnet && !fields.leadMagnet) fields.leadMagnet = form.defaultLeadMagnet;
+
+  const missing = form.required.filter((field) => !fields[field]);
+  if (missing.length) {
+    return jsonResponse({ ok: false, error: `Missing required fields: ${missing.join(', ')}` }, 400);
+  }
+
+  if (!isValidEmail(fields.email)) {
+    return jsonResponse({ ok: false, error: 'Invalid email address.' }, 400);
+  }
+
+  if (form.requireConsent && fields.consent !== 'yes') {
+    return jsonResponse({ ok: false, error: 'Consent is required before sending this download.' }, 400);
+  }
+
+  const result = await submitToFormDatabase({ env, request, formType, fields });
+  if (!result.ok) return jsonResponse(result.body, result.status);
+
+  const body = { ok: true, submissionId: result.submissionId };
+  if (form.downloadPath) body.downloadPath = form.downloadPath;
+  return jsonResponse(body);
 }
 
 export default {
   async fetch(request, env, ctx) {
     const url = new URL(request.url);
-
-    if (url.pathname === '/api/training-inquiry') {
-      return handleInquiry(request, env, 'training');
+    const entry = Object.entries(FORM_DATABASE_FORMS).find(([, form]) => form.route === url.pathname);
+    if (entry) {
+      return handleFormDatabaseSubmission(request, env, entry[0]);
     }
-
-    if (url.pathname === '/api/groups-inquiry') {
-      return handleInquiry(request, env, 'groups');
-    }
-
-    if (url.pathname === '/api/lead-magnet') {
-      return handleLeadMagnet(request, env);
-    }
-
     return env.ASSETS.fetch(request);
   }
 };
