@@ -167,7 +167,15 @@ async function handleFormDatabaseSubmission({ request, env, formType }) {
 }
 
 export async function onRequestPost({ request, env }) {
-  return handleFormDatabaseSubmission({ request, env, formType: FORM_TYPE });
+  try {
+    return await handleFormDatabaseSubmission({ request, env, formType: FORM_TYPE });
+  } catch (error) {
+    return jsonResponse({
+      ok: false,
+      error: 'Function runtime error.',
+      message: error && error.message ? String(error.message).slice(0, 240) : 'Unknown runtime error.'
+    }, 500);
+  }
 }
 
 export async function onRequestGet() {
