@@ -67,7 +67,8 @@ for (const token of [
   'LEAD_MAGNET_WEBHOOK_URL',
   'postJsonWithManualRedirect',
   "redirect: 'manual'",
-  'webhookResult.parsed.ok !== true',
+  'queueFormDatabaseSubmission',
+  'FORM_DATABASE_BACKGROUND_DISPATCH_FAILED',
   'Consent is required',
   'downloadPath'
 ]) {
@@ -82,7 +83,7 @@ for (const token of [
   'LEAD_MAGNET_DOWNLOAD_PATH',
   'FORM_DATABASE_WEBHOOK_URL',
   'postJsonWithManualRedirect',
-  'webhookResult.parsed.ok !== true'
+  'queueFormDatabaseSubmission'
 ]) {
   if (!worker.includes(token)) fail(`Worker missing token: ${token}`);
 }

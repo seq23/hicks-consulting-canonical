@@ -89,7 +89,7 @@ Apps Script must return:
 { "ok": true, "submissionId": "..." }
 ```
 
-If Apps Script returns `{ "ok": false }`, invalid JSON, an empty body, or an HTTP failure, the website treats the submission as failed.
+The website validates the form and queues the Apps Script dispatch in the background. Apps Script should still return `{ "ok": true }` so Cloudflare logs can distinguish recorded submissions from background receiver failures.
 
 ## Full Apps Script routing model
 
@@ -143,16 +143,17 @@ All form endpoints must:
 - validate required fields
 - validate email fields
 - generate a submission ID without relying only on `crypto.randomUUID()`
-- forward to the form database webhook
-- handle Google Apps Script redirects safely by preserving POST behavior
-- require Apps Script JSON body `ok: true`
+- queue the form database webhook dispatch in the request context with `waitUntil` when available
+- return user-facing success after local validation and successful queueing, without blocking the visitor on Google Apps Script
+- handle Google Apps Script redirects safely by preserving POST behavior in the background dispatcher
+- log background receiver failures when Apps Script does not return JSON body `ok: true`
 - return controlled JSON errors instead of Cloudflare-level crashes
 
-## Lead magnet fail-closed rule
+## Lead magnet response rule
 
-The lead magnet form must not reveal the PDF unless the spreadsheet receiver confirms `{ "ok": true }`.
+The lead magnet validates required fields, email format, and consent before revealing the PDF. After validation, the Cloudflare route queues the FORM DATABASE dispatch in the background and immediately returns the PDF path.
 
-This protects the client from silent download traffic with no captured email.
+This protects the visitor experience from Google Apps Script redirect/runtime instability while keeping one spreadsheet receiver as the operational database. Background failures should be checked in Cloudflare logs and corrected at the Apps Script/config layer.
 
 ## Manual tests
 
@@ -175,12 +176,14 @@ curl -i -sS -X POST "https://www.hicksconsulting.org/api/lead-magnet" \
 Expected success body:
 
 ```json
-{ "ok": true, "submissionId": "...", "downloadPath": "/assets/downloads/stress-management-made-simple.pdf" }
+{ "ok": true, "submissionId": "...", "queued": true, "downloadPath": "/assets/downloads/stress-management-made-simple.pdf" }
 ```
 
-If the response is a controlled JSON error, inspect Cloudflare env vars and Apps Script properties.
+If the response is a controlled JSON error before queueing, inspect Cloudflare env vars and required fields.
 
-If the response is a Cloudflare plain-text `error code: 502`, inspect the Worker deployment and route runtime.
+If the response succeeds but no row appears, inspect Cloudflare background logs, Apps Script properties, Apps Script deployment access, and spreadsheet tab/header handling.
+
+If the response is a Cloudflare plain-text `error code: 502`, inspect the Worker/Pages deployment and route runtime before the background dispatcher is scheduled.
 
 ## Failure recovery
 

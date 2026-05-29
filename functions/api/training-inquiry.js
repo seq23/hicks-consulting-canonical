@@ -83,7 +83,7 @@ async function postJsonWithManualRedirect(webhookUrl, body) {
   return fetch(redirectedUrl, requestInit);
 }
 
-async function submitToFormDatabase({ env, request, formType, fields }) {
+function queueFormDatabaseSubmission({ env, request, context, formType, fields }) {
   const form = FORM_DATABASE_FORMS[formType];
   const { webhookUrl, sharedSecret } = getFormDatabaseConfig(env);
 
@@ -104,31 +104,35 @@ async function submitToFormDatabase({ env, request, formType, fields }) {
     fields
   };
 
-  let upstream;
-  try {
-    upstream = await postJsonWithManualRedirect(webhookUrl, JSON.stringify(forwardPayload));
-  } catch (error) {
-    return { ok: false, status: 502, body: { ok: false, error: 'Submission service unavailable.' } };
-  }
-
-  const webhookResult = await readWebhookResult(upstream);
-  if (!upstream.ok || !webhookResult.parsed || webhookResult.parsed.ok !== true) {
-    return {
-      ok: false,
-      status: 502,
-      body: {
-        ok: false,
-        error: 'Submission could not be recorded.',
-        upstreamStatus: upstream.status,
-        upstreamMessage: webhookResult.raw.slice(0, 240)
+  const dispatch = Promise.resolve()
+    .then(() => postJsonWithManualRedirect(webhookUrl, JSON.stringify(forwardPayload)))
+    .then(async (upstream) => {
+      const webhookResult = await readWebhookResult(upstream);
+      if (!upstream.ok || !webhookResult.parsed || webhookResult.parsed.ok !== true) {
+        console.warn('FORM_DATABASE_BACKGROUND_DISPATCH_FAILED', JSON.stringify({
+          formType,
+          submissionId,
+          upstreamStatus: upstream.status,
+          upstreamMessage: webhookResult.raw.slice(0, 240)
+        }));
       }
-    };
+    })
+    .catch((error) => {
+      console.warn('FORM_DATABASE_BACKGROUND_DISPATCH_ERROR', JSON.stringify({
+        formType,
+        submissionId,
+        message: error && error.message ? String(error.message).slice(0, 240) : 'Unknown dispatch error.'
+      }));
+    });
+
+  if (context && typeof context.waitUntil === 'function') {
+    context.waitUntil(dispatch);
   }
 
-  return { ok: true, submissionId };
+  return { ok: true, submissionId, queued: true };
 }
 
-async function handleFormDatabaseSubmission({ request, env, formType }) {
+async function handleFormDatabaseSubmission({ request, env, context, formType }) {
   const form = FORM_DATABASE_FORMS[formType];
   if (!form) return jsonResponse({ ok: false, error: 'Unknown form type.' }, 404);
 
@@ -158,17 +162,17 @@ async function handleFormDatabaseSubmission({ request, env, formType }) {
     return jsonResponse({ ok: false, error: 'Consent is required before sending this download.' }, 400);
   }
 
-  const result = await submitToFormDatabase({ env, request, formType, fields });
+  const result = queueFormDatabaseSubmission({ env, request, context, formType, fields });
   if (!result.ok) return jsonResponse(result.body, result.status);
 
-  const body = { ok: true, submissionId: result.submissionId };
+  const body = { ok: true, submissionId: result.submissionId, queued: result.queued === true };
   if (form.downloadPath) body.downloadPath = form.downloadPath;
   return jsonResponse(body);
 }
 
-export async function onRequestPost({ request, env }) {
+export async function onRequestPost({ request, env, waitUntil }) {
   try {
-    return await handleFormDatabaseSubmission({ request, env, formType: FORM_TYPE });
+    return await handleFormDatabaseSubmission({ request, env, context: { waitUntil }, formType: FORM_TYPE });
   } catch (error) {
     return jsonResponse({
       ok: false,

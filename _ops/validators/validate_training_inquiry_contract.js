@@ -78,7 +78,8 @@ for (const contract of contracts) {
   if (!fn.includes('FORM_DATABASE_WEBHOOK_URL') || !fn.includes('FORM_DATABASE_SHARED_SECRET')) fail(`${contract.label} must support canonical form database env vars.`);
   if (!fn.includes('TRAINING_INQUIRY_WEBHOOK_URL') || !fn.includes('INQUIRY_SHARED_SECRET')) fail(`${contract.label} must keep legacy webhook fallback variables.`);
   if (!fn.includes('secret: sharedSecret')) fail(`${contract.label} backend must forward shared secret to Apps Script.`);
-  if (!fn.includes('webhookResult.parsed.ok !== true')) fail(`${contract.label} backend must require Apps Script ok:true.`);
+  if (!fn.includes('queueFormDatabaseSubmission')) fail(`${contract.label} backend must queue background Apps Script submission.`);
+  if (!fn.includes('FORM_DATABASE_BACKGROUND_DISPATCH_FAILED')) fail(`${contract.label} backend must log failed background dispatches.`);
 }
 
 if (config.forms?.groups !== '/groups/#group-inquiry-form') fail('Groups config must route to /groups/#group-inquiry-form.');

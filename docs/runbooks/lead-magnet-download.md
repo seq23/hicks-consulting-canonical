@@ -22,7 +22,7 @@ The landing page form collects:
 - consent checkbox
 - hidden lead magnet key: `stress-management-made-simple`
 
-After a successful submission, the page reveals the PDF download link. The API must fail closed: the download link is only returned after the FORM DATABASE webhook receiver returns JSON with `ok: true`.
+After local validation succeeds, the API queues the FORM DATABASE webhook dispatch in the background and reveals the PDF download link. The visitor must not be blocked by Google Apps Script redirect/runtime instability.
 
 ## FORM DATABASE receiver
 
@@ -87,6 +87,8 @@ The endpoint forwards:
 - `sourcePage`
 - `userAgent`
 - `fields`
+
+The dispatch is backgrounded with `waitUntil` when available. Apps Script should return `{ "ok": true }` for observability, but the user-facing response does not wait on Apps Script.
 
 ## Updating the PDF
 

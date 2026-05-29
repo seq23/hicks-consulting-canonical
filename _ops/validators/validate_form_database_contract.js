@@ -48,7 +48,9 @@ for (const token of [
   'INQUIRY_SHARED_SECRET',
   'postJsonWithManualRedirect',
   "redirect: 'manual'",
-  'webhookResult.parsed.ok !== true',
+  'queueFormDatabaseSubmission',
+  'FORM_DATABASE_BACKGROUND_DISPATCH_FAILED',
+  'context.waitUntil',
   'handleFormDatabaseSubmission'
 ]) {
   if (!worker.includes(token)) fail(`Worker missing unified form database token: ${token}`);
@@ -75,7 +77,9 @@ for (const contract of formContracts) {
   if (!fn.includes(`const FORM_TYPE = '${contract.type}'`)) fail(`${contract.functionPath} must be a thin wrapper for ${contract.type}.`);
   if (!fn.includes('FORM_DATABASE_FORMS')) fail(`${contract.functionPath} missing unified form registry.`);
   if (!fn.includes('postJsonWithManualRedirect')) fail(`${contract.functionPath} missing Apps Script redirect-safe poster.`);
-  if (!fn.includes('webhookResult.parsed.ok !== true')) fail(`${contract.functionPath} must require Apps Script ok:true.`);
+  if (!fn.includes('queueFormDatabaseSubmission')) fail(`${contract.functionPath} must queue background Apps Script submission.`);
+  if (!fn.includes('FORM_DATABASE_BACKGROUND_DISPATCH_FAILED')) fail(`${contract.functionPath} must log failed background dispatches.`);
+  if (!fn.includes('waitUntil')) fail(`${contract.functionPath} must use request context waitUntil for background dispatch.`);
 
   const formPattern = new RegExp(`<form[^>]+id=["']${contract.formId}["'][^>]*>`, 'i');
   if (!formPattern.test(html)) fail(`${contract.type} HTML form missing: ${contract.formId}.`);
@@ -106,4 +110,4 @@ for (const token of ['FORM DATABASE', 'FORM_DATABASE_WEBHOOK_URL', 'FORM_DATABAS
   if (!runbook.includes(token)) fail(`Form database runbook missing token: ${token}`);
 }
 
-console.log(`Form database contract OK (${formContracts.length} forms routed through one webhook architecture).`);
+console.log(`Form database contract OK (${formContracts.length} forms routed through one background webhook architecture).`);
