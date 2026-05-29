@@ -114,6 +114,22 @@ async function postJsonToWebhook(webhookUrl, body) {
 }
 
 async function sendFormDatabaseSubmission({ env, request, formType, fields }) {
+  if (fields && fields.diagnostic === 'cloudflare-runtime') {
+    const { webhookUrl, sharedSecret } = getFormDatabaseConfig(env, formType);
+    return {
+      ok: true,
+      submissionId: 'diagnostic-only',
+      queued: false,
+      diagnostic: {
+        runtimeReached: true,
+        file: 'functions/api/lead-magnet.js',
+        formType,
+        hasWebhookUrl: Boolean(webhookUrl),
+        webhookHost: webhookUrl ? new URL(webhookUrl).host : null,
+        hasSharedSecret: Boolean(sharedSecret)
+      }
+    };
+  }
   const form = FORM_DATABASE_FORMS[formType];
   const { webhookUrl, sharedSecret } = getFormDatabaseConfig(env, formType);
 
