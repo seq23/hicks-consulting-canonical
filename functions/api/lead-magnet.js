@@ -94,10 +94,24 @@ async function readWebhookResult(upstream) {
 }
 
 async function postJsonToWebhook(webhookUrl, body) {
-  return fetch(webhookUrl, {
+  const first = await fetch(webhookUrl, {
     method: 'POST',
     headers: { 'content-type': 'application/json' },
-    body
+    body,
+    redirect: 'manual'
+  });
+
+  if (![301, 302, 303, 307, 308].includes(first.status)) return first;
+
+  const location = first.headers.get('location');
+  if (!location) return first;
+
+  const redirectedUrl = new URL(location, webhookUrl).toString();
+
+  return fetch(redirectedUrl, {
+    method: 'GET',
+    headers: { accept: 'application/json' },
+    redirect: 'follow'
   });
 }
 
