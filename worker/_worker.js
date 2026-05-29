@@ -181,7 +181,7 @@ export default {
       const url = new URL(request.url);
       const entry = Object.entries(FORM_DATABASE_FORMS).find(([, form]) => form.route === url.pathname);
       if (entry) {
-        return handleFormDatabaseSubmission(request, env, entry[0]);
+        return await handleFormDatabaseSubmission(request, env, entry[0]);
       }
 
       if (env.ASSETS && typeof env.ASSETS.fetch === 'function') {
