@@ -1493,3 +1493,30 @@ footer {
   .lead-magnet-steps p { grid-column: 1; }
 }
 
+.lead-magnet-preview,
+.resource-preview-card {
+  border: 1px solid rgba(218, 199, 122, 0.28);
+  border-radius: 32px;
+  overflow: hidden;
+  background: rgba(236, 232, 220, 0.04);
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.22);
+}
+
+.lead-magnet-preview img,
+.resource-preview-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.resource-preview-card {
+  max-width: 420px;
+  justify-self: end;
+}
+
+@media (max-width: 820px) {
+  .resource-preview-card {
+    max-width: 100%;
+    justify-self: stretch;
+  }
+}
