@@ -76,6 +76,16 @@ function isValidEmail(value) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(String(value || '').trim());
 }
 
+function createSubmissionId() {
+  try {
+    if (globalThis.crypto && typeof globalThis.crypto.randomUUID === 'function') {
+      return globalThis.crypto.randomUUID();
+    }
+  } catch (error) {}
+
+  return `lead_${Date.now()}_${Math.random().toString(36).slice(2, 12)}`;
+}
+
 async function readWebhookResult(upstream) {
   const raw = await upstream.text().catch(() => '');
   if (!raw) return { raw, parsed: null };
@@ -122,7 +132,7 @@ async function handleInquiry(request, env, inquiryType) {
     return jsonResponse({ ok: false, error: 'Invalid email address.' }, 400);
   }
 
-  const submissionId = crypto.randomUUID();
+  const submissionId = createSubmissionId();
   const sourcePage = inquiryType === 'groups' ? '/groups/' : '/organizational-training-inquiry/';
   const forwardPayload = {
     secret: sharedSecret,
@@ -189,7 +199,7 @@ async function handleLeadMagnet(request, env) {
     return jsonResponse({ ok: false, error: 'Consent is required before sending this download.' }, 400);
   }
 
-  const submissionId = crypto.randomUUID();
+  const submissionId = createSubmissionId();
   const webhookUrl = env.LEAD_MAGNET_WEBHOOK_URL || env.TRAINING_INQUIRY_WEBHOOK_URL;
   const sharedSecret = env.LEAD_MAGNET_SHARED_SECRET || env.TRAINING_INQUIRY_SECRET || env.INQUIRY_SHARED_SECRET;
 
