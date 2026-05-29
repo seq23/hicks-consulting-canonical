@@ -207,6 +207,73 @@ function wireGroupsInquiryForm() {
   });
 }
 
+function wireLeadMagnetForm() {
+  const form = document.getElementById('stress-worksheet-form');
+  if (!form) return;
+
+  const status = document.getElementById('stress-worksheet-status');
+  const panel = document.getElementById('stress-worksheet-download');
+  const downloadLink = panel ? panel.querySelector('[data-download-url]') : null;
+  const submit = form.querySelector('button[type="submit"]');
+  const endpoint = form.getAttribute('data-endpoint') || form.getAttribute('action') || '/api/lead-magnet';
+
+  const setStatus = (message, type) => {
+    if (!status) return;
+    status.textContent = message;
+    status.className = `form-status ${type || ''}`.trim();
+  };
+
+  form.addEventListener('submit', async (event) => {
+    event.preventDefault();
+
+    const formData = new FormData(form);
+    const payload = {
+      sourcePage: window.location.pathname,
+      submittedAtClient: new Date().toISOString(),
+      leadMagnet: String(formData.get('leadMagnet') || 'stress-management-made-simple').trim(),
+      firstName: String(formData.get('firstName') || '').trim(),
+      email: String(formData.get('email') || '').trim(),
+      stressContext: String(formData.get('stressContext') || '').trim(),
+      consent: formData.get('consent') === 'yes' ? 'yes' : ''
+    };
+
+    if (!payload.firstName || !payload.email || !payload.consent) {
+      setStatus('Please enter your first name, email, and consent before downloading.', 'error');
+      return;
+    }
+
+    const originalText = submit ? submit.textContent : '';
+    if (submit) {
+      submit.disabled = true;
+      submit.textContent = 'Submitting…';
+    }
+    setStatus('', '');
+
+    try {
+      const response = await submitInquiryPayload(endpoint, payload);
+      const result = await response.json().catch(() => ({}));
+      if (!response.ok || result.ok !== true) {
+        throw new Error(result.error || 'Submission failed');
+      }
+
+      form.reset();
+      form.hidden = true;
+      if (downloadLink) {
+        downloadLink.setAttribute('href', result.downloadPath || downloadLink.getAttribute('data-download-url') || '/assets/downloads/stress-management-made-simple.pdf');
+      }
+      if (panel) panel.hidden = false;
+      setStatus('Thank you. Your worksheet is ready below.', 'success');
+      if (status) status.focus?.();
+    } catch (error) {
+      setStatus('We could not prepare the download just now. Please try again, or email info@hicksconsulting.org.', 'error');
+      if (submit) {
+        submit.disabled = false;
+        submit.textContent = originalText || 'Send me the worksheet';
+      }
+    }
+  });
+}
+
 
 function wireBrowserCompatibility() {
   document.documentElement.style.setProperty('color-scheme', document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light');
@@ -259,6 +326,7 @@ document.addEventListener('DOMContentLoaded', () => {
   runSafely(wireFormLinks);
   runSafely(wireTrainingInquiryForm);
   runSafely(wireGroupsInquiryForm);
+  runSafely(wireLeadMagnetForm);
 });
 
 window.wireFormLinks = wireFormLinks;

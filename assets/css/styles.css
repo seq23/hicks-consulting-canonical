@@ -1410,3 +1410,86 @@ footer {
 }
 :root[data-theme='dark'] .form-status.success { color: #dff2cf; }
 :root[data-theme='dark'] .form-status.error { color: #ffd6c9; }
+
+
+/* Lead magnet / worksheet funnel */
+.lead-magnet-spotlight-section { padding-top: 2.6rem; padding-bottom: 2.6rem; }
+.lead-magnet-spotlight,
+.lead-magnet-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(280px, .92fr);
+  gap: 1.4rem;
+  align-items: stretch;
+}
+.lead-magnet-mini,
+.lead-magnet-steps {
+  border-radius: 30px;
+  background: linear-gradient(180deg, rgba(75,88,64,.96), rgba(47,55,40,.96));
+  color: #fffaf2;
+  box-shadow: 0 26px 60px rgba(37,35,30,.16);
+  border: 1px solid rgba(234,217,180,.18);
+}
+.lead-magnet-mini {
+  padding: 1.4rem;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0,1fr));
+  gap: .8rem;
+}
+.lead-magnet-mini span,
+.lead-magnet-steps span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 52px;
+  border-radius: 18px;
+  background: rgba(234,217,180,.16);
+  border: 1px solid rgba(234,217,180,.2);
+  color: #fff7de;
+  font-weight: 800;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+}
+.lead-magnet-steps {
+  display: grid;
+  gap: .85rem;
+  padding: 1.15rem;
+}
+.lead-magnet-steps div {
+  display: grid;
+  grid-template-columns: 82px 1fr;
+  gap: .8rem 1rem;
+  align-items: center;
+  padding: .95rem;
+  border-radius: 22px;
+  background: rgba(255,255,255,.06);
+}
+.lead-magnet-steps h3 { margin: 0; color: #fff; }
+.lead-magnet-steps p { grid-column: 2; margin: -.25rem 0 0; color: rgba(255,250,242,.82); }
+.lead-magnet-hero .short-answer { margin-top: 1.1rem; }
+.checkbox-label {
+  display: flex !important;
+  grid-template-columns: none !important;
+  align-items: flex-start;
+  gap: .7rem !important;
+  font-weight: 500 !important;
+}
+.checkbox-label input { width: auto; margin-top: .35rem; flex: 0 0 auto; }
+.download-success {
+  margin-top: 1rem;
+  padding: 1.1rem;
+  border-radius: 22px;
+  background: rgba(79,112,69,.12);
+  border: 1px solid rgba(79,112,69,.18);
+}
+.download-success h3 { margin-top: 0; }
+.lead-magnet-note .inline-links { margin-top: 1rem; }
+@media (max-width: 880px) {
+  .lead-magnet-spotlight,
+  .lead-magnet-layout { grid-template-columns: 1fr; }
+}
+@media (max-width: 620px) {
+  .lead-magnet-mini { grid-template-columns: 1fr; }
+  .lead-magnet-steps div { grid-template-columns: 1fr; }
+  .lead-magnet-steps p { grid-column: 1; }
+}
+

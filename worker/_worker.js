@@ -21,6 +21,24 @@ const TRAINING_REQUIRED_FIELDS = [
   'eventDetails'
 ];
 
+const LEAD_MAGNET_FIELDS = [
+  'firstName',
+  'email',
+  'leadMagnet',
+  'stressContext',
+  'consent',
+  'sourcePage',
+  'submittedAtClient'
+];
+
+const LEAD_MAGNET_REQUIRED_FIELDS = [
+  'firstName',
+  'email',
+  'consent'
+];
+
+const LEAD_MAGNET_DOWNLOAD_PATH = '/assets/downloads/stress-management-made-simple.pdf';
+
 const GROUPS_FIELDS = [
   'firstName',
   'lastName',
@@ -56,6 +74,16 @@ function clean(value) {
 
 function isValidEmail(value) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(String(value || '').trim());
+}
+
+async function readWebhookResult(upstream) {
+  const raw = await upstream.text().catch(() => '');
+  if (!raw) return { raw, parsed: null };
+  try {
+    return { raw, parsed: JSON.parse(raw) };
+  } catch (error) {
+    return { raw, parsed: null };
+  }
 }
 
 async function handleInquiry(request, env, inquiryType) {
@@ -130,6 +158,81 @@ async function handleInquiry(request, env, inquiryType) {
   return jsonResponse({ ok: true, submissionId });
 }
 
+async function handleLeadMagnet(request, env) {
+  if (request.method !== 'POST') {
+    return jsonResponse({ ok: false, error: 'Method not allowed.' }, 405);
+  }
+
+  let incoming;
+  try {
+    incoming = await request.json();
+  } catch (error) {
+    return jsonResponse({ ok: false, error: 'Invalid JSON payload.' }, 400);
+  }
+
+  const payload = {};
+  for (const field of LEAD_MAGNET_FIELDS) {
+    payload[field] = clean(incoming[field]);
+  }
+  payload.leadMagnet = payload.leadMagnet || 'stress-management-made-simple';
+
+  const missing = LEAD_MAGNET_REQUIRED_FIELDS.filter((field) => !payload[field]);
+  if (missing.length) {
+    return jsonResponse({ ok: false, error: `Missing required fields: ${missing.join(', ')}` }, 400);
+  }
+
+  if (!isValidEmail(payload.email)) {
+    return jsonResponse({ ok: false, error: 'Invalid email address.' }, 400);
+  }
+
+  if (payload.consent !== 'yes') {
+    return jsonResponse({ ok: false, error: 'Consent is required before sending this download.' }, 400);
+  }
+
+  const submissionId = crypto.randomUUID();
+  const webhookUrl = env.LEAD_MAGNET_WEBHOOK_URL || env.TRAINING_INQUIRY_WEBHOOK_URL;
+  const sharedSecret = env.LEAD_MAGNET_SHARED_SECRET || env.TRAINING_INQUIRY_SECRET || env.INQUIRY_SHARED_SECRET;
+
+  if (!webhookUrl || !sharedSecret) {
+    return jsonResponse({ ok: false, error: 'Lead magnet endpoint is not configured.' }, 503);
+  }
+
+  const forwardPayload = {
+    secret: sharedSecret,
+    inquiryType: 'lead-magnet',
+    leadMagnet: payload.leadMagnet,
+    submissionId,
+    submittedAt: new Date().toISOString(),
+    sourcePage: clean(payload.sourcePage || '/stress-management-worksheet/'),
+    userAgent: clean(request.headers.get('user-agent') || ''),
+    fields: payload
+  };
+
+  let upstream;
+  try {
+    upstream = await fetch(webhookUrl, {
+      method: 'POST',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify(forwardPayload)
+    });
+  } catch (error) {
+    return jsonResponse({ ok: false, error: 'Submission service unavailable.' }, 502);
+  }
+
+  const webhookResult = await readWebhookResult(upstream);
+
+  if (!upstream.ok || !webhookResult.parsed || webhookResult.parsed.ok !== true) {
+    return jsonResponse({
+      ok: false,
+      error: 'Submission could not be recorded.',
+      upstreamStatus: upstream.status,
+      upstreamMessage: webhookResult.raw.slice(0, 240)
+    }, 502);
+  }
+
+  return jsonResponse({ ok: true, submissionId, downloadPath: LEAD_MAGNET_DOWNLOAD_PATH });
+}
+
 export default {
   async fetch(request, env, ctx) {
     const url = new URL(request.url);
@@ -140,6 +243,10 @@ export default {
 
     if (url.pathname === '/api/groups-inquiry') {
       return handleInquiry(request, env, 'groups');
+    }
+
+    if (url.pathname === '/api/lead-magnet') {
+      return handleLeadMagnet(request, env);
     }
 
     return env.ASSETS.fetch(request);
