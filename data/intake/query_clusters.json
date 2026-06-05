@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-02T16:04:15.117Z",
+  "generatedAt": "2026-06-05T15:39:30.442Z",
   "clusters": [
     {
       "id": "black_women_healing",
@@ -21,11 +21,25 @@
           "audience": "Black women",
           "contentType": "service",
           "status": "candidate",
-          "generatedAt": "2026-06-02T16:04:14.685Z"
+          "generatedAt": "2026-06-05T15:39:29.994Z"
+        },
+        {
+          "id": "reddit_rss_blackwomen-the-curious-pint-2-an-evening-of-black-women-in-literature-and-music-in-person",
+          "query": "The Curious Pint #2: An Evening of Black Women in Literature and Music In-Person",
+          "source": "reddit_rss_blackwomen",
+          "sourceType": "rss",
+          "tags": [
+            "black_women"
+          ],
+          "intent": "informational",
+          "audience": "Black women",
+          "contentType": "answer",
+          "status": "candidate",
+          "generatedAt": "2026-06-05T15:39:29.994Z"
         }
       ],
-      "queryCount": 1,
-      "score": 20,
+      "queryCount": 2,
+      "score": 40,
       "targetPage": "/llm-atlas/clusters/",
       "status": "active"
     },
@@ -35,43 +49,11 @@
       "tags": [
         "burnout"
       ],
-      "signals": [
-        {
-          "id": "reddit_rss_blackwomen-recommendations-for-a-good-therapist-in-naperville-who-doesn-t-have-3-month-wait",
-          "query": "Recommendations for a good therapist in Naperville who doesn't have 3-month waiting lists? I'm looking for something focused on anxiety and professional burnout.",
-          "source": "reddit_rss_blackwomen",
-          "sourceType": "rss",
-          "tags": [
-            "ai_digital_wellness",
-            "burnout"
-          ],
-          "intent": "informational",
-          "audience": "Clients seeking emotional wellness support",
-          "contentType": "answer",
-          "status": "candidate",
-          "generatedAt": "2026-06-02T16:04:14.685Z"
-        },
-        {
-          "id": "reddit_rss_ai_wellness-i-got-tired-of-staring-at-agent-logs-in-a-terminal-so-i-built-a-pixel-art-office",
-          "query": "I got tired of staring at agent logs in a terminal, so I built a pixel-art office where you can watch AI agents work in real-time",
-          "source": "reddit_rss_ai_wellness",
-          "sourceType": "rss",
-          "tags": [
-            "ai_digital_wellness",
-            "burnout",
-            "workplace_emotional_intelligence"
-          ],
-          "intent": "commercial",
-          "audience": "Organizations and teams",
-          "contentType": "service",
-          "status": "candidate",
-          "generatedAt": "2026-06-02T16:04:14.685Z"
-        }
-      ],
-      "queryCount": 2,
-      "score": 40,
+      "signals": [],
+      "queryCount": 0,
+      "score": 0,
       "targetPage": "/llm-atlas/clusters/",
-      "status": "active"
+      "status": "seed"
     },
     {
       "id": "ai_digital_wellness",
@@ -81,8 +63,8 @@
       ],
       "signals": [
         {
-          "id": "reddit_rss_blackwomen-isekai-d-into-a-dark-fantasy-rpg-are-you-kidding-me-somehow-i-ended-on-the-villa",
-          "query": "[Isekai’d into a Dark Fantasy RPG, Are You Kidding Me? Somehow, I Ended on the Villains Side.] Chapter 24: It Was So Warm and Soft",
+          "id": "reddit_rss_blackwomen-feeling-lost-and-looking-for-advice-lower-back-pain",
+          "query": "Feeling lost and looking for advice, lower back pain",
           "source": "reddit_rss_blackwomen",
           "sourceType": "rss",
           "tags": [
@@ -92,11 +74,11 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-06-02T16:04:14.685Z"
+          "generatedAt": "2026-06-05T15:39:29.994Z"
         },
         {
-          "id": "reddit_rss_blackwomen-isekai-d-into-a-dark-fantasy-rpg-are-you-kidding-me-somehow-i-ended-on-the-villa",
-          "query": "Isekai’d into a Dark Fantasy RPG, Are You Kidding Me? Somehow, I Ended on the Villains Side. Chapter 24: It Was So Warm and Soft",
+          "id": "reddit_rss_blackwomen-why-the-obsession-with-grind-culture-is-destroying-sustainable-success-and-what-",
+          "query": "Why the obsession with \"grind culture\" is destroying sustainable success (and what to do instead)",
           "source": "reddit_rss_blackwomen",
           "sourceType": "rss",
           "tags": [
@@ -106,21 +88,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-06-02T16:04:14.685Z"
-        },
-        {
-          "id": "reddit_rss_blackwomen-aitah-for-wearing-a-nightgown-during-maternity-leave",
-          "query": "AITAH for wearing a nightgown during maternity leave?",
-          "source": "reddit_rss_blackwomen",
-          "sourceType": "rss",
-          "tags": [
-            "ai_digital_wellness"
-          ],
-          "intent": "informational",
-          "audience": "Clients seeking emotional wellness support",
-          "contentType": "answer",
-          "status": "candidate",
-          "generatedAt": "2026-06-02T16:04:14.685Z"
+          "generatedAt": "2026-06-05T15:39:29.994Z"
         },
         {
           "id": "reddit_rss_ai_wellness-reddit-com-search-results-ai-anxiety-mental-health",
@@ -134,11 +102,11 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-06-02T16:04:14.685Z"
+          "generatedAt": "2026-06-05T15:39:29.994Z"
         },
         {
-          "id": "reddit_rss_ai_wellness-planning-to-go-straight-to-a-psychiatrist",
-          "query": "Planning to go straight to a psychiatrist",
+          "id": "reddit_rss_ai_wellness-what-makes-you-human-when-ai-starts-to-feel-alive-human-authenticity-and-ai-vort",
+          "query": "What Makes You Human When AI Starts to Feel Alive? Human Authenticity and AI Vortex-13's Origin Story",
           "source": "reddit_rss_ai_wellness",
           "sourceType": "rss",
           "tags": [
@@ -148,11 +116,11 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-06-02T16:04:14.685Z"
+          "generatedAt": "2026-06-05T15:39:29.994Z"
         },
         {
-          "id": "reddit_rss_ai_wellness-my-sibling-relies-on-ai-too-much-how-do-i-make-them-realise-it-s-not-healthy",
-          "query": "my sibling relies on ai too much. how do i make them realise it's not healthy",
+          "id": "reddit_rss_ai_wellness-canada-wants-large-scale-ai-data-centres-what-s-the-environmental-impact",
+          "query": "Canada wants 'large-scale' AI data centres. What's the environmental impact?",
           "source": "reddit_rss_ai_wellness",
           "sourceType": "rss",
           "tags": [
@@ -162,11 +130,25 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-06-02T16:04:14.685Z"
+          "generatedAt": "2026-06-05T15:39:29.994Z"
         },
         {
-          "id": "reddit_rss_genz_mental_health-boyfriend-relapsing-again-not-looking-to-recover-how-to-support",
-          "query": "Boyfriend relapsing again - not looking to recover, how to support",
+          "id": "reddit_rss_ai_wellness-samsung-introduces-next-gen-galaxy-watch-features-for-ai-powered-everyday-health",
+          "query": "Samsung Introduces Next-Gen Galaxy Watch Features for AI-Powered Everyday Health Companion",
+          "source": "reddit_rss_ai_wellness",
+          "sourceType": "rss",
+          "tags": [
+            "ai_digital_wellness"
+          ],
+          "intent": "informational",
+          "audience": "Clients seeking emotional wellness support",
+          "contentType": "answer",
+          "status": "candidate",
+          "generatedAt": "2026-06-05T15:39:29.994Z"
+        },
+        {
+          "id": "reddit_rss_genz_mental_health-what-makes-you-human-when-ai-starts-to-feel-alive-human-authenticity-and-ai-vort",
+          "query": "What Makes You Human When AI Starts to Feel Alive? Human Authenticity and AI Vortex-13's Origin Story",
           "source": "reddit_rss_genz_mental_health",
           "sourceType": "rss",
           "tags": [
@@ -176,11 +158,11 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-06-02T16:04:14.685Z"
+          "generatedAt": "2026-06-05T15:39:29.994Z"
         },
         {
-          "id": "reddit_rss_genz_mental_health-planning-to-go-straight-to-a-psychiatrist",
-          "query": "Planning to go straight to a psychiatrist",
+          "id": "reddit_rss_genz_mental_health-samsung-introduces-next-gen-galaxy-watch-features-for-ai-powered-everyday-health",
+          "query": "Samsung Introduces Next-Gen Galaxy Watch Features for AI-Powered Everyday Health Companion",
           "source": "reddit_rss_genz_mental_health",
           "sourceType": "rss",
           "tags": [
@@ -190,10 +172,54 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-06-02T16:04:14.685Z"
+          "generatedAt": "2026-06-05T15:39:29.994Z"
+        },
+        {
+          "id": "google_news_workplace_mental_health-workplace-mental-health-training-emotional-intelligence-google-news",
+          "query": "\"workplace mental health training emotional intelligence\" - Google News",
+          "source": "google_news_workplace_mental_health",
+          "sourceType": "rss",
+          "tags": [
+            "ai_digital_wellness",
+            "workplace_emotional_intelligence"
+          ],
+          "intent": "commercial",
+          "audience": "Organizations and teams",
+          "contentType": "service",
+          "status": "candidate",
+          "generatedAt": "2026-06-05T15:39:29.994Z"
+        },
+        {
+          "id": "google_news_workplace_mental_health-emotional-intelligence-training-improves-stress-regulation-and-performance-in-hi",
+          "query": "Emotional intelligence training improves stress regulation and performance in high-stress occupations - Nature",
+          "source": "google_news_workplace_mental_health",
+          "sourceType": "rss",
+          "tags": [
+            "ai_digital_wellness"
+          ],
+          "intent": "informational",
+          "audience": "Clients seeking emotional wellness support",
+          "contentType": "answer",
+          "status": "candidate",
+          "generatedAt": "2026-06-05T15:39:29.994Z"
+        },
+        {
+          "id": "google_news_workplace_mental_health-training-and-well-being-shape-workforce-in-older-adult-services-rochester-busine",
+          "query": "Training and well-being shape workforce in older adult services - Rochester Business Journal",
+          "source": "google_news_workplace_mental_health",
+          "sourceType": "rss",
+          "tags": [
+            "ai_digital_wellness",
+            "workplace_emotional_intelligence"
+          ],
+          "intent": "commercial",
+          "audience": "Organizations and teams",
+          "contentType": "service",
+          "status": "candidate",
+          "generatedAt": "2026-06-05T15:39:29.994Z"
         }
       ],
-      "queryCount": 8,
+      "queryCount": 11,
       "score": 100,
       "targetPage": "/llm-atlas/clusters/",
       "status": "active"
@@ -217,11 +243,11 @@
           "audience": "Gen Z and millennial clients",
           "contentType": "service",
           "status": "candidate",
-          "generatedAt": "2026-06-02T16:04:14.685Z"
+          "generatedAt": "2026-06-05T15:39:29.994Z"
         },
         {
-          "id": "reddit_rss_genz_mental_health-gen-z-nenga-gaali-daw-enimae",
-          "query": "Gen z nenga gaali daw enimae",
+          "id": "reddit_rss_genz_mental_health-gen-z-et-candidature-le-niveau-z-ro-de-l-effort",
+          "query": "Gen Z et candidature : Le niveau zéro de l'effort",
           "source": "reddit_rss_genz_mental_health",
           "sourceType": "rss",
           "tags": [
@@ -231,7 +257,7 @@
           "audience": "Gen Z and millennial clients",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-06-02T16:04:14.685Z"
+          "generatedAt": "2026-06-05T15:39:29.994Z"
         }
       ],
       "queryCount": 2,
@@ -247,8 +273,22 @@
       ],
       "signals": [
         {
-          "id": "reddit_rss_ai_wellness-i-really-want-a-job-but-it-feels-impossible",
-          "query": "I really want a job, but it feels impossible.",
+          "id": "reddit_rss_ai_wellness-why-did-propranolol-only-work-for-one-day",
+          "query": "Why did propranolol only work for one day?",
+          "source": "reddit_rss_ai_wellness",
+          "sourceType": "rss",
+          "tags": [
+            "workplace_emotional_intelligence"
+          ],
+          "intent": "informational",
+          "audience": "Organizations and teams",
+          "contentType": "answer",
+          "status": "candidate",
+          "generatedAt": "2026-06-05T15:39:29.994Z"
+        },
+        {
+          "id": "reddit_rss_ai_wellness-i-i-am-a-clinical-hypnotherapist-specializing-in-rapid-cold-call-anxiety-removal",
+          "query": "I I am a clinical hypnotherapist specializing in rapid cold-call anxiety removal (Doing pro-bono work this week) on zoom",
           "source": "reddit_rss_ai_wellness",
           "sourceType": "rss",
           "tags": [
@@ -258,11 +298,11 @@
           "audience": "Organizations and teams",
           "contentType": "service",
           "status": "candidate",
-          "generatedAt": "2026-06-02T16:04:14.685Z"
+          "generatedAt": "2026-06-05T15:39:29.994Z"
         }
       ],
-      "queryCount": 1,
-      "score": 20,
+      "queryCount": 2,
+      "score": 40,
       "targetPage": "/llm-atlas/clusters/",
       "status": "active"
     },
@@ -297,7 +337,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-06-02T16:04:14.685Z"
+          "generatedAt": "2026-06-05T15:39:29.994Z"
         },
         {
           "id": "reddit_rss_blackwomen-blackgirlshealing",
@@ -311,7 +351,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-06-02T16:04:14.685Z"
+          "generatedAt": "2026-06-05T15:39:29.994Z"
         },
         {
           "id": "reddit_rss_blackwomen-most-suffering-is-abuse-inequality-let-s-end-the-violence-harmful-labels-hardcor",
@@ -325,11 +365,11 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-06-02T16:04:14.685Z"
+          "generatedAt": "2026-06-05T15:39:29.994Z"
         },
         {
-          "id": "reddit_rss_blackwomen-happy-pride-month-y-all",
-          "query": "Happy pride month, y'all!🌈🩷",
+          "id": "reddit_rss_blackwomen-the-fangs-of-dracula-vii",
+          "query": "The Fangs of Dracula VII",
           "source": "reddit_rss_blackwomen",
           "sourceType": "rss",
           "tags": [
@@ -339,11 +379,11 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-06-02T16:04:14.685Z"
+          "generatedAt": "2026-06-05T15:39:29.994Z"
         },
         {
-          "id": "reddit_rss_blackwomen-eating-tips-advice-not-seeking-medical-advice",
-          "query": "Eating tips/advice? (NOT SEEKING MEDICAL ADVICE)",
+          "id": "reddit_rss_blackwomen-31-dc-metro-masc-4-femme-looking-for-something-real",
+          "query": "31/DC Metro/Masc 4 Femme/Looking for Something Real",
           "source": "reddit_rss_blackwomen",
           "sourceType": "rss",
           "tags": [
@@ -353,11 +393,11 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-06-02T16:04:14.685Z"
+          "generatedAt": "2026-06-05T15:39:29.994Z"
         },
         {
-          "id": "reddit_rss_blackwomen-i-will-never-look-the-way-i-want-to-no-amount-of-self-acceptance-will-make-thing",
-          "query": "I will never look the way I want to. No amount of self acceptance will make things better.",
+          "id": "reddit_rss_blackwomen-what-is-the-point-of-living-if-all-men-are-most-attracted-to-18-20",
+          "query": "What is the point of living if all men are most attracted to 18-20",
           "source": "reddit_rss_blackwomen",
           "sourceType": "rss",
           "tags": [
@@ -367,11 +407,25 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-06-02T16:04:14.685Z"
+          "generatedAt": "2026-06-05T15:39:29.994Z"
         },
         {
-          "id": "reddit_rss_blackwomen-blue-moon",
-          "query": "Blue Moon",
+          "id": "reddit_rss_blackwomen-grindset-vs-therapy-speak-dichotomy-is-a-lie-true-greatness-is-about-managing-th",
+          "query": "\"Grindset\" vs. \"Therapy Speak\" dichotomy is a lie. True greatness is about managing the fire, not burning out.",
+          "source": "reddit_rss_blackwomen",
+          "sourceType": "rss",
+          "tags": [
+            "general_emotional_wellness"
+          ],
+          "intent": "commercial",
+          "audience": "Clients seeking emotional wellness support",
+          "contentType": "service",
+          "status": "candidate",
+          "generatedAt": "2026-06-05T15:39:29.994Z"
+        },
+        {
+          "id": "reddit_rss_blackwomen-selling-branded-watches-declutter-price-drop-negotiable",
+          "query": "[Selling] Branded Watches Declutter - Price Drop & Negotiable❗️",
           "source": "reddit_rss_blackwomen",
           "sourceType": "rss",
           "tags": [
@@ -381,11 +435,11 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-06-02T16:04:14.685Z"
+          "generatedAt": "2026-06-05T15:39:29.994Z"
         },
         {
-          "id": "reddit_rss_blackwomen-still-feeling-like-the-odd-one-out-socially",
-          "query": "still feeling like the odd one out socially",
+          "id": "reddit_rss_blackwomen-multiple-items-for-sale",
+          "query": "Multiple items for sale!",
           "source": "reddit_rss_blackwomen",
           "sourceType": "rss",
           "tags": [
@@ -395,11 +449,11 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-06-02T16:04:14.685Z"
+          "generatedAt": "2026-06-05T15:39:29.994Z"
         },
         {
-          "id": "reddit_rss_blackwomen-disorganized-vent-someone-make-me-feel-less-depressed-pls",
-          "query": "disorganized vent- someone make me feel less depressed pls",
+          "id": "reddit_rss_blackwomen-selling-double-discount-sale-huge-list-of-1100-movies-lots-of-new-and-rare-title",
+          "query": "(Selling) DOUBLE DISCOUNT SALE!! Huge List Of 1100+ Movies! Lots Of New And Rare Titles!",
           "source": "reddit_rss_blackwomen",
           "sourceType": "rss",
           "tags": [
@@ -409,11 +463,11 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-06-02T16:04:14.685Z"
+          "generatedAt": "2026-06-05T15:39:29.994Z"
         },
         {
-          "id": "reddit_rss_blackwomen-qotd-tl-dr-part-four-the-short-happy-life-of-baby-jenks-the-fang-gang",
-          "query": "QotD TL;DR - Part Four (The Short Happy Life of Baby Jenks & The Fang Gang)",
+          "id": "reddit_rss_blackwomen-visenya-was-heir-to-dragonstone-not-aegon-spoilers-extended",
+          "query": "Visenya was Heir to Dragonstone, not Aegon. [spoilers extended]",
           "source": "reddit_rss_blackwomen",
           "sourceType": "rss",
           "tags": [
@@ -423,11 +477,11 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-06-02T16:04:14.685Z"
+          "generatedAt": "2026-06-05T15:39:29.994Z"
         },
         {
-          "id": "reddit_rss_blackwomen-building-a-business-need-help",
-          "query": "Building a business need help :(",
+          "id": "reddit_rss_blackwomen-sex-abuse-discussion-best-practices-resources",
+          "query": "Sex Abuse Discussion Best Practices/Resources",
           "source": "reddit_rss_blackwomen",
           "sourceType": "rss",
           "tags": [
@@ -437,11 +491,11 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-06-02T16:04:14.685Z"
+          "generatedAt": "2026-06-05T15:39:29.994Z"
         },
         {
-          "id": "reddit_rss_blackwomen-i-broke-up-with-her-and-i-deeply-regret-it",
-          "query": "I broke up with her and I deeply regret it",
+          "id": "reddit_rss_blackwomen-buy-any-jeans-for-499-s",
+          "query": "Buy any jeans for 499+s",
           "source": "reddit_rss_blackwomen",
           "sourceType": "rss",
           "tags": [
@@ -451,11 +505,11 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-06-02T16:04:14.685Z"
+          "generatedAt": "2026-06-05T15:39:29.994Z"
         },
         {
-          "id": "reddit_rss_blackwomen-43-m4f-discreet-gentleman-with-a-hidden-naughty-side",
-          "query": "43 [M4F] Discreet gentleman with a hidden naughty side.",
+          "id": "reddit_rss_blackwomen-peter-lamb-mp-lab-points-out-more-holes-in-disputed-draft-ehrc-guidance",
+          "query": "Peter Lamb MP (lab) points out more holes in disputed draft EHRC guidance",
           "source": "reddit_rss_blackwomen",
           "sourceType": "rss",
           "tags": [
@@ -465,11 +519,11 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-06-02T16:04:14.685Z"
+          "generatedAt": "2026-06-05T15:39:29.994Z"
         },
         {
-          "id": "reddit_rss_blackwomen-sandra-and-eric-part-3-chapter-28-prosthetics-interactions-and-echoes",
-          "query": "[Sandra and Eric] Part 3 Chapter 28: Prosthetics, Interactions, and Echoes",
+          "id": "reddit_rss_blackwomen-there-s-something-broken-in-me-i-don-t-wan-to-be-alone",
+          "query": "There's something broken in me. I don't wan to be alone.",
           "source": "reddit_rss_blackwomen",
           "sourceType": "rss",
           "tags": [
@@ -479,11 +533,11 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-06-02T16:04:14.685Z"
+          "generatedAt": "2026-06-05T15:39:29.994Z"
         },
         {
-          "id": "reddit_rss_blackwomen-need-help-figuring-out-this-title-please",
-          "query": "Need help figuring out this title please!",
+          "id": "reddit_rss_blackwomen-wore-this-gifted-dress-this-evening-and-literally-everyone-was-staring-at-my-cle",
+          "query": "Wore this gifted dress this evening and literally everyone was staring at my cleavage",
           "source": "reddit_rss_blackwomen",
           "sourceType": "rss",
           "tags": [
@@ -493,77 +547,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-06-02T16:04:14.685Z"
-        },
-        {
-          "id": "reddit_rss_blackwomen-texting-a-friend-but-didn-t-know-she-had-feelings",
-          "query": "Texting a \"Friend\" but didn't know she had feelings?",
-          "source": "reddit_rss_blackwomen",
-          "sourceType": "rss",
-          "tags": [
-            "general_emotional_wellness"
-          ],
-          "intent": "informational",
-          "audience": "Clients seeking emotional wellness support",
-          "contentType": "answer",
-          "status": "candidate",
-          "generatedAt": "2026-06-02T16:04:14.685Z"
-        },
-        {
-          "id": "reddit_rss_blackwomen-my-husband-m-42-wife-32-ia-world-fantasy-sex-rol-playing",
-          "query": "My husband M 42 / wife 32 IA world fantasy sex rol playing",
-          "source": "reddit_rss_blackwomen",
-          "sourceType": "rss",
-          "tags": [
-            "general_emotional_wellness"
-          ],
-          "intent": "informational",
-          "audience": "Clients seeking emotional wellness support",
-          "contentType": "answer",
-          "status": "candidate",
-          "generatedAt": "2026-06-02T16:04:14.685Z"
-        },
-        {
-          "id": "reddit_rss_blackwomen-welcome-to-rosewood-part-6-finale",
-          "query": "Welcome to Rosewood Part 6 (finale)",
-          "source": "reddit_rss_blackwomen",
-          "sourceType": "rss",
-          "tags": [
-            "general_emotional_wellness"
-          ],
-          "intent": "informational",
-          "audience": "Clients seeking emotional wellness support",
-          "contentType": "answer",
-          "status": "candidate",
-          "generatedAt": "2026-06-02T16:04:14.685Z"
-        },
-        {
-          "id": "reddit_rss_blackwomen-welcome-to-rosewood-part-5",
-          "query": "Welcome to Rosewood Part 5",
-          "source": "reddit_rss_blackwomen",
-          "sourceType": "rss",
-          "tags": [
-            "general_emotional_wellness"
-          ],
-          "intent": "informational",
-          "audience": "Clients seeking emotional wellness support",
-          "contentType": "answer",
-          "status": "candidate",
-          "generatedAt": "2026-06-02T16:04:14.685Z"
-        },
-        {
-          "id": "reddit_rss_blackwomen-polyamory-to-divorce-pipeline",
-          "query": "polyamory to divorce pipeline!",
-          "source": "reddit_rss_blackwomen",
-          "sourceType": "rss",
-          "tags": [
-            "general_emotional_wellness"
-          ],
-          "intent": "informational",
-          "audience": "Clients seeking emotional wellness support",
-          "contentType": "answer",
-          "status": "candidate",
-          "generatedAt": "2026-06-02T16:04:14.685Z"
+          "generatedAt": "2026-06-05T15:39:29.994Z"
         },
         {
           "id": "reddit_rss_ai_wellness-health-anxiety",
@@ -577,7 +561,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-06-02T16:04:14.685Z"
+          "generatedAt": "2026-06-05T15:39:29.994Z"
         },
         {
           "id": "reddit_rss_ai_wellness-social-anxiety",
@@ -591,11 +575,11 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-06-02T16:04:14.685Z"
+          "generatedAt": "2026-06-05T15:39:29.994Z"
         },
         {
-          "id": "reddit_rss_ai_wellness-anxiety-disorders",
-          "query": "Anxiety Disorders",
+          "id": "reddit_rss_ai_wellness-mentalhealthuk",
+          "query": "MentalHealthUK",
           "source": "reddit_rss_ai_wellness",
           "sourceType": "rss",
           "tags": [
@@ -605,11 +589,11 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-06-02T16:04:14.685Z"
+          "generatedAt": "2026-06-05T15:39:29.994Z"
         },
         {
-          "id": "reddit_rss_ai_wellness-well-made-goal-this-morning-65-down-from-zep-start-date-and-100-down-from-highes",
-          "query": "Well, made goal this morning. 65 down from zep start date, and 100 down from highest weight-and havent shared a thing sbout my journey on social media other than here",
+          "id": "reddit_rss_ai_wellness-life-so-far-idk-how-i-am-surviving",
+          "query": "life so far idk how i am surviving",
           "source": "reddit_rss_ai_wellness",
           "sourceType": "rss",
           "tags": [
@@ -619,11 +603,11 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-06-02T16:04:14.685Z"
+          "generatedAt": "2026-06-05T15:39:29.994Z"
         },
         {
-          "id": "reddit_rss_ai_wellness-stray-dog",
-          "query": "Stray Dog",
+          "id": "reddit_rss_ai_wellness-26f-at-rock-bottom-lost-everything-how-did-you-restart-when-everything-fell-apar",
+          "query": "26F at rock bottom. Lost everything. How did you restart when everything fell apart?",
           "source": "reddit_rss_ai_wellness",
           "sourceType": "rss",
           "tags": [
@@ -633,11 +617,11 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-06-02T16:04:14.685Z"
+          "generatedAt": "2026-06-05T15:39:29.994Z"
         },
         {
-          "id": "reddit_rss_ai_wellness-tw-trigger-warning-sexual-abuse-sexual-assault-domestic-violence-emotional-abuse",
-          "query": "TW: Trigger Warning: Sexual abuse, sexual assault, domestic violence, emotional abuse, pregnancy loss, family trauma, substance use, and mental health struggles🩵 I know I need a therapist",
+          "id": "reddit_rss_ai_wellness-how-to-deal-with-emotionally-abusive-parents",
+          "query": "How to deal with emotionally abusive parents",
           "source": "reddit_rss_ai_wellness",
           "sourceType": "rss",
           "tags": [
@@ -647,11 +631,11 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-06-02T16:04:14.685Z"
+          "generatedAt": "2026-06-05T15:39:29.994Z"
         },
         {
-          "id": "reddit_rss_ai_wellness-making-friends-as-an-adult-recovering-from-cptsd-in-relationships",
-          "query": "Making friends as an adult recovering from cptsd in relationships",
+          "id": "reddit_rss_ai_wellness-happy-men-s-mental-health-month",
+          "query": "Happy men's mental health month",
           "source": "reddit_rss_ai_wellness",
           "sourceType": "rss",
           "tags": [
@@ -661,11 +645,11 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-06-02T16:04:14.685Z"
+          "generatedAt": "2026-06-05T15:39:29.994Z"
         },
         {
-          "id": "reddit_rss_ai_wellness-vocic-com-review-with-coupons",
-          "query": "Vocic.com Review with Coupons",
+          "id": "reddit_rss_ai_wellness-trampoline-safety-and-privacy-concerns-scotland",
+          "query": "Trampoline safety and privacy concerns Scotland",
           "source": "reddit_rss_ai_wellness",
           "sourceType": "rss",
           "tags": [
@@ -675,11 +659,11 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-06-02T16:04:14.685Z"
+          "generatedAt": "2026-06-05T15:39:29.994Z"
         },
         {
-          "id": "reddit_rss_ai_wellness-welcome-read-me-first",
-          "query": "Welcome! Read Me First.",
+          "id": "reddit_rss_ai_wellness-the-effects-of-an-underactive-medial-prefrontal-cortex-in-borderline-personality",
+          "query": "The Effects of an Underactive Medial Prefrontal Cortex in Borderline Personality Disorder",
           "source": "reddit_rss_ai_wellness",
           "sourceType": "rss",
           "tags": [
@@ -689,11 +673,11 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-06-02T16:04:14.685Z"
+          "generatedAt": "2026-06-05T15:39:29.994Z"
         },
         {
-          "id": "reddit_rss_ai_wellness-how-do-you-cope-with-all-of-the-back-and-forth-is-it-a-common-symptom",
-          "query": "How do you cope with all of the back and forth?…is it a common symptom?",
+          "id": "reddit_rss_ai_wellness-a-discussion-about-the-future-of-cas",
+          "query": "A discussion about the future of CAS.",
           "source": "reddit_rss_ai_wellness",
           "sourceType": "rss",
           "tags": [
@@ -703,11 +687,11 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-06-02T16:04:14.685Z"
+          "generatedAt": "2026-06-05T15:39:29.994Z"
         },
         {
-          "id": "reddit_rss_ai_wellness-daddies-girls-not-so-much",
-          "query": "Daddies girls... not so much.",
+          "id": "reddit_rss_ai_wellness-what-song-are-you-sleeping-out-on",
+          "query": "What song are you sleeping out on?",
           "source": "reddit_rss_ai_wellness",
           "sourceType": "rss",
           "tags": [
@@ -717,11 +701,11 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-06-02T16:04:14.685Z"
+          "generatedAt": "2026-06-05T15:39:29.994Z"
         },
         {
-          "id": "reddit_rss_ai_wellness-father-cheated-on-mother-my-mother-forgave-him-and-my-father-still-doesn-t-chang",
-          "query": "Father cheated on mother, my mother forgave him and my father still doesn't change.",
+          "id": "reddit_rss_ai_wellness-from-burning-red-to-the-alchemy-how-taylor-completely-rewrote-her-psychological-",
+          "query": "From Burning Red to The Alchemy: How Taylor Completely Rewrote Her Psychological Use of Gold",
           "source": "reddit_rss_ai_wellness",
           "sourceType": "rss",
           "tags": [
@@ -731,11 +715,11 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-06-02T16:04:14.685Z"
+          "generatedAt": "2026-06-05T15:39:29.994Z"
         },
         {
-          "id": "reddit_rss_ai_wellness-heal-me-ella-jacobs",
-          "query": "Heal Me - Ella Jacobs",
+          "id": "reddit_rss_ai_wellness-advice-on-alt-esotropia",
+          "query": "Advice on alt esotropia",
           "source": "reddit_rss_ai_wellness",
           "sourceType": "rss",
           "tags": [
@@ -745,11 +729,11 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-06-02T16:04:14.685Z"
+          "generatedAt": "2026-06-05T15:39:29.994Z"
         },
         {
-          "id": "reddit_rss_ai_wellness-i-ruined-my-friendship-with-my-childhood-best-friend-years-ago-she-cut-me-off-bu",
-          "query": "I ruined my friendship with my childhood best friend years ago. She cut me off, but left me on her Instagram Close Friends list. Why?",
+          "id": "reddit_rss_ai_wellness-just-to-clarify-no-i-m-not-pushing-men-s-mental-health-month-over-pride-month-we",
+          "query": "Just to Clarify: No, I'm not pushing Men's mental health month over Pride Month. We can celebrate both, it's not like both are mutually exclusive, right?",
           "source": "reddit_rss_ai_wellness",
           "sourceType": "rss",
           "tags": [
@@ -759,11 +743,11 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-06-02T16:04:14.685Z"
+          "generatedAt": "2026-06-05T15:39:29.994Z"
         },
         {
-          "id": "reddit_rss_ai_wellness-life-em-avthundho-teliyatla",
-          "query": "Life em avthundho teliyatla",
+          "id": "reddit_rss_ai_wellness-my-experience-with-ocd-from-as-early-as-i-can-remember",
+          "query": "My experience with OCD, from as early as I can remember.",
           "source": "reddit_rss_ai_wellness",
           "sourceType": "rss",
           "tags": [
@@ -773,11 +757,11 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-06-02T16:04:14.685Z"
+          "generatedAt": "2026-06-05T15:39:29.994Z"
         },
         {
-          "id": "reddit_rss_ai_wellness-22f-dont-know-who-i-am",
-          "query": "22f dont know who I am",
+          "id": "reddit_rss_ai_wellness-am-i-cooked",
+          "query": "Am I cooked?",
           "source": "reddit_rss_ai_wellness",
           "sourceType": "rss",
           "tags": [
@@ -787,11 +771,11 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-06-02T16:04:14.685Z"
+          "generatedAt": "2026-06-05T15:39:29.994Z"
         },
         {
-          "id": "reddit_rss_ai_wellness-wtf-do-i-do",
-          "query": "Wtf do I do.",
+          "id": "reddit_rss_ai_wellness-my-ocs-rate-yours-with-custom-responses-read-desc",
+          "query": "My ocs rate yours with custom responses!! (Read desc!)",
           "source": "reddit_rss_ai_wellness",
           "sourceType": "rss",
           "tags": [
@@ -801,11 +785,11 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-06-02T16:04:14.685Z"
+          "generatedAt": "2026-06-05T15:39:29.994Z"
         },
         {
-          "id": "reddit_rss_ai_wellness-mental-health-how-to-cope",
-          "query": "Mental health/ how to cope?",
+          "id": "reddit_rss_ai_wellness-the-industry-s-advocacy-goes-only-so-far-and-has-to-stay-comfortable",
+          "query": "The industry's \"advocacy\" goes only so far and has to stay comfortable?",
           "source": "reddit_rss_ai_wellness",
           "sourceType": "rss",
           "tags": [
@@ -815,11 +799,11 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-06-02T16:04:14.685Z"
+          "generatedAt": "2026-06-05T15:39:29.994Z"
         },
         {
-          "id": "reddit_rss_ai_wellness-what-is-this-called",
-          "query": "What is this called?",
+          "id": "reddit_rss_ai_wellness-was-my-subreddit-victim-to-malicious-activity",
+          "query": "Was my subreddit victim to malicious activity?",
           "source": "reddit_rss_ai_wellness",
           "sourceType": "rss",
           "tags": [
@@ -829,21 +813,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-06-02T16:04:14.685Z"
-        },
-        {
-          "id": "reddit_rss_ai_wellness-falsely-accused-of-serious-things-years-ago-by-an-ex-s-mum-it-s-ruining-my-menta",
-          "query": "Falsely accused of serious things years ago by an ex's mum. It's ruining my mental health and I need to get it off my chest",
-          "source": "reddit_rss_ai_wellness",
-          "sourceType": "rss",
-          "tags": [
-            "general_emotional_wellness"
-          ],
-          "intent": "informational",
-          "audience": "Clients seeking emotional wellness support",
-          "contentType": "answer",
-          "status": "candidate",
-          "generatedAt": "2026-06-02T16:04:14.685Z"
+          "generatedAt": "2026-06-05T15:39:29.994Z"
         },
         {
           "id": "reddit_rss_genz_mental_health-mentalhealththerapy",
@@ -857,7 +827,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "service",
           "status": "candidate",
-          "generatedAt": "2026-06-02T16:04:14.685Z"
+          "generatedAt": "2026-06-05T15:39:29.994Z"
         },
         {
           "id": "reddit_rss_genz_mental_health-patient-perspectives-on-psychotherapy",
@@ -871,11 +841,11 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "service",
           "status": "candidate",
-          "generatedAt": "2026-06-02T16:04:14.685Z"
+          "generatedAt": "2026-06-05T15:39:29.994Z"
         },
         {
-          "id": "reddit_rss_genz_mental_health-a-subreddit-for-cognitive-behavioral-therapy",
-          "query": "A Subreddit for Cognitive Behavioral Therapy",
+          "id": "reddit_rss_genz_mental_health-dialectic-behavioral-therapy-dbt-self-help",
+          "query": "Dialectic Behavioral Therapy (DBT) Self Help",
           "source": "reddit_rss_genz_mental_health",
           "sourceType": "rss",
           "tags": [
@@ -885,11 +855,11 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "service",
           "status": "candidate",
-          "generatedAt": "2026-06-02T16:04:14.685Z"
+          "generatedAt": "2026-06-05T15:39:29.994Z"
         },
         {
-          "id": "reddit_rss_genz_mental_health-well-made-goal-this-morning-65-down-from-zep-start-date-and-100-down-from-highes",
-          "query": "Well, made goal this morning. 65 down from zep start date, and 100 down from highest weight-and havent shared a thing sbout my journey on social media other than here",
+          "id": "reddit_rss_genz_mental_health-life-so-far-idk-how-i-am-surviving",
+          "query": "life so far idk how i am surviving",
           "source": "reddit_rss_genz_mental_health",
           "sourceType": "rss",
           "tags": [
@@ -899,11 +869,11 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-06-02T16:04:14.685Z"
+          "generatedAt": "2026-06-05T15:39:29.994Z"
         },
         {
-          "id": "reddit_rss_genz_mental_health-stray-dog",
-          "query": "Stray Dog",
+          "id": "reddit_rss_genz_mental_health-26f-at-rock-bottom-lost-everything-how-did-you-restart-when-everything-fell-apar",
+          "query": "26F at rock bottom. Lost everything. How did you restart when everything fell apart?",
           "source": "reddit_rss_genz_mental_health",
           "sourceType": "rss",
           "tags": [
@@ -913,11 +883,11 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-06-02T16:04:14.685Z"
+          "generatedAt": "2026-06-05T15:39:29.994Z"
         },
         {
-          "id": "reddit_rss_genz_mental_health-tw-trigger-warning-sexual-abuse-sexual-assault-domestic-violence-emotional-abuse",
-          "query": "TW: Trigger Warning: Sexual abuse, sexual assault, domestic violence, emotional abuse, pregnancy loss, family trauma, substance use, and mental health struggles🩵 I know I need a therapist",
+          "id": "reddit_rss_genz_mental_health-how-to-deal-with-emotionally-abusive-parents",
+          "query": "How to deal with emotionally abusive parents",
           "source": "reddit_rss_genz_mental_health",
           "sourceType": "rss",
           "tags": [
@@ -927,11 +897,11 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-06-02T16:04:14.685Z"
+          "generatedAt": "2026-06-05T15:39:29.994Z"
         },
         {
-          "id": "reddit_rss_genz_mental_health-making-friends-as-an-adult-recovering-from-cptsd-in-relationships",
-          "query": "Making friends as an adult recovering from cptsd in relationships",
+          "id": "reddit_rss_genz_mental_health-happy-men-s-mental-health-month",
+          "query": "Happy men's mental health month",
           "source": "reddit_rss_genz_mental_health",
           "sourceType": "rss",
           "tags": [
@@ -941,11 +911,11 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-06-02T16:04:14.685Z"
+          "generatedAt": "2026-06-05T15:39:29.994Z"
         },
         {
-          "id": "reddit_rss_genz_mental_health-scientists-report-retatrutide-reduced-up-to-82-of-liver-fat-in-early-clinical-re",
-          "query": "Scientists Report Retatrutide Reduced Up To 82% Of Liver Fat In Early Clinical Research",
+          "id": "reddit_rss_genz_mental_health-trampoline-safety-and-privacy-concerns-scotland",
+          "query": "Trampoline safety and privacy concerns Scotland",
           "source": "reddit_rss_genz_mental_health",
           "sourceType": "rss",
           "tags": [
@@ -955,11 +925,11 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-06-02T16:04:14.685Z"
+          "generatedAt": "2026-06-05T15:39:29.994Z"
         },
         {
-          "id": "reddit_rss_genz_mental_health-welcome-read-me-first",
-          "query": "Welcome! Read Me First.",
+          "id": "reddit_rss_genz_mental_health-i-need-help-i-do-not-know-how-much-longer-i-can-do-this",
+          "query": "I need help, I do not know how much longer I can do this",
           "source": "reddit_rss_genz_mental_health",
           "sourceType": "rss",
           "tags": [
@@ -969,11 +939,11 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-06-02T16:04:14.685Z"
+          "generatedAt": "2026-06-05T15:39:29.994Z"
         },
         {
-          "id": "reddit_rss_genz_mental_health-my-22f-boyfriend-24m-wants-me-fill-out-a-form-if-i-m-upset-about-something",
-          "query": "My [22f] boyfriend [24m] wants me fill out a form if I'm upset about something",
+          "id": "reddit_rss_genz_mental_health-a-discussion-about-the-future-of-cas",
+          "query": "A discussion about the future of CAS.",
           "source": "reddit_rss_genz_mental_health",
           "sourceType": "rss",
           "tags": [
@@ -983,11 +953,11 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-06-02T16:04:14.685Z"
+          "generatedAt": "2026-06-05T15:39:29.994Z"
         },
         {
-          "id": "reddit_rss_genz_mental_health-how-do-you-cope-with-all-of-the-back-and-forth-is-it-a-common-symptom",
-          "query": "How do you cope with all of the back and forth?…is it a common symptom?",
+          "id": "reddit_rss_genz_mental_health-starbucks-ification-of-barista-culture",
+          "query": "Starbucks-ification of Barista Culture",
           "source": "reddit_rss_genz_mental_health",
           "sourceType": "rss",
           "tags": [
@@ -997,11 +967,11 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-06-02T16:04:14.685Z"
+          "generatedAt": "2026-06-05T15:39:29.994Z"
         },
         {
-          "id": "reddit_rss_genz_mental_health-daddies-girls-not-so-much",
-          "query": "Daddies girls... not so much.",
+          "id": "reddit_rss_genz_mental_health-what-song-are-you-sleeping-out-on",
+          "query": "What song are you sleeping out on?",
           "source": "reddit_rss_genz_mental_health",
           "sourceType": "rss",
           "tags": [
@@ -1011,11 +981,11 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-06-02T16:04:14.685Z"
+          "generatedAt": "2026-06-05T15:39:29.994Z"
         },
         {
-          "id": "reddit_rss_genz_mental_health-father-cheated-on-mother-my-mother-forgave-him-and-my-father-still-doesn-t-chang",
-          "query": "Father cheated on mother, my mother forgave him and my father still doesn't change.",
+          "id": "reddit_rss_genz_mental_health-advice-on-alt-esotropia",
+          "query": "Advice on alt esotropia",
           "source": "reddit_rss_genz_mental_health",
           "sourceType": "rss",
           "tags": [
@@ -1025,11 +995,11 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-06-02T16:04:14.685Z"
+          "generatedAt": "2026-06-05T15:39:29.994Z"
         },
         {
-          "id": "reddit_rss_genz_mental_health-heal-me-ella-jacobs",
-          "query": "Heal Me - Ella Jacobs",
+          "id": "reddit_rss_genz_mental_health-just-to-clarify-no-i-m-not-pushing-men-s-mental-health-month-over-pride-month-we",
+          "query": "Just to Clarify: No, I'm not pushing Men's mental health month over Pride Month. We can celebrate both, it's not like both are mutually exclusive, right?",
           "source": "reddit_rss_genz_mental_health",
           "sourceType": "rss",
           "tags": [
@@ -1039,11 +1009,11 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-06-02T16:04:14.685Z"
+          "generatedAt": "2026-06-05T15:39:29.994Z"
         },
         {
-          "id": "reddit_rss_genz_mental_health-i-ruined-my-friendship-with-my-childhood-best-friend-years-ago-she-cut-me-off-bu",
-          "query": "I ruined my friendship with my childhood best friend years ago. She cut me off, but left me on her Instagram Close Friends list. Why?",
+          "id": "reddit_rss_genz_mental_health-my-experience-with-ocd-from-as-early-as-i-can-remember",
+          "query": "My experience with OCD, from as early as I can remember.",
           "source": "reddit_rss_genz_mental_health",
           "sourceType": "rss",
           "tags": [
@@ -1053,11 +1023,11 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-06-02T16:04:14.685Z"
+          "generatedAt": "2026-06-05T15:39:29.994Z"
         },
         {
-          "id": "reddit_rss_genz_mental_health-life-em-avthundho-teliyatla",
-          "query": "Life em avthundho teliyatla",
+          "id": "reddit_rss_genz_mental_health-feedback-on-my-application-gap-year-applying-in-2028",
+          "query": "Feedback on my application? Gap year, applying in 2028",
           "source": "reddit_rss_genz_mental_health",
           "sourceType": "rss",
           "tags": [
@@ -1067,11 +1037,11 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-06-02T16:04:14.685Z"
+          "generatedAt": "2026-06-05T15:39:29.994Z"
         },
         {
-          "id": "reddit_rss_genz_mental_health-25-f4a-need-an-ear",
-          "query": "25 [F4A] need an ear 👂",
+          "id": "reddit_rss_genz_mental_health-the-industry-s-advocacy-goes-only-so-far-and-has-to-stay-comfortable",
+          "query": "The industry's \"advocacy\" goes only so far and has to stay comfortable?",
           "source": "reddit_rss_genz_mental_health",
           "sourceType": "rss",
           "tags": [
@@ -1081,11 +1051,11 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-06-02T16:04:14.685Z"
+          "generatedAt": "2026-06-05T15:39:29.994Z"
         },
         {
-          "id": "reddit_rss_genz_mental_health-wtf-do-i-do",
-          "query": "Wtf do I do.",
+          "id": "reddit_rss_genz_mental_health-cjp-cockroach-janta-party-tomorrow-s-protest-impact-on-tricity-our-nation",
+          "query": "CJP(Cockroach Janta Party) tomorrow's Protest impact on Tricity & our nation",
           "source": "reddit_rss_genz_mental_health",
           "sourceType": "rss",
           "tags": [
@@ -1095,11 +1065,11 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-06-02T16:04:14.685Z"
+          "generatedAt": "2026-06-05T15:39:29.994Z"
         },
         {
-          "id": "reddit_rss_genz_mental_health-mental-health-how-to-cope",
-          "query": "Mental health/ how to cope?",
+          "id": "reddit_rss_genz_mental_health-how-am-i-supposed-to-help-tw-suicide",
+          "query": "How am I supposed to help? TW: suicide",
           "source": "reddit_rss_genz_mental_health",
           "sourceType": "rss",
           "tags": [
@@ -1109,11 +1079,11 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-06-02T16:04:14.685Z"
+          "generatedAt": "2026-06-05T15:39:29.994Z"
         },
         {
-          "id": "reddit_rss_genz_mental_health-what-is-this-called",
-          "query": "What is this called?",
+          "id": "reddit_rss_genz_mental_health-valve-is-a-corrupt-gambling-company-that-must-be-punished-by-the-law",
+          "query": "Valve is a corrupt gambling company that must be punished by the law.",
           "source": "reddit_rss_genz_mental_health",
           "sourceType": "rss",
           "tags": [
@@ -1123,11 +1093,11 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-06-02T16:04:14.685Z"
+          "generatedAt": "2026-06-05T15:39:29.994Z"
         },
         {
-          "id": "reddit_rss_genz_mental_health-falsely-accused-of-serious-things-years-ago-by-an-ex-s-mum-it-s-ruining-my-menta",
-          "query": "Falsely accused of serious things years ago by an ex's mum. It's ruining my mental health and I need to get it off my chest",
+          "id": "reddit_rss_genz_mental_health-hiv-news-week-of-june-5-2026",
+          "query": "HIV News. Week of June 5, 2026",
           "source": "reddit_rss_genz_mental_health",
           "sourceType": "rss",
           "tags": [
@@ -1137,10 +1107,38 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-06-02T16:04:14.685Z"
+          "generatedAt": "2026-06-05T15:39:29.994Z"
+        },
+        {
+          "id": "google_news_workplace_mental_health-google-news",
+          "query": "Google News",
+          "source": "google_news_workplace_mental_health",
+          "sourceType": "rss",
+          "tags": [
+            "general_emotional_wellness"
+          ],
+          "intent": "informational",
+          "audience": "Clients seeking emotional wellness support",
+          "contentType": "answer",
+          "status": "candidate",
+          "generatedAt": "2026-06-05T15:39:29.994Z"
+        },
+        {
+          "id": "google_news_workplace_mental_health-emotional-intelligence-and-holistic-student-development-an-assessment-of-psychol",
+          "query": "Emotional intelligence and holistic student development: an assessment of psychological and social efficacy in vocational university English education - Frontiers",
+          "source": "google_news_workplace_mental_health",
+          "sourceType": "rss",
+          "tags": [
+            "general_emotional_wellness"
+          ],
+          "intent": "informational",
+          "audience": "Clients seeking emotional wellness support",
+          "contentType": "answer",
+          "status": "candidate",
+          "generatedAt": "2026-06-05T15:39:29.994Z"
         }
       ],
-      "queryCount": 61,
+      "queryCount": 58,
       "score": 100,
       "targetPage": "/llm-atlas/clusters/",
       "status": "active"
