@@ -56,4 +56,23 @@ if (homepage.includes('Book a Consult</a><a class="button alt" href="/corporate-
   fail('Homepage contains stale blended hero CTAs.');
 }
 
+const homepageRestoredProof = [
+  'luxury-fade-words',
+  'Grounded care.',
+  'Intentional healing.',
+  'Room to exhale.',
+  'Client reviews',
+  'What clients are saying',
+  'Monika is easy to talk to and makes it easier to open up.',
+  'Memphis Voyager',
+  'memphisvoyager.com/interview/hidden-gems-meet-monika-hicks-of-hicks-consulting/',
+  'Verified profiles',
+  'psychology-today-badge.png',
+  'therapy-for-black-girls-badge.png',
+  'providers.therapyforblackgirls.com/listing/monika-hicks-lcsw/'
+];
+for (const token of homepageRestoredProof) {
+  if (!homepage.includes(token)) fail(`Homepage restored credibility/proof feature missing token: ${token}`);
+}
+
 console.log('Conversion contract OK');

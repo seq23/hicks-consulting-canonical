@@ -13,7 +13,7 @@ for(const file of walk(path.join(process.cwd(),'pages'))){
 
 // Homepage above-fold dual pathway checks.
 const homepage = fs.readFileSync(path.join(process.cwd(), 'pages', 'index.html'), 'utf8');
-for (const token of ['Mental health support for high-achieving women and healthier organizations.', 'Work With Me (Individuals)', 'Book a Training (Organizations)', 'boundary challenges']) {
+for (const token of ['Mental health support for high-achieving women and healthier organizations.', 'Work With Me (Individuals)', 'Book a Training (Organizations)', 'boundary challenges', 'luxury-fade-words', 'Grounded care.', 'Intentional healing.', 'Room to exhale.']) {
   if (!homepage.includes(token)) fail(`Homepage above-fold dual pathway token missing: ${token}`);
 }
 
