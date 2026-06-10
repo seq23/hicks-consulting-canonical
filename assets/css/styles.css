@@ -1044,6 +1044,10 @@ footer {
 .quiz-checks div { display:flex; gap:.6rem; align-items:flex-start; }
 .quiz-checks span:first-child { color: var(--gold-soft); font-weight:700; }
 .service-split { display:grid; grid-template-columns: 1fr 1fr; gap:1.4rem; }
+.service-split.two-up { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.service-split.three-up { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.center { text-align: center; }
+.center .hero-actions, .center .cta-row { justify-content: center; }
 .service-panel {
   padding: 2rem;
   border-radius: 30px;
@@ -1061,6 +1065,8 @@ footer {
   .trust-grid,
   .quiz-feature,
   .service-split,
+  .service-split.two-up,
+  .service-split.three-up,
   .about-grid-v2,
   .resource-tease { grid-template-columns: 1fr; }
   .hero-v2 .hero-image-main { min-height: 520px; }

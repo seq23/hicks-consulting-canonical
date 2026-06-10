@@ -23,4 +23,37 @@ for(const route of moneyPages){
   const hasAllowed=[...allowed].some(url => url && html.includes(url));
   if(!hasAllowed) fail(`${route} missing approved conversion path.`);
 }
+
+
+// Homepage dual-pathway contract: individual healing and organizational training must remain visibly separated.
+const homepage = fs.readFileSync('pages/index.html', 'utf8');
+const homepageRequired = [
+  'Mental health support for high-achieving women and healthier organizations.',
+  'Work With Me (Individuals)',
+  'Book a Training (Organizations)',
+  'For Individuals Seeking Healing &amp; Support',
+  'For Organizations &amp; Teams',
+  'licensed mental health professional',
+  'medication management',
+  'keynote speaking',
+  'Burnout-Proofing the Workplace',
+  'Trauma-Informed Leadership in Real-World Settings',
+  'The Human Side of Retention',
+  '/organizational-training-inquiry/',
+  'https://monika-hicks.clientsecure.me/'
+];
+for (const token of homepageRequired) {
+  if (!homepage.includes(token)) fail(`Homepage dual-pathway contract missing token: ${token}`);
+}
+
+const individualSection = (homepage.match(/<section class="section soft-tone" id="individual-support">[\s\S]*?<\/section>/) || [''])[0];
+const individualPathway = (homepage.match(/<span class="section-label">For Individuals Seeking Healing &amp; Support<\/span>[\s\S]*?<a class="button" data-form-key="therapy"/) || [''])[0];
+for (const block of [individualSection, individualPathway]) {
+  if (/trauma/i.test(block)) fail('Individual homepage pathway must not position trauma as an individual-client focus.');
+}
+
+if (homepage.includes('Book a Consult</a><a class="button alt" href="/corporate-speaking/">Organizational Trainings')) {
+  fail('Homepage contains stale blended hero CTAs.');
+}
+
 console.log('Conversion contract OK');

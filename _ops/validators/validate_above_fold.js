@@ -9,4 +9,12 @@ for(const file of walk(path.join(process.cwd(),'pages'))){
   if(!/<h1[ >]/.test(html)) fail(`Missing H1 in ${file}`);
   if(!html.includes('short-answer')) fail(`Missing short answer block in ${file}`);
 }
+
+
+// Homepage above-fold dual pathway checks.
+const homepage = fs.readFileSync(path.join(process.cwd(), 'pages', 'index.html'), 'utf8');
+for (const token of ['Mental health support for high-achieving women and healthier organizations.', 'Work With Me (Individuals)', 'Book a Training (Organizations)', 'boundary challenges']) {
+  if (!homepage.includes(token)) fail(`Homepage above-fold dual pathway token missing: ${token}`);
+}
+
 console.log('Above-fold contract OK');
