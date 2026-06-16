@@ -1,9 +1,11 @@
 name: Validate
 on:
   push:
+    branches:
+      - main
   pull_request:
 concurrency:
-  group: hicks-consulting-validate
+  group: hicks-consulting-validate-${{ github.ref }}
   cancel-in-progress: true
 jobs:
   validate:
