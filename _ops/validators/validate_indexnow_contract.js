@@ -2,7 +2,7 @@ const { fs, path, fail, exists, read } = require('./util');
 
 const root = process.cwd();
 const pkg = JSON.parse(read('package.json'));
-const requiredScripts = ['indexnow:emit', 'indexnow:submit', 'gsc:reindex-queue', 'validate:indexnow'];
+const requiredScripts = ['indexnow:emit', 'indexnow:submit', 'gsc:reindex-queue', 'validate:indexnow', 'validate:profile:indexnow'];
 for (const script of requiredScripts) {
   if (!pkg.scripts || !pkg.scripts[script]) fail(`IndexNow contract fail: package.json missing script ${script}`);
 }
@@ -26,6 +26,7 @@ if (!/workflow_dispatch:/.test(workflow)) fail('IndexNow contract fail: workflow
 if (!/npm run build/.test(workflow)) fail('IndexNow contract fail: workflow must build before submission.');
 if (!/npm run validate:all/.test(workflow)) fail('IndexNow contract fail: workflow must run validate:all before submission.');
 if (!/npm run indexnow:emit/.test(workflow)) fail('IndexNow contract fail: workflow must emit IndexNow files.');
+if (!/npm run validate:profile:indexnow/.test(workflow)) fail('IndexNow contract fail: workflow must validate emitted output through the registered IndexNow profile.');
 if (!/npm run indexnow:submit/.test(workflow)) fail('IndexNow contract fail: workflow must submit IndexNow files.');
 if (!/INDEXNOW_DRY_RUN=1 npm run indexnow:submit/.test(workflow)) fail('IndexNow contract fail: workflow must write a dry-run report when INDEXNOW_KEY is missing.');
 if (!/npm run gsc:reindex-queue/.test(workflow)) fail('IndexNow contract fail: workflow must create GSC/manual reindex queue.');

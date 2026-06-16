@@ -1,0 +1,32 @@
+{
+  "repo": "hicks-consulting-canonical",
+  "date": "2026-06-16",
+  "sourceArtifact": "hicks-consulting-canonical-main_BASELINE_06-16-26_fb09df15.zip",
+  "result": "REMEDIATED_CLEAN_CONTAINER_VALIDATION",
+  "cleanValidation": {
+    "npmCi": "PASS",
+    "npmAuditVulnerabilities": 0,
+    "build": "PASS",
+    "registeredChecksPassed": 35,
+    "hardFailFindings": 0,
+    "executionHardFailures": 0,
+    "strongWarnings": 0,
+    "softWarnings": 0,
+    "infoFindings": 0
+  },
+  "hostileCases": [
+    {"case": "admin_preview_inconsistency", "expectedExit": 0, "observedExit": 0, "classification": "STRONG_WARNING"},
+    {"case": "recent_four_order_reversed", "expectedExit": 0, "observedExit": 0, "classification": "STRONG_WARNING"},
+    {"case": "warning_validator_syntax_error", "expectedExit": 1, "observedExit": 1, "classification": "EXECUTION_HARD_FAIL"},
+    {"case": "warning_validator_runtime_crash", "expectedExit": 1, "observedExit": 1, "classification": "EXECUTION_HARD_FAIL"},
+    {"case": "direct_ci_leaf_invocation", "expectedExit": 1, "observedExit": 1, "classification": "HARD_FAIL"},
+    {"case": "info_input_missing", "expectedExit": 0, "observedExit": 0, "classification": "INFO"},
+    {"case": "required_root_file_missing", "expectedExit": 1, "observedExit": 1, "classification": "HARD_FAIL"}
+  ],
+  "unproven": [
+    "real browser rendering",
+    "deployed Cloudflare runtime",
+    "GitHub Actions execution",
+    "postdeploy click audit"
+  ]
+}

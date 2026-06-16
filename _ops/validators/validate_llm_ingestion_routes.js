@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+const { warn: reportFindings } = require('../validation/protocol');
 
 const warnings = [];
 function warn(message) { warnings.push(message); }
@@ -30,8 +31,7 @@ for (const required of ['sitemap.xml', 'llms.txt']) {
 }
 
 if (warnings.length) {
-  console.warn(`LLM ingestion route advisory warnings (${warnings.length}):`);
-  for (const warning of warnings) console.warn(`- ${warning}`);
+  reportFindings(warnings.map((warning) => `- ${warning}`), `${warnings.length}-llm-route-warning(s)`);
 } else {
   console.log('LLM ingestion route advisory OK');
 }

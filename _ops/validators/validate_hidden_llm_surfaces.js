@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+const { warn: reportFindings } = require('../validation/protocol');
 
 const root = process.cwd();
 const buildScriptPath = path.join(root, 'scripts', 'build', 'build.js');
@@ -75,8 +76,7 @@ for (const route of expectedHiddenRoutes) {
 }
 
 if (warnings.length) {
-  console.warn(`Hidden LLM surface advisory warnings (${warnings.length}):`);
-  for (const warning of warnings) console.warn(`- ${warning}`);
+  reportFindings(warnings.map((warning) => `- ${warning}`), `${warnings.length}-hidden-llm-warning(s)`);
 } else {
   console.log('Hidden LLM surface advisory OK');
 }

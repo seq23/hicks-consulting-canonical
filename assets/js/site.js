@@ -61,12 +61,15 @@ async function renderPublishedResources(containerId) {
   const container = document.getElementById(containerId);
   if (!container) return;
   const items = await loadManifest();
-  items.sort((a, b) => publicReleaseDate(b).localeCompare(publicReleaseDate(a)));
-  if (!items.length) {
+  const selection = window.HicksResourceSelection;
+  const recentItems = selection && typeof selection.selectRecentPublishedResources === 'function'
+    ? selection.selectRecentPublishedResources(items, 4)
+    : items.slice().sort((a, b) => publicReleaseDate(b).localeCompare(publicReleaseDate(a))).slice(0, 4);
+  if (!recentItems.length) {
     container.innerHTML = '<article class="resource-card" data-animate="zoom"><span class="badge">Resources</span><h3>Fresh resources are on the way.</h3><p class="muted small">New resources will appear here as they are released.</p></article>';
     return;
   }
-  container.innerHTML = items.map(item => `
+  container.innerHTML = recentItems.map(item => `
     <article class="resource-card" data-animate="zoom">
       <span class="badge">${escapeHtml(resourceTypeLabel(item.type))}</span>
       <h3><a href="${escapeHtml(item.slug)}">${escapeHtml(item.title)}</a></h3>

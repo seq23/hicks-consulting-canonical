@@ -1,10 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-
-function fail(message) {
-  console.error(`LEAD MAGNET CONTRACT FAIL: ${message}`);
-  process.exit(1);
-}
+const { fail } = require('../validation/protocol');
 
 function read(file) {
   return fs.readFileSync(file, 'utf8');

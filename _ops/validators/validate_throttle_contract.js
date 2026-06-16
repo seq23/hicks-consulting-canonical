@@ -1,14 +1,17 @@
 const fs = require('fs');
-const warnings=[]; function fail(m){ warnings.push(`THROTTLE CONTRACT WARNING: ${m}`); }
-if(!fs.existsSync('scripts/ingestion/throttle.js')) fail('scripts/ingestion/throttle.js missing.');
-const policy=JSON.parse(fs.readFileSync('config/social_ingestion_policy.json','utf8'));
-const t=policy.throttle || {};
-if(typeof t.delayMs !== 'number' || t.delayMs < 500) fail('throttle.delayMs must be >= 500.');
-if(typeof t.maxRetries !== 'number' || t.maxRetries > 3) fail('throttle.maxRetries must be <= 3.');
-if(typeof t.timeoutMs !== 'number' || t.timeoutMs > 30000) fail('throttle.timeoutMs must be <= 30000.');
-if (warnings.length) {
-  console.warn(warnings.join('\n'));
-} else {
-  console.log('Throttle contract OK');
+const { warn: reportFindings } = require('../validation/protocol');
+const warnings = [];
+function finding(message) { warnings.push(`THROTTLE CONTRACT WARNING: ${message}`); }
+if (!fs.existsSync('scripts/ingestion/throttle.js')) finding('scripts/ingestion/throttle.js missing.');
+let policy = null;
+try { policy = JSON.parse(fs.readFileSync('config/social_ingestion_policy.json', 'utf8')); }
+catch (error) { finding(`config/social_ingestion_policy.json is missing or invalid: ${error.message}`); }
+const throttle = policy?.throttle || {};
+if (policy) {
+  if (typeof throttle.delayMs !== 'number' || throttle.delayMs < 500) finding('throttle.delayMs must be >= 500.');
+  if (typeof throttle.maxRetries !== 'number' || throttle.maxRetries > 3) finding('throttle.maxRetries must be <= 3.');
+  if (typeof throttle.timeoutMs !== 'number' || throttle.timeoutMs > 30000) finding('throttle.timeoutMs must be <= 30000.');
 }
+if (warnings.length) reportFindings(warnings, `${warnings.length}-throttle-warning(s)`);
+else console.log('Throttle contract OK');
 process.exit(0);

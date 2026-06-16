@@ -115,7 +115,8 @@ for (const contract of formContracts) {
 }
 
 if (!packageJson.scripts['validate:form-database']) fail('package.json missing validate:form-database script.');
-if (!packageJson.scripts['validate:all'].includes('validate:form-database')) fail('validate:all must include validate:form-database.');
+const validationRegistry = JSON.parse(read('_repo_validation_registry.json'));
+if (!validationRegistry.checks?.some((entry) => entry.npmScript === 'validate:form-database' && entry.enabled !== false)) fail('validate:form-database must be admitted to the validation registry.');
 
 const formRunbookPath = 'docs/runbooks/form-database-webhook.md';
 if (!fs.existsSync(path.join(root, formRunbookPath))) fail('Unified form database runbook missing.');

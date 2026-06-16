@@ -21,7 +21,7 @@ jobs:
       - run: npm run build
       - run: npm run validate:all
       - run: npm run indexnow:emit
-      - run: npm run validate:indexnow
+      - run: npm run validate:profile:indexnow
       - name: Submit IndexNow live
         if: ${{ env.INDEXNOW_KEY != '' }}
         run: INDEXNOW_ALLOW_EXTERNAL_FAILURE=1 npm run indexnow:submit

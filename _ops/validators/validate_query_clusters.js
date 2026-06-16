@@ -1,13 +1,21 @@
 const fs = require('fs');
-const warnings=[]; function fail(m){ warnings.push(`QUERY CLUSTER CONTRACT WARNING: ${m}`); }
-const p='data/intake/query_clusters.json';
-if(!fs.existsSync(p)) fail('query_clusters.json missing.');
-const payload=JSON.parse(fs.readFileSync(p,'utf8'));
-if(!Array.isArray(payload.clusters) || !payload.clusters.length) fail('clusters must be a non-empty array.');
-for(const c of payload.clusters){ if(!c.id || !c.title || typeof c.queryCount !== 'number' || typeof c.score !== 'number') fail(`Invalid cluster: ${JSON.stringify(c)}`); }
-if (warnings.length) {
-  console.warn(warnings.join('\n'));
-} else {
-  console.log('Query cluster contract OK');
+const { warn: reportFindings } = require('../validation/protocol');
+const warnings = [];
+function finding(message) { warnings.push(`QUERY CLUSTER CONTRACT INFO: ${message}`); }
+const file = 'data/intake/query_clusters.json';
+let payload = null;
+if (!fs.existsSync(file)) finding('query_clusters.json missing.');
+else {
+  try { payload = JSON.parse(fs.readFileSync(file, 'utf8')); }
+  catch (error) { finding(`query_clusters.json is invalid JSON: ${error.message}`); }
 }
+const clusters = Array.isArray(payload?.clusters) ? payload.clusters : [];
+if (payload && (!Array.isArray(payload.clusters) || !payload.clusters.length)) finding('clusters must be a non-empty array.');
+for (const cluster of clusters) {
+  if (!cluster.id || !cluster.title || typeof cluster.queryCount !== 'number' || typeof cluster.score !== 'number') {
+    finding(`Invalid cluster: ${JSON.stringify(cluster)}`);
+  }
+}
+if (warnings.length) reportFindings(warnings, `${warnings.length}-query-cluster-info-finding(s)`);
+else console.log('Query cluster contract OK');
 process.exit(0);

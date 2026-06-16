@@ -1,13 +1,21 @@
 const fs = require('fs');
-const warnings=[]; function fail(m){ warnings.push(`FANOUT CANDIDATE CONTRACT WARNING: ${m}`); }
-const p='data/intake/fanout_candidates.json';
-if(!fs.existsSync(p)) fail('fanout_candidates.json missing.');
-const payload=JSON.parse(fs.readFileSync(p,'utf8'));
-if(!Array.isArray(payload.candidates)) fail('candidates must be array.');
-for(const c of payload.candidates){ if(!c.id || !c.clusterId || !c.candidateRoute || c.userNavExposure !== false || c.crawlerDiscoverable !== true) fail(`Invalid fanout candidate: ${JSON.stringify(c)}`); }
-if (warnings.length) {
-  console.warn(warnings.join('\n'));
-} else {
-  console.log('Fanout candidates contract OK');
+const { warn: reportFindings } = require('../validation/protocol');
+const warnings = [];
+function finding(message) { warnings.push(`FANOUT CANDIDATE CONTRACT INFO: ${message}`); }
+const file = 'data/intake/fanout_candidates.json';
+let payload = null;
+if (!fs.existsSync(file)) finding('fanout_candidates.json missing.');
+else {
+  try { payload = JSON.parse(fs.readFileSync(file, 'utf8')); }
+  catch (error) { finding(`fanout_candidates.json is invalid JSON: ${error.message}`); }
 }
+const candidates = Array.isArray(payload?.candidates) ? payload.candidates : [];
+if (payload && !Array.isArray(payload.candidates)) finding('candidates must be array.');
+for (const candidate of candidates) {
+  if (!candidate.id || !candidate.clusterId || !candidate.candidateRoute || candidate.userNavExposure !== false || candidate.crawlerDiscoverable !== true) {
+    finding(`Invalid fanout candidate: ${JSON.stringify(candidate)}`);
+  }
+}
+if (warnings.length) reportFindings(warnings, `${warnings.length}-fanout-info-finding(s)`);
+else console.log('Fanout candidates contract OK');
 process.exit(0);

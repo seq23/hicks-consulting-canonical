@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+const { fail, warn: reportFindings } = require('../validation/protocol');
 
 const root = process.cwd();
 const manifest = JSON.parse(fs.readFileSync(path.join(root, 'data', 'admin', 'content_manifest.json'), 'utf8'));
@@ -11,8 +12,7 @@ let checked = 0;
 for (const item of manifest.filter(i => i.slug && i.slug.startsWith('/resources/') && i.validationPassed === true)) {
   const file = path.join(root, 'pages', item.slug.replace(/^\//,'').replace(/\/$/,''), 'index.html');
   if (!fs.existsSync(file)) {
-    console.error(`WORD COUNT FAIL: missing source page for ${item.id}: ${file}`);
-    process.exit(1);
+    fail(`WORD COUNT FAIL: missing source page for ${item.id}: ${file}`);
   }
   const count = wordCount(strip(fs.readFileSync(file, 'utf8')));
   const target = Number(item.contentWordTarget || targets[item.type] || 700);
@@ -21,9 +21,9 @@ for (const item of manifest.filter(i => i.slug && i.slug.startsWith('/resources/
   if (count < floor) warnings.push(`${item.id} ${item.type} ${count}/${target} words (warn under ${floor})`);
 }
 if (warnings.length) {
-  console.warn(`WORD COUNT WARNINGS (${warnings.length}):`);
-  warnings.slice(0, 25).forEach(w => console.warn(`- ${w}`));
-  if (warnings.length > 25) console.warn(`- ... ${warnings.length - 25} more`);
+  const displayed = warnings.slice(0, 25).map((item) => `- ${item}`);
+  if (warnings.length > 25) displayed.push(`- ... ${warnings.length - 25} more`);
+  reportFindings(displayed, `${warnings.length}-word-count-warning(s)`);
 } else {
   console.log(`Resource word count warnings clean (${checked} pages checked, 25% margin).`);
 }

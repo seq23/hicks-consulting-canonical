@@ -1,5 +1,6 @@
 const fs = require("fs");
 const path = require("path");
+const { fail } = require('../validation/protocol');
 
 const root = process.cwd();
 const pagesDir = path.join(root, "pages");
@@ -74,9 +75,7 @@ for (const file of files) {
 }
 
 if (failures.length) {
-  console.error("SEO metadata contract failed:");
-  for (const failure of failures) console.error(`- ${failure}`);
-  process.exit(1);
+  fail(["SEO metadata contract failed:", ...failures.map((failure) => `- ${failure}`)]);
 }
 
 console.log(`SEO metadata contract OK (${files.length} public pages checked).`);

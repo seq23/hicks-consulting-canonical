@@ -1,15 +1,28 @@
 const fs = require('fs');
-const warnings=[]; function fail(m){ warnings.push(`INGESTION FRESHNESS CONTRACT WARNING: ${m}`); }
-for(const file of ['data/intake/social_signals.json','data/intake/query_signals_post_2027.json','data/intake/source_health.json']){
-  if(!fs.existsSync(file)) fail(`${file} missing.`);
-  const data=JSON.parse(fs.readFileSync(file,'utf8'));
-  if(!data.generatedAt || Number.isNaN(Date.parse(data.generatedAt))) fail(`${file} has invalid generatedAt.`);
+const { warn: reportFindings } = require('../validation/protocol');
+const warnings = [];
+function finding(message) { warnings.push(`INGESTION FRESHNESS CONTRACT INFO: ${message}`); }
+function readJson(file) {
+  if (!fs.existsSync(file)) {
+    finding(`${file} missing.`);
+    return null;
+  }
+  try {
+    return JSON.parse(fs.readFileSync(file, 'utf8'));
+  } catch (error) {
+    finding(`${file} is invalid JSON: ${error.message}`);
+    return null;
+  }
 }
-const health=JSON.parse(fs.readFileSync('data/intake/source_health.json','utf8'));
-if(process.env.STRICT_INGESTION === '1' && health.mode === 'fallback') fail('Strict ingestion forbids fallback-only mode.');
-if (warnings.length) {
-  console.warn(warnings.join('\n'));
-} else {
-  console.log('Ingestion freshness contract OK');
+
+for (const file of ['data/intake/social_signals.json', 'data/intake/query_signals_post_2027.json', 'data/intake/source_health.json']) {
+  const data = readJson(file);
+  if (!data) continue;
+  if (!data.generatedAt || Number.isNaN(Date.parse(data.generatedAt))) finding(`${file} has invalid generatedAt.`);
 }
+const health = readJson('data/intake/source_health.json');
+if (health && process.env.STRICT_INGESTION === '1' && health.mode === 'fallback') finding('Strict ingestion forbids fallback-only mode.');
+
+if (warnings.length) reportFindings(warnings, `${warnings.length}-ingestion-freshness-info-finding(s)`);
+else console.log('Ingestion freshness contract OK');
 process.exit(0);

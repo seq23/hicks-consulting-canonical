@@ -1,4 +1,5 @@
 const fs = require('fs');
+const { warn: reportFindings } = require('../validation/protocol');
 const warnings = [];
 function warn(m){ warnings.push(`CONTENT BRIEF WARNING: ${m}`); }
 function readJson(file, fallback){ try { return JSON.parse(fs.readFileSync(file,'utf8')); } catch { return fallback; } }
@@ -18,7 +19,7 @@ for (const c of candidates) {
   if (!c.llmPrompt || c.llmPrompt.length < 300) warn(`${c.id} missing detailed LLM generation prompt.`);
 }
 if (warnings.length) {
-  console.warn(warnings.join('\n'));
+  reportFindings(warnings, `${warnings.length}-content-brief-warning(s)`);
 } else {
   console.log('Content brief candidate advisory OK');
 }

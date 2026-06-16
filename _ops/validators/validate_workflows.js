@@ -3,12 +3,17 @@ const pkg = JSON.parse(read('package.json'));
 const workflowsDir = path.join(process.cwd(), '.github', 'workflows');
 const files = fs.readdirSync(workflowsDir).filter(f => f.endsWith('.yml') || f.endsWith('.yaml'));
 const writeWorkflows = [];
+
+const registry = JSON.parse(read('_repo_validation_registry.json'));
+const leafScripts = new Set(registry.checks.map((check) => check.npmScript));
+
 for (const file of files) {
   const full = path.join(workflowsDir, file);
   const content = fs.readFileSync(full, 'utf8');
   for (const match of content.matchAll(/-\s+run:\s+npm run ([A-Za-z0-9:_-]+)/g)) {
     const script = match[1];
     if (!pkg.scripts || !pkg.scripts[script]) fail(`Workflow ${file} references missing npm script: ${script}`);
+    if (leafScripts.has(script)) fail(`Workflow ${file} invokes leaf validator ${script} directly; use a registered validation profile.`);
   }
   if (!/uses:\s+actions\/checkout@v4/.test(content)) fail(`Workflow ${file} missing actions/checkout@v4`);
   if (!/uses:\s+actions\/setup-node@v4/.test(content)) fail(`Workflow ${file} missing actions/setup-node@v4`);
@@ -24,14 +29,21 @@ for (const file of files) {
   }
 }
 if (writeWorkflows.length < 2) fail('Expected content-publish and social-ingestion writer workflows to be present.');
+
+const buildWorkflow = fs.readFileSync(path.join(workflowsDir, 'build.yml'), 'utf8');
+const buildStep = buildWorkflow.indexOf('npm run build');
+const validateStep = buildWorkflow.indexOf('npm run validate:all');
+if (buildStep === -1 || validateStep === -1 || buildStep > validateStep) {
+  fail('build.yml must build before validate:all so dist-aware checks inspect the current output.');
+}
+
 console.log(`Workflow contracts OK (${files.length} workflows, ${writeWorkflows.length} writer workflows traced).`);
 
 {
   const fsWorkflow = require('fs');
   const workflowText = fsWorkflow.readFileSync('.github/workflows/content-publish.yml', 'utf8');
   function workflowFail(message) {
-    console.error(`Workflow contract failed: ${message}`);
-    process.exit(1);
+    fail(`Workflow contract failed: ${message}`);
   }
 
   for (const marker of ['push:', 'branches:', '- main', 'paths:', "data/admin/content_manifest.json"]) {

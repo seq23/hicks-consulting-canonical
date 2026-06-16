@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-function fail(m){ console.error(`CONVERSION CONTRACT FAIL: ${m}`); process.exit(1); }
+const { fail } = require('../validation/protocol');
 const config=JSON.parse(fs.readFileSync('data/system/config.json','utf8'));
 const forms=config.forms || {};
 const allowed = new Set([forms.therapy, forms.coaching, forms.corporate, forms.groups, '/intake-quiz/', '/request-consult/', '/book-discovery-call/', '/organizational-training-inquiry/'].filter(Boolean));

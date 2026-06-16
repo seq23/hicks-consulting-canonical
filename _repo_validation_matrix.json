@@ -1,0 +1,81 @@
+{
+  "schemaVersion": "2.0.0",
+  "repo": "hicks-consulting-canonical",
+  "registry": "_repo_validation_registry.json",
+  "authority": "docs/runbooks/VALIDATION_MATRIX.md",
+  "profiles": {
+    "all": {
+      "description": "Every enabled registered validator in canonical order.",
+      "checks": [
+        "validation-registry",
+        "orchestrator-contract",
+        "preflight",
+        "publisher-contract",
+        "canonical-url",
+        "seo-metadata",
+        "lead-magnet",
+        "form-database",
+        "crawl-contract",
+        "sitemap-parity",
+        "internal-links",
+        "hidden-llm-surfaces",
+        "llm-ingestion-routes",
+        "query-traceability",
+        "above-fold",
+        "entity-coverage",
+        "conversion-contract",
+        "training-inquiry",
+        "source-health",
+        "ingestion-freshness",
+        "query-signal-schema",
+        "query-clusters",
+        "fanout-candidates",
+        "social-firehose",
+        "throttle-contract",
+        "content-briefs",
+        "publish-state",
+        "policy-compliance",
+        "content-plan",
+        "recent-resources",
+        "word-counts",
+        "admin-previews",
+        "admin-generated-queue",
+        "workflow-contracts",
+        "indexnow"
+      ]
+    },
+    "ingestion": {
+      "description": "Content-intelligence ingestion, observability, provider-resilience, and publishing-governance checks.",
+      "checks": [
+        "source-health",
+        "ingestion-freshness",
+        "query-signal-schema",
+        "query-clusters",
+        "fanout-candidates",
+        "social-firehose",
+        "throttle-contract",
+        "content-briefs"
+      ]
+    },
+    "sitemap-indexing": {
+      "description": "Crawler, sitemap, and hidden LLM surface checks for the indexing workflow.",
+      "checks": [
+        "sitemap-parity",
+        "hidden-llm-surfaces",
+        "llm-ingestion-routes"
+      ]
+    },
+    "indexnow": {
+      "description": "IndexNow contract check after emission.",
+      "checks": [
+        "indexnow"
+      ]
+    }
+  },
+  "compositeScripts": {
+    "validate:all": "all",
+    "validate:ingestion": "ingestion",
+    "validate:profile:sitemap-indexing": "sitemap-indexing",
+    "validate:profile:indexnow": "indexnow"
+  }
+}

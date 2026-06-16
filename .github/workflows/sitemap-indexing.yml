@@ -16,6 +16,4 @@ jobs:
           node-version: 20
       - run: npm ci
       - run: npm run build
-      - run: npm run validate:sitemap
-      - run: npm run validate:hidden-llm-surfaces
-      - run: npm run validate:llm-ingestion-routes
+      - run: npm run validate:profile:sitemap-indexing
