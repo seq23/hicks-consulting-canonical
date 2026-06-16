@@ -147,4 +147,6 @@ if (fs.existsSync(workerSource)) {
   fs.copyFileSync(workerSource, path.join(dist, '_worker.js'));
 }
 
+require('./agency/generate_agency_report').generate();
+
 console.log('Build complete:', dist);

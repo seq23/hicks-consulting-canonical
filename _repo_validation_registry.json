@@ -130,6 +130,34 @@
       "rationale": "Missing metadata or schema materially degrades search and sharing surfaces without creating an unsafe runtime."
     },
     {
+      "id": "agency-infrastructure",
+      "npmScript": "validate:agency-infrastructure",
+      "entrypoint": "_ops/validators/validate_agency_infrastructure.js",
+      "severity": "HARD_FAIL",
+      "blocksRelease": true,
+      "group": "agency-operations",
+      "owner": "repo-maintainers",
+      "scope": "agency dashboard, report generation, workflow, and provider-monitor infrastructure",
+      "ciInvocation": "MATRIX_ONLY",
+      "findingProtocol": "VALIDATION_FINDING",
+      "enabled": true,
+      "rationale": "Missing or malformed agency runtime files, scorecard data, build wiring, workflow controls, or secret-safe provider plumbing means the delivered operator system is incomplete or unsafe to deploy."
+    },
+    {
+      "id": "agency-quality",
+      "npmScript": "validate:agency-quality",
+      "entrypoint": "_ops/validators/validate_agency_quality.js",
+      "severity": "STRONG_WARNING",
+      "blocksRelease": false,
+      "group": "agency-advisory",
+      "owner": "growth-and-content",
+      "scope": "SEO, AEO, GEO, forward-content readiness, similarity, and measurement quality",
+      "ciInvocation": "MATRIX_ONLY",
+      "findingProtocol": "VALIDATION_FINDING",
+      "enabled": true,
+      "rationale": "Owner-directed SEO, AEO, GEO, similarity, GSC, Bing, and live-health findings must remain visible but may never block publishing or deployment."
+    },
+    {
       "id": "lead-magnet",
       "npmScript": "validate:lead-magnet",
       "entrypoint": "_ops/validators/validate_lead_magnet_contract.js",

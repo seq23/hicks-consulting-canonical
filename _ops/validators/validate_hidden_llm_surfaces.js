@@ -3,7 +3,7 @@ const path = require('path');
 const { warn: reportFindings } = require('../validation/protocol');
 
 const root = process.cwd();
-const buildScriptPath = path.join(root, 'scripts', 'build', 'build.js');
+const buildScriptPath = path.join(root, 'scripts', 'site_build.js');
 const pagesDir = path.join(root, 'pages');
 const distDir = path.join(root, 'dist');
 const expectedHiddenRoutes = [
@@ -33,7 +33,7 @@ function walk(dir) {
 }
 
 const buildScript = read(buildScriptPath);
-if (!/const\s+llmOnlyRoutes\s*=\s*\[/.test(buildScript)) warn('scripts/build/build.js should define llmOnlyRoutes.');
+if (!/const\s+llmOnlyRoutes\s*=\s*\[/.test(buildScript)) warn('scripts/site_build.js should define llmOnlyRoutes.');
 const staticBlockMatch = buildScript.match(/const\s+staticPublicRoutes\s*=\s*\[([\s\S]*?)\];/);
 const llmBlockMatch = buildScript.match(/const\s+llmOnlyRoutes\s*=\s*\[([\s\S]*?)\];/);
 

@@ -6,9 +6,9 @@ const warnings = [];
 function warn(message) { warnings.push(message); }
 function read(file) { return fs.existsSync(file) ? fs.readFileSync(file, 'utf8') : ''; }
 
-const build = read('scripts/build/build.js');
+const build = read('scripts/site_build.js');
 const match = build.match(/const\s+llmOnlyRoutes\s*=\s*\[([\s\S]*?)\];/);
-if (!match) warn('llmOnlyRoutes is missing from scripts/build/build.js.');
+if (!match) warn('llmOnlyRoutes is missing from scripts/site_build.js.');
 const routes = match ? [...match[1].matchAll(/'([^']+)'/g)].map(x => x[1]) : [];
 if (routes.length < 8) warn(`Expected expanded llmOnlyRoutes set; found ${routes.length}.`);
 

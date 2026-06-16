@@ -4,7 +4,7 @@
   "private": true,
   "description": "Canonical static site for Hicks Consulting",
   "scripts": {
-    "build": "node scripts/build/build.js",
+    "build": "node scripts/site_build.js",
     "validate:registry": "node _ops/validators/validate_validation_registry.js",
     "validate:orchestrator-contract": "node _ops/validators/validate_orchestrator_contract.js",
     "validate:publisher-contract": "node _ops/validators/validate_publisher_contract.js",
@@ -23,6 +23,7 @@
     "validate:ingestion": "node _ops/validation/run_validation_matrix.js --profile ingestion",
     "validate:profile:sitemap-indexing": "node _ops/validation/run_validation_matrix.js --profile sitemap-indexing",
     "validate:profile:indexnow": "node _ops/validation/run_validation_matrix.js --profile indexnow",
+    "validate:profile:agency": "node _ops/validation/run_validation_matrix.js --profile agency",
     "validate:workflows": "node _ops/validators/validate_workflows.js",
     "publish:content": "node scripts/publishing/process_manifest.js",
     "validate:content-plan": "node _ops/validators/validate_content_plan_2026.js",
@@ -55,7 +56,14 @@
     "validate:indexnow": "node _ops/validators/validate_indexnow_contract.js",
     "validate:training-inquiry": "node _ops/validators/validate_training_inquiry_contract.js",
     "validate:seo-metadata": "node _ops/validators/validate_seo_metadata_contract.js",
+    "validate:agency-infrastructure": "node _ops/validators/validate_agency_infrastructure.js",
+    "validate:agency-quality": "node _ops/validators/validate_agency_quality.js",
     "validate:lead-magnet": "node _ops/validators/validate_lead_magnet_contract.js",
-    "validate:form-database": "node _ops/validators/validate_form_database_contract.js"
+    "validate:form-database": "node _ops/validators/validate_form_database_contract.js",
+    "agency:report": "node scripts/agency/generate_agency_report.js",
+    "agency:refresh": "node scripts/agency/refresh_search_health.js",
+    "agency:monitor": "npm run agency:refresh && npm run build",
+    "release:prepush:local": "node scripts/release/prepush_local.js",
+    "release:prepush": "npm run release:prepush:local"
   }
 }

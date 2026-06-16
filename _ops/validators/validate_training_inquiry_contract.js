@@ -2,7 +2,7 @@ const { fs, path, read, fail } = require('./util');
 
 const js = read('assets/js/site.js');
 const config = JSON.parse(read('data/system/config.json'));
-const build = read('scripts/build/build.js');
+const build = read('scripts/site_build.js');
 const homepage = read('pages/index.html');
 const css = read('assets/css/styles.css');
 const wranglerPath = path.join(process.cwd(), 'wrangler.toml');
@@ -112,7 +112,7 @@ for (const marker of ['/api/training-inquiry', '/api/groups-inquiry', 'FORM_DATA
 }
 if (!advancedWorker.includes('sendFormDatabaseSubmission') || !advancedWorker.includes('webhookResult.parsed.ok !== true')) fail('Advanced worker must synchronously require Apps Script ok:true before user success.');
 if (advancedWorker.includes('context.waitUntil') || advancedWorker.includes('queueFormDatabaseSubmission')) fail('Advanced worker must not background-queue form submissions.');
-const buildSource = read('scripts/build/build.js');
+const buildSource = read('scripts/site_build.js');
 if (!buildSource.includes("path.join(root, 'worker', '_worker.js')") || !buildSource.includes("path.join(dist, '_worker.js')")) fail('Build must copy worker/_worker.js to dist/_worker.js.');
 
 const runbook = read('docs/runbooks/training-inquiry-google-sheet.md');

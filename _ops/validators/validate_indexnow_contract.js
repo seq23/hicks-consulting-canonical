@@ -17,7 +17,7 @@ for (const file of requiredFiles) {
   if (!exists(file)) fail(`IndexNow contract fail: missing ${file}`);
 }
 
-const build = read('scripts/build/build.js');
+const build = read('scripts/site_build.js');
 if (!/indexnow\.txt/.test(build)) fail('IndexNow contract fail: build must copy root indexnow.txt into dist for key verification.');
 
 const workflow = read('.github/workflows/indexnow-submit.yml');

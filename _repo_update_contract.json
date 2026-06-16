@@ -1,0 +1,10 @@
+{
+  "schema_version": "3.1",
+  "repo_name": "hicks-consulting-canonical",
+  "expected_branch": "main",
+  "package_manager": "npm",
+  "commands": {
+    "prepush_local": "npm run release:prepush:local",
+    "prepush": "npm run release:prepush:local"
+  }
+}

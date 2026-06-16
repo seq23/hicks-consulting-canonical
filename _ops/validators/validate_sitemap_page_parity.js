@@ -20,7 +20,7 @@ for (let route of walk(path.join(process.cwd(), 'pages')).map(file => {
   if (value === '/' || value === '/.') return '/';
   return value + '/';
 })) {
-  if (route === '/admin/') continue;
+  if (route === '/admin/' || route === '/agency/') continue;
   if (route.startsWith('/resources/') && route !== '/resources/' && !publishedContent.has(route)) continue;
   const loc = `https://www.hicksconsulting.org${route}`;
   if (!xml.includes(loc)) fail(`Missing route in sitemap: ${loc}`);

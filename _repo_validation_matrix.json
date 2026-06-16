@@ -13,6 +13,8 @@
         "publisher-contract",
         "canonical-url",
         "seo-metadata",
+        "agency-infrastructure",
+        "agency-quality",
         "lead-magnet",
         "form-database",
         "crawl-contract",
@@ -70,12 +72,20 @@
       "checks": [
         "indexnow"
       ]
+    },
+    "agency": {
+      "description": "Agency dashboard infrastructure plus warning-only SEO/AEO/GEO and forward publishing-readiness checks.",
+      "checks": [
+        "agency-infrastructure",
+        "agency-quality"
+      ]
     }
   },
   "compositeScripts": {
     "validate:all": "all",
     "validate:ingestion": "ingestion",
     "validate:profile:sitemap-indexing": "sitemap-indexing",
-    "validate:profile:indexnow": "indexnow"
+    "validate:profile:indexnow": "indexnow",
+    "validate:profile:agency": "agency"
   }
 }

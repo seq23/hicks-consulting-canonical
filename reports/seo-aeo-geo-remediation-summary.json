@@ -1,0 +1,95 @@
+{
+  "completedAt": "2026-06-16T16:11:06.288Z",
+  "scope": "SEO/AEO/GEO remediation with warning-only agency monitoring; security excluded by owner direction.",
+  "content": {
+    "total": 227,
+    "published": 48,
+    "approvedRewritten": 179,
+    "forwardHighSimilarityPairs": 0
+  },
+  "scores": [
+    {
+      "key": "technical",
+      "label": "Technical SEO",
+      "score": 100,
+      "summary": "Crawl, metadata, canonical, and document structure health.",
+      "grade": "A",
+      "target": 87,
+      "targetMet": true
+    },
+    {
+      "key": "onpage",
+      "label": "On-page SEO",
+      "score": 99,
+      "summary": "Titles, descriptions, internal linking, and service alignment.",
+      "grade": "A",
+      "target": 87,
+      "targetMet": true
+    },
+    {
+      "key": "liveContent",
+      "label": "Live content quality",
+      "score": 87,
+      "summary": "Current public resource distinctiveness and trust signals; legacy similarity is capped but always shown.",
+      "grade": "B+",
+      "target": 87,
+      "targetMet": true
+    },
+    {
+      "key": "forwardContent",
+      "label": "Forward publishing readiness",
+      "score": 100,
+      "summary": "Approved, unpublished pieces before their scheduled release.",
+      "grade": "A",
+      "target": 87,
+      "targetMet": true
+    },
+    {
+      "key": "aeo",
+      "label": "AEO",
+      "score": 100,
+      "summary": "Direct answers, readable structure, dates, and Article schema.",
+      "grade": "A",
+      "target": 87,
+      "targetMet": true
+    },
+    {
+      "key": "geo",
+      "label": "GEO",
+      "score": 100,
+      "summary": "Entity clarity, author evidence, supporting sources, and citation readiness.",
+      "grade": "A",
+      "target": 87,
+      "targetMet": true
+    },
+    {
+      "key": "measurement",
+      "label": "GSC + Bing measurement",
+      "score": 87,
+      "summary": "Connector availability and data freshness.",
+      "grade": "B+",
+      "target": 87,
+      "targetMet": true
+    },
+    {
+      "key": "monitoring",
+      "label": "Live health monitoring",
+      "score": 94,
+      "summary": "Scheduled URL, sitemap, robots, and response checks.",
+      "grade": "A",
+      "target": 87,
+      "targetMet": true
+    }
+  ],
+  "validation": {
+    "registeredChecks": 35,
+    "passed": 35,
+    "hardFailures": 0,
+    "warnings": 0
+  },
+  "dashboard": "/agency/",
+  "policy": {
+    "blocking": false,
+    "message": "SEO, AEO, GEO, GSC, Bing, and live-health findings are advisory warnings only. They never block publishing or deployment."
+  }
+}

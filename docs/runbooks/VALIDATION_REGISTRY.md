@@ -43,6 +43,8 @@ Passing checks produce no warning. Execution failures are not downgraded by the 
 | `publisher-contract` | `validate:publisher-contract` | Hard fail | `publishing-safety` | `content-operations` | publication state transitions | Blocks |
 | `canonical-url` | `validate:canonical` | Strong warning | `discoverability` | `growth-and-content` | search and crawler surfaces | Non-blocking |
 | `seo-metadata` | `validate:seo-metadata` | Strong warning | `discoverability` | `growth-and-content` | search and crawler surfaces | Non-blocking |
+| `agency-infrastructure` | `validate:agency-infrastructure` | Hard fail | `agency-operations` | `repo-maintainers` | agency dashboard, report generation, workflow, and provider-monitor infrastructure | Blocks |
+| `agency-quality` | `validate:agency-quality` | Strong warning | `agency-advisory` | `growth-and-content` | SEO, AEO, GEO, forward-content readiness, similarity, and measurement quality | Non-blocking |
 | `lead-magnet` | `validate:lead-magnet` | Hard fail | `data-capture` | `platform-operations` | public form submission and durable capture | Blocks |
 | `form-database` | `validate:form-database` | Hard fail | `data-capture` | `platform-operations` | public form submission and durable capture | Blocks |
 | `crawl-contract` | `validate:crawl` | Strong warning | `discoverability` | `growth-and-content` | search and crawler surfaces | Non-blocking |
@@ -84,3 +86,10 @@ Passing checks produce no warning. Execution failures are not downgraded by the 
 ## 6. Change control
 
 A new validator is invalid until it is added to `_repo_validation_registry.json`, assigned an owner, scope, group, severity, rationale, entrypoint, and `MATRIX_ONLY` CI policy, then added to the appropriate matrix profile. `validate:registry` hard-fails drift.
+
+## 6. Agency validation rule
+
+- `agency-infrastructure` is a **hard fail** only for broken or missing system machinery: required files, invalid JSON or JavaScript, missing build wiring, absent dashboard artifacts, sitemap/noindex drift, workflow safety drift, or secret-bearing snapshot data.
+- `agency-quality` is a **strong warning** for SEO, AEO, GEO, similarity, score, author/date/schema, service-link, GSC, Bing, and live-health quality findings.
+- Agency quality findings never stop scheduled publishing or deployment. Validator syntax errors, crashes, and missing entrypoints remain execution hard failures under the universal orchestrator law.
+- The focused profile is `npm run validate:profile:agency`.

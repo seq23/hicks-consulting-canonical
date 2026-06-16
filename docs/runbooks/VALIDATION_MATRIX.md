@@ -13,10 +13,11 @@ The matrix is the execution plan. It does not own severity or validator metadata
 
 | Profile | Package command | Profile checks | Purpose |
 |---|---|---:|---|
-| `all` | `validate:all` | 35 | Every enabled registered validator in canonical order. |
+| `all` | `validate:all` | 37 | Every enabled registered validator in canonical order. |
 | `ingestion` | `validate:ingestion` | 8 | Content-intelligence ingestion, observability, provider-resilience, and publishing-governance checks. |
 | `sitemap-indexing` | `validate:profile:sitemap-indexing` | 3 | Crawler, sitemap, and hidden LLM surface checks for the indexing workflow. |
 | `indexnow` | `validate:profile:indexnow` | 1 | IndexNow contract check after emission. |
+| `agency` | `validate:profile:agency` | 2 | Agency infrastructure plus warning-only SEO/AEO/GEO and forward-content readiness. |
 
 ## 3. Workflow invocation law
 
@@ -30,6 +31,7 @@ The matrix is the execution plan. It does not own severity or validator metadata
 - Ingestion profile: `npm run validate:ingestion`
 - Sitemap/indexing profile: `npm run validate:profile:sitemap-indexing`
 - IndexNow profile: `npm run validate:profile:indexnow`
+- Agency profile: `npm run validate:profile:agency`
 - Registry integrity: `npm run validate:registry`
 
 ## 5. Result rules

@@ -10,7 +10,11 @@ const allowedExternalPrefixes = [
   'https://www.psychologytoday.com/',
   'https://providers.therapyforblackgirls.com',
   'https://memphisvoyager.com/',
-  'https://monika-hicks.clientsecure.me/'
+  'https://monika-hicks.clientsecure.me/',
+  'https://www.apa.org/',
+  'https://www.nimh.nih.gov/',
+  'https://www.cdc.gov/',
+  'https://www.samhsa.gov/'
 ];
 for(const file of walk(path.join(process.cwd(),'pages'))){
   const html=fs.readFileSync(file,'utf8');
