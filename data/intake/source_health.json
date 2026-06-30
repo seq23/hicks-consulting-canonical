@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-06-26T15:29:07.599Z",
-  "runId": "2026-06-26T15-28-57-973Z",
+  "generatedAt": "2026-06-30T15:33:52.329Z",
+  "runId": "2026-06-30T15-33-43-350Z",
   "mode": "external",
-  "externalSignalCount": 87,
+  "externalSignalCount": 70,
   "fallbackSignalCount": 7,
   "sources": [
     {
@@ -11,9 +11,9 @@
       "url": "https://www.reddit.com/search.rss?q=Black%20women%20burnout%20therapy&sort=new",
       "status": "ok",
       "httpStatus": 200,
-      "startedAt": "2026-06-26T15:28:57.974Z",
-      "finishedAt": "2026-06-26T15:28:59.219Z",
-      "signalCount": 19
+      "startedAt": "2026-06-30T15:33:43.351Z",
+      "finishedAt": "2026-06-30T15:33:44.319Z",
+      "signalCount": 25
     },
     {
       "id": "reddit_rss_ai_wellness",
@@ -21,19 +21,19 @@
       "url": "https://www.reddit.com/search.rss?q=AI%20anxiety%20mental%20health&sort=new",
       "status": "degraded",
       "httpStatus": 429,
-      "startedAt": "2026-06-26T15:28:59.720Z",
-      "finishedAt": "2026-06-26T15:28:59.752Z",
+      "startedAt": "2026-06-30T15:33:44.819Z",
+      "finishedAt": "2026-06-30T15:33:44.893Z",
       "signalCount": 0
     },
     {
       "id": "reddit_rss_genz_mental_health",
       "name": "Reddit RSS - Gen Z mental health therapy",
       "url": "https://www.reddit.com/search.rss?q=Gen%20Z%20mental%20health%20therapy&sort=new",
-      "status": "ok",
-      "httpStatus": 200,
-      "startedAt": "2026-06-26T15:29:00.252Z",
-      "finishedAt": "2026-06-26T15:29:00.850Z",
-      "signalCount": 23
+      "status": "degraded",
+      "httpStatus": 429,
+      "startedAt": "2026-06-30T15:33:45.392Z",
+      "finishedAt": "2026-06-30T15:33:45.470Z",
+      "signalCount": 0
     },
     {
       "id": "youtube_rss_blackwomen_burnout",
@@ -41,8 +41,8 @@
       "url": "https://www.youtube.com/feeds/videos.xml?search_query=Black%20women%20burnout%20therapy",
       "status": "degraded",
       "httpStatus": 400,
-      "startedAt": "2026-06-26T15:29:01.349Z",
-      "finishedAt": "2026-06-26T15:29:01.435Z",
+      "startedAt": "2026-06-30T15:33:45.970Z",
+      "finishedAt": "2026-06-30T15:33:46.065Z",
       "signalCount": 0
     },
     {
@@ -51,8 +51,8 @@
       "url": "https://news.google.com/rss/search?q=workplace%20mental%20health%20training%20emotional%20intelligence",
       "status": "ok",
       "httpStatus": 200,
-      "startedAt": "2026-06-26T15:29:01.935Z",
-      "finishedAt": "2026-06-26T15:29:02.464Z",
+      "startedAt": "2026-06-30T15:33:46.564Z",
+      "finishedAt": "2026-06-30T15:33:47.170Z",
       "signalCount": 15
     },
     {
@@ -61,8 +61,8 @@
       "url": "https://news.google.com/rss/search?q=faith%20centered%20therapy%20emotional%20healing",
       "status": "ok",
       "httpStatus": 200,
-      "startedAt": "2026-06-26T15:29:02.966Z",
-      "finishedAt": "2026-06-26T15:29:03.475Z",
+      "startedAt": "2026-06-30T15:33:47.670Z",
+      "finishedAt": "2026-06-30T15:33:48.206Z",
       "signalCount": 15
     },
     {
@@ -71,8 +71,8 @@
       "url": "https://interpersonal.stackexchange.com/feeds",
       "status": "ok",
       "httpStatus": 200,
-      "startedAt": "2026-06-26T15:29:03.975Z",
-      "finishedAt": "2026-06-26T15:29:04.094Z",
+      "startedAt": "2026-06-30T15:33:48.706Z",
+      "finishedAt": "2026-06-30T15:33:48.823Z",
       "signalCount": 15
     },
     {
@@ -80,8 +80,8 @@
       "name": "Quora public questions - research lane only",
       "status": "degraded",
       "error": "Failed to parse URL from undefined",
-      "startedAt": "2026-06-26T15:29:04.594Z",
-      "finishedAt": "2026-06-26T15:29:05.095Z",
+      "startedAt": "2026-06-30T15:33:49.323Z",
+      "finishedAt": "2026-06-30T15:33:49.824Z",
       "signalCount": 0
     },
     {
@@ -89,8 +89,8 @@
       "name": "X/Twitter public posts - research lane only",
       "status": "degraded",
       "error": "Failed to parse URL from undefined",
-      "startedAt": "2026-06-26T15:29:05.594Z",
-      "finishedAt": "2026-06-26T15:29:06.095Z",
+      "startedAt": "2026-06-30T15:33:50.324Z",
+      "finishedAt": "2026-06-30T15:33:50.826Z",
       "signalCount": 0
     },
     {
@@ -98,8 +98,8 @@
       "name": "TikTok public posts - research lane only",
       "status": "degraded",
       "error": "Failed to parse URL from undefined",
-      "startedAt": "2026-06-26T15:29:06.597Z",
-      "finishedAt": "2026-06-26T15:29:07.098Z",
+      "startedAt": "2026-06-30T15:33:51.326Z",
+      "finishedAt": "2026-06-30T15:33:51.828Z",
       "signalCount": 0
     }
   ]
