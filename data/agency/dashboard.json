@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-02T13:58:34.816Z",
+  "generatedAt": "2026-07-02T15:09:46.415Z",
   "policy": {
     "blocking": false,
     "message": "SEO, AEO, GEO, GSC, Bing, and live-health findings are advisory warnings only. They never block publishing or deployment."
@@ -89,91 +89,91 @@
     "gsc": {
       "provider": "gsc",
       "status": "not_connected",
-      "checkedAt": "2026-07-01T15:21:48.956Z",
+      "checkedAt": "2026-07-02T15:09:44.951Z",
       "siteUrl": "https://www.hicksconsulting.org/",
       "message": "Add GSC_SITE_URL plus GSC service-account secrets or GSC_ACCESS_TOKEN to enable automatic Search Console monitoring."
     },
     "bing": {
       "provider": "bing",
       "status": "not_connected",
-      "checkedAt": "2026-07-01T15:21:48.956Z",
+      "checkedAt": "2026-07-02T15:09:44.951Z",
       "siteUrl": "https://www.hicksconsulting.org/",
       "message": "Add BING_WEBMASTER_API_KEY and BING_SITE_URL to enable automatic Bing Webmaster monitoring."
     },
     "live": {
       "provider": "live",
       "status": "ok",
-      "checkedAt": "2026-07-01T15:21:48.956Z",
+      "checkedAt": "2026-07-02T15:09:44.951Z",
       "siteUrl": "https://www.hicksconsulting.org",
       "checks": [
         {
           "route": "/",
           "status": 200,
           "ok": true,
-          "ms": 331,
+          "ms": 225,
           "contentType": "text/html; charset=utf-8"
         },
         {
           "route": "/therapy/",
           "status": 200,
           "ok": true,
-          "ms": 152,
+          "ms": 124,
           "contentType": "text/html; charset=utf-8"
         },
         {
           "route": "/coaching/",
           "status": 200,
           "ok": true,
-          "ms": 64,
+          "ms": 45,
           "contentType": "text/html; charset=utf-8"
         },
         {
           "route": "/groups/",
           "status": 200,
           "ok": true,
-          "ms": 45,
+          "ms": 44,
           "contentType": "text/html; charset=utf-8"
         },
         {
           "route": "/corporate-speaking/",
           "status": 200,
           "ok": true,
-          "ms": 67,
+          "ms": 41,
           "contentType": "text/html; charset=utf-8"
         },
         {
           "route": "/about/",
           "status": 200,
           "ok": true,
-          "ms": 35,
+          "ms": 44,
           "contentType": "text/html; charset=utf-8"
         },
         {
           "route": "/resources/",
           "status": 200,
           "ok": true,
-          "ms": 72,
+          "ms": 44,
           "contentType": "text/html; charset=utf-8"
         },
         {
           "route": "/sitemap.xml",
           "status": 200,
           "ok": true,
-          "ms": 153,
+          "ms": 34,
           "contentType": "application/xml"
         },
         {
           "route": "/robots.txt",
           "status": 200,
           "ok": true,
-          "ms": 51,
+          "ms": 57,
           "contentType": "text/plain; charset=utf-8"
         },
         {
           "route": "/agency/",
           "status": 200,
           "ok": true,
-          "ms": 85,
+          "ms": 47,
           "contentType": "text/html; charset=utf-8"
         }
       ],
