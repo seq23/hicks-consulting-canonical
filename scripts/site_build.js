@@ -93,7 +93,7 @@ for (const item of manifest.filter(item => item.slug.startsWith('/resources/') &
 
 const staticPublicRoutes = [
   '/', '/therapy/', '/coaching/', '/groups/', '/corporate-speaking/', '/about/', '/resources/', '/contact/', '/organizational-training-inquiry/',
-  '/intake-quiz/', '/stress-management-worksheet/', '/resources/insights/', '/resources/articles/', '/resources/guides/', '/resources/white-papers/', '/request-consult/', '/book-discovery-call/', '/faq/', '/privacy-policy/', '/cookie-policy/', '/disclaimer/',
+  '/intake-quiz/', '/stress-management-worksheet/', '/resources/insights/', '/resources/articles/', '/resources/guides/', '/resources/white-papers/', '/resources/free-downloads/', '/resources/premium-downloads/', '/request-consult/', '/book-discovery-call/', '/faq/', '/privacy-policy/', '/cookie-policy/', '/disclaimer/',
   '/terms/', '/good-faith-estimate/', '/emergency-crisis-notice/'
 ];
 
@@ -136,7 +136,9 @@ const llms = [
   `- Therapy and coaching consults: ${siteConfig.forms?.therapy || 'https://monika-hicks.clientsecure.me/'}`,
   `- Organizational training: ${siteConfig.forms?.corporate || '/organizational-training-inquiry/'}`,
   `- Groups: ${siteConfig.forms?.groups || '/groups/#group-inquiry-form'}`,
-  `- Free stress management worksheet: ${siteConfig.leadMagnets?.stressManagementWorksheet?.slug || '/stress-management-worksheet/'}`
+  `- Free stress management worksheet: ${siteConfig.leadMagnets?.stressManagementWorksheet?.slug || '/stress-management-worksheet/'}`,
+  '- Free downloads library: /resources/free-downloads/',
+  '- Premium downloads library: /resources/premium-downloads/'
 ].join('\n');
 fs.writeFileSync(path.join(root, 'llms.txt'), llms + '\n');
 fs.writeFileSync(path.join(dist, 'llms.txt'), llms + '\n');

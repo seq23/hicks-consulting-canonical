@@ -1,0 +1,42 @@
+{
+  "schemaVersion": "1.0.0",
+  "updatedAt": "2026-07-07T00:00:00.000Z",
+  "source": "seed-and-admin-api",
+  "adminPath": "/admin/digitalproducts/",
+  "products": [
+    {
+      "id": "stress-management-made-simple",
+      "title": "Stress Management Made Simple",
+      "productType": "free",
+      "status": "published",
+      "featured": true,
+      "description": "A practical free worksheet using the IEMM method to identify, eliminate, minimize, and manage everyday stressors.",
+      "category": "worksheet",
+      "downloadUrl": "/assets/downloads/stress-management-made-simple.pdf",
+      "gumroadUrl": "",
+      "priceLabel": "Free",
+      "buttonLabel": "Download free worksheet",
+      "coverImageUrl": "/assets/images/stress-management-guide-preview.png",
+      "coverSource": "custom_image",
+      "checkoutStatus": "not_applicable",
+      "publishedAt": "2026-07-07"
+    },
+    {
+      "id": "high-performing-womans-guide",
+      "title": "The High-Performing Woman's Guide",
+      "productType": "premium",
+      "status": "draft",
+      "featured": true,
+      "description": "A self-guided digital workbook for high-performing women carrying anxiety, perfectionism, emotional pressure, and the cost of holding everything together.",
+      "category": "workbook",
+      "downloadUrl": "",
+      "gumroadUrl": "https://www.gumroad.com",
+      "priceLabel": "$10",
+      "buttonLabel": "Buy on Gumroad - $10",
+      "coverImageUrl": "",
+      "coverSource": "branded_placeholder",
+      "checkoutStatus": "placeholder",
+      "publishedAt": ""
+    }
+  ]
+}

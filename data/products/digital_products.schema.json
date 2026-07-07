@@ -1,0 +1,41 @@
+{
+  "schemaVersion": "1.0.0",
+  "requiredProductFields": [
+    "id",
+    "title",
+    "productType",
+    "status",
+    "featured",
+    "description",
+    "category",
+    "checkoutStatus",
+    "coverSource"
+  ],
+  "allowedProductTypes": [
+    "free",
+    "premium"
+  ],
+  "allowedStatuses": [
+    "draft",
+    "ready_for_approval",
+    "published",
+    "revoked"
+  ],
+  "allowedCheckoutStatuses": [
+    "not_applicable",
+    "placeholder",
+    "ready",
+    "live"
+  ],
+  "publicRules": {
+    "freePublishedRequires": [
+      "downloadUrl"
+    ],
+    "premiumPublishedRequires": [
+      "gumroadUrl",
+      "priceLabel"
+    ],
+    "premiumPublishedDisallowsPlaceholderGumroad": true,
+    "singleFeaturedPerType": true
+  }
+}

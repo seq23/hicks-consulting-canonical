@@ -34,5 +34,15 @@
       "downloadPath": "/assets/downloads/stress-management-made-simple.pdf",
       "type": "worksheet"
     }
+  },
+  "digitalProducts": {
+    "adminPath": "/admin/digitalproducts/",
+    "freeDownloadsPath": "/resources/free-downloads/",
+    "premiumDownloadsPath": "/resources/premium-downloads/",
+    "apiPath": "/api/digital-products",
+    "storage": "Cloudflare R2 via DIGITAL_PRODUCT_FILES binding",
+    "metadata": "Cloudflare KV via DIGITAL_PRODUCTS_KV binding",
+    "premiumFulfillment": "Gumroad",
+    "placeholderGumroadUrl": "https://www.gumroad.com"
   }
 }

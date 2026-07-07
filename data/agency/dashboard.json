@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-06T17:18:32.757Z",
+  "generatedAt": "2026-07-07T09:57:05.501Z",
   "policy": {
     "blocking": false,
     "message": "SEO, AEO, GEO, GSC, Bing, and live-health findings are advisory warnings only. They never block publishing or deployment."
@@ -8,8 +8,8 @@
     "totalManifest": 227,
     "published": 66,
     "approved": 161,
-    "livePages": 90,
-    "sourcePages": 251
+    "livePages": 92,
+    "sourcePages": 253
   },
   "scores": [
     {
@@ -24,7 +24,7 @@
     {
       "key": "onpage",
       "label": "On-page SEO",
-      "score": 99,
+      "score": 97,
       "summary": "Titles, descriptions, internal linking, and service alignment.",
       "grade": "A",
       "target": 87,
@@ -33,11 +33,11 @@
     {
       "key": "liveContent",
       "label": "Live content quality",
-      "score": 87,
+      "score": 79,
       "summary": "Current public resource distinctiveness and trust signals; legacy similarity is capped but always shown.",
-      "grade": "B+",
+      "grade": "C+",
       "target": 87,
-      "targetMet": true
+      "targetMet": false
     },
     {
       "key": "forwardContent",
@@ -51,7 +51,7 @@
     {
       "key": "aeo",
       "label": "AEO",
-      "score": 100,
+      "score": 98,
       "summary": "Direct answers, readable structure, dates, and Article schema.",
       "grade": "A",
       "target": 87,
@@ -60,7 +60,7 @@
     {
       "key": "geo",
       "label": "GEO",
-      "score": 100,
+      "score": 98,
       "summary": "Entity clarity, author evidence, supporting sources, and citation readiness.",
       "grade": "A",
       "target": 87,
@@ -191,10 +191,52 @@
   },
   "warningCounts": {
     "high": 0,
-    "medium": 30,
-    "low": 1
+    "medium": 36,
+    "low": 5
   },
   "priorities": [
+    {
+      "severity": "medium",
+      "code": "author-bio-link",
+      "route": "/resources/free-downloads/",
+      "message": "Resource lacks a linked Monika Hicks author credit.",
+      "tip": "Link the author name and bio box to /about/."
+    },
+    {
+      "severity": "medium",
+      "code": "service-connection",
+      "route": "/resources/free-downloads/",
+      "message": "Resource has no contextual service link.",
+      "tip": "Connect the topic to the most relevant therapy, coaching, group, or training page."
+    },
+    {
+      "severity": "medium",
+      "code": "article-schema",
+      "route": "/resources/free-downloads/",
+      "message": "Article schema is incomplete.",
+      "tip": "Include Article, author, datePublished, dateModified, publisher, and mainEntityOfPage."
+    },
+    {
+      "severity": "medium",
+      "code": "author-bio-link",
+      "route": "/resources/premium-downloads/",
+      "message": "Resource lacks a linked Monika Hicks author credit.",
+      "tip": "Link the author name and bio box to /about/."
+    },
+    {
+      "severity": "medium",
+      "code": "service-connection",
+      "route": "/resources/premium-downloads/",
+      "message": "Resource has no contextual service link.",
+      "tip": "Connect the topic to the most relevant therapy, coaching, group, or training page."
+    },
+    {
+      "severity": "medium",
+      "code": "article-schema",
+      "route": "/resources/premium-downloads/",
+      "message": "Article schema is incomplete.",
+      "tip": "Include Article, author, datePublished, dateModified, publisher, and mainEntityOfPage."
+    },
     {
       "severity": "medium",
       "code": "content-similarity",
@@ -441,6 +483,34 @@
       "route": "/",
       "message": "Title is 86 characters.",
       "tip": "Shorten the search title while preserving the page H1."
+    },
+    {
+      "severity": "low",
+      "code": "visible-date",
+      "route": "/resources/free-downloads/",
+      "message": "Resource lacks a machine-readable visible date.",
+      "tip": "Add a visible <time datetime=\"…\"> element."
+    },
+    {
+      "severity": "low",
+      "code": "source-link",
+      "route": "/resources/free-downloads/",
+      "message": "Resource has no external supporting source.",
+      "tip": "Add one or two credible sources where the topic benefits from them."
+    },
+    {
+      "severity": "low",
+      "code": "visible-date",
+      "route": "/resources/premium-downloads/",
+      "message": "Resource lacks a machine-readable visible date.",
+      "tip": "Add a visible <time datetime=\"…\"> element."
+    },
+    {
+      "severity": "low",
+      "code": "source-link",
+      "route": "/resources/premium-downloads/",
+      "message": "Resource has no external supporting source.",
+      "tip": "Add one or two credible sources where the topic benefits from them."
     }
   ],
   "duplicatePairs": {

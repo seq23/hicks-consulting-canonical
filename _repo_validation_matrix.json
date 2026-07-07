@@ -43,7 +43,12 @@
         "admin-previews",
         "admin-generated-queue",
         "workflow-contracts",
-        "indexnow"
+        "indexnow",
+        "digital-products-contract",
+        "product-routes",
+        "product-upload-contract",
+        "product-cover-contract",
+        "product-api-behavior"
       ]
     },
     "ingestion": {
@@ -79,6 +84,16 @@
         "agency-infrastructure",
         "agency-quality"
       ]
+    },
+    "digital-products": {
+      "description": "Digital product catalog, public routes, admin upload flow, and cover fallback checks.",
+      "checks": [
+        "digital-products-contract",
+        "product-routes",
+        "product-upload-contract",
+        "product-cover-contract",
+        "product-api-behavior"
+      ]
     }
   },
   "compositeScripts": {
@@ -86,6 +101,7 @@
     "validate:ingestion": "ingestion",
     "validate:profile:sitemap-indexing": "sitemap-indexing",
     "validate:profile:indexnow": "indexnow",
-    "validate:profile:agency": "agency"
+    "validate:profile:agency": "agency",
+    "validate:profile:digital-products": "digital-products"
   }
 }

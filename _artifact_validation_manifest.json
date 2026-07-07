@@ -1,0 +1,40 @@
+{
+  "schemaVersion": "1.0.0",
+  "repoName": "hicks-consulting-canonical",
+  "zipRoot": "hicks-consulting-canonical-main",
+  "expectedBranch": "main",
+  "validatedSourceRoot": "/workspace/work_hicks_digital_products_v1/hicks-consulting-canonical-main",
+  "packagedSourceRoot": "/workspace/work_hicks_digital_products_v1/hicks-consulting-canonical-main",
+  "profile": "container",
+  "localBrowserValidation": "NOT_EXECUTED",
+  "localBrowserValidationReason": "ChatGPT sandbox does not support the required local browser/Playwright proof; browserless static, route, contract, build, and reopened-artifact checks were executed instead.",
+  "requiredLocalUpdater": "update_repo_from_zip_generic_v3_1.sh",
+  "requiredLocalCommandPattern": "bash \"$HOME/repo-tools/active/update_repo_from_zip_generic_v3_1.sh\" \"<ZIP_PATH>\" \"<REPO_PATH>\" \"snapshot\" \"hicks-consulting-canonical\"",
+  "requiredLocalPrepush": "npm run release:prepush:local",
+  "releasePrepushContainerResult": "PASS_WITH_NON_BLOCKING_FINDINGS",
+  "releasePrepushContainerCommand": "npm run release:prepush:local",
+  "digitalProductsProfileResult": "PASS",
+  "digitalProductsProfileCommand": "npm run validate:profile:digital-products",
+  "uiParityResult": "PASS_BROWSERLESS",
+  "browserSuiteContractResult": "NOT_EXECUTED_IN_SANDBOX",
+  "sourceArtifactParityResult": "PASS_BROWSERLESS",
+  "reopenedArtifactValidationResult": "PASS",
+  "nonBlockingFindings": [
+    {
+      "check": "agency-quality",
+      "severity": "STRONG_WARNING",
+      "summary": "Existing repo-wide agency quality score remains below B+ target: 79."
+    }
+  ],
+  "artifactSha256": "RECORDED_AFTER_PACKAGING_IN_HANDOFF",
+  "sourceTreeFingerprint": "c3c49f8d189a5ac3c074faa55663ba1e628420abb63ee0920d99a3efaa5168ae",
+  "generatedAt": "2026-07-07T17:40:00Z",
+  "evidenceReferences": [
+    "npm run validate:profile:digital-products",
+    "npm run release:prepush:local",
+    "built static route/admin/sitemap/llms browserless checks",
+    "premium price/placeholder/CTA behavior checks",
+    "unzip -t reopened artifact integrity",
+    "zip root and exclusion checks"
+  ]
+}

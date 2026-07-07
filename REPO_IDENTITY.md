@@ -14,3 +14,5 @@
 - Deployment target: Cloudflare Pages
 - System mode: canonical_only
 - Publishing mode: hybrid manual approval with launch seed content pre-published
+
+- Digital products: free downloads and premium Gumroad downloads managed through `/admin/digitalproducts/` with Cloudflare Functions/R2/KV bindings for true upload persistence.

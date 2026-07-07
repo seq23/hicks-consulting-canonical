@@ -64,6 +64,12 @@
     "agency:refresh": "node scripts/agency/refresh_search_health.js",
     "agency:monitor": "npm run agency:refresh && npm run build",
     "release:prepush:local": "node scripts/release/prepush_local.js",
-    "release:prepush": "npm run release:prepush:local"
+    "release:prepush": "npm run release:prepush:local",
+    "validate:digital-products": "node _ops/validators/validate_digital_products_contract.js",
+    "validate:product-routes": "node _ops/validators/validate_product_routes.js",
+    "validate:product-upload": "node _ops/validators/validate_product_upload_contract.js",
+    "validate:product-cover": "node _ops/validators/validate_product_cover_contract.js",
+    "validate:profile:digital-products": "node _ops/validation/run_validation_matrix.js --profile digital-products",
+    "validate:product-api-behavior": "node _ops/validators/validate_product_api_behavior.js"
   }
 }

@@ -562,6 +562,76 @@
       "findingProtocol": "VALIDATION_FINDING",
       "enabled": true,
       "rationale": "IndexNow output defects delay discovery but do not affect site correctness or safety."
+    },
+    {
+      "id": "digital-products-contract",
+      "npmScript": "validate:digital-products",
+      "entrypoint": "_ops/validators/validate_digital_products_contract.js",
+      "severity": "HARD_FAIL",
+      "blocksRelease": true,
+      "group": "digital-products",
+      "owner": "platform-operations",
+      "scope": "digital products and download publishing",
+      "ciInvocation": "MATRIX_ONLY",
+      "findingProtocol": "VALIDATION_FINDING",
+      "enabled": true,
+      "rationale": "Digital products catalog, placeholder checkout, status, price, and featured rules."
+    },
+    {
+      "id": "product-routes",
+      "npmScript": "validate:product-routes",
+      "entrypoint": "_ops/validators/validate_product_routes.js",
+      "severity": "HARD_FAIL",
+      "blocksRelease": true,
+      "group": "digital-products",
+      "owner": "platform-operations",
+      "scope": "digital products and download publishing",
+      "ciInvocation": "MATRIX_ONLY",
+      "findingProtocol": "VALIDATION_FINDING",
+      "enabled": true,
+      "rationale": "Public free and premium download routes and resource navigation contract."
+    },
+    {
+      "id": "product-upload-contract",
+      "npmScript": "validate:product-upload",
+      "entrypoint": "_ops/validators/validate_product_upload_contract.js",
+      "severity": "HARD_FAIL",
+      "blocksRelease": true,
+      "group": "digital-products",
+      "owner": "platform-operations",
+      "scope": "digital products and download publishing",
+      "ciInvocation": "MATRIX_ONLY",
+      "findingProtocol": "VALIDATION_FINDING",
+      "enabled": true,
+      "rationale": "Admin product upload, Gumroad, price, and Cloudflare binding contract."
+    },
+    {
+      "id": "product-cover-contract",
+      "npmScript": "validate:product-cover",
+      "entrypoint": "_ops/validators/validate_product_cover_contract.js",
+      "severity": "HARD_FAIL",
+      "blocksRelease": true,
+      "group": "digital-products",
+      "owner": "platform-operations",
+      "scope": "digital products and download publishing",
+      "ciInvocation": "MATRIX_ONLY",
+      "findingProtocol": "VALIDATION_FINDING",
+      "enabled": true,
+      "rationale": "Custom cover and PDF-first-page fallback preview contract."
+    },
+    {
+      "id": "product-api-behavior",
+      "npmScript": "validate:product-api-behavior",
+      "entrypoint": "_ops/validators/validate_product_api_behavior.js",
+      "severity": "HARD_FAIL",
+      "blocksRelease": true,
+      "group": "digital-products",
+      "owner": "platform-operations",
+      "scope": "digital products API mutation safety",
+      "ciInvocation": "MATRIX_ONLY",
+      "findingProtocol": "VALIDATION_FINDING",
+      "enabled": true,
+      "rationale": "Prevents product updates from erasing existing uploaded file URLs and prevents premium products from publishing without live checkout state."
     }
   ]
 }
