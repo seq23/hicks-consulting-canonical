@@ -1710,3 +1710,23 @@ footer {
     grid-template-columns: 1fr;
   }
 }
+
+/* Digital products admin checkbox alignment */
+.digital-product-form .checkbox-label {
+  display: inline-flex !important;
+  align-items: flex-start;
+  justify-content: flex-start;
+  justify-self: start;
+  gap: .65rem !important;
+  width: fit-content;
+  max-width: 100%;
+}
+
+.digital-product-form .checkbox-label input[type="checkbox"] {
+  width: auto;
+  min-width: 16px;
+  height: 16px;
+  margin: .25rem 0 0;
+  padding: 0;
+  flex: 0 0 auto;
+}
