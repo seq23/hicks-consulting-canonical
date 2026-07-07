@@ -5,3 +5,14 @@ compatibility_date = "2026-05-02"
 [vars]
 TRAINING_INQUIRY_WEBHOOK_URL = "https://script.google.com/macros/s/AKfycbx7TneKS_mq6eJfcBpSxtzhgUzgjubYXKw5i8BAeisz7Z0YilvqVjOWdbwBAVqbYKtj/exec"
 INQUIRY_SHARED_SECRET = "gjV0T-nKsFcO00DH2z94LWpc7CpQkEalonZBqEgiH2DFFv5SAOyx39RRFqmfq2Op"
+
+[[kv_namespaces]]
+binding = "DIGITAL_PRODUCTS_KV"
+id = "69fbebf9cc224bdea08d36ca66c170be"
+preview_id = "b83548dda5f54d99947ca9967855bb58"
+
+[[r2_buckets]]
+binding = "DIGITAL_PRODUCT_FILES"
+bucket_name = "hicks-digital-product-files"
+preview_bucket_name = "hicks-digital-product-files-preview"
+
