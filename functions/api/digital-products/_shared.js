@@ -2,6 +2,7 @@ const SEED_CATALOG_URL = '/data/products/digital_products.json';
 const KV_KEY = 'digital_products_catalog_v1';
 const ALLOWED_TYPES = new Set(['free', 'premium']);
 const ALLOWED_STATUSES = new Set(['draft', 'ready_for_approval', 'published', 'revoked']);
+const DIGITAL_PRODUCTS_ADMIN_HASH = 'c7ef3319e6cf6aab9035156df95f18dfec2ba2178f733940eda688758805708b';
 
 export function jsonResponse(body, status = 200) {
   return new Response(JSON.stringify(body), {
@@ -22,10 +23,10 @@ export function slugify(value) {
 }
 
 export function requireAdmin(request, env) {
-  const expected = env.DIGITAL_PRODUCTS_ADMIN_TOKEN;
-  if (!expected) return { ok: false, response: jsonResponse({ ok: false, error: 'Digital products admin token is not configured.' }, 503) };
-  const actual = request.headers.get('x-admin-token') || '';
-  if (actual !== expected) return { ok: false, response: jsonResponse({ ok: false, error: 'Digital products admin token did not match.' }, 401) };
+  const expectedHash = clean(env.DIGITAL_PRODUCTS_ADMIN_HASH || env.ADMIN_HASH || DIGITAL_PRODUCTS_ADMIN_HASH);
+  const actualHash = clean(request.headers.get('x-admin-password-hash') || '');
+  if (!expectedHash) return { ok: false, response: jsonResponse({ ok: false, error: 'Digital products admin auth is not configured.' }, 503) };
+  if (!actualHash || actualHash !== expectedHash) return { ok: false, response: jsonResponse({ ok: false, error: 'Admin password did not match.' }, 401) };
   return { ok: true };
 }
 
