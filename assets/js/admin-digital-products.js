@@ -48,12 +48,42 @@ function wireMobileNav() {
 
 const ADMIN_PASSWORD_HASH = 'c7ef3319e6cf6aab9035156df95f18dfec2ba2178f733940eda688758805708b';
 const SESSION_KEY = 'hc_admin_unlocked';
+const ADMIN_AUTH_HASH_KEY = 'hc_admin_password_hash_v1';
 let PRODUCTS = [];
 
 async function sha256(value) {
   const bytes = new TextEncoder().encode(value);
   const digest = await crypto.subtle.digest('SHA-256', bytes);
   return Array.from(new Uint8Array(digest)).map(b => b.toString(16).padStart(2, '0')).join('');
+}
+
+function getAdminAuthHash() {
+  try {
+    return localStorage.getItem(ADMIN_AUTH_HASH_KEY) || sessionStorage.getItem(ADMIN_AUTH_HASH_KEY) || '';
+  } catch (error) {
+    return '';
+  }
+}
+
+function setAdminAuthHash(hash) {
+  try {
+    localStorage.setItem(ADMIN_AUTH_HASH_KEY, hash);
+  } catch (error) {
+    try { sessionStorage.setItem(ADMIN_AUTH_HASH_KEY, hash); } catch (innerError) {}
+  }
+}
+
+function clearAdminAuthHash() {
+  try { localStorage.removeItem(ADMIN_AUTH_HASH_KEY); } catch (error) {}
+  try { sessionStorage.removeItem(ADMIN_AUTH_HASH_KEY); } catch (error) {}
+}
+
+function adminAuthHeaders(extra = {}) {
+  const hash = getAdminAuthHash();
+  return {
+    ...extra,
+    ...(hash ? { 'x-admin-password-hash': hash } : {})
+  };
 }
 
 function escapeHtml(value) {
@@ -131,7 +161,6 @@ function renderRows() {
 
 async function mutateProductStatus(id, action) {
   const message = document.getElementById('digital-product-form-message');
-  const token = document.getElementById('admin-api-token')?.value || '';
   const endpoint = {
     publish: '/api/digital-products/publish',
     revoke: '/api/digital-products/revoke'
@@ -140,7 +169,7 @@ async function mutateProductStatus(id, action) {
   if (message) message.textContent = `${action === 'publish' ? 'Publishing' : 'Revoking'} product...`;
   const res = await fetch(endpoint, {
     method: 'POST',
-    headers: { 'content-type': 'application/json', ...(token ? { 'x-admin-token': token } : {}) },
+    headers: adminAuthHeaders({ 'content-type': 'application/json' }),
     body: JSON.stringify({ id })
   }).catch((error) => ({ ok: false, json: async () => ({ error: error.message }) }));
   const payload = await res.json().catch(() => ({}));
@@ -153,7 +182,6 @@ async function mutateProductStatus(id, action) {
   renderRows();
   if (message) message.textContent = action === 'publish' ? 'Product published.' : 'Product revoked.';
 }
-
 
 function renderStats() {
   const c = counts(PRODUCTS);
@@ -192,15 +220,14 @@ async function saveProduct(event) {
   const form = event.currentTarget;
   const message = document.getElementById('digital-product-form-message');
   if (message) message.textContent = 'Saving product...';
-  const token = document.getElementById('admin-api-token')?.value || '';
   const res = await fetch('/api/digital-products/update', {
     method: 'POST',
-    headers: token ? { 'x-admin-token': token } : {},
+    headers: adminAuthHeaders(),
     body: normalizeForm(form)
   }).catch((error) => ({ ok: false, json: async () => ({ error: error.message }) }));
   const payload = await res.json().catch(() => ({}));
   if (!res.ok || payload.ok === false) {
-    if (message) message.textContent = payload.error || 'Product could not be saved. Cloudflare backend bindings may not be configured yet.';
+    if (message) message.textContent = payload.error || 'Product could not be saved. Please confirm you are signed in and try again.';
     return;
   }
   PRODUCTS = payload.products || PRODUCTS;
@@ -230,12 +257,14 @@ async function unlockAdmin() {
     return;
   }
   sessionStorage.setItem(SESSION_KEY, 'true');
+  setAdminAuthHash(hash);
   document.getElementById('login-message').textContent = '';
   await renderAdmin();
 }
 
 function lockAdmin() {
   sessionStorage.removeItem(SESSION_KEY);
+  clearAdminAuthHash();
   document.getElementById('admin-panel').hidden = true;
   document.getElementById('login-panel').hidden = false;
   document.getElementById('admin-password').value = '';
@@ -247,5 +276,10 @@ window.lockAdmin = lockAdmin;
 document.addEventListener('DOMContentLoaded', async () => {
   wireMobileNav();
   wireThemeToggle();
-  if (sessionStorage.getItem(SESSION_KEY) === 'true') await renderAdmin();
+  const storedHash = getAdminAuthHash();
+  if (storedHash === ADMIN_PASSWORD_HASH || sessionStorage.getItem(SESSION_KEY) === 'true') {
+    sessionStorage.setItem(SESSION_KEY, 'true');
+    if (storedHash !== ADMIN_PASSWORD_HASH) setAdminAuthHash(ADMIN_PASSWORD_HASH);
+    await renderAdmin();
+  }
 });
