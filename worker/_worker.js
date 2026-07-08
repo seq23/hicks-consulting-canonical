@@ -17,17 +17,17 @@ function createSubmissionId() {
   try { if (globalThis.crypto && typeof globalThis.crypto.randomUUID === 'function') return globalThis.crypto.randomUUID(); } catch (error) {}
   return `form_${Date.now()}_${Math.random().toString(36).slice(2, 12)}`;
 }
-function envKey(env, value) { return env[value.replace('::', '_')]; }
-
 function getFormDatabaseConfig(env, formType) {
-  const sharedA = envKey(env, 'FORM_DATABASE_SHARED::SECRET');
-  const sharedB = envKey(env, 'TRAINING_INQUIRY::SECRET');
-  const sharedC = envKey(env, 'INQUIRY_SHARED::SECRET');
-  const sharedD = envKey(env, 'LEAD_MAGNET_SHARED::SECRET');
   if (formType === 'lead-magnet') {
-    return { webhookUrl: env.LEAD_MAGNET_WEBHOOK_URL || env.FORM_DATABASE_WEBHOOK_URL || env.TRAINING_INQUIRY_WEBHOOK_URL, sharedKey: sharedA || sharedB || sharedC || sharedD };
+    return {
+      webhookUrl: env.LEAD_MAGNET_WEBHOOK_URL || env.FORM_DATABASE_WEBHOOK_URL || env.TRAINING_INQUIRY_WEBHOOK_URL,
+      sharedSecret: env.FORM_DATABASE_SHARED_SECRET || env.TRAINING_INQUIRY_SECRET || env.INQUIRY_SHARED_SECRET || env.LEAD_MAGNET_SHARED_SECRET
+    };
   }
-  return { webhookUrl: env.FORM_DATABASE_WEBHOOK_URL || env.TRAINING_INQUIRY_WEBHOOK_URL || env.LEAD_MAGNET_WEBHOOK_URL, sharedKey: sharedA || sharedB || sharedC || sharedD };
+  return {
+    webhookUrl: env.FORM_DATABASE_WEBHOOK_URL || env.TRAINING_INQUIRY_WEBHOOK_URL || env.LEAD_MAGNET_WEBHOOK_URL,
+    sharedSecret: env.FORM_DATABASE_SHARED_SECRET || env.TRAINING_INQUIRY_SECRET || env.INQUIRY_SHARED_SECRET || env.LEAD_MAGNET_SHARED_SECRET
+  };
 }
 
 function normalizeForwardFields(formType, fields) {
@@ -56,14 +56,14 @@ async function postJsonToWebhook(webhookUrl, body) {
 }
 
 async function sendFormDatabaseSubmission({ env, request, formType, fields }) {
-  const { webhookUrl, sharedKey } = getFormDatabaseConfig(env, formType);
-  if (fields && fields.diagnostic === 'cloudflare-runtime') return { ok: true, submissionId: 'diagnostic-only', queued: false, diagnostic: { runtimeReached: true, formType, hasWebhookUrl: Boolean(webhookUrl), webhookHost: webhookUrl ? new URL(webhookUrl).host : null, hasSharedSecret: Boolean(sharedKey) } };
+  const { webhookUrl, sharedSecret } = getFormDatabaseConfig(env, formType);
+  if (fields && fields.diagnostic === 'cloudflare-runtime') return { ok: true, submissionId: 'diagnostic-only', queued: false, diagnostic: { runtimeReached: true, formType, hasWebhookUrl: Boolean(webhookUrl), webhookHost: webhookUrl ? new URL(webhookUrl).host : null, hasSharedSecret: Boolean(sharedSecret) } };
   const form = FORM_DATABASE_FORMS[formType];
-  if (!webhookUrl || !sharedKey) return { ok: false, status: 503, body: { ok: false, error: 'Form database endpoint is not configured.' } };
+  if (!webhookUrl || !sharedSecret) return { ok: false, status: 503, body: { ok: false, error: 'Form database endpoint is not configured.' } };
   const submissionId = createSubmissionId();
   const forwardFields = normalizeForwardFields(formType, fields);
   const forwardPayload = { inquiryType: formType, formType, leadMagnet: forwardFields.leadMagnet || form.defaultLeadMagnet || '', submissionId, submittedAt: new Date().toISOString(), sourcePage: clean(fields.sourcePage || form.sourcePage), userAgent: clean(request.headers.get('user-agent') || ''), fields: forwardFields };
-  forwardPayload['se' + 'cret'] = sharedKey;
+  forwardPayload.secret = sharedSecret;
   let upstream;
   let webhookResult;
   try { upstream = await postJsonToWebhook(webhookUrl, JSON.stringify(forwardPayload)); webhookResult = await readWebhookResult(upstream); }

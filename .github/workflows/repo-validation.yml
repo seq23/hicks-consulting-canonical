@@ -1,0 +1,45 @@
+name: Repo Validation
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+      - 'repo-tools/**'
+      - 'juniper/**'
+      - 'fix/**'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: repo-validation-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    name: Validate repo contract
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Validate all profiles
+        run: npm run validate:all
+
+      - name: Build site
+        run: npm run build
+
+      - name: Run local prepush gate
+        run: npm run release:prepush:local

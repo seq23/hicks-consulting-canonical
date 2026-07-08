@@ -90,6 +90,34 @@ function escapeHtml(value) {
   return String(value ?? '').replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;').replaceAll("'", '&#039;');
 }
 
+function displayStatus(status) {
+  return status === 'revoked' ? 'Hidden' : String(status || '').replaceAll('_', ' ');
+}
+
+function isPublishBlocked(item) {
+  if (!item) return 'Product was not found.';
+  if (item.productType === 'premium' && item.checkoutStatus === 'placeholder') return 'This premium product needs a real Gumroad URL before it can be published live.';
+  if (item.productType === 'premium' && !item.gumroadUrl) return 'This premium product needs a Gumroad URL before it can be published live.';
+  if (item.productType === 'free' && !item.downloadUrl) return 'This free product needs a PDF or download URL before it can be published live.';
+  return '';
+}
+
+function confirmStatusChange(item, action) {
+  if (!item) return false;
+  if (action === 'publish') {
+    const blocked = isPublishBlocked(item);
+    if (blocked) {
+      window.alert(blocked);
+      return false;
+    }
+    return window.confirm(`Publish this live?\n\nThis will make "${item.title || item.id}" visible on the public download page. It will not change GitHub.`);
+  }
+  if (action === 'revoke') {
+    return window.confirm(`Hide this from the public site?\n\nThis will remove "${item.title || item.id}" from public download pages without deleting it. It will not change GitHub.`);
+  }
+  return false;
+}
+
 async function fetchJson(url) {
   const res = await fetch(url, { cache: 'no-store' }).catch(() => null);
   if (!res || !res.ok) return null;
@@ -128,9 +156,10 @@ function filteredProducts() {
 }
 
 function statusHelp(item) {
-  if (item.productType === 'premium' && item.checkoutStatus === 'placeholder') return 'Needs real Gumroad URL before publish.';
+  if (item.productType === 'premium' && item.checkoutStatus === 'placeholder') return 'Needs real Gumroad URL before Publish Live.';
   if (item.status === 'published') return 'Live on public download page.';
-  if (item.status === 'ready_for_approval') return 'Ready for final human publish action.';
+  if (item.status === 'ready_for_approval') return 'Ready for final human Publish Live action.';
+  if (item.status === 'revoked') return 'Hidden from public download pages.';
   return 'Not public.';
 }
 
@@ -144,29 +173,35 @@ function renderRows() {
     body.innerHTML = '<tr><td colspan="8" class="muted">No digital products match the current filters.</td></tr>';
     return;
   }
-  body.innerHTML = items.map((item) => `<tr>
-    <td><strong>${escapeHtml(item.title)}</strong><div class="muted small">${escapeHtml(item.id)}</div><div class="muted small">${escapeHtml(statusHelp(item))}</div></td>
-    <td>${item.productType === 'premium' ? 'Premium Download' : 'Free Download'}</td>
-    <td><span class="badge">${escapeHtml(String(item.status || '').replaceAll('_', ' '))}</span></td>
-    <td>${escapeHtml(item.priceLabel || (item.productType === 'free' ? 'Free' : ''))}</td>
-    <td class="small">${item.productType === 'premium' ? escapeHtml(item.gumroadUrl || 'Missing Gumroad URL') : escapeHtml(item.downloadUrl || 'Missing download URL')}</td>
-    <td>${escapeHtml(item.coverSource || 'none')}</td>
-    <td>${item.featured ? 'Yes' : 'No'}</td>
-    <td><button class="small-button" type="button" data-edit-product="${escapeHtml(item.id)}">Edit</button><button class="small-button" type="button" data-publish-product="${escapeHtml(item.id)}">Publish</button><button class="small-button alt" type="button" data-revoke-product="${escapeHtml(item.id)}">Revoke</button></td>
-  </tr>`).join('');
+  body.innerHTML = items.map((item) => {
+    const publishBlocked = isPublishBlocked(item);
+    const publishTitle = publishBlocked || 'Make this product visible on public download pages. Does not change GitHub.';
+    return `<tr>
+      <td><strong>${escapeHtml(item.title)}</strong><div class="muted small">${escapeHtml(item.id)}</div><div class="muted small">${escapeHtml(statusHelp(item))}</div></td>
+      <td>${item.productType === 'premium' ? 'Premium Download' : 'Free Download'}</td>
+      <td><span class="badge">${escapeHtml(displayStatus(item.status))}</span></td>
+      <td>${escapeHtml(item.priceLabel || (item.productType === 'free' ? 'Free' : ''))}</td>
+      <td class="small">${item.productType === 'premium' ? escapeHtml(item.gumroadUrl || 'Missing Gumroad URL') : escapeHtml(item.downloadUrl || 'Missing download URL')}</td>
+      <td>${escapeHtml(item.coverSource || 'none')}</td>
+      <td>${item.featured ? 'Yes' : 'No'}</td>
+      <td><button class="small-button" type="button" data-edit-product="${escapeHtml(item.id)}">Edit</button><button class="small-button" type="button" data-publish-product="${escapeHtml(item.id)}" title="${escapeHtml(publishTitle)}"${publishBlocked ? ' disabled' : ''}>Publish Live</button><button class="small-button alt" type="button" data-revoke-product="${escapeHtml(item.id)}" title="Hide this product from public download pages. Does not change GitHub.">Hide from Site</button></td>
+    </tr>`;
+  }).join('');
   document.querySelectorAll('[data-edit-product]').forEach((button) => button.addEventListener('click', () => fillForm(button.getAttribute('data-edit-product'))));
   document.querySelectorAll('[data-publish-product]').forEach((button) => button.addEventListener('click', () => mutateProductStatus(button.getAttribute('data-publish-product'), 'publish')));
   document.querySelectorAll('[data-revoke-product]').forEach((button) => button.addEventListener('click', () => mutateProductStatus(button.getAttribute('data-revoke-product'), 'revoke')));
 }
 
 async function mutateProductStatus(id, action) {
+  const item = PRODUCTS.find((product) => product.id === id);
+  if (!confirmStatusChange(item, action)) return;
   const message = document.getElementById('digital-product-form-message');
   const endpoint = {
     publish: '/api/digital-products/publish',
     revoke: '/api/digital-products/revoke'
   }[action];
   if (!endpoint) return;
-  if (message) message.textContent = `${action === 'publish' ? 'Publishing' : 'Revoking'} product...`;
+  if (message) message.textContent = `${action === 'publish' ? 'Publishing live' : 'Hiding from site'}...`;
   const res = await fetch(endpoint, {
     method: 'POST',
     headers: adminAuthHeaders({ 'content-type': 'application/json' }),
@@ -174,13 +209,13 @@ async function mutateProductStatus(id, action) {
   }).catch((error) => ({ ok: false, json: async () => ({ error: error.message }) }));
   const payload = await res.json().catch(() => ({}));
   if (!res.ok || payload.ok === false) {
-    if (message) message.textContent = payload.error || `Product could not be ${action === 'publish' ? 'published' : 'revoked'}.`;
+    if (message) message.textContent = payload.error || `Product could not be ${action === 'publish' ? 'published live' : 'hidden from site'}.`;
     return;
   }
   PRODUCTS = payload.products || PRODUCTS;
   renderStats();
   renderRows();
-  if (message) message.textContent = action === 'publish' ? 'Product published.' : 'Product revoked.';
+  if (message) message.textContent = action === 'publish' ? 'Product published live. GitHub was not changed.' : 'Product hidden from the public site. GitHub was not changed.';
 }
 
 function renderStats() {
@@ -219,7 +254,7 @@ async function saveProduct(event) {
   event.preventDefault();
   const form = event.currentTarget;
   const message = document.getElementById('digital-product-form-message');
-  if (message) message.textContent = 'Saving product...';
+  if (message) message.textContent = 'Saving product details...';
   const res = await fetch('/api/digital-products/update', {
     method: 'POST',
     headers: adminAuthHeaders(),
@@ -233,7 +268,7 @@ async function saveProduct(event) {
   PRODUCTS = payload.products || PRODUCTS;
   renderStats();
   renderRows();
-  if (message) message.textContent = 'Product saved. Publish remains a separate intentional action.';
+  if (message) message.textContent = 'Product saved. Publish Live remains a separate intentional action.';
 }
 
 async function renderAdmin() {
@@ -277,9 +312,11 @@ document.addEventListener('DOMContentLoaded', async () => {
   wireMobileNav();
   wireThemeToggle();
   const storedHash = getAdminAuthHash();
-  if (storedHash === ADMIN_PASSWORD_HASH || sessionStorage.getItem(SESSION_KEY) === 'true') {
+  if (storedHash === ADMIN_PASSWORD_HASH) {
     sessionStorage.setItem(SESSION_KEY, 'true');
-    if (storedHash !== ADMIN_PASSWORD_HASH) setAdminAuthHash(ADMIN_PASSWORD_HASH);
     await renderAdmin();
+  } else {
+    sessionStorage.removeItem(SESSION_KEY);
+    clearAdminAuthHash();
   }
 });

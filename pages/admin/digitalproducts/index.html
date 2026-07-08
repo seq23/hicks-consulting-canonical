@@ -53,7 +53,11 @@
         <div class="section-heading">
           <p class="eyebrow">Operator dashboard</p>
           <h2>Digital product manager</h2>
-          <p class="muted">Use this page to prepare, review, publish, or hide Hicks Consulting free downloads and premium Gumroad downloads.</p>
+          <p class="muted">Use this page to prepare, review, publish live, or hide Hicks Consulting free downloads and premium Gumroad downloads.</p>
+        </div>
+
+        <div class="notice" id="runtime-catalog-note">
+          <strong>Live catalog update:</strong> Save, Publish Live, and Hide from Site update the live digital product catalog through Cloudflare runtime storage. GitHub is not required for normal product publishing. Backup tools are separate and should only be used for recovery or static fallback work.
         </div>
 
         <div class="callout-grid">
@@ -62,16 +66,16 @@
             <ol class="instructions-list admin-steps">
               <li><strong>Step 1: Find or start a product.</strong> Use Smart Filters to find an existing download, then click Edit. To create a new product, skip the table and fill out the form.</li>
               <li><strong>Step 2: Add the product details.</strong> Choose Free or Premium, add the title, description, category, price, Gumroad link if premium, PDF, and optional cover image.</li>
-              <li><strong>Step 3: Save, then publish.</strong> Save first. Publish only when ready for the product to appear on the public download page. Revoke hides it again.</li>
+              <li><strong>Step 3: Save, then publish.</strong> Save first. Publish only when ready for the product to appear on the public download page. Hide from Site removes it from public pages without deleting it.</li>
             </ol>
           </div>
           <div class="soft-panel">
             <h3>Status key</h3>
             <ul class="clean">
-              <li><strong>draft</strong>: not public</li>
-              <li><strong>ready_for_approval</strong>: complete enough for final review</li>
-              <li><strong>published</strong>: visible on public download pages</li>
-              <li><strong>revoked</strong>: removed from public download pages</li>
+              <li><strong>Draft</strong>: saved, not visible on public pages</li>
+              <li><strong>Ready</strong>: complete enough for final review, not public yet</li>
+              <li><strong>Published</strong>: visible on public download pages</li>
+              <li><strong>Hidden</strong>: removed from public pages without deleting it</li>
             </ul>
           </div>
         </div>
@@ -80,7 +84,7 @@
           <div class="card"><strong id="draft-count">0</strong><div class="muted small">Drafts</div></div>
           <div class="card"><strong id="ready-count">0</strong><div class="muted small">Ready to publish</div></div>
           <div class="card"><strong id="published-count">0</strong><div class="muted small">Published</div></div>
-          <div class="card"><strong id="revoked-count">0</strong><div class="muted small">Revoked</div></div>
+          <div class="card"><strong id="revoked-count">0</strong><div class="muted small">Hidden</div></div>
         </div>
 
         <section class="panel">
@@ -90,7 +94,7 @@
             <div class="admin-filter-grid">
               <label>Search<input id="product-search" type="search" placeholder="Search product title or ID"/></label>
               <label>Type<select id="product-type-filter"><option value="all">All types</option><option value="free">Free downloads</option><option value="premium">Premium downloads</option></select></label>
-              <label>Status<select id="product-status-filter"><option value="all">All statuses</option><option value="draft">Draft</option><option value="ready_for_approval">Ready</option><option value="published">Published</option><option value="revoked">Revoked</option></select></label>
+              <label>Status<select id="product-status-filter"><option value="all">All statuses</option><option value="draft">Draft</option><option value="ready_for_approval">Ready</option><option value="published">Published</option><option value="revoked">Hidden</option></select></label>
             </div>
             <p class="muted small" id="product-filter-summary">Showing all products.</p>
           </div>
@@ -104,11 +108,11 @@
 
         <section class="soft-panel digital-products-form-panel">
           <h3>Add or update a product</h3>
-          <p class="muted small">Use this box to create a new product or update a product after clicking Edit in the table above.</p>
+          <p class="muted small">Use this box to create a new product or update a product after clicking Edit in the table above. Saving does not make the product public.</p>
           <form id="digital-product-form" class="digital-product-form">
             <label>Product ID<input name="id" required placeholder="high-performing-womans-guide"/></label>
             <label>Product type<select name="productType" required><option value="free">Free Download</option><option value="premium">Premium Download</option></select></label>
-            <label>Status<select name="status" required><option value="draft">Draft</option><option value="ready_for_approval">Ready for approval</option><option value="published">Published</option><option value="revoked">Revoked</option></select></label>
+            <label>Status<select name="status" required><option value="draft">Draft</option><option value="ready_for_approval">Ready for approval</option><option value="published">Published</option><option value="revoked">Hidden</option></select></label>
             <label>Title<input name="title" required placeholder="The High-Performing Woman's Guide"/></label>
             <label>Description<textarea name="description" required rows="4"></textarea></label>
             <label>Category<input name="category" required placeholder="worksheet, workbook, guide"/></label>
@@ -117,9 +121,20 @@
             <label>PDF file<input name="pdf" type="file" accept="application/pdf"/></label>
             <label>Optional cover / preview image<input name="cover" type="file" accept="image/png,image/jpeg,image/webp"/></label>
             <label class="checkbox-label"><input name="featured" type="checkbox"/> Feature this product within its download type</label>
-            <div class="hero-actions"><button class="button" type="submit">Save product</button><button class="button alt" type="button" id="reset-product-form">Clear form</button></div>
+            <div class="hero-actions"><button class="button" type="submit">Save Draft / Product Details</button><button class="button alt" type="button" id="reset-product-form">Clear form</button></div>
             <p class="muted small" id="digital-product-form-message"></p>
           </form>
+        </section>
+
+        <section class="soft-panel" id="digital-products-backup-tools">
+          <p class="eyebrow">Backup / GitHub tools</p>
+          <h3>Static backup controls</h3>
+          <p class="muted small">Normal product publishing does not use GitHub. These backup controls are intentionally secondary and are reserved for exporting, recovery, or developer static fallback work.</p>
+          <div class="hero-actions">
+            <button class="button alt" type="button" disabled title="Planned backup action; normal live publishing does not need this.">Backup Product Catalog to GitHub</button>
+            <button class="button alt" type="button" disabled title="Planned recovery action; use only if runtime catalog needs to be restored.">Restore Product Catalog from GitHub</button>
+            <button class="button alt" type="button" disabled title="Planned export action for developer/recovery use.">Export Product Catalog JSON</button>
+          </div>
         </section>
 
         <p class="small"><a class="button alt small-button" href="/admin/">Back to admin</a> <button onclick="lockAdmin()">Lock admin</button></p>

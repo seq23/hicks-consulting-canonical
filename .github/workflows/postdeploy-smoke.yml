@@ -1,0 +1,85 @@
+name: Postdeploy Smoke
+
+on:
+  workflow_dispatch:
+    inputs:
+      base_url:
+        description: 'Cloudflare Pages base URL to smoke test'
+        required: false
+        default: 'https://hicks-consulting-canonical.pages.dev'
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  smoke:
+    name: Smoke test live Pages deployment
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      BASE_URL: ${{ github.event.inputs.base_url || 'https://hicks-consulting-canonical.pages.dev' }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Wait briefly for Pages deployment
+        run: sleep 45
+
+      - name: Check public routes
+        shell: bash
+        run: |
+          set -euo pipefail
+          for path in "/" "/admin/" "/admin/digitalproducts/" "/resources/free-downloads/" "/resources/premium-downloads/"; do
+            code=$(curl -L -s -o /tmp/smoke.html -w "%{http_code}" "$BASE_URL$path")
+            if [ "$code" != "200" ]; then
+              echo "Expected 200 for $path, got $code"
+              exit 1
+            fi
+          done
+
+      - name: Check digital products API
+        shell: bash
+        run: |
+          set -euo pipefail
+          code=$(curl -L -s -o /tmp/digital-products.json -w "%{http_code}" "$BASE_URL/api/digital-products")
+          if [ "$code" != "200" ]; then
+            echo "Expected 200 for /api/digital-products, got $code"
+            exit 1
+          fi
+          node -e "const fs=require('fs'); const data=JSON.parse(fs.readFileSync('/tmp/digital-products.json','utf8')); if (!Array.isArray(data.products)) throw new Error('Digital products API did not return products array');"
+
+      - name: Check digital products admin safety
+        shell: bash
+        run: |
+          set -euo pipefail
+          curl -L -s "$BASE_URL/admin/digitalproducts/" -o /tmp/admin-digitalproducts.html
+          grep -q "admin-digital-products.js" /tmp/admin-digitalproducts.html
+          if grep -Eiq "Admin API token|admin-api-token|x-admin-token" /tmp/admin-digitalproducts.html; then
+            echo "Admin page exposes deprecated token language"
+            exit 1
+          fi
+          grep -q "Publish Live" /tmp/admin-digitalproducts.html
+          grep -q "Hide from Site" /tmp/admin-digitalproducts.html
+
+      - name: Check free PDF route
+        shell: bash
+        run: |
+          set -euo pipefail
+          headers=$(mktemp)
+          code=$(curl -L -s -o /dev/null -D "$headers" -w "%{http_code}" "$BASE_URL/assets/downloads/stress-management-made-simple.pdf")
+          if [ "$code" != "200" ]; then
+            echo "Expected 200 for free PDF, got $code"
+            exit 1
+          fi
+          if ! grep -iq "content-type:.*pdf" "$headers"; then
+            echo "Free PDF route did not return a PDF content type"
+            cat "$headers"
+            exit 1
+          fi

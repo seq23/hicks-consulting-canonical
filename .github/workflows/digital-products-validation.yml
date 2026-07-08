@@ -1,0 +1,62 @@
+name: Digital Products Validation
+
+on:
+  pull_request:
+    paths:
+      - 'pages/admin/digitalproducts/**'
+      - 'assets/js/admin-digital-products.js'
+      - 'worker/_worker.js'
+      - 'functions/api/digital-products/**'
+      - 'data/products/**'
+      - '_ops/validators/*product*.js'
+      - 'package.json'
+      - 'package-lock.json'
+      - '.github/workflows/**'
+  push:
+    branches:
+      - main
+      - 'repo-tools/**'
+      - 'juniper/**'
+      - 'fix/**'
+    paths:
+      - 'pages/admin/digitalproducts/**'
+      - 'assets/js/admin-digital-products.js'
+      - 'worker/_worker.js'
+      - 'functions/api/digital-products/**'
+      - 'data/products/**'
+      - '_ops/validators/*product*.js'
+      - 'package.json'
+      - 'package-lock.json'
+      - '.github/workflows/**'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: digital-products-validation-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate-digital-products:
+    name: Validate digital products flow
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Validate digital-products profile
+        run: npm run validate:profile:digital-products
+
+      - name: Build site
+        run: npm run build

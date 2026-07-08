@@ -1,0 +1,22 @@
+{
+  "artifact": "hicks-consulting-canonical_FULL_BASELINE_hybrid_admin_ci_20260708.zip",
+  "base_zip": "hicks-consulting-canonical-main.zip",
+  "patch_zip": "hicks_admin_hybrid_ci_patch_20260708.zip",
+  "root": "hicks-consulting-canonical",
+  "mode": "full baseline with patch overlay",
+  "changed_paths": [
+    "ARTIFACT_MANIFEST.txt",
+    "docs/hicks-hybrid-admin-implementation.md",
+    "_ops/validators/validate_product_upload_contract.js",
+    "assets/js/admin-digital-products.js",
+    "pages/admin/digitalproducts/index.html",
+    ".github/workflows/repo-validation.yml",
+    ".github/workflows/digital-products-validation.yml",
+    ".github/workflows/postdeploy-smoke.yml"
+  ],
+  "safety_notes": [
+    "No data/products files modified by overlay",
+    "No current content migration performed",
+    "Admin UI changes are additive for digital products page"
+  ]
+}
