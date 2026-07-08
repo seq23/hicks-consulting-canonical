@@ -42,4 +42,16 @@ for (const item of catalog.products) {
 }
 if (!ids.has('stress-management-made-simple')) fail('Seed free worksheet product is missing.');
 if (!ids.has('high-performing-womans-guide')) fail('Seed premium workbook product is missing.');
+
+const adminPage = fs.readFileSync(path.join(root, 'pages/admin/digitalproducts/index.html'), 'utf8');
+for (const token of ['How to use this page', 'Step 1', 'Step 2', 'Step 3', 'Smart filters', 'Add or update a product']) {
+  if (!adminPage.includes(token)) fail(`Admin digital products UX missing token: ${token}`);
+}
+if (adminPage.includes('Admin API token') || adminPage.includes('admin-api-token') || adminPage.includes('x-admin-token')) {
+  fail('Admin digital products UX must not expose deprecated API token language.');
+}
+if (adminPage.indexOf('Smart filters') > adminPage.indexOf('Add or update a product')) {
+  fail('Admin smart filters must appear before the add/update product box.');
+}
+
 console.log('Digital products catalog contract OK');
