@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-07-10T16:37:56.966Z",
-  "runId": "2026-07-10T16-37-48-660Z",
+  "generatedAt": "2026-07-14T16:01:17.374Z",
+  "runId": "2026-07-14T16-01-08-465Z",
   "mode": "external",
-  "externalSignalCount": 69,
+  "externalSignalCount": 70,
   "fallbackSignalCount": 7,
   "sources": [
     {
@@ -11,9 +11,9 @@
       "url": "https://www.reddit.com/search.rss?q=Black%20women%20burnout%20therapy&sort=new",
       "status": "ok",
       "httpStatus": 200,
-      "startedAt": "2026-07-10T16:37:48.661Z",
-      "finishedAt": "2026-07-10T16:37:49.214Z",
-      "signalCount": 24
+      "startedAt": "2026-07-14T16:01:08.465Z",
+      "finishedAt": "2026-07-14T16:01:09.222Z",
+      "signalCount": 25
     },
     {
       "id": "reddit_rss_ai_wellness",
@@ -21,8 +21,8 @@
       "url": "https://www.reddit.com/search.rss?q=AI%20anxiety%20mental%20health&sort=new",
       "status": "degraded",
       "httpStatus": 429,
-      "startedAt": "2026-07-10T16:37:49.715Z",
-      "finishedAt": "2026-07-10T16:37:49.728Z",
+      "startedAt": "2026-07-14T16:01:09.722Z",
+      "finishedAt": "2026-07-14T16:01:09.762Z",
       "signalCount": 0
     },
     {
@@ -31,8 +31,8 @@
       "url": "https://www.reddit.com/search.rss?q=Gen%20Z%20mental%20health%20therapy&sort=new",
       "status": "degraded",
       "httpStatus": 429,
-      "startedAt": "2026-07-10T16:37:50.228Z",
-      "finishedAt": "2026-07-10T16:37:50.240Z",
+      "startedAt": "2026-07-14T16:01:10.262Z",
+      "finishedAt": "2026-07-14T16:01:10.302Z",
       "signalCount": 0
     },
     {
@@ -41,8 +41,8 @@
       "url": "https://www.youtube.com/feeds/videos.xml?search_query=Black%20women%20burnout%20therapy",
       "status": "degraded",
       "httpStatus": 400,
-      "startedAt": "2026-07-10T16:37:50.739Z",
-      "finishedAt": "2026-07-10T16:37:50.775Z",
+      "startedAt": "2026-07-14T16:01:10.801Z",
+      "finishedAt": "2026-07-14T16:01:10.893Z",
       "signalCount": 0
     },
     {
@@ -51,8 +51,8 @@
       "url": "https://news.google.com/rss/search?q=workplace%20mental%20health%20training%20emotional%20intelligence",
       "status": "ok",
       "httpStatus": 200,
-      "startedAt": "2026-07-10T16:37:51.275Z",
-      "finishedAt": "2026-07-10T16:37:51.817Z",
+      "startedAt": "2026-07-14T16:01:11.392Z",
+      "finishedAt": "2026-07-14T16:01:12.082Z",
       "signalCount": 15
     },
     {
@@ -61,8 +61,8 @@
       "url": "https://news.google.com/rss/search?q=faith%20centered%20therapy%20emotional%20healing",
       "status": "ok",
       "httpStatus": 200,
-      "startedAt": "2026-07-10T16:37:52.317Z",
-      "finishedAt": "2026-07-10T16:37:52.812Z",
+      "startedAt": "2026-07-14T16:01:12.582Z",
+      "finishedAt": "2026-07-14T16:01:13.110Z",
       "signalCount": 15
     },
     {
@@ -71,8 +71,8 @@
       "url": "https://interpersonal.stackexchange.com/feeds",
       "status": "ok",
       "httpStatus": 200,
-      "startedAt": "2026-07-10T16:37:53.311Z",
-      "finishedAt": "2026-07-10T16:37:53.458Z",
+      "startedAt": "2026-07-14T16:01:13.611Z",
+      "finishedAt": "2026-07-14T16:01:13.868Z",
       "signalCount": 15
     },
     {
@@ -80,8 +80,8 @@
       "name": "Quora public questions - research lane only",
       "status": "degraded",
       "error": "Failed to parse URL from undefined",
-      "startedAt": "2026-07-10T16:37:53.959Z",
-      "finishedAt": "2026-07-10T16:37:54.461Z",
+      "startedAt": "2026-07-14T16:01:14.369Z",
+      "finishedAt": "2026-07-14T16:01:14.871Z",
       "signalCount": 0
     },
     {
@@ -89,8 +89,8 @@
       "name": "X/Twitter public posts - research lane only",
       "status": "degraded",
       "error": "Failed to parse URL from undefined",
-      "startedAt": "2026-07-10T16:37:54.961Z",
-      "finishedAt": "2026-07-10T16:37:55.462Z",
+      "startedAt": "2026-07-14T16:01:15.371Z",
+      "finishedAt": "2026-07-14T16:01:15.871Z",
       "signalCount": 0
     },
     {
@@ -98,8 +98,8 @@
       "name": "TikTok public posts - research lane only",
       "status": "degraded",
       "error": "Failed to parse URL from undefined",
-      "startedAt": "2026-07-10T16:37:55.963Z",
-      "finishedAt": "2026-07-10T16:37:56.464Z",
+      "startedAt": "2026-07-14T16:01:16.372Z",
+      "finishedAt": "2026-07-14T16:01:16.873Z",
       "signalCount": 0
     }
   ]
