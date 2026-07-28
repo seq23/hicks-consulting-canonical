@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-21T16:04:32.847Z",
+  "generatedAt": "2026-07-28T16:20:14.875Z",
   "clusters": [
     {
       "id": "black_women_healing",
@@ -21,7 +21,7 @@
           "audience": "Black women",
           "contentType": "service",
           "status": "candidate",
-          "generatedAt": "2026-07-21T16:04:32.385Z"
+          "generatedAt": "2026-07-28T16:20:14.460Z"
         },
         {
           "id": "seed-black-women-burnout-and-boundaries",
@@ -36,7 +36,7 @@
           "audience": "Black women",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-07-21T16:04:32.385Z"
+          "generatedAt": "2026-07-28T16:20:14.460Z"
         }
       ],
       "queryCount": 2,
@@ -64,7 +64,7 @@
           "audience": "Organizations and teams",
           "contentType": "service",
           "status": "candidate",
-          "generatedAt": "2026-07-21T16:04:32.385Z"
+          "generatedAt": "2026-07-28T16:20:14.460Z"
         },
         {
           "id": "seed-millennial-women-burnout-motherhood-work",
@@ -80,7 +80,7 @@
           "audience": "Gen Z and millennial clients",
           "contentType": "service",
           "status": "candidate",
-          "generatedAt": "2026-07-21T16:04:32.385Z"
+          "generatedAt": "2026-07-28T16:20:14.460Z"
         }
       ],
       "queryCount": 2,
@@ -96,6 +96,48 @@
       ],
       "signals": [
         {
+          "id": "reddit_rss_blackwomen-isekai-d-into-a-dark-fantasy-rpg-are-you-kidding-me-somehow-i-ended-on-the-villa",
+          "query": "[Isekai’d into a Dark Fantasy RPG, Are You Kidding Me? Somehow, I Ended on the Villains Side.] Chapter 32: I Really Didn't Want to Beat Up Elderly Women",
+          "source": "reddit_rss_blackwomen",
+          "sourceType": "rss",
+          "tags": [
+            "ai_digital_wellness"
+          ],
+          "intent": "informational",
+          "audience": "Clients seeking emotional wellness support",
+          "contentType": "answer",
+          "status": "candidate",
+          "generatedAt": "2026-07-28T16:20:14.460Z"
+        },
+        {
+          "id": "reddit_rss_blackwomen-isekai-d-into-a-dark-fantasy-rpg-are-you-kidding-me-somehow-i-ended-on-the-villa",
+          "query": "Isekai’d into a Dark Fantasy RPG, Are You Kidding Me? Somehow, I Ended on the Villains’ Side. Chapter 32: I Really Didn't Want to Beat Up Elderly Women",
+          "source": "reddit_rss_blackwomen",
+          "sourceType": "rss",
+          "tags": [
+            "ai_digital_wellness"
+          ],
+          "intent": "informational",
+          "audience": "Clients seeking emotional wellness support",
+          "contentType": "answer",
+          "status": "candidate",
+          "generatedAt": "2026-07-28T16:20:14.460Z"
+        },
+        {
+          "id": "reddit_rss_blackwomen-my-spouse-was-laid-off-two-months-ago-and-i-resent-him-for-getting-to-recover",
+          "query": "My spouse was laid off two months ago and I resent him for getting to recover",
+          "source": "reddit_rss_blackwomen",
+          "sourceType": "rss",
+          "tags": [
+            "ai_digital_wellness"
+          ],
+          "intent": "informational",
+          "audience": "Clients seeking emotional wellness support",
+          "contentType": "answer",
+          "status": "candidate",
+          "generatedAt": "2026-07-28T16:20:14.460Z"
+        },
+        {
           "id": "google_news_workplace_mental_health-workplace-mental-health-training-emotional-intelligence-google-news",
           "query": "\"workplace mental health training emotional intelligence\" - Google News",
           "source": "google_news_workplace_mental_health",
@@ -108,7 +150,7 @@
           "audience": "Organizations and teams",
           "contentType": "service",
           "status": "candidate",
-          "generatedAt": "2026-07-21T16:04:32.385Z"
+          "generatedAt": "2026-07-28T16:20:14.460Z"
         },
         {
           "id": "google_news_workplace_mental_health-10-tips-to-boost-wellbeing-in-the-workplace-for-2024-mental-health-first-aid",
@@ -123,7 +165,7 @@
           "audience": "Organizations and teams",
           "contentType": "service",
           "status": "candidate",
-          "generatedAt": "2026-07-21T16:04:32.385Z"
+          "generatedAt": "2026-07-28T16:20:14.460Z"
         },
         {
           "id": "google_news_workplace_mental_health-emotional-intelligence-training-improves-stress-regulation-and-performance-in-hi",
@@ -137,7 +179,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-07-21T16:04:32.385Z"
+          "generatedAt": "2026-07-28T16:20:14.460Z"
         },
         {
           "id": "google_news_faith_centered_therapy-faith-centered-therapy-emotional-healing-google-news",
@@ -152,7 +194,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "service",
           "status": "candidate",
-          "generatedAt": "2026-07-21T16:04:32.385Z"
+          "generatedAt": "2026-07-28T16:20:14.460Z"
         },
         {
           "id": "google_news_faith_centered_therapy-resonance-across-cultures-and-faiths-examining-the-violin-music-s-role-in-emotio",
@@ -167,7 +209,22 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-07-21T16:04:32.385Z"
+          "generatedAt": "2026-07-28T16:20:14.460Z"
+        },
+        {
+          "id": "google_news_faith_centered_therapy-a-timely-exploration-of-faith-psychology-and-human-growth-bo-aspen-daily-news",
+          "query": "A Timely Exploration of Faith Psychology and Human Growth Bo... - Aspen Daily News",
+          "source": "google_news_faith_centered_therapy",
+          "sourceType": "rss",
+          "tags": [
+            "ai_digital_wellness",
+            "faith_centered_support"
+          ],
+          "intent": "informational",
+          "audience": "Clients seeking emotional wellness support",
+          "contentType": "answer",
+          "status": "candidate",
+          "generatedAt": "2026-07-28T16:20:14.460Z"
         },
         {
           "id": "google_news_faith_centered_therapy-all-in-solutions-wellness-center-emphasizes-mind-and-body-reset-through-comprehe",
@@ -181,7 +238,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-07-21T16:04:32.385Z"
+          "generatedAt": "2026-07-28T16:20:14.460Z"
         },
         {
           "id": "stackexchange_interpersonal_forum-how-to-gain-trust-after-failing-to-support-my-wife-in-a-difficult-moment",
@@ -195,7 +252,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-07-21T16:04:32.385Z"
+          "generatedAt": "2026-07-28T16:20:14.460Z"
         },
         {
           "id": "seed-ai-anxiety-and-emotional-wellness",
@@ -209,10 +266,10 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-07-21T16:04:32.385Z"
+          "generatedAt": "2026-07-28T16:20:14.460Z"
         }
       ],
-      "queryCount": 8,
+      "queryCount": 12,
       "score": 100,
       "targetPage": "/llm-atlas/clusters/",
       "status": "active"
@@ -236,7 +293,7 @@
           "audience": "Gen Z and millennial clients",
           "contentType": "service",
           "status": "candidate",
-          "generatedAt": "2026-07-21T16:04:32.385Z"
+          "generatedAt": "2026-07-28T16:20:14.460Z"
         }
       ],
       "queryCount": 1,
@@ -252,6 +309,20 @@
       ],
       "signals": [
         {
+          "id": "reddit_rss_blackwomen-whatever-i-do-my-work-life-is-still-great-my-love-life-is-shit",
+          "query": "Whatever I do, my work life is still great, my love life is shit",
+          "source": "reddit_rss_blackwomen",
+          "sourceType": "rss",
+          "tags": [
+            "workplace_emotional_intelligence"
+          ],
+          "intent": "informational",
+          "audience": "Organizations and teams",
+          "contentType": "answer",
+          "status": "candidate",
+          "generatedAt": "2026-07-28T16:20:14.460Z"
+        },
+        {
           "id": "google_news_workplace_mental_health-emotional-intelligence-and-ems-leadership-caring-for-mental-health-after-a-tough",
           "query": "Emotional Intelligence and EMS Leadership: Caring for Mental Health After a Tough Call - HMP Global Learning Network",
           "source": "google_news_workplace_mental_health",
@@ -263,7 +334,7 @@
           "audience": "Organizations and teams",
           "contentType": "service",
           "status": "candidate",
-          "generatedAt": "2026-07-21T16:04:32.385Z"
+          "generatedAt": "2026-07-28T16:20:14.460Z"
         },
         {
           "id": "google_news_workplace_mental_health-high-emotional-intelligence-might-protect-narcissists-from-workplace-distress-ps",
@@ -277,7 +348,21 @@
           "audience": "Organizations and teams",
           "contentType": "service",
           "status": "candidate",
-          "generatedAt": "2026-07-21T16:04:32.385Z"
+          "generatedAt": "2026-07-28T16:20:14.460Z"
+        },
+        {
+          "id": "google_news_workplace_mental_health-gaslighting-at-work-the-silent-psychological-risk-and-the-critical-role-of-hr-et",
+          "query": "Gaslighting at work: The silent psychological risk and the critical role of HR - ETHRWorld.com",
+          "source": "google_news_workplace_mental_health",
+          "sourceType": "rss",
+          "tags": [
+            "workplace_emotional_intelligence"
+          ],
+          "intent": "commercial",
+          "audience": "Organizations and teams",
+          "contentType": "service",
+          "status": "candidate",
+          "generatedAt": "2026-07-28T16:20:14.460Z"
         },
         {
           "id": "google_news_workplace_mental_health-transform-workplace-mental-health-with-a-skills-based-approach-shrm",
@@ -291,7 +376,7 @@
           "audience": "Organizations and teams",
           "contentType": "service",
           "status": "candidate",
-          "generatedAt": "2026-07-21T16:04:32.385Z"
+          "generatedAt": "2026-07-28T16:20:14.460Z"
         },
         {
           "id": "google_news_workplace_mental_health-new-research-explores-mental-health-costs-of-emotional-labor-at-work-university-",
@@ -305,35 +390,7 @@
           "audience": "Organizations and teams",
           "contentType": "service",
           "status": "candidate",
-          "generatedAt": "2026-07-21T16:04:32.385Z"
-        },
-        {
-          "id": "google_news_workplace_mental_health-pro-black-organizations-lead-the-way-for-workplace-mental-health-and-wellbeing-n",
-          "query": "Pro-Black Organizations Lead the Way for Workplace Mental Health and Wellbeing - Nonprofit Quarterly",
-          "source": "google_news_workplace_mental_health",
-          "sourceType": "rss",
-          "tags": [
-            "workplace_emotional_intelligence"
-          ],
-          "intent": "commercial",
-          "audience": "Organizations and teams",
-          "contentType": "service",
-          "status": "candidate",
-          "generatedAt": "2026-07-21T16:04:32.385Z"
-        },
-        {
-          "id": "google_news_workplace_mental_health-5-ways-to-become-more-emotionally-intelligent-at-work-verywell-mind",
-          "query": "5 Ways to Become More Emotionally Intelligent at Work - Verywell Mind",
-          "source": "google_news_workplace_mental_health",
-          "sourceType": "rss",
-          "tags": [
-            "workplace_emotional_intelligence"
-          ],
-          "intent": "commercial",
-          "audience": "Organizations and teams",
-          "contentType": "service",
-          "status": "candidate",
-          "generatedAt": "2026-07-21T16:04:32.385Z"
+          "generatedAt": "2026-07-28T16:20:14.460Z"
         },
         {
           "id": "google_news_workplace_mental_health-rising-workload-pressures-pushing-people-leaders-to-breaking-point-report-benefi",
@@ -347,7 +404,7 @@
           "audience": "Organizations and teams",
           "contentType": "service",
           "status": "candidate",
-          "generatedAt": "2026-07-21T16:04:32.385Z"
+          "generatedAt": "2026-07-28T16:20:14.460Z"
         },
         {
           "id": "google_news_workplace_mental_health-well-being-intelligence-a-skill-set-for-the-new-world-of-work-mit-sloan-manageme",
@@ -361,7 +418,7 @@
           "audience": "Organizations and teams",
           "contentType": "service",
           "status": "candidate",
-          "generatedAt": "2026-07-21T16:04:32.385Z"
+          "generatedAt": "2026-07-28T16:20:14.460Z"
         }
       ],
       "queryCount": 8,
@@ -400,7 +457,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-07-21T16:04:32.385Z"
+          "generatedAt": "2026-07-28T16:20:14.460Z"
         },
         {
           "id": "reddit_rss_blackwomen-blackgirlshealing",
@@ -414,7 +471,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-07-21T16:04:32.385Z"
+          "generatedAt": "2026-07-28T16:20:14.460Z"
         },
         {
           "id": "reddit_rss_blackwomen-most-suffering-is-abuse-inequality-let-s-end-the-violence-harmful-labels-hardcor",
@@ -428,11 +485,11 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-07-21T16:04:32.385Z"
+          "generatedAt": "2026-07-28T16:20:14.460Z"
         },
         {
-          "id": "reddit_rss_blackwomen-i-36f-want-to-keep-fighting-for-my-relationship-with-my-partner-48f-but-i-don-t-",
-          "query": "I (36F) want to keep fighting for my relationship with my partner (48F) but I don't know if I'm ignoring reality.",
+          "id": "reddit_rss_blackwomen-the-ultimate-false-dilemma-deconstructing-the-rp-categorization-of-women",
+          "query": "The ultimate False Dilemma: Deconstructing the RP categorization of women.",
           "source": "reddit_rss_blackwomen",
           "sourceType": "rss",
           "tags": [
@@ -442,11 +499,11 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-07-21T16:04:32.385Z"
+          "generatedAt": "2026-07-28T16:20:14.460Z"
         },
         {
-          "id": "reddit_rss_blackwomen-the-silens-of-the-lambs-interpretation-discussion",
-          "query": "The Silens of the Lambs, Interpretation, discussion.",
+          "id": "reddit_rss_blackwomen-hmfts-by-clip-description-most-likely-russian-pop-song-or-by-a-russian-group",
+          "query": "{[HMFTS] by clip description} Most likely Russian (pop?) song or by a Russian group",
           "source": "reddit_rss_blackwomen",
           "sourceType": "rss",
           "tags": [
@@ -456,11 +513,11 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-07-21T16:04:32.385Z"
+          "generatedAt": "2026-07-28T16:20:14.460Z"
         },
         {
-          "id": "reddit_rss_blackwomen-the-silens-of-the-lambs-interpretation-discussion",
-          "query": "The Silens of the Lambs, Interpretation, Discussion",
+          "id": "reddit_rss_blackwomen-2026-commonwealth-games-event-finals-day-2-results",
+          "query": "2026 Commonwealth Games Event Finals Day 2 Results",
           "source": "reddit_rss_blackwomen",
           "sourceType": "rss",
           "tags": [
@@ -470,11 +527,11 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-07-21T16:04:32.385Z"
+          "generatedAt": "2026-07-28T16:20:14.460Z"
         },
         {
-          "id": "reddit_rss_blackwomen-zombie",
-          "query": "Zombie",
+          "id": "reddit_rss_blackwomen-i-think-my-roommate-is-cheating-and-its-triggering-my-ptsd",
+          "query": "I think my roommate is cheating and its triggering my PTSD",
           "source": "reddit_rss_blackwomen",
           "sourceType": "rss",
           "tags": [
@@ -484,11 +541,11 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-07-21T16:04:32.385Z"
+          "generatedAt": "2026-07-28T16:20:14.460Z"
         },
         {
-          "id": "reddit_rss_blackwomen-the-psychology-of-handbags-what-your-bag-says-about-your-style",
-          "query": "The Psychology of Handbags: What Your Bag Says About Your Style",
+          "id": "reddit_rss_blackwomen-abortion-20-two-years-later-i-am-still-not-myself-any-advice",
+          "query": "Abortion @ 20, two years later I am still not myself. Any advice?",
           "source": "reddit_rss_blackwomen",
           "sourceType": "rss",
           "tags": [
@@ -498,11 +555,11 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-07-21T16:04:32.385Z"
+          "generatedAt": "2026-07-28T16:20:14.460Z"
         },
         {
-          "id": "reddit_rss_blackwomen-30-m4f-france-europe-introvert-nature-lover-just-looking-for-someone-with-whom-i",
-          "query": "30 [M4F] France/Europe, Introvert, nature lover, just looking for someone with whom I’ll feel comfortable, and vice versa",
+          "id": "reddit_rss_blackwomen-tw-2-principals-tried-to-unalived-me-one-teacher-unalived-a-student-and-got-away",
+          "query": "TW: 2 Principals tried to unalived me, one teacher unalived a student, and got away with it.",
           "source": "reddit_rss_blackwomen",
           "sourceType": "rss",
           "tags": [
@@ -512,11 +569,11 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-07-21T16:04:32.385Z"
+          "generatedAt": "2026-07-28T16:20:14.460Z"
         },
         {
-          "id": "reddit_rss_blackwomen-kdramas-that-are-like-life-on-mars",
-          "query": "KDramas that are like Life on Mars",
+          "id": "reddit_rss_blackwomen-how-do-i-30f-take-space-in-a-relationship-with-my-bf-31m-i-feel-like-i-m-sinking",
+          "query": "How do I (30f) take space in a relationship with my bf (31m). I feel like I’m sinking.",
           "source": "reddit_rss_blackwomen",
           "sourceType": "rss",
           "tags": [
@@ -526,11 +583,11 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-07-21T16:04:32.385Z"
+          "generatedAt": "2026-07-28T16:20:14.460Z"
         },
         {
-          "id": "reddit_rss_blackwomen-i-m-thinking-of-separating-from-my-husband",
-          "query": "I’m thinking of separating from my husband",
+          "id": "reddit_rss_blackwomen-wts-various-smartwool-baselayers-and-outdoor-research-super-alpine-down-parka",
+          "query": "[wts] Various Smartwool baselayers, and Outdoor Research Super Alpine Down Parka",
           "source": "reddit_rss_blackwomen",
           "sourceType": "rss",
           "tags": [
@@ -540,11 +597,11 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-07-21T16:04:32.385Z"
+          "generatedAt": "2026-07-28T16:20:14.460Z"
         },
         {
-          "id": "reddit_rss_blackwomen-racism-rudeness-or-all-of-the-above",
-          "query": "Racism, Rudeness, or All of The Above?",
+          "id": "reddit_rss_blackwomen-found-myself-on-tik-tok",
+          "query": "Found myself on tik tok..",
           "source": "reddit_rss_blackwomen",
           "sourceType": "rss",
           "tags": [
@@ -554,11 +611,11 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-07-21T16:04:32.385Z"
+          "generatedAt": "2026-07-28T16:20:14.460Z"
         },
         {
-          "id": "reddit_rss_blackwomen-i-m-thinking-of-separating-with-my-husband-8-months-pregnant",
-          "query": "I’m thinking of separating with my husband 8 months pregnant",
+          "id": "reddit_rss_blackwomen-just-a-small-story-about-how-i-became-a-sad-mess-gt",
+          "query": "Just a small story about how I became a sad mess:&gt;",
           "source": "reddit_rss_blackwomen",
           "sourceType": "rss",
           "tags": [
@@ -568,11 +625,11 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-07-21T16:04:32.385Z"
+          "generatedAt": "2026-07-28T16:20:14.460Z"
         },
         {
-          "id": "reddit_rss_blackwomen-interesting-repost",
-          "query": "interesting repost.",
+          "id": "reddit_rss_blackwomen-epstein-files-efta01682027",
+          "query": "EPSTEIN FILES EFTA01682027",
           "source": "reddit_rss_blackwomen",
           "sourceType": "rss",
           "tags": [
@@ -582,11 +639,11 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-07-21T16:04:32.385Z"
+          "generatedAt": "2026-07-28T16:20:14.460Z"
         },
         {
-          "id": "reddit_rss_blackwomen-selling-us-updated-various-boutique-blu-ray-with-oop-offerings",
-          "query": "[Selling] [US] Updated: various boutique blu ray with OOP offerings",
+          "id": "reddit_rss_blackwomen-how-to-rebuild-self-esteem-and-confidence-after-a-breakup-and-betrayal",
+          "query": "How to rebuild self esteem and confidence after a breakup and betrayal?",
           "source": "reddit_rss_blackwomen",
           "sourceType": "rss",
           "tags": [
@@ -596,11 +653,11 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-07-21T16:04:32.385Z"
+          "generatedAt": "2026-07-28T16:20:14.460Z"
         },
         {
-          "id": "reddit_rss_blackwomen-not-allowed-to-discuss-hrt-during-well-woman-exam",
-          "query": "Not allowed to discuss HRT during \"well woman\" exam",
+          "id": "reddit_rss_blackwomen-looking-for-pcp",
+          "query": "Looking for PCP",
           "source": "reddit_rss_blackwomen",
           "sourceType": "rss",
           "tags": [
@@ -610,11 +667,11 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-07-21T16:04:32.385Z"
+          "generatedAt": "2026-07-28T16:20:14.460Z"
         },
         {
-          "id": "reddit_rss_blackwomen-forcing-myself-to-do-positive-things",
-          "query": "Forcing myself to do positive things",
+          "id": "reddit_rss_blackwomen-epstein-files-efta01682027",
+          "query": "Epstein files EFTA01682027",
           "source": "reddit_rss_blackwomen",
           "sourceType": "rss",
           "tags": [
@@ -624,11 +681,11 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-07-21T16:04:32.385Z"
+          "generatedAt": "2026-07-28T16:20:14.460Z"
         },
         {
-          "id": "reddit_rss_blackwomen-lesbian-in-formal-women-s-attire",
-          "query": "Lesbian in Formal Women’s Attire",
+          "id": "reddit_rss_blackwomen-us-women-s-poverty-rates-by-race",
+          "query": "US Women's poverty rates by race",
           "source": "reddit_rss_blackwomen",
           "sourceType": "rss",
           "tags": [
@@ -638,11 +695,11 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-07-21T16:04:32.385Z"
+          "generatedAt": "2026-07-28T16:20:14.460Z"
         },
         {
-          "id": "reddit_rss_blackwomen-i-can-t-tell-if-this-is-rsd-or-if-it-s-more-trying-not-to-spiral",
-          "query": "I can't tell if this is RSD or if it's more... Trying not to spiral.",
+          "id": "reddit_rss_blackwomen-how-is-this-selfish",
+          "query": "How is this selfish?",
           "source": "reddit_rss_blackwomen",
           "sourceType": "rss",
           "tags": [
@@ -652,11 +709,11 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-07-21T16:04:32.385Z"
+          "generatedAt": "2026-07-28T16:20:14.460Z"
         },
         {
-          "id": "reddit_rss_blackwomen-empyrean-iris-3-195-iron-cloud-by-charlie-star",
-          "query": "[Empyrean Iris:] 3-195 Iron Cloud (by Charlie Star)",
+          "id": "reddit_rss_blackwomen-the-weir-october-1989",
+          "query": "The Weir (October 1989)",
           "source": "reddit_rss_blackwomen",
           "sourceType": "rss",
           "tags": [
@@ -666,63 +723,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-07-21T16:04:32.385Z"
-        },
-        {
-          "id": "reddit_rss_blackwomen-the-odyssey-movie-michael-jackson-biopic-breaks-records-betting-on-your-delayed-",
-          "query": "The Odyssey Movie, Michael Jackson Biopic Breaks Records, Betting On Your Delayed Flights (Full Episode)",
-          "source": "reddit_rss_blackwomen",
-          "sourceType": "rss",
-          "tags": [
-            "general_emotional_wellness"
-          ],
-          "intent": "informational",
-          "audience": "Clients seeking emotional wellness support",
-          "contentType": "answer",
-          "status": "candidate",
-          "generatedAt": "2026-07-21T16:04:32.385Z"
-        },
-        {
-          "id": "reddit_rss_blackwomen-black-socialism-radicle-tradition",
-          "query": "Black Socialism / Radicle Tradition",
-          "source": "reddit_rss_blackwomen",
-          "sourceType": "rss",
-          "tags": [
-            "general_emotional_wellness"
-          ],
-          "intent": "informational",
-          "audience": "Clients seeking emotional wellness support",
-          "contentType": "answer",
-          "status": "candidate",
-          "generatedAt": "2026-07-21T16:04:32.385Z"
-        },
-        {
-          "id": "reddit_rss_blackwomen-autism-referral",
-          "query": "Autism referral",
-          "source": "reddit_rss_blackwomen",
-          "sourceType": "rss",
-          "tags": [
-            "general_emotional_wellness"
-          ],
-          "intent": "informational",
-          "audience": "Clients seeking emotional wellness support",
-          "contentType": "answer",
-          "status": "candidate",
-          "generatedAt": "2026-07-21T16:04:32.385Z"
-        },
-        {
-          "id": "reddit_rss_blackwomen-and-so-marks-the-end-of-burgundy",
-          "query": "And so marks the end of Burgundy.",
-          "source": "reddit_rss_blackwomen",
-          "sourceType": "rss",
-          "tags": [
-            "general_emotional_wellness"
-          ],
-          "intent": "informational",
-          "audience": "Clients seeking emotional wellness support",
-          "contentType": "answer",
-          "status": "candidate",
-          "generatedAt": "2026-07-21T16:04:32.385Z"
+          "generatedAt": "2026-07-28T16:20:14.460Z"
         },
         {
           "id": "google_news_workplace_mental_health-google-news",
@@ -736,7 +737,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-07-21T16:04:32.385Z"
+          "generatedAt": "2026-07-28T16:20:14.460Z"
         },
         {
           "id": "google_news_workplace_mental_health-emotional-intelligence-for-safety-pros-safety-health-magazine",
@@ -750,7 +751,21 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-07-21T16:04:32.385Z"
+          "generatedAt": "2026-07-28T16:20:14.460Z"
+        },
+        {
+          "id": "google_news_workplace_mental_health-impact-of-emotional-intelligence-on-professional-performance-and-stress-resilien",
+          "query": "Impact of Emotional Intelligence on Professional Performance and Stress Resilience Among Healthcare Practitioners - Cureus",
+          "source": "google_news_workplace_mental_health",
+          "sourceType": "rss",
+          "tags": [
+            "general_emotional_wellness"
+          ],
+          "intent": "informational",
+          "audience": "Clients seeking emotional wellness support",
+          "contentType": "answer",
+          "status": "candidate",
+          "generatedAt": "2026-07-28T16:20:14.460Z"
         },
         {
           "id": "google_news_workplace_mental_health-are-firefighters-really-so-unique-firerescue1",
@@ -764,7 +779,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-07-21T16:04:32.385Z"
+          "generatedAt": "2026-07-28T16:20:14.460Z"
         },
         {
           "id": "google_news_faith_centered_therapy-google-news",
@@ -778,11 +793,11 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-07-21T16:04:32.385Z"
+          "generatedAt": "2026-07-28T16:20:14.460Z"
         },
         {
-          "id": "google_news_faith_centered_therapy-all-in-solutions-wellness-center-emphasizes-mind-body-healing-approach-during-de",
-          "query": "All In Solutions Wellness Center Emphasizes Mind-Body Healing Approach During Detox Process - Detroit Free Press",
+          "id": "google_news_faith_centered_therapy-all-in-solutions-wellness-center-emphasizes-emotional-healing-during-detox-proce",
+          "query": "All In Solutions Wellness Center Emphasizes Emotional Healing During Detox Process - Marshfield News-Herald",
           "source": "google_news_faith_centered_therapy",
           "sourceType": "rss",
           "tags": [
@@ -792,7 +807,21 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-07-21T16:04:32.385Z"
+          "generatedAt": "2026-07-28T16:20:14.460Z"
+        },
+        {
+          "id": "google_news_faith_centered_therapy-all-in-solutions-wellness-center-emphasizes-mind-body-healing-approach-during-de",
+          "query": "All In Solutions Wellness Center Emphasizes Mind-Body Healing Approach During Detox Process - PhillyBurbs",
+          "source": "google_news_faith_centered_therapy",
+          "sourceType": "rss",
+          "tags": [
+            "general_emotional_wellness"
+          ],
+          "intent": "informational",
+          "audience": "Clients seeking emotional wellness support",
+          "contentType": "answer",
+          "status": "candidate",
+          "generatedAt": "2026-07-28T16:20:14.460Z"
         },
         {
           "id": "google_news_faith_centered_therapy-all-in-solutions-counseling-center-cherry-hill-expands-holistic-therapy-options-",
@@ -806,7 +835,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "service",
           "status": "candidate",
-          "generatedAt": "2026-07-21T16:04:32.385Z"
+          "generatedAt": "2026-07-28T16:20:14.460Z"
         },
         {
           "id": "google_news_faith_centered_therapy-all-in-solutions-cherry-hill-emphasizes-emotional-wellness-through-mindfulness-i",
@@ -820,21 +849,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-07-21T16:04:32.385Z"
-        },
-        {
-          "id": "google_news_faith_centered_therapy-all-in-solutions-detox-emphasizes-comprehensive-healing-approach-during-detoxifi",
-          "query": "All In Solutions Detox Emphasizes Comprehensive Healing Approach During Detoxification Process - Times Herald",
-          "source": "google_news_faith_centered_therapy",
-          "sourceType": "rss",
-          "tags": [
-            "general_emotional_wellness"
-          ],
-          "intent": "informational",
-          "audience": "Clients seeking emotional wellness support",
-          "contentType": "answer",
-          "status": "candidate",
-          "generatedAt": "2026-07-21T16:04:32.385Z"
+          "generatedAt": "2026-07-28T16:20:14.460Z"
         },
         {
           "id": "google_news_faith_centered_therapy-all-in-solutions-counseling-center-enhances-holistic-recovery-programs-with-comp",
@@ -848,7 +863,21 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-07-21T16:04:32.385Z"
+          "generatedAt": "2026-07-28T16:20:14.460Z"
+        },
+        {
+          "id": "google_news_faith_centered_therapy-all-in-solutions-detox-emphasizes-comprehensive-healing-approach-during-detoxifi",
+          "query": "All In Solutions Detox Emphasizes Comprehensive Healing Approach During Detoxification Process - The Stockton Record",
+          "source": "google_news_faith_centered_therapy",
+          "sourceType": "rss",
+          "tags": [
+            "general_emotional_wellness"
+          ],
+          "intent": "informational",
+          "audience": "Clients seeking emotional wellness support",
+          "contentType": "answer",
+          "status": "candidate",
+          "generatedAt": "2026-07-28T16:20:14.460Z"
         },
         {
           "id": "google_news_faith_centered_therapy-meet-deborah-fowler-of-alhambra-ca-voyage-la-magazine",
@@ -862,7 +891,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-07-21T16:04:32.385Z"
+          "generatedAt": "2026-07-28T16:20:14.460Z"
         },
         {
           "id": "google_news_faith_centered_therapy-all-in-solutions-california-enhances-outpatient-programs-with-expanded-trauma-tr",
@@ -876,11 +905,11 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-07-21T16:04:32.385Z"
+          "generatedAt": "2026-07-28T16:20:14.460Z"
         },
         {
-          "id": "google_news_faith_centered_therapy-all-in-solutions-detox-emphasizes-comfort-strategies-in-comprehensive-detox-cent",
-          "query": "All In Solutions Detox Emphasizes Comfort Strategies in Comprehensive Detox Center Approach - USA Today",
+          "id": "google_news_faith_centered_therapy-all-in-solutions-wellness-center-highlights-how-structured-environment-enhances-",
+          "query": "All In Solutions Wellness Center Highlights How Structured Environment Enhances Recovery Outcomes - The Providence Journal",
           "source": "google_news_faith_centered_therapy",
           "sourceType": "rss",
           "tags": [
@@ -890,21 +919,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-07-21T16:04:32.385Z"
-        },
-        {
-          "id": "google_news_faith_centered_therapy-don-t-suffer-alone-support-groups-open-doors-to-healing-in-brevard-county-florid",
-          "query": "Don't suffer alone: Support groups open doors to healing in Brevard County - Florida Today",
-          "source": "google_news_faith_centered_therapy",
-          "sourceType": "rss",
-          "tags": [
-            "general_emotional_wellness"
-          ],
-          "intent": "informational",
-          "audience": "Clients seeking emotional wellness support",
-          "contentType": "answer",
-          "status": "candidate",
-          "generatedAt": "2026-07-21T16:04:32.385Z"
+          "generatedAt": "2026-07-28T16:20:14.460Z"
         },
         {
           "id": "google_news_faith_centered_therapy-can-religion-and-spirituality-have-a-place-in-therapy-experts-say-yes-american-p",
@@ -918,21 +933,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "service",
           "status": "candidate",
-          "generatedAt": "2026-07-21T16:04:32.385Z"
-        },
-        {
-          "id": "google_news_faith_centered_therapy-many-people-mislabel-emotional-struggle-as-spiritual-funke-adetuberu-tribune-onl",
-          "query": "Many people mislabel emotional struggle as spiritual —Funke Adetuberu - Tribune Online",
-          "source": "google_news_faith_centered_therapy",
-          "sourceType": "rss",
-          "tags": [
-            "general_emotional_wellness"
-          ],
-          "intent": "informational",
-          "audience": "Clients seeking emotional wellness support",
-          "contentType": "answer",
-          "status": "candidate",
-          "generatedAt": "2026-07-21T16:04:32.385Z"
+          "generatedAt": "2026-07-28T16:20:14.460Z"
         },
         {
           "id": "stackexchange_interpersonal_forum-recent-questions-interpersonal-skills-stack-exchange",
@@ -946,21 +947,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-07-21T16:04:32.385Z"
-        },
-        {
-          "id": "stackexchange_interpersonal_forum-what-should-i-do-if-i-feel-neglected-at-school-and-my-teachers-only-give-me-perf",
-          "query": "What should I do if I feel neglected at school and my teachers only give me perfunctory treatment? [closed]",
-          "source": "stackexchange_interpersonal_forum",
-          "sourceType": "rss",
-          "tags": [
-            "general_emotional_wellness"
-          ],
-          "intent": "informational",
-          "audience": "Clients seeking emotional wellness support",
-          "contentType": "answer",
-          "status": "candidate",
-          "generatedAt": "2026-07-21T16:04:32.385Z"
+          "generatedAt": "2026-07-28T16:20:14.460Z"
         },
         {
           "id": "stackexchange_interpersonal_forum-how-do-i-add-to-a-conversation-without-people-getting-defensive-that-x27-s-not-w",
@@ -974,7 +961,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-07-21T16:04:32.385Z"
+          "generatedAt": "2026-07-28T16:20:14.460Z"
         },
         {
           "id": "stackexchange_interpersonal_forum-how-to-say-x27-i-x27-m-sorry-x27-to-a-small-local-business",
@@ -988,7 +975,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-07-21T16:04:32.385Z"
+          "generatedAt": "2026-07-28T16:20:14.460Z"
         },
         {
           "id": "stackexchange_interpersonal_forum-how-do-i-prevent-myself-from-coming-off-as-stuck-up-or-conceited-when-discussing",
@@ -1002,7 +989,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-07-21T16:04:32.385Z"
+          "generatedAt": "2026-07-28T16:20:14.460Z"
         },
         {
           "id": "stackexchange_interpersonal_forum-how-do-speakers-handle-public-speaking-on-difficult-topics-without-your-voice-br",
@@ -1016,7 +1003,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-07-21T16:04:32.385Z"
+          "generatedAt": "2026-07-28T16:20:14.460Z"
         },
         {
           "id": "stackexchange_interpersonal_forum-how-to-pass-on-a-question-when-you-cannot-answer-efficiently",
@@ -1030,7 +1017,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-07-21T16:04:32.385Z"
+          "generatedAt": "2026-07-28T16:20:14.460Z"
         },
         {
           "id": "stackexchange_interpersonal_forum-how-does-a-single-person-influence-the-team-towards-consensus-and-a-positive-cha",
@@ -1044,7 +1031,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-07-21T16:04:32.385Z"
+          "generatedAt": "2026-07-28T16:20:14.460Z"
         },
         {
           "id": "stackexchange_interpersonal_forum-how-do-i-kick-one-person-out-of-a-friend-group-without-alienating-those-who-supp",
@@ -1058,7 +1045,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-07-21T16:04:32.385Z"
+          "generatedAt": "2026-07-28T16:20:14.460Z"
         },
         {
           "id": "stackexchange_interpersonal_forum-in-online-dating-how-do-i-ask-a-date-why-she-seems-so-disinterested",
@@ -1072,7 +1059,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-07-21T16:04:32.385Z"
+          "generatedAt": "2026-07-28T16:20:14.460Z"
         },
         {
           "id": "stackexchange_interpersonal_forum-a-friend-always-talks-in-dry-professional-language-even-though-being-very-close-",
@@ -1086,7 +1073,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-07-21T16:04:32.385Z"
+          "generatedAt": "2026-07-28T16:20:14.460Z"
         },
         {
           "id": "stackexchange_interpersonal_forum-my-boyfriend-blocked-me-i-would-like-to-make-up-with-him",
@@ -1100,7 +1087,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-07-21T16:04:32.385Z"
+          "generatedAt": "2026-07-28T16:20:14.460Z"
         },
         {
           "id": "stackexchange_interpersonal_forum-reassuring-my-wife-being-jealous-of-my-close-female-friend",
@@ -1114,7 +1101,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-07-21T16:04:32.385Z"
+          "generatedAt": "2026-07-28T16:20:14.460Z"
         },
         {
           "id": "stackexchange_interpersonal_forum-how-as-in-what-way-am-i-expected-to-go-about-using-a-dating-app-correctly",
@@ -1128,7 +1115,21 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-07-21T16:04:32.385Z"
+          "generatedAt": "2026-07-28T16:20:14.460Z"
+        },
+        {
+          "id": "stackexchange_interpersonal_forum-how-do-i-progress-a-newly-formed-friendship-into-a-romantic-relationship",
+          "query": "How do I progress a newly formed friendship into a romantic relationship?",
+          "source": "stackexchange_interpersonal_forum",
+          "sourceType": "rss",
+          "tags": [
+            "general_emotional_wellness"
+          ],
+          "intent": "informational",
+          "audience": "Clients seeking emotional wellness support",
+          "contentType": "answer",
+          "status": "candidate",
+          "generatedAt": "2026-07-28T16:20:14.460Z"
         },
         {
           "id": "seed-black-community-emotional-wellness-and-healing",
@@ -1142,10 +1143,10 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-07-21T16:04:32.385Z"
+          "generatedAt": "2026-07-28T16:20:14.460Z"
         }
       ],
-      "queryCount": 54,
+      "queryCount": 50,
       "score": 100,
       "targetPage": "/llm-atlas/clusters/",
       "status": "active"
