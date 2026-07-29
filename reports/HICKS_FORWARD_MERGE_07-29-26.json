@@ -1,0 +1,553 @@
+{
+  "schema_version": "1.0",
+  "repo_id": "hicks-consulting-canonical",
+  "merge_type": "forward_merge_current_published_resource_state_into_fixed_baseline",
+  "base_zip": "hicks-consulting-canonical-main_BASELINE_07-25-26_df2e1a5748c3.zip",
+  "forward_source_zip": "hicks-consulting-canonical-main-7-29.zip",
+  "generated_at": "2026-07-29T13:25:00Z",
+  "overlay_paths": [
+    {
+      "path": "sitemap.xml",
+      "sha256": "18566618569d99ba9b9014222fb301b0e3107dca7b1baac5dd0528732c130e39",
+      "bytes": 15896
+    },
+    {
+      "path": "data/admin/content_manifest.json",
+      "sha256": "56ef0990663d144d902a9a8d0e29e770a289f033f92869ec8a9662b0f7e56572",
+      "bytes": 182853
+    },
+    {
+      "path": "data/agency/bing_snapshot.json",
+      "sha256": "f9aebb4caac4fed7822a026f1a7d2c1f366d6c886e3a8c7f4526ef141951eb16",
+      "bytes": 254
+    },
+    {
+      "path": "data/agency/dashboard.json",
+      "sha256": "42252ccb7e0fa148983d42e85a835e50016ea61f19c4b054361ff5959e6b1040",
+      "bytes": 40313
+    },
+    {
+      "path": "data/agency/gsc_snapshot.json",
+      "sha256": "ae4f9241b49a16eead1a0ecbfb37875afb88b321f3a9f7c0edca4a0769c9f490",
+      "bytes": 278
+    },
+    {
+      "path": "data/agency/live_snapshot.json",
+      "sha256": "7c07f60eaea8b6504b8168ba92efde14b023e1c84daf53d669cc6280f9c74b73",
+      "bytes": 1740
+    },
+    {
+      "path": "data/intake/content_brief_candidates.json",
+      "sha256": "3073bb3023fa4ba067ec04be3f85818d0c84aed711bff563c231ddd45e916a93",
+      "bytes": 12982
+    },
+    {
+      "path": "data/intake/fanout_candidates.json",
+      "sha256": "5f9fc6c90c395e5e237d438234ce93452e996f236d88f441542dce4b1bf16111",
+      "bytes": 2839
+    },
+    {
+      "path": "data/intake/fanout_pages_manifest.json",
+      "sha256": "a06b12601196ea4d37952fb923a5a283eb52ea3017a67a96ec2564450da33c72",
+      "bytes": 1097
+    },
+    {
+      "path": "data/intake/normalized_query_signals.json",
+      "sha256": "ca219fd6686f381aac3afba930aad7454300870bc9518e4d6f078692b98068f0",
+      "bytes": 41873
+    },
+    {
+      "path": "data/intake/query_clusters.json",
+      "sha256": "122c1d447c74bd27d4c6b144ed9f46c7dd97170de2627c1389d9928cda767926",
+      "bytes": 48268
+    },
+    {
+      "path": "data/intake/query_signals_post_2027.json",
+      "sha256": "6e99f106e222eb302a9d1d6046fb5f46c6591756b0fb927145122a1f55f8282e",
+      "bytes": 37654
+    },
+    {
+      "path": "data/intake/query_to_page_candidates.json",
+      "sha256": "289f08db2eafa89ac2d66ab50388a4d39bc709cb1b641d96dad385a3798b79a8",
+      "bytes": 34190
+    },
+    {
+      "path": "data/intake/scored_query_clusters.json",
+      "sha256": "8a8b07f06fbb1153bbfda95c4c6d0649fd3519add763aba6f2510fd09dbd27d0",
+      "bytes": 2039
+    },
+    {
+      "path": "data/intake/social_signals.json",
+      "sha256": "5bd7bad066be59e097d55bd49f32193f0f17883904fc1157052d7f58d254b71f",
+      "bytes": 41737
+    },
+    {
+      "path": "data/intake/source_health.json",
+      "sha256": "4416719352d804fe0e713a87bc2ba53f07f7c94c0556788a131d37ebdf89c18d",
+      "bytes": 3860
+    },
+    {
+      "path": "data/social/publish_queue.json",
+      "sha256": "e2b7af3a8dff13a894b3fa11a529d594d9548be1a3efcaac444803b4ff589f14",
+      "bytes": 30673
+    },
+    {
+      "path": "data/social/published_manifest.json",
+      "sha256": "0f3f527fc883a2c623e0029860e8578c357e0dc7fe8470e9db537839c01d1a85",
+      "bytes": 67
+    },
+    {
+      "path": "data/social/runs/latest.json",
+      "sha256": "5bd7bad066be59e097d55bd49f32193f0f17883904fc1157052d7f58d254b71f",
+      "bytes": 41737
+    }
+  ],
+  "published_resources": [
+    {
+      "id": "weekly-001",
+      "slug": "/resources/articles/how-burnout-shows-up-before-you-ever-call-it-burnout/",
+      "publishedAt": "2026-06-16T11:22:23.867Z"
+    },
+    {
+      "id": "daily-001-1",
+      "slug": "/resources/insights/how-burnout-shows-up-before-you-ever-call-it-burnout-what-this-looks-like-in-real-lif/",
+      "publishedAt": "2026-06-16T11:22:23.867Z"
+    },
+    {
+      "id": "daily-001-2",
+      "slug": "/resources/insights/how-burnout-shows-up-before-you-ever-call-it-burnout-why-women-minimize-it/",
+      "publishedAt": "2026-06-16T11:22:23.867Z"
+    },
+    {
+      "id": "daily-001-3",
+      "slug": "/resources/insights/how-burnout-shows-up-before-you-ever-call-it-burnout-how-it-shows-up-in-work-and-rela/",
+      "publishedAt": "2026-06-16T11:22:23.867Z"
+    },
+    {
+      "id": "daily-001-4",
+      "slug": "/resources/insights/how-burnout-shows-up-before-you-ever-call-it-burnout-a-gentler-truth-to-consider/",
+      "publishedAt": "2026-06-16T11:22:23.867Z"
+    },
+    {
+      "id": "daily-001-5",
+      "slug": "/resources/insights/how-burnout-shows-up-before-you-ever-call-it-burnout-next-step-reflection/",
+      "publishedAt": "2026-06-16T11:22:23.867Z"
+    },
+    {
+      "id": "weekly-002",
+      "slug": "/resources/articles/why-rest-feels-so-hard-when-you-have-been-rewarded-for-overfunctioning/",
+      "publishedAt": "2026-06-16T11:22:23.867Z"
+    },
+    {
+      "id": "daily-002-1",
+      "slug": "/resources/insights/why-rest-feels-so-hard-when-you-have-been-rewarded-for-overfunctioning-what-this-look/",
+      "publishedAt": "2026-06-16T11:22:23.867Z"
+    },
+    {
+      "id": "daily-002-2",
+      "slug": "/resources/insights/why-rest-feels-so-hard-when-you-have-been-rewarded-for-overfunctioning-why-women-mini/",
+      "publishedAt": "2026-06-16T11:22:23.867Z"
+    },
+    {
+      "id": "daily-002-3",
+      "slug": "/resources/insights/why-rest-feels-so-hard-when-you-have-been-rewarded-for-overfunctioning-how-it-shows-u/",
+      "publishedAt": "2026-06-16T11:22:23.867Z"
+    },
+    {
+      "id": "daily-002-4",
+      "slug": "/resources/insights/why-rest-feels-so-hard-when-you-have-been-rewarded-for-overfunctioning-a-gentler-trut/",
+      "publishedAt": "2026-06-16T11:22:23.867Z"
+    },
+    {
+      "id": "daily-002-5",
+      "slug": "/resources/insights/why-rest-feels-so-hard-when-you-have-been-rewarded-for-overfunctioning-next-step-refl/",
+      "publishedAt": "2026-06-16T11:22:23.867Z"
+    },
+    {
+      "id": "weekly-003",
+      "slug": "/resources/articles/what-boundary-problems-really-sound-like-in-professional-women/",
+      "publishedAt": "2026-06-16T11:22:23.867Z"
+    },
+    {
+      "id": "daily-003-1",
+      "slug": "/resources/insights/what-boundary-problems-really-sound-like-in-professional-women-what-this-looks-like-i/",
+      "publishedAt": "2026-06-16T11:22:23.867Z"
+    },
+    {
+      "id": "daily-003-2",
+      "slug": "/resources/insights/what-boundary-problems-really-sound-like-in-professional-women-why-women-minimize-it/",
+      "publishedAt": "2026-06-16T11:22:23.867Z"
+    },
+    {
+      "id": "daily-003-3",
+      "slug": "/resources/insights/what-boundary-problems-really-sound-like-in-professional-women-how-it-shows-up-in-wor/",
+      "publishedAt": "2026-06-16T11:22:23.867Z"
+    },
+    {
+      "id": "daily-003-4",
+      "slug": "/resources/insights/what-boundary-problems-really-sound-like-in-professional-women-a-gentler-truth-to-con/",
+      "publishedAt": "2026-06-16T11:22:23.867Z"
+    },
+    {
+      "id": "daily-003-5",
+      "slug": "/resources/insights/what-boundary-problems-really-sound-like-in-professional-women-next-step-reflection/",
+      "publishedAt": "2026-06-16T11:22:23.867Z"
+    },
+    {
+      "id": "weekly-004",
+      "slug": "/resources/articles/the-difference-between-being-busy-and-being-emotionally-maxed-out/",
+      "publishedAt": "2026-06-16T11:22:23.867Z"
+    },
+    {
+      "id": "daily-004-1",
+      "slug": "/resources/insights/the-difference-between-being-busy-and-being-emotionally-maxed-out-what-this-looks-lik/",
+      "publishedAt": "2026-06-16T11:22:23.867Z"
+    },
+    {
+      "id": "daily-004-2",
+      "slug": "/resources/insights/the-difference-between-being-busy-and-being-emotionally-maxed-out-why-women-minimize/",
+      "publishedAt": "2026-06-16T11:22:23.867Z"
+    },
+    {
+      "id": "daily-004-3",
+      "slug": "/resources/insights/the-difference-between-being-busy-and-being-emotionally-maxed-out-how-it-shows-up-in/",
+      "publishedAt": "2026-06-16T11:22:23.867Z"
+    },
+    {
+      "id": "daily-004-4",
+      "slug": "/resources/insights/the-difference-between-being-busy-and-being-emotionally-maxed-out-a-gentler-truth-to/",
+      "publishedAt": "2026-06-16T11:22:23.867Z"
+    },
+    {
+      "id": "daily-004-5",
+      "slug": "/resources/insights/the-difference-between-being-busy-and-being-emotionally-maxed-out-next-step-reflectio/",
+      "publishedAt": "2026-06-16T11:22:23.867Z"
+    },
+    {
+      "id": "weekly-005",
+      "slug": "/resources/articles/when-your-body-is-carrying-stress-your-mind-keeps-dismissing/",
+      "publishedAt": "2026-06-16T11:22:23.867Z"
+    },
+    {
+      "id": "daily-005-1",
+      "slug": "/resources/insights/when-your-body-is-carrying-stress-your-mind-keeps-dismissing-what-this-looks-like-in/",
+      "publishedAt": "2026-06-16T11:22:23.867Z"
+    },
+    {
+      "id": "daily-005-2",
+      "slug": "/resources/insights/when-your-body-is-carrying-stress-your-mind-keeps-dismissing-why-women-minimize-it/",
+      "publishedAt": "2026-06-16T11:22:23.867Z"
+    },
+    {
+      "id": "daily-005-3",
+      "slug": "/resources/insights/when-your-body-is-carrying-stress-your-mind-keeps-dismissing-how-it-shows-up-in-work/",
+      "publishedAt": "2026-06-16T11:22:23.867Z"
+    },
+    {
+      "id": "daily-005-4",
+      "slug": "/resources/insights/when-your-body-is-carrying-stress-your-mind-keeps-dismissing-a-gentler-truth-to-consi/",
+      "publishedAt": "2026-06-16T11:22:23.867Z"
+    },
+    {
+      "id": "daily-005-5",
+      "slug": "/resources/insights/when-your-body-is-carrying-stress-your-mind-keeps-dismissing-next-step-reflection/",
+      "publishedAt": "2026-06-16T11:22:23.867Z"
+    },
+    {
+      "id": "weekly-006",
+      "slug": "/resources/articles/the-quiet-anger-that-builds-when-you-are-always-the-reliable-one/",
+      "publishedAt": "2026-06-16T11:22:23.867Z"
+    },
+    {
+      "id": "daily-006-1",
+      "slug": "/resources/insights/the-quiet-anger-that-builds-when-you-are-always-the-reliable-one-what-this-looks-like/",
+      "publishedAt": "2026-06-16T11:22:23.867Z"
+    },
+    {
+      "id": "daily-006-2",
+      "slug": "/resources/insights/the-quiet-anger-that-builds-when-you-are-always-the-reliable-one-why-women-minimize-i/",
+      "publishedAt": "2026-06-16T11:22:23.867Z"
+    },
+    {
+      "id": "daily-006-3",
+      "slug": "/resources/insights/the-quiet-anger-that-builds-when-you-are-always-the-reliable-one-how-it-shows-up-in-w/",
+      "publishedAt": "2026-06-16T11:22:23.867Z"
+    },
+    {
+      "id": "daily-006-4",
+      "slug": "/resources/insights/the-quiet-anger-that-builds-when-you-are-always-the-reliable-one-a-gentler-truth-to-c/",
+      "publishedAt": "2026-06-16T11:22:23.867Z"
+    },
+    {
+      "id": "daily-006-5",
+      "slug": "/resources/insights/the-quiet-anger-that-builds-when-you-are-always-the-reliable-one-next-step-reflection/",
+      "publishedAt": "2026-06-16T11:22:23.867Z"
+    },
+    {
+      "id": "weekly-007",
+      "slug": "/resources/articles/how-life-transitions-can-shake-women-who-usually-look-put-together/",
+      "publishedAt": "2026-06-16T17:01:15.216Z"
+    },
+    {
+      "id": "daily-007-1",
+      "slug": "/resources/insights/how-life-transitions-can-shake-women-who-usually-look-put-together-what-this-looks-li/",
+      "publishedAt": "2026-06-16T11:22:23.867Z"
+    },
+    {
+      "id": "daily-007-2",
+      "slug": "/resources/insights/how-life-transitions-can-shake-women-who-usually-look-put-together-why-women-minimize/",
+      "publishedAt": "2026-06-16T17:01:15.216Z"
+    },
+    {
+      "id": "daily-007-3",
+      "slug": "/resources/insights/how-life-transitions-can-shake-women-who-usually-look-put-together-how-it-shows-up-in/",
+      "publishedAt": "2026-06-17T14:27:48.793Z"
+    },
+    {
+      "id": "daily-007-4",
+      "slug": "/resources/insights/how-life-transitions-can-shake-women-who-usually-look-put-together-a-gentler-truth-to/",
+      "publishedAt": "2026-06-18T14:21:56.135Z"
+    },
+    {
+      "id": "daily-007-5",
+      "slug": "/resources/insights/how-life-transitions-can-shake-women-who-usually-look-put-together-next-step-reflecti/",
+      "publishedAt": "2026-06-19T14:21:25.962Z"
+    },
+    {
+      "id": "weekly-008",
+      "slug": "/resources/articles/why-high-achieving-women-sometimes-mistake-numbness-for-maturity/",
+      "publishedAt": "2026-06-23T14:06:11.482Z"
+    },
+    {
+      "id": "daily-008-1",
+      "slug": "/resources/insights/why-high-achieving-women-sometimes-mistake-numbness-for-maturity-what-this-looks-like/",
+      "publishedAt": "2026-06-22T15:08:26.529Z"
+    },
+    {
+      "id": "daily-008-2",
+      "slug": "/resources/insights/why-high-achieving-women-sometimes-mistake-numbness-for-maturity-why-women-minimize-i/",
+      "publishedAt": "2026-06-23T14:06:11.482Z"
+    },
+    {
+      "id": "daily-008-3",
+      "slug": "/resources/insights/why-high-achieving-women-sometimes-mistake-numbness-for-maturity-how-it-shows-up-in-w/",
+      "publishedAt": "2026-06-24T14:00:46.993Z"
+    },
+    {
+      "id": "daily-008-4",
+      "slug": "/resources/insights/why-high-achieving-women-sometimes-mistake-numbness-for-maturity-a-gentler-truth-to-c/",
+      "publishedAt": "2026-06-25T14:00:19.498Z"
+    },
+    {
+      "id": "daily-008-5",
+      "slug": "/resources/insights/why-high-achieving-women-sometimes-mistake-numbness-for-maturity-next-step-reflection/",
+      "publishedAt": "2026-06-26T14:00:33.222Z"
+    },
+    {
+      "id": "weekly-009",
+      "slug": "/resources/articles/what-people-pleasing-costs-black-women-at-work-and-at-home/",
+      "publishedAt": "2026-06-30T14:00:12.148Z"
+    },
+    {
+      "id": "daily-009-1",
+      "slug": "/resources/insights/what-people-pleasing-costs-black-women-at-work-and-at-home-what-this-looks-like-in-re/",
+      "publishedAt": "2026-06-29T14:37:53.352Z"
+    },
+    {
+      "id": "daily-009-2",
+      "slug": "/resources/insights/what-people-pleasing-costs-black-women-at-work-and-at-home-why-women-minimize-it/",
+      "publishedAt": "2026-06-30T14:00:12.148Z"
+    },
+    {
+      "id": "daily-009-3",
+      "slug": "/resources/insights/what-people-pleasing-costs-black-women-at-work-and-at-home-how-it-shows-up-in-work-an/",
+      "publishedAt": "2026-07-01T14:00:51.094Z"
+    },
+    {
+      "id": "daily-009-4",
+      "slug": "/resources/insights/what-people-pleasing-costs-black-women-at-work-and-at-home-a-gentler-truth-to-conside/",
+      "publishedAt": "2026-07-02T13:58:34.050Z"
+    },
+    {
+      "id": "daily-009-5",
+      "slug": "/resources/insights/what-people-pleasing-costs-black-women-at-work-and-at-home-next-step-reflection/",
+      "publishedAt": "2026-07-03T15:26:35.179Z"
+    },
+    {
+      "id": "weekly-010",
+      "slug": "/resources/articles/when-success-stops-feeling-like-proof-and-starts-feeling-like-pressure/",
+      "publishedAt": "2026-07-07T15:57:36.078Z"
+    },
+    {
+      "id": "daily-010-1",
+      "slug": "/resources/insights/when-success-stops-feeling-like-proof-and-starts-feeling-like-pressure-what-this-look/",
+      "publishedAt": "2026-07-06T16:30:41.036Z"
+    },
+    {
+      "id": "daily-010-2",
+      "slug": "/resources/insights/when-success-stops-feeling-like-proof-and-starts-feeling-like-pressure-why-women-mini/",
+      "publishedAt": "2026-07-07T15:57:36.078Z"
+    },
+    {
+      "id": "daily-010-3",
+      "slug": "/resources/insights/when-success-stops-feeling-like-proof-and-starts-feeling-like-pressure-how-it-shows-u/",
+      "publishedAt": "2026-07-08T15:36:13.732Z"
+    },
+    {
+      "id": "daily-010-4",
+      "slug": "/resources/insights/when-success-stops-feeling-like-proof-and-starts-feeling-like-pressure-a-gentler-trut/",
+      "publishedAt": "2026-07-09T16:09:34.584Z"
+    },
+    {
+      "id": "daily-010-5",
+      "slug": "/resources/insights/when-success-stops-feeling-like-proof-and-starts-feeling-like-pressure-next-step-refl/",
+      "publishedAt": "2026-07-10T15:40:04.295Z"
+    },
+    {
+      "id": "weekly-011",
+      "slug": "/resources/articles/how-to-tell-whether-you-need-more-discipline-or-more-support/",
+      "publishedAt": "2026-07-14T15:03:34.644Z"
+    },
+    {
+      "id": "daily-011-1",
+      "slug": "/resources/insights/how-to-tell-whether-you-need-more-discipline-or-more-support-what-this-looks-like-in/",
+      "publishedAt": "2026-07-13T15:59:57.770Z"
+    },
+    {
+      "id": "daily-011-2",
+      "slug": "/resources/insights/how-to-tell-whether-you-need-more-discipline-or-more-support-why-women-minimize-it/",
+      "publishedAt": "2026-07-14T15:03:34.644Z"
+    },
+    {
+      "id": "daily-011-3",
+      "slug": "/resources/insights/how-to-tell-whether-you-need-more-discipline-or-more-support-how-it-shows-up-in-work/",
+      "publishedAt": "2026-07-15T15:02:09.497Z"
+    },
+    {
+      "id": "daily-011-4",
+      "slug": "/resources/insights/how-to-tell-whether-you-need-more-discipline-or-more-support-a-gentler-truth-to-consi/",
+      "publishedAt": "2026-07-16T15:14:23.503Z"
+    },
+    {
+      "id": "daily-011-5",
+      "slug": "/resources/insights/how-to-tell-whether-you-need-more-discipline-or-more-support-next-step-reflection/",
+      "publishedAt": "2026-07-17T14:53:54.453Z"
+    },
+    {
+      "id": "weekly-012",
+      "slug": "/resources/articles/what-strong-black-woman-fatigue-can-look-like-in-real-life/",
+      "publishedAt": "2026-07-21T15:18:05.665Z"
+    },
+    {
+      "id": "daily-012-1",
+      "slug": "/resources/insights/what-strong-black-woman-fatigue-can-look-like-in-real-life-what-this-looks-like-in-re/",
+      "publishedAt": "2026-07-20T15:21:36.697Z"
+    },
+    {
+      "id": "daily-012-2",
+      "slug": "/resources/insights/what-strong-black-woman-fatigue-can-look-like-in-real-life-why-women-minimize-it/",
+      "publishedAt": "2026-07-21T15:18:05.665Z"
+    },
+    {
+      "id": "daily-012-3",
+      "slug": "/resources/insights/what-strong-black-woman-fatigue-can-look-like-in-real-life-how-it-shows-up-in-work-an/",
+      "publishedAt": "2026-07-22T15:17:23.493Z"
+    },
+    {
+      "id": "daily-012-4",
+      "slug": "/resources/insights/what-strong-black-woman-fatigue-can-look-like-in-real-life-a-gentler-truth-to-conside/",
+      "publishedAt": "2026-07-23T15:26:16.400Z"
+    },
+    {
+      "id": "daily-012-5",
+      "slug": "/resources/insights/what-strong-black-woman-fatigue-can-look-like-in-real-life-next-step-reflection/",
+      "publishedAt": "2026-07-24T15:08:27.595Z"
+    },
+    {
+      "id": "weekly-013",
+      "slug": "/resources/articles/how-boundary-guilt-keeps-women-stuck-in-the-same-exhausting-loops/",
+      "publishedAt": "2026-07-28T15:36:03.067Z"
+    },
+    {
+      "id": "daily-013-1",
+      "slug": "/resources/insights/how-boundary-guilt-keeps-women-stuck-in-the-same-exhausting-loops-what-this-looks-lik/",
+      "publishedAt": "2026-07-27T15:52:48.625Z"
+    },
+    {
+      "id": "daily-013-2",
+      "slug": "/resources/insights/how-boundary-guilt-keeps-women-stuck-in-the-same-exhausting-loops-why-women-minimize/",
+      "publishedAt": "2026-07-28T15:36:03.067Z"
+    },
+    {
+      "id": "weekly-029",
+      "slug": "/resources/articles/what-black-women-deserve-from-support-that-is-actually-useful/",
+      "publishedAt": "2026-05-07T13:00:00.000Z"
+    },
+    {
+      "id": "daily-029-4",
+      "slug": "/resources/insights/what-black-women-deserve-from-support-that-is-actually-useful-a-gentler-truth-to-cons/",
+      "publishedAt": "2026-05-08T13:00:00.000Z"
+    },
+    {
+      "id": "monthly-001",
+      "slug": "/resources/guides/burnout-recovery-for-black-women-who-keep-functioning-through-everything/",
+      "publishedAt": "2026-05-09T13:00:00.000Z"
+    },
+    {
+      "id": "monthly-002",
+      "slug": "/resources/guides/anxiety-overwhelm-and-the-cost-of-being-mentally-on-all-the-time/",
+      "publishedAt": "2026-06-16T11:22:23.867Z"
+    },
+    {
+      "id": "monthly-003",
+      "slug": "/resources/guides/boundaries-people-pleasing-and-the-fear-of-letting-people-down/",
+      "publishedAt": "2026-07-15T15:02:09.497Z"
+    },
+    {
+      "id": "quarterly-001",
+      "slug": "/resources/white-papers/the-burnout-and-boundaries-playbook-for-high-achieving-black-women/",
+      "publishedAt": "2026-05-10T13:00:00.000Z"
+    },
+    {
+      "id": "daily-legacy-001",
+      "slug": "/resources/insights/why-successful-black-women-still-feel-worn-down/",
+      "publishedAt": "2026-06-16T11:22:23.867Z"
+    },
+    {
+      "id": "weekly-legacy-001",
+      "slug": "/resources/articles/burnout-or-just-too-much/",
+      "publishedAt": "2026-06-16T11:22:23.867Z"
+    },
+    {
+      "id": "monthly-legacy-001",
+      "slug": "/resources/guides/boundaries-for-black-women/",
+      "publishedAt": "2026-06-16T11:22:23.867Z"
+    },
+    {
+      "id": "quarterly-legacy-001",
+      "slug": "/resources/white-papers/therapy-vs-coaching-guide/",
+      "publishedAt": "2026-06-16T11:22:23.867Z"
+    },
+    {
+      "id": "daily-legacy-002",
+      "slug": "/resources/insights/when-rest-feels-like-guilt/",
+      "publishedAt": "2026-06-16T11:22:23.867Z"
+    },
+    {
+      "id": "weekly-legacy-002",
+      "slug": "/resources/articles/when-you-keep-saying-yes/",
+      "publishedAt": "2026-06-16T11:22:23.867Z"
+    }
+  ],
+  "published_resource_count": 87,
+  "protected_editorial_core_repair": {
+    "reason": "07-29 live published-state transition removes previewPath from newly published items. Validator now accepts native publication-transition hashes with or without the removed previewPath while preserving protected identity checks for title/slug/content fields.",
+    "validator_patch": "scripts/authority_scale/validate_protected_editorial_core.mjs",
+    "protected_manifest_hash_updated": "data/protected_core/protected_editorial_core.json",
+    "affected_ids": [
+      "weekly-013",
+      "daily-013-1",
+      "daily-013-2"
+    ]
+  }
+}

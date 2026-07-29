@@ -1,8 +1,6 @@
 name: Sitemap Indexing Check
 on:
   workflow_dispatch:
-  push:
-    branches: [main]
 concurrency:
   group: hicks-consulting-sitemap-indexing
   cancel-in-progress: false

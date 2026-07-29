@@ -1,0 +1,27 @@
+{
+  "schema_version": "1.0",
+  "repo": "hicks",
+  "policy": "PROTECTED_CLIENT_EDITORIAL_CORE_DO_NOT_MUTATE",
+  "files": [
+    {
+      "path": "pages/admin/index.html",
+      "sha256": "1cd711bf12be0d787c812521b9ff614b813336864aa7de8edbc3d0f27cc02d1b",
+      "bytes": 12299
+    },
+    {
+      "path": "assets/js/admin.js",
+      "sha256": "c1c5a57c4aa792e801bd0d284cb60a6acc0d6a1204e87b8d7452ca5f3d9721a8",
+      "bytes": 14739
+    },
+    {
+      "path": "scripts/publishing/process_manifest.js",
+      "sha256": "e5c2cacbb0c6e1690a726f3faf18b6ec93c0cb1474e74934555b5e9f36106dbd",
+      "bytes": 3453
+    },
+    {
+      "path": ".github/workflows/content-publish.yml",
+      "sha256": "f1b69e65b41d2712ff39485a051b758c1520eb799645d691cca139438070c49f",
+      "bytes": 1094
+    }
+  ]
+}

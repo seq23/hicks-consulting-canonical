@@ -1,42 +1,67 @@
-name: IndexNow Submit
+name: Post-Publish Distribution
+
 on:
+  workflow_run:
+    workflows: ["Content Publish"]
+    types: [completed]
   workflow_dispatch:
-  push:
-    branches: [main]
+
+permissions:
+  contents: write
+
 concurrency:
-  group: hicks-consulting-indexnow
+  group: hicks-consulting-content-automation
   cancel-in-progress: false
+
 jobs:
-  indexnow-submit:
+  distribute:
+    if: ${{ github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
     env:
       SITE_URL: https://www.hicksconsulting.org
       INDEXNOW_KEY: ${{ secrets.INDEXNOW_KEY }}
+      INDEXNOW_KEY_LOCATION: ${{ secrets.INDEXNOW_KEY_LOCATION }}
+      GSC_SERVICE_ACCOUNT_JSON: ${{ secrets.GSC_SERVICE_ACCOUNT_JSON }}
+      GSC_SITE_URL: ${{ secrets.GSC_SITE_URL }}
+      GSC_INSPECTION_LIMIT: 20
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
       - uses: actions/setup-node@v4
         with:
           node-version: 20
       - run: npm ci
-      - run: npm run build
-      - run: npm run validate:all
-      - run: npm run indexnow:emit
-      - run: npm run validate:profile:indexnow
-      - name: Submit IndexNow live
-        if: ${{ env.INDEXNOW_KEY != '' }}
-        run: INDEXNOW_ALLOW_EXTERNAL_FAILURE=1 npm run indexnow:submit
-      - name: Write IndexNow dry-run report when key is not configured
-        if: ${{ env.INDEXNOW_KEY == '' }}
-        run: INDEXNOW_DRY_RUN=1 npm run indexnow:submit
-      - run: npm run gsc:reindex-queue
-      - name: Upload IndexNow and GSC reports
+      - run: git pull --rebase origin main
+      - name: Refresh sitemap and public build after successful client publish
+        run: npm run build
+      - name: Build priority and batch URL files
+        run: npm run indexnow:emit
+      - name: Run IndexNow, GSC sitemap submission, and priority URL inspection
+        run: npm run distribution:post-publish
+      - name: Validate full post-publish distribution contract
+        run: |
+          npm run validate:profile:indexnow
+          npm run validate:authority-modernization
+      - name: Commit durable distribution receipts and observation feedback
+        run: |
+          git config user.name "hicks-distribution-observer"
+          git config user.email "actions@github.com"
+          git add data/distribution
+          if git diff --cached --quiet; then
+            echo "No distribution receipt changes."
+          else
+            git commit -m "Record post-publish distribution receipt"
+            git push origin main
+          fi
+      - name: Upload distribution evidence
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: hicks-consulting-indexnow-reports
+          name: hicks-consulting-distribution-evidence
           path: |
+            data/distribution
             reports/indexnow-priority.txt
             reports/indexnow-batch.txt
             reports/indexnow-manifest.json
-            reports/indexnow-submit-report.json
-            reports/search-reindex-queue.json

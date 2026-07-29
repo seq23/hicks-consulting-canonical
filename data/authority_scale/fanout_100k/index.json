@@ -1,0 +1,174 @@
+{
+  "schema_version": "1.0",
+  "repo_id": "hicks-consulting-canonical",
+  "generated_at": "2026-07-24T00:00:00.000Z",
+  "materialized_reference_runway": 100000,
+  "theoretical_combinations": "14976000",
+  "page_quota": false,
+  "publication_authority": "EXISTING_CLIENT_ADMIN_AND_APPROVAL_SYSTEM",
+  "compression": "gzip_jsonl",
+  "shard_count": 20,
+  "aggregate_sha256": "56f5d068dd672b798c05613653cfc3e35cce83acd28f871ab4d8187762768fb6",
+  "shards": [
+    {
+      "part": 1,
+      "path": "data/authority_scale/fanout_100k/part-00001.jsonl.gz",
+      "record_count": 5000,
+      "sha256": "45eade379f51c80c3150d72789dfa5c94c28ed4d6b9c638fc0487bda0c134b2a",
+      "first_id": "hicks_fanout_000001_2c465f8917",
+      "last_id": "hicks_fanout_005000_daeda5fc7e"
+    },
+    {
+      "part": 2,
+      "path": "data/authority_scale/fanout_100k/part-00002.jsonl.gz",
+      "record_count": 5000,
+      "sha256": "c93477fc8a388c7b168dabc7e916e88552b51f71caaf03930189458c95a5a1ad",
+      "first_id": "hicks_fanout_005001_448109fb52",
+      "last_id": "hicks_fanout_010000_85fec07ac6"
+    },
+    {
+      "part": 3,
+      "path": "data/authority_scale/fanout_100k/part-00003.jsonl.gz",
+      "record_count": 5000,
+      "sha256": "862ab1a5276e95ca41e7ed329035f207935927b164a4681c5f24301db70267f6",
+      "first_id": "hicks_fanout_010001_34c9b8c7b1",
+      "last_id": "hicks_fanout_015000_79535d5198"
+    },
+    {
+      "part": 4,
+      "path": "data/authority_scale/fanout_100k/part-00004.jsonl.gz",
+      "record_count": 5000,
+      "sha256": "77796703a83b08438596c89a612b8c0ed16fe7d11cabd8cabf0f22cac205c0d8",
+      "first_id": "hicks_fanout_015001_d1fcee6afc",
+      "last_id": "hicks_fanout_020000_46a1cf7c3c"
+    },
+    {
+      "part": 5,
+      "path": "data/authority_scale/fanout_100k/part-00005.jsonl.gz",
+      "record_count": 5000,
+      "sha256": "407ea1e412b716685fc810f381552dce4da282d24baefee7a933e95e86e50217",
+      "first_id": "hicks_fanout_020001_c05db21d88",
+      "last_id": "hicks_fanout_025000_6755f87a06"
+    },
+    {
+      "part": 6,
+      "path": "data/authority_scale/fanout_100k/part-00006.jsonl.gz",
+      "record_count": 5000,
+      "sha256": "b2bd65df6014be736da9a0eeba31cd6b1fa54959fad743573ed877b0fda8c858",
+      "first_id": "hicks_fanout_025001_c30b45e27b",
+      "last_id": "hicks_fanout_030000_e291ab6a8c"
+    },
+    {
+      "part": 7,
+      "path": "data/authority_scale/fanout_100k/part-00007.jsonl.gz",
+      "record_count": 5000,
+      "sha256": "116255a9c6495b0856a8290aef9ec5d6f1c9df5b23038d8484d855e70841051f",
+      "first_id": "hicks_fanout_030001_309dfc5c29",
+      "last_id": "hicks_fanout_035000_8d18180123"
+    },
+    {
+      "part": 8,
+      "path": "data/authority_scale/fanout_100k/part-00008.jsonl.gz",
+      "record_count": 5000,
+      "sha256": "5036c77ababd19cd9f4429d43349a156db437bb76e0236e21e6e245aa970b694",
+      "first_id": "hicks_fanout_035001_28b1146054",
+      "last_id": "hicks_fanout_040000_7e595108a4"
+    },
+    {
+      "part": 9,
+      "path": "data/authority_scale/fanout_100k/part-00009.jsonl.gz",
+      "record_count": 5000,
+      "sha256": "3917189ce3b2e7d52b5d08f729977cf1452766aafb48f0b393e2baeb2eaad05d",
+      "first_id": "hicks_fanout_040001_4b0c047f60",
+      "last_id": "hicks_fanout_045000_11264a7520"
+    },
+    {
+      "part": 10,
+      "path": "data/authority_scale/fanout_100k/part-00010.jsonl.gz",
+      "record_count": 5000,
+      "sha256": "6fa707dbe598b21230cef744987b4cb70f813caad0c732361d7eda880c37b635",
+      "first_id": "hicks_fanout_045001_2f23fdd100",
+      "last_id": "hicks_fanout_050000_77e36c82fb"
+    },
+    {
+      "part": 11,
+      "path": "data/authority_scale/fanout_100k/part-00011.jsonl.gz",
+      "record_count": 5000,
+      "sha256": "2daff02f8b512218230b9972d745f6ae409f67fcca756064d5b893475f73a3db",
+      "first_id": "hicks_fanout_050001_46aef23eb4",
+      "last_id": "hicks_fanout_055000_7bb5ba6efc"
+    },
+    {
+      "part": 12,
+      "path": "data/authority_scale/fanout_100k/part-00012.jsonl.gz",
+      "record_count": 5000,
+      "sha256": "caf73b8db640ee286d613770240e9ce6c91b47e41ddae35cb1c54133666c3e51",
+      "first_id": "hicks_fanout_055001_84acc681aa",
+      "last_id": "hicks_fanout_060000_833a91b17d"
+    },
+    {
+      "part": 13,
+      "path": "data/authority_scale/fanout_100k/part-00013.jsonl.gz",
+      "record_count": 5000,
+      "sha256": "7d57d8ca66b709d9ab4300b7721b8b3d28d02a40a1bd910a976a26818768bbaf",
+      "first_id": "hicks_fanout_060001_8613cfbe11",
+      "last_id": "hicks_fanout_065000_e1f9c03774"
+    },
+    {
+      "part": 14,
+      "path": "data/authority_scale/fanout_100k/part-00014.jsonl.gz",
+      "record_count": 5000,
+      "sha256": "81c8e3f93aa661d590032f8113a0a29040649cdfa4425236cacb30ad64653ffd",
+      "first_id": "hicks_fanout_065001_fb94fc2a28",
+      "last_id": "hicks_fanout_070000_be7cf5a99d"
+    },
+    {
+      "part": 15,
+      "path": "data/authority_scale/fanout_100k/part-00015.jsonl.gz",
+      "record_count": 5000,
+      "sha256": "f1d2707816123d8e6ae5bebcc4f33a6e74ea35622f081a1fc0c2269675813494",
+      "first_id": "hicks_fanout_070001_636ea34008",
+      "last_id": "hicks_fanout_075000_08ed69ec09"
+    },
+    {
+      "part": 16,
+      "path": "data/authority_scale/fanout_100k/part-00016.jsonl.gz",
+      "record_count": 5000,
+      "sha256": "d2ca8b60cb6d68c31c2e0afe055de93f9a802e332d044326e1d3e5707e3e4810",
+      "first_id": "hicks_fanout_075001_6c4ee81dfa",
+      "last_id": "hicks_fanout_080000_2a419dcca4"
+    },
+    {
+      "part": 17,
+      "path": "data/authority_scale/fanout_100k/part-00017.jsonl.gz",
+      "record_count": 5000,
+      "sha256": "b498a498d968066b8af07e7596b851ea20f2014fc4b15b45bb1e227fad97eec5",
+      "first_id": "hicks_fanout_080001_bffacfc237",
+      "last_id": "hicks_fanout_085000_93487f8579"
+    },
+    {
+      "part": 18,
+      "path": "data/authority_scale/fanout_100k/part-00018.jsonl.gz",
+      "record_count": 5000,
+      "sha256": "5c74812fd137c928d5d73f7a61889c6776e72a23a05c0de7befa467211ea15dd",
+      "first_id": "hicks_fanout_085001_749d26f469",
+      "last_id": "hicks_fanout_090000_c6ceefb038"
+    },
+    {
+      "part": 19,
+      "path": "data/authority_scale/fanout_100k/part-00019.jsonl.gz",
+      "record_count": 5000,
+      "sha256": "5b6f91d77ebb1f076a4f9a9e3230a4ccbdf2a362b7077ac1a524686c7f9bb817",
+      "first_id": "hicks_fanout_090001_fedf989311",
+      "last_id": "hicks_fanout_095000_426652b99e"
+    },
+    {
+      "part": 20,
+      "path": "data/authority_scale/fanout_100k/part-00020.jsonl.gz",
+      "record_count": 5000,
+      "sha256": "e42440be7eb4a086cf970365b077affcb8c6a9c8bbb074c844d495fc6d20d358",
+      "first_id": "hicks_fanout_095001_53ac4ff52d",
+      "last_id": "hicks_fanout_100000_b27fa96d88"
+    }
+  ]
+}

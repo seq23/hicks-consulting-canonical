@@ -8,6 +8,8 @@ function slugify(text){ return String(text||'').toLowerCase().replace(/[^a-z0-9]
 const policy = readJson('config/content_generation_policy.json', { contentTypes: {}, humanizationChecklist: [] });
 const clusters = readJson('data/intake/query_clusters.json', { clusters: [] }).clusters || [];
 const conversion = readJson('data/system/config.json', {}).forms || {};
+const previousBriefPayload = readJson('data/intake/content_brief_candidates.json', { candidates: [] });
+const previousQueue = readJson('data/social/publish_queue.json', { publishMode: 'queued', items: [] });
 const typeOrder = ['whitepaper','article','insight','faq','fanout'];
 function chooseType(cluster, index){
   if (cluster.score >= 80 || /workplace|authority|training/i.test(cluster.title)) return index === 0 ? 'whitepaper' : 'guide';
@@ -48,7 +50,7 @@ function validate(candidate){
   return null;
 }
 const active = clusters.filter(c => (c.queryCount || 0) > 0).sort((a,b) => (b.score||0)-(a.score||0));
-const candidates = active.slice(0, 8).map((cluster, index) => {
+const generated = active.slice(0, 8).map((cluster, index) => {
   const contentType = chooseType(cluster, index);
   const typePolicy = policy.contentTypes[contentType] || policy.contentTypes.insight;
   return repair({
@@ -69,6 +71,18 @@ const candidates = active.slice(0, 8).map((cluster, index) => {
     createdAt: new Date().toISOString()
   });
 });
+
+// Preserve rolling-continuity candidates across the existing twice-weekly ingestion refresh.
+// They remain recommendation/draft candidates only and never gain publication authority here.
+const continuityMap = new Map();
+for (const item of [...(previousBriefPayload.candidates || []), ...(previousQueue.items || [])]) {
+  if (!item?.id) continue;
+  if (item.continuity_generated === true || String(item.id).startsWith('continuity-')) continuityMap.set(item.id, repair({ ...item }));
+}
+const mergedMap = new Map(generated.map(x => [x.id, x]));
+for (const [id, item] of continuityMap) if (!mergedMap.has(id)) mergedMap.set(id, item);
+const candidates = [...mergedMap.values()];
+
 const errors = candidates.map(c => [c.id, validate(c)]).filter(([,err]) => err);
 if (errors.length) {
   console.error('CONTENT BRIEF PREWRITE SELF-REPAIR FAIL');
@@ -79,8 +93,7 @@ const payload = { generatedAt: new Date().toISOString(), policy: 'approval_queue
 fs.writeFileSync(path.join(outDir, 'content_brief_candidates.json'), JSON.stringify(payload, null, 2) + '\n');
 const socialDir = path.join(root, 'data', 'social');
 fs.mkdirSync(socialDir, { recursive: true });
-const queue = readJson('data/social/publish_queue.json', { publishMode: 'queued', items: [] });
-const existing = new Map((queue.items || []).map(item => [item.id, item]));
-for (const candidate of candidates) existing.set(candidate.id, { ...candidate, queueType: 'content_brief', status: 'queued_for_owner_approval' });
+const existing = new Map((previousQueue.items || []).map(item => [item.id, item]));
+for (const candidate of candidates) existing.set(candidate.id, { ...candidate, queueType: 'content_brief', status: candidate.status || 'queued_for_owner_approval' });
 fs.writeFileSync(path.join(socialDir, 'publish_queue.json'), JSON.stringify({ generatedAt: payload.generatedAt, publishMode: 'queued', items: [...existing.values()] }, null, 2) + '\n');
-console.log(`Content brief candidates built: ${candidates.length}`);
+console.log(`Content brief candidates built: ${candidates.length} (${continuityMap.size} continuity candidates preserved)`);

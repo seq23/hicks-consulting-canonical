@@ -1,0 +1,65 @@
+{
+  "schema_version": "1.0",
+  "repo_id": "hicks-consulting-canonical",
+  "created_at": "2026-07-29T13:25:00Z",
+  "base_fixed_zip": "hicks-consulting-canonical-main_BASELINE_07-25-26_df2e1a5748c3.zip",
+  "forward_source_zip": "hicks-consulting-canonical-main-7-29.zip",
+  "merge_strategy": "fixed_baseline_plus_forward_current_resource_publication_state",
+  "changed_from_fixed": [
+    ".build/authority_distribution/distribution-manifest.json",
+    ".build/authority_distribution/indexnow-batch.txt",
+    "data/admin/content_manifest.json",
+    "data/agency/bing_snapshot.json",
+    "data/agency/dashboard.json",
+    "data/agency/gsc_snapshot.json",
+    "data/agency/live_snapshot.json",
+    "data/intake/content_brief_candidates.json",
+    "data/intake/fanout_candidates.json",
+    "data/intake/fanout_pages_manifest.json",
+    "data/intake/normalized_query_signals.json",
+    "data/intake/query_clusters.json",
+    "data/intake/query_signals_post_2027.json",
+    "data/intake/query_to_page_candidates.json",
+    "data/intake/scored_query_clusters.json",
+    "data/intake/social_signals.json",
+    "data/intake/source_health.json",
+    "data/social/publish_queue.json",
+    "data/social/published_manifest.json",
+    "data/social/runs/latest.json",
+    "scripts/authority_scale/validate_protected_editorial_core.mjs",
+    "sitemap.xml"
+  ],
+  "added_vs_fixed": [
+    "reports/HICKS_FORWARD_MERGE_07-29-26.json"
+  ],
+  "removed_vs_fixed": [],
+  "preserved_fixed_only_count": 59,
+  "sitemap_url_count": 121,
+  "published_count": 87,
+  "newly_live_boundary_guilt_urls": [
+    "https://www.hicksconsulting.org/resources/articles/how-boundary-guilt-keeps-women-stuck-in-the-same-exhausting-loops/",
+    "https://www.hicksconsulting.org/resources/insights/how-boundary-guilt-keeps-women-stuck-in-the-same-exhausting-loops-what-this-looks-lik/",
+    "https://www.hicksconsulting.org/resources/insights/how-boundary-guilt-keeps-women-stuck-in-the-same-exhausting-loops-why-women-minimize/"
+  ],
+  "validation": {
+    "npm_run_release_prepush": "PASS",
+    "npm_run_validate_all": "PASS_WITH_NON_BLOCKING_FINDINGS",
+    "non_blocking_findings": [
+      "agency-quality strong warning: Live content quality is below the B+ target: 79"
+    ],
+    "npm_run_build": "PASS",
+    "profile_sitemap_indexing": "PASS",
+    "profile_indexnow": "PASS",
+    "profile_agency": "PASS_WITH_NON_BLOCKING_FINDINGS",
+    "profile_digital_products": "PASS",
+    "authority_modernization": "PASS",
+    "ingestion": "PASS",
+    "workflows": "PASS",
+    "node_syntax_scripts_ops_functions_worker": "PASS",
+    "authority_distribution_url_count": 121,
+    "authority_fanout_records": 100000,
+    "verified_external_citations_claimed": 0,
+    "live_postdeploy": "NOT_RUN",
+    "git_push": "NOT_RUN"
+  }
+}

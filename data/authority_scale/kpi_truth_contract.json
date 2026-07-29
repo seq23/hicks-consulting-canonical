@@ -1,0 +1,24 @@
+{
+  "schema_version": "1.0",
+  "standard": "PORTFOLIO_100K_SURFACING_TRUTH_CONTRACT",
+  "repo_id": "hicks-consulting-canonical",
+  "target": {
+    "verified_external_citations": 100000,
+    "window_days": 180,
+    "guarantee": false
+  },
+  "metrics": {
+    "fanout_opportunity": "Planning opportunity only; not a page or citation.",
+    "published_page": "Public page released by the existing client approval system.",
+    "indexed_page": "Observed indexed URL evidence.",
+    "search_visibility": "Observed search impression or result evidence.",
+    "llm_surfacing": "Observed LLM mention/surface evidence.",
+    "external_reference": "Observed backlink or external reference evidence.",
+    "verified_citation": "Externally observed citation/link with evidence."
+  },
+  "truth_rules": [
+    "100K is a stretch target, not a guarantee.",
+    "Fanout, page count, indexing, impressions, LLM mentions, backlinks, and verified citations remain distinct.",
+    "Editorial publication authority remains the existing client admin/approval system."
+  ]
+}

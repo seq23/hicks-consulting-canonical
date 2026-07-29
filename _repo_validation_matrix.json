@@ -48,7 +48,13 @@
         "product-routes",
         "product-upload-contract",
         "product-cover-contract",
-        "product-api-behavior"
+        "product-api-behavior",
+        "authority-fanout",
+        "kpi-truth",
+        "protected-editorial-core",
+        "improvement-recommendations",
+        "authority-distribution",
+        "editorial-continuity"
       ]
     },
     "ingestion": {
@@ -94,6 +100,17 @@
         "product-cover-contract",
         "product-api-behavior"
       ]
+    },
+    "authority-modernization": {
+      "description": "Protected-core authority-scale, KPI truth, recommendation-only intelligence, distribution observation, and editorial continuity checks.",
+      "checks": [
+        "authority-fanout",
+        "kpi-truth",
+        "protected-editorial-core",
+        "improvement-recommendations",
+        "authority-distribution",
+        "editorial-continuity"
+      ]
     }
   },
   "compositeScripts": {
@@ -102,6 +119,7 @@
     "validate:profile:sitemap-indexing": "sitemap-indexing",
     "validate:profile:indexnow": "indexnow",
     "validate:profile:agency": "agency",
-    "validate:profile:digital-products": "digital-products"
+    "validate:profile:digital-products": "digital-products",
+    "validate:authority-modernization": "authority-modernization"
   }
 }

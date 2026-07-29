@@ -1,0 +1,49 @@
+{
+  "schema_version": "2.0",
+  "receipt_id": "BASELINE_NOT_CONFIGURED",
+  "attempted_at": "2026-07-25T00:00:00.000Z",
+  "publication_trigger": "ONLY_AFTER_EXISTING_CONTENT_PUBLISH_WORKFLOW_SUCCEEDS",
+  "chain": [
+    "successful_publish",
+    "sitemap_refresh",
+    "indexnow",
+    "gsc_sitemap_submission",
+    "priority_url_inspection_where_configured",
+    "durable_distribution_receipt",
+    "observation_feedback"
+  ],
+  "sitemap_refresh": {
+    "status": "SUCCESS",
+    "sitemap_url": "https://www.hicksconsulting.org/sitemap.xml",
+    "sitemap_sha256": "c760c030e7e63eefd45543371fd398f0cef52b46af6e9507928cf988bb983ef0",
+    "url_count": 36
+  },
+  "indexnow": {
+    "status": "NOT_CONFIGURED",
+    "attempted": false,
+    "submitted_urls": 0
+  },
+  "gsc_sitemap_submission": {
+    "status": "NOT_CONFIGURED",
+    "attempted": false
+  },
+  "priority_url_inspection": {
+    "status": "NOT_CONFIGURED",
+    "attempted": false,
+    "requested_urls": 15,
+    "inspected_urls": 0,
+    "results": []
+  },
+  "durable_receipt": {
+    "status": "SUCCESS",
+    "latest_path": "data/distribution/provider_receipt.json",
+    "history_path": "data/distribution/receipts/<runtime-receipt-id>.json"
+  },
+  "observation_feedback": {
+    "status": "SUCCESS",
+    "path": "data/distribution/observation_feedback.json"
+  },
+  "provider_success_claimed": false,
+  "verified_external_citations_delta": 0,
+  "truth_boundary": "Provider submission or inspection is not proof of indexing, search visibility, LLM surfacing, external reference, or citation."
+}
