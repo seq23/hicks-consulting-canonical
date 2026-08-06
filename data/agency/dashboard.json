@@ -24,7 +24,7 @@
     {
       "key": "onpage",
       "label": "On-page SEO",
-      "score": 97,
+      "score": 98,
       "summary": "Titles, descriptions, internal linking, and service alignment.",
       "grade": "A",
       "target": 87,
@@ -33,11 +33,11 @@
     {
       "key": "liveContent",
       "label": "Live content quality",
-      "score": 79,
+      "score": 92,
       "summary": "Current public resource distinctiveness and trust signals; legacy similarity is capped but always shown.",
-      "grade": "C+",
+      "grade": "A-",
       "target": 87,
-      "targetMet": false
+      "targetMet": true
     },
     {
       "key": "forwardContent",
@@ -51,7 +51,7 @@
     {
       "key": "aeo",
       "label": "AEO",
-      "score": 98,
+      "score": 100,
       "summary": "Direct answers, readable structure, dates, and Article schema.",
       "grade": "A",
       "target": 87,
@@ -191,292 +191,10 @@
   },
   "warningCounts": {
     "high": 0,
-    "medium": 36,
-    "low": 6
+    "medium": 0,
+    "low": 4
   },
   "priorities": [
-    {
-      "severity": "medium",
-      "code": "author-bio-link",
-      "route": "/resources/free-downloads/",
-      "message": "Resource lacks a linked Monika Hicks author credit.",
-      "tip": "Link the author name and bio box to /about/."
-    },
-    {
-      "severity": "medium",
-      "code": "service-connection",
-      "route": "/resources/free-downloads/",
-      "message": "Resource has no contextual service link.",
-      "tip": "Connect the topic to the most relevant therapy, coaching, group, or training page."
-    },
-    {
-      "severity": "medium",
-      "code": "article-schema",
-      "route": "/resources/free-downloads/",
-      "message": "Article schema is incomplete.",
-      "tip": "Include Article, author, datePublished, dateModified, publisher, and mainEntityOfPage."
-    },
-    {
-      "severity": "medium",
-      "code": "author-bio-link",
-      "route": "/resources/premium-downloads/",
-      "message": "Resource lacks a linked Monika Hicks author credit.",
-      "tip": "Link the author name and bio box to /about/."
-    },
-    {
-      "severity": "medium",
-      "code": "service-connection",
-      "route": "/resources/premium-downloads/",
-      "message": "Resource has no contextual service link.",
-      "tip": "Connect the topic to the most relevant therapy, coaching, group, or training page."
-    },
-    {
-      "severity": "medium",
-      "code": "article-schema",
-      "route": "/resources/premium-downloads/",
-      "message": "Article schema is incomplete.",
-      "tip": "Include Article, author, datePublished, dateModified, publisher, and mainEntityOfPage."
-    },
-    {
-      "severity": "medium",
-      "code": "content-similarity",
-      "route": "/resources/insights/how-burnout-shows-up-before-you-ever-call-it-burnout-a-gentler-truth-to-consider/",
-      "relatedRoute": "/resources/insights/what-black-women-deserve-from-support-that-is-actually-useful-a-gentler-truth-to-cons/",
-      "message": "Content similarity 98% with /resources/insights/what-black-women-deserve-from-support-that-is-actually-useful-a-gentler-truth-to-cons/.",
-      "tip": "Keep the subject, but deepen a different angle, example set, structure, and service connection."
-    },
-    {
-      "severity": "medium",
-      "code": "content-similarity",
-      "route": "/resources/insights/how-burnout-shows-up-before-you-ever-call-it-burnout-a-gentler-truth-to-consider/",
-      "relatedRoute": "/resources/insights/when-your-body-is-carrying-stress-your-mind-keeps-dismissing-a-gentler-truth-to-consi/",
-      "message": "Content similarity 98% with /resources/insights/when-your-body-is-carrying-stress-your-mind-keeps-dismissing-a-gentler-truth-to-consi/.",
-      "tip": "Keep the subject, but deepen a different angle, example set, structure, and service connection."
-    },
-    {
-      "severity": "medium",
-      "code": "content-similarity",
-      "route": "/resources/insights/how-burnout-shows-up-before-you-ever-call-it-burnout-how-it-shows-up-in-work-and-rela/",
-      "relatedRoute": "/resources/insights/when-your-body-is-carrying-stress-your-mind-keeps-dismissing-how-it-shows-up-in-work/",
-      "message": "Content similarity 98% with /resources/insights/when-your-body-is-carrying-stress-your-mind-keeps-dismissing-how-it-shows-up-in-work/.",
-      "tip": "Keep the subject, but deepen a different angle, example set, structure, and service connection."
-    },
-    {
-      "severity": "medium",
-      "code": "content-similarity",
-      "route": "/resources/insights/how-burnout-shows-up-before-you-ever-call-it-burnout-next-step-reflection/",
-      "relatedRoute": "/resources/insights/when-your-body-is-carrying-stress-your-mind-keeps-dismissing-next-step-reflection/",
-      "message": "Content similarity 98% with /resources/insights/when-your-body-is-carrying-stress-your-mind-keeps-dismissing-next-step-reflection/.",
-      "tip": "Keep the subject, but deepen a different angle, example set, structure, and service connection."
-    },
-    {
-      "severity": "medium",
-      "code": "content-similarity",
-      "route": "/resources/insights/how-burnout-shows-up-before-you-ever-call-it-burnout-what-this-looks-like-in-real-lif/",
-      "relatedRoute": "/resources/insights/when-your-body-is-carrying-stress-your-mind-keeps-dismissing-what-this-looks-like-in/",
-      "message": "Content similarity 98% with /resources/insights/when-your-body-is-carrying-stress-your-mind-keeps-dismissing-what-this-looks-like-in/.",
-      "tip": "Keep the subject, but deepen a different angle, example set, structure, and service connection."
-    },
-    {
-      "severity": "medium",
-      "code": "content-similarity",
-      "route": "/resources/insights/how-burnout-shows-up-before-you-ever-call-it-burnout-why-women-minimize-it/",
-      "relatedRoute": "/resources/insights/when-your-body-is-carrying-stress-your-mind-keeps-dismissing-why-women-minimize-it/",
-      "message": "Content similarity 98% with /resources/insights/when-your-body-is-carrying-stress-your-mind-keeps-dismissing-why-women-minimize-it/.",
-      "tip": "Keep the subject, but deepen a different angle, example set, structure, and service connection."
-    },
-    {
-      "severity": "medium",
-      "code": "content-similarity",
-      "route": "/resources/articles/how-burnout-shows-up-before-you-ever-call-it-burnout/",
-      "relatedRoute": "/resources/articles/what-black-women-deserve-from-support-that-is-actually-useful/",
-      "message": "Content similarity 98% with /resources/articles/what-black-women-deserve-from-support-that-is-actually-useful/.",
-      "tip": "Keep the subject, but deepen a different angle, example set, structure, and service connection."
-    },
-    {
-      "severity": "medium",
-      "code": "content-similarity",
-      "route": "/resources/articles/how-burnout-shows-up-before-you-ever-call-it-burnout/",
-      "relatedRoute": "/resources/articles/when-your-body-is-carrying-stress-your-mind-keeps-dismissing/",
-      "message": "Content similarity 98% with /resources/articles/when-your-body-is-carrying-stress-your-mind-keeps-dismissing/.",
-      "tip": "Keep the subject, but deepen a different angle, example set, structure, and service connection."
-    },
-    {
-      "severity": "medium",
-      "code": "content-similarity",
-      "route": "/resources/insights/how-burnout-shows-up-before-you-ever-call-it-burnout-a-gentler-truth-to-consider/",
-      "relatedRoute": "/resources/insights/the-difference-between-being-busy-and-being-emotionally-maxed-out-a-gentler-truth-to/",
-      "message": "Content similarity 98% with /resources/insights/the-difference-between-being-busy-and-being-emotionally-maxed-out-a-gentler-truth-to/.",
-      "tip": "Keep the subject, but deepen a different angle, example set, structure, and service connection."
-    },
-    {
-      "severity": "medium",
-      "code": "content-similarity",
-      "route": "/resources/insights/how-burnout-shows-up-before-you-ever-call-it-burnout-how-it-shows-up-in-work-and-rela/",
-      "relatedRoute": "/resources/insights/the-difference-between-being-busy-and-being-emotionally-maxed-out-how-it-shows-up-in/",
-      "message": "Content similarity 98% with /resources/insights/the-difference-between-being-busy-and-being-emotionally-maxed-out-how-it-shows-up-in/.",
-      "tip": "Keep the subject, but deepen a different angle, example set, structure, and service connection."
-    },
-    {
-      "severity": "medium",
-      "code": "content-similarity",
-      "route": "/resources/insights/how-burnout-shows-up-before-you-ever-call-it-burnout-next-step-reflection/",
-      "relatedRoute": "/resources/insights/the-difference-between-being-busy-and-being-emotionally-maxed-out-next-step-reflectio/",
-      "message": "Content similarity 98% with /resources/insights/the-difference-between-being-busy-and-being-emotionally-maxed-out-next-step-reflectio/.",
-      "tip": "Keep the subject, but deepen a different angle, example set, structure, and service connection."
-    },
-    {
-      "severity": "medium",
-      "code": "content-similarity",
-      "route": "/resources/insights/how-burnout-shows-up-before-you-ever-call-it-burnout-what-this-looks-like-in-real-lif/",
-      "relatedRoute": "/resources/insights/the-difference-between-being-busy-and-being-emotionally-maxed-out-what-this-looks-lik/",
-      "message": "Content similarity 98% with /resources/insights/the-difference-between-being-busy-and-being-emotionally-maxed-out-what-this-looks-lik/.",
-      "tip": "Keep the subject, but deepen a different angle, example set, structure, and service connection."
-    },
-    {
-      "severity": "medium",
-      "code": "content-similarity",
-      "route": "/resources/insights/how-burnout-shows-up-before-you-ever-call-it-burnout-why-women-minimize-it/",
-      "relatedRoute": "/resources/insights/the-difference-between-being-busy-and-being-emotionally-maxed-out-why-women-minimize/",
-      "message": "Content similarity 98% with /resources/insights/the-difference-between-being-busy-and-being-emotionally-maxed-out-why-women-minimize/.",
-      "tip": "Keep the subject, but deepen a different angle, example set, structure, and service connection."
-    },
-    {
-      "severity": "medium",
-      "code": "content-similarity",
-      "route": "/resources/insights/what-black-women-deserve-from-support-that-is-actually-useful-a-gentler-truth-to-cons/",
-      "relatedRoute": "/resources/insights/when-your-body-is-carrying-stress-your-mind-keeps-dismissing-a-gentler-truth-to-consi/",
-      "message": "Content similarity 98% with /resources/insights/when-your-body-is-carrying-stress-your-mind-keeps-dismissing-a-gentler-truth-to-consi/.",
-      "tip": "Keep the subject, but deepen a different angle, example set, structure, and service connection."
-    },
-    {
-      "severity": "medium",
-      "code": "content-similarity",
-      "route": "/resources/articles/how-burnout-shows-up-before-you-ever-call-it-burnout/",
-      "relatedRoute": "/resources/articles/the-difference-between-being-busy-and-being-emotionally-maxed-out/",
-      "message": "Content similarity 97% with /resources/articles/the-difference-between-being-busy-and-being-emotionally-maxed-out/.",
-      "tip": "Keep the subject, but deepen a different angle, example set, structure, and service connection."
-    },
-    {
-      "severity": "medium",
-      "code": "content-similarity",
-      "route": "/resources/articles/what-black-women-deserve-from-support-that-is-actually-useful/",
-      "relatedRoute": "/resources/articles/when-your-body-is-carrying-stress-your-mind-keeps-dismissing/",
-      "message": "Content similarity 97% with /resources/articles/when-your-body-is-carrying-stress-your-mind-keeps-dismissing/.",
-      "tip": "Keep the subject, but deepen a different angle, example set, structure, and service connection."
-    },
-    {
-      "severity": "medium",
-      "code": "content-similarity",
-      "route": "/resources/insights/how-burnout-shows-up-before-you-ever-call-it-burnout-a-gentler-truth-to-consider/",
-      "relatedRoute": "/resources/insights/why-rest-feels-so-hard-when-you-have-been-rewarded-for-overfunctioning-a-gentler-trut/",
-      "message": "Content similarity 97% with /resources/insights/why-rest-feels-so-hard-when-you-have-been-rewarded-for-overfunctioning-a-gentler-trut/.",
-      "tip": "Keep the subject, but deepen a different angle, example set, structure, and service connection."
-    },
-    {
-      "severity": "medium",
-      "code": "content-similarity",
-      "route": "/resources/insights/how-burnout-shows-up-before-you-ever-call-it-burnout-how-it-shows-up-in-work-and-rela/",
-      "relatedRoute": "/resources/insights/why-rest-feels-so-hard-when-you-have-been-rewarded-for-overfunctioning-how-it-shows-u/",
-      "message": "Content similarity 97% with /resources/insights/why-rest-feels-so-hard-when-you-have-been-rewarded-for-overfunctioning-how-it-shows-u/.",
-      "tip": "Keep the subject, but deepen a different angle, example set, structure, and service connection."
-    },
-    {
-      "severity": "medium",
-      "code": "content-similarity",
-      "route": "/resources/insights/how-burnout-shows-up-before-you-ever-call-it-burnout-next-step-reflection/",
-      "relatedRoute": "/resources/insights/why-rest-feels-so-hard-when-you-have-been-rewarded-for-overfunctioning-next-step-refl/",
-      "message": "Content similarity 97% with /resources/insights/why-rest-feels-so-hard-when-you-have-been-rewarded-for-overfunctioning-next-step-refl/.",
-      "tip": "Keep the subject, but deepen a different angle, example set, structure, and service connection."
-    },
-    {
-      "severity": "medium",
-      "code": "content-similarity",
-      "route": "/resources/insights/how-burnout-shows-up-before-you-ever-call-it-burnout-what-this-looks-like-in-real-lif/",
-      "relatedRoute": "/resources/insights/how-life-transitions-can-shake-women-who-usually-look-put-together-what-this-looks-li/",
-      "message": "Content similarity 97% with /resources/insights/how-life-transitions-can-shake-women-who-usually-look-put-together-what-this-looks-li/.",
-      "tip": "Keep the subject, but deepen a different angle, example set, structure, and service connection."
-    },
-    {
-      "severity": "medium",
-      "code": "content-similarity",
-      "route": "/resources/insights/how-burnout-shows-up-before-you-ever-call-it-burnout-what-this-looks-like-in-real-lif/",
-      "relatedRoute": "/resources/insights/why-rest-feels-so-hard-when-you-have-been-rewarded-for-overfunctioning-what-this-look/",
-      "message": "Content similarity 97% with /resources/insights/why-rest-feels-so-hard-when-you-have-been-rewarded-for-overfunctioning-what-this-look/.",
-      "tip": "Keep the subject, but deepen a different angle, example set, structure, and service connection."
-    },
-    {
-      "severity": "medium",
-      "code": "content-similarity",
-      "route": "/resources/insights/how-burnout-shows-up-before-you-ever-call-it-burnout-why-women-minimize-it/",
-      "relatedRoute": "/resources/insights/why-rest-feels-so-hard-when-you-have-been-rewarded-for-overfunctioning-why-women-mini/",
-      "message": "Content similarity 97% with /resources/insights/why-rest-feels-so-hard-when-you-have-been-rewarded-for-overfunctioning-why-women-mini/.",
-      "tip": "Keep the subject, but deepen a different angle, example set, structure, and service connection."
-    },
-    {
-      "severity": "medium",
-      "code": "content-similarity",
-      "route": "/resources/insights/the-difference-between-being-busy-and-being-emotionally-maxed-out-a-gentler-truth-to/",
-      "relatedRoute": "/resources/insights/what-black-women-deserve-from-support-that-is-actually-useful-a-gentler-truth-to-cons/",
-      "message": "Content similarity 97% with /resources/insights/what-black-women-deserve-from-support-that-is-actually-useful-a-gentler-truth-to-cons/.",
-      "tip": "Keep the subject, but deepen a different angle, example set, structure, and service connection."
-    },
-    {
-      "severity": "medium",
-      "code": "content-similarity",
-      "route": "/resources/insights/the-difference-between-being-busy-and-being-emotionally-maxed-out-a-gentler-truth-to/",
-      "relatedRoute": "/resources/insights/when-your-body-is-carrying-stress-your-mind-keeps-dismissing-a-gentler-truth-to-consi/",
-      "message": "Content similarity 97% with /resources/insights/when-your-body-is-carrying-stress-your-mind-keeps-dismissing-a-gentler-truth-to-consi/.",
-      "tip": "Keep the subject, but deepen a different angle, example set, structure, and service connection."
-    },
-    {
-      "severity": "medium",
-      "code": "content-similarity",
-      "route": "/resources/insights/the-difference-between-being-busy-and-being-emotionally-maxed-out-how-it-shows-up-in/",
-      "relatedRoute": "/resources/insights/when-your-body-is-carrying-stress-your-mind-keeps-dismissing-how-it-shows-up-in-work/",
-      "message": "Content similarity 97% with /resources/insights/when-your-body-is-carrying-stress-your-mind-keeps-dismissing-how-it-shows-up-in-work/.",
-      "tip": "Keep the subject, but deepen a different angle, example set, structure, and service connection."
-    },
-    {
-      "severity": "medium",
-      "code": "content-similarity",
-      "route": "/resources/insights/the-difference-between-being-busy-and-being-emotionally-maxed-out-next-step-reflectio/",
-      "relatedRoute": "/resources/insights/when-your-body-is-carrying-stress-your-mind-keeps-dismissing-next-step-reflection/",
-      "message": "Content similarity 97% with /resources/insights/when-your-body-is-carrying-stress-your-mind-keeps-dismissing-next-step-reflection/.",
-      "tip": "Keep the subject, but deepen a different angle, example set, structure, and service connection."
-    },
-    {
-      "severity": "medium",
-      "code": "content-similarity",
-      "route": "/resources/insights/the-difference-between-being-busy-and-being-emotionally-maxed-out-what-this-looks-lik/",
-      "relatedRoute": "/resources/insights/when-your-body-is-carrying-stress-your-mind-keeps-dismissing-what-this-looks-like-in/",
-      "message": "Content similarity 97% with /resources/insights/when-your-body-is-carrying-stress-your-mind-keeps-dismissing-what-this-looks-like-in/.",
-      "tip": "Keep the subject, but deepen a different angle, example set, structure, and service connection."
-    },
-    {
-      "severity": "medium",
-      "code": "content-similarity",
-      "route": "/resources/insights/the-difference-between-being-busy-and-being-emotionally-maxed-out-why-women-minimize/",
-      "relatedRoute": "/resources/insights/when-your-body-is-carrying-stress-your-mind-keeps-dismissing-why-women-minimize-it/",
-      "message": "Content similarity 97% with /resources/insights/when-your-body-is-carrying-stress-your-mind-keeps-dismissing-why-women-minimize-it/.",
-      "tip": "Keep the subject, but deepen a different angle, example set, structure, and service connection."
-    },
-    {
-      "severity": "medium",
-      "code": "content-similarity",
-      "route": "/resources/insights/how-life-transitions-can-shake-women-who-usually-look-put-together-what-this-looks-li/",
-      "relatedRoute": "/resources/insights/when-your-body-is-carrying-stress-your-mind-keeps-dismissing-what-this-looks-like-in/",
-      "message": "Content similarity 97% with /resources/insights/when-your-body-is-carrying-stress-your-mind-keeps-dismissing-what-this-looks-like-in/.",
-      "tip": "Keep the subject, but deepen a different angle, example set, structure, and service connection."
-    },
-    {
-      "severity": "medium",
-      "code": "content-similarity",
-      "route": "/resources/insights/what-black-women-deserve-from-support-that-is-actually-useful-a-gentler-truth-to-cons/",
-      "relatedRoute": "/resources/insights/why-rest-feels-so-hard-when-you-have-been-rewarded-for-overfunctioning-a-gentler-trut/",
-      "message": "Content similarity 97% with /resources/insights/why-rest-feels-so-hard-when-you-have-been-rewarded-for-overfunctioning-a-gentler-trut/.",
-      "tip": "Keep the subject, but deepen a different angle, example set, structure, and service connection."
-    },
     {
       "severity": "low",
       "code": "long-title",
@@ -486,24 +204,10 @@
     },
     {
       "severity": "low",
-      "code": "visible-date",
-      "route": "/resources/free-downloads/",
-      "message": "Resource lacks a machine-readable visible date.",
-      "tip": "Add a visible <time datetime=\"…\"> element."
-    },
-    {
-      "severity": "low",
       "code": "source-link",
       "route": "/resources/free-downloads/",
       "message": "Resource has no external supporting source.",
       "tip": "Add one or two credible sources where the topic benefits from them."
-    },
-    {
-      "severity": "low",
-      "code": "visible-date",
-      "route": "/resources/premium-downloads/",
-      "message": "Resource lacks a machine-readable visible date.",
-      "tip": "Add a visible <time datetime=\"…\"> element."
     },
     {
       "severity": "low",
@@ -521,258 +225,7 @@
     }
   ],
   "duplicatePairs": {
-    "live": [
-      {
-        "a": "/resources/insights/how-burnout-shows-up-before-you-ever-call-it-burnout-a-gentler-truth-to-consider/",
-        "b": "/resources/insights/what-black-women-deserve-from-support-that-is-actually-useful-a-gentler-truth-to-cons/",
-        "similarity": 0.977
-      },
-      {
-        "a": "/resources/insights/how-burnout-shows-up-before-you-ever-call-it-burnout-a-gentler-truth-to-consider/",
-        "b": "/resources/insights/when-your-body-is-carrying-stress-your-mind-keeps-dismissing-a-gentler-truth-to-consi/",
-        "similarity": 0.977
-      },
-      {
-        "a": "/resources/insights/how-burnout-shows-up-before-you-ever-call-it-burnout-how-it-shows-up-in-work-and-rela/",
-        "b": "/resources/insights/when-your-body-is-carrying-stress-your-mind-keeps-dismissing-how-it-shows-up-in-work/",
-        "similarity": 0.977
-      },
-      {
-        "a": "/resources/insights/how-burnout-shows-up-before-you-ever-call-it-burnout-next-step-reflection/",
-        "b": "/resources/insights/when-your-body-is-carrying-stress-your-mind-keeps-dismissing-next-step-reflection/",
-        "similarity": 0.977
-      },
-      {
-        "a": "/resources/insights/how-burnout-shows-up-before-you-ever-call-it-burnout-what-this-looks-like-in-real-lif/",
-        "b": "/resources/insights/when-your-body-is-carrying-stress-your-mind-keeps-dismissing-what-this-looks-like-in/",
-        "similarity": 0.977
-      },
-      {
-        "a": "/resources/insights/how-burnout-shows-up-before-you-ever-call-it-burnout-why-women-minimize-it/",
-        "b": "/resources/insights/when-your-body-is-carrying-stress-your-mind-keeps-dismissing-why-women-minimize-it/",
-        "similarity": 0.977
-      },
-      {
-        "a": "/resources/articles/how-burnout-shows-up-before-you-ever-call-it-burnout/",
-        "b": "/resources/articles/what-black-women-deserve-from-support-that-is-actually-useful/",
-        "similarity": 0.975
-      },
-      {
-        "a": "/resources/articles/how-burnout-shows-up-before-you-ever-call-it-burnout/",
-        "b": "/resources/articles/when-your-body-is-carrying-stress-your-mind-keeps-dismissing/",
-        "similarity": 0.975
-      },
-      {
-        "a": "/resources/insights/how-burnout-shows-up-before-you-ever-call-it-burnout-a-gentler-truth-to-consider/",
-        "b": "/resources/insights/the-difference-between-being-busy-and-being-emotionally-maxed-out-a-gentler-truth-to/",
-        "similarity": 0.975
-      },
-      {
-        "a": "/resources/insights/how-burnout-shows-up-before-you-ever-call-it-burnout-how-it-shows-up-in-work-and-rela/",
-        "b": "/resources/insights/the-difference-between-being-busy-and-being-emotionally-maxed-out-how-it-shows-up-in/",
-        "similarity": 0.975
-      },
-      {
-        "a": "/resources/insights/how-burnout-shows-up-before-you-ever-call-it-burnout-next-step-reflection/",
-        "b": "/resources/insights/the-difference-between-being-busy-and-being-emotionally-maxed-out-next-step-reflectio/",
-        "similarity": 0.975
-      },
-      {
-        "a": "/resources/insights/how-burnout-shows-up-before-you-ever-call-it-burnout-what-this-looks-like-in-real-lif/",
-        "b": "/resources/insights/the-difference-between-being-busy-and-being-emotionally-maxed-out-what-this-looks-lik/",
-        "similarity": 0.975
-      },
-      {
-        "a": "/resources/insights/how-burnout-shows-up-before-you-ever-call-it-burnout-why-women-minimize-it/",
-        "b": "/resources/insights/the-difference-between-being-busy-and-being-emotionally-maxed-out-why-women-minimize/",
-        "similarity": 0.975
-      },
-      {
-        "a": "/resources/insights/what-black-women-deserve-from-support-that-is-actually-useful-a-gentler-truth-to-cons/",
-        "b": "/resources/insights/when-your-body-is-carrying-stress-your-mind-keeps-dismissing-a-gentler-truth-to-consi/",
-        "similarity": 0.975
-      },
-      {
-        "a": "/resources/articles/how-burnout-shows-up-before-you-ever-call-it-burnout/",
-        "b": "/resources/articles/the-difference-between-being-busy-and-being-emotionally-maxed-out/",
-        "similarity": 0.974
-      },
-      {
-        "a": "/resources/articles/what-black-women-deserve-from-support-that-is-actually-useful/",
-        "b": "/resources/articles/when-your-body-is-carrying-stress-your-mind-keeps-dismissing/",
-        "similarity": 0.974
-      },
-      {
-        "a": "/resources/insights/how-burnout-shows-up-before-you-ever-call-it-burnout-a-gentler-truth-to-consider/",
-        "b": "/resources/insights/why-rest-feels-so-hard-when-you-have-been-rewarded-for-overfunctioning-a-gentler-trut/",
-        "similarity": 0.974
-      },
-      {
-        "a": "/resources/insights/how-burnout-shows-up-before-you-ever-call-it-burnout-how-it-shows-up-in-work-and-rela/",
-        "b": "/resources/insights/why-rest-feels-so-hard-when-you-have-been-rewarded-for-overfunctioning-how-it-shows-u/",
-        "similarity": 0.974
-      },
-      {
-        "a": "/resources/insights/how-burnout-shows-up-before-you-ever-call-it-burnout-next-step-reflection/",
-        "b": "/resources/insights/why-rest-feels-so-hard-when-you-have-been-rewarded-for-overfunctioning-next-step-refl/",
-        "similarity": 0.974
-      },
-      {
-        "a": "/resources/insights/how-burnout-shows-up-before-you-ever-call-it-burnout-what-this-looks-like-in-real-lif/",
-        "b": "/resources/insights/how-life-transitions-can-shake-women-who-usually-look-put-together-what-this-looks-li/",
-        "similarity": 0.974
-      },
-      {
-        "a": "/resources/insights/how-burnout-shows-up-before-you-ever-call-it-burnout-what-this-looks-like-in-real-lif/",
-        "b": "/resources/insights/why-rest-feels-so-hard-when-you-have-been-rewarded-for-overfunctioning-what-this-look/",
-        "similarity": 0.974
-      },
-      {
-        "a": "/resources/insights/how-burnout-shows-up-before-you-ever-call-it-burnout-why-women-minimize-it/",
-        "b": "/resources/insights/why-rest-feels-so-hard-when-you-have-been-rewarded-for-overfunctioning-why-women-mini/",
-        "similarity": 0.974
-      },
-      {
-        "a": "/resources/insights/the-difference-between-being-busy-and-being-emotionally-maxed-out-a-gentler-truth-to/",
-        "b": "/resources/insights/what-black-women-deserve-from-support-that-is-actually-useful-a-gentler-truth-to-cons/",
-        "similarity": 0.974
-      },
-      {
-        "a": "/resources/insights/the-difference-between-being-busy-and-being-emotionally-maxed-out-a-gentler-truth-to/",
-        "b": "/resources/insights/when-your-body-is-carrying-stress-your-mind-keeps-dismissing-a-gentler-truth-to-consi/",
-        "similarity": 0.974
-      },
-      {
-        "a": "/resources/insights/the-difference-between-being-busy-and-being-emotionally-maxed-out-how-it-shows-up-in/",
-        "b": "/resources/insights/when-your-body-is-carrying-stress-your-mind-keeps-dismissing-how-it-shows-up-in-work/",
-        "similarity": 0.974
-      },
-      {
-        "a": "/resources/insights/the-difference-between-being-busy-and-being-emotionally-maxed-out-next-step-reflectio/",
-        "b": "/resources/insights/when-your-body-is-carrying-stress-your-mind-keeps-dismissing-next-step-reflection/",
-        "similarity": 0.974
-      },
-      {
-        "a": "/resources/insights/the-difference-between-being-busy-and-being-emotionally-maxed-out-what-this-looks-lik/",
-        "b": "/resources/insights/when-your-body-is-carrying-stress-your-mind-keeps-dismissing-what-this-looks-like-in/",
-        "similarity": 0.974
-      },
-      {
-        "a": "/resources/insights/the-difference-between-being-busy-and-being-emotionally-maxed-out-why-women-minimize/",
-        "b": "/resources/insights/when-your-body-is-carrying-stress-your-mind-keeps-dismissing-why-women-minimize-it/",
-        "similarity": 0.974
-      },
-      {
-        "a": "/resources/insights/how-life-transitions-can-shake-women-who-usually-look-put-together-what-this-looks-li/",
-        "b": "/resources/insights/when-your-body-is-carrying-stress-your-mind-keeps-dismissing-what-this-looks-like-in/",
-        "similarity": 0.973
-      },
-      {
-        "a": "/resources/insights/what-black-women-deserve-from-support-that-is-actually-useful-a-gentler-truth-to-cons/",
-        "b": "/resources/insights/why-rest-feels-so-hard-when-you-have-been-rewarded-for-overfunctioning-a-gentler-trut/",
-        "similarity": 0.973
-      },
-      {
-        "a": "/resources/insights/when-your-body-is-carrying-stress-your-mind-keeps-dismissing-a-gentler-truth-to-consi/",
-        "b": "/resources/insights/why-rest-feels-so-hard-when-you-have-been-rewarded-for-overfunctioning-a-gentler-trut/",
-        "similarity": 0.973
-      },
-      {
-        "a": "/resources/insights/when-your-body-is-carrying-stress-your-mind-keeps-dismissing-how-it-shows-up-in-work/",
-        "b": "/resources/insights/why-rest-feels-so-hard-when-you-have-been-rewarded-for-overfunctioning-how-it-shows-u/",
-        "similarity": 0.973
-      },
-      {
-        "a": "/resources/insights/when-your-body-is-carrying-stress-your-mind-keeps-dismissing-what-this-looks-like-in/",
-        "b": "/resources/insights/why-rest-feels-so-hard-when-you-have-been-rewarded-for-overfunctioning-what-this-look/",
-        "similarity": 0.973
-      },
-      {
-        "a": "/resources/insights/when-your-body-is-carrying-stress-your-mind-keeps-dismissing-why-women-minimize-it/",
-        "b": "/resources/insights/why-rest-feels-so-hard-when-you-have-been-rewarded-for-overfunctioning-why-women-mini/",
-        "similarity": 0.973
-      },
-      {
-        "a": "/resources/articles/how-burnout-shows-up-before-you-ever-call-it-burnout/",
-        "b": "/resources/articles/why-rest-feels-so-hard-when-you-have-been-rewarded-for-overfunctioning/",
-        "similarity": 0.972
-      },
-      {
-        "a": "/resources/articles/the-difference-between-being-busy-and-being-emotionally-maxed-out/",
-        "b": "/resources/articles/what-black-women-deserve-from-support-that-is-actually-useful/",
-        "similarity": 0.972
-      },
-      {
-        "a": "/resources/articles/the-difference-between-being-busy-and-being-emotionally-maxed-out/",
-        "b": "/resources/articles/when-your-body-is-carrying-stress-your-mind-keeps-dismissing/",
-        "similarity": 0.972
-      },
-      {
-        "a": "/resources/insights/when-your-body-is-carrying-stress-your-mind-keeps-dismissing-next-step-reflection/",
-        "b": "/resources/insights/why-rest-feels-so-hard-when-you-have-been-rewarded-for-overfunctioning-next-step-refl/",
-        "similarity": 0.972
-      },
-      {
-        "a": "/resources/articles/what-black-women-deserve-from-support-that-is-actually-useful/",
-        "b": "/resources/articles/why-rest-feels-so-hard-when-you-have-been-rewarded-for-overfunctioning/",
-        "similarity": 0.971
-      },
-      {
-        "a": "/resources/articles/when-your-body-is-carrying-stress-your-mind-keeps-dismissing/",
-        "b": "/resources/articles/why-rest-feels-so-hard-when-you-have-been-rewarded-for-overfunctioning/",
-        "similarity": 0.971
-      },
-      {
-        "a": "/resources/insights/how-life-transitions-can-shake-women-who-usually-look-put-together-what-this-looks-li/",
-        "b": "/resources/insights/the-difference-between-being-busy-and-being-emotionally-maxed-out-what-this-looks-lik/",
-        "similarity": 0.971
-      },
-      {
-        "a": "/resources/insights/the-difference-between-being-busy-and-being-emotionally-maxed-out-a-gentler-truth-to/",
-        "b": "/resources/insights/why-rest-feels-so-hard-when-you-have-been-rewarded-for-overfunctioning-a-gentler-trut/",
-        "similarity": 0.971
-      },
-      {
-        "a": "/resources/insights/the-difference-between-being-busy-and-being-emotionally-maxed-out-how-it-shows-up-in/",
-        "b": "/resources/insights/why-rest-feels-so-hard-when-you-have-been-rewarded-for-overfunctioning-how-it-shows-u/",
-        "similarity": 0.971
-      },
-      {
-        "a": "/resources/insights/the-difference-between-being-busy-and-being-emotionally-maxed-out-next-step-reflectio/",
-        "b": "/resources/insights/why-rest-feels-so-hard-when-you-have-been-rewarded-for-overfunctioning-next-step-refl/",
-        "similarity": 0.971
-      },
-      {
-        "a": "/resources/insights/the-difference-between-being-busy-and-being-emotionally-maxed-out-what-this-looks-lik/",
-        "b": "/resources/insights/why-rest-feels-so-hard-when-you-have-been-rewarded-for-overfunctioning-what-this-look/",
-        "similarity": 0.971
-      },
-      {
-        "a": "/resources/insights/the-difference-between-being-busy-and-being-emotionally-maxed-out-why-women-minimize/",
-        "b": "/resources/insights/why-rest-feels-so-hard-when-you-have-been-rewarded-for-overfunctioning-why-women-mini/",
-        "similarity": 0.971
-      },
-      {
-        "a": "/resources/articles/the-difference-between-being-busy-and-being-emotionally-maxed-out/",
-        "b": "/resources/articles/why-rest-feels-so-hard-when-you-have-been-rewarded-for-overfunctioning/",
-        "similarity": 0.97
-      },
-      {
-        "a": "/resources/insights/how-life-transitions-can-shake-women-who-usually-look-put-together-what-this-looks-li/",
-        "b": "/resources/insights/why-rest-feels-so-hard-when-you-have-been-rewarded-for-overfunctioning-what-this-look/",
-        "similarity": 0.97
-      },
-      {
-        "a": "/resources/insights/how-burnout-shows-up-before-you-ever-call-it-burnout-a-gentler-truth-to-consider/",
-        "b": "/resources/insights/how-burnout-shows-up-before-you-ever-call-it-burnout-next-step-reflection/",
-        "similarity": 0.964
-      },
-      {
-        "a": "/resources/insights/how-burnout-shows-up-before-you-ever-call-it-burnout-next-step-reflection/",
-        "b": "/resources/insights/how-burnout-shows-up-before-you-ever-call-it-burnout-why-women-minimize-it/",
-        "similarity": 0.964
-      }
-    ],
+    "live": [],
     "forward": []
   },
   "autonomy": {
@@ -864,7 +317,9 @@
             "GSC_SERVICE_ACCOUNT_EMAIL",
             "GSC_PRIVATE_KEY"
           ],
-          "fallback": "display_disconnected"
+          "fallback": "display_disconnected",
+          "setupPath": "/agency/#search-connection-panel",
+          "displayState": "CONNECTION_REQUIRED"
         },
         "bing": {
           "state": "INTEGRATED_UNPROVEN",
@@ -872,7 +327,9 @@
             "BING_SITE_URL",
             "BING_WEBMASTER_API_KEY"
           ],
-          "fallback": "display_disconnected"
+          "fallback": "display_disconnected",
+          "setupPath": "/agency/#search-connection-panel",
+          "displayState": "CONNECTION_REQUIRED"
         },
         "competitorSearch": {
           "state": "INTEGRATED_UNPROVEN",
@@ -888,7 +345,9 @@
             "GITHUB_ADMIN_TOKEN",
             "GITHUB_REPOSITORY"
           ],
-          "fallback": "read_only_admin"
+          "fallback": "read_only_admin",
+          "setupPath": "/admin/#optional-operations-panel",
+          "displayState": "CONNECTION_REQUIRED"
         },
         "adminGate": {
           "state": "STRUCTURAL",

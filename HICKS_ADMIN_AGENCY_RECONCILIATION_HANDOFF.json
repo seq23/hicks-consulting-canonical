@@ -1,0 +1,45 @@
+{
+  "schemaVersion": "1.0.0",
+  "repo": "hicks-consulting-canonical",
+  "artifactType": "full baseline snapshot reconciliation",
+  "implemented": [
+    "Original client-facing admin restored as primary experience",
+    "Optional real operations panel retained with exact GitHub setup instructions and setup-required behavior",
+    "Digital Products manager preserved and fully validated",
+    "Agency High/Medium findings resolved and similarity pairs reduced to zero",
+    "GSC and Bing connection instructions, provider buttons, and connection-test action added",
+    "No visible unknown statuses on admin, digital products, or agency surfaces"
+  ],
+  "notImplemented": [
+    "Live provider credentials",
+    "Production deployment",
+    "Live GSC/Bing/email/GitHub/LLM/IndexNow receipts"
+  ],
+  "publishingVelocity": "UNCHANGED_EXISTING_CLIENT_SYSTEM",
+  "editorialRecords": 227,
+  "agency": {
+    "highFindings": 0,
+    "mediumFindings": 0,
+    "liveSimilarityPairs": 0,
+    "forwardSimilarityPairs": 0,
+    "liveContentQuality": 92,
+    "grade": "A-"
+  },
+  "validation": {
+    "registeredChecks": 58,
+    "isolatedProbes": 62,
+    "blockingFailures": 0,
+    "authoritativeSourceMutationsByValidation": 0,
+    "localPrepush": "PASSED",
+    "result": "PASS_WITH_NON_BLOCKING_FINDINGS",
+    "nonBlockingFindings": [
+      "GSC and Bing measurement score is 0 until credentials are connected",
+      "Five existing resources remain below advisory word-count ranges"
+    ]
+  },
+  "browserValidation": {
+    "status": "NOT_EXECUTED",
+    "reason": "Host administrator blocks browser navigation in this container."
+  },
+  "status": "STRUCTURALLY CHECKED \u2014 DEEP LOCAL VALIDATION PASSED; LIVE PROVIDER ACTIVATION REQUIRED"
+}

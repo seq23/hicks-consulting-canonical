@@ -1,20 +1,17 @@
 {
-  "schemaVersion": "2.0.0",
+  "schemaVersion": "2.1.0",
   "repoName": "hicks-consulting-canonical",
   "zipRoot": "hicks-consulting-canonical-main",
   "expectedBranch": "main",
-  "validatedSourceRoot": "/mnt/data/hicks_impl/hicks-consulting-canonical-main",
-  "packagedSourceRoot": "/mnt/data/hicks_impl/hicks-consulting-canonical-main",
-  "profile": "deep-autonomy",
+  "validatedSourceRoot": "/mnt/data/hicks_reconcile_final_work/hicks-consulting-canonical-main",
+  "packagedSourceRoot": "/mnt/data/hicks_reconcile_final_work/hicks-consulting-canonical-main",
+  "profile": "all + deep-autonomy + isolated probes",
   "localBrowserValidation": "NOT_EXECUTED",
-  "localBrowserValidationReason": "No Playwright/browser runtime was used; static route, security behavior, E2E sandbox, deterministic build, and isolated validator proof were executed.",
-  "requiredLocalUpdater": "update_repo_from_zip_generic_v3.sh",
-  "requiredLocalCommandPattern": "bash \"$HOME/update_repo_from_zip_generic_v3.sh\" \"<ZIP_PATH>\" \"<REPO_PATH>\" \"snapshot\" \"hicks-consulting-canonical\"",
+  "localBrowserValidationReason": "Browser navigation is blocked by the host administrator. Static UI, source, route, JavaScript, API fixture, Digital Products, and validation contracts passed.",
+  "requiredLocalUpdater": "update_repo_from_zip_generic_v3_1.sh",
   "requiredLocalPrepush": "npm run release:prepush:local",
   "releasePrepushContainerResult": "PASS_WITH_NON_BLOCKING_FINDINGS",
-  "releasePrepushContainerCommand": "npm run release:prepush:local",
   "deepValidationResult": "PASS_WITH_NON_BLOCKING_FINDINGS",
-  "deepValidationCommand": "npm run validate:deep",
   "isolatedProbeResult": "PASS_WITH_NON_BLOCKING_FINDINGS",
   "isolatedProbeCount": 62,
   "registeredValidatorCount": 58,
@@ -25,24 +22,35 @@
   "selfHealRollbackE2E": "PASS",
   "velocityImmutability": "PASS",
   "siteIntentPreservation": "PASS",
+  "digitalProductsProfile": "PASS",
+  "adminContinuity": "PASS",
+  "agencyHighFindings": 0,
+  "agencyMediumFindings": 0,
+  "agencySimilarityPairs": 0,
+  "agencyLiveContentQuality": 92,
   "liveProviderValidation": "NOT_EXECUTED",
-  "liveProviderValidationReason": "GSC, Bing, email, LLM, search, GitHub admin, IndexNow, and Cloudflare credentials were not available.",
+  "liveProviderValidationReason": "Provider credentials were not available.",
   "nonBlockingFindings": [
     {
       "check": "agency-quality",
       "severity": "STRONG_WARNING",
-      "summary": "Live content-quality score remains 79 and GSC/Bing measurement remains unavailable until provider activation."
+      "summary": "GSC/Bing measurement remains 0 until live credentials are connected."
+    },
+    {
+      "check": "word-counts",
+      "severity": "SOFT_WARNING",
+      "summary": "Five existing resources remain below advisory word-count ranges."
     }
   ],
   "artifactSha256": "RECORDED_AFTER_PACKAGING_IN_HANDOFF",
-  "generatedAt": "2026-08-06T22:58:00.000Z",
+  "generatedAt": "2026-08-07T00:30:00.000Z",
   "evidenceReferences": [
     "reports/deep-validation/isolation-report.md",
     "reports/deep-validation/isolation-report.json",
+    "ARTIFACT_ADMIN_AGENCY_RECONCILIATION.md",
+    "HICKS_ADMIN_AGENCY_RECONCILIATION_HANDOFF.json",
+    "npm run validate:all",
     "npm run validate:deep",
-    "npm run release:prepush:local",
-    "npm run validate:autonomy-cycle-e2e",
-    "npm run validate:self-heal-e2e",
-    "npm run validate:build-determinism"
+    "npm run release:prepush:local"
   ]
 }

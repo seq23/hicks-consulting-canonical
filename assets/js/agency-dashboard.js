@@ -1,132 +1,256 @@
 (() => {
   'use strict';
+
   const gate = window.HicksAdminGate;
   let report = null;
   const $ = (id) => document.getElementById(id);
-  const escapeHtml = (value) => String(value ?? '').replace(/[&<>'"]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]));
+  const escapeHtml = (value) => String(value ?? '').replace(/[&<>'"]/g, (character) => ({
+    '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;'
+  }[character]));
   const pct = (value) => `${Math.round((Number(value) || 0) * 100)}%`;
   const num = (value) => new Intl.NumberFormat().format(Number(value) || 0);
   const date = (value) => value ? new Date(value).toLocaleString() : 'Not yet refreshed';
-  const statusClass = (status) => status === 'ok' ? 'good' : status === 'warning' ? 'warn' : 'neutral';
+
+  function normalizeStatus(value, fallback = 'NOT REPORTED') {
+    const raw = String(value || '').trim();
+    if (!raw) return fallback;
+    const key = raw.toLowerCase().replace(/[\s-]+/g, '_');
+    const labels = {
+      ok: 'HEALTHY',
+      healthy: 'HEALTHY',
+      connected: 'CONNECTED',
+      success: 'SUCCESS',
+      warning: 'ATTENTION',
+      not_connected: 'CONNECTION REQUIRED',
+      disconnected: 'CONNECTION REQUIRED',
+      integrated_unproven: 'CONNECTION REQUIRED',
+      not_run: 'NOT RUN',
+      unavailable: 'NOT AVAILABLE',
+      failed: 'FAILED',
+      error: 'ERROR',
+      paused: 'PAUSED',
+      full_safe_autonomy: 'FULL SAFE AUTONOMY'
+    };
+    return labels[key] || raw.replaceAll('_', ' ').toUpperCase();
+  }
+
+  function statusClass(value) {
+    const label = normalizeStatus(value);
+    if (/HEALTHY|CONNECTED|SUCCESS|FULL SAFE AUTONOMY|PASS/.test(label)) return 'good';
+    if (/FAILED|ERROR|ATTENTION|EMERGENCY/.test(label)) return 'warn';
+    return 'neutral';
+  }
+
   function renderScores() {
-    $('score-grid').innerHTML = report.scores.map((item) => `
+    const scores = Array.isArray(report?.scores) ? report.scores : [];
+    $('score-grid').innerHTML = scores.length ? scores.map((item) => `
       <article class="agency-score-card ${item.targetMet ? 'target-met' : 'target-missed'}">
         <div class="agency-score-top"><span class="agency-grade">${escapeHtml(item.grade)}</span><strong>${escapeHtml(item.label)}</strong></div>
-        <div class="agency-score-number">${item.score}<span>/100</span></div>
-        <div class="agency-progress"><span style="width:${item.score}%"></span></div>
+        <div class="agency-score-number">${num(item.score)}<span>/100</span></div>
+        <div class="agency-progress"><span style="width:${Number(item.score) || 0}%"></span></div>
         <p>${escapeHtml(item.summary)}</p>
-        <small>${item.targetMet ? 'B+ target met' : `Needs ${Math.max(0, item.target - item.score)} point(s) to reach B+`}</small>
-      </article>`).join('');
+        <small>${item.targetMet ? 'B+ target met' : `Needs ${Math.max(0, Number(item.target || 87) - Number(item.score || 0))} point(s) to reach B+`}</small>
+      </article>`).join('') : '<p class="muted">Scorecard has not been generated yet.</p>';
   }
+
+  function providerCopy(provider, item) {
+    if (String(item?.status || '').toLowerCase() === 'not_connected') {
+      return provider === 'gsc'
+        ? 'Connection required. Follow the Google Search Console steps below, add encrypted credentials, and run the connection workflow.'
+        : 'Connection required. Follow the Bing Webmaster Tools steps below, add the encrypted API key, and run the connection workflow.';
+    }
+    return item?.message || 'No provider message has been recorded yet.';
+  }
+
   function healthCard(provider, label) {
-    const item = report.health[provider] || {};
-    return `<div class="agency-health-row"><div><span class="agency-status ${statusClass(item.status)}">${escapeHtml(item.status || 'unknown')}</span><strong>${escapeHtml(label)}</strong><p>${escapeHtml(item.message || 'No status message.')}</p></div><small>Checked: ${escapeHtml(date(item.checkedAt))}</small></div>`;
+    const item = report?.health?.[provider] || {};
+    const display = normalizeStatus(item.status, provider === 'live' ? 'NOT RUN' : 'CONNECTION REQUIRED');
+    return `<div class="agency-health-row"><div><span class="agency-status ${statusClass(display)}">${escapeHtml(display)}</span><strong>${escapeHtml(label)}</strong><p>${escapeHtml(providerCopy(provider, item))}</p></div><small>Checked: ${escapeHtml(date(item.checkedAt))}</small></div>`;
   }
+
+  function updateConnectionPanel() {
+    const gsc = report?.health?.gsc || {};
+    const bing = report?.health?.bing || {};
+    const gscConnected = /connected|ok|healthy/i.test(String(gsc.status || ''));
+    const bingConnected = /connected|ok|healthy/i.test(String(bing.status || ''));
+    if ($('gsc-connection-status')) {
+      $('gsc-connection-status').textContent = gscConnected ? 'Connected' : 'Connection required';
+      $('gsc-connection-status').className = `agency-status ${gscConnected ? 'good' : 'neutral'}`;
+    }
+    if ($('gsc-connection-message')) $('gsc-connection-message').textContent = gscConnected
+      ? `Last successful refresh: ${date(gsc.checkedAt)}`
+      : 'Complete the setup steps below. The dashboard will not invent search performance while the provider is disconnected.';
+    if ($('bing-connection-status')) {
+      $('bing-connection-status').textContent = bingConnected ? 'Connected' : 'Connection required';
+      $('bing-connection-status').className = `agency-status ${bingConnected ? 'good' : 'neutral'}`;
+    }
+    if ($('bing-connection-message')) $('bing-connection-message').textContent = bingConnected
+      ? `Last successful refresh: ${date(bing.checkedAt)}`
+      : 'Complete the setup steps below. The dashboard will not invent search performance while the provider is disconnected.';
+  }
+
   function renderHealth() {
-    $('search-health').innerHTML = healthCard('gsc','Google Search Console') + healthCard('bing','Bing Webmaster Tools');
-    const live = report.health.live || {};
-    let checks = '';
-    if (Array.isArray(live.checks)) checks = `<div class="agency-live-checks">${live.checks.map((c) => `<div><span class="agency-dot ${c.ok ? 'good' : 'warn'}"></span><code>${escapeHtml(c.route)}</code><span>${escapeHtml(c.status || 'ERR')}</span><small>${escapeHtml(c.ms)}ms</small></div>`).join('')}</div>`;
-    $('live-health').innerHTML = healthCard('live','Monitored routes') + checks;
+    $('search-health').innerHTML = healthCard('gsc', 'Google Search Console') + healthCard('bing', 'Bing Webmaster Tools');
+    const live = report?.health?.live || {};
+    const checks = Array.isArray(live.checks) ? `<div class="agency-live-checks">${live.checks.map((check) => `<div><span class="agency-dot ${check.ok ? 'good' : 'warn'}"></span><code>${escapeHtml(check.route)}</code><span>${escapeHtml(check.status || 'NO RESPONSE')}</span><small>${escapeHtml(check.ms ?? '—')}ms</small></div>`).join('')}</div>` : '';
+    $('live-health').innerHTML = healthCard('live', 'Monitored routes') + checks;
+    updateConnectionPanel();
   }
+
   function renderPerformance() {
-    const g = report.health.gsc || {};
-    const m = g.metrics || {};
-    const delta = (a,b) => b ? `${(((a-b)/b)*100).toFixed(1)}%` : '—';
+    const gsc = report?.health?.gsc || {};
+    const metrics = gsc.metrics || {};
+    const delta = (current, previous) => previous ? `${(((current - previous) / previous) * 100).toFixed(1)}%` : '—';
     const cards = [
-      ['Google clicks',num(m.clicks),delta(m.clicks,m.previousClicks)],
-      ['Google impressions',num(m.impressions),delta(m.impressions,m.previousImpressions)],
-      ['Google CTR',pct(m.ctr),delta(m.ctr,m.previousCtr)],
-      ['Average position',m.position ? Number(m.position).toFixed(1) : '—',m.previousPosition ? `prior ${Number(m.previousPosition).toFixed(1)}` : '—']
+      ['Google clicks', num(metrics.clicks), delta(metrics.clicks, metrics.previousClicks)],
+      ['Google impressions', num(metrics.impressions), delta(metrics.impressions, metrics.previousImpressions)],
+      ['Google CTR', pct(metrics.ctr), delta(metrics.ctr, metrics.previousCtr)],
+      ['Average position', metrics.position ? Number(metrics.position).toFixed(1) : '—', metrics.previousPosition ? `prior ${Number(metrics.previousPosition).toFixed(1)}` : '—']
     ];
-    $('performance-metrics').innerHTML = cards.map(([l,v,d]) => `<div class="agency-metric"><span>${escapeHtml(l)}</span><strong>${escapeHtml(v)}</strong><small>${escapeHtml(d)}</small></div>`).join('');
-    const rows = [...(g.topQueries || []).slice(0,10).map((r) => ({label:`Query: ${(r.keys||[])[0]||''}`,...r})), ...(g.topPages || []).slice(0,10).map((r) => ({label:`Page: ${(r.keys||[])[0]||''}`,...r}))];
-    $('performance-table').innerHTML = rows.length ? rows.map((r) => `<tr><td>${escapeHtml(r.label)}</td><td>${num(r.clicks)}</td><td>${num(r.impressions)}</td><td>${pct(r.ctr)}</td><td>${Number(r.position||0).toFixed(1)}</td></tr>`).join('') : '<tr><td colspan="5" class="muted">Connect the GSC API workflow to populate query and page performance.</td></tr>';
+    $('performance-metrics').innerHTML = cards.map(([label, value, change]) => `<div class="agency-metric"><span>${escapeHtml(label)}</span><strong>${escapeHtml(value)}</strong><small>${escapeHtml(change)}</small></div>`).join('');
+    const rows = [
+      ...(gsc.topQueries || []).slice(0, 10).map((row) => ({ label: `Query: ${(row.keys || [])[0] || ''}`, ...row })),
+      ...(gsc.topPages || []).slice(0, 10).map((row) => ({ label: `Page: ${(row.keys || [])[0] || ''}`, ...row }))
+    ];
+    $('performance-table').innerHTML = rows.length
+      ? rows.map((row) => `<tr><td>${escapeHtml(row.label)}</td><td>${num(row.clicks)}</td><td>${num(row.impressions)}</td><td>${pct(row.ctr)}</td><td>${Number(row.position || 0).toFixed(1)}</td></tr>`).join('')
+      : '<tr><td colspan="5" class="muted">Connection required. Complete the GSC setup below to populate real query and page performance.</td></tr>';
   }
 
   function renderAutonomy() {
-    const autonomy = report.autonomy || {};
+    const autonomy = report?.autonomy || {};
     const state = autonomy.state || {};
     const velocity = autonomy.velocityContract || {};
     const cadence = velocity.editorialReleaseVelocity || {};
-    const stateLabel = state.emergencyStop ? 'EMERGENCY STOP' : state.paused ? 'PAUSED' : (state.runtimeMode || 'UNKNOWN');
-    $('autonomy-health').innerHTML = `<div class="agency-health-row"><div><span class="agency-status ${state.emergencyStop ? 'warn' : 'good'}">${escapeHtml(stateLabel)}</span><strong>${escapeHtml(state.lastCycleStatus || 'Not run')}</strong><p>Routine approval: off. Exceptions skip, record, and continue unless system integrity is at risk.</p></div></div><div class="agency-health-row"><div><strong>Immutable existing cadence</strong><p>${escapeHtml(Object.values(cadence).map((item) => item.description).join(' · ') || 'Velocity contract unavailable')}</p></div><small>${escapeHtml(velocity.authority || '')}</small></div>`;
+    const stateLabel = state.emergencyStop ? 'EMERGENCY STOP' : state.paused ? 'PAUSED' : normalizeStatus(state.runtimeMode, 'FULL SAFE AUTONOMY');
+    const lastCycle = state.lastCycleStatus ? normalizeStatus(state.lastCycleStatus, 'NOT RUN') : 'NOT RUN';
+    $('autonomy-health').innerHTML = `<div class="agency-health-row"><div><span class="agency-status ${statusClass(stateLabel)}">${escapeHtml(stateLabel)}</span><strong>${escapeHtml(lastCycle)}</strong><p>Routine approval is off. Exceptions skip, record, and continue unless system integrity is at risk.</p></div></div><div class="agency-health-row"><div><strong>Immutable existing cadence</strong><p>${escapeHtml(Object.values(cadence).map((item) => item.description).filter(Boolean).join(' · ') || 'Cadence contract not loaded')}</p></div><small>${escapeHtml(velocity.authority || 'Repo-defined cadence')}</small></div>`;
     const heal = autonomy.selfHeal || {};
-    $('self-heal-health').innerHTML = `<div class="agency-health-row"><div><span class="agency-status ${/fail|block/i.test(heal.status || '') ? 'warn' : 'neutral'}">${escapeHtml(heal.status || 'NOT_RUN')}</span><strong>Last run: ${escapeHtml(date(heal.lastRunAt))}</strong><p>${num((heal.repairs || []).length)} repair(s) · ${num((heal.skips || []).length)} skip(s). Accepted content changes only through scoped, validated, reversible revisions.</p></div></div>`;
+    const healStatus = normalizeStatus(heal.status, 'NOT RUN');
+    $('self-heal-health').innerHTML = `<div class="agency-health-row"><div><span class="agency-status ${statusClass(healStatus)}">${escapeHtml(healStatus)}</span><strong>Last run: ${escapeHtml(date(heal.lastRunAt))}</strong><p>${num((heal.repairs || []).length)} repair(s) · ${num((heal.skips || []).length)} skip(s). Accepted content changes only through scoped, validated, reversible revisions.</p></div></div>`;
   }
+
+  function healthBadge(status) {
+    const label = normalizeStatus(status, 'NOT REPORTED');
+    return `<span class="agency-status ${statusClass(label)}">${escapeHtml(label)}</span>`;
+  }
+
   function renderSearchIntelligence() {
-    const intel = report.searchIntelligence || {};
+    const intel = report?.searchIntelligence || {};
     const queries = intel.targetQueries?.queries || intel.targetQueries?.items || [];
-    const free = intel.freeWins || {};
+    const freeWins = intel.freeWins || {};
     const competitors = intel.competitors || {};
     $('target-query-table').innerHTML = queries.length ? queries.map((item) => `<tr><td><strong>${escapeHtml(item.query)}</strong></td><td><a href="${escapeHtml(item.primaryPage || item.route || '#')}">${escapeHtml(item.primaryPage || item.route || 'Unassigned')}</a></td><td>${escapeHtml(item.intent || item.cluster || '—')}</td><td>${item.metrics ? `${num(item.metrics.impressions)} impressions · position ${escapeHtml(item.metrics.position || '—')}` : '<span class="muted">Awaiting connected GSC/Bing evidence</span>'}</td></tr>`).join('') : '<tr><td colspan="4" class="muted">No governed target-query registry found.</td></tr>';
-    const wins = free.items || [];
-    $('free-win-panel').innerHTML = `<p>${healthBadge(free.providerState || 'DISCONNECTED')} Provider evidence</p>` + (wins.length ? `<ol class="agency-tip-list">${wins.slice(0,12).map((item) => `<li><strong>${escapeHtml(item.query || item.title || item.type || 'Opportunity')}</strong><br/><span class="muted small">${escapeHtml(item.recommendation || item.action || item.reason || '')}</span></li>`).join('')}</ol>` : '<p class="muted">No observed free wins yet. The dashboard will not relabel modeled opportunities as rankings.</p>');
+    const wins = freeWins.items || [];
+    $('free-win-panel').innerHTML = `<p>${healthBadge(freeWins.providerState || 'CONNECTION_REQUIRED')} Provider evidence</p>${wins.length ? `<ol class="agency-tip-list">${wins.slice(0, 12).map((item) => `<li><strong>${escapeHtml(item.query || item.title || item.type || 'Opportunity')}</strong><br/><span class="muted small">${escapeHtml(item.recommendation || item.action || item.reason || '')}</span></li>`).join('')}</ol>` : '<p class="muted">No observed free wins yet. Modeled opportunities are not labeled as rankings.</p>'}`;
     const observations = competitors.observations || [];
-    $('competitor-panel').innerHTML = `<p>${healthBadge(competitors.providerState || 'DISCONNECTED')} Observation provider</p>` + (observations.length ? `<ol class="agency-tip-list">${observations.slice(0,12).map((item) => `<li><strong>${escapeHtml(item.query || item.competitor || 'Observation')}</strong><br/><span class="muted small">${escapeHtml(item.gap || item.recommendation || item.summary || '')}</span></li>`).join('')}</ol>` : '<p class="muted">No live competitor observations yet. Provider activation is required before current SERP comparisons can run.</p>');
+    $('competitor-panel').innerHTML = `<p>${healthBadge(competitors.providerState || 'CONNECTION_REQUIRED')} Observation provider</p>${observations.length ? `<ol class="agency-tip-list">${observations.slice(0, 12).map((item) => `<li><strong>${escapeHtml(item.query || item.competitor || 'Observation')}</strong><br/><span class="muted small">${escapeHtml(item.gap || item.recommendation || item.summary || '')}</span></li>`).join('')}</ol>` : '<p class="muted">No live competitor observations yet. Connect the search provider before current SERP comparisons can run.</p>'}`;
   }
-  function healthBadge(status) { return `<span class="agency-status ${/connected|healthy|ok/i.test(status) ? 'good' : /disconnected|failed|error/i.test(status) ? 'warn' : 'neutral'}">${escapeHtml(status)}</span>`; }
+
   function renderTips() {
-    $('aeo-tips').innerHTML = (report.tips.aeo || []).map((t) => `<li>${escapeHtml(t)}</li>`).join('');
-    $('geo-tips').innerHTML = (report.tips.geo || []).map((t) => `<li>${escapeHtml(t)}</li>`).join('');
+    $('aeo-tips').innerHTML = (report?.tips?.aeo || []).map((tip) => `<li>${escapeHtml(tip)}</li>`).join('');
+    $('geo-tips').innerHTML = (report?.tips?.geo || []).map((tip) => `<li>${escapeHtml(tip)}</li>`).join('');
   }
+
   function filteredWarnings() {
     const severity = $('warning-severity').value;
     const query = $('warning-search').value.trim().toLowerCase();
-    return (report.priorities || []).filter((w) => (severity === 'all' || w.severity === severity) && (!query || `${w.route} ${w.message} ${w.tip} ${w.code}`.toLowerCase().includes(query)));
+    return (report?.priorities || []).filter((warning) => (severity === 'all' || warning.severity === severity) && (!query || `${warning.route} ${warning.message} ${warning.tip} ${warning.code}`.toLowerCase().includes(query)));
   }
+
   function renderWarnings() {
-    const c = report.warningCounts || {};
-    $('warning-summary').innerHTML = `<span class="agency-status warn">${num(c.high)} high</span><span class="agency-status neutral">${num(c.medium)} medium</span><span class="agency-status good">${num(c.low)} low</span>`;
+    const counts = report?.warningCounts || { high: 0, medium: 0, low: 0 };
+    $('warning-summary').innerHTML = `<span class="agency-status ${counts.high ? 'warn' : 'good'}">${num(counts.high)} high</span><span class="agency-status ${counts.medium ? 'neutral' : 'good'}">${num(counts.medium)} medium</span><span class="agency-status good">${num(counts.low)} low</span>`;
     const rows = filteredWarnings();
-    $('warning-table').innerHTML = rows.length ? rows.map((w) => `<tr><td><span class="agency-status ${w.severity === 'high' ? 'warn' : w.severity === 'medium' ? 'neutral' : 'good'}">${escapeHtml(w.severity)}</span></td><td><a href="${escapeHtml(w.route)}" target="_blank" rel="noopener noreferrer">${escapeHtml(w.route)}</a>${w.relatedRoute ? `<br/><small>Related: ${escapeHtml(w.relatedRoute)}</small>` : ''}</td><td><strong>${escapeHtml(w.code)}</strong><br/>${escapeHtml(w.message)}</td><td>${escapeHtml(w.tip)}</td></tr>`).join('') : '<tr><td colspan="4" class="muted">No findings match the current filters.</td></tr>';
+    $('warning-table').innerHTML = rows.length ? rows.map((warning) => `<tr><td><span class="agency-status ${warning.severity === 'high' ? 'warn' : warning.severity === 'medium' ? 'neutral' : 'good'}">${escapeHtml(warning.severity)}</span></td><td><a href="${escapeHtml(warning.route)}" target="_blank" rel="noopener noreferrer">${escapeHtml(warning.route)}</a>${warning.relatedRoute ? `<br/><small>Related: ${escapeHtml(warning.relatedRoute)}</small>` : ''}</td><td><strong>${escapeHtml(warning.code)}</strong><br/>${escapeHtml(warning.message)}</td><td>${escapeHtml(warning.tip)}</td></tr>`).join('') : '<tr><td colspan="4" class="muted">No findings match the current filters.</td></tr>';
   }
+
   function renderSimilarity() {
-    const live = (report.duplicatePairs?.live || []).map((x) => ({scope:'Live',...x}));
-    const forward = (report.duplicatePairs?.forward || []).map((x) => ({scope:'Forward',...x}));
-    const rows = [...live,...forward].sort((a,b) => b.similarity-a.similarity).slice(0,60);
-    $('similarity-table').innerHTML = rows.length ? rows.map((r) => `<tr><td>${escapeHtml(r.scope)}</td><td><a href="${escapeHtml(r.a)}">${escapeHtml(r.a)}</a></td><td><a href="${escapeHtml(r.b)}">${escapeHtml(r.b)}</a></td><td>${Math.round(r.similarity*100)}%</td></tr>`).join('') : '<tr><td colspan="4" class="muted">No high-similarity pairs crossed the advisory threshold.</td></tr>';
+    const live = (report?.duplicatePairs?.live || []).map((item) => ({ scope: 'Live', ...item }));
+    const forward = (report?.duplicatePairs?.forward || []).map((item) => ({ scope: 'Forward', ...item }));
+    const rows = [...live, ...forward].sort((left, right) => right.similarity - left.similarity).slice(0, 60);
+    $('similarity-table').innerHTML = rows.length ? rows.map((row) => `<tr><td>${escapeHtml(row.scope)}</td><td><a href="${escapeHtml(row.a)}">${escapeHtml(row.a)}</a></td><td><a href="${escapeHtml(row.b)}">${escapeHtml(row.b)}</a></td><td>${Math.round(row.similarity * 100)}%</td></tr>`).join('') : '<tr><td colspan="4" class="muted">No page pair crossed the similarity advisory threshold.</td></tr>';
   }
+
   function render() {
-    $('agency-policy').innerHTML = `<strong>Warning-only policy</strong><p>${escapeHtml(report.policy.message)}</p>`;
-    $('generated-at').textContent = `Report generated ${date(report.generatedAt)}`;
-    renderScores(); renderHealth(); renderPerformance(); renderAutonomy(); renderSearchIntelligence(); renderTips(); renderWarnings(); renderSimilarity();
+    $('agency-policy').innerHTML = `<strong>Warning-only policy</strong><p>${escapeHtml(report?.policy?.message || 'Findings inform improvement; the site remains the authority for what must work.')}</p>`;
+    $('generated-at').textContent = `Report generated ${date(report?.generatedAt)}`;
+    renderScores();
+    renderHealth();
+    renderPerformance();
+    renderAutonomy();
+    renderSearchIntelligence();
+    renderTips();
+    renderWarnings();
+    renderSimilarity();
   }
+
   async function load() {
     $('generated-at').textContent = 'Loading agency report…';
     try {
-      const res = await fetch(`/data/agency/dashboard.json?ts=${Date.now()}`, {cache:'no-store', credentials:'same-origin'});
-      if (!res.ok) throw new Error(`Dashboard report returned ${res.status}`);
-      report = await res.json(); render();
-    } catch (err) {
+      const response = await fetch(`/data/agency/dashboard.json?ts=${Date.now()}`, {
+        cache: 'no-store',
+        credentials: 'same-origin'
+      });
+      if (!response.ok) throw new Error(`Dashboard report returned ${response.status}`);
+      report = await response.json();
+      render();
+    } catch (error) {
       $('generated-at').textContent = 'Dashboard data unavailable';
-      $('agency-policy').innerHTML = `<strong>Report warning</strong><p>${escapeHtml(err.message)}</p>`;
+      $('agency-policy').innerHTML = `<strong>Report warning</strong><p>${escapeHtml(error.message)}</p>`;
     }
   }
+
   function showAgency() {
     $('agency-login-panel').hidden = true;
     $('agency-panel').hidden = false;
     load();
+    window.HicksAdminOperations?.loadStatus?.();
   }
+
   function showLogin(message = '') {
     $('agency-panel').hidden = true;
     $('agency-login-panel').hidden = false;
     $('agency-login-message').textContent = message;
   }
+
   async function unlockAgency(event) {
     event.preventDefault();
     $('agency-login-message').textContent = 'Checking password…';
     const ok = await gate.unlock($('agency-password').value);
-    if (!ok) { showLogin('Password did not match.'); return; }
+    if (!ok) {
+      showLogin('Password did not match.');
+      return;
+    }
     $('agency-password').value = '';
     $('agency-login-message').textContent = '';
     showAgency();
   }
-  function lockAgency() { gate.lock(); showLogin(''); }
+
+  function lockAgency() {
+    gate.lock();
+    showLogin('');
+  }
+
+  async function runSearchConnectionWorkflow() {
+    const receipt = $('search-connection-receipt');
+    if (!window.HicksAdminOperations?.runAction) {
+      receipt.innerHTML = '<strong>Connection workflow unavailable</strong><p class="muted small">Open /admin and complete the optional GitHub connection steps, then reload this page.</p>';
+      return;
+    }
+    const result = await window.HicksAdminOperations.runAction('refresh-search', receipt);
+    if (result?.ok) {
+      receipt.insertAdjacentHTML('beforeend', '<p class="muted small">The workflow was dispatched. Refresh this dashboard after GitHub Actions completes to see the provider result.</p>');
+    }
+  }
+
   $('warning-severity')?.addEventListener('change', renderWarnings);
   $('warning-search')?.addEventListener('input', renderWarnings);
   $('refresh-dashboard')?.addEventListener('click', load);
+  $('test-search-connections')?.addEventListener('click', runSearchConnectionWorkflow);
   $('agency-login-form')?.addEventListener('submit', unlockAgency);
   $('agency-lock-button')?.addEventListener('click', lockAgency);
-  if (gate?.isUnlocked()) showAgency(); else showLogin('');
+
+  if (gate?.isUnlocked()) showAgency();
+  else showLogin('');
 })();

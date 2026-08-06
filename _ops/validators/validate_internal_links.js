@@ -14,7 +14,11 @@ const allowedExternalPrefixes = [
   'https://www.apa.org/',
   'https://www.nimh.nih.gov/',
   'https://www.cdc.gov/',
-  'https://www.samhsa.gov/'
+  'https://www.samhsa.gov/',
+  'https://github.com/',
+  'https://dash.cloudflare.com/',
+  'https://search.google.com/',
+  'https://www.bing.com/webmasters/'
 ];
 for(const file of walk(path.join(process.cwd(),'pages'))){
   const html=fs.readFileSync(file,'utf8');

@@ -18,9 +18,9 @@
   },
   "admin": {
     "path": "/admin/",
-    "passwordHint": "Configured for launch gate; rotate before production hardening.",
-    "auth": "server_side_session",
-    "controlRoom": true
+    "passwordHint": "Shared convenience gate for /admin, /agency, and /admin/digitalproducts; password is blackgirlmagic.",
+    "auth": "shared_client_side_sha256",
+    "controlRoom": "optional_alternative_panel"
   },
   "repo": {
     "owner": "seq23",

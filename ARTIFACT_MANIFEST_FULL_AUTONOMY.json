@@ -1,13 +1,13 @@
 {
   "schemaVersion": "2.0.0",
-  "artifact": "hicks-consulting-canonical full safe autonomy baseline",
+  "artifact": "hicks-consulting-canonical full safe autonomy + admin/agency reconciliation baseline",
   "baseZip": "hicks-consulting-canonical-main.zip",
   "root": "hicks-consulting-canonical-main",
   "mode": "full baseline snapshot",
   "runtimeMode": "FULL_SAFE_AUTONOMY",
   "publishingVelocityAuthority": "IMMUTABLE_EXISTING_CLIENT_SYSTEM",
   "baselineEditorialRecords": 227,
-  "changedPathCount": 92,
+  "changedPathCount": 95,
   "changedPaths": [
     ".dev.vars.example",
     ".github/workflows/agency-seo-monitor.yml",
@@ -17,11 +17,11 @@
     ".github/workflows/editorial-continuity.yml",
     ".github/workflows/indexnow-submit.yml",
     ".github/workflows/social-ingestion.yml",
-    "ARTIFACT_AUTH_CORRECTION.md",
+    "ARTIFACT_ADMIN_AGENCY_RECONCILIATION.md",
     "ARTIFACT_MANIFEST.txt",
     "ARTIFACT_MANIFEST_FULL_AUTONOMY.json",
     "ARTIFACT_SCOPE.md",
-    "HICKS_AUTH_CORRECTION_HANDOFF.json",
+    "HICKS_ADMIN_AGENCY_RECONCILIATION_HANDOFF.json",
     "README.md",
     "REPO_IDENTITY.md",
     "_artifact_validation_manifest.json",
@@ -30,6 +30,7 @@
     "_ops/validators/validate_admin_preview_links.js",
     "_ops/validators/validate_content_brief_candidates.js",
     "_ops/validators/validate_entity_coverage.js",
+    "_ops/validators/validate_internal_links.js",
     "_ops/validators/validate_product_api_behavior.js",
     "_ops/validators/validate_product_upload_contract.js",
     "_ops/validators/validate_social_firehose_contract.js",
@@ -37,6 +38,7 @@
     "_repo_validation_registry.json",
     "assets/css/styles.css",
     "assets/js/admin-digital-products.js",
+    "assets/js/admin-operations.js",
     "assets/js/admin.js",
     "assets/js/agency-dashboard.js",
     "assets/js/shared-admin-gate.js",
@@ -74,6 +76,7 @@
     "llms.txt",
     "package.json",
     "pages/about/index.html",
+    "pages/admin/digitalproducts/index.html",
     "pages/admin/index.html",
     "pages/agency/index.html",
     "pages/anxiety-therapist-memphis",
@@ -112,11 +115,11 @@
     "authoritativeSourceMutationsByValidation": 0,
     "localPrepush": "PASSED",
     "nonBlockingFindings": [
-      "content quality score 79",
-      "GSC and Bing unavailable until credentials are connected"
+      "GSC and Bing measurement unavailable until credentials are connected",
+      "Five existing resources below advisory word-count ranges"
     ]
   },
-  "generatedAt": "2026-08-06T23:11:35Z",
+  "generatedAt": "2026-08-07T00:35:00Z",
   "accessCorrection": {
     "approvedPassword": "blackgirlmagic",
     "gateMode": "shared_lightweight_client_side_sha256",
@@ -186,5 +189,15 @@
       "worker/admin_runtime.mjs",
       "wrangler.toml"
     ]
+  },
+  "agencyReconciliation": {
+    "admin": "original client-facing experience restored as primary",
+    "digitalProducts": "original manager preserved and validated",
+    "highFindings": 0,
+    "mediumFindings": 0,
+    "similarityPairs": 0,
+    "liveContentQuality": 92,
+    "gscBing": "connection instructions, provider buttons, and connection test present",
+    "unknownStatuses": 0
   }
 }

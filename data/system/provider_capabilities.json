@@ -26,7 +26,9 @@
         "GSC_SERVICE_ACCOUNT_EMAIL",
         "GSC_PRIVATE_KEY"
       ],
-      "fallback": "display_disconnected"
+      "fallback": "display_disconnected",
+      "setupPath": "/agency/#search-connection-panel",
+      "displayState": "CONNECTION_REQUIRED"
     },
     "bing": {
       "state": "INTEGRATED_UNPROVEN",
@@ -34,7 +36,9 @@
         "BING_SITE_URL",
         "BING_WEBMASTER_API_KEY"
       ],
-      "fallback": "display_disconnected"
+      "fallback": "display_disconnected",
+      "setupPath": "/agency/#search-connection-panel",
+      "displayState": "CONNECTION_REQUIRED"
     },
     "competitorSearch": {
       "state": "INTEGRATED_UNPROVEN",
@@ -50,7 +54,9 @@
         "GITHUB_ADMIN_TOKEN",
         "GITHUB_REPOSITORY"
       ],
-      "fallback": "read_only_admin"
+      "fallback": "read_only_admin",
+      "setupPath": "/admin/#optional-operations-panel",
+      "displayState": "CONNECTION_REQUIRED"
     },
     "adminGate": {
       "state": "STRUCTURAL",

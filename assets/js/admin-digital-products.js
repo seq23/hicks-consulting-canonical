@@ -46,15 +46,45 @@ function wireMobileNav() {
   nav.querySelectorAll('a, button').forEach((item) => item.addEventListener('click', () => setNavState(false)));
 }
 
-const gate = window.HicksAdminGate;
+const HicksAdminGate = window.HicksAdminGate;
+const ADMIN_PASSWORD_HASH = 'c7ef3319e6cf6aab9035156df95f18dfec2ba2178f733940eda688758805708b';
+const SESSION_KEY = 'hc_admin_unlocked';
+const ADMIN_AUTH_HASH_KEY = 'hc_admin_password_hash_v1';
+let PRODUCTS = [];
 
-function adminAuthHeaders(extra = {}) { return gate.authHeaders(extra); }
+async function sha256(value) {
+  const bytes = new TextEncoder().encode(value);
+  const digest = await crypto.subtle.digest('SHA-256', bytes);
+  return Array.from(new Uint8Array(digest)).map(b => b.toString(16).padStart(2, '0')).join('');
+}
 
-async function adminApi(path, options = {}) {
-  const response = await fetch(path, { cache: 'no-store', ...options, headers: adminAuthHeaders(options.headers || {}) });
-  const body = await response.json().catch(() => ({}));
-  if (!response.ok) throw new Error(body.error || `Admin request failed (${response.status})`);
-  return body;
+function getAdminAuthHash() {
+  try {
+    return localStorage.getItem(ADMIN_AUTH_HASH_KEY) || sessionStorage.getItem(ADMIN_AUTH_HASH_KEY) || '';
+  } catch (error) {
+    return '';
+  }
+}
+
+function setAdminAuthHash(hash) {
+  try {
+    localStorage.setItem(ADMIN_AUTH_HASH_KEY, hash);
+  } catch (error) {
+    try { sessionStorage.setItem(ADMIN_AUTH_HASH_KEY, hash); } catch (innerError) {}
+  }
+}
+
+function clearAdminAuthHash() {
+  try { localStorage.removeItem(ADMIN_AUTH_HASH_KEY); } catch (error) {}
+  try { sessionStorage.removeItem(ADMIN_AUTH_HASH_KEY); } catch (error) {}
+}
+
+function adminAuthHeaders(extra = {}) {
+  const hash = getAdminAuthHash();
+  return {
+    ...extra,
+    ...(hash ? { 'x-admin-password-hash': hash } : {})
+  };
 }
 
 function escapeHtml(value) {
@@ -90,7 +120,7 @@ function confirmStatusChange(item, action) {
 }
 
 async function fetchJson(url) {
-  const res = await fetch(url, { cache: 'no-store', credentials: 'same-origin' }).catch(() => null);
+  const res = await fetch(url, { cache: 'no-store' }).catch(() => null);
   if (!res || !res.ok) return null;
   return res.json().catch(() => null);
 }
@@ -256,17 +286,23 @@ async function renderAdmin() {
 }
 
 async function unlockAdmin() {
-  const message = document.getElementById('login-message');
-  message.textContent = 'Checking password…';
-  const ok = await gate.unlock(document.getElementById('admin-password').value);
-  if (!ok) { message.textContent = 'Password did not match.'; return; }
-  document.getElementById('admin-password').value = '';
-  message.textContent = '';
+  const password = document.getElementById('admin-password').value.trim();
+  const sharedOk = HicksAdminGate ? await HicksAdminGate.unlock(password) : false;
+  const hash = sharedOk ? ADMIN_PASSWORD_HASH : await sha256(password);
+  if (hash !== ADMIN_PASSWORD_HASH) {
+    document.getElementById('login-message').textContent = 'Password did not match.';
+    return;
+  }
+  sessionStorage.setItem(SESSION_KEY, 'true');
+  setAdminAuthHash(hash);
+  document.getElementById('login-message').textContent = '';
   await renderAdmin();
 }
 
 function lockAdmin() {
-  gate.lock();
+  sessionStorage.removeItem(SESSION_KEY);
+  clearAdminAuthHash();
+  HicksAdminGate?.lock?.();
   document.getElementById('admin-panel').hidden = true;
   document.getElementById('login-panel').hidden = false;
   document.getElementById('admin-password').value = '';
@@ -278,9 +314,12 @@ window.lockAdmin = lockAdmin;
 document.addEventListener('DOMContentLoaded', async () => {
   wireMobileNav();
   wireThemeToggle();
-  if (gate?.isUnlocked()) await renderAdmin();
-  else {
-    document.getElementById('login-panel').hidden = false;
-    document.getElementById('admin-panel').hidden = true;
+  const storedHash = getAdminAuthHash();
+  if (storedHash === ADMIN_PASSWORD_HASH || HicksAdminGate?.isUnlocked?.()) {
+    sessionStorage.setItem(SESSION_KEY, 'true');
+    await renderAdmin();
+  } else {
+    sessionStorage.removeItem(SESSION_KEY);
+    clearAdminAuthHash();
   }
 });

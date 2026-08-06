@@ -13,6 +13,6 @@ const allowed=new Set(['DISCOVERED','SCORED','ADMITTED','DRAFTING','DRAFTED','VA
 for(const item of queue.items||[]){ const s=item.state||item.autonomyStatus||item.status; if(!allowed.has(s))errors.push(`invalid-state:${item.id}:${s}`); if(item.routineApprovalRequired!==false||item.publicOnlyAfterApproval!==false)errors.push(`approval-gate:${item.id}`); }
 for(const file of ['scripts/autonomy/run_cycle.mjs','scripts/publishing/run_safe_publish.mjs','scripts/autonomy/run_post_publish_email.mjs','.github/workflows/autonomy-cycle.yml','.github/workflows/autonomy-self-heal.yml']) if(!fs.existsSync(file))errors.push(`missing:${file}`);
 const admin=fs.readFileSync('pages/admin/index.html','utf8');
-if(!/Routine approval is not required/i.test(admin)||!/Full Safe Autonomy/i.test(admin))errors.push('admin-does-not-reflect-runtime');
+if(!/Routine client approval is not required/i.test(admin)||!/full safe autonomy/i.test(admin)||!/optional-operations-panel/i.test(admin)||!/generated-content-panel/i.test(admin))errors.push('admin-does-not-reflect-runtime');
 if(errors.length)fail(errors);
 console.log(`Full Safe Autonomy contract OK (${(queue.items||[]).length} migrated candidates; approval gate removed; protected-fact and skip-record-continue boundaries present).`);
