@@ -2,16 +2,17 @@
   "max_items_per_source_per_run": 25,
   "max_clusters_per_run": 10,
   "max_pages_generated_per_run": 5,
-  "max_pages_published_per_day": 0,
+  "max_pages_published_per_day": "GOVERNED_BY_EXISTING_VELOCITY_CONTRACT",
   "require_cluster_score_minimum": true,
   "dedupe_before_publish": true,
-  "publish_mode": "queued",
+  "publish_mode": "full_safe_autonomy",
   "crawler_discovery": "llmOnlyRoutes",
-  "user_nav_exposure": "forbidden",
+  "user_nav_exposure": "contextual_only_for_admitted_public_pages",
   "throttle": {
     "delayMs": 500,
     "maxRetries": 1,
     "timeoutMs": 5000,
     "maxRuntimeMs": 30000
-  }
+  },
+  "routine_approval_required": false
 }

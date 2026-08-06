@@ -1,7 +1,7 @@
 import { jsonResponse, readCatalog, requireAdmin, validateProductForPublication, writeCatalog } from './_shared.js';
 
 export async function onRequestPost({ request, env }) {
-  const auth = requireAdmin(request, env);
+  const auth = await requireAdmin(request, env);
   if (!auth.ok) return auth.response;
   const incoming = await request.json().catch(() => ({}));
   const id = String(incoming.id || '').trim();

@@ -40,11 +40,11 @@ async function refreshGsc() {
     const endpoint = `https://www.googleapis.com/webmasters/v3/sites/${encodeURIComponent(siteUrl)}/searchAnalytics/query`;
     const query = async (startDate,endDate,dimensions,rowLimit=25) => fetchJson(endpoint,{method:'POST',headers:{authorization:`Bearer ${token}`,'content-type':'application/json'},body:JSON.stringify({startDate,endDate,dimensions,rowLimit,type:'web',dataState:'final'})});
     const currentStart=shiftDays(-30), currentEnd=shiftDays(-3), previousStart=shiftDays(-58), previousEnd=shiftDays(-31);
-    const [summary, previous, topQueries, topPages, byDate] = await Promise.all([
-      query(currentStart,currentEnd,[]), query(previousStart,previousEnd,[]), query(currentStart,currentEnd,['query'],20), query(currentStart,currentEnd,['page'],20), query(currentStart,currentEnd,['date'],60)
+    const [summary, previous, topQueries, topPages, byDate, queryPage] = await Promise.all([
+      query(currentStart,currentEnd,[]), query(previousStart,previousEnd,[]), query(currentStart,currentEnd,['query'],50), query(currentStart,currentEnd,['page'],50), query(currentStart,currentEnd,['date'],60), query(currentStart,currentEnd,['query','page'],1000)
     ]);
     const cur=(summary.rows||[{}])[0], prev=(previous.rows||[{}])[0];
-    write('gsc',{provider:'gsc',status:'ok',checkedAt:now.toISOString(),siteUrl,dateRange:{currentStart,currentEnd,previousStart,previousEnd},metrics:{clicks:cur.clicks||0,impressions:cur.impressions||0,ctr:cur.ctr||0,position:cur.position||0,previousClicks:prev.clicks||0,previousImpressions:prev.impressions||0,previousCtr:prev.ctr||0,previousPosition:prev.position||0},topQueries:topQueries.rows||[],topPages:topPages.rows||[],daily:byDate.rows||[],message:'Search Console API connected and refreshed.'});
+    write('gsc',{provider:'gsc',status:'ok',checkedAt:now.toISOString(),siteUrl,dateRange:{currentStart,currentEnd,previousStart,previousEnd},metrics:{clicks:cur.clicks||0,impressions:cur.impressions||0,ctr:cur.ctr||0,position:cur.position||0,previousClicks:prev.clicks||0,previousImpressions:prev.impressions||0,previousCtr:prev.ctr||0,previousPosition:prev.position||0},topQueries:topQueries.rows||[],topPages:topPages.rows||[],queryPage:queryPage.rows||[],daily:byDate.rows||[],message:'Search Console API connected and refreshed.'});
   } catch (err) { write('gsc',{provider:'gsc',status:'warning',checkedAt:now.toISOString(),message:err.message}); }
 }
 async function bingCall(method, params={}) {
@@ -67,7 +67,7 @@ async function refreshBing() {
   } catch (err) { write('bing',{provider:'bing',status:'warning',checkedAt:now.toISOString(),siteUrl,message:err.message}); }
 }
 async function refreshLive() {
-  const routes=['/','/therapy/','/coaching/','/groups/','/corporate-speaking/','/about/','/resources/','/sitemap.xml','/robots.txt','/agency/'];
+  const routes=['/','/therapy/','/black-therapist-memphis/','/anxiety-therapist-memphis/','/coaching/','/groups/','/corporate-speaking/','/about/','/resources/','/sitemap.xml','/robots.txt','/agency/'];
   const checks=[];
   for(const route of routes){
     const started=Date.now();

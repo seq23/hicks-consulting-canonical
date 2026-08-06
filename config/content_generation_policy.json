@@ -1,15 +1,39 @@
 {
-  "publishMode": "approval_queue_only",
+  "publishMode": "full_safe_autonomy",
   "humanizedByLlmRequired": true,
   "prewriteSelfRepairRequired": true,
   "defaultFlexMargin": 0.2,
   "contentTypes": {
-    "insight": { "targetWords": 900, "minimumWords": 720, "approvalRequired": true },
-    "article": { "targetWords": 1200, "minimumWords": 960, "approvalRequired": true },
-    "guide": { "targetWords": 1400, "minimumWords": 1120, "approvalRequired": true },
-    "whitepaper": { "targetWords": 2500, "minimumWords": 2000, "approvalRequired": true },
-    "faq": { "targetWords": 700, "minimumWords": 560, "approvalRequired": true },
-    "fanout": { "targetWords": 900, "minimumWords": 720, "approvalRequired": true }
+    "insight": {
+      "targetWords": 900,
+      "minimumWords": 720,
+      "approvalRequired": false
+    },
+    "article": {
+      "targetWords": 1200,
+      "minimumWords": 960,
+      "approvalRequired": false
+    },
+    "guide": {
+      "targetWords": 1400,
+      "minimumWords": 1120,
+      "approvalRequired": false
+    },
+    "whitepaper": {
+      "targetWords": 2500,
+      "minimumWords": 2000,
+      "approvalRequired": false
+    },
+    "faq": {
+      "targetWords": 700,
+      "minimumWords": 560,
+      "approvalRequired": false
+    },
+    "fanout": {
+      "targetWords": 900,
+      "minimumWords": 720,
+      "approvalRequired": false
+    }
   },
   "humanizationChecklist": [
     "Use plain human language rather than generic therapy marketing copy.",
@@ -20,7 +44,50 @@
     "End with an approved conversion path only after value is delivered."
   ],
   "prewriteGate": {
-    "requiredFields": ["id", "clusterId", "contentType", "title", "targetWords", "minimumWords", "approvalStatus", "llmPrompt", "humanizationChecklist", "conversionPath"],
-    "allowedApprovalStatuses": ["queued_for_owner_approval", "needs_revision", "approved_for_drafting"]
-  }
+    "requiredFields": [
+      "id",
+      "clusterId",
+      "contentType",
+      "title",
+      "targetWords",
+      "minimumWords",
+      "autonomyStatus",
+      "llmPrompt",
+      "humanizationChecklist",
+      "conversionPath"
+    ],
+    "allowedAutonomyStatuses": [
+      "DISCOVERED",
+      "SCORED",
+      "ADMITTED",
+      "DRAFTING",
+      "DRAFTED",
+      "VALIDATING",
+      "REPAIRING",
+      "VALIDATED_SAFE",
+      "SCHEDULED",
+      "PUBLISHED",
+      "DISTRIBUTED",
+      "MEASURED",
+      "SKIPPED_DUPLICATE",
+      "SKIPPED_UNSUPPORTED_CLAIM",
+      "SKIPPED_PROTECTED_OWNER",
+      "SKIPPED_PROHIBITED_ACTION",
+      "FAILED_RETRYABLE",
+      "SYSTEM_BLOCKED"
+    ]
+  },
+  "postPublicationNotificationRequired": true,
+  "routineApprovalRequired": false,
+  "protectedFacts": [
+    "credentials",
+    "physical office location",
+    "fees",
+    "insurance participation",
+    "availability",
+    "testimonials",
+    "personal stories",
+    "clinical outcomes",
+    "unapproved treatment methods"
+  ]
 }

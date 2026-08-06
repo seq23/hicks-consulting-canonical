@@ -2,7 +2,7 @@
   "siteName": "Hicks Consulting",
   "canonicalDomain": "https://www.hicksconsulting.org",
   "therapyState": "Tennessee",
-  "publishingMode": "hybrid",
+  "publishingMode": "full_safe_autonomy",
   "audience": "Black women as a specialty, with services available to clients of all ethnicities and organizations through therapy, coaching, groups, consulting, and training",
   "brandDirection": "grounded, elevated, feminine, polished, restorative",
   "forms": {
@@ -18,7 +18,9 @@
   },
   "admin": {
     "path": "/admin/",
-    "passwordHint": "Configured for launch gate; rotate before production hardening."
+    "passwordHint": "Configured for launch gate; rotate before production hardening.",
+    "auth": "server_side_session",
+    "controlRoom": true
   },
   "repo": {
     "owner": "seq23",
@@ -44,5 +46,11 @@
     "metadata": "Cloudflare KV via DIGITAL_PRODUCTS_KV binding",
     "premiumFulfillment": "Gumroad",
     "placeholderGumroadUrl": "https://www.gumroad.com"
+  },
+  "runtimeMode": "FULL_SAFE_AUTONOMY",
+  "serviceArea": {
+    "therapy": "Tennessee, including Memphis, via virtual care",
+    "coaching": "Virtual; non-clinical",
+    "organizations": "Memphis area and other approved locations"
   }
 }

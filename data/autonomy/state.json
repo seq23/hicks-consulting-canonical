@@ -1,0 +1,19 @@
+{
+  "schemaVersion": "1.0.0",
+  "runtimeMode": "FULL_SAFE_AUTONOMY",
+  "paused": false,
+  "emergencyStop": false,
+  "lastCycleAt": null,
+  "lastCycleStatus": "NOT_RUN",
+  "currentPhase": "IDLE",
+  "counts": {
+    "discovered": 0,
+    "admitted": 0,
+    "drafted": 0,
+    "scheduled": 0,
+    "published": 0,
+    "skipped": 0,
+    "failed": 0
+  },
+  "velocityContract": "data/system/publishing_velocity_contract.json"
+}

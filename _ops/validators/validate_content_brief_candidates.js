@@ -12,7 +12,7 @@ for (const c of candidates) {
   const typePolicy = policy.contentTypes?.[c.contentType];
   if (!typePolicy) warn(`${c.id || 'unknown'} has unknown contentType ${c.contentType}`);
   if (!c.llmGeneratedRequired) warn(`${c.id} must be marked llmGeneratedRequired.`);
-  if (!c.publicOnlyAfterApproval) warn(`${c.id} must remain private until approval.`);
+  if (c.publicOnlyAfterApproval !== false || c.routineApprovalRequired !== false) warn(`${c.id} must use Full Safe Autonomy without routine approval.`);
   if (typeof c.minimumWords !== 'number' || typeof c.targetWords !== 'number') warn(`${c.id} missing numeric word targets.`);
   if (typePolicy && c.minimumWords < typePolicy.minimumWords) warn(`${c.id} minimumWords below approved 20% flex floor.`);
   if (!Array.isArray(c.humanizationChecklist) || c.humanizationChecklist.length < 4) warn(`${c.id} missing humanization checklist.`);

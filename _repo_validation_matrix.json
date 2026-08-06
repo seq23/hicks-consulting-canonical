@@ -54,7 +54,17 @@
         "protected-editorial-core",
         "improvement-recommendations",
         "authority-distribution",
-        "editorial-continuity"
+        "editorial-continuity",
+        "site-intent-preservation",
+        "memphis-search-surfaces",
+        "velocity-immutability",
+        "autonomy-contract",
+        "safe-harbor-behavior",
+        "admin-security-behavior",
+        "notification-freeze-behavior",
+        "build-determinism",
+        "autonomy-cycle-e2e",
+        "self-heal-e2e"
       ]
     },
     "ingestion": {
@@ -111,6 +121,69 @@
         "authority-distribution",
         "editorial-continuity"
       ]
+    },
+    "deep-autonomy": {
+      "description": "Site-driven deep validation: every canonical local check plus isolated behavioral proof for autonomy, security, cadence, Memphis search surfaces, notification, rollback, and deterministic builds.",
+      "checks": [
+        "validation-registry",
+        "orchestrator-contract",
+        "preflight",
+        "publisher-contract",
+        "canonical-url",
+        "seo-metadata",
+        "agency-infrastructure",
+        "agency-quality",
+        "lead-magnet",
+        "form-database",
+        "crawl-contract",
+        "sitemap-parity",
+        "internal-links",
+        "hidden-llm-surfaces",
+        "llm-ingestion-routes",
+        "query-traceability",
+        "above-fold",
+        "entity-coverage",
+        "conversion-contract",
+        "training-inquiry",
+        "source-health",
+        "ingestion-freshness",
+        "query-signal-schema",
+        "query-clusters",
+        "fanout-candidates",
+        "social-firehose",
+        "throttle-contract",
+        "content-briefs",
+        "publish-state",
+        "policy-compliance",
+        "content-plan",
+        "recent-resources",
+        "word-counts",
+        "admin-previews",
+        "admin-generated-queue",
+        "workflow-contracts",
+        "indexnow",
+        "digital-products-contract",
+        "product-routes",
+        "product-upload-contract",
+        "product-cover-contract",
+        "product-api-behavior",
+        "authority-fanout",
+        "kpi-truth",
+        "protected-editorial-core",
+        "improvement-recommendations",
+        "authority-distribution",
+        "editorial-continuity",
+        "site-intent-preservation",
+        "memphis-search-surfaces",
+        "velocity-immutability",
+        "autonomy-contract",
+        "safe-harbor-behavior",
+        "admin-security-behavior",
+        "notification-freeze-behavior",
+        "build-determinism",
+        "autonomy-cycle-e2e",
+        "self-heal-e2e"
+      ]
     }
   },
   "compositeScripts": {
@@ -120,6 +193,7 @@
     "validate:profile:indexnow": "indexnow",
     "validate:profile:agency": "agency",
     "validate:profile:digital-products": "digital-products",
-    "validate:authority-modernization": "authority-modernization"
+    "validate:authority-modernization": "authority-modernization",
+    "validate:deep": "deep-autonomy"
   }
 }

@@ -1,5 +1,5 @@
+import { handleAdminRequest, verifyAdminPasswordHash } from './admin_runtime.mjs';
 const LEAD_MAGNET_DOWNLOAD_PATH = '/assets/downloads/stress-management-made-simple.pdf';
-const DIGITAL_PRODUCTS_ADMIN_HASH = 'c7ef3319e6cf6aab9035156df95f18dfec2ba2178f733940eda688758805708b';
 
 const FORM_DATABASE_FORMS = {
   training: { route: '/api/training-inquiry', sourcePage: '/organizational-training-inquiry/', fields: ['firstName', 'lastName', 'company', 'email', 'services', 'eventDate', 'honorarium', 'referral', 'eventDetails'], required: ['firstName', 'lastName', 'company', 'email', 'services', 'eventDate', 'honorarium', 'eventDetails'] },
@@ -97,11 +97,8 @@ const DIGITAL_PRODUCTS_ALLOWED_TYPES = new Set(['free', 'premium']);
 const DIGITAL_PRODUCTS_ALLOWED_STATUSES = new Set(['draft', 'ready_for_approval', 'published', 'revoked']);
 function slugifyProduct(value) { return clean(value).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '').slice(0, 90); }
 
-function requireDigitalProductsAdmin(request, env) {
-  const expectedHash = clean(env.DIGITAL_PRODUCTS_ADMIN_HASH || env.ADMIN_HASH || DIGITAL_PRODUCTS_ADMIN_HASH);
-  const actualHash = clean(request.headers.get('x-admin-password-hash') || '');
-  if (!expectedHash) return { ok: false, response: jsonResponse({ ok: false, error: 'Digital products admin auth is not configured.' }, 503) };
-  if (!actualHash || actualHash !== expectedHash) return { ok: false, response: jsonResponse({ ok: false, error: 'Admin password did not match.' }, 401) };
+async function requireDigitalProductsAdmin(request, env) {
+  if (!verifyAdminPasswordHash(request)) return { ok: false, response: jsonResponse({ ok: false, error: 'Admin password did not match.' }, 401) };
   return { ok: true };
 }
 
@@ -183,7 +180,7 @@ function upsertDigitalProduct(catalog, product) {
   return { ...catalog, updatedAt: new Date().toISOString(), products };
 }
 async function handleDigitalProductUpdate(request, env) {
-  const auth = requireDigitalProductsAdmin(request, env);
+  const auth = await requireDigitalProductsAdmin(request, env);
   if (!auth.ok) return auth.response;
   try {
     const product = await digitalProductFromForm(request, env);
@@ -197,7 +194,7 @@ async function handleDigitalProductUpdate(request, env) {
   } catch (error) { return jsonResponse({ ok: false, error: error && error.message ? error.message : 'Digital product update failed.' }, 400); }
 }
 async function handleDigitalProductPublish(request, env) {
-  const auth = requireDigitalProductsAdmin(request, env);
+  const auth = await requireDigitalProductsAdmin(request, env);
   if (!auth.ok) return auth.response;
   const incoming = await request.json().catch(() => ({}));
   const id = clean(incoming.id);
@@ -214,7 +211,7 @@ async function handleDigitalProductPublish(request, env) {
   return jsonResponse({ ok: true, products });
 }
 async function handleDigitalProductRevoke(request, env) {
-  const auth = requireDigitalProductsAdmin(request, env);
+  const auth = await requireDigitalProductsAdmin(request, env);
   if (!auth.ok) return auth.response;
   const incoming = await request.json().catch(() => ({}));
   const id = clean(incoming.id);
@@ -258,12 +255,14 @@ export default {
   async fetch(request, env, ctx) {
     try {
       const url = new URL(request.url);
+      const adminResponse = await handleAdminRequest(request, env, url);
+      if (adminResponse) return adminResponse;
       const entry = Object.entries(FORM_DATABASE_FORMS).find(([, form]) => form.route === url.pathname);
       if (entry) return await handleFormDatabaseSubmission(request, env, entry[0]);
       const digitalProductsResponse = await handleDigitalProductsRequest(request, env, url);
       if (digitalProductsResponse) return digitalProductsResponse;
       if (env.ASSETS && typeof env.ASSETS.fetch === 'function') return env.ASSETS.fetch(request);
       return jsonResponse({ ok: false, error: 'Static asset binding is not available.' }, 500);
-    } catch (error) { return jsonResponse({ ok: false, error: 'Worker runtime error.', message: error && error.message ? String(error.message).slice(0, 240) : 'Unknown runtime error.' }, 500); }
+    } catch (error) { console.error('WORKER_RUNTIME_ERROR', error); return jsonResponse({ ok: false, error: 'Worker runtime error.' }, 500); }
   }
 };

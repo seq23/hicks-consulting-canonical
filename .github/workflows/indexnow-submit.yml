@@ -44,15 +44,22 @@ jobs:
         run: |
           npm run validate:profile:indexnow
           npm run validate:authority-modernization
-      - name: Commit durable distribution receipts and observation feedback
+      - name: Send or retry post-publication explanation email
+        run: npm run notify:publish
+        env:
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          PUBLICATION_NOTIFICATION_TO: ${{ secrets.PUBLICATION_NOTIFICATION_TO }}
+          PUBLICATION_NOTIFICATION_FROM: ${{ secrets.PUBLICATION_NOTIFICATION_FROM }}
+        continue-on-error: true
+      - name: Commit durable distribution and notification receipts
         run: |
           git config user.name "hicks-distribution-observer"
           git config user.email "actions@github.com"
-          git add data/distribution
+          git add data/distribution data/autonomy/notification_queue.json
           if git diff --cached --quiet; then
-            echo "No distribution receipt changes."
+            echo "No distribution or notification receipt changes."
           else
-            git commit -m "Record post-publish distribution receipt"
+            git commit -m "Record distribution and publication notification receipts"
             git push origin main
           fi
       - name: Upload distribution evidence

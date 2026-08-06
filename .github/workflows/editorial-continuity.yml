@@ -22,15 +22,17 @@ jobs:
       - run: npm ci
       - name: Refresh authority intelligence
         run: npm run authority:cycle
-      - name: Replenish future approval candidates when runway falls below 120 days
+      - name: Replenish future autonomous candidates when runway falls below 120 days
         run: npm run continuity:replenish
+      - name: Migrate continuity candidates into autonomous queue
+        run: npm run autonomy:migrate
       - name: Validate authority modernization and protected editorial core
         run: npm run validate:authority-modernization
-      - name: Commit sidecar candidate updates only
+      - name: Commit sidecar and autonomy candidate updates only
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/authority_scale data/continuity data/intake/content_brief_candidates.json data/social/publish_queue.json
+          git add data/authority_scale data/continuity data/intake/content_brief_candidates.json data/social/publish_queue.json data/autonomy/queue.json
           if git diff --cached --quiet; then echo "No continuity changes."; exit 0; fi
-          git commit -m "chore: replenish approval-gated editorial continuity"
+          git commit -m "chore: replenish autonomous editorial continuity at locked velocity"
           git push

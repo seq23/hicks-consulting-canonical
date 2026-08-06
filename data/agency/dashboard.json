@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-08-06T15:09:42.713Z",
+  "generatedAt": "2026-08-06T15:09:40.487Z",
   "policy": {
     "blocking": false,
-    "message": "SEO, AEO, GEO, GSC, Bing, and live-health findings are advisory warnings only. They never block publishing or deployment."
+    "message": "SEO, AEO, GEO, GSC, Bing, and live-health quality findings are advisory. Runtime safety, data integrity, auth, cadence, and truth checks remain release gates."
   },
   "inventory": {
     "totalManifest": 227,
     "published": 95,
     "approved": 132,
-    "livePages": 121,
-    "sourcePages": 253
+    "livePages": 123,
+    "sourcePages": 255
   },
   "scores": [
     {
@@ -24,7 +24,7 @@
     {
       "key": "onpage",
       "label": "On-page SEO",
-      "score": 98,
+      "score": 97,
       "summary": "Titles, descriptions, internal linking, and service alignment.",
       "grade": "A",
       "target": 87,
@@ -69,11 +69,11 @@
     {
       "key": "measurement",
       "label": "GSC + Bing measurement",
-      "score": 87,
+      "score": 0,
       "summary": "Connector availability and data freshness.",
-      "grade": "B+",
+      "grade": "F",
       "target": 87,
-      "targetMet": true
+      "targetMet": false
     },
     {
       "key": "monitoring",
@@ -192,7 +192,7 @@
   "warningCounts": {
     "high": 0,
     "medium": 36,
-    "low": 5
+    "low": 6
   },
   "priorities": [
     {
@@ -511,6 +511,13 @@
       "route": "/resources/premium-downloads/",
       "message": "Resource has no external supporting source.",
       "tip": "Add one or two credible sources where the topic benefits from them."
+    },
+    {
+      "severity": "low",
+      "code": "description-length",
+      "route": "/therapy/",
+      "message": "Description is 167 characters.",
+      "tip": "Keep descriptions useful and roughly 80–165 characters."
     }
   ],
   "duplicatePairs": {
@@ -767,6 +774,197 @@
       }
     ],
     "forward": []
+  },
+  "autonomy": {
+    "state": {
+      "schemaVersion": "1.0.0",
+      "runtimeMode": "FULL_SAFE_AUTONOMY",
+      "paused": false,
+      "emergencyStop": false,
+      "lastCycleAt": null,
+      "lastCycleStatus": "NOT_RUN",
+      "currentPhase": "IDLE",
+      "counts": {
+        "discovered": 0,
+        "admitted": 0,
+        "drafted": 0,
+        "scheduled": 0,
+        "published": 0,
+        "skipped": 0,
+        "failed": 0
+      },
+      "velocityContract": "data/system/publishing_velocity_contract.json"
+    },
+    "velocityContract": {
+      "schemaVersion": "1.0.0",
+      "authority": "IMMUTABLE_EXISTING_CLIENT_SYSTEM",
+      "editorialReleaseVelocity": {
+        "daily": {
+          "description": "5 business-day reflections per week",
+          "contentType": "insights",
+          "slotRule": "Monday through Friday reflection slots"
+        },
+        "weekly": {
+          "description": "1 substantial article per week",
+          "contentType": "articles",
+          "slotRule": "existing weekly article slot"
+        },
+        "monthly": {
+          "description": "1 pillar piece per month",
+          "contentType": "guides",
+          "slotRule": "existing monthly guide slot"
+        },
+        "quarterly": {
+          "description": "1 flagship guide per quarter",
+          "contentType": "white-papers",
+          "slotRule": "existing quarterly white-paper slot"
+        }
+      },
+      "lockedRecordCount": 227,
+      "existingScheduledThrough": "2027-01-01T13:00:00.000Z",
+      "laws": [
+        "Automation may select, draft, validate, repair, schedule, publish, distribute, measure, and roll back.",
+        "Automation may not add, remove, accelerate, or reinterpret editorial release slots.",
+        "A skipped item may be replaced only inside the same content-type/date slot.",
+        "Intelligence processing volume is not publication velocity."
+      ]
+    },
+    "selfHeal": {
+      "schemaVersion": "1.0.0",
+      "lastRunAt": null,
+      "status": "NOT_RUN",
+      "repairs": [],
+      "skips": []
+    },
+    "providerCapabilities": {
+      "schemaVersion": "1.0.0",
+      "capabilities": {
+        "llm": {
+          "state": "INTEGRATED_UNPROVEN",
+          "requiredSecrets": [
+            "LLM_API_URL",
+            "LLM_API_KEY",
+            "LLM_MODEL"
+          ],
+          "fallback": "do_not_generate"
+        },
+        "email": {
+          "state": "INTEGRATED_UNPROVEN",
+          "requiredSecrets": [
+            "RESEND_API_KEY",
+            "PUBLICATION_NOTIFICATION_TO",
+            "PUBLICATION_NOTIFICATION_FROM"
+          ],
+          "fallback": "record_pending_notification_and_retry"
+        },
+        "gsc": {
+          "state": "INTEGRATED_UNPROVEN",
+          "requiredSecrets": [
+            "GSC_SITE_URL",
+            "GSC_SERVICE_ACCOUNT_EMAIL",
+            "GSC_PRIVATE_KEY"
+          ],
+          "fallback": "display_disconnected"
+        },
+        "bing": {
+          "state": "INTEGRATED_UNPROVEN",
+          "requiredSecrets": [
+            "BING_SITE_URL",
+            "BING_WEBMASTER_API_KEY"
+          ],
+          "fallback": "display_disconnected"
+        },
+        "competitorSearch": {
+          "state": "INTEGRATED_UNPROVEN",
+          "requiredSecrets": [
+            "SEARCH_API_URL",
+            "SEARCH_PROVIDER_API_KEY"
+          ],
+          "fallback": "no_external_competitor_claims"
+        },
+        "githubAdmin": {
+          "state": "INTEGRATED_UNPROVEN",
+          "requiredSecrets": [
+            "GITHUB_ADMIN_TOKEN",
+            "GITHUB_REPOSITORY"
+          ],
+          "fallback": "read_only_admin"
+        },
+        "adminGate": {
+          "state": "STRUCTURAL",
+          "requiredSecrets": [],
+          "passwordMode": "shared_client_side_sha256",
+          "routes": [
+            "/admin/",
+            "/agency/",
+            "/admin/digitalproducts/"
+          ],
+          "fallback": "show_password_gate",
+          "securityBoundary": "convenience_only_no_secrets_in_browser_payloads"
+        }
+      }
+    }
+  },
+  "searchIntelligence": {
+    "targetQueries": {
+      "schemaVersion": "1.0.0",
+      "queries": [
+        {
+          "query": "black therapist in Memphis",
+          "intent": "commercial",
+          "primaryPage": "/black-therapist-memphis/",
+          "status": "governed"
+        },
+        {
+          "query": "Black woman therapist Memphis",
+          "intent": "commercial",
+          "primaryPage": "/black-therapist-memphis/",
+          "status": "governed"
+        },
+        {
+          "query": "therapist for anxiety in Memphis",
+          "intent": "commercial",
+          "primaryPage": "/anxiety-therapist-memphis/",
+          "status": "governed"
+        },
+        {
+          "query": "anxiety therapist Memphis",
+          "intent": "commercial",
+          "primaryPage": "/anxiety-therapist-memphis/",
+          "status": "governed"
+        },
+        {
+          "query": "virtual therapist Memphis",
+          "intent": "commercial",
+          "primaryPage": "/therapy/",
+          "status": "governed"
+        },
+        {
+          "query": "burnout therapist Memphis",
+          "intent": "commercial",
+          "primaryPage": "/therapy/",
+          "status": "governed"
+        },
+        {
+          "query": "therapy for high-achieving Black women Memphis",
+          "intent": "commercial",
+          "primaryPage": "/black-therapist-memphis/",
+          "status": "governed"
+        }
+      ]
+    },
+    "freeWins": {
+      "schemaVersion": "1.0.0",
+      "generatedAt": null,
+      "providerState": "DISCONNECTED",
+      "items": []
+    },
+    "competitors": {
+      "schemaVersion": "1.0.0",
+      "generatedAt": null,
+      "providerState": "DISCONNECTED",
+      "observations": []
+    }
   },
   "tips": {
     "seo": [

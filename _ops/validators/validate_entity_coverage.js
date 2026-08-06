@@ -12,7 +12,13 @@ if(!org.name || !org.url || !Array.isArray(org.sameAs)) fail('Org profile incomp
 if(org.name !== entities.organization.name) fail('Org profile name must match entity registry organization name.');
 if(author.organization !== entities.organization.name) fail('Author organization must match entity registry organization name.');
 const serviceNames = new Set(entities.services.map(s => s.name));
-for(const required of ['Virtual therapy in Tennessee','Virtual coaching','Virtual support groups','Organizational trainings']){
-  if(!serviceNames.has(required)) fail(`Missing required service entity: ${required}`);
+const requiredServices = [
+  {label:'Virtual therapy', test:(name)=>/^Virtual therapy/i.test(name)},
+  {label:'Virtual coaching', test:(name)=>name==='Virtual coaching'},
+  {label:'Virtual support groups', test:(name)=>name==='Virtual support groups'},
+  {label:'Organizational trainings', test:(name)=>name==='Organizational trainings'}
+];
+for(const required of requiredServices){
+  if(![...serviceNames].some(required.test)) fail(`Missing required service entity: ${required.label}`);
 }
 console.log('Entity coverage OK');

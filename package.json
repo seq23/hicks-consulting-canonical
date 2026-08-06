@@ -25,7 +25,7 @@
     "validate:profile:indexnow": "node _ops/validation/run_validation_matrix.js --profile indexnow",
     "validate:profile:agency": "node _ops/validation/run_validation_matrix.js --profile agency",
     "validate:workflows": "node _ops/validators/validate_workflows.js",
-    "publish:content": "node scripts/publishing/process_manifest.js",
+    "publish:content": "node scripts/publishing/run_safe_publish.mjs",
     "validate:content-plan": "node _ops/validators/validate_content_plan_2026.js",
     "validate:word-counts": "node _ops/validators/validate_resource_word_counts.js",
     "ingest:social": "node scripts/ingestion/social_signal_ingest.js",
@@ -88,6 +88,23 @@
     "authority:scoreboard": "node scripts/authority_scale/build_citation_scoreboard.mjs",
     "authority:velocity": "node scripts/authority_scale/evaluate_intelligence_velocity.mjs",
     "validate:improvement-recommendations": "node scripts/authority_scale/validate_improvement_recommendations.mjs",
-    "distribution:post-publish": "node scripts/distribution/run_post_publish_distribution.mjs"
+    "distribution:post-publish": "node scripts/distribution/run_post_publish_distribution.mjs",
+    "autonomy:migrate": "node scripts/autonomy/migrate_queue.mjs",
+    "autonomy:cycle": "node scripts/autonomy/run_cycle.mjs",
+    "autonomy:self-heal": "node scripts/autonomy/run_self_heal_cycle.mjs",
+    "autonomy:measure": "node scripts/autonomy/run_measurement_cycle.mjs",
+    "notify:publish": "node scripts/autonomy/run_post_publish_email.mjs",
+    "autonomy:full-cycle": "npm run autonomy:migrate && npm run autonomy:cycle && npm run build && npm run autonomy:self-heal && npm run build",
+    "validate:site-intent-preservation": "node _ops/validators/deep/validate_site_intent_preservation.js",
+    "validate:memphis-search-surfaces": "node _ops/validators/deep/validate_memphis_search_surfaces.js",
+    "validate:velocity-immutability": "node _ops/validators/deep/validate_velocity_immutability.js",
+    "validate:autonomy-contract": "node _ops/validators/deep/validate_autonomy_contract.js",
+    "validate:safe-harbor-behavior": "node _ops/validators/deep/validate_safe_harbor_behavior.mjs",
+    "validate:admin-security-behavior": "node _ops/validators/deep/validate_admin_security_behavior.mjs",
+    "validate:notification-freeze-behavior": "node _ops/validators/deep/validate_notification_freeze_behavior.mjs",
+    "validate:build-determinism": "node _ops/validators/deep/validate_build_determinism.js",
+    "validate:deep": "node _ops/validation/run_validation_matrix.js --profile deep-autonomy",
+    "validate:autonomy-cycle-e2e": "node _ops/validators/deep/validate_autonomy_cycle_e2e.mjs",
+    "validate:self-heal-e2e": "node _ops/validators/deep/validate_self_heal_e2e.mjs"
   }
 }

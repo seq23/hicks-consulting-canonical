@@ -92,7 +92,7 @@ for (const item of manifest.filter(item => item.slug.startsWith('/resources/') &
 }
 
 const staticPublicRoutes = [
-  '/', '/therapy/', '/coaching/', '/groups/', '/corporate-speaking/', '/about/', '/resources/', '/contact/', '/organizational-training-inquiry/',
+  '/', '/therapy/', '/black-therapist-memphis/', '/anxiety-therapist-memphis/', '/coaching/', '/groups/', '/corporate-speaking/', '/about/', '/resources/', '/contact/', '/organizational-training-inquiry/',
   '/intake-quiz/', '/stress-management-worksheet/', '/resources/insights/', '/resources/articles/', '/resources/guides/', '/resources/white-papers/', '/resources/free-downloads/', '/resources/premium-downloads/', '/request-consult/', '/book-discovery-call/', '/faq/', '/privacy-policy/', '/cookie-policy/', '/disclaimer/',
   '/terms/', '/good-faith-estimate/', '/emergency-crisis-notice/'
 ];
@@ -147,6 +147,7 @@ fs.writeFileSync(path.join(dist, 'llms.txt'), llms + '\n');
 const workerSource = path.join(root, 'worker', '_worker.js');
 if (fs.existsSync(workerSource)) {
   fs.copyFileSync(workerSource, path.join(dist, '_worker.js'));
+  copyRecursive(path.join(root, 'worker', 'admin_runtime.mjs'), path.join(dist, 'admin_runtime.mjs'));
 }
 
 require('./agency/generate_agency_report').generate();

@@ -1,42 +1,46 @@
 # Validation Matrix Runbook
 
 **Repository:** `hicks-consulting-canonical`  
-**Status:** AUTHORITATIVE  
 **Executable matrix:** `/_repo_validation_matrix.json`  
-**Registry authority:** `/_repo_validation_registry.json`
+**Registry authority:** `/_repo_validation_registry.json`  
+**Deep behavior map:** `/docs/runbooks/DEEP_VALIDATION_MATRIX.md`
 
-## 1. Purpose
+## 1. Authority
 
-The matrix is the execution plan. It does not own severity or validator metadata; those live only in the registry. Each profile lists registered business checks in deterministic order. The orchestrator automatically runs the hard-fail registry bootstrap before every profile or single-check execution.
+The product and its approved operating contracts define correctness. The matrix schedules independent proof probes; it does not create product requirements.
+
+Severity lives only in the registry. Profiles define deterministic execution order. The orchestrator always runs the registry bootstrap and treats syntax errors, missing entrypoints, process crashes, unsupported exit codes, and protocol violations as execution hard failures.
 
 ## 2. Profiles
 
-| Profile | Package command | Profile checks | Purpose |
+| Profile | Package command | Checks | Purpose |
 |---|---|---:|---|
-| `all` | `validate:all` | 37 | Every enabled registered validator in canonical order. |
-| `ingestion` | `validate:ingestion` | 8 | Content-intelligence ingestion, observability, provider-resilience, and publishing-governance checks. |
-| `sitemap-indexing` | `validate:profile:sitemap-indexing` | 3 | Crawler, sitemap, and hidden LLM surface checks for the indexing workflow. |
-| `indexnow` | `validate:profile:indexnow` | 1 | IndexNow contract check after emission. |
-| `agency` | `validate:profile:agency` | 2 | Agency infrastructure plus warning-only SEO/AEO/GEO and forward-content readiness. |
+| `all` | `npm run validate:all` | 58 | Every enabled registered validator in canonical order |
+| `deep-autonomy` | `npm run validate:deep` | 58 | Full local suite plus site-preservation, autonomy, security, cadence, E2E, notification/freeze, and deterministic-build proof |
+| `ingestion` | `npm run validate:ingestion` | 8 | Query/content signal ingestion contracts |
+| `sitemap-indexing` | `npm run validate:profile:sitemap-indexing` | 3 | Crawl, sitemap, and LLM ingestion routes |
+| `indexnow` | `npm run validate:profile:indexnow` | 1 | IndexNow artifact contract |
+| `agency` | `npm run validate:profile:agency` | 2 | Growth infrastructure plus non-blocking SEO/AEO/GEO quality findings |
+| `digital-products` | `npm run validate:profile:digital-products` | 5 | Catalog, public routes, secure admin upload, cover, and API behavior |
+| `authority-modernization` | `npm run validate:authority-modernization` | 6 | Fanout truth, KPI truth, protected core, recommendations, distribution, and continuity |
 
-## 3. Workflow invocation law
+## 3. CI invocation law
 
-- GitHub Actions must invoke `validate:all` or another declared composite profile.
-- Workflows may not invoke `validate:canonical`, `validate:sitemap`, `validate:indexnow`, or any other leaf check directly.
-- Direct leaf invocation bypasses registry severity and is therefore a hard failure.
+GitHub Actions invoke only registered composite profiles. Leaf validators may be run locally for diagnosis, but workflows may not bypass the registry severity and finding protocol.
 
-## 4. Commands
+## 4. Result rules
 
-- Full release profile: `npm run validate:all`
-- Ingestion profile: `npm run validate:ingestion`
-- Sitemap/indexing profile: `npm run validate:profile:sitemap-indexing`
-- IndexNow profile: `npm run validate:profile:indexnow`
-- Agency profile: `npm run validate:profile:agency`
-- Registry integrity: `npm run validate:registry`
+- Real product, security, safety, cadence, data-integrity, crawl, or truth failures may block release.
+- Strong/soft/info findings remain visible and return a passing profile when no hard failure exists.
+- Provider unavailability is reported honestly and does not become a fake positive score.
+- A validator cannot become release-blocking merely because it encodes a preference, arbitrary target, or stale governance assumption.
+- Validator source-tree mutation is prohibited unless the probe explicitly operates in a temporary sandbox and leaves the repo unchanged.
 
-## 5. Result rules
+## 5. Commands
 
-- A registered hard-fail finding returns non-zero.
-- Strong warnings, soft warnings, and info findings return zero.
-- Any validator execution failure returns non-zero regardless of registered severity.
-- The full summary reports pass, hard findings, execution hard failures, strong warnings, soft warnings, and info findings separately.
+```bash
+npm run validate:registry
+npm run validate:all
+npm run validate:deep
+npm run release:prepush:local
+```

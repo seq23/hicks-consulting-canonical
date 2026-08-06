@@ -136,7 +136,7 @@ function generate() {
   const weights = { high: 8, medium: 3, low: 1 };
 
   const gscAge = daysOld(gsc.checkedAt), bingAge = daysOld(bing.checkedAt), liveAge = daysOld(live.checkedAt);
-  const measurementScore = clamp(100 - (gsc.status === 'ok' ? 0 : 6.5) - (bing.status === 'ok' ? 0 : 6.5) - (gscAge !== null && gscAge > 7 ? 5 : 0) - (bingAge !== null && bingAge > 7 ? 5 : 0));
+  const measurementScore = clamp((gsc.status === 'ok' ? 50 : 0) + (bing.status === 'ok' ? 50 : 0) - (gscAge !== null && gscAge > 7 ? 10 : 0) - (bingAge !== null && bingAge > 7 ? 10 : 0));
   const monitoringScore = clamp(100 - (live.status === 'ok' ? 0 : 6) - (liveAge !== null && liveAge > 3 ? 4 : 0));
 
   const coverageScore = (findings, totalPages, cap = 13) => {
@@ -162,9 +162,17 @@ function generate() {
   const priorities = [...liveFindings, ...forwardFindings]
     .sort((a,b) => ({high:3,medium:2,low:1}[b.severity] - {high:3,medium:2,low:1}[a.severity]))
     .slice(0, 80);
+  const autonomyState = readJson(path.join(root, 'data', 'autonomy', 'state.json'), { lastCycleStatus:'NOT_CONFIGURED', counts:{} });
+  const velocityContract = readJson(path.join(root, 'data', 'system', 'publishing_velocity_contract.json'), null);
+  const targetQueries = readJson(path.join(root, 'data', 'search', 'target_queries.json'), { queries:[] });
+  const freeWins = readJson(path.join(root, 'data', 'search', 'free_wins.json'), { providerState:'DISCONNECTED', items:[] });
+  const competitors = readJson(path.join(root, 'data', 'search', 'competitor_observations.json'), { providerState:'DISCONNECTED', observations:[] });
+  const selfHeal = readJson(path.join(root, 'data', 'autonomy', 'self_heal_state.json'), { status:'NOT_RUN', repairs:[], skips:[] });
+  const providerCapabilities = readJson(path.join(root, 'data', 'system', 'provider_capabilities.json'), { capabilities:{} });
+  const stableGeneratedAt = process.env.AGENCY_REPORT_GENERATED_AT || [gsc.checkedAt, bing.checkedAt, live.checkedAt].filter(Boolean).sort().slice(-1)[0] || '1970-01-01T00:00:00.000Z';
   const report = {
-    generatedAt:new Date().toISOString(),
-    policy:{ blocking:false, message:'SEO, AEO, GEO, GSC, Bing, and live-health findings are advisory warnings only. They never block publishing or deployment.' },
+    generatedAt:stableGeneratedAt,
+    policy:{ blocking:false, message:'SEO, AEO, GEO, GSC, Bing, and live-health quality findings are advisory. Runtime safety, data integrity, auth, cadence, and truth checks remain release gates.' },
     inventory:{ totalManifest:manifest.length, published:manifest.filter((i)=>i.status==='published').length, approved:manifest.filter((i)=>i.status==='approved').length, livePages:liveAnalysis.pages.length, sourcePages:sourceAnalysis.pages.length },
     scores,
     health:{ gsc, bing, live },
@@ -172,6 +180,8 @@ function generate() {
     warningCounts:{ high:priorities.filter((f)=>f.severity==='high').length, medium:priorities.filter((f)=>f.severity==='medium').length, low:priorities.filter((f)=>f.severity==='low').length },
     priorities,
     duplicatePairs:{ live:liveAnalysis.duplicatePairs.slice(0,50), forward:sourceAnalysis.duplicatePairs.filter((p)=>approvedRoutes.has(p.a)&&approvedRoutes.has(p.b)).slice(0,50) },
+    autonomy:{ state:autonomyState, velocityContract, selfHeal, providerCapabilities },
+    searchIntelligence:{ targetQueries, freeWins, competitors },
     tips:{
       seo:['Keep search titles concise while preserving the editorial H1.','Use contextual internal links to the most relevant service and resource pages.','Review warnings by affected URL instead of changing the whole architecture.'],
       aeo:['Lead with a direct short answer that can stand on its own.','Use descriptive H2s, visible dates, and complete Article schema.','Answer the exact page intent before broadening into adjacent context.'],

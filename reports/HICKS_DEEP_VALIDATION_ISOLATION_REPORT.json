@@ -1,0 +1,1469 @@
+{
+  "source_zip": "hicks-consulting-canonical-main.zip",
+  "validator_count": 48,
+  "isolated_failures": 0,
+  "mutating_validators": 0,
+  "build_differences": [
+    "dist/data/agency/dashboard.json::generatedAt"
+  ],
+  "checks": [
+    {
+      "id": "validation-registry",
+      "severity": "HARD_FAIL",
+      "blocksRelease": true,
+      "group": "governance",
+      "entrypoint": "_ops/validators/validate_validation_registry.js",
+      "npmScript": "validate:registry",
+      "status": 0,
+      "duration_ms": 66,
+      "stdout": "Validation registry contract OK (48 checks, 7 profiles, 2 release gates).",
+      "stderr": "",
+      "changed_files": [],
+      "source_assertion_strings": [
+        "); const path = require(",
+        "); const { fail } = require(",
+        "); function readJson(file, label) { if (!fs.existsSync(file)) fail(`${label} is missing.`); try { return JSON.parse(fs.readFileSync(file,",
+        ")); } catch (error) { fail(`${label} is invalid JSON: ${error.message}`); } } const registry = readJson(registryPath,",
+        "); const scripts = pkg.scripts || {}; const allowedSeverities = new Set([",
+        "]); const checks = registry.checks; if (!Array.isArray(checks) || checks.length === 0) fail(",
+        "matrix must reference _repo_validation_registry.json.",
+        "registry finding marker must be VALIDATION_FINDING.",
+        "HARD_FAIL",
+        "unexpected validator execution failures must be HARD_FAIL.",
+        "FORBIDDEN",
+        "direct CI leaf invocation must be FORBIDDEN.",
+        "check id is missing or duplicated: ${check.id}",
+        "npmScript is missing or duplicated: ${check.npmScript}",
+        "entrypoint is missing or duplicated: ${check.entrypoint}",
+        "${check.id} has invalid severity: ${check.severity}",
+        "${check.id} blocksRelease does not match severity.",
+        "${check.id} must define group, owner, scope, and rationale.",
+        "${check.id} must use MATRIX_ONLY CI invocation.",
+        "${check.id} must use the VALIDATION_FINDING protocol.",
+        "${check.npmScript} must map exactly to ${expectedCommand}.",
+        "${check.id} entrypoint is missing: ${check.entrypoint}",
+        "Composite script is missing from package.json: ${script}",
+        "${script} must map exactly to ${expected}.",
+        "registry or matrix references missing package validate script: ${script}",
+        "matrix.profiles must be a non-empty object.",
+        "profile ${profileName} must contain checks.",
+        "profile ${profileName} duplicates check: ${id}",
+        "The all profile must include every enabled registered check exactly once in registry order.",
+        "workflows",
+        "Workflow ${file} invokes leaf validator ${script} directly; CI must use a registered matrix profile.",
+        "release gate is incomplete or not HARD_FAIL: ${JSON.stringify(gate)}"
+      ],
+      "classification": [
+        "governance",
+        "KEEP_NON_BLOCKING_FOR_PRODUCT"
+      ]
+    },
+    {
+      "id": "orchestrator-contract",
+      "severity": "HARD_FAIL",
+      "blocksRelease": true,
+      "group": "governance",
+      "entrypoint": "_ops/validators/validate_orchestrator_contract.js",
+      "npmScript": "validate:orchestrator-contract",
+      "status": 0,
+      "duration_ms": 437,
+      "stdout": "Validation orchestrator contract OK (warning pass, hard finding block, runtime crash block, syntax crash block).",
+      "stderr": "",
+      "changed_files": [],
+      "source_assertion_strings": [
+        "); const os = require(",
+        "); const path = require(",
+        "); const { spawnSync } = require(",
+        "); const { fail } = require(",
+        ": ''; fail(",
+        "const broken = ;\\n",
+        "HARD_FAIL",
+        ", JSON.stringify({ schemaVersion:",
+        ", unexpectedExecutionFailure:",
+        "); assert(result.status === 0,",
+        "strong warning must be classified visibly",
+        "); assert(result.status === 1,",
+        "hard finding must be classified visibly",
+        "runtime crash must be classified as execution hard fail",
+        "syntax error must be identified before execution"
+      ],
+      "classification": [
+        "governance",
+        "KEEP_NON_BLOCKING_FOR_PRODUCT"
+      ]
+    },
+    {
+      "id": "preflight",
+      "severity": "HARD_FAIL",
+      "blocksRelease": true,
+      "group": "repository",
+      "entrypoint": "_ops/validators/validate_preflight.js",
+      "npmScript": "validate:preflight",
+      "status": 0,
+      "duration_ms": 41,
+      "stdout": "Preflight OK",
+      "stderr": "",
+      "changed_files": [],
+      "source_assertion_strings": [
+        "].forEach(item => { if (!exists(item)) fail(`Missing required item: ${item}`); }); console.log("
+      ],
+      "classification": [
+        "release-integrity",
+        "KEEP_BLOCKING"
+      ]
+    },
+    {
+      "id": "publisher-contract",
+      "severity": "HARD_FAIL",
+      "blocksRelease": true,
+      "group": "publishing-safety",
+      "entrypoint": "_ops/validators/validate_publisher_contract.js",
+      "npmScript": "validate:publisher-contract",
+      "status": 0,
+      "duration_ms": 38,
+      "stdout": "Manifest updated: 1 scheduled item(s) published.\nPublisher scheduling contract OK (strict scheduledAt authority, future-date protection, preview cleanup, duplicate protection, atomic write, idempotence).",
+      "stderr": "",
+      "changed_files": [],
+      "source_assertion_strings": [
+        "); const os = require(",
+        "); const path = require(",
+        "); const { processManifest, publishManifestFile } = require(",
+        "); const { fail } = require(",
+        "); function assert(condition, message) { if (!condition) fail(`PUBLISHER CONTRACT FAIL: ${message}`); } const now = new Date(",
+        ", status:",
+        "); assert(result.publishedCount === 1, `expected exactly one publication, got ${result.publishedCount}`); assert(due.status ===",
+        "due approved content must publish",
+        "publishedAt must use the publication clock",
+        "published content must remove previewPath",
+        "future scheduled content must remain approved",
+        "future content must retain previewPath",
+        "draft content must remain unchanged",
+        "second run at same clock must be idempotent",
+        "idempotent run must not republish content",
+        ", validationPassed: true }], /missing scheduledAt/,",
+        ", validationPassed: false } ], /duplicate id/,",
+        ").status ===",
+        "atomic file write must persist published state",
+        "atomic file write must not leave temporary files",
+        "Publisher scheduling contract OK (strict scheduledAt authority, future-date protection, preview cleanup, duplicate protection, atomic write, idempotence)."
+      ],
+      "classification": [
+        "legacy-publisher-behavior",
+        "REPLACE_FOR_FULL_SAFE_AUTONOMY"
+      ]
+    },
+    {
+      "id": "canonical-url",
+      "severity": "STRONG_WARNING",
+      "blocksRelease": false,
+      "group": "discoverability",
+      "entrypoint": "_ops/validators/validate_canonical_url_contract.js",
+      "npmScript": "validate:canonical",
+      "status": 0,
+      "duration_ms": 52,
+      "stdout": "Canonical URLs OK",
+      "stderr": "",
+      "changed_files": [],
+      "source_assertion_strings": [
+        ")) fail(`Missing canonical domain in ${file}`); } console.log("
+      ],
+      "classification": [
+        "search-quality",
+        "KEEP_WARNING"
+      ]
+    },
+    {
+      "id": "seo-metadata",
+      "severity": "STRONG_WARNING",
+      "blocksRelease": false,
+      "group": "discoverability",
+      "entrypoint": "_ops/validators/validate_seo_metadata_contract.js",
+      "npmScript": "validate:seo-metadata",
+      "status": 0,
+      "duration_ms": 59,
+      "stdout": "SEO metadata contract OK (262 public pages checked).",
+      "stderr": "",
+      "changed_files": [],
+      "source_assertion_strings": [
+        "); const path = require(",
+        "); const { fail } = require('../validation/protocol'); const root = process.cwd(); const pagesDir = path.join(root,",
+        ">([\\s\\S]*?)<\\/script>/gi)]; return matches.map((match) => JSON.parse(match[1])); } const requiredMeta = [ 'property=",
+        "' ]; const failures = []; const files = walk(pagesDir).filter((file) => !rel(file).includes(",
+        "); const name = rel(file); for (const token of requiredMeta) { if (!html.includes(token)) failures.push(`${name}: missing ${token}`); } if (!html.includes('type=",
+        "${name}: missing JSON-LD",
+        "${name}: invalid JSON-LD (${err.message})",
+        "]) ? schema[",
+        "] : [schema[",
+        ")) failures.push(`${name}: missing BreadcrumbList schema`); if (name ===",
+        "${name}: missing ${type} schema",
+        ")) failures.push(`${name}: missing Article schema`); } } if (failures.length) { fail([",
+        "- ${failure}"
+      ],
+      "classification": [
+        "search-quality",
+        "KEEP_WARNING"
+      ]
+    },
+    {
+      "id": "agency-infrastructure",
+      "severity": "HARD_FAIL",
+      "blocksRelease": true,
+      "group": "agency-operations",
+      "entrypoint": "_ops/validators/validate_agency_infrastructure.js",
+      "npmScript": "validate:agency-infrastructure",
+      "status": 0,
+      "duration_ms": 90,
+      "stdout": "Agency infrastructure contract OK (route, report, workflow, scorecard, noindex, sitemap isolation, and warning-only provider behavior).",
+      "stderr": "",
+      "changed_files": [],
+      "source_assertion_strings": [
+        "); const path = require(",
+        "); const { spawnSync } = require(",
+        "); const { fail } = require(",
+        "); const root = process.cwd(); const issues = []; const requiredFiles = [",
+        ".github/workflows/agency-seo-monitor.yml",
+        "Missing required agency file: ${relative}",
+        "); } for (const file of requiredFiles) read(file); const pkg = JSON.parse(read(",
+        "); const expectedScripts = {",
+        "${name} must map exactly to: ${expected}",
+        "}); if (result.status !== 0) issues.push(`${file} failed syntax validation: ${(result.stderr || result.stdout ||",
+        "/agency/ must contain a noindex,nofollow robots directive.",
+        "/agency/ must load assets/js/agency-dashboard.js.",
+        "Agency dashboard JavaScript must load /data/agency/dashboard.json.",
+        "Production build must generate the agency dashboard report.",
+        ")); } catch (error) { issues.push(`data/agency/dashboard.json is invalid JSON: ${error.message}`); } if (dashboard) { if (dashboard.policy?.blocking !== false) issues.push(",
+        "); const expectedKeys = [",
+        "Agency scorecard is missing category: ${key}",
+        "); for (const score of dashboard.scores || []) { if (!Number.isFinite(score.score) || score.score < 0 || score.score > 100) issues.push(`Invalid agency score for ${score.key}.`); } } const workflow = read(",
+        "Agency workflow is missing required contract token: ${token}",
+        "Agency monitor job must remain continue-on-error: true.",
+        "Agency monitoring workflow must not invoke content publication.",
+        "GSC connector must use the read-only webmaster scope.",
+        "Agency provider-monitor failures must remain non-blocking.",
+        "Agency report generator must encode warning-only policy.",
+        "Agency report CLI quality failures must remain non-blocking.",
+        "${file} appears to contain a secret value.",
+        "Production build is missing agency artifact: ${file}",
+        "Agency infrastructure contract OK (route, report, workflow, scorecard, noindex, sitemap isolation, and warning-only provider behavior)."
+      ],
+      "classification": [
+        "operator-system-shape",
+        "DOWNGRADE_UNLESS_RUNTIME_BROKEN"
+      ]
+    },
+    {
+      "id": "agency-quality",
+      "severity": "STRONG_WARNING",
+      "blocksRelease": false,
+      "group": "agency-advisory",
+      "entrypoint": "_ops/validators/validate_agency_quality.js",
+      "npmScript": "validate:agency-quality",
+      "status": 0,
+      "duration_ms": 49,
+      "stdout": "",
+      "stderr": "VALIDATION_FINDING check=agency-quality summary=1 agency quality finding(s)\nLive content quality is below the B+ target: 79.",
+      "changed_files": [],
+      "source_assertion_strings": [
+        "); const path = require(",
+        "); const { warn } = require(",
+        ")); } catch (error) { findings.push(`${relative} could not be read: ${error.message}`); return null; } } function decode(text) { return String(text ||",
+        ") .trim(); } function articleSchema(html) { const scripts = [...html.matchAll(/<script[^>]+type=[\"",
+        "); const approved = manifest.filter((item) => item.status ===",
+        "); const published = manifest.filter((item) => item.status ===",
+        "${item.id}: source page missing at ${relative}",
+        "); const h1 = decode((html.match(/<h1[^>]*>([\\s\\S]*?)<\\/h1>/i) || [])[1]); const expectedDate = String(item.scheduledAt ||",
+        "']/i.test(html)) findings.push(`${item.id}: meta description is missing or too short.`); if (!html.includes('/about/')) findings.push(`${item.id}: linked author biography is missing.`); if (!new RegExp(`<time[^>]+datetime=[",
+        "]${expectedDate}[\"",
+        "${href}`) || html.includes(`href='${href}`))) findings.push(`${item.id}: topic-appropriate service connection is missing.`); if (!html.includes('href=",
+        "${item.id}: resource-library link is missing.",
+        "${item.id}: author box is missing.",
+        "${item.id}: Article schema is missing or invalid.",
+        "${item.id}: Article schema is missing ${field}.",
+        "${item.id}: Article datePublished does not match scheduledAt.",
+        "? schema.author.url :",
+        ")) findings.push(`${item.id}: Article author URL must resolve to /about/.`); } if (dashboard) { if (dashboard.inventory?.totalManifest !== manifest.length) findings.push(",
+        "); const expectedScores = [",
+        "Dashboard score category missing: ${key}",
+        "Forward publishing inventory has ${dashboard.duplicatePairs.forward.length} high-similarity pair(s).",
+        "Agency SEO/AEO/GEO findings are not configured as warning-only."
+      ],
+      "classification": [
+        "advisory-quality",
+        "KEEP_WARNING"
+      ]
+    },
+    {
+      "id": "lead-magnet",
+      "severity": "HARD_FAIL",
+      "blocksRelease": true,
+      "group": "data-capture",
+      "entrypoint": "_ops/validators/validate_lead_magnet_contract.js",
+      "npmScript": "validate:lead-magnet",
+      "status": 0,
+      "duration_ms": 35,
+      "stdout": "Lead magnet contract OK",
+      "stderr": "",
+      "changed_files": [],
+      "source_assertion_strings": [
+        "); const path = require(",
+        "); const { fail } = require(",
+        "); } const requiredFiles = [",
+        "Missing required file: ${file}",
+        "Landing page missing token: ${token}",
+        "Homepage must link to stress worksheet landing page.",
+        "Homepage spotlight section missing.",
+        "Resources page must link to stress worksheet landing page.",
+        "Resources spotlight section missing.",
+        "Client JS missing token: ${token}",
+        "FORM_DATABASE_SHARED_SECRET",
+        "FORM_DATABASE_DISPATCH_FAILED",
+        "Consent is required",
+        "Lead magnet function missing token: ${token}",
+        "Lead magnet function must prefer LEAD_MAGNET_WEBHOOK_URL before legacy training webhook URL.",
+        "Lead magnet function must manually capture Apps Script 302 redirect.",
+        "Lead magnet function must follow Apps Script redirect with a pristine GET.",
+        "Lead magnet function must not send headers on the redirected GET.",
+        "Lead magnet function must use the unified postJsonToWebhook helper only.",
+        "Lead magnet function must require Apps Script JSON ok:true before revealing download.",
+        "Lead magnet function must not background-queue spreadsheet capture.",
+        "route: '/api/lead-magnet'",
+        "Worker missing token: ${token}"
+      ],
+      "classification": [
+        "critical-user-journey",
+        "KEEP_BLOCKING"
+      ]
+    },
+    {
+      "id": "form-database",
+      "severity": "HARD_FAIL",
+      "blocksRelease": true,
+      "group": "data-capture",
+      "entrypoint": "_ops/validators/validate_form_database_contract.js",
+      "npmScript": "validate:form-database",
+      "status": 0,
+      "duration_ms": 36,
+      "stdout": "Form database contract OK (3 forms POST to Apps Script, manually follow Google redirect with pristine GET, and require ok:true before user success).",
+      "stderr": "",
+      "changed_files": [],
+      "source_assertion_strings": [
+        "Cloudflare Advanced Mode worker missing: worker/_worker.js",
+        ", route:",
+        "], required: [",
+        "FORM_DATABASE_SHARED_SECRET",
+        "INQUIRY_SHARED_SECRET",
+        "FORM_DATABASE_DISPATCH_FAILED",
+        "Worker missing unified form database token: ${token}",
+        "Worker must prefer FORM_DATABASE_WEBHOOK_URL before legacy webhook variables.",
+        "TRAINING_INQUIRY_SECRET",
+        "Worker must prefer FORM_DATABASE_SHARED_SECRET before legacy secret variables.",
+        "LEAD_MAGNET_SHARED_SECRET",
+        "Worker must keep lead magnet env vars during transition.",
+        "Worker must prefer LEAD_MAGNET_WEBHOOK_URL for lead-magnet submissions.",
+        "sharedSecret: env.FORM_DATABASE_SHARED_SECRET || env.TRAINING_INQUIRY_SECRET || env.INQUIRY_SHARED_SECRET || env.LEAD_MAGNET_SHARED_SECRET",
+        "Worker must prefer shared form secrets before LEAD_MAGNET_SHARED_SECRET for lead-magnet submissions.",
+        "Worker must not background-queue form submissions because users would see success without confirmed spreadsheet capture.",
+        "${contract.type} function missing: ${contract.functionPath}",
+        "); if (!worker.includes(`route:",
+        "`)) fail(`Worker registry missing route ${contract.route}.`); if (!worker.includes(`",
+        ":`) && !worker.includes(`${contract.type}:`)) fail(`Worker registry missing form type ${contract.type}.`); if (!fn.includes(`const FORM_TYPE =",
+        "`)) fail(`${contract.functionPath} must be a thin wrapper for ${contract.type}.`); if (!fn.includes(",
+        ")) fail(`${contract.functionPath} missing unified form registry.`); if (!fn.includes(",
+        ")) fail(`${contract.functionPath} missing Apps Script webhook transport.`); if (!fn.includes(\"redirect:",
+        "\")) fail(`${contract.functionPath} must manually capture Apps Script 302 redirect.`); if (!fn.includes(\"method:",
+        "\")) fail(`${contract.functionPath} must follow Apps Script redirect with a pristine GET.`); if (fn.includes(\"headers: { accept:",
+        "}\")) fail(`${contract.functionPath} must not send headers on the redirected GET.`); if (fn.includes(",
+        ")) fail(`${contract.functionPath} must use the unified postJsonToWebhook helper only.`); if (!fn.includes(",
+        ")) fail(`${contract.functionPath} must synchronously send Apps Script submission.`); if (!fn.includes(",
+        ")) fail(`${contract.functionPath} must require Apps Script JSON ok:true before returning success.`); if (!fn.includes(",
+        ")) fail(`${contract.functionPath} must log failed dispatches.`); if (fn.includes(",
+        ")) fail(`${contract.functionPath} must not background-queue form database submissions.`); const formPattern = new RegExp(`<form[^>]+id=[\"",
+        "'][^>]*>`, 'i'); if (!formPattern.test(html)) fail(`${contract.type} HTML form missing: ${contract.formId}.`); if (!html.includes(`action=",
+        "${contract.route}",
+        ")) fail(",
+        "); if (!siteJs.includes(contract.route)) fail(",
+        "); } for (const field of contract.required) { if (!worker.includes(",
+        "Worker missing lead magnet download path.",
+        "Lead magnet function missing download path.",
+        "package.json missing validate:form-database script.",
+        "validate:form-database must be admitted to the validation registry.",
+        "Unified form database runbook missing.",
+        "Form database runbook missing token: ${token}",
+        "Form database contract OK (${formContracts.length} forms POST to Apps Script, manually follow Google redirect with pristine GET, and require ok:true before user success)."
+      ],
+      "classification": [
+        "critical-user-journey",
+        "KEEP_BLOCKING"
+      ]
+    },
+    {
+      "id": "crawl-contract",
+      "severity": "STRONG_WARNING",
+      "blocksRelease": false,
+      "group": "discoverability",
+      "entrypoint": "_ops/validators/validate_crawl_contract.js",
+      "npmScript": "validate:crawl",
+      "status": 0,
+      "duration_ms": 34,
+      "stdout": "Crawl contract OK",
+      "stderr": "",
+      "changed_files": [],
+      "source_assertion_strings": [
+        ")) fail("
+      ],
+      "classification": [
+        "search-quality",
+        "KEEP_WARNING"
+      ]
+    },
+    {
+      "id": "sitemap-parity",
+      "severity": "STRONG_WARNING",
+      "blocksRelease": false,
+      "group": "discoverability",
+      "entrypoint": "_ops/validators/validate_sitemap_page_parity.js",
+      "npmScript": "validate:sitemap",
+      "status": 0,
+      "duration_ms": 44,
+      "stdout": "Sitemap parity OK",
+      "stderr": "",
+      "changed_files": [],
+      "source_assertion_strings": [
+        ")); const publishedContent = new Set( manifest.filter(item => item.validationPassed === true && item.status ===",
+        "; })) { if (route ===",
+        "|| route.startsWith(",
+        ")) continue; if (route.startsWith(",
+        ") && route !==",
+        "&& !publishedContent.has(route)) continue; const loc = `https://www.hicksconsulting.org${route}`; if (!xml.includes(loc)) fail(`Missing route in sitemap: ${loc}`); } console.log("
+      ],
+      "classification": [
+        "search-quality",
+        "KEEP_WARNING"
+      ]
+    },
+    {
+      "id": "internal-links",
+      "severity": "STRONG_WARNING",
+      "blocksRelease": false,
+      "group": "navigation",
+      "entrypoint": "_ops/validators/validate_internal_links.js",
+      "npmScript": "validate:links",
+      "status": 0,
+      "duration_ms": 59,
+      "stdout": "Internal links OK",
+      "stderr": "",
+      "changed_files": [],
+      "source_assertion_strings": [
+        "); const routes = new Set(); function walk(dir, arr=[]){ for(const e of fs.readdirSync(dir)){ const p=path.join(dir,e); const s=fs.statSync(p); if(s.isDirectory()) walk(p,arr); else if(e===",
+        "); routes.add(rel===",
+        "); } const allowedExternalPrefixes = [",
+        ")){ if(!allowedExternalPrefixes.some(prefix => href.startsWith(prefix))) fail(`Unexpected external link ${href} in ${file}`); } else if(href.startsWith(",
+        "; if(!routes.has(normalized) && ![",
+        "Broken internal route ${href} in ${file}"
+      ],
+      "classification": [
+        "critical-navigation",
+        "KEEP_WARNING_OR_BLOCK_BROKEN_PRIMARY_CTA"
+      ]
+    },
+    {
+      "id": "hidden-llm-surfaces",
+      "severity": "SOFT_WARNING",
+      "blocksRelease": false,
+      "group": "ai-discoverability",
+      "entrypoint": "_ops/validators/validate_hidden_llm_surfaces.js",
+      "npmScript": "validate:hidden-llm-surfaces",
+      "status": 0,
+      "duration_ms": 90,
+      "stdout": "Hidden LLM surface advisory OK",
+      "stderr": "",
+      "changed_files": [],
+      "source_assertion_strings": [
+        "); const path = require(",
+        "); const { warn: reportFindings } = require(",
+        "); const expectedHiddenRoutes = [",
+        "href=[\"']${route.replace(/[.*+?^${}()|[\\]\\\\]/g, '\\\\$&')}[\"']",
+        ")); const warnings = []; function warn(message) { warnings.push(message); } function read(file) { return fs.existsSync(file) ? fs.readFileSync(file,",
+        "scripts/site_build.js should define llmOnlyRoutes.",
+        "'${route}'",
+        "${route} should be classified inside llmOnlyRoutes.",
+        "${route} should not be classified inside staticPublicRoutes.",
+        ", route.replace(/^\\//,",
+        "${route} should have a source page at ${path.relative(root, pagePath)}.",
+        "LLM-only route appears in main nav in ${path.relative(root, file)}.",
+        "LLM-only route appears in a user-facing block in ${path.relative(root, file)}.",
+        "${route} should remain crawler-discoverable in sitemap.xml after build.",
+        "${route} should remain visible in llms.txt after build."
+      ],
+      "classification": [
+        "optional-ai-surface",
+        "KEEP_INFO"
+      ]
+    },
+    {
+      "id": "llm-ingestion-routes",
+      "severity": "SOFT_WARNING",
+      "blocksRelease": false,
+      "group": "ai-discoverability",
+      "entrypoint": "_ops/validators/validate_llm_ingestion_routes.js",
+      "npmScript": "validate:llm-ingestion-routes",
+      "status": 0,
+      "duration_ms": 34,
+      "stdout": "LLM ingestion route advisory OK",
+      "stderr": "",
+      "changed_files": [],
+      "source_assertion_strings": [
+        "); const path = require(",
+        "); const { warn: reportFindings } = require(",
+        "); const warnings = []; function warn(message) { warnings.push(message); } function read(file) { return fs.existsSync(file) ? fs.readFileSync(file,",
+        "); const match = build.match(/const\\s+llmOnlyRoutes\\s*=\\s*\\[([\\s\\S]*?)\\];/); if (!match) warn(",
+        "); const routes = match ? [...match[1].matchAll(/",
+        "/g)].map(x => x[1]) : []; if (routes.length < 8) warn(`Expected expanded llmOnlyRoutes set; found ${routes.length}.`); for (const route of routes) { const page = path.join(",
+        ", route.replace(/^\\//,",
+        "Missing page for ${route}: ${page}",
+        "${route} should disclose crawler/LLM-only purpose.",
+        "${route} should keep an extractable short-answer block.",
+        "${required} is missing ${route}. Run npm run build.",
+        "${warnings.length}-llm-route-warning(s)",
+        "LLM ingestion route advisory OK"
+      ],
+      "classification": [
+        "optional-ai-surface",
+        "KEEP_INFO"
+      ]
+    },
+    {
+      "id": "query-traceability",
+      "severity": "SOFT_WARNING",
+      "blocksRelease": false,
+      "group": "content-operations",
+      "entrypoint": "_ops/validators/validate_query_traceability.js",
+      "npmScript": "validate:queries",
+      "status": 0,
+      "duration_ms": 34,
+      "stdout": "Query traceability OK",
+      "stderr": "",
+      "changed_files": [],
+      "source_assertion_strings": [
+        "); const path = require(",
+        "); const { read, fail } = require(",
+        ")); const seenQuery = new Set(); const pageSet = new Set(); for(const item of map){ if(!item.query || !item.page || !item.intent || !item.entityTarget || !item.ctaTarget) fail(",
+        "); const q = item.query.toLowerCase().trim(); if(seenQuery.has(q)) fail(`Duplicate query: ${item.query}`); seenQuery.add(q); pageSet.add(item.page.replace(/\\/$/,",
+        "Mapped page missing: ${item.page}",
+        "Query coverage map is empty."
+      ],
+      "classification": [
+        "planning-observability",
+        "KEEP_INFO"
+      ]
+    },
+    {
+      "id": "above-fold",
+      "severity": "STRONG_WARNING",
+      "blocksRelease": false,
+      "group": "conversion-ux",
+      "entrypoint": "_ops/validators/validate_above_fold.js",
+      "npmScript": "validate:abovefold",
+      "status": 0,
+      "duration_ms": 50,
+      "stdout": "Above-fold contract OK",
+      "stderr": "",
+      "changed_files": [],
+      "source_assertion_strings": [
+        "); const isAdmin = rel.includes(`${path.sep}admin${path.sep}`); if(isNoIndex || isAdmin) continue; if(!/<h1[ >]/.test(html)) fail(`Missing H1 in ${file}`); if(!html.includes(",
+        ")) fail(`Missing short answer block in ${file}`); } // Homepage above-fold dual pathway checks. const homepage = fs.readFileSync(path.join(process.cwd(),",
+        "Homepage above-fold dual pathway token missing: ${token}"
+      ],
+      "classification": [
+        "conversion-quality",
+        "KEEP_WARNING"
+      ]
+    },
+    {
+      "id": "entity-coverage",
+      "severity": "SOFT_WARNING",
+      "blocksRelease": false,
+      "group": "semantic-data",
+      "entrypoint": "_ops/validators/validate_entity_coverage.js",
+      "npmScript": "validate:entities",
+      "status": 0,
+      "duration_ms": 34,
+      "stdout": "Entity coverage OK",
+      "stderr": "",
+      "changed_files": [],
+      "source_assertion_strings": [
+        "); function parse(file){ try { return JSON.parse(read(file)); } catch(error){ fail(`${file} is not valid JSON: ${error.message}`); } } const entities = parse(",
+        "); if(!entities.organization?.name || !entities.organization?.url) fail(",
+        "); if(!entities.provider?.name || !entities.provider?.role) fail(",
+        "); if(!Array.isArray(entities.services) || entities.services.length < 4) fail(",
+        "); if(!entities.domain?.canonicalDomain) fail(",
+        "); if(!author.name || !author.organization || !author.bio) fail(",
+        "); if(!org.name || !org.url || !Array.isArray(org.sameAs)) fail(",
+        "); if(org.name !== entities.organization.name) fail(",
+        "); if(author.organization !== entities.organization.name) fail(",
+        "); const serviceNames = new Set(entities.services.map(s => s.name)); for(const required of [",
+        "Missing required service entity: ${required}",
+        "Entity coverage OK"
+      ],
+      "classification": [
+        "semantic-quality",
+        "KEEP_WARNING"
+      ]
+    },
+    {
+      "id": "conversion-contract",
+      "severity": "STRONG_WARNING",
+      "blocksRelease": false,
+      "group": "conversion-ux",
+      "entrypoint": "_ops/validators/validate_conversion_contract.js",
+      "npmScript": "validate:conversion",
+      "status": 0,
+      "duration_ms": 37,
+      "stdout": "Conversion contract OK",
+      "stderr": "",
+      "changed_files": [],
+      "source_assertion_strings": [
+        "); const path = require(",
+        "); const { fail } = require(",
+        ")); const forms=config.forms || {}; const allowed = new Set([forms.therapy, forms.coaching, forms.corporate, forms.groups,",
+        "data/query_coverage_map.json",
+        ")); for(const item of qmap){ if(!item.ctaTarget) fail(`Query missing ctaTarget: ${item.query}`); const target=item.ctaTarget; const internal=target.startsWith(",
+        "); if(!allowed.has(target) && !internal) fail(`Unapproved external ctaTarget: ${target}`); if(internal){ const page=path.join(",
+        "ctaTarget internal page missing: ${target}",
+        ", route.replace(/^\\//,",
+        "${route} missing approved conversion path.",
+        "); const homepageRequired = [",
+        "Homepage dual-pathway contract missing token: ${token}",
+        "])[0]; for (const block of [individualSection, individualPathway]) { if (/trauma/i.test(block)) fail(",
+        ")) { fail(",
+        "Homepage restored credibility/proof feature missing token: ${token}"
+      ],
+      "classification": [
+        "critical-user-journey",
+        "KEEP_BLOCKING_ONLY_FOR_PRIMARY_CTA_FAILURE"
+      ]
+    },
+    {
+      "id": "training-inquiry",
+      "severity": "HARD_FAIL",
+      "blocksRelease": true,
+      "group": "data-capture",
+      "entrypoint": "_ops/validators/validate_training_inquiry_contract.js",
+      "npmScript": "validate:training-inquiry",
+      "status": 0,
+      "duration_ms": 45,
+      "stdout": "Inquiry, visual, runtime, and edit-audit contracts OK (2 forms, 17 locked fields traced frontend \u2192 JS \u2192 backend).",
+      "stderr": "",
+      "changed_files": [],
+      "source_assertion_strings": [
+        "); const wranglerToml = fs.existsSync(wranglerPath) ? fs.readFileSync(wranglerPath,",
+        ", statusId:",
+        "group-inquiry-status",
+        "], forbiddenFields: [",
+        "${contract.label} Cloudflare Function missing: ${contract.fnPath}",
+        "'][^>]*>`, 'i'); if (!formPattern.test(html)) fail(`${contract.label} form missing.`); const endpointPattern = new RegExp(`action=[",
+        "']`); if (!endpointPattern.test(html)) fail(`${contract.label} form must post to ${contract.endpoint}.`); if (!/method=[",
+        "']/i.test(html)) fail(`${contract.label} form method must be POST.`); const formBlockMatch = html.match(new RegExp(String.raw`<form[^>]+id=[",
+        ")); if (!formBlockMatch) fail(`${contract.label} form block missing.`); const formBlock = formBlockMatch[0]; const formFields = Array.from(formBlock.matchAll(/name=[\"",
+        "${contract.label} must expose exact fields in order. Expected ${contract.fields.join(', ')}; got ${uniqueFields.join(', ')}",
+        "${contract.label} contains stale Training-only fields: ${forbidden.join(', ')}",
+        "${contract.label} frontend field missing: ${field}",
+        "${contract.label} JS payload mapping missing: ${field}",
+        "${contract.label} backend registry missing: ${field}",
+        "id=[\"']${contract.statusId}[\"']",
+        "${contract.label} status message region missing.",
+        "]mailto:/i.test(html)) fail(`${contract.label} form must not use mailto action.`); if (!js.includes(",
+        ")) fail(`${contract.label} JS must submit through explicit POST helper.`); if (!js.includes(",
+        "${contract.label} success behavior must hide the form.",
+        "${contract.label} success thank-you copy missing from JS.",
+        "${contract.label} backend form type marker missing.",
+        "FORM_DATABASE_SHARED_SECRET",
+        "${contract.label} must support canonical form database env vars.",
+        "INQUIRY_SHARED_SECRET",
+        "${contract.label} must keep legacy webhook fallback variables.",
+        "secret: sharedSecret",
+        "${contract.label} backend must forward shared secret to Apps Script.",
+        "${contract.label} backend must synchronously send Apps Script submission.",
+        "${contract.label} backend must require Apps Script JSON ok:true before user success.",
+        "FORM_DATABASE_DISPATCH_FAILED",
+        "${contract.label} backend must log failed dispatches.",
+        "${contract.label} backend must not background-queue form submissions.",
+        "Groups config must route to /groups/#group-inquiry-form.",
+        ")) fail(",
+        "\")) fail(",
+        "Build llms fallback must not route groups to mailto.",
+        "Corporate Speaking page must mention keynote speaking.",
+        "Organizational Training Inquiry page must mention keynote speaking.",
+        "Homepage hero must not include logo overlay on green blazer photo.",
+        "Homepage header must use full Hicks Consulting logo.",
+        "Homepage must keep green blazer hero photo.",
+        "Homepage must keep clean white-background / colorful-suit Meet Monika portrait.",
+        "content must never depend on JS animation",
+        "Animated sections must fail open so homepage content remains visible without JS.",
+        "wrangler.toml is required so Cloudflare Pages uses the explicit repo deployment contract.",
+        "wrangler.toml must set pages_build_output_dir = \"dist\".",
+        "wrangler.toml must retain legacy TRAINING_INQUIRY_WEBHOOK_URL fallback during form database migration.",
+        "wrangler.toml must retain legacy INQUIRY_SHARED_SECRET fallback during form database migration.",
+        "Cloudflare Advanced Mode worker missing: worker/_worker.js",
+        "Cloudflare Advanced Mode worker missing marker: ${marker}",
+        "Advanced worker must synchronously require Apps Script ok:true before user success.",
+        "Advanced worker must not background-queue form submissions.",
+        "Build must copy worker/_worker.js to dist/_worker.js.",
+        "Runbook must document Groups inquiry field contract.",
+        "Training runbook must point to the unified form database env vars.",
+        "Training form must show thank-you confirmation after successful submit.",
+        "Groups form must show thank-you confirmation after successful submit.",
+        ")); if (missingArticleCredits.length) fail(`Article author credit missing on ${missingArticleCredits.length} article pages: ${missingArticleCredits.slice(0, 10).join("
+      ],
+      "classification": [
+        "critical-user-journey",
+        "KEEP_BLOCKING"
+      ]
+    },
+    {
+      "id": "source-health",
+      "severity": "SOFT_WARNING",
+      "blocksRelease": false,
+      "group": "ingestion",
+      "entrypoint": "_ops/validators/validate_source_health.js",
+      "npmScript": "validate:source-health",
+      "status": 0,
+      "duration_ms": 36,
+      "stdout": "Source health contract OK",
+      "stderr": "",
+      "changed_files": [],
+      "source_assertion_strings": [
+        "); const { warn: reportFindings } = require(",
+        "; let health = null; if (!fs.existsSync(file)) finding(",
+        ")); } catch (error) { finding(`source_health.json is invalid JSON: ${error.message}`); } } if (health) { if (!health.generatedAt || !health.mode || !Array.isArray(health.sources)) finding(",
+        "Invalid ingestion mode: ${health.mode}",
+        ") finding(`Invalid source health entry: ${JSON.stringify(source)}`); } } if (warnings.length) reportFindings(warnings, `${warnings.length}-source-health-warning(s)`); else console.log("
+      ],
+      "classification": [
+        "input-quality",
+        "KEEP_WARNING"
+      ]
+    },
+    {
+      "id": "ingestion-freshness",
+      "severity": "INFO",
+      "blocksRelease": false,
+      "group": "ingestion-observability",
+      "entrypoint": "_ops/validators/validate_ingestion_freshness.js",
+      "npmScript": "validate:ingestion-freshness",
+      "status": 0,
+      "duration_ms": 35,
+      "stdout": "Ingestion freshness contract OK",
+      "stderr": "",
+      "changed_files": [],
+      "source_assertion_strings": [
+        "); const { warn: reportFindings } = require(",
+        "${file} missing.",
+        ")); } catch (error) { finding(`${file} is invalid JSON: ${error.message}`); return null; } } for (const file of [",
+        "${file} has invalid generatedAt."
+      ],
+      "classification": [
+        "observability",
+        "KEEP_INFO"
+      ]
+    },
+    {
+      "id": "query-signal-schema",
+      "severity": "SOFT_WARNING",
+      "blocksRelease": false,
+      "group": "ingestion",
+      "entrypoint": "_ops/validators/validate_query_signal_schema.js",
+      "npmScript": "validate:query-signals",
+      "status": 0,
+      "duration_ms": 34,
+      "stdout": "Query signal schema OK",
+      "stderr": "",
+      "changed_files": [],
+      "source_assertion_strings": [
+        "); const { warn: reportFindings } = require(",
+        "); const warnings = []; function finding(message) { warnings.push(`QUERY SIGNAL SCHEMA WARNING: ${message}`); } const file =",
+        "; let payload = null; if (!fs.existsSync(file)) finding(",
+        ")); } catch (error) { finding(`normalized_query_signals.json is invalid JSON: ${error.message}`); } } const signals = Array.isArray(payload?.signals) ? payload.signals : []; if (payload && !Array.isArray(payload.signals)) finding(",
+        "Signal missing ${key}: ${JSON.stringify(signal)}",
+        "Signal tags must be array: ${signal.id}",
+        "Query signal schema OK"
+      ],
+      "classification": [
+        "input-contract",
+        "KEEP_WARNING"
+      ]
+    },
+    {
+      "id": "query-clusters",
+      "severity": "INFO",
+      "blocksRelease": false,
+      "group": "ingestion-observability",
+      "entrypoint": "_ops/validators/validate_query_clusters.js",
+      "npmScript": "validate:query-clusters",
+      "status": 0,
+      "duration_ms": 34,
+      "stdout": "Query cluster contract OK",
+      "stderr": "",
+      "changed_files": [],
+      "source_assertion_strings": [
+        "); const { warn: reportFindings } = require(",
+        "; let payload = null; if (!fs.existsSync(file)) finding(",
+        "query_clusters.json is invalid JSON: ${error.message}",
+        "clusters must be a non-empty array.",
+        ") { finding(`Invalid cluster: ${JSON.stringify(cluster)}`); } } if (warnings.length) reportFindings(warnings, `${warnings.length}-query-cluster-info-finding(s)`); else console.log("
+      ],
+      "classification": [
+        "observability",
+        "KEEP_INFO"
+      ]
+    },
+    {
+      "id": "fanout-candidates",
+      "severity": "INFO",
+      "blocksRelease": false,
+      "group": "ingestion-observability",
+      "entrypoint": "_ops/validators/validate_fanout_candidates.js",
+      "npmScript": "validate:fanouts",
+      "status": 0,
+      "duration_ms": 32,
+      "stdout": "Fanout candidates contract OK",
+      "stderr": "",
+      "changed_files": [],
+      "source_assertion_strings": [
+        "); const { warn: reportFindings } = require(",
+        "; let payload = null; if (!fs.existsSync(file)) finding(",
+        ")); } catch (error) { finding(`fanout_candidates.json is invalid JSON: ${error.message}`); } } const candidates = Array.isArray(payload?.candidates) ? payload.candidates : []; if (payload && !Array.isArray(payload.candidates)) finding(",
+        "Invalid fanout candidate: ${JSON.stringify(candidate)}"
+      ],
+      "classification": [
+        "observability",
+        "KEEP_INFO"
+      ]
+    },
+    {
+      "id": "social-firehose",
+      "severity": "STRONG_WARNING",
+      "blocksRelease": false,
+      "group": "publishing-governance",
+      "entrypoint": "_ops/validators/validate_social_firehose_contract.js",
+      "npmScript": "validate:social-firehose",
+      "status": 0,
+      "duration_ms": 36,
+      "stdout": "Social firehose contract OK",
+      "stderr": "",
+      "changed_files": [],
+      "source_assertion_strings": [
+        "); const { warn: reportFindings } = require(",
+        "${file} missing.",
+        ")); } catch (error) { finding(`${file} is invalid JSON: ${error.message}`); return null; } } const policy = readJson(",
+        "); const required = [",
+        "require_cluster_score_minimum",
+        "Policy missing ${key}",
+        "max_items_per_source_per_run must be <= 25.",
+        "max_pages_generated_per_run must be <= 5."
+      ],
+      "classification": [
+        "legacy-approval-governance",
+        "REPLACE_FOR_FULL_SAFE_AUTONOMY"
+      ]
+    },
+    {
+      "id": "throttle-contract",
+      "severity": "SOFT_WARNING",
+      "blocksRelease": false,
+      "group": "provider-resilience",
+      "entrypoint": "_ops/validators/validate_throttle_contract.js",
+      "npmScript": "validate:throttle",
+      "status": 0,
+      "duration_ms": 33,
+      "stdout": "Throttle contract OK",
+      "stderr": "",
+      "changed_files": [],
+      "source_assertion_strings": [
+        "); const { warn: reportFindings } = require(",
+        "); const warnings = []; function finding(message) { warnings.push(`THROTTLE CONTRACT WARNING: ${message}`); } if (!fs.existsSync(",
+        ")); } catch (error) { finding(`config/social_ingestion_policy.json is missing or invalid: ${error.message}`); } const throttle = policy?.throttle || {}; if (policy) { if (typeof throttle.delayMs !=="
+      ],
+      "classification": [
+        "provider-resilience",
+        "KEEP_WARNING"
+      ]
+    },
+    {
+      "id": "content-briefs",
+      "severity": "STRONG_WARNING",
+      "blocksRelease": false,
+      "group": "publishing-governance",
+      "entrypoint": "_ops/validators/validate_content_brief_candidates.js",
+      "npmScript": "validate:content-briefs",
+      "status": 0,
+      "duration_ms": 32,
+      "stdout": "Content brief candidate advisory OK",
+      "stderr": "",
+      "changed_files": [],
+      "source_assertion_strings": [
+        "); const { warn: reportFindings } = require(",
+        "); if (!c.llmGeneratedRequired) warn("
+      ],
+      "classification": [
+        "legacy-approval-governance",
+        "REPLACE_FOR_FULL_SAFE_AUTONOMY"
+      ]
+    },
+    {
+      "id": "publish-state",
+      "severity": "HARD_FAIL",
+      "blocksRelease": true,
+      "group": "publishing-safety",
+      "entrypoint": "_ops/validators/validate_publish_state.js",
+      "npmScript": "validate:publish",
+      "status": 0,
+      "duration_ms": 33,
+      "stdout": "Publish state OK",
+      "stderr": "",
+      "changed_files": [],
+      "source_assertion_strings": [
+        ")); const allowed = new Set([",
+        "Manifest item missing core fields: ${JSON.stringify(item)}",
+        "Invalid status ${item.status}",
+        "&& item.validationPassed !== true) fail(`Non-draft item must be validation-passed: ${item.id}`); if (item.status ===",
+        "&& !item.requiresFooter) fail(`Published item missing footer flag ${item.id}`); } console.log("
+      ],
+      "classification": [
+        "publishing-safety",
+        "REWRITE_FOR_AUTONOMY_STATE_MACHINE"
+      ]
+    },
+    {
+      "id": "policy-compliance",
+      "severity": "HARD_FAIL",
+      "blocksRelease": true,
+      "group": "compliance",
+      "entrypoint": "_ops/validators/validate_policy_compliance.js",
+      "npmScript": "validate:policy",
+      "status": 0,
+      "duration_ms": 55,
+      "stdout": "Policy compliance OK",
+      "stderr": "",
+      "changed_files": [],
+      "source_assertion_strings": [
+        ").toLowerCase(); for(const phrase of banned){ if(html.includes(phrase)) fail(`Policy phrase found: ${phrase} in ${file}`);} if(!html.includes(",
+        ")) fail(`Missing disclaimer/footer language in ${file}`); } console.log("
+      ],
+      "classification": [
+        "content-safety",
+        "KEEP_BLOCKING_FOR_PROHIBITED_CONTENT"
+      ]
+    },
+    {
+      "id": "content-plan",
+      "severity": "STRONG_WARNING",
+      "blocksRelease": false,
+      "group": "content-operations",
+      "entrypoint": "_ops/validators/validate_content_plan_2026.js",
+      "npmScript": "validate:content-plan",
+      "status": 0,
+      "duration_ms": 37,
+      "stdout": "2026 content plan loaded: daily=177, weekly=37, monthly=9, quarterly=4. Latest scheduledAt=2027-01-01T13:00:00.000Z",
+      "stderr": "",
+      "changed_files": [],
+      "source_assertion_strings": [
+        "); const path = require(",
+        "); const { fail } = require(",
+        "CONTENT PLAN FAIL: ${type} manifest count ${counts[type] || 0} < expected ${n}",
+        "CONTENT PLAN FAIL: latest scheduledAt ${lastPublish} does not reach 2026-12-31"
+      ],
+      "classification": [
+        "velocity-contract",
+        "KEEP_BLOCKING_FOR_CADENCE_DRIFT"
+      ]
+    },
+    {
+      "id": "recent-resources",
+      "severity": "STRONG_WARNING",
+      "blocksRelease": false,
+      "group": "content-discovery",
+      "entrypoint": "_ops/validators/validate_recent_resources.js",
+      "npmScript": "validate:recent-resources",
+      "status": 0,
+      "duration_ms": 42,
+      "stdout": "Recent resources contract OK (4 newest published resources selected).",
+      "stderr": "",
+      "changed_files": [],
+      "source_assertion_strings": [
+        "); const path = require(",
+        "); const { warn } = require(",
+        "); const { selectRecentPublishedResources } = require(",
+        "); } const eligible = manifest .filter((item) => item?.validationPassed === true && item?.status ===",
+        "Expected ${Math.min(4, eligible.length)} recent cards, selected ${actual.length}.",
+        "Newest-four order mismatch. Expected ${expectedIds.join(', ') || '(none)'}; got ${actualIds.join(', ') || '(none)'}."
+      ],
+      "classification": [
+        "content-discovery",
+        "KEEP_WARNING"
+      ]
+    },
+    {
+      "id": "word-counts",
+      "severity": "SOFT_WARNING",
+      "blocksRelease": false,
+      "group": "content-quality",
+      "entrypoint": "_ops/validators/validate_resource_word_counts.js",
+      "npmScript": "validate:word-counts",
+      "status": 0,
+      "duration_ms": 60,
+      "stdout": "Resource word count warnings clean (227 pages checked, 25% margin).",
+      "stderr": "",
+      "changed_files": [],
+      "source_assertion_strings": [
+        "); const path = require(",
+        "); const { fail, warn: reportFindings } = require(",
+        "WORD COUNT FAIL: missing source page for ${item.id}: ${file}"
+      ],
+      "classification": [
+        "petty-quality-proxy",
+        "DOWNGRADE_INFO"
+      ]
+    },
+    {
+      "id": "admin-previews",
+      "severity": "STRONG_WARNING",
+      "blocksRelease": false,
+      "group": "admin-operations",
+      "entrypoint": "_ops/validators/validate_admin_preview_links.js",
+      "npmScript": "validate:admin-previews",
+      "status": 0,
+      "duration_ms": 36,
+      "stdout": "Admin preview manifest OK (227 items checked, 132 review previews, 95 live public items).",
+      "stderr": "",
+      "changed_files": [],
+      "source_assertion_strings": [
+        "); const { warn: reportFindings } = require(",
+        ")); const allowedTypes = new Set([",
+        "Manifest item ${item.id} missing slug/publicPath/contentType",
+        "Manifest item ${item.id} has invalid contentType: ${item.contentType}",
+        "Manifest item ${item.id} uses stale cadence route in ${field}: ${item[field]}",
+        "Manifest item ${item.id} publicPath must match slug: ${item.publicPath} !== ${item.slug}",
+        "Manifest item ${item.id} public source page missing: ${item.publicPath}",
+        "Manifest item ${item.id} is published and should not require a previewPath",
+        "Manifest item ${item.id} missing previewPath for unpublished review item",
+        "Manifest item ${item.id} previewPath must be /preview + publicPath"
+      ],
+      "classification": [
+        "legacy-approval-admin",
+        "REPLACE_FOR_CONTROL_ROOM"
+      ]
+    },
+    {
+      "id": "admin-generated-queue",
+      "severity": "STRONG_WARNING",
+      "blocksRelease": false,
+      "group": "admin-operations",
+      "entrypoint": "_ops/validators/validate_admin_generated_queue.js",
+      "npmScript": "validate:admin-generated-queue",
+      "status": 0,
+      "duration_ms": 32,
+      "stdout": "Admin generated content queue OK (6 candidates, 14 queue items).",
+      "stderr": "",
+      "changed_files": [],
+      "source_assertion_strings": [
+        "); const requiredHtml = [",
+        "Admin page missing generated content queue surface: ${token}",
+        "Admin JS missing generated content queue wiring: ${token}",
+        "Candidate missing required admin fields: ${candidate.id || 'unknown'}",
+        "Candidate must remain approval-gated: ${candidate.id}",
+        "Candidate must require LLM-generated/humanized drafting: ${candidate.id}"
+      ],
+      "classification": [
+        "legacy-approval-admin",
+        "REPLACE_FOR_AUTONOMY_QUEUE"
+      ]
+    },
+    {
+      "id": "workflow-contracts",
+      "severity": "HARD_FAIL",
+      "blocksRelease": true,
+      "group": "release-safety",
+      "entrypoint": "_ops/validators/validate_workflows.js",
+      "npmScript": "validate:workflows",
+      "status": 0,
+      "duration_ms": 33,
+      "stdout": "Workflow contracts OK (11 workflows, 5 writer workflows traced).",
+      "stderr": "",
+      "changed_files": [],
+      "source_assertion_strings": [
+        ")); const workflowsDir = path.join(process.cwd(),",
+        "workflows",
+        ")); const writeWorkflows = []; const registry = JSON.parse(read(",
+        ")); const leafScripts = new Set(registry.checks.map((check) => check.npmScript)); for (const file of files) { const full = path.join(workflowsDir, file); const content = fs.readFileSync(full,",
+        "Workflow ${file} references missing npm script: ${script}",
+        "Workflow ${file} invokes leaf validator ${script} directly; use a registered validation profile.",
+        "Workflow ${file} missing actions/checkout@v4",
+        "Workflow ${file} missing actions/setup-node@v4",
+        "Writer workflow ${file} must use shared hicks-consulting-content-automation concurrency group.",
+        "Writer workflow ${file} must pull latest main before mutating generated outputs.",
+        "Expected content-publish and social-ingestion writer workflows to be present.",
+        "); const buildStep = buildWorkflow.indexOf(",
+        "); const validateStep = buildWorkflow.indexOf(",
+        "); if (buildStep === -1 || validateStep === -1 || buildStep > validateStep) { fail(",
+        "); } console.log(`Workflow contracts OK (${files.length} workflows, ${writeWorkflows.length} writer workflows traced).`); { const fsWorkflow = require(",
+        "); const workflowText = fsWorkflow.readFileSync(",
+        "); function workflowFail(message) { fail(`Workflow contract failed: ${message}`); } for (const marker of [",
+        ", \"data/admin/content_manifest.json\"]) { if (!workflowText.includes(marker)) workflowFail(`content-publish.yml missing manifest push trigger marker: ${marker}`); } if (!workflowText.includes(",
+        ") || !workflowText.includes(",
+        ")) { workflowFail(",
+        "); } if (!workflowText.includes(",
+        "); } const publishIndex = workflowText.indexOf(",
+        "); const buildIndex = workflowText.indexOf(",
+        "); const validateIndex = workflowText.indexOf(",
+        "); const commitIndex = workflowText.indexOf(",
+        "); if (publishIndex === -1) workflowFail(",
+        "); if (buildIndex === -1) workflowFail(",
+        "); if (validateIndex === -1) workflowFail(",
+        "); if (commitIndex === -1) workflowFail(",
+        "); if (!(publishIndex < buildIndex && buildIndex < validateIndex && validateIndex < commitIndex)) { workflowFail("
+      ],
+      "classification": [
+        "release-integrity",
+        "KEEP_BLOCKING_FOR_REAL_WRITER_SAFETY"
+      ]
+    },
+    {
+      "id": "indexnow",
+      "severity": "SOFT_WARNING",
+      "blocksRelease": false,
+      "group": "discoverability",
+      "entrypoint": "_ops/validators/validate_indexnow_contract.js",
+      "npmScript": "validate:indexnow",
+      "status": 0,
+      "duration_ms": 36,
+      "stdout": "IndexNow post-publish distribution contract OK",
+      "stderr": "",
+      "changed_files": [],
+      "source_assertion_strings": [
+        ")); const requiredScripts = [",
+        "IndexNow contract fail: package.json missing script ${script}",
+        ".github/workflows/indexnow-submit.yml",
+        "IndexNow contract fail: missing ${file}",
+        "IndexNow contract fail: build must copy root indexnow.txt into dist for key verification.",
+        "IndexNow contract fail: workflow must run only after Content Publish.",
+        "/.test(workflow)) fail(",
+        "); if (!/workflow_dispatch:/.test(workflow)) fail(",
+        "IndexNow contract fail: workflow missing ${command}.",
+        "IndexNow contract fail: workflow must commit durable distribution receipts.",
+        "IndexNow contract fail: workflow must upload distribution evidence.",
+        "IndexNow contract fail: post-publish runner missing ${token}.",
+        "IndexNow contract fail: emit script must write ${token}.",
+        "IndexNow contract fail: priority and batch artifacts must exist together.",
+        ").split(/\\r?\\n/).map((s) => s.trim()).filter(Boolean); if (!urls.length) fail(",
+        "); const invalid = urls.filter((url) => !/^https:\\/\\/www\\.hicksconsulting\\.org\\//.test(url)); if (invalid.length) fail(`IndexNow contract fail: non-canonical URLs in batch file: ${invalid.slice(0, 5).join("
+      ],
+      "classification": [
+        "distribution",
+        "KEEP_WARNING"
+      ]
+    },
+    {
+      "id": "digital-products-contract",
+      "severity": "HARD_FAIL",
+      "blocksRelease": true,
+      "group": "digital-products",
+      "entrypoint": "_ops/validators/validate_digital_products_contract.js",
+      "npmScript": "validate:digital-products",
+      "status": 0,
+      "duration_ms": 34,
+      "stdout": "Digital products catalog contract OK",
+      "stderr": "",
+      "changed_files": [],
+      "source_assertion_strings": [
+        "); const path = require(",
+        "); const { fail } = require(",
+        ")); } catch (error) { fail(`${file} is invalid JSON: ${error.message}`); } } const root = process.cwd(); const catalogPath = path.join(root,",
+        "); const schemaPath = path.join(root,",
+        "); if (!fs.existsSync(catalogPath)) fail(",
+        "); if (!fs.existsSync(schemaPath)) fail(",
+        "); const catalog = readJson(catalogPath); const schema = readJson(schemaPath); if (!Array.isArray(catalog.products)) fail(",
+        "); const ids = new Set(); const featuredByType = new Map(); for (const item of catalog.products) { for (const field of schema.requiredProductFields) { if (!(field in item)) fail(`Product ${item.id ||",
+        "); } if (ids.has(item.id)) fail(",
+        "); ids.add(item.id); if (!schema.allowedProductTypes.includes(item.productType)) fail(",
+        "); if (!schema.allowedStatuses.includes(item.status)) fail(",
+        "); if (!schema.allowedCheckoutStatuses.includes(item.checkoutStatus)) fail(",
+        "); if (item.productType === 'free' && item.status === 'published' && !item.downloadUrl) fail(",
+        "); if (item.productType === 'premium' && item.status === 'published') { if (!item.gumroadUrl) fail(",
+        "); if (item.gumroadUrl === 'https://www.gumroad.com') fail(",
+        "); if (item.checkoutStatus !== 'live') fail(",
+        "); if (!item.priceLabel) fail(",
+        "); if (!String(item.buttonLabel || '').includes(item.priceLabel)) fail(",
+        "); } if (item.featured === true) { const current = featuredByType.get(item.productType); if (current) fail(",
+        "Seed free worksheet product is missing.",
+        "Seed premium workbook product is missing.",
+        "Admin digital products UX missing token: ${token}",
+        "Admin digital products UX must not expose deprecated API token language.",
+        "Admin smart filters must appear before the add/update product box."
+      ],
+      "classification": [
+        "commerce-contract",
+        "KEEP_BLOCKING"
+      ]
+    },
+    {
+      "id": "product-routes",
+      "severity": "HARD_FAIL",
+      "blocksRelease": true,
+      "group": "digital-products",
+      "entrypoint": "_ops/validators/validate_product_routes.js",
+      "npmScript": "validate:product-routes",
+      "status": 0,
+      "duration_ms": 33,
+      "stdout": "Digital product route contract OK",
+      "stderr": "",
+      "changed_files": [],
+      "source_assertion_strings": [
+        "); const { fail } = require(",
+        "); const requiredFiles = [",
+        "Missing required product route file: ${file}",
+        "Resources page missing token: ${token}",
+        "CSS missing digital route token: ${token}",
+        "); for (const route of [",
+        "Build script must include public route: ${route}",
+        "Digital product route contract OK"
+      ],
+      "classification": [
+        "commerce-user-journey",
+        "KEEP_BLOCKING"
+      ]
+    },
+    {
+      "id": "product-upload-contract",
+      "severity": "HARD_FAIL",
+      "blocksRelease": true,
+      "group": "digital-products",
+      "entrypoint": "_ops/validators/validate_product_upload_contract.js",
+      "npmScript": "validate:product-upload",
+      "status": 0,
+      "duration_ms": 32,
+      "stdout": "Digital product upload/admin contract OK",
+      "stderr": "",
+      "changed_files": [],
+      "source_assertion_strings": [
+        "); const { fail } = require(",
+        "GitHub is not required for normal product publishing",
+        "Admin digital products page missing token: ${token}",
+        "Admin digital products page must not expose deprecated token UX: ${forbidden}",
+        "Smart filters must appear above the add/update product form.",
+        "GitHub backup tools must remain visually secondary to normal product editing.",
+        ")) fail(",
+        "x-admin-password-hash",
+        "confirmStatusChange",
+        "GitHub was not changed",
+        "Admin JS missing token: ${token}",
+        "Admin JS must not depend on deprecated visible API token auth.",
+        "Admin JS must not auto-promote a stale session flag into password-hash auth.",
+        "Digital products API shared contract missing token: ${token}",
+        "Digital products shared API must not require deprecated token auth.",
+        "Admin password did not match.",
+        "Worker digital products auth missing token: ${token}",
+        "Worker must not require deprecated digital products token auth."
+      ],
+      "classification": [
+        "commerce-admin-security",
+        "KEEP_BLOCKING"
+      ]
+    },
+    {
+      "id": "product-cover-contract",
+      "severity": "HARD_FAIL",
+      "blocksRelease": true,
+      "group": "digital-products",
+      "entrypoint": "_ops/validators/validate_product_cover_contract.js",
+      "npmScript": "validate:product-cover",
+      "status": 0,
+      "duration_ms": 31,
+      "stdout": "Digital product cover contract OK",
+      "stderr": "",
+      "changed_files": [],
+      "source_assertion_strings": [
+        "); const { fail } = require(",
+        "Public digital products JS missing cover fallback token: ${token}",
+        ")) fail(",
+        "API cover contract missing token: ${token}"
+      ],
+      "classification": [
+        "commerce-quality",
+        "KEEP_WARNING"
+      ]
+    },
+    {
+      "id": "product-api-behavior",
+      "severity": "HARD_FAIL",
+      "blocksRelease": true,
+      "group": "digital-products",
+      "entrypoint": "_ops/validators/validate_product_api_behavior.js",
+      "npmScript": "validate:product-api-behavior",
+      "status": 0,
+      "duration_ms": 32,
+      "stdout": "Digital product API behavior contract OK",
+      "stderr": "",
+      "changed_files": [],
+      "source_assertion_strings": [
+        "); const { fail } = require(",
+        "); const requiredShared = [",
+        "x-admin-password-hash",
+        "Admin password did not match.",
+        "merged.checkoutStatus = 'live';",
+        "Published premium downloads require live checkout status.",
+        "status === 'published' ? 'live' : 'ready'",
+        "Digital products shared API missing behavior guard: ${token}",
+        "Digital products shared API still references deprecated auth: ${forbidden}",
+        "Worker still references deprecated auth: ${forbidden}",
+        "Worker must accept password-hash auth for digital product write endpoints.",
+        "checkoutStatus: item.productType === 'premium' ? 'live' : item.checkoutStatus",
+        "Publish endpoint must promote premium checkoutStatus to live only during publish action.",
+        "Update endpoint must validate publish attempts before writing.",
+        "Update endpoint must merge product records instead of replacing blindly."
+      ],
+      "classification": [
+        "commerce-runtime",
+        "KEEP_BLOCKING"
+      ]
+    },
+    {
+      "id": "authority-fanout",
+      "severity": "HARD_FAIL",
+      "blocksRelease": true,
+      "group": "authority-scale",
+      "entrypoint": "scripts/authority_scale/validate_max_fanout.mjs",
+      "npmScript": "validate:authority-fanout",
+      "status": 0,
+      "duration_ms": 685,
+      "stdout": "{\n  \"ok\": true,\n  \"records\": 100000,\n  \"unique_queries\": 100000,\n  \"shards\": 20,\n  \"publication_authority\": \"EXISTING_CLIENT_ADMIN_AND_APPROVAL_SYSTEM\",\n  \"errors\": []\n}",
+      "stderr": "",
+      "changed_files": [],
+      "source_assertion_strings": [
+        ")),errors=[],q=new Set(),ids=new Set();let n=0;for(const sh of idx.shards||[]){if(!fs.existsSync(sh.path)){errors.push(`missing:${sh.path}`);continue;}const b=fs.readFileSync(sh.path),h=crypto.createHash("
+      ],
+      "classification": [
+        "planning-capacity",
+        "KEEP_INFO_NOT_PRODUCT_BLOCKER"
+      ]
+    },
+    {
+      "id": "kpi-truth",
+      "severity": "HARD_FAIL",
+      "blocksRelease": true,
+      "group": "authority-scale",
+      "entrypoint": "scripts/authority_scale/validate_kpi_truth.mjs",
+      "npmScript": "validate:kpi-truth",
+      "status": 0,
+      "duration_ms": 43,
+      "stdout": "{\n  \"ok\": true,\n  \"verified_citations\": 0,\n  \"events\": 0,\n  \"errors\": []\n}",
+      "stderr": "",
+      "changed_files": [],
+      "source_assertion_strings": [
+        "missing:${k}"
+      ],
+      "classification": [
+        "truthfulness",
+        "KEEP_BLOCKING_FOR_FALSE_CLAIMS"
+      ]
+    },
+    {
+      "id": "protected-editorial-core",
+      "severity": "HARD_FAIL",
+      "blocksRelease": true,
+      "group": "publishing-safety",
+      "entrypoint": "scripts/authority_scale/validate_protected_editorial_core.mjs",
+      "npmScript": "validate:protected-editorial-core",
+      "status": 0,
+      "duration_ms": 45,
+      "stdout": "{\n  \"ok\": true,\n  \"repo\": \"hicks\",\n  \"protected_files\": 4,\n  \"baseline_editorial_records\": 227,\n  \"current_editorial_records\": 227,\n  \"policy\": \"PROTECTED_CLIENT_EDITORIAL_CORE_DO_NOT_MUTATE\",\n  \"state_policy\": \"PRESERVE_BASELINE_EDITORIAL_IDENTITY_ALLOW_NATIVE_STATUS_TRANSITIONS\",\n  \"errors\": []\n}",
+      "stderr": "",
+      "changed_files": [],
+      "source_assertion_strings": [
+        "missing:${x.path}",
+        "drift:${x.path}",
+        "missing-baseline-editorial-record:${rec.id}",
+        "baseline-editorial-identity-drift:${rec.id}"
+      ],
+      "classification": [
+        "preservation",
+        "REWRITE_TO_ALLOW_SCOPED_VERSIONED_REPAIR"
+      ]
+    },
+    {
+      "id": "improvement-recommendations",
+      "severity": "STRONG_WARNING",
+      "blocksRelease": false,
+      "group": "authority-scale",
+      "entrypoint": "scripts/authority_scale/validate_improvement_recommendations.mjs",
+      "npmScript": "validate:improvement-recommendations",
+      "status": 0,
+      "duration_ms": 35,
+      "stdout": "{\n  \"ok\": true,\n  \"recommendations\": 40,\n  \"twin_agent_installed\": false,\n  \"errors\": []\n}",
+      "stderr": "",
+      "changed_files": [],
+      "source_assertion_strings": [
+        "authority:${i.route}",
+        "lessons:${i.route}"
+      ],
+      "classification": [
+        "advisory",
+        "KEEP_INFO"
+      ]
+    },
+    {
+      "id": "authority-distribution",
+      "severity": "HARD_FAIL",
+      "blocksRelease": true,
+      "group": "discoverability",
+      "entrypoint": "scripts/authority_scale/validate_distribution_manifest.mjs",
+      "npmScript": "validate:authority-distribution",
+      "status": 0,
+      "duration_ms": 35,
+      "stdout": "{\n  \"ok\": true,\n  \"url_count\": 121,\n  \"provider_success_claimed\": false,\n  \"errors\": []\n}",
+      "stderr": "",
+      "changed_files": [],
+      "source_assertion_strings": [
+        "; const errors = []; const required = [",
+        ".github/workflows/indexnow-submit.yml",
+        "missing:${file}",
+        ").split(/\\r?\\n/).map((x) => x.trim()).filter(Boolean); const workflow = fs.readFileSync(",
+        "); if (manifest.url_count !== batch.length) errors.push(`count:${manifest.url_count}/${batch.length}`); if (!workflow.includes(",
+        ") || !workflow.includes(",
+        "); if (!workflow.includes(\"github.event.workflow_run.conclusion ==",
+        "workflow-command:${command}",
+        "workflow-durable-commit",
+        "].includes(receipt.indexnow?.status) && ![",
+        "].includes(receipt.gsc_sitemap_submission?.status) && ![",
+        "].includes(receipt.priority_url_inspection?.status)) errors.push("
+      ],
+      "classification": [
+        "distribution-contract",
+        "KEEP_WARNING_UNTIL_PROVIDER_PROVEN"
+      ]
+    },
+    {
+      "id": "editorial-continuity",
+      "severity": "HARD_FAIL",
+      "blocksRelease": true,
+      "group": "publishing-safety",
+      "entrypoint": "scripts/continuity/validate_editorial_continuity.mjs",
+      "npmScript": "validate:continuity",
+      "status": 0,
+      "duration_ms": 35,
+      "stdout": "{\n  \"ok\": true,\n  \"schema_version\": \"1.1\",\n  \"run_date\": \"2026-08-03\",\n  \"horizon_days\": 120,\n  \"last_manifest_scheduled_date\": \"2027-01-01\",\n  \"prior_coverage_end\": \"2027-01-01\",\n  \"target_coverage_end\": \"2026-12-01\",\n  \"planned_slots_needed\": 0,\n  \"candidates_added\": 0,\n  \"dry_run\": false,\n  \"cadence_preserved\": {\n    \"daily\": \"weekday insights\",\n    \"weekly\": \"Tuesday article\",\n    \"monthly\": \"15th guide\",\n    \"quarterly\": \"Mar/Jun/Sep/Dec 20th whitepaper\"\n  },\n  \"publication_authority\": \"EXISTING_HICKS_ADMIN_APPROVAL_FLOW\",\n  \"continuity_candidates\": 0,\n  \"errors\": []\n}",
+      "stderr": "",
+      "changed_files": [],
+      "source_assertion_strings": [
+        "invalid-continuity-status:${x.id}",
+        "approval-gate-missing:${x.id}",
+        "invalid-future-slot:${x.id}",
+        "invalid-cadence:${x.id}"
+      ],
+      "classification": [
+        "legacy-approval-continuity",
+        "REWRITE_FOR_AUTONOMY_AND_LOCKED_VELOCITY"
+      ]
+    }
+  ]
+}

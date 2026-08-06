@@ -16,7 +16,7 @@ if (policy) {
   for (const key of required) if (!(key in policy)) finding(`Policy missing ${key}`);
   if (policy.max_items_per_source_per_run > 25) finding('max_items_per_source_per_run must be <= 25.');
   if (policy.max_pages_generated_per_run > 5) finding('max_pages_generated_per_run must be <= 5.');
-  if (policy.publish_mode !== 'queued') finding('publish_mode must be queued.');
+  if (policy.publish_mode !== 'full_safe_autonomy') finding('publish_mode must be full_safe_autonomy.');
 }
 const queue = readJson('data/social/publish_queue.json');
 if (queue && !Array.isArray(queue.items)) finding('publish_queue.items must be array.');

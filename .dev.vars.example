@@ -1,0 +1,42 @@
+# Admin command actions (the /admin and /agency convenience gate is client-side and uses the owner-selected shared password)
+GITHUB_ADMIN_TOKEN=replace_with_fine_grained_repo_token
+GITHUB_REPOSITORY=owner/hicks-consulting-canonical
+GITHUB_BRANCH=main
+INQUIRY_SHARED_SECRET=replace_with_long_random_secret
+
+# Autonomous drafting provider
+LLM_PROVIDER=openai_compatible
+LLM_API_URL=https://provider.example/v1/chat/completions
+LLM_API_KEY=replace_with_provider_key
+LLM_MODEL=replace_with_model_id
+
+# Publication notification (Resend path)
+RESEND_API_KEY=replace_with_resend_key
+PUBLICATION_NOTIFICATION_TO=client@example.com
+PUBLICATION_NOTIFICATION_FROM=Hicks Consulting <notifications@verified-domain.example>
+# Alternative webhook path:
+# EMAIL_WEBHOOK_URL=https://automation.example/hooks/hicks-publication
+# EMAIL_WEBHOOK_SECRET=replace_with_webhook_secret
+
+# Google Search Console monitoring
+GSC_SITE_URL=https://www.hicksconsulting.org/
+GSC_SERVICE_ACCOUNT_EMAIL=service-account@example-project.iam.gserviceaccount.com
+GSC_PRIVATE_KEY="-----BEGIN PRIVATE KEY-----\nREPLACE\n-----END PRIVATE KEY-----\n"
+# Optional temporary token fallback:
+# GSC_ACCESS_TOKEN=replace_with_short_lived_access_token
+
+# Distribution / URL Inspection workflow uses the full service-account JSON
+GSC_SERVICE_ACCOUNT_JSON={"type":"service_account","project_id":"replace","private_key_id":"replace","private_key":"-----BEGIN PRIVATE KEY-----\\nREPLACE\\n-----END PRIVATE KEY-----\\n","client_email":"replace","token_uri":"https://oauth2.googleapis.com/token"}
+
+# Bing Webmaster Tools
+BING_SITE_URL=https://www.hicksconsulting.org/
+BING_WEBMASTER_API_KEY=replace_with_bing_key
+
+# Current SERP / competitor observation provider
+SEARCH_API_URL=https://provider.example/search
+SEARCH_PROVIDER_API_KEY=replace_with_search_provider_key
+# SEARCH_QUERY_PARAM=q
+
+# IndexNow
+INDEXNOW_KEY=replace_with_indexnow_key
+INDEXNOW_KEY_LOCATION=https://www.hicksconsulting.org/indexnow.txt

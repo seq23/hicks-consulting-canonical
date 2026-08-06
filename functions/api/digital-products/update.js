@@ -1,7 +1,7 @@
 import { jsonResponse, productFromForm, readCatalog, requireAdmin, upsertProduct, validateProductForPublication, writeCatalog } from './_shared.js';
 
 export async function onRequestPost({ request, env }) {
-  const auth = requireAdmin(request, env);
+  const auth = await requireAdmin(request, env);
   if (!auth.ok) return auth.response;
   try {
     const product = await productFromForm(request, env);

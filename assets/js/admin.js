@@ -1,313 +1,157 @@
+(() => {
+  'use strict';
+  const gate = window.HicksAdminGate;
+  // Canonical lifecycle examples rendered by this cockpit: SCHEDULED and SKIPPED_UNSUPPORTED_CLAIM.
+  const $ = (id) => document.getElementById(id);
+  const esc = (value) => String(value ?? '').replace(/[&<>'"]/g, (char) => ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', "'":'&#39;', '"':'&quot;' }[char]));
+  const fmt = (value) => value ? new Date(value).toLocaleString() : '—';
+  const badge = (status) => `<span class="agency-status ${/healthy|connected|success|published|scheduled|safe|active/i.test(status) ? 'good' : /failed|blocked|error|emergency|disconnected/i.test(status) ? 'warn' : 'neutral'}">${esc(status || 'unknown')}</span>`;
 
-function applyHicksTheme(theme) {
-  const isDark = theme === 'dark';
-  document.documentElement.setAttribute('data-theme', isDark ? 'dark' : 'light');
-  document.documentElement.style.setProperty('color-scheme', isDark ? 'dark' : 'light');
-  document.querySelectorAll('.theme-toggle').forEach((toggle) => {
-    toggle.setAttribute('aria-pressed', String(isDark));
-    toggle.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
-    const icon = toggle.querySelector('.theme-icon');
-    const text = toggle.querySelector('.theme-text');
-    if (icon) icon.textContent = isDark ? '☼' : '☾';
-    if (text) text.textContent = isDark ? 'Light' : 'Dark';
-  });
-}
-
-function wireThemeToggle() {
-  const toggles = Array.from(document.querySelectorAll('.theme-toggle'));
-  if (!toggles.length) return;
-  let stored = 'light';
-  try { stored = localStorage.getItem('hicks-theme') || 'light'; } catch (e) {}
-  applyHicksTheme(stored === 'dark' ? 'dark' : 'light');
-  toggles.forEach((toggle) => {
-    toggle.addEventListener('click', (event) => {
-      event.preventDefault();
-      const current = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
-      const nextTheme = current === 'dark' ? 'light' : 'dark';
-      try { localStorage.setItem('hicks-theme', nextTheme); } catch (e) {}
-      applyHicksTheme(nextTheme);
-    });
-  });
-}
-
-function wireMobileNav() {
-  const toggles = Array.from(document.querySelectorAll('.nav-toggle'));
-  const nav = document.getElementById('site-navigation');
-  if (!toggles.length || !nav) return;
-  const setNavState = (isOpen) => {
-    toggles.forEach((toggle) => {
-      toggle.setAttribute('aria-expanded', String(isOpen));
-      toggle.setAttribute('aria-label', isOpen ? 'Close navigation' : 'Open navigation');
-    });
-    nav.classList.toggle('is-open', isOpen);
-    document.body.classList.toggle('nav-open', isOpen);
-  };
-  toggles.forEach((toggle) => {
-    toggle.addEventListener('click', (event) => {
-      event.preventDefault();
-      event.stopPropagation();
-      const isOpen = toggle.getAttribute('aria-expanded') === 'true';
-      setNavState(!isOpen);
-    });
-  });
-  nav.querySelectorAll('a, button').forEach((item) => item.addEventListener('click', () => setNavState(false)));
-  document.addEventListener('click', (event) => {
-    if (!document.body.classList.contains('nav-open')) return;
-    if (nav.contains(event.target) || toggles.some((toggle) => toggle.contains(event.target))) return;
-    setNavState(false);
-  });
-  window.addEventListener('resize', () => {
-    if (window.innerWidth > 760) setNavState(false);
-  });
-  document.addEventListener('keydown', (event) => {
-    if (event.key === 'Escape') setNavState(false);
-  });
-}
-
-const ADMIN_PASSWORD_HASH = 'c7ef3319e6cf6aab9035156df95f18dfec2ba2178f733940eda688758805708b';
-const SESSION_KEY = 'hc_admin_unlocked';
-let ADMIN_ITEMS = [];
-let ADMIN_CONFIG = {};
-let GENERATED_CANDIDATES = [];
-let PUBLISH_QUEUE_ITEMS = [];
-
-async function sha256(value) {
-  const bytes = new TextEncoder().encode(value);
-  const digest = await crypto.subtle.digest('SHA-256', bytes);
-  return Array.from(new Uint8Array(digest)).map(b => b.toString(16).padStart(2, '0')).join('');
-}
-
-function escapeHtml(value) {
-  return String(value ?? '')
-    .replaceAll('&', '&amp;')
-    .replaceAll('<', '&lt;')
-    .replaceAll('>', '&gt;')
-    .replaceAll('"', '&quot;')
-    .replaceAll("'", '&#039;');
-}
-
-async function fetchJson(url) {
-  const res = await fetch(url).catch(() => null);
-  if (!res || !res.ok) return null;
-  return res.json();
-}
-
-function typeLabel(item) {
-  const value = item.contentType || '';
-  const labels = { 'insights': 'Insight', 'articles': 'Article', 'guides': 'Guide', 'white-papers': 'White Paper', insight: 'Insight', article: 'Article', guide: 'Guide', whitepaper: 'White Paper', faq: 'FAQ', fanout: 'Fanout' };
-  return labels[value] || String(item.type || value || '').replaceAll('-', ' ');
-}
-
-function statusInstruction(item) {
-  if (item.status === 'ready_for_approval') return `Change status for ${item.id} from ready_for_approval to approved in the manifest.`;
-  if (item.status === 'approved') return `Approved items auto-publish when scheduledAt is reached. Edit only if you need to delay or revoke.`;
-  if (item.status === 'published') return `Change status for ${item.id} from published to revoked in the manifest.`;
-  if (item.status === 'revoked') return `Change status for ${item.id} from revoked to approved when you want it to go live again.`;
-  return '';
-}
-
-function formatDate(value) {
-  if (!value) return 'Unscheduled';
-  const date = new Date(value);
-  if (Number.isNaN(date.getTime())) return value;
-  return date.toISOString().slice(0, 10);
-}
-
-function actionLinks(item, config) {
-  const edit = config.repo?.manifestEditUrl || '#';
-  const preview = item.previewPath || '';
-  const live = item.publicPath || item.slug || '';
-  const previewLink = item.status !== 'published'
-    ? (preview
-      ? `<a class="button alt small-button" href="${escapeHtml(preview)}" target="_blank" rel="noopener noreferrer">Preview</a>`
-      : `<span class="badge muted">No preview</span>`)
-    : '';
-  const liveLink = item.status === 'published' && live
-    ? `<a class="button alt small-button" href="${escapeHtml(live)}" target="_blank" rel="noopener noreferrer">Live</a>`
-    : '';
-  return `
-    <a class="button small-button" href="${escapeHtml(edit)}" target="_blank" rel="noopener noreferrer">Edit in GitHub</a>
-    ${previewLink}
-    ${liveLink}
-  `;
-}
-
-function statusCounts(items) {
-  return {
-    ready_for_approval: items.filter(item => item.status === 'ready_for_approval').length,
-    approved: items.filter(item => item.status === 'approved').length,
-    published: items.filter(item => item.status === 'published').length,
-    revoked: items.filter(item => item.status === 'revoked').length
-  };
-}
-
-function getFilters() {
-  return {
-    q: (document.getElementById('admin-search')?.value || '').trim().toLowerCase(),
-    status: document.getElementById('status-filter')?.value || 'all',
-    type: document.getElementById('type-filter')?.value || 'all',
-    from: document.getElementById('date-from')?.value || '',
-    to: document.getElementById('date-to')?.value || '',
-    sort: document.getElementById('sort-filter')?.value || 'scheduledAt-asc'
-  };
-}
-
-function filterItems(items) {
-  const filters = getFilters();
-  let out = items.filter(item => item.validationPassed === true && ['ready_for_approval','approved','published','revoked'].includes(item.status));
-  if (filters.status !== 'all') out = out.filter(item => item.status === filters.status);
-  if (filters.type !== 'all') out = out.filter(item => (item.contentType || '') === filters.type);
-  if (filters.from) out = out.filter(item => !item.scheduledAt || formatDate(item.scheduledAt) >= filters.from);
-  if (filters.to) out = out.filter(item => !item.scheduledAt || formatDate(item.scheduledAt) <= filters.to);
-  if (filters.q) {
-    out = out.filter(item => [item.id, item.title, item.slug, item.publicPath, item.previewPath, item.status, item.contentType, item.type]
-      .some(value => String(value || '').toLowerCase().includes(filters.q)));
+  async function api(path, options = {}) {
+    const headers = gate.authHeaders({ ...(options.headers || {}) });
+    if (options.body && !headers['content-type']) headers['content-type'] = 'application/json';
+    const response = await fetch(path, { cache: 'no-store', ...options, headers });
+    const body = await response.json().catch(() => ({ ok:false, error:`HTTP ${response.status}` }));
+    if (!response.ok) throw new Error(body.error || `Request failed (${response.status})`);
+    return body;
   }
-  const [field, direction] = filters.sort.split('-');
-  out.sort((a, b) => {
-    let av = field === 'type' ? typeLabel(a) : (a[field] || '');
-    let bv = field === 'type' ? typeLabel(b) : (b[field] || '');
-    if (field === 'scheduledAt') { av = av || '9999-12-31'; bv = bv || '9999-12-31'; }
-    return direction === 'desc' ? String(bv).localeCompare(String(av)) : String(av).localeCompare(String(bv));
-  });
-  return out;
-}
 
-function renderRows(items, config) {
-  if (!items.length) {
-    return `<tr><td colspan="9" class="muted">No items match the current filters.</td></tr>`;
+  function velocityText(contract = {}) {
+    const cadence = contract.cadence || contract.lockedCadence || {};
+    const values = [];
+    const map = [['insights','weekday reflections'],['articles','substantial article'],['guides','pillar/guide'],['white-papers','flagship guide/white paper']];
+    for (const [key,label] of map) {
+      const value = cadence[key] || cadence[key.replace('-', '_')];
+      if (value) values.push(`${esc(String(value))} ${label}`);
+    }
+    return values.length ? values.join(' · ') : 'Existing repository cadence remains authoritative and unchanged.';
   }
-  return items.map(item => `
-    <tr>
-      <td>${escapeHtml(item.title)}<div class="muted small">${escapeHtml(item.publicPath || item.slug)}</div><div class="muted small">${item.status === 'published' ? 'Live public item' : `Preview: ${escapeHtml(item.previewPath || 'not generated')}`}</div></td>
-      <td>${escapeHtml(typeLabel(item))}</td>
-      <td>${escapeHtml(item.track)}</td>
-      <td><span class="badge">${escapeHtml(item.status.replaceAll('_', ' '))}</span></td>
-      <td>${escapeHtml(formatDate(item.scheduledAt))}</td>
-      <td>${item.validationPassed ? 'Passed' : 'No'}</td>
-      <td>${item.requiresFooter ? 'Yes' : 'No'}</td>
-      <td class="small">${escapeHtml(statusInstruction(item))}</td>
-      <td>${actionLinks(item, config)}</td>
-    </tr>
-  `).join('');
-}
 
-function candidateWarnings(candidate) {
-  const warnings = [];
-  if (!candidate.llmPrompt || candidate.llmPrompt.length < 300) warnings.push('prompt too short');
-  if (!Array.isArray(candidate.humanizationChecklist) || candidate.humanizationChecklist.length < 4) warnings.push('humanization checklist incomplete');
-  if (!candidate.minimumWords || !candidate.targetWords) warnings.push('word floors missing');
-  if (candidate.publicOnlyAfterApproval !== true) warnings.push('approval gate missing');
-  return warnings;
-}
-
-function renderGeneratedCandidates() {
-  const tbody = document.getElementById('generated-candidates-tbody');
-  if (!tbody) return;
-  const warnings = GENERATED_CANDIDATES.reduce((sum, item) => sum + candidateWarnings(item).length, 0);
-  const candidateCount = document.getElementById('candidate-count');
-  const queueCount = document.getElementById('queue-count');
-  const warningCount = document.getElementById('candidate-warning-count');
-  if (candidateCount) candidateCount.textContent = String(GENERATED_CANDIDATES.length);
-  if (queueCount) queueCount.textContent = String(PUBLISH_QUEUE_ITEMS.length);
-  if (warningCount) warningCount.textContent = String(warnings);
-  if (!GENERATED_CANDIDATES.length) {
-    tbody.innerHTML = `<tr><td colspan="7" class="muted">No generated candidates are queued. Run npm run ingest:all to refresh social/query-derived briefs.</td></tr>`;
-    return;
+  function renderAutonomyQueue(queue = {}) {
+    const items = Array.isArray(queue.items) ? queue.items : [];
+    $('autonomy-queue-count').textContent = String(items.length);
+    $('autonomy-queue-tbody').innerHTML = items.length ? items.slice().sort((a,b) => String(a.scheduledFor || a.updatedAt || '').localeCompare(String(b.scheduledFor || b.updatedAt || ''))).map((item) => `
+      <tr>
+        <td><strong>${esc(item.title || item.id)}</strong><div class="muted small">${esc(item.id || '')}</div></td>
+        <td>${esc(item.contentType || item.type || '—')}</td>
+        <td>${esc(item.targetQuery || item.query || item.cluster || '—')}</td>
+        <td>${badge(item.status)}</td>
+        <td>${esc(item.scheduledFor || item.publishAt || 'Backlog')}</td>
+        <td>${esc(item.lastDecision || item.decision || item.status || 'DISCOVERED')}</td>
+      </tr>`).join('') : '<tr><td colspan="6" class="muted">No autonomous candidates are currently queued.</td></tr>';
   }
-  tbody.innerHTML = GENERATED_CANDIDATES.map(item => {
-    const itemWarnings = candidateWarnings(item);
-    const promptBlock = item.llmPrompt ? `<details><summary>LLM draft prompt</summary><pre class="small">${escapeHtml(item.llmPrompt)}</pre></details>` : '';
-    const route = item.suggestedRoute || '';
-    const words = `${item.minimumWords || '?'} min / ${item.targetWords || '?'} target`;
-    const status = item.approvalStatus || item.status || 'queued_for_owner_approval';
-    return `<tr>
-      <td><strong>${escapeHtml(item.title)}</strong><div class="muted small">${escapeHtml(route)}</div>${promptBlock}</td>
-      <td>${escapeHtml(typeLabel(item))}</td>
-      <td>${escapeHtml(item.clusterTitle || item.clusterId || '')}</td>
-      <td>${escapeHtml(words)}</td>
-      <td>${escapeHtml(item.sourceSignalCount || 0)}</td>
-      <td><span class="badge">${escapeHtml(status.replaceAll('_', ' '))}</span>${itemWarnings.length ? `<div class="muted small">Warnings: ${escapeHtml(itemWarnings.join(', '))}</div>` : `<div class="muted small">Prewrite gate ready</div>`}</td>
-      <td class="small">Approve by changing this item in <code>data/social/publish_queue.json</code> from queued_for_owner_approval to approved_for_drafting, then run the draft/prewrite loop. This does not publish automatically.</td>
-    </tr>`;
-  }).join('');
-}
 
-function renderFilteredAdmin() {
-  const counts = statusCounts(ADMIN_ITEMS.filter(item => item.validationPassed === true));
-  document.getElementById('ready-count').textContent = String(counts.ready_for_approval || 0);
-  document.getElementById('approved-count').textContent = String(counts.approved || 0);
-  document.getElementById('published-count').textContent = String(counts.published || 0);
-  document.getElementById('revoked-count').textContent = String(counts.revoked || 0);
-  const filtered = filterItems(ADMIN_ITEMS);
-  document.getElementById('content-tbody').innerHTML = renderRows(filtered, ADMIN_CONFIG);
-  const summary = document.getElementById('filter-summary');
-  if (summary) summary.textContent = `Showing ${filtered.length} of ${ADMIN_ITEMS.length} validation-passed content items.`;
-  renderGeneratedCandidates();
-}
-
-function bindFilters() {
-  ['admin-search','status-filter','type-filter','date-from','date-to','sort-filter'].forEach(id => {
-    const el = document.getElementById(id);
-    if (el) el.addEventListener('input', renderFilteredAdmin);
-    if (el) el.addEventListener('change', renderFilteredAdmin);
-  });
-  document.querySelectorAll('[data-status-shortcut]').forEach(button => {
-    button.addEventListener('click', () => {
-      const select = document.getElementById('status-filter');
-      if (select) select.value = button.getAttribute('data-status-shortcut') || 'all';
-      renderFilteredAdmin();
-    });
-  });
-}
-
-async function renderAdmin() {
-  const [manifest, config, briefPayload, publishQueue] = await Promise.all([
-    fetchJson('/data/admin/content_manifest.json'),
-    fetchJson('/data/system/config.json'),
-    fetchJson('/data/intake/content_brief_candidates.json'),
-    fetchJson('/data/social/publish_queue.json')
-  ]);
-  if (!manifest || !config) {
-    document.getElementById('admin-message').textContent = 'Admin data failed to load.';
-    return;
+  function renderProviders(providers = {}) {
+    const entries = Object.entries(providers.providers || providers.capabilities || providers).filter(([,v]) => v && typeof v === 'object');
+    $('provider-health').innerHTML = entries.length ? entries.map(([name,value]) => `<div class="agency-health-row"><div>${badge(value.status || value.state || 'unknown')}<strong>${esc(name)}</strong><p>${esc(value.message || value.reason || value.description || '')}</p></div></div>`).join('') : '<p class="muted">No provider capability data found.</p>';
+    const connected = entries.filter(([,v]) => /connected|healthy|configured/i.test(v.status || v.state || '')).length;
+    $('provider-summary').textContent = `${connected} of ${entries.length} provider capabilities currently report connected/configured.`;
   }
-  ADMIN_ITEMS = manifest;
-  ADMIN_CONFIG = config;
-  GENERATED_CANDIDATES = Array.isArray(briefPayload?.candidates) ? briefPayload.candidates : [];
-  PUBLISH_QUEUE_ITEMS = Array.isArray(publishQueue?.items) ? publishQueue.items : [];
-  document.getElementById('manifest-link').href = config.repo?.manifestViewUrl || '#';
-  document.getElementById('manifest-edit-link').href = config.repo?.manifestEditUrl || '#';
-  bindFilters();
-  renderFilteredAdmin();
-  document.getElementById('login-panel').hidden = true;
-  document.getElementById('admin-panel').hidden = false;
-}
 
-async function unlockAdmin() {
-  const password = document.getElementById('admin-password').value.trim();
-  const hash = await sha256(password);
-  if (hash !== ADMIN_PASSWORD_HASH) {
-    document.getElementById('login-message').textContent = 'Password did not match.';
-    return;
+  function renderSelfHeal(state = {}) {
+    const rows = [
+      ['Status', state.status || state.state || 'IDLE'],
+      ['Last run', fmt(state.lastRunAt || state.updatedAt)],
+      ['Repairs', state.repairsApplied ?? state.repaired ?? 0],
+      ['Skipped protected', state.skippedProtected ?? 0],
+      ['Rollback available', state.rollbackAvailable === false ? 'No' : 'Yes']
+    ];
+    $('self-heal-state').innerHTML = rows.map(([label,value]) => `<div class="agency-health-row"><span>${esc(label)}</span><strong>${esc(value)}</strong></div>`).join('');
   }
-  sessionStorage.setItem(SESSION_KEY, 'true');
-  document.getElementById('login-message').textContent = '';
-  await renderAdmin();
-}
 
-function lockAdmin() {
-  sessionStorage.removeItem(SESSION_KEY);
-  document.getElementById('admin-panel').hidden = true;
-  document.getElementById('login-panel').hidden = false;
-  document.getElementById('admin-password').value = '';
-}
+  function renderFreeWins(data = {}) {
+    const items = Array.isArray(data.items) ? data.items : [];
+    $('free-wins-list').innerHTML = items.length ? `<ol class="agency-tip-list">${items.slice(0,10).map((item) => `<li><strong>${esc(item.query || item.title || item.type || 'Opportunity')}</strong><br><span class="muted small">${esc(item.recommendation || item.action || item.reason || '')}</span></li>`).join('')}</ol>` : '<p class="muted">No observed free wins yet. Modeled opportunities are not presented as live performance.</p>';
+  }
 
-window.unlockAdmin = unlockAdmin;
-window.lockAdmin = lockAdmin;
+  function renderExceptions(data = {}) {
+    const items = Array.isArray(data.items) ? data.items : [];
+    $('exception-count').textContent = String(items.length);
+    $('exception-list').innerHTML = items.length ? `<ol class="agency-tip-list">${items.slice(-10).reverse().map((item) => `<li>${badge(item.status || item.decision || 'exception')} <strong>${esc(item.title || item.id || item.route || 'Item')}</strong><br><span class="muted small">${esc(item.reason || item.message || '')}</span></li>`).join('')}</ol>` : '<p class="muted">No recorded autonomy exceptions.</p>';
+  }
 
-document.addEventListener('DOMContentLoaded', async () => {
-  wireMobileNav();
-  wireThemeToggle();
-  if (sessionStorage.getItem(SESSION_KEY) === 'true') await renderAdmin();
-});
+  function renderStatus(status) {
+    const state = status.state || {};
+    $('login-panel').hidden = true;
+    $('admin-panel').hidden = false;
+    $('system-state-label').innerHTML = `${badge(state.emergencyStop ? 'EMERGENCY STOP' : state.paused ? 'PAUSED' : state.mode || 'FULL_SAFE_AUTONOMY')} ${state.emergencyStop ? 'Automation is stopped.' : state.paused ? 'Automation is paused.' : 'Automation is active.'}`;
+    $('manifest-total').textContent = String(status.manifest?.total || 0);
+    $('notification-count').textContent = String(status.notifications?.items?.length || 0);
+    $('velocity-summary').textContent = velocityText(status.velocity);
+    renderAutonomyQueue(status.queue);
+    renderProviders(status.providers);
+    renderSelfHeal(status.selfHeal);
+    renderFreeWins(status.freeWins);
+    renderExceptions(status.exceptions);
+  }
+
+  async function loadGate() {
+    if (!gate?.isUnlocked()) {
+      $('login-panel').hidden = false;
+      $('admin-panel').hidden = true;
+      return;
+    }
+    try {
+      renderStatus(await api('/api/admin/status'));
+    } catch (error) {
+      gate.lock();
+      $('login-message').textContent = error.message;
+      $('login-panel').hidden = false;
+      $('admin-panel').hidden = true;
+    }
+  }
+
+  async function login(event) {
+    event.preventDefault();
+    $('login-message').textContent = 'Checking password…';
+    const ok = await gate.unlock($('admin-password').value);
+    if (!ok) {
+      $('login-message').textContent = 'Password did not match.';
+      return;
+    }
+    $('admin-password').value = '';
+    $('login-message').textContent = '';
+    const next = new URLSearchParams(location.search).get('next');
+    if (next === 'agency') { location.href = '/agency/'; return; }
+    try { renderStatus(await api('/api/admin/status')); }
+    catch (error) { $('login-message').textContent = error.message; }
+  }
+
+  async function runAction(button) {
+    const action = button.dataset.adminAction;
+    const destructive = ['emergency-stop','pause'].includes(action);
+    if (destructive && !window.confirm(`${button.textContent.trim()}? This changes live automation state and will create a GitHub receipt.`)) return;
+    const original = button.innerHTML;
+    button.disabled = true; button.textContent = 'Running…';
+    try {
+      const result = await api('/api/admin/action', { method:'POST', body:JSON.stringify({ action }) });
+      const receipt = result.receipt;
+      $('action-receipt').innerHTML = `<strong>${esc(receipt.status)} — ${esc(receipt.action)}</strong><p class="small">Receipt ${esc(receipt.id)} · ${esc(fmt(receipt.completedAt))}</p><pre>${esc(JSON.stringify(receipt.result || {}, null, 2))}</pre>`;
+      renderStatus(await api('/api/admin/status'));
+    } catch (error) { $('action-receipt').innerHTML = `<strong>Action failed</strong><p>${esc(error.message)}</p>`; }
+    finally { button.disabled = false; button.innerHTML = original; }
+  }
+
+  async function submitFeedback(event) {
+    event.preventDefault();
+    const message = $('feedback-message'); message.textContent = 'Submitting…';
+    try {
+      const result = await api('/api/admin/feedback', { method:'POST', body:JSON.stringify({ route:$('feedback-route').value, feedback:$('feedback-text').value }) });
+      message.textContent = `Received as ${result.record.id}.`;
+      event.target.reset();
+    } catch (error) { message.textContent = error.message; }
+  }
+
+  function logout() {
+    gate.lock();
+    $('admin-panel').hidden = true;
+    $('login-panel').hidden = false;
+    $('admin-password').value = '';
+  }
+
+  $('admin-login-form')?.addEventListener('submit', login);
+  $('logout-button')?.addEventListener('click', logout);
+  $('feedback-form')?.addEventListener('submit', submitFeedback);
+  document.querySelectorAll('[data-admin-action]').forEach((button) => button.addEventListener('click', () => runAction(button)));
+  loadGate();
+})();

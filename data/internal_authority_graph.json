@@ -3,7 +3,9 @@
     "/therapy/",
     "/coaching/",
     "/resources/",
-    "/corporate-speaking/"
+    "/corporate-speaking/",
+    "/black-therapist-memphis/",
+    "/anxiety-therapist-memphis/"
   ],
   "clusters": [
     "/resources/burnout/",
@@ -15,5 +17,23 @@
     "/request-consult/",
     "/book-discovery-call/",
     "/corporate-speaking/"
-  ]
+  ],
+  "queryOwnership": {
+    "black therapist in Memphis": "/black-therapist-memphis/",
+    "Black woman therapist Memphis": "/black-therapist-memphis/",
+    "therapist for anxiety in Memphis": "/anxiety-therapist-memphis/",
+    "anxiety therapist Memphis": "/anxiety-therapist-memphis/",
+    "virtual therapist Memphis": "/therapy/"
+  },
+  "supportingLinks": {
+    "/black-therapist-memphis/": [
+      "/therapy/",
+      "/about/",
+      "/resources/"
+    ],
+    "/anxiety-therapist-memphis/": [
+      "/therapy/",
+      "/resources/"
+    ]
+  }
 }

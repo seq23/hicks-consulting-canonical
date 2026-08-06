@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "1.0.0",
+  "capabilities": {
+    "llm": {
+      "state": "INTEGRATED_UNPROVEN",
+      "requiredSecrets": [
+        "LLM_API_URL",
+        "LLM_API_KEY",
+        "LLM_MODEL"
+      ],
+      "fallback": "do_not_generate"
+    },
+    "email": {
+      "state": "INTEGRATED_UNPROVEN",
+      "requiredSecrets": [
+        "RESEND_API_KEY",
+        "PUBLICATION_NOTIFICATION_TO",
+        "PUBLICATION_NOTIFICATION_FROM"
+      ],
+      "fallback": "record_pending_notification_and_retry"
+    },
+    "gsc": {
+      "state": "INTEGRATED_UNPROVEN",
+      "requiredSecrets": [
+        "GSC_SITE_URL",
+        "GSC_SERVICE_ACCOUNT_EMAIL",
+        "GSC_PRIVATE_KEY"
+      ],
+      "fallback": "display_disconnected"
+    },
+    "bing": {
+      "state": "INTEGRATED_UNPROVEN",
+      "requiredSecrets": [
+        "BING_SITE_URL",
+        "BING_WEBMASTER_API_KEY"
+      ],
+      "fallback": "display_disconnected"
+    },
+    "competitorSearch": {
+      "state": "INTEGRATED_UNPROVEN",
+      "requiredSecrets": [
+        "SEARCH_API_URL",
+        "SEARCH_PROVIDER_API_KEY"
+      ],
+      "fallback": "no_external_competitor_claims"
+    },
+    "githubAdmin": {
+      "state": "INTEGRATED_UNPROVEN",
+      "requiredSecrets": [
+        "GITHUB_ADMIN_TOKEN",
+        "GITHUB_REPOSITORY"
+      ],
+      "fallback": "read_only_admin"
+    },
+    "adminGate": {
+      "state": "STRUCTURAL",
+      "requiredSecrets": [],
+      "passwordMode": "shared_client_side_sha256",
+      "routes": [
+        "/admin/",
+        "/agency/",
+        "/admin/digitalproducts/"
+      ],
+      "fallback": "show_password_gate",
+      "securityBoundary": "convenience_only_no_secrets_in_browser_payloads"
+    }
+  }
+}

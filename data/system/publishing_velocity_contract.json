@@ -1,0 +1,34 @@
+{
+  "schemaVersion": "1.0.0",
+  "authority": "IMMUTABLE_EXISTING_CLIENT_SYSTEM",
+  "editorialReleaseVelocity": {
+    "daily": {
+      "description": "5 business-day reflections per week",
+      "contentType": "insights",
+      "slotRule": "Monday through Friday reflection slots"
+    },
+    "weekly": {
+      "description": "1 substantial article per week",
+      "contentType": "articles",
+      "slotRule": "existing weekly article slot"
+    },
+    "monthly": {
+      "description": "1 pillar piece per month",
+      "contentType": "guides",
+      "slotRule": "existing monthly guide slot"
+    },
+    "quarterly": {
+      "description": "1 flagship guide per quarter",
+      "contentType": "white-papers",
+      "slotRule": "existing quarterly white-paper slot"
+    }
+  },
+  "lockedRecordCount": 227,
+  "existingScheduledThrough": "2027-01-01T13:00:00.000Z",
+  "laws": [
+    "Automation may select, draft, validate, repair, schedule, publish, distribute, measure, and roll back.",
+    "Automation may not add, remove, accelerate, or reinterpret editorial release slots.",
+    "A skipped item may be replaced only inside the same content-type/date slot.",
+    "Intelligence processing volume is not publication velocity."
+  ]
+}

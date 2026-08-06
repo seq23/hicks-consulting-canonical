@@ -31,6 +31,17 @@ jobs:
 
       - run: npm run ingest:all
 
+      - name: Migrate admitted opportunities into Full Safe Autonomy
+        run: npm run autonomy:migrate
+
+      - name: Draft, validate, repair, and assign existing cadence slots
+        run: npm run autonomy:cycle
+        env:
+          LLM_PROVIDER: ${{ secrets.LLM_PROVIDER }}
+          LLM_API_URL: ${{ secrets.LLM_API_URL }}
+          LLM_API_KEY: ${{ secrets.LLM_API_KEY }}
+          LLM_MODEL: ${{ secrets.LLM_MODEL }}
+
       - run: npm run build
 
       - run: npm run validate:all
@@ -40,9 +51,9 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          if [[ -n "$(git status --porcelain data/intake data/social pages/llm-atlas llms.txt sitemap.xml)" ]]; then
-            git add data/intake data/social pages/llm-atlas llms.txt sitemap.xml
-            git commit -m "Update social ingestion and LLM atlas outputs"
+          if [[ -n "$(git status --porcelain data/intake data/social data/autonomy pages/resources pages/llm-atlas llms.txt sitemap.xml)" ]]; then
+            git add data/intake data/social data/autonomy pages/resources pages/llm-atlas llms.txt sitemap.xml
+            git commit -m "Update autonomous content intelligence and scheduled resources"
             git push
           else
             echo "No social ingestion changes to commit."

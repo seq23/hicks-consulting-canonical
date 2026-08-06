@@ -44,10 +44,8 @@ if (!adminHome.includes('/admin/digitalproducts/')) fail('Admin home must link t
 
 const js = fs.readFileSync('assets/js/admin-digital-products.js', 'utf8');
 for (const token of [
-  'ADMIN_AUTH_HASH_KEY',
-  'x-admin-password-hash',
+  'HicksAdminGate',
   'adminAuthHeaders',
-  'clearAdminAuthHash',
   'priceLabel',
   '$10',
   'gumroadUrl',
@@ -67,17 +65,25 @@ for (const token of [
   if (!js.includes(token)) fail(`Admin JS missing token: ${token}`);
 }
 if (js.includes('admin-api-token') || js.includes('x-admin-token')) fail('Admin JS must not depend on deprecated visible API token auth.');
-if (js.includes("sessionStorage.getItem(SESSION_KEY) === 'true'")) fail('Admin JS must not auto-promote a stale session flag into password-hash auth.');
+
+const sharedGate = fs.readFileSync('assets/js/shared-admin-gate.js', 'utf8');
+for (const token of ['window.HicksAdminGate', 'x-admin-password-hash', 'c7ef3319e6cf6aab9035156df95f18dfec2ba2178f733940eda688758805708b']) {
+  if (!sharedGate.includes(token)) fail(`Shared admin gate missing token: ${token}`);
+}
 
 const fn = fs.readFileSync('functions/api/digital-products/_shared.js', 'utf8');
-for (const token of ['DIGITAL_PRODUCTS_KV', 'DIGITAL_PRODUCT_FILES', 'DIGITAL_PRODUCTS_ADMIN_HASH', 'x-admin-password-hash', 'priceLabel', 'gumroadUrl', 'placeholder']) {
+for (const token of ['DIGITAL_PRODUCTS_KV', 'DIGITAL_PRODUCT_FILES', 'verifyAdminPasswordHash', 'Admin password did not match.', 'priceLabel', 'gumroadUrl', 'placeholder']) {
   if (!fn.includes(token)) fail(`Digital products API shared contract missing token: ${token}`);
 }
 if (fn.includes('DIGITAL_PRODUCTS_ADMIN_TOKEN') || fn.includes('x-admin-token')) fail('Digital products shared API must not require deprecated token auth.');
 
 const worker = fs.readFileSync('worker/_worker.js', 'utf8');
-for (const token of ['DIGITAL_PRODUCTS_ADMIN_HASH', 'x-admin-password-hash', 'Admin password did not match.']) {
-  if (!worker.includes(token)) fail(`Worker digital products auth missing token: ${token}`);
+for (const token of ['verifyAdminPasswordHash', 'Admin password did not match.']) {
+  if (!worker.includes(token)) fail(`Worker digital products gate missing token: ${token}`);
+}
+const adminRuntime = fs.readFileSync('worker/admin_runtime.mjs', 'utf8');
+for (const token of ['x-admin-password-hash', 'c7ef3319e6cf6aab9035156df95f18dfec2ba2178f733940eda688758805708b']) {
+  if (!adminRuntime.includes(token)) fail(`Shared admin runtime missing token: ${token}`);
 }
 if (worker.includes('DIGITAL_PRODUCTS_ADMIN_TOKEN') || worker.includes('x-admin-token')) fail('Worker must not require deprecated digital products token auth.');
 

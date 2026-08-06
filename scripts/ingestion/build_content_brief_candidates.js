@@ -26,7 +26,12 @@ function repair(candidate){
   const typePolicy = policy.contentTypes[candidate.contentType] || policy.contentTypes.insight || { targetWords: 900, minimumWords: 720 };
   candidate.targetWords = candidate.targetWords || typePolicy.targetWords;
   candidate.minimumWords = candidate.minimumWords || typePolicy.minimumWords || Math.floor(candidate.targetWords * 0.8);
-  candidate.approvalStatus = candidate.approvalStatus || 'queued_for_owner_approval';
+  candidate.autonomyStatus = candidate.autonomyStatus || candidate.state || 'DISCOVERED';
+  candidate.publishMode = 'full_safe_autonomy';
+  candidate.routineApprovalRequired = false;
+  candidate.publicOnlyAfterApproval = false;
+  delete candidate.approvalStatus;
+  if (candidate.status === 'queued_for_owner_approval') delete candidate.status;
   candidate.humanizationChecklist = candidate.humanizationChecklist && candidate.humanizationChecklist.length ? candidate.humanizationChecklist : policy.humanizationChecklist;
   candidate.conversionPath = candidate.conversionPath || conversion.therapy || 'https://monika-hicks.clientsecure.me/';
   candidate.sections = candidate.sections && candidate.sections.length ? candidate.sections : baseSections(candidate.contentType);
@@ -46,7 +51,7 @@ function validate(candidate){
   const missing = required.filter(key => !candidate[key] || (Array.isArray(candidate[key]) && !candidate[key].length));
   if (missing.length) return `missing fields: ${missing.join(', ')}`;
   if (candidate.targetWords < candidate.minimumWords) return 'targetWords below minimumWords';
-  if (!policy.prewriteGate.allowedApprovalStatuses.includes(candidate.approvalStatus)) return `invalid approvalStatus: ${candidate.approvalStatus}`;
+  if (!policy.prewriteGate.allowedAutonomyStatuses.includes(candidate.autonomyStatus)) return `invalid autonomyStatus: ${candidate.autonomyStatus}`;
   return null;
 }
 const active = clusters.filter(c => (c.queryCount || 0) > 0).sort((a,b) => (b.score||0)-(a.score||0));
@@ -64,16 +69,17 @@ const generated = active.slice(0, 8).map((cluster, index) => {
     minimumWords: typePolicy.minimumWords,
     sourceSignalCount: cluster.queryCount,
     score: cluster.score,
-    publishMode: 'approval_queue_only',
-    approvalStatus: 'queued_for_owner_approval',
+    publishMode: 'full_safe_autonomy',
+    autonomyStatus: 'DISCOVERED',
+    routineApprovalRequired: false,
     llmGeneratedRequired: true,
-    publicOnlyAfterApproval: true,
+    publicOnlyAfterApproval: false,
     createdAt: new Date().toISOString()
   });
 });
 
 // Preserve rolling-continuity candidates across the existing twice-weekly ingestion refresh.
-// They remain recommendation/draft candidates only and never gain publication authority here.
+// They remain autonomous backlog candidates; cadence assignment and publication authority belong to the Safe Harbor runtime.
 const continuityMap = new Map();
 for (const item of [...(previousBriefPayload.candidates || []), ...(previousQueue.items || [])]) {
   if (!item?.id) continue;
@@ -89,11 +95,17 @@ if (errors.length) {
   for (const [id, err] of errors) console.error(`- ${id}: ${err}`);
   process.exit(1);
 }
-const payload = { generatedAt: new Date().toISOString(), policy: 'approval_queue_only_llm_humanized_prewrite_validated', candidates };
+const payload = { generatedAt: new Date().toISOString(), policy: 'full_safe_autonomy_llm_humanized_prewrite_validated', candidates };
 fs.writeFileSync(path.join(outDir, 'content_brief_candidates.json'), JSON.stringify(payload, null, 2) + '\n');
 const socialDir = path.join(root, 'data', 'social');
 fs.mkdirSync(socialDir, { recursive: true });
 const existing = new Map((previousQueue.items || []).map(item => [item.id, item]));
-for (const candidate of candidates) existing.set(candidate.id, { ...candidate, queueType: 'content_brief', status: candidate.status || 'queued_for_owner_approval' });
-fs.writeFileSync(path.join(socialDir, 'publish_queue.json'), JSON.stringify({ generatedAt: payload.generatedAt, publishMode: 'queued', items: [...existing.values()] }, null, 2) + '\n');
+for (const candidate of candidates) existing.set(candidate.id, { ...candidate, queueType: 'content_brief', publishMode: 'full_safe_autonomy', autonomyStatus: candidate.autonomyStatus || 'DISCOVERED', routineApprovalRequired: false, publicOnlyAfterApproval: false });
+const autonomousItems = [...existing.values()].map((item) => {
+  const normalized = { ...item, publishMode: 'full_safe_autonomy', autonomyStatus: item.autonomyStatus || item.state || 'DISCOVERED', routineApprovalRequired: false, publicOnlyAfterApproval: false };
+  delete normalized.approvalStatus;
+  if (normalized.status === 'queued_for_owner_approval') delete normalized.status;
+  return normalized;
+});
+fs.writeFileSync(path.join(socialDir, 'publish_queue.json'), JSON.stringify({ generatedAt: payload.generatedAt, publishMode: 'full_safe_autonomy', items: autonomousItems }, null, 2) + '\n');
 console.log(`Content brief candidates built: ${candidates.length} (${continuityMap.size} continuity candidates preserved)`);

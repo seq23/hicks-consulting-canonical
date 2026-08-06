@@ -7,13 +7,19 @@
   "provider": {
     "name": "Monika Hicks, LCSW",
     "type": "Person",
-    "role": "Licensed Clinical Social Worker"
+    "role": "Licensed Clinical Social Worker",
+    "identityContext": "Black woman therapist",
+    "serviceArea": "Tennessee, including Memphis, through virtual therapy"
   },
   "services": [
     {
-      "name": "Virtual therapy in Tennessee",
+      "name": "Virtual therapy serving Memphis and Tennessee",
       "type": "Service",
-      "audience": "Black women as a specialty and clients of all ethnicities in Tennessee"
+      "audience": "Black women as a specialty and eligible clients of all ethnicities in Tennessee, including Memphis",
+      "areaServed": [
+        "Tennessee",
+        "Memphis, Tennessee"
+      ]
     },
     {
       "name": "Virtual coaching",
@@ -39,13 +45,17 @@
     "Hicks Consulting",
     "Monika Hicks, LCSW",
     "Hicks Consulting therapy",
-    "Hicks Consulting coaching"
+    "Hicks Consulting coaching",
+    "Black woman therapist serving Memphis",
+    "Virtual anxiety therapist serving Memphis"
   ],
   "productServiceRelationships": [
     {
-      "service": "Virtual therapy in Tennessee",
+      "service": "Virtual therapy serving Memphis and Tennessee",
       "primaryPages": [
         "/therapy/",
+        "/black-therapist-memphis/",
+        "/anxiety-therapist-memphis/",
         "/request-consult/"
       ],
       "conversion": "https://monika-hicks.clientsecure.me/"

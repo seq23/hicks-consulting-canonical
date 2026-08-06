@@ -1,0 +1,73 @@
+{
+  "schemaVersion": "1.0.0",
+  "repo": "hicks-consulting-canonical",
+  "lanes": [
+    {
+      "lane": "client-editorial-baseline",
+      "owns": [
+        "data/admin/content_manifest.json",
+        "pages/resources/**"
+      ],
+      "mutation": "status transitions and versioned scoped repairs only",
+      "priority": 1
+    },
+    {
+      "lane": "safe-autonomy",
+      "owns": [
+        "data/autonomy/**",
+        "scripts/autonomy/**",
+        ".github/workflows/autonomy-*.yml"
+      ],
+      "mutation": "admitted candidates, receipts, exceptions, generated future resources",
+      "priority": 2
+    },
+    {
+      "lane": "search-intelligence",
+      "owns": [
+        "data/agency/**",
+        "data/search/**",
+        "scripts/agency/**",
+        "scripts/search/**"
+      ],
+      "mutation": "measurement and recommendations only",
+      "priority": 3
+    },
+    {
+      "lane": "public-site",
+      "owns": [
+        "pages/**",
+        "assets/**",
+        "scripts/site_build.js"
+      ],
+      "mutation": "approved repo artifacts and bounded self-healing zones",
+      "priority": 4
+    },
+    {
+      "lane": "operator-runtime",
+      "owns": [
+        "pages/admin/**",
+        "pages/agency/**",
+        "worker/**",
+        "functions/api/digital-products/**",
+        "assets/js/admin.js",
+        "assets/js/agency-dashboard.js",
+        "assets/js/admin-digital-products.js",
+        "assets/js/shared-admin-gate.js"
+      ],
+      "mutation": "owner-approved shared lightweight gate, provider-backed command actions, product operations, and receipts",
+      "priority": 5
+    }
+  ],
+  "protectedFacts": [
+    "credentials",
+    "physicalOffice",
+    "fees",
+    "insurance",
+    "availability",
+    "testimonials",
+    "personalStories",
+    "clinicalOutcomes",
+    "treatmentMethodsNotAlreadyApproved"
+  ],
+  "conflictBehavior": "skip_record_continue_unless_secret_or_integrity_failure"
+}

@@ -1,27 +1,49 @@
 {
-  "schema_version": "1.0",
+  "schema_version": "2.0",
   "repo": "hicks",
-  "policy": "PROTECTED_CLIENT_EDITORIAL_CORE_DO_NOT_MUTATE",
+  "policy": "FULL_SAFE_AUTONOMY_PROTECTED_CORE_SCOPED_REPAIRS_ONLY",
   "files": [
     {
-      "path": "pages/admin/index.html",
-      "sha256": "1cd711bf12be0d787c812521b9ff614b813336864aa7de8edbc3d0f27cc02d1b",
-      "bytes": 12299
+      "path": "data/system/publishing_velocity_contract.json",
+      "sha256": "372e76053e6dcf6da0000643027f2d2f26284a8b42689bfadcc159c7ab41bbe0",
+      "bytes": 1229
     },
     {
-      "path": "assets/js/admin.js",
-      "sha256": "c1c5a57c4aa792e801bd0d284cb60a6acc0d6a1204e87b8d7452ca5f3d9721a8",
-      "bytes": 14739
+      "path": "data/system/runtime_contract.json",
+      "sha256": "044c0a2344193c4f9e41c1694a99f4494390ba650352874c426d0b1d32bde716",
+      "bytes": 402
     },
     {
-      "path": "scripts/publishing/process_manifest.js",
-      "sha256": "e5c2cacbb0c6e1690a726f3faf18b6ec93c0cb1474e74934555b5e9f36106dbd",
-      "bytes": 3453
+      "path": "worker/admin_runtime.mjs",
+      "sha256": "f107f3a32420cab97001d2a88177598d50a81163ce375cd9d7cd81fc3a9ad7d2",
+      "bytes": 7335
+    },
+    {
+      "path": "scripts/publishing/run_safe_publish.mjs",
+      "sha256": "60d3c9e3618f6534efebb67f35ccc8ed7bf54aedfb5037841932e18af592110c",
+      "bytes": 3510
     },
     {
       "path": ".github/workflows/content-publish.yml",
-      "sha256": "f1b69e65b41d2712ff39485a051b758c1520eb799645d691cca139438070c49f",
-      "bytes": 1094
+      "sha256": "afd0b49fdc9c83b0f3d4d94fd9b9ee5e83d8f062d00e1e0e86db199dea158b88",
+      "bytes": 1157
+    },
+    {
+      "path": "pages/admin/index.html",
+      "sha256": "9774b61ff21924f824cbb52ca437265512cdfc87751cd48ca31daf05539702df",
+      "bytes": 11216
+    },
+    {
+      "path": "assets/js/admin.js",
+      "sha256": "e345067f2b389d76aa7728db013dc6cf05c3cdc042abda0f157c12b3ba611e57",
+      "bytes": 9192
+    },
+    {
+      "path": "scripts/autonomy/lib/safe_harbor.mjs",
+      "sha256": "31262f1c431f14b07f13a5df828fecc1cd51d6da9b4036162776f48f0fa4ba8d",
+      "bytes": 7192
     }
-  ]
+  ],
+  "baseline_refreshed_at": "2026-08-06T23:09:09Z",
+  "baseline_reason": "Owner-approved access correction: shared blackgirlmagic client-side gate for /admin, /agency, and digital products; unauthorized signed-session/CSRF/rate-limit layer removed; autonomy and cadence preserved."
 }

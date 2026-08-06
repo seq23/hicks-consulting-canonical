@@ -28,7 +28,7 @@ for (const item of manifest) {
     if (item.previewPath) warn(`Manifest item ${item.id} is published and should not require a previewPath`);
     publishedChecked += 1;
   } else {
-    if (!item.previewPath) warn(`Manifest item ${item.id} missing previewPath for unpublished review item`);
+    if (!item.previewPath) warn(`Manifest item ${item.id} missing previewPath for unpublished scheduled or draft item`);
     if (item.previewPath && item.publicPath && item.previewPath !== `/preview${item.publicPath}`) warn(`Manifest item ${item.id} previewPath must be /preview + publicPath`);
     previewChecked += 1;
   }
@@ -38,7 +38,7 @@ for (const item of manifest) {
 if (warnings.length) {
   reportFindings(warnings, `${warnings.length}-admin-preview-strong-warning(s)`);
 } else {
-  console.log(`Admin preview manifest OK (${checked} items checked, ${previewChecked} review previews, ${publishedChecked} live public items).`);
+  console.log(`Admin preview manifest OK (${checked} items checked, ${previewChecked} scheduled previews, ${publishedChecked} live public items).`);
 }
 
 // Preview inconsistencies are operational cleanup items, not release blockers.

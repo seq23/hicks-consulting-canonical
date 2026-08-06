@@ -1,0 +1,45 @@
+name: Bounded Self-Healing
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '11 16 * * 3'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: hicks-consulting-content-automation
+  cancel-in-progress: false
+
+jobs:
+  self-heal:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: git pull --rebase origin main
+      - run: npm ci
+      - name: Run bounded technical and allowed content repairs
+        run: npm run autonomy:self-heal
+      - name: Build the repaired site
+        run: npm run build
+      - name: Run deep site-driven validation
+        run: npm run validate:deep
+      - name: Commit only validated repair output and receipts
+        run: |
+          git config user.name "hicks-self-heal-bot"
+          git config user.email "actions@github.com"
+          git add data/autonomy data/admin pages sitemap.xml reports
+          if git diff --cached --quiet; then
+            echo "No safe repairs were needed."
+          else
+            git commit -m "Self-heal: apply bounded validated repairs"
+            git push origin main
+          fi

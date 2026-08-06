@@ -1,0 +1,10 @@
+{
+  "schemaVersion": "1.0.0",
+  "runtimeMode": "FULL_SAFE_AUTONOMY",
+  "routineApprovalRequired": false,
+  "safeBehavior": "generate_validate_repair_schedule_publish_distribute_measure",
+  "exceptionBehavior": "skip_record_continue",
+  "protectedFactsRequireHumanConfirmation": true,
+  "artifactApprovalSeparate": true,
+  "publishingVelocityContract": "data/system/publishing_velocity_contract.json"
+}

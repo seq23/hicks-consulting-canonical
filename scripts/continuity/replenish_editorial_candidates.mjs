@@ -85,7 +85,7 @@ for (let i = 0; i < slots.length && candidates.length; i++) {
     'Write in a warm, grounded, specific voice. Do not diagnose, guarantee outcomes, or invent client stories.',
     `Include these sections: ${sections.join('; ')}.`,
     `Approved conversion path after value is delivered: ${conversionPath}.`,
-    'This is a draft candidate only. Existing Hicks admin approval and existing publishing rules remain required before anything becomes public.'
+    'This is an autonomous candidate. It must pass Safe Harbor, duplicate, source, cadence, build, and release validation before it can be scheduled.'
   ].join('\n');
   picked.push({
     id,
@@ -100,10 +100,11 @@ for (let i = 0; i < slots.length && candidates.length; i++) {
     minimumWords: typePolicy.minimumWords,
     sourceSignalCount: 1,
     score: c.priority_score,
-    publishMode: 'approval_queue_only',
-    approvalStatus: 'queued_for_owner_approval',
+    publishMode: 'full_safe_autonomy',
+    autonomyStatus: 'DISCOVERED',
     llmGeneratedRequired: true,
-    publicOnlyAfterApproval: true,
+    routineApprovalRequired: false,
+    publicOnlyAfterApproval: false,
     continuity_generated: true,
     continuityAfter: '2027-01-01',
     continuityPolicy: 'rolling_120_day_candidate_runway_existing_cadence',
@@ -131,7 +132,7 @@ const report = {
     monthly: '15th guide',
     quarterly: 'Mar/Jun/Sep/Dec 20th whitepaper'
   },
-  publication_authority: 'EXISTING_HICKS_ADMIN_APPROVAL_FLOW'
+  publication_authority: 'FULL_SAFE_AUTONOMY_WITH_EXISTING_VELOCITY'
 };
 
 fs.mkdirSync('data/continuity', { recursive: true });
@@ -142,11 +143,11 @@ if (!DRY && picked.length) {
   const queueMap = new Map((queue.items || []).map(x => [x.id, x]));
   for (const x of picked) {
     briefMap.set(x.id, x);
-    queueMap.set(x.id, { ...x, queueType: 'content_brief', status: 'queued_for_owner_approval' });
+    queueMap.set(x.id, { ...x, queueType: 'content_brief', status: 'DISCOVERED', autonomyStatus: 'DISCOVERED' });
   }
   const generatedAt = `${RUN}T00:00:00.000Z`;
   const nextBriefs = { ...briefs, generatedAt, candidates: [...briefMap.values()] };
-  const nextQueue = { ...queue, generatedAt, publishMode: queue.publishMode || 'queued', items: [...queueMap.values()] };
+  const nextQueue = { ...queue, generatedAt, publishMode: 'full_safe_autonomy', items: [...queueMap.values()] };
   fs.writeFileSync('data/intake/content_brief_candidates.json', JSON.stringify(nextBriefs, null, 2) + '\n');
   fs.writeFileSync('data/social/publish_queue.json', JSON.stringify(nextQueue, null, 2) + '\n');
 }

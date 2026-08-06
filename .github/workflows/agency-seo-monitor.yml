@@ -36,6 +36,12 @@ jobs:
       - name: Refresh live, GSC, and Bing snapshots
         run: npm run agency:refresh
         continue-on-error: true
+      - name: Build free-win and competitor measurement ledgers
+        run: npm run autonomy:measure
+        env:
+          SEARCH_API_URL: ${{ secrets.SEARCH_API_URL }}
+          SEARCH_PROVIDER_API_KEY: ${{ secrets.SEARCH_PROVIDER_API_KEY }}
+        continue-on-error: true
       - name: Build dashboard and advisory QA report
         run: npm run build
         continue-on-error: true
@@ -43,8 +49,8 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          if [[ -n "$(git status --porcelain data/agency)" ]]; then
-            git add data/agency
+          if [[ -n "$(git status --porcelain data/agency data/search)" ]]; then
+            git add data/agency data/search
             git commit -m "Refresh agency SEO monitoring snapshots"
             git push
           else
