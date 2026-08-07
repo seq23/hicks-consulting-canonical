@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-07T00:30:22.243Z",
+  "generatedAt": "2026-08-07T14:41:53.019Z",
   "policy": {
     "blocking": false,
     "message": "SEO, AEO, GEO, GSC, Bing, and live-health quality findings are advisory. Runtime safety, data integrity, auth, cadence, and truth checks remain release gates."
@@ -89,7 +89,7 @@
     "gsc": {
       "provider": "gsc",
       "status": "ok",
-      "checkedAt": "2026-08-07T00:30:22.243Z",
+      "checkedAt": "2026-08-07T14:41:53.019Z",
       "siteUrl": "sc-domain:hicksconsulting.org",
       "dateRange": {
         "currentStart": "2026-07-08",
@@ -1206,17 +1206,11 @@
     "bing": {
       "provider": "bing",
       "status": "ok",
-      "checkedAt": "2026-08-07T00:30:22.243Z",
+      "checkedAt": "2026-08-07T14:41:53.019Z",
       "siteUrl": "https://www.hicksconsulting.org/",
       "site": null,
       "metrics": {
         "rankAndTraffic": [
-          {
-            "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
-            "Clicks": 0,
-            "Date": "/Date(1771574400000-0800)/",
-            "Impressions": 0
-          },
           {
             "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
             "Clicks": 0,
@@ -1750,27 +1744,15 @@
             "Clicks": 0,
             "Date": "/Date(1785826800000-0700)/",
             "Impressions": 0
+          },
+          {
+            "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+            "Clicks": 0,
+            "Date": "/Date(1785913200000-0700)/",
+            "Impressions": 0
           }
         ],
         "crawl": [
-          {
-            "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
-            "AllOtherCodes": 1,
-            "BlockedByRobotsTxt": 0,
-            "Code2xx": 18,
-            "Code301": 1,
-            "Code302": 0,
-            "Code4xx": 0,
-            "Code5xx": 0,
-            "ConnectionTimeout": 0,
-            "ContainsMalware": 0,
-            "CrawlErrors": 0,
-            "CrawledPages": 4,
-            "Date": "/Date(1771660800000-0800)/",
-            "DnsFailures": 0,
-            "InIndex": 17,
-            "InLinks": 0
-          },
           {
             "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
             "AllOtherCodes": 1,
@@ -3372,6 +3354,24 @@
             "DnsFailures": 0,
             "InIndex": 0,
             "InLinks": 5
+          },
+          {
+            "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+            "AllOtherCodes": 0,
+            "BlockedByRobotsTxt": 0,
+            "Code2xx": 13,
+            "Code301": 1,
+            "Code302": 0,
+            "Code4xx": 0,
+            "Code5xx": 0,
+            "ConnectionTimeout": 0,
+            "ContainsMalware": 0,
+            "CrawlErrors": 0,
+            "CrawledPages": 3,
+            "Date": "/Date(1785999600000-0700)/",
+            "DnsFailures": 0,
+            "InIndex": 0,
+            "InLinks": 5
           }
         ]
       },
@@ -3397,20 +3397,20 @@
         {
           "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
           "AvgClickPosition": -1,
-          "AvgImpressionPosition": 2,
-          "Clicks": 0,
-          "Date": "/Date(1752217200000-0700)/",
-          "Impressions": 1,
-          "Query": "melissa hicks therapy"
-        },
-        {
-          "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
-          "AvgClickPosition": -1,
           "AvgImpressionPosition": 7,
           "Clicks": 0,
           "Date": "/Date(1752217200000-0700)/",
           "Impressions": 1,
           "Query": "jonathan hicks counseling"
+        },
+        {
+          "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
+          "AvgClickPosition": -1,
+          "AvgImpressionPosition": 2,
+          "Clicks": 0,
+          "Date": "/Date(1752217200000-0700)/",
+          "Impressions": 1,
+          "Query": "melissa hicks therapy"
         },
         {
           "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
@@ -3460,15 +3460,6 @@
         {
           "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
           "AvgClickPosition": -1,
-          "AvgImpressionPosition": 6,
-          "Clicks": 0,
-          "Date": "/Date(1752822000000-0700)/",
-          "Impressions": 1,
-          "Query": "hickstele"
-        },
-        {
-          "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
-          "AvgClickPosition": -1,
           "AvgImpressionPosition": 1,
           "Clicks": 0,
           "Date": "/Date(1752822000000-0700)/",
@@ -3478,11 +3469,11 @@
         {
           "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
           "AvgClickPosition": -1,
-          "AvgImpressionPosition": 5,
-          "Clicks": 1,
-          "Date": "/Date(1753426800000-0700)/",
-          "Impressions": 2,
-          "Query": "anthony hicks, consultant"
+          "AvgImpressionPosition": 6,
+          "Clicks": 0,
+          "Date": "/Date(1752822000000-0700)/",
+          "Impressions": 1,
+          "Query": "hickstele"
         },
         {
           "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
@@ -3497,28 +3488,19 @@
           "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
           "AvgClickPosition": -1,
           "AvgImpressionPosition": 5,
+          "Clicks": 1,
+          "Date": "/Date(1753426800000-0700)/",
+          "Impressions": 2,
+          "Query": "anthony hicks, consultant"
+        },
+        {
+          "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
+          "AvgClickPosition": -1,
+          "AvgImpressionPosition": 5,
           "Clicks": 0,
           "Date": "/Date(1753426800000-0700)/",
           "Impressions": 2,
           "Query": "hicks consulting | alameda ca"
-        },
-        {
-          "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
-          "AvgClickPosition": -1,
-          "AvgImpressionPosition": 8,
-          "Clicks": 0,
-          "Date": "/Date(1753426800000-0700)/",
-          "Impressions": 1,
-          "Query": "www norman hicks consulting"
-        },
-        {
-          "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
-          "AvgClickPosition": -1,
-          "AvgImpressionPosition": 2,
-          "Clicks": 0,
-          "Date": "/Date(1753426800000-0700)/",
-          "Impressions": 1,
-          "Query": "how to manage stress and anxiety john hicks consulting counselling"
         },
         {
           "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
@@ -3532,11 +3514,11 @@
         {
           "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
           "AvgClickPosition": -1,
-          "AvgImpressionPosition": 9,
+          "AvgImpressionPosition": 2,
           "Clicks": 0,
           "Date": "/Date(1753426800000-0700)/",
           "Impressions": 1,
-          "Query": "justin hicks social worker"
+          "Query": "how to manage stress and anxiety john hicks consulting counselling"
         },
         {
           "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
@@ -3546,6 +3528,24 @@
           "Date": "/Date(1753426800000-0700)/",
           "Impressions": 1,
           "Query": "hicks consulting llc"
+        },
+        {
+          "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
+          "AvgClickPosition": -1,
+          "AvgImpressionPosition": 8,
+          "Clicks": 0,
+          "Date": "/Date(1753426800000-0700)/",
+          "Impressions": 1,
+          "Query": "www norman hicks consulting"
+        },
+        {
+          "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
+          "AvgClickPosition": -1,
+          "AvgImpressionPosition": 9,
+          "Clicks": 0,
+          "Date": "/Date(1753426800000-0700)/",
+          "Impressions": 1,
+          "Query": "justin hicks social worker"
         },
         {
           "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
@@ -3598,91 +3598,91 @@
     "live": {
       "provider": "live",
       "status": "ok",
-      "checkedAt": "2026-08-07T00:30:22.243Z",
+      "checkedAt": "2026-08-07T14:41:53.019Z",
       "siteUrl": "https://www.hicksconsulting.org",
       "checks": [
         {
           "route": "/",
           "status": 200,
           "ok": true,
-          "ms": 405,
+          "ms": 158,
           "contentType": "text/html; charset=utf-8"
         },
         {
           "route": "/therapy/",
           "status": 200,
           "ok": true,
-          "ms": 139,
+          "ms": 91,
           "contentType": "text/html; charset=utf-8"
         },
         {
           "route": "/black-therapist-memphis/",
           "status": 200,
           "ok": true,
-          "ms": 123,
+          "ms": 42,
           "contentType": "text/html; charset=utf-8"
         },
         {
           "route": "/anxiety-therapist-memphis/",
           "status": 200,
           "ok": true,
-          "ms": 44,
+          "ms": 61,
           "contentType": "text/html; charset=utf-8"
         },
         {
           "route": "/coaching/",
           "status": 200,
           "ok": true,
-          "ms": 135,
+          "ms": 69,
           "contentType": "text/html; charset=utf-8"
         },
         {
           "route": "/groups/",
           "status": 200,
           "ok": true,
-          "ms": 79,
+          "ms": 51,
           "contentType": "text/html; charset=utf-8"
         },
         {
           "route": "/corporate-speaking/",
           "status": 200,
           "ok": true,
-          "ms": 136,
+          "ms": 35,
           "contentType": "text/html; charset=utf-8"
         },
         {
           "route": "/about/",
           "status": 200,
           "ok": true,
-          "ms": 43,
+          "ms": 58,
           "contentType": "text/html; charset=utf-8"
         },
         {
           "route": "/resources/",
           "status": 200,
           "ok": true,
-          "ms": 420,
+          "ms": 64,
           "contentType": "text/html; charset=utf-8"
         },
         {
           "route": "/sitemap.xml",
           "status": 200,
           "ok": true,
-          "ms": 36,
+          "ms": 124,
           "contentType": "application/xml"
         },
         {
           "route": "/robots.txt",
           "status": 200,
           "ok": true,
-          "ms": 169,
+          "ms": 77,
           "contentType": "text/plain; charset=utf-8"
         },
         {
           "route": "/agency/",
           "status": 200,
           "ok": true,
-          "ms": 134,
+          "ms": 70,
           "contentType": "text/html; charset=utf-8"
         }
       ],
@@ -3707,12 +3707,6 @@
     },
     "bing": {
       "rankAndTraffic": [
-        {
-          "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
-          "Clicks": 0,
-          "Date": "/Date(1771574400000-0800)/",
-          "Impressions": 0
-        },
         {
           "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
           "Clicks": 0,
@@ -4246,27 +4240,15 @@
           "Clicks": 0,
           "Date": "/Date(1785826800000-0700)/",
           "Impressions": 0
+        },
+        {
+          "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+          "Clicks": 0,
+          "Date": "/Date(1785913200000-0700)/",
+          "Impressions": 0
         }
       ],
       "crawl": [
-        {
-          "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
-          "AllOtherCodes": 1,
-          "BlockedByRobotsTxt": 0,
-          "Code2xx": 18,
-          "Code301": 1,
-          "Code302": 0,
-          "Code4xx": 0,
-          "Code5xx": 0,
-          "ConnectionTimeout": 0,
-          "ContainsMalware": 0,
-          "CrawlErrors": 0,
-          "CrawledPages": 4,
-          "Date": "/Date(1771660800000-0800)/",
-          "DnsFailures": 0,
-          "InIndex": 17,
-          "InLinks": 0
-        },
         {
           "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
           "AllOtherCodes": 1,
@@ -5868,6 +5850,24 @@
           "DnsFailures": 0,
           "InIndex": 0,
           "InLinks": 5
+        },
+        {
+          "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+          "AllOtherCodes": 0,
+          "BlockedByRobotsTxt": 0,
+          "Code2xx": 13,
+          "Code301": 1,
+          "Code302": 0,
+          "Code4xx": 0,
+          "Code5xx": 0,
+          "ConnectionTimeout": 0,
+          "ContainsMalware": 0,
+          "CrawlErrors": 0,
+          "CrawledPages": 3,
+          "Date": "/Date(1785999600000-0700)/",
+          "DnsFailures": 0,
+          "InIndex": 0,
+          "InLinks": 5
         }
       ]
     }
@@ -6097,13 +6097,13 @@
     },
     "freeWins": {
       "schemaVersion": "1.0.0",
-      "generatedAt": "2026-08-07T00:30:24.271Z",
+      "generatedAt": "2026-08-07T14:41:54.162Z",
       "providerState": "CONNECTED",
       "items": []
     },
     "competitors": {
       "schemaVersion": "1.0.0",
-      "generatedAt": "2026-08-07T00:30:24.271Z",
+      "generatedAt": "2026-08-07T14:41:54.162Z",
       "providerState": "DISCONNECTED",
       "observations": []
     }
