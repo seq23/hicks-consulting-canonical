@@ -33,7 +33,7 @@
         "Risks and limitations",
         "Recommended next steps"
       ],
-      "state": "DISCOVERED",
+      "state": "ADMITTED",
       "routineApprovalRequired": false,
       "publicOnlyAfterApproval": false,
       "source": "legacy_generated_queue_migration",
@@ -49,8 +49,22 @@
           "to": "DISCOVERED",
           "at": "2026-08-06T22:28:33.983Z",
           "reason": "Migrated from the prior approval-only generated queue."
+        },
+        {
+          "from": "DISCOVERED",
+          "to": "SCORED",
+          "at": "2026-08-07T15:29:29.991Z",
+          "reason": "Candidate score normalized for autonomous admission."
+        },
+        {
+          "from": "SCORED",
+          "to": "ADMITTED",
+          "at": "2026-08-07T15:29:29.991Z",
+          "reason": "Candidate admitted inside the existing content policy and ownership boundaries."
         }
-      ]
+      ],
+      "updatedAt": "2026-08-07T15:29:29.991Z",
+      "providerGate": "LLM_PROVIDER_NOT_CONFIGURED"
     },
     {
       "id": "brief-black_women_healing-article",
@@ -82,7 +96,7 @@
         "Common mistakes",
         "Next step"
       ],
-      "state": "DISCOVERED",
+      "state": "ADMITTED",
       "routineApprovalRequired": false,
       "publicOnlyAfterApproval": false,
       "source": "legacy_generated_queue_migration",
@@ -98,8 +112,22 @@
           "to": "DISCOVERED",
           "at": "2026-08-06T22:28:33.983Z",
           "reason": "Migrated from the prior approval-only generated queue."
+        },
+        {
+          "from": "DISCOVERED",
+          "to": "SCORED",
+          "at": "2026-08-07T15:29:29.991Z",
+          "reason": "Candidate score normalized for autonomous admission."
+        },
+        {
+          "from": "SCORED",
+          "to": "ADMITTED",
+          "at": "2026-08-07T15:29:29.991Z",
+          "reason": "Candidate admitted inside the existing content policy and ownership boundaries."
         }
-      ]
+      ],
+      "updatedAt": "2026-08-07T15:29:29.991Z",
+      "providerGate": "LLM_PROVIDER_NOT_CONFIGURED"
     },
     {
       "id": "brief-burnout_boundaries-insight",
