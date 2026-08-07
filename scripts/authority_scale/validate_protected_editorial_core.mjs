@@ -10,7 +10,7 @@ function canonicalHash(obj, mutableFields){
 }
 function nativePublicationTransitionVariants(obj){
   const variants=[obj];
-  if(obj && obj.status === 'published' && !Object.prototype.hasOwnProperty.call(obj,'previewPath') && obj.publicPath){
+  if(obj && (obj.status === 'published' || obj.status === 'revoked') && !Object.prototype.hasOwnProperty.call(obj,'previewPath') && obj.publicPath){
     const reconstructed={...obj,previewPath:`/preview${String(obj.publicPath).startsWith('/') ? obj.publicPath : `/${obj.publicPath}`}`};
     variants.push(reconstructed);
   }

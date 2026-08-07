@@ -108,7 +108,7 @@ const llmOnlyRoutes = [
   '/llm-atlas/answer-surfaces/'
 ];
 
-const urls = [...staticPublicRoutes, ...llmOnlyRoutes, ...Array.from(publishedResourceSlugs)].map(route => `${canonicalDomain}${route}`);
+const urls = [...staticPublicRoutes, ...Array.from(publishedResourceSlugs)].map(route => `${canonicalDomain}${route}`);
 const sitemap = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">', ...urls.map(url => `  <url><loc>${url}</loc></url>`), '</urlset>'].join('\n');
 fs.writeFileSync(path.join(root, 'sitemap.xml'), sitemap + '\n');
 fs.writeFileSync(path.join(dist, 'sitemap.xml'), sitemap + '\n');

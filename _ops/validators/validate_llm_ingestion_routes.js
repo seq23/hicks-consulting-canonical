@@ -23,11 +23,11 @@ for (const route of routes) {
   if (!html.includes('short-answer')) warn(`${route} should keep an extractable short-answer block.`);
 }
 
-for (const required of ['sitemap.xml', 'llms.txt']) {
-  const text = read(required);
-  for (const route of routes) {
-    if (!text.includes(route)) warn(`${required} is missing ${route}. Run npm run build.`);
-  }
+const sitemap = read('sitemap.xml');
+const llms = read('llms.txt');
+for (const route of routes) {
+  if (sitemap.includes(route)) warn(`sitemap.xml should exclude LLM-only route ${route}.`);
+  if (!llms.includes(route)) warn(`llms.txt is missing ${route}. Run npm run build.`);
 }
 
 if (warnings.length) {
