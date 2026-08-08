@@ -1,42 +1,56 @@
 {
   "provider": "live",
   "status": "ok",
-  "checkedAt": "2026-08-06T15:09:40.487Z",
+  "checkedAt": "2026-08-08T14:37:15.270Z",
   "siteUrl": "https://www.hicksconsulting.org",
   "checks": [
     {
       "route": "/",
       "status": 200,
       "ok": true,
-      "ms": 359,
+      "ms": 250,
       "contentType": "text/html; charset=utf-8"
     },
     {
       "route": "/therapy/",
       "status": 200,
       "ok": true,
-      "ms": 158,
+      "ms": 109,
+      "contentType": "text/html; charset=utf-8"
+    },
+    {
+      "route": "/black-therapist-memphis/",
+      "status": 200,
+      "ok": true,
+      "ms": 45,
+      "contentType": "text/html; charset=utf-8"
+    },
+    {
+      "route": "/anxiety-therapist-memphis/",
+      "status": 200,
+      "ok": true,
+      "ms": 41,
       "contentType": "text/html; charset=utf-8"
     },
     {
       "route": "/coaching/",
       "status": 200,
       "ok": true,
-      "ms": 101,
+      "ms": 45,
       "contentType": "text/html; charset=utf-8"
     },
     {
       "route": "/groups/",
       "status": 200,
       "ok": true,
-      "ms": 88,
+      "ms": 38,
       "contentType": "text/html; charset=utf-8"
     },
     {
       "route": "/corporate-speaking/",
       "status": 200,
       "ok": true,
-      "ms": 201,
+      "ms": 53,
       "contentType": "text/html; charset=utf-8"
     },
     {
@@ -50,34 +64,34 @@
       "route": "/resources/",
       "status": 200,
       "ok": true,
-      "ms": 89,
+      "ms": 52,
       "contentType": "text/html; charset=utf-8"
     },
     {
       "route": "/sitemap.xml",
       "status": 200,
       "ok": true,
-      "ms": 130,
+      "ms": 60,
       "contentType": "application/xml"
     },
     {
       "route": "/robots.txt",
       "status": 200,
       "ok": true,
-      "ms": 114,
+      "ms": 39,
       "contentType": "text/plain; charset=utf-8"
     },
     {
       "route": "/agency/",
       "status": 200,
       "ok": true,
-      "ms": 88,
+      "ms": 71,
       "contentType": "text/html; charset=utf-8"
     }
   ],
   "summary": {
-    "checked": 10,
-    "passed": 10,
+    "checked": 12,
+    "passed": 12,
     "failed": 0
   },
   "message": "All monitored live routes returned successful responses."

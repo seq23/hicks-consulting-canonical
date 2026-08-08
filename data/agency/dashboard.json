@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-06T15:09:40.487Z",
+  "generatedAt": "2026-08-08T14:37:15.270Z",
   "policy": {
     "blocking": false,
     "message": "SEO, AEO, GEO, GSC, Bing, and live-health quality findings are advisory. Runtime safety, data integrity, auth, cadence, and truth checks remain release gates."
@@ -69,11 +69,11 @@
     {
       "key": "measurement",
       "label": "GSC + Bing measurement",
-      "score": 0,
+      "score": 100,
       "summary": "Connector availability and data freshness.",
-      "grade": "F",
+      "grade": "A",
       "target": 87,
-      "targetMet": false
+      "targetMet": true
     },
     {
       "key": "monitoring",
@@ -88,57 +88,3547 @@
   "health": {
     "gsc": {
       "provider": "gsc",
-      "status": "not_connected",
-      "checkedAt": "2026-08-06T15:09:40.487Z",
-      "siteUrl": "https://www.hicksconsulting.org/",
-      "message": "Add GSC_SITE_URL plus GSC service-account secrets or GSC_ACCESS_TOKEN to enable automatic Search Console monitoring."
+      "status": "ok",
+      "checkedAt": "2026-08-08T14:37:15.270Z",
+      "siteUrl": "sc-domain:hicksconsulting.org",
+      "dateRange": {
+        "currentStart": "2026-07-09",
+        "currentEnd": "2026-08-05",
+        "previousStart": "2026-06-11",
+        "previousEnd": "2026-07-08"
+      },
+      "metrics": {
+        "clicks": 9,
+        "impressions": 508,
+        "ctr": 0.017716535433070866,
+        "position": 8.187007874015748,
+        "previousClicks": 31,
+        "previousImpressions": 564,
+        "previousCtr": 0.0549645390070922,
+        "previousPosition": 8.813829787234042
+      },
+      "topQueries": [
+        {
+          "keys": [
+            "hicks consulting"
+          ],
+          "clicks": 2,
+          "impressions": 30,
+          "ctr": 0.06666666666666667,
+          "position": 3.8333333333333335
+        },
+        {
+          "keys": [
+            "black therapist memphis tn"
+          ],
+          "clicks": 1,
+          "impressions": 3,
+          "ctr": 0.3333333333333333,
+          "position": 3
+        },
+        {
+          "keys": [
+            "behavior health consultant"
+          ],
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 2
+        },
+        {
+          "keys": [
+            "black mental health therapist"
+          ],
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 4
+        },
+        {
+          "keys": [
+            "black therapists near me"
+          ],
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 24
+        },
+        {
+          "keys": [
+            "black women therapist"
+          ],
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 1
+        },
+        {
+          "keys": [
+            "cancer consultants near me"
+          ],
+          "clicks": 0,
+          "impressions": 12,
+          "ctr": 0,
+          "position": 1
+        },
+        {
+          "keys": [
+            "christian therapists near me"
+          ],
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 51
+        },
+        {
+          "keys": [
+            "clinical support mental health"
+          ],
+          "clicks": 0,
+          "impressions": 2,
+          "ctr": 0,
+          "position": 41
+        },
+        {
+          "keys": [
+            "consultant"
+          ],
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 5
+        },
+        {
+          "keys": [
+            "female therapist near me"
+          ],
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 10
+        },
+        {
+          "keys": [
+            "grief counseling germantown, tn"
+          ],
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 21
+        },
+        {
+          "keys": [
+            "healthcare consultant"
+          ],
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 11
+        },
+        {
+          "keys": [
+            "healthcare consulting firms near me"
+          ],
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 1
+        },
+        {
+          "keys": [
+            "healthcare consulting tennessee"
+          ],
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 3
+        },
+        {
+          "keys": [
+            "herman hicks"
+          ],
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 43
+        },
+        {
+          "keys": [
+            "hicks"
+          ],
+          "clicks": 0,
+          "impressions": 9,
+          "ctr": 0,
+          "position": 2.7777777777777777
+        },
+        {
+          "keys": [
+            "hicks health"
+          ],
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 5
+        },
+        {
+          "keys": [
+            "hicks healthcare"
+          ],
+          "clicks": 0,
+          "impressions": 3,
+          "ctr": 0,
+          "position": 1
+        },
+        {
+          "keys": [
+            "jhicks consulting"
+          ],
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 12
+        },
+        {
+          "keys": [
+            "jill hicks consulting"
+          ],
+          "clicks": 0,
+          "impressions": 2,
+          "ctr": 0,
+          "position": 19.5
+        },
+        {
+          "keys": [
+            "memphis small business consulting"
+          ],
+          "clicks": 0,
+          "impressions": 2,
+          "ctr": 0,
+          "position": 21
+        },
+        {
+          "keys": [
+            "mental cancer"
+          ],
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 12
+        },
+        {
+          "keys": [
+            "mental health"
+          ],
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 22
+        },
+        {
+          "keys": [
+            "mental health clinic"
+          ],
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 21
+        },
+        {
+          "keys": [
+            "monica hicks"
+          ],
+          "clicks": 0,
+          "impressions": 5,
+          "ctr": 0,
+          "position": 26.2
+        },
+        {
+          "keys": [
+            "oneclick hicks"
+          ],
+          "clicks": 0,
+          "impressions": 3,
+          "ctr": 0,
+          "position": 9
+        },
+        {
+          "keys": [
+            "psychologists near me"
+          ],
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 30
+        },
+        {
+          "keys": [
+            "rebecca hicks"
+          ],
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 3
+        },
+        {
+          "keys": [
+            "therapist germantown, tn"
+          ],
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 21
+        },
+        {
+          "keys": [
+            "therapist near me for mental health"
+          ],
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 14
+        },
+        {
+          "keys": [
+            "vanessa hicks"
+          ],
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 34
+        }
+      ],
+      "topPages": [
+        {
+          "keys": [
+            "https://www.hicksconsulting.org/"
+          ],
+          "clicks": 9,
+          "impressions": 499,
+          "ctr": 0.018036072144288578,
+          "position": 8.018036072144287
+        },
+        {
+          "keys": [
+            "https://www.hicksconsulting.org/about/"
+          ],
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 2
+        },
+        {
+          "keys": [
+            "https://www.hicksconsulting.org/book-discovery-call/"
+          ],
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 7
+        },
+        {
+          "keys": [
+            "https://www.hicksconsulting.org/coaching/"
+          ],
+          "clicks": 0,
+          "impressions": 6,
+          "ctr": 0,
+          "position": 8
+        },
+        {
+          "keys": [
+            "https://www.hicksconsulting.org/copy-of-home"
+          ],
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 5
+        },
+        {
+          "keys": [
+            "https://www.hicksconsulting.org/corporate-speaking/"
+          ],
+          "clicks": 0,
+          "impressions": 6,
+          "ctr": 0,
+          "position": 8
+        },
+        {
+          "keys": [
+            "https://www.hicksconsulting.org/emergency-crisis-notice/"
+          ],
+          "clicks": 0,
+          "impressions": 4,
+          "ctr": 0,
+          "position": 27.25
+        },
+        {
+          "keys": [
+            "https://www.hicksconsulting.org/faq/"
+          ],
+          "clicks": 0,
+          "impressions": 17,
+          "ctr": 0,
+          "position": 13.941176470588236
+        },
+        {
+          "keys": [
+            "https://www.hicksconsulting.org/groups/"
+          ],
+          "clicks": 0,
+          "impressions": 6,
+          "ctr": 0,
+          "position": 8
+        },
+        {
+          "keys": [
+            "https://www.hicksconsulting.org/intake-quiz/"
+          ],
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 2
+        },
+        {
+          "keys": [
+            "https://www.hicksconsulting.org/llm-atlas/"
+          ],
+          "clicks": 0,
+          "impressions": 2,
+          "ctr": 0,
+          "position": 8
+        },
+        {
+          "keys": [
+            "https://www.hicksconsulting.org/resources/"
+          ],
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 2
+        },
+        {
+          "keys": [
+            "https://www.hicksconsulting.org/therapy/"
+          ],
+          "clicks": 0,
+          "impressions": 9,
+          "ctr": 0,
+          "position": 6.333333333333333
+        }
+      ],
+      "queryPage": [
+        {
+          "keys": [
+            "hicks consulting",
+            "https://www.hicksconsulting.org/"
+          ],
+          "clicks": 2,
+          "impressions": 28,
+          "ctr": 0.07142857142857142,
+          "position": 1.8928571428571428
+        },
+        {
+          "keys": [
+            "black therapist memphis tn",
+            "https://www.hicksconsulting.org/"
+          ],
+          "clicks": 1,
+          "impressions": 3,
+          "ctr": 0.3333333333333333,
+          "position": 3
+        },
+        {
+          "keys": [
+            "behavior health consultant",
+            "https://www.hicksconsulting.org/"
+          ],
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 2
+        },
+        {
+          "keys": [
+            "black mental health therapist",
+            "https://www.hicksconsulting.org/"
+          ],
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 4
+        },
+        {
+          "keys": [
+            "black therapists near me",
+            "https://www.hicksconsulting.org/"
+          ],
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 24
+        },
+        {
+          "keys": [
+            "black women therapist",
+            "https://www.hicksconsulting.org/"
+          ],
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 1
+        },
+        {
+          "keys": [
+            "cancer consultants near me",
+            "https://www.hicksconsulting.org/"
+          ],
+          "clicks": 0,
+          "impressions": 12,
+          "ctr": 0,
+          "position": 1
+        },
+        {
+          "keys": [
+            "christian therapists near me",
+            "https://www.hicksconsulting.org/"
+          ],
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 51
+        },
+        {
+          "keys": [
+            "clinical support mental health",
+            "https://www.hicksconsulting.org/"
+          ],
+          "clicks": 0,
+          "impressions": 2,
+          "ctr": 0,
+          "position": 41
+        },
+        {
+          "keys": [
+            "consultant",
+            "https://www.hicksconsulting.org/"
+          ],
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 5
+        },
+        {
+          "keys": [
+            "female therapist near me",
+            "https://www.hicksconsulting.org/"
+          ],
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 10
+        },
+        {
+          "keys": [
+            "grief counseling germantown, tn",
+            "https://www.hicksconsulting.org/"
+          ],
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 21
+        },
+        {
+          "keys": [
+            "healthcare consultant",
+            "https://www.hicksconsulting.org/"
+          ],
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 11
+        },
+        {
+          "keys": [
+            "healthcare consulting firms near me",
+            "https://www.hicksconsulting.org/"
+          ],
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 1
+        },
+        {
+          "keys": [
+            "healthcare consulting tennessee",
+            "https://www.hicksconsulting.org/"
+          ],
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 3
+        },
+        {
+          "keys": [
+            "herman hicks",
+            "https://www.hicksconsulting.org/"
+          ],
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 43
+        },
+        {
+          "keys": [
+            "hicks",
+            "https://www.hicksconsulting.org/"
+          ],
+          "clicks": 0,
+          "impressions": 9,
+          "ctr": 0,
+          "position": 2.7777777777777777
+        },
+        {
+          "keys": [
+            "hicks consulting",
+            "https://www.hicksconsulting.org/about/"
+          ],
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 2
+        },
+        {
+          "keys": [
+            "hicks consulting",
+            "https://www.hicksconsulting.org/coaching/"
+          ],
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 2
+        },
+        {
+          "keys": [
+            "hicks consulting",
+            "https://www.hicksconsulting.org/corporate-speaking/"
+          ],
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 2
+        },
+        {
+          "keys": [
+            "hicks consulting",
+            "https://www.hicksconsulting.org/emergency-crisis-notice/"
+          ],
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 40
+        },
+        {
+          "keys": [
+            "hicks consulting",
+            "https://www.hicksconsulting.org/faq/"
+          ],
+          "clicks": 0,
+          "impressions": 7,
+          "ctr": 0,
+          "position": 10
+        },
+        {
+          "keys": [
+            "hicks consulting",
+            "https://www.hicksconsulting.org/groups/"
+          ],
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 2
+        },
+        {
+          "keys": [
+            "hicks consulting",
+            "https://www.hicksconsulting.org/intake-quiz/"
+          ],
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 2
+        },
+        {
+          "keys": [
+            "hicks consulting",
+            "https://www.hicksconsulting.org/resources/"
+          ],
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 2
+        },
+        {
+          "keys": [
+            "hicks consulting",
+            "https://www.hicksconsulting.org/therapy/"
+          ],
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 2
+        },
+        {
+          "keys": [
+            "hicks health",
+            "https://www.hicksconsulting.org/"
+          ],
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 5
+        },
+        {
+          "keys": [
+            "hicks healthcare",
+            "https://www.hicksconsulting.org/"
+          ],
+          "clicks": 0,
+          "impressions": 3,
+          "ctr": 0,
+          "position": 1
+        },
+        {
+          "keys": [
+            "jhicks consulting",
+            "https://www.hicksconsulting.org/"
+          ],
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 12
+        },
+        {
+          "keys": [
+            "jill hicks consulting",
+            "https://www.hicksconsulting.org/"
+          ],
+          "clicks": 0,
+          "impressions": 2,
+          "ctr": 0,
+          "position": 19.5
+        },
+        {
+          "keys": [
+            "memphis small business consulting",
+            "https://www.hicksconsulting.org/"
+          ],
+          "clicks": 0,
+          "impressions": 2,
+          "ctr": 0,
+          "position": 21
+        },
+        {
+          "keys": [
+            "mental cancer",
+            "https://www.hicksconsulting.org/"
+          ],
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 12
+        },
+        {
+          "keys": [
+            "mental health",
+            "https://www.hicksconsulting.org/"
+          ],
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 22
+        },
+        {
+          "keys": [
+            "mental health clinic",
+            "https://www.hicksconsulting.org/"
+          ],
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 21
+        },
+        {
+          "keys": [
+            "monica hicks",
+            "https://www.hicksconsulting.org/"
+          ],
+          "clicks": 0,
+          "impressions": 5,
+          "ctr": 0,
+          "position": 26.2
+        },
+        {
+          "keys": [
+            "oneclick hicks",
+            "https://www.hicksconsulting.org/"
+          ],
+          "clicks": 0,
+          "impressions": 3,
+          "ctr": 0,
+          "position": 9
+        },
+        {
+          "keys": [
+            "psychologists near me",
+            "https://www.hicksconsulting.org/"
+          ],
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 30
+        },
+        {
+          "keys": [
+            "rebecca hicks",
+            "https://www.hicksconsulting.org/"
+          ],
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 3
+        },
+        {
+          "keys": [
+            "therapist germantown, tn",
+            "https://www.hicksconsulting.org/"
+          ],
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 21
+        },
+        {
+          "keys": [
+            "therapist near me for mental health",
+            "https://www.hicksconsulting.org/"
+          ],
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 14
+        },
+        {
+          "keys": [
+            "vanessa hicks",
+            "https://www.hicksconsulting.org/"
+          ],
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 34
+        }
+      ],
+      "daily": [
+        {
+          "keys": [
+            "2026-07-09"
+          ],
+          "clicks": 1,
+          "impressions": 16,
+          "ctr": 0.0625,
+          "position": 5.9375
+        },
+        {
+          "keys": [
+            "2026-07-10"
+          ],
+          "clicks": 0,
+          "impressions": 23,
+          "ctr": 0,
+          "position": 8.304347826086957
+        },
+        {
+          "keys": [
+            "2026-07-11"
+          ],
+          "clicks": 0,
+          "impressions": 7,
+          "ctr": 0,
+          "position": 8.714285714285715
+        },
+        {
+          "keys": [
+            "2026-07-12"
+          ],
+          "clicks": 0,
+          "impressions": 10,
+          "ctr": 0,
+          "position": 5.1
+        },
+        {
+          "keys": [
+            "2026-07-13"
+          ],
+          "clicks": 0,
+          "impressions": 41,
+          "ctr": 0,
+          "position": 16.414634146341463
+        },
+        {
+          "keys": [
+            "2026-07-14"
+          ],
+          "clicks": 0,
+          "impressions": 15,
+          "ctr": 0,
+          "position": 7.066666666666666
+        },
+        {
+          "keys": [
+            "2026-07-15"
+          ],
+          "clicks": 0,
+          "impressions": 16,
+          "ctr": 0,
+          "position": 6.875
+        },
+        {
+          "keys": [
+            "2026-07-16"
+          ],
+          "clicks": 0,
+          "impressions": 15,
+          "ctr": 0,
+          "position": 5.933333333333334
+        },
+        {
+          "keys": [
+            "2026-07-17"
+          ],
+          "clicks": 0,
+          "impressions": 17,
+          "ctr": 0,
+          "position": 3.764705882352941
+        },
+        {
+          "keys": [
+            "2026-07-18"
+          ],
+          "clicks": 1,
+          "impressions": 10,
+          "ctr": 0.1,
+          "position": 7.6
+        },
+        {
+          "keys": [
+            "2026-07-19"
+          ],
+          "clicks": 0,
+          "impressions": 14,
+          "ctr": 0,
+          "position": 9.142857142857142
+        },
+        {
+          "keys": [
+            "2026-07-20"
+          ],
+          "clicks": 0,
+          "impressions": 19,
+          "ctr": 0,
+          "position": 4.105263157894736
+        },
+        {
+          "keys": [
+            "2026-07-21"
+          ],
+          "clicks": 0,
+          "impressions": 26,
+          "ctr": 0,
+          "position": 6.730769230769231
+        },
+        {
+          "keys": [
+            "2026-07-22"
+          ],
+          "clicks": 0,
+          "impressions": 28,
+          "ctr": 0,
+          "position": 7.928571428571429
+        },
+        {
+          "keys": [
+            "2026-07-23"
+          ],
+          "clicks": 0,
+          "impressions": 19,
+          "ctr": 0,
+          "position": 6.684210526315789
+        },
+        {
+          "keys": [
+            "2026-07-24"
+          ],
+          "clicks": 0,
+          "impressions": 20,
+          "ctr": 0,
+          "position": 5.85
+        },
+        {
+          "keys": [
+            "2026-07-25"
+          ],
+          "clicks": 0,
+          "impressions": 17,
+          "ctr": 0,
+          "position": 8.529411764705882
+        },
+        {
+          "keys": [
+            "2026-07-26"
+          ],
+          "clicks": 0,
+          "impressions": 11,
+          "ctr": 0,
+          "position": 16.454545454545453
+        },
+        {
+          "keys": [
+            "2026-07-27"
+          ],
+          "clicks": 2,
+          "impressions": 21,
+          "ctr": 0.09523809523809523,
+          "position": 6.428571428571429
+        },
+        {
+          "keys": [
+            "2026-07-28"
+          ],
+          "clicks": 2,
+          "impressions": 22,
+          "ctr": 0.09090909090909091,
+          "position": 6.318181818181818
+        },
+        {
+          "keys": [
+            "2026-07-29"
+          ],
+          "clicks": 1,
+          "impressions": 21,
+          "ctr": 0.047619047619047616,
+          "position": 9.571428571428571
+        },
+        {
+          "keys": [
+            "2026-07-30"
+          ],
+          "clicks": 0,
+          "impressions": 19,
+          "ctr": 0,
+          "position": 7.578947368421052
+        },
+        {
+          "keys": [
+            "2026-07-31"
+          ],
+          "clicks": 0,
+          "impressions": 17,
+          "ctr": 0,
+          "position": 5.0588235294117645
+        },
+        {
+          "keys": [
+            "2026-08-01"
+          ],
+          "clicks": 0,
+          "impressions": 8,
+          "ctr": 0,
+          "position": 15.375
+        },
+        {
+          "keys": [
+            "2026-08-02"
+          ],
+          "clicks": 0,
+          "impressions": 18,
+          "ctr": 0,
+          "position": 7.611111111111111
+        },
+        {
+          "keys": [
+            "2026-08-03"
+          ],
+          "clicks": 1,
+          "impressions": 24,
+          "ctr": 0.041666666666666664,
+          "position": 8.708333333333332
+        },
+        {
+          "keys": [
+            "2026-08-04"
+          ],
+          "clicks": 1,
+          "impressions": 11,
+          "ctr": 0.09090909090909091,
+          "position": 4.454545454545455
+        },
+        {
+          "keys": [
+            "2026-08-05"
+          ],
+          "clicks": 0,
+          "impressions": 23,
+          "ctr": 0,
+          "position": 10.73913043478261
+        }
+      ],
+      "message": "Search Console API connected and refreshed."
     },
     "bing": {
       "provider": "bing",
-      "status": "not_connected",
-      "checkedAt": "2026-08-06T15:09:40.487Z",
+      "status": "ok",
+      "checkedAt": "2026-08-08T14:37:15.270Z",
       "siteUrl": "https://www.hicksconsulting.org/",
-      "message": "Add BING_WEBMASTER_API_KEY and BING_SITE_URL to enable automatic Bing Webmaster monitoring."
+      "site": null,
+      "metrics": {
+        "rankAndTraffic": [
+          {
+            "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+            "Clicks": 0,
+            "Date": "/Date(1771747200000-0800)/",
+            "Impressions": 0
+          },
+          {
+            "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+            "Clicks": 0,
+            "Date": "/Date(1771833600000-0800)/",
+            "Impressions": 0
+          },
+          {
+            "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+            "Clicks": 0,
+            "Date": "/Date(1771920000000-0800)/",
+            "Impressions": 0
+          },
+          {
+            "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+            "Clicks": 0,
+            "Date": "/Date(1772006400000-0800)/",
+            "Impressions": 0
+          },
+          {
+            "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+            "Clicks": 0,
+            "Date": "/Date(1772092800000-0800)/",
+            "Impressions": 0
+          },
+          {
+            "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+            "Clicks": 0,
+            "Date": "/Date(1772179200000-0800)/",
+            "Impressions": 0
+          },
+          {
+            "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+            "Clicks": 0,
+            "Date": "/Date(1772265600000-0800)/",
+            "Impressions": 0
+          },
+          {
+            "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+            "Clicks": 0,
+            "Date": "/Date(1772352000000-0800)/",
+            "Impressions": 0
+          },
+          {
+            "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+            "Clicks": 0,
+            "Date": "/Date(1772438400000-0800)/",
+            "Impressions": 0
+          },
+          {
+            "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+            "Clicks": 0,
+            "Date": "/Date(1772524800000-0800)/",
+            "Impressions": 0
+          },
+          {
+            "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+            "Clicks": 0,
+            "Date": "/Date(1772611200000-0800)/",
+            "Impressions": 0
+          },
+          {
+            "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+            "Clicks": 0,
+            "Date": "/Date(1772697600000-0800)/",
+            "Impressions": 0
+          },
+          {
+            "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+            "Clicks": 0,
+            "Date": "/Date(1772784000000-0800)/",
+            "Impressions": 0
+          },
+          {
+            "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+            "Clicks": 0,
+            "Date": "/Date(1772870400000-0800)/",
+            "Impressions": 0
+          },
+          {
+            "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+            "Clicks": 0,
+            "Date": "/Date(1772956800000-0800)/",
+            "Impressions": 0
+          },
+          {
+            "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+            "Clicks": 0,
+            "Date": "/Date(1773039600000-0700)/",
+            "Impressions": 0
+          },
+          {
+            "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+            "Clicks": 0,
+            "Date": "/Date(1773126000000-0700)/",
+            "Impressions": 0
+          },
+          {
+            "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+            "Clicks": 0,
+            "Date": "/Date(1773212400000-0700)/",
+            "Impressions": 0
+          },
+          {
+            "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+            "Clicks": 0,
+            "Date": "/Date(1773298800000-0700)/",
+            "Impressions": 0
+          },
+          {
+            "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+            "Clicks": 0,
+            "Date": "/Date(1773385200000-0700)/",
+            "Impressions": 0
+          },
+          {
+            "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+            "Clicks": 0,
+            "Date": "/Date(1773471600000-0700)/",
+            "Impressions": 0
+          },
+          {
+            "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+            "Clicks": 0,
+            "Date": "/Date(1780124400000-0700)/",
+            "Impressions": 0
+          },
+          {
+            "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+            "Clicks": 0,
+            "Date": "/Date(1780210800000-0700)/",
+            "Impressions": 0
+          },
+          {
+            "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+            "Clicks": 0,
+            "Date": "/Date(1780297200000-0700)/",
+            "Impressions": 0
+          },
+          {
+            "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+            "Clicks": 0,
+            "Date": "/Date(1780383600000-0700)/",
+            "Impressions": 0
+          },
+          {
+            "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+            "Clicks": 0,
+            "Date": "/Date(1780470000000-0700)/",
+            "Impressions": 0
+          },
+          {
+            "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+            "Clicks": 0,
+            "Date": "/Date(1780556400000-0700)/",
+            "Impressions": 0
+          },
+          {
+            "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+            "Clicks": 0,
+            "Date": "/Date(1780642800000-0700)/",
+            "Impressions": 0
+          },
+          {
+            "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+            "Clicks": 0,
+            "Date": "/Date(1780729200000-0700)/",
+            "Impressions": 0
+          },
+          {
+            "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+            "Clicks": 0,
+            "Date": "/Date(1780815600000-0700)/",
+            "Impressions": 0
+          },
+          {
+            "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+            "Clicks": 0,
+            "Date": "/Date(1780902000000-0700)/",
+            "Impressions": 0
+          },
+          {
+            "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+            "Clicks": 0,
+            "Date": "/Date(1780988400000-0700)/",
+            "Impressions": 0
+          },
+          {
+            "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+            "Clicks": 0,
+            "Date": "/Date(1781074800000-0700)/",
+            "Impressions": 0
+          },
+          {
+            "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+            "Clicks": 0,
+            "Date": "/Date(1781161200000-0700)/",
+            "Impressions": 0
+          },
+          {
+            "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+            "Clicks": 0,
+            "Date": "/Date(1781247600000-0700)/",
+            "Impressions": 0
+          },
+          {
+            "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+            "Clicks": 0,
+            "Date": "/Date(1781334000000-0700)/",
+            "Impressions": 0
+          },
+          {
+            "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+            "Clicks": 0,
+            "Date": "/Date(1781420400000-0700)/",
+            "Impressions": 0
+          },
+          {
+            "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+            "Clicks": 0,
+            "Date": "/Date(1781506800000-0700)/",
+            "Impressions": 0
+          },
+          {
+            "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+            "Clicks": 0,
+            "Date": "/Date(1781593200000-0700)/",
+            "Impressions": 0
+          },
+          {
+            "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+            "Clicks": 0,
+            "Date": "/Date(1781679600000-0700)/",
+            "Impressions": 0
+          },
+          {
+            "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+            "Clicks": 0,
+            "Date": "/Date(1781766000000-0700)/",
+            "Impressions": 0
+          },
+          {
+            "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+            "Clicks": 0,
+            "Date": "/Date(1781852400000-0700)/",
+            "Impressions": 0
+          },
+          {
+            "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+            "Clicks": 0,
+            "Date": "/Date(1781938800000-0700)/",
+            "Impressions": 0
+          },
+          {
+            "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+            "Clicks": 0,
+            "Date": "/Date(1782025200000-0700)/",
+            "Impressions": 0
+          },
+          {
+            "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+            "Clicks": 0,
+            "Date": "/Date(1782111600000-0700)/",
+            "Impressions": 0
+          },
+          {
+            "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+            "Clicks": 0,
+            "Date": "/Date(1782198000000-0700)/",
+            "Impressions": 0
+          },
+          {
+            "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+            "Clicks": 0,
+            "Date": "/Date(1782284400000-0700)/",
+            "Impressions": 0
+          },
+          {
+            "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+            "Clicks": 0,
+            "Date": "/Date(1782370800000-0700)/",
+            "Impressions": 0
+          },
+          {
+            "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+            "Clicks": 0,
+            "Date": "/Date(1782457200000-0700)/",
+            "Impressions": 0
+          },
+          {
+            "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+            "Clicks": 0,
+            "Date": "/Date(1782543600000-0700)/",
+            "Impressions": 0
+          },
+          {
+            "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+            "Clicks": 0,
+            "Date": "/Date(1782630000000-0700)/",
+            "Impressions": 0
+          },
+          {
+            "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+            "Clicks": 0,
+            "Date": "/Date(1782716400000-0700)/",
+            "Impressions": 0
+          },
+          {
+            "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+            "Clicks": 0,
+            "Date": "/Date(1782802800000-0700)/",
+            "Impressions": 0
+          },
+          {
+            "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+            "Clicks": 0,
+            "Date": "/Date(1782889200000-0700)/",
+            "Impressions": 0
+          },
+          {
+            "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+            "Clicks": 0,
+            "Date": "/Date(1782975600000-0700)/",
+            "Impressions": 0
+          },
+          {
+            "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+            "Clicks": 0,
+            "Date": "/Date(1783062000000-0700)/",
+            "Impressions": 0
+          },
+          {
+            "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+            "Clicks": 0,
+            "Date": "/Date(1783148400000-0700)/",
+            "Impressions": 0
+          },
+          {
+            "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+            "Clicks": 0,
+            "Date": "/Date(1783234800000-0700)/",
+            "Impressions": 0
+          },
+          {
+            "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+            "Clicks": 0,
+            "Date": "/Date(1783321200000-0700)/",
+            "Impressions": 0
+          },
+          {
+            "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+            "Clicks": 0,
+            "Date": "/Date(1783407600000-0700)/",
+            "Impressions": 0
+          },
+          {
+            "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+            "Clicks": 0,
+            "Date": "/Date(1783494000000-0700)/",
+            "Impressions": 0
+          },
+          {
+            "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+            "Clicks": 0,
+            "Date": "/Date(1783580400000-0700)/",
+            "Impressions": 0
+          },
+          {
+            "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+            "Clicks": 0,
+            "Date": "/Date(1783666800000-0700)/",
+            "Impressions": 0
+          },
+          {
+            "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+            "Clicks": 0,
+            "Date": "/Date(1783753200000-0700)/",
+            "Impressions": 0
+          },
+          {
+            "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+            "Clicks": 0,
+            "Date": "/Date(1783839600000-0700)/",
+            "Impressions": 0
+          },
+          {
+            "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+            "Clicks": 0,
+            "Date": "/Date(1783926000000-0700)/",
+            "Impressions": 0
+          },
+          {
+            "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+            "Clicks": 0,
+            "Date": "/Date(1784012400000-0700)/",
+            "Impressions": 0
+          },
+          {
+            "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+            "Clicks": 0,
+            "Date": "/Date(1784098800000-0700)/",
+            "Impressions": 0
+          },
+          {
+            "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+            "Clicks": 0,
+            "Date": "/Date(1784185200000-0700)/",
+            "Impressions": 0
+          },
+          {
+            "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+            "Clicks": 0,
+            "Date": "/Date(1784271600000-0700)/",
+            "Impressions": 0
+          },
+          {
+            "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+            "Clicks": 0,
+            "Date": "/Date(1784358000000-0700)/",
+            "Impressions": 0
+          },
+          {
+            "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+            "Clicks": 0,
+            "Date": "/Date(1784444400000-0700)/",
+            "Impressions": 0
+          },
+          {
+            "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+            "Clicks": 0,
+            "Date": "/Date(1784530800000-0700)/",
+            "Impressions": 0
+          },
+          {
+            "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+            "Clicks": 0,
+            "Date": "/Date(1784617200000-0700)/",
+            "Impressions": 0
+          },
+          {
+            "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+            "Clicks": 0,
+            "Date": "/Date(1784703600000-0700)/",
+            "Impressions": 0
+          },
+          {
+            "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+            "Clicks": 0,
+            "Date": "/Date(1784790000000-0700)/",
+            "Impressions": 0
+          },
+          {
+            "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+            "Clicks": 0,
+            "Date": "/Date(1784876400000-0700)/",
+            "Impressions": 0
+          },
+          {
+            "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+            "Clicks": 0,
+            "Date": "/Date(1784962800000-0700)/",
+            "Impressions": 0
+          },
+          {
+            "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+            "Clicks": 0,
+            "Date": "/Date(1785049200000-0700)/",
+            "Impressions": 0
+          },
+          {
+            "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+            "Clicks": 0,
+            "Date": "/Date(1785135600000-0700)/",
+            "Impressions": 0
+          },
+          {
+            "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+            "Clicks": 0,
+            "Date": "/Date(1785222000000-0700)/",
+            "Impressions": 0
+          },
+          {
+            "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+            "Clicks": 0,
+            "Date": "/Date(1785308400000-0700)/",
+            "Impressions": 0
+          },
+          {
+            "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+            "Clicks": 0,
+            "Date": "/Date(1785394800000-0700)/",
+            "Impressions": 0
+          },
+          {
+            "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+            "Clicks": 0,
+            "Date": "/Date(1785481200000-0700)/",
+            "Impressions": 0
+          },
+          {
+            "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+            "Clicks": 0,
+            "Date": "/Date(1785567600000-0700)/",
+            "Impressions": 0
+          },
+          {
+            "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+            "Clicks": 0,
+            "Date": "/Date(1785654000000-0700)/",
+            "Impressions": 0
+          },
+          {
+            "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+            "Clicks": 0,
+            "Date": "/Date(1785740400000-0700)/",
+            "Impressions": 0
+          },
+          {
+            "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+            "Clicks": 0,
+            "Date": "/Date(1785826800000-0700)/",
+            "Impressions": 0
+          },
+          {
+            "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+            "Clicks": 0,
+            "Date": "/Date(1785913200000-0700)/",
+            "Impressions": 0
+          },
+          {
+            "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+            "Clicks": 0,
+            "Date": "/Date(1785999600000-0700)/",
+            "Impressions": 0
+          }
+        ],
+        "crawl": [
+          {
+            "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+            "AllOtherCodes": 1,
+            "BlockedByRobotsTxt": 0,
+            "Code2xx": 18,
+            "Code301": 1,
+            "Code302": 0,
+            "Code4xx": 6,
+            "Code5xx": 0,
+            "ConnectionTimeout": 0,
+            "ContainsMalware": 0,
+            "CrawlErrors": 8,
+            "CrawledPages": 13,
+            "Date": "/Date(1771833600000-0800)/",
+            "DnsFailures": 0,
+            "InIndex": 17,
+            "InLinks": 0
+          },
+          {
+            "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+            "AllOtherCodes": 1,
+            "BlockedByRobotsTxt": 0,
+            "Code2xx": 18,
+            "Code301": 1,
+            "Code302": 0,
+            "Code4xx": 2,
+            "Code5xx": 0,
+            "ConnectionTimeout": 0,
+            "ContainsMalware": 0,
+            "CrawlErrors": 2,
+            "CrawledPages": 5,
+            "Date": "/Date(1771920000000-0800)/",
+            "DnsFailures": 0,
+            "InIndex": 17,
+            "InLinks": 0
+          },
+          {
+            "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+            "AllOtherCodes": 1,
+            "BlockedByRobotsTxt": 0,
+            "Code2xx": 18,
+            "Code301": 1,
+            "Code302": 0,
+            "Code4xx": 0,
+            "Code5xx": 0,
+            "ConnectionTimeout": 0,
+            "ContainsMalware": 0,
+            "CrawlErrors": 0,
+            "CrawledPages": 3,
+            "Date": "/Date(1772006400000-0800)/",
+            "DnsFailures": 0,
+            "InIndex": 17,
+            "InLinks": 0
+          },
+          {
+            "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+            "AllOtherCodes": 1,
+            "BlockedByRobotsTxt": 0,
+            "Code2xx": 18,
+            "Code301": 1,
+            "Code302": 0,
+            "Code4xx": 0,
+            "Code5xx": 0,
+            "ConnectionTimeout": 0,
+            "ContainsMalware": 0,
+            "CrawlErrors": 0,
+            "CrawledPages": 0,
+            "Date": "/Date(1772092800000-0800)/",
+            "DnsFailures": 0,
+            "InIndex": 17,
+            "InLinks": 0
+          },
+          {
+            "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+            "AllOtherCodes": 1,
+            "BlockedByRobotsTxt": 0,
+            "Code2xx": 18,
+            "Code301": 1,
+            "Code302": 0,
+            "Code4xx": 0,
+            "Code5xx": 0,
+            "ConnectionTimeout": 0,
+            "ContainsMalware": 0,
+            "CrawlErrors": 0,
+            "CrawledPages": 5,
+            "Date": "/Date(1772179200000-0800)/",
+            "DnsFailures": 0,
+            "InIndex": 17,
+            "InLinks": 0
+          },
+          {
+            "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+            "AllOtherCodes": 1,
+            "BlockedByRobotsTxt": 0,
+            "Code2xx": 19,
+            "Code301": 1,
+            "Code302": 0,
+            "Code4xx": 3,
+            "Code5xx": 0,
+            "ConnectionTimeout": 0,
+            "ContainsMalware": 0,
+            "CrawlErrors": 4,
+            "CrawledPages": 5,
+            "Date": "/Date(1772265600000-0800)/",
+            "DnsFailures": 0,
+            "InIndex": 18,
+            "InLinks": 0
+          },
+          {
+            "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+            "AllOtherCodes": 1,
+            "BlockedByRobotsTxt": 0,
+            "Code2xx": 19,
+            "Code301": 1,
+            "Code302": 0,
+            "Code4xx": 3,
+            "Code5xx": 0,
+            "ConnectionTimeout": 0,
+            "ContainsMalware": 0,
+            "CrawlErrors": 4,
+            "CrawledPages": 9,
+            "Date": "/Date(1772352000000-0800)/",
+            "DnsFailures": 0,
+            "InIndex": 18,
+            "InLinks": 0
+          },
+          {
+            "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+            "AllOtherCodes": 1,
+            "BlockedByRobotsTxt": 0,
+            "Code2xx": 19,
+            "Code301": 1,
+            "Code302": 0,
+            "Code4xx": 1,
+            "Code5xx": 0,
+            "ConnectionTimeout": 0,
+            "ContainsMalware": 0,
+            "CrawlErrors": 1,
+            "CrawledPages": 2,
+            "Date": "/Date(1772438400000-0800)/",
+            "DnsFailures": 0,
+            "InIndex": 18,
+            "InLinks": 0
+          },
+          {
+            "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+            "AllOtherCodes": 1,
+            "BlockedByRobotsTxt": 0,
+            "Code2xx": 20,
+            "Code301": 1,
+            "Code302": 0,
+            "Code4xx": 0,
+            "Code5xx": 0,
+            "ConnectionTimeout": 0,
+            "ContainsMalware": 0,
+            "CrawlErrors": 0,
+            "CrawledPages": 0,
+            "Date": "/Date(1772524800000-0800)/",
+            "DnsFailures": 0,
+            "InIndex": 19,
+            "InLinks": 0
+          },
+          {
+            "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+            "AllOtherCodes": 1,
+            "BlockedByRobotsTxt": 0,
+            "Code2xx": 20,
+            "Code301": 1,
+            "Code302": 0,
+            "Code4xx": 0,
+            "Code5xx": 0,
+            "ConnectionTimeout": 0,
+            "ContainsMalware": 0,
+            "CrawlErrors": 0,
+            "CrawledPages": 5,
+            "Date": "/Date(1772611200000-0800)/",
+            "DnsFailures": 0,
+            "InIndex": 19,
+            "InLinks": 0
+          },
+          {
+            "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+            "AllOtherCodes": 1,
+            "BlockedByRobotsTxt": 0,
+            "Code2xx": 21,
+            "Code301": 1,
+            "Code302": 0,
+            "Code4xx": 5,
+            "Code5xx": 0,
+            "ConnectionTimeout": 0,
+            "ContainsMalware": 0,
+            "CrawlErrors": 6,
+            "CrawledPages": 8,
+            "Date": "/Date(1772697600000-0800)/",
+            "DnsFailures": 0,
+            "InIndex": 20,
+            "InLinks": 0
+          },
+          {
+            "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+            "AllOtherCodes": 1,
+            "BlockedByRobotsTxt": 0,
+            "Code2xx": 21,
+            "Code301": 1,
+            "Code302": 0,
+            "Code4xx": 3,
+            "Code5xx": 0,
+            "ConnectionTimeout": 0,
+            "ContainsMalware": 0,
+            "CrawlErrors": 4,
+            "CrawledPages": 9,
+            "Date": "/Date(1772784000000-0800)/",
+            "DnsFailures": 0,
+            "InIndex": 20,
+            "InLinks": 0
+          },
+          {
+            "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+            "AllOtherCodes": 1,
+            "BlockedByRobotsTxt": 0,
+            "Code2xx": 21,
+            "Code301": 1,
+            "Code302": 0,
+            "Code4xx": 0,
+            "Code5xx": 0,
+            "ConnectionTimeout": 0,
+            "ContainsMalware": 0,
+            "CrawlErrors": 0,
+            "CrawledPages": 1,
+            "Date": "/Date(1772870400000-0800)/",
+            "DnsFailures": 0,
+            "InIndex": 20,
+            "InLinks": 0
+          },
+          {
+            "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+            "AllOtherCodes": 2,
+            "BlockedByRobotsTxt": 0,
+            "Code2xx": 20,
+            "Code301": 1,
+            "Code302": 0,
+            "Code4xx": 0,
+            "Code5xx": 0,
+            "ConnectionTimeout": 0,
+            "ContainsMalware": 0,
+            "CrawlErrors": 0,
+            "CrawledPages": 5,
+            "Date": "/Date(1772956800000-0800)/",
+            "DnsFailures": 0,
+            "InIndex": 20,
+            "InLinks": 0
+          },
+          {
+            "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+            "AllOtherCodes": 2,
+            "BlockedByRobotsTxt": 0,
+            "Code2xx": 21,
+            "Code301": 1,
+            "Code302": 0,
+            "Code4xx": 0,
+            "Code5xx": 0,
+            "ConnectionTimeout": 0,
+            "ContainsMalware": 0,
+            "CrawlErrors": 0,
+            "CrawledPages": 8,
+            "Date": "/Date(1773039600000-0700)/",
+            "DnsFailures": 0,
+            "InIndex": 21,
+            "InLinks": 0
+          },
+          {
+            "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+            "AllOtherCodes": 2,
+            "BlockedByRobotsTxt": 0,
+            "Code2xx": 21,
+            "Code301": 1,
+            "Code302": 0,
+            "Code4xx": 1,
+            "Code5xx": 0,
+            "ConnectionTimeout": 0,
+            "ContainsMalware": 0,
+            "CrawlErrors": 2,
+            "CrawledPages": 10,
+            "Date": "/Date(1773126000000-0700)/",
+            "DnsFailures": 0,
+            "InIndex": 21,
+            "InLinks": 0
+          },
+          {
+            "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+            "AllOtherCodes": 2,
+            "BlockedByRobotsTxt": 0,
+            "Code2xx": 21,
+            "Code301": 1,
+            "Code302": 0,
+            "Code4xx": 2,
+            "Code5xx": 0,
+            "ConnectionTimeout": 0,
+            "ContainsMalware": 0,
+            "CrawlErrors": 3,
+            "CrawledPages": 9,
+            "Date": "/Date(1773212400000-0700)/",
+            "DnsFailures": 0,
+            "InIndex": 21,
+            "InLinks": 0
+          },
+          {
+            "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+            "AllOtherCodes": 2,
+            "BlockedByRobotsTxt": 0,
+            "Code2xx": 21,
+            "Code301": 1,
+            "Code302": 0,
+            "Code4xx": 0,
+            "Code5xx": 0,
+            "ConnectionTimeout": 0,
+            "ContainsMalware": 0,
+            "CrawlErrors": 0,
+            "CrawledPages": 5,
+            "Date": "/Date(1773298800000-0700)/",
+            "DnsFailures": 0,
+            "InIndex": 21,
+            "InLinks": 0
+          },
+          {
+            "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+            "AllOtherCodes": 1,
+            "BlockedByRobotsTxt": 0,
+            "Code2xx": 22,
+            "Code301": 1,
+            "Code302": 0,
+            "Code4xx": 0,
+            "Code5xx": 0,
+            "ConnectionTimeout": 0,
+            "ContainsMalware": 0,
+            "CrawlErrors": 0,
+            "CrawledPages": 6,
+            "Date": "/Date(1773385200000-0700)/",
+            "DnsFailures": 0,
+            "InIndex": 21,
+            "InLinks": 0
+          },
+          {
+            "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+            "AllOtherCodes": 1,
+            "BlockedByRobotsTxt": 0,
+            "Code2xx": 22,
+            "Code301": 1,
+            "Code302": 0,
+            "Code4xx": 0,
+            "Code5xx": 0,
+            "ConnectionTimeout": 0,
+            "ContainsMalware": 0,
+            "CrawlErrors": 0,
+            "CrawledPages": 6,
+            "Date": "/Date(1773471600000-0700)/",
+            "DnsFailures": 0,
+            "InIndex": 21,
+            "InLinks": 0
+          },
+          {
+            "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+            "AllOtherCodes": 1,
+            "BlockedByRobotsTxt": 0,
+            "Code2xx": 22,
+            "Code301": 1,
+            "Code302": 0,
+            "Code4xx": 2,
+            "Code5xx": 0,
+            "ConnectionTimeout": 0,
+            "ContainsMalware": 0,
+            "CrawlErrors": 3,
+            "CrawledPages": 5,
+            "Date": "/Date(1773558000000-0700)/",
+            "DnsFailures": 0,
+            "InIndex": 21,
+            "InLinks": 0
+          },
+          {
+            "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+            "AllOtherCodes": 0,
+            "BlockedByRobotsTxt": 0,
+            "Code2xx": 9,
+            "Code301": 1,
+            "Code302": 0,
+            "Code4xx": 0,
+            "Code5xx": 0,
+            "ConnectionTimeout": 0,
+            "ContainsMalware": 0,
+            "CrawlErrors": 0,
+            "CrawledPages": 0,
+            "Date": "/Date(1780210800000-0700)/",
+            "DnsFailures": 0,
+            "InIndex": 1,
+            "InLinks": 2
+          },
+          {
+            "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+            "AllOtherCodes": 0,
+            "BlockedByRobotsTxt": 0,
+            "Code2xx": 9,
+            "Code301": 1,
+            "Code302": 0,
+            "Code4xx": 0,
+            "Code5xx": 0,
+            "ConnectionTimeout": 0,
+            "ContainsMalware": 0,
+            "CrawlErrors": 0,
+            "CrawledPages": 0,
+            "Date": "/Date(1780297200000-0700)/",
+            "DnsFailures": 0,
+            "InIndex": 1,
+            "InLinks": 2
+          },
+          {
+            "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+            "AllOtherCodes": 0,
+            "BlockedByRobotsTxt": 0,
+            "Code2xx": 8,
+            "Code301": 1,
+            "Code302": 0,
+            "Code4xx": 0,
+            "Code5xx": 0,
+            "ConnectionTimeout": 0,
+            "ContainsMalware": 0,
+            "CrawlErrors": 0,
+            "CrawledPages": 0,
+            "Date": "/Date(1780383600000-0700)/",
+            "DnsFailures": 0,
+            "InIndex": 1,
+            "InLinks": 2
+          },
+          {
+            "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+            "AllOtherCodes": 0,
+            "BlockedByRobotsTxt": 0,
+            "Code2xx": 8,
+            "Code301": 1,
+            "Code302": 0,
+            "Code4xx": 0,
+            "Code5xx": 0,
+            "ConnectionTimeout": 0,
+            "ContainsMalware": 0,
+            "CrawlErrors": 0,
+            "CrawledPages": 0,
+            "Date": "/Date(1780470000000-0700)/",
+            "DnsFailures": 0,
+            "InIndex": 1,
+            "InLinks": 2
+          },
+          {
+            "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+            "AllOtherCodes": 0,
+            "BlockedByRobotsTxt": 0,
+            "Code2xx": 7,
+            "Code301": 1,
+            "Code302": 0,
+            "Code4xx": 0,
+            "Code5xx": 0,
+            "ConnectionTimeout": 0,
+            "ContainsMalware": 0,
+            "CrawlErrors": 0,
+            "CrawledPages": 0,
+            "Date": "/Date(1780556400000-0700)/",
+            "DnsFailures": 0,
+            "InIndex": 1,
+            "InLinks": 2
+          },
+          {
+            "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+            "AllOtherCodes": 0,
+            "BlockedByRobotsTxt": 0,
+            "Code2xx": 7,
+            "Code301": 1,
+            "Code302": 0,
+            "Code4xx": 0,
+            "Code5xx": 0,
+            "ConnectionTimeout": 0,
+            "ContainsMalware": 0,
+            "CrawlErrors": 0,
+            "CrawledPages": 0,
+            "Date": "/Date(1780642800000-0700)/",
+            "DnsFailures": 0,
+            "InIndex": 1,
+            "InLinks": 2
+          },
+          {
+            "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+            "AllOtherCodes": 0,
+            "BlockedByRobotsTxt": 0,
+            "Code2xx": 7,
+            "Code301": 1,
+            "Code302": 0,
+            "Code4xx": 0,
+            "Code5xx": 0,
+            "ConnectionTimeout": 0,
+            "ContainsMalware": 0,
+            "CrawlErrors": 0,
+            "CrawledPages": 1,
+            "Date": "/Date(1780729200000-0700)/",
+            "DnsFailures": 0,
+            "InIndex": 1,
+            "InLinks": 2
+          },
+          {
+            "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+            "AllOtherCodes": 0,
+            "BlockedByRobotsTxt": 0,
+            "Code2xx": 7,
+            "Code301": 1,
+            "Code302": 0,
+            "Code4xx": 0,
+            "Code5xx": 0,
+            "ConnectionTimeout": 0,
+            "ContainsMalware": 0,
+            "CrawlErrors": 0,
+            "CrawledPages": 0,
+            "Date": "/Date(1780815600000-0700)/",
+            "DnsFailures": 0,
+            "InIndex": 1,
+            "InLinks": 2
+          },
+          {
+            "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+            "AllOtherCodes": 0,
+            "BlockedByRobotsTxt": 0,
+            "Code2xx": 7,
+            "Code301": 1,
+            "Code302": 0,
+            "Code4xx": 0,
+            "Code5xx": 0,
+            "ConnectionTimeout": 0,
+            "ContainsMalware": 0,
+            "CrawlErrors": 0,
+            "CrawledPages": 1,
+            "Date": "/Date(1780902000000-0700)/",
+            "DnsFailures": 0,
+            "InIndex": 1,
+            "InLinks": 2
+          },
+          {
+            "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+            "AllOtherCodes": 0,
+            "BlockedByRobotsTxt": 0,
+            "Code2xx": 7,
+            "Code301": 1,
+            "Code302": 0,
+            "Code4xx": 0,
+            "Code5xx": 0,
+            "ConnectionTimeout": 0,
+            "ContainsMalware": 0,
+            "CrawlErrors": 0,
+            "CrawledPages": 0,
+            "Date": "/Date(1780988400000-0700)/",
+            "DnsFailures": 0,
+            "InIndex": 1,
+            "InLinks": 3
+          },
+          {
+            "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+            "AllOtherCodes": 0,
+            "BlockedByRobotsTxt": 0,
+            "Code2xx": 7,
+            "Code301": 1,
+            "Code302": 0,
+            "Code4xx": 0,
+            "Code5xx": 0,
+            "ConnectionTimeout": 0,
+            "ContainsMalware": 0,
+            "CrawlErrors": 0,
+            "CrawledPages": 0,
+            "Date": "/Date(1781074800000-0700)/",
+            "DnsFailures": 0,
+            "InIndex": 1,
+            "InLinks": 3
+          },
+          {
+            "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+            "AllOtherCodes": 0,
+            "BlockedByRobotsTxt": 0,
+            "Code2xx": 7,
+            "Code301": 1,
+            "Code302": 0,
+            "Code4xx": 0,
+            "Code5xx": 0,
+            "ConnectionTimeout": 0,
+            "ContainsMalware": 0,
+            "CrawlErrors": 0,
+            "CrawledPages": 0,
+            "Date": "/Date(1781161200000-0700)/",
+            "DnsFailures": 0,
+            "InIndex": 1,
+            "InLinks": 3
+          },
+          {
+            "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+            "AllOtherCodes": 0,
+            "BlockedByRobotsTxt": 0,
+            "Code2xx": 7,
+            "Code301": 1,
+            "Code302": 0,
+            "Code4xx": 0,
+            "Code5xx": 0,
+            "ConnectionTimeout": 0,
+            "ContainsMalware": 0,
+            "CrawlErrors": 0,
+            "CrawledPages": 2,
+            "Date": "/Date(1781247600000-0700)/",
+            "DnsFailures": 0,
+            "InIndex": 1,
+            "InLinks": 3
+          },
+          {
+            "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+            "AllOtherCodes": 0,
+            "BlockedByRobotsTxt": 0,
+            "Code2xx": 7,
+            "Code301": 1,
+            "Code302": 0,
+            "Code4xx": 0,
+            "Code5xx": 0,
+            "ConnectionTimeout": 0,
+            "ContainsMalware": 0,
+            "CrawlErrors": 0,
+            "CrawledPages": 3,
+            "Date": "/Date(1781334000000-0700)/",
+            "DnsFailures": 0,
+            "InIndex": 1,
+            "InLinks": 3
+          },
+          {
+            "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+            "AllOtherCodes": 0,
+            "BlockedByRobotsTxt": 0,
+            "Code2xx": 7,
+            "Code301": 1,
+            "Code302": 0,
+            "Code4xx": 0,
+            "Code5xx": 0,
+            "ConnectionTimeout": 0,
+            "ContainsMalware": 0,
+            "CrawlErrors": 0,
+            "CrawledPages": 2,
+            "Date": "/Date(1781420400000-0700)/",
+            "DnsFailures": 0,
+            "InIndex": 1,
+            "InLinks": 3
+          },
+          {
+            "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+            "AllOtherCodes": 0,
+            "BlockedByRobotsTxt": 0,
+            "Code2xx": 7,
+            "Code301": 1,
+            "Code302": 0,
+            "Code4xx": 0,
+            "Code5xx": 0,
+            "ConnectionTimeout": 0,
+            "ContainsMalware": 0,
+            "CrawlErrors": 0,
+            "CrawledPages": 2,
+            "Date": "/Date(1781506800000-0700)/",
+            "DnsFailures": 0,
+            "InIndex": 1,
+            "InLinks": 3
+          },
+          {
+            "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+            "AllOtherCodes": 0,
+            "BlockedByRobotsTxt": 0,
+            "Code2xx": 7,
+            "Code301": 1,
+            "Code302": 0,
+            "Code4xx": 0,
+            "Code5xx": 0,
+            "ConnectionTimeout": 0,
+            "ContainsMalware": 0,
+            "CrawlErrors": 0,
+            "CrawledPages": 0,
+            "Date": "/Date(1781593200000-0700)/",
+            "DnsFailures": 0,
+            "InIndex": 1,
+            "InLinks": 3
+          },
+          {
+            "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+            "AllOtherCodes": 0,
+            "BlockedByRobotsTxt": 0,
+            "Code2xx": 7,
+            "Code301": 1,
+            "Code302": 0,
+            "Code4xx": 0,
+            "Code5xx": 0,
+            "ConnectionTimeout": 0,
+            "ContainsMalware": 0,
+            "CrawlErrors": 0,
+            "CrawledPages": 1,
+            "Date": "/Date(1781679600000-0700)/",
+            "DnsFailures": 0,
+            "InIndex": 1,
+            "InLinks": 3
+          },
+          {
+            "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+            "AllOtherCodes": 0,
+            "BlockedByRobotsTxt": 0,
+            "Code2xx": 7,
+            "Code301": 1,
+            "Code302": 0,
+            "Code4xx": 0,
+            "Code5xx": 0,
+            "ConnectionTimeout": 0,
+            "ContainsMalware": 0,
+            "CrawlErrors": 0,
+            "CrawledPages": 0,
+            "Date": "/Date(1781766000000-0700)/",
+            "DnsFailures": 0,
+            "InIndex": 1,
+            "InLinks": 3
+          },
+          {
+            "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+            "AllOtherCodes": 0,
+            "BlockedByRobotsTxt": 0,
+            "Code2xx": 7,
+            "Code301": 1,
+            "Code302": 0,
+            "Code4xx": 0,
+            "Code5xx": 0,
+            "ConnectionTimeout": 0,
+            "ContainsMalware": 0,
+            "CrawlErrors": 0,
+            "CrawledPages": 1,
+            "Date": "/Date(1781852400000-0700)/",
+            "DnsFailures": 0,
+            "InIndex": 1,
+            "InLinks": 3
+          },
+          {
+            "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+            "AllOtherCodes": 0,
+            "BlockedByRobotsTxt": 0,
+            "Code2xx": 7,
+            "Code301": 1,
+            "Code302": 0,
+            "Code4xx": 0,
+            "Code5xx": 0,
+            "ConnectionTimeout": 0,
+            "ContainsMalware": 0,
+            "CrawlErrors": 0,
+            "CrawledPages": 0,
+            "Date": "/Date(1781938800000-0700)/",
+            "DnsFailures": 0,
+            "InIndex": 1,
+            "InLinks": 3
+          },
+          {
+            "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+            "AllOtherCodes": 0,
+            "BlockedByRobotsTxt": 0,
+            "Code2xx": 7,
+            "Code301": 1,
+            "Code302": 0,
+            "Code4xx": 0,
+            "Code5xx": 0,
+            "ConnectionTimeout": 0,
+            "ContainsMalware": 0,
+            "CrawlErrors": 0,
+            "CrawledPages": 1,
+            "Date": "/Date(1782025200000-0700)/",
+            "DnsFailures": 0,
+            "InIndex": 1,
+            "InLinks": 3
+          },
+          {
+            "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+            "AllOtherCodes": 0,
+            "BlockedByRobotsTxt": 0,
+            "Code2xx": 7,
+            "Code301": 1,
+            "Code302": 0,
+            "Code4xx": 0,
+            "Code5xx": 0,
+            "ConnectionTimeout": 0,
+            "ContainsMalware": 0,
+            "CrawlErrors": 0,
+            "CrawledPages": 0,
+            "Date": "/Date(1782111600000-0700)/",
+            "DnsFailures": 0,
+            "InIndex": 1,
+            "InLinks": 3
+          },
+          {
+            "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+            "AllOtherCodes": 0,
+            "BlockedByRobotsTxt": 0,
+            "Code2xx": 7,
+            "Code301": 1,
+            "Code302": 0,
+            "Code4xx": 0,
+            "Code5xx": 0,
+            "ConnectionTimeout": 0,
+            "ContainsMalware": 0,
+            "CrawlErrors": 0,
+            "CrawledPages": 0,
+            "Date": "/Date(1782198000000-0700)/",
+            "DnsFailures": 0,
+            "InIndex": 1,
+            "InLinks": 3
+          },
+          {
+            "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+            "AllOtherCodes": 0,
+            "BlockedByRobotsTxt": 0,
+            "Code2xx": 7,
+            "Code301": 1,
+            "Code302": 0,
+            "Code4xx": 0,
+            "Code5xx": 0,
+            "ConnectionTimeout": 0,
+            "ContainsMalware": 0,
+            "CrawlErrors": 0,
+            "CrawledPages": 0,
+            "Date": "/Date(1782284400000-0700)/",
+            "DnsFailures": 0,
+            "InIndex": 1,
+            "InLinks": 3
+          },
+          {
+            "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+            "AllOtherCodes": 0,
+            "BlockedByRobotsTxt": 0,
+            "Code2xx": 7,
+            "Code301": 1,
+            "Code302": 0,
+            "Code4xx": 0,
+            "Code5xx": 0,
+            "ConnectionTimeout": 0,
+            "ContainsMalware": 0,
+            "CrawlErrors": 0,
+            "CrawledPages": 0,
+            "Date": "/Date(1782370800000-0700)/",
+            "DnsFailures": 0,
+            "InIndex": 1,
+            "InLinks": 3
+          },
+          {
+            "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+            "AllOtherCodes": 0,
+            "BlockedByRobotsTxt": 0,
+            "Code2xx": 8,
+            "Code301": 1,
+            "Code302": 0,
+            "Code4xx": 0,
+            "Code5xx": 0,
+            "ConnectionTimeout": 0,
+            "ContainsMalware": 0,
+            "CrawlErrors": 0,
+            "CrawledPages": 0,
+            "Date": "/Date(1782457200000-0700)/",
+            "DnsFailures": 0,
+            "InIndex": 1,
+            "InLinks": 4
+          },
+          {
+            "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+            "AllOtherCodes": 0,
+            "BlockedByRobotsTxt": 0,
+            "Code2xx": 8,
+            "Code301": 1,
+            "Code302": 0,
+            "Code4xx": 0,
+            "Code5xx": 0,
+            "ConnectionTimeout": 0,
+            "ContainsMalware": 0,
+            "CrawlErrors": 0,
+            "CrawledPages": 2,
+            "Date": "/Date(1782543600000-0700)/",
+            "DnsFailures": 0,
+            "InIndex": 1,
+            "InLinks": 4
+          },
+          {
+            "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+            "AllOtherCodes": 0,
+            "BlockedByRobotsTxt": 0,
+            "Code2xx": 8,
+            "Code301": 1,
+            "Code302": 0,
+            "Code4xx": 0,
+            "Code5xx": 0,
+            "ConnectionTimeout": 0,
+            "ContainsMalware": 0,
+            "CrawlErrors": 0,
+            "CrawledPages": 0,
+            "Date": "/Date(1782630000000-0700)/",
+            "DnsFailures": 0,
+            "InIndex": 1,
+            "InLinks": 4
+          },
+          {
+            "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+            "AllOtherCodes": 0,
+            "BlockedByRobotsTxt": 0,
+            "Code2xx": 8,
+            "Code301": 1,
+            "Code302": 0,
+            "Code4xx": 0,
+            "Code5xx": 0,
+            "ConnectionTimeout": 0,
+            "ContainsMalware": 0,
+            "CrawlErrors": 0,
+            "CrawledPages": 1,
+            "Date": "/Date(1782716400000-0700)/",
+            "DnsFailures": 0,
+            "InIndex": 1,
+            "InLinks": 4
+          },
+          {
+            "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+            "AllOtherCodes": 0,
+            "BlockedByRobotsTxt": 0,
+            "Code2xx": 8,
+            "Code301": 1,
+            "Code302": 0,
+            "Code4xx": 0,
+            "Code5xx": 0,
+            "ConnectionTimeout": 0,
+            "ContainsMalware": 0,
+            "CrawlErrors": 0,
+            "CrawledPages": 2,
+            "Date": "/Date(1782802800000-0700)/",
+            "DnsFailures": 0,
+            "InIndex": 1,
+            "InLinks": 4
+          },
+          {
+            "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+            "AllOtherCodes": 0,
+            "BlockedByRobotsTxt": 0,
+            "Code2xx": 8,
+            "Code301": 1,
+            "Code302": 0,
+            "Code4xx": 0,
+            "Code5xx": 0,
+            "ConnectionTimeout": 0,
+            "ContainsMalware": 0,
+            "CrawlErrors": 0,
+            "CrawledPages": 0,
+            "Date": "/Date(1782889200000-0700)/",
+            "DnsFailures": 0,
+            "InIndex": 1,
+            "InLinks": 4
+          },
+          {
+            "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+            "AllOtherCodes": 0,
+            "BlockedByRobotsTxt": 0,
+            "Code2xx": 8,
+            "Code301": 1,
+            "Code302": 0,
+            "Code4xx": 0,
+            "Code5xx": 0,
+            "ConnectionTimeout": 0,
+            "ContainsMalware": 0,
+            "CrawlErrors": 0,
+            "CrawledPages": 0,
+            "Date": "/Date(1782975600000-0700)/",
+            "DnsFailures": 0,
+            "InIndex": 1,
+            "InLinks": 4
+          },
+          {
+            "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+            "AllOtherCodes": 0,
+            "BlockedByRobotsTxt": 0,
+            "Code2xx": 8,
+            "Code301": 1,
+            "Code302": 0,
+            "Code4xx": 0,
+            "Code5xx": 0,
+            "ConnectionTimeout": 0,
+            "ContainsMalware": 0,
+            "CrawlErrors": 0,
+            "CrawledPages": 0,
+            "Date": "/Date(1783062000000-0700)/",
+            "DnsFailures": 0,
+            "InIndex": 1,
+            "InLinks": 4
+          },
+          {
+            "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+            "AllOtherCodes": 0,
+            "BlockedByRobotsTxt": 0,
+            "Code2xx": 8,
+            "Code301": 1,
+            "Code302": 0,
+            "Code4xx": 0,
+            "Code5xx": 0,
+            "ConnectionTimeout": 0,
+            "ContainsMalware": 0,
+            "CrawlErrors": 0,
+            "CrawledPages": 0,
+            "Date": "/Date(1783148400000-0700)/",
+            "DnsFailures": 0,
+            "InIndex": 1,
+            "InLinks": 4
+          },
+          {
+            "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+            "AllOtherCodes": 0,
+            "BlockedByRobotsTxt": 0,
+            "Code2xx": 8,
+            "Code301": 1,
+            "Code302": 0,
+            "Code4xx": 0,
+            "Code5xx": 0,
+            "ConnectionTimeout": 0,
+            "ContainsMalware": 0,
+            "CrawlErrors": 0,
+            "CrawledPages": 6,
+            "Date": "/Date(1783234800000-0700)/",
+            "DnsFailures": 0,
+            "InIndex": 1,
+            "InLinks": 4
+          },
+          {
+            "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+            "AllOtherCodes": 0,
+            "BlockedByRobotsTxt": 0,
+            "Code2xx": 9,
+            "Code301": 1,
+            "Code302": 0,
+            "Code4xx": 0,
+            "Code5xx": 0,
+            "ConnectionTimeout": 0,
+            "ContainsMalware": 0,
+            "CrawlErrors": 0,
+            "CrawledPages": 3,
+            "Date": "/Date(1783321200000-0700)/",
+            "DnsFailures": 0,
+            "InIndex": 1,
+            "InLinks": 5
+          },
+          {
+            "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+            "AllOtherCodes": 0,
+            "BlockedByRobotsTxt": 0,
+            "Code2xx": 10,
+            "Code301": 1,
+            "Code302": 0,
+            "Code4xx": 0,
+            "Code5xx": 0,
+            "ConnectionTimeout": 0,
+            "ContainsMalware": 0,
+            "CrawlErrors": 0,
+            "CrawledPages": 1,
+            "Date": "/Date(1783407600000-0700)/",
+            "DnsFailures": 0,
+            "InIndex": 1,
+            "InLinks": 5
+          },
+          {
+            "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+            "AllOtherCodes": 0,
+            "BlockedByRobotsTxt": 0,
+            "Code2xx": 10,
+            "Code301": 1,
+            "Code302": 0,
+            "Code4xx": 0,
+            "Code5xx": 0,
+            "ConnectionTimeout": 0,
+            "ContainsMalware": 0,
+            "CrawlErrors": 0,
+            "CrawledPages": 0,
+            "Date": "/Date(1783494000000-0700)/",
+            "DnsFailures": 0,
+            "InIndex": 1,
+            "InLinks": 5
+          },
+          {
+            "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+            "AllOtherCodes": 0,
+            "BlockedByRobotsTxt": 0,
+            "Code2xx": 10,
+            "Code301": 1,
+            "Code302": 0,
+            "Code4xx": 0,
+            "Code5xx": 0,
+            "ConnectionTimeout": 0,
+            "ContainsMalware": 0,
+            "CrawlErrors": 0,
+            "CrawledPages": 0,
+            "Date": "/Date(1783580400000-0700)/",
+            "DnsFailures": 0,
+            "InIndex": 1,
+            "InLinks": 5
+          },
+          {
+            "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+            "AllOtherCodes": 0,
+            "BlockedByRobotsTxt": 0,
+            "Code2xx": 10,
+            "Code301": 1,
+            "Code302": 0,
+            "Code4xx": 0,
+            "Code5xx": 0,
+            "ConnectionTimeout": 0,
+            "ContainsMalware": 0,
+            "CrawlErrors": 0,
+            "CrawledPages": 2,
+            "Date": "/Date(1783666800000-0700)/",
+            "DnsFailures": 0,
+            "InIndex": 1,
+            "InLinks": 5
+          },
+          {
+            "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+            "AllOtherCodes": 0,
+            "BlockedByRobotsTxt": 0,
+            "Code2xx": 10,
+            "Code301": 1,
+            "Code302": 0,
+            "Code4xx": 0,
+            "Code5xx": 0,
+            "ConnectionTimeout": 0,
+            "ContainsMalware": 0,
+            "CrawlErrors": 0,
+            "CrawledPages": 0,
+            "Date": "/Date(1783753200000-0700)/",
+            "DnsFailures": 0,
+            "InIndex": 1,
+            "InLinks": 5
+          },
+          {
+            "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+            "AllOtherCodes": 0,
+            "BlockedByRobotsTxt": 0,
+            "Code2xx": 10,
+            "Code301": 1,
+            "Code302": 0,
+            "Code4xx": 0,
+            "Code5xx": 0,
+            "ConnectionTimeout": 0,
+            "ContainsMalware": 0,
+            "CrawlErrors": 0,
+            "CrawledPages": 0,
+            "Date": "/Date(1783839600000-0700)/",
+            "DnsFailures": 0,
+            "InIndex": 1,
+            "InLinks": 5
+          },
+          {
+            "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+            "AllOtherCodes": 0,
+            "BlockedByRobotsTxt": 0,
+            "Code2xx": 10,
+            "Code301": 1,
+            "Code302": 0,
+            "Code4xx": 0,
+            "Code5xx": 0,
+            "ConnectionTimeout": 0,
+            "ContainsMalware": 0,
+            "CrawlErrors": 0,
+            "CrawledPages": 2,
+            "Date": "/Date(1783926000000-0700)/",
+            "DnsFailures": 0,
+            "InIndex": 1,
+            "InLinks": 5
+          },
+          {
+            "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+            "AllOtherCodes": 0,
+            "BlockedByRobotsTxt": 0,
+            "Code2xx": 10,
+            "Code301": 1,
+            "Code302": 0,
+            "Code4xx": 0,
+            "Code5xx": 0,
+            "ConnectionTimeout": 0,
+            "ContainsMalware": 0,
+            "CrawlErrors": 0,
+            "CrawledPages": 3,
+            "Date": "/Date(1784012400000-0700)/",
+            "DnsFailures": 0,
+            "InIndex": 1,
+            "InLinks": 5
+          },
+          {
+            "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+            "AllOtherCodes": 0,
+            "BlockedByRobotsTxt": 0,
+            "Code2xx": 10,
+            "Code301": 1,
+            "Code302": 0,
+            "Code4xx": 0,
+            "Code5xx": 0,
+            "ConnectionTimeout": 0,
+            "ContainsMalware": 0,
+            "CrawlErrors": 0,
+            "CrawledPages": 3,
+            "Date": "/Date(1784098800000-0700)/",
+            "DnsFailures": 0,
+            "InIndex": 1,
+            "InLinks": 5
+          },
+          {
+            "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+            "AllOtherCodes": 0,
+            "BlockedByRobotsTxt": 0,
+            "Code2xx": 10,
+            "Code301": 1,
+            "Code302": 0,
+            "Code4xx": 0,
+            "Code5xx": 0,
+            "ConnectionTimeout": 0,
+            "ContainsMalware": 0,
+            "CrawlErrors": 0,
+            "CrawledPages": 0,
+            "Date": "/Date(1784185200000-0700)/",
+            "DnsFailures": 0,
+            "InIndex": 1,
+            "InLinks": 5
+          },
+          {
+            "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+            "AllOtherCodes": 0,
+            "BlockedByRobotsTxt": 0,
+            "Code2xx": 10,
+            "Code301": 1,
+            "Code302": 0,
+            "Code4xx": 0,
+            "Code5xx": 0,
+            "ConnectionTimeout": 0,
+            "ContainsMalware": 0,
+            "CrawlErrors": 0,
+            "CrawledPages": 0,
+            "Date": "/Date(1784271600000-0700)/",
+            "DnsFailures": 0,
+            "InIndex": 1,
+            "InLinks": 5
+          },
+          {
+            "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+            "AllOtherCodes": 0,
+            "BlockedByRobotsTxt": 0,
+            "Code2xx": 10,
+            "Code301": 1,
+            "Code302": 0,
+            "Code4xx": 0,
+            "Code5xx": 0,
+            "ConnectionTimeout": 0,
+            "ContainsMalware": 0,
+            "CrawlErrors": 0,
+            "CrawledPages": 1,
+            "Date": "/Date(1784358000000-0700)/",
+            "DnsFailures": 0,
+            "InIndex": 1,
+            "InLinks": 5
+          },
+          {
+            "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+            "AllOtherCodes": 0,
+            "BlockedByRobotsTxt": 0,
+            "Code2xx": 10,
+            "Code301": 1,
+            "Code302": 0,
+            "Code4xx": 0,
+            "Code5xx": 0,
+            "ConnectionTimeout": 0,
+            "ContainsMalware": 0,
+            "CrawlErrors": 0,
+            "CrawledPages": 2,
+            "Date": "/Date(1784444400000-0700)/",
+            "DnsFailures": 0,
+            "InIndex": 1,
+            "InLinks": 5
+          },
+          {
+            "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+            "AllOtherCodes": 0,
+            "BlockedByRobotsTxt": 0,
+            "Code2xx": 10,
+            "Code301": 1,
+            "Code302": 0,
+            "Code4xx": 0,
+            "Code5xx": 0,
+            "ConnectionTimeout": 0,
+            "ContainsMalware": 0,
+            "CrawlErrors": 0,
+            "CrawledPages": 0,
+            "Date": "/Date(1784530800000-0700)/",
+            "DnsFailures": 0,
+            "InIndex": 1,
+            "InLinks": 5
+          },
+          {
+            "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+            "AllOtherCodes": 0,
+            "BlockedByRobotsTxt": 0,
+            "Code2xx": 10,
+            "Code301": 1,
+            "Code302": 0,
+            "Code4xx": 0,
+            "Code5xx": 0,
+            "ConnectionTimeout": 0,
+            "ContainsMalware": 0,
+            "CrawlErrors": 0,
+            "CrawledPages": 1,
+            "Date": "/Date(1784617200000-0700)/",
+            "DnsFailures": 0,
+            "InIndex": 1,
+            "InLinks": 5
+          },
+          {
+            "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+            "AllOtherCodes": 0,
+            "BlockedByRobotsTxt": 0,
+            "Code2xx": 10,
+            "Code301": 1,
+            "Code302": 0,
+            "Code4xx": 0,
+            "Code5xx": 0,
+            "ConnectionTimeout": 0,
+            "ContainsMalware": 0,
+            "CrawlErrors": 0,
+            "CrawledPages": 1,
+            "Date": "/Date(1784703600000-0700)/",
+            "DnsFailures": 0,
+            "InIndex": 1,
+            "InLinks": 5
+          },
+          {
+            "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+            "AllOtherCodes": 0,
+            "BlockedByRobotsTxt": 0,
+            "Code2xx": 10,
+            "Code301": 1,
+            "Code302": 0,
+            "Code4xx": 0,
+            "Code5xx": 0,
+            "ConnectionTimeout": 0,
+            "ContainsMalware": 0,
+            "CrawlErrors": 0,
+            "CrawledPages": 1,
+            "Date": "/Date(1784790000000-0700)/",
+            "DnsFailures": 0,
+            "InIndex": 1,
+            "InLinks": 5
+          },
+          {
+            "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+            "AllOtherCodes": 0,
+            "BlockedByRobotsTxt": 0,
+            "Code2xx": 11,
+            "Code301": 1,
+            "Code302": 0,
+            "Code4xx": 0,
+            "Code5xx": 0,
+            "ConnectionTimeout": 0,
+            "ContainsMalware": 0,
+            "CrawlErrors": 0,
+            "CrawledPages": 1,
+            "Date": "/Date(1784876400000-0700)/",
+            "DnsFailures": 0,
+            "InIndex": 1,
+            "InLinks": 5
+          },
+          {
+            "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+            "AllOtherCodes": 0,
+            "BlockedByRobotsTxt": 0,
+            "Code2xx": 11,
+            "Code301": 1,
+            "Code302": 0,
+            "Code4xx": 0,
+            "Code5xx": 0,
+            "ConnectionTimeout": 0,
+            "ContainsMalware": 0,
+            "CrawlErrors": 0,
+            "CrawledPages": 4,
+            "Date": "/Date(1784962800000-0700)/",
+            "DnsFailures": 0,
+            "InIndex": 1,
+            "InLinks": 5
+          },
+          {
+            "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+            "AllOtherCodes": 0,
+            "BlockedByRobotsTxt": 0,
+            "Code2xx": 10,
+            "Code301": 1,
+            "Code302": 0,
+            "Code4xx": 0,
+            "Code5xx": 0,
+            "ConnectionTimeout": 0,
+            "ContainsMalware": 0,
+            "CrawlErrors": 0,
+            "CrawledPages": 3,
+            "Date": "/Date(1785049200000-0700)/",
+            "DnsFailures": 0,
+            "InIndex": 0,
+            "InLinks": 5
+          },
+          {
+            "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+            "AllOtherCodes": 0,
+            "BlockedByRobotsTxt": 0,
+            "Code2xx": 10,
+            "Code301": 1,
+            "Code302": 0,
+            "Code4xx": 0,
+            "Code5xx": 0,
+            "ConnectionTimeout": 0,
+            "ContainsMalware": 0,
+            "CrawlErrors": 0,
+            "CrawledPages": 1,
+            "Date": "/Date(1785135600000-0700)/",
+            "DnsFailures": 0,
+            "InIndex": 0,
+            "InLinks": 5
+          },
+          {
+            "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+            "AllOtherCodes": 0,
+            "BlockedByRobotsTxt": 0,
+            "Code2xx": 10,
+            "Code301": 1,
+            "Code302": 0,
+            "Code4xx": 0,
+            "Code5xx": 0,
+            "ConnectionTimeout": 0,
+            "ContainsMalware": 0,
+            "CrawlErrors": 0,
+            "CrawledPages": 3,
+            "Date": "/Date(1785222000000-0700)/",
+            "DnsFailures": 0,
+            "InIndex": 0,
+            "InLinks": 5
+          },
+          {
+            "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+            "AllOtherCodes": 0,
+            "BlockedByRobotsTxt": 0,
+            "Code2xx": 10,
+            "Code301": 1,
+            "Code302": 0,
+            "Code4xx": 0,
+            "Code5xx": 0,
+            "ConnectionTimeout": 0,
+            "ContainsMalware": 0,
+            "CrawlErrors": 0,
+            "CrawledPages": 3,
+            "Date": "/Date(1785308400000-0700)/",
+            "DnsFailures": 0,
+            "InIndex": 0,
+            "InLinks": 5
+          },
+          {
+            "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+            "AllOtherCodes": 0,
+            "BlockedByRobotsTxt": 0,
+            "Code2xx": 10,
+            "Code301": 1,
+            "Code302": 0,
+            "Code4xx": 0,
+            "Code5xx": 0,
+            "ConnectionTimeout": 0,
+            "ContainsMalware": 0,
+            "CrawlErrors": 0,
+            "CrawledPages": 4,
+            "Date": "/Date(1785394800000-0700)/",
+            "DnsFailures": 0,
+            "InIndex": 0,
+            "InLinks": 5
+          },
+          {
+            "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+            "AllOtherCodes": 0,
+            "BlockedByRobotsTxt": 0,
+            "Code2xx": 11,
+            "Code301": 1,
+            "Code302": 0,
+            "Code4xx": 0,
+            "Code5xx": 0,
+            "ConnectionTimeout": 0,
+            "ContainsMalware": 0,
+            "CrawlErrors": 0,
+            "CrawledPages": 3,
+            "Date": "/Date(1785481200000-0700)/",
+            "DnsFailures": 0,
+            "InIndex": 0,
+            "InLinks": 5
+          },
+          {
+            "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+            "AllOtherCodes": 0,
+            "BlockedByRobotsTxt": 0,
+            "Code2xx": 12,
+            "Code301": 1,
+            "Code302": 0,
+            "Code4xx": 0,
+            "Code5xx": 0,
+            "ConnectionTimeout": 0,
+            "ContainsMalware": 0,
+            "CrawlErrors": 0,
+            "CrawledPages": 2,
+            "Date": "/Date(1785567600000-0700)/",
+            "DnsFailures": 0,
+            "InIndex": 0,
+            "InLinks": 5
+          },
+          {
+            "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+            "AllOtherCodes": 0,
+            "BlockedByRobotsTxt": 0,
+            "Code2xx": 12,
+            "Code301": 1,
+            "Code302": 0,
+            "Code4xx": 0,
+            "Code5xx": 0,
+            "ConnectionTimeout": 0,
+            "ContainsMalware": 0,
+            "CrawlErrors": 0,
+            "CrawledPages": 2,
+            "Date": "/Date(1785654000000-0700)/",
+            "DnsFailures": 0,
+            "InIndex": 0,
+            "InLinks": 5
+          },
+          {
+            "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+            "AllOtherCodes": 0,
+            "BlockedByRobotsTxt": 0,
+            "Code2xx": 12,
+            "Code301": 1,
+            "Code302": 0,
+            "Code4xx": 0,
+            "Code5xx": 0,
+            "ConnectionTimeout": 0,
+            "ContainsMalware": 0,
+            "CrawlErrors": 0,
+            "CrawledPages": 5,
+            "Date": "/Date(1785740400000-0700)/",
+            "DnsFailures": 0,
+            "InIndex": 0,
+            "InLinks": 5
+          },
+          {
+            "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+            "AllOtherCodes": 0,
+            "BlockedByRobotsTxt": 0,
+            "Code2xx": 13,
+            "Code301": 1,
+            "Code302": 0,
+            "Code4xx": 0,
+            "Code5xx": 0,
+            "ConnectionTimeout": 0,
+            "ContainsMalware": 0,
+            "CrawlErrors": 0,
+            "CrawledPages": 3,
+            "Date": "/Date(1785826800000-0700)/",
+            "DnsFailures": 0,
+            "InIndex": 0,
+            "InLinks": 5
+          },
+          {
+            "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+            "AllOtherCodes": 0,
+            "BlockedByRobotsTxt": 0,
+            "Code2xx": 13,
+            "Code301": 1,
+            "Code302": 0,
+            "Code4xx": 0,
+            "Code5xx": 0,
+            "ConnectionTimeout": 0,
+            "ContainsMalware": 0,
+            "CrawlErrors": 0,
+            "CrawledPages": 3,
+            "Date": "/Date(1785913200000-0700)/",
+            "DnsFailures": 0,
+            "InIndex": 0,
+            "InLinks": 5
+          },
+          {
+            "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+            "AllOtherCodes": 0,
+            "BlockedByRobotsTxt": 0,
+            "Code2xx": 13,
+            "Code301": 1,
+            "Code302": 0,
+            "Code4xx": 0,
+            "Code5xx": 0,
+            "ConnectionTimeout": 0,
+            "ContainsMalware": 0,
+            "CrawlErrors": 0,
+            "CrawledPages": 3,
+            "Date": "/Date(1785999600000-0700)/",
+            "DnsFailures": 0,
+            "InIndex": 0,
+            "InLinks": 5
+          },
+          {
+            "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+            "AllOtherCodes": 0,
+            "BlockedByRobotsTxt": 0,
+            "Code2xx": 13,
+            "Code301": 1,
+            "Code302": 0,
+            "Code4xx": 0,
+            "Code5xx": 0,
+            "ConnectionTimeout": 0,
+            "ContainsMalware": 0,
+            "CrawlErrors": 0,
+            "CrawledPages": 2,
+            "Date": "/Date(1786086000000-0700)/",
+            "DnsFailures": 0,
+            "InIndex": 0,
+            "InLinks": 5
+          }
+        ]
+      },
+      "topQueries": [
+        {
+          "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
+          "AvgClickPosition": -1,
+          "AvgImpressionPosition": 4,
+          "Clicks": 1,
+          "Date": "/Date(1751612400000-0700)/",
+          "Impressions": 6,
+          "Query": "hicks consulting"
+        },
+        {
+          "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
+          "AvgClickPosition": -1,
+          "AvgImpressionPosition": 3,
+          "Clicks": 0,
+          "Date": "/Date(1752217200000-0700)/",
+          "Impressions": 3,
+          "Query": "online therapy for black women"
+        },
+        {
+          "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
+          "AvgClickPosition": -1,
+          "AvgImpressionPosition": 8,
+          "Clicks": 0,
+          "Date": "/Date(1752217200000-0700)/",
+          "Impressions": 1,
+          "Query": "erica hart hicks consultants"
+        },
+        {
+          "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
+          "AvgClickPosition": -1,
+          "AvgImpressionPosition": 1,
+          "Clicks": 0,
+          "Date": "/Date(1752217200000-0700)/",
+          "Impressions": 1,
+          "Query": "hicks consultancy"
+        },
+        {
+          "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
+          "AvgClickPosition": -1,
+          "AvgImpressionPosition": 7,
+          "Clicks": 0,
+          "Date": "/Date(1752217200000-0700)/",
+          "Impressions": 1,
+          "Query": "jonathan hicks counseling"
+        },
+        {
+          "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
+          "AvgClickPosition": -1,
+          "AvgImpressionPosition": 10,
+          "Clicks": 0,
+          "Date": "/Date(1752217200000-0700)/",
+          "Impressions": 1,
+          "Query": "rebecca hicks counselor"
+        },
+        {
+          "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
+          "AvgClickPosition": -1,
+          "AvgImpressionPosition": 2,
+          "Clicks": 0,
+          "Date": "/Date(1752217200000-0700)/",
+          "Impressions": 1,
+          "Query": "melissa hicks therapy"
+        },
+        {
+          "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
+          "AvgClickPosition": -1,
+          "AvgImpressionPosition": 4,
+          "Clicks": 0,
+          "Date": "/Date(1752822000000-0700)/",
+          "Impressions": 6,
+          "Query": "hickishconsulting"
+        },
+        {
+          "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
+          "AvgClickPosition": -1,
+          "AvgImpressionPosition": 5,
+          "Clicks": 0,
+          "Date": "/Date(1752822000000-0700)/",
+          "Impressions": 2,
+          "Query": "hick consulting partners"
+        },
+        {
+          "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
+          "AvgClickPosition": -1,
+          "AvgImpressionPosition": 1,
+          "Clicks": 0,
+          "Date": "/Date(1752822000000-0700)/",
+          "Impressions": 1,
+          "Query": "hicks consulting"
+        },
+        {
+          "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
+          "AvgClickPosition": -1,
+          "AvgImpressionPosition": 6,
+          "Clicks": 0,
+          "Date": "/Date(1752822000000-0700)/",
+          "Impressions": 1,
+          "Query": "hickstele"
+        },
+        {
+          "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
+          "AvgClickPosition": -1,
+          "AvgImpressionPosition": 5,
+          "Clicks": 1,
+          "Date": "/Date(1753426800000-0700)/",
+          "Impressions": 2,
+          "Query": "anthony hicks, consultant"
+        },
+        {
+          "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
+          "AvgClickPosition": -1,
+          "AvgImpressionPosition": 2,
+          "Clicks": 1,
+          "Date": "/Date(1753426800000-0700)/",
+          "Impressions": 2,
+          "Query": "scot hicks clinical services and consultation"
+        },
+        {
+          "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
+          "AvgClickPosition": -1,
+          "AvgImpressionPosition": 5,
+          "Clicks": 0,
+          "Date": "/Date(1753426800000-0700)/",
+          "Impressions": 2,
+          "Query": "hicks consulting | alameda ca"
+        },
+        {
+          "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
+          "AvgClickPosition": -1,
+          "AvgImpressionPosition": 6,
+          "Clicks": 0,
+          "Date": "/Date(1753426800000-0700)/",
+          "Impressions": 1,
+          "Query": "hicks consulting llc"
+        },
+        {
+          "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
+          "AvgClickPosition": -1,
+          "AvgImpressionPosition": 8,
+          "Clicks": 0,
+          "Date": "/Date(1753426800000-0700)/",
+          "Impressions": 1,
+          "Query": "www norman hicks consulting"
+        },
+        {
+          "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
+          "AvgClickPosition": -1,
+          "AvgImpressionPosition": 2,
+          "Clicks": 0,
+          "Date": "/Date(1753426800000-0700)/",
+          "Impressions": 1,
+          "Query": "janice hicks counseling"
+        },
+        {
+          "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
+          "AvgClickPosition": -1,
+          "AvgImpressionPosition": 2,
+          "Clicks": 0,
+          "Date": "/Date(1753426800000-0700)/",
+          "Impressions": 1,
+          "Query": "how to manage stress and anxiety john hicks consulting counselling"
+        },
+        {
+          "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
+          "AvgClickPosition": -1,
+          "AvgImpressionPosition": 9,
+          "Clicks": 0,
+          "Date": "/Date(1753426800000-0700)/",
+          "Impressions": 1,
+          "Query": "justin hicks social worker"
+        },
+        {
+          "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
+          "AvgClickPosition": -1,
+          "AvgImpressionPosition": 8,
+          "Clicks": 0,
+          "Date": "/Date(1770969600000-0800)/",
+          "Impressions": 1,
+          "Query": "dawn hicks consultring"
+        },
+        {
+          "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
+          "AvgClickPosition": -1,
+          "AvgImpressionPosition": 2,
+          "Clicks": 0,
+          "Date": "/Date(1771574400000-0800)/",
+          "Impressions": 4,
+          "Query": "monika hicks"
+        },
+        {
+          "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
+          "AvgClickPosition": -1,
+          "AvgImpressionPosition": 6,
+          "Clicks": 0,
+          "Date": "/Date(1771574400000-0800)/",
+          "Impressions": 2,
+          "Query": "david hicks pele counseling services, llc"
+        },
+        {
+          "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
+          "AvgClickPosition": -1,
+          "AvgImpressionPosition": 2,
+          "Clicks": 0,
+          "Date": "/Date(1771574400000-0800)/",
+          "Impressions": 1,
+          "Query": "joyce hicks consulting"
+        },
+        {
+          "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
+          "AvgClickPosition": -1,
+          "AvgImpressionPosition": 2,
+          "Clicks": 0,
+          "Date": "/Date(1771574400000-0800)/",
+          "Impressions": 1,
+          "Query": "hicks consulting"
+        }
+      ],
+      "message": "Bing Webmaster API connected and refreshed."
     },
     "live": {
       "provider": "live",
       "status": "ok",
-      "checkedAt": "2026-08-06T15:09:40.487Z",
+      "checkedAt": "2026-08-08T14:37:15.270Z",
       "siteUrl": "https://www.hicksconsulting.org",
       "checks": [
         {
           "route": "/",
           "status": 200,
           "ok": true,
-          "ms": 359,
+          "ms": 250,
           "contentType": "text/html; charset=utf-8"
         },
         {
           "route": "/therapy/",
           "status": 200,
           "ok": true,
-          "ms": 158,
+          "ms": 109,
+          "contentType": "text/html; charset=utf-8"
+        },
+        {
+          "route": "/black-therapist-memphis/",
+          "status": 200,
+          "ok": true,
+          "ms": 45,
+          "contentType": "text/html; charset=utf-8"
+        },
+        {
+          "route": "/anxiety-therapist-memphis/",
+          "status": 200,
+          "ok": true,
+          "ms": 41,
           "contentType": "text/html; charset=utf-8"
         },
         {
           "route": "/coaching/",
           "status": 200,
           "ok": true,
-          "ms": 101,
+          "ms": 45,
           "contentType": "text/html; charset=utf-8"
         },
         {
           "route": "/groups/",
           "status": 200,
           "ok": true,
-          "ms": 88,
+          "ms": 38,
           "contentType": "text/html; charset=utf-8"
         },
         {
           "route": "/corporate-speaking/",
           "status": 200,
           "ok": true,
-          "ms": 201,
+          "ms": 53,
           "contentType": "text/html; charset=utf-8"
         },
         {
@@ -152,42 +3642,2216 @@
           "route": "/resources/",
           "status": 200,
           "ok": true,
-          "ms": 89,
+          "ms": 52,
           "contentType": "text/html; charset=utf-8"
         },
         {
           "route": "/sitemap.xml",
           "status": 200,
           "ok": true,
-          "ms": 130,
+          "ms": 60,
           "contentType": "application/xml"
         },
         {
           "route": "/robots.txt",
           "status": 200,
           "ok": true,
-          "ms": 114,
+          "ms": 39,
           "contentType": "text/plain; charset=utf-8"
         },
         {
           "route": "/agency/",
           "status": 200,
           "ok": true,
-          "ms": 88,
+          "ms": 71,
           "contentType": "text/html; charset=utf-8"
         }
       ],
       "summary": {
-        "checked": 10,
-        "passed": 10,
+        "checked": 12,
+        "passed": 12,
         "failed": 0
       },
       "message": "All monitored live routes returned successful responses."
     }
   },
   "trends": {
-    "gsc": null,
-    "bing": null
+    "gsc": {
+      "clicks": 9,
+      "impressions": 508,
+      "ctr": 0.017716535433070866,
+      "position": 8.187007874015748,
+      "previousClicks": 31,
+      "previousImpressions": 564,
+      "previousCtr": 0.0549645390070922,
+      "previousPosition": 8.813829787234042
+    },
+    "bing": {
+      "rankAndTraffic": [
+        {
+          "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+          "Clicks": 0,
+          "Date": "/Date(1771747200000-0800)/",
+          "Impressions": 0
+        },
+        {
+          "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+          "Clicks": 0,
+          "Date": "/Date(1771833600000-0800)/",
+          "Impressions": 0
+        },
+        {
+          "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+          "Clicks": 0,
+          "Date": "/Date(1771920000000-0800)/",
+          "Impressions": 0
+        },
+        {
+          "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+          "Clicks": 0,
+          "Date": "/Date(1772006400000-0800)/",
+          "Impressions": 0
+        },
+        {
+          "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+          "Clicks": 0,
+          "Date": "/Date(1772092800000-0800)/",
+          "Impressions": 0
+        },
+        {
+          "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+          "Clicks": 0,
+          "Date": "/Date(1772179200000-0800)/",
+          "Impressions": 0
+        },
+        {
+          "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+          "Clicks": 0,
+          "Date": "/Date(1772265600000-0800)/",
+          "Impressions": 0
+        },
+        {
+          "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+          "Clicks": 0,
+          "Date": "/Date(1772352000000-0800)/",
+          "Impressions": 0
+        },
+        {
+          "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+          "Clicks": 0,
+          "Date": "/Date(1772438400000-0800)/",
+          "Impressions": 0
+        },
+        {
+          "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+          "Clicks": 0,
+          "Date": "/Date(1772524800000-0800)/",
+          "Impressions": 0
+        },
+        {
+          "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+          "Clicks": 0,
+          "Date": "/Date(1772611200000-0800)/",
+          "Impressions": 0
+        },
+        {
+          "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+          "Clicks": 0,
+          "Date": "/Date(1772697600000-0800)/",
+          "Impressions": 0
+        },
+        {
+          "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+          "Clicks": 0,
+          "Date": "/Date(1772784000000-0800)/",
+          "Impressions": 0
+        },
+        {
+          "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+          "Clicks": 0,
+          "Date": "/Date(1772870400000-0800)/",
+          "Impressions": 0
+        },
+        {
+          "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+          "Clicks": 0,
+          "Date": "/Date(1772956800000-0800)/",
+          "Impressions": 0
+        },
+        {
+          "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+          "Clicks": 0,
+          "Date": "/Date(1773039600000-0700)/",
+          "Impressions": 0
+        },
+        {
+          "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+          "Clicks": 0,
+          "Date": "/Date(1773126000000-0700)/",
+          "Impressions": 0
+        },
+        {
+          "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+          "Clicks": 0,
+          "Date": "/Date(1773212400000-0700)/",
+          "Impressions": 0
+        },
+        {
+          "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+          "Clicks": 0,
+          "Date": "/Date(1773298800000-0700)/",
+          "Impressions": 0
+        },
+        {
+          "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+          "Clicks": 0,
+          "Date": "/Date(1773385200000-0700)/",
+          "Impressions": 0
+        },
+        {
+          "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+          "Clicks": 0,
+          "Date": "/Date(1773471600000-0700)/",
+          "Impressions": 0
+        },
+        {
+          "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+          "Clicks": 0,
+          "Date": "/Date(1780124400000-0700)/",
+          "Impressions": 0
+        },
+        {
+          "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+          "Clicks": 0,
+          "Date": "/Date(1780210800000-0700)/",
+          "Impressions": 0
+        },
+        {
+          "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+          "Clicks": 0,
+          "Date": "/Date(1780297200000-0700)/",
+          "Impressions": 0
+        },
+        {
+          "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+          "Clicks": 0,
+          "Date": "/Date(1780383600000-0700)/",
+          "Impressions": 0
+        },
+        {
+          "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+          "Clicks": 0,
+          "Date": "/Date(1780470000000-0700)/",
+          "Impressions": 0
+        },
+        {
+          "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+          "Clicks": 0,
+          "Date": "/Date(1780556400000-0700)/",
+          "Impressions": 0
+        },
+        {
+          "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+          "Clicks": 0,
+          "Date": "/Date(1780642800000-0700)/",
+          "Impressions": 0
+        },
+        {
+          "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+          "Clicks": 0,
+          "Date": "/Date(1780729200000-0700)/",
+          "Impressions": 0
+        },
+        {
+          "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+          "Clicks": 0,
+          "Date": "/Date(1780815600000-0700)/",
+          "Impressions": 0
+        },
+        {
+          "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+          "Clicks": 0,
+          "Date": "/Date(1780902000000-0700)/",
+          "Impressions": 0
+        },
+        {
+          "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+          "Clicks": 0,
+          "Date": "/Date(1780988400000-0700)/",
+          "Impressions": 0
+        },
+        {
+          "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+          "Clicks": 0,
+          "Date": "/Date(1781074800000-0700)/",
+          "Impressions": 0
+        },
+        {
+          "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+          "Clicks": 0,
+          "Date": "/Date(1781161200000-0700)/",
+          "Impressions": 0
+        },
+        {
+          "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+          "Clicks": 0,
+          "Date": "/Date(1781247600000-0700)/",
+          "Impressions": 0
+        },
+        {
+          "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+          "Clicks": 0,
+          "Date": "/Date(1781334000000-0700)/",
+          "Impressions": 0
+        },
+        {
+          "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+          "Clicks": 0,
+          "Date": "/Date(1781420400000-0700)/",
+          "Impressions": 0
+        },
+        {
+          "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+          "Clicks": 0,
+          "Date": "/Date(1781506800000-0700)/",
+          "Impressions": 0
+        },
+        {
+          "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+          "Clicks": 0,
+          "Date": "/Date(1781593200000-0700)/",
+          "Impressions": 0
+        },
+        {
+          "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+          "Clicks": 0,
+          "Date": "/Date(1781679600000-0700)/",
+          "Impressions": 0
+        },
+        {
+          "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+          "Clicks": 0,
+          "Date": "/Date(1781766000000-0700)/",
+          "Impressions": 0
+        },
+        {
+          "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+          "Clicks": 0,
+          "Date": "/Date(1781852400000-0700)/",
+          "Impressions": 0
+        },
+        {
+          "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+          "Clicks": 0,
+          "Date": "/Date(1781938800000-0700)/",
+          "Impressions": 0
+        },
+        {
+          "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+          "Clicks": 0,
+          "Date": "/Date(1782025200000-0700)/",
+          "Impressions": 0
+        },
+        {
+          "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+          "Clicks": 0,
+          "Date": "/Date(1782111600000-0700)/",
+          "Impressions": 0
+        },
+        {
+          "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+          "Clicks": 0,
+          "Date": "/Date(1782198000000-0700)/",
+          "Impressions": 0
+        },
+        {
+          "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+          "Clicks": 0,
+          "Date": "/Date(1782284400000-0700)/",
+          "Impressions": 0
+        },
+        {
+          "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+          "Clicks": 0,
+          "Date": "/Date(1782370800000-0700)/",
+          "Impressions": 0
+        },
+        {
+          "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+          "Clicks": 0,
+          "Date": "/Date(1782457200000-0700)/",
+          "Impressions": 0
+        },
+        {
+          "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+          "Clicks": 0,
+          "Date": "/Date(1782543600000-0700)/",
+          "Impressions": 0
+        },
+        {
+          "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+          "Clicks": 0,
+          "Date": "/Date(1782630000000-0700)/",
+          "Impressions": 0
+        },
+        {
+          "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+          "Clicks": 0,
+          "Date": "/Date(1782716400000-0700)/",
+          "Impressions": 0
+        },
+        {
+          "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+          "Clicks": 0,
+          "Date": "/Date(1782802800000-0700)/",
+          "Impressions": 0
+        },
+        {
+          "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+          "Clicks": 0,
+          "Date": "/Date(1782889200000-0700)/",
+          "Impressions": 0
+        },
+        {
+          "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+          "Clicks": 0,
+          "Date": "/Date(1782975600000-0700)/",
+          "Impressions": 0
+        },
+        {
+          "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+          "Clicks": 0,
+          "Date": "/Date(1783062000000-0700)/",
+          "Impressions": 0
+        },
+        {
+          "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+          "Clicks": 0,
+          "Date": "/Date(1783148400000-0700)/",
+          "Impressions": 0
+        },
+        {
+          "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+          "Clicks": 0,
+          "Date": "/Date(1783234800000-0700)/",
+          "Impressions": 0
+        },
+        {
+          "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+          "Clicks": 0,
+          "Date": "/Date(1783321200000-0700)/",
+          "Impressions": 0
+        },
+        {
+          "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+          "Clicks": 0,
+          "Date": "/Date(1783407600000-0700)/",
+          "Impressions": 0
+        },
+        {
+          "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+          "Clicks": 0,
+          "Date": "/Date(1783494000000-0700)/",
+          "Impressions": 0
+        },
+        {
+          "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+          "Clicks": 0,
+          "Date": "/Date(1783580400000-0700)/",
+          "Impressions": 0
+        },
+        {
+          "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+          "Clicks": 0,
+          "Date": "/Date(1783666800000-0700)/",
+          "Impressions": 0
+        },
+        {
+          "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+          "Clicks": 0,
+          "Date": "/Date(1783753200000-0700)/",
+          "Impressions": 0
+        },
+        {
+          "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+          "Clicks": 0,
+          "Date": "/Date(1783839600000-0700)/",
+          "Impressions": 0
+        },
+        {
+          "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+          "Clicks": 0,
+          "Date": "/Date(1783926000000-0700)/",
+          "Impressions": 0
+        },
+        {
+          "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+          "Clicks": 0,
+          "Date": "/Date(1784012400000-0700)/",
+          "Impressions": 0
+        },
+        {
+          "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+          "Clicks": 0,
+          "Date": "/Date(1784098800000-0700)/",
+          "Impressions": 0
+        },
+        {
+          "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+          "Clicks": 0,
+          "Date": "/Date(1784185200000-0700)/",
+          "Impressions": 0
+        },
+        {
+          "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+          "Clicks": 0,
+          "Date": "/Date(1784271600000-0700)/",
+          "Impressions": 0
+        },
+        {
+          "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+          "Clicks": 0,
+          "Date": "/Date(1784358000000-0700)/",
+          "Impressions": 0
+        },
+        {
+          "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+          "Clicks": 0,
+          "Date": "/Date(1784444400000-0700)/",
+          "Impressions": 0
+        },
+        {
+          "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+          "Clicks": 0,
+          "Date": "/Date(1784530800000-0700)/",
+          "Impressions": 0
+        },
+        {
+          "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+          "Clicks": 0,
+          "Date": "/Date(1784617200000-0700)/",
+          "Impressions": 0
+        },
+        {
+          "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+          "Clicks": 0,
+          "Date": "/Date(1784703600000-0700)/",
+          "Impressions": 0
+        },
+        {
+          "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+          "Clicks": 0,
+          "Date": "/Date(1784790000000-0700)/",
+          "Impressions": 0
+        },
+        {
+          "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+          "Clicks": 0,
+          "Date": "/Date(1784876400000-0700)/",
+          "Impressions": 0
+        },
+        {
+          "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+          "Clicks": 0,
+          "Date": "/Date(1784962800000-0700)/",
+          "Impressions": 0
+        },
+        {
+          "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+          "Clicks": 0,
+          "Date": "/Date(1785049200000-0700)/",
+          "Impressions": 0
+        },
+        {
+          "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+          "Clicks": 0,
+          "Date": "/Date(1785135600000-0700)/",
+          "Impressions": 0
+        },
+        {
+          "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+          "Clicks": 0,
+          "Date": "/Date(1785222000000-0700)/",
+          "Impressions": 0
+        },
+        {
+          "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+          "Clicks": 0,
+          "Date": "/Date(1785308400000-0700)/",
+          "Impressions": 0
+        },
+        {
+          "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+          "Clicks": 0,
+          "Date": "/Date(1785394800000-0700)/",
+          "Impressions": 0
+        },
+        {
+          "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+          "Clicks": 0,
+          "Date": "/Date(1785481200000-0700)/",
+          "Impressions": 0
+        },
+        {
+          "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+          "Clicks": 0,
+          "Date": "/Date(1785567600000-0700)/",
+          "Impressions": 0
+        },
+        {
+          "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+          "Clicks": 0,
+          "Date": "/Date(1785654000000-0700)/",
+          "Impressions": 0
+        },
+        {
+          "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+          "Clicks": 0,
+          "Date": "/Date(1785740400000-0700)/",
+          "Impressions": 0
+        },
+        {
+          "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+          "Clicks": 0,
+          "Date": "/Date(1785826800000-0700)/",
+          "Impressions": 0
+        },
+        {
+          "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+          "Clicks": 0,
+          "Date": "/Date(1785913200000-0700)/",
+          "Impressions": 0
+        },
+        {
+          "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+          "Clicks": 0,
+          "Date": "/Date(1785999600000-0700)/",
+          "Impressions": 0
+        }
+      ],
+      "crawl": [
+        {
+          "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+          "AllOtherCodes": 1,
+          "BlockedByRobotsTxt": 0,
+          "Code2xx": 18,
+          "Code301": 1,
+          "Code302": 0,
+          "Code4xx": 6,
+          "Code5xx": 0,
+          "ConnectionTimeout": 0,
+          "ContainsMalware": 0,
+          "CrawlErrors": 8,
+          "CrawledPages": 13,
+          "Date": "/Date(1771833600000-0800)/",
+          "DnsFailures": 0,
+          "InIndex": 17,
+          "InLinks": 0
+        },
+        {
+          "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+          "AllOtherCodes": 1,
+          "BlockedByRobotsTxt": 0,
+          "Code2xx": 18,
+          "Code301": 1,
+          "Code302": 0,
+          "Code4xx": 2,
+          "Code5xx": 0,
+          "ConnectionTimeout": 0,
+          "ContainsMalware": 0,
+          "CrawlErrors": 2,
+          "CrawledPages": 5,
+          "Date": "/Date(1771920000000-0800)/",
+          "DnsFailures": 0,
+          "InIndex": 17,
+          "InLinks": 0
+        },
+        {
+          "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+          "AllOtherCodes": 1,
+          "BlockedByRobotsTxt": 0,
+          "Code2xx": 18,
+          "Code301": 1,
+          "Code302": 0,
+          "Code4xx": 0,
+          "Code5xx": 0,
+          "ConnectionTimeout": 0,
+          "ContainsMalware": 0,
+          "CrawlErrors": 0,
+          "CrawledPages": 3,
+          "Date": "/Date(1772006400000-0800)/",
+          "DnsFailures": 0,
+          "InIndex": 17,
+          "InLinks": 0
+        },
+        {
+          "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+          "AllOtherCodes": 1,
+          "BlockedByRobotsTxt": 0,
+          "Code2xx": 18,
+          "Code301": 1,
+          "Code302": 0,
+          "Code4xx": 0,
+          "Code5xx": 0,
+          "ConnectionTimeout": 0,
+          "ContainsMalware": 0,
+          "CrawlErrors": 0,
+          "CrawledPages": 0,
+          "Date": "/Date(1772092800000-0800)/",
+          "DnsFailures": 0,
+          "InIndex": 17,
+          "InLinks": 0
+        },
+        {
+          "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+          "AllOtherCodes": 1,
+          "BlockedByRobotsTxt": 0,
+          "Code2xx": 18,
+          "Code301": 1,
+          "Code302": 0,
+          "Code4xx": 0,
+          "Code5xx": 0,
+          "ConnectionTimeout": 0,
+          "ContainsMalware": 0,
+          "CrawlErrors": 0,
+          "CrawledPages": 5,
+          "Date": "/Date(1772179200000-0800)/",
+          "DnsFailures": 0,
+          "InIndex": 17,
+          "InLinks": 0
+        },
+        {
+          "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+          "AllOtherCodes": 1,
+          "BlockedByRobotsTxt": 0,
+          "Code2xx": 19,
+          "Code301": 1,
+          "Code302": 0,
+          "Code4xx": 3,
+          "Code5xx": 0,
+          "ConnectionTimeout": 0,
+          "ContainsMalware": 0,
+          "CrawlErrors": 4,
+          "CrawledPages": 5,
+          "Date": "/Date(1772265600000-0800)/",
+          "DnsFailures": 0,
+          "InIndex": 18,
+          "InLinks": 0
+        },
+        {
+          "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+          "AllOtherCodes": 1,
+          "BlockedByRobotsTxt": 0,
+          "Code2xx": 19,
+          "Code301": 1,
+          "Code302": 0,
+          "Code4xx": 3,
+          "Code5xx": 0,
+          "ConnectionTimeout": 0,
+          "ContainsMalware": 0,
+          "CrawlErrors": 4,
+          "CrawledPages": 9,
+          "Date": "/Date(1772352000000-0800)/",
+          "DnsFailures": 0,
+          "InIndex": 18,
+          "InLinks": 0
+        },
+        {
+          "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+          "AllOtherCodes": 1,
+          "BlockedByRobotsTxt": 0,
+          "Code2xx": 19,
+          "Code301": 1,
+          "Code302": 0,
+          "Code4xx": 1,
+          "Code5xx": 0,
+          "ConnectionTimeout": 0,
+          "ContainsMalware": 0,
+          "CrawlErrors": 1,
+          "CrawledPages": 2,
+          "Date": "/Date(1772438400000-0800)/",
+          "DnsFailures": 0,
+          "InIndex": 18,
+          "InLinks": 0
+        },
+        {
+          "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+          "AllOtherCodes": 1,
+          "BlockedByRobotsTxt": 0,
+          "Code2xx": 20,
+          "Code301": 1,
+          "Code302": 0,
+          "Code4xx": 0,
+          "Code5xx": 0,
+          "ConnectionTimeout": 0,
+          "ContainsMalware": 0,
+          "CrawlErrors": 0,
+          "CrawledPages": 0,
+          "Date": "/Date(1772524800000-0800)/",
+          "DnsFailures": 0,
+          "InIndex": 19,
+          "InLinks": 0
+        },
+        {
+          "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+          "AllOtherCodes": 1,
+          "BlockedByRobotsTxt": 0,
+          "Code2xx": 20,
+          "Code301": 1,
+          "Code302": 0,
+          "Code4xx": 0,
+          "Code5xx": 0,
+          "ConnectionTimeout": 0,
+          "ContainsMalware": 0,
+          "CrawlErrors": 0,
+          "CrawledPages": 5,
+          "Date": "/Date(1772611200000-0800)/",
+          "DnsFailures": 0,
+          "InIndex": 19,
+          "InLinks": 0
+        },
+        {
+          "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+          "AllOtherCodes": 1,
+          "BlockedByRobotsTxt": 0,
+          "Code2xx": 21,
+          "Code301": 1,
+          "Code302": 0,
+          "Code4xx": 5,
+          "Code5xx": 0,
+          "ConnectionTimeout": 0,
+          "ContainsMalware": 0,
+          "CrawlErrors": 6,
+          "CrawledPages": 8,
+          "Date": "/Date(1772697600000-0800)/",
+          "DnsFailures": 0,
+          "InIndex": 20,
+          "InLinks": 0
+        },
+        {
+          "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+          "AllOtherCodes": 1,
+          "BlockedByRobotsTxt": 0,
+          "Code2xx": 21,
+          "Code301": 1,
+          "Code302": 0,
+          "Code4xx": 3,
+          "Code5xx": 0,
+          "ConnectionTimeout": 0,
+          "ContainsMalware": 0,
+          "CrawlErrors": 4,
+          "CrawledPages": 9,
+          "Date": "/Date(1772784000000-0800)/",
+          "DnsFailures": 0,
+          "InIndex": 20,
+          "InLinks": 0
+        },
+        {
+          "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+          "AllOtherCodes": 1,
+          "BlockedByRobotsTxt": 0,
+          "Code2xx": 21,
+          "Code301": 1,
+          "Code302": 0,
+          "Code4xx": 0,
+          "Code5xx": 0,
+          "ConnectionTimeout": 0,
+          "ContainsMalware": 0,
+          "CrawlErrors": 0,
+          "CrawledPages": 1,
+          "Date": "/Date(1772870400000-0800)/",
+          "DnsFailures": 0,
+          "InIndex": 20,
+          "InLinks": 0
+        },
+        {
+          "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+          "AllOtherCodes": 2,
+          "BlockedByRobotsTxt": 0,
+          "Code2xx": 20,
+          "Code301": 1,
+          "Code302": 0,
+          "Code4xx": 0,
+          "Code5xx": 0,
+          "ConnectionTimeout": 0,
+          "ContainsMalware": 0,
+          "CrawlErrors": 0,
+          "CrawledPages": 5,
+          "Date": "/Date(1772956800000-0800)/",
+          "DnsFailures": 0,
+          "InIndex": 20,
+          "InLinks": 0
+        },
+        {
+          "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+          "AllOtherCodes": 2,
+          "BlockedByRobotsTxt": 0,
+          "Code2xx": 21,
+          "Code301": 1,
+          "Code302": 0,
+          "Code4xx": 0,
+          "Code5xx": 0,
+          "ConnectionTimeout": 0,
+          "ContainsMalware": 0,
+          "CrawlErrors": 0,
+          "CrawledPages": 8,
+          "Date": "/Date(1773039600000-0700)/",
+          "DnsFailures": 0,
+          "InIndex": 21,
+          "InLinks": 0
+        },
+        {
+          "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+          "AllOtherCodes": 2,
+          "BlockedByRobotsTxt": 0,
+          "Code2xx": 21,
+          "Code301": 1,
+          "Code302": 0,
+          "Code4xx": 1,
+          "Code5xx": 0,
+          "ConnectionTimeout": 0,
+          "ContainsMalware": 0,
+          "CrawlErrors": 2,
+          "CrawledPages": 10,
+          "Date": "/Date(1773126000000-0700)/",
+          "DnsFailures": 0,
+          "InIndex": 21,
+          "InLinks": 0
+        },
+        {
+          "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+          "AllOtherCodes": 2,
+          "BlockedByRobotsTxt": 0,
+          "Code2xx": 21,
+          "Code301": 1,
+          "Code302": 0,
+          "Code4xx": 2,
+          "Code5xx": 0,
+          "ConnectionTimeout": 0,
+          "ContainsMalware": 0,
+          "CrawlErrors": 3,
+          "CrawledPages": 9,
+          "Date": "/Date(1773212400000-0700)/",
+          "DnsFailures": 0,
+          "InIndex": 21,
+          "InLinks": 0
+        },
+        {
+          "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+          "AllOtherCodes": 2,
+          "BlockedByRobotsTxt": 0,
+          "Code2xx": 21,
+          "Code301": 1,
+          "Code302": 0,
+          "Code4xx": 0,
+          "Code5xx": 0,
+          "ConnectionTimeout": 0,
+          "ContainsMalware": 0,
+          "CrawlErrors": 0,
+          "CrawledPages": 5,
+          "Date": "/Date(1773298800000-0700)/",
+          "DnsFailures": 0,
+          "InIndex": 21,
+          "InLinks": 0
+        },
+        {
+          "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+          "AllOtherCodes": 1,
+          "BlockedByRobotsTxt": 0,
+          "Code2xx": 22,
+          "Code301": 1,
+          "Code302": 0,
+          "Code4xx": 0,
+          "Code5xx": 0,
+          "ConnectionTimeout": 0,
+          "ContainsMalware": 0,
+          "CrawlErrors": 0,
+          "CrawledPages": 6,
+          "Date": "/Date(1773385200000-0700)/",
+          "DnsFailures": 0,
+          "InIndex": 21,
+          "InLinks": 0
+        },
+        {
+          "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+          "AllOtherCodes": 1,
+          "BlockedByRobotsTxt": 0,
+          "Code2xx": 22,
+          "Code301": 1,
+          "Code302": 0,
+          "Code4xx": 0,
+          "Code5xx": 0,
+          "ConnectionTimeout": 0,
+          "ContainsMalware": 0,
+          "CrawlErrors": 0,
+          "CrawledPages": 6,
+          "Date": "/Date(1773471600000-0700)/",
+          "DnsFailures": 0,
+          "InIndex": 21,
+          "InLinks": 0
+        },
+        {
+          "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+          "AllOtherCodes": 1,
+          "BlockedByRobotsTxt": 0,
+          "Code2xx": 22,
+          "Code301": 1,
+          "Code302": 0,
+          "Code4xx": 2,
+          "Code5xx": 0,
+          "ConnectionTimeout": 0,
+          "ContainsMalware": 0,
+          "CrawlErrors": 3,
+          "CrawledPages": 5,
+          "Date": "/Date(1773558000000-0700)/",
+          "DnsFailures": 0,
+          "InIndex": 21,
+          "InLinks": 0
+        },
+        {
+          "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+          "AllOtherCodes": 0,
+          "BlockedByRobotsTxt": 0,
+          "Code2xx": 9,
+          "Code301": 1,
+          "Code302": 0,
+          "Code4xx": 0,
+          "Code5xx": 0,
+          "ConnectionTimeout": 0,
+          "ContainsMalware": 0,
+          "CrawlErrors": 0,
+          "CrawledPages": 0,
+          "Date": "/Date(1780210800000-0700)/",
+          "DnsFailures": 0,
+          "InIndex": 1,
+          "InLinks": 2
+        },
+        {
+          "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+          "AllOtherCodes": 0,
+          "BlockedByRobotsTxt": 0,
+          "Code2xx": 9,
+          "Code301": 1,
+          "Code302": 0,
+          "Code4xx": 0,
+          "Code5xx": 0,
+          "ConnectionTimeout": 0,
+          "ContainsMalware": 0,
+          "CrawlErrors": 0,
+          "CrawledPages": 0,
+          "Date": "/Date(1780297200000-0700)/",
+          "DnsFailures": 0,
+          "InIndex": 1,
+          "InLinks": 2
+        },
+        {
+          "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+          "AllOtherCodes": 0,
+          "BlockedByRobotsTxt": 0,
+          "Code2xx": 8,
+          "Code301": 1,
+          "Code302": 0,
+          "Code4xx": 0,
+          "Code5xx": 0,
+          "ConnectionTimeout": 0,
+          "ContainsMalware": 0,
+          "CrawlErrors": 0,
+          "CrawledPages": 0,
+          "Date": "/Date(1780383600000-0700)/",
+          "DnsFailures": 0,
+          "InIndex": 1,
+          "InLinks": 2
+        },
+        {
+          "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+          "AllOtherCodes": 0,
+          "BlockedByRobotsTxt": 0,
+          "Code2xx": 8,
+          "Code301": 1,
+          "Code302": 0,
+          "Code4xx": 0,
+          "Code5xx": 0,
+          "ConnectionTimeout": 0,
+          "ContainsMalware": 0,
+          "CrawlErrors": 0,
+          "CrawledPages": 0,
+          "Date": "/Date(1780470000000-0700)/",
+          "DnsFailures": 0,
+          "InIndex": 1,
+          "InLinks": 2
+        },
+        {
+          "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+          "AllOtherCodes": 0,
+          "BlockedByRobotsTxt": 0,
+          "Code2xx": 7,
+          "Code301": 1,
+          "Code302": 0,
+          "Code4xx": 0,
+          "Code5xx": 0,
+          "ConnectionTimeout": 0,
+          "ContainsMalware": 0,
+          "CrawlErrors": 0,
+          "CrawledPages": 0,
+          "Date": "/Date(1780556400000-0700)/",
+          "DnsFailures": 0,
+          "InIndex": 1,
+          "InLinks": 2
+        },
+        {
+          "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+          "AllOtherCodes": 0,
+          "BlockedByRobotsTxt": 0,
+          "Code2xx": 7,
+          "Code301": 1,
+          "Code302": 0,
+          "Code4xx": 0,
+          "Code5xx": 0,
+          "ConnectionTimeout": 0,
+          "ContainsMalware": 0,
+          "CrawlErrors": 0,
+          "CrawledPages": 0,
+          "Date": "/Date(1780642800000-0700)/",
+          "DnsFailures": 0,
+          "InIndex": 1,
+          "InLinks": 2
+        },
+        {
+          "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+          "AllOtherCodes": 0,
+          "BlockedByRobotsTxt": 0,
+          "Code2xx": 7,
+          "Code301": 1,
+          "Code302": 0,
+          "Code4xx": 0,
+          "Code5xx": 0,
+          "ConnectionTimeout": 0,
+          "ContainsMalware": 0,
+          "CrawlErrors": 0,
+          "CrawledPages": 1,
+          "Date": "/Date(1780729200000-0700)/",
+          "DnsFailures": 0,
+          "InIndex": 1,
+          "InLinks": 2
+        },
+        {
+          "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+          "AllOtherCodes": 0,
+          "BlockedByRobotsTxt": 0,
+          "Code2xx": 7,
+          "Code301": 1,
+          "Code302": 0,
+          "Code4xx": 0,
+          "Code5xx": 0,
+          "ConnectionTimeout": 0,
+          "ContainsMalware": 0,
+          "CrawlErrors": 0,
+          "CrawledPages": 0,
+          "Date": "/Date(1780815600000-0700)/",
+          "DnsFailures": 0,
+          "InIndex": 1,
+          "InLinks": 2
+        },
+        {
+          "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+          "AllOtherCodes": 0,
+          "BlockedByRobotsTxt": 0,
+          "Code2xx": 7,
+          "Code301": 1,
+          "Code302": 0,
+          "Code4xx": 0,
+          "Code5xx": 0,
+          "ConnectionTimeout": 0,
+          "ContainsMalware": 0,
+          "CrawlErrors": 0,
+          "CrawledPages": 1,
+          "Date": "/Date(1780902000000-0700)/",
+          "DnsFailures": 0,
+          "InIndex": 1,
+          "InLinks": 2
+        },
+        {
+          "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+          "AllOtherCodes": 0,
+          "BlockedByRobotsTxt": 0,
+          "Code2xx": 7,
+          "Code301": 1,
+          "Code302": 0,
+          "Code4xx": 0,
+          "Code5xx": 0,
+          "ConnectionTimeout": 0,
+          "ContainsMalware": 0,
+          "CrawlErrors": 0,
+          "CrawledPages": 0,
+          "Date": "/Date(1780988400000-0700)/",
+          "DnsFailures": 0,
+          "InIndex": 1,
+          "InLinks": 3
+        },
+        {
+          "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+          "AllOtherCodes": 0,
+          "BlockedByRobotsTxt": 0,
+          "Code2xx": 7,
+          "Code301": 1,
+          "Code302": 0,
+          "Code4xx": 0,
+          "Code5xx": 0,
+          "ConnectionTimeout": 0,
+          "ContainsMalware": 0,
+          "CrawlErrors": 0,
+          "CrawledPages": 0,
+          "Date": "/Date(1781074800000-0700)/",
+          "DnsFailures": 0,
+          "InIndex": 1,
+          "InLinks": 3
+        },
+        {
+          "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+          "AllOtherCodes": 0,
+          "BlockedByRobotsTxt": 0,
+          "Code2xx": 7,
+          "Code301": 1,
+          "Code302": 0,
+          "Code4xx": 0,
+          "Code5xx": 0,
+          "ConnectionTimeout": 0,
+          "ContainsMalware": 0,
+          "CrawlErrors": 0,
+          "CrawledPages": 0,
+          "Date": "/Date(1781161200000-0700)/",
+          "DnsFailures": 0,
+          "InIndex": 1,
+          "InLinks": 3
+        },
+        {
+          "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+          "AllOtherCodes": 0,
+          "BlockedByRobotsTxt": 0,
+          "Code2xx": 7,
+          "Code301": 1,
+          "Code302": 0,
+          "Code4xx": 0,
+          "Code5xx": 0,
+          "ConnectionTimeout": 0,
+          "ContainsMalware": 0,
+          "CrawlErrors": 0,
+          "CrawledPages": 2,
+          "Date": "/Date(1781247600000-0700)/",
+          "DnsFailures": 0,
+          "InIndex": 1,
+          "InLinks": 3
+        },
+        {
+          "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+          "AllOtherCodes": 0,
+          "BlockedByRobotsTxt": 0,
+          "Code2xx": 7,
+          "Code301": 1,
+          "Code302": 0,
+          "Code4xx": 0,
+          "Code5xx": 0,
+          "ConnectionTimeout": 0,
+          "ContainsMalware": 0,
+          "CrawlErrors": 0,
+          "CrawledPages": 3,
+          "Date": "/Date(1781334000000-0700)/",
+          "DnsFailures": 0,
+          "InIndex": 1,
+          "InLinks": 3
+        },
+        {
+          "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+          "AllOtherCodes": 0,
+          "BlockedByRobotsTxt": 0,
+          "Code2xx": 7,
+          "Code301": 1,
+          "Code302": 0,
+          "Code4xx": 0,
+          "Code5xx": 0,
+          "ConnectionTimeout": 0,
+          "ContainsMalware": 0,
+          "CrawlErrors": 0,
+          "CrawledPages": 2,
+          "Date": "/Date(1781420400000-0700)/",
+          "DnsFailures": 0,
+          "InIndex": 1,
+          "InLinks": 3
+        },
+        {
+          "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+          "AllOtherCodes": 0,
+          "BlockedByRobotsTxt": 0,
+          "Code2xx": 7,
+          "Code301": 1,
+          "Code302": 0,
+          "Code4xx": 0,
+          "Code5xx": 0,
+          "ConnectionTimeout": 0,
+          "ContainsMalware": 0,
+          "CrawlErrors": 0,
+          "CrawledPages": 2,
+          "Date": "/Date(1781506800000-0700)/",
+          "DnsFailures": 0,
+          "InIndex": 1,
+          "InLinks": 3
+        },
+        {
+          "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+          "AllOtherCodes": 0,
+          "BlockedByRobotsTxt": 0,
+          "Code2xx": 7,
+          "Code301": 1,
+          "Code302": 0,
+          "Code4xx": 0,
+          "Code5xx": 0,
+          "ConnectionTimeout": 0,
+          "ContainsMalware": 0,
+          "CrawlErrors": 0,
+          "CrawledPages": 0,
+          "Date": "/Date(1781593200000-0700)/",
+          "DnsFailures": 0,
+          "InIndex": 1,
+          "InLinks": 3
+        },
+        {
+          "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+          "AllOtherCodes": 0,
+          "BlockedByRobotsTxt": 0,
+          "Code2xx": 7,
+          "Code301": 1,
+          "Code302": 0,
+          "Code4xx": 0,
+          "Code5xx": 0,
+          "ConnectionTimeout": 0,
+          "ContainsMalware": 0,
+          "CrawlErrors": 0,
+          "CrawledPages": 1,
+          "Date": "/Date(1781679600000-0700)/",
+          "DnsFailures": 0,
+          "InIndex": 1,
+          "InLinks": 3
+        },
+        {
+          "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+          "AllOtherCodes": 0,
+          "BlockedByRobotsTxt": 0,
+          "Code2xx": 7,
+          "Code301": 1,
+          "Code302": 0,
+          "Code4xx": 0,
+          "Code5xx": 0,
+          "ConnectionTimeout": 0,
+          "ContainsMalware": 0,
+          "CrawlErrors": 0,
+          "CrawledPages": 0,
+          "Date": "/Date(1781766000000-0700)/",
+          "DnsFailures": 0,
+          "InIndex": 1,
+          "InLinks": 3
+        },
+        {
+          "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+          "AllOtherCodes": 0,
+          "BlockedByRobotsTxt": 0,
+          "Code2xx": 7,
+          "Code301": 1,
+          "Code302": 0,
+          "Code4xx": 0,
+          "Code5xx": 0,
+          "ConnectionTimeout": 0,
+          "ContainsMalware": 0,
+          "CrawlErrors": 0,
+          "CrawledPages": 1,
+          "Date": "/Date(1781852400000-0700)/",
+          "DnsFailures": 0,
+          "InIndex": 1,
+          "InLinks": 3
+        },
+        {
+          "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+          "AllOtherCodes": 0,
+          "BlockedByRobotsTxt": 0,
+          "Code2xx": 7,
+          "Code301": 1,
+          "Code302": 0,
+          "Code4xx": 0,
+          "Code5xx": 0,
+          "ConnectionTimeout": 0,
+          "ContainsMalware": 0,
+          "CrawlErrors": 0,
+          "CrawledPages": 0,
+          "Date": "/Date(1781938800000-0700)/",
+          "DnsFailures": 0,
+          "InIndex": 1,
+          "InLinks": 3
+        },
+        {
+          "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+          "AllOtherCodes": 0,
+          "BlockedByRobotsTxt": 0,
+          "Code2xx": 7,
+          "Code301": 1,
+          "Code302": 0,
+          "Code4xx": 0,
+          "Code5xx": 0,
+          "ConnectionTimeout": 0,
+          "ContainsMalware": 0,
+          "CrawlErrors": 0,
+          "CrawledPages": 1,
+          "Date": "/Date(1782025200000-0700)/",
+          "DnsFailures": 0,
+          "InIndex": 1,
+          "InLinks": 3
+        },
+        {
+          "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+          "AllOtherCodes": 0,
+          "BlockedByRobotsTxt": 0,
+          "Code2xx": 7,
+          "Code301": 1,
+          "Code302": 0,
+          "Code4xx": 0,
+          "Code5xx": 0,
+          "ConnectionTimeout": 0,
+          "ContainsMalware": 0,
+          "CrawlErrors": 0,
+          "CrawledPages": 0,
+          "Date": "/Date(1782111600000-0700)/",
+          "DnsFailures": 0,
+          "InIndex": 1,
+          "InLinks": 3
+        },
+        {
+          "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+          "AllOtherCodes": 0,
+          "BlockedByRobotsTxt": 0,
+          "Code2xx": 7,
+          "Code301": 1,
+          "Code302": 0,
+          "Code4xx": 0,
+          "Code5xx": 0,
+          "ConnectionTimeout": 0,
+          "ContainsMalware": 0,
+          "CrawlErrors": 0,
+          "CrawledPages": 0,
+          "Date": "/Date(1782198000000-0700)/",
+          "DnsFailures": 0,
+          "InIndex": 1,
+          "InLinks": 3
+        },
+        {
+          "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+          "AllOtherCodes": 0,
+          "BlockedByRobotsTxt": 0,
+          "Code2xx": 7,
+          "Code301": 1,
+          "Code302": 0,
+          "Code4xx": 0,
+          "Code5xx": 0,
+          "ConnectionTimeout": 0,
+          "ContainsMalware": 0,
+          "CrawlErrors": 0,
+          "CrawledPages": 0,
+          "Date": "/Date(1782284400000-0700)/",
+          "DnsFailures": 0,
+          "InIndex": 1,
+          "InLinks": 3
+        },
+        {
+          "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+          "AllOtherCodes": 0,
+          "BlockedByRobotsTxt": 0,
+          "Code2xx": 7,
+          "Code301": 1,
+          "Code302": 0,
+          "Code4xx": 0,
+          "Code5xx": 0,
+          "ConnectionTimeout": 0,
+          "ContainsMalware": 0,
+          "CrawlErrors": 0,
+          "CrawledPages": 0,
+          "Date": "/Date(1782370800000-0700)/",
+          "DnsFailures": 0,
+          "InIndex": 1,
+          "InLinks": 3
+        },
+        {
+          "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+          "AllOtherCodes": 0,
+          "BlockedByRobotsTxt": 0,
+          "Code2xx": 8,
+          "Code301": 1,
+          "Code302": 0,
+          "Code4xx": 0,
+          "Code5xx": 0,
+          "ConnectionTimeout": 0,
+          "ContainsMalware": 0,
+          "CrawlErrors": 0,
+          "CrawledPages": 0,
+          "Date": "/Date(1782457200000-0700)/",
+          "DnsFailures": 0,
+          "InIndex": 1,
+          "InLinks": 4
+        },
+        {
+          "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+          "AllOtherCodes": 0,
+          "BlockedByRobotsTxt": 0,
+          "Code2xx": 8,
+          "Code301": 1,
+          "Code302": 0,
+          "Code4xx": 0,
+          "Code5xx": 0,
+          "ConnectionTimeout": 0,
+          "ContainsMalware": 0,
+          "CrawlErrors": 0,
+          "CrawledPages": 2,
+          "Date": "/Date(1782543600000-0700)/",
+          "DnsFailures": 0,
+          "InIndex": 1,
+          "InLinks": 4
+        },
+        {
+          "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+          "AllOtherCodes": 0,
+          "BlockedByRobotsTxt": 0,
+          "Code2xx": 8,
+          "Code301": 1,
+          "Code302": 0,
+          "Code4xx": 0,
+          "Code5xx": 0,
+          "ConnectionTimeout": 0,
+          "ContainsMalware": 0,
+          "CrawlErrors": 0,
+          "CrawledPages": 0,
+          "Date": "/Date(1782630000000-0700)/",
+          "DnsFailures": 0,
+          "InIndex": 1,
+          "InLinks": 4
+        },
+        {
+          "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+          "AllOtherCodes": 0,
+          "BlockedByRobotsTxt": 0,
+          "Code2xx": 8,
+          "Code301": 1,
+          "Code302": 0,
+          "Code4xx": 0,
+          "Code5xx": 0,
+          "ConnectionTimeout": 0,
+          "ContainsMalware": 0,
+          "CrawlErrors": 0,
+          "CrawledPages": 1,
+          "Date": "/Date(1782716400000-0700)/",
+          "DnsFailures": 0,
+          "InIndex": 1,
+          "InLinks": 4
+        },
+        {
+          "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+          "AllOtherCodes": 0,
+          "BlockedByRobotsTxt": 0,
+          "Code2xx": 8,
+          "Code301": 1,
+          "Code302": 0,
+          "Code4xx": 0,
+          "Code5xx": 0,
+          "ConnectionTimeout": 0,
+          "ContainsMalware": 0,
+          "CrawlErrors": 0,
+          "CrawledPages": 2,
+          "Date": "/Date(1782802800000-0700)/",
+          "DnsFailures": 0,
+          "InIndex": 1,
+          "InLinks": 4
+        },
+        {
+          "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+          "AllOtherCodes": 0,
+          "BlockedByRobotsTxt": 0,
+          "Code2xx": 8,
+          "Code301": 1,
+          "Code302": 0,
+          "Code4xx": 0,
+          "Code5xx": 0,
+          "ConnectionTimeout": 0,
+          "ContainsMalware": 0,
+          "CrawlErrors": 0,
+          "CrawledPages": 0,
+          "Date": "/Date(1782889200000-0700)/",
+          "DnsFailures": 0,
+          "InIndex": 1,
+          "InLinks": 4
+        },
+        {
+          "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+          "AllOtherCodes": 0,
+          "BlockedByRobotsTxt": 0,
+          "Code2xx": 8,
+          "Code301": 1,
+          "Code302": 0,
+          "Code4xx": 0,
+          "Code5xx": 0,
+          "ConnectionTimeout": 0,
+          "ContainsMalware": 0,
+          "CrawlErrors": 0,
+          "CrawledPages": 0,
+          "Date": "/Date(1782975600000-0700)/",
+          "DnsFailures": 0,
+          "InIndex": 1,
+          "InLinks": 4
+        },
+        {
+          "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+          "AllOtherCodes": 0,
+          "BlockedByRobotsTxt": 0,
+          "Code2xx": 8,
+          "Code301": 1,
+          "Code302": 0,
+          "Code4xx": 0,
+          "Code5xx": 0,
+          "ConnectionTimeout": 0,
+          "ContainsMalware": 0,
+          "CrawlErrors": 0,
+          "CrawledPages": 0,
+          "Date": "/Date(1783062000000-0700)/",
+          "DnsFailures": 0,
+          "InIndex": 1,
+          "InLinks": 4
+        },
+        {
+          "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+          "AllOtherCodes": 0,
+          "BlockedByRobotsTxt": 0,
+          "Code2xx": 8,
+          "Code301": 1,
+          "Code302": 0,
+          "Code4xx": 0,
+          "Code5xx": 0,
+          "ConnectionTimeout": 0,
+          "ContainsMalware": 0,
+          "CrawlErrors": 0,
+          "CrawledPages": 0,
+          "Date": "/Date(1783148400000-0700)/",
+          "DnsFailures": 0,
+          "InIndex": 1,
+          "InLinks": 4
+        },
+        {
+          "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+          "AllOtherCodes": 0,
+          "BlockedByRobotsTxt": 0,
+          "Code2xx": 8,
+          "Code301": 1,
+          "Code302": 0,
+          "Code4xx": 0,
+          "Code5xx": 0,
+          "ConnectionTimeout": 0,
+          "ContainsMalware": 0,
+          "CrawlErrors": 0,
+          "CrawledPages": 6,
+          "Date": "/Date(1783234800000-0700)/",
+          "DnsFailures": 0,
+          "InIndex": 1,
+          "InLinks": 4
+        },
+        {
+          "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+          "AllOtherCodes": 0,
+          "BlockedByRobotsTxt": 0,
+          "Code2xx": 9,
+          "Code301": 1,
+          "Code302": 0,
+          "Code4xx": 0,
+          "Code5xx": 0,
+          "ConnectionTimeout": 0,
+          "ContainsMalware": 0,
+          "CrawlErrors": 0,
+          "CrawledPages": 3,
+          "Date": "/Date(1783321200000-0700)/",
+          "DnsFailures": 0,
+          "InIndex": 1,
+          "InLinks": 5
+        },
+        {
+          "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+          "AllOtherCodes": 0,
+          "BlockedByRobotsTxt": 0,
+          "Code2xx": 10,
+          "Code301": 1,
+          "Code302": 0,
+          "Code4xx": 0,
+          "Code5xx": 0,
+          "ConnectionTimeout": 0,
+          "ContainsMalware": 0,
+          "CrawlErrors": 0,
+          "CrawledPages": 1,
+          "Date": "/Date(1783407600000-0700)/",
+          "DnsFailures": 0,
+          "InIndex": 1,
+          "InLinks": 5
+        },
+        {
+          "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+          "AllOtherCodes": 0,
+          "BlockedByRobotsTxt": 0,
+          "Code2xx": 10,
+          "Code301": 1,
+          "Code302": 0,
+          "Code4xx": 0,
+          "Code5xx": 0,
+          "ConnectionTimeout": 0,
+          "ContainsMalware": 0,
+          "CrawlErrors": 0,
+          "CrawledPages": 0,
+          "Date": "/Date(1783494000000-0700)/",
+          "DnsFailures": 0,
+          "InIndex": 1,
+          "InLinks": 5
+        },
+        {
+          "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+          "AllOtherCodes": 0,
+          "BlockedByRobotsTxt": 0,
+          "Code2xx": 10,
+          "Code301": 1,
+          "Code302": 0,
+          "Code4xx": 0,
+          "Code5xx": 0,
+          "ConnectionTimeout": 0,
+          "ContainsMalware": 0,
+          "CrawlErrors": 0,
+          "CrawledPages": 0,
+          "Date": "/Date(1783580400000-0700)/",
+          "DnsFailures": 0,
+          "InIndex": 1,
+          "InLinks": 5
+        },
+        {
+          "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+          "AllOtherCodes": 0,
+          "BlockedByRobotsTxt": 0,
+          "Code2xx": 10,
+          "Code301": 1,
+          "Code302": 0,
+          "Code4xx": 0,
+          "Code5xx": 0,
+          "ConnectionTimeout": 0,
+          "ContainsMalware": 0,
+          "CrawlErrors": 0,
+          "CrawledPages": 2,
+          "Date": "/Date(1783666800000-0700)/",
+          "DnsFailures": 0,
+          "InIndex": 1,
+          "InLinks": 5
+        },
+        {
+          "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+          "AllOtherCodes": 0,
+          "BlockedByRobotsTxt": 0,
+          "Code2xx": 10,
+          "Code301": 1,
+          "Code302": 0,
+          "Code4xx": 0,
+          "Code5xx": 0,
+          "ConnectionTimeout": 0,
+          "ContainsMalware": 0,
+          "CrawlErrors": 0,
+          "CrawledPages": 0,
+          "Date": "/Date(1783753200000-0700)/",
+          "DnsFailures": 0,
+          "InIndex": 1,
+          "InLinks": 5
+        },
+        {
+          "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+          "AllOtherCodes": 0,
+          "BlockedByRobotsTxt": 0,
+          "Code2xx": 10,
+          "Code301": 1,
+          "Code302": 0,
+          "Code4xx": 0,
+          "Code5xx": 0,
+          "ConnectionTimeout": 0,
+          "ContainsMalware": 0,
+          "CrawlErrors": 0,
+          "CrawledPages": 0,
+          "Date": "/Date(1783839600000-0700)/",
+          "DnsFailures": 0,
+          "InIndex": 1,
+          "InLinks": 5
+        },
+        {
+          "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+          "AllOtherCodes": 0,
+          "BlockedByRobotsTxt": 0,
+          "Code2xx": 10,
+          "Code301": 1,
+          "Code302": 0,
+          "Code4xx": 0,
+          "Code5xx": 0,
+          "ConnectionTimeout": 0,
+          "ContainsMalware": 0,
+          "CrawlErrors": 0,
+          "CrawledPages": 2,
+          "Date": "/Date(1783926000000-0700)/",
+          "DnsFailures": 0,
+          "InIndex": 1,
+          "InLinks": 5
+        },
+        {
+          "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+          "AllOtherCodes": 0,
+          "BlockedByRobotsTxt": 0,
+          "Code2xx": 10,
+          "Code301": 1,
+          "Code302": 0,
+          "Code4xx": 0,
+          "Code5xx": 0,
+          "ConnectionTimeout": 0,
+          "ContainsMalware": 0,
+          "CrawlErrors": 0,
+          "CrawledPages": 3,
+          "Date": "/Date(1784012400000-0700)/",
+          "DnsFailures": 0,
+          "InIndex": 1,
+          "InLinks": 5
+        },
+        {
+          "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+          "AllOtherCodes": 0,
+          "BlockedByRobotsTxt": 0,
+          "Code2xx": 10,
+          "Code301": 1,
+          "Code302": 0,
+          "Code4xx": 0,
+          "Code5xx": 0,
+          "ConnectionTimeout": 0,
+          "ContainsMalware": 0,
+          "CrawlErrors": 0,
+          "CrawledPages": 3,
+          "Date": "/Date(1784098800000-0700)/",
+          "DnsFailures": 0,
+          "InIndex": 1,
+          "InLinks": 5
+        },
+        {
+          "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+          "AllOtherCodes": 0,
+          "BlockedByRobotsTxt": 0,
+          "Code2xx": 10,
+          "Code301": 1,
+          "Code302": 0,
+          "Code4xx": 0,
+          "Code5xx": 0,
+          "ConnectionTimeout": 0,
+          "ContainsMalware": 0,
+          "CrawlErrors": 0,
+          "CrawledPages": 0,
+          "Date": "/Date(1784185200000-0700)/",
+          "DnsFailures": 0,
+          "InIndex": 1,
+          "InLinks": 5
+        },
+        {
+          "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+          "AllOtherCodes": 0,
+          "BlockedByRobotsTxt": 0,
+          "Code2xx": 10,
+          "Code301": 1,
+          "Code302": 0,
+          "Code4xx": 0,
+          "Code5xx": 0,
+          "ConnectionTimeout": 0,
+          "ContainsMalware": 0,
+          "CrawlErrors": 0,
+          "CrawledPages": 0,
+          "Date": "/Date(1784271600000-0700)/",
+          "DnsFailures": 0,
+          "InIndex": 1,
+          "InLinks": 5
+        },
+        {
+          "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+          "AllOtherCodes": 0,
+          "BlockedByRobotsTxt": 0,
+          "Code2xx": 10,
+          "Code301": 1,
+          "Code302": 0,
+          "Code4xx": 0,
+          "Code5xx": 0,
+          "ConnectionTimeout": 0,
+          "ContainsMalware": 0,
+          "CrawlErrors": 0,
+          "CrawledPages": 1,
+          "Date": "/Date(1784358000000-0700)/",
+          "DnsFailures": 0,
+          "InIndex": 1,
+          "InLinks": 5
+        },
+        {
+          "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+          "AllOtherCodes": 0,
+          "BlockedByRobotsTxt": 0,
+          "Code2xx": 10,
+          "Code301": 1,
+          "Code302": 0,
+          "Code4xx": 0,
+          "Code5xx": 0,
+          "ConnectionTimeout": 0,
+          "ContainsMalware": 0,
+          "CrawlErrors": 0,
+          "CrawledPages": 2,
+          "Date": "/Date(1784444400000-0700)/",
+          "DnsFailures": 0,
+          "InIndex": 1,
+          "InLinks": 5
+        },
+        {
+          "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+          "AllOtherCodes": 0,
+          "BlockedByRobotsTxt": 0,
+          "Code2xx": 10,
+          "Code301": 1,
+          "Code302": 0,
+          "Code4xx": 0,
+          "Code5xx": 0,
+          "ConnectionTimeout": 0,
+          "ContainsMalware": 0,
+          "CrawlErrors": 0,
+          "CrawledPages": 0,
+          "Date": "/Date(1784530800000-0700)/",
+          "DnsFailures": 0,
+          "InIndex": 1,
+          "InLinks": 5
+        },
+        {
+          "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+          "AllOtherCodes": 0,
+          "BlockedByRobotsTxt": 0,
+          "Code2xx": 10,
+          "Code301": 1,
+          "Code302": 0,
+          "Code4xx": 0,
+          "Code5xx": 0,
+          "ConnectionTimeout": 0,
+          "ContainsMalware": 0,
+          "CrawlErrors": 0,
+          "CrawledPages": 1,
+          "Date": "/Date(1784617200000-0700)/",
+          "DnsFailures": 0,
+          "InIndex": 1,
+          "InLinks": 5
+        },
+        {
+          "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+          "AllOtherCodes": 0,
+          "BlockedByRobotsTxt": 0,
+          "Code2xx": 10,
+          "Code301": 1,
+          "Code302": 0,
+          "Code4xx": 0,
+          "Code5xx": 0,
+          "ConnectionTimeout": 0,
+          "ContainsMalware": 0,
+          "CrawlErrors": 0,
+          "CrawledPages": 1,
+          "Date": "/Date(1784703600000-0700)/",
+          "DnsFailures": 0,
+          "InIndex": 1,
+          "InLinks": 5
+        },
+        {
+          "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+          "AllOtherCodes": 0,
+          "BlockedByRobotsTxt": 0,
+          "Code2xx": 10,
+          "Code301": 1,
+          "Code302": 0,
+          "Code4xx": 0,
+          "Code5xx": 0,
+          "ConnectionTimeout": 0,
+          "ContainsMalware": 0,
+          "CrawlErrors": 0,
+          "CrawledPages": 1,
+          "Date": "/Date(1784790000000-0700)/",
+          "DnsFailures": 0,
+          "InIndex": 1,
+          "InLinks": 5
+        },
+        {
+          "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+          "AllOtherCodes": 0,
+          "BlockedByRobotsTxt": 0,
+          "Code2xx": 11,
+          "Code301": 1,
+          "Code302": 0,
+          "Code4xx": 0,
+          "Code5xx": 0,
+          "ConnectionTimeout": 0,
+          "ContainsMalware": 0,
+          "CrawlErrors": 0,
+          "CrawledPages": 1,
+          "Date": "/Date(1784876400000-0700)/",
+          "DnsFailures": 0,
+          "InIndex": 1,
+          "InLinks": 5
+        },
+        {
+          "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+          "AllOtherCodes": 0,
+          "BlockedByRobotsTxt": 0,
+          "Code2xx": 11,
+          "Code301": 1,
+          "Code302": 0,
+          "Code4xx": 0,
+          "Code5xx": 0,
+          "ConnectionTimeout": 0,
+          "ContainsMalware": 0,
+          "CrawlErrors": 0,
+          "CrawledPages": 4,
+          "Date": "/Date(1784962800000-0700)/",
+          "DnsFailures": 0,
+          "InIndex": 1,
+          "InLinks": 5
+        },
+        {
+          "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+          "AllOtherCodes": 0,
+          "BlockedByRobotsTxt": 0,
+          "Code2xx": 10,
+          "Code301": 1,
+          "Code302": 0,
+          "Code4xx": 0,
+          "Code5xx": 0,
+          "ConnectionTimeout": 0,
+          "ContainsMalware": 0,
+          "CrawlErrors": 0,
+          "CrawledPages": 3,
+          "Date": "/Date(1785049200000-0700)/",
+          "DnsFailures": 0,
+          "InIndex": 0,
+          "InLinks": 5
+        },
+        {
+          "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+          "AllOtherCodes": 0,
+          "BlockedByRobotsTxt": 0,
+          "Code2xx": 10,
+          "Code301": 1,
+          "Code302": 0,
+          "Code4xx": 0,
+          "Code5xx": 0,
+          "ConnectionTimeout": 0,
+          "ContainsMalware": 0,
+          "CrawlErrors": 0,
+          "CrawledPages": 1,
+          "Date": "/Date(1785135600000-0700)/",
+          "DnsFailures": 0,
+          "InIndex": 0,
+          "InLinks": 5
+        },
+        {
+          "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+          "AllOtherCodes": 0,
+          "BlockedByRobotsTxt": 0,
+          "Code2xx": 10,
+          "Code301": 1,
+          "Code302": 0,
+          "Code4xx": 0,
+          "Code5xx": 0,
+          "ConnectionTimeout": 0,
+          "ContainsMalware": 0,
+          "CrawlErrors": 0,
+          "CrawledPages": 3,
+          "Date": "/Date(1785222000000-0700)/",
+          "DnsFailures": 0,
+          "InIndex": 0,
+          "InLinks": 5
+        },
+        {
+          "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+          "AllOtherCodes": 0,
+          "BlockedByRobotsTxt": 0,
+          "Code2xx": 10,
+          "Code301": 1,
+          "Code302": 0,
+          "Code4xx": 0,
+          "Code5xx": 0,
+          "ConnectionTimeout": 0,
+          "ContainsMalware": 0,
+          "CrawlErrors": 0,
+          "CrawledPages": 3,
+          "Date": "/Date(1785308400000-0700)/",
+          "DnsFailures": 0,
+          "InIndex": 0,
+          "InLinks": 5
+        },
+        {
+          "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+          "AllOtherCodes": 0,
+          "BlockedByRobotsTxt": 0,
+          "Code2xx": 10,
+          "Code301": 1,
+          "Code302": 0,
+          "Code4xx": 0,
+          "Code5xx": 0,
+          "ConnectionTimeout": 0,
+          "ContainsMalware": 0,
+          "CrawlErrors": 0,
+          "CrawledPages": 4,
+          "Date": "/Date(1785394800000-0700)/",
+          "DnsFailures": 0,
+          "InIndex": 0,
+          "InLinks": 5
+        },
+        {
+          "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+          "AllOtherCodes": 0,
+          "BlockedByRobotsTxt": 0,
+          "Code2xx": 11,
+          "Code301": 1,
+          "Code302": 0,
+          "Code4xx": 0,
+          "Code5xx": 0,
+          "ConnectionTimeout": 0,
+          "ContainsMalware": 0,
+          "CrawlErrors": 0,
+          "CrawledPages": 3,
+          "Date": "/Date(1785481200000-0700)/",
+          "DnsFailures": 0,
+          "InIndex": 0,
+          "InLinks": 5
+        },
+        {
+          "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+          "AllOtherCodes": 0,
+          "BlockedByRobotsTxt": 0,
+          "Code2xx": 12,
+          "Code301": 1,
+          "Code302": 0,
+          "Code4xx": 0,
+          "Code5xx": 0,
+          "ConnectionTimeout": 0,
+          "ContainsMalware": 0,
+          "CrawlErrors": 0,
+          "CrawledPages": 2,
+          "Date": "/Date(1785567600000-0700)/",
+          "DnsFailures": 0,
+          "InIndex": 0,
+          "InLinks": 5
+        },
+        {
+          "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+          "AllOtherCodes": 0,
+          "BlockedByRobotsTxt": 0,
+          "Code2xx": 12,
+          "Code301": 1,
+          "Code302": 0,
+          "Code4xx": 0,
+          "Code5xx": 0,
+          "ConnectionTimeout": 0,
+          "ContainsMalware": 0,
+          "CrawlErrors": 0,
+          "CrawledPages": 2,
+          "Date": "/Date(1785654000000-0700)/",
+          "DnsFailures": 0,
+          "InIndex": 0,
+          "InLinks": 5
+        },
+        {
+          "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+          "AllOtherCodes": 0,
+          "BlockedByRobotsTxt": 0,
+          "Code2xx": 12,
+          "Code301": 1,
+          "Code302": 0,
+          "Code4xx": 0,
+          "Code5xx": 0,
+          "ConnectionTimeout": 0,
+          "ContainsMalware": 0,
+          "CrawlErrors": 0,
+          "CrawledPages": 5,
+          "Date": "/Date(1785740400000-0700)/",
+          "DnsFailures": 0,
+          "InIndex": 0,
+          "InLinks": 5
+        },
+        {
+          "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+          "AllOtherCodes": 0,
+          "BlockedByRobotsTxt": 0,
+          "Code2xx": 13,
+          "Code301": 1,
+          "Code302": 0,
+          "Code4xx": 0,
+          "Code5xx": 0,
+          "ConnectionTimeout": 0,
+          "ContainsMalware": 0,
+          "CrawlErrors": 0,
+          "CrawledPages": 3,
+          "Date": "/Date(1785826800000-0700)/",
+          "DnsFailures": 0,
+          "InIndex": 0,
+          "InLinks": 5
+        },
+        {
+          "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+          "AllOtherCodes": 0,
+          "BlockedByRobotsTxt": 0,
+          "Code2xx": 13,
+          "Code301": 1,
+          "Code302": 0,
+          "Code4xx": 0,
+          "Code5xx": 0,
+          "ConnectionTimeout": 0,
+          "ContainsMalware": 0,
+          "CrawlErrors": 0,
+          "CrawledPages": 3,
+          "Date": "/Date(1785913200000-0700)/",
+          "DnsFailures": 0,
+          "InIndex": 0,
+          "InLinks": 5
+        },
+        {
+          "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+          "AllOtherCodes": 0,
+          "BlockedByRobotsTxt": 0,
+          "Code2xx": 13,
+          "Code301": 1,
+          "Code302": 0,
+          "Code4xx": 0,
+          "Code5xx": 0,
+          "ConnectionTimeout": 0,
+          "ContainsMalware": 0,
+          "CrawlErrors": 0,
+          "CrawledPages": 3,
+          "Date": "/Date(1785999600000-0700)/",
+          "DnsFailures": 0,
+          "InIndex": 0,
+          "InLinks": 5
+        },
+        {
+          "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+          "AllOtherCodes": 0,
+          "BlockedByRobotsTxt": 0,
+          "Code2xx": 13,
+          "Code301": 1,
+          "Code302": 0,
+          "Code4xx": 0,
+          "Code5xx": 0,
+          "ConnectionTimeout": 0,
+          "ContainsMalware": 0,
+          "CrawlErrors": 0,
+          "CrawledPages": 2,
+          "Date": "/Date(1786086000000-0700)/",
+          "DnsFailures": 0,
+          "InIndex": 0,
+          "InLinks": 5
+        }
+      ]
+    }
   },
   "warningCounts": {
     "high": 0,
@@ -414,8 +6078,8 @@
     },
     "freeWins": {
       "schemaVersion": "1.0.0",
-      "generatedAt": null,
-      "providerState": "DISCONNECTED",
+      "generatedAt": "2026-08-08T14:37:16.273Z",
+      "providerState": "CONNECTED",
       "items": []
     },
     "competitors": {
@@ -426,7 +6090,7 @@
     },
     "providerHealth": {
       "schemaVersion": "2.0.0",
-      "generatedAt": "2026-08-08T01:25:59.578Z",
+      "generatedAt": "2026-08-08T14:37:16.273Z",
       "truthBoundary": "Grounded Google Search observations are evidence of live web surfacing/citations, not verified organic rank. GSC average position is the authoritative Google-owned performance metric available to this system.",
       "providers": {
         "gemini_grounded_search": {
@@ -442,8 +6106,8 @@
           "costBoundary": "Designed for the Gemini Developer API free tier when available; the workflow enforces a bounded daily query panel."
         },
         "gsc": {
-          "state": "NOT_CONFIGURED",
-          "configured": false,
+          "state": "CONNECTED",
+          "configured": true,
           "capabilities": {
             "ownedGooglePerformance": true,
             "averagePosition": true,
@@ -452,8 +6116,8 @@
           }
         },
         "bing": {
-          "state": "NOT_CONFIGURED",
-          "configured": false,
+          "state": "CONNECTED",
+          "configured": true,
           "capabilities": {
             "bingPerformance": true,
             "crawlStats": true,
@@ -471,14 +6135,14 @@
     },
     "queryObservations": {
       "schemaVersion": "2.0.0",
-      "generatedAt": "2026-08-08T01:25:59.578Z",
+      "generatedAt": "2026-08-08T14:37:16.273Z",
       "providerState": "NOT_CONFIGURED",
       "truthBoundary": "These are Google-Search-grounded web observations and citations. They are not literal organic SERP positions. Use GSC for Google-owned impressions, clicks, CTR, and average position.",
       "observations": []
     },
     "searchActions": {
       "schemaVersion": "2.0.0",
-      "generatedAt": "2026-08-08T01:25:59.578Z",
+      "generatedAt": "2026-08-08T14:37:16.273Z",
       "policy": "Hicks may autonomously apply bounded technical/search-alignment repairs. Substantive clinical claims and unsupported treatment assertions are never auto-generated from competitor content.",
       "items": [
         {
@@ -597,7 +6261,7 @@
     },
     "searchRepairs": {
       "schemaVersion": "2.0.0",
-      "updatedAt": "2026-08-08T01:25:59.578Z",
+      "updatedAt": "2026-08-08T14:37:16.388Z",
       "repairs": [],
       "lastRunRepairs": [],
       "externalOutcome": "UNPROVEN_PENDING_RETEST"

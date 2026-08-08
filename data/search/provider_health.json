@@ -1,6 +1,6 @@
 {
   "schemaVersion": "2.0.0",
-  "generatedAt": "2026-08-08T01:25:59.578Z",
+  "generatedAt": "2026-08-08T14:37:16.273Z",
   "truthBoundary": "Grounded Google Search observations are evidence of live web surfacing/citations, not verified organic rank. GSC average position is the authoritative Google-owned performance metric available to this system.",
   "providers": {
     "gemini_grounded_search": {
@@ -16,8 +16,8 @@
       "costBoundary": "Designed for the Gemini Developer API free tier when available; the workflow enforces a bounded daily query panel."
     },
     "gsc": {
-      "state": "NOT_CONFIGURED",
-      "configured": false,
+      "state": "CONNECTED",
+      "configured": true,
       "capabilities": {
         "ownedGooglePerformance": true,
         "averagePosition": true,
@@ -26,8 +26,8 @@
       }
     },
     "bing": {
-      "state": "NOT_CONFIGURED",
-      "configured": false,
+      "state": "CONNECTED",
+      "configured": true,
       "capabilities": {
         "bingPerformance": true,
         "crawlStats": true,
