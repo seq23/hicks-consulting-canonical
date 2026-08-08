@@ -105,6 +105,12 @@
     "validate:build-determinism": "node _ops/validators/deep/validate_build_determinism.js",
     "validate:deep": "node _ops/validation/run_validation_matrix.js --profile deep-autonomy",
     "validate:autonomy-cycle-e2e": "node _ops/validators/deep/validate_autonomy_cycle_e2e.mjs",
-    "validate:self-heal-e2e": "node _ops/validators/deep/validate_self_heal_e2e.mjs"
+    "validate:self-heal-e2e": "node _ops/validators/deep/validate_self_heal_e2e.mjs",
+    "search:observe": "node scripts/search/live_query_observer.mjs",
+    "search:actions": "node scripts/search/build_search_action_queue.mjs",
+    "search:repair": "node scripts/search/apply_bounded_search_repairs.mjs",
+    "search:intelligence": "node scripts/search/run_search_intelligence_cycle.mjs",
+    "search:provider-audit": "node scripts/search/run_provider_audit.mjs",
+    "validate:search-intelligence": "node _ops/validators/validate_search_intelligence_contract.js"
   }
 }

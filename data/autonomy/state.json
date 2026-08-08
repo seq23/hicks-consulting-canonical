@@ -3,12 +3,17 @@
   "runtimeMode": "FULL_SAFE_AUTONOMY",
   "paused": false,
   "emergencyStop": false,
-  "lastCycleAt": "2026-08-07T15:29:29.991Z",
-  "lastCycleStatus": "COMPLETED_NO_NEW_SCHEDULED_ITEMS",
+  "lastCycleAt": null,
+  "lastCycleStatus": "NOT_RUN",
   "currentPhase": "IDLE",
   "counts": {
-    "admitted": 2,
-    "discovered": 12
+    "discovered": 0,
+    "admitted": 0,
+    "drafted": 0,
+    "scheduled": 0,
+    "published": 0,
+    "skipped": 0,
+    "failed": 0
   },
   "velocityContract": "data/system/publishing_velocity_contract.json"
 }

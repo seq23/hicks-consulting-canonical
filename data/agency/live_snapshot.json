@@ -1,97 +1,83 @@
 {
   "provider": "live",
   "status": "ok",
-  "checkedAt": "2026-08-07T14:41:53.019Z",
+  "checkedAt": "2026-08-06T15:09:40.487Z",
   "siteUrl": "https://www.hicksconsulting.org",
   "checks": [
     {
       "route": "/",
       "status": 200,
       "ok": true,
-      "ms": 158,
+      "ms": 359,
       "contentType": "text/html; charset=utf-8"
     },
     {
       "route": "/therapy/",
       "status": 200,
       "ok": true,
-      "ms": 91,
-      "contentType": "text/html; charset=utf-8"
-    },
-    {
-      "route": "/black-therapist-memphis/",
-      "status": 200,
-      "ok": true,
-      "ms": 42,
-      "contentType": "text/html; charset=utf-8"
-    },
-    {
-      "route": "/anxiety-therapist-memphis/",
-      "status": 200,
-      "ok": true,
-      "ms": 61,
+      "ms": 158,
       "contentType": "text/html; charset=utf-8"
     },
     {
       "route": "/coaching/",
       "status": 200,
       "ok": true,
-      "ms": 69,
+      "ms": 101,
       "contentType": "text/html; charset=utf-8"
     },
     {
       "route": "/groups/",
       "status": 200,
       "ok": true,
-      "ms": 51,
+      "ms": 88,
       "contentType": "text/html; charset=utf-8"
     },
     {
       "route": "/corporate-speaking/",
       "status": 200,
       "ok": true,
-      "ms": 35,
+      "ms": 201,
       "contentType": "text/html; charset=utf-8"
     },
     {
       "route": "/about/",
       "status": 200,
       "ok": true,
-      "ms": 58,
+      "ms": 36,
       "contentType": "text/html; charset=utf-8"
     },
     {
       "route": "/resources/",
       "status": 200,
       "ok": true,
-      "ms": 64,
+      "ms": 89,
       "contentType": "text/html; charset=utf-8"
     },
     {
       "route": "/sitemap.xml",
       "status": 200,
       "ok": true,
-      "ms": 124,
+      "ms": 130,
       "contentType": "application/xml"
     },
     {
       "route": "/robots.txt",
       "status": 200,
       "ok": true,
-      "ms": 77,
+      "ms": 114,
       "contentType": "text/plain; charset=utf-8"
     },
     {
       "route": "/agency/",
       "status": 200,
       "ok": true,
-      "ms": 70,
+      "ms": 88,
       "contentType": "text/html; charset=utf-8"
     }
   ],
   "summary": {
-    "checked": 12,
-    "passed": 12,
+    "checked": 10,
+    "passed": 10,
     "failed": 0
   },
   "message": "All monitored live routes returned successful responses."

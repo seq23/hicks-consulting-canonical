@@ -138,13 +138,23 @@
   function renderSearchIntelligence() {
     const intel = report?.searchIntelligence || {};
     const queries = intel.targetQueries?.queries || intel.targetQueries?.items || [];
-    const freeWins = intel.freeWins || {};
-    const competitors = intel.competitors || {};
-    $('target-query-table').innerHTML = queries.length ? queries.map((item) => `<tr><td><strong>${escapeHtml(item.query)}</strong></td><td><a href="${escapeHtml(item.primaryPage || item.route || '#')}">${escapeHtml(item.primaryPage || item.route || 'Unassigned')}</a></td><td>${escapeHtml(item.intent || item.cluster || '—')}</td><td>${item.metrics ? `${num(item.metrics.impressions)} impressions · position ${escapeHtml(item.metrics.position || '—')}` : '<span class="muted">Awaiting connected GSC/Bing evidence</span>'}</td></tr>`).join('') : '<tr><td colspan="4" class="muted">No governed target-query registry found.</td></tr>';
-    const wins = freeWins.items || [];
-    $('free-win-panel').innerHTML = `<p>${healthBadge(freeWins.providerState || 'CONNECTION_REQUIRED')} Provider evidence</p>${wins.length ? `<ol class="agency-tip-list">${wins.slice(0, 12).map((item) => `<li><strong>${escapeHtml(item.query || item.title || item.type || 'Opportunity')}</strong><br/><span class="muted small">${escapeHtml(item.recommendation || item.action || item.reason || '')}</span></li>`).join('')}</ol>` : '<p class="muted">No observed free wins yet. Modeled opportunities are not labeled as rankings.</p>'}`;
-    const observations = competitors.observations || [];
-    $('competitor-panel').innerHTML = `<p>${healthBadge(competitors.providerState || 'CONNECTION_REQUIRED')} Observation provider</p>${observations.length ? `<ol class="agency-tip-list">${observations.slice(0, 12).map((item) => `<li><strong>${escapeHtml(item.query || item.competitor || 'Observation')}</strong><br/><span class="muted small">${escapeHtml(item.gap || item.recommendation || item.summary || '')}</span></li>`).join('')}</ol>` : '<p class="muted">No live competitor observations yet. Connect the search provider before current SERP comparisons can run.</p>'}`;
+    const observations = intel.queryObservations || {};
+    const actionQueue = intel.searchActions?.items || [];
+    const repairs = intel.searchRepairs || {};
+    const providerHealth = intel.providerHealth?.providers || {};
+    const observationByQuery = new Map((observations.observations || []).map((item) => [String(item.query || '').toLowerCase(), item]));
+    const actionByQuery = new Map(actionQueue.map((item) => [String(item.query || '').toLowerCase(), item]));
+    $('target-query-table').innerHTML = queries.length ? queries.map((item) => {
+      const obs = observationByQuery.get(String(item.query || '').toLowerCase());
+      const action = actionByQuery.get(String(item.query || '').toLowerCase());
+      const evidence = action ? `${action.status} · GSC ${num(action.evidence?.gscImpressions)} impressions · avg ${Number(action.evidence?.gscAveragePosition || 0).toFixed(1)} · grounded ${obs?.siteSurfaced ? 'surfaced' : 'not surfaced / unproven'}` : 'Awaiting live query cycle';
+      return `<tr><td><strong>${escapeHtml(item.query)}</strong></td><td><a href="${escapeHtml(item.primaryPage || item.route || '#')}">${escapeHtml(item.primaryPage || item.route || 'Unassigned')}</a></td><td>${escapeHtml(item.intent || item.cluster || '—')}</td><td>${escapeHtml(evidence)}</td></tr>`;
+    }).join('') : '<tr><td colspan="4" class="muted">No governed target-query registry found.</td></tr>';
+    const provider = providerHealth.gemini_grounded_search || {};
+    const repairRows = repairs.lastRunRepairs || [];
+    $('free-win-panel').innerHTML = `<p>${healthBadge(provider.state || observations.providerState || 'NOT_CONFIGURED')} Live query provider</p><p class="muted small">${escapeHtml(intel.truthBoundary || observations.truthBoundary || '')}</p><p><strong>${num(actionQueue.filter(x => x.status === 'OBSERVED').length)}</strong> observed · <strong>${num(actionQueue.filter(x => x.status === 'MISSING').length)}</strong> missing · <strong>${num(repairRows.length)}</strong> bounded repair(s) last cycle.</p>${repairRows.length ? '<ul>' + repairRows.slice(0,12).map(r => `<li><code>${escapeHtml(r.route)}</code> — ${escapeHtml((r.queries||[]).join(' · '))} — awaiting external retest</li>`).join('') + '</ul>' : '<p class="muted">No bounded repair was needed in the last recorded cycle.</p>'}`;
+    const observed = observations.observations || [];
+    $('competitor-panel').innerHTML = `<p>${healthBadge(observations.providerState || 'NOT_CONFIGURED')} Grounded competitor observations</p>${observed.length ? '<ul>' + observed.slice(0,10).map(item => `<li><strong>${escapeHtml(item.query)}</strong> — Hicks ${item.siteSurfaced ? 'surfaced' : 'not surfaced / unproven'}; ${num((item.competitors||[]).length)} competitor page(s) inspected. ${escapeHtml((item.diagnosis||[]).join(', '))}</li>`).join('') + '</ul>' : '<p class="muted">No grounded query observations are recorded yet. The scheduled workflow will populate these after the Gemini secret is configured.</p>'}`;
   }
 
   function renderTips() {

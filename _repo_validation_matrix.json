@@ -64,7 +64,8 @@
         "notification-freeze-behavior",
         "build-determinism",
         "autonomy-cycle-e2e",
-        "self-heal-e2e"
+        "self-heal-e2e",
+        "search-intelligence-contract"
       ]
     },
     "ingestion": {
@@ -98,7 +99,8 @@
       "description": "Agency dashboard infrastructure plus warning-only SEO/AEO/GEO and forward publishing-readiness checks.",
       "checks": [
         "agency-infrastructure",
-        "agency-quality"
+        "agency-quality",
+        "search-intelligence-contract"
       ]
     },
     "digital-products": {
@@ -182,7 +184,8 @@
         "notification-freeze-behavior",
         "build-determinism",
         "autonomy-cycle-e2e",
-        "self-heal-e2e"
+        "self-heal-e2e",
+        "search-intelligence-contract"
       ]
     }
   },

@@ -41,7 +41,7 @@ for (const item of manifest) {
 if (warnings.length) {
   reportFindings(warnings, `${warnings.length}-admin-preview-strong-warning(s)`);
 } else {
-  console.log(`Admin preview manifest OK (${checked} items checked, ${previewChecked} scheduled previews, ${publishedChecked} live public items, ${revokedChecked} revoked items).`);
+  console.log(`Admin preview manifest OK (${checked} items checked, ${previewChecked} scheduled previews, ${publishedChecked} live public items).`);
 }
 
 // Preview inconsistencies are operational cleanup items, not release blockers.

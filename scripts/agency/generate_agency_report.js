@@ -169,6 +169,10 @@ function generate() {
   const competitors = readJson(path.join(root, 'data', 'search', 'competitor_observations.json'), { providerState:'DISCONNECTED', observations:[] });
   const selfHeal = readJson(path.join(root, 'data', 'autonomy', 'self_heal_state.json'), { status:'NOT_RUN', repairs:[], skips:[] });
   const providerCapabilities = readJson(path.join(root, 'data', 'system', 'provider_capabilities.json'), { capabilities:{} });
+  const providerHealth = readJson(path.join(root, 'data', 'search', 'provider_health.json'), { providers:{} });
+  const queryObservations = readJson(path.join(root, 'data', 'search', 'query_observations.json'), { providerState:'NOT_CONFIGURED', observations:[] });
+  const searchActions = readJson(path.join(root, 'data', 'search', 'search_action_queue.json'), { items:[] });
+  const searchRepairs = readJson(path.join(root, 'data', 'search', 'search_repair_state.json'), { repairs:[], lastRunRepairs:[] });
   const stableGeneratedAt = process.env.AGENCY_REPORT_GENERATED_AT || [gsc.checkedAt, bing.checkedAt, live.checkedAt].filter(Boolean).sort().slice(-1)[0] || '1970-01-01T00:00:00.000Z';
   const report = {
     generatedAt:stableGeneratedAt,
@@ -181,7 +185,7 @@ function generate() {
     priorities,
     duplicatePairs:{ live:liveAnalysis.duplicatePairs.slice(0,50), forward:sourceAnalysis.duplicatePairs.filter((p)=>approvedRoutes.has(p.a)&&approvedRoutes.has(p.b)).slice(0,50) },
     autonomy:{ state:autonomyState, velocityContract, selfHeal, providerCapabilities },
-    searchIntelligence:{ targetQueries, freeWins, competitors },
+    searchIntelligence:{ targetQueries, freeWins, competitors, providerHealth, queryObservations, searchActions, searchRepairs, truthBoundary:'Grounded Google Search citations are live web surfacing observations, not literal organic rank. GSC remains the owned-site source for Google clicks, impressions, CTR, and average position.' },
     tips:{
       seo:['Keep search titles concise while preserving the editorial H1.','Use contextual internal links to the most relevant service and resource pages.','Review warnings by affected URL instead of changing the whole architecture.'],
       aeo:['Lead with a direct short answer that can stand on its own.','Use descriptive H2s, visible dates, and complete Article schema.','Answer the exact page intent before broadening into adjacent context.'],

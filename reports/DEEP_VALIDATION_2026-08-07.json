@@ -1,0 +1,51 @@
+{
+  "schema_version": "1.0.0",
+  "repo": "hicks-consulting-canonical",
+  "validation_mode": "deep_on_demand",
+  "local_date": "2026-08-07",
+  "source_zip": "hicks-consulting-canonical-FINAL-search-self-healing.zip",
+  "source_zip_sha256": "243714f64c6aaf429d18fd4ba9bf0e4efb5299b57b558dfb9adbac61f4aa49b7",
+  "repairs_from_deep_validation": [
+    "Registered the search-intelligence validator under the governed validate:* registry convention.",
+    "Restored LLM-only route exclusion in sitemap parity after the Bing consolidation.",
+    "Restored revoked-content semantics in the admin preview validator."
+  ],
+  "release_gate": {
+    "command": "npm run release:prepush:local",
+    "status": "PASS_WITH_NON_BLOCKING_FINDINGS",
+    "pass_count": 57,
+    "hard_fail_findings": 0,
+    "execution_hard_fail": 0,
+    "strong_warnings": 1,
+    "soft_warnings": 1
+  },
+  "deep_profile": {
+    "command": "npm run validate:deep",
+    "status": "PASS_WITH_NON_BLOCKING_FINDINGS",
+    "pass_count": 57,
+    "hard_fail_findings": 0,
+    "execution_hard_fail": 0,
+    "strong_warnings": 1,
+    "soft_warnings": 1
+  },
+  "non_blocking_findings": [
+    "GSC + Bing measurement remains zero because live provider credentials are not configured in this clean-room validation environment.",
+    "Five pre-existing editorial word-count advisories remain warning-only."
+  ],
+  "search_cycle": {
+    "provider_state": "NOT_CONFIGURED",
+    "queries_observed": 0,
+    "safe_repairs_applied": 0,
+    "truth_behavior": "UNKNOWN/HOLD actions only; no fabricated ranking or repair success."
+  },
+  "preservation": {
+    "bing_duplicate_consolidation_redirects": 54,
+    "publishing_velocity_immutable": true,
+    "protected_editorial_core_passed": true,
+    "build_determinism_passed": true
+  },
+  "high_risk_secret_pattern_scan": "PASS",
+  "cache_temp_scan": "PASS",
+  "live_postdeploy_validation": "NOT_RUN_NEW_ARTIFACT_NOT_DEPLOYED",
+  "pre_receipt_tree_sha256": "fb5dbbfd94cb4284b02c588b5fe3782f64f4aee5e7455e9451214ff7ff19ad1b"
+}

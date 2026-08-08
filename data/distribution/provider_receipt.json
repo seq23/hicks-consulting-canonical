@@ -1,7 +1,7 @@
 {
   "schema_version": "2.0",
-  "receipt_id": "2026-08-07T13-45-36.289Z-31184161047",
-  "attempted_at": "2026-08-07T13:45:36.289Z",
+  "receipt_id": "2026-08-06T13-59-20.651Z-31108550399",
+  "attempted_at": "2026-08-06T13:59:20.651Z",
   "publication_trigger": "ONLY_AFTER_EXISTING_CONTENT_PUBLISH_WORKFLOW_SUCCEEDS",
   "chain": [
     "successful_publish",
@@ -15,189 +15,31 @@
   "sitemap_refresh": {
     "status": "SUCCESS",
     "sitemap_url": "https://www.hicksconsulting.org/sitemap.xml",
-    "sitemap_sha256": "72691630c7d839ffcb1b0612cb8608e0422aa4485cf3b8dba4d9aae55a6eafbe",
-    "url_count": 70
+    "sitemap_sha256": "3533ad48d8355c232fde3b0c7a44c57b6aa5edbc4225d8e233d369e3253e63fb",
+    "url_count": 129
   },
   "indexnow": {
     "status": "SUCCESS",
     "attempted": true,
     "http_status": 200,
-    "submitted_urls": 70,
+    "submitted_urls": 129,
     "key_location": "https://www.hicksconsulting.org/indexnow.txt"
   },
   "gsc_sitemap_submission": {
-    "status": "SUCCESS",
-    "attempted": true,
-    "http_status": 204,
-    "site_url": "sc-domain:hicksconsulting.org",
-    "sitemap_url": "https://www.hicksconsulting.org/sitemap.xml"
+    "status": "NOT_CONFIGURED",
+    "attempted": false
   },
   "priority_url_inspection": {
-    "status": "SUCCESS",
-    "attempted": true,
+    "status": "NOT_CONFIGURED",
+    "attempted": false,
     "requested_urls": 17,
-    "inspected_urls": 17,
-    "failed_urls": 0,
-    "results": [
-      {
-        "url": "https://www.hicksconsulting.org/",
-        "status": "SUCCESS",
-        "http_status": 200,
-        "verdict": "PASS",
-        "coverage_state": "Submitted and indexed",
-        "indexing_state": "INDEXING_ALLOWED",
-        "last_crawl_time": "2026-07-30T09:36:09Z"
-      },
-      {
-        "url": "https://www.hicksconsulting.org/therapy/",
-        "status": "SUCCESS",
-        "http_status": 200,
-        "verdict": "PASS",
-        "coverage_state": "Submitted and indexed",
-        "indexing_state": "INDEXING_ALLOWED",
-        "last_crawl_time": "2026-05-27T23:52:58Z"
-      },
-      {
-        "url": "https://www.hicksconsulting.org/coaching/",
-        "status": "SUCCESS",
-        "http_status": 200,
-        "verdict": "NEUTRAL",
-        "coverage_state": "Discovered - currently not indexed",
-        "indexing_state": "INDEXING_STATE_UNSPECIFIED",
-        "last_crawl_time": null
-      },
-      {
-        "url": "https://www.hicksconsulting.org/corporate-speaking/",
-        "status": "SUCCESS",
-        "http_status": 200,
-        "verdict": "NEUTRAL",
-        "coverage_state": "Discovered - currently not indexed",
-        "indexing_state": "INDEXING_STATE_UNSPECIFIED",
-        "last_crawl_time": null
-      },
-      {
-        "url": "https://www.hicksconsulting.org/organizational-training-inquiry/",
-        "status": "SUCCESS",
-        "http_status": 200,
-        "verdict": "NEUTRAL",
-        "coverage_state": "Discovered - currently not indexed",
-        "indexing_state": "INDEXING_STATE_UNSPECIFIED",
-        "last_crawl_time": null
-      },
-      {
-        "url": "https://www.hicksconsulting.org/contact/",
-        "status": "SUCCESS",
-        "http_status": 200,
-        "verdict": "NEUTRAL",
-        "coverage_state": "Discovered - currently not indexed",
-        "indexing_state": "INDEXING_STATE_UNSPECIFIED",
-        "last_crawl_time": null
-      },
-      {
-        "url": "https://www.hicksconsulting.org/resources/",
-        "status": "SUCCESS",
-        "http_status": 200,
-        "verdict": "NEUTRAL",
-        "coverage_state": "Discovered - currently not indexed",
-        "indexing_state": "INDEXING_STATE_UNSPECIFIED",
-        "last_crawl_time": null
-      },
-      {
-        "url": "https://www.hicksconsulting.org/resources/guides/burnout-recovery-for-black-women-who-keep-functioning-through-everything/",
-        "status": "SUCCESS",
-        "http_status": 200,
-        "verdict": "NEUTRAL",
-        "coverage_state": "Crawled - currently not indexed",
-        "indexing_state": "INDEXING_STATE_UNSPECIFIED",
-        "last_crawl_time": "2026-05-28T03:09:37Z"
-      },
-      {
-        "url": "https://www.hicksconsulting.org/resources/guides/anxiety-overwhelm-and-the-cost-of-being-mentally-on-all-the-time/",
-        "status": "SUCCESS",
-        "http_status": 200,
-        "verdict": "NEUTRAL",
-        "coverage_state": "Discovered - currently not indexed",
-        "indexing_state": "INDEXING_STATE_UNSPECIFIED",
-        "last_crawl_time": null
-      },
-      {
-        "url": "https://www.hicksconsulting.org/resources/guides/boundaries-people-pleasing-and-the-fear-of-letting-people-down/",
-        "status": "SUCCESS",
-        "http_status": 200,
-        "verdict": "NEUTRAL",
-        "coverage_state": "Discovered - currently not indexed",
-        "indexing_state": "INDEXING_STATE_UNSPECIFIED",
-        "last_crawl_time": null
-      },
-      {
-        "url": "https://www.hicksconsulting.org/resources/white-papers/the-burnout-and-boundaries-playbook-for-high-achieving-black-women/",
-        "status": "SUCCESS",
-        "http_status": 200,
-        "verdict": "NEUTRAL",
-        "coverage_state": "Discovered - currently not indexed",
-        "indexing_state": "INDEXING_STATE_UNSPECIFIED",
-        "last_crawl_time": null
-      },
-      {
-        "url": "https://www.hicksconsulting.org/resources/insights/why-successful-black-women-still-feel-worn-down/",
-        "status": "SUCCESS",
-        "http_status": 200,
-        "verdict": "NEUTRAL",
-        "coverage_state": "Discovered - currently not indexed",
-        "indexing_state": "INDEXING_STATE_UNSPECIFIED",
-        "last_crawl_time": null
-      },
-      {
-        "url": "https://www.hicksconsulting.org/resources/articles/burnout-or-just-too-much/",
-        "status": "SUCCESS",
-        "http_status": 200,
-        "verdict": "NEUTRAL",
-        "coverage_state": "Discovered - currently not indexed",
-        "indexing_state": "INDEXING_STATE_UNSPECIFIED",
-        "last_crawl_time": null
-      },
-      {
-        "url": "https://www.hicksconsulting.org/resources/guides/boundaries-for-black-women/",
-        "status": "SUCCESS",
-        "http_status": 200,
-        "verdict": "NEUTRAL",
-        "coverage_state": "URL is unknown to Google",
-        "indexing_state": "INDEXING_STATE_UNSPECIFIED",
-        "last_crawl_time": null
-      },
-      {
-        "url": "https://www.hicksconsulting.org/resources/white-papers/therapy-vs-coaching-guide/",
-        "status": "SUCCESS",
-        "http_status": 200,
-        "verdict": "NEUTRAL",
-        "coverage_state": "Discovered - currently not indexed",
-        "indexing_state": "INDEXING_STATE_UNSPECIFIED",
-        "last_crawl_time": null
-      },
-      {
-        "url": "https://www.hicksconsulting.org/resources/insights/when-rest-feels-like-guilt/",
-        "status": "SUCCESS",
-        "http_status": 200,
-        "verdict": "NEUTRAL",
-        "coverage_state": "Discovered - currently not indexed",
-        "indexing_state": "INDEXING_STATE_UNSPECIFIED",
-        "last_crawl_time": null
-      },
-      {
-        "url": "https://www.hicksconsulting.org/resources/articles/when-you-keep-saying-yes/",
-        "status": "SUCCESS",
-        "http_status": 200,
-        "verdict": "NEUTRAL",
-        "coverage_state": "Discovered - currently not indexed",
-        "indexing_state": "INDEXING_STATE_UNSPECIFIED",
-        "last_crawl_time": null
-      }
-    ]
+    "inspected_urls": 0,
+    "results": []
   },
   "durable_receipt": {
     "status": "SUCCESS",
     "latest_path": "data/distribution/provider_receipt.json",
-    "history_path": "data/distribution/receipts/2026-08-07T13-45-36.289Z-31184161047.json"
+    "history_path": "data/distribution/receipts/2026-08-06T13-59-20.651Z-31108550399.json"
   },
   "observation_feedback": {
     "status": "SUCCESS",

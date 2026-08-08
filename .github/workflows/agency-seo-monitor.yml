@@ -36,21 +36,30 @@ jobs:
       - name: Refresh live, GSC, and Bing snapshots
         run: npm run agency:refresh
         continue-on-error: true
-      - name: Build free-win and competitor measurement ledgers
+      - name: Build GSC free-wins and live grounded query observations
         run: npm run autonomy:measure
         env:
-          SEARCH_API_URL: ${{ secrets.SEARCH_API_URL }}
-          SEARCH_PROVIDER_API_KEY: ${{ secrets.SEARCH_PROVIDER_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_SEARCH_MODEL: gemini-2.5-flash-lite
+          LIVE_QUERY_LIMIT: '7'
+        continue-on-error: true
+      - name: Apply bounded autonomous search repairs
+        run: npm run search:repair
+        env:
+          SEARCH_AUTO_REPAIR: '1'
         continue-on-error: true
       - name: Build dashboard and advisory QA report
         run: npm run build
+        continue-on-error: true
+      - name: Verify agency search-intelligence contract
+        run: npm run validate:profile:agency
         continue-on-error: true
       - name: Commit monitoring snapshots
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          if [[ -n "$(git status --porcelain data/agency data/search)" ]]; then
-            git add data/agency data/search
+          if [[ -n "$(git status --porcelain data/agency data/search pages)" ]]; then
+            git add data/agency data/search pages
             git commit -m "Refresh agency SEO monitoring snapshots"
             git push
           else
@@ -62,4 +71,6 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: hicks-agency-seo-monitor
-          path: data/agency/
+          path: |
+            data/agency/
+            data/search/

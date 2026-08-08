@@ -1,6 +1,10 @@
 import { buildFreeWins } from './lib/search_intelligence.mjs';
-import { refreshCompetitorObservations } from './lib/competitor.mjs';
-const clock = new Date();
-const freeWins = buildFreeWins(clock);
-const competitors = await refreshCompetitorObservations(process.env, clock);
-console.log(JSON.stringify({ ok: true, freeWins: freeWins.items.length, competitorQueries: competitors.observations.length, providerState: { gsc: freeWins.providerState, competitor: competitors.providerState } }, null, 2));
+import { runLiveQueryObservation } from '../search/live_query_observer.mjs';
+import { buildSearchActionQueue } from '../search/build_search_action_queue.mjs';
+import { buildProviderHealth } from '../search/provider_truth.mjs';
+const clock=new Date();
+const freeWins=buildFreeWins(clock);
+const observations=await runLiveQueryObservation(process.env,clock);
+const queue=buildSearchActionQueue(clock);
+const health=buildProviderHealth(process.env,clock);
+console.log(JSON.stringify({ok:true,freeWins:freeWins.items.length,queriesObserved:observations.observations.length,providerState:{gsc:freeWins.providerState,liveSearch:observations.providerState},actionQueue:queue.items.length,providerHealth:health.providers},null,2));

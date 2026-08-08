@@ -856,6 +856,20 @@
       "findingProtocol": "VALIDATION_FINDING",
       "enabled": true,
       "rationale": "Proves self-healing is reversible and bounded rather than merely checking for a repair script."
+    },
+    {
+      "id": "search-intelligence-contract",
+      "npmScript": "validate:search-intelligence",
+      "entrypoint": "_ops/validators/validate_search_intelligence_contract.js",
+      "severity": "HARD_FAIL",
+      "blocksRelease": true,
+      "group": "agency-search",
+      "owner": "repo-maintainers",
+      "scope": "live query provider truth and bounded self-healing",
+      "ciInvocation": "MATRIX_ONLY",
+      "findingProtocol": "VALIDATION_FINDING",
+      "enabled": true,
+      "rationale": "The scheduled search loop must use grounded search truthfully, expose provider readiness, and preserve bounded repairs."
     }
   ]
 }

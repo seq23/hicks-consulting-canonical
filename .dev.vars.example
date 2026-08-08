@@ -21,12 +21,12 @@ PUBLICATION_NOTIFICATION_FROM=Hicks Consulting <notifications@verified-domain.ex
 # Google Search Console monitoring
 GSC_SITE_URL=https://www.hicksconsulting.org/
 GSC_SERVICE_ACCOUNT_EMAIL=service-account@example-project.iam.gserviceaccount.com
-GSC_PRIVATE_KEY="-----BEGIN PRIVATE KEY-----\nREPLACE\n-----END PRIVATE KEY-----\n"
+GSC_PRIVATE_KEY=replace_with_pem_private_key_with_escaped_newlines
 # Optional temporary token fallback:
 # GSC_ACCESS_TOKEN=replace_with_short_lived_access_token
 
 # Distribution / URL Inspection workflow uses the full service-account JSON
-GSC_SERVICE_ACCOUNT_JSON={"type":"service_account","project_id":"replace","private_key_id":"replace","private_key":"-----BEGIN PRIVATE KEY-----\\nREPLACE\\n-----END PRIVATE KEY-----\\n","client_email":"replace","token_uri":"https://oauth2.googleapis.com/token"}
+GSC_SERVICE_ACCOUNT_JSON={"type":"service_account","project_id":"replace","private_key_id":"replace","private_key":"replace_with_pem_private_key","client_email":"replace","token_uri":"https://oauth2.googleapis.com/token"}
 
 # Bing Webmaster Tools
 BING_SITE_URL=https://www.hicksconsulting.org/
@@ -40,3 +40,8 @@ SEARCH_PROVIDER_API_KEY=replace_with_search_provider_key
 # IndexNow
 INDEXNOW_KEY=replace_with_indexnow_key
 INDEXNOW_KEY_LOCATION=https://www.hicksconsulting.org/indexnow.txt
+# Live search intelligence (never commit a real value)
+GEMINI_API_KEY=
+GEMINI_SEARCH_MODEL=gemini-2.5-flash-lite
+LIVE_QUERY_LIMIT=7
+SEARCH_AUTO_REPAIR=1
