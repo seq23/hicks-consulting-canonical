@@ -16,13 +16,14 @@
     {
       "id": "notification-publish-2026-08-10T13-48-00-336Z",
       "receiptId": "publish-2026-08-10T13-48-00-336Z",
-      "state": "PENDING",
+      "state": "PROVIDER_GATED",
       "attempts": 0,
       "createdAt": "2026-08-10T13:48:00.336Z",
       "email": {
         "subject": "Hicks Consulting published: What to Do When You Are Tired of Being Everyone’s Safe Place: What This Looks Like In Real Life",
         "html": "<p>The autonomous publishing system completed a safe publication run.</p><h2>What to Do When You Are Tired of Being Everyone’s Safe Place: What This Looks Like In Real Life</h2>\n<p><strong>Live URL:</strong> <a href=\"https://www.hicksconsulting.org/resources/insights/what-to-do-when-you-are-tired-of-being-everyone-s-safe-place-what-this-looks-like-in/\">https://www.hicksconsulting.org/resources/insights/what-to-do-when-you-are-tired-of-being-everyone-s-safe-place-what-this-looks-like-in/</a></p>\n<p><strong>Why it was selected:</strong> Released from the existing client editorial calendar at its established date.</p>\n<p><strong>Target query or cluster:</strong> Editorial calendar topic</p>\n<p><strong>Safe Harbor decision:</strong> EXISTING_VALIDATED_EDITORIAL_ITEM</p>\n<p><strong>What the system checked:</strong> source and claim safety, duplication, metadata, internal links, build integrity, and publishing-state integrity.</p>\n<p><strong>Sources carried by the page:</strong> No external source was required or recorded for this resource.</p>\n<p><strong>Internal links added:</strong> Existing page navigation and related-resource links were preserved.</p>\n<p><strong>Automatic repairs:</strong> None required.</p>\n<p>Please double-check the page when convenient. Reply with any personal context, examples, nuance, corrections, or additions you want considered. No reply is required for the page to remain live.</p><hr/><p><strong>Run receipt:</strong> publish-2026-08-10T13-48-00-336Z</p><p>This email is an explanation and optional review request, not an approval gate.</p>"
-      }
+      },
+      "lastError": "Email provider is not configured."
     }
   ]
 }
