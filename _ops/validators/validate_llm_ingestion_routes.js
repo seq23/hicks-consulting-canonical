@@ -26,7 +26,7 @@ for (const route of routes) {
 const sitemap = read('sitemap.xml');
 const llms = read('llms.txt');
 for (const route of routes) {
-  if (sitemap.includes(route)) warn(`sitemap.xml should exclude LLM-only route ${route}.`);
+  if (!sitemap.includes(route)) warn(`sitemap.xml is missing approved LLM Atlas route ${route}. Run npm run build.`);
   if (!llms.includes(route)) warn(`llms.txt is missing ${route}. Run npm run build.`);
 }
 

@@ -28,3 +28,10 @@ Any install, build, hard validator, validator execution, commit, or push failure
 ## Updater v3.1 build-directory compatibility
 
 The generic updater excludes directories named `build` at any depth. The canonical production build entrypoint therefore lives at `scripts/site_build.js`, not `scripts/build/build.js`. `release:prepush:local` removes the legacy `scripts/build/` directory before validation so an older tracked copy cannot survive snapshot application and bypass agency report generation.
+
+
+## Runtime evidence preservation (2026-08-09)
+
+`data/system/runtime_evidence_preservation.json` is active repo authority for append-only runtime proof. Before a snapshot updater replaces repository contents, it must preserve and merge the listed runtime-evidence paths. A source ZIP is authoritative for source code, but absence of an older runtime receipt from a newer source snapshot is **not** authority to delete that receipt from the operator repository.
+
+This repository declaration does not by itself prove the external generic updater implements the merge. The updater layer must be inspected and repaired separately before claiming cross-snapshot evidence preservation is fully enforced.

@@ -15,7 +15,6 @@ permissions:
 jobs:
   monitor:
     runs-on: ubuntu-latest
-    continue-on-error: true
     env:
       LIVE_SITE_URL: https://www.hicksconsulting.org
       GSC_SITE_URL: ${{ secrets.GSC_SITE_URL }}
@@ -25,10 +24,10 @@ jobs:
       BING_SITE_URL: ${{ secrets.BING_SITE_URL }}
       BING_WEBMASTER_API_KEY: ${{ secrets.BING_WEBMASTER_API_KEY }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with:
           fetch-depth: 0
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v7
         with:
           node-version: 20
       - run: git pull --rebase origin main
@@ -47,13 +46,10 @@ jobs:
         run: npm run search:repair
         env:
           SEARCH_AUTO_REPAIR: '1'
-        continue-on-error: true
       - name: Build dashboard and advisory QA report
         run: npm run build
-        continue-on-error: true
       - name: Verify agency search-intelligence contract
         run: npm run validate:profile:agency
-        continue-on-error: true
       - name: Commit monitoring snapshots
         run: |
           git config user.name "github-actions[bot]"
@@ -65,10 +61,9 @@ jobs:
           else
             echo "No agency monitoring changes to commit."
           fi
-        continue-on-error: true
       - name: Upload advisory monitoring artifact
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: hicks-agency-seo-monitor
           path: |

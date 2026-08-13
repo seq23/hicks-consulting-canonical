@@ -54,8 +54,17 @@ for (const token of ['wireLeadMagnetForm', '/api/lead-magnet', 'stress-worksheet
 }
 
 const fn = read('functions/api/lead-magnet.js');
+const sharedFormHelper = read('functions/api/_lib/form-database.js');
 for (const token of [
   "const FORM_TYPE = 'lead-magnet'",
+  "from './_lib/form-database.js'",
+  'handleFormRequestPost',
+  'handleFormRequestGet'
+]) {
+  if (!fn.includes(token)) fail(`Lead magnet thin wrapper missing token: ${token}`);
+}
+if (fn.includes('FORM_DATABASE_FORMS') || fn.includes('postJsonToWebhook') || fn.includes('sendFormDatabaseSubmission')) fail('Lead magnet endpoint must remain a thin wrapper and must not duplicate shared transport logic.');
+for (const token of [
   'FORM_DATABASE_FORMS',
   'FORM_DATABASE_WEBHOOK_URL',
   'FORM_DATABASE_SHARED_SECRET',
@@ -65,19 +74,17 @@ for (const token of [
   'sendFormDatabaseSubmission',
   'FORM_DATABASE_DISPATCH_FAILED',
   'Consent is required',
-  'downloadPath'
+  'downloadPath',
+  "webhookUrl: env.LEAD_MAGNET_WEBHOOK_URL || env.FORM_DATABASE_WEBHOOK_URL || env.TRAINING_INQUIRY_WEBHOOK_URL",
+  "redirect: 'manual'",
+  "method: 'GET'",
+  'webhookResult.parsed.ok !== true'
 ]) {
-  if (!fn.includes(token)) fail(`Lead magnet function missing token: ${token}`);
+  if (!sharedFormHelper.includes(token)) fail(`Shared form helper missing lead-magnet behavior token: ${token}`);
 }
-
-
-if (!fn.includes("webhookUrl: env.LEAD_MAGNET_WEBHOOK_URL || env.FORM_DATABASE_WEBHOOK_URL || env.TRAINING_INQUIRY_WEBHOOK_URL")) fail('Lead magnet function must prefer LEAD_MAGNET_WEBHOOK_URL before legacy training webhook URL.');
-if (!fn.includes("redirect: 'manual'")) fail('Lead magnet function must manually capture Apps Script 302 redirect.');
-if (!fn.includes("method: 'GET'")) fail('Lead magnet function must follow Apps Script redirect with a pristine GET.');
-if (fn.includes("headers: { accept: 'application/json' }")) fail('Lead magnet function must not send headers on the redirected GET.');
-if (fn.includes('postJsonWithManualRedirect')) fail('Lead magnet function must use the unified postJsonToWebhook helper only.');
-if (!fn.includes('webhookResult.parsed.ok !== true')) fail('Lead magnet function must require Apps Script JSON ok:true before revealing download.');
-if (fn.includes('context.waitUntil') || fn.includes('queueFormDatabaseSubmission')) fail('Lead magnet function must not background-queue spreadsheet capture.');
+if (sharedFormHelper.includes("headers: { accept: 'application/json' }")) fail('Shared form helper must not send headers on the redirected GET.');
+if (sharedFormHelper.includes('postJsonWithManualRedirect')) fail('Shared form helper must use the unified postJsonToWebhook helper only.');
+if (sharedFormHelper.includes('context.waitUntil') || sharedFormHelper.includes('queueFormDatabaseSubmission')) fail('Shared form helper must not background-queue spreadsheet capture.');
 
 const worker = read('worker/_worker.js');
 for (const token of [

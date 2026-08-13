@@ -7,6 +7,9 @@ if (!fs.existsSync(workerPath)) fail('Cloudflare Advanced Mode worker missing: w
 const worker = read('worker/_worker.js');
 const siteJs = read('assets/js/site.js');
 const packageJson = JSON.parse(read('package.json'));
+const sharedFunctionHelperPath = 'functions/api/_lib/form-database.js';
+if (!fs.existsSync(path.join(root, sharedFunctionHelperPath))) fail('Shared form database helper missing.');
+const sharedFunctionHelper = read(sharedFunctionHelperPath);
 
 const formContracts = [
   {
@@ -75,6 +78,13 @@ if (worker.includes('context.waitUntil') || worker.includes('queueFormDatabaseSu
   fail('Worker must not background-queue form submissions because users would see success without confirmed spreadsheet capture.');
 }
 
+
+for (const token of ['FORM_DATABASE_FORMS', 'postJsonToWebhook', 'sendFormDatabaseSubmission', 'FORM_DATABASE_DISPATCH_FAILED', 'FORM_DATABASE_DISPATCH_ERROR', 'normalizeForwardFields', 'handleFormDatabaseSubmission', "redirect: 'manual'", "method: 'GET'", 'webhookResult.parsed.ok !== true']) {
+  if (!sharedFunctionHelper.includes(token)) fail(`Shared form helper missing transport token: ${token}`);
+}
+if (sharedFunctionHelper.includes("headers: { accept: 'application/json' }") || sharedFunctionHelper.includes('postJsonWithManualRedirect')) fail('Shared form helper must preserve pristine redirected GET behavior.');
+if (sharedFunctionHelper.includes('context.waitUntil') || sharedFunctionHelper.includes('queueFormDatabaseSubmission')) fail('Shared form helper must synchronously confirm form database receipt.');
+
 for (const contract of formContracts) {
   const html = read(contract.page);
   const fnPath = path.join(root, contract.functionPath);
@@ -83,17 +93,10 @@ for (const contract of formContracts) {
 
   if (!worker.includes(`route: '${contract.route}'`)) fail(`Worker registry missing route ${contract.route}.`);
   if (!worker.includes(`'${contract.type}':`) && !worker.includes(`${contract.type}:`)) fail(`Worker registry missing form type ${contract.type}.`);
-  if (!fn.includes(`const FORM_TYPE = '${contract.type}'`)) fail(`${contract.functionPath} must be a thin wrapper for ${contract.type}.`);
-  if (!fn.includes('FORM_DATABASE_FORMS')) fail(`${contract.functionPath} missing unified form registry.`);
-  if (!fn.includes('postJsonToWebhook')) fail(`${contract.functionPath} missing Apps Script webhook transport.`);
-    if (!fn.includes("redirect: 'manual'")) fail(`${contract.functionPath} must manually capture Apps Script 302 redirect.`);
-  if (!fn.includes("method: 'GET'")) fail(`${contract.functionPath} must follow Apps Script redirect with a pristine GET.`);
-  if (fn.includes("headers: { accept: 'application/json' }")) fail(`${contract.functionPath} must not send headers on the redirected GET.`);
-  if (fn.includes('postJsonWithManualRedirect')) fail(`${contract.functionPath} must use the unified postJsonToWebhook helper only.`);
-  if (!fn.includes('sendFormDatabaseSubmission')) fail(`${contract.functionPath} must synchronously send Apps Script submission.`);
-  if (!fn.includes('webhookResult.parsed.ok !== true')) fail(`${contract.functionPath} must require Apps Script JSON ok:true before returning success.`);
-  if (!fn.includes('FORM_DATABASE_DISPATCH_FAILED')) fail(`${contract.functionPath} must log failed dispatches.`);
-  if (fn.includes('context.waitUntil') || fn.includes('queueFormDatabaseSubmission')) fail(`${contract.functionPath} must not background-queue form database submissions.`);
+  if (!fn.includes(`const FORM_TYPE = '${contract.type}'`)) fail(`${contract.functionPath} must declare the ${contract.type} wrapper type.`);
+  if (!fn.includes("from './_lib/form-database.js'")) fail(`${contract.functionPath} must delegate to the shared form database helper.`);
+  if (!fn.includes('handleFormRequestPost') || !fn.includes('handleFormRequestGet')) fail(`${contract.functionPath} must remain a thin shared-helper wrapper.`);
+  if (fn.includes('FORM_DATABASE_FORMS') || fn.includes('postJsonToWebhook') || fn.includes('sendFormDatabaseSubmission')) fail(`${contract.functionPath} must not duplicate shared form transport logic.`);
 
   const formPattern = new RegExp(`<form[^>]+id=["']${contract.formId}["'][^>]*>`, 'i');
   if (!formPattern.test(html)) fail(`${contract.type} HTML form missing: ${contract.formId}.`);
@@ -102,7 +105,7 @@ for (const contract of formContracts) {
 
   for (const field of contract.fields) {
     if (!worker.includes(`'${field}'`)) fail(`Worker registry missing ${contract.type} field: ${field}`);
-    if (!fn.includes(`'${field}'`)) fail(`${contract.functionPath} registry missing field: ${field}`);
+    if (!sharedFunctionHelper.includes(`'${field}'`)) fail(`Shared form helper registry missing ${contract.type} field: ${field}`);
   }
   for (const field of contract.required) {
     if (!worker.includes(`'${field}'`)) fail(`Worker registry missing ${contract.type} required field: ${field}`);
@@ -110,7 +113,7 @@ for (const contract of formContracts) {
 
   if (contract.downloadPath) {
     if (!worker.includes(contract.downloadPath)) fail('Worker missing lead magnet download path.');
-    if (!fn.includes(contract.downloadPath)) fail('Lead magnet function missing download path.');
+    if (!sharedFunctionHelper.includes(contract.downloadPath)) fail('Shared form helper missing lead magnet download path.');
   }
 }
 

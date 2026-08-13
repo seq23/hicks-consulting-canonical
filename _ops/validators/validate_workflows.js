@@ -15,8 +15,8 @@ for (const file of files) {
     if (!pkg.scripts || !pkg.scripts[script]) fail(`Workflow ${file} references missing npm script: ${script}`);
     if (leafScripts.has(script)) fail(`Workflow ${file} invokes leaf validator ${script} directly; use a registered validation profile.`);
   }
-  if (!/uses:\s+actions\/checkout@v4/.test(content)) fail(`Workflow ${file} missing actions/checkout@v4`);
-  if (!/uses:\s+actions\/setup-node@v4/.test(content)) fail(`Workflow ${file} missing actions/setup-node@v4`);
+  if (!/uses:\s+actions\/checkout@v\d+/.test(content)) fail(`Workflow ${file} missing actions/checkout`);
+  if (!/uses:\s+actions\/setup-node@v\d+/.test(content)) fail(`Workflow ${file} missing actions/setup-node`);
   const writes = /permissions:[\s\S]*contents:\s*write/.test(content) || /git\s+push/.test(content);
   if (writes) {
     writeWorkflows.push(file);

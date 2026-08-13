@@ -84,6 +84,14 @@ const documents = existingDocuments();
 const receipts = [];
 state.currentPhase = 'RUNNING';
 state.lastCycleAt = nowIso(clock);
+const draftingProviderIsConfigured = providerConfigured(process.env);
+state.draftingProvider = {
+  configured: draftingProviderIsConfigured,
+  status: draftingProviderIsConfigured ? 'CONFIGURED' : 'NOT_CONFIGURED',
+  requiredEnvironment: ['LLM_API_URL', 'LLM_API_KEY', 'LLM_MODEL'],
+  lastSuccessfulDraftAt: state.draftingProvider?.lastSuccessfulDraftAt || null,
+  lastProviderGate: state.draftingProvider?.lastProviderGate || null
+};
 
 for (const item of candidates) {
   try {
@@ -97,15 +105,19 @@ for (const item of candidates) {
       transition(item, 'ADMITTED', 'Candidate admitted inside the existing content policy and ownership boundaries.', clock);
     }
 
-    if (!providerConfigured(process.env)) {
+    if (!draftingProviderIsConfigured) {
       item.providerGate = 'LLM_PROVIDER_NOT_CONFIGURED';
       item.updatedAt = nowIso(clock);
+      state.draftingProvider.lastProviderGate = 'LLM_PROVIDER_NOT_CONFIGURED';
       continue;
     }
 
     transition(item, 'DRAFTING', 'Structured LLM drafting started.', clock);
     let draft = await generateStructuredDraft({ candidate: item, brandContext: brandContext(), sourceContext: sourceContext(), existingContext: documents.slice(0, 12).map((document) => document.route) });
     transition(item, 'DRAFTED', 'Structured draft produced.', clock);
+    item.providerGate = null;
+    state.draftingProvider.lastSuccessfulDraftAt = nowIso(clock);
+    state.draftingProvider.lastProviderGate = null;
     writeJsonAtomic(`data/autonomy/revisions/${item.id}-draft.json`, { candidateId: item.id, createdAt: nowIso(clock), draft });
 
     transition(item, 'VALIDATING', 'Safe Harbor validation started.', clock);

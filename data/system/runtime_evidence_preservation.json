@@ -1,0 +1,15 @@
+{
+  "schemaVersion": "1.0.0",
+  "policy": "APPEND_ONLY_RUNTIME_EVIDENCE",
+  "owner": "hicks-consulting-canonical",
+  "preserveAcrossSnapshotApply": [
+    "data/autonomy/receipts/",
+    "data/autonomy/revision_registry.json",
+    "data/autonomy/revisions/",
+    "data/autonomy/frozen/",
+    "data/release/frozen_output_registry.json",
+    "data/release/frozen_outputs/"
+  ],
+  "mergeRule": "Existing runtime evidence from the target repository must survive source-snapshot replacement. New snapshot files may add evidence but may not delete older evidence solely because it is absent from the source ZIP.",
+  "updaterBoundary": "Enforcement belongs to the canonical external updater before destructive snapshot replacement. This repo declares the preservation contract; it does not claim the external updater already enforces it."
+}

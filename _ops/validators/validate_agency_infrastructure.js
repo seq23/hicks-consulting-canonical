@@ -82,11 +82,15 @@ if (dashboard) {
 }
 
 const workflow = read('.github/workflows/agency-seo-monitor.yml');
-for (const token of ['workflow_dispatch:', 'schedule:', 'contents: write', 'npm run agency:refresh', 'npm run build', 'actions/upload-artifact@v4']) {
+for (const token of ['workflow_dispatch:', 'schedule:', 'contents: write', 'npm run agency:refresh', 'npm run build', 'actions/upload-artifact@']) {
   if (!workflow.includes(token)) issues.push(`Agency workflow is missing required contract token: ${token}`);
 }
-if (!/jobs:\s*[\s\S]*?monitor:\s*[\s\S]*?continue-on-error:\s*true/.test(workflow)) {
-  issues.push('Agency monitor job must remain continue-on-error: true.');
+if (/^    continue-on-error:\s*true\s*$/m.test(workflow)) {
+  issues.push('Agency monitor job must not mask build/contract failures with job-wide continue-on-error.');
+}
+for (const step of ['Refresh live, GSC, and Bing snapshots', 'Build GSC free-wins and live grounded query observations']) {
+  const escaped = step.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  if (!new RegExp(`- name: ${escaped}\\n[\\s\\S]*?continue-on-error: true`).test(workflow)) issues.push(`Provider-facing agency step must remain nonblocking: ${step}`);
 }
 if (/npm run publish:content/.test(workflow)) issues.push('Agency monitoring workflow must not invoke content publication.');
 

@@ -1,7 +1,7 @@
 {
   "schema_version": "2.0",
-  "receipt_id": "2026-08-12T13-49-59.611Z-31603454195",
-  "attempted_at": "2026-08-12T13:49:59.611Z",
+  "receipt_id": "2026-08-09T13-36-26.214Z-31316234784",
+  "attempted_at": "2026-08-09T13:36:26.214Z",
   "publication_trigger": "ONLY_AFTER_EXISTING_CONTENT_PUBLISH_WORKFLOW_SUCCEEDS",
   "chain": [
     "successful_publish",
@@ -15,14 +15,14 @@
   "sitemap_refresh": {
     "status": "SUCCESS",
     "sitemap_url": "https://www.hicksconsulting.org/sitemap.xml",
-    "sitemap_sha256": "fb52ebfda7d5233b9f7c545d21ecf93292403a9b11e00b35629bfea8282aea0f",
-    "url_count": 74
+    "sitemap_sha256": "72691630c7d839ffcb1b0612cb8608e0422aa4485cf3b8dba4d9aae55a6eafbe",
+    "url_count": 70
   },
   "indexnow": {
     "status": "SUCCESS",
     "attempted": true,
     "http_status": 200,
-    "submitted_urls": 74,
+    "submitted_urls": 70,
     "key_location": "https://www.hicksconsulting.org/indexnow.txt"
   },
   "gsc_sitemap_submission": {
@@ -62,7 +62,7 @@
         "status": "SUCCESS",
         "http_status": 200,
         "verdict": "NEUTRAL",
-        "coverage_state": "URL is unknown to Google",
+        "coverage_state": "Discovered - currently not indexed",
         "indexing_state": "INDEXING_STATE_UNSPECIFIED",
         "last_crawl_time": null
       },
@@ -161,7 +161,7 @@
         "status": "SUCCESS",
         "http_status": 200,
         "verdict": "NEUTRAL",
-        "coverage_state": "Discovered - currently not indexed",
+        "coverage_state": "URL is unknown to Google",
         "indexing_state": "INDEXING_STATE_UNSPECIFIED",
         "last_crawl_time": null
       },
@@ -197,7 +197,7 @@
   "durable_receipt": {
     "status": "SUCCESS",
     "latest_path": "data/distribution/provider_receipt.json",
-    "history_path": "data/distribution/receipts/2026-08-12T13-49-59.611Z-31603454195.json"
+    "history_path": "data/distribution/receipts/2026-08-09T13-36-26.214Z-31316234784.json"
   },
   "observation_feedback": {
     "status": "SUCCESS",

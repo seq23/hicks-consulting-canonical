@@ -71,7 +71,7 @@ for (const file of publicHtmlFiles) {
 const sitemap = read(path.join(root, 'sitemap.xml'));
 const llms = read(path.join(root, 'llms.txt'));
 for (const route of expectedHiddenRoutes) {
-  if (sitemap && sitemap.includes(route)) warn(`${route} should remain excluded from the public search sitemap.`);
+  if (sitemap && !sitemap.includes(route)) warn(`${route} is expected in sitemap parity after the approved LLM Atlas discoverability update.`);
   if (llms && !llms.includes(route)) warn(`${route} should remain visible in llms.txt after build.`);
 }
 

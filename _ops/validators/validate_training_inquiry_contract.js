@@ -7,6 +7,7 @@ const homepage = read('pages/index.html');
 const css = read('assets/css/styles.css');
 const wranglerPath = path.join(process.cwd(), 'wrangler.toml');
 const wranglerToml = fs.existsSync(wranglerPath) ? fs.readFileSync(wranglerPath, 'utf8') : '';
+const sharedFormHelper = read('functions/api/_lib/form-database.js');
 
 const contracts = [
   {
@@ -65,7 +66,7 @@ for (const contract of contracts) {
     const fieldPattern = new RegExp(`name=["']${field}["']`);
     if (!fieldPattern.test(formBlock)) fail(`${contract.label} frontend field missing: ${field}`);
     if (!js.includes(`'${field}'`) && !js.includes(`"${field}"`)) fail(`${contract.label} JS payload mapping missing: ${field}`);
-    if (!fn.includes(`'${field}'`) && !fn.includes(`"${field}"`)) fail(`${contract.label} backend registry missing: ${field}`);
+    if (!sharedFormHelper.includes(`'${field}'`) && !sharedFormHelper.includes(`"${field}"`)) fail(`${contract.label} shared backend registry missing: ${field}`);
     fieldCount += 1;
   }
 
@@ -75,13 +76,12 @@ for (const contract of contracts) {
   if (!js.includes('form.hidden = true')) fail(`${contract.label} success behavior must hide the form.`);
   if (!js.includes(contract.successCopy)) fail(`${contract.label} success thank-you copy missing from JS.`);
   if (!fn.includes(contract.formType)) fail(`${contract.label} backend form type marker missing.`);
-  if (!fn.includes('FORM_DATABASE_WEBHOOK_URL') || !fn.includes('FORM_DATABASE_SHARED_SECRET')) fail(`${contract.label} must support canonical form database env vars.`);
-  if (!fn.includes('TRAINING_INQUIRY_WEBHOOK_URL') || !fn.includes('INQUIRY_SHARED_SECRET')) fail(`${contract.label} must keep legacy webhook fallback variables.`);
-  if (!fn.includes('secret: sharedSecret')) fail(`${contract.label} backend must forward shared secret to Apps Script.`);
-  if (!fn.includes('sendFormDatabaseSubmission')) fail(`${contract.label} backend must synchronously send Apps Script submission.`);
-  if (!fn.includes('webhookResult.parsed.ok !== true')) fail(`${contract.label} backend must require Apps Script JSON ok:true before user success.`);
-  if (!fn.includes('FORM_DATABASE_DISPATCH_FAILED')) fail(`${contract.label} backend must log failed dispatches.`);
-  if (fn.includes('context.waitUntil') || fn.includes('queueFormDatabaseSubmission')) fail(`${contract.label} backend must not background-queue form submissions.`);
+  if (!fn.includes("from './_lib/form-database.js'") || !fn.includes('handleFormRequestPost') || !fn.includes('handleFormRequestGet')) fail(`${contract.label} backend must remain a thin wrapper around the shared form helper.`);
+  if (fn.includes('FORM_DATABASE_FORMS') || fn.includes('postJsonToWebhook') || fn.includes('sendFormDatabaseSubmission')) fail(`${contract.label} backend must not duplicate shared transport logic.`);
+  for (const token of ['FORM_DATABASE_WEBHOOK_URL','FORM_DATABASE_SHARED_SECRET','TRAINING_INQUIRY_WEBHOOK_URL','INQUIRY_SHARED_SECRET','secret: sharedSecret','sendFormDatabaseSubmission','webhookResult.parsed.ok !== true','FORM_DATABASE_DISPATCH_FAILED']) {
+    if (!sharedFormHelper.includes(token)) fail(`${contract.label} shared form helper missing transport token: ${token}`);
+  }
+  if (sharedFormHelper.includes('context.waitUntil') || sharedFormHelper.includes('queueFormDatabaseSubmission')) fail(`${contract.label} shared helper must not background-queue form submissions.`);
 }
 
 if (config.forms?.groups !== '/groups/#group-inquiry-form') fail('Groups config must route to /groups/#group-inquiry-form.');

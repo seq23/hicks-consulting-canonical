@@ -13,7 +13,7 @@ if (!/github\.event\.workflow_run\.conclusion == 'success'/.test(workflow)) fail
 if (!/workflow_dispatch:/.test(workflow)) fail('IndexNow contract fail: workflow must support workflow_dispatch.');
 for (const command of ['npm run build','npm run indexnow:emit','npm run distribution:post-publish','npm run validate:profile:indexnow','npm run validate:authority-modernization']) if (!workflow.includes(command)) fail(`IndexNow contract fail: workflow missing ${command}.`);
 if (!/git add data\/distribution/.test(workflow)) fail('IndexNow contract fail: workflow must commit durable distribution receipts.');
-if (!/actions\/upload-artifact@v4/.test(workflow)) fail('IndexNow contract fail: workflow must upload distribution evidence.');
+if (!/actions\/upload-artifact@v\d+/.test(workflow)) fail('IndexNow contract fail: workflow must upload distribution evidence with a versioned actions/upload-artifact action.');
 const runner = read('scripts/distribution/run_post_publish_distribution.mjs');
 for (const token of ['api.indexnow.org/indexnow','webmasters/v3/sites/','searchconsole.googleapis.com/v1/urlInspection/index:inspect','provider_receipt.json','observation_feedback.json','receipts/']) if (!runner.includes(token)) fail(`IndexNow contract fail: post-publish runner missing ${token}.`);
 const emit = read('scripts/indexnow_emit.js');
