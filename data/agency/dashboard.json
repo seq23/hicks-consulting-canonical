@@ -6,9 +6,9 @@
   },
   "inventory": {
     "totalManifest": 227,
-    "published": 48,
-    "approved": 125,
-    "livePages": 76,
+    "published": 49,
+    "approved": 124,
+    "livePages": 77,
     "sourcePages": 255
   },
   "scores": [
@@ -6059,17 +6059,12 @@
       "runtimeMode": "FULL_SAFE_AUTONOMY",
       "paused": false,
       "emergencyStop": false,
-      "lastCycleAt": null,
-      "lastCycleStatus": "NOT_RUN",
+      "lastCycleAt": "2026-08-14T14:59:31.945Z",
+      "lastCycleStatus": "COMPLETED_NO_NEW_SCHEDULED_ITEMS",
       "currentPhase": "IDLE",
       "counts": {
-        "discovered": 0,
-        "admitted": 0,
-        "drafted": 0,
-        "scheduled": 0,
-        "published": 0,
-        "skipped": 0,
-        "failed": 0
+        "admitted": 2,
+        "discovered": 12
       },
       "velocityContract": "data/system/publishing_velocity_contract.json",
       "draftingProvider": {
@@ -6081,8 +6076,7 @@
           "LLM_MODEL"
         ],
         "lastSuccessfulDraftAt": null,
-        "lastProviderGate": "LLM_PROVIDER_NOT_CONFIGURED",
-        "truthBoundary": "Source baseline cannot prove live provider configuration; runtime cycle updates this object from the actual environment."
+        "lastProviderGate": "LLM_PROVIDER_NOT_CONFIGURED"
       }
     },
     "velocityContract": {
