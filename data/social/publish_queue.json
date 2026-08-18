@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-14T14:59:31.635Z",
+  "generatedAt": "2026-08-18T14:52:53.795Z",
   "publishMode": "full_safe_autonomy",
   "items": [
     {
@@ -11,14 +11,14 @@
       "suggestedRoute": "/resources/white-papers/ai-social-media-and-digital-emotional-overload-whitepaper/",
       "targetWords": 2500,
       "minimumWords": 2000,
-      "sourceSignalCount": 13,
+      "sourceSignalCount": 17,
       "score": 100,
       "publishMode": "full_safe_autonomy",
       "autonomyStatus": "ADMITTED",
       "routineApprovalRequired": false,
       "llmGeneratedRequired": true,
       "publicOnlyAfterApproval": false,
-      "createdAt": "2026-08-14T14:59:31.634Z",
+      "createdAt": "2026-08-18T14:52:53.794Z",
       "humanizationChecklist": [
         "Use plain human language rather than generic therapy marketing copy.",
         "Vary sentence rhythm and paragraph length.",
@@ -94,7 +94,7 @@
       "routineApprovalRequired": false,
       "llmGeneratedRequired": true,
       "publicOnlyAfterApproval": false,
-      "createdAt": "2026-08-14T14:59:31.635Z",
+      "createdAt": "2026-08-18T14:52:53.794Z",
       "humanizationChecklist": [
         "Use plain human language rather than generic therapy marketing copy.",
         "Vary sentence rhythm and paragraph length.",
@@ -280,7 +280,7 @@
       "routineApprovalRequired": false,
       "llmGeneratedRequired": true,
       "publicOnlyAfterApproval": false,
-      "createdAt": "2026-08-14T14:59:31.634Z",
+      "createdAt": "2026-08-18T14:52:53.794Z",
       "humanizationChecklist": [
         "Use plain human language rather than generic therapy marketing copy.",
         "Vary sentence rhythm and paragraph length.",
@@ -310,14 +310,14 @@
       "suggestedRoute": "/resources/guides/general-emotional-wellness-and-intentional-living-guide/",
       "targetWords": 1400,
       "minimumWords": 1120,
-      "sourceSignalCount": 50,
+      "sourceSignalCount": 44,
       "score": 100,
       "publishMode": "full_safe_autonomy",
       "autonomyStatus": "DISCOVERED",
       "routineApprovalRequired": false,
       "llmGeneratedRequired": true,
       "publicOnlyAfterApproval": false,
-      "createdAt": "2026-08-14T14:59:31.634Z",
+      "createdAt": "2026-08-18T14:52:53.794Z",
       "humanizationChecklist": [
         "Use plain human language rather than generic therapy marketing copy.",
         "Vary sentence rhythm and paragraph length.",
@@ -391,7 +391,7 @@
       "routineApprovalRequired": false,
       "llmGeneratedRequired": true,
       "publicOnlyAfterApproval": false,
-      "createdAt": "2026-08-14T14:59:31.635Z",
+      "createdAt": "2026-08-18T14:52:53.794Z",
       "humanizationChecklist": [
         "Use plain human language rather than generic therapy marketing copy.",
         "Vary sentence rhythm and paragraph length.",
@@ -524,6 +524,43 @@
       "queueType": "content_brief",
       "autonomyStatus": "DISCOVERED",
       "routineApprovalRequired": false
+    },
+    {
+      "id": "brief-black_women_healing-guide",
+      "clusterId": "black_women_healing",
+      "clusterTitle": "Black women healing beyond survival",
+      "contentType": "guide",
+      "title": "Black women healing beyond survival: what people are asking and what to do next",
+      "suggestedRoute": "/resources/guides/black-women-healing-beyond-survival-guide/",
+      "targetWords": 1400,
+      "minimumWords": 1120,
+      "sourceSignalCount": 4,
+      "score": 80,
+      "publishMode": "full_safe_autonomy",
+      "autonomyStatus": "DISCOVERED",
+      "routineApprovalRequired": false,
+      "llmGeneratedRequired": true,
+      "publicOnlyAfterApproval": false,
+      "createdAt": "2026-08-18T14:52:53.794Z",
+      "humanizationChecklist": [
+        "Use plain human language rather than generic therapy marketing copy.",
+        "Vary sentence rhythm and paragraph length.",
+        "Include concrete examples without inventing client stories.",
+        "Avoid exaggerated claims, guarantees, diagnosis, or pressure language.",
+        "Keep Monika Hicks / Hicks Consulting entity references consistent.",
+        "End with an approved conversion path only after value is delivered."
+      ],
+      "conversionPath": "https://monika-hicks.clientsecure.me/",
+      "sections": [
+        "Short answer",
+        "Who this is for",
+        "Why this matters",
+        "Decision criteria",
+        "Common mistakes",
+        "Next step"
+      ],
+      "llmPrompt": "Create a humanized guide draft for Hicks Consulting.\nTitle: Black women healing beyond survival: what people are asking and what to do next\nCluster: Black women healing beyond survival\nMinimum words: 1120. Target words: 1400.\nWrite in a warm, grounded, specific voice. Do not diagnose. Do not guarantee outcomes. Do not invent client stories.\nInclude these sections: Short answer; Who this is for; Why this matters; Decision criteria; Common mistakes; Next step.\nApproved conversion path after value is delivered: https://monika-hicks.clientsecure.me/",
+      "queueType": "content_brief"
     }
   ]
 }
