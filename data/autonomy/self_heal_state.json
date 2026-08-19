@@ -1,7 +1,24 @@
 {
   "schemaVersion": "1.0.0",
-  "lastRunAt": null,
-  "status": "NOT_RUN",
-  "repairs": [],
-  "skips": []
+  "lastRunAt": "2026-08-19T16:19:04.849Z",
+  "status": "COMPLETED",
+  "repairs": [
+    {
+      "route": "/resources/white-papers/the-burnout-and-boundaries-playbook-for-high-achieving-black-women/",
+      "file": "pages/resources/white-papers/the-burnout-and-boundaries-playbook-for-high-achieving-black-women/index.html",
+      "applied": [
+        {
+          "code": "MISSING_INFORMATIONAL_BOUNDARY",
+          "action": "inserted"
+        }
+      ],
+      "preRevisionId": "self-heal-pre-quarterly-001-2026-08-19T16-19-04-849Z",
+      "preHash": "d102e3b55a0234db0030d4825b9b061cda2dc92caf7b5e882fe07926e340d3e1",
+      "postRevisionId": "self-heal-post-quarterly-001-2026-08-19T16-19-04-849Z",
+      "postHash": "e57440665cbbe95594485a73e648ae4816b7d43e4b4e2ec111725eea2501420a",
+      "rollbackRevisionId": "self-heal-pre-quarterly-001-2026-08-19T16-19-04-849Z"
+    }
+  ],
+  "skips": [],
+  "rollbackReady": true
 }
