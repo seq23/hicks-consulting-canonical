@@ -80,6 +80,23 @@ function injectPersonSchema() {
   fs.writeFileSync(aboutPath, html);
 }
 
+function injectOrganizationSchema() {
+  const schemaPath = path.join(root, 'data', 'entities', 'org_schema.json');
+  const homePath = path.join(dist, 'index.html');
+  if (!fs.existsSync(schemaPath) || !fs.existsSync(homePath)) return;
+  const schema = JSON.parse(fs.readFileSync(schemaPath, 'utf8'));
+  let html = fs.readFileSync(homePath, 'utf8');
+  const payload = `<script id="hicks-organization-schema" type="application/ld+json">${JSON.stringify(schema)}</script>`;
+  const legacyOrganization = /<script type="application\/ld\+json">\{"@context":"https:\/\/schema\.org","@type":"Organization"[\s\S]*?<\/script>/;
+  if (html.includes('id="hicks-organization-schema"')) return;
+  if (legacyOrganization.test(html)) {
+    html = html.replace(legacyOrganization, payload);
+  } else {
+    html = html.replace('</head>', `${payload}</head>`);
+  }
+  fs.writeFileSync(homePath, html);
+}
+
 copyRecursive(pages, dist);
 copyRecursive(path.join(root, 'assets'), path.join(dist, 'assets'));
 copyRecursive(path.join(root, 'data'), path.join(dist, 'data'));
@@ -87,6 +104,7 @@ copyRecursive(path.join(root, 'data'), path.join(dist, 'data'));
   copyRecursive(path.join(root, file), path.join(dist, file));
 });
 injectPersonSchema();
+injectOrganizationSchema();
 
 for (const item of manifest.filter(item => item.validationPassed === true && item.status !== 'published' && item.slug.startsWith('/resources/'))) {
   copyPreviewForItem(item);
@@ -146,6 +164,7 @@ const llms = [
   '- /data/internal_authority_graph.json',
   '- /data/entities/entity_registry.json',
   '- /data/entities/person_schema.json',
+  '- /data/entities/org_schema.json',
   '',
   'Conversion paths:',
   `- Therapy and coaching consults: ${siteConfig.forms?.therapy || 'https://monika-hicks.clientsecure.me/'}`,
