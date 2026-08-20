@@ -1,0 +1,70 @@
+{
+  "version": 1,
+  "updated": "2026-08-20",
+  "canonicalPersonId": "https://www.hicksconsulting.org/about/#monika-hicks",
+  "canonicalOrganizationId": "https://www.hicksconsulting.org/#organization",
+  "evidence": [
+    {
+      "id": "memphis-voyager-2026",
+      "entity": "person_and_organization",
+      "classification": "independent_editorial",
+      "status": "verified",
+      "name": "Hidden Gems: Meet Monika Hicks of Hicks Consulting",
+      "url": "https://memphisvoyager.com/interview/hidden-gems-meet-monika-hicks-of-hicks-consulting/"
+    },
+    {
+      "id": "psychology-today-tennessee",
+      "entity": "person",
+      "classification": "professional_profile",
+      "status": "preferred_verified_profile",
+      "name": "Psychology Today profile for Monika Hicks",
+      "url": "https://www.psychologytoday.com/us/therapists/monika-t-hicks-brentwood-tn/1357023"
+    },
+    {
+      "id": "grow-therapy",
+      "entity": "person",
+      "classification": "professional_profile",
+      "status": "verified_external_evidence",
+      "name": "Grow Therapy profile for Monika Hicks",
+      "url": "https://growtherapy.com/provider/8s8incz2ufm8/monika-hicks"
+    },
+    {
+      "id": "mia-foundation-2026",
+      "entity": "person_and_organization",
+      "classification": "speaking_event",
+      "status": "verified_external_evidence",
+      "name": "The M.I.A. Foundation Worth Fighting For Weekend Workshop & Gala",
+      "url": "https://www.eventbrite.com/e/the-mia-foundation-worth-fighting-for-weekend-workshop-gala-tickets-1998116018800"
+    },
+    {
+      "id": "hicks-consulting-npi",
+      "entity": "organization",
+      "classification": "institutional_provider_record",
+      "status": "verified_external_evidence",
+      "name": "Hicks Consulting PLLC provider record",
+      "url": "https://healthprovidersdata.com/hipaa/codes/NPI-1740023480-hicks-consulting-pllc"
+    }
+  ],
+  "conflicts": [
+    {
+      "id": "psychology-today-mississippi-duplicate",
+      "classification": "duplicate_or_noncanonical_profile",
+      "status": "external_review_required",
+      "url": "https://www.psychologytoday.com/us/therapists/monika-hicks-olive-branch-ms/1663504",
+      "rule": "Do not use as canonical identity evidence unless independently reviewed and intentionally promoted."
+    },
+    {
+      "id": "headway-experience-count",
+      "classification": "biographical_conflict",
+      "status": "external_review_required",
+      "url": "https://care.headway.co/providers/monika-hicks",
+      "rule": "Do not encode a precise years-of-experience claim from this profile. Canonical copy should remain qualitative unless a precise value is explicitly verified."
+    }
+  ],
+  "guardrails": {
+    "preciseYearsOfExperience": "prohibited_without_explicit_verification",
+    "duplicatePsychologyTodayProfileCanonical": false,
+    "identityProfilesAreNotEditorialEvidence": true,
+    "editorialEvidenceIsNotSameAs": true
+  }
+}
