@@ -1,33 +1,42 @@
 {
   "provider": "gsc",
   "status": "ok",
-  "checkedAt": "2026-08-19T14:37:25.714Z",
+  "checkedAt": "2026-08-20T14:37:53.182Z",
   "siteUrl": "sc-domain:hicksconsulting.org",
   "dateRange": {
-    "currentStart": "2026-07-20",
-    "currentEnd": "2026-08-16",
-    "previousStart": "2026-06-22",
-    "previousEnd": "2026-07-19"
+    "currentStart": "2026-07-21",
+    "currentEnd": "2026-08-17",
+    "previousStart": "2026-06-23",
+    "previousEnd": "2026-07-20"
   },
   "metrics": {
-    "clicks": 10,
-    "impressions": 602,
-    "ctr": 0.016611295681063124,
-    "position": 8.164451827242525,
-    "previousClicks": 31,
-    "previousImpressions": 551,
-    "previousCtr": 0.056261343012704176,
-    "previousPosition": 6.800362976406533
+    "clicks": 12,
+    "impressions": 605,
+    "ctr": 0.019834710743801654,
+    "position": 8.173553719008265,
+    "previousClicks": 28,
+    "previousImpressions": 546,
+    "previousCtr": 0.05128205128205128,
+    "previousPosition": 6.7765567765567765
   },
   "topQueries": [
     {
       "keys": [
         "hicks consulting"
       ],
-      "clicks": 3,
+      "clicks": 4,
       "impressions": 49,
-      "ctr": 0.061224489795918366,
+      "ctr": 0.08163265306122448,
       "position": 3.183673469387755
+    },
+    {
+      "keys": [
+        "therapist near me"
+      ],
+      "clicks": 1,
+      "impressions": 1,
+      "ctr": 1,
+      "position": 19
     },
     {
       "keys": [
@@ -79,7 +88,7 @@
         "cancer consultants near me"
       ],
       "clicks": 0,
-      "impressions": 7,
+      "impressions": 6,
       "ctr": 0,
       "position": 1
     },
@@ -394,9 +403,9 @@
         "russell calame memphis tn"
       ],
       "clicks": 0,
-      "impressions": 2,
+      "impressions": 3,
       "ctr": 0,
-      "position": 8
+      "position": 8.666666666666668
     },
     {
       "keys": [
@@ -449,10 +458,10 @@
       "keys": [
         "https://www.hicksconsulting.org/"
       ],
-      "clicks": 10,
-      "impressions": 573,
-      "ctr": 0.017452006980802792,
-      "position": 8.052356020942408
+      "clicks": 12,
+      "impressions": 576,
+      "ctr": 0.020833333333333332,
+      "position": 8.0625
     },
     {
       "keys": [
@@ -522,9 +531,9 @@
         "https://www.hicksconsulting.org/faq/"
       ],
       "clicks": 0,
-      "impressions": 30,
+      "impressions": 31,
       "ctr": 0,
-      "position": 10.833333333333334
+      "position": 10.741935483870968
     },
     {
       "keys": [
@@ -587,10 +596,20 @@
         "hicks consulting",
         "https://www.hicksconsulting.org/"
       ],
-      "clicks": 3,
+      "clicks": 4,
       "impressions": 47,
-      "ctr": 0.06382978723404255,
+      "ctr": 0.0851063829787234,
       "position": 2
+    },
+    {
+      "keys": [
+        "therapist near me",
+        "https://www.hicksconsulting.org/"
+      ],
+      "clicks": 1,
+      "impressions": 1,
+      "ctr": 1,
+      "position": 19
     },
     {
       "keys": [
@@ -648,7 +667,7 @@
         "https://www.hicksconsulting.org/"
       ],
       "clicks": 0,
-      "impressions": 7,
+      "impressions": 6,
       "ctr": 0,
       "position": 1
     },
@@ -828,9 +847,9 @@
         "https://www.hicksconsulting.org/faq/"
       ],
       "clicks": 0,
-      "impressions": 8,
+      "impressions": 9,
       "ctr": 0,
-      "position": 10.125
+      "position": 9.88888888888889
     },
     {
       "keys": [
@@ -1098,9 +1117,9 @@
         "https://www.hicksconsulting.org/"
       ],
       "clicks": 0,
-      "impressions": 2,
+      "impressions": 3,
       "ctr": 0,
-      "position": 8
+      "position": 8.666666666666668
     },
     {
       "keys": [
@@ -1154,15 +1173,6 @@
     }
   ],
   "daily": [
-    {
-      "keys": [
-        "2026-07-20"
-      ],
-      "clicks": 0,
-      "impressions": 19,
-      "ctr": 0,
-      "position": 4.105263157894736
-    },
     {
       "keys": [
         "2026-07-21"
@@ -1405,6 +1415,15 @@
       "impressions": 23,
       "ctr": 0.043478260869565216,
       "position": 6.521739130434782
+    },
+    {
+      "keys": [
+        "2026-08-17"
+      ],
+      "clicks": 2,
+      "impressions": 22,
+      "ctr": 0.09090909090909091,
+      "position": 4.909090909090909
     }
   ],
   "message": "Search Console API connected and refreshed."
