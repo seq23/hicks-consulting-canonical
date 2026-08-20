@@ -1,0 +1,57 @@
+{
+  "schemaVersion": "1.0.0",
+  "updated": "2026-08-20",
+  "queries": [
+    {
+      "query": "Monika Hicks",
+      "entity": "person",
+      "expectedAssertions": ["canonical_person_identity", "hicks_consulting_relationship"]
+    },
+    {
+      "query": "Monika Hicks LCSW",
+      "entity": "person",
+      "expectedAssertions": ["licensed_clinical_social_worker", "canonical_person_identity"]
+    },
+    {
+      "query": "Monika Hicks Hicks Consulting",
+      "entity": "person_and_organization",
+      "expectedAssertions": ["hicks_consulting_relationship", "canonical_person_identity", "canonical_organization_identity"]
+    },
+    {
+      "query": "Monika Hicks consultant",
+      "entity": "person",
+      "expectedAssertions": ["mental_health_consultant"]
+    },
+    {
+      "query": "Monika Hicks speaker",
+      "entity": "person",
+      "expectedAssertions": ["speaker_and_workshop_role"]
+    },
+    {
+      "query": "Hicks Consulting",
+      "entity": "organization",
+      "expectedAssertions": ["canonical_organization_identity", "monika_relationship"]
+    },
+    {
+      "query": "Hicks Consulting Memphis",
+      "entity": "organization",
+      "expectedAssertions": ["canonical_organization_identity", "memphis_service_context"]
+    },
+    {
+      "query": "Hicks Consulting Monika Hicks",
+      "entity": "person_and_organization",
+      "expectedAssertions": ["canonical_person_identity", "canonical_organization_identity", "reciprocal_relationship"]
+    }
+  ],
+  "assertions": {
+    "canonical_person_identity": "Monika Hicks, LCSW resolves to https://www.hicksconsulting.org/about/#monika-hicks",
+    "canonical_organization_identity": "Hicks Consulting resolves to https://www.hicksconsulting.org/#organization",
+    "hicks_consulting_relationship": "Monika Hicks is linked to Hicks Consulting as the canonical person leading/working for the organization.",
+    "monika_relationship": "Hicks Consulting reciprocally links to Monika Hicks as its canonical person/lead.",
+    "reciprocal_relationship": "The Person and Organization entities reference one another using the canonical IDs.",
+    "licensed_clinical_social_worker": "Monika Hicks is represented as a Licensed Clinical Social Worker.",
+    "mental_health_consultant": "Monika Hicks is represented as a Mental Health Consultant.",
+    "speaker_and_workshop_role": "Independent evidence supports speaking/workshop activity associated with Monika Hicks and Hicks Consulting.",
+    "memphis_service_context": "Hicks Consulting serves Memphis/Tennessee through its stated service model."
+  }
+}
