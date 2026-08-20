@@ -5,6 +5,7 @@ const author = parse('data/entities/author_profile.json');
 const org = parse('data/entities/org_profile.json');
 const person = parse('data/entities/person_schema.json');
 const orgSchema = parse('data/entities/org_schema.json');
+const authority = parse('data/entities/external_authority_registry.json');
 if(!entities.organization?.name || !entities.organization?.url) fail('Entity registry missing organization name/url.');
 if(!entities.provider?.name || !entities.provider?.role) fail('Entity registry missing provider name/role.');
 if(!Array.isArray(entities.services) || entities.services.length < 4) fail('Entity registry must define therapy, coaching, groups, and organizational training services.');
@@ -25,7 +26,11 @@ const education = new Set((person.alumniOf || []).map(item => item && item.name)
 if(!education.has('Middle Tennessee State University') || !education.has('University of Tennessee, Knoxville')) fail('Monika Person education relationships are incomplete.');
 const subjects = person.subjectOf || [];
 if(!subjects.some(item => item && /memphisvoyager\.com/.test(item.url || ''))) fail('Monika Person must include the verified Memphis Voyager subjectOf evidence.');
-if(!subjects.some(item => item && /psychologytoday\.com/.test(item.url || ''))) fail('Monika Person must include the verified Psychology Today profile evidence.');
+if(!subjects.some(item => item && /psychologytoday\.com\/us\/therapists\/monika-t-hicks-brentwood-tn\/1357023/.test(item.url || ''))) fail('Monika Person must include the preferred verified Tennessee Psychology Today profile.');
+if(subjects.some(item => item && /psychologytoday\.com\/us\/therapists\/monika-hicks-olive-branch-ms\/1663504/.test(item.url || ''))) fail('Noncanonical Mississippi Psychology Today profile must not be promoted into Person subjectOf.');
+if(!subjects.some(item => item && /growtherapy\.com/.test(item.url || ''))) fail('Monika Person must include Grow Therapy external evidence.');
+if(!subjects.some(item => item && /eventbrite\.com/.test(item.url || ''))) fail('Monika Person must include current speaking-event evidence.');
+if(/\b\d+\s+years?\s+(?:of\s+)?experience\b/i.test(person.description || '')) fail('Person description must not encode a precise years-of-experience claim without explicit verification.');
 if(orgSchema['@context'] !== 'https://schema.org' || orgSchema['@type'] !== 'Organization') fail('Hicks Consulting schema must be a schema.org Organization.');
 if(orgSchema['@id'] !== 'https://www.hicksconsulting.org/#organization') fail('Hicks Consulting canonical Organization @id is incorrect.');
 if(orgSchema.name !== 'Hicks Consulting') fail('Hicks Consulting canonical Organization name is incorrect.');
@@ -40,6 +45,14 @@ for(const url of orgSameAs){
 }
 const orgSubjects = orgSchema.subjectOf || [];
 if(!orgSubjects.some(item => item && /memphisvoyager\.com/.test(item.url || ''))) fail('Hicks Consulting Organization must include Memphis Voyager subjectOf evidence.');
+if(!orgSubjects.some(item => item && /eventbrite\.com/.test(item.url || ''))) fail('Hicks Consulting Organization must include independent speaking-event evidence.');
+if(!orgSubjects.some(item => item && /healthprovidersdata\.com/.test(item.url || ''))) fail('Hicks Consulting Organization must include institutional provider evidence.');
+if(authority.canonicalPersonId !== person['@id'] || authority.canonicalOrganizationId !== orgSchema['@id']) fail('External authority registry canonical IDs must match entity schemas.');
+if(!Array.isArray(authority.evidence) || authority.evidence.length < 5) fail('External authority registry must include the verified Phase 5 evidence set.');
+const conflicts = new Map((authority.conflicts || []).map(item => [item.id, item]));
+if(conflicts.get('psychology-today-mississippi-duplicate')?.status !== 'external_review_required') fail('Duplicate Psychology Today profile must remain explicitly tracked for external review.');
+if(conflicts.get('headway-experience-count')?.status !== 'external_review_required') fail('Headway experience-count conflict must remain explicitly tracked for external review.');
+if(authority.guardrails?.preciseYearsOfExperience !== 'prohibited_without_explicit_verification') fail('Authority registry must guard precise years-of-experience claims.');
 const offers = new Set((orgSchema.makesOffer || []).map(item => item?.itemOffered?.name));
 const serviceNames = new Set(entities.services.map(s => s.name));
 const requiredServices = [
