@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "1.0.0",
+  "baselineDate": "2026-08-20",
+  "canonicalPersonId": "https://www.hicksconsulting.org/about/#monika-hicks",
+  "canonicalOrganizationId": "https://www.hicksconsulting.org/#organization",
+  "entities": {
+    "person": {
+      "name": "Monika Hicks, LCSW",
+      "canonicalUrl": "https://www.hicksconsulting.org/about/",
+      "expectedRoles": [
+        "Licensed Clinical Social Worker",
+        "Mental Health Consultant"
+      ],
+      "expectedOrganizationId": "https://www.hicksconsulting.org/#organization",
+      "expectedCapabilities": [
+        "Virtual therapy for eligible Tennessee clients",
+        "Coaching",
+        "Support groups",
+        "Organizational mental health training",
+        "Workshops",
+        "Keynote speaking"
+      ],
+      "evidenceIds": [
+        "memphis-voyager-2026",
+        "psychology-today-tennessee",
+        "grow-therapy",
+        "mia-foundation-2026"
+      ],
+      "knownConflictIds": [
+        "psychology-today-mississippi-duplicate",
+        "headway-experience-count"
+      ]
+    },
+    "organization": {
+      "name": "Hicks Consulting",
+      "legalName": "Hicks Consulting PLLC",
+      "canonicalUrl": "https://www.hicksconsulting.org/",
+      "expectedPersonId": "https://www.hicksconsulting.org/about/#monika-hicks",
+      "expectedServices": [
+        "Virtual therapy serving Memphis and Tennessee",
+        "Virtual coaching",
+        "Virtual support groups",
+        "Organizational trainings"
+      ],
+      "evidenceIds": [
+        "memphis-voyager-2026",
+        "mia-foundation-2026",
+        "hicks-consulting-npi"
+      ]
+    }
+  },
+  "recognitionState": {
+    "googleKnowledgePanel": {
+      "person": "unverified",
+      "organization": "unverified",
+      "lastVerifiedAt": null,
+      "evidence": []
+    },
+    "aiRecognition": {
+      "status": "unverified",
+      "providersTested": [],
+      "lastVerifiedAt": null,
+      "evidence": []
+    }
+  },
+  "truthBoundary": "This baseline records canonical expectations and known evidence/conflicts. It does not claim a Google Knowledge Panel exists and does not claim AI systems have been tested unless a later verified observation explicitly records that evidence."
+}
