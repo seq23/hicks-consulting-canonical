@@ -2,24 +2,27 @@
   "organization": {
     "name": "Hicks Consulting",
     "type": "Organization",
-    "url": "https://www.hicksconsulting.org"
+    "url": "https://www.hicksconsulting.org",
+    "canonicalId": "https://www.hicksconsulting.org/#organization"
   },
   "provider": {
     "name": "Monika Hicks, LCSW",
     "type": "Person",
     "role": "Licensed Clinical Social Worker",
+    "canonicalId": "https://www.hicksconsulting.org/about/#monika-hicks",
+    "canonicalUrl": "https://www.hicksconsulting.org/about/",
     "identityContext": "Black woman therapist",
-    "serviceArea": "Tennessee, including Memphis, through virtual therapy"
+    "serviceArea": "Tennessee, including Memphis, through virtual therapy",
+    "sameAs": [
+      "https://www.linkedin.com/in/monika-hicks-lcsw-8168b6b0/"
+    ]
   },
   "services": [
     {
       "name": "Virtual therapy serving Memphis and Tennessee",
       "type": "Service",
       "audience": "Black women as a specialty and eligible clients of all ethnicities in Tennessee, including Memphis",
-      "areaServed": [
-        "Tennessee",
-        "Memphis, Tennessee"
-      ]
+      "areaServed": ["Tennessee", "Memphis, Tennessee"]
     },
     {
       "name": "Virtual coaching",
@@ -52,35 +55,22 @@
   "productServiceRelationships": [
     {
       "service": "Virtual therapy serving Memphis and Tennessee",
-      "primaryPages": [
-        "/therapy/",
-        "/black-therapist-memphis/",
-        "/anxiety-therapist-memphis/",
-        "/request-consult/"
-      ],
+      "primaryPages": ["/therapy/", "/black-therapist-memphis/", "/anxiety-therapist-memphis/", "/request-consult/"],
       "conversion": "https://monika-hicks.clientsecure.me/"
     },
     {
       "service": "Virtual coaching",
-      "primaryPages": [
-        "/coaching/",
-        "/book-discovery-call/"
-      ],
+      "primaryPages": ["/coaching/", "/book-discovery-call/"],
       "conversion": "https://monika-hicks.clientsecure.me/"
     },
     {
       "service": "Virtual support groups",
-      "primaryPages": [
-        "/groups/"
-      ],
+      "primaryPages": ["/groups/"],
       "conversion": "mailto:info@hicksconsulting.org?subject=Interest%20in%20Virtual%20Support%20Groups"
     },
     {
       "service": "Organizational trainings",
-      "primaryPages": [
-        "/corporate-speaking/",
-        "/organizational-training-inquiry/"
-      ],
+      "primaryPages": ["/corporate-speaking/", "/organizational-training-inquiry/"],
       "conversion": "/organizational-training-inquiry/"
     }
   ]
