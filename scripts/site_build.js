@@ -67,12 +67,26 @@ function copyPreviewForItem(item) {
   fs.writeFileSync(dest, preparePreviewHtml(html, item));
 }
 
+function injectPersonSchema() {
+  const schemaPath = path.join(root, 'data', 'entities', 'person_schema.json');
+  const aboutPath = path.join(dist, 'about', 'index.html');
+  if (!fs.existsSync(schemaPath) || !fs.existsSync(aboutPath)) return;
+  const schema = JSON.parse(fs.readFileSync(schemaPath, 'utf8'));
+  let html = fs.readFileSync(aboutPath, 'utf8');
+  const marker = '<script id="monika-person-schema" type="application/ld+json">';
+  if (html.includes(marker)) return;
+  const payload = `${marker}${JSON.stringify(schema)}</script>`;
+  html = html.replace('</head>', `${payload}</head>`);
+  fs.writeFileSync(aboutPath, html);
+}
+
 copyRecursive(pages, dist);
 copyRecursive(path.join(root, 'assets'), path.join(dist, 'assets'));
 copyRecursive(path.join(root, 'data'), path.join(dist, 'data'));
 ['robots.txt','_headers','_redirects','llms.txt','answers.json','coverage.json','indexnow.txt','0ccfc65ebb714f0a804be19ff50c9be4.txt'].forEach(file => {
   copyRecursive(path.join(root, file), path.join(dist, file));
 });
+injectPersonSchema();
 
 for (const item of manifest.filter(item => item.validationPassed === true && item.status !== 'published' && item.slug.startsWith('/resources/'))) {
   copyPreviewForItem(item);
@@ -131,6 +145,7 @@ const llms = [
   '- /data/query_metadata.json',
   '- /data/internal_authority_graph.json',
   '- /data/entities/entity_registry.json',
+  '- /data/entities/person_schema.json',
   '',
   'Conversion paths:',
   `- Therapy and coaching consults: ${siteConfig.forms?.therapy || 'https://monika-hicks.clientsecure.me/'}`,
@@ -142,7 +157,6 @@ const llms = [
 ].join('\n');
 fs.writeFileSync(path.join(root, 'llms.txt'), llms + '\n');
 fs.writeFileSync(path.join(dist, 'llms.txt'), llms + '\n');
-
 
 const workerSource = path.join(root, 'worker', '_worker.js');
 if (fs.existsSync(workerSource)) {
