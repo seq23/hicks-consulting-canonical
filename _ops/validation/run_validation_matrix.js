@@ -189,6 +189,35 @@ for (const entry of checks) {
   }
 }
 
+// Persist a machine-readable summary so tooling (the self-heal loop) can read
+// which checks reported findings instead of scraping console output, whose shape
+// differs per validator. Written to the ignored .tmp/ tree so routine validation
+// never dirties the working tree or triggers spurious automation commits.
+function writeMachineSummary() {
+  try {
+    const outDir = path.join(root, '.tmp', 'validation');
+    fs.mkdirSync(outDir, { recursive: true });
+    const slug = selectionLabel.replace(/[^A-Za-z0-9._-]+/g, '-');
+    const summary = {
+      schema_version: '1.0',
+      repo: registry.repo,
+      selection: selectionLabel,
+      generated_at: new Date().toISOString(),
+      totals,
+      blocked: totals.HARD_FAIL > 0 || totals.EXECUTION_HARD_FAIL > 0,
+      // Every check that produced a finding. Anything not listed here passed.
+      findings: findings.map(({ id, severity, reason }) => ({ id, severity, reason: reason || '' }))
+    };
+    const body = `${JSON.stringify(summary, null, 2)}\n`;
+    fs.writeFileSync(path.join(outDir, `validation-summary-${slug}.json`), body);
+    fs.writeFileSync(path.join(outDir, 'validation-summary-latest.json'), body);
+  } catch {
+    // Reporting is best-effort: it must never change the validation verdict, and
+    // must never write to stderr (the orchestrator treats stray stderr as a fault).
+  }
+}
+writeMachineSummary();
+
 console.log('\nVALIDATION REGISTRY SUMMARY');
 console.log(`Pass: ${totals.PASS}`);
 console.log(`Hard fail findings: ${totals.HARD_FAIL}`);

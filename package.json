@@ -37,7 +37,7 @@
     "ingest:map": "node scripts/ingestion/map_queries_to_pages.js",
     "ingest:fanouts": "node scripts/ingestion/build_fanout_candidates.js",
     "ingest:llm-pages": "node scripts/ingestion/build_llm_ingestion_pages.js",
-    "ingest:all": "npm run ingest:social && npm run ingest:normalize && npm run ingest:cluster && npm run ingest:score && npm run ingest:map && npm run ingest:fanouts && npm run ingest:llm-pages && npm run ingest:briefs",
+    "ingest:all": "npm run ingest:social && npm run queries:ingest && npm run ingest:normalize && npm run ingest:cluster && npm run ingest:score && npm run ingest:map && npm run ingest:fanouts && npm run ingest:llm-pages && npm run ingest:briefs",
     "validate:source-health": "node _ops/validators/validate_source_health.js",
     "validate:ingestion-freshness": "node _ops/validators/validate_ingestion_freshness.js",
     "validate:query-signals": "node _ops/validators/validate_query_signal_schema.js",
@@ -113,6 +113,9 @@
     "search:provider-audit": "node scripts/search/run_provider_audit.mjs",
     "validate:search-intelligence": "node _ops/validators/validate_search_intelligence_contract.js",
     "validate:no-instruction-leak": "node scripts/validators/validate_no_internal_instruction_leak.js",
-    "validate:no-empty-cells": "node scripts/validators/validate_no_empty_table_cells.js"
+    "validate:no-empty-cells": "node scripts/validators/validate_no_empty_table_cells.js",
+    "queries:ingest": "node scripts/queries/ingest_gsc_evidence.mjs",
+    "selfheal": "node _ops/selfheal/heal_until_clean.js",
+    "selfheal:dry": "node _ops/selfheal/heal_until_clean.js --dry-run"
   }
 }
