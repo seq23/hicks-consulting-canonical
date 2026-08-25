@@ -1,0 +1,43 @@
+{
+  "schema_version": "1.0",
+  "note": "2026 content is locked and client-approved. Only the from_2027 lane is adjustable. Both lanes emit candidates that still require approval through /admin - cadence controls how much is PROPOSED for review, never what is published.",
+  "locked_through": "2026-12-31",
+  "lanes": {
+    "locked_2026": {
+      "insight_weekdays": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "article_weekday": 2,
+      "guide_day_of_month": 15,
+      "whitepaper_day_of_month": 20,
+      "whitepaper_months": [
+        3,
+        6,
+        9,
+        12
+      ]
+    },
+    "from_2027": {
+      "insight_weekdays": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "article_weekday": 2,
+      "guide_day_of_month": 15,
+      "whitepaper_day_of_month": 20,
+      "whitepaper_months": [
+        3,
+        6,
+        9,
+        12
+      ]
+    }
+  }
+}

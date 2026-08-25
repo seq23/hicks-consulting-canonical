@@ -4,6 +4,17 @@ import crypto from 'node:crypto';
 
 const RUN = process.env.CONTINUITY_RUN_DATE || new Date().toISOString().slice(0, 10);
 const HORIZON = Number(process.env.CONTINUITY_HORIZON_DAYS || 120);
+
+// Cadence policy: 2026 is locked and client-approved; the from_2027 lane is
+// adjustable without editing this generator. Both lanes emit candidates that still
+// require approval through /admin, so cadence controls how much is PROPOSED for
+// review, never what is published.
+const POLICY = (() => { try { return JSON.parse(fs.readFileSync('data/continuity/cadence_policy.json', 'utf8')); } catch { return null; } })();
+const LOCKED_THROUGH = POLICY?.locked_through || '2026-12-31';
+const laneFor = (dateStr) => {
+  const lanes = POLICY?.lanes || {};
+  return dateStr > LOCKED_THROUGH ? (lanes.from_2027 || lanes.locked_2026 || {}) : (lanes.locked_2026 || {});
+};
 const DRY = process.argv.includes('--dry-run');
 const DAY_MS = 86400000;
 
@@ -57,10 +68,11 @@ for (let d = addDays(coverageEnd, 1); isoDate(d) <= targetEnd; d = new Date(d.ge
   const dow = d.getUTCDay();
   const day = d.getUTCDate();
   const month = d.getUTCMonth() + 1;
-  if (dow >= 1 && dow <= 5) slots.push({ date, type: 'insight', cadence: 'daily' });
-  if (dow === 2) slots.push({ date, type: 'article', cadence: 'weekly' });
-  if (day === 15) slots.push({ date, type: 'guide', cadence: 'monthly' });
-  if (day === 20 && [3, 6, 9, 12].includes(month)) slots.push({ date, type: 'whitepaper', cadence: 'quarterly' });
+  const lane = laneFor(date);
+  if ((lane.insight_weekdays ?? [1, 2, 3, 4, 5]).includes(dow)) slots.push({ date, type: 'insight', cadence: 'daily' });
+  if (dow === (lane.article_weekday ?? 2)) slots.push({ date, type: 'article', cadence: 'weekly' });
+  if (day === (lane.guide_day_of_month ?? 15)) slots.push({ date, type: 'guide', cadence: 'monthly' });
+  if (day === (lane.whitepaper_day_of_month ?? 20) && (lane.whitepaper_months ?? [3, 6, 9, 12]).includes(month)) slots.push({ date, type: 'whitepaper', cadence: 'quarterly' });
 }
 
 const candidates = backlog.candidates || [];
