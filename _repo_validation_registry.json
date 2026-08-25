@@ -870,6 +870,34 @@
       "findingProtocol": "VALIDATION_FINDING",
       "enabled": true,
       "rationale": "The scheduled search loop must use grounded search truthfully, expose provider readiness, and preserve bounded repairs."
+    },
+    {
+      "id": "no-internal-instruction-leak",
+      "npmScript": "validate:no-instruction-leak",
+      "entrypoint": "scripts/validators/validate_no_internal_instruction_leak.js",
+      "severity": "HARD_FAIL",
+      "blocksRelease": true,
+      "group": "content-governance",
+      "owner": "repo-maintainers",
+      "scope": "published page copy under pages/",
+      "ciInvocation": "MATRIX_ONLY",
+      "findingProtocol": "VALIDATION_FINDING",
+      "enabled": true,
+      "rationale": "External-agent build directives (FILEPATH:, || CURRENT/MISSING/EDIT:, citation-ready update text) must never reach a published page, least of all the direct-answer block an answer engine extracts."
+    },
+    {
+      "id": "no-empty-table-cells",
+      "npmScript": "validate:no-empty-cells",
+      "entrypoint": "scripts/validators/validate_no_empty_table_cells.js",
+      "severity": "HARD_FAIL",
+      "blocksRelease": true,
+      "group": "content-governance",
+      "owner": "repo-maintainers",
+      "scope": "published page copy under pages/",
+      "ciInvocation": "MATRIX_ONLY",
+      "findingProtocol": "VALIDATION_FINDING",
+      "enabled": true,
+      "rationale": "An empty table cell breaks column-to-header alignment, so the table stops being a usable fact source for readers and for extraction."
     }
   ]
 }

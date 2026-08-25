@@ -111,6 +111,8 @@
     "search:repair": "node scripts/search/apply_bounded_search_repairs.mjs",
     "search:intelligence": "node scripts/search/run_search_intelligence_cycle.mjs",
     "search:provider-audit": "node scripts/search/run_provider_audit.mjs",
-    "validate:search-intelligence": "node _ops/validators/validate_search_intelligence_contract.js"
+    "validate:search-intelligence": "node _ops/validators/validate_search_intelligence_contract.js",
+    "validate:no-instruction-leak": "node scripts/validators/validate_no_internal_instruction_leak.js",
+    "validate:no-empty-cells": "node scripts/validators/validate_no_empty_table_cells.js"
   }
 }
