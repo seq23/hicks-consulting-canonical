@@ -116,6 +116,7 @@
     "validate:no-empty-cells": "node scripts/validators/validate_no_empty_table_cells.js",
     "queries:ingest": "node scripts/queries/ingest_gsc_evidence.mjs",
     "selfheal": "node _ops/selfheal/heal_until_clean.js",
-    "selfheal:dry": "node _ops/selfheal/heal_until_clean.js --dry-run"
+    "selfheal:dry": "node _ops/selfheal/heal_until_clean.js --dry-run",
+    "validate:content-pattern": "node scripts/validators/validate_content_pattern_contract.js"
   }
 }

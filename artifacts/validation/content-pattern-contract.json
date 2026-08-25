@@ -1,0 +1,236 @@
+{
+  "schemaVersion": "1.0.0",
+  "validator": "content-pattern-contract",
+  "spec": ".clarity/content-pattern-spec.json",
+  "generatedAt": "2026-08-25T22:08:27.408Z",
+  "enforcement": "report",
+  "pagesChecked": 259,
+  "status": "REPORTED",
+  "blockingFailures": 7,
+  "summary": [
+    {
+      "id": "direct_answer",
+      "blocking": true,
+      "pagesMissing": 0,
+      "coveragePct": 100,
+      "why": "no short-answer block - nothing here is quotable without surrounding context"
+    },
+    {
+      "id": "query_in_heading",
+      "blocking": true,
+      "pagesMissing": 0,
+      "coveragePct": 100,
+      "why": "h1 missing or too short to carry the searcher phrasing"
+    },
+    {
+      "id": "no_empty_table_cells",
+      "blocking": true,
+      "pagesMissing": 0,
+      "coveragePct": 100,
+      "why": "table ships empty cells - the agent calls these impossible to cite"
+    },
+    {
+      "id": "conversion_path",
+      "blocking": true,
+      "pagesMissing": 7,
+      "coveragePct": 97.3,
+      "why": "no approved conversion path - an answer-engine citation lands with nowhere to go"
+    },
+    {
+      "id": "checklist",
+      "blocking": false,
+      "pagesMissing": 18,
+      "coveragePct": 93.1,
+      "why": "no checklist or numbered protocol (agent request #1, 730 occurrences)"
+    },
+    {
+      "id": "comparison_table",
+      "blocking": false,
+      "pagesMissing": 259,
+      "coveragePct": 0,
+      "why": "no comparison or cost table (agent request #2, 529 occurrences)"
+    },
+    {
+      "id": "concrete_numbers",
+      "blocking": false,
+      "pagesMissing": 256,
+      "coveragePct": 1.2,
+      "why": "no concrete cost or timeline figures (agent request #5, 365 occurrences)"
+    },
+    {
+      "id": "named_sources",
+      "blocking": false,
+      "pagesMissing": 7,
+      "coveragePct": 97.3,
+      "why": "no named primary source (agent request #6, 288 occurrences)"
+    },
+    {
+      "id": "faq",
+      "blocking": false,
+      "pagesMissing": 255,
+      "coveragePct": 1.5,
+      "why": "no FAQ block or FAQPage schema (agent request #9)"
+    },
+    {
+      "id": "structured_data",
+      "blocking": false,
+      "pagesMissing": 0,
+      "coveragePct": 100,
+      "why": "no JSON-LD structured data (agent request #10)"
+    }
+  ],
+  "worstGaps": {
+    "direct_answer": [],
+    "query_in_heading": [],
+    "no_empty_table_cells": [],
+    "conversion_path": [],
+    "checklist": [
+      "pages/about/index.html",
+      "pages/anxiety-therapist-memphis/index.html",
+      "pages/black-therapist-memphis/index.html",
+      "pages/book-discovery-call/index.html",
+      "pages/corporate-speaking/index.html",
+      "pages/emergency-crisis-notice/index.html",
+      "pages/good-faith-estimate/index.html",
+      "pages/groups/index.html",
+      "pages/index.html",
+      "pages/intake-quiz/index.html",
+      "pages/llm-atlas/index.html",
+      "pages/organizational-training-inquiry/index.html",
+      "pages/request-consult/index.html",
+      "pages/resources/free-downloads/index.html",
+      "pages/resources/index.html",
+      "pages/resources/premium-downloads/index.html",
+      "pages/stress-management-worksheet/index.html",
+      "pages/therapy/index.html"
+    ],
+    "comparison_table": [
+      "pages/about/index.html",
+      "pages/anxiety-therapist-memphis/index.html",
+      "pages/black-therapist-memphis/index.html",
+      "pages/book-discovery-call/index.html",
+      "pages/coaching/index.html",
+      "pages/contact/index.html",
+      "pages/corporate-speaking/index.html",
+      "pages/emergency-crisis-notice/index.html",
+      "pages/faq/index.html",
+      "pages/good-faith-estimate/index.html",
+      "pages/groups/index.html",
+      "pages/index.html",
+      "pages/intake-quiz/index.html",
+      "pages/llm-atlas/answer-surfaces/index.html",
+      "pages/llm-atlas/clusters/index.html",
+      "pages/llm-atlas/fanouts/index.html",
+      "pages/llm-atlas/index.html",
+      "pages/llm-atlas/pillars/index.html",
+      "pages/llm-atlas/queries/index.html",
+      "pages/llm-atlas/social-signals/index.html",
+      "pages/llm-atlas/source-health/index.html",
+      "pages/organizational-training-inquiry/index.html",
+      "pages/request-consult/index.html",
+      "pages/resources/articles/burnout-or-just-too-much/index.html",
+      "pages/resources/articles/how-boundary-guilt-keeps-women-stuck-in-the-same-exhausting-loops/index.html"
+    ],
+    "concrete_numbers": [
+      "pages/about/index.html",
+      "pages/anxiety-therapist-memphis/index.html",
+      "pages/black-therapist-memphis/index.html",
+      "pages/book-discovery-call/index.html",
+      "pages/coaching/index.html",
+      "pages/contact/index.html",
+      "pages/corporate-speaking/index.html",
+      "pages/emergency-crisis-notice/index.html",
+      "pages/good-faith-estimate/index.html",
+      "pages/groups/index.html",
+      "pages/index.html",
+      "pages/intake-quiz/index.html",
+      "pages/llm-atlas/answer-surfaces/index.html",
+      "pages/llm-atlas/clusters/index.html",
+      "pages/llm-atlas/fanouts/index.html",
+      "pages/llm-atlas/index.html",
+      "pages/llm-atlas/pillars/index.html",
+      "pages/llm-atlas/queries/index.html",
+      "pages/llm-atlas/social-signals/index.html",
+      "pages/llm-atlas/source-health/index.html",
+      "pages/organizational-training-inquiry/index.html",
+      "pages/request-consult/index.html",
+      "pages/resources/articles/burnout-or-just-too-much/index.html",
+      "pages/resources/articles/how-boundary-guilt-keeps-women-stuck-in-the-same-exhausting-loops/index.html",
+      "pages/resources/articles/how-burnout-changes-the-way-you-think-about-your-own-life/index.html"
+    ],
+    "named_sources": [
+      "pages/llm-atlas/answer-surfaces/index.html",
+      "pages/llm-atlas/clusters/index.html",
+      "pages/llm-atlas/fanouts/index.html",
+      "pages/llm-atlas/pillars/index.html",
+      "pages/llm-atlas/queries/index.html",
+      "pages/llm-atlas/social-signals/index.html",
+      "pages/llm-atlas/source-health/index.html"
+    ],
+    "faq": [
+      "pages/about/index.html",
+      "pages/book-discovery-call/index.html",
+      "pages/coaching/index.html",
+      "pages/contact/index.html",
+      "pages/corporate-speaking/index.html",
+      "pages/emergency-crisis-notice/index.html",
+      "pages/good-faith-estimate/index.html",
+      "pages/index.html",
+      "pages/intake-quiz/index.html",
+      "pages/llm-atlas/answer-surfaces/index.html",
+      "pages/llm-atlas/clusters/index.html",
+      "pages/llm-atlas/fanouts/index.html",
+      "pages/llm-atlas/index.html",
+      "pages/llm-atlas/pillars/index.html",
+      "pages/llm-atlas/queries/index.html",
+      "pages/llm-atlas/social-signals/index.html",
+      "pages/llm-atlas/source-health/index.html",
+      "pages/organizational-training-inquiry/index.html",
+      "pages/request-consult/index.html",
+      "pages/resources/articles/burnout-or-just-too-much/index.html",
+      "pages/resources/articles/how-boundary-guilt-keeps-women-stuck-in-the-same-exhausting-loops/index.html",
+      "pages/resources/articles/how-burnout-changes-the-way-you-think-about-your-own-life/index.html",
+      "pages/resources/articles/how-burnout-shows-up-before-you-ever-call-it-burnout/index.html",
+      "pages/resources/articles/how-coaching-can-help-when-you-want-to-move-differently-without-starting-over/index.html",
+      "pages/resources/articles/how-life-transitions-can-shake-women-who-usually-look-put-together/index.html"
+    ],
+    "structured_data": []
+  },
+  "blockingBacklog": [
+    {
+      "path": "pages/llm-atlas/answer-surfaces/index.html",
+      "check": "conversion_path",
+      "why": "no approved conversion path - an answer-engine citation lands with nowhere to go"
+    },
+    {
+      "path": "pages/llm-atlas/clusters/index.html",
+      "check": "conversion_path",
+      "why": "no approved conversion path - an answer-engine citation lands with nowhere to go"
+    },
+    {
+      "path": "pages/llm-atlas/fanouts/index.html",
+      "check": "conversion_path",
+      "why": "no approved conversion path - an answer-engine citation lands with nowhere to go"
+    },
+    {
+      "path": "pages/llm-atlas/pillars/index.html",
+      "check": "conversion_path",
+      "why": "no approved conversion path - an answer-engine citation lands with nowhere to go"
+    },
+    {
+      "path": "pages/llm-atlas/queries/index.html",
+      "check": "conversion_path",
+      "why": "no approved conversion path - an answer-engine citation lands with nowhere to go"
+    },
+    {
+      "path": "pages/llm-atlas/social-signals/index.html",
+      "check": "conversion_path",
+      "why": "no approved conversion path - an answer-engine citation lands with nowhere to go"
+    },
+    {
+      "path": "pages/llm-atlas/source-health/index.html",
+      "check": "conversion_path",
+      "why": "no approved conversion path - an answer-engine citation lands with nowhere to go"
+    }
+  ]
+}

@@ -914,6 +914,20 @@
       "findingProtocol": "VALIDATION_FINDING",
       "enabled": true,
       "rationale": "An empty table cell breaks column-to-header alignment, so the table stops being a usable fact source for readers and for extraction."
+    },
+    {
+      "id": "content-pattern-contract",
+      "npmScript": "validate:content-pattern",
+      "entrypoint": "scripts/validators/validate_content_pattern_contract.js",
+      "severity": "STRONG_WARNING",
+      "blocksRelease": false,
+      "group": "content-governance",
+      "owner": "repo-maintainers",
+      "scope": "published page copy under pages/",
+      "ciInvocation": "MATRIX_ONLY",
+      "findingProtocol": "VALIDATION_FINDING",
+      "enabled": true,
+      "rationale": "Reports pre-publish coverage of the blocks an answer engine needs: a short-answer block, an h1 that carries the query, tables without empty cells, and one approved conversion path, plus coverage for checklist, comparison table, concrete numbers, named sources, FAQ and JSON-LD. STRONG_WARNING rather than HARD_FAIL while 7 llm-atlas machine-surface pages carry no approved conversion path; promote to HARD_FAIL at zero."
     }
   ]
 }
