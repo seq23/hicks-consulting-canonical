@@ -183,6 +183,66 @@ if (fs.existsSync(workerSource)) {
   copyRecursive(path.join(root, 'worker', 'admin_runtime.mjs'), path.join(dist, 'admin_runtime.mjs'));
 }
 
+// Cloudflare Pages answers HTTP 200 with index.html for any unmatched path when
+// the output has no 404.html, so every nonexistent URL was serving a duplicate
+// of the homepage under a 200 - indexable synthetic URLs at scale. The worker
+// falls through to env.ASSETS, which serves this with a real 404 status.
+// Emitted here rather than as a separate npm step because validate_agency_
+// infrastructure pins package.json "build" to exactly this script.
+(() => {
+  const indexPath = path.join(dist, 'index.html');
+  if (!fs.existsSync(indexPath)) return;
+  const index = fs.readFileSync(indexPath, 'utf8');
+  const styles = [
+    ...(index.match(/<style[\s\S]*?<\/style>/gi) || []),
+    ...(index.match(/<link[^>]+rel=["'](?:stylesheet|preconnect)["'][^>]*>/gi) || []),
+  ].join('\n');
+  const footer = (index.match(/<footer[\s\S]*?<\/footer>/i) || [''])[0];
+  const canonicalRaw = (index.match(/<link[^>]*rel=["']canonical["'][^>]*>/i)
+    || index.match(/<link[^>]*href=[^>]*rel=["']canonical["'][^>]*>/i) || [''])[0];
+  const href = (canonicalRaw.match(/href=["']([^"']+)["']/i) || [])[1];
+  let origin = '';
+  try { origin = href ? new URL(href).origin : ''; } catch { origin = ''; }
+  const titleRaw = (index.match(/<title>([^<]*)<\/title>/i) || [, 'This site'])[1];
+  const siteName = titleRaw.split(/\s+[|\u2014-]\s+/)[0].trim();
+  const esc = (v) => String(v).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+  const ld = { '@context': 'https://schema.org', '@type': 'WebPage', name: `Page not found \u00b7 ${siteName}` };
+  if (origin) {
+    ld['@id'] = `${origin}/404.html`;
+    ld.url = `${origin}/404.html`;
+    ld.isPartOf = { '@type': 'WebSite', name: siteName, url: `${origin}/` };
+  }
+  const html = `<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Page not found &middot; ${esc(siteName)}</title>
+  <meta name="robots" content="noindex, follow">
+  <meta name="description" content="That page could not be found on ${esc(siteName)}. The address may be mistyped, or the page may have been moved or retired.">${origin ? `\n  <link rel="canonical" href="${origin}/404.html">` : ''}
+${styles}
+  <style>
+    .nf-wrap { max-width: 40rem; margin: 0 auto; padding: 4rem 1.25rem; }
+    .nf-code { font-size: .75rem; letter-spacing: .12em; text-transform: uppercase; opacity: .7; margin: 0 0 .75rem; }
+    .nf-wrap h1 { margin: 0 0 .75rem; text-wrap: balance; }
+    .nf-wrap p { margin: 0 0 1.5rem; max-width: 34rem; }
+  </style>
+</head>
+<body>
+  <main class="nf-wrap">
+    <p class="nf-code">Error 404</p>
+    <h1>We couldn&rsquo;t find that page</h1>
+    <p>The address may be mistyped, or the page may have been moved or retired since it was linked.</p>
+    <p><a href="/">Return to ${esc(siteName)}</a></p>
+  </main>
+${footer}
+  <script type="application/ld+json">${JSON.stringify(ld, null, 2)}</script>
+</body>
+</html>
+`;
+  fs.writeFileSync(path.join(dist, '404.html'), html);
+})();
+
 require('./agency/generate_agency_report').generate();
 
 console.log('Build complete:', dist);
