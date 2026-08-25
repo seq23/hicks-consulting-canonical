@@ -365,7 +365,9 @@
       "ciInvocation": "MATRIX_ONLY",
       "findingProtocol": "VALIDATION_FINDING",
       "enabled": true,
-      "rationale": "Malformed normalized signals degrade downstream content planning but do not affect the live site directly."
+      "rationale": "Malformed normalized signals degrade downstream content planning but do not affect the live site directly.",
+      "repair_command": "npm run ingest:normalize",
+      "repair_rationale": "The check reads data/intake/normalized_query_signals.json; normalize_query_signals.js is the only writer of that file and emits exactly the id/query/source/intent/audience/contentType/status/generatedAt/tags fields the check requires."
     },
     {
       "id": "query-clusters",
@@ -379,7 +381,9 @@
       "ciInvocation": "MATRIX_ONLY",
       "findingProtocol": "VALIDATION_FINDING",
       "enabled": true,
-      "rationale": "Cluster completeness is a planning metric and is reported without release warning status."
+      "rationale": "Cluster completeness is a planning metric and is reported without release warning status.",
+      "repair_command": "npm run ingest:cluster",
+      "repair_rationale": "The check reads data/intake/query_clusters.json; cluster_query_signals.js is the only writer of that file and produces the id/title/queryCount/score shape the check requires."
     },
     {
       "id": "fanout-candidates",
@@ -393,7 +397,9 @@
       "ciInvocation": "MATRIX_ONLY",
       "findingProtocol": "VALIDATION_FINDING",
       "enabled": true,
-      "rationale": "Fanout candidates are optional planning inventory and are reported without warning status."
+      "rationale": "Fanout candidates are optional planning inventory and are reported without warning status.",
+      "repair_command": "npm run ingest:fanouts",
+      "repair_rationale": "The check reads data/intake/fanout_candidates.json; build_fanout_candidates.js is the only writer of that file and sets the id/clusterId/candidateRoute/userNavExposure/crawlerDiscoverable fields the check asserts."
     },
     {
       "id": "social-firehose",
@@ -435,7 +441,9 @@
       "ciInvocation": "MATRIX_ONLY",
       "findingProtocol": "VALIDATION_FINDING",
       "enabled": true,
-      "rationale": "Approval and humanization metadata protect content quality and publication boundaries."
+      "rationale": "Approval and humanization metadata protect content quality and publication boundaries.",
+      "repair_command": "npm run ingest:briefs",
+      "repair_rationale": "The check reads data/intake/content_brief_candidates.json and its own finding text prescribes this command by name; build_content_brief_candidates.js writes that file with the word targets, humanization checklist, and LLM prompt the check requires."
     },
     {
       "id": "publish-state",
@@ -561,7 +569,9 @@
       "ciInvocation": "MATRIX_ONLY",
       "findingProtocol": "VALIDATION_FINDING",
       "enabled": true,
-      "rationale": "IndexNow output defects delay discovery but do not affect site correctness or safety."
+      "rationale": "IndexNow output defects delay discovery but do not affect site correctness or safety.",
+      "repair_command": "npm run indexnow:emit",
+      "repair_rationale": "Repairs this check artifact defect: it fails when reports/indexnow-priority.txt and reports/indexnow-batch.txt do not exist together or the batch is empty, and indexnow_emit.js is the writer of both. Its script- and workflow-presence assertions are not repairable and are reported by name."
     },
     {
       "id": "digital-products-contract",
@@ -687,7 +697,9 @@
       "ciInvocation": "MATRIX_ONLY",
       "findingProtocol": "VALIDATION_FINDING",
       "enabled": true,
-      "rationale": "Modernization validator required to preserve authority-scale truth and existing client publishing sovereignty."
+      "rationale": "Modernization validator required to preserve authority-scale truth and existing client publishing sovereignty.",
+      "repair_command": "npm run authority:improvements",
+      "repair_rationale": "The check reads only data/authority_scale/improvement_recommendations.json; build_improvement_recommendations.mjs writes only that file and sets the twin_agent_installed, policy, editorial_action, and five-plus quality-lesson fields the check asserts."
     },
     {
       "id": "authority-distribution",
@@ -701,7 +713,9 @@
       "ciInvocation": "MATRIX_ONLY",
       "findingProtocol": "VALIDATION_FINDING",
       "enabled": true,
-      "rationale": "Modernization validator required to preserve authority-scale truth and existing client publishing sovereignty."
+      "rationale": "Modernization validator required to preserve authority-scale truth and existing client publishing sovereignty.",
+      "repair_command": "npm run authority:distribution-manifest",
+      "repair_rationale": "Repairs this check missing-artifact and url_count-mismatch defects: build_distribution_manifest.mjs writes .build/authority_distribution/indexnow-batch.txt and distribution-manifest.json from one URL set, which is the pair and the count the check cross-checks. Its remaining structural assertions about workflow and runner source are not repairable and are reported by name."
     },
     {
       "id": "editorial-continuity",
@@ -715,7 +729,9 @@
       "ciInvocation": "MATRIX_ONLY",
       "findingProtocol": "VALIDATION_FINDING",
       "enabled": true,
-      "rationale": "Modernization validator required to preserve authority-scale truth and existing client publishing sovereignty."
+      "rationale": "Modernization validator required to preserve authority-scale truth and existing client publishing sovereignty.",
+      "repair_command": "npm run continuity:replenish",
+      "repair_rationale": "The check reads data/continuity/editorial_continuity_report.json plus the continuity rows in the brief and queue files; replenish_editorial_candidates.mjs writes exactly those three artifacts at the locked cadence, and the repo editorial-continuity workflow already runs it immediately before validating."
     },
     {
       "id": "site-intent-preservation",

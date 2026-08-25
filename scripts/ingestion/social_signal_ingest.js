@@ -132,6 +132,15 @@ function slugify(text) {
   }
   fs.writeFileSync(path.join(runsDir, 'latest.json'), JSON.stringify(payload, null, 2) + '\n');
   fs.writeFileSync(path.join(outDir, 'social_signals.json'), JSON.stringify(payload, null, 2) + '\n');
-  fs.writeFileSync(path.join(outDir, 'query_signals_post_2027.json'), JSON.stringify({ generatedAt: payload.generatedAt, querySignals: signals }, null, 2) + '\n');
+  // Measured Search Console rows are merged into this same file by
+  // scripts/queries/ingest_gsc_evidence.mjs. This writer rebuilds the file from
+  // scraped sources, so preserve those measured rows explicitly - otherwise every
+  // social ingest would silently erase the only real demand evidence the pipeline
+  // has, which is exactly the failure mode this ingestion was meant to fix.
+  const scrapedQueries = new Set(signals.map((s) => String(s?.query || '').trim().toLowerCase()).filter(Boolean));
+  const priorSignals = readJson('data/intake/query_signals_post_2027.json', { querySignals: [] }).querySignals || [];
+  const measuredSignals = priorSignals.filter((s) => (s?.sourceType === 'gsc_search_analytics' || s?.evidence_tier === 'T1')
+    && !scrapedQueries.has(String(s?.query || '').trim().toLowerCase()));
+  fs.writeFileSync(path.join(outDir, 'query_signals_post_2027.json'), JSON.stringify({ generatedAt: payload.generatedAt, querySignals: [...signals, ...measuredSignals] }, null, 2) + '\n');
   console.log(`Social signal ingestion complete: ${signals.length} signals (${mode} mode).`);
 })();

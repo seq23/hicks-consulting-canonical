@@ -29,7 +29,18 @@ jobs:
 
       - run: npm ci
 
-      - run: npm run ingest:all
+      # ingest:all now runs queries:ingest between ingest:social and the rest of the
+      # pipeline, so measured Search Console queries are merged into the signal file
+      # before it is normalized, clustered, scored, and turned into briefs. Without
+      # credentials queries:ingest exits 0 and writes nothing. Existing schedule and
+      # publishing cadence are unchanged.
+      - name: Ingest signals, including measured Search Console queries
+        run: npm run ingest:all
+        env:
+          GSC_SITE_URL: ${{ secrets.GSC_SITE_URL }}
+          GSC_SERVICE_ACCOUNT_EMAIL: ${{ secrets.GSC_SERVICE_ACCOUNT_EMAIL }}
+          GSC_PRIVATE_KEY: ${{ secrets.GSC_PRIVATE_KEY }}
+          GSC_ACCESS_TOKEN: ${{ secrets.GSC_ACCESS_TOKEN }}
 
       - name: Migrate admitted opportunities into Full Safe Autonomy
         run: npm run autonomy:migrate

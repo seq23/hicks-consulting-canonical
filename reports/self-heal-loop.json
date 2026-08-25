@@ -1,0 +1,75 @@
+{
+  "schema_version": "1.0",
+  "repo": "hicks-consulting-canonical",
+  "profile": "all",
+  "max_attempts": 3,
+  "dry_run": true,
+  "generated_at": "2026-08-25T22:00:03.895Z",
+  "status": "CLEAN",
+  "safe_to_push": true,
+  "registered_repairs": [
+    {
+      "id": "query-signal-schema",
+      "severity": "SOFT_WARNING",
+      "repair_command": "npm run ingest:normalize"
+    },
+    {
+      "id": "query-clusters",
+      "severity": "INFO",
+      "repair_command": "npm run ingest:cluster"
+    },
+    {
+      "id": "fanout-candidates",
+      "severity": "INFO",
+      "repair_command": "npm run ingest:fanouts"
+    },
+    {
+      "id": "content-briefs",
+      "severity": "STRONG_WARNING",
+      "repair_command": "npm run ingest:briefs"
+    },
+    {
+      "id": "indexnow",
+      "severity": "SOFT_WARNING",
+      "repair_command": "npm run indexnow:emit"
+    },
+    {
+      "id": "improvement-recommendations",
+      "severity": "STRONG_WARNING",
+      "repair_command": "npm run authority:improvements"
+    },
+    {
+      "id": "authority-distribution",
+      "severity": "HARD_FAIL",
+      "repair_command": "npm run authority:distribution-manifest"
+    },
+    {
+      "id": "editorial-continuity",
+      "severity": "HARD_FAIL",
+      "repair_command": "npm run continuity:replenish"
+    }
+  ],
+  "remaining_findings": [
+    {
+      "id": "word-counts",
+      "severity": "SOFT_WARNING",
+      "blocking": false,
+      "repair_command": null
+    }
+  ],
+  "attempts": [
+    {
+      "attempt": 1,
+      "validation_exit": 0,
+      "findings": [
+        {
+          "id": "word-counts",
+          "severity": "SOFT_WARNING",
+          "reason": ""
+        }
+      ],
+      "repaired": [],
+      "result": "CLEAN"
+    }
+  ]
+}
