@@ -116,7 +116,15 @@ const blocking = [];
 const warnings = [];
 
 if (ledgerExists && newUrls.length > policy.new_pages_per_week) {
-  blocking.push(`weekly_cap: ${newUrls.length} URLs are new since the last run, cap is ${policy.new_pages_per_week} per week`);
+  const msg = `weekly_cap: ${newUrls.length} URLs are new since the last run, cap is ${policy.new_pages_per_week} per week`;
+  // A repo whose publishing we do not control cannot have its build failed by
+  // that publishing. Reported instead, on the same pattern as require_lastmod,
+  // so the cadence is still visible on every run.
+  if (policy.enforce_weekly_cap === false) {
+    warnings.push(`${msg} (reported only: ${policy._cadence_note || 'cap enforcement disabled for this repo'})`);
+  } else {
+    blocking.push(msg);
+  }
 }
 if (stalePct > policy.stale_tolerance_pct) {
   blocking.push(`refresh_debt: ${stale} of ${dated.length} pages (${stalePct.toFixed(0)}%) are older than ${policy.refresh_window_days} days, tolerance is ${policy.stale_tolerance_pct}%`);
