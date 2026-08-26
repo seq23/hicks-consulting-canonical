@@ -2,7 +2,7 @@
   "schemaVersion": "1.0.0",
   "validator": "content-pattern-contract",
   "spec": ".clarity/content-pattern-spec.json",
-  "generatedAt": "2026-08-26T13:38:09.313Z",
+  "generatedAt": "2026-08-26T19:59:10.943Z",
   "enforcement": "report",
   "pagesChecked": 259,
   "status": "REPORTED",
@@ -81,8 +81,8 @@
     {
       "id": "recommendation_summary",
       "blocking": false,
-      "pagesMissing": 259,
-      "coveragePct": 0,
+      "pagesMissing": 145,
+      "coveragePct": 44,
       "why": "no recommendation summary - asked for on 913 of 913 agent recommendations, the single most requested block"
     },
     {

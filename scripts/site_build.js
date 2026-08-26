@@ -140,10 +140,48 @@ const llmOnlyRoutes = [
   '/llm-atlas/answer-surfaces/'
 ];
 
-const urls = [...staticPublicRoutes, ...llmOnlyRoutes, ...Array.from(publishedResourceSlugs)].map(route => `${canonicalDomain}${route}`);
-const sitemap = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">', ...urls.map(url => `  <url><loc>${url}</loc></url>`), '</urlset>'].join('\n');
+const sitemapRoutes = [...staticPublicRoutes, ...llmOnlyRoutes, ...Array.from(publishedResourceSlugs)];
+
+// <lastmod> is metadata about the sitemap entry, not page content: emitting it
+// changes nothing on any published page. It was absent on all 95 URLs, which
+// data/cadence/policy.json treats as a blocking no_freshness_signal and which
+// leaves a crawler no way to tell what changed.
+//
+// The date is keyed on a hash of the rendered page rather than read from git at
+// build time. `git log -1` would report the tip commit for every file in the
+// depth-1 checkouts CI uses, stamping one uniform date across the whole
+// library - the date-bump pattern scripts/cadence_gate.js exists to flag. The
+// ledger only consults git to seed a URL it has never seen, and only when the
+// clone actually has the history. See scripts/lib/lastmod_ledger.js.
+const ledgerLib = require('./lib/lastmod_ledger');
+const today = ledgerLib.buildDate();
+const ledger = ledgerLib.load();
+const ledgerPages = {};
+for (const route of sitemapRoutes) {
+  const url = `${canonicalDomain}${route}`;
+  const clean = route.replace(/^\//, '').replace(/\/$/, '');
+  const rendered = clean ? path.join(dist, clean, 'index.html') : path.join(dist, 'index.html');
+  const source = path.posix.join('pages', clean, 'index.html');
+  // Hash the rendered page so the date follows what a crawler actually sees.
+  // A route with no rendered file is left out of the ledger rather than hashed
+  // as empty, which would make every such URL share one bogus identity.
+  if (!fs.existsSync(rendered)) continue;
+  ledgerPages[url] = { hash: ledgerLib.contentHash(fs.readFileSync(rendered)), file: source };
+}
+const lastmods = ledgerLib.resolve(ledgerPages, ledger, today);
+ledgerLib.save(ledgerLib.rebuilt(ledgerPages, ledger, today, { prune: true }));
+
+const urls = sitemapRoutes.map(route => `${canonicalDomain}${route}`);
+const sitemap = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">', ...urls.map(url => {
+  const lm = lastmods[url];
+  // No date is invented for a URL the ledger could not resolve; it keeps the
+  // shape it had before rather than being stamped with today.
+  return lm ? `  <url><loc>${url}</loc><lastmod>${lm}</lastmod></url>` : `  <url><loc>${url}</loc></url>`;
+}), '</urlset>'].join('\n');
 fs.writeFileSync(path.join(root, 'sitemap.xml'), sitemap + '\n');
 fs.writeFileSync(path.join(dist, 'sitemap.xml'), sitemap + '\n');
+const dated = urls.filter(u => lastmods[u]).length;
+console.log(`sitemap: ${urls.length} url(s), ${dated} with lastmod (ledger: data/cadence/lastmod_ledger.json)`);
 
 const llms = [
   '# Hicks Consulting',

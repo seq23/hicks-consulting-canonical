@@ -1,0 +1,387 @@
+{
+  "schema": "lastmod-ledger-v1",
+  "note": "Per-URL content hash and the date that content last changed. lastmod only advances for a URL whose hash changed; see scripts/lib/lastmod_ledger.js. A URL the ledger has not seen before is seeded from its last commit date when the clone has full history, and from the build date otherwise. No dates are reconstructed or estimated.",
+  "seeded_on": "2026-08-26",
+  "entries": {
+    "https://www.hicksconsulting.org/": {
+      "hash": "c7db6bb696a020d9c6fe0322b708b3a7323a8078760715b05778056dc15e52aa",
+      "lastmod": "2026-08-06"
+    },
+    "https://www.hicksconsulting.org/about/": {
+      "hash": "4f22d68c628ee16bf7859f26f9e9ad2ed721451cd9e14fe66ee71b38a3e00843",
+      "lastmod": "2026-08-06"
+    },
+    "https://www.hicksconsulting.org/anxiety-therapist-memphis/": {
+      "hash": "e1dfe17e9beca969779992d64659d8643654fca0ecb25e912dc8cad3e99fd0a2",
+      "lastmod": "2026-08-06"
+    },
+    "https://www.hicksconsulting.org/black-therapist-memphis/": {
+      "hash": "ba06af7b32ca2c680bb1c8c43ae70cdd83d174dc5e71c3ce751d2003ff6f9c7b",
+      "lastmod": "2026-08-06"
+    },
+    "https://www.hicksconsulting.org/book-discovery-call/": {
+      "hash": "0541d611da6395556ee7e8e10a3dae42bbfd254f4dbeb1eedb08f5e8ca87247c",
+      "lastmod": "2026-08-12"
+    },
+    "https://www.hicksconsulting.org/coaching/": {
+      "hash": "133b8bd7a95bcffc9754b6c7f42fdb0eaa5e2e93d9749c477d39e2dd83fe2529",
+      "lastmod": "2026-08-12"
+    },
+    "https://www.hicksconsulting.org/contact/": {
+      "hash": "189c7d62aa5a40f5586151bb62d8b8444b8650d3592ea2179e949535d076c3e4",
+      "lastmod": "2026-08-06"
+    },
+    "https://www.hicksconsulting.org/cookie-policy/": {
+      "hash": "6a4cee07888aef6de3f473bc95c8f6ed2fbd6151400e4d5683030a76846cb59e",
+      "lastmod": "2026-06-16"
+    },
+    "https://www.hicksconsulting.org/corporate-speaking/": {
+      "hash": "f9327c92f50f6200acd4342ff057d4c8d6ddb9ba53d29e7cc12ba979e16e2bd1",
+      "lastmod": "2026-08-06"
+    },
+    "https://www.hicksconsulting.org/disclaimer/": {
+      "hash": "4cf2bb7477bd02d9f6a0ac26e4a97f41d3006eed3bca2bc74c1b69e7794cadf8",
+      "lastmod": "2026-06-16"
+    },
+    "https://www.hicksconsulting.org/emergency-crisis-notice/": {
+      "hash": "bab8d52ddd3a8cd556222cbbdd1a348d468925689a0e62b695bbd4326609886b",
+      "lastmod": "2026-08-12"
+    },
+    "https://www.hicksconsulting.org/faq/": {
+      "hash": "dbdd3a079a20be605bf4ee0fc101e4f035e6db1e626a9d0970353911590f9ea8",
+      "lastmod": "2026-08-12"
+    },
+    "https://www.hicksconsulting.org/good-faith-estimate/": {
+      "hash": "825962d4b315e9fde1d62f3437c16c258b9957bbb46e197885c04077ef3f21d8",
+      "lastmod": "2026-06-16"
+    },
+    "https://www.hicksconsulting.org/groups/": {
+      "hash": "4a4a78f807725bd222a70b1c562054d6794735ad6443786932b101c848a0676c",
+      "lastmod": "2026-08-12"
+    },
+    "https://www.hicksconsulting.org/intake-quiz/": {
+      "hash": "d90867ae13857629ce04463f5ef7becfd584a9fa230afc7353ebaafc08c213fb",
+      "lastmod": "2026-08-12"
+    },
+    "https://www.hicksconsulting.org/llm-atlas/": {
+      "hash": "b925d21f0a064345e21c4e44fa8a3c67d74663df3b666a9fbf32ddc6d8319edb",
+      "lastmod": "2026-05-27"
+    },
+    "https://www.hicksconsulting.org/llm-atlas/answer-surfaces/": {
+      "hash": "7ff87f511f1a58d5d3fc8a5d4e5f95b2a799f0140909bb2324c8c7b12be41771",
+      "lastmod": "2026-05-27"
+    },
+    "https://www.hicksconsulting.org/llm-atlas/clusters/": {
+      "hash": "cfd48fd2e28b2cb9794c354fbc9fd09aa91750c3504bfeb92465ef81fe81b2b4",
+      "lastmod": "2026-05-27"
+    },
+    "https://www.hicksconsulting.org/llm-atlas/fanouts/": {
+      "hash": "00fdbf2197e97f5e73e2ecd5dde926f1017f4ea6d46b789ce528bc8a81676d1b",
+      "lastmod": "2026-05-27"
+    },
+    "https://www.hicksconsulting.org/llm-atlas/pillars/": {
+      "hash": "2692d12d8ff431049d5c83df14a11e866257578d21985e9832f47bb6b5497bed",
+      "lastmod": "2026-05-27"
+    },
+    "https://www.hicksconsulting.org/llm-atlas/queries/": {
+      "hash": "f7faf35150a3758c39838ebef6bee9c1442a395e54afdbfeb767bd6e9cd5e0d1",
+      "lastmod": "2026-05-27"
+    },
+    "https://www.hicksconsulting.org/llm-atlas/social-signals/": {
+      "hash": "f938dd9b5f776956091dc47b62688816237fc55ba290e8897e7c80e945cd7bcc",
+      "lastmod": "2026-05-27"
+    },
+    "https://www.hicksconsulting.org/llm-atlas/source-health/": {
+      "hash": "b4951daf6207a206f37be233a8779966cad259c67c0419f087f872cc5c6a4299",
+      "lastmod": "2026-05-27"
+    },
+    "https://www.hicksconsulting.org/organizational-training-inquiry/": {
+      "hash": "939cc6e80de525a51aa815cc778d3d729253a7881614cd1ca913bf7ae53053f1",
+      "lastmod": "2026-05-27"
+    },
+    "https://www.hicksconsulting.org/privacy-policy/": {
+      "hash": "64e6059d25c4d918c1fc418e4f1dd28a534458bdfb9fcfd4ec6fbaa1a3765b94",
+      "lastmod": "2026-06-16"
+    },
+    "https://www.hicksconsulting.org/request-consult/": {
+      "hash": "208fd8eff477c8a594b3e37e22f61a089a67699d9c1651a1089266d1dcbe18ec",
+      "lastmod": "2026-05-27"
+    },
+    "https://www.hicksconsulting.org/resources/": {
+      "hash": "d95572d1e1f9c970b3d97b6eed8b998c9fa5f99e8458fea270e53f5299b2355d",
+      "lastmod": "2026-08-06"
+    },
+    "https://www.hicksconsulting.org/resources/articles/": {
+      "hash": "7636cf208812e188a0ba930e330d407d0d1769d0cc16a405eb339b0cb13ae7ff",
+      "lastmod": "2026-05-27"
+    },
+    "https://www.hicksconsulting.org/resources/articles/burnout-or-just-too-much/": {
+      "hash": "80c1353771359dcc6a99cc4a3f3017cefae71eb595fc244b9dacaafd947977c2",
+      "lastmod": "2026-08-06"
+    },
+    "https://www.hicksconsulting.org/resources/articles/how-boundary-guilt-keeps-women-stuck-in-the-same-exhausting-loops/": {
+      "hash": "723d366106c21fce6affe65aea4496fd39b7687ade1ca4589f0870be6cf7d844",
+      "lastmod": "2026-06-16"
+    },
+    "https://www.hicksconsulting.org/resources/articles/how-burnout-changes-the-way-you-think-about-your-own-life/": {
+      "hash": "a7d0305c21f28cefc4d53e45da5a414eb3b97fd750a9b492a42bee8712610b00",
+      "lastmod": "2026-06-16"
+    },
+    "https://www.hicksconsulting.org/resources/articles/how-burnout-shows-up-before-you-ever-call-it-burnout/": {
+      "hash": "cd6104e7494fdcc69d19614ff0a7141ed4aae72e449a887dd794702ca91af8c6",
+      "lastmod": "2026-08-06"
+    },
+    "https://www.hicksconsulting.org/resources/articles/how-life-transitions-can-shake-women-who-usually-look-put-together/": {
+      "hash": "3e97177e845be26f1d84476558419c5a9439763b9b39c92cc8e1a256f507123d",
+      "lastmod": "2026-06-16"
+    },
+    "https://www.hicksconsulting.org/resources/articles/how-to-tell-whether-you-need-more-discipline-or-more-support/": {
+      "hash": "524caf8c57a72563101110e065b0d815a2393aa3546aac5e479a29a52b8bfc10",
+      "lastmod": "2026-06-16"
+    },
+    "https://www.hicksconsulting.org/resources/articles/the-difference-between-being-busy-and-being-emotionally-maxed-out/": {
+      "hash": "c5dfafadbb38bd171d94ec2035182de2b834cc0b84ee54f9306915548d4b01fe",
+      "lastmod": "2026-08-06"
+    },
+    "https://www.hicksconsulting.org/resources/articles/the-quiet-anger-that-builds-when-you-are-always-the-reliable-one/": {
+      "hash": "f477eb121d44f64089eeddd33046c315c0ec3ec227c5fbfc31e829fc4dfa58e5",
+      "lastmod": "2026-08-06"
+    },
+    "https://www.hicksconsulting.org/resources/articles/what-black-women-deserve-from-support-that-is-actually-useful/": {
+      "hash": "00e3cd65cf59102cf45b97cff3c1fa9571045861f4d29f9d6641b13aabb6c20b",
+      "lastmod": "2026-08-06"
+    },
+    "https://www.hicksconsulting.org/resources/articles/what-boundary-problems-really-sound-like-in-professional-women/": {
+      "hash": "493beccd0e84df5868ec5e730566c0b47a684e48f56dd6e8aa270fa686dfd044",
+      "lastmod": "2026-08-06"
+    },
+    "https://www.hicksconsulting.org/resources/articles/what-people-pleasing-costs-black-women-at-work-and-at-home/": {
+      "hash": "dfb428657e6df565e03669d4439de00defe9fa49f8077cf01c37b743e8ad5387",
+      "lastmod": "2026-06-16"
+    },
+    "https://www.hicksconsulting.org/resources/articles/what-strong-black-woman-fatigue-can-look-like-in-real-life/": {
+      "hash": "44ac33bdeda8dd7843d8c9db9149f638cb004360eaa86a61b563cf12b8bd94d7",
+      "lastmod": "2026-06-16"
+    },
+    "https://www.hicksconsulting.org/resources/articles/what-to-do-when-you-are-tired-of-being-everyone-s-safe-place/": {
+      "hash": "23d41646baeea8c2713ece85ec0d6d4f473e2096f50a421ef9e612020ba09c97",
+      "lastmod": "2026-06-16"
+    },
+    "https://www.hicksconsulting.org/resources/articles/when-success-stops-feeling-like-proof-and-starts-feeling-like-pressure/": {
+      "hash": "c9241d2d6f4c5a57e0ee019c385352ab134f7dc886baa5299357f78d7ab6078f",
+      "lastmod": "2026-06-16"
+    },
+    "https://www.hicksconsulting.org/resources/articles/when-you-keep-saying-yes/": {
+      "hash": "13dd42ff2564ccb643f59ecd5a2e3f873f9c0110dcc92445c64aa10dfb4c73f5",
+      "lastmod": "2026-08-06"
+    },
+    "https://www.hicksconsulting.org/resources/articles/when-your-body-is-carrying-stress-your-mind-keeps-dismissing/": {
+      "hash": "f66453fc8c14feb1bccdda6b4d1c419583bcf2f56f7c9497513c2eb461b52090",
+      "lastmod": "2026-08-06"
+    },
+    "https://www.hicksconsulting.org/resources/articles/why-emotional-heaviness-does-not-always-look-like-crying/": {
+      "hash": "f992141a488393f986954cd9fbe176a0adf968ef1c2c4ddd39a5631071c7b6bb",
+      "lastmod": "2026-06-16"
+    },
+    "https://www.hicksconsulting.org/resources/articles/why-high-achieving-women-sometimes-mistake-numbness-for-maturity/": {
+      "hash": "44fe9d27f9dfd4541c6e5108ee75662a9cd991d9d006eb9f2031d34582ef4a0c",
+      "lastmod": "2026-06-16"
+    },
+    "https://www.hicksconsulting.org/resources/articles/why-it-can-feel-so-hard-to-ask-for-help-even-when-you-need-it/": {
+      "hash": "c566123981732bb67785258c993a41ef3c4c865436e1aa0631d202e697ff7cc4",
+      "lastmod": "2026-06-16"
+    },
+    "https://www.hicksconsulting.org/resources/articles/why-rest-feels-so-hard-when-you-have-been-rewarded-for-overfunctioning/": {
+      "hash": "478e7f8f2d9a2cb5be1a64626526e514432faff3b095837406741eed86346a46",
+      "lastmod": "2026-08-06"
+    },
+    "https://www.hicksconsulting.org/resources/free-downloads/": {
+      "hash": "81f138e7c395c301f1b898c110b33ee928ebc6691d11cce2928a9a26b702f112",
+      "lastmod": "2026-08-06"
+    },
+    "https://www.hicksconsulting.org/resources/guides/": {
+      "hash": "4d43c204264b8f282e4c7b86b760df3162f2929dad5f6a7b60507e2d02f20ff6",
+      "lastmod": "2026-05-27"
+    },
+    "https://www.hicksconsulting.org/resources/guides/anxiety-overwhelm-and-the-cost-of-being-mentally-on-all-the-time/": {
+      "hash": "971ac6fe86cecfea85b831478cdff7fee2493b5b58340ddbe33439cc8e7168cc",
+      "lastmod": "2026-08-06"
+    },
+    "https://www.hicksconsulting.org/resources/guides/boundaries-for-black-women/": {
+      "hash": "bf4a0747dde2865cf7ab8128d04ff60ad418ddc74967bb538f2f9339c00d12e2",
+      "lastmod": "2026-06-16"
+    },
+    "https://www.hicksconsulting.org/resources/guides/boundaries-people-pleasing-and-the-fear-of-letting-people-down/": {
+      "hash": "eb5104b254a56da3ec722b453145b26d3fb2f50ec5e0a54b92653b9aa2e88e99",
+      "lastmod": "2026-06-16"
+    },
+    "https://www.hicksconsulting.org/resources/guides/burnout-recovery-for-black-women-who-keep-functioning-through-everything/": {
+      "hash": "153a94e99fba810dafe6c187e4540eafbec8506af05bc8464a554de7401f3302",
+      "lastmod": "2026-08-06"
+    },
+    "https://www.hicksconsulting.org/resources/guides/life-transitions-for-high-achieving-black-women/": {
+      "hash": "34bbf53a5870835cec094bcd7ff4b2f202631a16df4ea5d9e90b9d055cbb14db",
+      "lastmod": "2026-06-16"
+    },
+    "https://www.hicksconsulting.org/resources/insights/": {
+      "hash": "da43547c53086d7bad1b0bf682a3611dc8569274992c3dcc73bb0556f52f90d4",
+      "lastmod": "2026-05-27"
+    },
+    "https://www.hicksconsulting.org/resources/insights/how-boundary-guilt-keeps-women-stuck-in-the-same-exhausting-loops-how-it-shows-up-in/": {
+      "hash": "965f2a0205fd4845628359034cc52df01be83cef22c3bd2fcbe4042b3a6d7b5d",
+      "lastmod": "2026-06-16"
+    },
+    "https://www.hicksconsulting.org/resources/insights/how-boundary-guilt-keeps-women-stuck-in-the-same-exhausting-loops-next-step-reflectio/": {
+      "hash": "5b79cf17517c1312b83a3091b48fa1c7eef697de099a9ddcfb16df392e9ac933",
+      "lastmod": "2026-06-16"
+    },
+    "https://www.hicksconsulting.org/resources/insights/how-burnout-changes-the-way-you-think-about-your-own-life-a-gentler-truth-to-consider/": {
+      "hash": "8d13113bd00766d5c51a79634675e370ba550b43a5ea4d1ebb50161abd6e9615",
+      "lastmod": "2026-06-16"
+    },
+    "https://www.hicksconsulting.org/resources/insights/how-burnout-changes-the-way-you-think-about-your-own-life-how-it-shows-up-in-work-and/": {
+      "hash": "518f16116af8060f103c63009696dc8f07222f408bd5fa9ca10fc49b909f58a8",
+      "lastmod": "2026-06-16"
+    },
+    "https://www.hicksconsulting.org/resources/insights/how-burnout-changes-the-way-you-think-about-your-own-life-next-step-reflection/": {
+      "hash": "4dba89a4d95b9a734a82a119fce7d9a89046a1a5d2bab42eb81de41fd962389e",
+      "lastmod": "2026-06-16"
+    },
+    "https://www.hicksconsulting.org/resources/insights/how-burnout-changes-the-way-you-think-about-your-own-life-what-this-looks-like-in-rea/": {
+      "hash": "0f7afc23e719a55e71463913d6da1697b68cdb48117aeff71408a738cd733ff9",
+      "lastmod": "2026-06-16"
+    },
+    "https://www.hicksconsulting.org/resources/insights/how-burnout-changes-the-way-you-think-about-your-own-life-why-women-minimize-it/": {
+      "hash": "ff8cfe7bbd6506c48cb45d0813456a6932aa1ceb670d983759f9a8feabcfd979",
+      "lastmod": "2026-06-16"
+    },
+    "https://www.hicksconsulting.org/resources/insights/how-life-transitions-can-shake-women-who-usually-look-put-together-what-this-looks-li/": {
+      "hash": "a8dba7e055911d1fe9dde0026642df9edc4378376d2418f102825be01f7c4c39",
+      "lastmod": "2026-08-06"
+    },
+    "https://www.hicksconsulting.org/resources/insights/how-to-tell-whether-you-need-more-discipline-or-more-support-next-step-reflection/": {
+      "hash": "9dbf168a0d97e86616ff719b7014e1bc5a92af5fa8574dea596f12e5712d4ed4",
+      "lastmod": "2026-06-16"
+    },
+    "https://www.hicksconsulting.org/resources/insights/the-quiet-anger-that-builds-when-you-are-always-the-reliable-one-a-gentler-truth-to-c/": {
+      "hash": "db6b78f413d8cb200cfaa6517dfdc50154ca8b38a9bf8b70f896e0bacbbf253e",
+      "lastmod": "2026-08-06"
+    },
+    "https://www.hicksconsulting.org/resources/insights/the-quiet-anger-that-builds-when-you-are-always-the-reliable-one-how-it-shows-up-in-w/": {
+      "hash": "10db1ac7b89c2318960144b8fc7394ae699f224ea2a44121398c09783d50e951",
+      "lastmod": "2026-08-06"
+    },
+    "https://www.hicksconsulting.org/resources/insights/the-quiet-anger-that-builds-when-you-are-always-the-reliable-one-next-step-reflection/": {
+      "hash": "5db89e75e61962d535e83414cfd3de4151eabcb4b911d4d6d71ea743905b3cb2",
+      "lastmod": "2026-08-06"
+    },
+    "https://www.hicksconsulting.org/resources/insights/what-boundary-problems-really-sound-like-in-professional-women-a-gentler-truth-to-con/": {
+      "hash": "0d5c8d9cddfa0e2708a379628a98d3d810d5ceacd68035a12dc11b0dd74dd1f1",
+      "lastmod": "2026-08-06"
+    },
+    "https://www.hicksconsulting.org/resources/insights/what-boundary-problems-really-sound-like-in-professional-women-how-it-shows-up-in-wor/": {
+      "hash": "224e9c4e36245de9fac8014c598528fbb953b17096034abadaf8bb8ed7454043",
+      "lastmod": "2026-08-06"
+    },
+    "https://www.hicksconsulting.org/resources/insights/what-boundary-problems-really-sound-like-in-professional-women-next-step-reflection/": {
+      "hash": "b3de8c304a96affb48acf1e484f0ef593ea69a1e24585463e56a8e48435738d9",
+      "lastmod": "2026-08-06"
+    },
+    "https://www.hicksconsulting.org/resources/insights/what-boundary-problems-really-sound-like-in-professional-women-what-this-looks-like-i/": {
+      "hash": "61cf87625dd6940fc247bffa797a79fdd75c773d864bfd6bd025244882c52597",
+      "lastmod": "2026-08-06"
+    },
+    "https://www.hicksconsulting.org/resources/insights/what-boundary-problems-really-sound-like-in-professional-women-why-women-minimize-it/": {
+      "hash": "c7dc49235f1c0624681cfd235eabbb4315d8c72189483c74b6706ad7bdf93ef8",
+      "lastmod": "2026-08-06"
+    },
+    "https://www.hicksconsulting.org/resources/insights/what-people-pleasing-costs-black-women-at-work-and-at-home-how-it-shows-up-in-work-an/": {
+      "hash": "70e620e3dce02199bb29ff56a342ae084967abd284b8b3cbe46758e4ae6468e7",
+      "lastmod": "2026-06-16"
+    },
+    "https://www.hicksconsulting.org/resources/insights/what-people-pleasing-costs-black-women-at-work-and-at-home-why-women-minimize-it/": {
+      "hash": "3abab0dc3a9f079e617c41764c45e38568bce83fe65ce1348a75755779fc264e",
+      "lastmod": "2026-06-16"
+    },
+    "https://www.hicksconsulting.org/resources/insights/what-to-do-when-you-are-tired-of-being-everyone-s-safe-place-a-gentler-truth-to-consi/": {
+      "hash": "99416fee2aaafd5251fa4ca306b528078775a15fe582497761896ac227f2b5d4",
+      "lastmod": "2026-06-16"
+    },
+    "https://www.hicksconsulting.org/resources/insights/what-to-do-when-you-are-tired-of-being-everyone-s-safe-place-how-it-shows-up-in-work/": {
+      "hash": "888e9db7d94cb9633d7db43be4e30625202bc1d03f9eece16d55602a8058c97c",
+      "lastmod": "2026-06-16"
+    },
+    "https://www.hicksconsulting.org/resources/insights/what-to-do-when-you-are-tired-of-being-everyone-s-safe-place-next-step-reflection/": {
+      "hash": "f20e4f562d464866b1e51b122ec5cea1414e63a02a67f3e68405792e9557c681",
+      "lastmod": "2026-06-16"
+    },
+    "https://www.hicksconsulting.org/resources/insights/what-to-do-when-you-are-tired-of-being-everyone-s-safe-place-what-this-looks-like-in/": {
+      "hash": "b55f4ddacd313645b9620c0ffb13d14c8b69f79a1c914c17810b73842b216516",
+      "lastmod": "2026-06-16"
+    },
+    "https://www.hicksconsulting.org/resources/insights/what-to-do-when-you-are-tired-of-being-everyone-s-safe-place-why-women-minimize-it/": {
+      "hash": "aba14ff5bafce0ca46ad00af11293d1103b318f704e99fd86c0c329bb1ed6fdf",
+      "lastmod": "2026-06-16"
+    },
+    "https://www.hicksconsulting.org/resources/insights/when-rest-feels-like-guilt/": {
+      "hash": "9b573dd87e57d7e55439d4be6380537cfbb9726a5c54ec6abcdf80a1d5856acc",
+      "lastmod": "2026-08-06"
+    },
+    "https://www.hicksconsulting.org/resources/insights/why-emotional-heaviness-does-not-always-look-like-crying-how-it-shows-up-in-work-and/": {
+      "hash": "2a7c1e2eb7ddb5fc4b7662c3d65e4a20806c0bbabb28d6ebcb644d56d183e6af",
+      "lastmod": "2026-06-16"
+    },
+    "https://www.hicksconsulting.org/resources/insights/why-emotional-heaviness-does-not-always-look-like-crying-next-step-reflection/": {
+      "hash": "a78737c05b9c0db6ffa15b1de81f21a0398e9019ab5d6f4c705d66f4acb758fc",
+      "lastmod": "2026-06-16"
+    },
+    "https://www.hicksconsulting.org/resources/insights/why-high-achieving-women-sometimes-mistake-numbness-for-maturity-next-step-reflection/": {
+      "hash": "10cbb5e57480d9136a10f6f9e816be35870f5aa0a2e54dee8d4d9903deb04eb6",
+      "lastmod": "2026-06-16"
+    },
+    "https://www.hicksconsulting.org/resources/insights/why-it-can-feel-so-hard-to-ask-for-help-even-when-you-need-it-how-it-shows-up-in-work/": {
+      "hash": "8f157ef144732f9b71e279700f18882d90b04dc4452fe22139870fbb8221ef48",
+      "lastmod": "2026-06-16"
+    },
+    "https://www.hicksconsulting.org/resources/insights/why-it-can-feel-so-hard-to-ask-for-help-even-when-you-need-it-what-this-looks-like-in/": {
+      "hash": "a21ffb3174b0b6d602117f8a9787cc77c9289860fa9501f85d747570f67b721d",
+      "lastmod": "2026-06-16"
+    },
+    "https://www.hicksconsulting.org/resources/insights/why-it-can-feel-so-hard-to-ask-for-help-even-when-you-need-it-why-women-minimize-it/": {
+      "hash": "982bb39790f56ed741388fa7299061988c433a943dc8fb4211b32fc4ad5d0883",
+      "lastmod": "2026-06-16"
+    },
+    "https://www.hicksconsulting.org/resources/insights/why-successful-black-women-still-feel-worn-down/": {
+      "hash": "f149f81c3d95e696a1b077738166f27c72ffc69c264fa57d9ead3a8b0b4f61d6",
+      "lastmod": "2026-08-06"
+    },
+    "https://www.hicksconsulting.org/resources/premium-downloads/": {
+      "hash": "ccec8bb9a07c3474d53bf4a8a273b8ab69127450f80b10e3c97e629b175e8b7c",
+      "lastmod": "2026-08-06"
+    },
+    "https://www.hicksconsulting.org/resources/white-papers/": {
+      "hash": "f130f9eb84b24c5b8be91f2adad08fd480779886d9188e641c1cd9ae1655924f",
+      "lastmod": "2026-05-27"
+    },
+    "https://www.hicksconsulting.org/resources/white-papers/the-burnout-and-boundaries-playbook-for-high-achieving-black-women/": {
+      "hash": "e57440665cbbe95594485a73e648ae4816b7d43e4b4e2ec111725eea2501420a",
+      "lastmod": "2026-08-19"
+    },
+    "https://www.hicksconsulting.org/resources/white-papers/therapy-vs-coaching-guide/": {
+      "hash": "6693112ef03f9862adb3a27dc3d908de0daab1e9cf8a5f6f7c0a2176412baf52",
+      "lastmod": "2026-06-16"
+    },
+    "https://www.hicksconsulting.org/stress-management-worksheet/": {
+      "hash": "933f769982e70fbbcd332a3a228c6562e5159f94f8fbe32666f0a3da9f731b92",
+      "lastmod": "2026-05-29"
+    },
+    "https://www.hicksconsulting.org/terms/": {
+      "hash": "a28aedd87c999e60fa596dfe77efc79a79a427b2b2c7805ee8b87d454ef6df96",
+      "lastmod": "2026-06-16"
+    },
+    "https://www.hicksconsulting.org/therapy/": {
+      "hash": "bd45b7c89879ad427135f96cb3c00afe3b879b63d0e8b96b8cdf1b96d3ccfdd3",
+      "lastmod": "2026-08-12"
+    }
+  }
+}
