@@ -2,7 +2,7 @@
   "schemaVersion": "1.0.0",
   "validator": "content-pattern-contract",
   "spec": ".clarity/content-pattern-spec.json",
-  "generatedAt": "2026-08-26T19:59:10.943Z",
+  "generatedAt": "2026-08-26T21:33:13.250Z",
   "enforcement": "report",
   "pagesChecked": 259,
   "status": "REPORTED",
@@ -39,8 +39,8 @@
     {
       "id": "checklist",
       "blocking": false,
-      "pagesMissing": 18,
-      "coveragePct": 93.1,
+      "pagesMissing": 16,
+      "coveragePct": 93.8,
       "why": "no checklist or numbered protocol (agent request #1, 730 occurrences)"
     },
     {
@@ -107,8 +107,6 @@
     "conversion_path": [],
     "checklist": [
       "pages/about/index.html",
-      "pages/anxiety-therapist-memphis/index.html",
-      "pages/black-therapist-memphis/index.html",
       "pages/book-discovery-call/index.html",
       "pages/corporate-speaking/index.html",
       "pages/emergency-crisis-notice/index.html",

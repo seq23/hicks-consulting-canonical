@@ -1,14 +1,14 @@
 {
   "generated_at": "2026-08-26",
   "policy_source": "data/cadence/policy.json",
-  "urls": 94,
-  "dated": 0,
-  "undated": 94,
+  "urls": 95,
+  "dated": 95,
+  "undated": 0,
   "stale_over_window": 0,
   "stale_pct": 0,
-  "fresh_within_30d": 0,
-  "lastmod_within_7d": 0,
-  "new_since_last_run": 0,
+  "fresh_within_30d": 79,
+  "lastmod_within_7d": 69,
+  "new_since_last_run": 1,
   "ledger_initialised": true,
   "maintainable_ceiling": 130,
   "policy": {
@@ -20,11 +20,13 @@
     "require_lastmod": false,
     "note": "Client repo, content frozen until 2026-12-31.",
     "_why": "13 weeks is the point where pages become markedly more likely to lose AI citations, and recency is the strongest single correlate of being cited. The ceiling is refresh capacity times that window: publish faster than the library can be maintained and the tail ages out of citability.",
-    "_lastmod_note": "Client repo, content frozen until 2026-12-31. Sitemap is generated from dist/ at build time; lastmod is reported rather than enforced until the freeze lifts."
+    "_lastmod_note": "Client repo, content frozen until 2026-12-31. Sitemap is generated from dist/ at build time; lastmod is reported rather than enforced until the freeze lifts.",
+    "enforce_weekly_cap": false,
+    "_cadence_note": "Client repo. Publishing is the client's approved 2026 plan, not ours to gate, so new pages are reported rather than blocking. Content and cadence are frozen on our side until 2026-12-31."
   },
   "blocking": [],
   "warnings": [
-    "no_freshness_signal: 94 sitemap URLs have no lastmod, so a crawler cannot tell when they changed (reported only: Client repo, content frozen until 2026-12-31. Sitemap is generated from dist/ at build time; lastmod is reported rather than enforced until the freeze lifts.)"
+    "weekly_cap: 1 URLs are new since the last run, cap is 0 per week (reported only: Client repo. Publishing is the client's approved 2026 plan, not ours to gate, so new pages are reported rather than blocking. Content and cadence are frozen on our side until 2026-12-31.)"
   ],
   "status": "CLEAR"
 }
