@@ -118,7 +118,6 @@
     "selfheal": "node _ops/selfheal/heal_until_clean.js",
     "selfheal:dry": "node _ops/selfheal/heal_until_clean.js --dry-run",
     "validate:content-pattern": "node scripts/validators/validate_content_pattern_contract.js",
-    "cadence:headroom": "node scripts/cadence/publish_headroom.mjs",
-    "validate:operator-doc-currency": "node scripts/validators/validate_operator_doc_currency.mjs docs/runbooks"
+    "cadence:headroom": "node scripts/cadence/publish_headroom.mjs"
   }
 }
