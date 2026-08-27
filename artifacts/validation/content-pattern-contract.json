@@ -2,9 +2,9 @@
   "schemaVersion": "1.0.0",
   "validator": "content-pattern-contract",
   "spec": ".clarity/content-pattern-spec.json",
-  "generatedAt": "2026-08-27T00:54:34.122Z",
+  "generatedAt": "2026-08-27T15:58:57.255Z",
   "enforcement": "report",
-  "pagesChecked": 259,
+  "pagesChecked": 265,
   "status": "REPORTED",
   "blockingFailures": 7,
   "summary": [
@@ -33,42 +33,42 @@
       "id": "conversion_path",
       "blocking": true,
       "pagesMissing": 7,
-      "coveragePct": 97.3,
+      "coveragePct": 97.4,
       "why": "no approved conversion path - an answer-engine citation lands with nowhere to go"
     },
     {
       "id": "checklist",
       "blocking": false,
       "pagesMissing": 15,
-      "coveragePct": 94.2,
+      "coveragePct": 94.3,
       "why": "no checklist or numbered protocol (agent request #1, 730 occurrences)"
     },
     {
       "id": "comparison_table",
       "blocking": false,
       "pagesMissing": 259,
-      "coveragePct": 0,
+      "coveragePct": 2.3,
       "why": "no comparison or cost table (agent request #2, 529 occurrences)"
     },
     {
       "id": "concrete_numbers",
       "blocking": false,
-      "pagesMissing": 256,
-      "coveragePct": 1.2,
+      "pagesMissing": 258,
+      "coveragePct": 2.6,
       "why": "no concrete cost or timeline figures (agent request #5, 365 occurrences)"
     },
     {
       "id": "named_sources",
       "blocking": false,
       "pagesMissing": 7,
-      "coveragePct": 97.3,
+      "coveragePct": 97.4,
       "why": "no named primary source (agent request #6, 288 occurrences)"
     },
     {
       "id": "faq",
       "blocking": false,
       "pagesMissing": 255,
-      "coveragePct": 1.5,
+      "coveragePct": 3.8,
       "why": "no FAQ block or FAQPage schema (agent request #9)"
     },
     {
@@ -82,21 +82,21 @@
       "id": "recommendation_summary",
       "blocking": false,
       "pagesMissing": 145,
-      "coveragePct": 44,
+      "coveragePct": 45.3,
       "why": "no recommendation summary - asked for on 913 of 913 agent recommendations, the single most requested block"
     },
     {
       "id": "definition_callout",
       "blocking": false,
       "pagesMissing": 257,
-      "coveragePct": 0.8,
+      "coveragePct": 3,
       "why": "no definition callout (agent requested 196 times) - this is what an answer engine lifts for \"what is X\""
     },
     {
       "id": "trust_block",
       "blocking": false,
       "pagesMissing": 23,
-      "coveragePct": 91.1,
+      "coveragePct": 91.3,
       "why": "no trust or authorship block (agent requested 215 times) - entity clarity is a citation factor"
     }
   ],
