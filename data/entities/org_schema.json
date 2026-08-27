@@ -1,6 +1,9 @@
 {
   "@context": "https://schema.org",
-  "@type": "Organization",
+  "@type": [
+    "Organization",
+    "ProfessionalService"
+  ],
   "@id": "https://www.hicksconsulting.org/#organization",
   "name": "Hicks Consulting",
   "legalName": "Hicks Consulting PLLC",
@@ -70,6 +73,33 @@
         "@type": "Service",
         "name": "Organizational trainings"
       }
+    }
+  ],
+  "email": "info@hicksconsulting.org",
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Monday",
+      "opens": "09:00",
+      "closes": "15:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Wednesday",
+      "opens": "09:00",
+      "closes": "15:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Thursday",
+      "opens": "09:00",
+      "closes": "15:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Friday",
+      "opens": "09:00",
+      "closes": "12:00"
     }
   ]
 }

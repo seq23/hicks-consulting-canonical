@@ -97,6 +97,48 @@ function injectOrganizationSchema() {
   fs.writeFileSync(homePath, html);
 }
 
+// The canonical organization node existed on exactly one page (the home page),
+// so 30 of the 95 sitemap URLs carried no organization-family node at all and
+// the other 64 carried only an anonymous `publisher` blank node inside their
+// Article schema - never the same entity twice. This walks every rendered page
+// and stamps the one canonical `#organization` node from
+// data/entities/org_schema.json into the static HTML, so every URL resolves the
+// publisher blank nodes to a single identified entity.
+//
+// It runs at build time against dist/ rather than editing pages/ because dist/
+// is wiped and rebuilt on every `npm run build`: a JSON-LD block written into
+// dist/ by hand would not survive, and one copied into all 266 page sources
+// would drift the moment the org facts changed. Injecting from the single data
+// file keeps one source of truth. The result is inert static markup in the
+// shipped HTML - not client-side JS - so crawlers see it without executing
+// anything.
+function injectOrganizationSchemaSitewide() {
+  const schemaPath = path.join(root, 'data', 'entities', 'org_schema.json');
+  if (!fs.existsSync(schemaPath)) return;
+  const schema = JSON.parse(fs.readFileSync(schemaPath, 'utf8'));
+  const payload = `<script id="hicks-organization-schema" type="application/ld+json">${JSON.stringify(schema)}</script>`;
+  let stamped = 0;
+  const skip = new Set(['admin', 'preview', 'assets', 'data']);
+  (function walk(dir) {
+    for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+      const full = path.join(dir, entry.name);
+      if (entry.isDirectory()) {
+        if (skip.has(entry.name) && path.dirname(full) === dist) continue;
+        walk(full);
+      } else if (entry.name.endsWith('.html')) {
+        const html = fs.readFileSync(full, 'utf8');
+        // Never inject twice, and never displace an existing block: the home
+        // page is already handled by injectOrganizationSchema() above.
+        if (html.includes('id="hicks-organization-schema"')) continue;
+        if (!html.includes('</head>')) continue;
+        fs.writeFileSync(full, html.replace('</head>', `${payload}</head>`));
+        stamped++;
+      }
+    }
+  })(dist);
+  console.log(`organization schema: stamped ${stamped} additional page(s)`);
+}
+
 copyRecursive(pages, dist);
 copyRecursive(path.join(root, 'assets'), path.join(dist, 'assets'));
 copyRecursive(path.join(root, 'data'), path.join(dist, 'data'));
@@ -122,6 +164,10 @@ for (const item of manifest.filter(item => item.slug.startsWith('/resources/') &
     removeRecursive(slugToDistPath(normalized));
   }
 }
+
+// After unpublished resources are pruned, so only pages that actually ship get
+// stamped.
+injectOrganizationSchemaSitewide();
 
 const staticPublicRoutes = [
   '/', '/therapy/', '/black-therapist-memphis/', '/anxiety-therapist-memphis/', '/coaching/', '/groups/', '/corporate-speaking/', '/about/', '/resources/', '/contact/', '/organizational-training-inquiry/',
@@ -166,7 +212,16 @@ for (const route of sitemapRoutes) {
   // A route with no rendered file is left out of the ledger rather than hashed
   // as empty, which would make every such URL share one bogus identity.
   if (!fs.existsSync(rendered)) continue;
-  ledgerPages[url] = { hash: ledgerLib.contentHash(fs.readFileSync(rendered)), file: source };
+  // The canonical organization node is byte-identical boilerplate stamped onto
+  // every page, so it carries no per-page freshness information. Hashing it
+  // would move all 95 URLs to the same lastmod the first time it shipped -
+  // precisely the mass date-bump cadence_gate.js warns about, and a false
+  // "the whole library changed today" signal to a crawler. It is excluded so
+  // lastmod keeps tracking per-page change; genuinely per-page schema and copy
+  // edits still move the date normally.
+  const hashed = fs.readFileSync(rendered, 'utf8')
+    .replace(/<script id="hicks-organization-schema"[\s\S]*?<\/script>/, '');
+  ledgerPages[url] = { hash: ledgerLib.contentHash(hashed), file: source };
 }
 const lastmods = ledgerLib.resolve(ledgerPages, ledger, today);
 ledgerLib.save(ledgerLib.rebuilt(ledgerPages, ledger, today, { prune: true }));
