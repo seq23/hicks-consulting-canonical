@@ -2,7 +2,7 @@
   "schemaVersion": "1.0.0",
   "validator": "content-pattern-contract",
   "spec": ".clarity/content-pattern-spec.json",
-  "generatedAt": "2026-08-26T21:33:13.250Z",
+  "generatedAt": "2026-08-27T00:54:34.122Z",
   "enforcement": "report",
   "pagesChecked": 259,
   "status": "REPORTED",
@@ -39,8 +39,8 @@
     {
       "id": "checklist",
       "blocking": false,
-      "pagesMissing": 16,
-      "coveragePct": 93.8,
+      "pagesMissing": 15,
+      "coveragePct": 94.2,
       "why": "no checklist or numbered protocol (agent request #1, 730 occurrences)"
     },
     {
@@ -114,7 +114,6 @@
       "pages/groups/index.html",
       "pages/index.html",
       "pages/intake-quiz/index.html",
-      "pages/llm-atlas/index.html",
       "pages/organizational-training-inquiry/index.html",
       "pages/request-consult/index.html",
       "pages/resources/free-downloads/index.html",
