@@ -3,6 +3,36 @@ const path = require('path');
 
 const ISO_WITH_TIMEZONE = /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d{3})?(?:Z|[+-]\d{2}:\d{2})$/;
 
+const APPROVALS_PATH = path.join(process.cwd(), 'data', 'admin', 'publication_approvals.json');
+
+// The human release gate.
+//
+// status:'approved' does not mean a person approved anything. scripts/autonomy/
+// run_cycle.mjs writes that status itself, on content it drafted, and the daily
+// Content Publish cron then released it to a client's live site. 114 items carried
+// it, 113 of them scheduled one per day into the future, with no human in the loop
+// at any point.
+//
+// So publication now requires a second, separate fact: an entry in
+// data/admin/publication_approvals.json naming who approved this specific item.
+// Only scripts/admin/approve_publication.mjs writes there, and it is reachable only
+// through workflow_dispatch. A cron cannot approve anything, and no code path
+// approves on a person's behalf.
+//
+// This is the same shape horse-legal-guide-velocity already uses, where approval
+// lives outside the automated pipeline and the publish step is a gate rather than
+// a scheduler.
+function loadApprovedIds(explicit) {
+  if (explicit) return explicit instanceof Set ? explicit : new Set(explicit);
+  if (!fs.existsSync(APPROVALS_PATH)) return new Set();
+  const doc = JSON.parse(fs.readFileSync(APPROVALS_PATH, 'utf8'));
+  return new Set(
+    (doc.approvals || [])
+      .filter((entry) => entry && typeof entry.id === 'string' && typeof entry.approvedBy === 'string' && entry.approvedBy.trim())
+      .map((entry) => entry.id)
+  );
+}
+
 function parseScheduledAt(value, itemId) {
   if (typeof value !== 'string' || !ISO_WITH_TIMEZONE.test(value)) {
     throw new Error(`Approved manifest item ${itemId} has invalid scheduledAt: ${value}. Use an ISO timestamp with timezone.`);
@@ -14,7 +44,7 @@ function parseScheduledAt(value, itemId) {
   return date;
 }
 
-function processManifest(manifest, now = new Date()) {
+function processManifest(manifest, now = new Date(), options = {}) {
   if (!Array.isArray(manifest)) {
     throw new TypeError('Content manifest must be an array.');
   }
@@ -36,8 +66,10 @@ function processManifest(manifest, now = new Date()) {
     seenIds.add(item.id);
   }
 
+  const approvedIds = loadApprovedIds(options.approvedIds);
   let changed = false;
   let publishedCount = 0;
+  let heldForApproval = 0;
 
   const updated = manifest.map((item) => {
     if (item.status !== 'approved' || item.validationPassed !== true) {
@@ -53,6 +85,13 @@ function processManifest(manifest, now = new Date()) {
       return item;
     }
 
+    // Due, validated, and still not releasable without a person. Held, not failed:
+    // an unapproved queue is a normal state, not a broken one.
+    if (!approvedIds.has(item.id)) {
+      heldForApproval += 1;
+      return item;
+    }
+
     const { previewPath: _removedPreviewPath, ...publishedItem } = item;
     changed = true;
     publishedCount += 1;
@@ -64,7 +103,7 @@ function processManifest(manifest, now = new Date()) {
     };
   });
 
-  return { manifest: updated, changed, publishedCount };
+  return { manifest: updated, changed, publishedCount, heldForApproval };
 }
 
 function writeJsonAtomically(filePath, value) {
@@ -82,16 +121,21 @@ function writeJsonAtomically(filePath, value) {
 
 function publishManifestFile({
   manifestPath = path.join(process.cwd(), 'data', 'admin', 'content_manifest.json'),
-  now = new Date()
+  now = new Date(),
+  approvedIds
 } = {}) {
   const manifest = JSON.parse(fs.readFileSync(manifestPath, 'utf8'));
-  const result = processManifest(manifest, now);
+  const result = processManifest(manifest, now, { approvedIds });
 
   if (result.changed) {
     writeJsonAtomically(manifestPath, result.manifest);
-    console.log(`Manifest updated: ${result.publishedCount} scheduled item(s) published.`);
+    console.log(`Manifest updated: ${result.publishedCount} human-approved item(s) published.`);
   } else {
-    console.log('Manifest unchanged: no approved items are due.');
+    console.log('Manifest unchanged: nothing is both due and human-approved.');
+  }
+  if (result.heldForApproval) {
+    console.log(`${result.heldForApproval} item(s) are due and validated but awaiting human approval in data/admin/publication_approvals.json.`);
+    console.log('Approve with: node scripts/admin/approve_publication.mjs --id <id> --by "<person>"');
   }
 
   return result;
@@ -107,6 +151,8 @@ if (require.main === module) {
 }
 
 module.exports = {
+  APPROVALS_PATH,
+  loadApprovedIds,
   ISO_WITH_TIMEZONE,
   parseScheduledAt,
   processManifest,

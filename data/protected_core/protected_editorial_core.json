@@ -20,12 +20,12 @@
     },
     {
       "path": "scripts/publishing/run_safe_publish.mjs",
-      "sha256": "60d3c9e3618f6534efebb67f35ccc8ed7bf54aedfb5037841932e18af592110c",
+      "sha256": "2b4848fbe258675805158bb84f3158229a6a44e35399bb7c608803cc04e25876",
       "bytes": 3510
     },
     {
       "path": ".github/workflows/content-publish.yml",
-      "sha256": "72d7d93c96d3c82b07a679258248f0cf76355642dabbbc3dfe21f8e36fadf651",
+      "sha256": "9b9aeb3b8974bb232aa15459e6511b688f3757a24c26f7974dd8b6406da75062",
       "bytes": 1157
     },
     {
@@ -44,6 +44,10 @@
       "bytes": 7192
     }
   ],
-  "baseline_refreshed_at": "2026-08-10T14:00:00Z",
-  "baseline_reason": "Owner-approved workflow reliability reconciliation: GitHub Actions runtime majors refreshed without changing the protected publishing contract; protected hash updated only for the intentional workflow runtime reference change."
+  "baseline_refreshed_at": "2026-08-27T16:03:02.161069Z",
+  "baseline_reason": "Added a human release gate to the publisher. data/admin/content_manifest.json carried 114 items with status:'approved' and 113 of them scheduled one per day into the future, but that status is written by scripts/autonomy/run_cycle.mjs on its own LLM-drafted output - it never represented a human decision. The daily Content Publish cron released them to the client's live site unattended. Publication now additionally requires a named approver in data/admin/publication_approvals.json, written only by scripts/admin/approve_publication.mjs, which is reachable through workflow_dispatch and never from a schedule. run_safe_publish.mjs no longer touches unapproved content at all, and content-publish.yml commits explicit paths instead of `git add -A`. Nothing was published, unpublished, or retired by this change; 59 already-live items are untouched and the 114 queued items are held rather than cancelled. Refreshed deliberately: these two files had to change for the gate to exist, and the tripwire is doing its job by making that visible.",
+  "baseline_refresh_changed_files": [
+    "scripts/publishing/run_safe_publish.mjs",
+    ".github/workflows/content-publish.yml"
+  ]
 }

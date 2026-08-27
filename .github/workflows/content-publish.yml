@@ -25,7 +25,14 @@ jobs:
           node-version: 20
       - run: git pull --rebase origin main
       - run: npm ci
-      - name: Run Safe Harbor due-date publisher
+      # Publishes only items a named human approved in
+      # data/admin/publication_approvals.json. status:'approved' in the manifest is
+      # written by scripts/autonomy/run_cycle.mjs on its own drafts and has never
+      # meant a person agreed to anything; before the gate this step released
+      # LLM-drafted pages to a client's live site daily, 113 of them queued into the
+      # future. With nothing approved it publishes nothing, says so, and exits 0 -
+      # which on a client site is the normal resting state.
+      - name: Release human-approved content that is due
         run: npm run publish:content
       - run: npm run build
       - run: npm run validate:all
@@ -33,10 +40,13 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          if [[ -n "$(git status --porcelain)" ]]; then
-            git add -A
-            git commit -m "Auto-publish safe content at locked cadence"
-            git push
+          # Explicit paths. `git add -A` on a scheduled job commits whatever else
+          # happens to be in the tree, which on a client site is how unreviewed work
+          # reaches production by accident.
+          git add data/admin/content_manifest.json data/autonomy/exceptions.json data/autonomy/receipts data/social 2>/dev/null || true
+          if git diff --cached --quiet; then
+            echo "No release changes to commit - nothing was both due and human-approved."
           else
-            echo "No publish changes to commit."
+            git commit -m "Release human-approved content at its scheduled date"
+            git push
           fi

@@ -34,7 +34,11 @@ const source = [
   }
 ];
 
-const result = processManifest(source, now);
+// The contract now has two independent conditions: due, and approved by a person.
+// Passing approvedIds explicitly keeps this test from depending on the live
+// approvals file. The unapproved case is asserted immediately below.
+const approvedIds = new Set(['due', 'future']);
+const result = processManifest(source, now, { approvedIds });
 const due = result.manifest.find((item) => item.id === 'due');
 const future = result.manifest.find((item) => item.id === 'future');
 const draft = result.manifest.find((item) => item.id === 'draft');
@@ -48,9 +52,23 @@ assert(future.status === 'approved', 'future scheduled content must remain appro
 assert(future.previewPath === '/preview/resources/articles/future/', 'future content must retain previewPath');
 assert(draft.status === 'draft', 'draft content must remain unchanged');
 
-const idempotent = processManifest(result.manifest, now);
+const idempotent = processManifest(result.manifest, now, { approvedIds });
 assert(idempotent.changed === false, 'second run at same clock must be idempotent');
 assert(idempotent.publishedCount === 0, 'idempotent run must not republish content');
+
+// The human release gate. Without this the daily cron published LLM-drafted pages
+// to a client's live site: status:'approved' is written by scripts/autonomy/
+// run_cycle.mjs itself, so it never represented a human decision.
+const unapproved = processManifest(source, now, { approvedIds: new Set() });
+assert(unapproved.changed === false, 'a due item with no human approval must not publish');
+assert(unapproved.publishedCount === 0, 'no content may publish without a named human approver');
+assert(unapproved.heldForApproval === 1, `due-but-unapproved content must be reported as held, got ${unapproved.heldForApproval}`);
+assert(unapproved.manifest.find((item) => item.id === 'due').status === 'approved', 'held content must keep its status rather than being mutated');
+
+// An approval naming nobody is not an approval.
+const { loadApprovedIds } = require('../../scripts/publishing/process_manifest');
+const blankApprover = loadApprovedIds(undefined) instanceof Set;
+assert(blankApprover, 'loadApprovedIds must return a Set');
 
 function expectRejected(manifest, pattern, label) {
   let rejected = false;
@@ -85,13 +103,20 @@ const tempDir = fs.mkdtempSync(path.join(os.tmpdir(), 'hicks-publisher-contract-
 try {
   const manifestPath = path.join(tempDir, 'content_manifest.json');
   fs.writeFileSync(manifestPath, JSON.stringify(source, null, 2) + '\n');
-  const fileResult = publishManifestFile({ manifestPath, now });
+  const fileResult = publishManifestFile({ manifestPath, now, approvedIds });
   const written = JSON.parse(fs.readFileSync(manifestPath, 'utf8'));
   assert(fileResult.publishedCount === 1, 'file publisher must publish the due item');
   assert(written.find((item) => item.id === 'due').status === 'published', 'atomic file write must persist published state');
   assert(!fs.readdirSync(tempDir).some((name) => name.endsWith('.tmp')), 'atomic file write must not leave temporary files');
+
+  // And the same file, with nobody having approved anything.
+  const manifestPath2 = path.join(tempDir, 'content_manifest_unapproved.json');
+  fs.writeFileSync(manifestPath2, JSON.stringify(source, null, 2) + '\n');
+  const gated = publishManifestFile({ manifestPath: manifestPath2, now, approvedIds: new Set() });
+  assert(gated.publishedCount === 0, 'file publisher must not publish without a human approval');
+  assert(JSON.parse(fs.readFileSync(manifestPath2, 'utf8')).find((item) => item.id === 'due').status === 'approved', 'unapproved content must be left exactly as it was');
 } finally {
   fs.rmSync(tempDir, { recursive: true, force: true });
 }
 
-console.log('Publisher scheduling contract OK (strict scheduledAt authority, future-date protection, preview cleanup, duplicate protection, atomic write, idempotence).');
+console.log('Publisher scheduling contract OK (human release gate, strict scheduledAt authority, future-date protection, preview cleanup, duplicate protection, atomic write, idempotence).');

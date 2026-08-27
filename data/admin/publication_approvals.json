@@ -1,0 +1,11 @@
+{
+  "schemaVersion": "1.0.0",
+  "note": "The human release gate for hicksconsulting.org. An item in data/admin/content_manifest.json publishes only when its id appears here with a real approvedBy. status:'approved' in the manifest means a machine validated it, not that anyone agreed to publish it - scripts/autonomy/run_cycle.mjs writes that status itself, so before this file existed the daily Content Publish cron released LLM-drafted pages to a client's live site with nobody in the loop. 113 such items were queued one per day into the future.",
+  "how_to_approve": "node scripts/admin/approve_publication.mjs --id <manifest id> --by \"<person>\" [--note \"<why>\"]. Reachable only through the Admin Operations workflow_dispatch, never from a cron.",
+  "pre_gate_baseline": {
+    "sealed_on": "2026-08-27",
+    "published_before_gate": 59,
+    "note": "59 items were already live when this gate was introduced. They are not retired and not retroactively approved; the gate governs future releases only. Everything still unpublished needs an approval here, whatever its manifest status says."
+  },
+  "approvals": []
+}
