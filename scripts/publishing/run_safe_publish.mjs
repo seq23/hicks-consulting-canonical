@@ -3,12 +3,18 @@ import { readJson, writeJsonAtomic, nowIso, routeToSourceFile } from '../autonom
 import { analyzeResourceHtml, repairResourceHtml } from '../autonomy/lib/self_heal.mjs';
 import { enqueuePublicationNotification } from '../autonomy/lib/notification.mjs';
 const require = createRequire(import.meta.url);
-const { processManifest } = require('./process_manifest.js');
+const { processManifest, loadApprovedIds } = require('./process_manifest.js');
 
 const clock = process.env.PUBLISH_CLOCK ? new Date(process.env.PUBLISH_CLOCK) : new Date();
 const manifest = readJson('data/admin/content_manifest.json');
 const exceptions = readJson('data/autonomy/exceptions.json', { schemaVersion: '1.0.0', items: [] });
-const due = manifest.filter((item) => item.status === 'approved' && item.validationPassed === true && item.scheduledAt && new Date(item.scheduledAt) <= clock);
+// Only human-approved items are touched at all. Repairing and rewriting the source
+// HTML of content nobody has agreed to publish churns the client's tree for pages
+// that may never ship, and it was the same loop that fed the auto-publisher.
+const approvedIds = loadApprovedIds();
+const dueAll = manifest.filter((item) => item.status === 'approved' && item.validationPassed === true && item.scheduledAt && new Date(item.scheduledAt) <= clock);
+const due = dueAll.filter((item) => approvedIds.has(item.id));
+const awaitingApproval = dueAll.filter((item) => !approvedIds.has(item.id));
 const repairsById = new Map();
 for (const item of due) {
   if (!String(item.slug || '').startsWith('/resources/')) continue;
@@ -49,8 +55,15 @@ const receipt = {
     internalLinks: item.autonomy?.internalLinks || []
   })),
   skipped: due.filter((item) => item.status === 'skipped_unsafe').map((item) => ({ id: item.id, findings: item.skipReason })),
+  awaitingHumanApproval: awaitingApproval.map((item) => ({ id: item.id, route: item.slug, scheduledAt: item.scheduledAt })),
   changed: result.changed
 };
 writeJsonAtomic(`data/autonomy/receipts/${receipt.receiptId}.json`, receipt);
 if (published.length) enqueuePublicationNotification(receipt, clock);
 console.log(JSON.stringify({ ok: true, ...receipt }, null, 2));
+if (!published.length) {
+  // A successful run. Nothing was due and approved, which on a client site is the
+  // normal resting state, not a fault.
+  console.log(`\nNOTHING TO PUBLISH - this is a successful run. ${awaitingApproval.length} item(s) are due and validated but await a human decision.`);
+  console.log('Approve with: node scripts/admin/approve_publication.mjs --id <id> --by "<person>"  (Admin Operations, workflow_dispatch only)');
+}
