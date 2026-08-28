@@ -18,10 +18,25 @@ async function fetchJson(url, options = {}) {
   if (!res.ok) throw new Error(`${res.status} ${res.statusText}: ${JSON.stringify(body).slice(0,600)}`);
   return body;
 }
+// Accepts GSC_SERVICE_ACCOUNT_JSON, which is the one credential the portfolio
+// still issues. This used to read only the GSC_SERVICE_ACCOUNT_EMAIL /
+// GSC_PRIVATE_KEY pair, so once that key was revoked on 2026-08-27 this monitor
+// had no way to authenticate at all - it reported 'not_connected' and asked for
+// secrets that no longer exist.
+function serviceAccountFromJson() {
+  const raw = String(process.env.GSC_SERVICE_ACCOUNT_JSON || '').trim();
+  if (!raw) return null;
+  try {
+    const info = raw.startsWith('{') ? JSON.parse(raw) : JSON.parse(fs.readFileSync(raw, 'utf8'));
+    if (!info || !info.client_email || !info.private_key) return null;
+    return { email: String(info.client_email).trim(), key: String(info.private_key) };
+  } catch { return null; }
+}
 async function gscToken() {
   if (process.env.GSC_ACCESS_TOKEN) return process.env.GSC_ACCESS_TOKEN;
-  const email = process.env.GSC_SERVICE_ACCOUNT_EMAIL;
-  const key = (process.env.GSC_PRIVATE_KEY || '').replace(/\\n/g,'\n');
+  const json = serviceAccountFromJson();
+  const email = json ? json.email : process.env.GSC_SERVICE_ACCOUNT_EMAIL;
+  const key = (json ? json.key : (process.env.GSC_PRIVATE_KEY || '')).replace(/\\n/g,'\n');
   if (!email || !key) return null;
   const header = base64url(JSON.stringify({alg:'RS256',typ:'JWT'}));
   const iat = Math.floor(Date.now()/1000);

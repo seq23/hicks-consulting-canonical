@@ -18,9 +18,10 @@ jobs:
     env:
       LIVE_SITE_URL: https://www.hicksconsulting.org
       GSC_SITE_URL: ${{ secrets.GSC_SITE_URL }}
-      GSC_SERVICE_ACCOUNT_EMAIL: ${{ secrets.GSC_SERVICE_ACCOUNT_EMAIL }}
-      GSC_PRIVATE_KEY: ${{ secrets.GSC_PRIVATE_KEY }}
-      GSC_ACCESS_TOKEN: ${{ secrets.GSC_ACCESS_TOKEN }}
+      # See social-ingestion.yml: passing the revoked EMAIL/PRIVATE_KEY pair
+      # shadows the working service-account JSON, because that pair is only
+      # bypassed when it is absent entirely.
+      GSC_SERVICE_ACCOUNT_JSON: ${{ secrets.GSC_SERVICE_ACCOUNT_JSON }}
       BING_SITE_URL: ${{ secrets.BING_SITE_URL }}
       BING_WEBMASTER_API_KEY: ${{ secrets.BING_WEBMASTER_API_KEY }}
     steps:

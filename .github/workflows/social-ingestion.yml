@@ -38,9 +38,15 @@ jobs:
         run: npm run ingest:all
         env:
           GSC_SITE_URL: ${{ secrets.GSC_SITE_URL }}
-          GSC_SERVICE_ACCOUNT_EMAIL: ${{ secrets.GSC_SERVICE_ACCOUNT_EMAIL }}
-          GSC_PRIVATE_KEY: ${{ secrets.GSC_PRIVATE_KEY }}
-          GSC_ACCESS_TOKEN: ${{ secrets.GSC_ACCESS_TOKEN }}
+          # Only GSC_SERVICE_ACCOUNT_JSON is passed, and that is deliberate.
+          # credentials() in scripts/queries/ingest_gsc_evidence.mjs consults the
+          # JSON only when GSC_SERVICE_ACCOUNT_EMAIL and GSC_PRIVATE_KEY are both
+          # absent. Those two secrets still exist on this repo and hold the key
+          # revoked on 2026-08-27, so passing them meant the revoked credential
+          # won every run and the working key was never read - queries:ingest
+          # wrote nothing, and the content pipeline scored, clustered and drafted
+          # from scraped chatter with zero measured search demand behind it.
+          GSC_SERVICE_ACCOUNT_JSON: ${{ secrets.GSC_SERVICE_ACCOUNT_JSON }}
 
       - name: Migrate admitted opportunities into Full Safe Autonomy
         run: npm run autonomy:migrate
