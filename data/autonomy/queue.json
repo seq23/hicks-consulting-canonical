@@ -133,18 +133,60 @@
           "to": "FAILED_RETRYABLE",
           "at": "2026-08-28T17:18:57.488Z",
           "reason": "Candidate did not satisfy the final Safe Harbor gate."
+        },
+        {
+          "from": "FAILED_RETRYABLE",
+          "to": "SCORED",
+          "at": "2026-08-28T18:49:43.291Z",
+          "reason": "Candidate score normalized for autonomous admission."
+        },
+        {
+          "from": "SCORED",
+          "to": "ADMITTED",
+          "at": "2026-08-28T18:49:43.291Z",
+          "reason": "Candidate admitted inside the existing content policy and ownership boundaries."
+        },
+        {
+          "from": "ADMITTED",
+          "to": "DRAFTING",
+          "at": "2026-08-28T18:49:43.291Z",
+          "reason": "Structured LLM drafting started."
+        },
+        {
+          "from": "DRAFTING",
+          "to": "DRAFTED",
+          "at": "2026-08-28T18:49:43.291Z",
+          "reason": "Structured draft produced."
+        },
+        {
+          "from": "DRAFTED",
+          "to": "VALIDATING",
+          "at": "2026-08-28T18:49:43.291Z",
+          "reason": "Safe Harbor validation started."
+        },
+        {
+          "from": "VALIDATING",
+          "to": "REPAIRING",
+          "at": "2026-08-28T18:49:43.291Z",
+          "reason": "Repairable Safe Harbor findings detected."
+        },
+        {
+          "from": "REPAIRING",
+          "to": "FAILED_RETRYABLE",
+          "at": "2026-08-28T18:49:43.291Z",
+          "reason": "Candidate did not satisfy the final Safe Harbor gate."
         }
       ],
-      "updatedAt": "2026-08-28T17:18:57.488Z",
+      "updatedAt": "2026-08-28T18:49:43.291Z",
       "providerGate": null,
       "findings": [
         {
           "code": "THIN_CONTENT",
           "severity": "repairable",
-          "message": "Draft has 603 words; minimum is 2000."
+          "message": "Draft has 717 words; minimum is 2000."
         }
       ],
-      "attempts": 1
+      "attempts": 2
     },
     {
       "id": "brief-black_women_healing-article",
@@ -276,9 +318,51 @@
           "to": "FAILED_RETRYABLE",
           "at": "2026-08-28T17:18:57.488Z",
           "reason": "Candidate did not satisfy the final Safe Harbor gate."
+        },
+        {
+          "from": "FAILED_RETRYABLE",
+          "to": "SCORED",
+          "at": "2026-08-28T18:49:43.291Z",
+          "reason": "Candidate score normalized for autonomous admission."
+        },
+        {
+          "from": "SCORED",
+          "to": "ADMITTED",
+          "at": "2026-08-28T18:49:43.291Z",
+          "reason": "Candidate admitted inside the existing content policy and ownership boundaries."
+        },
+        {
+          "from": "ADMITTED",
+          "to": "DRAFTING",
+          "at": "2026-08-28T18:49:43.291Z",
+          "reason": "Structured LLM drafting started."
+        },
+        {
+          "from": "DRAFTING",
+          "to": "DRAFTED",
+          "at": "2026-08-28T18:49:43.291Z",
+          "reason": "Structured draft produced."
+        },
+        {
+          "from": "DRAFTED",
+          "to": "VALIDATING",
+          "at": "2026-08-28T18:49:43.291Z",
+          "reason": "Safe Harbor validation started."
+        },
+        {
+          "from": "VALIDATING",
+          "to": "REPAIRING",
+          "at": "2026-08-28T18:49:43.291Z",
+          "reason": "Repairable Safe Harbor findings detected."
+        },
+        {
+          "from": "REPAIRING",
+          "to": "FAILED_RETRYABLE",
+          "at": "2026-08-28T18:49:43.291Z",
+          "reason": "Candidate did not satisfy the final Safe Harbor gate."
         }
       ],
-      "updatedAt": "2026-08-28T17:18:57.488Z",
+      "updatedAt": "2026-08-28T18:49:43.291Z",
       "providerGate": null,
       "findings": [
         {
@@ -287,7 +371,7 @@
           "message": "Draft has 382 words; minimum is 960."
         }
       ],
-      "attempts": 1
+      "attempts": 2
     },
     {
       "id": "brief-burnout_boundaries-insight",
