@@ -140,7 +140,25 @@ for (const item of candidates) {
     }
 
     if (!validation.safe) {
-      transition(item, validation.decision, 'Candidate did not satisfy the final Safe Harbor gate.', clock);
+      // validation.decision is Safe Harbor's DECISION vocabulary, not the queue's
+      // STATE vocabulary. Passing it straight through worked for two of the three
+      // reachable decisions purely because SKIPPED_UNSUPPORTED_CLAIM and
+      // SKIPPED_DUPLICATE_INTENT happen to be spelled the same in both - which is
+      // why the third went unnoticed. REPAIR_REQUIRED is not a state, and writing
+      // it into item.state produced `invalid-state:...:REPAIR_REQUIRED` and a hard
+      // fail from validate_autonomy_contract.js.
+      //
+      // A candidate whose findings survived local repair and the LLM repair pass
+      // is retryable: run_cycle's own candidate filter above picks FAILED_RETRYABLE
+      // back up on the next cycle, which is the behaviour intended here. An
+      // unrecognised decision blocks rather than leaking a new value into state.
+      const FINAL_STATE_BY_DECISION = {
+        SKIPPED_UNSUPPORTED_CLAIM: 'SKIPPED_UNSUPPORTED_CLAIM',
+        SKIPPED_DUPLICATE_INTENT: 'SKIPPED_DUPLICATE_INTENT',
+        REPAIR_REQUIRED: 'FAILED_RETRYABLE',
+      };
+      const finalState = FINAL_STATE_BY_DECISION[validation.decision] || 'SYSTEM_BLOCKED';
+      transition(item, finalState, 'Candidate did not satisfy the final Safe Harbor gate.', clock);
       item.findings = validation.findings;
       appendException(exceptions, item, validation.decision, validation.findings, clock);
       continue;
