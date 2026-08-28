@@ -18,6 +18,11 @@ async function fetchFeature(url){try{const r=await fetch(url,{headers:{'user-age
 // error, which is indistinguishable at a glance from a site that is genuinely never
 // cited. The provider is pinned to OpenRouter so the observations are real.
 const OPENROUTER_ENDPOINT='https://openrouter.ai/api/v1/chat/completions';
+// OpenRouter bills the web plugin per REQUEST on the parallel engine with 10
+// results included - measured at $0.00127/call on this account against ~$0.04
+// on the default engine's per-result billing. Identical url_citation schema.
+const WEB_ENGINE=process.env.OPENROUTER_WEB_ENGINE||'parallel';
+const WEB_MODE=process.env.OPENROUTER_WEB_MODE||'turbo';
 function openRouterCitations(body){
  const message=body?.choices?.[0]?.message||{};
  const text=typeof message.content==='string'?message.content:Array.isArray(message.content)?message.content.map(part=>part?.text||'').join('\n'):'';
@@ -31,7 +36,7 @@ async function openRouterObserve(query,primaryPage,env){
  const model=env.OPENROUTER_SEARCH_MODEL||'openai/gpt-4o-mini';
  const endpoint=env.OPENROUTER_API_URL||OPENROUTER_ENDPOINT;
  const prompt=`Use web search to investigate this exact local search query: ${JSON.stringify(query)}. We are evaluating https://www.hicksconsulting.org${primaryPage}. Identify which public web sources a live web search surfaces for this query, whether Hicks Consulting is among the cited sources, and the strongest competing pages or directories. Do not invent organic rank. Keep the answer factual and concise.`;
- const r=await fetch(endpoint,{method:'POST',headers:{'content-type':'application/json',authorization:`Bearer ${env.OPENROUTER_API_KEY}`},body:JSON.stringify({model,plugins:[{id:'web',max_results:Number(env.OPENROUTER_WEB_MAX_RESULTS||10)}],messages:[{role:'user',content:prompt}]}),signal:AbortSignal.timeout(Number(env.OPENROUTER_SEARCH_TIMEOUT_MS||45000))});
+ const r=await fetch(endpoint,{method:'POST',headers:{'content-type':'application/json',authorization:`Bearer ${env.OPENROUTER_API_KEY}`},body:JSON.stringify({model,plugins:[{id:'web',engine:WEB_ENGINE,mode:WEB_MODE,max_results:Number(env.OPENROUTER_WEB_MAX_RESULTS||10)}],messages:[{role:'user',content:prompt}]}),signal:AbortSignal.timeout(Number(env.OPENROUTER_SEARCH_TIMEOUT_MS||45000))});
  const text=await r.text();
  if(!r.ok)throw new Error(`${r.status}: ${text.slice(0,500)}`);
  const body=JSON.parse(text);
