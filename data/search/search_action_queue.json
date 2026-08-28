@@ -1,15 +1,18 @@
 {
   "schemaVersion": "2.0.0",
-  "generatedAt": "2026-08-28T03:45:27.021Z",
+  "generatedAt": "2026-08-28T18:34:33.048Z",
   "policy": "Hicks may autonomously apply bounded technical/search-alignment repairs. Substantive clinical claims and unsupported treatment assertions are never auto-generated from competitor content.",
   "items": [
     {
       "query": "black therapist in Memphis",
       "primaryPage": "/black-therapist-memphis/",
-      "status": "UNKNOWN",
-      "reasons": [],
+      "status": "OBSERVED",
+      "reasons": [
+        "EXACT_QUERY_NOT_IN_PRIMARY_SEARCH_SURFACES"
+      ],
       "evidence": {
-        "groundedSiteSurfaced": false,
+        "groundedSiteSurfaced": true,
+        "groundedProviderAnswered": true,
         "gscImpressions": 0,
         "gscClicks": 0,
         "gscAveragePosition": 0,
@@ -22,26 +25,34 @@
     {
       "query": "Black woman therapist Memphis",
       "primaryPage": "/black-therapist-memphis/",
-      "status": "UNKNOWN",
-      "reasons": [],
+      "status": "MISSING",
+      "reasons": [
+        "EXACT_QUERY_NOT_IN_PRIMARY_SEARCH_SURFACES",
+        "SITE_NOT_SURFACED_IN_GROUNDED_OBSERVATION",
+        "NO_GROUNDED_CITATIONS_RETURNED"
+      ],
       "evidence": {
         "groundedSiteSurfaced": false,
+        "groundedProviderAnswered": true,
         "gscImpressions": 0,
         "gscClicks": 0,
         "gscAveragePosition": 0,
         "gscPages": [],
         "competitorUrls": []
       },
-      "safeRepairEligible": false,
-      "recommendedAction": "Observe or route to content/technical review; do not invent a ranking win."
+      "safeRepairEligible": true,
+      "recommendedAction": "Run bounded search-alignment repair, rebuild, then await the next external observation cycle."
     },
     {
       "query": "therapist for anxiety in Memphis",
       "primaryPage": "/anxiety-therapist-memphis/",
-      "status": "UNKNOWN",
-      "reasons": [],
+      "status": "OBSERVED",
+      "reasons": [
+        "EXACT_QUERY_NOT_IN_PRIMARY_SEARCH_SURFACES"
+      ],
       "evidence": {
-        "groundedSiteSurfaced": false,
+        "groundedSiteSurfaced": true,
+        "groundedProviderAnswered": true,
         "gscImpressions": 0,
         "gscClicks": 0,
         "gscAveragePosition": 0,
@@ -54,10 +65,13 @@
     {
       "query": "anxiety therapist Memphis",
       "primaryPage": "/anxiety-therapist-memphis/",
-      "status": "UNKNOWN",
-      "reasons": [],
+      "status": "OBSERVED",
+      "reasons": [
+        "EXACT_QUERY_NOT_IN_PRIMARY_SEARCH_SURFACES"
+      ],
       "evidence": {
-        "groundedSiteSurfaced": false,
+        "groundedSiteSurfaced": true,
+        "groundedProviderAnswered": true,
         "gscImpressions": 0,
         "gscClicks": 0,
         "gscAveragePosition": 0,
@@ -70,10 +84,13 @@
     {
       "query": "virtual therapist Memphis",
       "primaryPage": "/therapy/",
-      "status": "UNKNOWN",
-      "reasons": [],
+      "status": "OBSERVED",
+      "reasons": [
+        "EXACT_QUERY_NOT_IN_PRIMARY_SEARCH_SURFACES"
+      ],
       "evidence": {
-        "groundedSiteSurfaced": false,
+        "groundedSiteSurfaced": true,
+        "groundedProviderAnswered": true,
         "gscImpressions": 0,
         "gscClicks": 0,
         "gscAveragePosition": 0,
@@ -86,10 +103,13 @@
     {
       "query": "burnout therapist Memphis",
       "primaryPage": "/therapy/",
-      "status": "UNKNOWN",
-      "reasons": [],
+      "status": "OBSERVED",
+      "reasons": [
+        "EXACT_QUERY_NOT_IN_PRIMARY_SEARCH_SURFACES"
+      ],
       "evidence": {
-        "groundedSiteSurfaced": false,
+        "groundedSiteSurfaced": true,
+        "groundedProviderAnswered": true,
         "gscImpressions": 0,
         "gscClicks": 0,
         "gscAveragePosition": 0,
@@ -102,10 +122,13 @@
     {
       "query": "therapy for high-achieving Black women Memphis",
       "primaryPage": "/black-therapist-memphis/",
-      "status": "UNKNOWN",
-      "reasons": [],
+      "status": "OBSERVED",
+      "reasons": [
+        "EXACT_QUERY_NOT_IN_PRIMARY_SEARCH_SURFACES"
+      ],
       "evidence": {
-        "groundedSiteSurfaced": false,
+        "groundedSiteSurfaced": true,
+        "groundedProviderAnswered": true,
         "gscImpressions": 0,
         "gscClicks": 0,
         "gscAveragePosition": 0,

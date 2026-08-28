@@ -1,11 +1,11 @@
 {
   "schemaVersion": "2.0.0",
-  "generatedAt": "2026-08-28T17:14:48.167Z",
+  "generatedAt": "2026-08-28T18:34:33.048Z",
   "truthBoundary": "Live web-search observations are evidence of web surfacing/citations, not verified organic rank, and a 0% citation rate is only meaningful for queries the provider actually answered. GSC average position is the authoritative Google-owned performance metric available to this system.",
   "providers": {
     "openrouter_web_search": {
-      "state": "NOT_CONFIGURED",
-      "configured": false,
+      "state": "CONNECTED",
+      "configured": true,
       "capabilities": {
         "liveWeb": true,
         "groundedCitations": true,
@@ -13,11 +13,8 @@
         "paaLiteral": false
       },
       "model": "openai/gpt-4o-mini",
-      "queriesAnswered": 0,
-      "lastStop": {
-        "name": "SEARCH_PROVIDER_NOT_CONFIGURED",
-        "reason": "OPENROUTER_API_KEY is not set, so no live query observation was attempted. No citation rate was recorded."
-      },
+      "queriesAnswered": 7,
+      "lastStop": null,
       "costBoundary": "Paid per request on OpenRouter; the workflow enforces a bounded daily query panel via LIVE_QUERY_LIMIT."
     },
     "gsc": {
@@ -32,7 +29,7 @@
     },
     "bing": {
       "state": "CONNECTED",
-      "configured": false,
+      "configured": true,
       "capabilities": {
         "bingPerformance": true,
         "crawlStats": true,
