@@ -1,4 +1,85 @@
 {
   "schemaVersion": "1.0.0",
-  "items": []
+  "items": [
+    {
+      "id": "exception-brief-ai_digital_wellness-whitepaper-1787933948055",
+      "candidateId": "brief-ai_digital_wellness-whitepaper",
+      "decision": "REPAIR_REQUIRED",
+      "findings": [
+        {
+          "code": "MISSING_TITLE",
+          "severity": "repairable",
+          "message": "Draft is missing title."
+        },
+        {
+          "code": "MISSING_DESCRIPTION",
+          "severity": "repairable",
+          "message": "Draft is missing description."
+        },
+        {
+          "code": "MISSING_SHORTANSWER",
+          "severity": "repairable",
+          "message": "Draft is missing shortAnswer."
+        },
+        {
+          "code": "MISSING_SECTIONS",
+          "severity": "repairable",
+          "message": "Draft is missing sections."
+        },
+        {
+          "code": "THIN_CONTENT",
+          "severity": "repairable",
+          "message": "Draft has 16 words; minimum is 2000."
+        },
+        {
+          "code": "GUARANTEE",
+          "severity": "repairable",
+          "message": "Prohibited or unsafe phrasing matched GUARANTEE."
+        }
+      ],
+      "createdAt": "2026-08-28T16:18:05.159Z",
+      "blocksOtherWork": false,
+      "clientActionRequired": false
+    },
+    {
+      "id": "exception-brief-black_women_healing-article-1787933981504",
+      "candidateId": "brief-black_women_healing-article",
+      "decision": "REPAIR_REQUIRED",
+      "findings": [
+        {
+          "code": "MISSING_TITLE",
+          "severity": "repairable",
+          "message": "Draft is missing title."
+        },
+        {
+          "code": "MISSING_DESCRIPTION",
+          "severity": "repairable",
+          "message": "Draft is missing description."
+        },
+        {
+          "code": "MISSING_SHORTANSWER",
+          "severity": "repairable",
+          "message": "Draft is missing shortAnswer."
+        },
+        {
+          "code": "MISSING_SECTIONS",
+          "severity": "repairable",
+          "message": "Draft is missing sections."
+        },
+        {
+          "code": "THIN_CONTENT",
+          "severity": "repairable",
+          "message": "Draft has 16 words; minimum is 960."
+        },
+        {
+          "code": "GUARANTEE",
+          "severity": "repairable",
+          "message": "Prohibited or unsafe phrasing matched GUARANTEE."
+        }
+      ],
+      "createdAt": "2026-08-28T16:18:05.159Z",
+      "blocksOtherWork": false,
+      "clientActionRequired": false
+    }
+  ]
 }

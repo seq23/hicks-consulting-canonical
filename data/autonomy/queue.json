@@ -33,7 +33,7 @@
         "Risks and limitations",
         "Recommended next steps"
       ],
-      "state": "ADMITTED",
+      "state": "FAILED_RETRYABLE",
       "routineApprovalRequired": false,
       "publicOnlyAfterApproval": false,
       "source": "legacy_generated_queue_migration",
@@ -61,10 +61,72 @@
           "to": "ADMITTED",
           "at": "2026-08-14T14:59:31.945Z",
           "reason": "Candidate admitted inside the existing content policy and ownership boundaries."
+        },
+        {
+          "from": "ADMITTED",
+          "to": "DRAFTING",
+          "at": "2026-08-28T16:18:05.159Z",
+          "reason": "Structured LLM drafting started."
+        },
+        {
+          "from": "DRAFTING",
+          "to": "DRAFTED",
+          "at": "2026-08-28T16:18:05.159Z",
+          "reason": "Structured draft produced."
+        },
+        {
+          "from": "DRAFTED",
+          "to": "VALIDATING",
+          "at": "2026-08-28T16:18:05.159Z",
+          "reason": "Safe Harbor validation started."
+        },
+        {
+          "from": "VALIDATING",
+          "to": "REPAIRING",
+          "at": "2026-08-28T16:18:05.159Z",
+          "reason": "Repairable Safe Harbor findings detected."
+        },
+        {
+          "from": "REPAIRING",
+          "to": "FAILED_RETRYABLE",
+          "at": "2026-08-28T16:18:05.159Z",
+          "reason": "Candidate did not satisfy the final Safe Harbor gate."
         }
       ],
-      "updatedAt": "2026-08-25T14:57:32.415Z",
-      "providerGate": "LLM_PROVIDER_NOT_CONFIGURED"
+      "updatedAt": "2026-08-28T16:18:05.159Z",
+      "providerGate": null,
+      "findings": [
+        {
+          "code": "MISSING_TITLE",
+          "severity": "repairable",
+          "message": "Draft is missing title."
+        },
+        {
+          "code": "MISSING_DESCRIPTION",
+          "severity": "repairable",
+          "message": "Draft is missing description."
+        },
+        {
+          "code": "MISSING_SHORTANSWER",
+          "severity": "repairable",
+          "message": "Draft is missing shortAnswer."
+        },
+        {
+          "code": "MISSING_SECTIONS",
+          "severity": "repairable",
+          "message": "Draft is missing sections."
+        },
+        {
+          "code": "THIN_CONTENT",
+          "severity": "repairable",
+          "message": "Draft has 16 words; minimum is 2000."
+        },
+        {
+          "code": "GUARANTEE",
+          "severity": "repairable",
+          "message": "Prohibited or unsafe phrasing matched GUARANTEE."
+        }
+      ]
     },
     {
       "id": "brief-black_women_healing-article",
@@ -96,7 +158,7 @@
         "Common mistakes",
         "Next step"
       ],
-      "state": "ADMITTED",
+      "state": "FAILED_RETRYABLE",
       "routineApprovalRequired": false,
       "publicOnlyAfterApproval": false,
       "source": "legacy_generated_queue_migration",
@@ -124,10 +186,72 @@
           "to": "ADMITTED",
           "at": "2026-08-14T14:59:31.945Z",
           "reason": "Candidate admitted inside the existing content policy and ownership boundaries."
+        },
+        {
+          "from": "ADMITTED",
+          "to": "DRAFTING",
+          "at": "2026-08-28T16:18:05.159Z",
+          "reason": "Structured LLM drafting started."
+        },
+        {
+          "from": "DRAFTING",
+          "to": "DRAFTED",
+          "at": "2026-08-28T16:18:05.159Z",
+          "reason": "Structured draft produced."
+        },
+        {
+          "from": "DRAFTED",
+          "to": "VALIDATING",
+          "at": "2026-08-28T16:18:05.159Z",
+          "reason": "Safe Harbor validation started."
+        },
+        {
+          "from": "VALIDATING",
+          "to": "REPAIRING",
+          "at": "2026-08-28T16:18:05.159Z",
+          "reason": "Repairable Safe Harbor findings detected."
+        },
+        {
+          "from": "REPAIRING",
+          "to": "FAILED_RETRYABLE",
+          "at": "2026-08-28T16:18:05.159Z",
+          "reason": "Candidate did not satisfy the final Safe Harbor gate."
         }
       ],
-      "updatedAt": "2026-08-25T14:57:32.415Z",
-      "providerGate": "LLM_PROVIDER_NOT_CONFIGURED"
+      "updatedAt": "2026-08-28T16:18:05.159Z",
+      "providerGate": null,
+      "findings": [
+        {
+          "code": "MISSING_TITLE",
+          "severity": "repairable",
+          "message": "Draft is missing title."
+        },
+        {
+          "code": "MISSING_DESCRIPTION",
+          "severity": "repairable",
+          "message": "Draft is missing description."
+        },
+        {
+          "code": "MISSING_SHORTANSWER",
+          "severity": "repairable",
+          "message": "Draft is missing shortAnswer."
+        },
+        {
+          "code": "MISSING_SECTIONS",
+          "severity": "repairable",
+          "message": "Draft is missing sections."
+        },
+        {
+          "code": "THIN_CONTENT",
+          "severity": "repairable",
+          "message": "Draft has 16 words; minimum is 960."
+        },
+        {
+          "code": "GUARANTEE",
+          "severity": "repairable",
+          "message": "Prohibited or unsafe phrasing matched GUARANTEE."
+        }
+      ]
     },
     {
       "id": "brief-burnout_boundaries-insight",
