@@ -1,9 +1,9 @@
 {
   "schemaVersion": "2.0.0",
-  "generatedAt": "2026-08-28T03:45:27.021Z",
-  "truthBoundary": "Grounded Google Search observations are evidence of live web surfacing/citations, not verified organic rank. GSC average position is the authoritative Google-owned performance metric available to this system.",
+  "generatedAt": "2026-08-28T17:14:48.167Z",
+  "truthBoundary": "Live web-search observations are evidence of web surfacing/citations, not verified organic rank, and a 0% citation rate is only meaningful for queries the provider actually answered. GSC average position is the authoritative Google-owned performance metric available to this system.",
   "providers": {
-    "gemini_grounded_search": {
+    "openrouter_web_search": {
       "state": "NOT_CONFIGURED",
       "configured": false,
       "capabilities": {
@@ -12,8 +12,13 @@
         "literalOrganicRank": false,
         "paaLiteral": false
       },
-      "model": "gemini-2.5-flash-lite",
-      "costBoundary": "Designed for the Gemini Developer API free tier when available; the workflow enforces a bounded daily query panel."
+      "model": "openai/gpt-4o-mini",
+      "queriesAnswered": 0,
+      "lastStop": {
+        "name": "SEARCH_PROVIDER_NOT_CONFIGURED",
+        "reason": "OPENROUTER_API_KEY is not set, so no live query observation was attempted. No citation rate was recorded."
+      },
+      "costBoundary": "Paid per request on OpenRouter; the workflow enforces a bounded daily query panel via LIVE_QUERY_LIMIT."
     },
     "gsc": {
       "state": "CONNECTED",
@@ -27,7 +32,7 @@
     },
     "bing": {
       "state": "CONNECTED",
-      "configured": true,
+      "configured": false,
       "capabilities": {
         "bingPerformance": true,
         "crawlStats": true,

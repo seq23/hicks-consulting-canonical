@@ -1,7 +1,13 @@
 {
-  "schemaVersion": "2.0.0",
+  "schemaVersion": "2.1.0",
   "generatedAt": "2026-08-28T03:45:27.021Z",
   "providerState": "NOT_CONFIGURED",
-  "truthBoundary": "These are Google-Search-grounded web observations and citations. They are not literal organic SERP positions. Use GSC for Google-owned impressions, clicks, CTR, and average position.",
-  "observations": []
+  "truthBoundary": "These are live web-search observations and citations returned by OpenRouter's web plugin. They are not literal organic SERP positions, and a citation rate is only meaningful for observations where providerAnswered is true. Use GSC for Google-owned impressions, clicks, CTR, and average position.",
+  "observations": [],
+  "provider": "openrouter_web_search",
+  "stop": {
+    "name": "SEARCH_PROVIDER_NOT_CONFIGURED",
+    "reason": "OPENROUTER_API_KEY is not set, so no live query observation was attempted. No citation rate was recorded."
+  },
+  "queriesAnswered": 0
 }

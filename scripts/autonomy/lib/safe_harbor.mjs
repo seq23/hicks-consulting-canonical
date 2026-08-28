@@ -17,6 +17,28 @@ const PROTECTED_FACT_PATTERNS = [
 
 const NUMERIC_CLAIM = /\b\d+(?:\.\d+)?%\b|\b\d+\s+(?:people|adults|women|clients)\b/i;
 
+// The disclaimer localRepairDraft falls back to when a draft arrives without one.
+// It must not itself match any PROHIBITED_PATTERNS entry: the previous default said
+// "or a guarantee of outcomes", which the GUARANTEE check then flagged, so the repair
+// injected a finding the repair could not clear. localRepairDraft additionally routes
+// this value through the same sanitizer as author-written text, and
+// validate_safe_harbor_behavior asserts it stays clean.
+export const DEFAULT_DISCLAIMER = 'This educational resource is for general information only. It does not provide diagnosis, crisis care, or medical advice, and it does not promise individual outcomes.';
+
+export const DEFAULT_INTERNAL_LINKS = ['/resources/', '/therapy/', '/about/'];
+
+// Minimum shape a value must satisfy to be usable as a draft. Anything that fails
+// this is not a draft and must never replace one - see run_cycle's repair step.
+export function isStructuredDraftShape(value) {
+  if (!value || typeof value !== 'object' || Array.isArray(value)) return false;
+  if (typeof value.title !== 'string' || !value.title.trim()) return false;
+  if (!Array.isArray(value.sections) || value.sections.length === 0) return false;
+  return value.sections.every((section) =>
+    section && typeof section === 'object' && !Array.isArray(section) &&
+    typeof section.heading === 'string' && section.heading.trim().length > 0 &&
+    typeof section.body === 'string' && section.body.trim().length > 0);
+}
+
 export function plainTextFromDraft(draft) {
   const sections = Array.isArray(draft?.sections) ? draft.sections : [];
   return [draft?.title, draft?.description, draft?.shortAnswer, ...sections.flatMap((section) => [section?.heading, section?.body, ...(section?.bullets || [])]), draft?.disclaimer]
@@ -83,6 +105,15 @@ export function localRepairDraft(input, findings = []) {
     .replace(/\bpermanent cure\b/gi, 'ongoing support')
     .replace(/\b(best|top[- ]rated|number one|#1)\s+(therapist|therapy|provider|practice)\b/gi, '$2 option')
     .replace(/\bthis means you have\b/gi, 'this may be worth discussing with a qualified professional because it can resemble');
+  // Backfill defaults FIRST, then sanitize, so every value this repair introduces
+  // travels the same sanitizer as author-written text. These assignments used to run
+  // after the sanitizer, which is how the default disclaimer shipped the word
+  // "guarantee" into the draft unsanitized and how a defaulted description inherited
+  // an unsanitized shortAnswer.
+  if (!draft.disclaimer) draft.disclaimer = DEFAULT_DISCLAIMER;
+  if (!Array.isArray(draft.internalLinks) || draft.internalLinks.length === 0) draft.internalLinks = [...DEFAULT_INTERNAL_LINKS];
+  if (!draft.shortAnswer && Array.isArray(draft.sections) && draft.sections[0]?.body) draft.shortAnswer = String(draft.sections[0].body).slice(0, 240);
+  if (!draft.description && draft.shortAnswer) draft.description = String(draft.shortAnswer).slice(0, 155);
   for (const field of ['title', 'description', 'shortAnswer', 'disclaimer']) if (draft[field]) draft[field] = textReplace(draft[field]);
   if (Array.isArray(draft.sections)) {
     draft.sections = draft.sections.map((section) => ({
@@ -92,10 +123,6 @@ export function localRepairDraft(input, findings = []) {
       bullets: Array.isArray(section.bullets) ? section.bullets.map(textReplace) : section.bullets
     }));
   }
-  if (!draft.disclaimer) draft.disclaimer = 'This educational resource does not provide diagnosis, crisis care, medical advice, or a guarantee of outcomes.';
-  if (!Array.isArray(draft.internalLinks) || draft.internalLinks.length === 0) draft.internalLinks = ['/resources/', '/therapy/', '/about/'];
-  if (!draft.description && draft.shortAnswer) draft.description = String(draft.shortAnswer).slice(0, 155);
-  if (!draft.shortAnswer && Array.isArray(draft.sections) && draft.sections[0]?.body) draft.shortAnswer = String(draft.sections[0].body).slice(0, 240);
   draft.repairLog = [...(draft.repairLog || []), ...findings.filter((f) => f.severity === 'repairable').map((f) => ({ code: f.code, action: 'local_rewrite_or_default' }))];
   return draft;
 }
