@@ -2,7 +2,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { readJson, writeJsonAtomic, writeTextAtomic, nowIso, slugify, routeToSourceFile, listFiles, ROOT, stableJsonHash } from './lib/io.mjs';
 import { normalizeContentType, nextAvailableSlot } from './lib/cadence.mjs';
-import { validateDraft, localRepairDraft } from './lib/safe_harbor.mjs';
+import { validateDraft, localRepairDraft, isStructuredDraftShape } from './lib/safe_harbor.mjs';
 import { providerConfigured, generateStructuredDraft, repairStructuredDraft } from './lib/llm_provider.mjs';
 import { writeResource } from './lib/render_resource.mjs';
 import { freezeFile } from './lib/freeze.mjs';
@@ -131,10 +131,20 @@ for (const item of candidates) {
       validation = validateDraft(draft, { existingDocuments: documents, minimumWords });
       if (validation.decision === 'REPAIR_REQUIRED') {
         const llmRepair = await repairStructuredDraft({ draft, findings: validation.findings, candidate: item });
-        if (llmRepair) {
+        // The repair return value used to be assigned straight into `draft` with no
+        // shape check. When the provider answered with a wrapper object, a partial
+        // object, or anything that was not a draft, the good draft the repair was
+        // meant to improve was destroyed; localRepairDraft then backfilled the
+        // remains with its defaults and Safe Harbor reported MISSING_TITLE /
+        // MISSING_SECTIONS against content the generator had actually produced.
+        // A repair may only replace a draft if it is itself a usable draft.
+        if (isStructuredDraftShape(llmRepair)) {
           draft = localRepairDraft(llmRepair, validation.findings);
           repairs.push(...(draft.repairLog || []));
           validation = validateDraft(draft, { existingDocuments: documents, minimumWords });
+        } else if (llmRepair !== null && llmRepair !== undefined) {
+          // Named, visible outcome: the repair was discarded and the prior draft kept.
+          repairs.push({ code: 'LLM_REPAIR_REJECTED_SHAPE', action: 'kept_previous_draft' });
         }
       }
     }
@@ -157,8 +167,20 @@ for (const item of candidates) {
         SKIPPED_DUPLICATE_INTENT: 'SKIPPED_DUPLICATE_INTENT',
         REPAIR_REQUIRED: 'FAILED_RETRYABLE',
       };
-      const finalState = FINAL_STATE_BY_DECISION[validation.decision] || 'SYSTEM_BLOCKED';
-      transition(item, finalState, 'Candidate did not satisfy the final Safe Harbor gate.', clock);
+      //
+      // The retry counter used to advance only in the catch block below, so a
+      // candidate that failed validation - rather than throwing - re-entered the
+      // queue as FAILED_RETRYABLE with attempts still unset and re-failed forever.
+      // A validation failure is an attempt: count it here too, and let the same
+      // AUTONOMY_MAX_ATTEMPTS ceiling promote an exhausted candidate to
+      // SYSTEM_BLOCKED so FAILED_RETRYABLE is genuinely bounded.
+      item.attempts = Number(item.attempts || 0) + 1;
+      const maxAttempts = Number(process.env.AUTONOMY_MAX_ATTEMPTS || 3);
+      let finalState = FINAL_STATE_BY_DECISION[validation.decision] || 'SYSTEM_BLOCKED';
+      if (finalState === 'FAILED_RETRYABLE' && item.attempts >= maxAttempts) finalState = 'SYSTEM_BLOCKED';
+      transition(item, finalState, finalState === 'SYSTEM_BLOCKED' && item.attempts >= maxAttempts
+        ? `Candidate exhausted ${maxAttempts} Safe Harbor attempts without clearing its findings.`
+        : 'Candidate did not satisfy the final Safe Harbor gate.', clock);
       item.findings = validation.findings;
       appendException(exceptions, item, validation.decision, validation.findings, clock);
       continue;

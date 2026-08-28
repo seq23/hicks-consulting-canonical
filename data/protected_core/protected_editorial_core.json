@@ -40,14 +40,13 @@
     },
     {
       "path": "scripts/autonomy/lib/safe_harbor.mjs",
-      "sha256": "31262f1c431f14b07f13a5df828fecc1cd51d6da9b4036162776f48f0fa4ba8d",
-      "bytes": 7192
+      "sha256": "83f0e9d81e076f23f7ff3deed40a884602c6bbf9585bc215c6a64f4e9046a6f6",
+      "bytes": 8930
     }
   ],
-  "baseline_refreshed_at": "2026-08-27T16:03:02.161069Z",
-  "baseline_reason": "Added a human release gate to the publisher. data/admin/content_manifest.json carried 114 items with status:'approved' and 113 of them scheduled one per day into the future, but that status is written by scripts/autonomy/run_cycle.mjs on its own LLM-drafted output - it never represented a human decision. The daily Content Publish cron released them to the client's live site unattended. Publication now additionally requires a named approver in data/admin/publication_approvals.json, written only by scripts/admin/approve_publication.mjs, which is reachable through workflow_dispatch and never from a schedule. run_safe_publish.mjs no longer touches unapproved content at all, and content-publish.yml commits explicit paths instead of `git add -A`. Nothing was published, unpublished, or retired by this change; 59 already-live items are untouched and the 114 queued items are held rather than cancelled. Refreshed deliberately: these two files had to change for the gate to exist, and the tripwire is doing its job by making that visible.",
+  "baseline_refreshed_at": "2026-08-28T17:13:01.835851Z",
+  "baseline_reason": "Repaired the Safe Harbor local repair so it cannot destroy or contaminate the draft it is meant to fix. localRepairDraft's default disclaimer read '... or a guarantee of outcomes' and was assigned AFTER the textReplace sanitizer ran, so a draft that merely arrived without a disclaimer came back carrying a fresh GUARANTEE finding that the repair itself could not clear; the defaulted description had the same problem, inheriting an unsanitized shortAnswer. Defaults are now backfilled before the sanitizer rather than after, and the default disclaimer is reworded so it trips no prohibited-phrase check on its own. The file also gains an exported isStructuredDraftShape check so scripts/autonomy/run_cycle.mjs can refuse a malformed LLM repair instead of assigning it over a good draft. No prohibited-phrase pattern, protected-fact pattern, numeric-claim rule, duplicate threshold, minimum word count or decision mapping was weakened, added to, or removed: PROHIBITED_PATTERNS, PROTECTED_FACT_PATTERNS, NUMERIC_CLAIM, validateDraft and SAFE_HARBOR_DECISIONS are byte-identical to the previous baseline. Nothing was published and no client-approved content changed. _ops/validators/deep/validate_safe_harbor_behavior.mjs now asserts that the default disclaimer trips no prohibited-phrase check and that the shape check accepts only real drafts, so this class of regression fails the matrix rather than reaching content. Refreshed deliberately: this file had to change for the repair to stop injecting findings, and the tripwire is doing its job by making that visible.",
   "baseline_refresh_changed_files": [
-    "scripts/publishing/run_safe_publish.mjs",
-    ".github/workflows/content-publish.yml"
+    "scripts/autonomy/lib/safe_harbor.mjs"
   ]
 }
