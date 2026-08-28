@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-27T18:07:22.316Z",
+  "generatedAt": "2026-08-28T03:45:24.912Z",
   "policy": {
     "blocking": false,
     "message": "SEO, AEO, GEO, GSC, Bing, and live-health quality findings are advisory. Runtime safety, data integrity, auth, cadence, and truth checks remain release gates."
@@ -89,33 +89,33 @@
     "gsc": {
       "provider": "gsc",
       "status": "ok",
-      "checkedAt": "2026-08-27T18:07:22.316Z",
+      "checkedAt": "2026-08-28T03:45:24.912Z",
       "siteUrl": "sc-domain:hicksconsulting.org",
       "dateRange": {
-        "currentStart": "2026-07-28",
-        "currentEnd": "2026-08-24",
-        "previousStart": "2026-06-30",
-        "previousEnd": "2026-07-27"
+        "currentStart": "2026-07-29",
+        "currentEnd": "2026-08-25",
+        "previousStart": "2026-07-01",
+        "previousEnd": "2026-07-28"
       },
       "metrics": {
-        "clicks": 12,
-        "impressions": 614,
-        "ctr": 0.019543973941368076,
-        "position": 8.35830618892508,
-        "previousClicks": 19,
-        "previousImpressions": 531,
-        "previousCtr": 0.035781544256120526,
-        "previousPosition": 7.376647834274953
+        "clicks": 10,
+        "impressions": 613,
+        "ctr": 0.01631321370309951,
+        "position": 8.30505709624796,
+        "previousClicks": 21,
+        "previousImpressions": 539,
+        "previousCtr": 0.03896103896103896,
+        "previousPosition": 7.291280148423006
       },
       "topQueries": [
         {
           "keys": [
             "hicks consulting"
           ],
-          "clicks": 5,
-          "impressions": 50,
-          "ctr": 0.1,
-          "position": 3.18
+          "clicks": 4,
+          "impressions": 51,
+          "ctr": 0.0784313725490196,
+          "position": 3.156862745098039
         },
         {
           "keys": [
@@ -275,9 +275,9 @@
             "hicks health"
           ],
           "clicks": 0,
-          "impressions": 2,
+          "impressions": 1,
           "ctr": 0,
-          "position": 6.5
+          "position": 8
         },
         {
           "keys": [
@@ -528,19 +528,19 @@
           "keys": [
             "https://www.hicksconsulting.org/"
           ],
-          "clicks": 12,
-          "impressions": 562,
-          "ctr": 0.021352313167259787,
-          "position": 7.606761565836299
+          "clicks": 10,
+          "impressions": 558,
+          "ctr": 0.017921146953405017,
+          "position": 7.60931899641577
         },
         {
           "keys": [
             "https://hicksconsulting.org/intake-quiz/"
           ],
           "clicks": 0,
-          "impressions": 21,
+          "impressions": 24,
           "ctr": 0,
-          "position": 4.333333333333334
+          "position": 4.166666666666666
         },
         {
           "keys": [
@@ -601,9 +601,9 @@
             "https://www.hicksconsulting.org/faq/"
           ],
           "clicks": 0,
-          "impressions": 36,
+          "impressions": 35,
           "ctr": 0,
-          "position": 11.333333333333334
+          "position": 10.771428571428572
         },
         {
           "keys": [
@@ -664,9 +664,9 @@
             "https://www.hicksconsulting.org/therapy/"
           ],
           "clicks": 0,
-          "impressions": 23,
+          "impressions": 22,
           "ctr": 0,
-          "position": 19.565217391304348
+          "position": 20.318181818181817
         }
       ],
       "queryPage": [
@@ -675,10 +675,10 @@
             "hicks consulting",
             "https://www.hicksconsulting.org/"
           ],
-          "clicks": 5,
-          "impressions": 48,
-          "ctr": 0.10416666666666667,
-          "position": 2.020833333333333
+          "clicks": 4,
+          "impressions": 49,
+          "ctr": 0.08163265306122448,
+          "position": 2.020408163265306
         },
         {
           "keys": [
@@ -886,9 +886,9 @@
             "https://www.hicksconsulting.org/faq/"
           ],
           "clicks": 0,
-          "impressions": 9,
+          "impressions": 8,
           "ctr": 0,
-          "position": 9.88888888888889
+          "position": 9.875
         },
         {
           "keys": [
@@ -946,9 +946,9 @@
             "https://www.hicksconsulting.org/"
           ],
           "clicks": 0,
-          "impressions": 2,
+          "impressions": 1,
           "ctr": 0,
-          "position": 6.5
+          "position": 8
         },
         {
           "keys": [
@@ -1244,15 +1244,6 @@
       "daily": [
         {
           "keys": [
-            "2026-07-28"
-          ],
-          "clicks": 2,
-          "impressions": 22,
-          "ctr": 0.09090909090909091,
-          "position": 6.318181818181818
-        },
-        {
-          "keys": [
             "2026-07-29"
           ],
           "clicks": 1,
@@ -1493,6 +1484,15 @@
           "impressions": 21,
           "ctr": 0,
           "position": 5.809523809523809
+        },
+        {
+          "keys": [
+            "2026-08-25"
+          ],
+          "clicks": 0,
+          "impressions": 21,
+          "ctr": 0,
+          "position": 4.666666666666666
         }
       ],
       "message": "Search Console API connected and refreshed."
@@ -1500,7 +1500,7 @@
     "bing": {
       "provider": "bing",
       "status": "ok",
-      "checkedAt": "2026-08-27T18:07:22.316Z",
+      "checkedAt": "2026-08-28T03:45:24.912Z",
       "siteUrl": "https://www.hicksconsulting.org/",
       "site": null,
       "metrics": {
@@ -2047,24 +2047,6 @@
           }
         ],
         "crawl": [
-          {
-            "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
-            "AllOtherCodes": 1,
-            "BlockedByRobotsTxt": 0,
-            "Code2xx": 22,
-            "Code301": 1,
-            "Code302": 0,
-            "Code4xx": 0,
-            "Code5xx": 0,
-            "ConnectionTimeout": 0,
-            "ContainsMalware": 0,
-            "CrawlErrors": 0,
-            "CrawledPages": 6,
-            "Date": "/Date(1773385200000-0700)/",
-            "DnsFailures": 0,
-            "InIndex": 21,
-            "InLinks": 0
-          },
           {
             "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
             "AllOtherCodes": 1,
@@ -3666,6 +3648,24 @@
             "DnsFailures": 0,
             "InIndex": 0,
             "InLinks": 7
+          },
+          {
+            "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+            "AllOtherCodes": 0,
+            "BlockedByRobotsTxt": 0,
+            "Code2xx": 12,
+            "Code301": 1,
+            "Code302": 0,
+            "Code4xx": 0,
+            "Code5xx": 0,
+            "ConnectionTimeout": 0,
+            "ContainsMalware": 0,
+            "CrawlErrors": 0,
+            "CrawledPages": 0,
+            "Date": "/Date(1787814000000-0700)/",
+            "DnsFailures": 0,
+            "InIndex": 0,
+            "InLinks": 7
           }
         ]
       },
@@ -3691,20 +3691,20 @@
         {
           "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
           "AvgClickPosition": -1,
+          "AvgImpressionPosition": 8,
+          "Clicks": 0,
+          "Date": "/Date(1752217200000-0700)/",
+          "Impressions": 1,
+          "Query": "erica hart hicks consultants"
+        },
+        {
+          "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
+          "AvgClickPosition": -1,
           "AvgImpressionPosition": 10,
           "Clicks": 0,
           "Date": "/Date(1752217200000-0700)/",
           "Impressions": 1,
           "Query": "rebecca hicks counselor"
-        },
-        {
-          "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
-          "AvgClickPosition": -1,
-          "AvgImpressionPosition": 7,
-          "Clicks": 0,
-          "Date": "/Date(1752217200000-0700)/",
-          "Impressions": 1,
-          "Query": "jonathan hicks counseling"
         },
         {
           "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
@@ -3718,20 +3718,20 @@
         {
           "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
           "AvgClickPosition": -1,
+          "AvgImpressionPosition": 7,
+          "Clicks": 0,
+          "Date": "/Date(1752217200000-0700)/",
+          "Impressions": 1,
+          "Query": "jonathan hicks counseling"
+        },
+        {
+          "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
+          "AvgClickPosition": -1,
           "AvgImpressionPosition": 2,
           "Clicks": 0,
           "Date": "/Date(1752217200000-0700)/",
           "Impressions": 1,
           "Query": "melissa hicks therapy"
-        },
-        {
-          "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
-          "AvgClickPosition": -1,
-          "AvgImpressionPosition": 8,
-          "Clicks": 0,
-          "Date": "/Date(1752217200000-0700)/",
-          "Impressions": 1,
-          "Query": "erica hart hicks consultants"
         },
         {
           "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
@@ -3772,20 +3772,20 @@
         {
           "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
           "AvgClickPosition": -1,
-          "AvgImpressionPosition": 5,
-          "Clicks": 1,
-          "Date": "/Date(1753426800000-0700)/",
-          "Impressions": 2,
-          "Query": "anthony hicks, consultant"
-        },
-        {
-          "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
-          "AvgClickPosition": -1,
           "AvgImpressionPosition": 2,
           "Clicks": 1,
           "Date": "/Date(1753426800000-0700)/",
           "Impressions": 2,
           "Query": "scot hicks clinical services and consultation"
+        },
+        {
+          "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
+          "AvgClickPosition": -1,
+          "AvgImpressionPosition": 5,
+          "Clicks": 1,
+          "Date": "/Date(1753426800000-0700)/",
+          "Impressions": 2,
+          "Query": "anthony hicks, consultant"
         },
         {
           "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
@@ -3808,24 +3808,6 @@
         {
           "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
           "AvgClickPosition": -1,
-          "AvgImpressionPosition": 8,
-          "Clicks": 0,
-          "Date": "/Date(1753426800000-0700)/",
-          "Impressions": 1,
-          "Query": "www norman hicks consulting"
-        },
-        {
-          "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
-          "AvgClickPosition": -1,
-          "AvgImpressionPosition": 9,
-          "Clicks": 0,
-          "Date": "/Date(1753426800000-0700)/",
-          "Impressions": 1,
-          "Query": "justin hicks social worker"
-        },
-        {
-          "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
-          "AvgClickPosition": -1,
           "AvgImpressionPosition": 2,
           "Clicks": 0,
           "Date": "/Date(1753426800000-0700)/",
@@ -3840,6 +3822,24 @@
           "Date": "/Date(1753426800000-0700)/",
           "Impressions": 1,
           "Query": "hicks consulting llc"
+        },
+        {
+          "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
+          "AvgClickPosition": -1,
+          "AvgImpressionPosition": 8,
+          "Clicks": 0,
+          "Date": "/Date(1753426800000-0700)/",
+          "Impressions": 1,
+          "Query": "www norman hicks consulting"
+        },
+        {
+          "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
+          "AvgClickPosition": -1,
+          "AvgImpressionPosition": 9,
+          "Clicks": 0,
+          "Date": "/Date(1753426800000-0700)/",
+          "Impressions": 1,
+          "Query": "justin hicks social worker"
         },
         {
           "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
@@ -3892,91 +3892,91 @@
     "live": {
       "provider": "live",
       "status": "ok",
-      "checkedAt": "2026-08-27T18:07:22.316Z",
+      "checkedAt": "2026-08-28T03:45:24.912Z",
       "siteUrl": "https://www.hicksconsulting.org",
       "checks": [
         {
           "route": "/",
           "status": 200,
           "ok": true,
-          "ms": 259,
+          "ms": 398,
           "contentType": "text/html; charset=utf-8"
         },
         {
           "route": "/therapy/",
           "status": 200,
           "ok": true,
-          "ms": 222,
+          "ms": 167,
           "contentType": "text/html; charset=utf-8"
         },
         {
           "route": "/black-therapist-memphis/",
           "status": 200,
           "ok": true,
-          "ms": 54,
+          "ms": 121,
           "contentType": "text/html; charset=utf-8"
         },
         {
           "route": "/anxiety-therapist-memphis/",
           "status": 200,
           "ok": true,
-          "ms": 52,
+          "ms": 156,
           "contentType": "text/html; charset=utf-8"
         },
         {
           "route": "/coaching/",
           "status": 200,
           "ok": true,
-          "ms": 57,
+          "ms": 119,
           "contentType": "text/html; charset=utf-8"
         },
         {
           "route": "/groups/",
           "status": 200,
           "ok": true,
-          "ms": 87,
+          "ms": 146,
           "contentType": "text/html; charset=utf-8"
         },
         {
           "route": "/corporate-speaking/",
           "status": 200,
           "ok": true,
-          "ms": 95,
+          "ms": 149,
           "contentType": "text/html; charset=utf-8"
         },
         {
           "route": "/about/",
           "status": 200,
           "ok": true,
-          "ms": 58,
+          "ms": 123,
           "contentType": "text/html; charset=utf-8"
         },
         {
           "route": "/resources/",
           "status": 200,
           "ok": true,
-          "ms": 78,
+          "ms": 101,
           "contentType": "text/html; charset=utf-8"
         },
         {
           "route": "/sitemap.xml",
           "status": 200,
           "ok": true,
-          "ms": 79,
+          "ms": 97,
           "contentType": "application/xml"
         },
         {
           "route": "/robots.txt",
           "status": 200,
           "ok": true,
-          "ms": 75,
+          "ms": 164,
           "contentType": "text/plain; charset=utf-8"
         },
         {
           "route": "/agency/",
           "status": 200,
           "ok": true,
-          "ms": 180,
+          "ms": 129,
           "contentType": "text/html; charset=utf-8"
         }
       ],
@@ -3990,14 +3990,14 @@
   },
   "trends": {
     "gsc": {
-      "clicks": 12,
-      "impressions": 614,
-      "ctr": 0.019543973941368076,
-      "position": 8.35830618892508,
-      "previousClicks": 19,
-      "previousImpressions": 531,
-      "previousCtr": 0.035781544256120526,
-      "previousPosition": 7.376647834274953
+      "clicks": 10,
+      "impressions": 613,
+      "ctr": 0.01631321370309951,
+      "position": 8.30505709624796,
+      "previousClicks": 21,
+      "previousImpressions": 539,
+      "previousCtr": 0.03896103896103896,
+      "previousPosition": 7.291280148423006
     },
     "bing": {
       "rankAndTraffic": [
@@ -4543,24 +4543,6 @@
         }
       ],
       "crawl": [
-        {
-          "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
-          "AllOtherCodes": 1,
-          "BlockedByRobotsTxt": 0,
-          "Code2xx": 22,
-          "Code301": 1,
-          "Code302": 0,
-          "Code4xx": 0,
-          "Code5xx": 0,
-          "ConnectionTimeout": 0,
-          "ContainsMalware": 0,
-          "CrawlErrors": 0,
-          "CrawledPages": 6,
-          "Date": "/Date(1773385200000-0700)/",
-          "DnsFailures": 0,
-          "InIndex": 21,
-          "InLinks": 0
-        },
         {
           "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
           "AllOtherCodes": 1,
@@ -6162,6 +6144,24 @@
           "DnsFailures": 0,
           "InIndex": 0,
           "InLinks": 7
+        },
+        {
+          "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+          "AllOtherCodes": 0,
+          "BlockedByRobotsTxt": 0,
+          "Code2xx": 12,
+          "Code301": 1,
+          "Code302": 0,
+          "Code4xx": 0,
+          "Code5xx": 0,
+          "ConnectionTimeout": 0,
+          "ContainsMalware": 0,
+          "CrawlErrors": 0,
+          "CrawledPages": 0,
+          "Date": "/Date(1787814000000-0700)/",
+          "DnsFailures": 0,
+          "InIndex": 0,
+          "InLinks": 7
         }
       ]
     }
@@ -6169,7 +6169,7 @@
   "warningCounts": {
     "high": 0,
     "medium": 0,
-    "low": 4
+    "low": 32
   },
   "priorities": [
     {
@@ -6199,6 +6199,202 @@
       "route": "/therapy/",
       "message": "Description is 167 characters.",
       "tip": "Keep descriptions useful and roughly 80–165 characters."
+    },
+    {
+      "severity": "low",
+      "code": "long-title",
+      "route": "/resources/articles/the-emotional-cost-of-always-being-the-one-who-handles-it/",
+      "message": "Title is 76 characters.",
+      "tip": "Shorten the search title while preserving the page H1."
+    },
+    {
+      "severity": "low",
+      "code": "description-length",
+      "route": "/resources/articles/the-emotional-cost-of-always-being-the-one-who-handles-it/",
+      "message": "Description is 170 characters.",
+      "tip": "Keep descriptions useful and roughly 80–165 characters."
+    },
+    {
+      "severity": "low",
+      "code": "long-title",
+      "route": "/resources/articles/the-workplace-habits-that-keep-high-functioning-women-drained/",
+      "message": "Title is 80 characters.",
+      "tip": "Shorten the search title while preserving the page H1."
+    },
+    {
+      "severity": "low",
+      "code": "description-length",
+      "route": "/resources/articles/the-workplace-habits-that-keep-high-functioning-women-drained/",
+      "message": "Description is 184 characters.",
+      "tip": "Keep descriptions useful and roughly 80–165 characters."
+    },
+    {
+      "severity": "low",
+      "code": "long-title",
+      "route": "/resources/articles/when-your-nervous-system-is-tired-but-your-life-keeps-demanding-more/",
+      "message": "Title is 87 characters.",
+      "tip": "Shorten the search title while preserving the page H1."
+    },
+    {
+      "severity": "low",
+      "code": "description-length",
+      "route": "/resources/articles/when-your-nervous-system-is-tired-but-your-life-keeps-demanding-more/",
+      "message": "Description is 172 characters.",
+      "tip": "Keep descriptions useful and roughly 80–165 characters."
+    },
+    {
+      "severity": "low",
+      "code": "long-title",
+      "route": "/resources/guides/a-gentler-way-forward-reflection-recovery-and-rebuilding-trust-in-yourself/",
+      "message": "Title is 96 characters.",
+      "tip": "Shorten the search title while preserving the page H1."
+    },
+    {
+      "severity": "low",
+      "code": "long-title",
+      "route": "/resources/guides/relationship-stress-emotional-labor-and-the-need-for-more-honest-support/",
+      "message": "Title is 93 characters.",
+      "tip": "Shorten the search title while preserving the page H1."
+    },
+    {
+      "severity": "low",
+      "code": "long-title",
+      "route": "/resources/guides/self-worth-identity-and-the-pressure-to-be-exceptional/",
+      "message": "Title is 75 characters.",
+      "tip": "Shorten the search title while preserving the page H1."
+    },
+    {
+      "severity": "low",
+      "code": "long-title",
+      "route": "/resources/guides/strong-black-woman-fatigue-and-the-weight-of-looking-fine/",
+      "message": "Title is 76 characters.",
+      "tip": "Shorten the search title while preserving the page H1."
+    },
+    {
+      "severity": "low",
+      "code": "description-length",
+      "route": "/resources/guides/strong-black-woman-fatigue-and-the-weight-of-looking-fine/",
+      "message": "Description is 170 characters.",
+      "tip": "Keep descriptions useful and roughly 80–165 characters."
+    },
+    {
+      "severity": "low",
+      "code": "long-title",
+      "route": "/resources/insights/the-emotional-cost-of-always-being-the-one-who-handles-it-a-gentler-truth-to-consider/",
+      "message": "Title is 105 characters.",
+      "tip": "Shorten the search title while preserving the page H1."
+    },
+    {
+      "severity": "low",
+      "code": "long-title",
+      "route": "/resources/insights/the-emotional-cost-of-always-being-the-one-who-handles-it-how-it-shows-up-in-work-and/",
+      "message": "Title is 119 characters.",
+      "tip": "Shorten the search title while preserving the page H1."
+    },
+    {
+      "severity": "low",
+      "code": "long-title",
+      "route": "/resources/insights/the-emotional-cost-of-always-being-the-one-who-handles-it-next-step-reflection/",
+      "message": "Title is 98 characters.",
+      "tip": "Shorten the search title while preserving the page H1."
+    },
+    {
+      "severity": "low",
+      "code": "long-title",
+      "route": "/resources/insights/the-emotional-cost-of-always-being-the-one-who-handles-it-what-this-looks-like-in-rea/",
+      "message": "Title is 111 characters.",
+      "tip": "Shorten the search title while preserving the page H1."
+    },
+    {
+      "severity": "low",
+      "code": "long-title",
+      "route": "/resources/insights/the-emotional-cost-of-always-being-the-one-who-handles-it-why-women-minimize-it/",
+      "message": "Title is 99 characters.",
+      "tip": "Shorten the search title while preserving the page H1."
+    },
+    {
+      "severity": "low",
+      "code": "long-title",
+      "route": "/resources/insights/the-workplace-habits-that-keep-high-functioning-women-drained-a-gentler-truth-to-cons/",
+      "message": "Title is 109 characters.",
+      "tip": "Shorten the search title while preserving the page H1."
+    },
+    {
+      "severity": "low",
+      "code": "long-title",
+      "route": "/resources/insights/the-workplace-habits-that-keep-high-functioning-women-drained-how-it-shows-up-in-work/",
+      "message": "Title is 123 characters.",
+      "tip": "Shorten the search title while preserving the page H1."
+    },
+    {
+      "severity": "low",
+      "code": "long-title",
+      "route": "/resources/insights/the-workplace-habits-that-keep-high-functioning-women-drained-next-step-reflection/",
+      "message": "Title is 102 characters.",
+      "tip": "Shorten the search title while preserving the page H1."
+    },
+    {
+      "severity": "low",
+      "code": "long-title",
+      "route": "/resources/insights/the-workplace-habits-that-keep-high-functioning-women-drained-what-this-looks-like-in/",
+      "message": "Title is 115 characters.",
+      "tip": "Shorten the search title while preserving the page H1."
+    },
+    {
+      "severity": "low",
+      "code": "long-title",
+      "route": "/resources/insights/the-workplace-habits-that-keep-high-functioning-women-drained-why-women-minimize-it/",
+      "message": "Title is 103 characters.",
+      "tip": "Shorten the search title while preserving the page H1."
+    },
+    {
+      "severity": "low",
+      "code": "long-title",
+      "route": "/resources/insights/when-your-nervous-system-is-tired-but-your-life-keeps-demanding-more-a-gentler-truth/",
+      "message": "Title is 116 characters.",
+      "tip": "Shorten the search title while preserving the page H1."
+    },
+    {
+      "severity": "low",
+      "code": "long-title",
+      "route": "/resources/insights/when-your-nervous-system-is-tired-but-your-life-keeps-demanding-more-how-it-shows-up/",
+      "message": "Title is 130 characters.",
+      "tip": "Shorten the search title while preserving the page H1."
+    },
+    {
+      "severity": "low",
+      "code": "long-title",
+      "route": "/resources/insights/when-your-nervous-system-is-tired-but-your-life-keeps-demanding-more-next-step-reflec/",
+      "message": "Title is 109 characters.",
+      "tip": "Shorten the search title while preserving the page H1."
+    },
+    {
+      "severity": "low",
+      "code": "long-title",
+      "route": "/resources/insights/when-your-nervous-system-is-tired-but-your-life-keeps-demanding-more-what-this-looks/",
+      "message": "Title is 122 characters.",
+      "tip": "Shorten the search title while preserving the page H1."
+    },
+    {
+      "severity": "low",
+      "code": "long-title",
+      "route": "/resources/insights/when-your-nervous-system-is-tired-but-your-life-keeps-demanding-more-why-women-minimi/",
+      "message": "Title is 110 characters.",
+      "tip": "Shorten the search title while preserving the page H1."
+    },
+    {
+      "severity": "low",
+      "code": "long-title",
+      "route": "/resources/white-papers/a-practical-guide-to-life-transitions-identity-drift-and-starting-again-without-panic/",
+      "message": "Title is 106 characters.",
+      "tip": "Shorten the search title while preserving the page H1."
+    },
+    {
+      "severity": "low",
+      "code": "long-title",
+      "route": "/resources/white-papers/the-end-of-year-reset-guide-for-black-women-who-are-tired-of-holding-everything-toget/",
+      "message": "Title is 107 characters.",
+      "tip": "Shorten the search title while preserving the page H1."
     }
   ],
   "duplicatePairs": {
@@ -6398,7 +6594,7 @@
     },
     "freeWins": {
       "schemaVersion": "1.0.0",
-      "generatedAt": "2026-08-27T18:07:23.854Z",
+      "generatedAt": "2026-08-28T03:45:27.021Z",
       "providerState": "CONNECTED",
       "items": []
     },
@@ -6410,7 +6606,7 @@
     },
     "providerHealth": {
       "schemaVersion": "2.0.0",
-      "generatedAt": "2026-08-27T18:07:23.854Z",
+      "generatedAt": "2026-08-28T03:45:27.021Z",
       "truthBoundary": "Grounded Google Search observations are evidence of live web surfacing/citations, not verified organic rank. GSC average position is the authoritative Google-owned performance metric available to this system.",
       "providers": {
         "gemini_grounded_search": {
@@ -6427,7 +6623,7 @@
         },
         "gsc": {
           "state": "CONNECTED",
-          "configured": true,
+          "configured": false,
           "capabilities": {
             "ownedGooglePerformance": true,
             "averagePosition": true,
@@ -6455,14 +6651,14 @@
     },
     "queryObservations": {
       "schemaVersion": "2.0.0",
-      "generatedAt": "2026-08-27T18:07:23.854Z",
+      "generatedAt": "2026-08-28T03:45:27.021Z",
       "providerState": "NOT_CONFIGURED",
       "truthBoundary": "These are Google-Search-grounded web observations and citations. They are not literal organic SERP positions. Use GSC for Google-owned impressions, clicks, CTR, and average position.",
       "observations": []
     },
     "searchActions": {
       "schemaVersion": "2.0.0",
-      "generatedAt": "2026-08-27T18:07:23.854Z",
+      "generatedAt": "2026-08-28T03:45:27.021Z",
       "policy": "Hicks may autonomously apply bounded technical/search-alignment repairs. Substantive clinical claims and unsupported treatment assertions are never auto-generated from competitor content.",
       "items": [
         {
@@ -6581,7 +6777,7 @@
     },
     "searchRepairs": {
       "schemaVersion": "2.0.0",
-      "updatedAt": "2026-08-27T18:07:24.038Z",
+      "updatedAt": "2026-08-28T03:45:27.199Z",
       "repairs": [],
       "lastRunRepairs": [],
       "externalOutcome": "UNPROVEN_PENDING_RETEST"
