@@ -71,7 +71,8 @@
         "no-internal-instruction-leak",
         "no-empty-table-cells",
         "content-pattern-contract",
-        "title-uniqueness"
+        "title-uniqueness",
+        "discovery-gap-contract"
       ]
     },
     "ingestion": {
@@ -84,7 +85,8 @@
         "fanout-candidates",
         "social-firehose",
         "throttle-contract",
-        "content-briefs"
+        "content-briefs",
+        "discovery-gap-contract"
       ]
     },
     "sitemap-indexing": {
@@ -194,7 +196,8 @@
         "autonomy-cycle-e2e",
         "self-heal-e2e",
         "search-intelligence-contract",
-        "title-uniqueness"
+        "title-uniqueness",
+        "discovery-gap-contract"
       ]
     }
   },

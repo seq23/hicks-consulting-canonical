@@ -970,6 +970,20 @@
       "findingProtocol": "VALIDATION_FINDING",
       "enabled": true,
       "rationale": "On 2026-08-08, 54 pages were removed from the public sitemap and every one of the 54 mappings in reports/BING_INDEXATION_CONSOLIDATION_REPORT.json carries duplicateHtmlTitle: true. The mechanism was a parent title plus a rotating editorial suffix. This check proves no new title duplicates or extends another, that the frozen legacy exemption in data/admin/legacy_title_grandfather.json cannot grow, that the demand phrasing bank is still grounded in live query research, and that every title-producing generator goes through scripts/lib/demand_titles.js. It hard-fails if it examines zero items."
+    },
+    {
+      "id": "discovery-gap-contract",
+      "npmScript": "validate:discovery-gap",
+      "entrypoint": "_ops/validators/validate_discovery_gap.js",
+      "severity": "HARD_FAIL",
+      "blocksRelease": true,
+      "group": "agency-search",
+      "owner": "repo-maintainers",
+      "scope": "discovery-gap scoring integrity",
+      "ciInvocation": "MATRIX_ONLY",
+      "findingProtocol": "VALIDATION_FINDING",
+      "enabled": true,
+      "rationale": "The discovery-gap scorer must have a caller that keeps its output, must carry an aged openness reading forward as stale rather than overwriting it with UNMEASURED when the 25-query observation window rolls past it, and must gate every target with blue_ocean_eligible so \"not cited\" is never read as \"open ground\". Hard-fails if it examines zero targets."
     }
   ]
 }
