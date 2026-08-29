@@ -1,0 +1,99 @@
+name: Repo Self-Healing Loop
+
+# _ops/selfheal/heal_until_clean.js runs the registered validation matrix, runs
+# the `repair_command` each failing check declares in
+# _repo_validation_registry.json, and re-validates. It worked, and nothing
+# automated ever called it: it had two npm scripts and no workflow, no aggregate
+# script, and no runbook reference, so the 8 registered repair commands were
+# dead weight in CI and a failing run always waited for a human even when the
+# remedy was one npm script away.
+#
+# Sunday 09:07 UTC is deliberately clear of every other lane in the shared
+# hicks-consulting-content-automation group (13:17 / 14:23 daily, 10:41 Mon,
+# 14:41 Tue+Fri, 16:11 Wed), so this never queues behind a publishing run.
+
+on:
+  workflow_dispatch:
+    inputs:
+      profile:
+        description: Validation profile to heal
+        required: false
+        default: all
+      max_attempts:
+        description: Maximum validate/repair passes (1-5)
+        required: false
+        default: '3'
+  schedule:
+    - cron: '7 9 * * 0'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: hicks-consulting-content-automation
+  cancel-in-progress: false
+
+jobs:
+  self-heal:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 20
+          cache: npm
+      - run: git pull --rebase origin main
+      - run: npm ci
+      - name: Build so dist-aware checks inspect the current output
+        run: npm run build
+      - name: Run the registered validate, repair, and re-validate loop
+        id: heal
+        continue-on-error: true
+        run: npm run selfheal -- --profile ${{ inputs.profile || 'all' }} --max ${{ inputs.max_attempts || '3' }}
+      # An UNRESOLVED report is the most useful thing this lane produces: it names
+      # every check that still has a finding and whether a repair exists for it.
+      # It has to survive a failing run, so this uploads on always() and treats a
+      # missing report as an error rather than a quiet no-op.
+      - name: Upload the self-heal loop report
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: hicks-repo-self-heal-report
+          if-no-files-found: error
+          path: reports/self-heal-loop.json
+      - name: Commit repairs the loop re-validated clean
+        if: always()
+        run: |
+          if [ ! -f reports/self-heal-loop.json ]; then
+            echo "No loop report was produced; nothing to commit."
+            exit 0
+          fi
+          SAFE="$(node -e 'process.stdout.write(String(JSON.parse(require("fs").readFileSync("reports/self-heal-loop.json","utf8")).safe_to_push))')"
+          if [ "$SAFE" != "true" ]; then
+            echo "The loop did not reach a clean matrix; refusing to push unverified repair output."
+            echo "See the hicks-repo-self-heal-report artifact for what could not be healed."
+            exit 0
+          fi
+          git config user.name "hicks-repo-self-heal-bot"
+          git config user.email "actions@github.com"
+          # Exactly the paths the 8 registered repair commands write. data/admin is
+          # deliberately excluded: no registered repair writes it, and staging a
+          # path this lane does not own would race the admin surface.
+          git add -A -- .build data/continuity data/intake data/search data/social reports
+          if git diff --cached --quiet; then
+            echo "Matrix was already clean and no repair changed anything on disk."
+            exit 0
+          fi
+          git commit -m "Repo self-heal: apply registered repairs and re-validate clean"
+          git push origin main
+      - name: Fail the lane if the tree could not be healed
+        if: always()
+        run: |
+          if [ "${{ steps.heal.outcome }}" != "success" ]; then
+            echo "heal_until_clean exited non-zero: the matrix is not clean and could not be repaired."
+            exit 1
+          fi
+          echo "Matrix is clean."

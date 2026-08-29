@@ -32,14 +32,34 @@ jobs:
         run: npm run build
       - name: Run deep site-driven validation
         run: npm run validate:deep
+      - name: Upload the self-heal outcome receipt
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: hicks-self-heal-outcome
+          if-no-files-found: error
+          path: |
+            reports/self-heal-outcome.json
+            data/autonomy/self_heal_state.json
       - name: Commit only validated repair output and receipts
         run: |
           git config user.name "hicks-self-heal-bot"
           git config user.email "actions@github.com"
-          git add data/autonomy data/admin pages sitemap.xml reports
+          # data/admin is deliberately NOT staged here: this cycle only reads
+          # data/admin/content_manifest.json and never writes it, and staging a
+          # path the lane does not own invites a race with the admin surface.
+          git add data/autonomy pages sitemap.xml reports
           if git diff --cached --quiet; then
-            echo "No safe repairs were needed."
-          else
-            git commit -m "Self-heal: apply bounded validated repairs"
-            git push origin main
+            echo "Self-heal made no changes on disk; nothing to commit."
+            exit 0
           fi
+          # The subject comes from the run's own receipt, so a run that repaired
+          # nothing can no longer commit a message claiming it applied repairs.
+          MESSAGE="$(node -e 'process.stdout.write(JSON.parse(require("fs").readFileSync("reports/self-heal-outcome.json","utf8")).commitMessage)')"
+          if [ -z "$MESSAGE" ]; then
+            echo "Refusing to commit: the self-heal receipt carried no commit message."
+            exit 1
+          fi
+          echo "Committing as: $MESSAGE"
+          git commit -m "$MESSAGE"
+          git push origin main
