@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 import fs from 'node:fs';
 import path from 'node:path';
+import { execFileSync } from 'node:child_process';
 const ROOT=process.cwd(); const APPLY=process.argv.includes('--apply'); const THRESHOLD=.85;
 const manifestFile=path.join(ROOT,'data/admin/content_manifest.json'); const redirectsFile=path.join(ROOT,'_redirects');
 function read(f){return fs.readFileSync(f,'utf8')} function write(f,v){fs.mkdirSync(path.dirname(f),{recursive:true});fs.writeFileSync(f,v)}
@@ -16,4 +17,19 @@ if(!APPLY)process.exit(0); if(mappings.length!==54)throw new Error(`Expected kno
 const ts=new Date().toISOString(), ids=new Set(mappings.map(x=>x.insightId)); for(const x of manifest){if(ids.has(x.id)){x.status='revoked';x.revokedAt=x.revokedAt||ts}} write(manifestFile,JSON.stringify(manifest,null,2)+'\n');
 let red=read(redirectsFile).replace(/\n?# BEGIN BING DUPLICATE CONSOLIDATION[\s\S]*?# END BING DUPLICATE CONSOLIDATION\n?/g,'\n').trimEnd(); red+='\n\n# BEGIN BING DUPLICATE CONSOLIDATION\n'+mappings.map(x=>`${x.source} ${x.target} 301`).join('\n')+'\n# END BING DUPLICATE CONSOLIDATION\n'; write(redirectsFile,red);
 const report={schemaVersion:'1.0.0',generatedAt:ts,purpose:'Consolidate high-similarity orphaned insight derivatives into parent articles for search index-quality remediation.',similarityThreshold:THRESHOLD,consolidationCount:mappings.length,sitemapChange:'LLM-only routes remain in llms.txt but are excluded from the public search sitemap.',publishingCadenceChanged:false,editorialContentRewritten:false,mappings}; write(path.join(ROOT,'reports/BING_INDEXATION_CONSOLIDATION_REPORT.json'),JSON.stringify(report,null,2)+'\n');
-console.log(`APPLIED ${mappings.length} consolidations.`);
+/* A removal with no reason must not be possible.
+ *
+ * This script used to stop one line above: it set status='revoked' on 54 items,
+ * wrote the redirects and the report, and left the manifest saying nothing about
+ * WHY. The admin page then had no reason to show a human, filled the gap with the
+ * word "Revoked", and told the client she had turned down 54 pieces nobody had
+ * ever asked her about. The reason existed -- it was in the report, in machine
+ * language, where no person would read it.
+ *
+ * So writing the removals and writing their reasons are now one step. The
+ * builder composes a plain-language reason per item via scripts/admin/removal_reasons.js
+ * and throws if any of them comes out empty, which fails this migration rather
+ * than leaving unexplained removals behind.
+ */
+execFileSync(process.execPath, [path.join(ROOT, 'scripts/admin/build_content_consolidations.js')], { cwd: ROOT, stdio: 'inherit' });
+console.log(`APPLIED ${mappings.length} consolidations, each with a recorded reason.`);

@@ -1771,10 +1771,14 @@ footer {
 .pill-published{background:#ddefe5;color:#1e6b45;border-color:#b6d9c6}
 .pill-scheduled{background:#e0eefa;color:#1b4f7a;border-color:#b9d7ee}
 .pill-declined{background:rgba(0,0,0,.045);color:var(--muted)}
+/* A machine's removal is a distinct fact from a decision she made, so it does
+   not borrow the decline pill. Neutral slate: informational, not a verdict. */
+.pill-system-removed{background:#eceff3;color:#4a5568;border-color:#d3dae3}
 :root[data-theme='dark'] .pill-ready{background:#33220f;color:#e0a165;border-color:#5c4021}
 :root[data-theme='dark'] .pill-published{background:#123024;color:#67bd93;border-color:#1f5138}
 :root[data-theme='dark'] .pill-scheduled{background:#12263a;color:#79b6e6;border-color:#1f4666}
 :root[data-theme='dark'] .pill-declined{background:rgba(255,255,255,.06);color:var(--muted)}
+:root[data-theme='dark'] .pill-system-removed{background:#1c2229;color:#9aa9bb;border-color:#2e3944}
 
 /* The manual-run controls were rendered as very large filled lozenges that read
    as the most important thing on the page. They are the least important: these
