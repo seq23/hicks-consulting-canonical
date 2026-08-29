@@ -1,7 +1,14 @@
 const { fs, path, read } = require('./util');
 const { warn: reportFindings } = require('../validation/protocol');
 const manifest = JSON.parse(read('data/admin/content_manifest.json'));
-const allowedTypes = new Set(['insights', 'articles', 'guides', 'white-papers']);
+// 'local-landing' is not part of the editorial cadence (insights daily, articles
+// weekly, guides monthly, white papers quarterly). It is the five Memphis
+// local-intent landing pages the site owner published on 2026-08-29 onto
+// top-level routes: they answer measured local searches, they are not on a
+// release schedule, and filing five of them under 'guides' put five items in the
+// one-pillar-piece-per-month slot and collided in
+// _ops/validators/deep/validate_velocity_immutability.js.
+const allowedTypes = new Set(['insights', 'articles', 'guides', 'white-papers', 'local-landing']);
 const oldCadence = /^\/resources\/(daily|weekly|monthly|quarterly)\//;
 const warnings = [];
 let checked = 0;

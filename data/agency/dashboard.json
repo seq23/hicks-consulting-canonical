@@ -6,9 +6,9 @@
   },
   "inventory": {
     "totalManifest": 238,
-    "published": 61,
+    "published": 66,
     "approved": 118,
-    "livePages": 89,
+    "livePages": 94,
     "sourcePages": 266
   },
   "scores": [
@@ -24,7 +24,7 @@
     {
       "key": "onpage",
       "label": "On-page SEO",
-      "score": 98,
+      "score": 93,
       "summary": "Titles, descriptions, internal linking, and service alignment.",
       "grade": "A",
       "target": 87,
@@ -6169,15 +6169,57 @@
   "warningCounts": {
     "high": 0,
     "medium": 0,
-    "low": 43
+    "low": 50
   },
   "priorities": [
+    {
+      "severity": "low",
+      "code": "long-title",
+      "route": "/christian-therapist-memphis/",
+      "message": "Title is 79 characters.",
+      "tip": "Shorten the search title while preserving the page H1."
+    },
+    {
+      "severity": "low",
+      "code": "description-length",
+      "route": "/christian-therapist-memphis/",
+      "message": "Description is 189 characters.",
+      "tip": "Keep descriptions useful and roughly 80–165 characters."
+    },
+    {
+      "severity": "low",
+      "code": "long-title",
+      "route": "/female-therapist-memphis/",
+      "message": "Title is 93 characters.",
+      "tip": "Shorten the search title while preserving the page H1."
+    },
+    {
+      "severity": "low",
+      "code": "description-length",
+      "route": "/female-therapist-memphis/",
+      "message": "Description is 184 characters.",
+      "tip": "Keep descriptions useful and roughly 80–165 characters."
+    },
     {
       "severity": "low",
       "code": "long-title",
       "route": "/",
       "message": "Title is 86 characters.",
       "tip": "Shorten the search title while preserving the page H1."
+    },
+    {
+      "severity": "low",
+      "code": "long-title",
+      "route": "/psychologist-vs-therapist-memphis/",
+      "message": "Title is 104 characters.",
+      "tip": "Shorten the search title while preserving the page H1."
+    },
+    {
+      "severity": "low",
+      "code": "description-length",
+      "route": "/psychologist-vs-therapist-memphis/",
+      "message": "Description is 176 characters.",
+      "tip": "Keep descriptions useful and roughly 80–165 characters."
     },
     {
       "severity": "low",
@@ -6192,6 +6234,34 @@
       "route": "/resources/premium-downloads/",
       "message": "Resource has no external supporting source.",
       "tip": "Add one or two credible sources where the topic benefits from them."
+    },
+    {
+      "severity": "low",
+      "code": "long-title",
+      "route": "/therapist-near-me-memphis/",
+      "message": "Title is 89 characters.",
+      "tip": "Shorten the search title while preserving the page H1."
+    },
+    {
+      "severity": "low",
+      "code": "description-length",
+      "route": "/therapist-near-me-memphis/",
+      "message": "Description is 168 characters.",
+      "tip": "Keep descriptions useful and roughly 80–165 characters."
+    },
+    {
+      "severity": "low",
+      "code": "long-title",
+      "route": "/therapist-olive-branch-ms/",
+      "message": "Title is 91 characters.",
+      "tip": "Shorten the search title while preserving the page H1."
+    },
+    {
+      "severity": "low",
+      "code": "description-length",
+      "route": "/therapist-olive-branch-ms/",
+      "message": "Description is 222 characters.",
+      "tip": "Keep descriptions useful and roughly 80–165 characters."
     },
     {
       "severity": "low",
@@ -6252,34 +6322,6 @@
     {
       "severity": "low",
       "code": "long-title",
-      "route": "/resources/guides/christian-therapist-memphis/",
-      "message": "Title is 79 characters.",
-      "tip": "Shorten the search title while preserving the page H1."
-    },
-    {
-      "severity": "low",
-      "code": "description-length",
-      "route": "/resources/guides/christian-therapist-memphis/",
-      "message": "Description is 189 characters.",
-      "tip": "Keep descriptions useful and roughly 80–165 characters."
-    },
-    {
-      "severity": "low",
-      "code": "long-title",
-      "route": "/resources/guides/female-therapist-memphis/",
-      "message": "Title is 93 characters.",
-      "tip": "Shorten the search title while preserving the page H1."
-    },
-    {
-      "severity": "low",
-      "code": "description-length",
-      "route": "/resources/guides/female-therapist-memphis/",
-      "message": "Description is 184 characters.",
-      "tip": "Keep descriptions useful and roughly 80–165 characters."
-    },
-    {
-      "severity": "low",
-      "code": "long-title",
       "route": "/resources/guides/how-to-choose-a-therapist-near-you/",
       "message": "Title is 76 characters.",
       "tip": "Shorten the search title while preserving the page H1."
@@ -6287,16 +6329,37 @@
     {
       "severity": "low",
       "code": "long-title",
-      "route": "/resources/guides/psychologist-vs-therapist-memphis/",
-      "message": "Title is 104 characters.",
+      "route": "/resources/guides/memphis-area-service-area-what-is-available-where-you-live/",
+      "message": "Title is 92 characters.",
       "tip": "Shorten the search title while preserving the page H1."
     },
     {
       "severity": "low",
       "code": "description-length",
-      "route": "/resources/guides/psychologist-vs-therapist-memphis/",
-      "message": "Description is 176 characters.",
+      "route": "/resources/guides/memphis-area-service-area-what-is-available-where-you-live/",
+      "message": "Description is 188 characters.",
       "tip": "Keep descriptions useful and roughly 80–165 characters."
+    },
+    {
+      "severity": "low",
+      "code": "long-title",
+      "route": "/resources/guides/memphis-organizational-mental-health-training/",
+      "message": "Title is 103 characters.",
+      "tip": "Shorten the search title while preserving the page H1."
+    },
+    {
+      "severity": "low",
+      "code": "description-length",
+      "route": "/resources/guides/memphis-organizational-mental-health-training/",
+      "message": "Description is 168 characters.",
+      "tip": "Keep descriptions useful and roughly 80–165 characters."
+    },
+    {
+      "severity": "low",
+      "code": "long-title",
+      "route": "/resources/guides/online-therapy-memphis-how-virtual-sessions-work/",
+      "message": "Title is 80 characters.",
+      "tip": "Shorten the search title while preserving the page H1."
     },
     {
       "severity": "low",
@@ -6329,30 +6392,16 @@
     {
       "severity": "low",
       "code": "long-title",
-      "route": "/resources/guides/therapist-near-me-memphis/",
-      "message": "Title is 89 characters.",
+      "route": "/resources/guides/therapy-vs-coaching-vs-organizational-training/",
+      "message": "Title is 97 characters.",
       "tip": "Shorten the search title while preserving the page H1."
-    },
-    {
-      "severity": "low",
-      "code": "description-length",
-      "route": "/resources/guides/therapist-near-me-memphis/",
-      "message": "Description is 168 characters.",
-      "tip": "Keep descriptions useful and roughly 80–165 characters."
     },
     {
       "severity": "low",
       "code": "long-title",
-      "route": "/resources/guides/therapist-olive-branch-ms/",
-      "message": "Title is 91 characters.",
+      "route": "/resources/guides/what-therapy-and-coaching-cost-hicks-consulting/",
+      "message": "Title is 69 characters.",
       "tip": "Shorten the search title while preserving the page H1."
-    },
-    {
-      "severity": "low",
-      "code": "description-length",
-      "route": "/resources/guides/therapist-olive-branch-ms/",
-      "message": "Description is 222 characters.",
-      "tip": "Keep descriptions useful and roughly 80–165 characters."
     },
     {
       "severity": "low",
@@ -6628,7 +6677,7 @@
         {
           "query": "mental health therapy near me",
           "intent": "observed",
-          "primaryPage": "/resources/guides/therapist-near-me-memphis/",
+          "primaryPage": "/therapist-near-me-memphis/",
           "status": "discovered_from_gsc",
           "provenance": "google_search_console query/page pair, joined by scripts/queries/score_discovery_gap.mjs",
           "gsc_measured": {
@@ -6659,7 +6708,7 @@
         {
           "query": "black female therapist near me",
           "intent": "observed",
-          "primaryPage": "/resources/guides/female-therapist-memphis/",
+          "primaryPage": "/female-therapist-memphis/",
           "status": "discovered_from_gsc",
           "provenance": "google_search_console query/page pair, joined by scripts/queries/score_discovery_gap.mjs",
           "gsc_measured": {
@@ -6690,7 +6739,7 @@
         {
           "query": "christian therapists near me",
           "intent": "observed",
-          "primaryPage": "/resources/guides/christian-therapist-memphis/",
+          "primaryPage": "/christian-therapist-memphis/",
           "status": "discovered_from_gsc",
           "provenance": "google_search_console query/page pair, joined by scripts/queries/score_discovery_gap.mjs",
           "gsc_measured": {
@@ -6721,7 +6770,7 @@
         {
           "query": "female therapist near me",
           "intent": "observed",
-          "primaryPage": "/resources/guides/female-therapist-memphis/",
+          "primaryPage": "/female-therapist-memphis/",
           "status": "discovered_from_gsc",
           "provenance": "google_search_console query/page pair, joined by scripts/queries/score_discovery_gap.mjs",
           "gsc_measured": {
@@ -6752,8 +6801,16 @@
         {
           "query": "mental health diagnosis near me",
           "intent": "observed",
-          "primaryPage": "/",
+          "primaryPage": "/psychologist-vs-therapist-memphis/",
           "status": "discovered_from_gsc",
+          "targeting": {
+            "targeted": true,
+            "decision": "ANSWER_HONESTLY_ON_AN_EXISTING_PAGE",
+            "decided_on": "2026-08-29",
+            "why": "This one splits. An LCSW does diagnose within scope, and the practice's own published fee list names an initial intake evaluation - so a page here is not a claim of a service that does not exist. What this practice does NOT do is formal psychological or neuropsychological testing, and it does not prescribe, which is what a large share of people typing 'mental health diagnosis near me' actually need.",
+            "how": "No new page. /psychologist-vs-therapist-memphis/ already answers exactly this: it sets out which role does psychotherapy, which does formal testing and which prescribes, and it states plainly that Hicks Consulting provides psychotherapy, not testing and not prescriptions. That is the honest answer to the query, and it says no where no is the truth.",
+            "not_this": "A page titled for diagnosis or assessment would read as an offer of diagnostic evaluation to someone who may need testing this practice cannot perform."
+          },
           "provenance": "google_search_console query/page pair, joined by scripts/queries/score_discovery_gap.mjs",
           "gsc_measured": {
             "impressions": 1,
@@ -6783,7 +6840,7 @@
         {
           "query": "psychologists near me",
           "intent": "observed",
-          "primaryPage": "/resources/guides/psychologist-vs-therapist-memphis/",
+          "primaryPage": "/psychologist-vs-therapist-memphis/",
           "status": "discovered_from_gsc",
           "provenance": "google_search_console query/page pair, joined by scripts/queries/score_discovery_gap.mjs",
           "gsc_measured": {
@@ -6814,7 +6871,7 @@
         {
           "query": "therapist in olive branch ms",
           "intent": "observed",
-          "primaryPage": "/resources/guides/therapist-olive-branch-ms/",
+          "primaryPage": "/therapist-olive-branch-ms/",
           "status": "discovered_from_gsc",
           "provenance": "google_search_console query/page pair, joined by scripts/queries/score_discovery_gap.mjs",
           "gsc_measured": {
@@ -6856,7 +6913,7 @@
         {
           "query": "therapist near me",
           "intent": "observed",
-          "primaryPage": "/resources/guides/therapist-near-me-memphis/",
+          "primaryPage": "/therapist-near-me-memphis/",
           "status": "discovered_from_gsc",
           "provenance": "google_search_console query/page pair, joined by scripts/queries/score_discovery_gap.mjs",
           "gsc_measured": {
@@ -6887,7 +6944,7 @@
         {
           "query": "therapists near me",
           "intent": "observed",
-          "primaryPage": "/resources/guides/therapist-near-me-memphis/",
+          "primaryPage": "/therapist-near-me-memphis/",
           "status": "discovered_from_gsc",
           "provenance": "google_search_console query/page pair, joined by scripts/queries/score_discovery_gap.mjs",
           "gsc_measured": {
@@ -6918,8 +6975,18 @@
         {
           "query": "trauma center near me",
           "intent": "observed",
-          "primaryPage": "/",
-          "status": "discovered_from_gsc",
+          "primaryPage": "/emergency-crisis-notice/",
+          "status": "governed_measured_not_targeted",
+          "targeting": {
+            "targeted": false,
+            "decision": "MEASURE_ONLY_NEVER_TARGET",
+            "decided_on": "2026-08-29",
+            "why": "A trauma center is an emergency medical facility - an ACS-verified Level I to IV hospital unit - or, in the other common reading, a residential or intensive outpatient trauma treatment program. Hicks Consulting is neither. It is a solo licensed clinical social work practice offering virtual psychotherapy to clients located in Tennessee, and its own emergency and crisis notice says in as many words that it does not provide crisis or emergency services. Writing a page for this query would put this practice in front of someone who may be in acute need of a facility it is not, which is the one thing a page must never do in this vertical.",
+            "why_not_a_disambiguation_page": "The honest page for this searcher already exists and is already live: /emergency-crisis-notice/ states that no crisis or emergency service is provided and routes to 988, 911 and the nearest emergency room. A second page saying the same thing, optimized to rank for \"trauma center\", would be competing for the query while disclaiming it - which is worse than not competing, because it wins the click before it explains.",
+            "so_what_happens_instead": "The query stays in this file so its impressions keep being measured and this decision keeps being visible. primaryPage points at the crisis notice, which is where a person arriving on this intent should land. No localized variant is created, and no content generator may draft against it: blue_ocean_eligible is false, which is the field content generation reads.",
+            "revisit_if": "The practice ever offers, or partners to offer, an actual trauma treatment programme. Nothing short of that changes this."
+          },
+          "status_note": "Governed, not ungoverned: the decision is that no page targets this. Absence of a page here is a recorded choice, not an oversight.",
           "provenance": "google_search_console query/page pair, joined by scripts/queries/score_discovery_gap.mjs",
           "gsc_measured": {
             "impressions": 1,
@@ -6939,17 +7006,40 @@
             "cited_hosts": [],
             "observed_at": null,
             "model": null,
-            "note": "Citations returned for this string are geographic noise, so an openness reading would be meaningless and \"not cited\" here is not open ground. The localized variant of this query is the governed, measurable target."
+            "note": "Citations returned for this string are geographic noise, so an openness reading would be meaningless and \"not cited\" here is not open ground. There is deliberately no localized variant of this one - see `targeting`."
+          },
+          "blue_ocean_eligible": {
+            "eligible": false,
+            "reason": "SERVICE_NOT_PROVIDED"
+          }
+        },
+        {
+          "query": "mental health diagnosis near me memphis",
+          "intent": "localized_variant",
+          "primaryPage": "/psychologist-vs-therapist-memphis/",
+          "status": "governed_localized_variant",
+          "provenance": "hand-added localized variant of a measured GSC 'near me' query. The bare phrase carries no location and is not answerable; this is the form a Memphis searcher and a location-aware answer engine resolve to.",
+          "localizes": "mental health diagnosis near me",
+          "answer_shape": "Role and scope explainer, not a service offer. The landing page states which practitioner type performs formal psychological testing, which prescribes, and that this practice does neither - so a searcher who needs testing is sent to the right kind of provider rather than into a consult that cannot help them.",
+          "lead_intent_tier": "T1_LOCAL_READY",
+          "lead_intent_method": "regex_classifier_on_query_string, scripts/queries/score_discovery_gap.mjs",
+          "occupancy": {
+            "verdict": "UNMEASURED",
+            "reason": "NO_LIVE_OBSERVATION",
+            "openness_score": null,
+            "cited_hosts": [],
+            "observed_at": null,
+            "model": null
           },
           "blue_ocean_eligible": {
             "eligible": true,
-            "reason": "UNRESOLVABLE_WITHOUT_LOCATION"
+            "reason": "UNMEASURED"
           }
         },
         {
           "query": "christian therapists near me memphis",
           "intent": "localized_variant",
-          "primaryPage": "/resources/guides/christian-therapist-memphis/",
+          "primaryPage": "/christian-therapist-memphis/",
           "status": "governed_localized_variant",
           "provenance": "hand-added localized variant of a measured GSC 'near me' query. The bare phrase carries no location and is not answerable; this is the form a Memphis searcher and a location-aware answer engine resolve to.",
           "localizes": "christian therapists near me",
@@ -6971,7 +7061,7 @@
         {
           "query": "female therapist near me memphis",
           "intent": "localized_variant",
-          "primaryPage": "/resources/guides/female-therapist-memphis/",
+          "primaryPage": "/female-therapist-memphis/",
           "status": "governed_localized_variant",
           "provenance": "hand-added localized variant of a measured GSC 'near me' query. The bare phrase carries no location and is not answerable; this is the form a Memphis searcher and a location-aware answer engine resolve to.",
           "localizes": "female therapist near me",
@@ -6993,7 +7083,7 @@
         {
           "query": "mental health therapy near me memphis",
           "intent": "localized_variant",
-          "primaryPage": "/resources/guides/therapist-near-me-memphis/",
+          "primaryPage": "/therapist-near-me-memphis/",
           "status": "governed_localized_variant",
           "provenance": "hand-added localized variant of a measured GSC 'near me' query. The bare phrase carries no location and is not answerable; this is the form a Memphis searcher and a location-aware answer engine resolve to.",
           "localizes": "mental health therapy near me",
@@ -7015,7 +7105,7 @@
         {
           "query": "psychologists near me memphis",
           "intent": "localized_variant",
-          "primaryPage": "/resources/guides/psychologist-vs-therapist-memphis/",
+          "primaryPage": "/psychologist-vs-therapist-memphis/",
           "status": "governed_localized_variant",
           "provenance": "hand-added localized variant of a measured GSC 'near me' query. The bare phrase carries no location and is not answerable; this is the form a Memphis searcher and a location-aware answer engine resolve to.",
           "localizes": "psychologists near me",
@@ -7037,7 +7127,7 @@
         {
           "query": "therapist in olive branch ms memphis area",
           "intent": "localized_variant",
-          "primaryPage": "/resources/guides/therapist-olive-branch-ms/",
+          "primaryPage": "/therapist-olive-branch-ms/",
           "status": "governed_localized_variant",
           "provenance": "hand-added localized variant of a measured GSC 'near me' query. The bare phrase carries no location and is not answerable; this is the form a Memphis searcher and a location-aware answer engine resolve to.",
           "localizes": "therapist in olive branch ms",
@@ -7059,7 +7149,7 @@
         {
           "query": "therapist near me memphis",
           "intent": "localized_variant",
-          "primaryPage": "/resources/guides/therapist-near-me-memphis/",
+          "primaryPage": "/therapist-near-me-memphis/",
           "status": "governed_localized_variant",
           "provenance": "hand-added localized variant of a measured GSC 'near me' query. The bare phrase carries no location and is not answerable; this is the form a Memphis searcher and a location-aware answer engine resolve to.",
           "localizes": "therapist near me",
@@ -7081,7 +7171,7 @@
         {
           "query": "therapists near me memphis tn",
           "intent": "localized_variant",
-          "primaryPage": "/resources/guides/therapist-near-me-memphis/",
+          "primaryPage": "/therapist-near-me-memphis/",
           "status": "governed_localized_variant",
           "provenance": "hand-added localized variant of a measured GSC 'near me' query. The bare phrase carries no location and is not answerable; this is the form a Memphis searcher and a location-aware answer engine resolve to.",
           "localizes": "therapists near me",
@@ -8453,7 +8543,7 @@
         {
           "query": "black female therapist memphis tn",
           "intent": "localized_variant",
-          "primaryPage": "/resources/guides/female-therapist-memphis/",
+          "primaryPage": "/female-therapist-memphis/",
           "status": "governed_localized_variant",
           "provenance": "hand-added localized variant of a measured GSC 'near me' query. The bare phrase carries no location and is not answerable; this is the form a Memphis searcher and a location-aware answer engine resolve to.",
           "localizes": "black female therapist near me",
@@ -8607,7 +8697,14 @@
             "BRAND_OR_PERSON_NAME_NAVIGATIONAL",
             "NO_SERVICE_OR_LOCATION_ANCHOR",
             "ALREADY_HELD_BY_US",
-            "EMPTY_QUERY"
+            "EMPTY_QUERY",
+            "SERVICE_NOT_PROVIDED"
+          ]
+        },
+        "recorded_non_targets": {
+          "why": "A query can be measured, apparently winnable and still wrong to write for. Leaving one out of this file makes it ungoverned - nobody can tell a decision from an oversight - so the decision is recorded ON the query, in `targeting`, and scripts/lib/demand_titles.js#blueOceanEligibility refuses anything carrying targeting.targeted:false. Content generation reads blue_ocean_eligible, so the refusal is enforced rather than merely written down.",
+          "queries": [
+            "trauma center near me - a trauma center is an emergency hospital facility or a residential trauma programme. This is a solo virtual therapy practice whose own emergency notice states it provides no crisis or emergency service. Measured, never targeted. primaryPage is /emergency-crisis-notice/, which is the page that already tells that searcher the truth and routes them to 988, 911 or an emergency room."
           ]
         },
         "refused_sources": [

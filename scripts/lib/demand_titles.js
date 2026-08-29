@@ -176,6 +176,19 @@ const BRAND_TOKEN = /\bhicks\b/;
 function blueOceanEligibility(target) {
   const q = String(target && target.query || '').toLowerCase();
   if (!q) return { eligible: false, reason: 'EMPTY_QUERY' };
+  // A recorded decision not to target a query outranks every measurement of it.
+  //
+  // "trauma center near me" is measured, winnable-looking (average position 1)
+  // and must never be written for: a trauma center is a hospital facility or a
+  // residential programme, and this is a solo virtual therapy practice whose own
+  // crisis notice says it provides no emergency service. Blue-ocean scoring is
+  // what content generation reads, so the refusal has to live here - otherwise
+  // the drafting cycle re-proposes the page every run, and the decision is only
+  // ever a comment. Set by hand in data/search/target_queries.json under
+  // `targeting`, with the reasoning next to it.
+  if (target && target.targeting && target.targeting.targeted === false) {
+    return { eligible: false, reason: 'SERVICE_NOT_PROVIDED', note: String(target.targeting.why || 'Recorded decision not to target this query.') };
+  }
   if (BRAND_TOKEN.test(q)) {
     return { eligible: false, reason: 'BRAND_OR_PERSON_NAME_NAVIGATIONAL', note: 'Surname-matched query. The live observer returns Hickory/Hicksville and unrelated Hicks practitioners for these; an OPEN verdict on them is noise, not open ground.' };
   }

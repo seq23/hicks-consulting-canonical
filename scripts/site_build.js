@@ -251,11 +251,37 @@ renderSectionIndexes();
 // stamped.
 injectOrganizationSchemaSitewide();
 
-const staticPublicRoutes = [
+const handAuthoredPublicRoutes = [
   '/', '/therapy/', '/black-therapist-memphis/', '/anxiety-therapist-memphis/', '/coaching/', '/groups/', '/corporate-speaking/', '/about/', '/resources/', '/contact/', '/organizational-training-inquiry/',
   '/intake-quiz/', '/stress-management-worksheet/', '/resources/insights/', '/resources/articles/', '/resources/guides/', '/resources/white-papers/', '/resources/free-downloads/', '/resources/premium-downloads/', '/request-consult/', '/book-discovery-call/', '/faq/', '/privacy-policy/', '/cookie-policy/', '/disclaimer/',
   '/terms/', '/good-faith-estimate/', '/emergency-crisis-notice/'
 ];
+
+// Published manifest items that do not live under /resources/.
+//
+// Every manifest item used to sit under /resources/, so the sitemap took its
+// manifest routes from publishedResourceSlugs and the list above was purely
+// hand-maintained. On 2026-08-29 five localized local-intent landing pages were
+// published on top-level routes, and a hardcoded entry for each would mean the
+// next one ships as a page that exists, renders, and appears in no sitemap and
+// no index - published in the manifest and inert in reality.
+//
+// So the route comes from the same fact that decides the page ships at all. The
+// dist check is the same one publishedResourceSlugs applies: a route with no
+// rendered file is never advertised.
+const publishedTopLevelRoutes = manifest
+  .filter(item => item.status === 'published'
+    && item.validationPassed === true
+    && typeof item.slug === 'string'
+    && !item.slug.startsWith('/resources/'))
+  .map(item => String(item.publicPath || item.slug))
+  .filter(route => route.startsWith('/') && route.endsWith('/'))
+  .filter(route => fs.existsSync(path.join(slugToDistPath(route), 'index.html')))
+  .filter(route => !handAuthoredPublicRoutes.includes(route))
+  .sort();
+
+const staticPublicRoutes = [...handAuthoredPublicRoutes, ...publishedTopLevelRoutes];
+console.log(`public routes: ${handAuthoredPublicRoutes.length} hand-authored, ${publishedTopLevelRoutes.length} published from the manifest onto a top-level route`);
 
 const llmOnlyRoutes = [
   '/llm-atlas/',
