@@ -365,6 +365,13 @@ async function contentTakeDown(request, env, incoming) {
   const decider = requireDecider(incoming.by);
   if (!decider.ok) return json({ ok: false, error: decider.error }, 400);
   const reason = String(incoming.reason || '').replace(/[\u0000-\u001F\u007F]/g, ' ').trim().slice(0, 2000);
+  // Nothing comes off the site without saying why. This used to write
+  // `revokedReason: null` and accept it, which is how 54 items ended up in the
+  // manifest marked 'revoked' with no reason for the admin page to show -- and
+  // the page filled that silence with the word "Revoked", addressed to a client
+  // who had decided nothing. Every removal, by a person or by a machine, carries
+  // a reason or it does not happen.
+  if (!reason) return json({ ok: false, error: 'Please say why this is coming off the site. Every piece that comes down keeps a note of the reason.' }, 400);
 
   const { doc: manifest, sha } = await githubReadJson(env, CONTENT_MANIFEST_PATH);
   if (!Array.isArray(manifest)) return json({ ok: false, error: 'The content list could not be read. Nothing was changed.' }, 503);
@@ -374,10 +381,10 @@ async function contentTakeDown(request, env, incoming) {
 
   const at = new Date().toISOString();
   const next = manifest.map((entry) => entry && entry.id === id
-    ? { ...entry, status: 'revoked', revokedAt: at, revokedBy: decider.name, revokedReason: reason || null }
+    ? { ...entry, status: 'revoked', revokedAt: at, revokedBy: decider.name, revokedReason: reason }
     : entry);
   const commitSha = await githubWriteJson(env, CONTENT_MANIFEST_PATH, next, `admin: ${decider.name} took ${id} off the site`, sha);
-  return json({ ok: true, decision: 'taken_down', record: { id, route: item.slug, title: item.title, revokedBy: decider.name, revokedAt: at, reason: reason || null }, commitSha });
+  return json({ ok: true, decision: 'taken_down', record: { id, route: item.slug, title: item.title, revokedBy: decider.name, revokedAt: at, reason }, commitSha });
 }
 
 const CONTENT_DECISIONS = {

@@ -47,12 +47,13 @@
 <button class="small-button" data-status-shortcut="ready" type="button">Waiting for your OK</button>
 <button class="small-button" data-status-shortcut="scheduled" type="button">Approved, not yet up</button>
 <button class="small-button" data-status-shortcut="published" type="button">Published</button>
-<button class="small-button" data-status-shortcut="declined" type="button">Revoked</button>
+<button class="small-button" data-status-shortcut="declined" type="button">You turned down</button>
+<button class="small-button" data-status-shortcut="system-removed" type="button">Removed automatically</button>
 <button class="small-button alt" data-status-shortcut="all" type="button">Everything</button>
 </div>
 <div class="admin-filter-grid">
 <label>Search by title<input id="admin-search" placeholder="Type a few words from the title" type="search"/></label>
-<label>Show<select id="status-filter"><option value="all" selected="">Everything</option><option value="ready">Waiting for your OK</option><option value="scheduled">Approved, not yet published</option><option value="published">Published</option><option value="declined">Revoked</option></select></label>
+<label>Show<select id="status-filter"><option value="all" selected="">Everything</option><option value="ready">Waiting for your OK</option><option value="scheduled">Approved, not yet published</option><option value="published">Published</option><option value="declined">You turned down</option><option value="system-removed">Removed automatically</option></select></label>
 <label>Kind<select id="type-filter"><option value="all">Articles and insights</option><option value="articles">Articles only</option><option value="insights">Insights only</option></select></label>
 <label>Order<select id="sort-filter"><option value="date-asc">Date: oldest first</option><option value="date-desc">Date: newest first</option><option value="title-asc">Title: A to Z</option><option value="title-desc">Title: Z to A</option></select></label>
 </div>
@@ -85,6 +86,13 @@
 
 <details class="panel" id="optional-operations-panel">
 <summary><strong>Site owner tools</strong> &#8212; setup and notes. Monika does not need anything in here.</summary>
+<div class="soft-panel" hidden="" id="consolidated-panel">
+<h3>Behind the &#8220;Removed automatically&#8221; group</h3>
+<p class="muted small" id="consolidated-summary"></p>
+<p class="small">The client sees every one of these under <strong>Removed automatically</strong>, each with the plain-language reason attached to it. This table is the measurement behind those notes. No person decided any of it, so none of it is shown to her as a decision of hers, and there is no restore control on purpose: putting one back would republish a page that duplicates the title and most of the text of an article that is still live. Full evidence: <code>reports/BING_INDEXATION_CONSOLIDATION_REPORT.json</code> and <code>data/admin/content_consolidations.json</code>.</p>
+<div class="table-scroll"><table class="admin-table"><thead><tr><th>Title</th><th>Id</th><th>Redirects to</th><th>Similarity</th></tr></thead><tbody id="consolidated-tbody"></tbody></table></div>
+</div>
+
 <div class="soft-panel" id="github-admin-setup">
 <h3>GitHub connection</h3>
 <p><span class="agency-status neutral" id="github-admin-status">Checking configuration</span> <span id="github-admin-message">The buttons need a restricted GitHub connection to dispatch workflows.</span></p>

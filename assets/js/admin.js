@@ -72,6 +72,7 @@ let ADMIN_ITEMS = [];
 let ADMIN_CONFIG = {};
 let APPROVAL_RECORD = { approvals: [] };
 let DECLINE_RECORD = { declines: [] };
+let CONSOLIDATION_RECORD = { consolidations: [] };
 let SITE_STATE = {};
 let GENERATED_CANDIDATES = [];
 let PUBLISH_QUEUE_ITEMS = [];
@@ -183,15 +184,73 @@ function declineFor(item) {
   return ((DECLINE_RECORD || {}).declines || []).find((entry) => entry && entry.id === item.id) || null;
 }
 
-// Her four groups. One item is in exactly one of them.
+function consolidationFor(item) {
+  return ((CONSOLIDATION_RECORD || {}).consolidations || []).find((entry) => entry && entry.id === item.id) || null;
+}
+
+/* Who decided this, by name?
+ *
+ * Returns the person, or null when no person was involved. Nothing is ever put
+ * in front of Monika as her own decision unless this returns a name.
+ *
+ * Two things can be a decision: a decline she typed a reason into
+ * (publication_declines.json), or a take-down, which the worker writes back as
+ * status:'revoked' WITH revokedBy set to whoever pressed the button
+ * (worker/admin_runtime.mjs). A bare status:'revoked' with no name attached was
+ * not a decision at all -- it is a machine touching the manifest.
+ */
+function humanDecisionFor(item) {
+  const decline = declineFor(item);
+  if (decline && String(decline.declinedBy || decline.by || '').trim()) {
+    return { by: String(decline.declinedBy || decline.by).trim(), at: decline.declinedAt, reason: decline.reason || '' };
+  }
+  if (item.status === 'revoked' && String(item.revokedBy || '').trim()) {
+    return { by: String(item.revokedBy).trim(), at: item.revokedAt, reason: item.revokedReason || '' };
+  }
+  return null;
+}
+
+/* The plain-language reason a machine took something off the site.
+ *
+ * Every automated removal has one, written at the moment of removal by
+ * scripts/admin/removal_reasons.js and stored in content_consolidations.json.
+ * If this ever comes back empty the page says so out loud rather than inventing
+ * a story or, worse, falling back to a bare status word.
+ */
+function systemRemovalReasonFor(item) {
+  const record = consolidationFor(item);
+  const reason = String((record && record.reason) || item.revokedReason || '').trim();
+  return reason || 'Removed automatically. The reason was not recorded, which is a fault -- please tell your site owner.';
+}
+
+/* Two kinds of removal, and they are never the same thing.
+ *
+ * 'declined' means SHE turned it down: a name and a reason. 'system-removed'
+ * means a machine took it off and recorded why.
+ *
+ * Both used to be one group keyed on status === 'revoked', which swept up 54
+ * pieces she had never seen a decision screen for: duplicate insight pages an
+ * automated index-quality pass pulled from the sitemap on 8 August 2026 and
+ * 301-redirected to the article each duplicated. Not one carried a reason or a
+ * name, publication_declines.json was and is empty, and the page still showed
+ * her a chip reading "Revoked 54" -- 54 removals attributed to a decision she
+ * never made.
+ *
+ * They are still shown to her, because things leaving her site is her business.
+ * They are shown under their own name, with the reason attached to each one.
+ */
 function groupFor(item) {
   if (item.status === 'published') return 'published';
-  if (item.status === 'revoked') return 'declined';
-  if (declineFor(item)) return 'declined';
+  if (humanDecisionFor(item)) return 'declined';
+  if (item.status === 'revoked') return 'system-removed';
   if (item.validationPassed !== true) return 'draft';
   if (item.status !== 'approved') return 'draft';
   return approvalFor(item) ? 'scheduled' : 'ready';
 }
+
+// The groups Monika is shown. 'draft' is work that has not been written yet, so
+// it is the only one held back.
+const CLIENT_GROUPS = ['ready', 'scheduled', 'published', 'declined', 'system-removed'];
 
 function typeLabel(item) {
   const value = item.contentType || '';
@@ -225,8 +284,8 @@ function sortKeyDate(item) {
  *
  * The old page printed "Preview: not generated" and that was read as previews
  * being broken. They are not: every piece awaiting a decision has a preview
- * built at /preview + its route. The rows showing that message were the revoked
- * May items, which are the one group that legitimately has no preview, and they
+ * built at /preview + its route. The rows showing that message were the pieces the
+ * duplicate-consolidation pass had taken down, which are the one group that legitimately has no preview, and they
  * happened to sort to the top - so the whole list looked broken.
  *
  * Either way she could not read a good part of her own library, which is the
@@ -247,15 +306,17 @@ function whenLine(item, group) {
     return when ? `On your website since ${when}` : 'On your website now';
   }
   if (group === 'declined') {
-    const decline = declineFor(item);
-    const when = friendlyDate(decline ? decline.declinedAt : item.revokedAt, false);
-    if (decline) return `You said no on ${when}. Reason: ${decline.reason}`;
-    if (item.revokedReason) return `Taken off the site on ${when}. Reason: ${item.revokedReason}`;
-    // 54 pieces came down in one go on 6 August 2026, in a commit titled
-    // "consolidate duplicate insights for search indexing". Nobody rejected her
-    // writing and the list carries no reason field, so say the honest thing
-    // instead of leaving her to read "revoked" and worry.
-    return `Removed on ${when || '6 August'} during a duplicate cleanup. No action needed.`;
+    // Only ever reached for an item a named person decided against, so there is
+    // always a person and a date to name. No fallback prose is needed, and none
+    // is offered: an unattributed removal is not in this group at all.
+    const who = humanDecisionFor(item) || {};
+    const when = friendlyDate(who.at, false);
+    const said = `You turned this down${when ? ` on ${when}` : ''}.`;
+    return who.reason ? `${said} Reason: ${who.reason}` : said;
+  }
+  if (group === 'system-removed') {
+    // The whole reason this group exists: the note travels with the item.
+    return systemRemovalReasonFor(item);
   }
   const when = friendlyDate(item.scheduledAt);
   if (!when) return 'No date set yet';
@@ -289,7 +350,16 @@ function itemCard(item, group) {
          <div class="hero-actions"><button class="button" data-decline-send="${escapeHtml(item.id)}" type="button">Save my answer</button><button class="button ghost" data-decline-cancel="${escapeHtml(item.id)}" type="button">Never mind</button></div>
        </div>`
     : group === 'published'
-      ? `<div class="hero-actions"><button class="button alt" data-decide="take-down" data-id="${escapeHtml(item.id)}" type="button">Take it off my site</button></div>`
+      // Taking something down asks for a reason for the same purpose the whole
+      // of this change serves: a piece that leaves the site must say why it
+      // left. The server refuses a take-down with no reason, so asking here is
+      // not a formality -- without it the button would just fail.
+      ? `<div class="hero-actions"><button class="button alt" data-decide="take-down" data-id="${escapeHtml(item.id)}" type="button">Take it off my site</button></div>
+         <div class="soft-panel" hidden="" data-takedown-box="${escapeHtml(item.id)}">
+           <label for="why-off-${escapeHtml(item.id)}">Why is this coming off your site?</label>
+           <textarea id="why-off-${escapeHtml(item.id)}" rows="3" style="width:100%;padding:.7rem;border:1px solid var(--border);border-radius:12px;" placeholder="A sentence is enough. It is kept with the piece."></textarea>
+           <div class="hero-actions"><button class="button alt" data-takedown-send="${escapeHtml(item.id)}" type="button">Take it off my site</button><button class="button ghost" data-takedown-cancel="${escapeHtml(item.id)}" type="button">Never mind</button></div>
+         </div>`
       : '';
   return `<article class="soft-panel" data-item="${escapeHtml(item.id)}">
     <h3>${escapeHtml(item.title)}</h3>
@@ -311,15 +381,26 @@ function renderReview() {
     ready: items.length,
     scheduled: ADMIN_ITEMS.filter((item) => groupFor(item) === 'scheduled').length,
     published: ADMIN_ITEMS.filter((item) => groupFor(item) === 'published').length,
-    declined: ADMIN_ITEMS.filter((item) => groupFor(item) === 'declined').length
+    declined: ADMIN_ITEMS.filter((item) => groupFor(item) === 'declined').length,
+    systemRemoved: ADMIN_ITEMS.filter((item) => groupFor(item) === 'system-removed').length
   };
   // A bare 0 on a card cannot be told apart from a page that failed to load, so
   // every number is a sentence.
+  // "0 not going out" was the old tail of this sentence, and before that it read
+  // "54 not going out" -- a number that came from a machine and was addressed to
+  // her. Say what is true: how many she has turned down, and nothing more.
+  const turnedDown = counts.declined
+    ? `${counts.declined} you turned down`
+    : 'nothing you have turned down';
+  const removed = counts.systemRemoved
+    ? ` ${counts.systemRemoved} ${counts.systemRemoved === 1 ? 'piece was' : 'pieces were'} removed automatically because ${counts.systemRemoved === 1 ? 'it repeated' : 'they repeated'} an article already on your site; each one says why.`
+    : '';
+  const elsewhere = `${counts.scheduled} approved and waiting for ${counts.scheduled === 1 ? 'its date' : 'their dates'}, ${counts.published} already live, and ${turnedDown}.${removed}`;
   if (summary) {
     summary.innerHTML = counts.ready
       ? `<strong>${counts.ready} ${counts.ready === 1 ? 'piece is' : 'pieces are'} waiting for your OK.</strong> Nothing here goes on your website until you approve it. `
-        + `Elsewhere: ${counts.scheduled} approved and waiting for ${counts.scheduled === 1 ? 'its date' : 'their dates'}, ${counts.published} already live, ${counts.declined} not going out.`
-      : `<strong>Nothing needs your OK right now.</strong> ${counts.scheduled} approved and waiting for ${counts.scheduled === 1 ? 'its date' : 'their dates'}, ${counts.published} already live, ${counts.declined} not going out.`;
+        + `Elsewhere: ${elsewhere}`
+      : `<strong>Nothing needs your OK right now.</strong> ${elsewhere}`;
   }
   if (list) list.innerHTML = items.length ? items.map((item) => itemCard(item, 'ready')).join('') : '';
 }
@@ -341,7 +422,7 @@ function getFilters() {
 // was here before, kept deliberately -- title, kind, date, status, and the two
 // links on every row including Edit in GitHub.
 function statusChip(group) {
-  const label = { ready: 'Waiting for your OK', published: 'Published', scheduled: 'Approved', declined: 'Revoked' }[group] || '';
+  const label = { ready: 'Waiting for your OK', published: 'Published', scheduled: 'Approved', declined: 'You turned it down', 'system-removed': 'Removed automatically' }[group] || '';
   return `<span class="pill pill-${escapeHtml(group)}">${escapeHtml(label)}</span>`;
 }
 
@@ -376,7 +457,9 @@ function browseTable(rows) {
 
 function renderBrowse() {
   const filters = getFilters();
-  let out = ADMIN_ITEMS.map((item) => ({ item, group: groupFor(item) })).filter((row) => row.group !== 'draft');
+  // Only her groups reach this table. 'draft' is not written yet and
+  // 'consolidated' is a machine's sitemap housekeeping, not her call.
+  let out = ADMIN_ITEMS.map((item) => ({ item, group: groupFor(item) })).filter((row) => CLIENT_GROUPS.includes(row.group));
   if (filters.status !== 'all') out = out.filter((row) => row.group === filters.status);
   if (filters.type !== 'all') out = out.filter((row) => (row.item.contentType || '') === filters.type);
   if (filters.q) out = out.filter((row) => String(row.item.title || '').toLowerCase().includes(filters.q));
@@ -386,18 +469,31 @@ function renderBrowse() {
     const bv = field === 'title' ? String(b.item.title || '') : sortKeyDate(b.item);
     return direction === 'desc' ? bv.localeCompare(av) : av.localeCompare(bv);
   });
-  const labels = { ready: 'waiting for your OK', published: 'already published', scheduled: 'approved and not yet published', declined: 'revoked', all: 'in total' };
+  const labels = { ready: 'waiting for your OK', published: 'already published', scheduled: 'approved and not yet published', declined: 'you turned down', 'system-removed': 'removed automatically', all: 'in total' };
+  // An empty group is a fact, not a failure, and each empty group has its own
+  // fact. "Nothing matches what you asked for" would be wrong here: she asked a
+  // clear question and the honest answer is that she has never said no to
+  // anything.
+  const emptyLines = {
+    ready: 'Nothing is waiting for your OK right now.',
+    scheduled: 'Nothing is approved and waiting for a date right now.',
+    published: 'Nothing is on your website yet.',
+    declined: 'You have not turned anything down yet.',
+    'system-removed': 'Nothing has been removed automatically.',
+    all: 'There is nothing here yet.'
+  };
   const summary = document.getElementById('filter-summary');
   if (summary) {
-    summary.textContent = out.length
-      ? `Showing ${out.length} ${out.length === 1 ? 'piece' : 'pieces'} ${labels[filters.status] || ''}.`.replace(/\s+\./, '.')
-      : 'Nothing matches what you asked for. Try "Everything".';
+    if (out.length) {
+      summary.textContent = `Showing ${out.length} ${out.length === 1 ? 'piece' : 'pieces'} ${labels[filters.status] || ''}.`.replace(/\s+\./, '.');
+    } else if (filters.q || filters.type !== 'all') {
+      summary.textContent = 'Nothing matches what you asked for. Try "Everything".';
+    } else {
+      summary.textContent = emptyLines[filters.status] || emptyLines.all;
+    }
   }
   const list = document.getElementById('browse-list');
   if (!list) return;
-  // Revoked used to be folded behind a disclosure because it was the biggest
-  // and least actionable group. It is now something she picks on purpose from
-  // the filter, so hiding it would be hiding exactly what she asked to see.
   list.innerHTML = browseTable(out);
 }
 
@@ -418,6 +514,39 @@ function renderGeneratedCandidates() {
       <td>${written ? 'Written and being checked. It will appear above for your OK.' : 'Not written yet. It will appear above for your OK once it is.'}</td>
     </tr>`;
   }).join('');
+}
+
+/* ---------------- Site owner: the measurement behind the notes ----------------
+ *
+ * The client sees these 54 in her own "Removed automatically" filter, each with
+ * the plain-language reason attached. This table is the other half: the ids, the
+ * exact redirect target and the similarity score that triggered the removal --
+ * numbers that answer a site owner's question and would only be noise in hers.
+ *
+ * There is deliberately no restore control anywhere. Restoring one would put a
+ * page back that duplicates a live article's title and >=85% of its text, which
+ * is the exact condition the consolidation existed to remove.
+ */
+function renderConsolidations() {
+  const panel = document.getElementById('consolidated-panel');
+  const tbody = document.getElementById('consolidated-tbody');
+  const summary = document.getElementById('consolidated-summary');
+  if (!panel || !tbody) return;
+  const rows = (CONSOLIDATION_RECORD || {}).consolidations || [];
+  if (!rows.length) { panel.hidden = true; tbody.innerHTML = ''; return; }
+  panel.hidden = false;
+  const when = friendlyDate((CONSOLIDATION_RECORD || {}).generatedAt, false);
+  if (summary) {
+    summary.textContent = `${rows.length} duplicate insight ${rows.length === 1 ? 'page' : 'pages'} removed from the public sitemap`
+      + `${when ? ` on ${when}` : ''} by an automated index-quality pass, each 301-redirected to the article it duplicated. `
+      + 'No person decided this and no text was rewritten. The client sees all of them under "Removed automatically" with the reason on each; this table is the measurement behind those notes.';
+  }
+  tbody.innerHTML = rows.map((row) => `<tr>
+    <td>${escapeHtml(row.title || row.id)}</td>
+    <td class="nowrap">${escapeHtml(row.id)}</td>
+    <td><a href="${escapeHtml(row.redirectsTo || '')}" rel="noopener noreferrer" target="_blank">${escapeHtml(row.redirectsTo || '')}</a></td>
+    <td class="nowrap">${escapeHtml(String(row.similarity ?? ''))}</td>
+  </tr>`).join('');
 }
 
 /* ---------------- Is my site running? ---------------- */
@@ -510,8 +639,16 @@ async function sendDecision(id, decision, body) {
     if (result) result.textContent = 'Saved. This one will not go out, and your reason is kept with it.';
   } else {
     const item = ADMIN_ITEMS.find((entry) => entry.id === id);
-    if (item) { item.status = 'revoked'; item.revokedAt = payload.record.revokedAt; item.revokedReason = payload.record.reason; }
-    if (result) result.textContent = 'Taken off your website. It moves to "Not going out".';
+    // revokedBy is what makes this her decision rather than a machine's edit --
+    // the worker writes it and groupFor() requires it, so mirror it locally or
+    // the row she just acted on would drop out of her view entirely.
+    if (item) {
+      item.status = 'revoked';
+      item.revokedAt = payload.record.revokedAt;
+      item.revokedReason = payload.record.reason;
+      item.revokedBy = payload.record.revokedBy || name;
+    }
+    if (result) result.textContent = 'Taken off your website. It moves to the pieces you have turned down.';
   }
   window.setTimeout(() => { renderReview(); renderBrowse(); }, 1200);
 }
@@ -565,8 +702,20 @@ async function approveAll() {
 
 function bindDecisions() {
   document.addEventListener('click', (event) => {
-    const button = event.target.closest('[data-decide], [data-decline-send], [data-decline-cancel]');
+    const button = event.target.closest('[data-decide], [data-decline-send], [data-decline-cancel], [data-takedown-send], [data-takedown-cancel]');
     if (!button) return;
+    const takedownId = button.getAttribute('data-takedown-send') || button.getAttribute('data-takedown-cancel');
+    if (takedownId) {
+      const box = document.querySelector(`[data-takedown-box="${CSS.escape(takedownId)}"]`);
+      if (button.hasAttribute('data-takedown-cancel')) { if (box) box.hidden = true; return; }
+      const reason = box?.querySelector('textarea')?.value.trim() || '';
+      const result = document.querySelector(`[data-result="${CSS.escape(takedownId)}"]`);
+      if (!reason) { if (result) result.textContent = 'Please say why, in a sentence. It is kept with the piece.'; return; }
+      if (!window.confirm('Take this off your website? People will no longer be able to read it.')) return;
+      if (box) box.hidden = true;
+      sendDecision(takedownId, 'take-down', { reason });
+      return;
+    }
     const declineId = button.getAttribute('data-decline-send') || button.getAttribute('data-decline-cancel');
     if (declineId) {
       const box = document.querySelector(`[data-decline-box="${CSS.escape(declineId)}"]`);
@@ -585,7 +734,17 @@ function bindDecisions() {
       if (box) { box.hidden = false; box.querySelector('textarea')?.focus(); }
       return;
     }
-    if (decision === 'take-down' && !window.confirm('Take this off your website? People will no longer be able to read it.')) return;
+    if (decision === 'take-down') {
+      // The reason box is only on the card view; from the browse table row there
+      // is nowhere to type, so ask there instead of sending a request the server
+      // will refuse.
+      const box = document.querySelector(`[data-takedown-box="${CSS.escape(id)}"]`);
+      if (box) { box.hidden = false; box.querySelector('textarea')?.focus(); return; }
+      const typed = window.prompt('Why is this coming off your site? It is kept with the piece.') || '';
+      if (!typed.trim()) return;
+      sendDecision(id, decision, { reason: typed.trim() });
+      return;
+    }
     sendDecision(id, decision);
   });
 }
@@ -616,11 +775,12 @@ function bindFilters() {
 }
 
 async function renderAdmin() {
-  const [manifest, config, approvals, declines, state, briefPayload, publishQueue] = await Promise.all([
+  const [manifest, config, approvals, declines, consolidations, state, briefPayload, publishQueue] = await Promise.all([
     fetchJson('/data/admin/content_manifest.json'),
     fetchJson('/data/system/config.json'),
     fetchJson('/data/admin/publication_approvals.json'),
     fetchJson('/data/admin/publication_declines.json'),
+    fetchJson('/data/admin/content_consolidations.json'),
     fetchJson('/data/autonomy/state.json'),
     fetchJson('/data/intake/content_brief_candidates.json'),
     fetchJson('/data/social/publish_queue.json')
@@ -634,6 +794,7 @@ async function renderAdmin() {
   ADMIN_CONFIG = config || {};
   APPROVAL_RECORD = approvals && Array.isArray(approvals.approvals) ? approvals : { approvals: [] };
   DECLINE_RECORD = declines && Array.isArray(declines.declines) ? declines : { declines: [] };
+  CONSOLIDATION_RECORD = consolidations && Array.isArray(consolidations.consolidations) ? consolidations : { consolidations: [] };
   SITE_STATE = state || {};
   GENERATED_CANDIDATES = Array.isArray(briefPayload?.candidates) ? briefPayload.candidates : [];
   PUBLISH_QUEUE_ITEMS = Array.isArray(publishQueue?.items) ? publishQueue.items : [];
@@ -642,6 +803,7 @@ async function renderAdmin() {
   renderReview();
   renderBrowse();
   renderGeneratedCandidates();
+  renderConsolidations();
   document.getElementById('login-panel').hidden = true;
   document.getElementById('admin-panel').hidden = false;
 }
