@@ -4,7 +4,7 @@
     {
       "query": "mental health therapy near me",
       "intent": "observed",
-      "primaryPage": "/",
+      "primaryPage": "/resources/guides/therapist-near-me-memphis/",
       "status": "discovered_from_gsc",
       "provenance": "google_search_console query/page pair, joined by scripts/queries/score_discovery_gap.mjs",
       "gsc_measured": {
@@ -18,38 +18,24 @@
       "lead_intent_tier": "T1_LOCAL_READY",
       "lead_intent_method": "regex_classifier_on_query_string, scripts/queries/score_discovery_gap.mjs",
       "occupancy": {
-        "verdict": "OPEN",
-        "reason": "LIVE_WEB_SURFACING_OBSERVATION",
-        "openness_score": 0.625,
-        "platform_share": 0.25,
-        "institutional_share": 0,
-        "distinct_cited_hosts": 8,
-        "cited_hosts": [
-          "mentalhealth.com",
-          "lifestance.com",
-          "local.yahoo.com",
-          "healthgrades.com",
-          "otpotential.com",
-          "forbes.com",
-          "goodtherapy.org",
-          "zencare.co"
-        ],
-        "cited_ours": [],
-        "observed_at": "2026-08-29T01:31:46.350Z",
-        "model": "openai/gpt-4o-mini",
-        "rank_verified": false,
-        "stale": true,
-        "stale_reason": "PROVIDER_ERROR"
+        "verdict": "UNRESOLVABLE_WITHOUT_LOCATION",
+        "reason": "QUERY_IMPLIES_A_PLACE_AND_NAMES_NONE",
+        "openness_score": null,
+        "geo_resolvable": false,
+        "cited_hosts": [],
+        "observed_at": null,
+        "model": null,
+        "note": "Citations returned for this string are geographic noise, so an openness reading would be meaningless and \"not cited\" here is not open ground. The localized variant of this query is the governed, measurable target."
       },
       "blue_ocean_eligible": {
         "eligible": true,
-        "reason": "OPEN_WITH_ANCHORED_OBSERVATION"
+        "reason": "UNRESOLVABLE_WITHOUT_LOCATION"
       }
     },
     {
       "query": "black female therapist near me",
       "intent": "observed",
-      "primaryPage": "/",
+      "primaryPage": "/resources/guides/female-therapist-memphis/",
       "status": "discovered_from_gsc",
       "provenance": "google_search_console query/page pair, joined by scripts/queries/score_discovery_gap.mjs",
       "gsc_measured": {
@@ -63,39 +49,24 @@
       "lead_intent_tier": "T1_LOCAL_READY",
       "lead_intent_method": "regex_classifier_on_query_string, scripts/queries/score_discovery_gap.mjs",
       "occupancy": {
-        "verdict": "OPEN",
-        "reason": "LIVE_WEB_SURFACING_OBSERVATION",
-        "openness_score": 0.611,
-        "platform_share": 0.222,
-        "institutional_share": 0,
-        "distinct_cited_hosts": 9,
-        "cited_hosts": [
-          "lifestance.com",
-          "cliniciansofcolor.org",
-          "wherewespend.com",
-          "healthgrades.com",
-          "therapyforblackgirls.com",
-          "goodtherapy.org",
-          "therapist.com",
-          "talkspace.com",
-          "therapysites.com"
-        ],
-        "cited_ours": [],
-        "observed_at": "2026-08-29T01:31:46.350Z",
-        "model": "openai/gpt-4o-mini",
-        "rank_verified": false,
-        "stale": true,
-        "stale_reason": "PROVIDER_ERROR"
+        "verdict": "UNRESOLVABLE_WITHOUT_LOCATION",
+        "reason": "QUERY_IMPLIES_A_PLACE_AND_NAMES_NONE",
+        "openness_score": null,
+        "geo_resolvable": false,
+        "cited_hosts": [],
+        "observed_at": null,
+        "model": null,
+        "note": "Citations returned for this string are geographic noise, so an openness reading would be meaningless and \"not cited\" here is not open ground. The localized variant of this query is the governed, measurable target."
       },
       "blue_ocean_eligible": {
         "eligible": true,
-        "reason": "OPEN_WITH_ANCHORED_OBSERVATION"
+        "reason": "UNRESOLVABLE_WITHOUT_LOCATION"
       }
     },
     {
       "query": "christian therapists near me",
       "intent": "observed",
-      "primaryPage": "/",
+      "primaryPage": "/resources/guides/christian-therapist-memphis/",
       "status": "discovered_from_gsc",
       "provenance": "google_search_console query/page pair, joined by scripts/queries/score_discovery_gap.mjs",
       "gsc_measured": {
@@ -109,39 +80,24 @@
       "lead_intent_tier": "T1_LOCAL_READY",
       "lead_intent_method": "regex_classifier_on_query_string, scripts/queries/score_discovery_gap.mjs",
       "occupancy": {
-        "verdict": "OPEN",
-        "reason": "LIVE_WEB_SURFACING_OBSERVATION",
-        "openness_score": 0.611,
-        "platform_share": 0.222,
-        "institutional_share": 0,
-        "distinct_cited_hosts": 9,
-        "cited_hosts": [
-          "lifestance.com",
-          "therapistlookup.com",
-          "christiantherapists.net",
-          "zocdoc.com",
-          "thedirectory.com.clearwebstats.com",
-          "christiancounselordirectory.com",
-          "growtherapy.com",
-          "healthgrades.com",
-          "directory.choosingtherapy.com"
-        ],
-        "cited_ours": [],
-        "observed_at": "2026-08-29T01:31:46.350Z",
-        "model": "openai/gpt-4o-mini",
-        "rank_verified": false,
-        "stale": true,
-        "stale_reason": "PROVIDER_ERROR"
+        "verdict": "UNRESOLVABLE_WITHOUT_LOCATION",
+        "reason": "QUERY_IMPLIES_A_PLACE_AND_NAMES_NONE",
+        "openness_score": null,
+        "geo_resolvable": false,
+        "cited_hosts": [],
+        "observed_at": null,
+        "model": null,
+        "note": "Citations returned for this string are geographic noise, so an openness reading would be meaningless and \"not cited\" here is not open ground. The localized variant of this query is the governed, measurable target."
       },
       "blue_ocean_eligible": {
         "eligible": true,
-        "reason": "OPEN_WITH_ANCHORED_OBSERVATION"
+        "reason": "UNRESOLVABLE_WITHOUT_LOCATION"
       }
     },
     {
       "query": "female therapist near me",
       "intent": "observed",
-      "primaryPage": "/",
+      "primaryPage": "/resources/guides/female-therapist-memphis/",
       "status": "discovered_from_gsc",
       "provenance": "google_search_console query/page pair, joined by scripts/queries/score_discovery_gap.mjs",
       "gsc_measured": {
@@ -155,29 +111,18 @@
       "lead_intent_tier": "T1_LOCAL_READY",
       "lead_intent_method": "regex_classifier_on_query_string, scripts/queries/score_discovery_gap.mjs",
       "occupancy": {
-        "verdict": "OPEN",
-        "reason": "LIVE_WEB_SURFACING_OBSERVATION",
-        "openness_score": 0.6,
-        "platform_share": 0.2,
-        "institutional_share": 0,
-        "distinct_cited_hosts": 5,
-        "cited_hosts": [
-          "lifestance.com",
-          "welli.com",
-          "therapist.com",
-          "psychhub.com",
-          "goodtherapy.org"
-        ],
-        "cited_ours": [],
-        "observed_at": "2026-08-29T01:31:46.350Z",
-        "model": "openai/gpt-4o-mini",
-        "rank_verified": false,
-        "stale": true,
-        "stale_reason": "PROVIDER_ERROR"
+        "verdict": "UNRESOLVABLE_WITHOUT_LOCATION",
+        "reason": "QUERY_IMPLIES_A_PLACE_AND_NAMES_NONE",
+        "openness_score": null,
+        "geo_resolvable": false,
+        "cited_hosts": [],
+        "observed_at": null,
+        "model": null,
+        "note": "Citations returned for this string are geographic noise, so an openness reading would be meaningless and \"not cited\" here is not open ground. The localized variant of this query is the governed, measurable target."
       },
       "blue_ocean_eligible": {
         "eligible": true,
-        "reason": "OPEN_WITH_ANCHORED_OBSERVATION"
+        "reason": "UNRESOLVABLE_WITHOUT_LOCATION"
       }
     },
     {
@@ -197,38 +142,24 @@
       "lead_intent_tier": "T1_LOCAL_READY",
       "lead_intent_method": "regex_classifier_on_query_string, scripts/queries/score_discovery_gap.mjs",
       "occupancy": {
-        "verdict": "CONTESTED",
-        "reason": "LIVE_WEB_SURFACING_OBSERVATION",
-        "openness_score": 0.5,
-        "platform_share": 0,
-        "institutional_share": 0,
-        "distinct_cited_hosts": 8,
-        "cited_hosts": [
-          "whitespark.ca",
-          "brainito.com",
-          "therapysites.com",
-          "mentalhealthcenters.org",
-          "digital.whky.com",
-          "google.com",
-          "searchenginejournal.com",
-          "kckcc.libguides.com"
-        ],
-        "cited_ours": [],
-        "observed_at": "2026-08-29T01:31:46.350Z",
-        "model": "openai/gpt-4o-mini",
-        "rank_verified": false,
-        "stale": true,
-        "stale_reason": "PROVIDER_ERROR"
+        "verdict": "UNRESOLVABLE_WITHOUT_LOCATION",
+        "reason": "QUERY_IMPLIES_A_PLACE_AND_NAMES_NONE",
+        "openness_score": null,
+        "geo_resolvable": false,
+        "cited_hosts": [],
+        "observed_at": null,
+        "model": null,
+        "note": "Citations returned for this string are geographic noise, so an openness reading would be meaningless and \"not cited\" here is not open ground. The localized variant of this query is the governed, measurable target."
       },
       "blue_ocean_eligible": {
         "eligible": true,
-        "reason": "CONTESTED"
+        "reason": "UNRESOLVABLE_WITHOUT_LOCATION"
       }
     },
     {
       "query": "psychologists near me",
       "intent": "observed",
-      "primaryPage": "/",
+      "primaryPage": "/resources/guides/psychologist-vs-therapist-memphis/",
       "status": "discovered_from_gsc",
       "provenance": "google_search_console query/page pair, joined by scripts/queries/score_discovery_gap.mjs",
       "gsc_measured": {
@@ -242,33 +173,24 @@
       "lead_intent_tier": "T1_LOCAL_READY",
       "lead_intent_method": "regex_classifier_on_query_string, scripts/queries/score_discovery_gap.mjs",
       "occupancy": {
-        "verdict": "OPEN",
-        "reason": "LIVE_WEB_SURFACING_OBSERVATION",
-        "openness_score": 0.667,
-        "platform_share": 0.333,
-        "institutional_share": 0,
-        "distinct_cited_hosts": 3,
-        "cited_hosts": [
-          "healthgrades.com",
-          "talkspace.com",
-          "doctor.webmd.com"
-        ],
-        "cited_ours": [],
-        "observed_at": "2026-08-29T01:31:46.350Z",
-        "model": "openai/gpt-4o-mini",
-        "rank_verified": false,
-        "stale": true,
-        "stale_reason": "PROVIDER_ERROR"
+        "verdict": "UNRESOLVABLE_WITHOUT_LOCATION",
+        "reason": "QUERY_IMPLIES_A_PLACE_AND_NAMES_NONE",
+        "openness_score": null,
+        "geo_resolvable": false,
+        "cited_hosts": [],
+        "observed_at": null,
+        "model": null,
+        "note": "Citations returned for this string are geographic noise, so an openness reading would be meaningless and \"not cited\" here is not open ground. The localized variant of this query is the governed, measurable target."
       },
       "blue_ocean_eligible": {
         "eligible": true,
-        "reason": "OPEN_WITH_ANCHORED_OBSERVATION"
+        "reason": "UNRESOLVABLE_WITHOUT_LOCATION"
       }
     },
     {
       "query": "therapist in olive branch ms",
       "intent": "observed",
-      "primaryPage": "/",
+      "primaryPage": "/resources/guides/therapist-olive-branch-ms/",
       "status": "discovered_from_gsc",
       "provenance": "google_search_console query/page pair, joined by scripts/queries/score_discovery_gap.mjs",
       "gsc_measured": {
@@ -310,7 +232,7 @@
     {
       "query": "therapist near me",
       "intent": "observed",
-      "primaryPage": "/",
+      "primaryPage": "/resources/guides/therapist-near-me-memphis/",
       "status": "discovered_from_gsc",
       "provenance": "google_search_console query/page pair, joined by scripts/queries/score_discovery_gap.mjs",
       "gsc_measured": {
@@ -324,40 +246,24 @@
       "lead_intent_tier": "T1_LOCAL_READY",
       "lead_intent_method": "regex_classifier_on_query_string, scripts/queries/score_discovery_gap.mjs",
       "occupancy": {
-        "verdict": "OPEN",
-        "reason": "LIVE_WEB_SURFACING_OBSERVATION",
-        "openness_score": 0.6,
-        "platform_share": 0.2,
-        "institutional_share": 0,
-        "distinct_cited_hosts": 10,
-        "cited_hosts": [
-          "therapist.com",
-          "lifestance.com",
-          "therapistnearme.com",
-          "therapistlookup.com",
-          "therapyfinder.com",
-          "healthgrades.com",
-          "talkspace.com",
-          "findatherapist.com",
-          "goodtherapy.org",
-          "zencare.co"
-        ],
-        "cited_ours": [],
-        "observed_at": "2026-08-29T01:31:46.350Z",
-        "model": "openai/gpt-4o-mini",
-        "rank_verified": false,
-        "stale": true,
-        "stale_reason": "CARRIED_FORWARD_NO_OBSERVATION_IN_CURRENT_WINDOW"
+        "verdict": "UNRESOLVABLE_WITHOUT_LOCATION",
+        "reason": "QUERY_IMPLIES_A_PLACE_AND_NAMES_NONE",
+        "openness_score": null,
+        "geo_resolvable": false,
+        "cited_hosts": [],
+        "observed_at": null,
+        "model": null,
+        "note": "Citations returned for this string are geographic noise, so an openness reading would be meaningless and \"not cited\" here is not open ground. The localized variant of this query is the governed, measurable target."
       },
       "blue_ocean_eligible": {
         "eligible": true,
-        "reason": "OPEN_WITH_ANCHORED_OBSERVATION"
+        "reason": "UNRESOLVABLE_WITHOUT_LOCATION"
       }
     },
     {
       "query": "therapists near me",
       "intent": "observed",
-      "primaryPage": "/",
+      "primaryPage": "/resources/guides/therapist-near-me-memphis/",
       "status": "discovered_from_gsc",
       "provenance": "google_search_console query/page pair, joined by scripts/queries/score_discovery_gap.mjs",
       "gsc_measured": {
@@ -371,33 +277,18 @@
       "lead_intent_tier": "T1_LOCAL_READY",
       "lead_intent_method": "regex_classifier_on_query_string, scripts/queries/score_discovery_gap.mjs",
       "occupancy": {
-        "verdict": "OPEN",
-        "reason": "LIVE_WEB_SURFACING_OBSERVATION",
-        "openness_score": 0.611,
-        "platform_share": 0.222,
-        "institutional_share": 0,
-        "distinct_cited_hosts": 9,
-        "cited_hosts": [
-          "therapistlookup.com",
-          "healthgrades.com",
-          "zencare.co",
-          "talkspace.com",
-          "goodtherapy.org",
-          "therapygroupdc.com",
-          "lifestance.com",
-          "xndd.atlantafigures.org",
-          "directshifts.com"
-        ],
-        "cited_ours": [],
-        "observed_at": "2026-08-29T01:31:46.350Z",
-        "model": "openai/gpt-4o-mini",
-        "rank_verified": false,
-        "stale": true,
-        "stale_reason": "CARRIED_FORWARD_NO_OBSERVATION_IN_CURRENT_WINDOW"
+        "verdict": "UNRESOLVABLE_WITHOUT_LOCATION",
+        "reason": "QUERY_IMPLIES_A_PLACE_AND_NAMES_NONE",
+        "openness_score": null,
+        "geo_resolvable": false,
+        "cited_hosts": [],
+        "observed_at": null,
+        "model": null,
+        "note": "Citations returned for this string are geographic noise, so an openness reading would be meaningless and \"not cited\" here is not open ground. The localized variant of this query is the governed, measurable target."
       },
       "blue_ocean_eligible": {
         "eligible": true,
-        "reason": "OPEN_WITH_ANCHORED_OBSERVATION"
+        "reason": "UNRESOLVABLE_WITHOUT_LOCATION"
       }
     },
     {
@@ -417,33 +308,172 @@
       "lead_intent_tier": "T1_LOCAL_READY",
       "lead_intent_method": "regex_classifier_on_query_string, scripts/queries/score_discovery_gap.mjs",
       "occupancy": {
-        "verdict": "CONTESTED",
-        "reason": "LIVE_WEB_SURFACING_OBSERVATION",
-        "openness_score": 0.444,
-        "platform_share": 0,
-        "institutional_share": 0.111,
-        "distinct_cited_hosts": 9,
-        "cited_hosts": [
-          "trauma.georgia.gov",
-          "rehabs.com",
-          "clinicsforfree.com",
-          "ucsd.libguides.com",
-          "livefreerecoverynh.com",
-          "hospitalsafetygrade.org",
-          "self-sufficiency.org",
-          "jucm.com",
-          "moz.com"
-        ],
-        "cited_ours": [],
-        "observed_at": "2026-08-29T01:31:46.350Z",
-        "model": "openai/gpt-4o-mini",
-        "rank_verified": false,
-        "stale": true,
-        "stale_reason": "CARRIED_FORWARD_NO_OBSERVATION_IN_CURRENT_WINDOW"
+        "verdict": "UNRESOLVABLE_WITHOUT_LOCATION",
+        "reason": "QUERY_IMPLIES_A_PLACE_AND_NAMES_NONE",
+        "openness_score": null,
+        "geo_resolvable": false,
+        "cited_hosts": [],
+        "observed_at": null,
+        "model": null,
+        "note": "Citations returned for this string are geographic noise, so an openness reading would be meaningless and \"not cited\" here is not open ground. The localized variant of this query is the governed, measurable target."
       },
       "blue_ocean_eligible": {
         "eligible": true,
-        "reason": "CONTESTED"
+        "reason": "UNRESOLVABLE_WITHOUT_LOCATION"
+      }
+    },
+    {
+      "query": "christian therapists near me memphis",
+      "intent": "localized_variant",
+      "primaryPage": "/resources/guides/christian-therapist-memphis/",
+      "status": "governed_localized_variant",
+      "provenance": "hand-added localized variant of a measured GSC 'near me' query. The bare phrase carries no location and is not answerable; this is the form a Memphis searcher and a location-aware answer engine resolve to.",
+      "localizes": "christian therapists near me",
+      "lead_intent_tier": "T1_LOCAL_READY",
+      "lead_intent_method": "regex_classifier_on_query_string, scripts/queries/score_discovery_gap.mjs",
+      "occupancy": {
+        "verdict": "UNMEASURED",
+        "reason": "NO_LIVE_OBSERVATION",
+        "openness_score": null,
+        "cited_hosts": [],
+        "observed_at": null,
+        "model": null
+      },
+      "blue_ocean_eligible": {
+        "eligible": true,
+        "reason": "UNMEASURED"
+      }
+    },
+    {
+      "query": "female therapist near me memphis",
+      "intent": "localized_variant",
+      "primaryPage": "/resources/guides/female-therapist-memphis/",
+      "status": "governed_localized_variant",
+      "provenance": "hand-added localized variant of a measured GSC 'near me' query. The bare phrase carries no location and is not answerable; this is the form a Memphis searcher and a location-aware answer engine resolve to.",
+      "localizes": "female therapist near me",
+      "lead_intent_tier": "T1_LOCAL_READY",
+      "lead_intent_method": "regex_classifier_on_query_string, scripts/queries/score_discovery_gap.mjs",
+      "occupancy": {
+        "verdict": "UNMEASURED",
+        "reason": "NO_LIVE_OBSERVATION",
+        "openness_score": null,
+        "cited_hosts": [],
+        "observed_at": null,
+        "model": null
+      },
+      "blue_ocean_eligible": {
+        "eligible": true,
+        "reason": "UNMEASURED"
+      }
+    },
+    {
+      "query": "mental health therapy near me memphis",
+      "intent": "localized_variant",
+      "primaryPage": "/resources/guides/therapist-near-me-memphis/",
+      "status": "governed_localized_variant",
+      "provenance": "hand-added localized variant of a measured GSC 'near me' query. The bare phrase carries no location and is not answerable; this is the form a Memphis searcher and a location-aware answer engine resolve to.",
+      "localizes": "mental health therapy near me",
+      "lead_intent_tier": "T1_LOCAL_READY",
+      "lead_intent_method": "regex_classifier_on_query_string, scripts/queries/score_discovery_gap.mjs",
+      "occupancy": {
+        "verdict": "UNMEASURED",
+        "reason": "NO_LIVE_OBSERVATION",
+        "openness_score": null,
+        "cited_hosts": [],
+        "observed_at": null,
+        "model": null
+      },
+      "blue_ocean_eligible": {
+        "eligible": true,
+        "reason": "UNMEASURED"
+      }
+    },
+    {
+      "query": "psychologists near me memphis",
+      "intent": "localized_variant",
+      "primaryPage": "/resources/guides/psychologist-vs-therapist-memphis/",
+      "status": "governed_localized_variant",
+      "provenance": "hand-added localized variant of a measured GSC 'near me' query. The bare phrase carries no location and is not answerable; this is the form a Memphis searcher and a location-aware answer engine resolve to.",
+      "localizes": "psychologists near me",
+      "lead_intent_tier": "T1_LOCAL_READY",
+      "lead_intent_method": "regex_classifier_on_query_string, scripts/queries/score_discovery_gap.mjs",
+      "occupancy": {
+        "verdict": "UNMEASURED",
+        "reason": "NO_LIVE_OBSERVATION",
+        "openness_score": null,
+        "cited_hosts": [],
+        "observed_at": null,
+        "model": null
+      },
+      "blue_ocean_eligible": {
+        "eligible": true,
+        "reason": "UNMEASURED"
+      }
+    },
+    {
+      "query": "therapist in olive branch ms memphis area",
+      "intent": "localized_variant",
+      "primaryPage": "/resources/guides/therapist-olive-branch-ms/",
+      "status": "governed_localized_variant",
+      "provenance": "hand-added localized variant of a measured GSC 'near me' query. The bare phrase carries no location and is not answerable; this is the form a Memphis searcher and a location-aware answer engine resolve to.",
+      "localizes": "therapist in olive branch ms",
+      "lead_intent_tier": "T1_LOCAL_READY",
+      "lead_intent_method": "regex_classifier_on_query_string, scripts/queries/score_discovery_gap.mjs",
+      "occupancy": {
+        "verdict": "UNMEASURED",
+        "reason": "NO_LIVE_OBSERVATION",
+        "openness_score": null,
+        "cited_hosts": [],
+        "observed_at": null,
+        "model": null
+      },
+      "blue_ocean_eligible": {
+        "eligible": true,
+        "reason": "UNMEASURED"
+      }
+    },
+    {
+      "query": "therapist near me memphis",
+      "intent": "localized_variant",
+      "primaryPage": "/resources/guides/therapist-near-me-memphis/",
+      "status": "governed_localized_variant",
+      "provenance": "hand-added localized variant of a measured GSC 'near me' query. The bare phrase carries no location and is not answerable; this is the form a Memphis searcher and a location-aware answer engine resolve to.",
+      "localizes": "therapist near me",
+      "lead_intent_tier": "T1_LOCAL_READY",
+      "lead_intent_method": "regex_classifier_on_query_string, scripts/queries/score_discovery_gap.mjs",
+      "occupancy": {
+        "verdict": "UNMEASURED",
+        "reason": "NO_LIVE_OBSERVATION",
+        "openness_score": null,
+        "cited_hosts": [],
+        "observed_at": null,
+        "model": null
+      },
+      "blue_ocean_eligible": {
+        "eligible": true,
+        "reason": "UNMEASURED"
+      }
+    },
+    {
+      "query": "therapists near me memphis tn",
+      "intent": "localized_variant",
+      "primaryPage": "/resources/guides/therapist-near-me-memphis/",
+      "status": "governed_localized_variant",
+      "provenance": "hand-added localized variant of a measured GSC 'near me' query. The bare phrase carries no location and is not answerable; this is the form a Memphis searcher and a location-aware answer engine resolve to.",
+      "localizes": "therapists near me",
+      "lead_intent_tier": "T1_LOCAL_READY",
+      "lead_intent_method": "regex_classifier_on_query_string, scripts/queries/score_discovery_gap.mjs",
+      "occupancy": {
+        "verdict": "UNMEASURED",
+        "reason": "NO_LIVE_OBSERVATION",
+        "openness_score": null,
+        "cited_hosts": [],
+        "observed_at": null,
+        "model": null
+      },
+      "blue_ocean_eligible": {
+        "eligible": true,
+        "reason": "UNMEASURED"
       }
     },
     {
@@ -1797,6 +1827,28 @@
       }
     },
     {
+      "query": "black female therapist memphis tn",
+      "intent": "localized_variant",
+      "primaryPage": "/resources/guides/female-therapist-memphis/",
+      "status": "governed_localized_variant",
+      "provenance": "hand-added localized variant of a measured GSC 'near me' query. The bare phrase carries no location and is not answerable; this is the form a Memphis searcher and a location-aware answer engine resolve to.",
+      "localizes": "black female therapist near me",
+      "lead_intent_tier": "T4_INFORMATIONAL",
+      "lead_intent_method": "regex_classifier_on_query_string, scripts/queries/score_discovery_gap.mjs",
+      "occupancy": {
+        "verdict": "UNMEASURED",
+        "reason": "NO_LIVE_OBSERVATION",
+        "openness_score": null,
+        "cited_hosts": [],
+        "observed_at": null,
+        "model": null
+      },
+      "blue_ocean_eligible": {
+        "eligible": true,
+        "reason": "UNMEASURED"
+      }
+    },
+    {
       "query": "black therapist in Memphis",
       "intent": "commercial",
       "primaryPage": "/black-therapist-memphis/",
@@ -1918,7 +1970,7 @@
     }
   ],
   "discovery_gap_pass": {
-    "at": "2026-08-29T14:43:56.091Z",
+    "at": "2026-08-29T15:11:04.437Z",
     "by": "scripts/queries/score_discovery_gap.mjs",
     "why": "The observer read a 7-query hand-written list while Search Console reported 46 queries that actually put this practice in front of someone. The measured list is now the target list, ordered so the observer spends its 25-query budget on the queries a client arrives through.",
     "expansion_sources": [
@@ -1951,28 +2003,31 @@
       "formula": "openness_score = clamp(0.5 + 0.5*platform_share - 0.5*institutional_share, 0, 1)",
       "platform_share": "share of distinct cited hosts that are directories, marketplaces or user-generated platforms",
       "institutional_share": "share of distinct cited hosts on .gov/.edu/.mil or wikipedia",
+      "geo_precondition": "A query that implies a location (\"near me\", \"nearby\", \"open now\") but names none is not answerable, so its citations are geographic noise and its openness reading is meaningless. Those are scored UNRESOLVABLE_WITHOUT_LOCATION and carry no openness_score. Measure the localized variant instead.",
       "verdicts": {
         "HELD_BY_US": "the search already surfaced this practice - not an opportunity, a position to defend",
         "OPEN": "openness_score >= 0.6 - the answer is assembled from directories and platforms and no page owns it",
         "CONTESTED": "0.4 <= openness_score < 0.6",
         "HELD": "openness_score < 0.4 - institutions or established publishers occupy the answer",
-        "UNMEASURED": "the observer has not answered for this query; NOT a zero and never to be read as one"
+        "UNMEASURED": "the observer has not answered for this query; NOT a zero and never to be read as one",
+        "UNRESOLVABLE_WITHOUT_LOCATION": "the query implies a place and names none, so no incumbent can hold it and \"not cited\" is an artifact of the question, NOT open ground"
       },
       "not_measured": "search volume, keyword difficulty, organic rank. The observer says so itself: rankVerified is false on every observation."
     },
     "counts": {
-      "total_targets": 54,
-      "added_this_pass": 1,
-      "with_openness_reading": 25,
+      "total_targets": 62,
+      "added_this_pass": 0,
+      "with_openness_reading": 16,
       "lead_intent": {
-        "T1_LOCAL_READY": 10,
-        "T4_INFORMATIONAL": 44
+        "T1_LOCAL_READY": 17,
+        "T4_INFORMATIONAL": 45
       },
       "occupancy": {
-        "OPEN": 8,
-        "CONTESTED": 9,
+        "UNRESOLVABLE_WITHOUT_LOCATION": 9,
+        "OPEN": 1,
+        "UNMEASURED": 37,
         "HELD_BY_US": 8,
-        "UNMEASURED": 29
+        "CONTESTED": 7
       }
     }
   }

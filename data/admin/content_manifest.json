@@ -4257,7 +4257,7 @@
     "title": "How to Choose a Therapist Near You: A Practical Checklist",
     "type": "monthly",
     "slug": "/resources/guides/how-to-choose-a-therapist-near-you/",
-    "status": "draft",
+    "status": "approved",
     "riskLevel": "medium",
     "track": "both",
     "requiresFooter": true,
@@ -4268,7 +4268,7 @@
     "contentType": "guides",
     "publicPath": "/resources/guides/how-to-choose-a-therapist-near-you/",
     "previewPath": "/preview/resources/guides/how-to-choose-a-therapist-near-you/",
-    "scheduledAt": null,
+    "scheduledAt": "2027-01-05T13:00:00.000Z",
     "draftedFor": {
       "shape": "checklist/guide",
       "shape_rationale": "Query shape favoured because grounded AI-answer observations show cost/price, checklist/guide, geo-modified and comparison shapes leave slots for unbranded sites far more often than bare head terms.",
@@ -4331,7 +4331,7 @@
       ],
       "demand_source": "data/agency/gsc_snapshot.json topQueries, window 2026-07-27 to 2026-08-23"
     },
-    "notes": "DRAFT. Not approved and not published. Awaiting client review."
+    "notes": "Awaiting Monika's review. Scheduled after 2026-12-31 so the June standing editorial approval does not cover it. Publication requires a named per-item approval in data/admin/publication_approvals.json."
   },
   {
     "id": "guide-compare-001",
@@ -4439,5 +4439,196 @@
       "demand_source": "data/agency/gsc_snapshot.json topQueries, window 2026-07-27 to 2026-08-23"
     },
     "notes": "DRAFT. Not approved and not published. Awaiting client review."
+  },
+  {
+    "id": "guide-local-nearme-001",
+    "title": "Therapist Near Me in Memphis: How to Find One Who Can Actually See You",
+    "type": "monthly",
+    "slug": "/resources/guides/therapist-near-me-memphis/",
+    "status": "approved",
+    "riskLevel": "medium",
+    "track": "both",
+    "requiresFooter": true,
+    "validationPassed": true,
+    "contentWordTarget": 1400,
+    "contentWordWarningFloor": 1050,
+    "source": "measured_gsc_demand_2026_08_local_intent",
+    "contentType": "guides",
+    "publicPath": "/resources/guides/therapist-near-me-memphis/",
+    "previewPath": "/preview/resources/guides/therapist-near-me-memphis/",
+    "scheduledAt": "2027-01-12T13:00:00.000Z",
+    "draftedFor": {
+      "shape": "localized service guide",
+      "shape_rationale": "The bare query carries no location, so a live web observation of it returns geographic noise and cannot be won by any single local practice. The winnable form is the Memphis / Olive Branch localized variant, which is what this page is written for. Shape follows the two pages that already hold citations: /black-therapist-memphis/ and /anxiety-therapist-memphis/.",
+      "measured_queries": [
+        {
+          "query": "therapist near me",
+          "impressions_28d": 1,
+          "average_position": 19
+        },
+        {
+          "query": "therapists near me",
+          "impressions_28d": 1,
+          "average_position": 22
+        },
+        {
+          "query": "mental health therapy near me",
+          "impressions_28d": 2,
+          "average_position": 29
+        }
+      ],
+      "localized_target_queries": [
+        "therapist near me memphis",
+        "therapists near me memphis tn",
+        "mental health therapy near me memphis"
+      ],
+      "demand_source": "data/agency/gsc_snapshot.json topQueries, window 2026-07-27 to 2026-08-23"
+    },
+    "notes": "Awaiting Monika's review. Scheduled after 2026-12-31 so the June standing editorial approval does not cover it. Publication requires a named per-item approval in data/admin/publication_approvals.json."
+  },
+  {
+    "id": "guide-local-female-001",
+    "title": "Female Therapist in Memphis: What Gender Fit Changes, and What It Does Not",
+    "type": "monthly",
+    "slug": "/resources/guides/female-therapist-memphis/",
+    "status": "approved",
+    "riskLevel": "medium",
+    "track": "both",
+    "requiresFooter": true,
+    "validationPassed": true,
+    "contentWordTarget": 1400,
+    "contentWordWarningFloor": 1050,
+    "source": "measured_gsc_demand_2026_08_local_intent",
+    "contentType": "guides",
+    "publicPath": "/resources/guides/female-therapist-memphis/",
+    "previewPath": "/preview/resources/guides/female-therapist-memphis/",
+    "scheduledAt": "2027-01-19T13:00:00.000Z",
+    "draftedFor": {
+      "shape": "localized service guide",
+      "shape_rationale": "The bare query carries no location, so a live web observation of it returns geographic noise and cannot be won by any single local practice. The winnable form is the Memphis / Olive Branch localized variant, which is what this page is written for. Shape follows the two pages that already hold citations: /black-therapist-memphis/ and /anxiety-therapist-memphis/.",
+      "measured_queries": [
+        {
+          "query": "female therapist near me",
+          "impressions_28d": 1,
+          "average_position": 10
+        },
+        {
+          "query": "black female therapist near me",
+          "impressions_28d": 1,
+          "average_position": 24
+        }
+      ],
+      "localized_target_queries": [
+        "female therapist near me memphis",
+        "black female therapist memphis tn"
+      ],
+      "demand_source": "data/agency/gsc_snapshot.json topQueries, window 2026-07-27 to 2026-08-23"
+    },
+    "notes": "Awaiting Monika's review. Scheduled after 2026-12-31 so the June standing editorial approval does not cover it. Publication requires a named per-item approval in data/admin/publication_approvals.json."
+  },
+  {
+    "id": "guide-local-christian-001",
+    "title": "Christian Therapists in Memphis: How Faith Fits Into Therapy",
+    "type": "monthly",
+    "slug": "/resources/guides/christian-therapist-memphis/",
+    "status": "approved",
+    "riskLevel": "medium",
+    "track": "both",
+    "requiresFooter": true,
+    "validationPassed": true,
+    "contentWordTarget": 1400,
+    "contentWordWarningFloor": 1050,
+    "source": "measured_gsc_demand_2026_08_local_intent",
+    "contentType": "guides",
+    "publicPath": "/resources/guides/christian-therapist-memphis/",
+    "previewPath": "/preview/resources/guides/christian-therapist-memphis/",
+    "scheduledAt": "2027-01-26T13:00:00.000Z",
+    "draftedFor": {
+      "shape": "localized service guide",
+      "shape_rationale": "The bare query carries no location, so a live web observation of it returns geographic noise and cannot be won by any single local practice. The winnable form is the Memphis / Olive Branch localized variant, which is what this page is written for. Shape follows the two pages that already hold citations: /black-therapist-memphis/ and /anxiety-therapist-memphis/.",
+      "measured_queries": [
+        {
+          "query": "christian therapists near me",
+          "impressions_28d": 1,
+          "average_position": 51
+        }
+      ],
+      "localized_target_queries": [
+        "christian therapists near me memphis",
+        "christian therapist memphis tn"
+      ],
+      "demand_source": "data/agency/gsc_snapshot.json topQueries, window 2026-07-27 to 2026-08-23"
+    },
+    "notes": "Awaiting Monika's review. Scheduled after 2026-12-31 so the June standing editorial approval does not cover it. Publication requires a named per-item approval in data/admin/publication_approvals.json."
+  },
+  {
+    "id": "guide-local-psychologist-001",
+    "title": "Psychologists in Memphis: Do You Need a Psychologist, a Therapist, or a Psychiatrist?",
+    "type": "monthly",
+    "slug": "/resources/guides/psychologist-vs-therapist-memphis/",
+    "status": "approved",
+    "riskLevel": "medium",
+    "track": "both",
+    "requiresFooter": true,
+    "validationPassed": true,
+    "contentWordTarget": 1400,
+    "contentWordWarningFloor": 1050,
+    "source": "measured_gsc_demand_2026_08_local_intent",
+    "contentType": "guides",
+    "publicPath": "/resources/guides/psychologist-vs-therapist-memphis/",
+    "previewPath": "/preview/resources/guides/psychologist-vs-therapist-memphis/",
+    "scheduledAt": "2027-02-02T13:00:00.000Z",
+    "draftedFor": {
+      "shape": "localized service guide",
+      "shape_rationale": "The bare query carries no location, so a live web observation of it returns geographic noise and cannot be won by any single local practice. The winnable form is the Memphis / Olive Branch localized variant, which is what this page is written for. Shape follows the two pages that already hold citations: /black-therapist-memphis/ and /anxiety-therapist-memphis/.",
+      "measured_queries": [
+        {
+          "query": "psychologists near me",
+          "impressions_28d": 1,
+          "average_position": 30
+        }
+      ],
+      "localized_target_queries": [
+        "psychologists near me memphis",
+        "psychologist vs therapist memphis"
+      ],
+      "demand_source": "data/agency/gsc_snapshot.json topQueries, window 2026-07-27 to 2026-08-23"
+    },
+    "notes": "Awaiting Monika's review. Scheduled after 2026-12-31 so the June standing editorial approval does not cover it. Publication requires a named per-item approval in data/admin/publication_approvals.json."
+  },
+  {
+    "id": "guide-local-olivebranch-001",
+    "title": "Looking for a Therapist in Olive Branch, MS: What the State Line Changes",
+    "type": "monthly",
+    "slug": "/resources/guides/therapist-olive-branch-ms/",
+    "status": "approved",
+    "riskLevel": "medium",
+    "track": "both",
+    "requiresFooter": true,
+    "validationPassed": true,
+    "contentWordTarget": 1400,
+    "contentWordWarningFloor": 1050,
+    "source": "measured_gsc_demand_2026_08_local_intent",
+    "contentType": "guides",
+    "publicPath": "/resources/guides/therapist-olive-branch-ms/",
+    "previewPath": "/preview/resources/guides/therapist-olive-branch-ms/",
+    "scheduledAt": "2027-02-09T13:00:00.000Z",
+    "draftedFor": {
+      "shape": "localized service guide",
+      "shape_rationale": "The bare query carries no location, so a live web observation of it returns geographic noise and cannot be won by any single local practice. The winnable form is the Memphis / Olive Branch localized variant, which is what this page is written for. Shape follows the two pages that already hold citations: /black-therapist-memphis/ and /anxiety-therapist-memphis/.",
+      "measured_queries": [
+        {
+          "query": "therapist in olive branch ms",
+          "impressions_28d": 1,
+          "average_position": null
+        }
+      ],
+      "localized_target_queries": [
+        "therapist in olive branch ms",
+        "therapist near olive branch mississippi"
+      ],
+      "demand_source": "data/agency/gsc_snapshot.json topQueries, window 2026-07-27 to 2026-08-23"
+    },
+    "notes": "Awaiting Monika's review. Scheduled after 2026-12-31 so the June standing editorial approval does not cover it. Publication requires a named per-item approval in data/admin/publication_approvals.json."
   }
 ]
