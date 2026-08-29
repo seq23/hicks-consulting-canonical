@@ -12,7 +12,12 @@ const runtime=fs.readFileSync('worker/admin_runtime.mjs','utf8');
 for(const forbidden of ['ADMIN_SESSION_SECRET','verifyAdminSession','verifyAdminCsrf','x-csrf-token','rateLimitLogin','HttpOnly','SameSite=Strict'])if(runtime.includes(forbidden))errors.push(`stale-server-auth:${forbidden}`);
 
 const adminPage=fs.readFileSync('pages/admin/index.html','utf8');
-for(const token of ['Alternative: Real operations','GitHub connection','Create restricted token','Test GitHub connection','Every action is allowlisted and returns a receipt'])if(!adminPage.includes(token))errors.push(`admin-operations-guidance-missing:${token}`);
+for(const token of ['GitHub connection','Create restricted token','Test GitHub connection','Every action is allowlisted and returns a receipt'])if(!adminPage.includes(token))errors.push(`admin-operations-guidance-missing:${token}`);
+// The operations controls must be reachable directly, not buried behind a disclosure
+// heading. Assert the wiring, not the wording: prose on a client-facing page is not
+// a contract, and requiring a specific heading blocked a client-requested redesign.
+if(!adminPage.includes('/assets/js/admin-operations.js'))errors.push('admin-operations-script-not-loaded');
+if(/<details[^>]*>(?:(?!<\/details>)[\s\S])*admin-operations\.js/.test(adminPage))errors.push('admin-operations-hidden-in-disclosure');
 const agencyPage=fs.readFileSync('pages/agency/index.html','utf8');
 for(const token of ['Connect Google Search Console and Bing Webmaster Tools','Run GSC + Bing connection test','GSC_SITE_URL','BING_WEBMASTER_API_KEY'])if(!agencyPage.includes(token))errors.push(`agency-connection-guidance-missing:${token}`);
 const operations=fs.readFileSync('assets/js/admin-operations.js','utf8');

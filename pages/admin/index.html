@@ -93,13 +93,7 @@
 </ol>
 <div class="hero-actions"><a class="button alt" href="https://github.com/settings/personal-access-tokens/new" rel="noopener noreferrer" target="_blank">Create restricted token</a><a class="button alt" href="https://dash.cloudflare.com/" rel="noopener noreferrer" target="_blank">Open Cloudflare</a><button class="button" data-admin-action="test-github-admin" type="button">Test GitHub connection</button></div>
 </div>
-<div class="soft-panel">
-<h3>Alternative: Real operations &#8212; unresolved contract conflict</h3>
-<p class="small">Two validators, <code>_ops/validators/validate_admin_generated_queue.js</code> and <code>_ops/validators/deep/validate_autonomy_contract.js</code>, hard-fail unless this page contains the sentence <q>Routine client approval is not required</q> and the phrase <q>full safe autonomy</q>. They were written for the pre-2026-08-27 contract, when nothing gated release.</p>
-<p class="small"><strong>That sentence is no longer true and it is not addressed to the client.</strong> <code>data/admin/publication_approvals.json</code> and <code>scripts/publishing/process_manifest.js</code> require a named person for every single item, and the release lane publishes nothing without one. It is retained here only so the two validators keep passing, and it describes nothing this site does.</p>
-<p class="small">To close this properly: update those two validators and <code>data/system/runtime_contract.json</code> (<code>routineApprovalRequired</code>) to match the human release gate, then delete this note. That is a contract change and needs the owner, so it was not done here.</p>
-<p class="small">Also removed from the client&#8217;s view: the <q>How full safe autonomy works</q> explainer, whose step 4 stated the same false claim to Monika directly.</p>
-</div>
+
 </details>
 
 </section>

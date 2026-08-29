@@ -10,8 +10,10 @@ const operationsJs = read('assets/js/admin-operations.js');
 for (const token of ['optional-operations-panel','generated-content-panel']) {
   if (!adminHtml.includes(token)) fail(`Admin page missing approved autonomous support surface: ${token}`);
 }
-if (!/full safe autonomy/i.test(adminHtml)) fail('Admin page missing Full Safe Autonomy explanation.');
-if (!/Routine client approval is not required/i.test(adminHtml)) fail('Admin page missing routine-approval boundary.');
+// Was: required the page to say "Routine client approval is not required". That became
+// false when the human release gate landed 2026-08-27. The boundary is now asserted in
+// _ops/validators/deep/validate_autonomy_contract.js against the gate's own files,
+// rather than by string-matching prose on a page written for the client.
 for (const token of ['renderGeneratedCandidates','autonomyStatus','generated-candidates-tbody']) {
   if (!adminJs.includes(token)) fail(`Admin JS missing autonomous candidate rendering: ${token}`);
 }

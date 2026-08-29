@@ -1,10 +1,11 @@
 {
   "schemaVersion": "1.0.0",
   "runtimeMode": "FULL_SAFE_AUTONOMY",
-  "routineApprovalRequired": false,
+  "routineApprovalRequired": true,
   "safeBehavior": "generate_validate_repair_schedule_publish_distribute_measure",
   "exceptionBehavior": "skip_record_continue",
   "protectedFactsRequireHumanConfirmation": true,
   "artifactApprovalSeparate": true,
-  "publishingVelocityContract": "data/system/publishing_velocity_contract.json"
+  "publishingVelocityContract": "data/system/publishing_velocity_contract.json",
+  "routineApprovalRequiredWhy": "Set true on 2026-08-29. A human release gate was introduced 2026-08-27 (data/admin/publication_approvals.json + scripts/admin/approve_publication.mjs) requiring a named human before anything publishes. This flag said false, so the contract and the gate asserted opposite things and the validators enforced the false one. The gate is the truth: it blocked the 2026-08-27 and 2026-08-28 scheduled items from publishing. Autonomy still covers discovery, drafting, validation and repair - approval is required only at the release boundary."
 }

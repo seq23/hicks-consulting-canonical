@@ -2,7 +2,7 @@
   "schemaVersion": "1.0.0",
   "validator": "content-pattern-contract",
   "spec": ".clarity/content-pattern-spec.json",
-  "generatedAt": "2026-08-27T15:58:57.255Z",
+  "generatedAt": "2026-08-29T13:33:12.764Z",
   "enforcement": "report",
   "pagesChecked": 265,
   "status": "REPORTED",
@@ -46,8 +46,8 @@
     {
       "id": "comparison_table",
       "blocking": false,
-      "pagesMissing": 259,
-      "coveragePct": 2.3,
+      "pagesMissing": 258,
+      "coveragePct": 2.6,
       "why": "no comparison or cost table (agent request #2, 529 occurrences)"
     },
     {
@@ -88,8 +88,8 @@
     {
       "id": "definition_callout",
       "blocking": false,
-      "pagesMissing": 257,
-      "coveragePct": 3,
+      "pagesMissing": 256,
+      "coveragePct": 3.4,
       "why": "no definition callout (agent requested 196 times) - this is what an answer engine lifts for \"what is X\""
     },
     {
@@ -243,7 +243,6 @@
     "definition_callout": [
       "pages/about/index.html",
       "pages/anxiety-therapist-memphis/index.html",
-      "pages/black-therapist-memphis/index.html",
       "pages/book-discovery-call/index.html",
       "pages/coaching/index.html",
       "pages/contact/index.html",
@@ -265,7 +264,8 @@
       "pages/request-consult/index.html",
       "pages/resources/articles/burnout-or-just-too-much/index.html",
       "pages/resources/articles/how-boundary-guilt-keeps-women-stuck-in-the-same-exhausting-loops/index.html",
-      "pages/resources/articles/how-burnout-changes-the-way-you-think-about-your-own-life/index.html"
+      "pages/resources/articles/how-burnout-changes-the-way-you-think-about-your-own-life/index.html",
+      "pages/resources/articles/how-burnout-shows-up-before-you-ever-call-it-burnout/index.html"
     ],
     "trust_block": [
       "pages/anxiety-therapist-memphis/index.html",

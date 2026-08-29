@@ -10,17 +10,17 @@
     },
     {
       "path": "data/system/runtime_contract.json",
-      "sha256": "044c0a2344193c4f9e41c1694a99f4494390ba650352874c426d0b1d32bde716",
+      "sha256": "2d132b120f61c3a556922a0da9e3263e442f27663dd923ed542df4262ffa7070",
       "bytes": 402
     },
     {
       "path": "worker/admin_runtime.mjs",
-      "sha256": "4f296d5a200a8641832c721446ddf1dfffa86936908e582d9a54196682c9ec32",
+      "sha256": "67f51266b991572c2ad56dc6bd168d00e14d4173c91b94fa9a6f9f2866f91110",
       "bytes": 11371
     },
     {
       "path": "scripts/publishing/run_safe_publish.mjs",
-      "sha256": "2b4848fbe258675805158bb84f3158229a6a44e35399bb7c608803cc04e25876",
+      "sha256": "a350aef13a03d6eb0265939ca465555dd60f3a5d76da51a1506e8e60afbc0297",
       "bytes": 3510
     },
     {
@@ -30,12 +30,12 @@
     },
     {
       "path": "pages/admin/index.html",
-      "sha256": "eb662abcf656e1e39f4b13e1259684379fbe0d0e3bed7c6ad01659f18082e692",
+      "sha256": "4808af71aa4dd19a77305a2d8afd7f5479752cfcd3101472eb4539c7f1478e1b",
       "bytes": 16298
     },
     {
       "path": "assets/js/admin.js",
-      "sha256": "eaff68e10fde493b5171b140cab4d24b02a4dd3bdca5915cbab92e3d4518ecab",
+      "sha256": "4d9ea39da62cf0e30c524e82892cf070796278303a9be32c09372ceb7335e8e7",
       "bytes": 16002
     },
     {
@@ -44,9 +44,13 @@
       "bytes": 8930
     }
   ],
-  "baseline_refreshed_at": "2026-08-28T17:13:01.835851Z",
-  "baseline_reason": "Repaired the Safe Harbor local repair so it cannot destroy or contaminate the draft it is meant to fix. localRepairDraft's default disclaimer read '... or a guarantee of outcomes' and was assigned AFTER the textReplace sanitizer ran, so a draft that merely arrived without a disclaimer came back carrying a fresh GUARANTEE finding that the repair itself could not clear; the defaulted description had the same problem, inheriting an unsanitized shortAnswer. Defaults are now backfilled before the sanitizer rather than after, and the default disclaimer is reworded so it trips no prohibited-phrase check on its own. The file also gains an exported isStructuredDraftShape check so scripts/autonomy/run_cycle.mjs can refuse a malformed LLM repair instead of assigning it over a good draft. No prohibited-phrase pattern, protected-fact pattern, numeric-claim rule, duplicate threshold, minimum word count or decision mapping was weakened, added to, or removed: PROHIBITED_PATTERNS, PROTECTED_FACT_PATTERNS, NUMERIC_CLAIM, validateDraft and SAFE_HARBOR_DECISIONS are byte-identical to the previous baseline. Nothing was published and no client-approved content changed. _ops/validators/deep/validate_safe_harbor_behavior.mjs now asserts that the default disclaimer trips no prohibited-phrase check and that the shape check accepts only real drafts, so this class of regression fails the matrix rather than reaching content. Refreshed deliberately: this file had to change for the repair to stop injecting findings, and the tripwire is doing its job by making that visible.",
+  "baseline_refreshed_at": "2026-08-29T13:31:54.699036Z",
+  "baseline_reason": "Re-recorded 2026-08-29 after a deliberate, owner-authorised rewrite of the client admin surface: a plain-language approval page for the client, content approve/decline/take-down endpoints, and pause/emergencyStop now honoured by the publish and self-heal lanes as well as the drafting cycle. runtime_contract.routineApprovalRequired was corrected false -> true to match the human release gate introduced 2026-08-27, and two validators that enforced the opposite were updated to assert the gate's own files instead of prose on a client-facing page.",
   "baseline_refresh_changed_files": [
-    "scripts/autonomy/lib/safe_harbor.mjs"
+    "data/system/runtime_contract.json",
+    "worker/admin_runtime.mjs",
+    "scripts/publishing/run_safe_publish.mjs",
+    "pages/admin/index.html",
+    "assets/js/admin.js"
   ]
 }
