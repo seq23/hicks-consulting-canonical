@@ -37,7 +37,7 @@
     "ingest:map": "node scripts/ingestion/map_queries_to_pages.js",
     "ingest:fanouts": "node scripts/ingestion/build_fanout_candidates.js",
     "ingest:llm-pages": "node scripts/ingestion/build_llm_ingestion_pages.js",
-    "ingest:all": "npm run ingest:social && npm run queries:ingest && npm run ingest:normalize && npm run ingest:cluster && npm run ingest:score && npm run ingest:map && npm run ingest:fanouts && npm run ingest:llm-pages && npm run ingest:briefs",
+    "ingest:all": "npm run ingest:social && npm run queries:ingest && node scripts/queries/score_discovery_gap.mjs --allow-missing-snapshot && npm run ingest:normalize && npm run ingest:cluster && npm run ingest:score && npm run ingest:map && npm run ingest:fanouts && npm run ingest:llm-pages && npm run ingest:briefs",
     "validate:source-health": "node _ops/validators/validate_source_health.js",
     "validate:ingestion-freshness": "node _ops/validators/validate_ingestion_freshness.js",
     "validate:query-signals": "node _ops/validators/validate_query_signal_schema.js",
@@ -121,6 +121,8 @@
     "cadence:headroom": "node scripts/cadence/publish_headroom.mjs",
     "cadence:gate": "node scripts/cadence_gate.js",
     "sitemap:lastmod": "node scripts/sitemap_lastmod.js",
-    "validate:admin-publisher-agreement": "node _ops/validators/deep/validate_admin_publisher_agreement.js"
+    "validate:admin-publisher-agreement": "node _ops/validators/deep/validate_admin_publisher_agreement.js",
+    "validate:title-uniqueness": "node _ops/validators/validate_title_uniqueness_contract.js",
+    "queries:discovery-gap": "node scripts/queries/score_discovery_gap.mjs"
   }
 }

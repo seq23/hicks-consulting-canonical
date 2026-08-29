@@ -1,6 +1,8 @@
 #!/usr/bin/env node
 import fs from 'node:fs';
 import crypto from 'node:crypto';
+import { createRequire } from 'node:module';
+const demandTitles = createRequire(import.meta.url)('../lib/demand_titles.js');
 
 const RUN = process.env.CONTINUITY_RUN_DATE || new Date().toISOString().slice(0, 10);
 const HORIZON = Number(process.env.CONTINUITY_HORIZON_DAYS || 120);
@@ -28,17 +30,29 @@ function maxDate(values, fallback) { return values.filter(Boolean).sort().at(-1)
 function canonicalId(type, date, query) {
   return `continuity-${type}-${date}-${crypto.createHash('sha256').update(`${type}|${date}|${query}`).digest('hex').slice(0, 12)}`;
 }
-function sectionsFor(type) {
-  if (type === 'whitepaper') return ['Executive summary','Context and evidence','Core question','Audience analysis','Framework','Implementation guidance','Risks and limitations','Recommended next steps'];
-  if (type === 'guide') return ['Short answer','Who this is for','What to understand first','Decision framework','Practical steps','Common mistakes','When to seek support','Next step'];
-  return ['Short answer','Who this is for','Why this matters','Practical examples','Decision criteria','Common mistakes','Next step'];
-}
-function titleFor(type, query, topic) {
-  const clean = String(query || topic || 'Support topic').replace(/\?$/, '');
-  if (type === 'article') return `${clean}: a practical guide to what matters most`;
-  if (type === 'guide') return `${topic || clean}: a deeper guide for reflection and next steps`;
-  if (type === 'whitepaper') return `${topic || clean}: a practical quarterly reference`;
-  return `${clean}: what to understand and what to do next`;
+// `titleFor` used to live here. It composed every candidate title as
+// `${query||topic}` plus one of four interchangeable editorial suffixes
+// (": a practical guide to what matters most", ": a deeper guide for reflection
+// and next steps", ": a practical quarterly reference", ": what to understand and
+// what to do next"). Because build_max_fanout.mjs seeds its "queries" from this
+// site's OWN manifest titles, the topic it was appending to was itself already a
+// suffixed title - a closed loop that could only ever emit near-duplicates. That
+// loop is what put duplicateHtmlTitle: true on all 54 mappings in
+// reports/BING_INDEXATION_CONSOLIDATION_REPORT.json.
+//
+// Titles are now DRAWN from config/demand_phrasings.json - complete, standalone,
+// human-phrased questions grounded in the live clusters and the measured GSC
+// target queries - and claimed through a registry that refuses a duplicate or a
+// stem-plus-suffix of anything the repo already owns. Volume is unchanged: the
+// same slots are filled, each from a DIFFERENT real question, so three pieces off
+// one topic read like three different searches.
+//
+// Sections follow the FORM of the question (why / how / what / complaint), which
+// is what pulls two pieces on the same topic structurally apart rather than
+// leaving them the ~0.85-0.93 body-similar the 2026-08-08 consolidation found.
+const sectionsFor = (type, form) => demandTitles.sectionsForForm(form, type);
+function slugify(text) {
+  return String(text || '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '').slice(0, 80) || 'resource';
 }
 function contentDir(type) {
   return type === 'article' ? 'articles' : type === 'guide' ? 'guides' : type === 'whitepaper' ? 'white-papers' : 'insights';
@@ -77,20 +91,52 @@ for (let d = addDays(coverageEnd, 1); isoDate(d) <= targetEnd; d = new Date(d.ge
 
 const candidates = backlog.candidates || [];
 const conversionPath = config?.forms?.therapy || 'https://monika-hicks.clientsecure.me/';
+
+// The registry is seeded with every title the repo already owns - the manifest,
+// the brief candidates and both queues. That is the LINK that used to be missing:
+// each generator kept its own list and none of them could see the others.
+const registry = new demandTitles.TitleRegistry(demandTitles.takenTitles(process.cwd()), {
+  grandfathered: demandTitles.grandfatheredKeys(process.cwd()),
+});
+const demandPool = demandTitles.buildDemandPool(process.cwd(), { registry });
+let poolExhaustedAt = null;
+function drawTitle() {
+  while (demandPool.length) {
+    const entry = demandPool.shift();
+    if (registry.claim(entry.title)) return entry;
+  }
+  return null;
+}
+
 const picked = [];
+let slotsUnfilled = 0;
 for (let i = 0; i < slots.length && candidates.length; i++) {
   const slot = slots[i];
   const c = candidates[(i * 17 + slot.date.charCodeAt(9)) % candidates.length];
-  const id = canonicalId(slot.type, slot.date, c.query || c.topic || c.opportunity_id || String(i));
-  if (existingIds.has(id)) continue;
   const typePolicy = policy.contentTypes?.[slot.type] || policy.contentTypes?.insight || { targetWords: 900, minimumWords: 720 };
-  const sections = sectionsFor(slot.type);
-  const title = titleFor(slot.type, c.query, c.topic);
+  const drawn = drawTitle();
+  if (!drawn) {
+    // NAMED STOP. The phrasing bank is empty, so there is no research-grounded
+    // question left to justify another page. Emitting a templated title here is
+    // exactly the defect being removed, so the run stops filling slots and says
+    // why. Replenish config/demand_phrasings.json from new research.
+    if (!poolExhaustedAt) poolExhaustedAt = slot.date;
+    slotsUnfilled = slots.length - i;
+    break;
+  }
+  const title = drawn.title;
+  // The candidate is identified by the QUESTION it answers, not by a recycled
+  // fanout string. build_max_fanout.mjs seeds its "queries" from this site's own
+  // manifest titles, so `c.query` is a paraphrase of an existing page - anchoring
+  // a new candidate to it is what kept the bodies ~0.85-0.93 similar.
+  const id = canonicalId(slot.type, slot.date, title);
+  if (existingIds.has(id)) continue;
+  const sections = sectionsFor(slot.type, drawn.form);
   const proposedScheduledAt = `${slot.date}T13:00:00.000Z`;
   const llmPrompt = [
     `Create a humanized ${slot.type} draft for Hicks Consulting.`,
     `Title: ${title}`,
-    `Topic: ${c.query || c.topic}.`,
+    `This page exists to answer exactly one real question a person typed or said: "${title}". Answer THAT question in its own words in the first two sentences. Do not widen it into a general overview of ${drawn.evidence?.[0]?.title || drawn.familyId}; other pages on this site answer other questions in the same area and this one must not restate them.`,
     `Cadence: ${slot.cadence}. Proposed future slot: ${proposedScheduledAt}.`,
     `Minimum words: ${typePolicy.minimumWords}. Target words: ${typePolicy.targetWords}.`,
     'Use an answer-first opening, exact-intent headings, concrete examples, and a checklist or decision framework where useful.',
@@ -101,12 +147,14 @@ for (let i = 0; i < slots.length && candidates.length; i++) {
   ].join('\n');
   picked.push({
     id,
-    clusterId: c.opportunity_id,
-    clusterTitle: c.topic,
+    clusterId: drawn.clusterId || c.opportunity_id,
+    clusterTitle: drawn.evidence?.[0]?.title || c.topic,
+    demandPhrasing: { source: 'config/demand_phrasings.json', familyId: drawn.familyId, clusterId: drawn.clusterId, form: drawn.form, groundedIn: drawn.groundedIn, evidence: drawn.evidence },
     contentType: slot.type,
     cadence: slot.cadence,
     title,
-    suggestedRoute: `/resources/${contentDir(slot.type)}/${id}/`,
+    // The URL now reads like the question the page answers, instead of a hash.
+    suggestedRoute: `/resources/${contentDir(slot.type)}/${slugify(title)}/`,
     proposedScheduledAt,
     targetWords: typePolicy.targetWords,
     minimumWords: typePolicy.minimumWords,
@@ -138,6 +186,14 @@ const report = {
   planned_slots_needed: slots.length,
   candidates_added: picked.length,
   dry_run: DRY,
+  // Where every title came from, and what happens when there are none left.
+  title_source: 'config/demand_phrasings.json via scripts/lib/demand_titles.js (drawn, never composed)',
+  demand_pool_exhausted: Boolean(poolExhaustedAt),
+  demand_pool_exhausted_at_slot: poolExhaustedAt,
+  slots_left_unfilled_for_lack_of_research: slotsUnfilled,
+  exhaustion_remedy: slotsUnfilled
+    ? 'DEMAND_POOL_EXHAUSTED - replenish config/demand_phrasings.json from new query research. No templated fallback title is emitted.'
+    : null,
   cadence_preserved: {
     daily: 'weekday insights',
     weekly: 'Tuesday article',

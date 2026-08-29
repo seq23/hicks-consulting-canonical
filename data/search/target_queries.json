@@ -37,7 +37,13 @@
         "cited_ours": [],
         "observed_at": "2026-08-29T01:31:46.350Z",
         "model": "openai/gpt-4o-mini",
-        "rank_verified": false
+        "rank_verified": false,
+        "stale": true,
+        "stale_reason": "PROVIDER_ERROR"
+      },
+      "blue_ocean_eligible": {
+        "eligible": true,
+        "reason": "OPEN_WITH_ANCHORED_OBSERVATION"
       }
     },
     {
@@ -77,7 +83,13 @@
         "cited_ours": [],
         "observed_at": "2026-08-29T01:31:46.350Z",
         "model": "openai/gpt-4o-mini",
-        "rank_verified": false
+        "rank_verified": false,
+        "stale": true,
+        "stale_reason": "PROVIDER_ERROR"
+      },
+      "blue_ocean_eligible": {
+        "eligible": true,
+        "reason": "OPEN_WITH_ANCHORED_OBSERVATION"
       }
     },
     {
@@ -117,7 +129,13 @@
         "cited_ours": [],
         "observed_at": "2026-08-29T01:31:46.350Z",
         "model": "openai/gpt-4o-mini",
-        "rank_verified": false
+        "rank_verified": false,
+        "stale": true,
+        "stale_reason": "PROVIDER_ERROR"
+      },
+      "blue_ocean_eligible": {
+        "eligible": true,
+        "reason": "OPEN_WITH_ANCHORED_OBSERVATION"
       }
     },
     {
@@ -153,7 +171,13 @@
         "cited_ours": [],
         "observed_at": "2026-08-29T01:31:46.350Z",
         "model": "openai/gpt-4o-mini",
-        "rank_verified": false
+        "rank_verified": false,
+        "stale": true,
+        "stale_reason": "PROVIDER_ERROR"
+      },
+      "blue_ocean_eligible": {
+        "eligible": true,
+        "reason": "OPEN_WITH_ANCHORED_OBSERVATION"
       }
     },
     {
@@ -192,7 +216,13 @@
         "cited_ours": [],
         "observed_at": "2026-08-29T01:31:46.350Z",
         "model": "openai/gpt-4o-mini",
-        "rank_verified": false
+        "rank_verified": false,
+        "stale": true,
+        "stale_reason": "PROVIDER_ERROR"
+      },
+      "blue_ocean_eligible": {
+        "eligible": true,
+        "reason": "CONTESTED"
       }
     },
     {
@@ -226,7 +256,13 @@
         "cited_ours": [],
         "observed_at": "2026-08-29T01:31:46.350Z",
         "model": "openai/gpt-4o-mini",
-        "rank_verified": false
+        "rank_verified": false,
+        "stale": true,
+        "stale_reason": "PROVIDER_ERROR"
+      },
+      "blue_ocean_eligible": {
+        "eligible": true,
+        "reason": "OPEN_WITH_ANCHORED_OBSERVATION"
       }
     },
     {
@@ -262,7 +298,13 @@
         "cited_ours": [],
         "observed_at": "2026-08-29T01:31:46.350Z",
         "model": "openai/gpt-4o-mini",
-        "rank_verified": false
+        "rank_verified": false,
+        "stale": true,
+        "stale_reason": "PROVIDER_ERROR"
+      },
+      "blue_ocean_eligible": {
+        "eligible": true,
+        "reason": "OPEN_WITH_ANCHORED_OBSERVATION"
       }
     },
     {
@@ -303,7 +345,13 @@
         "cited_ours": [],
         "observed_at": "2026-08-29T01:31:46.350Z",
         "model": "openai/gpt-4o-mini",
-        "rank_verified": false
+        "rank_verified": false,
+        "stale": true,
+        "stale_reason": "CARRIED_FORWARD_NO_OBSERVATION_IN_CURRENT_WINDOW"
+      },
+      "blue_ocean_eligible": {
+        "eligible": true,
+        "reason": "OPEN_WITH_ANCHORED_OBSERVATION"
       }
     },
     {
@@ -343,7 +391,13 @@
         "cited_ours": [],
         "observed_at": "2026-08-29T01:31:46.350Z",
         "model": "openai/gpt-4o-mini",
-        "rank_verified": false
+        "rank_verified": false,
+        "stale": true,
+        "stale_reason": "CARRIED_FORWARD_NO_OBSERVATION_IN_CURRENT_WINDOW"
+      },
+      "blue_ocean_eligible": {
+        "eligible": true,
+        "reason": "OPEN_WITH_ANCHORED_OBSERVATION"
       }
     },
     {
@@ -383,7 +437,13 @@
         "cited_ours": [],
         "observed_at": "2026-08-29T01:31:46.350Z",
         "model": "openai/gpt-4o-mini",
-        "rank_verified": false
+        "rank_verified": false,
+        "stale": true,
+        "stale_reason": "CARRIED_FORWARD_NO_OBSERVATION_IN_CURRENT_WINDOW"
+      },
+      "blue_ocean_eligible": {
+        "eligible": true,
+        "reason": "CONTESTED"
       }
     },
     {
@@ -393,9 +453,9 @@
       "status": "discovered_from_gsc",
       "provenance": "google_search_console query/page pair, joined by scripts/queries/score_discovery_gap.mjs",
       "gsc_measured": {
-        "impressions": 72,
-        "clicks": 4,
-        "average_position": 6.24,
+        "impressions": 69,
+        "clicks": 3,
+        "average_position": 6.23,
         "window_start": null,
         "window_end": null,
         "source": "google_search_console"
@@ -421,7 +481,14 @@
         ],
         "observed_at": "2026-08-29T01:31:46.350Z",
         "model": "openai/gpt-4o-mini",
-        "rank_verified": false
+        "rank_verified": false,
+        "stale": true,
+        "stale_reason": "CARRIED_FORWARD_NO_OBSERVATION_IN_CURRENT_WINDOW"
+      },
+      "blue_ocean_eligible": {
+        "eligible": false,
+        "reason": "BRAND_OR_PERSON_NAME_NAVIGATIONAL",
+        "note": "Surname-matched query. The live observer returns Hickory/Hicksville and unrelated Hicks practitioners for these; an OPEN verdict on them is noise, not open ground."
       }
     },
     {
@@ -431,9 +498,9 @@
       "status": "discovered_from_gsc",
       "provenance": "google_search_console query/page pair, joined by scripts/queries/score_discovery_gap.mjs",
       "gsc_measured": {
-        "impressions": 15,
+        "impressions": 16,
         "clicks": 0,
-        "average_position": 2.13,
+        "average_position": 2.06,
         "window_start": null,
         "window_end": null,
         "source": "google_search_console"
@@ -462,7 +529,14 @@
         "cited_ours": [],
         "observed_at": "2026-08-29T01:31:46.350Z",
         "model": "openai/gpt-4o-mini",
-        "rank_verified": false
+        "rank_verified": false,
+        "stale": true,
+        "stale_reason": "CARRIED_FORWARD_NO_OBSERVATION_IN_CURRENT_WINDOW"
+      },
+      "blue_ocean_eligible": {
+        "eligible": false,
+        "reason": "BRAND_OR_PERSON_NAME_NAVIGATIONAL",
+        "note": "Surname-matched query. The live observer returns Hickory/Hicksville and unrelated Hicks practitioners for these; an OPEN verdict on them is noise, not open ground."
       }
     },
     {
@@ -502,7 +576,14 @@
         "cited_ours": [],
         "observed_at": "2026-08-29T01:31:46.350Z",
         "model": "openai/gpt-4o-mini",
-        "rank_verified": false
+        "rank_verified": false,
+        "stale": true,
+        "stale_reason": "CARRIED_FORWARD_NO_OBSERVATION_IN_CURRENT_WINDOW"
+      },
+      "blue_ocean_eligible": {
+        "eligible": false,
+        "reason": "BRAND_OR_PERSON_NAME_NAVIGATIONAL",
+        "note": "Surname-matched query. The live observer returns Hickory/Hicksville and unrelated Hicks practitioners for these; an OPEN verdict on them is noise, not open ground."
       }
     },
     {
@@ -542,7 +623,14 @@
         "cited_ours": [],
         "observed_at": "2026-08-29T01:31:46.350Z",
         "model": "openai/gpt-4o-mini",
-        "rank_verified": false
+        "rank_verified": false,
+        "stale": true,
+        "stale_reason": "CARRIED_FORWARD_NO_OBSERVATION_IN_CURRENT_WINDOW"
+      },
+      "blue_ocean_eligible": {
+        "eligible": false,
+        "reason": "BRAND_OR_PERSON_NAME_NAVIGATIONAL",
+        "note": "Surname-matched query. The live observer returns Hickory/Hicksville and unrelated Hicks practitioners for these; an OPEN verdict on them is noise, not open ground."
       }
     },
     {
@@ -575,7 +663,13 @@
         "cited_ours": [],
         "observed_at": "2026-08-29T01:31:46.350Z",
         "model": "openai/gpt-4o-mini",
-        "rank_verified": false
+        "rank_verified": false,
+        "stale": true,
+        "stale_reason": "CARRIED_FORWARD_NO_OBSERVATION_IN_CURRENT_WINDOW"
+      },
+      "blue_ocean_eligible": {
+        "eligible": true,
+        "reason": "CONTESTED"
       }
     },
     {
@@ -615,7 +709,42 @@
         ],
         "observed_at": "2026-08-29T01:31:46.350Z",
         "model": "openai/gpt-4o-mini",
-        "rank_verified": false
+        "rank_verified": false,
+        "stale": true,
+        "stale_reason": "CARRIED_FORWARD_NO_OBSERVATION_IN_CURRENT_WINDOW"
+      },
+      "blue_ocean_eligible": {
+        "eligible": false,
+        "reason": "ALREADY_HELD_BY_US"
+      }
+    },
+    {
+      "query": "heal consulting",
+      "intent": "observed",
+      "primaryPage": "/",
+      "status": "discovered_from_gsc",
+      "provenance": "google_search_console query/page pair, joined by scripts/queries/score_discovery_gap.mjs",
+      "gsc_measured": {
+        "impressions": 2,
+        "clicks": 0,
+        "average_position": 6.5,
+        "window_start": null,
+        "window_end": null,
+        "source": "google_search_console"
+      },
+      "lead_intent_tier": "T4_INFORMATIONAL",
+      "lead_intent_method": "regex_classifier_on_query_string, scripts/queries/score_discovery_gap.mjs",
+      "occupancy": {
+        "verdict": "UNMEASURED",
+        "reason": "NO_LIVE_OBSERVATION",
+        "openness_score": null,
+        "cited_hosts": [],
+        "observed_at": null,
+        "model": null
+      },
+      "blue_ocean_eligible": {
+        "eligible": true,
+        "reason": "UNMEASURED"
       }
     },
     {
@@ -653,7 +782,14 @@
         ],
         "observed_at": "2026-08-29T01:31:46.350Z",
         "model": "openai/gpt-4o-mini",
-        "rank_verified": false
+        "rank_verified": false,
+        "stale": true,
+        "stale_reason": "CARRIED_FORWARD_NO_OBSERVATION_IN_CURRENT_WINDOW"
+      },
+      "blue_ocean_eligible": {
+        "eligible": false,
+        "reason": "BRAND_OR_PERSON_NAME_NAVIGATIONAL",
+        "note": "Surname-matched query. The live observer returns Hickory/Hicksville and unrelated Hicks practitioners for these; an OPEN verdict on them is noise, not open ground."
       }
     },
     {
@@ -693,7 +829,13 @@
         "cited_ours": [],
         "observed_at": "2026-08-29T01:31:46.350Z",
         "model": "openai/gpt-4o-mini",
-        "rank_verified": false
+        "rank_verified": false,
+        "stale": true,
+        "stale_reason": "CARRIED_FORWARD_NO_OBSERVATION_IN_CURRENT_WINDOW"
+      },
+      "blue_ocean_eligible": {
+        "eligible": true,
+        "reason": "CONTESTED"
       }
     },
     {
@@ -732,7 +874,14 @@
         ],
         "observed_at": "2026-08-29T01:31:46.350Z",
         "model": "openai/gpt-4o-mini",
-        "rank_verified": false
+        "rank_verified": false,
+        "stale": true,
+        "stale_reason": "CARRIED_FORWARD_NO_OBSERVATION_IN_CURRENT_WINDOW"
+      },
+      "blue_ocean_eligible": {
+        "eligible": false,
+        "reason": "BRAND_OR_PERSON_NAME_NAVIGATIONAL",
+        "note": "Surname-matched query. The live observer returns Hickory/Hicksville and unrelated Hicks practitioners for these; an OPEN verdict on them is noise, not open ground."
       }
     },
     {
@@ -771,49 +920,13 @@
         "cited_ours": [],
         "observed_at": "2026-08-29T01:31:46.350Z",
         "model": "openai/gpt-4o-mini",
-        "rank_verified": false
-      }
-    },
-    {
-      "query": "mental health clinic",
-      "intent": "observed",
-      "primaryPage": "/",
-      "status": "discovered_from_gsc",
-      "provenance": "google_search_console query/page pair, joined by scripts/queries/score_discovery_gap.mjs",
-      "gsc_measured": {
-        "impressions": 2,
-        "clicks": 0,
-        "average_position": 21,
-        "window_start": null,
-        "window_end": null,
-        "source": "google_search_console"
+        "rank_verified": false,
+        "stale": true,
+        "stale_reason": "CARRIED_FORWARD_NO_OBSERVATION_IN_CURRENT_WINDOW"
       },
-      "lead_intent_tier": "T4_INFORMATIONAL",
-      "lead_intent_method": "regex_classifier_on_query_string, scripts/queries/score_discovery_gap.mjs",
-      "occupancy": {
-        "verdict": "HELD_BY_US",
-        "reason": "LIVE_WEB_SURFACING_OBSERVATION",
-        "openness_score": 0.389,
-        "platform_share": 0,
-        "institutional_share": 0.222,
-        "distinct_cited_hosts": 9,
-        "cited_hosts": [
-          "hicksconsulting.org",
-          "live-search.org",
-          "ucsd.libguides.com",
-          "guides.rasmussen.edu",
-          "clinicsforfree.com",
-          "searchenginejournal.com",
-          "thesearchguru.com",
-          "mansfieldtexas.gov",
-          "ahrefs.com"
-        ],
-        "cited_ours": [
-          "hicksconsulting.org"
-        ],
-        "observed_at": "2026-08-29T01:31:46.350Z",
-        "model": "openai/gpt-4o-mini",
-        "rank_verified": false
+      "blue_ocean_eligible": {
+        "eligible": true,
+        "reason": "CONTESTED"
       }
     },
     {
@@ -847,7 +960,13 @@
         ],
         "observed_at": "2026-08-29T01:31:46.350Z",
         "model": "openai/gpt-4o-mini",
-        "rank_verified": false
+        "rank_verified": false,
+        "stale": true,
+        "stale_reason": "CARRIED_FORWARD_NO_OBSERVATION_IN_CURRENT_WINDOW"
+      },
+      "blue_ocean_eligible": {
+        "eligible": false,
+        "reason": "ALREADY_HELD_BY_US"
       }
     },
     {
@@ -889,7 +1008,13 @@
         ],
         "observed_at": "2026-08-29T01:31:46.350Z",
         "model": "openai/gpt-4o-mini",
-        "rank_verified": false
+        "rank_verified": false,
+        "stale": true,
+        "stale_reason": "CARRIED_FORWARD_NO_OBSERVATION_IN_CURRENT_WINDOW"
+      },
+      "blue_ocean_eligible": {
+        "eligible": false,
+        "reason": "ALREADY_HELD_BY_US"
       }
     },
     {
@@ -929,7 +1054,13 @@
         ],
         "observed_at": "2026-08-29T01:31:46.350Z",
         "model": "openai/gpt-4o-mini",
-        "rank_verified": false
+        "rank_verified": false,
+        "stale": true,
+        "stale_reason": "CARRIED_FORWARD_NO_OBSERVATION_IN_CURRENT_WINDOW"
+      },
+      "blue_ocean_eligible": {
+        "eligible": false,
+        "reason": "ALREADY_HELD_BY_US"
       }
     },
     {
@@ -969,7 +1100,14 @@
         "cited_ours": [],
         "observed_at": "2026-08-29T01:31:46.350Z",
         "model": "openai/gpt-4o-mini",
-        "rank_verified": false
+        "rank_verified": false,
+        "stale": true,
+        "stale_reason": "CARRIED_FORWARD_NO_OBSERVATION_IN_CURRENT_WINDOW"
+      },
+      "blue_ocean_eligible": {
+        "eligible": false,
+        "reason": "BRAND_OR_PERSON_NAME_NAVIGATIONAL",
+        "note": "Surname-matched query. The live observer returns Hickory/Hicksville and unrelated Hicks practitioners for these; an OPEN verdict on them is noise, not open ground."
       }
     },
     {
@@ -995,6 +1133,11 @@
         "cited_hosts": [],
         "observed_at": null,
         "model": null
+      },
+      "blue_ocean_eligible": {
+        "eligible": false,
+        "reason": "BRAND_OR_PERSON_NAME_NAVIGATIONAL",
+        "note": "Surname-matched query. The live observer returns Hickory/Hicksville and unrelated Hicks practitioners for these; an OPEN verdict on them is noise, not open ground."
       }
     },
     {
@@ -1020,6 +1163,10 @@
         "cited_hosts": [],
         "observed_at": null,
         "model": null
+      },
+      "blue_ocean_eligible": {
+        "eligible": true,
+        "reason": "UNMEASURED"
       }
     },
     {
@@ -1045,6 +1192,10 @@
         "cited_hosts": [],
         "observed_at": null,
         "model": null
+      },
+      "blue_ocean_eligible": {
+        "eligible": true,
+        "reason": "UNMEASURED"
       }
     },
     {
@@ -1070,31 +1221,10 @@
         "cited_hosts": [],
         "observed_at": null,
         "model": null
-      }
-    },
-    {
-      "query": "heal consulting",
-      "intent": "observed",
-      "primaryPage": "/",
-      "status": "discovered_from_gsc",
-      "provenance": "google_search_console query/page pair, joined by scripts/queries/score_discovery_gap.mjs",
-      "gsc_measured": {
-        "impressions": 1,
-        "clicks": 0,
-        "average_position": 8,
-        "window_start": null,
-        "window_end": null,
-        "source": "google_search_console"
       },
-      "lead_intent_tier": "T4_INFORMATIONAL",
-      "lead_intent_method": "regex_classifier_on_query_string, scripts/queries/score_discovery_gap.mjs",
-      "occupancy": {
-        "verdict": "UNMEASURED",
-        "reason": "NO_LIVE_OBSERVATION",
-        "openness_score": null,
-        "cited_hosts": [],
-        "observed_at": null,
-        "model": null
+      "blue_ocean_eligible": {
+        "eligible": true,
+        "reason": "UNMEASURED"
       }
     },
     {
@@ -1120,6 +1250,10 @@
         "cited_hosts": [],
         "observed_at": null,
         "model": null
+      },
+      "blue_ocean_eligible": {
+        "eligible": true,
+        "reason": "UNMEASURED"
       }
     },
     {
@@ -1145,6 +1279,10 @@
         "cited_hosts": [],
         "observed_at": null,
         "model": null
+      },
+      "blue_ocean_eligible": {
+        "eligible": true,
+        "reason": "UNMEASURED"
       }
     },
     {
@@ -1170,6 +1308,11 @@
         "cited_hosts": [],
         "observed_at": null,
         "model": null
+      },
+      "blue_ocean_eligible": {
+        "eligible": false,
+        "reason": "BRAND_OR_PERSON_NAME_NAVIGATIONAL",
+        "note": "Surname-matched query. The live observer returns Hickory/Hicksville and unrelated Hicks practitioners for these; an OPEN verdict on them is noise, not open ground."
       }
     },
     {
@@ -1195,6 +1338,41 @@
         "cited_hosts": [],
         "observed_at": null,
         "model": null
+      },
+      "blue_ocean_eligible": {
+        "eligible": false,
+        "reason": "BRAND_OR_PERSON_NAME_NAVIGATIONAL",
+        "note": "Surname-matched query. The live observer returns Hickory/Hicksville and unrelated Hicks practitioners for these; an OPEN verdict on them is noise, not open ground."
+      }
+    },
+    {
+      "query": "hicks management",
+      "intent": "observed",
+      "primaryPage": "/",
+      "status": "discovered_from_gsc",
+      "provenance": "google_search_console query/page pair, joined by scripts/queries/score_discovery_gap.mjs",
+      "gsc_measured": {
+        "impressions": 1,
+        "clicks": 0,
+        "average_position": 20,
+        "window_start": null,
+        "window_end": null,
+        "source": "google_search_console"
+      },
+      "lead_intent_tier": "T4_INFORMATIONAL",
+      "lead_intent_method": "regex_classifier_on_query_string, scripts/queries/score_discovery_gap.mjs",
+      "occupancy": {
+        "verdict": "UNMEASURED",
+        "reason": "NO_LIVE_OBSERVATION",
+        "openness_score": null,
+        "cited_hosts": [],
+        "observed_at": null,
+        "model": null
+      },
+      "blue_ocean_eligible": {
+        "eligible": false,
+        "reason": "BRAND_OR_PERSON_NAME_NAVIGATIONAL",
+        "note": "Surname-matched query. The live observer returns Hickory/Hicksville and unrelated Hicks practitioners for these; an OPEN verdict on them is noise, not open ground."
       }
     },
     {
@@ -1220,6 +1398,11 @@
         "cited_hosts": [],
         "observed_at": null,
         "model": null
+      },
+      "blue_ocean_eligible": {
+        "eligible": false,
+        "reason": "BRAND_OR_PERSON_NAME_NAVIGATIONAL",
+        "note": "Surname-matched query. The live observer returns Hickory/Hicksville and unrelated Hicks practitioners for these; an OPEN verdict on them is noise, not open ground."
       }
     },
     {
@@ -1245,6 +1428,10 @@
         "cited_hosts": [],
         "observed_at": null,
         "model": null
+      },
+      "blue_ocean_eligible": {
+        "eligible": true,
+        "reason": "UNMEASURED"
       }
     },
     {
@@ -1270,6 +1457,11 @@
         "cited_hosts": [],
         "observed_at": null,
         "model": null
+      },
+      "blue_ocean_eligible": {
+        "eligible": false,
+        "reason": "BRAND_OR_PERSON_NAME_NAVIGATIONAL",
+        "note": "Surname-matched query. The live observer returns Hickory/Hicksville and unrelated Hicks practitioners for these; an OPEN verdict on them is noise, not open ground."
       }
     },
     {
@@ -1295,6 +1487,11 @@
         "cited_hosts": [],
         "observed_at": null,
         "model": null
+      },
+      "blue_ocean_eligible": {
+        "eligible": false,
+        "reason": "BRAND_OR_PERSON_NAME_NAVIGATIONAL",
+        "note": "Surname-matched query. The live observer returns Hickory/Hicksville and unrelated Hicks practitioners for these; an OPEN verdict on them is noise, not open ground."
       }
     },
     {
@@ -1320,6 +1517,11 @@
         "cited_hosts": [],
         "observed_at": null,
         "model": null
+      },
+      "blue_ocean_eligible": {
+        "eligible": false,
+        "reason": "BRAND_OR_PERSON_NAME_NAVIGATIONAL",
+        "note": "Surname-matched query. The live observer returns Hickory/Hicksville and unrelated Hicks practitioners for these; an OPEN verdict on them is noise, not open ground."
       }
     },
     {
@@ -1345,6 +1547,10 @@
         "cited_hosts": [],
         "observed_at": null,
         "model": null
+      },
+      "blue_ocean_eligible": {
+        "eligible": true,
+        "reason": "UNMEASURED"
       }
     },
     {
@@ -1370,6 +1576,58 @@
         "cited_hosts": [],
         "observed_at": null,
         "model": null
+      },
+      "blue_ocean_eligible": {
+        "eligible": true,
+        "reason": "UNMEASURED"
+      }
+    },
+    {
+      "query": "mental health clinic",
+      "intent": "observed",
+      "primaryPage": "/",
+      "status": "discovered_from_gsc",
+      "provenance": "google_search_console query/page pair, joined by scripts/queries/score_discovery_gap.mjs",
+      "gsc_measured": {
+        "impressions": 1,
+        "clicks": 0,
+        "average_position": 21,
+        "window_start": null,
+        "window_end": null,
+        "source": "google_search_console"
+      },
+      "lead_intent_tier": "T4_INFORMATIONAL",
+      "lead_intent_method": "regex_classifier_on_query_string, scripts/queries/score_discovery_gap.mjs",
+      "occupancy": {
+        "verdict": "HELD_BY_US",
+        "reason": "LIVE_WEB_SURFACING_OBSERVATION",
+        "openness_score": 0.389,
+        "platform_share": 0,
+        "institutional_share": 0.222,
+        "distinct_cited_hosts": 9,
+        "cited_hosts": [
+          "hicksconsulting.org",
+          "live-search.org",
+          "ucsd.libguides.com",
+          "guides.rasmussen.edu",
+          "clinicsforfree.com",
+          "searchenginejournal.com",
+          "thesearchguru.com",
+          "mansfieldtexas.gov",
+          "ahrefs.com"
+        ],
+        "cited_ours": [
+          "hicksconsulting.org"
+        ],
+        "observed_at": "2026-08-29T01:31:46.350Z",
+        "model": "openai/gpt-4o-mini",
+        "rank_verified": false,
+        "stale": true,
+        "stale_reason": "CARRIED_FORWARD_NO_OBSERVATION_IN_CURRENT_WINDOW"
+      },
+      "blue_ocean_eligible": {
+        "eligible": false,
+        "reason": "ALREADY_HELD_BY_US"
       }
     },
     {
@@ -1395,6 +1653,10 @@
         "cited_hosts": [],
         "observed_at": null,
         "model": null
+      },
+      "blue_ocean_eligible": {
+        "eligible": true,
+        "reason": "UNMEASURED"
       }
     },
     {
@@ -1420,6 +1682,10 @@
         "cited_hosts": [],
         "observed_at": null,
         "model": null
+      },
+      "blue_ocean_eligible": {
+        "eligible": true,
+        "reason": "UNMEASURED"
       }
     },
     {
@@ -1445,6 +1711,10 @@
         "cited_hosts": [],
         "observed_at": null,
         "model": null
+      },
+      "blue_ocean_eligible": {
+        "eligible": true,
+        "reason": "UNMEASURED"
       }
     },
     {
@@ -1470,6 +1740,10 @@
         "cited_hosts": [],
         "observed_at": null,
         "model": null
+      },
+      "blue_ocean_eligible": {
+        "eligible": true,
+        "reason": "UNMEASURED"
       }
     },
     {
@@ -1495,6 +1769,11 @@
         "cited_hosts": [],
         "observed_at": null,
         "model": null
+      },
+      "blue_ocean_eligible": {
+        "eligible": false,
+        "reason": "BRAND_OR_PERSON_NAME_NAVIGATIONAL",
+        "note": "Surname-matched query. The live observer returns Hickory/Hicksville and unrelated Hicks practitioners for these; an OPEN verdict on them is noise, not open ground."
       }
     },
     {
@@ -1511,6 +1790,10 @@
         "cited_hosts": [],
         "observed_at": null,
         "model": null
+      },
+      "blue_ocean_eligible": {
+        "eligible": true,
+        "reason": "UNMEASURED"
       }
     },
     {
@@ -1527,6 +1810,10 @@
         "cited_hosts": [],
         "observed_at": null,
         "model": null
+      },
+      "blue_ocean_eligible": {
+        "eligible": true,
+        "reason": "UNMEASURED"
       }
     },
     {
@@ -1543,6 +1830,10 @@
         "cited_hosts": [],
         "observed_at": null,
         "model": null
+      },
+      "blue_ocean_eligible": {
+        "eligible": true,
+        "reason": "UNMEASURED"
       }
     },
     {
@@ -1559,6 +1850,10 @@
         "cited_hosts": [],
         "observed_at": null,
         "model": null
+      },
+      "blue_ocean_eligible": {
+        "eligible": true,
+        "reason": "UNMEASURED"
       }
     },
     {
@@ -1575,6 +1870,10 @@
         "cited_hosts": [],
         "observed_at": null,
         "model": null
+      },
+      "blue_ocean_eligible": {
+        "eligible": true,
+        "reason": "UNMEASURED"
       }
     },
     {
@@ -1591,6 +1890,10 @@
         "cited_hosts": [],
         "observed_at": null,
         "model": null
+      },
+      "blue_ocean_eligible": {
+        "eligible": true,
+        "reason": "UNMEASURED"
       }
     },
     {
@@ -1607,16 +1910,30 @@
         "cited_hosts": [],
         "observed_at": null,
         "model": null
+      },
+      "blue_ocean_eligible": {
+        "eligible": true,
+        "reason": "UNMEASURED"
       }
     }
   ],
   "discovery_gap_pass": {
-    "at": "2026-08-29T01:35:49.096Z",
+    "at": "2026-08-29T14:43:56.091Z",
     "by": "scripts/queries/score_discovery_gap.mjs",
     "why": "The observer read a 7-query hand-written list while Search Console reported 46 queries that actually put this practice in front of someone. The measured list is now the target list, ordered so the observer spends its 25-query budget on the queries a client arrives through.",
     "expansion_sources": [
       "data/agency/gsc_snapshot.json (live Search Console snapshot, ?..?) - query/page pairs"
     ],
+    "blue_ocean_gate": {
+      "by": "scripts/lib/demand_titles.js#blueOceanEligibility, written to target_queries[].blue_ocean_eligible",
+      "why": "An OPEN occupancy verdict is a statement about WHO the observer cited, not about whether the citations were about this query. Surname-matched queries (\"hicks\", \"carol hicks\", \"kerry hicks\") and queries with no service or location anchor return Hickory PA/NC, Hicksville NY and unrelated practitioners; treating those as open ground is a false blue-ocean signal. Content generation reads blue_ocean_eligible; occupancy.verdict is left untouched.",
+      "ineligible_reasons": [
+        "BRAND_OR_PERSON_NAME_NAVIGATIONAL",
+        "NO_SERVICE_OR_LOCATION_ANCHOR",
+        "ALREADY_HELD_BY_US",
+        "EMPTY_QUERY"
+      ]
+    },
     "refused_sources": [
       "data/intake/normalized_query_signals.json - 151 RSS titles and subreddit names (\"/r/BlackWomens\", \"reddit.com: search results - ...\"). Topic signals, not queries anyone searched. The normalizer tags every one status \"candidate\" for exactly this reason.",
       "any modelled or estimated search volume - no live paid keyword source exists on this account."
@@ -1644,18 +1961,18 @@
       "not_measured": "search volume, keyword difficulty, organic rank. The observer says so itself: rankVerified is false on every observation."
     },
     "counts": {
-      "total_targets": 53,
-      "added_this_pass": 0,
+      "total_targets": 54,
+      "added_this_pass": 1,
       "with_openness_reading": 25,
       "lead_intent": {
         "T1_LOCAL_READY": 10,
-        "T4_INFORMATIONAL": 43
+        "T4_INFORMATIONAL": 44
       },
       "occupancy": {
         "OPEN": 8,
         "CONTESTED": 9,
         "HELD_BY_US": 8,
-        "UNMEASURED": 28
+        "UNMEASURED": 29
       }
     }
   }

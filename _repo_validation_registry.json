@@ -942,6 +942,20 @@
       "findingProtocol": "VALIDATION_FINDING",
       "enabled": true,
       "rationale": "Reports pre-publish coverage of the blocks an answer engine needs: a short-answer block, an h1 that carries the query, tables without empty cells, and one approved conversion path, plus coverage for checklist, comparison table, concrete numbers, named sources, FAQ and JSON-LD. STRONG_WARNING rather than HARD_FAIL while 7 llm-atlas machine-surface pages carry no approved conversion path; promote to HARD_FAIL at zero."
+    },
+    {
+      "id": "title-uniqueness",
+      "npmScript": "validate:title-uniqueness",
+      "entrypoint": "_ops/validators/validate_title_uniqueness_contract.js",
+      "severity": "HARD_FAIL",
+      "blocksRelease": true,
+      "group": "content-governance",
+      "owner": "site-operations",
+      "scope": "title uniqueness and stem-plus-suffix duplication across the content manifest, the brief candidates, the publish queue and the autonomy queue, plus the demand phrasing bank they are drawn from",
+      "ciInvocation": "MATRIX_ONLY",
+      "findingProtocol": "VALIDATION_FINDING",
+      "enabled": true,
+      "rationale": "On 2026-08-08, 54 pages were removed from the public sitemap and every one of the 54 mappings in reports/BING_INDEXATION_CONSOLIDATION_REPORT.json carries duplicateHtmlTitle: true. The mechanism was a parent title plus a rotating editorial suffix. This check proves no new title duplicates or extends another, that the frozen legacy exemption in data/admin/legacy_title_grandfather.json cannot grow, that the demand phrasing bank is still grounded in live query research, and that every title-producing generator goes through scripts/lib/demand_titles.js. It hard-fails if it examines zero items."
     }
   ]
 }

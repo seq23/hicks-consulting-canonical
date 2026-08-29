@@ -1,0 +1,251 @@
+{
+  "schemaVersion": "1.0.0",
+  "purpose": "The bank of real-world phrasings that generated drafts are titled from. Every title this repo produces for a new draft is DRAWN from this bank, never COMPOSED from a stem plus a suffix. One phrasing is consumed by at most one piece, ever.",
+  "why": "On 2026-08-08, 54 pages were removed from the public sitemap. Every one of the 54 mappings in reports/BING_INDEXATION_CONSOLIDATION_REPORT.json carries duplicateHtmlTitle: true. The defect was a parent title plus a rotating editorial suffix ('A Gentler Truth To Consider', 'What This Looks Like In Real Life', 'Next-Step Reflection'). This file exists so that mechanism cannot come back: there is no suffix to rotate, because there is no composition step.",
+  "provenanceRule": "Every family must name a live cluster id in data/intake/query_clusters.json or a live lead-intent tier in data/search/target_queries.json. _ops/validators/validate_title_uniqueness_contract.js hard-fails if a family points at research that no longer exists, so this bank cannot drift away from the pipeline that justifies it.",
+  "usageRule": "scripts/lib/demand_titles.js draws phrasings in research-ranked order and marks each one consumed against data/admin/content_manifest.json. When the bank is exhausted for every live family, generation STOPS with a named reason (DEMAND_POOL_EXHAUSTED) and the bank must be replenished from new research. It never falls back to a template.",
+  "families": {
+    "burnout_boundaries": {
+      "clusterId": "burnout_boundaries",
+      "groundedIn": [
+        "data/intake/query_clusters.json#burnout_boundaries",
+        "data/intake/normalized_query_signals.json tag:burnout",
+        "data/search/target_queries.json query:'burnout therapist Memphis'"
+      ],
+      "phrasings": [
+        { "form": "why", "title": "Why am I so tired all the time even when I sleep?" },
+        { "form": "why", "title": "Why do I feel guilty every time I say no?" },
+        { "form": "why", "title": "Why does setting a boundary make me feel like the bad guy?" },
+        { "form": "how", "title": "How do I stop saying yes when I already know I have nothing left?" },
+        { "form": "what", "title": "What does burnout actually feel like before it gets bad?" },
+        { "form": "why", "title": "Why am I dreading things I used to look forward to?" },
+        { "form": "complaint", "title": "I am the person everybody calls and I am running on empty" },
+        { "form": "how", "title": "How do I rest when resting makes me anxious?" },
+        { "form": "why", "title": "Why do I cry on the drive home and feel fine by the time I get there?" },
+        { "form": "what", "title": "What is the difference between being tired and being burned out?" },
+        { "form": "how", "title": "How do I tell my manager I am at my limit without sounding weak?" },
+        { "form": "why", "title": "Why does taking a day off make me feel worse?" },
+        { "form": "complaint", "title": "I keep waiting for a break that never actually comes" },
+        { "form": "how", "title": "How do I stop over-functioning for people who never asked me to?" },
+        { "form": "why", "title": "Why do I only notice how bad it got after the busy season ends?" },
+        { "form": "what", "title": "What happens if I keep ignoring how exhausted I am?" },
+        { "form": "how", "title": "How do I set a boundary with someone who does not respect the first one?" },
+        { "form": "why", "title": "Why do I feel responsible for everyone else's mood?" },
+        { "form": "complaint", "title": "Everyone thinks I have it together and I am barely holding on" },
+        { "form": "how", "title": "How long does it take to recover from burnout?" },
+        { "form": "why", "title": "Why does my body hurt when nothing is medically wrong?" },
+        { "form": "what", "title": "What do I do when I have no energy left for the people I love?" },
+        { "form": "how", "title": "How do I stop checking work email at midnight?" },
+        { "form": "why", "title": "Why do I get angry at small things and then feel ashamed about it?" },
+        { "form": "what", "title": "What does it mean if I feel nothing at all anymore?" },
+        { "form": "how", "title": "How do I take a real vacation without spending it worrying?" },
+        { "form": "why", "title": "Why am I so irritable with my family and so patient at work?" },
+        { "form": "complaint", "title": "I said yes again and I am already resenting it" },
+        { "form": "what", "title": "What is the first thing to drop when I am overcommitted?" },
+        { "form": "how", "title": "How do I know when to quit versus when to push through?" }
+      ]
+    },
+    "black_women_healing": {
+      "clusterId": "black_women_healing",
+      "groundedIn": [
+        "data/intake/query_clusters.json#black_women_healing",
+        "data/intake/normalized_query_signals.json tag:black_women",
+        "data/search/target_queries.json query:'black female therapist near me', 'therapy for high-achieving Black women Memphis'"
+      ],
+      "phrasings": [
+        { "form": "why", "title": "Why do I feel like I have to be strong for everybody?" },
+        { "form": "how", "title": "How do I find a Black woman therapist who actually gets it?" },
+        { "form": "what", "title": "What does strong Black woman fatigue actually look like?" },
+        { "form": "why", "title": "Why does asking for help feel like failing?" },
+        { "form": "complaint", "title": "I am the first one in my family to go to therapy and nobody understands" },
+        { "form": "how", "title": "How do I talk to my mother about therapy without her taking it personally?" },
+        { "form": "why", "title": "Why am I still exhausted after I finally got everything I worked for?" },
+        { "form": "what", "title": "What do I do when work praises my resilience instead of fixing the problem?" },
+        { "form": "how", "title": "How do I stop code-switching from following me home?" },
+        { "form": "why", "title": "Why do I feel guilty for wanting an easier life?" },
+        { "form": "complaint", "title": "I am tired of being the only one in the room and the one who has to explain it" },
+        { "form": "what", "title": "What does healing look like when survival is all I have practiced?" },
+        { "form": "how", "title": "How do I rest without feeling like I am letting my family down?" },
+        { "form": "why", "title": "Why does everyone bring me their problems and nobody asks about mine?" },
+        { "form": "what", "title": "What is racial battle fatigue and how do I know if I have it?" },
+        { "form": "how", "title": "How do I set boundaries with family who raised me to never have any?" },
+        { "form": "why", "title": "Why am I softer with strangers than I am with myself?" },
+        { "form": "complaint", "title": "I built the life I wanted and I still feel like I am performing" },
+        { "form": "what", "title": "What should I look for in a therapist who understands Black women?" },
+        { "form": "how", "title": "How do I grieve something my family never named out loud?" },
+        { "form": "why", "title": "Why do compliments about how strong I am make me want to disappear?" },
+        { "form": "what", "title": "What if I do not want to be the strong one anymore?" },
+        { "form": "how", "title": "How do I take up space at work without being called difficult?" },
+        { "form": "why", "title": "Why does joy feel unsafe to me?" },
+        { "form": "complaint", "title": "My friends call me the therapist of the group and I have nowhere to put my own stuff" }
+      ]
+    },
+    "workplace_emotional_intelligence": {
+      "clusterId": "workplace_emotional_intelligence",
+      "groundedIn": [
+        "data/intake/query_clusters.json#workplace_emotional_intelligence",
+        "data/intake/normalized_query_signals.json tag:workplace_emotional_intelligence",
+        "data/search/target_queries.json query:'memphis small business consulting', 'consultant mental health'"
+      ],
+      "phrasings": [
+        { "form": "how", "title": "How do I tell if my manager is gaslighting me or if I am overreacting?" },
+        { "form": "what", "title": "What do I say when a team member starts crying in a one-on-one?" },
+        { "form": "how", "title": "How do I bring up burnout on my team without it becoming an HR issue?" },
+        { "form": "why", "title": "Why does my team go quiet the second I ask for honest feedback?" },
+        { "form": "what", "title": "What is emotional labor at work and why is it never in the job description?" },
+        { "form": "how", "title": "How much does mental health training for a small team actually cost?" },
+        { "form": "what", "title": "What should be in a workplace mental health training that is not a lunch-and-learn?" },
+        { "form": "how", "title": "How do I support a grieving employee without overstepping?" },
+        { "form": "why", "title": "Why do my best people keep leaving right after a promotion?" },
+        { "form": "what", "title": "What do I do when the person burning out is me and I am the boss?" },
+        { "form": "how", "title": "How do I handle a high performer who is toxic to everyone around them?" },
+        { "form": "what", "title": "What does psychological safety look like in a team of eight?" },
+        { "form": "how", "title": "How do I run a hard conversation without either of us shutting down?" },
+        { "form": "why", "title": "Why does our engagement survey say we are fine when clearly we are not?" },
+        { "form": "what", "title": "What is the difference between an EAP and actual mental health support?" },
+        { "form": "how", "title": "How do I scope mental health training for an organization that has never done it?" },
+        { "form": "why", "title": "Why does every wellness initiative we launch quietly die in six weeks?" },
+        { "form": "complaint", "title": "My whole team is exhausted and leadership keeps calling it a capacity problem" },
+        { "form": "how", "title": "How do I give feedback to someone who cries every time?" },
+        { "form": "what", "title": "What do I do about a manager whose team keeps requesting transfers?" },
+        { "form": "how", "title": "How do I stop absorbing my team's stress and taking it home?" },
+        { "form": "what", "title": "What should leaders say the week after a layoff?" },
+        { "form": "why", "title": "Why do people agree in the meeting and disagree in the hallway?" },
+        { "form": "how", "title": "How do I measure whether emotional intelligence training actually worked?" },
+        { "form": "what", "title": "What does a manager owe an employee who discloses a mental health condition?" }
+      ]
+    },
+    "ai_digital_wellness": {
+      "clusterId": "ai_digital_wellness",
+      "groundedIn": [
+        "data/intake/query_clusters.json#ai_digital_wellness",
+        "data/intake/normalized_query_signals.json tag:ai_digital_wellness"
+      ],
+      "phrasings": [
+        { "form": "why", "title": "Why do I feel worse after an hour on my phone?" },
+        { "form": "how", "title": "How do I stop doomscrolling at two in the morning?" },
+        { "form": "what", "title": "What is AI anxiety and is it a real thing?" },
+        { "form": "why", "title": "Why does my job feel less secure every time I read the news?" },
+        { "form": "complaint", "title": "I use ChatGPT more than I talk to people and I am not sure that is fine" },
+        { "form": "how", "title": "How do I set a screen boundary that survives past Tuesday?" },
+        { "form": "what", "title": "What do I do when comparison on social media is wrecking my week?" },
+        { "form": "why", "title": "Why can I not sit still without reaching for my phone?" },
+        { "form": "how", "title": "How do I talk to my teenager about what they are seeing online?" },
+        { "form": "what", "title": "Is it okay to use an AI chatbot when I cannot afford a therapist?" },
+        { "form": "why", "title": "Why do I feel lonelier the more connected I am?" },
+        { "form": "how", "title": "How do I come back from a week of numbing out?" },
+        { "form": "what", "title": "What does digital overwhelm do to your nervous system?" },
+        { "form": "complaint", "title": "I deleted the app and reinstalled it the same night" },
+        { "form": "how", "title": "How do I stop checking my phone the second I wake up?" },
+        { "form": "why", "title": "Why does the news make me feel guilty for having a good day?" },
+        { "form": "what", "title": "What is the difference between taking a break and avoiding my life?" },
+        { "form": "how", "title": "How do I protect my attention when my job lives on Slack?" },
+        { "form": "why", "title": "Why do I keep reading things that make me feel awful?" },
+        { "form": "what", "title": "Can an AI tool tell me if I need therapy?" }
+      ]
+    },
+    "genz_millennial_mental_health": {
+      "clusterId": "genz_millennial_mental_health",
+      "groundedIn": [
+        "data/intake/query_clusters.json#genz_millennial_mental_health",
+        "data/intake/normalized_query_signals.json tag:genz_millennial"
+      ],
+      "phrasings": [
+        { "form": "what", "title": "Am I traumatized or was that just a hard year?" },
+        { "form": "why", "title": "Why does everyone online seem to know their attachment style except me?" },
+        { "form": "what", "title": "What does it mean to be high-functioning and still not okay?" },
+        { "form": "how", "title": "How do I know if I actually need therapy or just need sleep?" },
+        { "form": "why", "title": "Why do I keep calling everything a trauma response?" },
+        { "form": "complaint", "title": "I have the language for all of it and none of it has made me feel better" },
+        { "form": "how", "title": "How do I talk to my parents about therapy when they think it is dramatic?" },
+        { "form": "what", "title": "Is going no contact the answer or am I avoiding a hard conversation?" },
+        { "form": "why", "title": "Why does everyone my age seem burned out at thirty?" },
+        { "form": "how", "title": "How do I make friends again after a few years of just working?" },
+        { "form": "what", "title": "What is the difference between a boundary and a wall?" },
+        { "form": "why", "title": "Why do I feel behind when I am objectively doing fine?" },
+        { "form": "how", "title": "How do I start therapy when I do not know what my problem is?" },
+        { "form": "what", "title": "Is my therapist supposed to give me advice?" },
+        { "form": "complaint", "title": "I can explain exactly what is wrong with me and I still cannot change it" }
+      ]
+    },
+    "faith_centered_support": {
+      "clusterId": "faith_centered_support",
+      "groundedIn": [
+        "data/intake/query_clusters.json#faith_centered_support",
+        "data/search/target_queries.json query:'christian therapists near me'"
+      ],
+      "phrasings": [
+        { "form": "how", "title": "How do I find a therapist who will not dismiss my faith?" },
+        { "form": "why", "title": "Why do I feel guilty for needing therapy when I have prayed about it?" },
+        { "form": "what", "title": "Can I go to therapy and still trust God?" },
+        { "form": "how", "title": "How do I tell my church I am seeing a counselor?" },
+        { "form": "what", "title": "What do I do when the advice at church is just to have more faith?" },
+        { "form": "why", "title": "Why does my faith feel far away in the middle of a hard season?" },
+        { "form": "complaint", "title": "I was told to give it to God and I am still carrying all of it" },
+        { "form": "how", "title": "How do I grieve when everyone keeps telling me it was God's plan?" },
+        { "form": "what", "title": "What is the difference between pastoral counseling and licensed therapy?" },
+        { "form": "how", "title": "How do I forgive someone who has not apologized?" }
+      ]
+    },
+    "general_emotional_wellness": {
+      "clusterId": "general_emotional_wellness",
+      "groundedIn": [
+        "data/intake/query_clusters.json#general_emotional_wellness",
+        "data/intake/normalized_query_signals.json tag:general_emotional_wellness"
+      ],
+      "phrasings": [
+        { "form": "why", "title": "Why do I feel numb instead of sad?" },
+        { "form": "how", "title": "How do I stop replaying a conversation from three days ago?" },
+        { "form": "what", "title": "What do I do when I wake up already anxious?" },
+        { "form": "why", "title": "Why do I fall apart on Sunday nights?" },
+        { "form": "how", "title": "How do I ask for help without making it a whole thing?" },
+        { "form": "what", "title": "What is the difference between stress and anxiety?" },
+        { "form": "why", "title": "Why do I keep apologizing for things that are not my fault?" },
+        { "form": "how", "title": "How do I get through a day when I cannot get out of bed?" },
+        { "form": "complaint", "title": "Nothing is actually wrong and I still feel terrible" },
+        { "form": "what", "title": "What does a panic attack actually feel like?" },
+        { "form": "how", "title": "How do I stop overthinking every text I send?" },
+        { "form": "why", "title": "Why does my chest get tight before a meeting?" },
+        { "form": "what", "title": "What do I do when a big life change knocks me sideways?" },
+        { "form": "how", "title": "How do I rebuild trust in myself after a bad decision?" },
+        { "form": "why", "title": "Why do I shut down instead of arguing?" },
+        { "form": "what", "title": "What helps when grief shows up months later out of nowhere?" },
+        { "form": "how", "title": "How do I stop dreading Monday by Saturday afternoon?" },
+        { "form": "why", "title": "Why am I fine all day and wrecked at night?" },
+        { "form": "complaint", "title": "I keep telling people I am fine and I do not know why" },
+        { "form": "what", "title": "What do I do when my partner says I am always distant?" },
+        { "form": "how", "title": "How do I know if it is depression or just a rough patch?" },
+        { "form": "why", "title": "Why do I feel worse right after I finally relax?" },
+        { "form": "what", "title": "What should I do the week before a big life transition?" },
+        { "form": "how", "title": "How do I stop minimizing my own feelings?" },
+        { "form": "why", "title": "Why does everything feel harder than it should right now?" },
+        { "form": "what", "title": "What is the first session of therapy actually like?" },
+        { "form": "how", "title": "How do I handle a holiday with family that drains me?" },
+        { "form": "why", "title": "Why do I get defensive when someone asks if I am okay?" },
+        { "form": "what", "title": "What do I do when I am angry and have nowhere to put it?" },
+        { "form": "how", "title": "How do I stop carrying other people's emergencies?" }
+      ]
+    },
+    "local_access": {
+      "leadIntentTiers": ["T1_LOCAL_READY", "T2_COST_IN_MARKET", "T3_SELECTION"],
+      "groundedIn": [
+        "data/search/target_queries.json lead_intent_tier T1/T2/T3 with gsc_measured.impressions > 0",
+        "data/search/free_wins.json"
+      ],
+      "phrasings": [
+        { "form": "how", "title": "How do I find a therapist near me who is actually taking new clients?" },
+        { "form": "what", "title": "How much does a therapy session cost without insurance?" },
+        { "form": "how", "title": "How do I pick between three therapists who all look fine online?" },
+        { "form": "what", "title": "Does online therapy work as well as sitting in the room?" },
+        { "form": "how", "title": "What do I ask a therapist on the first phone call?" },
+        { "form": "what", "title": "Can I see a Tennessee therapist if I live in Olive Branch?" },
+        { "form": "how", "title": "How do I switch therapists without it being awkward?" },
+        { "form": "what", "title": "What are the red flags that a therapist is not a good fit?" },
+        { "form": "how", "title": "How soon can I actually get an appointment?" },
+        { "form": "what", "title": "Do I need therapy, coaching, or something else entirely?" },
+        { "form": "how", "title": "How does virtual therapy work if I do not have a private room at home?" },
+        { "form": "what", "title": "What happens if I cannot afford weekly sessions?" }
+      ]
+    }
+  }
+}

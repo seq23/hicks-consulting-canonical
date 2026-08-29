@@ -5,15 +5,15 @@
       "id": "brief-ai_digital_wellness-whitepaper",
       "clusterId": "ai_digital_wellness",
       "clusterTitle": "AI, social media, and digital emotional overload",
-      "query": "AI, social media, and digital emotional overload",
+      "query": "Why do I feel worse after an hour on my phone?",
       "contentType": "white-papers",
-      "title": "AI, social media, and digital emotional overload: what people are asking and what to do next",
-      "suggestedRoute": "/resources/white-papers/ai-social-media-and-digital-emotional-overload-whitepaper/",
+      "title": "Why do I feel worse after an hour on my phone?",
+      "suggestedRoute": "/resources/white-papers/why-do-i-feel-worse-after-an-hour-on-my-phone/",
       "targetWords": 2500,
       "minimumWords": 2000,
       "sourceSignalCount": 13,
       "score": 100,
-      "llmPrompt": "Create a humanized whitepaper draft for Hicks Consulting.\nTitle: AI, social media, and digital emotional overload: what people are asking and what to do next\nCluster: AI, social media, and digital emotional overload\nMinimum words: 2000. Target words: 2500.\nWrite in a warm, grounded, specific voice. Do not diagnose. Do not guarantee outcomes. Do not invent client stories.\nInclude these sections: Executive summary; Context and signal source; Core problem; Audience analysis; Framework; Implementation guidance; Risks and limitations; Recommended next steps.\nApproved conversion path after value is delivered: https://monika-hicks.clientsecure.me/",
+      "llmPrompt": "Create a humanized whitepaper draft for Hicks Consulting.\nTitle: Why do I feel worse after an hour on my phone?\nThis page exists to answer exactly one real question a person typed or said: \"Why do I feel worse after an hour on my phone?\". Answer THAT question, in that person's words, in the first two sentences. Do not broaden it into a general overview of AI, social media, and digital emotional overload; other pages on this site cover other questions in the same area and this one must not overlap them.\nMinimum words: 2000. Target words: 2500.\nWrite in a warm, grounded, specific voice. Do not diagnose. Do not guarantee outcomes. Do not invent client stories.\nInclude these sections: Executive summary; The question people are actually asking; What the evidence shows; Audience analysis; Framework; Implementation guidance; Risks and limitations; Recommended next steps.\nApproved conversion path after value is delivered: https://monika-hicks.clientsecure.me/",
       "humanizationChecklist": [
         "Use plain human language rather than generic therapy marketing copy.",
         "Vary sentence rhythm and paragraph length.",
@@ -25,8 +25,8 @@
       "conversionPath": "https://monika-hicks.clientsecure.me/",
       "sections": [
         "Executive summary",
-        "Context and signal source",
-        "Core problem",
+        "The question people are actually asking",
+        "What the evidence shows",
         "Audience analysis",
         "Framework",
         "Implementation guidance",
@@ -175,9 +175,15 @@
           "to": "FAILED_RETRYABLE",
           "at": "2026-08-28T18:49:43.291Z",
           "reason": "Candidate did not satisfy the final Safe Harbor gate."
+        },
+        {
+          "from": "FAILED_RETRYABLE",
+          "to": "FAILED_RETRYABLE",
+          "at": "2026-08-29T14:45:30.271Z",
+          "reason": "Title reconciled to the upstream demand-grounded brief before any page existed."
         }
       ],
-      "updatedAt": "2026-08-28T18:49:43.291Z",
+      "updatedAt": "2026-08-29T14:45:30.271Z",
       "providerGate": null,
       "findings": [
         {
@@ -186,21 +192,40 @@
           "message": "Draft has 717 words; minimum is 2000."
         }
       ],
-      "attempts": 2
+      "attempts": 2,
+      "demandPhrasing": {
+        "source": "config/demand_phrasings.json",
+        "familyId": "ai_digital_wellness",
+        "clusterId": null,
+        "form": "why",
+        "groundedIn": [
+          "data/intake/query_clusters.json#ai_digital_wellness",
+          "data/intake/normalized_query_signals.json tag:ai_digital_wellness"
+        ],
+        "evidence": [
+          {
+            "kind": "cluster",
+            "id": "ai_digital_wellness",
+            "title": "AI, social media, and digital emotional overload",
+            "score": 100,
+            "queryCount": 13
+          }
+        ]
+      }
     },
     {
       "id": "brief-black_women_healing-article",
       "clusterId": "black_women_healing",
       "clusterTitle": "Black women healing beyond survival",
-      "query": "Black women healing beyond survival",
+      "query": "Why do I feel like I have to be strong for everybody?",
       "contentType": "articles",
-      "title": "Black women healing beyond survival: what people are asking and what to do next",
-      "suggestedRoute": "/resources/articles/black-women-healing-beyond-survival-article/",
+      "title": "Why do I feel like I have to be strong for everybody?",
+      "suggestedRoute": "/resources/articles/why-do-i-feel-like-i-have-to-be-strong-for-everybody/",
       "targetWords": 1200,
       "minimumWords": 960,
       "sourceSignalCount": 3,
       "score": 60,
-      "llmPrompt": "Create a humanized article draft for Hicks Consulting.\nTitle: Black women healing beyond survival: what people are asking and what to do next\nCluster: Black women healing beyond survival\nMinimum words: 960. Target words: 1200.\nWrite in a warm, grounded, specific voice. Do not diagnose. Do not guarantee outcomes. Do not invent client stories.\nInclude these sections: Short answer; Who this is for; Why this matters; Decision criteria; Common mistakes; Next step.\nApproved conversion path after value is delivered: https://monika-hicks.clientsecure.me/",
+      "llmPrompt": "Create a humanized article draft for Hicks Consulting.\nTitle: Why do I feel like I have to be strong for everybody?\nThis page exists to answer exactly one real question a person typed or said: \"Why do I feel like I have to be strong for everybody?\". Answer THAT question, in that person's words, in the first two sentences. Do not broaden it into a general overview of Black women healing beyond survival; other pages on this site cover other questions in the same area and this one must not overlap them.\nMinimum words: 960. Target words: 1200.\nWrite in a warm, grounded, specific voice. Do not diagnose. Do not guarantee outcomes. Do not invent client stories.\nInclude these sections: Short answer; What is actually happening; Why it shows up this way; What it is not; What usually makes it worse; What helps; When to get support.\nApproved conversion path after value is delivered: https://monika-hicks.clientsecure.me/",
       "humanizationChecklist": [
         "Use plain human language rather than generic therapy marketing copy.",
         "Vary sentence rhythm and paragraph length.",
@@ -212,11 +237,12 @@
       "conversionPath": "https://monika-hicks.clientsecure.me/",
       "sections": [
         "Short answer",
-        "Who this is for",
-        "Why this matters",
-        "Decision criteria",
-        "Common mistakes",
-        "Next step"
+        "What is actually happening",
+        "Why it shows up this way",
+        "What it is not",
+        "What usually makes it worse",
+        "What helps",
+        "When to get support"
       ],
       "state": "FAILED_RETRYABLE",
       "routineApprovalRequired": true,
@@ -360,9 +386,15 @@
           "to": "FAILED_RETRYABLE",
           "at": "2026-08-28T18:49:43.291Z",
           "reason": "Candidate did not satisfy the final Safe Harbor gate."
+        },
+        {
+          "from": "FAILED_RETRYABLE",
+          "to": "FAILED_RETRYABLE",
+          "at": "2026-08-29T14:45:30.271Z",
+          "reason": "Title reconciled to the upstream demand-grounded brief before any page existed."
         }
       ],
-      "updatedAt": "2026-08-28T18:49:43.291Z",
+      "updatedAt": "2026-08-29T14:45:30.271Z",
       "providerGate": null,
       "findings": [
         {
@@ -371,21 +403,41 @@
           "message": "Draft has 382 words; minimum is 960."
         }
       ],
-      "attempts": 2
+      "attempts": 2,
+      "demandPhrasing": {
+        "source": "config/demand_phrasings.json",
+        "familyId": "black_women_healing",
+        "clusterId": null,
+        "form": "why",
+        "groundedIn": [
+          "data/intake/query_clusters.json#black_women_healing",
+          "data/intake/normalized_query_signals.json tag:black_women",
+          "data/search/target_queries.json query:'black female therapist near me', 'therapy for high-achieving Black women Memphis'"
+        ],
+        "evidence": [
+          {
+            "kind": "cluster",
+            "id": "black_women_healing",
+            "title": "Black women healing beyond survival",
+            "score": 60,
+            "queryCount": 3
+          }
+        ]
+      }
     },
     {
       "id": "brief-burnout_boundaries-insight",
       "clusterId": "burnout_boundaries",
       "clusterTitle": "Burnout, boundaries, and over-functioning",
-      "query": "Burnout, boundaries, and over-functioning",
+      "query": "Why am I so tired all the time even when I sleep?",
       "contentType": "insights",
-      "title": "Burnout, boundaries, and over-functioning: what people are asking and what to do next",
-      "suggestedRoute": "/resources/insights/burnout-boundaries-and-over-functioning-insight/",
+      "title": "Why am I so tired all the time even when I sleep?",
+      "suggestedRoute": "/resources/insights/why-am-i-so-tired-all-the-time-even-when-i-sleep/",
       "targetWords": 900,
       "minimumWords": 720,
       "sourceSignalCount": 2,
       "score": 40,
-      "llmPrompt": "Create a humanized insight draft for Hicks Consulting.\nTitle: Burnout, boundaries, and over-functioning: what people are asking and what to do next\nCluster: Burnout, boundaries, and over-functioning\nMinimum words: 720. Target words: 900.\nWrite in a warm, grounded, specific voice. Do not diagnose. Do not guarantee outcomes. Do not invent client stories.\nInclude these sections: Short answer; Who this is for; Why this matters; Decision criteria; Common mistakes; Next step.\nApproved conversion path after value is delivered: https://monika-hicks.clientsecure.me/",
+      "llmPrompt": "Create a humanized insight draft for Hicks Consulting.\nTitle: Why am I so tired all the time even when I sleep?\nThis page exists to answer exactly one real question a person typed or said: \"Why am I so tired all the time even when I sleep?\". Answer THAT question, in that person's words, in the first two sentences. Do not broaden it into a general overview of Burnout, boundaries, and over-functioning; other pages on this site cover other questions in the same area and this one must not overlap them.\nMinimum words: 720. Target words: 900.\nWrite in a warm, grounded, specific voice. Do not diagnose. Do not guarantee outcomes. Do not invent client stories.\nInclude these sections: Short answer; What is actually happening; Why it shows up this way; What it is not; What usually makes it worse; What helps; When to get support.\nApproved conversion path after value is delivered: https://monika-hicks.clientsecure.me/",
       "humanizationChecklist": [
         "Use plain human language rather than generic therapy marketing copy.",
         "Vary sentence rhythm and paragraph length.",
@@ -397,11 +449,12 @@
       "conversionPath": "https://monika-hicks.clientsecure.me/",
       "sections": [
         "Short answer",
-        "Who this is for",
-        "Why this matters",
-        "Decision criteria",
-        "Common mistakes",
-        "Next step"
+        "What is actually happening",
+        "Why it shows up this way",
+        "What it is not",
+        "What usually makes it worse",
+        "What helps",
+        "When to get support"
       ],
       "state": "DISCOVERED",
       "routineApprovalRequired": true,
@@ -419,22 +472,49 @@
           "to": "DISCOVERED",
           "at": "2026-08-06T22:28:33.983Z",
           "reason": "Migrated from the prior approval-only generated queue."
+        },
+        {
+          "from": "DISCOVERED",
+          "to": "DISCOVERED",
+          "at": "2026-08-29T14:45:30.271Z",
+          "reason": "Title reconciled to the upstream demand-grounded brief before any page existed."
         }
-      ]
+      ],
+      "demandPhrasing": {
+        "source": "config/demand_phrasings.json",
+        "familyId": "burnout_boundaries",
+        "clusterId": null,
+        "form": "why",
+        "groundedIn": [
+          "data/intake/query_clusters.json#burnout_boundaries",
+          "data/intake/normalized_query_signals.json tag:burnout",
+          "data/search/target_queries.json query:'burnout therapist Memphis'"
+        ],
+        "evidence": [
+          {
+            "kind": "cluster",
+            "id": "burnout_boundaries",
+            "title": "Burnout, boundaries, and over-functioning",
+            "score": 40,
+            "queryCount": 2
+          }
+        ]
+      },
+      "updatedAt": "2026-08-29T14:45:30.271Z"
     },
     {
       "id": "brief-genz_millennial_mental_health-faq",
       "clusterId": "genz_millennial_mental_health",
       "clusterTitle": "Gen Z and millennial mental health language",
-      "query": "Gen Z and millennial mental health language",
+      "query": "Why does everyone online seem to know their attachment style except me?",
       "contentType": "insights",
-      "title": "Gen Z and millennial mental health language: what people are asking and what to do next",
-      "suggestedRoute": "/resources/insights/gen-z-and-millennial-mental-health-language-faq/",
+      "title": "Why does everyone online seem to know their attachment style except me?",
+      "suggestedRoute": "/resources/insights/why-does-everyone-online-seem-to-know-their-attachment-style-except-me/",
       "targetWords": 700,
       "minimumWords": 560,
       "sourceSignalCount": 2,
       "score": 40,
-      "llmPrompt": "Create a humanized faq draft for Hicks Consulting.\nTitle: Gen Z and millennial mental health language: what people are asking and what to do next\nCluster: Gen Z and millennial mental health language\nMinimum words: 560. Target words: 700.\nWrite in a warm, grounded, specific voice. Do not diagnose. Do not guarantee outcomes. Do not invent client stories.\nInclude these sections: Short answer; Question set; Decision criteria; When to seek support; Approved next step.\nApproved conversion path after value is delivered: https://monika-hicks.clientsecure.me/",
+      "llmPrompt": "Create a humanized faq draft for Hicks Consulting.\nTitle: Why does everyone online seem to know their attachment style except me?\nThis page exists to answer exactly one real question a person typed or said: \"Why does everyone online seem to know their attachment style except me?\". Answer THAT question, in that person's words, in the first two sentences. Do not broaden it into a general overview of Gen Z and millennial mental health language; other pages on this site cover other questions in the same area and this one must not overlap them.\nMinimum words: 560. Target words: 700.\nWrite in a warm, grounded, specific voice. Do not diagnose. Do not guarantee outcomes. Do not invent client stories.\nInclude these sections: Short answer; What is actually happening; Why it shows up this way; What it is not; What usually makes it worse; What helps; When to get support.\nApproved conversion path after value is delivered: https://monika-hicks.clientsecure.me/",
       "humanizationChecklist": [
         "Use plain human language rather than generic therapy marketing copy.",
         "Vary sentence rhythm and paragraph length.",
@@ -446,10 +526,12 @@
       "conversionPath": "https://monika-hicks.clientsecure.me/",
       "sections": [
         "Short answer",
-        "Question set",
-        "Decision criteria",
-        "When to seek support",
-        "Approved next step"
+        "What is actually happening",
+        "Why it shows up this way",
+        "What it is not",
+        "What usually makes it worse",
+        "What helps",
+        "When to get support"
       ],
       "state": "DISCOVERED",
       "routineApprovalRequired": true,
@@ -467,22 +549,48 @@
           "to": "DISCOVERED",
           "at": "2026-08-06T22:28:33.983Z",
           "reason": "Migrated from the prior approval-only generated queue."
+        },
+        {
+          "from": "DISCOVERED",
+          "to": "DISCOVERED",
+          "at": "2026-08-29T14:45:30.271Z",
+          "reason": "Title reconciled to the upstream demand-grounded brief before any page existed."
         }
-      ]
+      ],
+      "demandPhrasing": {
+        "source": "config/demand_phrasings.json",
+        "familyId": "genz_millennial_mental_health",
+        "clusterId": null,
+        "form": "why",
+        "groundedIn": [
+          "data/intake/query_clusters.json#genz_millennial_mental_health",
+          "data/intake/normalized_query_signals.json tag:genz_millennial"
+        ],
+        "evidence": [
+          {
+            "kind": "cluster",
+            "id": "genz_millennial_mental_health",
+            "title": "Gen Z and millennial mental health language",
+            "score": 20,
+            "queryCount": 1
+          }
+        ]
+      },
+      "updatedAt": "2026-08-29T14:45:30.271Z"
     },
     {
       "id": "brief-general_emotional_wellness-fanout",
       "clusterId": "general_emotional_wellness",
       "clusterTitle": "General emotional wellness and intentional living",
-      "query": "General emotional wellness and intentional living",
+      "query": "How do I stop replaying a conversation from three days ago?",
       "contentType": "insights",
-      "title": "General emotional wellness and intentional living: what people are asking and what to do next",
-      "suggestedRoute": "/resources/insights/general-emotional-wellness-and-intentional-living-fanout/",
+      "title": "How do I stop replaying a conversation from three days ago?",
+      "suggestedRoute": "/resources/insights/how-do-i-stop-replaying-a-conversation-from-three-days-ago/",
       "targetWords": 900,
       "minimumWords": 720,
       "sourceSignalCount": 1,
       "score": 20,
-      "llmPrompt": "Create a humanized fanout draft for Hicks Consulting.\nTitle: General emotional wellness and intentional living: what people are asking and what to do next\nCluster: General emotional wellness and intentional living\nMinimum words: 720. Target words: 900.\nWrite in a warm, grounded, specific voice. Do not diagnose. Do not guarantee outcomes. Do not invent client stories.\nInclude these sections: Short answer; Who this is for; Why this matters; Decision criteria; Common mistakes; Next step.\nApproved conversion path after value is delivered: https://monika-hicks.clientsecure.me/",
+      "llmPrompt": "Create a humanized fanout draft for Hicks Consulting.\nTitle: How do I stop replaying a conversation from three days ago?\nThis page exists to answer exactly one real question a person typed or said: \"How do I stop replaying a conversation from three days ago?\". Answer THAT question, in that person's words, in the first two sentences. Do not broaden it into a general overview of General emotional wellness and intentional living; other pages on this site cover other questions in the same area and this one must not overlap them.\nMinimum words: 720. Target words: 900.\nWrite in a warm, grounded, specific voice. Do not diagnose. Do not guarantee outcomes. Do not invent client stories.\nInclude these sections: Short answer; Before you start; Step by step; What to say; What gets in the way; How to tell it is working; Next step.\nApproved conversion path after value is delivered: https://monika-hicks.clientsecure.me/",
       "humanizationChecklist": [
         "Use plain human language rather than generic therapy marketing copy.",
         "Vary sentence rhythm and paragraph length.",
@@ -494,10 +602,11 @@
       "conversionPath": "https://monika-hicks.clientsecure.me/",
       "sections": [
         "Short answer",
-        "Who this is for",
-        "Why this matters",
-        "Decision criteria",
-        "Common mistakes",
+        "Before you start",
+        "Step by step",
+        "What to say",
+        "What gets in the way",
+        "How to tell it is working",
         "Next step"
       ],
       "state": "DISCOVERED",
@@ -516,22 +625,48 @@
           "to": "DISCOVERED",
           "at": "2026-08-06T22:28:33.983Z",
           "reason": "Migrated from the prior approval-only generated queue."
+        },
+        {
+          "from": "DISCOVERED",
+          "to": "DISCOVERED",
+          "at": "2026-08-29T14:45:30.271Z",
+          "reason": "Title reconciled to the upstream demand-grounded brief before any page existed."
         }
-      ]
+      ],
+      "demandPhrasing": {
+        "source": "config/demand_phrasings.json",
+        "familyId": "general_emotional_wellness",
+        "clusterId": null,
+        "form": "how",
+        "groundedIn": [
+          "data/intake/query_clusters.json#general_emotional_wellness",
+          "data/intake/normalized_query_signals.json tag:general_emotional_wellness"
+        ],
+        "evidence": [
+          {
+            "kind": "cluster",
+            "id": "general_emotional_wellness",
+            "title": "General emotional wellness and intentional living",
+            "score": 100,
+            "queryCount": 125
+          }
+        ]
+      },
+      "updatedAt": "2026-08-29T14:45:30.271Z"
     },
     {
       "id": "brief-burnout_boundaries-whitepaper",
       "clusterId": "burnout_boundaries",
       "clusterTitle": "Burnout, boundaries, and over-functioning",
-      "query": "Burnout, boundaries, and over-functioning",
+      "query": "Why do I feel guilty every time I say no?",
       "contentType": "white-papers",
-      "title": "Burnout, boundaries, and over-functioning: what people are asking and what to do next",
-      "suggestedRoute": "/resources/white-papers/burnout-boundaries-and-over-functioning-whitepaper/",
+      "title": "Why do I feel guilty every time I say no?",
+      "suggestedRoute": "/resources/white-papers/why-do-i-feel-guilty-every-time-i-say-no/",
       "targetWords": 2500,
       "minimumWords": 2000,
       "sourceSignalCount": 5,
       "score": 100,
-      "llmPrompt": "Create a humanized whitepaper draft for Hicks Consulting.\nTitle: Burnout, boundaries, and over-functioning: what people are asking and what to do next\nCluster: Burnout, boundaries, and over-functioning\nMinimum words: 2000. Target words: 2500.\nWrite in a warm, grounded, specific voice. Do not diagnose. Do not guarantee outcomes. Do not invent client stories.\nInclude these sections: Executive summary; Context and signal source; Core problem; Audience analysis; Framework; Implementation guidance; Risks and limitations; Recommended next steps.\nApproved conversion path after value is delivered: https://monika-hicks.clientsecure.me/",
+      "llmPrompt": "Create a humanized whitepaper draft for Hicks Consulting.\nTitle: Why do I feel guilty every time I say no?\nThis page exists to answer exactly one real question a person typed or said: \"Why do I feel guilty every time I say no?\". Answer THAT question, in that person's words, in the first two sentences. Do not broaden it into a general overview of Burnout, boundaries, and over-functioning; other pages on this site cover other questions in the same area and this one must not overlap them.\nMinimum words: 2000. Target words: 2500.\nWrite in a warm, grounded, specific voice. Do not diagnose. Do not guarantee outcomes. Do not invent client stories.\nInclude these sections: Executive summary; The question people are actually asking; What the evidence shows; Audience analysis; Framework; Implementation guidance; Risks and limitations; Recommended next steps.\nApproved conversion path after value is delivered: https://monika-hicks.clientsecure.me/",
       "humanizationChecklist": [
         "Use plain human language rather than generic therapy marketing copy.",
         "Vary sentence rhythm and paragraph length.",
@@ -543,8 +678,8 @@
       "conversionPath": "https://monika-hicks.clientsecure.me/",
       "sections": [
         "Executive summary",
-        "Context and signal source",
-        "Core problem",
+        "The question people are actually asking",
+        "What the evidence shows",
         "Audience analysis",
         "Framework",
         "Implementation guidance",
@@ -567,22 +702,49 @@
           "to": "DISCOVERED",
           "at": "2026-08-06T22:28:33.983Z",
           "reason": "Migrated from the prior approval-only generated queue."
+        },
+        {
+          "from": "DISCOVERED",
+          "to": "DISCOVERED",
+          "at": "2026-08-29T14:45:30.271Z",
+          "reason": "Title reconciled to the upstream demand-grounded brief before any page existed."
         }
-      ]
+      ],
+      "demandPhrasing": {
+        "source": "config/demand_phrasings.json",
+        "familyId": "burnout_boundaries",
+        "clusterId": null,
+        "form": "why",
+        "groundedIn": [
+          "data/intake/query_clusters.json#burnout_boundaries",
+          "data/intake/normalized_query_signals.json tag:burnout",
+          "data/search/target_queries.json query:'burnout therapist Memphis'"
+        ],
+        "evidence": [
+          {
+            "kind": "cluster",
+            "id": "burnout_boundaries",
+            "title": "Burnout, boundaries, and over-functioning",
+            "score": 40,
+            "queryCount": 2
+          }
+        ]
+      },
+      "updatedAt": "2026-08-29T14:45:30.271Z"
     },
     {
       "id": "brief-ai_digital_wellness-guide",
       "clusterId": "ai_digital_wellness",
       "clusterTitle": "AI, social media, and digital emotional overload",
-      "query": "AI, social media, and digital emotional overload",
+      "query": "How do I stop doomscrolling at two in the morning?",
       "contentType": "guides",
-      "title": "AI, social media, and digital emotional overload: what people are asking and what to do next",
-      "suggestedRoute": "/resources/guides/ai-social-media-and-digital-emotional-overload-guide/",
+      "title": "How do I stop doomscrolling at two in the morning?",
+      "suggestedRoute": "/resources/guides/how-do-i-stop-doomscrolling-at-two-in-the-morning/",
       "targetWords": 1400,
       "minimumWords": 1120,
       "sourceSignalCount": 10,
       "score": 100,
-      "llmPrompt": "Create a humanized guide draft for Hicks Consulting.\nTitle: AI, social media, and digital emotional overload: what people are asking and what to do next\nCluster: AI, social media, and digital emotional overload\nMinimum words: 1120. Target words: 1400.\nWrite in a warm, grounded, specific voice. Do not diagnose. Do not guarantee outcomes. Do not invent client stories.\nInclude these sections: Short answer; Who this is for; Why this matters; Decision criteria; Common mistakes; Next step.\nApproved conversion path after value is delivered: https://monika-hicks.clientsecure.me/",
+      "llmPrompt": "Create a humanized guide draft for Hicks Consulting.\nTitle: How do I stop doomscrolling at two in the morning?\nThis page exists to answer exactly one real question a person typed or said: \"How do I stop doomscrolling at two in the morning?\". Answer THAT question, in that person's words, in the first two sentences. Do not broaden it into a general overview of AI, social media, and digital emotional overload; other pages on this site cover other questions in the same area and this one must not overlap them.\nMinimum words: 1120. Target words: 1400.\nWrite in a warm, grounded, specific voice. Do not diagnose. Do not guarantee outcomes. Do not invent client stories.\nInclude these sections: Short answer; Before you start; Step by step; What to say; What gets in the way; How to tell it is working; Next step.\nApproved conversion path after value is delivered: https://monika-hicks.clientsecure.me/",
       "humanizationChecklist": [
         "Use plain human language rather than generic therapy marketing copy.",
         "Vary sentence rhythm and paragraph length.",
@@ -594,10 +756,11 @@
       "conversionPath": "https://monika-hicks.clientsecure.me/",
       "sections": [
         "Short answer",
-        "Who this is for",
-        "Why this matters",
-        "Decision criteria",
-        "Common mistakes",
+        "Before you start",
+        "Step by step",
+        "What to say",
+        "What gets in the way",
+        "How to tell it is working",
         "Next step"
       ],
       "state": "DISCOVERED",
@@ -616,22 +779,48 @@
           "to": "DISCOVERED",
           "at": "2026-08-06T22:28:33.983Z",
           "reason": "Migrated from the prior approval-only generated queue."
+        },
+        {
+          "from": "DISCOVERED",
+          "to": "DISCOVERED",
+          "at": "2026-08-29T14:45:30.271Z",
+          "reason": "Title reconciled to the upstream demand-grounded brief before any page existed."
         }
-      ]
+      ],
+      "demandPhrasing": {
+        "source": "config/demand_phrasings.json",
+        "familyId": "ai_digital_wellness",
+        "clusterId": null,
+        "form": "how",
+        "groundedIn": [
+          "data/intake/query_clusters.json#ai_digital_wellness",
+          "data/intake/normalized_query_signals.json tag:ai_digital_wellness"
+        ],
+        "evidence": [
+          {
+            "kind": "cluster",
+            "id": "ai_digital_wellness",
+            "title": "AI, social media, and digital emotional overload",
+            "score": 100,
+            "queryCount": 13
+          }
+        ]
+      },
+      "updatedAt": "2026-08-29T14:45:30.271Z"
     },
     {
       "id": "brief-workplace_emotional_intelligence-guide",
       "clusterId": "workplace_emotional_intelligence",
       "clusterTitle": "Workplace emotional intelligence and mental health training",
-      "query": "Workplace emotional intelligence and mental health training",
+      "query": "How do I tell if my manager is gaslighting me or if I am overreacting?",
       "contentType": "guides",
-      "title": "Workplace emotional intelligence and mental health training: what people are asking and what to do next",
-      "suggestedRoute": "/resources/guides/workplace-emotional-intelligence-and-mental-health-training-guide/",
+      "title": "How do I tell if my manager is gaslighting me or if I am overreacting?",
+      "suggestedRoute": "/resources/guides/how-do-i-tell-if-my-manager-is-gaslighting-me-or-if-i-am-overreacting/",
       "targetWords": 1400,
       "minimumWords": 1120,
       "sourceSignalCount": 7,
       "score": 100,
-      "llmPrompt": "Create a humanized guide draft for Hicks Consulting.\nTitle: Workplace emotional intelligence and mental health training: what people are asking and what to do next\nCluster: Workplace emotional intelligence and mental health training\nMinimum words: 1120. Target words: 1400.\nWrite in a warm, grounded, specific voice. Do not diagnose. Do not guarantee outcomes. Do not invent client stories.\nInclude these sections: Short answer; Who this is for; Why this matters; Decision criteria; Common mistakes; Next step.\nApproved conversion path after value is delivered: https://monika-hicks.clientsecure.me/",
+      "llmPrompt": "Create a humanized guide draft for Hicks Consulting.\nTitle: How do I tell if my manager is gaslighting me or if I am overreacting?\nThis page exists to answer exactly one real question a person typed or said: \"How do I tell if my manager is gaslighting me or if I am overreacting?\". Answer THAT question, in that person's words, in the first two sentences. Do not broaden it into a general overview of Workplace emotional intelligence and mental health training; other pages on this site cover other questions in the same area and this one must not overlap them.\nMinimum words: 1120. Target words: 1400.\nWrite in a warm, grounded, specific voice. Do not diagnose. Do not guarantee outcomes. Do not invent client stories.\nInclude these sections: Short answer; Before you start; Step by step; What to say; What gets in the way; How to tell it is working; Next step.\nApproved conversion path after value is delivered: https://monika-hicks.clientsecure.me/",
       "humanizationChecklist": [
         "Use plain human language rather than generic therapy marketing copy.",
         "Vary sentence rhythm and paragraph length.",
@@ -643,10 +832,11 @@
       "conversionPath": "https://monika-hicks.clientsecure.me/",
       "sections": [
         "Short answer",
-        "Who this is for",
-        "Why this matters",
-        "Decision criteria",
-        "Common mistakes",
+        "Before you start",
+        "Step by step",
+        "What to say",
+        "What gets in the way",
+        "How to tell it is working",
         "Next step"
       ],
       "state": "DISCOVERED",
@@ -665,22 +855,49 @@
           "to": "DISCOVERED",
           "at": "2026-08-06T22:28:33.983Z",
           "reason": "Migrated from the prior approval-only generated queue."
+        },
+        {
+          "from": "DISCOVERED",
+          "to": "DISCOVERED",
+          "at": "2026-08-29T14:45:30.271Z",
+          "reason": "Title reconciled to the upstream demand-grounded brief before any page existed."
         }
-      ]
+      ],
+      "demandPhrasing": {
+        "source": "config/demand_phrasings.json",
+        "familyId": "workplace_emotional_intelligence",
+        "clusterId": null,
+        "form": "how",
+        "groundedIn": [
+          "data/intake/query_clusters.json#workplace_emotional_intelligence",
+          "data/intake/normalized_query_signals.json tag:workplace_emotional_intelligence",
+          "data/search/target_queries.json query:'memphis small business consulting', 'consultant mental health'"
+        ],
+        "evidence": [
+          {
+            "kind": "cluster",
+            "id": "workplace_emotional_intelligence",
+            "title": "Workplace emotional intelligence and mental health training",
+            "score": 100,
+            "queryCount": 7
+          }
+        ]
+      },
+      "updatedAt": "2026-08-29T14:45:30.271Z"
     },
     {
       "id": "brief-general_emotional_wellness-guide",
       "clusterId": "general_emotional_wellness",
       "clusterTitle": "General emotional wellness and intentional living",
-      "query": "General emotional wellness and intentional living",
+      "query": "Why do I feel numb instead of sad?",
       "contentType": "guides",
-      "title": "General emotional wellness and intentional living: what people are asking and what to do next",
-      "suggestedRoute": "/resources/guides/general-emotional-wellness-and-intentional-living-guide/",
+      "title": "Why do I feel numb instead of sad?",
+      "suggestedRoute": "/resources/guides/why-do-i-feel-numb-instead-of-sad/",
       "targetWords": 1400,
       "minimumWords": 1120,
       "sourceSignalCount": 49,
       "score": 100,
-      "llmPrompt": "Create a humanized guide draft for Hicks Consulting.\nTitle: General emotional wellness and intentional living: what people are asking and what to do next\nCluster: General emotional wellness and intentional living\nMinimum words: 1120. Target words: 1400.\nWrite in a warm, grounded, specific voice. Do not diagnose. Do not guarantee outcomes. Do not invent client stories.\nInclude these sections: Short answer; Who this is for; Why this matters; Decision criteria; Common mistakes; Next step.\nApproved conversion path after value is delivered: https://monika-hicks.clientsecure.me/",
+      "llmPrompt": "Create a humanized guide draft for Hicks Consulting.\nTitle: Why do I feel numb instead of sad?\nThis page exists to answer exactly one real question a person typed or said: \"Why do I feel numb instead of sad?\". Answer THAT question, in that person's words, in the first two sentences. Do not broaden it into a general overview of General emotional wellness and intentional living; other pages on this site cover other questions in the same area and this one must not overlap them.\nMinimum words: 1120. Target words: 1400.\nWrite in a warm, grounded, specific voice. Do not diagnose. Do not guarantee outcomes. Do not invent client stories.\nInclude these sections: Short answer; What is actually happening; Why it shows up this way; What it is not; What usually makes it worse; What helps; When to get support.\nApproved conversion path after value is delivered: https://monika-hicks.clientsecure.me/",
       "humanizationChecklist": [
         "Use plain human language rather than generic therapy marketing copy.",
         "Vary sentence rhythm and paragraph length.",
@@ -692,11 +909,12 @@
       "conversionPath": "https://monika-hicks.clientsecure.me/",
       "sections": [
         "Short answer",
-        "Who this is for",
-        "Why this matters",
-        "Decision criteria",
-        "Common mistakes",
-        "Next step"
+        "What is actually happening",
+        "Why it shows up this way",
+        "What it is not",
+        "What usually makes it worse",
+        "What helps",
+        "When to get support"
       ],
       "state": "DISCOVERED",
       "routineApprovalRequired": true,
@@ -714,22 +932,48 @@
           "to": "DISCOVERED",
           "at": "2026-08-06T22:28:33.983Z",
           "reason": "Migrated from the prior approval-only generated queue."
+        },
+        {
+          "from": "DISCOVERED",
+          "to": "DISCOVERED",
+          "at": "2026-08-29T14:45:30.271Z",
+          "reason": "Title reconciled to the upstream demand-grounded brief before any page existed."
         }
-      ]
+      ],
+      "demandPhrasing": {
+        "source": "config/demand_phrasings.json",
+        "familyId": "general_emotional_wellness",
+        "clusterId": null,
+        "form": "why",
+        "groundedIn": [
+          "data/intake/query_clusters.json#general_emotional_wellness",
+          "data/intake/normalized_query_signals.json tag:general_emotional_wellness"
+        ],
+        "evidence": [
+          {
+            "kind": "cluster",
+            "id": "general_emotional_wellness",
+            "title": "General emotional wellness and intentional living",
+            "score": 100,
+            "queryCount": 125
+          }
+        ]
+      },
+      "updatedAt": "2026-08-29T14:45:30.271Z"
     },
     {
       "id": "brief-black_women_healing-insight",
       "clusterId": "black_women_healing",
       "clusterTitle": "Black women healing beyond survival",
-      "query": "Black women healing beyond survival",
+      "query": "How do I find a Black woman therapist who actually gets it?",
       "contentType": "insights",
-      "title": "Black women healing beyond survival: what people are asking and what to do next",
-      "suggestedRoute": "/resources/insights/black-women-healing-beyond-survival-insight/",
+      "title": "How do I find a Black woman therapist who actually gets it?",
+      "suggestedRoute": "/resources/insights/how-do-i-find-a-black-woman-therapist-who-actually-gets-it/",
       "targetWords": 900,
       "minimumWords": 720,
       "sourceSignalCount": 2,
       "score": 40,
-      "llmPrompt": "Create a humanized insight draft for Hicks Consulting.\nTitle: Black women healing beyond survival: what people are asking and what to do next\nCluster: Black women healing beyond survival\nMinimum words: 720. Target words: 900.\nWrite in a warm, grounded, specific voice. Do not diagnose. Do not guarantee outcomes. Do not invent client stories.\nInclude these sections: Short answer; Who this is for; Why this matters; Decision criteria; Common mistakes; Next step.\nApproved conversion path after value is delivered: https://monika-hicks.clientsecure.me/",
+      "llmPrompt": "Create a humanized insight draft for Hicks Consulting.\nTitle: How do I find a Black woman therapist who actually gets it?\nThis page exists to answer exactly one real question a person typed or said: \"How do I find a Black woman therapist who actually gets it?\". Answer THAT question, in that person's words, in the first two sentences. Do not broaden it into a general overview of Black women healing beyond survival; other pages on this site cover other questions in the same area and this one must not overlap them.\nMinimum words: 720. Target words: 900.\nWrite in a warm, grounded, specific voice. Do not diagnose. Do not guarantee outcomes. Do not invent client stories.\nInclude these sections: Short answer; Before you start; Step by step; What to say; What gets in the way; How to tell it is working; Next step.\nApproved conversion path after value is delivered: https://monika-hicks.clientsecure.me/",
       "humanizationChecklist": [
         "Use plain human language rather than generic therapy marketing copy.",
         "Vary sentence rhythm and paragraph length.",
@@ -741,10 +985,11 @@
       "conversionPath": "https://monika-hicks.clientsecure.me/",
       "sections": [
         "Short answer",
-        "Who this is for",
-        "Why this matters",
-        "Decision criteria",
-        "Common mistakes",
+        "Before you start",
+        "Step by step",
+        "What to say",
+        "What gets in the way",
+        "How to tell it is working",
         "Next step"
       ],
       "state": "DISCOVERED",
@@ -763,22 +1008,49 @@
           "to": "DISCOVERED",
           "at": "2026-08-06T22:28:33.983Z",
           "reason": "Migrated from the prior approval-only generated queue."
+        },
+        {
+          "from": "DISCOVERED",
+          "to": "DISCOVERED",
+          "at": "2026-08-29T14:45:30.271Z",
+          "reason": "Title reconciled to the upstream demand-grounded brief before any page existed."
         }
-      ]
+      ],
+      "demandPhrasing": {
+        "source": "config/demand_phrasings.json",
+        "familyId": "black_women_healing",
+        "clusterId": null,
+        "form": "how",
+        "groundedIn": [
+          "data/intake/query_clusters.json#black_women_healing",
+          "data/intake/normalized_query_signals.json tag:black_women",
+          "data/search/target_queries.json query:'black female therapist near me', 'therapy for high-achieving Black women Memphis'"
+        ],
+        "evidence": [
+          {
+            "kind": "cluster",
+            "id": "black_women_healing",
+            "title": "Black women healing beyond survival",
+            "score": 60,
+            "queryCount": 3
+          }
+        ]
+      },
+      "updatedAt": "2026-08-29T14:45:30.271Z"
     },
     {
       "id": "brief-genz_millennial_mental_health-whitepaper",
       "clusterId": "genz_millennial_mental_health",
       "clusterTitle": "Gen Z and millennial mental health language",
-      "query": "Gen Z and millennial mental health language",
+      "query": "Am I traumatized or was that just a hard year?",
       "contentType": "white-papers",
-      "title": "Gen Z and millennial mental health language: what people are asking and what to do next",
-      "suggestedRoute": "/resources/white-papers/gen-z-and-millennial-mental-health-language-whitepaper/",
+      "title": "Am I traumatized or was that just a hard year?",
+      "suggestedRoute": "/resources/white-papers/am-i-traumatized-or-was-that-just-a-hard-year/",
       "targetWords": 2500,
       "minimumWords": 2000,
       "sourceSignalCount": 1,
       "score": 20,
-      "llmPrompt": "Create a humanized whitepaper draft for Hicks Consulting.\nTitle: Gen Z and millennial mental health language: what people are asking and what to do next\nCluster: Gen Z and millennial mental health language\nMinimum words: 2000. Target words: 2500.\nWrite in a warm, grounded, specific voice. Do not diagnose. Do not guarantee outcomes. Do not invent client stories.\nInclude these sections: Executive summary; Context and signal source; Core problem; Audience analysis; Framework; Implementation guidance; Risks and limitations; Recommended next steps.\nApproved conversion path after value is delivered: https://monika-hicks.clientsecure.me/",
+      "llmPrompt": "Create a humanized whitepaper draft for Hicks Consulting.\nTitle: Am I traumatized or was that just a hard year?\nThis page exists to answer exactly one real question a person typed or said: \"Am I traumatized or was that just a hard year?\". Answer THAT question, in that person's words, in the first two sentences. Do not broaden it into a general overview of Gen Z and millennial mental health language; other pages on this site cover other questions in the same area and this one must not overlap them.\nMinimum words: 2000. Target words: 2500.\nWrite in a warm, grounded, specific voice. Do not diagnose. Do not guarantee outcomes. Do not invent client stories.\nInclude these sections: Executive summary; The question people are actually asking; What the evidence shows; Audience analysis; Framework; Implementation guidance; Risks and limitations; Recommended next steps.\nApproved conversion path after value is delivered: https://monika-hicks.clientsecure.me/",
       "humanizationChecklist": [
         "Use plain human language rather than generic therapy marketing copy.",
         "Vary sentence rhythm and paragraph length.",
@@ -790,8 +1062,8 @@
       "conversionPath": "https://monika-hicks.clientsecure.me/",
       "sections": [
         "Executive summary",
-        "Context and signal source",
-        "Core problem",
+        "The question people are actually asking",
+        "What the evidence shows",
         "Audience analysis",
         "Framework",
         "Implementation guidance",
@@ -814,22 +1086,48 @@
           "to": "DISCOVERED",
           "at": "2026-08-06T22:28:33.983Z",
           "reason": "Migrated from the prior approval-only generated queue."
+        },
+        {
+          "from": "DISCOVERED",
+          "to": "DISCOVERED",
+          "at": "2026-08-29T14:45:30.271Z",
+          "reason": "Title reconciled to the upstream demand-grounded brief before any page existed."
         }
-      ]
+      ],
+      "demandPhrasing": {
+        "source": "config/demand_phrasings.json",
+        "familyId": "genz_millennial_mental_health",
+        "clusterId": null,
+        "form": "what",
+        "groundedIn": [
+          "data/intake/query_clusters.json#genz_millennial_mental_health",
+          "data/intake/normalized_query_signals.json tag:genz_millennial"
+        ],
+        "evidence": [
+          {
+            "kind": "cluster",
+            "id": "genz_millennial_mental_health",
+            "title": "Gen Z and millennial mental health language",
+            "score": 20,
+            "queryCount": 1
+          }
+        ]
+      },
+      "updatedAt": "2026-08-29T14:45:30.271Z"
     },
     {
       "id": "brief-genz_millennial_mental_health-fanout",
       "clusterId": "genz_millennial_mental_health",
       "clusterTitle": "Gen Z and millennial mental health language",
-      "query": "Gen Z and millennial mental health language",
+      "query": "What does it mean to be high-functioning and still not okay?",
       "contentType": "insights",
-      "title": "Gen Z and millennial mental health language: what people are asking and what to do next",
-      "suggestedRoute": "/resources/insights/gen-z-and-millennial-mental-health-language-fanout/",
+      "title": "What does it mean to be high-functioning and still not okay?",
+      "suggestedRoute": "/resources/insights/what-does-it-mean-to-be-high-functioning-and-still-not-okay/",
       "targetWords": 900,
       "minimumWords": 720,
       "sourceSignalCount": 1,
       "score": 20,
-      "llmPrompt": "Create a humanized fanout draft for Hicks Consulting.\nTitle: Gen Z and millennial mental health language: what people are asking and what to do next\nCluster: Gen Z and millennial mental health language\nMinimum words: 720. Target words: 900.\nWrite in a warm, grounded, specific voice. Do not diagnose. Do not guarantee outcomes. Do not invent client stories.\nInclude these sections: Short answer; Who this is for; Why this matters; Decision criteria; Common mistakes; Next step.\nApproved conversion path after value is delivered: https://monika-hicks.clientsecure.me/",
+      "llmPrompt": "Create a humanized fanout draft for Hicks Consulting.\nTitle: What does it mean to be high-functioning and still not okay?\nThis page exists to answer exactly one real question a person typed or said: \"What does it mean to be high-functioning and still not okay?\". Answer THAT question, in that person's words, in the first two sentences. Do not broaden it into a general overview of Gen Z and millennial mental health language; other pages on this site cover other questions in the same area and this one must not overlap them.\nMinimum words: 720. Target words: 900.\nWrite in a warm, grounded, specific voice. Do not diagnose. Do not guarantee outcomes. Do not invent client stories.\nInclude these sections: Short answer; Who this is for; What it looks like; How to tell the difference; Common mistakes; What to do next; When to seek support.\nApproved conversion path after value is delivered: https://monika-hicks.clientsecure.me/",
       "humanizationChecklist": [
         "Use plain human language rather than generic therapy marketing copy.",
         "Vary sentence rhythm and paragraph length.",
@@ -842,10 +1140,11 @@
       "sections": [
         "Short answer",
         "Who this is for",
-        "Why this matters",
-        "Decision criteria",
+        "What it looks like",
+        "How to tell the difference",
         "Common mistakes",
-        "Next step"
+        "What to do next",
+        "When to seek support"
       ],
       "state": "DISCOVERED",
       "routineApprovalRequired": true,
@@ -863,22 +1162,48 @@
           "to": "DISCOVERED",
           "at": "2026-08-06T22:28:33.983Z",
           "reason": "Migrated from the prior approval-only generated queue."
+        },
+        {
+          "from": "DISCOVERED",
+          "to": "DISCOVERED",
+          "at": "2026-08-29T14:45:30.271Z",
+          "reason": "Title reconciled to the upstream demand-grounded brief before any page existed."
         }
-      ]
+      ],
+      "demandPhrasing": {
+        "source": "config/demand_phrasings.json",
+        "familyId": "genz_millennial_mental_health",
+        "clusterId": null,
+        "form": "what",
+        "groundedIn": [
+          "data/intake/query_clusters.json#genz_millennial_mental_health",
+          "data/intake/normalized_query_signals.json tag:genz_millennial"
+        ],
+        "evidence": [
+          {
+            "kind": "cluster",
+            "id": "genz_millennial_mental_health",
+            "title": "Gen Z and millennial mental health language",
+            "score": 20,
+            "queryCount": 1
+          }
+        ]
+      },
+      "updatedAt": "2026-08-29T14:45:30.271Z"
     },
     {
       "id": "brief-burnout_boundaries-article",
       "clusterId": "burnout_boundaries",
       "clusterTitle": "Burnout, boundaries, and over-functioning",
-      "query": "Burnout, boundaries, and over-functioning",
+      "query": "Why does setting a boundary make me feel like the bad guy?",
       "contentType": "articles",
-      "title": "Burnout, boundaries, and over-functioning: what people are asking and what to do next",
-      "suggestedRoute": "/resources/articles/burnout-boundaries-and-over-functioning-article/",
+      "title": "Why does setting a boundary make me feel like the bad guy?",
+      "suggestedRoute": "/resources/articles/why-does-setting-a-boundary-make-me-feel-like-the-bad-guy/",
       "targetWords": 1200,
       "minimumWords": 960,
       "sourceSignalCount": 3,
       "score": 60,
-      "llmPrompt": "Create a humanized article draft for Hicks Consulting.\nTitle: Burnout, boundaries, and over-functioning: what people are asking and what to do next\nCluster: Burnout, boundaries, and over-functioning\nMinimum words: 960. Target words: 1200.\nWrite in a warm, grounded, specific voice. Do not diagnose. Do not guarantee outcomes. Do not invent client stories.\nInclude these sections: Short answer; Who this is for; Why this matters; Decision criteria; Common mistakes; Next step.\nApproved conversion path after value is delivered: https://monika-hicks.clientsecure.me/",
+      "llmPrompt": "Create a humanized article draft for Hicks Consulting.\nTitle: Why does setting a boundary make me feel like the bad guy?\nThis page exists to answer exactly one real question a person typed or said: \"Why does setting a boundary make me feel like the bad guy?\". Answer THAT question, in that person's words, in the first two sentences. Do not broaden it into a general overview of Burnout, boundaries, and over-functioning; other pages on this site cover other questions in the same area and this one must not overlap them.\nMinimum words: 960. Target words: 1200.\nWrite in a warm, grounded, specific voice. Do not diagnose. Do not guarantee outcomes. Do not invent client stories.\nInclude these sections: Short answer; What is actually happening; Why it shows up this way; What it is not; What usually makes it worse; What helps; When to get support.\nApproved conversion path after value is delivered: https://monika-hicks.clientsecure.me/",
       "humanizationChecklist": [
         "Use plain human language rather than generic therapy marketing copy.",
         "Vary sentence rhythm and paragraph length.",
@@ -890,11 +1215,12 @@
       "conversionPath": "https://monika-hicks.clientsecure.me/",
       "sections": [
         "Short answer",
-        "Who this is for",
-        "Why this matters",
-        "Decision criteria",
-        "Common mistakes",
-        "Next step"
+        "What is actually happening",
+        "Why it shows up this way",
+        "What it is not",
+        "What usually makes it worse",
+        "What helps",
+        "When to get support"
       ],
       "state": "DISCOVERED",
       "routineApprovalRequired": true,
@@ -912,22 +1238,49 @@
           "to": "DISCOVERED",
           "at": "2026-08-06T22:28:33.983Z",
           "reason": "Migrated from the prior approval-only generated queue."
+        },
+        {
+          "from": "DISCOVERED",
+          "to": "DISCOVERED",
+          "at": "2026-08-29T14:45:30.271Z",
+          "reason": "Title reconciled to the upstream demand-grounded brief before any page existed."
         }
-      ]
+      ],
+      "demandPhrasing": {
+        "source": "config/demand_phrasings.json",
+        "familyId": "burnout_boundaries",
+        "clusterId": null,
+        "form": "why",
+        "groundedIn": [
+          "data/intake/query_clusters.json#burnout_boundaries",
+          "data/intake/normalized_query_signals.json tag:burnout",
+          "data/search/target_queries.json query:'burnout therapist Memphis'"
+        ],
+        "evidence": [
+          {
+            "kind": "cluster",
+            "id": "burnout_boundaries",
+            "title": "Burnout, boundaries, and over-functioning",
+            "score": 40,
+            "queryCount": 2
+          }
+        ]
+      },
+      "updatedAt": "2026-08-29T14:45:30.271Z"
     },
     {
       "id": "brief-faith_centered_support-article",
       "clusterId": "faith_centered_support",
       "clusterTitle": "Faith-centered emotional support",
-      "query": "Faith-centered emotional support",
+      "query": "How do I find a therapist who will not dismiss my faith?",
       "contentType": "articles",
-      "title": "Faith-centered emotional support: what people are asking and what to do next",
-      "suggestedRoute": "/resources/articles/faith-centered-emotional-support-article/",
+      "title": "How do I find a therapist who will not dismiss my faith?",
+      "suggestedRoute": "/resources/articles/how-do-i-find-a-therapist-who-will-not-dismiss-my-faith/",
       "targetWords": 1200,
       "minimumWords": 960,
       "sourceSignalCount": 1,
       "score": 20,
-      "llmPrompt": "Create a humanized article draft for Hicks Consulting.\nTitle: Faith-centered emotional support: what people are asking and what to do next\nCluster: Faith-centered emotional support\nMinimum words: 960. Target words: 1200.\nWrite in a warm, grounded, specific voice. Do not diagnose. Do not guarantee outcomes. Do not invent client stories.\nInclude these sections: Short answer; Who this is for; Why this matters; Decision criteria; Common mistakes; Next step.\nApproved conversion path after value is delivered: https://monika-hicks.clientsecure.me/",
+      "llmPrompt": "Create a humanized article draft for Hicks Consulting.\nTitle: How do I find a therapist who will not dismiss my faith?\nThis page exists to answer exactly one real question a person typed or said: \"How do I find a therapist who will not dismiss my faith?\". Answer THAT question, in that person's words, in the first two sentences. Do not broaden it into a general overview of Faith-centered emotional support; other pages on this site cover other questions in the same area and this one must not overlap them.\nMinimum words: 960. Target words: 1200.\nWrite in a warm, grounded, specific voice. Do not diagnose. Do not guarantee outcomes. Do not invent client stories.\nInclude these sections: Short answer; Before you start; Step by step; What to say; What gets in the way; How to tell it is working; Next step.\nApproved conversion path after value is delivered: https://monika-hicks.clientsecure.me/",
       "humanizationChecklist": [
         "Use plain human language rather than generic therapy marketing copy.",
         "Vary sentence rhythm and paragraph length.",
@@ -939,10 +1292,11 @@
       "conversionPath": "https://monika-hicks.clientsecure.me/",
       "sections": [
         "Short answer",
-        "Who this is for",
-        "Why this matters",
-        "Decision criteria",
-        "Common mistakes",
+        "Before you start",
+        "Step by step",
+        "What to say",
+        "What gets in the way",
+        "How to tell it is working",
         "Next step"
       ],
       "state": "DISCOVERED",
@@ -961,22 +1315,48 @@
           "to": "DISCOVERED",
           "at": "2026-08-06T22:28:33.983Z",
           "reason": "Migrated from the prior approval-only generated queue."
+        },
+        {
+          "from": "DISCOVERED",
+          "to": "DISCOVERED",
+          "at": "2026-08-29T14:45:30.271Z",
+          "reason": "Title reconciled to the upstream demand-grounded brief before any page existed."
         }
-      ]
+      ],
+      "demandPhrasing": {
+        "source": "config/demand_phrasings.json",
+        "familyId": "faith_centered_support",
+        "clusterId": null,
+        "form": "how",
+        "groundedIn": [
+          "data/intake/query_clusters.json#faith_centered_support",
+          "data/search/target_queries.json query:'christian therapists near me'"
+        ],
+        "evidence": [
+          {
+            "kind": "cluster",
+            "id": "faith_centered_support",
+            "title": "Faith-centered emotional support",
+            "score": 0,
+            "queryCount": 0
+          }
+        ]
+      },
+      "updatedAt": "2026-08-29T14:45:30.271Z"
     },
     {
       "id": "brief-black_women_healing-guide",
       "clusterId": "black_women_healing",
       "clusterTitle": "Black women healing beyond survival",
-      "query": "Black women healing beyond survival",
+      "query": "What does strong Black woman fatigue actually look like?",
       "contentType": "guides",
-      "title": "Black women healing beyond survival: what people are asking and what to do next",
-      "suggestedRoute": "/resources/guides/black-women-healing-beyond-survival-guide/",
+      "title": "What does strong Black woman fatigue actually look like?",
+      "suggestedRoute": "/resources/guides/what-does-strong-black-woman-fatigue-actually-look-like/",
       "targetWords": 1400,
       "minimumWords": 1120,
       "sourceSignalCount": 4,
       "score": 80,
-      "llmPrompt": "Create a humanized guide draft for Hicks Consulting.\nTitle: Black women healing beyond survival: what people are asking and what to do next\nCluster: Black women healing beyond survival\nMinimum words: 1120. Target words: 1400.\nWrite in a warm, grounded, specific voice. Do not diagnose. Do not guarantee outcomes. Do not invent client stories.\nInclude these sections: Short answer; Who this is for; Why this matters; Decision criteria; Common mistakes; Next step.\nApproved conversion path after value is delivered: https://monika-hicks.clientsecure.me/",
+      "llmPrompt": "Create a humanized guide draft for Hicks Consulting.\nTitle: What does strong Black woman fatigue actually look like?\nThis page exists to answer exactly one real question a person typed or said: \"What does strong Black woman fatigue actually look like?\". Answer THAT question, in that person's words, in the first two sentences. Do not broaden it into a general overview of Black women healing beyond survival; other pages on this site cover other questions in the same area and this one must not overlap them.\nMinimum words: 1120. Target words: 1400.\nWrite in a warm, grounded, specific voice. Do not diagnose. Do not guarantee outcomes. Do not invent client stories.\nInclude these sections: Short answer; Who this is for; What it looks like; How to tell the difference; Common mistakes; What to do next; When to seek support.\nApproved conversion path after value is delivered: https://monika-hicks.clientsecure.me/",
       "humanizationChecklist": [
         "Use plain human language rather than generic therapy marketing copy.",
         "Vary sentence rhythm and paragraph length.",
@@ -989,10 +1369,11 @@
       "sections": [
         "Short answer",
         "Who this is for",
-        "Why this matters",
-        "Decision criteria",
+        "What it looks like",
+        "How to tell the difference",
         "Common mistakes",
-        "Next step"
+        "What to do next",
+        "When to seek support"
       ],
       "state": "DISCOVERED",
       "routineApprovalRequired": true,
@@ -1008,8 +1389,35 @@
           "to": "DISCOVERED",
           "at": "2026-08-18T14:52:54.006Z",
           "reason": "Migrated from the prior approval-only generated queue."
+        },
+        {
+          "from": "DISCOVERED",
+          "to": "DISCOVERED",
+          "at": "2026-08-29T14:45:30.271Z",
+          "reason": "Title reconciled to the upstream demand-grounded brief before any page existed."
         }
-      ]
+      ],
+      "demandPhrasing": {
+        "source": "config/demand_phrasings.json",
+        "familyId": "black_women_healing",
+        "clusterId": null,
+        "form": "what",
+        "groundedIn": [
+          "data/intake/query_clusters.json#black_women_healing",
+          "data/intake/normalized_query_signals.json tag:black_women",
+          "data/search/target_queries.json query:'black female therapist near me', 'therapy for high-achieving Black women Memphis'"
+        ],
+        "evidence": [
+          {
+            "kind": "cluster",
+            "id": "black_women_healing",
+            "title": "Black women healing beyond survival",
+            "score": 60,
+            "queryCount": 3
+          }
+        ]
+      },
+      "updatedAt": "2026-08-29T14:45:30.271Z"
     }
   ]
 }
