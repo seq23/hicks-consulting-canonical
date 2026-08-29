@@ -14,6 +14,11 @@ const sha = (file) => crypto.createHash('sha256').update(fs.readFileSync(file)).
 
 try {
   copyDir('scripts/autonomy', 'scripts/autonomy');
+  // run_cycle enforces title uniqueness through scripts/lib/demand_titles.js, so
+  // the isolated fixture must carry it or the cycle cannot start.
+  copyDir('scripts/lib', 'scripts/lib');
+  fs.mkdirSync(path.join(temp, 'config'), { recursive: true });
+  fs.cpSync(path.join(repo, 'config/demand_phrasings.json'), path.join(temp, 'config/demand_phrasings.json'));
   copyDir('pages/resources/articles/why-high-achieving-women-sometimes-mistake-numbness-for-maturity', 'pages/resources/articles/why-high-achieving-women-sometimes-mistake-numbness-for-maturity');
 
   writeJson('data/system/runtime_contract.json', { runtimeMode: 'FULL_SAFE_AUTONOMY' });
@@ -141,6 +146,9 @@ function buildRepairSandbox({ minimumWords, repairPayload }) {
   const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'hicks-repair-e2e-'));
   const put = (rel, value) => { const full = path.join(dir, rel); fs.mkdirSync(path.dirname(full), { recursive: true }); fs.writeFileSync(full, `${JSON.stringify(value, null, 2)}\n`); };
   fs.cpSync(path.join(repo, 'scripts/autonomy'), path.join(dir, 'scripts/autonomy'), { recursive: true });
+  fs.cpSync(path.join(repo, 'scripts/lib'), path.join(dir, 'scripts/lib'), { recursive: true });
+  fs.mkdirSync(path.join(dir, 'config'), { recursive: true });
+  fs.cpSync(path.join(repo, 'config/demand_phrasings.json'), path.join(dir, 'config/demand_phrasings.json'));
   fs.cpSync(path.join(repo, 'pages/resources/articles/why-high-achieving-women-sometimes-mistake-numbness-for-maturity'), path.join(dir, 'pages/resources/articles/why-high-achieving-women-sometimes-mistake-numbness-for-maturity'), { recursive: true });
   put('data/system/runtime_contract.json', { runtimeMode: 'FULL_SAFE_AUTONOMY' });
   put('data/system/config.json', { canonicalDomain: 'https://www.hicksconsulting.org/' });

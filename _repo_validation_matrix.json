@@ -70,7 +70,8 @@
         "search-intelligence-contract",
         "no-internal-instruction-leak",
         "no-empty-table-cells",
-        "content-pattern-contract"
+        "content-pattern-contract",
+        "title-uniqueness"
       ]
     },
     "ingestion": {
@@ -192,7 +193,8 @@
         "build-determinism",
         "autonomy-cycle-e2e",
         "self-heal-e2e",
-        "search-intelligence-contract"
+        "search-intelligence-contract",
+        "title-uniqueness"
       ]
     }
   },

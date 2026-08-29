@@ -52,6 +52,7 @@
  */
 import fs from 'node:fs';
 import path from 'node:path';
+import { createRequire } from 'node:module';
 
 const ROOT = process.cwd();
 const read = (p, fb) => { try { return JSON.parse(fs.readFileSync(path.join(ROOT, p), 'utf8')); } catch { return fb; } };
@@ -131,14 +132,29 @@ const OPENNESS_METHOD = {
   not_measured: 'search volume, keyword difficulty, organic rank. The observer says so itself: rankVerified is false on every observation.',
 };
 
-function occupancyFor(query, byQuery) {
+function occupancyFor(query, byQuery, prior) {
   const obs = byQuery.get(norm(query));
-  if (!obs) return { verdict: 'UNMEASURED', reason: 'NO_LIVE_OBSERVATION', openness_score: null, cited_hosts: [], observed_at: null, model: null };
-  if (obs.status !== 'ok' || !obs.providerAnswered) {
-    return { verdict: 'UNMEASURED', reason: 'PROVIDER_ERROR', openness_score: null, cited_hosts: [], observed_at: obs.observedAt || null, model: obs.model || null };
+  if (!obs) {
+    // data/search/query_observations.json is a ROLLING file - the observer caps
+    // itself at 25 queries per run, so a target measured last week is simply not
+    // in this week's file. Overwriting a real measurement with UNMEASURED because
+    // the window rolled past it destroys the only openness reading this repo has;
+    // one run of this script silently wiped the readings on all 54 targets.
+    // A measurement that has aged is carried forward and marked stale, never
+    // downgraded to "we never looked".
+    if (prior && prior.reason === 'LIVE_WEB_SURFACING_OBSERVATION') {
+      return { ...prior, stale: true, stale_reason: 'CARRIED_FORWARD_NO_OBSERVATION_IN_CURRENT_WINDOW' };
+    }
+    return { verdict: 'UNMEASURED', reason: 'NO_LIVE_OBSERVATION', openness_score: null, cited_hosts: [], observed_at: null, model: null };
   }
+  // Same rule as a missing observation: a FAILED observation is not evidence that
+  // the earlier successful one was wrong. Keep the reading, mark it stale.
+  const carry = (reason) => (prior && prior.reason === 'LIVE_WEB_SURFACING_OBSERVATION')
+    ? { ...prior, stale: true, stale_reason: reason }
+    : { verdict: 'UNMEASURED', reason, openness_score: null, cited_hosts: [], observed_at: obs.observedAt || null, model: obs.model || null };
+  if (obs.status !== 'ok' || !obs.providerAnswered) return carry('PROVIDER_ERROR');
   const hosts = [...new Set((obs.citations || []).map((c) => hostOf(c.url || c)).filter(Boolean))];
-  if (!hosts.length) return { verdict: 'UNMEASURED', reason: 'PROVIDER_ANSWERED_WITHOUT_RETRIEVING', openness_score: null, cited_hosts: [], observed_at: obs.observedAt, model: obs.model };
+  if (!hosts.length) return carry('PROVIDER_ANSWERED_WITHOUT_RETRIEVING');
   const ours = hosts.filter((h) => h === 'hicksconsulting.org' || h.endsWith('.hicksconsulting.org'));
   const platform = hosts.filter(isPlatform).length / hosts.length;
   const institutional = hosts.filter(isInstitutional).length / hosts.length;
@@ -156,6 +172,14 @@ function occupancyFor(query, byQuery) {
   };
 }
 
+// -------------------------------------------------------- blue-ocean gate
+//
+// Shared with content generation so the two cannot drift: scripts/lib/demand_titles.js
+// is the single definition of which observed queries describe real competitive
+// ground for this practice.
+const require_ = createRequire(import.meta.url);
+const { blueOceanEligibility } = require_('../lib/demand_titles.js');
+
 // ------------------------------------------------------------------ the merge
 const doc = read(TARGETS, null);
 if (!doc) { console.error(`score_discovery_gap: missing ${TARGETS}`); process.exit(1); }
@@ -163,8 +187,14 @@ const byQuery = new Map((doc.queries || []).map((q) => [norm(q.query), q]));
 
 const gsc = read(GSC, {});
 if (gsc.status !== 'ok') {
-  console.error(`score_discovery_gap: ${GSC} status is ${gsc.status || 'missing'}; refusing to merge targets from a snapshot that is not OK.`);
-  process.exit(1);
+  // Two callers, two correct behaviours. Run by hand, a bad snapshot is an error
+  // worth stopping on. Run inside `npm run ingest:all`, where Search Console
+  // credentials may legitimately be absent, a hard exit would take the whole
+  // ingestion lane down - so the flag turns it into a NAMED stop instead. It is
+  // still a stop: no targets are merged and the caller is told why.
+  const allowMissing = process.argv.includes('--allow-missing-snapshot');
+  console.log(`score_discovery_gap: ${GSC} status is ${gsc.status || 'missing'}; refusing to merge targets from a snapshot that is not OK. NAMED STOP: GSC_SNAPSHOT_NOT_OK (targets left exactly as they were).`);
+  process.exit(allowMissing ? 0 : 1);
 }
 
 // Aggregate the query -> page pairs. Search Console reports the same query
@@ -238,7 +268,21 @@ let scored = 0;
 for (const t of byQuery.values()) {
   t.lead_intent_tier = leadIntentTier(t.query);
   t.lead_intent_method = 'regex_classifier_on_query_string, scripts/queries/score_discovery_gap.mjs';
-  t.occupancy = occupancyFor(t.query, obsByQuery);
+  t.occupancy = occupancyFor(t.query, obsByQuery, t.occupancy);
+  // ADDITIVE. `occupancy.verdict` still says exactly what it always said - it is
+  // a measurement of who the observer's citation set contained. What it does NOT
+  // say is whether that citation set was ABOUT this query.
+  //
+  // The observer string-matches "Hicks" and returns lifestance.com/provider/
+  // therapist/ga/hicks, Healthgrades listings for Hickory PA and NC,
+  // mentalhealth.com/local/hicksville-ny, and physical therapists in the Olive
+  // Branch results. Those queries carry no service term and no location, so
+  // retrieval has nothing to anchor to. Scoring that noise 0.6+ and reading it as
+  // OPEN turns "not cited" into "open ground", and they are not the same thing.
+  //
+  // Content generation reads THIS field, not the verdict. Nothing downstream of
+  // this file changes shape, and no existing verdict is rewritten.
+  t.blue_ocean_eligible = blueOceanEligibility(t);
   if (t.occupancy.openness_score !== null) scored++;
 }
 
@@ -262,6 +306,11 @@ doc.discovery_gap_pass = {
   by: 'scripts/queries/score_discovery_gap.mjs',
   why: 'The observer read a 7-query hand-written list while Search Console reported 46 queries that actually put this practice in front of someone. The measured list is now the target list, ordered so the observer spends its 25-query budget on the queries a client arrives through.',
   expansion_sources: [`${GSC} (live Search Console snapshot, ${range.startDate || '?'}..${range.endDate || '?'}) - query/page pairs`],
+  blue_ocean_gate: {
+    by: 'scripts/lib/demand_titles.js#blueOceanEligibility, written to target_queries[].blue_ocean_eligible',
+    why: 'An OPEN occupancy verdict is a statement about WHO the observer cited, not about whether the citations were about this query. Surname-matched queries ("hicks", "carol hicks", "kerry hicks") and queries with no service or location anchor return Hickory PA/NC, Hicksville NY and unrelated practitioners; treating those as open ground is a false blue-ocean signal. Content generation reads blue_ocean_eligible; occupancy.verdict is left untouched.',
+    ineligible_reasons: ['BRAND_OR_PERSON_NAME_NAVIGATIONAL', 'NO_SERVICE_OR_LOCATION_ANCHOR', 'ALREADY_HELD_BY_US', 'EMPTY_QUERY'],
+  },
   refused_sources: [
     'data/intake/normalized_query_signals.json - 151 RSS titles and subreddit names ("/r/BlackWomens", "reddit.com: search results - ..."). Topic signals, not queries anyone searched. The normalizer tags every one status "candidate" for exactly this reason.',
     'any modelled or estimated search volume - no live paid keyword source exists on this account.',

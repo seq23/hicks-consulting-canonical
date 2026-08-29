@@ -6,6 +6,8 @@ import { validateDraft, localRepairDraft, isStructuredDraftShape } from './lib/s
 import { providerConfigured, generateStructuredDraft, repairStructuredDraft } from './lib/llm_provider.mjs';
 import { writeResource } from './lib/render_resource.mjs';
 import { freezeFile } from './lib/freeze.mjs';
+import { createRequire } from 'node:module';
+const demandTitles = createRequire(import.meta.url)('../lib/demand_titles.js');
 
 function transition(item, to, reason, clock = new Date()) {
   const from = item.state || null;
@@ -81,6 +83,11 @@ if (state.paused || state.emergencyStop) {
 
 const candidates = queue.items.filter((item) => ['DISCOVERED', 'SCORED', 'ADMITTED', 'DRAFTING', 'DRAFTED', 'VALIDATING', 'REPAIRING', 'FAILED_RETRYABLE'].includes(item.state)).slice(0, maxItems);
 const documents = existingDocuments();
+// Seeded with every title the repo already owns, and shared across the whole
+// cycle so two candidates in one run cannot claim the same title.
+const titleRegistry = new demandTitles.TitleRegistry(demandTitles.takenTitles(ROOT, { manifestOnly: true }), {
+  grandfathered: demandTitles.grandfatheredKeys(ROOT),
+});
 const receipts = [];
 state.currentPhase = 'RUNNING';
 state.lastCycleAt = nowIso(clock);
@@ -186,8 +193,36 @@ for (const item of candidates) {
       continue;
     }
 
+    // TITLE GATE. Nothing used to check draft.title at all - the manifest deduped
+    // on slug and id only, so a provider free to invent a title was free to
+    // invent one this site already owned, or the same title twice in one run.
+    // The candidate's own demand-grounded title is the authority; the provider's
+    // title is accepted only if it is genuinely new AND is not the candidate's
+    // title (or any owned title) plus a suffix.
+    const candidateTitle = typeof item.title === 'string' && item.title.trim() ? item.title.trim() : null;
+    const providerTitle = typeof draft.title === 'string' ? draft.title.trim() : '';
+    let titleDecision = 'PROVIDER_TITLE_ACCEPTED';
+    let titleRejections = [];
+    if (candidateTitle && providerTitle && demandTitles.normalizeTitleKey(providerTitle) !== demandTitles.normalizeTitleKey(candidateTitle)) {
+      titleRejections = titleRegistry.rejections(providerTitle);
+      if (titleRejections.length) {
+        draft.title = candidateTitle;
+        titleDecision = 'PROVIDER_TITLE_REJECTED_FELL_BACK_TO_DEMAND_TITLE';
+      }
+    } else if (candidateTitle) {
+      draft.title = candidateTitle;
+      titleDecision = 'DEMAND_TITLE_USED';
+    }
+    if (!titleRegistry.claim(draft.title)) {
+      // The candidate's own title is no longer issuable either (another item in
+      // this same cycle took it). Named stop rather than a duplicate page.
+      transition(item, 'SKIPPED_DUPLICATE_INTENT', `Title "${draft.title}" duplicates or extends a title this site already owns.`, clock);
+      appendException(exceptions, item, item.state, [{ code: 'DUPLICATE_OR_STEM_SUFFIX_TITLE', severity: 'duplicate', title: draft.title, rejections: titleRegistry.rejections(draft.title) }], clock);
+      continue;
+    }
+
     transition(item, 'VALIDATED_SAFE', repairs.length ? 'Draft repaired and passed Safe Harbor.' : 'Draft passed Safe Harbor without repair.', clock);
-    const route = routeForCandidate(item);
+    const route = routeForCandidate({ ...item, title: draft.title });
     if (manifest.some((entry) => entry.slug === route || entry.id === `auto-${item.id}`)) {
       transition(item, 'SKIPPED_DUPLICATE_INTENT', 'Manifest already owns the target route or candidate id.', clock);
       appendException(exceptions, item, item.state, [{ code: 'DUPLICATE_MANIFEST_ROUTE', severity: 'duplicate', route }], clock);
@@ -214,7 +249,7 @@ for (const item of candidates) {
       publicPath: route,
       previewPath: `/preview${route}`,
       scheduledAt,
-      autonomy: { candidateId: item.id, decision: repairs.length ? 'REWRITTEN_AND_AUTOPUBLISHED' : 'SAFE_AUTOPUBLISH', query: item.query, clusterId: item.clusterId, draftHash: stableJsonHash(draft), repairs, sources: Array.isArray(draft.sources) ? draft.sources : [], internalLinks: Array.isArray(draft.internalLinks) ? draft.internalLinks : [] }
+      autonomy: { candidateId: item.id, decision: repairs.length ? 'REWRITTEN_AND_AUTOPUBLISHED' : 'SAFE_AUTOPUBLISH', query: item.query, clusterId: item.clusterId, titleDecision, titleSource: item.demandPhrasing ? item.demandPhrasing.source : null, demandPhrasing: item.demandPhrasing || null, draftHash: stableJsonHash(draft), repairs, sources: Array.isArray(draft.sources) ? draft.sources : [], internalLinks: Array.isArray(draft.internalLinks) ? draft.internalLinks : [] }
     };
     if (!dryRun) manifest.push(manifestItem);
     const revisionId = `revision-${item.id}-${clock.toISOString().replace(/[:.]/g, '-')}`;

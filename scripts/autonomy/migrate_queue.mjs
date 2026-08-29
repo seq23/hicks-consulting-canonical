@@ -34,6 +34,34 @@ for (const sourceItem of source.items || []) {
   });
   added += 1;
 }
+// Titles used to be copied into this queue exactly once, when a candidate was
+// first migrated, and never looked at again. So when the upstream brief was
+// retitled the autonomy queue kept the old string - two components each keeping
+// their own list with no link between them, which is how a composed title
+// survived into a rendered page after its source had already been fixed.
+//
+// A candidate that has NOT yet produced a page is reconciled to its upstream
+// title, route and prompt on every migration. One that has (SCHEDULED or later,
+// or that already owns a route) is left alone: its URL is committed.
+const TERMINAL_STATES = new Set(['SCHEDULED', 'PUBLISHED', 'VALIDATED_SAFE']);
+const sourceById = new Map((source.items || []).map((item) => [item.id, item]));
+let reconciled = 0;
+for (const item of current.items) {
+  const upstream = sourceById.get(item.id);
+  if (!upstream || !upstream.title) continue;
+  if (TERMINAL_STATES.has(item.state) || item.route) continue;
+  if (item.title === upstream.title) continue;
+  item.title = upstream.title;
+  item.suggestedRoute = upstream.suggestedRoute || item.suggestedRoute;
+  item.llmPrompt = upstream.llmPrompt || item.llmPrompt;
+  item.sections = upstream.sections || item.sections;
+  item.query = upstream.demandPhrasing ? upstream.title : (item.query || upstream.clusterTitle);
+  item.demandPhrasing = upstream.demandPhrasing || item.demandPhrasing;
+  item.updatedAt = nowIso(clock);
+  item.history = Array.isArray(item.history) ? item.history : [];
+  item.history.push({ from: item.state, to: item.state, at: nowIso(clock), reason: 'Title reconciled to the upstream demand-grounded brief before any page existed.' });
+  reconciled += 1;
+}
 writeJsonAtomic('data/autonomy/queue.json', current);
 source.publishMode = 'full_safe_autonomy';
 source.items = (source.items || []).map((item) => ({
@@ -58,4 +86,4 @@ briefs.candidates = (briefs.candidates || []).map((item) => ({
   approvalStatus: undefined
 })).map((item) => Object.fromEntries(Object.entries(item).filter(([, value]) => value !== undefined)));
 writeJsonAtomic('data/intake/content_brief_candidates.json', briefs);
-console.log(JSON.stringify({ ok: true, added, total: current.items.length, publishMode: 'full_safe_autonomy' }, null, 2));
+console.log(JSON.stringify({ ok: true, added, reconciledTitles: reconciled, total: current.items.length, publishMode: 'full_safe_autonomy' }, null, 2));
