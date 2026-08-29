@@ -902,6 +902,20 @@
       "rationale": "Proves self-healing is reversible and bounded rather than merely checking for a repair script."
     },
     {
+      "id": "self-heal-integrity",
+      "npmScript": "validate:self-heal-integrity",
+      "entrypoint": "_ops/validators/validate_self_heal_integrity.js",
+      "severity": "HARD_FAIL",
+      "blocksRelease": true,
+      "group": "autonomy-runtime",
+      "owner": "repo-maintainers",
+      "scope": "self-heal loop invocation, title contract, and repair-run honesty",
+      "ciInvocation": "MATRIX_ONLY",
+      "findingProtocol": "VALIDATION_FINDING",
+      "enabled": true,
+      "rationale": "The repo's repair machinery must actually be reachable, must guard the one metadata element nothing else guarded, and must not commit a message claiming repairs it did not make. Asserts a scheduled workflow reaches heal_until_clean.js and keeps both its report and its repairs, that every registered repair_command resolves to a real npm script, that the metadata contract requires a <title> at the same minimum length the repairer uses, and that the self-heal lane derives its commit subject from the run's own receipt. Hard-fails if it examines zero workflows or zero registered repairs."
+    },
+    {
       "id": "search-intelligence-contract",
       "npmScript": "validate:search-intelligence",
       "entrypoint": "_ops/validators/validate_search_intelligence_contract.js",

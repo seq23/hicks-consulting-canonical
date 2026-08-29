@@ -46,6 +46,7 @@ One skipped item must not block unrelated safe work.
 | `agency-seo-monitor.yml` | Refresh GSC/Bing and search intelligence | Provider snapshots and recommendations |
 | `indexnow-submit.yml` | Submit distribution signals and send publication email | Distribution and notification receipts |
 | `editorial-continuity.yml` | Replenish backlog while preserving velocity | Candidate backlog only |
+| `repo-self-heal.yml` | Run the registered validate/repair/re-validate loop over the whole matrix | Only the artifacts the 8 registered `repair_command` generators write; never `data/admin` |
 
 All content-mutating workflows share concurrency protection and invoke the deep validation profile before committing.
 
