@@ -3,8 +3,8 @@
   "repo": "hicks-consulting-canonical",
   "profile": "all",
   "max_attempts": 3,
-  "dry_run": true,
-  "generated_at": "2026-08-25T22:00:03.895Z",
+  "dry_run": false,
+  "generated_at": "2026-08-29T20:51:56.288Z",
   "status": "CLEAN",
   "safe_to_push": true,
   "registered_repairs": [
@@ -51,8 +51,20 @@
   ],
   "remaining_findings": [
     {
+      "id": "entity-coverage",
+      "severity": "SOFT_WARNING",
+      "blocking": false,
+      "repair_command": null
+    },
+    {
       "id": "word-counts",
       "severity": "SOFT_WARNING",
+      "blocking": false,
+      "repair_command": null
+    },
+    {
+      "id": "content-pattern-contract",
+      "severity": "STRONG_WARNING",
       "blocking": false,
       "repair_command": null
     }
@@ -63,8 +75,18 @@
       "validation_exit": 0,
       "findings": [
         {
+          "id": "entity-coverage",
+          "severity": "SOFT_WARNING",
+          "reason": ""
+        },
+        {
           "id": "word-counts",
           "severity": "SOFT_WARNING",
+          "reason": ""
+        },
+        {
+          "id": "content-pattern-contract",
+          "severity": "STRONG_WARNING",
           "reason": ""
         }
       ],
