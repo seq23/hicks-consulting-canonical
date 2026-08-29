@@ -818,6 +818,20 @@
       "rationale": "Proves the exact owner-approved blackgirlmagic hash, one shared lightweight gate across admin surfaces, simple hash-header API compatibility, and removal of the unauthorized signed-session/CSRF layer."
     },
     {
+      "id": "admin-publisher-agreement",
+      "npmScript": "validate:admin-publisher-agreement",
+      "entrypoint": "_ops/validators/deep/validate_admin_publisher_agreement.js",
+      "severity": "HARD_FAIL",
+      "blocksRelease": true,
+      "group": "admin-access",
+      "owner": "site-operations",
+      "scope": "agreement between what the admin page tells the client and what the publisher actually releases",
+      "ciInvocation": "MATRIX_ONLY",
+      "findingProtocol": "VALIDATION_FINDING",
+      "enabled": true,
+      "rationale": "Runs the admin page's own approvalFor() and the publisher's standingApprovalFor() over the real manifest and asserts they agree item by item. They silently disagreed on 2026-08-29: the publisher wrote standing_approvals/scheduledThrough, the page probed standingApprovals/through, and the client was told 112 pieces awaited her OK when her June approval already covered 111. Nothing failed; the only symptom was a wrong number on a client's screen."
+    },
+    {
       "id": "notification-freeze-behavior",
       "npmScript": "validate:notification-freeze-behavior",
       "entrypoint": "_ops/validators/deep/validate_notification_freeze_behavior.mjs",

@@ -1753,3 +1753,33 @@ footer {
 .related-nav ul{margin:0;padding-left:1.15rem}
 .related-nav li{margin:.4rem 0}
 .related-nav a{font-weight:700;text-decoration-thickness:1px;text-underline-offset:3px}
+
+
+/* Admin browse grid. The review queue uses cards because each item there needs a
+   decision; everything else is a table, because 233 cards is a scroll wall with
+   nothing to scan across. Wide content scrolls inside its own container so the
+   page body never scrolls sideways. */
+.table-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.admin-table td.nowrap,.admin-table th.nowrap{white-space:nowrap}
+.admin-table td .small-button{margin-right:.35rem}
+.admin-table td [data-result]{display:block;color:var(--muted)}
+.admin-table tbody tr:hover{background:rgba(0,0,0,.025)}
+:root[data-theme='dark'] .admin-table tbody tr:hover{background:rgba(255,255,255,.04)}
+.pill{display:inline-block;padding:.16rem .6rem;border-radius:999px;font-size:.76rem;
+  font-weight:600;white-space:nowrap;border:1px solid var(--border)}
+.pill-ready{background:#fdeedd;color:#7a3b12;border-color:#e8c9a6}
+.pill-published{background:#ddefe5;color:#1e6b45;border-color:#b6d9c6}
+.pill-scheduled{background:#e0eefa;color:#1b4f7a;border-color:#b9d7ee}
+.pill-declined{background:rgba(0,0,0,.045);color:var(--muted)}
+:root[data-theme='dark'] .pill-ready{background:#33220f;color:#e0a165;border-color:#5c4021}
+:root[data-theme='dark'] .pill-published{background:#123024;color:#67bd93;border-color:#1f5138}
+:root[data-theme='dark'] .pill-scheduled{background:#12263a;color:#79b6e6;border-color:#1f4666}
+:root[data-theme='dark'] .pill-declined{background:rgba(255,255,255,.06);color:var(--muted)}
+
+/* The manual-run controls were rendered as very large filled lozenges that read
+   as the most important thing on the page. They are the least important: these
+   are the buttons for when she wants something to happen sooner than its own
+   schedule. Sized back to ordinary controls. */
+.command-grid{display:grid;gap:.7rem;grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
+.command-grid button,.command-grid .button{border-radius:14px;padding:.75rem .9rem;text-align:left;font-size:.9rem}
+.command-grid strong,.command-grid b{font-size:.94rem}
