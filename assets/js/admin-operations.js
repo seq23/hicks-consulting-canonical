@@ -43,6 +43,9 @@
   }
 
   function setActionAvailability(configured) {
+    // One plain sentence beats five buttons that look broken.
+    const notice = $('operations-unavailable');
+    if (notice) notice.hidden = Boolean(configured);
     document.querySelectorAll('[data-admin-action]').forEach((button) => {
       const action = button.getAttribute('data-admin-action');
       const isTest = action === 'test-github-admin';

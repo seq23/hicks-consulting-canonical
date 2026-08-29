@@ -51,7 +51,12 @@ function preparePreviewHtml(html, item) {
     out = out.replace('<head>', '<head><meta name="robots" content="noindex,nofollow"/>');
   }
   out = out.replace(/<link href="https:\/\/www\.hicksconsulting\.org[^"]*" rel="canonical"\/>/, `<link href="${canonicalDomain}${item.publicPath || item.slug}" rel="canonical"/>`);
-  const banner = `<div class="notice preview-notice"><strong>Preview mode.</strong> This content is loaded for admin review and may not be publicly listed yet. Status: ${item.status}.</div>`;
+  const readerState = item.status === 'published'
+    ? 'This is on your website now.'
+    : item.status === 'revoked'
+      ? 'This is not on your website. You are reading a copy.'
+      : 'This is not on your website yet. You are reading a copy, so you can decide about it.';
+  const banner = `<div class="notice preview-notice"><strong>Your copy.</strong> ${readerState}</div>`;
   out = out.replace('<main', `${banner}<main`);
   return out;
 }
@@ -148,7 +153,15 @@ copyRecursive(path.join(root, 'data'), path.join(dist, 'data'));
 injectPersonSchema();
 injectOrganizationSchema();
 
-for (const item of manifest.filter(item => item.validationPassed === true && item.status !== 'published' && item.slug.startsWith('/resources/'))) {
+// A preview for every piece, including the live ones and the ones that came down.
+//
+// Previews were only built for unpublished items, so on /admin/ the pieces that
+// had been taken off the site had nowhere to go and the row read "Preview: not
+// generated". Those 54 items sorted to the top of the list, which made the whole
+// page look like previews were broken when they were only missing for the group
+// that had none by design. The client cannot decide about writing she cannot
+// read, so every route she can see now resolves to something.
+for (const item of manifest.filter(item => item.validationPassed === true && item.slug.startsWith('/resources/'))) {
   copyPreviewForItem(item);
 }
 
