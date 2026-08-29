@@ -147,17 +147,32 @@ function approvalFor(item) {
   const record = APPROVAL_RECORD || {};
   const perItem = (record.approvals || []).find((entry) => entry && entry.id === item.id && String(entry.approvedBy || '').trim());
   if (perItem) return perItem;
-  const standingLists = [record.standingApprovals, record.standing, record.ranges, record.dateRangeApprovals];
+  // `standing_approvals` is the shape the publisher actually writes and reads
+  // (scripts/publishing/process_manifest.js). It is listed FIRST because it is
+  // the real one; the camelCase spellings are tolerated leftovers. Getting this
+  // key wrong is not cosmetic -- it silently pushed 111 already-approved items
+  // back into 'waiting for your OK', asking Monika to re-approve her own June
+  // decision while the publisher released them anyway.
+  const standingLists = [record.standing_approvals, record.standingApprovals, record.standing, record.ranges, record.dateRangeApprovals];
   for (const list of standingLists) {
     if (!Array.isArray(list)) continue;
     for (const entry of list) {
       if (!entry || !String(entry.approvedBy || entry.by || '').trim()) continue;
       const from = entry.from || entry.startsAt || entry.effectiveFrom || null;
-      const until = entry.through || entry.until || entry.expiresAt || entry.to || null;
+      const until = entry.scheduledThrough || entry.through || entry.until || entry.expiresAt || entry.to || null;
       const when = item.scheduledAt ? new Date(item.scheduledAt) : null;
       if (!when || Number.isNaN(when.getTime())) continue;
       if (from && when < new Date(from)) continue;
-      if (until && when > new Date(until)) continue;
+      // Inclusive of the whole final day, matching the publisher exactly. A
+      // date-only 'through' parses as midnight, which would drop anything
+      // scheduled during 31 December -- the page would show it as needing her
+      // OK while the publisher released it that morning.
+      if (until) {
+        const end = /^\d{4}-\d{2}-\d{2}$/.test(String(until))
+          ? new Date(`${until}T23:59:59.999Z`)
+          : new Date(until);
+        if (when > end) continue;
+      }
       return entry;
     }
   }
@@ -312,10 +327,51 @@ function renderReview() {
 function getFilters() {
   return {
     q: (document.getElementById('admin-search')?.value || '').trim().toLowerCase(),
-    status: document.getElementById('status-filter')?.value || 'ready',
+    status: document.getElementById('status-filter')?.value || 'all',
     type: document.getElementById('type-filter')?.value || 'all',
     sort: document.getElementById('sort-filter')?.value || 'date-asc'
   };
+}
+
+// The browse view is a table, not a stack of cards.
+//
+// Cards are right for the review queue, where there are few items and each one
+// needs a decision. For "everything" they are wrong: 233 cards is a scroll wall
+// with no columns to scan and no way to compare two rows. This is the grid that
+// was here before, kept deliberately -- title, kind, date, status, and the two
+// links on every row including Edit in GitHub.
+function statusChip(group) {
+  const label = { ready: 'Waiting for your OK', published: 'Published', scheduled: 'Approved', declined: 'Revoked' }[group] || '';
+  return `<span class="pill pill-${escapeHtml(group)}">${escapeHtml(label)}</span>`;
+}
+
+function itemRow(item, group) {
+  const href = readItLink(item);
+  const when = friendlyDate(sortKeyDate(item), false);
+  const decide = group === 'ready'
+    ? `<button class="button small-button" data-decide="approve" data-id="${escapeHtml(item.id)}" type="button">Approve</button>`
+    : group === 'published'
+      ? `<button class="button ghost small-button" data-decide="take-down" data-id="${escapeHtml(item.id)}" type="button">Take off</button>`
+      : '';
+  return `<tr data-item="${escapeHtml(item.id)}">
+    <td>${escapeHtml(item.title)}<span class="small" data-result="${escapeHtml(item.id)}"></span></td>
+    <td>${escapeHtml(typeLabel(item))}</td>
+    <td class="nowrap">${escapeHtml(when)}</td>
+    <td>${statusChip(group)}</td>
+    <td class="nowrap">
+      <a class="button alt small-button" href="${escapeHtml(href)}" rel="noopener noreferrer" target="_blank">${group === 'published' ? 'Read it' : 'Preview'}</a>
+      <a class="button ghost small-button" href="${escapeHtml(editLink(item))}" rel="noopener noreferrer" target="_blank">Edit in GitHub</a>
+      ${decide}
+    </td>
+  </tr>`;
+}
+
+function browseTable(rows) {
+  if (!rows.length) return '';
+  return `<div class="table-scroll"><table class="admin-table">
+    <thead><tr><th>Title</th><th>Kind</th><th>Date</th><th>Status</th><th>Open it</th></tr></thead>
+    <tbody>${rows.map((r) => itemRow(r.item, r.group)).join('')}</tbody>
+  </table></div>`;
 }
 
 function renderBrowse() {
@@ -330,7 +386,7 @@ function renderBrowse() {
     const bv = field === 'title' ? String(b.item.title || '') : sortKeyDate(b.item);
     return direction === 'desc' ? bv.localeCompare(av) : av.localeCompare(bv);
   });
-  const labels = { ready: 'needs your OK', published: 'already live', scheduled: 'scheduled and ready', declined: 'not going out', all: 'in total' };
+  const labels = { ready: 'waiting for your OK', published: 'already published', scheduled: 'approved and not yet published', declined: 'revoked', all: 'in total' };
   const summary = document.getElementById('filter-summary');
   if (summary) {
     summary.textContent = out.length
@@ -339,13 +395,10 @@ function renderBrowse() {
   }
   const list = document.getElementById('browse-list');
   if (!list) return;
-  // "Not going out" is the least actionable group and the largest, so it stays
-  // folded until she asks for it rather than being what she scrolls past.
-  if (filters.status === 'declined' && out.length) {
-    list.innerHTML = `<details><summary>${out.length} ${out.length === 1 ? 'piece is' : 'pieces are'} not going out. Most came off during a tidy-up, not because anyone rejected them.</summary>${out.map((row) => itemCard(row.item, row.group)).join('')}</details>`;
-    return;
-  }
-  list.innerHTML = out.map((row) => itemCard(row.item, row.group)).join('');
+  // Revoked used to be folded behind a disclosure because it was the biggest
+  // and least actionable group. It is now something she picks on purpose from
+  // the filter, so hiding it would be hiding exactly what she asked to see.
+  list.innerHTML = browseTable(out);
 }
 
 function renderGeneratedCandidates() {
@@ -463,6 +516,53 @@ async function sendDecision(id, decision, body) {
   window.setTimeout(() => { renderReview(); renderBrowse(); }, 1200);
 }
 
+// Approve everything still waiting, in one action.
+//
+// Monika approved this calendar once already, in June. Asking her to click 112
+// times to say the same thing again is not a safeguard, it is a chore -- and a
+// chore she will abandon halfway, leaving the site half-published. One button,
+// one confirmation naming the exact count, then it is done.
+async function approveAll() {
+  const pending = ADMIN_ITEMS.filter((item) => groupFor(item) === 'ready');
+  const status = document.getElementById('approve-all-status');
+  const button = document.getElementById('approve-all');
+  if (!pending.length) { if (status) status.textContent = 'Nothing is waiting for your OK.'; return; }
+  const name = deciderName();
+  if (!name) {
+    if (status) status.textContent = 'Please type your name at the top of the page first.';
+    document.getElementById('decider-name')?.focus();
+    return;
+  }
+  const what = `${pending.length} ${pending.length === 1 ? 'piece' : 'pieces'}`;
+  if (!window.confirm(`Approve ${what}? Each one still goes out on its own date, not all at once. You can take any of them off later.`)) return;
+  if (button) button.disabled = true;
+  rememberDecider(name);
+  let done = 0;
+  const failed = [];
+  for (const item of pending) {
+    if (status) status.textContent = `Approving ${done + 1} of ${pending.length}.`;
+    const response = await fetch('/api/admin/content/approve', {
+      method: 'POST',
+      headers: authHeaders({ 'content-type': 'application/json' }),
+      body: JSON.stringify({ id: item.id, by: name })
+    }).catch(() => null);
+    const payload = response ? await response.json().catch(() => null) : null;
+    if (!response || !response.ok) { failed.push(item.id); continue; }
+    APPROVAL_RECORD.approvals = [...(APPROVAL_RECORD.approvals || []), payload.record];
+    done += 1;
+  }
+  if (button) button.disabled = false;
+  // Report what actually happened. A partial run that claims success is worse
+  // than a visible failure, because the gap is invisible until a date passes.
+  if (status) {
+    status.textContent = failed.length
+      ? `Approved ${done}. ${failed.length} could not be saved and are still waiting - try those again.`
+      : `Approved all ${done}. Each goes out on its own date. Nothing more is needed from you.`;
+  }
+  renderReview();
+  renderBrowse();
+}
+
 function bindDecisions() {
   document.addEventListener('click', (event) => {
     const button = event.target.closest('[data-decide], [data-decline-send], [data-decline-cancel]');
@@ -488,6 +588,10 @@ function bindDecisions() {
     if (decision === 'take-down' && !window.confirm('Take this off your website? People will no longer be able to read it.')) return;
     sendDecision(id, decision);
   });
+}
+
+function bindApproveAll() {
+  document.getElementById('approve-all')?.addEventListener('click', approveAll);
 }
 
 function bindFilters() {
@@ -572,6 +676,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   wireMobileNav();
   wireThemeToggle();
   bindDecisions();
+  bindApproveAll();
   bindSiteControls();
   const storedHash = getAdminAuthHash();
   if (storedHash === ADMIN_PASSWORD_HASH || sessionStorage.getItem(SESSION_KEY) === 'true') {

@@ -35,26 +35,28 @@
 <h2>Ready for your review</h2>
 <p class="muted small" id="review-summary">Loading your content.</p>
 <p class="muted small">Reading a piece changes nothing. Nothing goes on your website until you choose <strong>Approve</strong>.</p>
+<div class="hero-actions"><button class="button" id="approve-all" type="button">Approve everything waiting</button></div>
+<p class="muted small" id="approve-all-status">Each piece still goes out on its own date. You can take any of them off later.</p>
 <div id="review-list"></div>
 </section>
 
 <section class="panel" id="browse-panel">
-<h2>Look at anything else</h2>
+<h2>All your content</h2>
 <div class="admin-filters soft-panel">
 <div class="filter-shortcuts">
-<button class="small-button" data-status-shortcut="ready" type="button">Needs your review</button>
-<button class="small-button" data-status-shortcut="published" type="button">Already live</button>
-<button class="small-button" data-status-shortcut="scheduled" type="button">Scheduled</button>
-<button class="small-button" data-status-shortcut="declined" type="button">Not going out</button>
+<button class="small-button" data-status-shortcut="ready" type="button">Waiting for your OK</button>
+<button class="small-button" data-status-shortcut="scheduled" type="button">Approved, not yet up</button>
+<button class="small-button" data-status-shortcut="published" type="button">Published</button>
+<button class="small-button" data-status-shortcut="declined" type="button">Revoked</button>
 <button class="small-button alt" data-status-shortcut="all" type="button">Everything</button>
 </div>
 <div class="admin-filter-grid">
 <label>Search by title<input id="admin-search" placeholder="Type a few words from the title" type="search"/></label>
-<label>Show<select id="status-filter"><option value="ready">Needs your review</option><option value="published">Already live</option><option value="scheduled">Scheduled</option><option value="declined">Not going out</option><option value="all">Everything</option></select></label>
+<label>Show<select id="status-filter"><option value="all" selected="">Everything</option><option value="ready">Waiting for your OK</option><option value="scheduled">Approved, not yet published</option><option value="published">Published</option><option value="declined">Revoked</option></select></label>
 <label>Kind<select id="type-filter"><option value="all">Articles and insights</option><option value="articles">Articles only</option><option value="insights">Insights only</option></select></label>
 <label>Order<select id="sort-filter"><option value="date-asc">Date: oldest first</option><option value="date-desc">Date: newest first</option><option value="title-asc">Title: A to Z</option><option value="title-desc">Title: Z to A</option></select></label>
 </div>
-<p class="muted small" id="filter-summary">Showing everything that needs your review.</p>
+<p class="muted small" id="filter-summary">Showing everything.</p>
 </div>
 <div id="browse-list"></div>
 </section>
