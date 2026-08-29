@@ -4,6 +4,19 @@ import { analyzeResourceHtml, repairResourceHtml } from './lib/self_heal.mjs';
 import { freezeFile, rollbackRevision } from './lib/freeze.mjs';
 
 const clock = process.env.SELF_HEAL_CLOCK ? new Date(process.env.SELF_HEAL_CLOCK) : new Date();
+
+// Same reason as scripts/publishing/run_safe_publish.mjs: the pause control on
+// /admin/ promises that nothing runs, and self-healing rewrites the HTML of the
+// client's pages. It has to stop too.
+const autonomyState = readJson('data/autonomy/state.json', { paused: false, emergencyStop: false });
+if (autonomyState.paused || autonomyState.emergencyStop) {
+  const status = autonomyState.emergencyStop ? 'EMERGENCY_STOPPED' : 'PAUSED';
+  const who = autonomyState.emergencyStop ? autonomyState.stoppedBy : autonomyState.pausedBy;
+  console.log(JSON.stringify({ ok: true, status, repairs: [], skips: [], stoppedBy: who || null }, null, 2));
+  console.log(`\nNO REPAIRS ATTEMPTED - the site is ${status === 'PAUSED' ? 'paused' : 'stopped'}${who ? ` by ${who}` : ''}. This is a successful run. Nothing on the live site was changed.`);
+  process.exit(0);
+}
+
 const state = readJson('data/autonomy/self_heal_state.json', { schemaVersion: '1.0.0', repairs: [], skips: [] });
 const manifest = readJson('data/admin/content_manifest.json', []);
 const byRoute = new Map(manifest.map((item) => [item.slug, item]));

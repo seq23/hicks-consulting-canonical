@@ -6,6 +6,28 @@ const require = createRequire(import.meta.url);
 const { processManifest, loadApprovedIds } = require('./process_manifest.js');
 
 const clock = process.env.PUBLISH_CLOCK ? new Date(process.env.PUBLISH_CLOCK) : new Date();
+
+// Pause and Stop have to mean it.
+//
+// data/autonomy/state.json carried `paused` and `emergencyStop` since the
+// autonomy work, but only scripts/autonomy/run_cycle.mjs ever read them. The
+// drafting lane stopped and the release lane did not, so pausing would have left
+// the daily Content Publish cron still putting pages on a live client site - a
+// button that reports it stopped everything while the one thing a client most
+// wants stopped keeps running. Now the client-facing control on /admin/ is real
+// on every lane it claims to cover.
+//
+// Held, not failed: exit 0 and say why. A paused system reporting a red CI
+// failure would train everyone to ignore the red.
+const autonomyState = readJson('data/autonomy/state.json', { paused: false, emergencyStop: false });
+if (autonomyState.paused || autonomyState.emergencyStop) {
+  const status = autonomyState.emergencyStop ? 'EMERGENCY_STOPPED' : 'PAUSED';
+  const who = autonomyState.emergencyStop ? autonomyState.stoppedBy : autonomyState.pausedBy;
+  console.log(JSON.stringify({ ok: true, status, published: [], processed: 0, stoppedBy: who || null }, null, 2));
+  console.log(`\nNOTHING PUBLISHED - the site is ${status === 'PAUSED' ? 'paused' : 'stopped'}${who ? ` by ${who}` : ''}. This is a successful run, not a fault. Content already live is unaffected.`);
+  process.exit(0);
+}
+
 const manifest = readJson('data/admin/content_manifest.json');
 const exceptions = readJson('data/autonomy/exceptions.json', { schemaVersion: '1.0.0', items: [] });
 // Only human-approved items are touched at all. Repairing and rewriting the source

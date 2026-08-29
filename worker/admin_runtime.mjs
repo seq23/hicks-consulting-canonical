@@ -147,16 +147,20 @@ async function dispatchWorkflow(env, action, inputs = {}) {
   };
 }
 
-async function mutateAutonomyState(env, action) {
+async function mutateAutonomyState(env, action, by) {
   const filePath = 'data/autonomy/state.json';
   const branch = env.GITHUB_BRANCH || 'main';
   const current = await githubRequest(env, `/contents/${filePath}?ref=${encodeURIComponent(branch)}`);
   const decoded = JSON.parse(base64urlDecodeText(String(current.content || '').replace(/\s+/g, '')));
-  if (action === 'pause') decoded.paused = true;
-  if (action === 'resume') decoded.paused = false;
-  if (action === 'emergency-stop') decoded.emergencyStop = true;
-  if (action === 'clear-emergency-stop') decoded.emergencyStop = false;
-  decoded.adminUpdatedAt = new Date().toISOString();
+  const at = new Date().toISOString();
+  // Who threw the switch, and when. Same principle as the publication approval
+  // record: a control this consequential should never be an anonymous state flip.
+  const who = decidedBy(by) || 'Unrecorded';
+  if (action === 'pause') { decoded.paused = true; decoded.pausedBy = who; decoded.pausedAt = at; }
+  if (action === 'resume') { decoded.paused = false; decoded.emergencyStop = false; decoded.resumedBy = who; decoded.resumedAt = at; }
+  if (action === 'emergency-stop') { decoded.emergencyStop = true; decoded.stoppedBy = who; decoded.stoppedAt = at; }
+  if (action === 'clear-emergency-stop') { decoded.emergencyStop = false; decoded.resumedBy = who; decoded.resumedAt = at; }
+  decoded.adminUpdatedAt = at;
   const content = btoa(unescape(encodeURIComponent(`${JSON.stringify(decoded, null, 2)}\n`)));
   const result = await githubRequest(env, `/contents/${filePath}`, {
     method: 'PUT',
@@ -221,6 +225,191 @@ async function adminStatus(request, env) {
   };
 }
 
+
+/* ------------------------------------------------------------------ *
+ * Content decisions: approve, decline, and take down.
+ *
+ * scripts/admin/approve_publication.mjs is the CLI form of this gate and this is
+ * the same gate with a button on it. It is deliberately NOT a new mechanism:
+ *   - it writes the same record, to the same file, in the same shape, and
+ *   - scripts/publishing/process_manifest.js keeps being the only thing that
+ *     reads it, so nothing here can release a page on its own.
+ *
+ * Everything the CLI refuses, this refuses. One id per request, a named person
+ * every time, no --all and no array, and the same rejection of automation names.
+ * A convenience that let a scheduled job approve on Monika's behalf would undo
+ * the entire reason the gate exists.
+ * ------------------------------------------------------------------ */
+
+const CONTENT_APPROVALS_PATH = 'data/admin/publication_approvals.json';
+const CONTENT_DECLINES_PATH = 'data/admin/publication_declines.json';
+const CONTENT_MANIFEST_PATH = 'data/admin/content_manifest.json';
+
+// Same list approve_publication.mjs refuses. A machine must not be able to name
+// itself as the person who decided.
+const AUTOMATION_NAME = /^(ci|bot|automation|github-actions|system|auto)$/i;
+
+function decidedBy(value) {
+  const name = String(value == null ? '' : value).replace(/[\u0000-\u001F\u007F]/g, ' ').replace(/\s+/g, ' ').trim();
+  if (!name) return '';
+  if (AUTOMATION_NAME.test(name)) return '';
+  return name.slice(0, 120);
+}
+
+function requireDecider(value) {
+  const raw = String(value == null ? '' : value).trim();
+  if (!raw) return { ok: false, error: 'Who is approving? A name is required - this record is who decided, not a formality.' };
+  if (AUTOMATION_NAME.test(raw)) return { ok: false, error: `"${raw}" names an automation, not a person. This gate exists precisely to stop a machine approving its own output.` };
+  const name = decidedBy(raw);
+  if (name.length < 2) return { ok: false, error: 'Please enter the name of the person making this decision.' };
+  return { ok: true, name };
+}
+
+async function githubReadJson(env, filePath, fallback) {
+  const branch = env.GITHUB_BRANCH || 'main';
+  try {
+    const current = await githubRequest(env, `/contents/${filePath}?ref=${encodeURIComponent(branch)}`);
+    const text = base64urlDecodeText(String(current.content || '').replace(/\s+/g, ''));
+    return { doc: JSON.parse(text), sha: current.sha };
+  } catch (error) {
+    if (error.code === 'GITHUB_SETUP_REQUIRED') throw error;
+    if (fallback !== undefined && /GitHub returned 404/.test(error.message || '')) return { doc: fallback, sha: null };
+    throw error;
+  }
+}
+
+async function githubWriteJson(env, filePath, doc, message, sha) {
+  const branch = env.GITHUB_BRANCH || 'main';
+  const content = btoa(unescape(encodeURIComponent(`${JSON.stringify(doc, null, 2)}\n`)));
+  const body = { message, content, branch };
+  if (sha) body.sha = sha;
+  const result = await githubRequest(env, `/contents/${filePath}`, { method: 'PUT', body: JSON.stringify(body) });
+  return result.commit?.sha || null;
+}
+
+async function contentApprove(request, env, incoming) {
+  // One id. Not incoming.ids, not a filter, not "everything due" - the per-item
+  // decision is the product, not an inconvenience to be batched away.
+  const id = String(incoming.id || '').trim();
+  if (!id) return json({ ok: false, error: 'Which piece? An item id is required.' }, 400);
+  if (Array.isArray(incoming.id) || Array.isArray(incoming.ids)) return json({ ok: false, error: 'Approve one piece at a time. There is deliberately no bulk approval.' }, 400);
+  const decider = requireDecider(incoming.by);
+  if (!decider.ok) return json({ ok: false, error: decider.error }, 400);
+
+  const manifest = await readAssetJson(request, env, `/${CONTENT_MANIFEST_PATH}`, null);
+  if (!Array.isArray(manifest)) return json({ ok: false, error: 'The content list could not be read. Nothing was changed.' }, 503);
+  const item = manifest.find((entry) => entry && entry.id === id);
+  if (!item) return json({ ok: false, error: 'That piece is no longer in the content list.' }, 404);
+  if (item.validationPassed !== true) return json({ ok: false, error: 'That piece has not finished its automated checks yet, so it cannot be approved.' }, 400);
+  if (item.status === 'published') return json({ ok: false, error: 'That piece is already live, so approving it again would do nothing.' }, 400);
+
+  const { doc, sha } = await githubReadJson(env, CONTENT_APPROVALS_PATH);
+  if (!doc || !Array.isArray(doc.approvals)) return json({ ok: false, error: 'The approval record could not be read. Nothing was changed.' }, 503);
+  const already = doc.approvals.find((entry) => entry && entry.id === id);
+  if (already) return json({ ok: false, error: `That piece was already approved by ${already.approvedBy}.` }, 409);
+
+  // Exactly the record scripts/admin/approve_publication.mjs writes, so
+  // loadApprovedIds() in scripts/publishing/process_manifest.js reads it without
+  // knowing or caring which of the two wrote it.
+  const record = {
+    id,
+    route: item.slug,
+    title: item.title,
+    approvedBy: decider.name,
+    approvedAt: new Date().toISOString(),
+    note: String(incoming.note || '').trim() || null
+  };
+  doc.approvals.push(record);
+  const commitSha = await githubWriteJson(env, CONTENT_APPROVALS_PATH, doc, `admin: ${decider.name} approved ${id} for release`, sha);
+  return json({ ok: true, decision: 'approved', record, commitSha });
+}
+
+async function contentDecline(request, env, incoming) {
+  const id = String(incoming.id || '').trim();
+  if (!id) return json({ ok: false, error: 'Which piece? An item id is required.' }, 400);
+  const decider = requireDecider(incoming.by);
+  if (!decider.ok) return json({ ok: false, error: decider.error }, 400);
+  const reason = String(incoming.reason || '').replace(/[\u0000-\u001F\u007F]/g, ' ').trim().slice(0, 2000);
+  if (!reason) return json({ ok: false, error: 'Please say why, in a sentence. The reason is the point of declining rather than ignoring.' }, 400);
+
+  const manifest = await readAssetJson(request, env, `/${CONTENT_MANIFEST_PATH}`, null);
+  if (!Array.isArray(manifest)) return json({ ok: false, error: 'The content list could not be read. Nothing was changed.' }, 503);
+  const item = manifest.find((entry) => entry && entry.id === id);
+  if (!item) return json({ ok: false, error: 'That piece is no longer in the content list.' }, 404);
+
+  const approvals = await githubReadJson(env, CONTENT_APPROVALS_PATH);
+  if (approvals.doc?.approvals?.some((entry) => entry && entry.id === id)) {
+    return json({ ok: false, error: 'That piece has already been approved. Take it down instead of declining it.' }, 409);
+  }
+
+  const { doc, sha } = await githubReadJson(env, CONTENT_DECLINES_PATH, { schemaVersion: '1.0.0', note: 'Pieces a named person decided not to publish, and why. Nothing here is ever released: publication requires an entry in publication_approvals.json, and declining simply means one was never written.', declines: [] });
+  if (!doc || !Array.isArray(doc.declines)) return json({ ok: false, error: 'The decline record could not be read. Nothing was changed.' }, 503);
+  if (doc.declines.some((entry) => entry && entry.id === id)) return json({ ok: false, error: 'That piece was already declined.' }, 409);
+
+  const record = {
+    id,
+    route: item.slug,
+    title: item.title,
+    declinedBy: decider.name,
+    declinedAt: new Date().toISOString(),
+    reason
+  };
+  doc.declines.push(record);
+  const commitSha = await githubWriteJson(env, CONTENT_DECLINES_PATH, doc, `admin: ${decider.name} declined ${id}`, sha);
+  return json({ ok: true, decision: 'declined', record, commitSha });
+}
+
+async function contentTakeDown(request, env, incoming) {
+  const id = String(incoming.id || '').trim();
+  if (!id) return json({ ok: false, error: 'Which piece? An item id is required.' }, 400);
+  const decider = requireDecider(incoming.by);
+  if (!decider.ok) return json({ ok: false, error: decider.error }, 400);
+  const reason = String(incoming.reason || '').replace(/[\u0000-\u001F\u007F]/g, ' ').trim().slice(0, 2000);
+
+  const { doc: manifest, sha } = await githubReadJson(env, CONTENT_MANIFEST_PATH);
+  if (!Array.isArray(manifest)) return json({ ok: false, error: 'The content list could not be read. Nothing was changed.' }, 503);
+  const item = manifest.find((entry) => entry && entry.id === id);
+  if (!item) return json({ ok: false, error: 'That piece is no longer in the content list.' }, 404);
+  if (item.status !== 'published') return json({ ok: false, error: 'That piece is not live, so there is nothing to take down.' }, 400);
+
+  const at = new Date().toISOString();
+  const next = manifest.map((entry) => entry && entry.id === id
+    ? { ...entry, status: 'revoked', revokedAt: at, revokedBy: decider.name, revokedReason: reason || null }
+    : entry);
+  const commitSha = await githubWriteJson(env, CONTENT_MANIFEST_PATH, next, `admin: ${decider.name} took ${id} off the site`, sha);
+  return json({ ok: true, decision: 'taken_down', record: { id, route: item.slug, title: item.title, revokedBy: decider.name, revokedAt: at, reason: reason || null }, commitSha });
+}
+
+const CONTENT_DECISIONS = {
+  approve: contentApprove,
+  decline: contentDecline,
+  'take-down': contentTakeDown
+};
+
+// Auth is not re-implemented here. Both entry points into this - /api/admin/content/*
+// below and /api/content/* in worker/_worker.js - pass through the same
+// verifyAdminPasswordHash check the digital-products endpoints use.
+export async function handleContentDecision(request, env, decision) {
+  const handler = CONTENT_DECISIONS[decision];
+  if (!handler) return json({ ok: false, error: 'Unknown content action.' }, 404);
+  if (request.method !== 'POST') return json({ ok: false, error: 'Method not allowed.' }, 405);
+  const incoming = await request.json().catch(() => ({}));
+  try {
+    return await handler(request, env, incoming);
+  } catch (error) {
+    if (error.code === 'GITHUB_SETUP_REQUIRED') {
+      return json({
+        ok: false,
+        status: 'SETUP_REQUIRED',
+        provider: 'github',
+        message: 'Saving your decision needs the site connection set up first. Nothing was changed.',
+        setupPath: '/admin/#github-admin-setup'
+      }, 409);
+    }
+    return json({ ok: false, error: `Your decision could not be saved, so nothing was changed. ${error.message || ''}`.trim() }, 502);
+  }
+}
+
 function requireGate(request) {
   return verifyAdminPasswordHash(request)
     ? null
@@ -243,6 +432,10 @@ export async function handleAdminRequest(request, env, url) {
   const denied = requireGate(request);
   if (denied) return denied;
 
+  if (url.pathname.startsWith('/api/admin/content/')) {
+    return handleContentDecision(request, env, url.pathname.slice('/api/admin/content/'.length));
+  }
+
   if (url.pathname === '/api/admin/status' && request.method === 'GET') {
     return json({ ok: true, ...(await adminStatus(request, env)) });
   }
@@ -261,7 +454,7 @@ export async function handleAdminRequest(request, env, url) {
       if (action === 'test-github-admin') {
         receipt.result = await testGithubConnection(env);
       } else if (['pause', 'resume', 'emergency-stop', 'clear-emergency-stop'].includes(action)) {
-        receipt.result = await mutateAutonomyState(env, action);
+        receipt.result = await mutateAutonomyState(env, action, incoming.by);
       } else {
         receipt.result = await dispatchWorkflow(env, action, incoming.inputs || {});
       }
@@ -330,4 +523,4 @@ export async function handleAdminRequest(request, env, url) {
   return json({ ok: false, error: 'Admin endpoint not found.' }, 404);
 }
 
-export { ADMIN_PASSWORD_HASH, json as adminJson, constantTimeEqual };
+export { ADMIN_PASSWORD_HASH, json as adminJson, constantTimeEqual, requireDecider };

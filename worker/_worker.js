@@ -1,4 +1,4 @@
-import { handleAdminRequest, verifyAdminPasswordHash } from './admin_runtime.mjs';
+import { handleAdminRequest, handleContentDecision, verifyAdminPasswordHash } from './admin_runtime.mjs';
 const LEAD_MAGNET_DOWNLOAD_PATH = '/assets/downloads/stress-management-made-simple.pdf';
 
 const FORM_DATABASE_FORMS = {
@@ -261,6 +261,12 @@ export default {
       if (entry) return await handleFormDatabaseSubmission(request, env, entry[0]);
       const digitalProductsResponse = await handleDigitalProductsRequest(request, env, url);
       if (digitalProductsResponse) return digitalProductsResponse;
+      // Content decisions. Same shape and same gate as /api/digital-products/*:
+      // the password hash header is checked before anything is read or written.
+      if (url.pathname.startsWith('/api/content/')) {
+        if (!verifyAdminPasswordHash(request)) return jsonResponse({ ok: false, error: 'Admin password did not match.' }, 401);
+        return handleContentDecision(request, env, url.pathname.slice('/api/content/'.length));
+      }
       if (env.ASSETS && typeof env.ASSETS.fetch === 'function') return env.ASSETS.fetch(request);
       return jsonResponse({ ok: false, error: 'Static asset binding is not available.' }, 500);
     } catch (error) { console.error('WORKER_RUNTIME_ERROR', error); return jsonResponse({ ok: false, error: 'Worker runtime error.' }, 500); }
