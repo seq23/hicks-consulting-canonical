@@ -121,6 +121,8 @@
     "cadence:headroom": "node scripts/cadence/publish_headroom.mjs",
     "cadence:gate": "node scripts/cadence_gate.js",
     "sitemap:lastmod": "node scripts/sitemap_lastmod.js",
-    "validate:admin-publisher-agreement": "node _ops/validators/deep/validate_admin_publisher_agreement.js"
+    "validate:admin-publisher-agreement": "node _ops/validators/deep/validate_admin_publisher_agreement.js",
+    "validate:client-decision-attribution": "node _ops/validators/deep/validate_client_decision_attribution.js",
+    "build:content-consolidations": "node scripts/admin/build_content_consolidations.js"
   }
 }

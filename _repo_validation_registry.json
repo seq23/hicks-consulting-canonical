@@ -832,6 +832,20 @@
       "rationale": "Runs the admin page's own approvalFor() and the publisher's standingApprovalFor() over the real manifest and asserts they agree item by item. They silently disagreed on 2026-08-29: the publisher wrote standing_approvals/scheduledThrough, the page probed standingApprovals/through, and the client was told 112 pieces awaited her OK when her June approval already covered 111. Nothing failed; the only symptom was a wrong number on a client's screen."
     },
     {
+      "id": "client-decision-attribution",
+      "npmScript": "validate:client-decision-attribution",
+      "entrypoint": "_ops/validators/deep/validate_client_decision_attribution.js",
+      "severity": "HARD_FAIL",
+      "blocksRelease": true,
+      "group": "admin-access",
+      "owner": "site-operations",
+      "scope": "attribution and stated reason for every piece that leaves the site",
+      "ciInvocation": "MATRIX_ONLY",
+      "findingProtocol": "VALIDATION_FINDING",
+      "enabled": true,
+      "rationale": "Runs the admin page's own groupFor()/humanDecisionFor()/whenLine() over the real manifest and asserts that every removal says why it happened and who decided it: a human decline needs a named decider and a reason, an automated removal needs a machine-written plain-language reason that names what triggered it and is actually rendered on the row. On 2026-08-29 the page showed the client a chip reading 'Revoked 54' when publication_declines.json was empty and none of the 54 carried a revokedBy or revokedReason: all 54 were an automated 2026-08-08 duplicate-consolidation pass (>=0.85 similarity, duplicate titles, editorialContentRewritten:false) that 301-redirected each page to the article it duplicated. The reason existed only in a search-engineering report, so the page filled the silence with a word that attributed 54 removals to a decision she never made. It also asserts both write paths -- worker contentTakeDown() and the consolidation migration -- refuse to record a removal with no reason, that no client filter label asserts a choice she may not have made, and it hard-fails if it examines zero items rather than passing on an empty loop."
+    },
+    {
       "id": "notification-freeze-behavior",
       "npmScript": "validate:notification-freeze-behavior",
       "entrypoint": "_ops/validators/deep/validate_notification_freeze_behavior.mjs",
