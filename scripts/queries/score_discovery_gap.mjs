@@ -117,22 +117,78 @@ const isPlatform = (h) => PLATFORM_HOSTS.has(h) || [...PLATFORM_HOSTS].some((p) 
 const isInstitutional = (h) => /\.(gov|edu|mil)$/.test(h) || h === 'wikipedia.org' || h.endsWith('.wikipedia.org');
 const hostOf = (u) => { try { return new URL(u).hostname.toLowerCase().replace(/^www\./, ''); } catch { return ''; } };
 
+// ------------------------------------------------- geographic resolvability
+//
+// "Not cited" and "open ground" are not the same fact, and conflating them
+// produced a false opportunity list.
+//
+// A query like "therapist near me" carries no place. An engine asked it with no
+// location context cannot answer it, so it string-matches instead: the observed
+// citations for the eight "near me" targets on this account were
+// lifestance.com/provider/therapist/ga/hicks, Healthgrades listings for Hickory
+// PA and Hickory NC, mentalhealth.com/local/hicksville-ny, and - for the Olive
+// Branch query - physical therapists. Those hosts are mostly directories, so
+// platform_share came out high, so openness_score came out >= 0.6, so the query
+// was labelled OPEN: "no page owns it".
+//
+// No page owns it because the question has no answer, not because the ground is
+// free. A Memphis practice cannot win "therapist near me" as a global string,
+// and reading that absence as an opportunity sends work at a target that does
+// not exist.
+//
+// So a location-implying query with no location in it is scored
+// UNRESOLVABLE_WITHOUT_LOCATION and carries no openness_score at all. The
+// localized form - "therapist near me memphis" - is a separate governed target
+// and is scored normally, because it is a question that can actually be asked.
+const IMPLIES_LOCATION = [/\bnear me\b/, /\bnearby\b/, /\bopen now\b/, /\baround here\b/, /\bclose to me\b/];
+const CARRIES_LOCATION = [
+  /\bmemphis\b/, /\btennessee\b/, /\btn\b/, /\bolive branch\b/, /\bsouthaven\b/, /\bdesoto\b/,
+  /\bmississippi\b/, /\bms\b/, /\barkansas\b/, /\bar\b/, /\bgermantown\b/, /\bcollierville\b/,
+  /\bbartlett\b/, /\bcordova\b/, /\bnashville\b/, /\bmid[- ]south\b/,
+  // generic "in <city> <ST>" - the same shape the T1 lead-intent classifier uses
+  /\bin [a-z]+(?: [a-z]+)?,? (?:al|ak|az|ar|ca|co|ct|de|fl|ga|hi|id|il|in|ia|ks|ky|la|me|md|ma|mi|mn|ms|mo|mt|ne|nv|nh|nj|nm|ny|nc|nd|oh|ok|or|pa|ri|sc|sd|tn|tx|ut|vt|va|wa|wv|wi|wy)\b/,
+];
+const impliesLocation = (q) => IMPLIES_LOCATION.some((re) => re.test(q));
+const carriesLocation = (q) => CARRIES_LOCATION.some((re) => re.test(q));
+const geoResolvable = (query) => {
+  const q = norm(query);
+  if (carriesLocation(q)) return true;
+  return !impliesLocation(q);
+};
+
 const OPENNESS_METHOD = {
   input: 'citations from data/search/query_observations.json, produced by scripts/search/live_query_observer.mjs (OpenRouter web plugin, engine=parallel, mode=turbo)',
   formula: 'openness_score = clamp(0.5 + 0.5*platform_share - 0.5*institutional_share, 0, 1)',
   platform_share: 'share of distinct cited hosts that are directories, marketplaces or user-generated platforms',
   institutional_share: 'share of distinct cited hosts on .gov/.edu/.mil or wikipedia',
+  geo_precondition: 'A query that implies a location ("near me", "nearby", "open now") but names none is not answerable, so its citations are geographic noise and its openness reading is meaningless. Those are scored UNRESOLVABLE_WITHOUT_LOCATION and carry no openness_score. Measure the localized variant instead.',
   verdicts: {
     HELD_BY_US: 'the search already surfaced this practice - not an opportunity, a position to defend',
     OPEN: 'openness_score >= 0.6 - the answer is assembled from directories and platforms and no page owns it',
     CONTESTED: '0.4 <= openness_score < 0.6',
     HELD: 'openness_score < 0.4 - institutions or established publishers occupy the answer',
     UNMEASURED: 'the observer has not answered for this query; NOT a zero and never to be read as one',
+    UNRESOLVABLE_WITHOUT_LOCATION: 'the query implies a place and names none, so no incumbent can hold it and "not cited" is an artifact of the question, NOT open ground',
   },
   not_measured: 'search volume, keyword difficulty, organic rank. The observer says so itself: rankVerified is false on every observation.',
 };
 
 function occupancyFor(query, byQuery, prior) {
+  // Before anything else, including the carry-forward below. A stale OPEN on a
+  // query that implies a place and names none is exactly the false opportunity
+  // this verdict exists to stop, so it must not survive by being carried.
+  if (!geoResolvable(query)) {
+    return {
+      verdict: 'UNRESOLVABLE_WITHOUT_LOCATION',
+      reason: 'QUERY_IMPLIES_A_PLACE_AND_NAMES_NONE',
+      openness_score: null,
+      geo_resolvable: false,
+      cited_hosts: [],
+      observed_at: null,
+      model: null,
+      note: 'Citations returned for this string are geographic noise, so an openness reading would be meaningless and "not cited" here is not open ground. The localized variant of this query is the governed, measurable target.',
+    };
+  }
   const obs = byQuery.get(norm(query));
   if (!obs) {
     // data/search/query_observations.json is a ROLLING file - the observer caps
@@ -162,6 +218,7 @@ function occupancyFor(query, byQuery, prior) {
   const verdict = (obs.siteSurfaced || ours.length) ? 'HELD_BY_US' : score >= 0.6 ? 'OPEN' : score >= 0.4 ? 'CONTESTED' : 'HELD';
   return {
     verdict, reason: 'LIVE_WEB_SURFACING_OBSERVATION',
+    geo_resolvable: true,
     openness_score: Number(score.toFixed(3)),
     platform_share: Number(platform.toFixed(3)),
     institutional_share: Number(institutional.toFixed(3)),
@@ -332,4 +389,12 @@ write(TARGETS, doc);
 console.log(`[discovery-gap] ${doc.queries.length} governed targets (+${added} this pass), ${scored} with an openness reading.`);
 console.log(`  lead intent: ${LEAD_TIER_ORDER.filter((t) => tiers[t]).map((t) => `${t}=${tiers[t]}`).join(' ')}`);
 console.log(`  occupancy:   ${Object.entries(verdicts).sort().map(([k, v]) => `${k}=${v}`).join(' ')}`);
+const unresolvable = doc.queries.filter((t) => t.occupancy.verdict === 'UNRESOLVABLE_WITHOUT_LOCATION');
+if (unresolvable.length) {
+  console.log(`  ${unresolvable.length} target(s) imply a place and name none. These are NOT open ground - the question has no answer, so nobody holds it. Measure the localized variant instead:`);
+  for (const t of unresolvable.slice(0, 10)) {
+    const variants = doc.queries.filter((q) => norm(q.localizes || '') === norm(t.query)).map((q) => q.query);
+    console.log(`    - ${t.query}${variants.length ? ` -> ${variants.join(', ')}` : ' -> NO LOCALIZED VARIANT GOVERNED YET'}`);
+  }
+}
 if (unlandable.length) console.log(`  ${unlandable.length} observed quer(y|ies) have impressions but no landing page: ${unlandable.slice(0, 5).join(', ')}`);
