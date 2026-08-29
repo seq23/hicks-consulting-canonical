@@ -181,6 +181,7 @@ const require_ = createRequire(import.meta.url);
 const { blueOceanEligibility } = require_('../lib/demand_titles.js');
 
 // ------------------------------------------------------------------ the merge
+const before = JSON.stringify(read(TARGETS, null));
 const doc = read(TARGETS, null);
 if (!doc) { console.error(`score_discovery_gap: missing ${TARGETS}`); process.exit(1); }
 const byQuery = new Map((doc.queries || []).map((q) => [norm(q.query), q]));
@@ -327,6 +328,18 @@ doc.discovery_gap_pass = {
   counts: { total_targets: doc.queries.length, added_this_pass: added, with_openness_reading: scored, lead_intent: tiers, occupancy: verdicts },
 };
 
+// Build determinism: this runs inside `ingest:all` on a schedule, and
+// data/search is now in that job's commit set. The pass timestamp is the only
+// field that moves on a no-op run, so bumping it every time would commit a
+// daily diff that says nothing changed. Keep the previous timestamp when
+// nothing else moved.
+const priorAt = (() => { try { return JSON.parse(before)?.discovery_gap_pass?.at || null; } catch { return null; } })();
+if (priorAt) {
+  const a = JSON.parse(before); const b = JSON.parse(JSON.stringify(doc));
+  if (a.discovery_gap_pass) a.discovery_gap_pass.at = null;
+  if (b.discovery_gap_pass) b.discovery_gap_pass.at = null;
+  if (JSON.stringify(a) === JSON.stringify(b)) doc.discovery_gap_pass.at = priorAt;
+}
 write(TARGETS, doc);
 
 console.log(`[discovery-gap] ${doc.queries.length} governed targets (+${added} this pass), ${scored} with an openness reading.`);
