@@ -1,11 +1,26 @@
 {
   "schemaVersion": "1.0.0",
-  "note": "The human release gate for hicksconsulting.org. An item in data/admin/content_manifest.json publishes only when its id appears here with a real approvedBy. status:'approved' in the manifest means a machine validated it, not that anyone agreed to publish it - scripts/autonomy/run_cycle.mjs writes that status itself, so before this file existed the daily Content Publish cron released LLM-drafted pages to a client's live site with nobody in the loop. 113 such items were queued one per day into the future.",
+  "note": "The human release gate for hicksconsulting.org. An item in data/admin/content_manifest.json publishes only when a named human has approved it, by one of exactly two routes: its id appears in `approvals` with a real approvedBy, or its scheduledAt falls inside a bounded window in `standing_approvals` that a named human agreed to. status:'approved' in the manifest means a machine validated it, not that anyone agreed to publish it - scripts/autonomy/run_cycle.mjs writes that status itself, so before this file existed the daily Content Publish cron released LLM-drafted pages to a client's live site with nobody in the loop. 113 such items were queued one per day into the future. Neither route is open-ended: per-item approval names one id, and a standing approval names an end date past which nothing publishes.",
   "how_to_approve": "node scripts/admin/approve_publication.mjs --id <manifest id> --by \"<person>\" [--note \"<why>\"]. Reachable only through the Admin Operations workflow_dispatch, never from a cron.",
+  "how_to_record_standing_approval": "Standing approvals are not written by a script. A person adds one entry to standing_approvals below, by hand, in a reviewed commit, recording an approval a named human actually gave for a bounded date range. There is deliberately no CLI for it: a command that writes a standing approval is a bulk approve-all, which is the exact thing this gate exists to prevent. scripts/admin/approve_publication.mjs remains the only tool, it still writes one id at a time, and it is still required for anything outside a standing window.",
+  "standing_approvals": [
+    {
+      "id": "standing-monika-2026-editorial-calendar",
+      "approvedBy": "Monika Hicks, LCSW",
+      "approvedAt": "2026-06-15",
+      "approvedAtPrecision": "month",
+      "scope": "Scheduled editorial content in data/admin/content_manifest.json - the daily insights calendar she reviewed.",
+      "scheduledThrough": "2026-12-31",
+      "recordedBy": "Site owner, on Monika's behalf",
+      "recordedAt": "2026-08-29",
+      "basis": "Monika reviewed and approved the scheduled content calendar through 2026-12-31 in June 2026, in the client agreement, before this gate existed. The approval is real; it simply predates the file. This entry records it here so the publisher can honour it, rather than re-asking her for a decision she already made.",
+      "note": "Bounded on purpose. It covers items whose scheduledAt falls on or before 2026-12-31 and nothing after: content scheduled into 2027 was never put in front of her, so it stays blocked and needs its own per-item approval. Extending this window is a deliberate edit to this file, not something any script does."
+    }
+  ],
   "pre_gate_baseline": {
     "sealed_on": "2026-08-27",
     "published_before_gate": 59,
-    "note": "59 items were already live when this gate was introduced. They are not retired and not retroactively approved; the gate governs future releases only. Everything still unpublished needs an approval here, whatever its manifest status says."
+    "note": "59 items were already live when this gate was introduced. They are not retired and not retroactively approved; the gate governs future releases only. Everything still unpublished needs an approval here, whatever its manifest status says - either a per-item entry in `approvals` or coverage by a bounded window in `standing_approvals`."
   },
   "approvals": [
     {

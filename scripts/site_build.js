@@ -165,6 +165,75 @@ for (const item of manifest.filter(item => item.slug.startsWith('/resources/') &
   }
 }
 
+// The section indexes are generated, not hand-maintained.
+//
+// pages/resources/<section>/index.html used to carry its listing as literal
+// markup, which meant publishing a page and listing it were two separate acts and
+// only one of them was automated. On 2026-08-29 two items were released and went
+// live with no link from /resources/insights/ at all - reachable only by knowing
+// the URL. For unattended publishing that is a silent failure: the cron reports
+// success, the page exists, the sitemap has it, and no reader can find it.
+//
+// So the listing is derived from the same manifest that decides what ships. A
+// published item cannot be missing from its own index, and a pruned one cannot
+// linger in it, because both facts come from one source.
+//
+// It rewrites dist/ rather than pages/, for the same reason
+// injectOrganizationSchemaSitewide() does: dist/ is wiped and rebuilt every run,
+// so generated markup belongs there, and the page source stays the hand-authored
+// hero, copy and footer that surround the list.
+function renderSectionIndexes() {
+  const escapeHtml = (value) => String(value)
+    .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+
+  let total = 0;
+  for (const section of ['insights', 'articles', 'guides', 'white-papers']) {
+    const indexPath = path.join(dist, 'resources', section, 'index.html');
+    if (!fs.existsSync(indexPath)) continue;
+    const html = fs.readFileSync(indexPath, 'utf8');
+    const listId = `${section}-published`;
+    // Match the generated list by its id and replace only its contents.
+    const pattern = new RegExp(`(<ul[^>]*id="${listId}"[^>]*>)([\\s\\S]*?)(</ul>)`);
+    if (!pattern.test(html)) {
+      // A section index that lost its marker would silently stop updating, which
+      // is the exact failure this replaces. Fail the build instead.
+      throw new Error(`Section index ${indexPath} has no <ul id="${listId}"> to generate into.`);
+    }
+
+    const prefix = `/resources/${section}/`;
+    const items = manifest
+      .filter(item => item.status === 'published'
+        && item.validationPassed === true
+        && typeof item.slug === 'string'
+        && item.slug.startsWith(prefix)
+        && item.slug !== prefix)
+      // The rendered page must actually exist in dist/, so the index can never
+      // link somewhere the prune step removed.
+      .filter(item => fs.existsSync(path.join(slugToDistPath(item.slug), 'index.html')))
+      .map(item => ({
+        slug: item.slug.replace(/\/$/, '/'),
+        title: item.title || item.slug,
+        // The publication date a reader sees is the editorial date the item was
+        // scheduled for, not the timestamp the cron happened to run at.
+        date: String(item.scheduledAt || item.publishedAt || '').slice(0, 10)
+      }))
+      // Newest first, then by slug so the output is deterministic when two items
+      // share a date - several do.
+      .sort((a, b) => (a.date === b.date ? a.slug.localeCompare(b.slug) : b.date.localeCompare(a.date)));
+
+    const list = items
+      .map(item => `<li><a href="${item.slug}">${escapeHtml(item.title)}</a>${item.date ? `<span class="muted small"> — ${item.date}</span>` : ''}</li>`)
+      .join('');
+
+    fs.writeFileSync(indexPath, html.replace(pattern, `$1${list}$3`));
+    total += items.length;
+    console.log(`section index: ${section} listed ${items.length} published item(s)`);
+  }
+  console.log(`section indexes: ${total} published item(s) listed from the manifest`);
+}
+
+renderSectionIndexes();
+
 // After unpublished resources are pruned, so only pages that actually ship get
 // stamped.
 injectOrganizationSchemaSitewide();
