@@ -136,6 +136,7 @@
     "validate:sitemap-ledger-integrity": "node _ops/validators/validate_sitemap_ledger_integrity.js",
     "validate:live-publication-verification": "node _ops/validators/validate_live_publication_verification.js",
     "validate:llm-atlas-navigation": "node _ops/validators/validate_llm_atlas_navigation.js",
-    "nav:atlas": "node scripts/ingestion/build_llm_atlas_navigation.js --write"
+    "nav:atlas": "node scripts/ingestion/build_llm_atlas_navigation.js --write",
+    "validate:content-gate-coverage": "node _ops/validators/validate_content_gate_coverage.js"
   }
 }

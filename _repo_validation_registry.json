@@ -1096,6 +1096,20 @@
       "findingProtocol": "VALIDATION_FINDING",
       "enabled": true,
       "rationale": "Second instance of the defect validate:internal-navigation already guards. scripts/ingestion/build_llm_atlas_navigation.js exists because seven of the eight atlas pages carried no anchor at all - the only dead ends among the site's sitemap URLs, present in sitemap.xml and reachable by no click path - and because the atlas index rendered its pillars as unlinked <article> cards. It ran once, its output was committed, and then nothing invoked it: not package.json, not any workflow, not site_build.js. Proved unguarded by deleting every <nav> from pages/llm-atlas/answer-surfaces/index.html and re-running llm-ingestion-routes, hidden-llm-surfaces and internal-links: all three passed, so the matrix would have stayed green while the atlas reverted to dead ends. This runs the generator in --check mode, then independently reads all eight pages and requires each to link to its seven siblings and to the home page, and requires an npm script to name the generator so the repair is findable. Hard-fails on zero atlas pages examined."
+    },
+    {
+      "id": "content-gate-coverage",
+      "npmScript": "validate:content-gate-coverage",
+      "entrypoint": "_ops/validators/validate_content_gate_coverage.js",
+      "severity": "HARD_FAIL",
+      "blocksRelease": true,
+      "group": "content-governance",
+      "owner": "site-operations",
+      "scope": "the release-blocking content gates cannot pass having examined nothing",
+      "ciInvocation": "MATRIX_ONLY",
+      "findingProtocol": "VALIDATION_FINDING",
+      "enabled": true,
+      "rationale": "A sibling repo had three HARD_FAIL blocksRelease gates of exactly this kind - instruction-leak, empty-cells, content-pattern - globbing for built *.html under a gitignored dist/ while CI ran validate:all before npm run build. Every run examined zero pages and exited 0: three release gates structurally incapable of failing, invisible because a pass on zero items reads exactly like a pass on every item. The ordering half was checked here and does not apply: a fresh clone with no dist/, running validate:all with no build first exactly as Validate does, showed 277, 277 and 270 pages, because these gates walk the committed pages/ tree and exclude dist/ by name. This closes the durable half. Each gate is copied into a synthetic repo-shaped directory with no pages and executed there, so __dirname resolves to the empty tree, and must exit non-zero naming the empty surface. It also asserts each gate last covered at least half the HTML under pages/, so a gate that hard-fails on zero but only ever sees a handful is caught too. Hard-fails if it traces zero gates."
     }
   ]
 }

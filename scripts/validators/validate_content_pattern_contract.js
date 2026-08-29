@@ -175,6 +175,28 @@ const summary = CHECKS.map((check) => {
   };
 });
 
+// Rule 0: a pass must not be indistinguishable from "found nothing to check".
+// In a sibling repo three gates of exactly this shape - instruction-leak, empty
+// cells, content-pattern - globbed for built HTML under a gitignored dist/ while
+// CI ran validation before the build, so every run examined zero pages and
+// exited 0: structurally incapable of failing. These gates walk the committed
+// pages/ tree instead and were verified in a fresh checkout with no dist/ to
+// examine 270 pages, so the ordering half of that defect does not apply here. This
+// is the other half, and it is the durable one: if the scan surface is ever
+// re-pointed, moved, or emptied, the gate fails loudly instead of passing on
+// nothing.
+if (!pages.length) {
+  // warn(), not fail(): this module imports warn and is registered STRONG_WARNING,
+  // and exit 1 is already how it signals. Using fail() here would throw
+  // ReferenceError on the one path it exists to cover.
+  warn(
+    'examined-no-pages: this gate scanned 0 files and would have reported a pass having checked nothing. ' +
+      'A content gate on a live client site must fail when its scan surface is empty, not succeed quietly.',
+    'scanned=0'
+  );
+  process.exit(1);
+}
+
 fs.mkdirSync(path.dirname(EVIDENCE), { recursive: true });
 fs.writeFileSync(EVIDENCE, `${JSON.stringify({
   schemaVersion: '1.0.0',
