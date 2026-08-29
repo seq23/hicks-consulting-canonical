@@ -108,11 +108,27 @@ for (const file of ['data/agency/dashboard.json', 'data/agency/gsc_snapshot.json
   if (/"(?:access_token|api_key|private_key)"\s*:\s*"(?!not_connected|warning|environment_unavailable)[^"\s]{12,}"/i.test(text)) issues.push(`${file} appears to contain a secret value.`);
 }
 
-if (fs.existsSync(path.join(root, 'dist'))) {
-  for (const file of ['dist/agency/index.html', 'dist/assets/js/agency-dashboard.js', 'dist/data/agency/dashboard.json']) {
+// These three assertions can only run against a build, and dist/ is gitignored.
+// `Validate` and `Repo Validation` both run validate:all with no build before it,
+// so in those lanes this block was skipped and the success line below printed
+// exactly the same words either way - a pass indistinguishable from "found
+// nothing to check". It is covered on every push by `Build`, which builds first,
+// and by Content Publish, social-ingestion and agency-seo-monitor, all of which
+// build before validating. So the right fix is not to hard-fail when dist/ is
+// absent, which would break the lanes that legitimately have none: it is to say
+// which of the two runs this was, so a reader can never mistake a skipped
+// assertion for a passed one.
+const BUILD_ARTIFACTS = ['dist/agency/index.html', 'dist/assets/js/agency-dashboard.js', 'dist/data/agency/dashboard.json'];
+const distPresent = fs.existsSync(path.join(root, 'dist'));
+if (distPresent) {
+  for (const file of BUILD_ARTIFACTS) {
     if (!fs.existsSync(path.join(root, file))) issues.push(`Production build is missing agency artifact: ${file}`);
   }
 }
 
 if (issues.length) fail(issues);
-console.log('Agency infrastructure contract OK (route, report, workflow, scorecard, noindex, sitemap isolation, and warning-only provider behavior).');
+const buildCoverage = distPresent
+  ? `${BUILD_ARTIFACTS.length} build artifact(s) verified in dist/`
+  : `${BUILD_ARTIFACTS.length} build artifact(s) NOT verified - no dist/ in this checkout, so this run did not build. ` +
+    'Covered by the Build workflow, which builds before it validates.';
+console.log(`Agency infrastructure contract OK (route, report, workflow, scorecard, noindex, sitemap isolation, and warning-only provider behavior; ${buildCoverage}).`);

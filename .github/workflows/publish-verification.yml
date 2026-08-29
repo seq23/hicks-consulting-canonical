@@ -1,0 +1,52 @@
+name: Publish Verification
+
+# The alert nobody had.
+#
+# Content Publish pushes its release commit with GITHUB_TOKEN, and a GITHUB_TOKEN
+# push never triggers another workflow. `Postdeploy Smoke` and `Build` are both
+# `on: push`, so neither runs after the daily cron's own commit. Cloudflare Pages
+# still deploys, because it watches the branch rather than the Actions API, and
+# that is why the site has been fine. But if a deploy fails, the repo says an item
+# is published and the live URL 404s, and nothing anywhere says so.
+#
+# A push-triggered check cannot close that, because push-triggered is exactly what
+# does not fire. This is schedule-triggered, and it checks the live site over HTTP
+# rather than the repo.
+#
+# 13:47 UTC is 30 minutes after the publish cron at 13:17 - long enough for the
+# Pages build, and clear of Agency SEO Monitor at 14:23. It is deliberately NOT in
+# the hicks-consulting-content-automation concurrency group: this lane writes
+# nothing, and it must be able to run while a publishing lane is queued, since a
+# stuck publishing lane is one of the things it exists to reveal.
+
+on:
+  workflow_dispatch:
+    inputs:
+      site_url:
+        description: Live site to verify
+        required: false
+        default: https://www.hicksconsulting.org
+  schedule:
+    - cron: '47 13 * * *'
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    name: Verify the newest published item is live
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      SITE_URL: ${{ github.event.inputs.site_url || 'https://www.hicksconsulting.org' }}
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: main
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 20
+      # The release commit lands at 13:17 and Pages builds from it. Checking out
+      # main here reads the manifest as the release left it.
+      - name: Verify the live site against the published manifest
+        run: node scripts/verification/verify_published_release.mjs

@@ -132,6 +132,11 @@
     "validate:internal-navigation": "node _ops/validators/validate_internal_navigation.js",
     "validate:individual-approval-gate": "node _ops/validators/deep/validate_individual_approval_gate.js",
     "validate:client-visible-review-queue": "node _ops/validators/deep/validate_client_visible_review_queue.mjs",
-    "validate:owner-publication-attribution": "node _ops/validators/deep/validate_owner_publication_attribution.js"
+    "validate:owner-publication-attribution": "node _ops/validators/deep/validate_owner_publication_attribution.js",
+    "validate:sitemap-ledger-integrity": "node _ops/validators/validate_sitemap_ledger_integrity.js",
+    "validate:live-publication-verification": "node _ops/validators/validate_live_publication_verification.js",
+    "validate:llm-atlas-navigation": "node _ops/validators/validate_llm_atlas_navigation.js",
+    "nav:atlas": "node scripts/ingestion/build_llm_atlas_navigation.js --write",
+    "validate:content-gate-coverage": "node _ops/validators/validate_content_gate_coverage.js"
   }
 }

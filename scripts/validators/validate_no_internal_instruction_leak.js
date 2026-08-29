@@ -66,6 +66,23 @@ let scanned = 0;
   }
 })(ROOT);
 
+// Rule 0: a pass must not be indistinguishable from "found nothing to check".
+// In a sibling repo three gates of exactly this shape - instruction-leak, empty
+// cells, content-pattern - globbed for built HTML under a gitignored dist/ while
+// CI ran validation before the build, so every run examined zero pages and
+// exited 0: structurally incapable of failing. These gates walk the committed
+// pages/ tree instead and were verified in a fresh checkout with no dist/ to
+// examine 277 pages, so the ordering half of that defect does not apply here. This
+// is the other half, and it is the durable one: if the scan surface is ever
+// re-pointed, moved, or emptied, the gate fails loudly instead of passing on
+// nothing.
+if (!scanned) {
+  fail(
+    'examined-no-pages: this gate scanned 0 files and would have reported a pass having checked nothing. ' +
+      'A content gate on a live client site must fail when its scan surface is empty, not succeed quietly.'
+  );
+}
+
 fs.mkdirSync(path.dirname(EVIDENCE), { recursive: true });
 fs.writeFileSync(EVIDENCE, `${JSON.stringify({
   schemaVersion: '1.0.0',

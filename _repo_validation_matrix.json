@@ -77,7 +77,11 @@
         "internal-navigation",
         "individual-approval-gate",
         "client-visible-review-queue",
-        "owner-publication-attribution"
+        "owner-publication-attribution",
+        "sitemap-ledger-integrity",
+        "live-publication-verification",
+        "llm-atlas-navigation",
+        "content-gate-coverage"
       ]
     },
     "ingestion": {
@@ -99,7 +103,9 @@
       "checks": [
         "sitemap-parity",
         "hidden-llm-surfaces",
-        "llm-ingestion-routes"
+        "llm-ingestion-routes",
+        "sitemap-ledger-integrity",
+        "llm-atlas-navigation"
       ]
     },
     "indexnow": {

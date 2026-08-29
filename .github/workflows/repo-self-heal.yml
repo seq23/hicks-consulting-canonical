@@ -87,7 +87,22 @@ jobs:
             echo "Matrix was already clean and no repair changed anything on disk."
             exit 0
           fi
-          git commit -m "Repo self-heal: apply registered repairs and re-validate clean"
+          # The subject is derived from what the loop actually repaired, not
+          # asserted. The 2026-08-29 dispatch reached clean on attempt 1 with
+          # `repaired: []` and still committed "apply registered repairs", which is
+          # a commit message describing work that did not happen - the same defect
+          # autonomy-self-heal.yml already fixed by taking its subject from its own
+          # receipt. A run that repaired nothing now says so.
+          MESSAGE="$(node -e '
+            const report = JSON.parse(require("fs").readFileSync("reports/self-heal-loop.json", "utf8"));
+            const repaired = (report.attempts || []).flatMap((a) => a.repaired || []);
+            const ids = [...new Set(repaired.map((r) => (typeof r === "string" ? r : r.id)).filter(Boolean))];
+            process.stdout.write(ids.length
+              ? `Repo self-heal: repair ${ids.join(", ")} and re-validate clean`
+              : "Repo self-heal: record the loop report; the matrix was already clean and no repair ran");
+          ')"
+          echo "Committing as: $MESSAGE"
+          git commit -m "$MESSAGE"
           git push origin main
       - name: Fail the lane if the tree could not be healed
         if: always()
