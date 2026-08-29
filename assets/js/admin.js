@@ -148,6 +148,16 @@ function approvalFor(item) {
   const record = APPROVAL_RECORD || {};
   const perItem = (record.approvals || []).find((entry) => entry && entry.id === item.id && String(entry.approvedBy || '').trim());
   if (perItem) return perItem;
+  // Some pieces have to be decided one at a time, whatever their date. Six
+  // guides were previously kept out of the standing window by being scheduled
+  // into 2027 -- a date standing in for a permission, at the price of four
+  // months. The requirement now travels on the piece, and this reads the same
+  // three flags scripts/publishing/process_manifest.js#requiresIndividualApproval
+  // reads. Inlined rather than factored out because the validators that hold the
+  // page and the publisher together lift this function on its own.
+  if (item.requiresIndividualApproval === true || item.routineApprovalRequired === true || item.publicOnlyAfterApproval === true) {
+    return null;
+  }
   // `standing_approvals` is the shape the publisher actually writes and reads
   // (scripts/publishing/process_manifest.js). It is listed FIRST because it is
   // the real one; the camelCase spellings are tolerated leftovers. Getting this
@@ -243,18 +253,42 @@ function groupFor(item) {
   if (item.status === 'published') return 'published';
   if (humanDecisionFor(item)) return 'declined';
   if (item.status === 'revoked') return 'system-removed';
-  if (item.validationPassed !== true) return 'draft';
-  if (item.status !== 'approved') return 'draft';
+  if (item.status !== 'approved' || item.validationPassed !== true) {
+    /* Not everything short of 'approved' is unwritten work.
+     *
+     * Five finished pieces sat at status:'draft' with no date, each carrying the
+     * note "Awaiting client review", and every client-facing view here dropped
+     * them: this function called them 'draft', and 'draft' was not in
+     * CLIENT_GROUPS. So an item that said in its own record that it was waiting
+     * on Monika was invisible to Monika, in the one place she looks. Nothing
+     * failed and nothing surfaced; they simply never arrived.
+     *
+     * An item awaiting a person cannot be invisible to that person. So a piece
+     * that is finished (machine-validated) AND says it is waiting on her is put
+     * where she can see it. A piece genuinely mid-generation is still held back,
+     * because a half-written draft in her queue is noise, not transparency.
+     */
+    const notes = String(item.notes || '');
+    const saysItAwaitsHer = item.awaitingClientReview === true
+      || item.requiresIndividualApproval === true
+      || /awaiting\s+(?:client|your|monika|monika['’]s|a\s+client)\s+(?:review|decision|approval)/i.test(notes)
+      || /awaiting\s+review/i.test(notes);
+    return (item.validationPassed === true && saysItAwaitsHer) ? 'awaiting-review' : 'draft';
+  }
   return approvalFor(item) ? 'scheduled' : 'ready';
 }
 
-// The groups Monika is shown. 'draft' is work that has not been written yet, so
-// it is the only one held back.
-const CLIENT_GROUPS = ['ready', 'scheduled', 'published', 'declined', 'system-removed'];
+// The groups Monika is shown.
+//
+// 'draft' -- work that is genuinely still being written -- is the only one held
+// back. 'awaiting-review' is here because of what happened when it was not: a
+// finished piece whose own record read "Awaiting client review" reached no view
+// on this page at all. Anything that says it is waiting on her is shown to her.
+const CLIENT_GROUPS = ['ready', 'awaiting-review', 'scheduled', 'published', 'declined', 'system-removed'];
 
 function typeLabel(item) {
   const value = item.contentType || '';
-  const labels = { insights: 'Insight', articles: 'Article', guides: 'Guide', 'white-papers': 'White paper' };
+  const labels = { insights: 'Insight', articles: 'Article', guides: 'Guide', 'white-papers': 'White paper', 'local-landing': 'Memphis page' };
   return labels[value] || 'Piece';
 }
 
@@ -303,7 +337,17 @@ function readItLink(item) {
 function whenLine(item, group) {
   if (group === 'published') {
     const when = friendlyDate(item.publishedAt, false);
-    return when ? `On your website since ${when}` : 'On your website now';
+    const live = when ? `On your website since ${when}` : 'On your website now';
+    // A page your site owner put up directly says so on its own row. Everything
+    // else on this screen is careful never to present a machine's act as your
+    // decision; a person's act is held to the same rule.
+    const owner = item.ownerPublication && String(item.ownerPublication.publishedBy || '').trim();
+    return owner ? `${live}. Put up by your site owner (${owner}) — this one did not go through your approvals. You can still take it off.` : live;
+  }
+  if (group === 'awaiting-review') {
+    const when = friendlyDate(item.scheduledAt);
+    const date = when ? ` It is pencilled in for ${when}.` : '';
+    return `Finished and waiting on you.${date} It is not on your website and will not go up until you say so.`;
   }
   if (group === 'declined') {
     // Only ever reached for an item a named person decided against, so there is
@@ -375,10 +419,15 @@ function itemCard(item, group) {
 
 function renderReview() {
   const items = ADMIN_ITEMS.filter((item) => groupFor(item) === 'ready').sort((a, b) => String(a.scheduledAt || '').localeCompare(String(b.scheduledAt || '')));
+  // Finished pieces whose own record says they are waiting on her. They used to
+  // reach no view on this page at all, so they are rendered here, after the ones
+  // she can act on, rather than being counted somewhere and shown nowhere.
+  const awaiting = ADMIN_ITEMS.filter((item) => groupFor(item) === 'awaiting-review').sort((a, b) => String(a.scheduledAt || '').localeCompare(String(b.scheduledAt || '')));
   const list = document.getElementById('review-list');
   const summary = document.getElementById('review-summary');
   const counts = {
     ready: items.length,
+    awaiting: awaiting.length,
     scheduled: ADMIN_ITEMS.filter((item) => groupFor(item) === 'scheduled').length,
     published: ADMIN_ITEMS.filter((item) => groupFor(item) === 'published').length,
     declined: ADMIN_ITEMS.filter((item) => groupFor(item) === 'declined').length,
@@ -396,13 +445,23 @@ function renderReview() {
     ? ` ${counts.systemRemoved} ${counts.systemRemoved === 1 ? 'piece was' : 'pieces were'} removed automatically because ${counts.systemRemoved === 1 ? 'it repeated' : 'they repeated'} an article already on your site; each one says why.`
     : '';
   const elsewhere = `${counts.scheduled} approved and waiting for ${counts.scheduled === 1 ? 'its date' : 'their dates'}, ${counts.published} already live, and ${turnedDown}.${removed}`;
+  // Said out loud rather than left to a filter chip. These are the pieces that
+  // were finished, marked as waiting on her, and shown nowhere.
+  const alsoWaiting = counts.awaiting
+    ? ` ${counts.awaiting} more ${counts.awaiting === 1 ? 'piece is' : 'pieces are'} finished and marked as waiting on you, below.`
+    : '';
   if (summary) {
     summary.innerHTML = counts.ready
-      ? `<strong>${counts.ready} ${counts.ready === 1 ? 'piece is' : 'pieces are'} waiting for your OK.</strong> Nothing here goes on your website until you approve it. `
+      ? `<strong>${counts.ready} ${counts.ready === 1 ? 'piece is' : 'pieces are'} waiting for your OK.</strong> Nothing here goes on your website until you approve it.${alsoWaiting} `
         + `Elsewhere: ${elsewhere}`
-      : `<strong>Nothing needs your OK right now.</strong> ${elsewhere}`;
+      : counts.awaiting
+        ? `<strong>Nothing is ready to approve yet, but ${counts.awaiting} ${counts.awaiting === 1 ? 'piece is' : 'pieces are'} finished and waiting on you.</strong> ${elsewhere}`
+        : `<strong>Nothing needs your OK right now.</strong> ${elsewhere}`;
   }
-  if (list) list.innerHTML = items.length ? items.map((item) => itemCard(item, 'ready')).join('') : '';
+  if (list) {
+    list.innerHTML = items.map((item) => itemCard(item, 'ready')).join('')
+      + awaiting.map((item) => itemCard(item, 'awaiting-review')).join('');
+  }
 }
 
 function getFilters() {
@@ -422,7 +481,7 @@ function getFilters() {
 // was here before, kept deliberately -- title, kind, date, status, and the two
 // links on every row including Edit in GitHub.
 function statusChip(group) {
-  const label = { ready: 'Waiting for your OK', published: 'Published', scheduled: 'Approved', declined: 'You turned it down', 'system-removed': 'Removed automatically' }[group] || '';
+  const label = { ready: 'Waiting for your OK', 'awaiting-review': 'Finished, waiting on you', published: 'Published', scheduled: 'Approved', declined: 'You turned it down', 'system-removed': 'Removed automatically' }[group] || '';
   return `<span class="pill pill-${escapeHtml(group)}">${escapeHtml(label)}</span>`;
 }
 
@@ -469,13 +528,14 @@ function renderBrowse() {
     const bv = field === 'title' ? String(b.item.title || '') : sortKeyDate(b.item);
     return direction === 'desc' ? bv.localeCompare(av) : av.localeCompare(bv);
   });
-  const labels = { ready: 'waiting for your OK', published: 'already published', scheduled: 'approved and not yet published', declined: 'you turned down', 'system-removed': 'removed automatically', all: 'in total' };
+  const labels = { ready: 'waiting for your OK', 'awaiting-review': 'finished and waiting on you', published: 'already published', scheduled: 'approved and not yet published', declined: 'you turned down', 'system-removed': 'removed automatically', all: 'in total' };
   // An empty group is a fact, not a failure, and each empty group has its own
   // fact. "Nothing matches what you asked for" would be wrong here: she asked a
   // clear question and the honest answer is that she has never said no to
   // anything.
   const emptyLines = {
     ready: 'Nothing is waiting for your OK right now.',
+    'awaiting-review': 'Nothing is finished and waiting on you right now.',
     scheduled: 'Nothing is approved and waiting for a date right now.',
     published: 'Nothing is on your website yet.',
     declined: 'You have not turned anything down yet.',

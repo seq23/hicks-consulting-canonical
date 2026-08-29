@@ -164,10 +164,69 @@ if (surname.length && refused === 0) {
   fail(`${surname.length} surname-matched queries present (e.g. "${surname[0].query}") yet the blue-ocean gate refused none - the gate has been widened into a no-op.`);
 }
 
+// ------------------------------------- (4) no "near me" query is left ungoverned
+//
+// A query that implies a place and names none cannot be answered as typed, so
+// each one needs a recorded decision: either a localized variant that a Memphis
+// searcher and a location-aware answer engine actually resolve to, or an
+// explicit decision that no page will ever target it.
+//
+// Ten were measured. Eight got localized variants; "trauma center near me" and
+// "mental health diagnosis near me" got neither and sat in the file for weeks
+// with primaryPage "/" - present, counted, and decided about by nobody. An
+// undecided row is indistinguishable from a forgotten one, which is how a page
+// gets written later for a service this practice does not provide.
+//
+// So: every bare "near me" target is under one of the two rules, and a decision
+// not to target must actually bind. blueOceanEligibility is what content
+// generation reads, so the refusal is asserted through that function rather than
+// trusted to a note.
+const IMPLIES_A_PLACE = /\b(near me|nearby|near by|open now|around here)\b/i;
+const localizedFor = new Set(rows.filter((r) => r && r.intent === 'localized_variant' && r.localizes).map((r) => String(r.localizes).toLowerCase()));
+const bare = rows.filter((r) => r && r.query && IMPLIES_A_PLACE.test(r.query) && r.intent !== 'localized_variant');
+
+let governed = 0;
+let notTargeted = 0;
+for (const row of bare) {
+  const q = String(row.query);
+  const targeting = row.targeting || null;
+  if (targeting && targeting.targeted === false) {
+    if (!String(targeting.why || '').trim()) fail(`"${q}" is marked as never to be targeted with no reason recorded.`);
+    if (!String(targeting.so_what_happens_instead || targeting.decision || '').trim()) fail(`"${q}" refuses a page without saying what happens to that searcher instead.`);
+    if (row.blue_ocean_eligible && row.blue_ocean_eligible.eligible !== false) {
+      fail(`"${q}" is marked as never to be targeted but is still blue-ocean eligible, so the drafting cycle will propose a page for it every run.`);
+    }
+    notTargeted++;
+    governed++;
+    continue;
+  }
+  if (localizedFor.has(q.toLowerCase())) { governed++; continue; }
+  if (targeting && targeting.targeted === true && String(targeting.how || '').trim()) { governed++; continue; }
+  fail(`"${q}" implies a location, names none, and carries neither a localized variant nor a recorded decision not to target it. Ungoverned: nobody can tell this apart from an oversight.`);
+}
+if (!bare.length) {
+  fail('no bare "near me" targets found - this section examined nothing and must not pass on an empty loop.');
+}
+
+// The refusal has to bind in code, not only in data.
+try {
+  const { blueOceanEligibility } = require('../../scripts/lib/demand_titles.js');
+  const probe = blueOceanEligibility({ query: 'trauma center near me', targeting: { targeted: false, why: 'fixture' }, occupancy: { verdict: 'OPEN' } });
+  if (!probe || probe.eligible !== false) {
+    fail('scripts/lib/demand_titles.js#blueOceanEligibility ignores targeting.targeted:false, so a recorded decision not to target a query does not actually stop content being drafted for it.');
+  }
+  const control = blueOceanEligibility({ query: 'therapist near me memphis', occupancy: { verdict: 'OPEN' } });
+  if (!control || control.eligible !== true) {
+    fail('blueOceanEligibility now refuses an ordinary anchored target - the non-target gate has been widened into a blanket refusal.');
+  }
+} catch (e) {
+  fail(`could not exercise blueOceanEligibility: ${e.message}`);
+}
+
 // ---------------------------------------------------------------------- verdict
 if (problems.length) {
   console.error('Discovery-gap contract FAILED:');
   for (const p of problems) console.error(`  - ${p}`);
   process.exit(1);
 }
-console.log(`Discovery-gap contract OK: ${examined} targets examined, all gated; ${refused} refused as navigational or unanchored; ${carried} readings carried forward as stale rather than destroyed; scorer invoked by ${invoking.map((i) => i.file).join(', ')} and its output committed.`);
+console.log(`Discovery-gap contract OK: ${examined} targets examined, all gated; ${refused} refused as navigational, unanchored or not-a-service-we-provide; ${carried} readings carried forward as stale rather than destroyed; ${governed}/${bare.length} location-implying "near me" targets governed (${notTargeted} recorded as never to be targeted, and the refusal proved binding through blueOceanEligibility); scorer invoked by ${invoking.map((i) => i.file).join(', ')} and its output committed.`);

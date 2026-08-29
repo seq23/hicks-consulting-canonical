@@ -25,18 +25,18 @@
     },
     {
       "path": ".github/workflows/content-publish.yml",
-      "sha256": "9b9aeb3b8974bb232aa15459e6511b688f3757a24c26f7974dd8b6406da75062",
-      "bytes": 1157
+      "sha256": "ab0b5fcff0bf43180ed8efae0311eeee5ab844c1e7e896433ec9fb59b5cde577",
+      "bytes": 3236
     },
     {
       "path": "pages/admin/index.html",
-      "sha256": "350f1dce84c3014ab15c9750a0c0bcbe4d65eb4f79804043918fa55e34f62d9d",
-      "bytes": 16298
+      "sha256": "8851907bec851c33263bb523769dfd77d5df59a7d8f3ee6402ba338109e039d3",
+      "bytes": 15055
     },
     {
       "path": "assets/js/admin.js",
-      "sha256": "aa702bb8bf3376753da9bfddc2b28ae312ba9ee3158c720f481e7fc2a2d53470",
-      "bytes": 16002
+      "sha256": "97b436c055fcc9bc80ab82c9416466138d4f06e79553d98f6ea1cb7a336c554b",
+      "bytes": 46475
     },
     {
       "path": "scripts/autonomy/lib/safe_harbor.mjs",
@@ -44,13 +44,11 @@
       "bytes": 8930
     }
   ],
-  "baseline_refreshed_at": "2026-08-29T13:31:54.699036Z",
-  "baseline_reason": "Re-recorded 2026-08-29 after a deliberate, owner-authorised rewrite of the client admin surface: a plain-language approval page for the client, content approve/decline/take-down endpoints, and pause/emergencyStop now honoured by the publish and self-heal lanes as well as the drafting cycle. runtime_contract.routineApprovalRequired was corrected false -> true to match the human release gate introduced 2026-08-27, and two validators that enforced the opposite were updated to assert the gate's own files instead of prose on a client-facing page.",
+  "baseline_refreshed_at": "2026-08-29T17:40:00.000000Z",
+  "baseline_reason": "Re-recorded 2026-08-29 (second refresh that day) after three deliberate, owner-authorised changes. (1) assets/js/admin.js and pages/admin/index.html: five finished pieces whose own record read \"Awaiting client review\" were invisible to the client, because groupFor() called every non-approved item 'draft' and 'draft' was not in CLIENT_GROUPS - so neither renderReview() nor renderBrowse() showed them. A sixth client group, 'awaiting-review', now carries anything finished that says it is waiting on her, with its own filter chip, status option, row label and place in the review panel; genuinely mid-generation drafts are still held back. approvalFor() additionally refuses to treat an item flagged requiresIndividualApproval as covered by a standing window, matching scripts/publishing/process_manifest.js exactly, and a published page the site owner released directly now says so on its own row rather than reading as a decision of hers. (2) .github/workflows/content-publish.yml: scripts/navigation/build_internal_navigation.mjs was invoked by nothing at all, so every release left the site's internal navigation describing the library as it was before that release; the workflow now runs it immediately after a release and commits pages/ and sitemap.xml. The five previous validators of this file all still pass unchanged. Nothing in the human release gate itself was weakened: the standing window still ends 2026-12-31, routineApprovalRequired remains true, and no additional item became releasable.",
   "baseline_refresh_changed_files": [
-    "data/system/runtime_contract.json",
-    "worker/admin_runtime.mjs",
-    "scripts/publishing/run_safe_publish.mjs",
     "pages/admin/index.html",
-    "assets/js/admin.js"
+    "assets/js/admin.js",
+    ".github/workflows/content-publish.yml"
   ]
 }

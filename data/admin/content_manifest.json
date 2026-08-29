@@ -4144,7 +4144,9 @@
     "title": "What Therapy and Coaching Cost at Hicks Consulting",
     "type": "monthly",
     "slug": "/resources/guides/what-therapy-and-coaching-cost-hicks-consulting/",
-    "status": "draft",
+    "status": "approved",
+    "requiresIndividualApproval": true,
+    "individualApprovalReason": "Written for searches Monika has never seen a page for. Her June 2026 standing approval covered the daily insights calendar she reviewed, not this. It needs her own decision, by name, whatever its date.",
     "riskLevel": "medium",
     "track": "both",
     "requiresFooter": true,
@@ -4155,7 +4157,7 @@
     "contentType": "guides",
     "publicPath": "/resources/guides/what-therapy-and-coaching-cost-hicks-consulting/",
     "previewPath": "/preview/resources/guides/what-therapy-and-coaching-cost-hicks-consulting/",
-    "scheduledAt": null,
+    "scheduledAt": "2026-09-12T13:00:00.000Z",
     "draftedFor": {
       "shape": "cost/price",
       "shape_rationale": "Query shape favoured because grounded AI-answer observations show cost/price, checklist/guide, geo-modified and comparison shapes leave slots for unbranded sites far more often than bare head terms.",
@@ -4168,14 +4170,16 @@
       ],
       "demand_source": "data/agency/gsc_snapshot.json topQueries, window 2026-07-27 to 2026-08-23"
     },
-    "notes": "DRAFT. Not approved and not published. Awaiting client review."
+    "notes": "In Monika's review queue for 12 September 2026. requiresIndividualApproval is true, so no standing approval window can release it: publication needs a named per-item approval in data/admin/publication_approvals.json. Every fee and policy on the page is taken from /faq/, the practice's published source of record."
   },
   {
     "id": "guide-geo-001",
     "title": "Online Therapy in Memphis: How Virtual Sessions Actually Work",
     "type": "monthly",
     "slug": "/resources/guides/online-therapy-memphis-how-virtual-sessions-work/",
-    "status": "draft",
+    "status": "approved",
+    "requiresIndividualApproval": true,
+    "individualApprovalReason": "Written for searches Monika has never seen a page for. Her June 2026 standing approval covered the daily insights calendar she reviewed, not this. It needs her own decision, by name, whatever its date.",
     "riskLevel": "medium",
     "track": "both",
     "requiresFooter": true,
@@ -4186,7 +4190,7 @@
     "contentType": "guides",
     "publicPath": "/resources/guides/online-therapy-memphis-how-virtual-sessions-work/",
     "previewPath": "/preview/resources/guides/online-therapy-memphis-how-virtual-sessions-work/",
-    "scheduledAt": null,
+    "scheduledAt": "2026-09-17T13:00:00.000Z",
     "draftedFor": {
       "shape": "geo-modified",
       "shape_rationale": "Query shape favoured because grounded AI-answer observations show cost/price, checklist/guide, geo-modified and comparison shapes leave slots for unbranded sites far more often than bare head terms.",
@@ -4209,14 +4213,16 @@
       ],
       "demand_source": "data/agency/gsc_snapshot.json topQueries, window 2026-07-27 to 2026-08-23"
     },
-    "notes": "DRAFT. Not approved and not published. Awaiting client review."
+    "notes": "In Monika's review queue for 17 September 2026. requiresIndividualApproval is true, so no standing approval window can release it: publication needs a named per-item approval in data/admin/publication_approvals.json. States the Tennessee licensure limit explicitly rather than implying wider availability."
   },
   {
     "id": "guide-geo-002",
     "title": "Memphis-Area Service Area: What Is Available Where You Live",
     "type": "monthly",
     "slug": "/resources/guides/memphis-area-service-area-what-is-available-where-you-live/",
-    "status": "draft",
+    "status": "approved",
+    "requiresIndividualApproval": true,
+    "individualApprovalReason": "Written for searches Monika has never seen a page for. Her June 2026 standing approval covered the daily insights calendar she reviewed, not this. It needs her own decision, by name, whatever its date.",
     "riskLevel": "medium",
     "track": "both",
     "requiresFooter": true,
@@ -4227,7 +4233,7 @@
     "contentType": "guides",
     "publicPath": "/resources/guides/memphis-area-service-area-what-is-available-where-you-live/",
     "previewPath": "/preview/resources/guides/memphis-area-service-area-what-is-available-where-you-live/",
-    "scheduledAt": null,
+    "scheduledAt": "2026-09-22T13:00:00.000Z",
     "draftedFor": {
       "shape": "geo-modified",
       "shape_rationale": "Query shape favoured because grounded AI-answer observations show cost/price, checklist/guide, geo-modified and comparison shapes leave slots for unbranded sites far more often than bare head terms.",
@@ -4250,7 +4256,7 @@
       ],
       "demand_source": "data/agency/gsc_snapshot.json topQueries, window 2026-07-27 to 2026-08-23"
     },
-    "notes": "DRAFT. Not approved and not published. Awaiting client review."
+    "notes": "In Monika's review queue for 22 September 2026. requiresIndividualApproval is true, so no standing approval window can release it: publication needs a named per-item approval in data/admin/publication_approvals.json. Tells Mississippi and Arkansas readers plainly that therapy is not available to them and points them elsewhere."
   },
   {
     "id": "guide-checklist-001",
@@ -4258,6 +4264,8 @@
     "type": "monthly",
     "slug": "/resources/guides/how-to-choose-a-therapist-near-you/",
     "status": "approved",
+    "requiresIndividualApproval": true,
+    "individualApprovalReason": "Written for searches Monika has never seen a page for. Her June 2026 standing approval covered the daily insights calendar she reviewed, not this. It needs her own decision, by name, whatever its date.",
     "riskLevel": "medium",
     "track": "both",
     "requiresFooter": true,
@@ -4268,7 +4276,7 @@
     "contentType": "guides",
     "publicPath": "/resources/guides/how-to-choose-a-therapist-near-you/",
     "previewPath": "/preview/resources/guides/how-to-choose-a-therapist-near-you/",
-    "scheduledAt": "2027-01-05T13:00:00.000Z",
+    "scheduledAt": "2026-09-02T13:00:00.000Z",
     "draftedFor": {
       "shape": "checklist/guide",
       "shape_rationale": "Query shape favoured because grounded AI-answer observations show cost/price, checklist/guide, geo-modified and comparison shapes leave slots for unbranded sites far more often than bare head terms.",
@@ -4331,14 +4339,16 @@
       ],
       "demand_source": "data/agency/gsc_snapshot.json topQueries, window 2026-07-27 to 2026-08-23"
     },
-    "notes": "Awaiting Monika's review. Scheduled after 2026-12-31 so the June standing editorial approval does not cover it. Publication requires a named per-item approval in data/admin/publication_approvals.json."
+    "notes": "In Monika's review queue for 2 September 2026. This is a genuine resource-library guide - it is written to be useful even when the therapist the reader chooses is not this practice - so it stays under /resources/guides/ rather than moving to a top-level landing route with the five local-intent pages. requiresIndividualApproval is true, so no standing approval window can release it: publication needs a named per-item approval in data/admin/publication_approvals.json. It no longer sits in 2027; the date was never the gate, the flag is."
   },
   {
     "id": "guide-compare-001",
     "title": "Therapy, Coaching, or Organizational Training: Which One Do You Actually Need?",
     "type": "monthly",
     "slug": "/resources/guides/therapy-vs-coaching-vs-organizational-training/",
-    "status": "draft",
+    "status": "approved",
+    "requiresIndividualApproval": true,
+    "individualApprovalReason": "Written for searches Monika has never seen a page for. Her June 2026 standing approval covered the daily insights calendar she reviewed, not this. It needs her own decision, by name, whatever its date.",
     "riskLevel": "medium",
     "track": "both",
     "requiresFooter": true,
@@ -4349,7 +4359,7 @@
     "contentType": "guides",
     "publicPath": "/resources/guides/therapy-vs-coaching-vs-organizational-training/",
     "previewPath": "/preview/resources/guides/therapy-vs-coaching-vs-organizational-training/",
-    "scheduledAt": null,
+    "scheduledAt": "2026-09-07T13:00:00.000Z",
     "draftedFor": {
       "shape": "comparison",
       "shape_rationale": "Query shape favoured because grounded AI-answer observations show cost/price, checklist/guide, geo-modified and comparison shapes leave slots for unbranded sites far more often than bare head terms.",
@@ -4387,14 +4397,16 @@
       ],
       "demand_source": "data/agency/gsc_snapshot.json topQueries, window 2026-07-27 to 2026-08-23"
     },
-    "notes": "DRAFT. Not approved and not published. Awaiting client review."
+    "notes": "In Monika's review queue for 7 September 2026. requiresIndividualApproval is true, so no standing approval window can release it: publication needs a named per-item approval in data/admin/publication_approvals.json. Keeps the clinical/non-clinical line explicit: coaching is named as not therapy in the body, the table and the FAQ."
   },
   {
     "id": "guide-geo-003",
     "title": "Mental Health Training for Memphis Organizations: What It Covers and How to Scope It",
     "type": "monthly",
     "slug": "/resources/guides/memphis-organizational-mental-health-training/",
-    "status": "draft",
+    "status": "approved",
+    "requiresIndividualApproval": true,
+    "individualApprovalReason": "Written for searches Monika has never seen a page for. Her June 2026 standing approval covered the daily insights calendar she reviewed, not this. It needs her own decision, by name, whatever its date.",
     "riskLevel": "medium",
     "track": "both",
     "requiresFooter": true,
@@ -4405,7 +4417,7 @@
     "contentType": "guides",
     "publicPath": "/resources/guides/memphis-organizational-mental-health-training/",
     "previewPath": "/preview/resources/guides/memphis-organizational-mental-health-training/",
-    "scheduledAt": null,
+    "scheduledAt": "2026-09-27T13:00:00.000Z",
     "draftedFor": {
       "shape": "geo-modified",
       "shape_rationale": "Query shape favoured because grounded AI-answer observations show cost/price, checklist/guide, geo-modified and comparison shapes leave slots for unbranded sites far more often than bare head terms.",
@@ -4438,14 +4450,15 @@
       ],
       "demand_source": "data/agency/gsc_snapshot.json topQueries, window 2026-07-27 to 2026-08-23"
     },
-    "notes": "DRAFT. Not approved and not published. Awaiting client review."
+    "notes": "In Monika's review queue for 27 September 2026. requiresIndividualApproval is true, so no standing approval window can release it: publication needs a named per-item approval in data/admin/publication_approvals.json. Quotes no training rate card, because there is not one to quote."
   },
   {
     "id": "guide-local-nearme-001",
     "title": "Therapist Near Me in Memphis: How to Find One Who Can Actually See You",
     "type": "monthly",
-    "slug": "/resources/guides/therapist-near-me-memphis/",
-    "status": "approved",
+    "slug": "/therapist-near-me-memphis/",
+    "family": "memphis-local-landing",
+    "status": "published",
     "riskLevel": "medium",
     "track": "both",
     "requiresFooter": true,
@@ -4453,10 +4466,17 @@
     "contentWordTarget": 1400,
     "contentWordWarningFloor": 1050,
     "source": "measured_gsc_demand_2026_08_local_intent",
-    "contentType": "guides",
-    "publicPath": "/resources/guides/therapist-near-me-memphis/",
-    "previewPath": "/preview/resources/guides/therapist-near-me-memphis/",
-    "scheduledAt": "2027-01-12T13:00:00.000Z",
+    "contentType": "local-landing",
+    "publicPath": "/therapist-near-me-memphis/",
+    "scheduledAt": "2026-08-29T16:00:00.000Z",
+    "publishedAt": "2026-08-29T16:00:00.000Z",
+    "ownerPublication": {
+      "publishedBy": "Site owner",
+      "publishedAt": "2026-08-29T16:00:00.000Z",
+      "reason": "Direct site-owner release. This answers measured local searches that were returning nothing for this practice, and the owner released it without routing it through the client review queue.",
+      "clientApproval": "none - Monika Hicks has not reviewed this page and no decision of hers is recorded or implied",
+      "routeChange": "Moved from /resources/guides/therapist-near-me-memphis/. That route family was only ever used because scripts/site_build.js prunes unpublished /resources/ routes from dist, which is what kept the page private. Nothing was ever published at the old path, so no redirect is owed."
+    },
     "draftedFor": {
       "shape": "localized service guide",
       "shape_rationale": "The bare query carries no location, so a live web observation of it returns geographic noise and cannot be won by any single local practice. The winnable form is the Memphis / Olive Branch localized variant, which is what this page is written for. Shape follows the two pages that already hold citations: /black-therapist-memphis/ and /anxiety-therapist-memphis/.",
@@ -4484,14 +4504,15 @@
       ],
       "demand_source": "data/agency/gsc_snapshot.json topQueries, window 2026-07-27 to 2026-08-23"
     },
-    "notes": "Awaiting Monika's review. Scheduled after 2026-12-31 so the June standing editorial approval does not cover it. Publication requires a named per-item approval in data/admin/publication_approvals.json."
+    "notes": "Published by the site owner on 29 August 2026. This is a localized service landing page of the same kind as /black-therapist-memphis/ and /anxiety-therapist-memphis/, not a resource-library guide, which is why it is on a top-level route. No client approval is claimed - see ownerPublication."
   },
   {
     "id": "guide-local-female-001",
     "title": "Female Therapist in Memphis: What Gender Fit Changes, and What It Does Not",
     "type": "monthly",
-    "slug": "/resources/guides/female-therapist-memphis/",
-    "status": "approved",
+    "slug": "/female-therapist-memphis/",
+    "family": "memphis-local-landing",
+    "status": "published",
     "riskLevel": "medium",
     "track": "both",
     "requiresFooter": true,
@@ -4499,10 +4520,17 @@
     "contentWordTarget": 1400,
     "contentWordWarningFloor": 1050,
     "source": "measured_gsc_demand_2026_08_local_intent",
-    "contentType": "guides",
-    "publicPath": "/resources/guides/female-therapist-memphis/",
-    "previewPath": "/preview/resources/guides/female-therapist-memphis/",
-    "scheduledAt": "2027-01-19T13:00:00.000Z",
+    "contentType": "local-landing",
+    "publicPath": "/female-therapist-memphis/",
+    "scheduledAt": "2026-08-29T16:05:00.000Z",
+    "publishedAt": "2026-08-29T16:05:00.000Z",
+    "ownerPublication": {
+      "publishedBy": "Site owner",
+      "publishedAt": "2026-08-29T16:05:00.000Z",
+      "reason": "Direct site-owner release. This answers measured local searches that were returning nothing for this practice, and the owner released it without routing it through the client review queue.",
+      "clientApproval": "none - Monika Hicks has not reviewed this page and no decision of hers is recorded or implied",
+      "routeChange": "Moved from /resources/guides/female-therapist-memphis/. That route family was only ever used because scripts/site_build.js prunes unpublished /resources/ routes from dist, which is what kept the page private. Nothing was ever published at the old path, so no redirect is owed."
+    },
     "draftedFor": {
       "shape": "localized service guide",
       "shape_rationale": "The bare query carries no location, so a live web observation of it returns geographic noise and cannot be won by any single local practice. The winnable form is the Memphis / Olive Branch localized variant, which is what this page is written for. Shape follows the two pages that already hold citations: /black-therapist-memphis/ and /anxiety-therapist-memphis/.",
@@ -4524,14 +4552,15 @@
       ],
       "demand_source": "data/agency/gsc_snapshot.json topQueries, window 2026-07-27 to 2026-08-23"
     },
-    "notes": "Awaiting Monika's review. Scheduled after 2026-12-31 so the June standing editorial approval does not cover it. Publication requires a named per-item approval in data/admin/publication_approvals.json."
+    "notes": "Published by the site owner on 29 August 2026. This is a localized service landing page of the same kind as /black-therapist-memphis/ and /anxiety-therapist-memphis/, not a resource-library guide, which is why it is on a top-level route. No client approval is claimed - see ownerPublication."
   },
   {
     "id": "guide-local-christian-001",
     "title": "Christian Therapists in Memphis: How Faith Fits Into Therapy",
     "type": "monthly",
-    "slug": "/resources/guides/christian-therapist-memphis/",
-    "status": "approved",
+    "slug": "/christian-therapist-memphis/",
+    "family": "memphis-local-landing",
+    "status": "published",
     "riskLevel": "medium",
     "track": "both",
     "requiresFooter": true,
@@ -4539,10 +4568,17 @@
     "contentWordTarget": 1400,
     "contentWordWarningFloor": 1050,
     "source": "measured_gsc_demand_2026_08_local_intent",
-    "contentType": "guides",
-    "publicPath": "/resources/guides/christian-therapist-memphis/",
-    "previewPath": "/preview/resources/guides/christian-therapist-memphis/",
-    "scheduledAt": "2027-01-26T13:00:00.000Z",
+    "contentType": "local-landing",
+    "publicPath": "/christian-therapist-memphis/",
+    "scheduledAt": "2026-08-29T16:10:00.000Z",
+    "publishedAt": "2026-08-29T16:10:00.000Z",
+    "ownerPublication": {
+      "publishedBy": "Site owner",
+      "publishedAt": "2026-08-29T16:10:00.000Z",
+      "reason": "Direct site-owner release. This answers measured local searches that were returning nothing for this practice, and the owner released it without routing it through the client review queue.",
+      "clientApproval": "none - Monika Hicks has not reviewed this page and no decision of hers is recorded or implied",
+      "routeChange": "Moved from /resources/guides/christian-therapist-memphis/. That route family was only ever used because scripts/site_build.js prunes unpublished /resources/ routes from dist, which is what kept the page private. Nothing was ever published at the old path, so no redirect is owed."
+    },
     "draftedFor": {
       "shape": "localized service guide",
       "shape_rationale": "The bare query carries no location, so a live web observation of it returns geographic noise and cannot be won by any single local practice. The winnable form is the Memphis / Olive Branch localized variant, which is what this page is written for. Shape follows the two pages that already hold citations: /black-therapist-memphis/ and /anxiety-therapist-memphis/.",
@@ -4559,14 +4595,15 @@
       ],
       "demand_source": "data/agency/gsc_snapshot.json topQueries, window 2026-07-27 to 2026-08-23"
     },
-    "notes": "Awaiting Monika's review. Scheduled after 2026-12-31 so the June standing editorial approval does not cover it. Publication requires a named per-item approval in data/admin/publication_approvals.json."
+    "notes": "Published by the site owner on 29 August 2026. This is a localized service landing page of the same kind as /black-therapist-memphis/ and /anxiety-therapist-memphis/, not a resource-library guide, which is why it is on a top-level route. No client approval is claimed - see ownerPublication."
   },
   {
     "id": "guide-local-psychologist-001",
     "title": "Psychologists in Memphis: Do You Need a Psychologist, a Therapist, or a Psychiatrist?",
     "type": "monthly",
-    "slug": "/resources/guides/psychologist-vs-therapist-memphis/",
-    "status": "approved",
+    "slug": "/psychologist-vs-therapist-memphis/",
+    "family": "memphis-local-landing",
+    "status": "published",
     "riskLevel": "medium",
     "track": "both",
     "requiresFooter": true,
@@ -4574,10 +4611,17 @@
     "contentWordTarget": 1400,
     "contentWordWarningFloor": 1050,
     "source": "measured_gsc_demand_2026_08_local_intent",
-    "contentType": "guides",
-    "publicPath": "/resources/guides/psychologist-vs-therapist-memphis/",
-    "previewPath": "/preview/resources/guides/psychologist-vs-therapist-memphis/",
-    "scheduledAt": "2027-02-02T13:00:00.000Z",
+    "contentType": "local-landing",
+    "publicPath": "/psychologist-vs-therapist-memphis/",
+    "scheduledAt": "2026-08-29T16:15:00.000Z",
+    "publishedAt": "2026-08-29T16:15:00.000Z",
+    "ownerPublication": {
+      "publishedBy": "Site owner",
+      "publishedAt": "2026-08-29T16:15:00.000Z",
+      "reason": "Direct site-owner release. This answers measured local searches that were returning nothing for this practice, and the owner released it without routing it through the client review queue.",
+      "clientApproval": "none - Monika Hicks has not reviewed this page and no decision of hers is recorded or implied",
+      "routeChange": "Moved from /resources/guides/psychologist-vs-therapist-memphis/. That route family was only ever used because scripts/site_build.js prunes unpublished /resources/ routes from dist, which is what kept the page private. Nothing was ever published at the old path, so no redirect is owed."
+    },
     "draftedFor": {
       "shape": "localized service guide",
       "shape_rationale": "The bare query carries no location, so a live web observation of it returns geographic noise and cannot be won by any single local practice. The winnable form is the Memphis / Olive Branch localized variant, which is what this page is written for. Shape follows the two pages that already hold citations: /black-therapist-memphis/ and /anxiety-therapist-memphis/.",
@@ -4594,14 +4638,15 @@
       ],
       "demand_source": "data/agency/gsc_snapshot.json topQueries, window 2026-07-27 to 2026-08-23"
     },
-    "notes": "Awaiting Monika's review. Scheduled after 2026-12-31 so the June standing editorial approval does not cover it. Publication requires a named per-item approval in data/admin/publication_approvals.json."
+    "notes": "Published by the site owner on 29 August 2026. This is a localized service landing page of the same kind as /black-therapist-memphis/ and /anxiety-therapist-memphis/, not a resource-library guide, which is why it is on a top-level route. No client approval is claimed - see ownerPublication."
   },
   {
     "id": "guide-local-olivebranch-001",
     "title": "Looking for a Therapist in Olive Branch, MS: What the State Line Changes",
     "type": "monthly",
-    "slug": "/resources/guides/therapist-olive-branch-ms/",
-    "status": "approved",
+    "slug": "/therapist-olive-branch-ms/",
+    "family": "memphis-local-landing",
+    "status": "published",
     "riskLevel": "medium",
     "track": "both",
     "requiresFooter": true,
@@ -4609,10 +4654,17 @@
     "contentWordTarget": 1400,
     "contentWordWarningFloor": 1050,
     "source": "measured_gsc_demand_2026_08_local_intent",
-    "contentType": "guides",
-    "publicPath": "/resources/guides/therapist-olive-branch-ms/",
-    "previewPath": "/preview/resources/guides/therapist-olive-branch-ms/",
-    "scheduledAt": "2027-02-09T13:00:00.000Z",
+    "contentType": "local-landing",
+    "publicPath": "/therapist-olive-branch-ms/",
+    "scheduledAt": "2026-08-29T16:20:00.000Z",
+    "publishedAt": "2026-08-29T16:20:00.000Z",
+    "ownerPublication": {
+      "publishedBy": "Site owner",
+      "publishedAt": "2026-08-29T16:20:00.000Z",
+      "reason": "Direct site-owner release. This answers measured local searches that were returning nothing for this practice, and the owner released it without routing it through the client review queue.",
+      "clientApproval": "none - Monika Hicks has not reviewed this page and no decision of hers is recorded or implied",
+      "routeChange": "Moved from /resources/guides/therapist-olive-branch-ms/. That route family was only ever used because scripts/site_build.js prunes unpublished /resources/ routes from dist, which is what kept the page private. Nothing was ever published at the old path, so no redirect is owed."
+    },
     "draftedFor": {
       "shape": "localized service guide",
       "shape_rationale": "The bare query carries no location, so a live web observation of it returns geographic noise and cannot be won by any single local practice. The winnable form is the Memphis / Olive Branch localized variant, which is what this page is written for. Shape follows the two pages that already hold citations: /black-therapist-memphis/ and /anxiety-therapist-memphis/.",
@@ -4629,6 +4681,6 @@
       ],
       "demand_source": "data/agency/gsc_snapshot.json topQueries, window 2026-07-27 to 2026-08-23"
     },
-    "notes": "Awaiting Monika's review. Scheduled after 2026-12-31 so the June standing editorial approval does not cover it. Publication requires a named per-item approval in data/admin/publication_approvals.json."
+    "notes": "Published by the site owner on 29 August 2026. This is a localized service landing page of the same kind as /black-therapist-memphis/ and /anxiety-therapist-memphis/, not a resource-library guide, which is why it is on a top-level route. No client approval is claimed - see ownerPublication."
   }
 ]

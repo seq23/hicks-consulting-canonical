@@ -45,6 +45,7 @@
 <div class="admin-filters soft-panel">
 <div class="filter-shortcuts">
 <button class="small-button" data-status-shortcut="ready" type="button">Waiting for your OK</button>
+<button class="small-button" data-status-shortcut="awaiting-review" type="button">Finished, waiting on you</button>
 <button class="small-button" data-status-shortcut="scheduled" type="button">Approved, not yet up</button>
 <button class="small-button" data-status-shortcut="published" type="button">Published</button>
 <button class="small-button" data-status-shortcut="declined" type="button">You turned down</button>
@@ -53,7 +54,7 @@
 </div>
 <div class="admin-filter-grid">
 <label>Search by title<input id="admin-search" placeholder="Type a few words from the title" type="search"/></label>
-<label>Show<select id="status-filter"><option value="all" selected="">Everything</option><option value="ready">Waiting for your OK</option><option value="scheduled">Approved, not yet published</option><option value="published">Published</option><option value="declined">You turned down</option><option value="system-removed">Removed automatically</option></select></label>
+<label>Show<select id="status-filter"><option value="all" selected="">Everything</option><option value="ready">Waiting for your OK</option><option value="awaiting-review">Finished, waiting on you</option><option value="scheduled">Approved, not yet published</option><option value="published">Published</option><option value="declined">You turned down</option><option value="system-removed">Removed automatically</option></select></label>
 <label>Kind<select id="type-filter"><option value="all">Articles and insights</option><option value="articles">Articles only</option><option value="insights">Insights only</option></select></label>
 <label>Order<select id="sort-filter"><option value="date-asc">Date: oldest first</option><option value="date-desc">Date: newest first</option><option value="title-asc">Title: A to Z</option><option value="title-desc">Title: Z to A</option></select></label>
 </div>

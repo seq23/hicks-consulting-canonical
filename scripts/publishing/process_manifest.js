@@ -127,9 +127,38 @@ function loadStandingApprovals(explicit) {
   return normalizeStandingApprovals(loadApprovalsDocument().standing_approvals);
 }
 
+// Some items must be approved one at a time, whatever their date.
+//
+// This used to be enforced by scheduling: six guides written for searches Monika
+// had never seen a page for were dated 2027-01-05 through 2027-02-09 purely
+// because the standing window ends 2026-12-31, so a 2027 date put them outside
+// it. That worked, and it cost four to five months of delay on content that was
+// finished, for a requirement that has nothing to do with when a piece runs.
+//
+// The requirement is a property of the piece, so it lives on the piece. An item
+// carrying any of these flags is never covered by a standing window; it can only
+// be released by its own named per-item approval in `approvals`. The flag names
+// are the ones the autonomy queue already uses (routineApprovalRequired /
+// publicOnlyAfterApproval, see _ops/validators/deep/validate_autonomy_contract.js)
+// plus an explicit one for this gate, so a single spelling cannot be the thing
+// that decides whether a client's approval is required.
+//
+// assets/js/admin.js#approvalFor must read the same flags, or the page and the
+// publisher disagree about what needs her OK. They are held together by
+// _ops/validators/deep/validate_admin_publisher_agreement.js and, on this
+// specific rule, by _ops/validators/deep/validate_individual_approval_gate.js.
+function requiresIndividualApproval(item) {
+  if (!item || typeof item !== 'object') return false;
+  return item.requiresIndividualApproval === true
+    || item.routineApprovalRequired === true
+    || item.publicOnlyAfterApproval === true;
+}
+
 // Returns the standing approval covering this item, or null. Null is the answer
-// for anything scheduled past every window's end date.
+// for anything scheduled past every window's end date, and for anything that
+// requires an individual decision whatever its date.
 function standingApprovalFor(item, standingApprovals, scheduledAt) {
+  if (requiresIndividualApproval(item)) return null;
   const at = scheduledAt instanceof Date ? scheduledAt.valueOf() : Date.parse(item.scheduledAt);
   if (!Number.isFinite(at)) return null;
   return standingApprovals.find((entry) => at <= entry.throughMs) || null;
@@ -285,6 +314,7 @@ module.exports = {
   loadPerItemApprovedIds,
   loadStandingApprovals,
   normalizeStandingApprovals,
+  requiresIndividualApproval,
   standingApprovalFor,
   ISO_WITH_TIMEZONE,
   parseScheduledAt,

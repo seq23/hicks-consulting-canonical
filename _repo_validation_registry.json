@@ -983,7 +983,63 @@
       "ciInvocation": "MATRIX_ONLY",
       "findingProtocol": "VALIDATION_FINDING",
       "enabled": true,
-      "rationale": "The discovery-gap scorer must have a caller that keeps its output, must carry an aged openness reading forward as stale rather than overwriting it with UNMEASURED when the 25-query observation window rolls past it, and must gate every target with blue_ocean_eligible so \"not cited\" is never read as \"open ground\". Hard-fails if it examines zero targets."
+      "rationale": "The discovery-gap scorer must have a caller that keeps its output, must carry an aged openness reading forward as stale rather than overwriting it with UNMEASURED when the 25-query observation window rolls past it, and must gate every target with blue_ocean_eligible so \"not cited\" is never read as \"open ground\". It also asserts that every measured query which implies a location and names none is governed - by a localized variant, or by a recorded decision never to target it that actually binds through blueOceanEligibility - because an undecided row is indistinguishable from a forgotten one. Hard-fails if it examines zero targets."
+    },
+    {
+      "id": "internal-navigation",
+      "npmScript": "validate:internal-navigation",
+      "entrypoint": "_ops/validators/validate_internal_navigation.js",
+      "severity": "HARD_FAIL",
+      "blocksRelease": true,
+      "group": "public-site",
+      "owner": "search-and-content",
+      "scope": "internal navigation generated from the manifest stays current with what is published",
+      "ciInvocation": "MATRIX_ONLY",
+      "findingProtocol": "VALIDATION_FINDING",
+      "enabled": true,
+      "rationale": "scripts/navigation/build_internal_navigation.mjs writes the category hub lists, breadcrumbs and related-links blocks into pages/ from the manifest. It was invoked by nothing - not package.json, not any workflow, not site_build.js - so every release after it landed left the navigation describing the library as it was before that release. Running it on 2026-08-29 changed the insights hub source and six sibling pages that had been stale since the previous release. It is now run by the Content Publish workflow immediately after a release, and this check runs it in --check mode so a stale tree is a hard failure. Hard-fails if the generator governs zero pages."
+    },
+    {
+      "id": "individual-approval-gate",
+      "npmScript": "validate:individual-approval-gate",
+      "entrypoint": "_ops/validators/deep/validate_individual_approval_gate.js",
+      "severity": "HARD_FAIL",
+      "blocksRelease": true,
+      "group": "admin-access",
+      "owner": "site-operations",
+      "scope": "items that must be approved one at a time are never covered by a standing approval",
+      "ciInvocation": "MATRIX_ONLY",
+      "findingProtocol": "VALIDATION_FINDING",
+      "enabled": true,
+      "rationale": "Six finished guides were held out of the client's June 2026 standing approval by being scheduled into 2027, past the window's 2026-12-31 end date. It worked, and it delayed pages answering searches people were making in August by four to five months, for a requirement that has nothing to do with when a piece runs. The requirement now lives on the item as requiresIndividualApproval (or the autonomy queue's routineApprovalRequired / publicOnlyAfterApproval) and both implementations must honour it: the publisher's standingApprovalFor()/loadApprovedIds() and the admin page's approvalFor(). This runs both over the real manifest and then simulates a publish run at each gated item's own scheduled moment, asserting it releases nothing. Hard-fails if no item carries the flag, which is the most likely way the gate would be lost."
+    },
+    {
+      "id": "client-visible-review-queue",
+      "npmScript": "validate:client-visible-review-queue",
+      "entrypoint": "_ops/validators/deep/validate_client_visible_review_queue.mjs",
+      "severity": "HARD_FAIL",
+      "blocksRelease": true,
+      "group": "admin-access",
+      "owner": "site-operations",
+      "scope": "work whose own record says it awaits the client reaches the client",
+      "ciInvocation": "MATRIX_ONLY",
+      "findingProtocol": "VALIDATION_FINDING",
+      "enabled": true,
+      "rationale": "Five finished guides sat at status 'draft' with scheduledAt null and the note 'Awaiting client review'. groupFor() called every non-approved item 'draft', 'draft' was not in CLIENT_GROUPS, and both renderReview() and renderBrowse() dropped them - so five pieces that said in their own record they were waiting on the client were invisible on the one screen where she decides, with nothing failing and nothing warning. This runs the page's own groupFor() over fixtures reproducing that exact shape and asserts it now reaches a client group that has a filter chip, a status option, a row label and a place in the review panel - while unfinished, mid-generation drafts stay out, because filling her queue with half-written work is not the fix either. It also pins the five PR #16 filter chips and refuses authorship language in client copy, since none of this content is written by her."
+    },
+    {
+      "id": "owner-publication-attribution",
+      "npmScript": "validate:owner-publication-attribution",
+      "entrypoint": "_ops/validators/deep/validate_owner_publication_attribution.js",
+      "severity": "HARD_FAIL",
+      "blocksRelease": true,
+      "group": "admin-access",
+      "owner": "site-operations",
+      "scope": "every release since the human gate was sealed names who made it",
+      "ciInvocation": "MATRIX_ONLY",
+      "findingProtocol": "VALIDATION_FINDING",
+      "enabled": true,
+      "rationale": "The release gate stops crons and generators publishing to a client's live site; it does not stop the site owner, who published five localized landing pages directly on 2026-08-29. What must never happen is that release being written into data/admin/publication_approvals.json as the client's decision, because one fabricated line makes the whole audit trail worthless. This asserts every item published on or after the gate's sealed_on date is under exactly one of two rules - released on a named client approval, or recorded in ownerPublication with the publisher named, a reason given and the absence of client approval stated - and that no owner publication carries the client's name. Pre-gate releases are out of scope by design. Hard-fails if nothing post-gate exists to examine."
     }
   ]
 }

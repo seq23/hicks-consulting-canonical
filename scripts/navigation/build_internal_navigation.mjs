@@ -282,8 +282,85 @@ for (const route of CONVERSION_ENTRY) {
   applyToFile(file, { breadcrumb: false, related: relatedNav([['Start a conversation', conversionTargets]]) });
 }
 
+/* ---------- 6. the Memphis local-intent landing family ---------- */
+
+/**
+ * Five localized landing pages were published onto top-level routes on
+ * 2026-08-29 -- /therapist-near-me-memphis/, /female-therapist-memphis/,
+ * /christian-therapist-memphis/, /psychologist-vs-therapist-memphis/ and
+ * /therapist-olive-branch-ms/. They are the same kind of page as the two that
+ * already hold this site's citations, /black-therapist-memphis/ and
+ * /anxiety-therapist-memphis/, and the manifest marks the five
+ * family:"memphis-local-landing".
+ *
+ * Nothing linked to any of them. A published page that no internal link reaches
+ * is inert whatever the sitemap says, and that is the defect this whole file
+ * exists to close -- it was written because 69 of 98 pages had zero inbound
+ * internal links. So the family is cross-linked here, from the manifest, rather
+ * than by hand: the next page added to the family is linked the moment it
+ * publishes, and a page removed from it stops being linked.
+ *
+ * This writes its own <nav class="local-family-nav"> element and only that. The
+ * five pages carry a hand-authored "Keep reading" related-nav whose per-page
+ * choices are editorial -- /therapist-olive-branch-ms/ points at coaching and
+ * organizational training because therapy is not available to that reader -- and
+ * regenerating it here would flatten that into one template.
+ */
+const LOCAL_FAMILY_RE = /<nav aria-label="Memphis pages" class="local-family-nav">[\s\S]*?<\/nav>/;
+
+const familyFromManifest = manifest
+  .filter((i) => i.family === 'memphis-local-landing' && i.status === 'published' && i.validationPassed === true)
+  .map((i) => String(i.publicPath || i.slug))
+  .filter((route) => fs.existsSync(routeToSource(route)));
+
+// The two pages that already hold citations are part of the family for linking
+// purposes even though they predate the manifest: a reader on one of them is
+// looking for exactly what the other five answer.
+const CITATION_HOLDERS = ['/black-therapist-memphis/', '/anxiety-therapist-memphis/']
+  .filter((route) => fs.existsSync(routeToSource(route)));
+
+const familyRoutes = [...new Set([...familyFromManifest, ...CITATION_HOLDERS])].sort();
+const familyLinks = familyRoutes
+  .map((route) => ({ href: route, text: readHeading(route) }))
+  .filter((link) => link.text);
+
+// /faq/ is the third entry point: it is where the money questions are answered,
+// it is unprotected, and it already carries a generated nav block.
+const FAMILY_LINK_SOURCES = [...new Set([...familyRoutes, '/faq/'])]
+  .filter((route) => fs.existsSync(routeToSource(route)));
+
+let familyPagesLinked = 0;
+for (const route of FAMILY_LINK_SOURCES) {
+  const file = routeToSource(route);
+  const others = familyLinks.filter((link) => link.href !== route);
+  if (!others.length) continue;
+  const block = `<nav aria-label="Memphis pages" class="local-family-nav"><p class="eyebrow">Finding a therapist in the Memphis area</p>${linkList(others)}</nav>`;
+  const before = fs.readFileSync(file, 'utf8');
+  let html = before.replace(LOCAL_FAMILY_RE, '');
+  // Anchored ahead of the related-links block, not to </main>. Section 5 above
+  // strips and re-appends the related-links block on every run, so appending
+  // this one to </main> as well made the two swap places each time: the file
+  // ended up byte-identical but --check reported three pages stale forever, and
+  // a guard that can never pass is not a guard.
+  if (RELATED_RE.test(html)) html = html.replace(RELATED_RE, (nav) => `${block}${nav}`);
+  else html = html.replace(/<\/main>/i, `${block}</main>`);
+  if (html !== before) {
+    if (!CHECK_ONLY) fs.writeFileSync(file, html);
+    if (!changed.includes(path.relative(ROOT, file))) changed.push(path.relative(ROOT, file));
+  }
+  familyPagesLinked += 1;
+}
+
+// Rule 0: a lane that runs and governs nothing is the failure this script was
+// written to fix, so it refuses to report success having linked no family.
+if (familyRoutes.length && !familyPagesLinked) {
+  console.error('internal navigation: the Memphis local-intent family is registered in the manifest but no page could be linked.');
+  process.exit(1);
+}
+
 /* ---------- report ---------- */
 
+console.log(`memphis local-intent family: ${familyRoutes.length} page(s), cross-linked from ${familyPagesLinked} source page(s)`);
 console.log(`published resources linked: ${published.length}`);
 console.log(`  articles ${byType('articles').length} | guides ${byType('guides').length} | insights ${byType('insights').length} | white papers ${byType('white-papers').length}`);
 console.log(`  insights mapped to a published parent article: ${parentOfInsight.size}/${byType('insights').length}`);

@@ -34,6 +34,20 @@ jobs:
       # which on a client site is the normal resting state.
       - name: Release human-approved content that is due
         run: npm run publish:content
+      # Relink the site to what just published.
+      #
+      # scripts/navigation/build_internal_navigation.mjs writes the category hub
+      # lists, breadcrumbs and related-links blocks into pages/ from the manifest.
+      # It was invoked by nothing - not package.json, not CI, not site_build.js -
+      # so every release since it landed left the navigation describing the
+      # library as it was before that release. On 2026-08-29 that was measurable:
+      # two items published, and the insights hub source plus six sibling pages
+      # were still pointing at the previous set. It runs here, immediately after
+      # the release that changes what it depends on, and its output is committed
+      # below. validate:all also runs it in --check mode, so a stale tree is a
+      # hard failure rather than a silent one.
+      - name: Relink internal navigation to the newly published set
+        run: npm run nav:internal
       - run: npm run build
       - run: npm run validate:all
       - name: Commit published status changes
@@ -43,7 +57,10 @@ jobs:
           # Explicit paths. `git add -A` on a scheduled job commits whatever else
           # happens to be in the tree, which on a client site is how unreviewed work
           # reaches production by accident.
-          git add data/admin/content_manifest.json data/autonomy/exceptions.json data/autonomy/receipts data/social 2>/dev/null || true
+          # pages/ is here for the navigation relink only. The step above writes
+          # nothing else into it: it replaces the generated hub lists, breadcrumb
+          # and related-links blocks and touches no editorial prose.
+          git add data/admin/content_manifest.json data/autonomy/exceptions.json data/autonomy/receipts data/social pages sitemap.xml 2>/dev/null || true
           if git diff --cached --quiet; then
             echo "No release changes to commit - nothing was both due and human-approved."
           else

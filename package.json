@@ -126,6 +126,11 @@
     "queries:discovery-gap": "node scripts/queries/score_discovery_gap.mjs",
     "validate:discovery-gap": "node _ops/validators/validate_discovery_gap.js",
     "validate:client-decision-attribution": "node _ops/validators/deep/validate_client_decision_attribution.js",
-    "build:content-consolidations": "node scripts/admin/build_content_consolidations.js"
+    "build:content-consolidations": "node scripts/admin/build_content_consolidations.js",
+    "nav:internal": "node scripts/navigation/build_internal_navigation.mjs",
+    "validate:internal-navigation": "node _ops/validators/validate_internal_navigation.js",
+    "validate:individual-approval-gate": "node _ops/validators/deep/validate_individual_approval_gate.js",
+    "validate:client-visible-review-queue": "node _ops/validators/deep/validate_client_visible_review_queue.mjs",
+    "validate:owner-publication-attribution": "node _ops/validators/deep/validate_owner_publication_attribution.js"
   }
 }
