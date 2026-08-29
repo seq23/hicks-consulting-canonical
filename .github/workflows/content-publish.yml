@@ -60,7 +60,20 @@ jobs:
           # pages/ is here for the navigation relink only. The step above writes
           # nothing else into it: it replaces the generated hub lists, breadcrumb
           # and related-links blocks and touches no editorial prose.
-          git add data/admin/content_manifest.json data/autonomy/exceptions.json data/autonomy/receipts data/social pages sitemap.xml 2>/dev/null || true
+          #
+          # data/cadence/lastmod_ledger.json is committed alongside sitemap.xml
+          # because the two are one artefact. scripts/lib/lastmod_ledger.js holds a
+          # per-URL content hash so a page that did not change keeps the <lastmod>
+          # it already had; that only works if the hashes survive the run. No
+          # workflow committed the ledger, so every release compared the newly
+          # relinked pages against a permanently stale ledger and re-stamped them
+          # with the build date - reproduced over four simulated daily runs, where
+          # one sibling insight moved 08-31 -> 09-01 -> 09-02 -> 09-03 without its
+          # content changing after the first day. That is the rolling date-bump
+          # scripts/cadence_gate.js flags as uniform_lastmod and the exact failure
+          # the ledger exists to prevent. Committing it holds the date at 08-31.
+          # Guarded by validate:sitemap-ledger-integrity.
+          git add data/admin/content_manifest.json data/autonomy/exceptions.json data/autonomy/receipts data/social pages sitemap.xml data/cadence/lastmod_ledger.json 2>/dev/null || true
           if git diff --cached --quiet; then
             echo "No release changes to commit - nothing was both due and human-approved."
           else

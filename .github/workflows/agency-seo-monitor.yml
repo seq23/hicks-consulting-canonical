@@ -60,8 +60,8 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          if [[ -n "$(git status --porcelain data/agency data/search pages)" ]]; then
-            git add data/agency data/search pages
+          if [[ -n "$(git status --porcelain data/agency data/search pages sitemap.xml data/cadence/lastmod_ledger.json)" ]]; then
+            git add data/agency data/search pages sitemap.xml data/cadence/lastmod_ledger.json
             git commit -m "Refresh agency SEO monitoring snapshots"
             git push
           else

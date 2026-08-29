@@ -48,7 +48,7 @@ jobs:
           # data/admin is deliberately NOT staged here: this cycle only reads
           # data/admin/content_manifest.json and never writes it, and staging a
           # path the lane does not own invites a race with the admin surface.
-          git add data/autonomy pages sitemap.xml reports
+          git add data/autonomy pages sitemap.xml data/cadence/lastmod_ledger.json reports
           if git diff --cached --quiet; then
             echo "Self-heal made no changes on disk; nothing to commit."
             exit 0
