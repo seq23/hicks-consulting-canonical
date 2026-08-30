@@ -1,209 +1,283 @@
 {
   "schemaVersion": "2.1.0",
-  "generatedAt": "2026-08-29T14:26:54.639Z",
-  "providerState": "DEGRADED",
+  "generatedAt": "2026-08-30T14:27:52.484Z",
+  "providerState": "CONNECTED",
   "provider": "openrouter_web_search",
-  "stop": {
-    "name": "SEARCH_PROVIDER_UNAVAILABLE",
-    "reason": "All 7 query observation(s) returned a provider error. Error states were recorded; no citation rate was recorded."
-  },
-  "queriesAnswered": 0,
+  "stop": null,
+  "queriesAnswered": 7,
   "truthBoundary": "These are live web-search observations and citations returned by OpenRouter's web plugin. They are not literal organic SERP positions, and a citation rate is only meaningful for observations where providerAnswered is true. Use GSC for Google-owned impressions, clicks, CTR, and average position.",
   "observations": [
     {
       "query": "mental health therapy near me",
-      "primaryPage": "/",
-      "status": "provider_error",
-      "observedAt": "2026-08-29T14:26:54.639Z",
+      "primaryPage": "/therapist-near-me-memphis/",
+      "status": "ok",
+      "observedAt": "2026-08-30T14:27:52.484Z",
       "provider": "openrouter_web_search",
       "model": "openai/gpt-4o-mini",
+      "observationType": "LIVE_WEB_SURFACING",
       "rankVerified": false,
-      "providerAnswered": false,
-      "citationCount": null,
-      "siteSurfaced": null,
-      "citations": [],
-      "error": "402: {\"error\":{\"message\":\"Insufficient credits. Add more using https://openrouter.ai/settings/credits\",\"code\":402,\"metadata\":{\"limit_source\":\"openrouter_credits\",\"remedy_hint\":\"Add credits at https://openrouter.ai/settings/credits, or lower max_tokens / prompt size to fit your remaining balance.\"}}}",
+      "providerAnswered": true,
+      "citationCount": 2,
+      "siteSurfaced": true,
+      "citations": [
+        {
+          "url": "https://www.hicksconsulting.org/",
+          "title": "Hicks Consulting | Therapy for Individuals & Mental Health ..."
+        },
+        {
+          "url": "https://www.hicksconsulting.org/therapy",
+          "title": "Virtual Therapy Serving Memphis & Tennessee"
+        }
+      ],
+      "searchQueries": [],
+      "competitors": [],
       "ownPage": {
-        "route": "/",
-        "sourceFile": "pages/index.html",
+        "route": "/therapist-near-me-memphis/",
+        "sourceFile": "pages/therapist-near-me-memphis/index.html",
         "status": "ok",
-        "title": "Hicks Consulting | Therapy for Individuals & Mental Health Trainings for Organizations",
-        "description": "Virtual therapy serving Memphis and Tennessee, plus coaching, groups, and organizational training that help women and teams build healthier patterns.",
-        "h1": "Mental health support for high-achieving women and healthier organizations.",
-        "textChars": 10181,
-        "internalLinks": 37,
+        "title": "Therapist Near Me in Memphis: How to Find One Who Can Actually See You | Hicks Consulting",
+        "description": "What “therapist near me” really has to mean in a three-state metro like Memphis, what to ask on the first call, what a first session involves, and what care costs here.",
+        "h1": "Therapist Near Me in Memphis: How to Find One Who Can Actually See You",
+        "textChars": 13363,
+        "internalLinks": 44,
         "canonical": ""
       },
       "diagnosis": [
-        "PROVIDER_ERROR"
+        "EXACT_QUERY_NOT_IN_PRIMARY_SEARCH_SURFACES"
       ]
     },
     {
       "query": "black female therapist near me",
-      "primaryPage": "/",
-      "status": "provider_error",
-      "observedAt": "2026-08-29T14:26:54.639Z",
+      "primaryPage": "/female-therapist-memphis/",
+      "status": "ok",
+      "observedAt": "2026-08-30T14:27:52.484Z",
       "provider": "openrouter_web_search",
       "model": "openai/gpt-4o-mini",
+      "observationType": "LIVE_WEB_SURFACING",
       "rankVerified": false,
-      "providerAnswered": false,
-      "citationCount": null,
-      "siteSurfaced": null,
-      "citations": [],
-      "error": "402: {\"error\":{\"message\":\"Insufficient credits. Add more using https://openrouter.ai/settings/credits\",\"code\":402,\"metadata\":{\"limit_source\":\"openrouter_credits\",\"remedy_hint\":\"Add credits at https://openrouter.ai/settings/credits, or lower max_tokens / prompt size to fit your remaining balance.\"}}}",
+      "providerAnswered": true,
+      "citationCount": 2,
+      "siteSurfaced": true,
+      "citations": [
+        {
+          "url": "https://www.hicksconsulting.org/",
+          "title": "Hicks Consulting | Therapy for Individuals & Mental Health ..."
+        },
+        {
+          "url": "https://www.hicksconsulting.org/therapy",
+          "title": "Virtual Therapy Serving Memphis & Tennessee"
+        }
+      ],
+      "searchQueries": [],
+      "competitors": [],
       "ownPage": {
-        "route": "/",
-        "sourceFile": "pages/index.html",
+        "route": "/female-therapist-memphis/",
+        "sourceFile": "pages/female-therapist-memphis/index.html",
         "status": "ok",
-        "title": "Hicks Consulting | Therapy for Individuals & Mental Health Trainings for Organizations",
-        "description": "Virtual therapy serving Memphis and Tennessee, plus coaching, groups, and organizational training that help women and teams build healthier patterns.",
-        "h1": "Mental health support for high-achieving women and healthier organizations.",
-        "textChars": 10181,
-        "internalLinks": 37,
+        "title": "Female Therapist in Memphis: What Gender Fit Changes, and What It Does Not | Hicks Consulting",
+        "description": "Why wanting a female therapist is a legitimate filter rather than a preference to apologise for, what it does and does not predict, and how to test for it on a consult call in Memphis.",
+        "h1": "Female Therapist in Memphis: What Gender Fit Changes, and What It Does Not",
+        "textChars": 11166,
+        "internalLinks": 44,
         "canonical": ""
       },
       "diagnosis": [
-        "PROVIDER_ERROR"
+        "EXACT_QUERY_NOT_IN_PRIMARY_SEARCH_SURFACES"
       ]
     },
     {
       "query": "christian therapists near me",
-      "primaryPage": "/",
-      "status": "provider_error",
-      "observedAt": "2026-08-29T14:26:54.639Z",
+      "primaryPage": "/christian-therapist-memphis/",
+      "status": "ok",
+      "observedAt": "2026-08-30T14:27:52.484Z",
       "provider": "openrouter_web_search",
       "model": "openai/gpt-4o-mini",
+      "observationType": "LIVE_WEB_SURFACING",
       "rankVerified": false,
-      "providerAnswered": false,
-      "citationCount": null,
-      "siteSurfaced": null,
-      "citations": [],
-      "error": "402: {\"error\":{\"message\":\"Insufficient credits. Add more using https://openrouter.ai/settings/credits\",\"code\":402,\"metadata\":{\"limit_source\":\"openrouter_credits\",\"remedy_hint\":\"Add credits at https://openrouter.ai/settings/credits, or lower max_tokens / prompt size to fit your remaining balance.\"}}}",
+      "providerAnswered": true,
+      "citationCount": 2,
+      "siteSurfaced": true,
+      "citations": [
+        {
+          "url": "https://www.hicksconsulting.org/",
+          "title": "Hicks Consulting | Therapy for Individuals & Mental Health ..."
+        },
+        {
+          "url": "https://www.hicksconsulting.org/therapy",
+          "title": "Virtual Therapy Serving Memphis & Tennessee"
+        }
+      ],
+      "searchQueries": [],
+      "competitors": [],
       "ownPage": {
-        "route": "/",
-        "sourceFile": "pages/index.html",
+        "route": "/christian-therapist-memphis/",
+        "sourceFile": "pages/christian-therapist-memphis/index.html",
         "status": "ok",
-        "title": "Hicks Consulting | Therapy for Individuals & Mental Health Trainings for Organizations",
-        "description": "Virtual therapy serving Memphis and Tennessee, plus coaching, groups, and organizational training that help women and teams build healthier patterns.",
-        "h1": "Mental health support for high-achieving women and healthier organizations.",
-        "textChars": 10181,
-        "internalLinks": 37,
+        "title": "Christian Therapists in Memphis: How Faith Fits Into Therapy | Hicks Consulting",
+        "description": "Three different things people mean by “Christian therapist”, which of them are licensed clinical care, what to ask so you get the one you want, and how faith is handled at Hicks Consulting.",
+        "h1": "Christian Therapists in Memphis: How Faith Fits Into Therapy",
+        "textChars": 11495,
+        "internalLinks": 43,
         "canonical": ""
       },
       "diagnosis": [
-        "PROVIDER_ERROR"
+        "EXACT_QUERY_NOT_IN_PRIMARY_SEARCH_SURFACES"
       ]
     },
     {
       "query": "female therapist near me",
-      "primaryPage": "/",
-      "status": "provider_error",
-      "observedAt": "2026-08-29T14:26:54.639Z",
+      "primaryPage": "/female-therapist-memphis/",
+      "status": "ok",
+      "observedAt": "2026-08-30T14:27:52.484Z",
       "provider": "openrouter_web_search",
       "model": "openai/gpt-4o-mini",
+      "observationType": "LIVE_WEB_SURFACING",
       "rankVerified": false,
-      "providerAnswered": false,
-      "citationCount": null,
-      "siteSurfaced": null,
-      "citations": [],
-      "error": "402: {\"error\":{\"message\":\"Insufficient credits. Add more using https://openrouter.ai/settings/credits\",\"code\":402,\"metadata\":{\"limit_source\":\"openrouter_credits\",\"remedy_hint\":\"Add credits at https://openrouter.ai/settings/credits, or lower max_tokens / prompt size to fit your remaining balance.\"}}}",
+      "providerAnswered": true,
+      "citationCount": 2,
+      "siteSurfaced": true,
+      "citations": [
+        {
+          "url": "https://www.hicksconsulting.org/",
+          "title": "Hicks Consulting | Therapy for Individuals & Mental Health ..."
+        },
+        {
+          "url": "https://www.hicksconsulting.org/therapy",
+          "title": "Virtual Therapy Serving Memphis & Tennessee"
+        }
+      ],
+      "searchQueries": [],
+      "competitors": [],
       "ownPage": {
-        "route": "/",
-        "sourceFile": "pages/index.html",
+        "route": "/female-therapist-memphis/",
+        "sourceFile": "pages/female-therapist-memphis/index.html",
         "status": "ok",
-        "title": "Hicks Consulting | Therapy for Individuals & Mental Health Trainings for Organizations",
-        "description": "Virtual therapy serving Memphis and Tennessee, plus coaching, groups, and organizational training that help women and teams build healthier patterns.",
-        "h1": "Mental health support for high-achieving women and healthier organizations.",
-        "textChars": 10181,
-        "internalLinks": 37,
+        "title": "Female Therapist in Memphis: What Gender Fit Changes, and What It Does Not | Hicks Consulting",
+        "description": "Why wanting a female therapist is a legitimate filter rather than a preference to apologise for, what it does and does not predict, and how to test for it on a consult call in Memphis.",
+        "h1": "Female Therapist in Memphis: What Gender Fit Changes, and What It Does Not",
+        "textChars": 11166,
+        "internalLinks": 44,
         "canonical": ""
       },
       "diagnosis": [
-        "PROVIDER_ERROR"
+        "EXACT_QUERY_NOT_IN_PRIMARY_SEARCH_SURFACES"
       ]
     },
     {
       "query": "mental health diagnosis near me",
-      "primaryPage": "/",
-      "status": "provider_error",
-      "observedAt": "2026-08-29T14:26:54.639Z",
+      "primaryPage": "/psychologist-vs-therapist-memphis/",
+      "status": "ok",
+      "observedAt": "2026-08-30T14:27:52.484Z",
       "provider": "openrouter_web_search",
       "model": "openai/gpt-4o-mini",
+      "observationType": "LIVE_WEB_SURFACING",
       "rankVerified": false,
-      "providerAnswered": false,
-      "citationCount": null,
-      "siteSurfaced": null,
-      "citations": [],
-      "error": "402: {\"error\":{\"message\":\"Insufficient credits. Add more using https://openrouter.ai/settings/credits\",\"code\":402,\"metadata\":{\"limit_source\":\"openrouter_credits\",\"remedy_hint\":\"Add credits at https://openrouter.ai/settings/credits, or lower max_tokens / prompt size to fit your remaining balance.\"}}}",
+      "providerAnswered": true,
+      "citationCount": 2,
+      "siteSurfaced": true,
+      "citations": [
+        {
+          "url": "https://www.hicksconsulting.org/",
+          "title": "Hicks Consulting | Therapy for Individuals & Mental Health ..."
+        },
+        {
+          "url": "https://www.hicksconsulting.org/therapy",
+          "title": "Virtual Therapy Serving Memphis & Tennessee"
+        }
+      ],
+      "searchQueries": [],
+      "competitors": [],
       "ownPage": {
-        "route": "/",
-        "sourceFile": "pages/index.html",
+        "route": "/psychologist-vs-therapist-memphis/",
+        "sourceFile": "pages/psychologist-vs-therapist-memphis/index.html",
         "status": "ok",
-        "title": "Hicks Consulting | Therapy for Individuals & Mental Health Trainings for Organizations",
-        "description": "Virtual therapy serving Memphis and Tennessee, plus coaching, groups, and organizational training that help women and teams build healthier patterns.",
-        "h1": "Mental health support for high-achieving women and healthier organizations.",
-        "textChars": 10181,
-        "internalLinks": 37,
+        "title": "Psychologists in Memphis: Do You Need a Psychologist, a Therapist, or a Psychiatrist? | Hicks Consulting",
+        "description": "What psychologists, LCSWs, counsellors and psychiatrists each do, when the difference genuinely matters, and how to tell which one your situation calls for in the Memphis area.",
+        "h1": "Psychologists in Memphis: Do You Need a Psychologist, a Therapist, or a Psychiatrist?",
+        "textChars": 11424,
+        "internalLinks": 43,
         "canonical": ""
       },
       "diagnosis": [
-        "PROVIDER_ERROR"
+        "EXACT_QUERY_NOT_IN_PRIMARY_SEARCH_SURFACES"
       ]
     },
     {
       "query": "psychologists near me",
-      "primaryPage": "/",
-      "status": "provider_error",
-      "observedAt": "2026-08-29T14:26:54.639Z",
+      "primaryPage": "/psychologist-vs-therapist-memphis/",
+      "status": "ok",
+      "observedAt": "2026-08-30T14:27:52.484Z",
       "provider": "openrouter_web_search",
       "model": "openai/gpt-4o-mini",
+      "observationType": "LIVE_WEB_SURFACING",
       "rankVerified": false,
-      "providerAnswered": false,
-      "citationCount": null,
-      "siteSurfaced": null,
-      "citations": [],
-      "error": "402: {\"error\":{\"message\":\"Insufficient credits. Add more using https://openrouter.ai/settings/credits\",\"code\":402,\"metadata\":{\"limit_source\":\"openrouter_credits\",\"remedy_hint\":\"Add credits at https://openrouter.ai/settings/credits, or lower max_tokens / prompt size to fit your remaining balance.\"}}}",
+      "providerAnswered": true,
+      "citationCount": 2,
+      "siteSurfaced": true,
+      "citations": [
+        {
+          "url": "https://www.hicksconsulting.org/",
+          "title": "Hicks Consulting | Therapy for Individuals & Mental Health ..."
+        },
+        {
+          "url": "https://www.hicksconsulting.org/therapy",
+          "title": "Virtual Therapy Serving Memphis & Tennessee"
+        }
+      ],
+      "searchQueries": [],
+      "competitors": [],
       "ownPage": {
-        "route": "/",
-        "sourceFile": "pages/index.html",
+        "route": "/psychologist-vs-therapist-memphis/",
+        "sourceFile": "pages/psychologist-vs-therapist-memphis/index.html",
         "status": "ok",
-        "title": "Hicks Consulting | Therapy for Individuals & Mental Health Trainings for Organizations",
-        "description": "Virtual therapy serving Memphis and Tennessee, plus coaching, groups, and organizational training that help women and teams build healthier patterns.",
-        "h1": "Mental health support for high-achieving women and healthier organizations.",
-        "textChars": 10181,
-        "internalLinks": 37,
+        "title": "Psychologists in Memphis: Do You Need a Psychologist, a Therapist, or a Psychiatrist? | Hicks Consulting",
+        "description": "What psychologists, LCSWs, counsellors and psychiatrists each do, when the difference genuinely matters, and how to tell which one your situation calls for in the Memphis area.",
+        "h1": "Psychologists in Memphis: Do You Need a Psychologist, a Therapist, or a Psychiatrist?",
+        "textChars": 11424,
+        "internalLinks": 43,
         "canonical": ""
       },
       "diagnosis": [
-        "PROVIDER_ERROR"
+        "EXACT_QUERY_NOT_IN_PRIMARY_SEARCH_SURFACES"
       ]
     },
     {
       "query": "therapist in olive branch ms",
-      "primaryPage": "/",
-      "status": "provider_error",
-      "observedAt": "2026-08-29T14:26:54.639Z",
+      "primaryPage": "/therapist-olive-branch-ms/",
+      "status": "ok",
+      "observedAt": "2026-08-30T14:27:52.484Z",
       "provider": "openrouter_web_search",
       "model": "openai/gpt-4o-mini",
+      "observationType": "LIVE_WEB_SURFACING",
       "rankVerified": false,
-      "providerAnswered": false,
-      "citationCount": null,
-      "siteSurfaced": null,
-      "citations": [],
-      "error": "402: {\"error\":{\"message\":\"Insufficient credits. Add more using https://openrouter.ai/settings/credits\",\"code\":402,\"metadata\":{\"limit_source\":\"openrouter_credits\",\"remedy_hint\":\"Add credits at https://openrouter.ai/settings/credits, or lower max_tokens / prompt size to fit your remaining balance.\"}}}",
+      "providerAnswered": true,
+      "citationCount": 2,
+      "siteSurfaced": true,
+      "citations": [
+        {
+          "url": "https://www.hicksconsulting.org/",
+          "title": "Hicks Consulting | Therapy for Individuals & Mental Health ... hicksconsulting.org https://www.hicksconsulting.org"
+        },
+        {
+          "url": "https://www.hicksconsulting.org/therapy",
+          "title": "Virtual Therapy Serving Memphis & Tennessee"
+        }
+      ],
+      "searchQueries": [],
+      "competitors": [],
       "ownPage": {
-        "route": "/",
-        "sourceFile": "pages/index.html",
+        "route": "/therapist-olive-branch-ms/",
+        "sourceFile": "pages/therapist-olive-branch-ms/index.html",
         "status": "ok",
-        "title": "Hicks Consulting | Therapy for Individuals & Mental Health Trainings for Organizations",
-        "description": "Virtual therapy serving Memphis and Tennessee, plus coaching, groups, and organizational training that help women and teams build healthier patterns.",
-        "h1": "Mental health support for high-achieving women and healthier organizations.",
-        "textChars": 10181,
-        "internalLinks": 37,
+        "title": "Looking for a Therapist in Olive Branch, MS: What the State Line Changes | Hicks Consulting",
+        "description": "Olive Branch sits in the Memphis metro but on the Mississippi side of the line. Here is what that changes about who can treat you, how to verify a Mississippi licence, and what is still available from a Tennessee practice.",
+        "h1": "Looking for a Therapist in Olive Branch, MS: What the State Line Changes",
+        "textChars": 10911,
+        "internalLinks": 45,
         "canonical": ""
       },
       "diagnosis": [
-        "PROVIDER_ERROR"
+        "EXACT_QUERY_NOT_IN_PRIMARY_SEARCH_SURFACES"
       ]
     }
   ]

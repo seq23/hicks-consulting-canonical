@@ -1,19 +1,20 @@
 {
   "schemaVersion": "2.0.0",
-  "generatedAt": "2026-08-29T14:26:54.639Z",
+  "generatedAt": "2026-08-30T14:27:52.484Z",
   "policy": "Hicks may autonomously apply bounded technical/search-alignment repairs. Substantive clinical claims and unsupported treatment assertions are never auto-generated from competitor content.",
   "items": [
     {
       "query": "mental health therapy near me",
-      "primaryPage": "/",
-      "status": "PROVIDER_ERROR",
+      "primaryPage": "/therapist-near-me-memphis/",
+      "status": "WRONG_PAGE",
       "reasons": [
+        "WRONG_HICKS_PAGE_RANKING",
         "AVERAGE_POSITION_OUTSIDE_TOP_10",
-        "PROVIDER_ERROR"
+        "EXACT_QUERY_NOT_IN_PRIMARY_SEARCH_SURFACES"
       ],
       "evidence": {
-        "groundedSiteSurfaced": null,
-        "groundedProviderAnswered": false,
+        "groundedSiteSurfaced": true,
+        "groundedProviderAnswered": true,
         "gscImpressions": 2,
         "gscClicks": 0,
         "gscAveragePosition": 29,
@@ -22,20 +23,21 @@
         ],
         "competitorUrls": []
       },
-      "safeRepairEligible": false,
-      "recommendedAction": "Observe or route to content/technical review; do not invent a ranking win."
+      "safeRepairEligible": true,
+      "recommendedAction": "Run bounded search-alignment repair, rebuild, then await the next external observation cycle."
     },
     {
       "query": "black female therapist near me",
-      "primaryPage": "/",
-      "status": "PROVIDER_ERROR",
+      "primaryPage": "/female-therapist-memphis/",
+      "status": "WRONG_PAGE",
       "reasons": [
+        "WRONG_HICKS_PAGE_RANKING",
         "AVERAGE_POSITION_OUTSIDE_TOP_10",
-        "PROVIDER_ERROR"
+        "EXACT_QUERY_NOT_IN_PRIMARY_SEARCH_SURFACES"
       ],
       "evidence": {
-        "groundedSiteSurfaced": null,
-        "groundedProviderAnswered": false,
+        "groundedSiteSurfaced": true,
+        "groundedProviderAnswered": true,
         "gscImpressions": 1,
         "gscClicks": 0,
         "gscAveragePosition": 24,
@@ -44,26 +46,23 @@
         ],
         "competitorUrls": []
       },
-      "safeRepairEligible": false,
-      "recommendedAction": "Observe or route to content/technical review; do not invent a ranking win."
+      "safeRepairEligible": true,
+      "recommendedAction": "Run bounded search-alignment repair, rebuild, then await the next external observation cycle."
     },
     {
       "query": "christian therapists near me",
-      "primaryPage": "/",
-      "status": "PROVIDER_ERROR",
+      "primaryPage": "/christian-therapist-memphis/",
+      "status": "OBSERVED",
       "reasons": [
-        "AVERAGE_POSITION_OUTSIDE_TOP_10",
-        "PROVIDER_ERROR"
+        "EXACT_QUERY_NOT_IN_PRIMARY_SEARCH_SURFACES"
       ],
       "evidence": {
-        "groundedSiteSurfaced": null,
-        "groundedProviderAnswered": false,
-        "gscImpressions": 1,
+        "groundedSiteSurfaced": true,
+        "groundedProviderAnswered": true,
+        "gscImpressions": 0,
         "gscClicks": 0,
-        "gscAveragePosition": 51,
-        "gscPages": [
-          "/"
-        ],
+        "gscAveragePosition": 0,
+        "gscPages": [],
         "competitorUrls": []
       },
       "safeRepairEligible": false,
@@ -71,20 +70,18 @@
     },
     {
       "query": "female therapist near me",
-      "primaryPage": "/",
-      "status": "PROVIDER_ERROR",
+      "primaryPage": "/female-therapist-memphis/",
+      "status": "OBSERVED",
       "reasons": [
-        "PROVIDER_ERROR"
+        "EXACT_QUERY_NOT_IN_PRIMARY_SEARCH_SURFACES"
       ],
       "evidence": {
-        "groundedSiteSurfaced": null,
-        "groundedProviderAnswered": false,
-        "gscImpressions": 1,
+        "groundedSiteSurfaced": true,
+        "groundedProviderAnswered": true,
+        "gscImpressions": 0,
         "gscClicks": 0,
-        "gscAveragePosition": 10,
-        "gscPages": [
-          "/"
-        ],
+        "gscAveragePosition": 0,
+        "gscPages": [],
         "competitorUrls": []
       },
       "safeRepairEligible": false,
@@ -92,15 +89,16 @@
     },
     {
       "query": "mental health diagnosis near me",
-      "primaryPage": "/",
-      "status": "PROVIDER_ERROR",
+      "primaryPage": "/psychologist-vs-therapist-memphis/",
+      "status": "WRONG_PAGE",
       "reasons": [
+        "WRONG_HICKS_PAGE_RANKING",
         "AVERAGE_POSITION_OUTSIDE_TOP_10",
-        "PROVIDER_ERROR"
+        "EXACT_QUERY_NOT_IN_PRIMARY_SEARCH_SURFACES"
       ],
       "evidence": {
-        "groundedSiteSurfaced": null,
-        "groundedProviderAnswered": false,
+        "groundedSiteSurfaced": true,
+        "groundedProviderAnswered": true,
         "gscImpressions": 1,
         "gscClicks": 0,
         "gscAveragePosition": 25,
@@ -109,20 +107,21 @@
         ],
         "competitorUrls": []
       },
-      "safeRepairEligible": false,
-      "recommendedAction": "Observe or route to content/technical review; do not invent a ranking win."
+      "safeRepairEligible": true,
+      "recommendedAction": "Run bounded search-alignment repair, rebuild, then await the next external observation cycle."
     },
     {
       "query": "psychologists near me",
-      "primaryPage": "/",
-      "status": "PROVIDER_ERROR",
+      "primaryPage": "/psychologist-vs-therapist-memphis/",
+      "status": "WRONG_PAGE",
       "reasons": [
+        "WRONG_HICKS_PAGE_RANKING",
         "AVERAGE_POSITION_OUTSIDE_TOP_10",
-        "PROVIDER_ERROR"
+        "EXACT_QUERY_NOT_IN_PRIMARY_SEARCH_SURFACES"
       ],
       "evidence": {
-        "groundedSiteSurfaced": null,
-        "groundedProviderAnswered": false,
+        "groundedSiteSurfaced": true,
+        "groundedProviderAnswered": true,
         "gscImpressions": 1,
         "gscClicks": 0,
         "gscAveragePosition": 30,
@@ -131,20 +130,21 @@
         ],
         "competitorUrls": []
       },
-      "safeRepairEligible": false,
-      "recommendedAction": "Observe or route to content/technical review; do not invent a ranking win."
+      "safeRepairEligible": true,
+      "recommendedAction": "Run bounded search-alignment repair, rebuild, then await the next external observation cycle."
     },
     {
       "query": "therapist in olive branch ms",
-      "primaryPage": "/",
-      "status": "PROVIDER_ERROR",
+      "primaryPage": "/therapist-olive-branch-ms/",
+      "status": "WRONG_PAGE",
       "reasons": [
+        "WRONG_HICKS_PAGE_RANKING",
         "AVERAGE_POSITION_OUTSIDE_TOP_10",
-        "PROVIDER_ERROR"
+        "EXACT_QUERY_NOT_IN_PRIMARY_SEARCH_SURFACES"
       ],
       "evidence": {
-        "groundedSiteSurfaced": null,
-        "groundedProviderAnswered": false,
+        "groundedSiteSurfaced": true,
+        "groundedProviderAnswered": true,
         "gscImpressions": 1,
         "gscClicks": 0,
         "gscAveragePosition": 61,
@@ -153,14 +153,15 @@
         ],
         "competitorUrls": []
       },
-      "safeRepairEligible": false,
-      "recommendedAction": "Observe or route to content/technical review; do not invent a ranking win."
+      "safeRepairEligible": true,
+      "recommendedAction": "Run bounded search-alignment repair, rebuild, then await the next external observation cycle."
     },
     {
       "query": "therapist near me",
-      "primaryPage": "/",
-      "status": "OBSERVED",
+      "primaryPage": "/therapist-near-me-memphis/",
+      "status": "WRONG_PAGE",
       "reasons": [
+        "WRONG_HICKS_PAGE_RANKING",
         "AVERAGE_POSITION_OUTSIDE_TOP_10"
       ],
       "evidence": {
@@ -179,9 +180,10 @@
     },
     {
       "query": "therapists near me",
-      "primaryPage": "/",
-      "status": "OBSERVED",
+      "primaryPage": "/therapist-near-me-memphis/",
+      "status": "WRONG_PAGE",
       "reasons": [
+        "WRONG_HICKS_PAGE_RANKING",
         "AVERAGE_POSITION_OUTSIDE_TOP_10"
       ],
       "evidence": {
@@ -200,9 +202,11 @@
     },
     {
       "query": "trauma center near me",
-      "primaryPage": "/",
-      "status": "OBSERVED",
-      "reasons": [],
+      "primaryPage": "/emergency-crisis-notice/",
+      "status": "WRONG_PAGE",
+      "reasons": [
+        "WRONG_HICKS_PAGE_RANKING"
+      ],
       "evidence": {
         "groundedSiteSurfaced": null,
         "groundedProviderAnswered": false,
@@ -218,6 +222,142 @@
       "recommendedAction": "Observe or route to content/technical review; do not invent a ranking win."
     },
     {
+      "query": "mental health diagnosis near me memphis",
+      "primaryPage": "/psychologist-vs-therapist-memphis/",
+      "status": "UNKNOWN",
+      "reasons": [],
+      "evidence": {
+        "groundedSiteSurfaced": null,
+        "groundedProviderAnswered": false,
+        "gscImpressions": 0,
+        "gscClicks": 0,
+        "gscAveragePosition": 0,
+        "gscPages": [],
+        "competitorUrls": []
+      },
+      "safeRepairEligible": false,
+      "recommendedAction": "Observe or route to content/technical review; do not invent a ranking win."
+    },
+    {
+      "query": "christian therapists near me memphis",
+      "primaryPage": "/christian-therapist-memphis/",
+      "status": "UNKNOWN",
+      "reasons": [],
+      "evidence": {
+        "groundedSiteSurfaced": null,
+        "groundedProviderAnswered": false,
+        "gscImpressions": 0,
+        "gscClicks": 0,
+        "gscAveragePosition": 0,
+        "gscPages": [],
+        "competitorUrls": []
+      },
+      "safeRepairEligible": false,
+      "recommendedAction": "Observe or route to content/technical review; do not invent a ranking win."
+    },
+    {
+      "query": "female therapist near me memphis",
+      "primaryPage": "/female-therapist-memphis/",
+      "status": "UNKNOWN",
+      "reasons": [],
+      "evidence": {
+        "groundedSiteSurfaced": null,
+        "groundedProviderAnswered": false,
+        "gscImpressions": 0,
+        "gscClicks": 0,
+        "gscAveragePosition": 0,
+        "gscPages": [],
+        "competitorUrls": []
+      },
+      "safeRepairEligible": false,
+      "recommendedAction": "Observe or route to content/technical review; do not invent a ranking win."
+    },
+    {
+      "query": "mental health therapy near me memphis",
+      "primaryPage": "/therapist-near-me-memphis/",
+      "status": "UNKNOWN",
+      "reasons": [],
+      "evidence": {
+        "groundedSiteSurfaced": null,
+        "groundedProviderAnswered": false,
+        "gscImpressions": 0,
+        "gscClicks": 0,
+        "gscAveragePosition": 0,
+        "gscPages": [],
+        "competitorUrls": []
+      },
+      "safeRepairEligible": false,
+      "recommendedAction": "Observe or route to content/technical review; do not invent a ranking win."
+    },
+    {
+      "query": "psychologists near me memphis",
+      "primaryPage": "/psychologist-vs-therapist-memphis/",
+      "status": "UNKNOWN",
+      "reasons": [],
+      "evidence": {
+        "groundedSiteSurfaced": null,
+        "groundedProviderAnswered": false,
+        "gscImpressions": 0,
+        "gscClicks": 0,
+        "gscAveragePosition": 0,
+        "gscPages": [],
+        "competitorUrls": []
+      },
+      "safeRepairEligible": false,
+      "recommendedAction": "Observe or route to content/technical review; do not invent a ranking win."
+    },
+    {
+      "query": "therapist in olive branch ms memphis area",
+      "primaryPage": "/therapist-olive-branch-ms/",
+      "status": "UNKNOWN",
+      "reasons": [],
+      "evidence": {
+        "groundedSiteSurfaced": null,
+        "groundedProviderAnswered": false,
+        "gscImpressions": 0,
+        "gscClicks": 0,
+        "gscAveragePosition": 0,
+        "gscPages": [],
+        "competitorUrls": []
+      },
+      "safeRepairEligible": false,
+      "recommendedAction": "Observe or route to content/technical review; do not invent a ranking win."
+    },
+    {
+      "query": "therapist near me memphis",
+      "primaryPage": "/therapist-near-me-memphis/",
+      "status": "UNKNOWN",
+      "reasons": [],
+      "evidence": {
+        "groundedSiteSurfaced": null,
+        "groundedProviderAnswered": false,
+        "gscImpressions": 0,
+        "gscClicks": 0,
+        "gscAveragePosition": 0,
+        "gscPages": [],
+        "competitorUrls": []
+      },
+      "safeRepairEligible": false,
+      "recommendedAction": "Observe or route to content/technical review; do not invent a ranking win."
+    },
+    {
+      "query": "therapists near me memphis tn",
+      "primaryPage": "/therapist-near-me-memphis/",
+      "status": "UNKNOWN",
+      "reasons": [],
+      "evidence": {
+        "groundedSiteSurfaced": null,
+        "groundedProviderAnswered": false,
+        "gscImpressions": 0,
+        "gscClicks": 0,
+        "gscAveragePosition": 0,
+        "gscPages": [],
+        "competitorUrls": []
+      },
+      "safeRepairEligible": false,
+      "recommendedAction": "Observe or route to content/technical review; do not invent a ranking win."
+    },
+    {
       "query": "hicks consulting",
       "primaryPage": "/",
       "status": "CANNIBALIZATION_REVIEW",
@@ -227,9 +367,9 @@
       "evidence": {
         "groundedSiteSurfaced": null,
         "groundedProviderAnswered": false,
-        "gscImpressions": 69,
+        "gscImpressions": 64,
         "gscClicks": 3,
-        "gscAveragePosition": 6.23,
+        "gscAveragePosition": 6.53,
         "gscPages": [
           "/",
           "/about/",
@@ -255,9 +395,9 @@
       "evidence": {
         "groundedSiteSurfaced": null,
         "groundedProviderAnswered": false,
-        "gscImpressions": 16,
+        "gscImpressions": 17,
         "gscClicks": 0,
-        "gscAveragePosition": 2.06,
+        "gscAveragePosition": 2,
         "gscPages": [
           "/"
         ],
@@ -349,6 +489,25 @@
       "recommendedAction": "Observe or route to content/technical review; do not invent a ranking win."
     },
     {
+      "query": "heal consulting",
+      "primaryPage": "/",
+      "status": "OBSERVED",
+      "reasons": [],
+      "evidence": {
+        "groundedSiteSurfaced": null,
+        "groundedProviderAnswered": false,
+        "gscImpressions": 2,
+        "gscClicks": 0,
+        "gscAveragePosition": 6.5,
+        "gscPages": [
+          "/"
+        ],
+        "competitorUrls": []
+      },
+      "safeRepairEligible": false,
+      "recommendedAction": "Observe or route to content/technical review; do not invent a ranking win."
+    },
+    {
       "query": "hicks healthcare",
       "primaryPage": "/",
       "status": "OBSERVED",
@@ -419,27 +578,6 @@
         "groundedSiteSurfaced": null,
         "groundedProviderAnswered": false,
         "gscImpressions": 2,
-        "gscClicks": 0,
-        "gscAveragePosition": 21,
-        "gscPages": [
-          "/"
-        ],
-        "competitorUrls": []
-      },
-      "safeRepairEligible": false,
-      "recommendedAction": "Observe or route to content/technical review; do not invent a ranking win."
-    },
-    {
-      "query": "mental health clinic",
-      "primaryPage": "/",
-      "status": "OBSERVED",
-      "reasons": [
-        "AVERAGE_POSITION_OUTSIDE_TOP_10"
-      ],
-      "evidence": {
-        "groundedSiteSurfaced": null,
-        "groundedProviderAnswered": false,
-        "gscImpressions": 1,
         "gscClicks": 0,
         "gscAveragePosition": 21,
         "gscPages": [
@@ -611,25 +749,6 @@
       "recommendedAction": "Observe or route to content/technical review; do not invent a ranking win."
     },
     {
-      "query": "heal consulting",
-      "primaryPage": "/",
-      "status": "OBSERVED",
-      "reasons": [],
-      "evidence": {
-        "groundedSiteSurfaced": null,
-        "groundedProviderAnswered": false,
-        "gscImpressions": 2,
-        "gscClicks": 0,
-        "gscAveragePosition": 6.5,
-        "gscPages": [
-          "/"
-        ],
-        "competitorUrls": []
-      },
-      "safeRepairEligible": false,
-      "recommendedAction": "Observe or route to content/technical review; do not invent a ranking win."
-    },
-    {
       "query": "health care facility consulting",
       "primaryPage": "/",
       "status": "OBSERVED",
@@ -697,6 +816,27 @@
         "gscImpressions": 1,
         "gscClicks": 0,
         "gscAveragePosition": 8,
+        "gscPages": [
+          "/"
+        ],
+        "competitorUrls": []
+      },
+      "safeRepairEligible": false,
+      "recommendedAction": "Observe or route to content/technical review; do not invent a ranking win."
+    },
+    {
+      "query": "hicks management",
+      "primaryPage": "/",
+      "status": "OBSERVED",
+      "reasons": [
+        "AVERAGE_POSITION_OUTSIDE_TOP_10"
+      ],
+      "evidence": {
+        "groundedSiteSurfaced": null,
+        "groundedProviderAnswered": false,
+        "gscImpressions": 1,
+        "gscClicks": 0,
+        "gscAveragePosition": 20,
         "gscPages": [
           "/"
         ],
@@ -834,6 +974,23 @@
     {
       "query": "mental health",
       "primaryPage": "/",
+      "status": "UNKNOWN",
+      "reasons": [],
+      "evidence": {
+        "groundedSiteSurfaced": null,
+        "groundedProviderAnswered": false,
+        "gscImpressions": 0,
+        "gscClicks": 0,
+        "gscAveragePosition": 0,
+        "gscPages": [],
+        "competitorUrls": []
+      },
+      "safeRepairEligible": false,
+      "recommendedAction": "Observe or route to content/technical review; do not invent a ranking win."
+    },
+    {
+      "query": "mental health clinic",
+      "primaryPage": "/",
       "status": "OBSERVED",
       "reasons": [
         "AVERAGE_POSITION_OUTSIDE_TOP_10"
@@ -843,7 +1000,7 @@
         "groundedProviderAnswered": false,
         "gscImpressions": 1,
         "gscClicks": 0,
-        "gscAveragePosition": 22,
+        "gscAveragePosition": 21,
         "gscPages": [
           "/"
         ],
@@ -958,6 +1115,23 @@
     {
       "query": "anxiety therapist Memphis",
       "primaryPage": "/anxiety-therapist-memphis/",
+      "status": "UNKNOWN",
+      "reasons": [],
+      "evidence": {
+        "groundedSiteSurfaced": null,
+        "groundedProviderAnswered": false,
+        "gscImpressions": 0,
+        "gscClicks": 0,
+        "gscAveragePosition": 0,
+        "gscPages": [],
+        "competitorUrls": []
+      },
+      "safeRepairEligible": false,
+      "recommendedAction": "Observe or route to content/technical review; do not invent a ranking win."
+    },
+    {
+      "query": "black female therapist memphis tn",
+      "primaryPage": "/female-therapist-memphis/",
       "status": "UNKNOWN",
       "reasons": [],
       "evidence": {
