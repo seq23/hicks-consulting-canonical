@@ -1,6 +1,6 @@
 {
   "schemaVersion": "2.1.0",
-  "generatedAt": "2026-08-30T14:27:52.484Z",
+  "generatedAt": "2026-08-31T14:32:01.516Z",
   "providerState": "CONNECTED",
   "provider": "openrouter_web_search",
   "stop": null,
@@ -11,7 +11,7 @@
       "query": "mental health therapy near me",
       "primaryPage": "/therapist-near-me-memphis/",
       "status": "ok",
-      "observedAt": "2026-08-30T14:27:52.484Z",
+      "observedAt": "2026-08-31T14:32:01.516Z",
       "provider": "openrouter_web_search",
       "model": "openai/gpt-4o-mini",
       "observationType": "LIVE_WEB_SURFACING",
@@ -38,7 +38,7 @@
         "title": "Therapist Near Me in Memphis: How to Find One Who Can Actually See You | Hicks Consulting",
         "description": "What “therapist near me” really has to mean in a three-state metro like Memphis, what to ask on the first call, what a first session involves, and what care costs here.",
         "h1": "Therapist Near Me in Memphis: How to Find One Who Can Actually See You",
-        "textChars": 13363,
+        "textChars": 13584,
         "internalLinks": 44,
         "canonical": ""
       },
@@ -50,7 +50,7 @@
       "query": "black female therapist near me",
       "primaryPage": "/female-therapist-memphis/",
       "status": "ok",
-      "observedAt": "2026-08-30T14:27:52.484Z",
+      "observedAt": "2026-08-31T14:32:01.516Z",
       "provider": "openrouter_web_search",
       "model": "openai/gpt-4o-mini",
       "observationType": "LIVE_WEB_SURFACING",
@@ -77,7 +77,7 @@
         "title": "Female Therapist in Memphis: What Gender Fit Changes, and What It Does Not | Hicks Consulting",
         "description": "Why wanting a female therapist is a legitimate filter rather than a preference to apologise for, what it does and does not predict, and how to test for it on a consult call in Memphis.",
         "h1": "Female Therapist in Memphis: What Gender Fit Changes, and What It Does Not",
-        "textChars": 11166,
+        "textChars": 11388,
         "internalLinks": 44,
         "canonical": ""
       },
@@ -89,24 +89,15 @@
       "query": "christian therapists near me",
       "primaryPage": "/christian-therapist-memphis/",
       "status": "ok",
-      "observedAt": "2026-08-30T14:27:52.484Z",
+      "observedAt": "2026-08-31T14:32:01.516Z",
       "provider": "openrouter_web_search",
       "model": "openai/gpt-4o-mini",
       "observationType": "LIVE_WEB_SURFACING",
       "rankVerified": false,
       "providerAnswered": true,
-      "citationCount": 2,
-      "siteSurfaced": true,
-      "citations": [
-        {
-          "url": "https://www.hicksconsulting.org/",
-          "title": "Hicks Consulting | Therapy for Individuals & Mental Health ..."
-        },
-        {
-          "url": "https://www.hicksconsulting.org/therapy",
-          "title": "Virtual Therapy Serving Memphis & Tennessee"
-        }
-      ],
+      "citationCount": 0,
+      "siteSurfaced": false,
+      "citations": [],
       "searchQueries": [],
       "competitors": [],
       "ownPage": {
@@ -121,14 +112,16 @@
         "canonical": ""
       },
       "diagnosis": [
-        "EXACT_QUERY_NOT_IN_PRIMARY_SEARCH_SURFACES"
+        "EXACT_QUERY_NOT_IN_PRIMARY_SEARCH_SURFACES",
+        "SITE_NOT_SURFACED_IN_GROUNDED_OBSERVATION",
+        "NO_GROUNDED_CITATIONS_RETURNED"
       ]
     },
     {
       "query": "female therapist near me",
       "primaryPage": "/female-therapist-memphis/",
       "status": "ok",
-      "observedAt": "2026-08-30T14:27:52.484Z",
+      "observedAt": "2026-08-31T14:32:01.516Z",
       "provider": "openrouter_web_search",
       "model": "openai/gpt-4o-mini",
       "observationType": "LIVE_WEB_SURFACING",
@@ -155,7 +148,7 @@
         "title": "Female Therapist in Memphis: What Gender Fit Changes, and What It Does Not | Hicks Consulting",
         "description": "Why wanting a female therapist is a legitimate filter rather than a preference to apologise for, what it does and does not predict, and how to test for it on a consult call in Memphis.",
         "h1": "Female Therapist in Memphis: What Gender Fit Changes, and What It Does Not",
-        "textChars": 11166,
+        "textChars": 11388,
         "internalLinks": 44,
         "canonical": ""
       },
@@ -167,7 +160,7 @@
       "query": "mental health diagnosis near me",
       "primaryPage": "/psychologist-vs-therapist-memphis/",
       "status": "ok",
-      "observedAt": "2026-08-30T14:27:52.484Z",
+      "observedAt": "2026-08-31T14:32:01.516Z",
       "provider": "openrouter_web_search",
       "model": "openai/gpt-4o-mini",
       "observationType": "LIVE_WEB_SURFACING",
@@ -194,7 +187,7 @@
         "title": "Psychologists in Memphis: Do You Need a Psychologist, a Therapist, or a Psychiatrist? | Hicks Consulting",
         "description": "What psychologists, LCSWs, counsellors and psychiatrists each do, when the difference genuinely matters, and how to tell which one your situation calls for in the Memphis area.",
         "h1": "Psychologists in Memphis: Do You Need a Psychologist, a Therapist, or a Psychiatrist?",
-        "textChars": 11424,
+        "textChars": 11669,
         "internalLinks": 43,
         "canonical": ""
       },
@@ -206,7 +199,7 @@
       "query": "psychologists near me",
       "primaryPage": "/psychologist-vs-therapist-memphis/",
       "status": "ok",
-      "observedAt": "2026-08-30T14:27:52.484Z",
+      "observedAt": "2026-08-31T14:32:01.516Z",
       "provider": "openrouter_web_search",
       "model": "openai/gpt-4o-mini",
       "observationType": "LIVE_WEB_SURFACING",
@@ -233,7 +226,7 @@
         "title": "Psychologists in Memphis: Do You Need a Psychologist, a Therapist, or a Psychiatrist? | Hicks Consulting",
         "description": "What psychologists, LCSWs, counsellors and psychiatrists each do, when the difference genuinely matters, and how to tell which one your situation calls for in the Memphis area.",
         "h1": "Psychologists in Memphis: Do You Need a Psychologist, a Therapist, or a Psychiatrist?",
-        "textChars": 11424,
+        "textChars": 11669,
         "internalLinks": 43,
         "canonical": ""
       },
@@ -245,7 +238,7 @@
       "query": "therapist in olive branch ms",
       "primaryPage": "/therapist-olive-branch-ms/",
       "status": "ok",
-      "observedAt": "2026-08-30T14:27:52.484Z",
+      "observedAt": "2026-08-31T14:32:01.516Z",
       "provider": "openrouter_web_search",
       "model": "openai/gpt-4o-mini",
       "observationType": "LIVE_WEB_SURFACING",
@@ -255,12 +248,12 @@
       "siteSurfaced": true,
       "citations": [
         {
-          "url": "https://www.hicksconsulting.org/",
-          "title": "Hicks Consulting | Therapy for Individuals & Mental Health ... hicksconsulting.org https://www.hicksconsulting.org"
-        },
-        {
           "url": "https://www.hicksconsulting.org/therapy",
           "title": "Virtual Therapy Serving Memphis & Tennessee"
+        },
+        {
+          "url": "https://www.hicksconsulting.org/",
+          "title": "Hicks Consulting | Therapy for Individuals & Mental Health ..."
         }
       ],
       "searchQueries": [],
@@ -272,7 +265,7 @@
         "title": "Looking for a Therapist in Olive Branch, MS: What the State Line Changes | Hicks Consulting",
         "description": "Olive Branch sits in the Memphis metro but on the Mississippi side of the line. Here is what that changes about who can treat you, how to verify a Mississippi licence, and what is still available from a Tennessee practice.",
         "h1": "Looking for a Therapist in Olive Branch, MS: What the State Line Changes",
-        "textChars": 10911,
+        "textChars": 11131,
         "internalLinks": 45,
         "canonical": ""
       },

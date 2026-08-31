@@ -1,6 +1,6 @@
 {
   "schemaVersion": "2.0.0",
-  "generatedAt": "2026-08-30T14:27:52.484Z",
+  "generatedAt": "2026-08-31T14:32:01.516Z",
   "policy": "Hicks may autonomously apply bounded technical/search-alignment repairs. Substantive clinical claims and unsupported treatment assertions are never auto-generated from competitor content.",
   "items": [
     {
@@ -52,12 +52,14 @@
     {
       "query": "christian therapists near me",
       "primaryPage": "/christian-therapist-memphis/",
-      "status": "OBSERVED",
+      "status": "MISSING",
       "reasons": [
-        "EXACT_QUERY_NOT_IN_PRIMARY_SEARCH_SURFACES"
+        "EXACT_QUERY_NOT_IN_PRIMARY_SEARCH_SURFACES",
+        "SITE_NOT_SURFACED_IN_GROUNDED_OBSERVATION",
+        "NO_GROUNDED_CITATIONS_RETURNED"
       ],
       "evidence": {
-        "groundedSiteSurfaced": true,
+        "groundedSiteSurfaced": false,
         "groundedProviderAnswered": true,
         "gscImpressions": 0,
         "gscClicks": 0,
@@ -65,8 +67,8 @@
         "gscPages": [],
         "competitorUrls": []
       },
-      "safeRepairEligible": false,
-      "recommendedAction": "Observe or route to content/technical review; do not invent a ranking win."
+      "safeRepairEligible": true,
+      "recommendedAction": "Run bounded search-alignment repair, rebuild, then await the next external observation cycle."
     },
     {
       "query": "female therapist near me",
@@ -367,7 +369,7 @@
       "evidence": {
         "groundedSiteSurfaced": null,
         "groundedProviderAnswered": false,
-        "gscImpressions": 64,
+        "gscImpressions": 61,
         "gscClicks": 3,
         "gscAveragePosition": 6.53,
         "gscPages": [
@@ -395,9 +397,9 @@
       "evidence": {
         "groundedSiteSurfaced": null,
         "groundedProviderAnswered": false,
-        "gscImpressions": 17,
+        "gscImpressions": 18,
         "gscClicks": 0,
-        "gscAveragePosition": 2,
+        "gscAveragePosition": 2.06,
         "gscPages": [
           "/"
         ],
@@ -416,9 +418,9 @@
       "evidence": {
         "groundedSiteSurfaced": null,
         "groundedProviderAnswered": false,
-        "gscImpressions": 5,
+        "gscImpressions": 4,
         "gscClicks": 0,
-        "gscAveragePosition": 22.2,
+        "gscAveragePosition": 22,
         "gscPages": [
           "/"
         ],
@@ -612,17 +614,15 @@
     {
       "query": "black mental health therapist",
       "primaryPage": "/",
-      "status": "OBSERVED",
+      "status": "UNKNOWN",
       "reasons": [],
       "evidence": {
         "groundedSiteSurfaced": null,
         "groundedProviderAnswered": false,
-        "gscImpressions": 1,
+        "gscImpressions": 0,
         "gscClicks": 0,
-        "gscAveragePosition": 4,
-        "gscPages": [
-          "/"
-        ],
+        "gscAveragePosition": 0,
+        "gscPages": [],
         "competitorUrls": []
       },
       "safeRepairEligible": false,

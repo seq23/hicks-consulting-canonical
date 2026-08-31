@@ -1,6 +1,6 @@
 {
   "schemaVersion": "2.0.0",
-  "updatedAt": "2026-08-30T14:28:14.827Z",
+  "updatedAt": "2026-08-31T14:32:23.162Z",
   "repairs": [
     {
       "queries": [
@@ -77,64 +77,33 @@
       ],
       "sourcePolicy": "Uses governed Hicks target-query wording only. Competitor text and clinical claims are not copied or invented.",
       "externalOutcome": "UNPROVEN_PENDING_RETEST"
+    },
+    {
+      "queries": [
+        "christian therapists near me"
+      ],
+      "route": "/christian-therapist-memphis/",
+      "sourceFile": "pages/christian-therapist-memphis/index.html",
+      "appliedAt": "2026-08-31T14:32:23.162Z",
+      "beforeHash": "c0a121fb56c7cf335985f1a0088e2f5db1c375a3dc5885922e7a7e8f489213a2",
+      "afterHash": "b5a37d776ca908ed2831bc7b1103dd9c9121933b3fd97dd9c86dd006eaa612be",
+      "changes": [
+        "governed_query_support_block"
+      ],
+      "sourcePolicy": "Uses governed Hicks target-query wording only. Competitor text and clinical claims are not copied or invented.",
+      "externalOutcome": "UNPROVEN_PENDING_RETEST"
     }
   ],
   "lastRunRepairs": [
     {
       "queries": [
-        "mental health therapy near me"
+        "christian therapists near me"
       ],
-      "route": "/therapist-near-me-memphis/",
-      "sourceFile": "pages/therapist-near-me-memphis/index.html",
-      "appliedAt": "2026-08-30T14:28:14.827Z",
-      "beforeHash": "cf0b3cf8fe7dcf384bfe9b50724a9784f680c2aee1e37d574ad6dd6ded0ebe59",
-      "afterHash": "4e86683510d691a98252c6480941fc2f9d8d7c6ffc32ec34e5308766e60b78e5",
-      "changes": [
-        "governed_query_support_block"
-      ],
-      "sourcePolicy": "Uses governed Hicks target-query wording only. Competitor text and clinical claims are not copied or invented.",
-      "externalOutcome": "UNPROVEN_PENDING_RETEST"
-    },
-    {
-      "queries": [
-        "black female therapist near me"
-      ],
-      "route": "/female-therapist-memphis/",
-      "sourceFile": "pages/female-therapist-memphis/index.html",
-      "appliedAt": "2026-08-30T14:28:14.827Z",
-      "beforeHash": "1a1ea850b141a4a6f236f8ab81e3e07c92d08f3189521483abbf25662184b24c",
-      "afterHash": "057cd3cc59e6cf12035f2f529d4bde0693e7fef182c2344b8ad6942be64021b6",
-      "changes": [
-        "governed_query_support_block"
-      ],
-      "sourcePolicy": "Uses governed Hicks target-query wording only. Competitor text and clinical claims are not copied or invented.",
-      "externalOutcome": "UNPROVEN_PENDING_RETEST"
-    },
-    {
-      "queries": [
-        "mental health diagnosis near me",
-        "psychologists near me"
-      ],
-      "route": "/psychologist-vs-therapist-memphis/",
-      "sourceFile": "pages/psychologist-vs-therapist-memphis/index.html",
-      "appliedAt": "2026-08-30T14:28:14.827Z",
-      "beforeHash": "441cafec4b397dc557516f60a06ba1265a93837ba4f18f4b957df13aaa1b9886",
-      "afterHash": "bc8ed1e005d41adcbd0ae5ee3604c16aa148eb2930b693b125e0c2d2d49acbe1",
-      "changes": [
-        "governed_query_support_block"
-      ],
-      "sourcePolicy": "Uses governed Hicks target-query wording only. Competitor text and clinical claims are not copied or invented.",
-      "externalOutcome": "UNPROVEN_PENDING_RETEST"
-    },
-    {
-      "queries": [
-        "therapist in olive branch ms"
-      ],
-      "route": "/therapist-olive-branch-ms/",
-      "sourceFile": "pages/therapist-olive-branch-ms/index.html",
-      "appliedAt": "2026-08-30T14:28:14.827Z",
-      "beforeHash": "cb922fb9d9aa1b6ee59cb3ff933b70b49f97947c940504e7f405b88e1d49586e",
-      "afterHash": "3e733f9f3e21de84b1e5e86604a5270c92dfbf3bd97c0a073edb977c4ab8e246",
+      "route": "/christian-therapist-memphis/",
+      "sourceFile": "pages/christian-therapist-memphis/index.html",
+      "appliedAt": "2026-08-31T14:32:23.162Z",
+      "beforeHash": "c0a121fb56c7cf335985f1a0088e2f5db1c375a3dc5885922e7a7e8f489213a2",
+      "afterHash": "b5a37d776ca908ed2831bc7b1103dd9c9121933b3fd97dd9c86dd006eaa612be",
       "changes": [
         "governed_query_support_block"
       ],
