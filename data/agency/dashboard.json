@@ -1,14 +1,14 @@
 {
-  "generatedAt": "2026-08-31T14:31:59.986Z",
+  "generatedAt": "2026-09-01T14:31:28.077Z",
   "policy": {
     "blocking": false,
     "message": "SEO, AEO, GEO, GSC, Bing, and live-health quality findings are advisory. Runtime safety, data integrity, auth, cadence, and truth checks remain release gates."
   },
   "inventory": {
     "totalManifest": 238,
-    "published": 67,
-    "approved": 117,
-    "livePages": 95,
+    "published": 69,
+    "approved": 115,
+    "livePages": 97,
     "sourcePages": 266
   },
   "scores": [
@@ -24,7 +24,7 @@
     {
       "key": "onpage",
       "label": "On-page SEO",
-      "score": 92,
+      "score": 90,
       "summary": "Titles, descriptions, internal linking, and service alignment.",
       "grade": "A-",
       "target": 87,
@@ -89,23 +89,23 @@
     "gsc": {
       "provider": "gsc",
       "status": "ok",
-      "checkedAt": "2026-08-31T14:31:59.986Z",
+      "checkedAt": "2026-09-01T14:31:28.077Z",
       "siteUrl": "sc-domain:hicksconsulting.org",
       "dateRange": {
-        "currentStart": "2026-08-01",
-        "currentEnd": "2026-08-28",
-        "previousStart": "2026-07-04",
-        "previousEnd": "2026-07-31"
+        "currentStart": "2026-08-02",
+        "currentEnd": "2026-08-29",
+        "previousStart": "2026-07-05",
+        "previousEnd": "2026-08-01"
       },
       "metrics": {
         "clicks": 10,
-        "impressions": 656,
-        "ctr": 0.01524390243902439,
-        "position": 7.626524390243903,
+        "impressions": 660,
+        "ctr": 0.015151515151515152,
+        "position": 7.618181818181818,
         "previousClicks": 18,
-        "previousImpressions": 529,
-        "previousCtr": 0.034026465028355386,
-        "previousPosition": 7.533081285444235
+        "previousImpressions": 524,
+        "previousCtr": 0.03435114503816794,
+        "previousPosition": 7.715648854961832
       },
       "topQueries": [
         {
@@ -170,6 +170,15 @@
           "impressions": 1,
           "ctr": 0,
           "position": 50
+        },
+        {
+          "keys": [
+            "christian counseling centers"
+          ],
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 57
         },
         {
           "keys": [
@@ -293,9 +302,9 @@
             "jhicks consulting"
           ],
           "clicks": 0,
-          "impressions": 1,
+          "impressions": 2,
           "ctr": 0,
-          "position": 12
+          "position": 7
         },
         {
           "keys": [
@@ -332,15 +341,6 @@
           "impressions": 1,
           "ctr": 0,
           "position": 19
-        },
-        {
-          "keys": [
-            "memphis small business consulting"
-          ],
-          "clicks": 0,
-          "impressions": 2,
-          "ctr": 0,
-          "position": 21
         },
         {
           "keys": [
@@ -493,9 +493,9 @@
             "https://www.hicksconsulting.org/"
           ],
           "clicks": 10,
-          "impressions": 586,
-          "ctr": 0.017064846416382253,
-          "position": 7.080204778156997
+          "impressions": 590,
+          "ctr": 0.01694915254237288,
+          "position": 7.074576271186441
         },
         {
           "keys": [
@@ -694,6 +694,16 @@
           "impressions": 1,
           "ctr": 0,
           "position": 50
+        },
+        {
+          "keys": [
+            "christian counseling centers",
+            "https://www.hicksconsulting.org/"
+          ],
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 57
         },
         {
           "keys": [
@@ -931,9 +941,9 @@
             "https://www.hicksconsulting.org/"
           ],
           "clicks": 0,
-          "impressions": 1,
+          "impressions": 2,
           "ctr": 0,
-          "position": 12
+          "position": 7
         },
         {
           "keys": [
@@ -984,16 +994,6 @@
           "impressions": 1,
           "ctr": 0,
           "position": 19
-        },
-        {
-          "keys": [
-            "memphis small business consulting",
-            "https://www.hicksconsulting.org/"
-          ],
-          "clicks": 0,
-          "impressions": 2,
-          "ctr": 0,
-          "position": 21
         },
         {
           "keys": [
@@ -1157,15 +1157,6 @@
         }
       ],
       "daily": [
-        {
-          "keys": [
-            "2026-08-01"
-          ],
-          "clicks": 0,
-          "impressions": 8,
-          "ctr": 0,
-          "position": 15.375
-        },
         {
           "keys": [
             "2026-08-02"
@@ -1408,6 +1399,15 @@
           "impressions": 69,
           "ctr": 0,
           "position": 2.7971014492753623
+        },
+        {
+          "keys": [
+            "2026-08-29"
+          ],
+          "clicks": 0,
+          "impressions": 12,
+          "ctr": 0,
+          "position": 12.333333333333334
         }
       ],
       "message": "Search Console API connected and refreshed."
@@ -1415,17 +1415,11 @@
     "bing": {
       "provider": "bing",
       "status": "ok",
-      "checkedAt": "2026-08-31T14:31:59.986Z",
+      "checkedAt": "2026-09-01T14:31:28.077Z",
       "siteUrl": "https://www.hicksconsulting.org/",
       "site": null,
       "metrics": {
         "rankAndTraffic": [
-          {
-            "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
-            "Clicks": 0,
-            "Date": "/Date(1780297200000-0700)/",
-            "Impressions": 0
-          },
           {
             "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
             "Clicks": 0,
@@ -1959,27 +1953,15 @@
             "Clicks": 0,
             "Date": "/Date(1787986800000-0700)/",
             "Impressions": 0
+          },
+          {
+            "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+            "Clicks": 0,
+            "Date": "/Date(1788073200000-0700)/",
+            "Impressions": 0
           }
         ],
         "crawl": [
-          {
-            "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
-            "AllOtherCodes": 0,
-            "BlockedByRobotsTxt": 0,
-            "Code2xx": 9,
-            "Code301": 1,
-            "Code302": 0,
-            "Code4xx": 0,
-            "Code5xx": 0,
-            "ConnectionTimeout": 0,
-            "ContainsMalware": 0,
-            "CrawlErrors": 0,
-            "CrawledPages": 0,
-            "Date": "/Date(1780297200000-0700)/",
-            "DnsFailures": 0,
-            "InIndex": 1,
-            "InLinks": 2
-          },
           {
             "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
             "AllOtherCodes": 0,
@@ -3581,6 +3563,24 @@
             "DnsFailures": 0,
             "InIndex": 0,
             "InLinks": 7
+          },
+          {
+            "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+            "AllOtherCodes": 0,
+            "BlockedByRobotsTxt": 0,
+            "Code2xx": 82,
+            "Code301": 1,
+            "Code302": 0,
+            "Code4xx": 1,
+            "Code5xx": 0,
+            "ConnectionTimeout": 0,
+            "ContainsMalware": 0,
+            "CrawlErrors": 1,
+            "CrawledPages": 1,
+            "Date": "/Date(1788159600000-0700)/",
+            "DnsFailures": 0,
+            "InIndex": 0,
+            "InLinks": 7
           }
         ]
       },
@@ -3615,15 +3615,6 @@
         {
           "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
           "AvgClickPosition": -1,
-          "AvgImpressionPosition": 2,
-          "Clicks": 0,
-          "Date": "/Date(1752217200000-0700)/",
-          "Impressions": 1,
-          "Query": "melissa hicks therapy"
-        },
-        {
-          "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
-          "AvgClickPosition": -1,
           "AvgImpressionPosition": 8,
           "Clicks": 0,
           "Date": "/Date(1752217200000-0700)/",
@@ -3647,6 +3638,15 @@
           "Date": "/Date(1752217200000-0700)/",
           "Impressions": 1,
           "Query": "jonathan hicks counseling"
+        },
+        {
+          "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
+          "AvgClickPosition": -1,
+          "AvgImpressionPosition": 2,
+          "Clicks": 0,
+          "Date": "/Date(1752217200000-0700)/",
+          "Impressions": 1,
+          "Query": "melissa hicks therapy"
         },
         {
           "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
@@ -3718,6 +3718,15 @@
           "Clicks": 0,
           "Date": "/Date(1753426800000-0700)/",
           "Impressions": 1,
+          "Query": "janice hicks counseling"
+        },
+        {
+          "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
+          "AvgClickPosition": -1,
+          "AvgImpressionPosition": 2,
+          "Clicks": 0,
+          "Date": "/Date(1753426800000-0700)/",
+          "Impressions": 1,
           "Query": "how to manage stress and anxiety john hicks consulting counselling"
         },
         {
@@ -3732,15 +3741,6 @@
         {
           "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
           "AvgClickPosition": -1,
-          "AvgImpressionPosition": 8,
-          "Clicks": 0,
-          "Date": "/Date(1753426800000-0700)/",
-          "Impressions": 1,
-          "Query": "www norman hicks consulting"
-        },
-        {
-          "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
-          "AvgClickPosition": -1,
           "AvgImpressionPosition": 6,
           "Clicks": 0,
           "Date": "/Date(1753426800000-0700)/",
@@ -3750,11 +3750,11 @@
         {
           "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
           "AvgClickPosition": -1,
-          "AvgImpressionPosition": 2,
+          "AvgImpressionPosition": 8,
           "Clicks": 0,
           "Date": "/Date(1753426800000-0700)/",
           "Impressions": 1,
-          "Query": "janice hicks counseling"
+          "Query": "www norman hicks consulting"
         },
         {
           "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
@@ -3807,7 +3807,7 @@
     "live": {
       "provider": "live",
       "status": "ok",
-      "checkedAt": "2026-08-31T14:31:59.986Z",
+      "checkedAt": "2026-09-01T14:31:28.077Z",
       "siteUrl": "https://www.hicksconsulting.org",
       "checks": [
         {
@@ -3821,77 +3821,77 @@
           "route": "/therapy/",
           "status": 200,
           "ok": true,
-          "ms": 191,
+          "ms": 149,
           "contentType": "text/html; charset=utf-8"
         },
         {
           "route": "/black-therapist-memphis/",
           "status": 200,
           "ok": true,
-          "ms": 74,
+          "ms": 94,
           "contentType": "text/html; charset=utf-8"
         },
         {
           "route": "/anxiety-therapist-memphis/",
           "status": 200,
           "ok": true,
-          "ms": 73,
+          "ms": 82,
           "contentType": "text/html; charset=utf-8"
         },
         {
           "route": "/coaching/",
           "status": 200,
           "ok": true,
-          "ms": 71,
+          "ms": 99,
           "contentType": "text/html; charset=utf-8"
         },
         {
           "route": "/groups/",
           "status": 200,
           "ok": true,
-          "ms": 72,
+          "ms": 101,
           "contentType": "text/html; charset=utf-8"
         },
         {
           "route": "/corporate-speaking/",
           "status": 200,
           "ok": true,
-          "ms": 70,
+          "ms": 111,
           "contentType": "text/html; charset=utf-8"
         },
         {
           "route": "/about/",
           "status": 200,
           "ok": true,
-          "ms": 70,
+          "ms": 91,
           "contentType": "text/html; charset=utf-8"
         },
         {
           "route": "/resources/",
           "status": 200,
           "ok": true,
-          "ms": 73,
+          "ms": 94,
           "contentType": "text/html; charset=utf-8"
         },
         {
           "route": "/sitemap.xml",
           "status": 200,
           "ok": true,
-          "ms": 63,
+          "ms": 78,
           "contentType": "application/xml"
         },
         {
           "route": "/robots.txt",
           "status": 200,
           "ok": true,
-          "ms": 113,
+          "ms": 100,
           "contentType": "text/plain; charset=utf-8"
         },
         {
           "route": "/agency/",
           "status": 200,
           "ok": true,
-          "ms": 77,
+          "ms": 95,
           "contentType": "text/html; charset=utf-8"
         }
       ],
@@ -3906,22 +3906,16 @@
   "trends": {
     "gsc": {
       "clicks": 10,
-      "impressions": 656,
-      "ctr": 0.01524390243902439,
-      "position": 7.626524390243903,
+      "impressions": 660,
+      "ctr": 0.015151515151515152,
+      "position": 7.618181818181818,
       "previousClicks": 18,
-      "previousImpressions": 529,
-      "previousCtr": 0.034026465028355386,
-      "previousPosition": 7.533081285444235
+      "previousImpressions": 524,
+      "previousCtr": 0.03435114503816794,
+      "previousPosition": 7.715648854961832
     },
     "bing": {
       "rankAndTraffic": [
-        {
-          "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
-          "Clicks": 0,
-          "Date": "/Date(1780297200000-0700)/",
-          "Impressions": 0
-        },
         {
           "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
           "Clicks": 0,
@@ -4455,27 +4449,15 @@
           "Clicks": 0,
           "Date": "/Date(1787986800000-0700)/",
           "Impressions": 0
+        },
+        {
+          "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+          "Clicks": 0,
+          "Date": "/Date(1788073200000-0700)/",
+          "Impressions": 0
         }
       ],
       "crawl": [
-        {
-          "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
-          "AllOtherCodes": 0,
-          "BlockedByRobotsTxt": 0,
-          "Code2xx": 9,
-          "Code301": 1,
-          "Code302": 0,
-          "Code4xx": 0,
-          "Code5xx": 0,
-          "ConnectionTimeout": 0,
-          "ContainsMalware": 0,
-          "CrawlErrors": 0,
-          "CrawledPages": 0,
-          "Date": "/Date(1780297200000-0700)/",
-          "DnsFailures": 0,
-          "InIndex": 1,
-          "InLinks": 2
-        },
         {
           "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
           "AllOtherCodes": 0,
@@ -6077,6 +6059,24 @@
           "DnsFailures": 0,
           "InIndex": 0,
           "InLinks": 7
+        },
+        {
+          "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+          "AllOtherCodes": 0,
+          "BlockedByRobotsTxt": 0,
+          "Code2xx": 82,
+          "Code301": 1,
+          "Code302": 0,
+          "Code4xx": 1,
+          "Code5xx": 0,
+          "ConnectionTimeout": 0,
+          "ContainsMalware": 0,
+          "CrawlErrors": 1,
+          "CrawledPages": 1,
+          "Date": "/Date(1788159600000-0700)/",
+          "DnsFailures": 0,
+          "InIndex": 0,
+          "InLinks": 7
         }
       ]
     }
@@ -6138,6 +6138,20 @@
     },
     {
       "severity": "low",
+      "code": "long-title",
+      "route": "/resources/articles/the-workplace-habits-that-keep-high-functioning-women-drained/",
+      "message": "Title is 80 characters.",
+      "tip": "Shorten the search title while preserving the page H1."
+    },
+    {
+      "severity": "low",
+      "code": "description-length",
+      "route": "/resources/articles/the-workplace-habits-that-keep-high-functioning-women-drained/",
+      "message": "Description is 184 characters.",
+      "tip": "Keep descriptions useful and roughly 80–165 characters."
+    },
+    {
+      "severity": "low",
       "code": "source-link",
       "route": "/resources/free-downloads/",
       "message": "Resource has no external supporting source.",
@@ -6148,6 +6162,13 @@
       "code": "long-title",
       "route": "/resources/insights/the-workplace-habits-that-keep-high-functioning-women-drained-what-this-looks-like-in/",
       "message": "Title is 115 characters.",
+      "tip": "Shorten the search title while preserving the page H1."
+    },
+    {
+      "severity": "low",
+      "code": "long-title",
+      "route": "/resources/insights/the-workplace-habits-that-keep-high-functioning-women-drained-why-women-minimize-it/",
+      "message": "Title is 103 characters.",
       "tip": "Shorten the search title while preserving the page H1."
     },
     {
@@ -6204,20 +6225,6 @@
       "code": "description-length",
       "route": "/resources/articles/the-emotional-cost-of-always-being-the-one-who-handles-it/",
       "message": "Description is 170 characters.",
-      "tip": "Keep descriptions useful and roughly 80–165 characters."
-    },
-    {
-      "severity": "low",
-      "code": "long-title",
-      "route": "/resources/articles/the-workplace-habits-that-keep-high-functioning-women-drained/",
-      "message": "Title is 80 characters.",
-      "tip": "Shorten the search title while preserving the page H1."
-    },
-    {
-      "severity": "low",
-      "code": "description-length",
-      "route": "/resources/articles/the-workplace-habits-that-keep-high-functioning-women-drained/",
-      "message": "Description is 184 characters.",
       "tip": "Keep descriptions useful and roughly 80–165 characters."
     },
     {
@@ -6379,13 +6386,6 @@
       "code": "long-title",
       "route": "/resources/insights/the-workplace-habits-that-keep-high-functioning-women-drained-next-step-reflection/",
       "message": "Title is 102 characters.",
-      "tip": "Shorten the search title while preserving the page H1."
-    },
-    {
-      "severity": "low",
-      "code": "long-title",
-      "route": "/resources/insights/the-workplace-habits-that-keep-high-functioning-women-drained-why-women-minimize-it/",
-      "message": "Title is 103 characters.",
       "tip": "Shorten the search title while preserving the page H1."
     },
     {
@@ -8670,7 +8670,7 @@
     },
     "freeWins": {
       "schemaVersion": "1.0.0",
-      "generatedAt": "2026-08-31T14:32:01.516Z",
+      "generatedAt": "2026-09-01T14:31:29.804Z",
       "providerState": "CONNECTED",
       "items": [
         {
@@ -8873,7 +8873,7 @@
     },
     "providerHealth": {
       "schemaVersion": "2.0.0",
-      "generatedAt": "2026-08-31T14:32:01.516Z",
+      "generatedAt": "2026-09-01T14:31:29.804Z",
       "truthBoundary": "Live web-search observations are evidence of web surfacing/citations, not verified organic rank, and a 0% citation rate is only meaningful for queries the provider actually answered. GSC average position is the authoritative Google-owned performance metric available to this system.",
       "providers": {
         "openrouter_web_search": {
@@ -8920,7 +8920,7 @@
     },
     "queryObservations": {
       "schemaVersion": "2.1.0",
-      "generatedAt": "2026-08-31T14:32:01.516Z",
+      "generatedAt": "2026-09-01T14:31:29.804Z",
       "providerState": "CONNECTED",
       "provider": "openrouter_web_search",
       "stop": null,
@@ -8931,7 +8931,7 @@
           "query": "mental health therapy near me",
           "primaryPage": "/therapist-near-me-memphis/",
           "status": "ok",
-          "observedAt": "2026-08-31T14:32:01.516Z",
+          "observedAt": "2026-09-01T14:31:29.804Z",
           "provider": "openrouter_web_search",
           "model": "openai/gpt-4o-mini",
           "observationType": "LIVE_WEB_SURFACING",
@@ -8970,7 +8970,7 @@
           "query": "black female therapist near me",
           "primaryPage": "/female-therapist-memphis/",
           "status": "ok",
-          "observedAt": "2026-08-31T14:32:01.516Z",
+          "observedAt": "2026-09-01T14:31:29.804Z",
           "provider": "openrouter_web_search",
           "model": "openai/gpt-4o-mini",
           "observationType": "LIVE_WEB_SURFACING",
@@ -9009,7 +9009,7 @@
           "query": "christian therapists near me",
           "primaryPage": "/christian-therapist-memphis/",
           "status": "ok",
-          "observedAt": "2026-08-31T14:32:01.516Z",
+          "observedAt": "2026-09-01T14:31:29.804Z",
           "provider": "openrouter_web_search",
           "model": "openai/gpt-4o-mini",
           "observationType": "LIVE_WEB_SURFACING",
@@ -9027,7 +9027,7 @@
             "title": "Christian Therapists in Memphis: How Faith Fits Into Therapy | Hicks Consulting",
             "description": "Three different things people mean by “Christian therapist”, which of them are licensed clinical care, what to ask so you get the one you want, and how faith is handled at Hicks Consulting.",
             "h1": "Christian Therapists in Memphis: How Faith Fits Into Therapy",
-            "textChars": 11495,
+            "textChars": 11715,
             "internalLinks": 43,
             "canonical": ""
           },
@@ -9041,7 +9041,7 @@
           "query": "female therapist near me",
           "primaryPage": "/female-therapist-memphis/",
           "status": "ok",
-          "observedAt": "2026-08-31T14:32:01.516Z",
+          "observedAt": "2026-09-01T14:31:29.804Z",
           "provider": "openrouter_web_search",
           "model": "openai/gpt-4o-mini",
           "observationType": "LIVE_WEB_SURFACING",
@@ -9080,7 +9080,7 @@
           "query": "mental health diagnosis near me",
           "primaryPage": "/psychologist-vs-therapist-memphis/",
           "status": "ok",
-          "observedAt": "2026-08-31T14:32:01.516Z",
+          "observedAt": "2026-09-01T14:31:29.804Z",
           "provider": "openrouter_web_search",
           "model": "openai/gpt-4o-mini",
           "observationType": "LIVE_WEB_SURFACING",
@@ -9119,7 +9119,7 @@
           "query": "psychologists near me",
           "primaryPage": "/psychologist-vs-therapist-memphis/",
           "status": "ok",
-          "observedAt": "2026-08-31T14:32:01.516Z",
+          "observedAt": "2026-09-01T14:31:29.804Z",
           "provider": "openrouter_web_search",
           "model": "openai/gpt-4o-mini",
           "observationType": "LIVE_WEB_SURFACING",
@@ -9158,7 +9158,7 @@
           "query": "therapist in olive branch ms",
           "primaryPage": "/therapist-olive-branch-ms/",
           "status": "ok",
-          "observedAt": "2026-08-31T14:32:01.516Z",
+          "observedAt": "2026-09-01T14:31:29.804Z",
           "provider": "openrouter_web_search",
           "model": "openai/gpt-4o-mini",
           "observationType": "LIVE_WEB_SURFACING",
@@ -9197,7 +9197,7 @@
     },
     "searchActions": {
       "schemaVersion": "2.0.0",
-      "generatedAt": "2026-08-31T14:32:01.516Z",
+      "generatedAt": "2026-09-01T14:31:29.804Z",
       "policy": "Hicks may autonomously apply bounded technical/search-alignment repairs. Substantive clinical claims and unsupported treatment assertions are never auto-generated from competitor content.",
       "items": [
         {
@@ -9769,19 +9769,15 @@
         {
           "query": "memphis small business consulting",
           "primaryPage": "/",
-          "status": "OBSERVED",
-          "reasons": [
-            "AVERAGE_POSITION_OUTSIDE_TOP_10"
-          ],
+          "status": "UNKNOWN",
+          "reasons": [],
           "evidence": {
             "groundedSiteSurfaced": null,
             "groundedProviderAnswered": false,
-            "gscImpressions": 2,
+            "gscImpressions": 0,
             "gscClicks": 0,
-            "gscAveragePosition": 21,
-            "gscPages": [
-              "/"
-            ],
+            "gscAveragePosition": 0,
+            "gscPages": [],
             "competitorUrls": []
           },
           "safeRepairEligible": false,
@@ -10067,15 +10063,13 @@
           "query": "jhicks consulting",
           "primaryPage": "/",
           "status": "OBSERVED",
-          "reasons": [
-            "AVERAGE_POSITION_OUTSIDE_TOP_10"
-          ],
+          "reasons": [],
           "evidence": {
             "groundedSiteSurfaced": null,
             "groundedProviderAnswered": false,
-            "gscImpressions": 1,
+            "gscImpressions": 2,
             "gscClicks": 0,
-            "gscAveragePosition": 12,
+            "gscAveragePosition": 7,
             "gscPages": [
               "/"
             ],
@@ -10449,7 +10443,7 @@
     },
     "searchRepairs": {
       "schemaVersion": "2.0.0",
-      "updatedAt": "2026-08-31T14:32:23.162Z",
+      "updatedAt": "2026-09-01T14:32:03.282Z",
       "repairs": [
         {
           "queries": [
@@ -10543,23 +10537,7 @@
           "externalOutcome": "UNPROVEN_PENDING_RETEST"
         }
       ],
-      "lastRunRepairs": [
-        {
-          "queries": [
-            "christian therapists near me"
-          ],
-          "route": "/christian-therapist-memphis/",
-          "sourceFile": "pages/christian-therapist-memphis/index.html",
-          "appliedAt": "2026-08-31T14:32:23.162Z",
-          "beforeHash": "c0a121fb56c7cf335985f1a0088e2f5db1c375a3dc5885922e7a7e8f489213a2",
-          "afterHash": "b5a37d776ca908ed2831bc7b1103dd9c9121933b3fd97dd9c86dd006eaa612be",
-          "changes": [
-            "governed_query_support_block"
-          ],
-          "sourcePolicy": "Uses governed Hicks target-query wording only. Competitor text and clinical claims are not copied or invented.",
-          "externalOutcome": "UNPROVEN_PENDING_RETEST"
-        }
-      ],
+      "lastRunRepairs": [],
       "externalOutcome": "UNPROVEN_PENDING_RETEST"
     },
     "truthBoundary": "Grounded Google Search citations are live web surfacing observations, not literal organic rank. GSC remains the owned-site source for Google clicks, impressions, CTR, and average position."

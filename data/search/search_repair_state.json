@@ -1,6 +1,6 @@
 {
   "schemaVersion": "2.0.0",
-  "updatedAt": "2026-08-31T14:32:23.162Z",
+  "updatedAt": "2026-09-01T14:32:03.282Z",
   "repairs": [
     {
       "queries": [
@@ -94,22 +94,6 @@
       "externalOutcome": "UNPROVEN_PENDING_RETEST"
     }
   ],
-  "lastRunRepairs": [
-    {
-      "queries": [
-        "christian therapists near me"
-      ],
-      "route": "/christian-therapist-memphis/",
-      "sourceFile": "pages/christian-therapist-memphis/index.html",
-      "appliedAt": "2026-08-31T14:32:23.162Z",
-      "beforeHash": "c0a121fb56c7cf335985f1a0088e2f5db1c375a3dc5885922e7a7e8f489213a2",
-      "afterHash": "b5a37d776ca908ed2831bc7b1103dd9c9121933b3fd97dd9c86dd006eaa612be",
-      "changes": [
-        "governed_query_support_block"
-      ],
-      "sourcePolicy": "Uses governed Hicks target-query wording only. Competitor text and clinical claims are not copied or invented.",
-      "externalOutcome": "UNPROVEN_PENDING_RETEST"
-    }
-  ],
+  "lastRunRepairs": [],
   "externalOutcome": "UNPROVEN_PENDING_RETEST"
 }
