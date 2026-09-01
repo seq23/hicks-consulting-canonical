@@ -212,29 +212,26 @@
       "lead_intent_tier": "T1_LOCAL_READY",
       "lead_intent_method": "regex_classifier_on_query_string, scripts/queries/score_discovery_gap.mjs",
       "occupancy": {
-        "verdict": "OPEN",
+        "verdict": "HELD_BY_US",
         "reason": "LIVE_WEB_SURFACING_OBSERVATION",
-        "openness_score": 0.8,
-        "platform_share": 0.6,
+        "geo_resolvable": true,
+        "openness_score": 0.5,
+        "platform_share": 0,
         "institutional_share": 0,
-        "distinct_cited_hosts": 5,
+        "distinct_cited_hosts": 1,
         "cited_hosts": [
-          "healthgrades.com",
-          "7cups.com",
-          "findatherapist.com",
-          "zocdoc.com",
-          "therapyden.com"
+          "hicksconsulting.org"
         ],
-        "cited_ours": [],
-        "observed_at": "2026-08-29T01:31:46.350Z",
+        "cited_ours": [
+          "hicksconsulting.org"
+        ],
+        "observed_at": "2026-09-01T14:31:29.804Z",
         "model": "openai/gpt-4o-mini",
-        "rank_verified": false,
-        "stale": true,
-        "stale_reason": "PROVIDER_ERROR"
+        "rank_verified": false
       },
       "blue_ocean_eligible": {
-        "eligible": true,
-        "reason": "OPEN_WITH_ANCHORED_OBSERVATION"
+        "eligible": false,
+        "reason": "ALREADY_HELD_BY_US"
       }
     },
     {
@@ -333,34 +330,12 @@
         "cited_hosts": [],
         "observed_at": null,
         "model": null,
-        "note": "Citations returned for this string are geographic noise, so an openness reading would be meaningless and \"not cited\" here is not open ground. There is deliberately no localized variant of this one - see `targeting`."
+        "note": "Citations returned for this string are geographic noise, so an openness reading would be meaningless and \"not cited\" here is not open ground. The localized variant of this query is the governed, measurable target."
       },
       "blue_ocean_eligible": {
         "eligible": false,
-        "reason": "SERVICE_NOT_PROVIDED"
-      }
-    },
-    {
-      "query": "mental health diagnosis near me memphis",
-      "intent": "localized_variant",
-      "primaryPage": "/psychologist-vs-therapist-memphis/",
-      "status": "governed_localized_variant",
-      "provenance": "hand-added localized variant of a measured GSC 'near me' query. The bare phrase carries no location and is not answerable; this is the form a Memphis searcher and a location-aware answer engine resolve to.",
-      "localizes": "mental health diagnosis near me",
-      "answer_shape": "Role and scope explainer, not a service offer. The landing page states which practitioner type performs formal psychological testing, which prescribes, and that this practice does neither - so a searcher who needs testing is sent to the right kind of provider rather than into a consult that cannot help them.",
-      "lead_intent_tier": "T1_LOCAL_READY",
-      "lead_intent_method": "regex_classifier_on_query_string, scripts/queries/score_discovery_gap.mjs",
-      "occupancy": {
-        "verdict": "UNMEASURED",
-        "reason": "NO_LIVE_OBSERVATION",
-        "openness_score": null,
-        "cited_hosts": [],
-        "observed_at": null,
-        "model": null
-      },
-      "blue_ocean_eligible": {
-        "eligible": true,
-        "reason": "UNMEASURED"
+        "reason": "SERVICE_NOT_PROVIDED",
+        "note": "A trauma center is an emergency medical facility - an ACS-verified Level I to IV hospital unit - or, in the other common reading, a residential or intensive outpatient trauma treatment program. Hicks Consulting is neither. It is a solo licensed clinical social work practice offering virtual psychotherapy to clients located in Tennessee, and its own emergency and crisis notice says in as many words that it does not provide crisis or emergency services. Writing a page for this query would put this practice in front of someone who may be in acute need of a facility it is not, which is the one thing a page must never do in this vertical."
       }
     },
     {
@@ -392,6 +367,29 @@
       "status": "governed_localized_variant",
       "provenance": "hand-added localized variant of a measured GSC 'near me' query. The bare phrase carries no location and is not answerable; this is the form a Memphis searcher and a location-aware answer engine resolve to.",
       "localizes": "female therapist near me",
+      "lead_intent_tier": "T1_LOCAL_READY",
+      "lead_intent_method": "regex_classifier_on_query_string, scripts/queries/score_discovery_gap.mjs",
+      "occupancy": {
+        "verdict": "UNMEASURED",
+        "reason": "NO_LIVE_OBSERVATION",
+        "openness_score": null,
+        "cited_hosts": [],
+        "observed_at": null,
+        "model": null
+      },
+      "blue_ocean_eligible": {
+        "eligible": true,
+        "reason": "UNMEASURED"
+      }
+    },
+    {
+      "query": "mental health diagnosis near me memphis",
+      "intent": "localized_variant",
+      "primaryPage": "/psychologist-vs-therapist-memphis/",
+      "status": "governed_localized_variant",
+      "provenance": "hand-added localized variant of a measured GSC 'near me' query. The bare phrase carries no location and is not answerable; this is the form a Memphis searcher and a location-aware answer engine resolve to.",
+      "localizes": "mental health diagnosis near me",
+      "answer_shape": "Role and scope explainer, not a service offer. The landing page states which practitioner type performs formal psychological testing, which prescribes, and that this practice does neither - so a searcher who needs testing is sent to the right kind of provider rather than into a consult that cannot help them.",
       "lead_intent_tier": "T1_LOCAL_READY",
       "lead_intent_method": "regex_classifier_on_query_string, scripts/queries/score_discovery_gap.mjs",
       "occupancy": {
@@ -524,9 +522,9 @@
       "status": "discovered_from_gsc",
       "provenance": "google_search_console query/page pair, joined by scripts/queries/score_discovery_gap.mjs",
       "gsc_measured": {
-        "impressions": 69,
+        "impressions": 61,
         "clicks": 3,
-        "average_position": 6.23,
+        "average_position": 6.53,
         "window_start": null,
         "window_end": null,
         "source": "google_search_console"
@@ -569,7 +567,7 @@
       "status": "discovered_from_gsc",
       "provenance": "google_search_console query/page pair, joined by scripts/queries/score_discovery_gap.mjs",
       "gsc_measured": {
-        "impressions": 16,
+        "impressions": 18,
         "clicks": 0,
         "average_position": 2.06,
         "window_start": null,
@@ -617,9 +615,9 @@
       "status": "discovered_from_gsc",
       "provenance": "google_search_console query/page pair, joined by scripts/queries/score_discovery_gap.mjs",
       "gsc_measured": {
-        "impressions": 5,
+        "impressions": 4,
         "clicks": 0,
-        "average_position": 22.2,
+        "average_position": 22,
         "window_start": null,
         "window_end": null,
         "source": "google_search_console"
@@ -907,6 +905,35 @@
       "blue_ocean_eligible": {
         "eligible": true,
         "reason": "CONTESTED"
+      }
+    },
+    {
+      "query": "jhicks consulting",
+      "intent": "observed",
+      "primaryPage": "/",
+      "status": "discovered_from_gsc",
+      "provenance": "google_search_console query/page pair, joined by scripts/queries/score_discovery_gap.mjs",
+      "gsc_measured": {
+        "impressions": 2,
+        "clicks": 0,
+        "average_position": 7,
+        "window_start": null,
+        "window_end": null,
+        "source": "google_search_console"
+      },
+      "lead_intent_tier": "T4_INFORMATIONAL",
+      "lead_intent_method": "regex_classifier_on_query_string, scripts/queries/score_discovery_gap.mjs",
+      "occupancy": {
+        "verdict": "UNMEASURED",
+        "reason": "NO_LIVE_OBSERVATION",
+        "openness_score": null,
+        "cited_hosts": [],
+        "observed_at": null,
+        "model": null
+      },
+      "blue_ocean_eligible": {
+        "eligible": true,
+        "reason": "UNMEASURED"
       }
     },
     {
@@ -1212,6 +1239,35 @@
       }
     },
     {
+      "query": "christian counseling centers",
+      "intent": "observed",
+      "primaryPage": "/",
+      "status": "discovered_from_gsc",
+      "provenance": "google_search_console query/page pair, joined by scripts/queries/score_discovery_gap.mjs",
+      "gsc_measured": {
+        "impressions": 1,
+        "clicks": 0,
+        "average_position": 57,
+        "window_start": null,
+        "window_end": null,
+        "source": "google_search_console"
+      },
+      "lead_intent_tier": "T4_INFORMATIONAL",
+      "lead_intent_method": "regex_classifier_on_query_string, scripts/queries/score_discovery_gap.mjs",
+      "occupancy": {
+        "verdict": "UNMEASURED",
+        "reason": "NO_LIVE_OBSERVATION",
+        "openness_score": null,
+        "cited_hosts": [],
+        "observed_at": null,
+        "model": null
+      },
+      "blue_ocean_eligible": {
+        "eligible": true,
+        "reason": "UNMEASURED"
+      }
+    },
+    {
       "query": "cons of being a therapist",
       "intent": "observed",
       "primaryPage": "/",
@@ -1474,35 +1530,6 @@
         "eligible": false,
         "reason": "BRAND_OR_PERSON_NAME_NAVIGATIONAL",
         "note": "Surname-matched query. The live observer returns Hickory/Hicksville and unrelated Hicks practitioners for these; an OPEN verdict on them is noise, not open ground."
-      }
-    },
-    {
-      "query": "jhicks consulting",
-      "intent": "observed",
-      "primaryPage": "/",
-      "status": "discovered_from_gsc",
-      "provenance": "google_search_console query/page pair, joined by scripts/queries/score_discovery_gap.mjs",
-      "gsc_measured": {
-        "impressions": 1,
-        "clicks": 0,
-        "average_position": 12,
-        "window_start": null,
-        "window_end": null,
-        "source": "google_search_console"
-      },
-      "lead_intent_tier": "T4_INFORMATIONAL",
-      "lead_intent_method": "regex_classifier_on_query_string, scripts/queries/score_discovery_gap.mjs",
-      "occupancy": {
-        "verdict": "UNMEASURED",
-        "reason": "NO_LIVE_OBSERVATION",
-        "openness_score": null,
-        "cited_hosts": [],
-        "observed_at": null,
-        "model": null
-      },
-      "blue_ocean_eligible": {
-        "eligible": true,
-        "reason": "UNMEASURED"
       }
     },
     {
@@ -2011,7 +2038,7 @@
     }
   ],
   "discovery_gap_pass": {
-    "at": "2026-08-29T15:11:04.437Z",
+    "at": "2026-09-01T14:48:20.231Z",
     "by": "scripts/queries/score_discovery_gap.mjs",
     "why": "The observer read a 7-query hand-written list while Search Console reported 46 queries that actually put this practice in front of someone. The measured list is now the target list, ordered so the observer spends its 25-query budget on the queries a client arrives through.",
     "expansion_sources": [
@@ -2024,14 +2051,7 @@
         "BRAND_OR_PERSON_NAME_NAVIGATIONAL",
         "NO_SERVICE_OR_LOCATION_ANCHOR",
         "ALREADY_HELD_BY_US",
-        "EMPTY_QUERY",
-        "SERVICE_NOT_PROVIDED"
-      ]
-    },
-    "recorded_non_targets": {
-      "why": "A query can be measured, apparently winnable and still wrong to write for. Leaving one out of this file makes it ungoverned - nobody can tell a decision from an oversight - so the decision is recorded ON the query, in `targeting`, and scripts/lib/demand_titles.js#blueOceanEligibility refuses anything carrying targeting.targeted:false. Content generation reads blue_ocean_eligible, so the refusal is enforced rather than merely written down.",
-      "queries": [
-        "trauma center near me - a trauma center is an emergency hospital facility or a residential trauma programme. This is a solo virtual therapy practice whose own emergency notice states it provides no crisis or emergency service. Measured, never targeted. primaryPage is /emergency-crisis-notice/, which is the page that already tells that searcher the truth and routes them to 988, 911 or an emergency room."
+        "EMPTY_QUERY"
       ]
     },
     "refused_sources": [
@@ -2063,18 +2083,17 @@
       "not_measured": "search volume, keyword difficulty, organic rank. The observer says so itself: rankVerified is false on every observation."
     },
     "counts": {
-      "total_targets": 62,
-      "added_this_pass": 0,
+      "total_targets": 64,
+      "added_this_pass": 1,
       "with_openness_reading": 16,
       "lead_intent": {
-        "T1_LOCAL_READY": 17,
-        "T4_INFORMATIONAL": 45
+        "T1_LOCAL_READY": 18,
+        "T4_INFORMATIONAL": 46
       },
       "occupancy": {
         "UNRESOLVABLE_WITHOUT_LOCATION": 9,
-        "OPEN": 1,
-        "UNMEASURED": 37,
-        "HELD_BY_US": 8,
+        "HELD_BY_US": 9,
+        "UNMEASURED": 39,
         "CONTESTED": 7
       }
     }

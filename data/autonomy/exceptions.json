@@ -140,6 +140,36 @@
       "createdAt": "2026-08-28T18:49:43.291Z",
       "blocksOtherWork": false,
       "clientActionRequired": false
+    },
+    {
+      "id": "exception-brief-ai_digital_wellness-whitepaper-1788274165555",
+      "candidateId": "brief-ai_digital_wellness-whitepaper",
+      "decision": "REPAIR_REQUIRED",
+      "findings": [
+        {
+          "code": "THIN_CONTENT",
+          "severity": "repairable",
+          "message": "Draft has 553 words; minimum is 2000."
+        }
+      ],
+      "createdAt": "2026-09-01T14:48:21.718Z",
+      "blocksOtherWork": false,
+      "clientActionRequired": false
+    },
+    {
+      "id": "exception-brief-black_women_healing-article-1788274244235",
+      "candidateId": "brief-black_women_healing-article",
+      "decision": "REPAIR_REQUIRED",
+      "findings": [
+        {
+          "code": "THIN_CONTENT",
+          "severity": "repairable",
+          "message": "Draft has 626 words; minimum is 960."
+        }
+      ],
+      "createdAt": "2026-09-01T14:48:21.718Z",
+      "blocksOtherWork": false,
+      "clientActionRequired": false
     }
   ]
 }
