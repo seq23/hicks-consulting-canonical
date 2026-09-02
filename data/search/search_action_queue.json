@@ -1,6 +1,6 @@
 {
   "schemaVersion": "2.0.0",
-  "generatedAt": "2026-09-01T14:31:29.804Z",
+  "generatedAt": "2026-09-02T14:31:26.940Z",
   "policy": "Hicks may autonomously apply bounded technical/search-alignment repairs. Substantive clinical claims and unsupported treatment assertions are never auto-generated from competitor content.",
   "items": [
     {
@@ -52,14 +52,12 @@
     {
       "query": "christian therapists near me",
       "primaryPage": "/christian-therapist-memphis/",
-      "status": "MISSING",
+      "status": "OBSERVED",
       "reasons": [
-        "EXACT_QUERY_NOT_IN_PRIMARY_SEARCH_SURFACES",
-        "SITE_NOT_SURFACED_IN_GROUNDED_OBSERVATION",
-        "NO_GROUNDED_CITATIONS_RETURNED"
+        "EXACT_QUERY_NOT_IN_PRIMARY_SEARCH_SURFACES"
       ],
       "evidence": {
-        "groundedSiteSurfaced": false,
+        "groundedSiteSurfaced": true,
         "groundedProviderAnswered": true,
         "gscImpressions": 0,
         "gscClicks": 0,
@@ -67,8 +65,8 @@
         "gscPages": [],
         "competitorUrls": []
       },
-      "safeRepairEligible": true,
-      "recommendedAction": "Run bounded search-alignment repair, rebuild, then await the next external observation cycle."
+      "safeRepairEligible": false,
+      "recommendedAction": "Observe or route to content/technical review; do not invent a ranking win."
     },
     {
       "query": "female therapist near me",
@@ -224,23 +222,6 @@
       "recommendedAction": "Observe or route to content/technical review; do not invent a ranking win."
     },
     {
-      "query": "mental health diagnosis near me memphis",
-      "primaryPage": "/psychologist-vs-therapist-memphis/",
-      "status": "UNKNOWN",
-      "reasons": [],
-      "evidence": {
-        "groundedSiteSurfaced": null,
-        "groundedProviderAnswered": false,
-        "gscImpressions": 0,
-        "gscClicks": 0,
-        "gscAveragePosition": 0,
-        "gscPages": [],
-        "competitorUrls": []
-      },
-      "safeRepairEligible": false,
-      "recommendedAction": "Observe or route to content/technical review; do not invent a ranking win."
-    },
-    {
       "query": "christian therapists near me memphis",
       "primaryPage": "/christian-therapist-memphis/",
       "status": "UNKNOWN",
@@ -260,6 +241,23 @@
     {
       "query": "female therapist near me memphis",
       "primaryPage": "/female-therapist-memphis/",
+      "status": "UNKNOWN",
+      "reasons": [],
+      "evidence": {
+        "groundedSiteSurfaced": null,
+        "groundedProviderAnswered": false,
+        "gscImpressions": 0,
+        "gscClicks": 0,
+        "gscAveragePosition": 0,
+        "gscPages": [],
+        "competitorUrls": []
+      },
+      "safeRepairEligible": false,
+      "recommendedAction": "Observe or route to content/technical review; do not invent a ranking win."
+    },
+    {
+      "query": "mental health diagnosis near me memphis",
+      "primaryPage": "/psychologist-vs-therapist-memphis/",
       "status": "UNKNOWN",
       "reasons": [],
       "evidence": {
@@ -369,15 +367,14 @@
       "evidence": {
         "groundedSiteSurfaced": null,
         "groundedProviderAnswered": false,
-        "gscImpressions": 61,
+        "gscImpressions": 49,
         "gscClicks": 3,
-        "gscAveragePosition": 6.53,
+        "gscAveragePosition": 2.11,
         "gscPages": [
           "/",
           "/about/",
           "/coaching/",
           "/corporate-speaking/",
-          "/emergency-crisis-notice/",
           "/faq/",
           "/groups/",
           "/intake-quiz/",
@@ -397,9 +394,9 @@
       "evidence": {
         "groundedSiteSurfaced": null,
         "groundedProviderAnswered": false,
-        "gscImpressions": 18,
+        "gscImpressions": 17,
         "gscClicks": 0,
-        "gscAveragePosition": 2.06,
+        "gscAveragePosition": 1.29,
         "gscPages": [
           "/"
         ],
@@ -474,16 +471,19 @@
     {
       "query": "black therapist memphis tn",
       "primaryPage": "/",
-      "status": "OBSERVED",
-      "reasons": [],
+      "status": "CANNIBALIZATION_REVIEW",
+      "reasons": [
+        "MULTIPLE_HICKS_PAGES_FOR_QUERY"
+      ],
       "evidence": {
         "groundedSiteSurfaced": null,
         "groundedProviderAnswered": false,
         "gscImpressions": 2,
         "gscClicks": 0,
-        "gscAveragePosition": 6.5,
+        "gscAveragePosition": 9,
         "gscPages": [
-          "/"
+          "/",
+          "/black-therapist-memphis/"
         ],
         "competitorUrls": []
       },
@@ -539,6 +539,25 @@
         "gscImpressions": 2,
         "gscClicks": 0,
         "gscAveragePosition": 10,
+        "gscPages": [
+          "/"
+        ],
+        "competitorUrls": []
+      },
+      "safeRepairEligible": false,
+      "recommendedAction": "Observe or route to content/technical review; do not invent a ranking win."
+    },
+    {
+      "query": "jhicks consulting",
+      "primaryPage": "/",
+      "status": "OBSERVED",
+      "reasons": [],
+      "evidence": {
+        "groundedSiteSurfaced": null,
+        "groundedProviderAnswered": false,
+        "gscImpressions": 2,
+        "gscClicks": 0,
+        "gscAveragePosition": 7,
         "gscPages": [
           "/"
         ],
@@ -675,6 +694,27 @@
         "gscImpressions": 1,
         "gscClicks": 0,
         "gscAveragePosition": 50,
+        "gscPages": [
+          "/"
+        ],
+        "competitorUrls": []
+      },
+      "safeRepairEligible": false,
+      "recommendedAction": "Observe or route to content/technical review; do not invent a ranking win."
+    },
+    {
+      "query": "christian counseling centers",
+      "primaryPage": "/",
+      "status": "OBSERVED",
+      "reasons": [
+        "AVERAGE_POSITION_OUTSIDE_TOP_10"
+      ],
+      "evidence": {
+        "groundedSiteSurfaced": null,
+        "groundedProviderAnswered": false,
+        "gscImpressions": 1,
+        "gscClicks": 0,
+        "gscAveragePosition": 57,
         "gscPages": [
           "/"
         ],
@@ -854,25 +894,6 @@
         "gscImpressions": 1,
         "gscClicks": 0,
         "gscAveragePosition": 14,
-        "gscPages": [
-          "/"
-        ],
-        "competitorUrls": []
-      },
-      "safeRepairEligible": false,
-      "recommendedAction": "Observe or route to content/technical review; do not invent a ranking win."
-    },
-    {
-      "query": "jhicks consulting",
-      "primaryPage": "/",
-      "status": "OBSERVED",
-      "reasons": [],
-      "evidence": {
-        "groundedSiteSurfaced": null,
-        "groundedProviderAnswered": false,
-        "gscImpressions": 2,
-        "gscClicks": 0,
-        "gscAveragePosition": 7,
         "gscPages": [
           "/"
         ],
