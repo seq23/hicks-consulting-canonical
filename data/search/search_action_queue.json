@@ -1,6 +1,6 @@
 {
   "schemaVersion": "2.0.0",
-  "generatedAt": "2026-09-02T14:31:26.940Z",
+  "generatedAt": "2026-09-03T14:31:53.379Z",
   "policy": "Hicks may autonomously apply bounded technical/search-alignment repairs. Substantive clinical claims and unsupported treatment assertions are never auto-generated from competitor content.",
   "items": [
     {
@@ -113,25 +113,21 @@
     {
       "query": "psychologists near me",
       "primaryPage": "/psychologist-vs-therapist-memphis/",
-      "status": "WRONG_PAGE",
+      "status": "OBSERVED",
       "reasons": [
-        "WRONG_HICKS_PAGE_RANKING",
-        "AVERAGE_POSITION_OUTSIDE_TOP_10",
         "EXACT_QUERY_NOT_IN_PRIMARY_SEARCH_SURFACES"
       ],
       "evidence": {
         "groundedSiteSurfaced": true,
         "groundedProviderAnswered": true,
-        "gscImpressions": 1,
+        "gscImpressions": 0,
         "gscClicks": 0,
-        "gscAveragePosition": 30,
-        "gscPages": [
-          "/"
-        ],
+        "gscAveragePosition": 0,
+        "gscPages": [],
         "competitorUrls": []
       },
-      "safeRepairEligible": true,
-      "recommendedAction": "Run bounded search-alignment repair, rebuild, then await the next external observation cycle."
+      "safeRepairEligible": false,
+      "recommendedAction": "Observe or route to content/technical review; do not invent a ranking win."
     },
     {
       "query": "therapist in olive branch ms",
@@ -367,9 +363,9 @@
       "evidence": {
         "groundedSiteSurfaced": null,
         "groundedProviderAnswered": false,
-        "gscImpressions": 49,
+        "gscImpressions": 46,
         "gscClicks": 3,
-        "gscAveragePosition": 2.11,
+        "gscAveragePosition": 2.06,
         "gscPages": [
           "/",
           "/about/",
@@ -396,7 +392,7 @@
         "groundedProviderAnswered": false,
         "gscImpressions": 17,
         "gscClicks": 0,
-        "gscAveragePosition": 1.29,
+        "gscAveragePosition": 1.41,
         "gscPages": [
           "/"
         ],
@@ -478,9 +474,9 @@
       "evidence": {
         "groundedSiteSurfaced": null,
         "groundedProviderAnswered": false,
-        "gscImpressions": 2,
+        "gscImpressions": 3,
         "gscClicks": 0,
-        "gscAveragePosition": 9,
+        "gscAveragePosition": 9.25,
         "gscPages": [
           "/",
           "/black-therapist-memphis/"
@@ -517,9 +513,9 @@
       "evidence": {
         "groundedSiteSurfaced": null,
         "groundedProviderAnswered": false,
-        "gscImpressions": 2,
+        "gscImpressions": 1,
         "gscClicks": 0,
-        "gscAveragePosition": 1.5,
+        "gscAveragePosition": 2,
         "gscPages": [
           "/"
         ],
@@ -646,16 +642,19 @@
     {
       "query": "black therapist memphis, tn",
       "primaryPage": "/",
-      "status": "OBSERVED",
-      "reasons": [],
+      "status": "CANNIBALIZATION_REVIEW",
+      "reasons": [
+        "MULTIPLE_HICKS_PAGES_FOR_QUERY"
+      ],
       "evidence": {
         "groundedSiteSurfaced": null,
         "groundedProviderAnswered": false,
-        "gscImpressions": 1,
+        "gscImpressions": 2,
         "gscClicks": 0,
-        "gscAveragePosition": 1,
+        "gscAveragePosition": 5,
         "gscPages": [
-          "/"
+          "/",
+          "/black-therapist-memphis/"
         ],
         "competitorUrls": []
       },
