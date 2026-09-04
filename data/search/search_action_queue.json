@@ -1,6 +1,6 @@
 {
   "schemaVersion": "2.0.0",
-  "generatedAt": "2026-09-03T14:31:53.379Z",
+  "generatedAt": "2026-09-04T14:30:05.997Z",
   "policy": "Hicks may autonomously apply bounded technical/search-alignment repairs. Substantive clinical claims and unsupported treatment assertions are never auto-generated from competitor content.",
   "items": [
     {
@@ -363,7 +363,7 @@
       "evidence": {
         "groundedSiteSurfaced": null,
         "groundedProviderAnswered": false,
-        "gscImpressions": 46,
+        "gscImpressions": 47,
         "gscClicks": 3,
         "gscAveragePosition": 2.06,
         "gscPages": [
@@ -474,9 +474,9 @@
       "evidence": {
         "groundedSiteSurfaced": null,
         "groundedProviderAnswered": false,
-        "gscImpressions": 3,
+        "gscImpressions": 11,
         "gscClicks": 0,
-        "gscAveragePosition": 9.25,
+        "gscAveragePosition": 9.45,
         "gscPages": [
           "/",
           "/black-therapist-memphis/"
@@ -551,9 +551,9 @@
       "evidence": {
         "groundedSiteSurfaced": null,
         "groundedProviderAnswered": false,
-        "gscImpressions": 2,
+        "gscImpressions": 1,
         "gscClicks": 0,
-        "gscAveragePosition": 7,
+        "gscAveragePosition": 2,
         "gscPages": [
           "/"
         ],
@@ -587,15 +587,19 @@
     {
       "query": "memphis small business consulting",
       "primaryPage": "/",
-      "status": "UNKNOWN",
-      "reasons": [],
+      "status": "OBSERVED",
+      "reasons": [
+        "AVERAGE_POSITION_OUTSIDE_TOP_10"
+      ],
       "evidence": {
         "groundedSiteSurfaced": null,
         "groundedProviderAnswered": false,
-        "gscImpressions": 0,
+        "gscImpressions": 3,
         "gscClicks": 0,
-        "gscAveragePosition": 0,
-        "gscPages": [],
+        "gscAveragePosition": 21,
+        "gscPages": [
+          "/"
+        ],
         "competitorUrls": []
       },
       "safeRepairEligible": false,
@@ -649,9 +653,9 @@
       "evidence": {
         "groundedSiteSurfaced": null,
         "groundedProviderAnswered": false,
-        "gscImpressions": 2,
+        "gscImpressions": 4,
         "gscClicks": 0,
-        "gscAveragePosition": 5,
+        "gscAveragePosition": 5.25,
         "gscPages": [
           "/",
           "/black-therapist-memphis/"

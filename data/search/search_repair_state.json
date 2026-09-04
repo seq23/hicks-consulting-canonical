@@ -1,6 +1,6 @@
 {
   "schemaVersion": "2.0.0",
-  "updatedAt": "2026-09-03T14:32:16.639Z",
+  "updatedAt": "2026-09-04T14:30:32.958Z",
   "repairs": [
     {
       "queries": [
@@ -109,22 +109,6 @@
       "externalOutcome": "UNPROVEN_PENDING_RETEST"
     }
   ],
-  "lastRunRepairs": [
-    {
-      "queries": [
-        "mental health diagnosis near me"
-      ],
-      "route": "/psychologist-vs-therapist-memphis/",
-      "sourceFile": "pages/psychologist-vs-therapist-memphis/index.html",
-      "appliedAt": "2026-09-03T14:32:16.639Z",
-      "beforeHash": "bc8ed1e005d41adcbd0ae5ee3604c16aa148eb2930b693b125e0c2d2d49acbe1",
-      "afterHash": "e74a8fca348ba7f941467fa258d58ef9173465807921e4cd9c5901fb9a09e899",
-      "changes": [
-        "governed_query_support_block"
-      ],
-      "sourcePolicy": "Uses governed Hicks target-query wording only. Competitor text and clinical claims are not copied or invented.",
-      "externalOutcome": "UNPROVEN_PENDING_RETEST"
-    }
-  ],
+  "lastRunRepairs": [],
   "externalOutcome": "UNPROVEN_PENDING_RETEST"
 }
