@@ -97,7 +97,7 @@ function moduleGraph(rel, seen = new Set()) {
  * those as unguarded exit sites, which is a false positive - and a guard that
  * cries wolf gets switched off, which is how the defect it watches comes back.
  */
-function stripNonCode(source) {
+function stripNonCode(source, { keepStrings = false } = {}) {
   let out = '';
   let i = 0;
   let quote = null;      // "'", '"' or '`' while inside a string
@@ -129,9 +129,9 @@ function stripNonCode(source) {
       continue;
     }
     if (quote) {
-      if (ch === '\\') { out += '  '; i += 2; continue; }
-      if (ch === quote) { quote = null; out += ' '; i++; continue; }
-      out += ch === '\n' ? ch : ' ';
+      if (ch === '\\') { out += keepStrings ? source.slice(i, i + 2) : '  '; i += 2; continue; }
+      if (ch === quote) { quote = null; out += keepStrings ? ch : ' '; i++; continue; }
+      out += (keepStrings || ch === '\n') ? ch : ' ';
       i++;
       continue;
     }
@@ -148,7 +148,7 @@ function stripNonCode(source) {
     if (ch === '/' && next === '/') { comment = 'line'; out += '  '; i += 2; continue; }
     if (ch === '/' && next === '*') { comment = 'block'; out += '  '; i += 2; continue; }
     if (ch === '/' && opensValue(lastCode)) { regex = true; charClass = false; out += ' '; i++; continue; }
-    if (ch === '"' || ch === "'" || ch === '`') { quote = ch; out += ' '; i++; continue; }
+    if (ch === '"' || ch === "'" || ch === '`') { quote = ch; out += keepStrings ? ch : ' '; i++; continue; }
     out += ch;
     if (!/\s/.test(ch)) lastCode = ch;
     i++;
@@ -211,11 +211,16 @@ for (const check of declaring) {
   // Exit sites are located in CODE only; the emission window is read from the
   // original source, because a literal marker emission is itself a string.
   const codeLines = stripNonCode(text).split('\n');
+  // The emission window keeps strings - a literal `console.log('VALIDATION_FINDING
+  // check=x')` IS the emission - but drops comments. A comment that merely
+  // MENTIONS the marker is not an emission, and letting one vouch for an exit
+  // site is how a reverted validator slipped past the static rule.
+  const windowLines = stripNonCode(text, { keepStrings: true }).split('\n');
   for (let i = 0; i < codeLines.length; i++) {
     for (const match of codeLines[i].matchAll(/process\.exit\(\s*([^)\s]+)\s*\)/g)) {
       if (match[1] === '0') continue;
       exitSites++;
-      const window = lines.slice(Math.max(0, i - 8), i + 1).join('\n');
+      const window = windowLines.slice(Math.max(0, i - 8), i + 1).join('\n');
       const emits = window.includes(FINDING_MARKER)
         || [...emitters].some((name) => window.includes(`${name}(`));
       if (!emits) {
