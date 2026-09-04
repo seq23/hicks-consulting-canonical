@@ -1,3 +1,4 @@
+const { emitFinding } = require('../validation/protocol');
 const fs=require('fs');
 const required=['scripts/search/live_query_observer.mjs','scripts/search/build_search_action_queue.mjs','scripts/search/apply_bounded_search_repairs.mjs','scripts/search/provider_truth.mjs','scripts/search/run_provider_audit.mjs','data/search/target_queries.json','.github/workflows/agency-seo-monitor.yml'];
 const fail=[];for(const f of required)if(!fs.existsSync(f))fail.push(`missing ${f}`);
@@ -43,4 +44,4 @@ for(const stopName of ['SEARCH_PROVIDER_NOT_CONFIGURED','NO_GOVERNED_TARGET_QUER
 }
 if(!obs.includes('NAMED_STOP'))fail.push('live query observer does not surface its named stop on the console');
 
-if(fail.length){console.error(fail.join('\n'));process.exit(1)}console.log(`Search intelligence contract structurally OK (provider pinned to OpenRouter web search, Gemini grounding barred, error states separated from measured zeros, named stops present).`);
+if(fail.length){emitFinding(fail.map((f)=>`- ${f}`),{summary:`search-intelligence-defect(s)=${fail.length}`});process.exit(1)}console.log(`Search intelligence contract structurally OK (provider pinned to OpenRouter web search, Gemini grounding barred, error states separated from measured zeros, named stops present).`);

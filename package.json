@@ -126,6 +126,7 @@
     "validate:title-uniqueness": "node _ops/validators/validate_title_uniqueness_contract.js",
     "queries:discovery-gap": "node scripts/queries/score_discovery_gap.mjs",
     "validate:discovery-gap": "node _ops/validators/validate_discovery_gap.js",
+    "validate:finding-protocol": "node _ops/validators/validate_finding_protocol_conformance.js",
     "validate:client-decision-attribution": "node _ops/validators/deep/validate_client_decision_attribution.js",
     "build:content-consolidations": "node scripts/admin/build_content_consolidations.js",
     "nav:internal": "node scripts/navigation/build_internal_navigation.mjs",

@@ -1,4 +1,6 @@
 #!/usr/bin/env node
+import protocolModule from '../../_ops/validation/protocol.js';
+const { emitFinding } = protocolModule;
 import fs from 'node:fs';
 const report=JSON.parse(fs.readFileSync('data/continuity/editorial_continuity_report.json','utf8'));
 const briefs=JSON.parse(fs.readFileSync('data/intake/content_brief_candidates.json','utf8'));
@@ -23,4 +25,4 @@ for(const x of continuityQueue){
   if(!['daily','weekly','monthly','quarterly'].includes(x.cadence)) errors.push(`invalid-cadence:${x.id}`);
 }
 console.log(JSON.stringify({ok:!errors.length,...report,continuity_candidates:continuityQueue.length,velocity_authority:velocity.authority,errors},null,2));
-if(errors.length) process.exit(1);
+if(errors.length){ emitFinding(errors.map((e)=>`- ${e}`),{summary:`editorial-continuity-error(s)=${errors.length}`}); process.exit(1); }
