@@ -170,6 +170,34 @@
       "createdAt": "2026-09-01T14:48:21.718Z",
       "blocksOtherWork": false,
       "clientActionRequired": false
+    },
+    {
+      "id": "exception-brief-burnout_boundaries-insight-1788566455490",
+      "candidateId": "brief-burnout_boundaries-insight",
+      "decision": "SKIPPED_PROHIBITED_ACTION",
+      "findings": [
+        {
+          "code": "LOW_ADMISSION_SCORE",
+          "severity": "advisory"
+        }
+      ],
+      "createdAt": "2026-09-05T00:00:55.453Z",
+      "blocksOtherWork": false,
+      "clientActionRequired": false
+    },
+    {
+      "id": "exception-brief-genz_millennial_mental_health-faq-1788566455490",
+      "candidateId": "brief-genz_millennial_mental_health-faq",
+      "decision": "SKIPPED_PROHIBITED_ACTION",
+      "findings": [
+        {
+          "code": "LOW_ADMISSION_SCORE",
+          "severity": "advisory"
+        }
+      ],
+      "createdAt": "2026-09-05T00:00:55.453Z",
+      "blocksOtherWork": false,
+      "clientActionRequired": false
     }
   ]
 }
