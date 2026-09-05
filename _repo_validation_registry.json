@@ -354,6 +354,20 @@
       "rationale": "Source-health defects degrade automated research inputs while manual publishing remains available."
     },
     {
+      "id": "social-ingestion-stops",
+      "npmScript": "validate:social-ingestion-stops",
+      "entrypoint": "_ops/validators/validate_social_ingestion_stops.js",
+      "severity": "HARD_FAIL",
+      "blocksRelease": true,
+      "group": "ingestion",
+      "owner": "repo-maintainers",
+      "scope": "scheduled social ingestion stop semantics",
+      "ciInvocation": "MATRIX_ONLY",
+      "findingProtocol": "VALIDATION_FINDING",
+      "enabled": true,
+      "rationale": "Social Ingestion is unattended: it pages the owner when it is red and is believed when it is green, and it was wrong in both directions. Three sources carrying enabled:false and a written reasonDisabled - platforms this repo has no credential or approved endpoint for - were fetched anyway and recorded as degraded with \"Failed to parse URL from undefined\" on every run, so a decision was indistinguishable from an outage. In the other direction, a run that reached none of its sources printed \"ingestion complete: 7 signals\" and exited 0, where all seven were hard-coded seed strings, and validate_source_health.js checked only the shape of the record so it reported OK regardless of status - clustering, scoring and drafting then ran on constants behind a green build. This check drives the real scripts against synthetic trees: a disabled source is STOPPED by name and never fetched, a total outage exits 0 with a printed and recorded NAMED STOP, that stop is counted across runs and hard-fails at fallbackStreakLimit so it cannot become a parking space, a healthy source resets it, and a missing Search Console credential or unusable snapshot stops rather than fails. Hard-fails if it runs fewer than its full probe set or if config/social_sources.json declares zero sources."
+    },
+    {
       "id": "ingestion-freshness",
       "npmScript": "validate:ingestion-freshness",
       "entrypoint": "_ops/validators/validate_ingestion_freshness.js",

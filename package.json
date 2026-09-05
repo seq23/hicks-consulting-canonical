@@ -39,6 +39,7 @@
     "ingest:llm-pages": "node scripts/ingestion/build_llm_ingestion_pages.js",
     "ingest:all": "npm run ingest:social && npm run queries:ingest && node scripts/queries/score_discovery_gap.mjs --allow-missing-snapshot && npm run ingest:normalize && npm run ingest:cluster && npm run ingest:score && npm run ingest:map && npm run ingest:fanouts && npm run ingest:llm-pages && npm run ingest:briefs",
     "validate:source-health": "node _ops/validators/validate_source_health.js",
+    "validate:social-ingestion-stops": "node _ops/validators/validate_social_ingestion_stops.js",
     "validate:ingestion-freshness": "node _ops/validators/validate_ingestion_freshness.js",
     "validate:query-signals": "node _ops/validators/validate_query_signal_schema.js",
     "validate:query-clusters": "node _ops/validators/validate_query_clusters.js",
