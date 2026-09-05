@@ -1,8 +1,55 @@
 {
   "schemaVersion": "2.0.0",
-  "generatedAt": "2026-09-04T14:30:05.997Z",
+  "generatedAt": "2026-09-05T14:27:58.696Z",
   "policy": "Hicks may autonomously apply bounded technical/search-alignment repairs. Substantive clinical claims and unsupported treatment assertions are never auto-generated from competitor content.",
   "items": [
+    {
+      "query": "black therapists near me",
+      "primaryPage": "/",
+      "status": "CANNIBALIZATION_REVIEW",
+      "reasons": [
+        "MULTIPLE_HICKS_PAGES_FOR_QUERY",
+        "EXACT_QUERY_NOT_IN_PRIMARY_SEARCH_SURFACES",
+        "SITE_NOT_SURFACED_IN_GROUNDED_OBSERVATION",
+        "COMPETITOR_BROADER_VISIBLE_COVERAGE",
+        "COMPETITOR_DEEPER_ANSWER_STRUCTURE"
+      ],
+      "evidence": {
+        "groundedSiteSurfaced": false,
+        "groundedProviderAnswered": true,
+        "gscImpressions": 4,
+        "gscClicks": 0,
+        "gscAveragePosition": 8.17,
+        "gscPages": [
+          "/",
+          "/black-therapist-memphis/"
+        ],
+        "competitorUrls": [
+          {
+            "url": "https://lifestance.com/provider/therapist/ny/hicks",
+            "title": "Find Therapists In Hicks, New York - LifeStance Health"
+          },
+          {
+            "url": "https://www.cliniciansofcolor.org/clinician-articles/how-to-find-a-black-therapist-near-you/",
+            "title": "How to find a Black therapist near you - Clinicians of Color Directory"
+          },
+          {
+            "url": "https://www.blacktherapistsmatter.com/",
+            "title": "Find Your Black Therapist Near You | BTM - Start Your Wellness Journey Today"
+          },
+          {
+            "url": "https://www.find-a-therapist.com/black-therapists-near-me",
+            "title": "7 Black Therapists Near Me in 2024: African American Counselors"
+          },
+          {
+            "url": "https://www.healthgrades.com/psychotherapy-directory/nc-north-carolina/hickory",
+            "title": "20 Best Psychotherapists Near Hickory, NC | Healthgrades"
+          }
+        ]
+      },
+      "safeRepairEligible": false,
+      "recommendedAction": "Observe or route to content/technical review; do not invent a ranking win."
+    },
     {
       "query": "mental health therapy near me",
       "primaryPage": "/therapist-near-me-memphis/",
@@ -25,6 +72,27 @@
       },
       "safeRepairEligible": true,
       "recommendedAction": "Run bounded search-alignment repair, rebuild, then await the next external observation cycle."
+    },
+    {
+      "query": "black counselors near me",
+      "primaryPage": "/black-therapist-memphis/",
+      "status": "OBSERVED",
+      "reasons": [
+        "EXACT_QUERY_NOT_IN_PRIMARY_SEARCH_SURFACES"
+      ],
+      "evidence": {
+        "groundedSiteSurfaced": true,
+        "groundedProviderAnswered": true,
+        "gscImpressions": 4,
+        "gscClicks": 0,
+        "gscAveragePosition": 8,
+        "gscPages": [
+          "/black-therapist-memphis/"
+        ],
+        "competitorUrls": []
+      },
+      "safeRepairEligible": false,
+      "recommendedAction": "Observe or route to content/technical review; do not invent a ranking win."
     },
     {
       "query": "black female therapist near me",
@@ -50,6 +118,48 @@
       "recommendedAction": "Run bounded search-alignment repair, rebuild, then await the next external observation cycle."
     },
     {
+      "query": "black mental health therapist near me",
+      "primaryPage": "/black-therapist-memphis/",
+      "status": "OBSERVED",
+      "reasons": [
+        "EXACT_QUERY_NOT_IN_PRIMARY_SEARCH_SURFACES"
+      ],
+      "evidence": {
+        "groundedSiteSurfaced": true,
+        "groundedProviderAnswered": true,
+        "gscImpressions": 3,
+        "gscClicks": 0,
+        "gscAveragePosition": 8,
+        "gscPages": [
+          "/black-therapist-memphis/"
+        ],
+        "competitorUrls": []
+      },
+      "safeRepairEligible": false,
+      "recommendedAction": "Observe or route to content/technical review; do not invent a ranking win."
+    },
+    {
+      "query": "black therapist near me",
+      "primaryPage": "/black-therapist-memphis/",
+      "status": "OBSERVED",
+      "reasons": [
+        "EXACT_QUERY_NOT_IN_PRIMARY_SEARCH_SURFACES"
+      ],
+      "evidence": {
+        "groundedSiteSurfaced": true,
+        "groundedProviderAnswered": true,
+        "gscImpressions": 4,
+        "gscClicks": 0,
+        "gscAveragePosition": 8.25,
+        "gscPages": [
+          "/black-therapist-memphis/"
+        ],
+        "competitorUrls": []
+      },
+      "safeRepairEligible": false,
+      "recommendedAction": "Observe or route to content/technical review; do not invent a ranking win."
+    },
+    {
       "query": "christian therapists near me",
       "primaryPage": "/christian-therapist-memphis/",
       "status": "OBSERVED",
@@ -71,13 +181,11 @@
     {
       "query": "female therapist near me",
       "primaryPage": "/female-therapist-memphis/",
-      "status": "OBSERVED",
-      "reasons": [
-        "EXACT_QUERY_NOT_IN_PRIMARY_SEARCH_SURFACES"
-      ],
+      "status": "UNKNOWN",
+      "reasons": [],
       "evidence": {
-        "groundedSiteSurfaced": true,
-        "groundedProviderAnswered": true,
+        "groundedSiteSurfaced": null,
+        "groundedProviderAnswered": false,
         "gscImpressions": 0,
         "gscClicks": 0,
         "gscAveragePosition": 0,
@@ -93,12 +201,11 @@
       "status": "WRONG_PAGE",
       "reasons": [
         "WRONG_HICKS_PAGE_RANKING",
-        "AVERAGE_POSITION_OUTSIDE_TOP_10",
-        "EXACT_QUERY_NOT_IN_PRIMARY_SEARCH_SURFACES"
+        "AVERAGE_POSITION_OUTSIDE_TOP_10"
       ],
       "evidence": {
-        "groundedSiteSurfaced": true,
-        "groundedProviderAnswered": true,
+        "groundedSiteSurfaced": null,
+        "groundedProviderAnswered": false,
         "gscImpressions": 1,
         "gscClicks": 0,
         "gscAveragePosition": 25,
@@ -107,19 +214,17 @@
         ],
         "competitorUrls": []
       },
-      "safeRepairEligible": true,
-      "recommendedAction": "Run bounded search-alignment repair, rebuild, then await the next external observation cycle."
+      "safeRepairEligible": false,
+      "recommendedAction": "Observe or route to content/technical review; do not invent a ranking win."
     },
     {
       "query": "psychologists near me",
       "primaryPage": "/psychologist-vs-therapist-memphis/",
-      "status": "OBSERVED",
-      "reasons": [
-        "EXACT_QUERY_NOT_IN_PRIMARY_SEARCH_SURFACES"
-      ],
+      "status": "UNKNOWN",
+      "reasons": [],
       "evidence": {
-        "groundedSiteSurfaced": true,
-        "groundedProviderAnswered": true,
+        "groundedSiteSurfaced": null,
+        "groundedProviderAnswered": false,
         "gscImpressions": 0,
         "gscClicks": 0,
         "gscAveragePosition": 0,
@@ -135,12 +240,11 @@
       "status": "WRONG_PAGE",
       "reasons": [
         "WRONG_HICKS_PAGE_RANKING",
-        "AVERAGE_POSITION_OUTSIDE_TOP_10",
-        "EXACT_QUERY_NOT_IN_PRIMARY_SEARCH_SURFACES"
+        "AVERAGE_POSITION_OUTSIDE_TOP_10"
       ],
       "evidence": {
-        "groundedSiteSurfaced": true,
-        "groundedProviderAnswered": true,
+        "groundedSiteSurfaced": null,
+        "groundedProviderAnswered": false,
         "gscImpressions": 1,
         "gscClicks": 0,
         "gscAveragePosition": 61,
@@ -149,8 +253,8 @@
         ],
         "competitorUrls": []
       },
-      "safeRepairEligible": true,
-      "recommendedAction": "Run bounded search-alignment repair, rebuild, then await the next external observation cycle."
+      "safeRepairEligible": false,
+      "recommendedAction": "Observe or route to content/technical review; do not invent a ranking win."
     },
     {
       "query": "therapist near me",
@@ -363,9 +467,9 @@
       "evidence": {
         "groundedSiteSurfaced": null,
         "groundedProviderAnswered": false,
-        "gscImpressions": 47,
-        "gscClicks": 3,
-        "gscAveragePosition": 2.06,
+        "gscImpressions": 49,
+        "gscClicks": 4,
+        "gscAveragePosition": 2.16,
         "gscPages": [
           "/",
           "/about/",
@@ -375,6 +479,7 @@
           "/groups/",
           "/intake-quiz/",
           "/resources/",
+          "/resources/guides/",
           "/therapy/"
         ],
         "competitorUrls": []
@@ -390,11 +495,74 @@
       "evidence": {
         "groundedSiteSurfaced": null,
         "groundedProviderAnswered": false,
-        "gscImpressions": 17,
+        "gscImpressions": 15,
         "gscClicks": 0,
-        "gscAveragePosition": 1.41,
+        "gscAveragePosition": 1.47,
         "gscPages": [
           "/"
+        ],
+        "competitorUrls": []
+      },
+      "safeRepairEligible": false,
+      "recommendedAction": "Observe or route to content/technical review; do not invent a ranking win."
+    },
+    {
+      "query": "black therapist memphis tn",
+      "primaryPage": "/",
+      "status": "CANNIBALIZATION_REVIEW",
+      "reasons": [
+        "MULTIPLE_HICKS_PAGES_FOR_QUERY"
+      ],
+      "evidence": {
+        "groundedSiteSurfaced": null,
+        "groundedProviderAnswered": false,
+        "gscImpressions": 12,
+        "gscClicks": 0,
+        "gscAveragePosition": 9.45,
+        "gscPages": [
+          "/",
+          "/black-therapist-memphis/"
+        ],
+        "competitorUrls": []
+      },
+      "safeRepairEligible": false,
+      "recommendedAction": "Observe or route to content/technical review; do not invent a ranking win."
+    },
+    {
+      "query": "black therapist memphis, tn",
+      "primaryPage": "/",
+      "status": "CANNIBALIZATION_REVIEW",
+      "reasons": [
+        "MULTIPLE_HICKS_PAGES_FOR_QUERY"
+      ],
+      "evidence": {
+        "groundedSiteSurfaced": null,
+        "groundedProviderAnswered": false,
+        "gscImpressions": 4,
+        "gscClicks": 0,
+        "gscAveragePosition": 5.25,
+        "gscPages": [
+          "/",
+          "/black-therapist-memphis/"
+        ],
+        "competitorUrls": []
+      },
+      "safeRepairEligible": false,
+      "recommendedAction": "Observe or route to content/technical review; do not invent a ranking win."
+    },
+    {
+      "query": "intake quiz",
+      "primaryPage": "/intake-quiz/",
+      "status": "OBSERVED",
+      "reasons": [],
+      "evidence": {
+        "groundedSiteSurfaced": null,
+        "groundedProviderAnswered": false,
+        "gscImpressions": 5,
+        "gscClicks": 0,
+        "gscAveragePosition": 1.75,
+        "gscPages": [
+          "/intake-quiz/"
         ],
         "competitorUrls": []
       },
@@ -446,6 +614,27 @@
       "recommendedAction": "Observe or route to content/technical review; do not invent a ranking win."
     },
     {
+      "query": "memphis small business consulting",
+      "primaryPage": "/",
+      "status": "OBSERVED",
+      "reasons": [
+        "AVERAGE_POSITION_OUTSIDE_TOP_10"
+      ],
+      "evidence": {
+        "groundedSiteSurfaced": null,
+        "groundedProviderAnswered": false,
+        "gscImpressions": 4,
+        "gscClicks": 0,
+        "gscAveragePosition": 21,
+        "gscPages": [
+          "/"
+        ],
+        "competitorUrls": []
+      },
+      "safeRepairEligible": false,
+      "recommendedAction": "Observe or route to content/technical review; do not invent a ranking win."
+    },
+    {
       "query": "russell calame memphis tn",
       "primaryPage": "/",
       "status": "OBSERVED",
@@ -465,21 +654,20 @@
       "recommendedAction": "Observe or route to content/technical review; do not invent a ranking win."
     },
     {
-      "query": "black therapist memphis tn",
-      "primaryPage": "/",
-      "status": "CANNIBALIZATION_REVIEW",
+      "query": "therapist psychologist",
+      "primaryPage": "/psychologist-vs-therapist-memphis/",
+      "status": "OBSERVED",
       "reasons": [
-        "MULTIPLE_HICKS_PAGES_FOR_QUERY"
+        "AVERAGE_POSITION_OUTSIDE_TOP_10"
       ],
       "evidence": {
         "groundedSiteSurfaced": null,
         "groundedProviderAnswered": false,
-        "gscImpressions": 11,
+        "gscImpressions": 3,
         "gscClicks": 0,
-        "gscAveragePosition": 9.45,
+        "gscAveragePosition": 22.33,
         "gscPages": [
-          "/",
-          "/black-therapist-memphis/"
+          "/psychologist-vs-therapist-memphis/"
         ],
         "competitorUrls": []
       },
@@ -506,18 +694,21 @@
       "recommendedAction": "Observe or route to content/technical review; do not invent a ranking win."
     },
     {
-      "query": "hicks healthcare",
+      "query": "i need a black therapist",
       "primaryPage": "/",
-      "status": "OBSERVED",
-      "reasons": [],
+      "status": "CANNIBALIZATION_REVIEW",
+      "reasons": [
+        "MULTIPLE_HICKS_PAGES_FOR_QUERY"
+      ],
       "evidence": {
         "groundedSiteSurfaced": null,
         "groundedProviderAnswered": false,
-        "gscImpressions": 1,
+        "gscImpressions": 2,
         "gscClicks": 0,
-        "gscAveragePosition": 2,
+        "gscAveragePosition": 6.5,
         "gscPages": [
-          "/"
+          "/",
+          "/black-therapist-memphis/"
         ],
         "competitorUrls": []
       },
@@ -535,25 +726,6 @@
         "gscImpressions": 2,
         "gscClicks": 0,
         "gscAveragePosition": 10,
-        "gscPages": [
-          "/"
-        ],
-        "competitorUrls": []
-      },
-      "safeRepairEligible": false,
-      "recommendedAction": "Observe or route to content/technical review; do not invent a ranking win."
-    },
-    {
-      "query": "jhicks consulting",
-      "primaryPage": "/",
-      "status": "OBSERVED",
-      "reasons": [],
-      "evidence": {
-        "groundedSiteSurfaced": null,
-        "groundedProviderAnswered": false,
-        "gscImpressions": 1,
-        "gscClicks": 0,
-        "gscAveragePosition": 2,
         "gscPages": [
           "/"
         ],
@@ -585,27 +757,6 @@
       "recommendedAction": "Observe or route to content/technical review; do not invent a ranking win."
     },
     {
-      "query": "memphis small business consulting",
-      "primaryPage": "/",
-      "status": "OBSERVED",
-      "reasons": [
-        "AVERAGE_POSITION_OUTSIDE_TOP_10"
-      ],
-      "evidence": {
-        "groundedSiteSurfaced": null,
-        "groundedProviderAnswered": false,
-        "gscImpressions": 3,
-        "gscClicks": 0,
-        "gscAveragePosition": 21,
-        "gscPages": [
-          "/"
-        ],
-        "competitorUrls": []
-      },
-      "safeRepairEligible": false,
-      "recommendedAction": "Observe or route to content/technical review; do not invent a ranking win."
-    },
-    {
       "query": "online therapy memphis",
       "primaryPage": "/therapy/",
       "status": "OBSERVED",
@@ -627,37 +778,41 @@
       "recommendedAction": "Observe or route to content/technical review; do not invent a ranking win."
     },
     {
-      "query": "black mental health therapist",
-      "primaryPage": "/",
-      "status": "UNKNOWN",
-      "reasons": [],
+      "query": "psychologist or psychotherapist",
+      "primaryPage": "/psychologist-vs-therapist-memphis/",
+      "status": "OBSERVED",
+      "reasons": [
+        "AVERAGE_POSITION_OUTSIDE_TOP_10"
+      ],
       "evidence": {
         "groundedSiteSurfaced": null,
         "groundedProviderAnswered": false,
-        "gscImpressions": 0,
+        "gscImpressions": 3,
         "gscClicks": 0,
-        "gscAveragePosition": 0,
-        "gscPages": [],
+        "gscAveragePosition": 52,
+        "gscPages": [
+          "/psychologist-vs-therapist-memphis/"
+        ],
         "competitorUrls": []
       },
       "safeRepairEligible": false,
       "recommendedAction": "Observe or route to content/technical review; do not invent a ranking win."
     },
     {
-      "query": "black therapist memphis, tn",
+      "query": "black mental health therapist",
       "primaryPage": "/",
-      "status": "CANNIBALIZATION_REVIEW",
+      "status": "WRONG_PAGE",
       "reasons": [
-        "MULTIPLE_HICKS_PAGES_FOR_QUERY"
+        "WRONG_HICKS_PAGE_RANKING",
+        "AVERAGE_POSITION_OUTSIDE_TOP_10"
       ],
       "evidence": {
         "groundedSiteSurfaced": null,
         "groundedProviderAnswered": false,
-        "gscImpressions": 4,
+        "gscImpressions": 2,
         "gscClicks": 0,
-        "gscAveragePosition": 5.25,
+        "gscAveragePosition": 13.5,
         "gscPages": [
-          "/",
           "/black-therapist-memphis/"
         ],
         "competitorUrls": []
@@ -718,6 +873,46 @@
         "gscImpressions": 1,
         "gscClicks": 0,
         "gscAveragePosition": 57,
+        "gscPages": [
+          "/"
+        ],
+        "competitorUrls": []
+      },
+      "safeRepairEligible": false,
+      "recommendedAction": "Observe or route to content/technical review; do not invent a ranking win."
+    },
+    {
+      "query": "christian counseling memphis",
+      "primaryPage": "/christian-therapist-memphis/",
+      "status": "OBSERVED",
+      "reasons": [
+        "AVERAGE_POSITION_OUTSIDE_TOP_10"
+      ],
+      "evidence": {
+        "groundedSiteSurfaced": null,
+        "groundedProviderAnswered": false,
+        "gscImpressions": 1,
+        "gscClicks": 0,
+        "gscAveragePosition": 20,
+        "gscPages": [
+          "/christian-therapist-memphis/"
+        ],
+        "competitorUrls": []
+      },
+      "safeRepairEligible": false,
+      "recommendedAction": "Observe or route to content/technical review; do not invent a ranking win."
+    },
+    {
+      "query": "committed to recovery memphis tn",
+      "primaryPage": "/",
+      "status": "OBSERVED",
+      "reasons": [],
+      "evidence": {
+        "groundedSiteSurfaced": null,
+        "groundedProviderAnswered": false,
+        "gscImpressions": 1,
+        "gscClicks": 0,
+        "gscAveragePosition": 7,
         "gscPages": [
           "/"
         ],
@@ -864,6 +1059,25 @@
       "recommendedAction": "Observe or route to content/technical review; do not invent a ranking win."
     },
     {
+      "query": "hicks healthcare",
+      "primaryPage": "/",
+      "status": "OBSERVED",
+      "reasons": [],
+      "evidence": {
+        "groundedSiteSurfaced": null,
+        "groundedProviderAnswered": false,
+        "gscImpressions": 1,
+        "gscClicks": 0,
+        "gscAveragePosition": 2,
+        "gscPages": [
+          "/"
+        ],
+        "competitorUrls": []
+      },
+      "safeRepairEligible": false,
+      "recommendedAction": "Observe or route to content/technical review; do not invent a ranking win."
+    },
+    {
       "query": "hicks management",
       "primaryPage": "/",
       "status": "OBSERVED",
@@ -906,21 +1120,36 @@
       "recommendedAction": "Observe or route to content/technical review; do not invent a ranking win."
     },
     {
-      "query": "jill hicks consulting",
+      "query": "jhicks consulting",
       "primaryPage": "/",
       "status": "OBSERVED",
-      "reasons": [
-        "AVERAGE_POSITION_OUTSIDE_TOP_10"
-      ],
+      "reasons": [],
       "evidence": {
         "groundedSiteSurfaced": null,
         "groundedProviderAnswered": false,
         "gscImpressions": 1,
         "gscClicks": 0,
-        "gscAveragePosition": 19,
+        "gscAveragePosition": 2,
         "gscPages": [
           "/"
         ],
+        "competitorUrls": []
+      },
+      "safeRepairEligible": false,
+      "recommendedAction": "Observe or route to content/technical review; do not invent a ranking win."
+    },
+    {
+      "query": "jill hicks consulting",
+      "primaryPage": "/",
+      "status": "UNKNOWN",
+      "reasons": [],
+      "evidence": {
+        "groundedSiteSurfaced": null,
+        "groundedProviderAnswered": false,
+        "gscImpressions": 0,
+        "gscClicks": 0,
+        "gscAveragePosition": 0,
+        "gscPages": [],
         "competitorUrls": []
       },
       "safeRepairEligible": false,
@@ -1019,6 +1248,25 @@
         "gscImpressions": 1,
         "gscClicks": 0,
         "gscAveragePosition": 21,
+        "gscPages": [
+          "/"
+        ],
+        "competitorUrls": []
+      },
+      "safeRepairEligible": false,
+      "recommendedAction": "Observe or route to content/technical review; do not invent a ranking win."
+    },
+    {
+      "query": "mental health consulting",
+      "primaryPage": "/",
+      "status": "OBSERVED",
+      "reasons": [],
+      "evidence": {
+        "groundedSiteSurfaced": null,
+        "groundedProviderAnswered": false,
+        "gscImpressions": 1,
+        "gscClicks": 0,
+        "gscAveragePosition": 2,
         "gscPages": [
           "/"
         ],
@@ -1148,6 +1396,23 @@
       "recommendedAction": "Observe or route to content/technical review; do not invent a ranking win."
     },
     {
+      "query": "black counselors memphis",
+      "primaryPage": "/black-therapist-memphis/",
+      "status": "UNKNOWN",
+      "reasons": [],
+      "evidence": {
+        "groundedSiteSurfaced": null,
+        "groundedProviderAnswered": false,
+        "gscImpressions": 0,
+        "gscClicks": 0,
+        "gscAveragePosition": 0,
+        "gscPages": [],
+        "competitorUrls": []
+      },
+      "safeRepairEligible": false,
+      "recommendedAction": "Observe or route to content/technical review; do not invent a ranking win."
+    },
+    {
       "query": "black female therapist memphis tn",
       "primaryPage": "/female-therapist-memphis/",
       "status": "UNKNOWN",
@@ -1165,7 +1430,58 @@
       "recommendedAction": "Observe or route to content/technical review; do not invent a ranking win."
     },
     {
+      "query": "black mental health therapist memphis",
+      "primaryPage": "/black-therapist-memphis/",
+      "status": "UNKNOWN",
+      "reasons": [],
+      "evidence": {
+        "groundedSiteSurfaced": null,
+        "groundedProviderAnswered": false,
+        "gscImpressions": 0,
+        "gscClicks": 0,
+        "gscAveragePosition": 0,
+        "gscPages": [],
+        "competitorUrls": []
+      },
+      "safeRepairEligible": false,
+      "recommendedAction": "Observe or route to content/technical review; do not invent a ranking win."
+    },
+    {
       "query": "black therapist in Memphis",
+      "primaryPage": "/black-therapist-memphis/",
+      "status": "UNKNOWN",
+      "reasons": [],
+      "evidence": {
+        "groundedSiteSurfaced": null,
+        "groundedProviderAnswered": false,
+        "gscImpressions": 0,
+        "gscClicks": 0,
+        "gscAveragePosition": 0,
+        "gscPages": [],
+        "competitorUrls": []
+      },
+      "safeRepairEligible": false,
+      "recommendedAction": "Observe or route to content/technical review; do not invent a ranking win."
+    },
+    {
+      "query": "black therapist memphis",
+      "primaryPage": "/black-therapist-memphis/",
+      "status": "UNKNOWN",
+      "reasons": [],
+      "evidence": {
+        "groundedSiteSurfaced": null,
+        "groundedProviderAnswered": false,
+        "gscImpressions": 0,
+        "gscClicks": 0,
+        "gscAveragePosition": 0,
+        "gscPages": [],
+        "competitorUrls": []
+      },
+      "safeRepairEligible": false,
+      "recommendedAction": "Observe or route to content/technical review; do not invent a ranking win."
+    },
+    {
+      "query": "black therapists memphis",
       "primaryPage": "/black-therapist-memphis/",
       "status": "UNKNOWN",
       "reasons": [],

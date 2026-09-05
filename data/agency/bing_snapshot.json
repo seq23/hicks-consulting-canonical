@@ -1,17 +1,11 @@
 {
   "provider": "bing",
   "status": "ok",
-  "checkedAt": "2026-09-04T14:30:04.487Z",
+  "checkedAt": "2026-09-05T14:27:57.507Z",
   "siteUrl": "https://www.hicksconsulting.org/",
   "site": null,
   "metrics": {
     "rankAndTraffic": [
-      {
-        "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
-        "Clicks": 0,
-        "Date": "/Date(1780642800000-0700)/",
-        "Impressions": 0
-      },
       {
         "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
         "Clicks": 0,
@@ -545,27 +539,15 @@
         "Clicks": 0,
         "Date": "/Date(1788332400000-0700)/",
         "Impressions": 0
+      },
+      {
+        "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+        "Clicks": 0,
+        "Date": "/Date(1788418800000-0700)/",
+        "Impressions": 0
       }
     ],
     "crawl": [
-      {
-        "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
-        "AllOtherCodes": 0,
-        "BlockedByRobotsTxt": 0,
-        "Code2xx": 7,
-        "Code301": 1,
-        "Code302": 0,
-        "Code4xx": 0,
-        "Code5xx": 0,
-        "ConnectionTimeout": 0,
-        "ContainsMalware": 0,
-        "CrawlErrors": 0,
-        "CrawledPages": 0,
-        "Date": "/Date(1780642800000-0700)/",
-        "DnsFailures": 0,
-        "InIndex": 1,
-        "InLinks": 2
-      },
       {
         "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
         "AllOtherCodes": 0,
@@ -2167,6 +2149,24 @@
         "DnsFailures": 0,
         "InIndex": 0,
         "InLinks": 7
+      },
+      {
+        "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+        "AllOtherCodes": 0,
+        "BlockedByRobotsTxt": 0,
+        "Code2xx": 91,
+        "Code301": 1,
+        "Code302": 0,
+        "Code4xx": 1,
+        "Code5xx": 0,
+        "ConnectionTimeout": 0,
+        "ContainsMalware": 0,
+        "CrawlErrors": 2,
+        "CrawledPages": 7,
+        "Date": "/Date(1788505200000-0700)/",
+        "DnsFailures": 0,
+        "InIndex": 0,
+        "InLinks": 7
       }
     ]
   },
@@ -2201,24 +2201,6 @@
     {
       "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
       "AvgClickPosition": -1,
-      "AvgImpressionPosition": 2,
-      "Clicks": 0,
-      "Date": "/Date(1752217200000-0700)/",
-      "Impressions": 1,
-      "Query": "melissa hicks therapy"
-    },
-    {
-      "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
-      "AvgClickPosition": -1,
-      "AvgImpressionPosition": 7,
-      "Clicks": 0,
-      "Date": "/Date(1752217200000-0700)/",
-      "Impressions": 1,
-      "Query": "jonathan hicks counseling"
-    },
-    {
-      "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
-      "AvgClickPosition": -1,
       "AvgImpressionPosition": 8,
       "Clicks": 0,
       "Date": "/Date(1752217200000-0700)/",
@@ -2233,6 +2215,24 @@
       "Date": "/Date(1752217200000-0700)/",
       "Impressions": 1,
       "Query": "hicks consultancy"
+    },
+    {
+      "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
+      "AvgClickPosition": -1,
+      "AvgImpressionPosition": 7,
+      "Clicks": 0,
+      "Date": "/Date(1752217200000-0700)/",
+      "Impressions": 1,
+      "Query": "jonathan hicks counseling"
+    },
+    {
+      "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
+      "AvgClickPosition": -1,
+      "AvgImpressionPosition": 2,
+      "Clicks": 0,
+      "Date": "/Date(1752217200000-0700)/",
+      "Impressions": 1,
+      "Query": "melissa hicks therapy"
     },
     {
       "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
@@ -2318,20 +2318,20 @@
     {
       "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
       "AvgClickPosition": -1,
-      "AvgImpressionPosition": 2,
-      "Clicks": 0,
-      "Date": "/Date(1753426800000-0700)/",
-      "Impressions": 1,
-      "Query": "janice hicks counseling"
-    },
-    {
-      "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
-      "AvgClickPosition": -1,
       "AvgImpressionPosition": 9,
       "Clicks": 0,
       "Date": "/Date(1753426800000-0700)/",
       "Impressions": 1,
       "Query": "justin hicks social worker"
+    },
+    {
+      "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
+      "AvgClickPosition": -1,
+      "AvgImpressionPosition": 2,
+      "Clicks": 0,
+      "Date": "/Date(1753426800000-0700)/",
+      "Impressions": 1,
+      "Query": "janice hicks counseling"
     },
     {
       "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
