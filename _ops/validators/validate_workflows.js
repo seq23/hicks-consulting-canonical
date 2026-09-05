@@ -1,4 +1,4 @@
-const { fs, path, fail, read } = require('./util');
+const { fs, path, fail, read, exists } = require('./util');
 const pkg = JSON.parse(read('package.json'));
 const workflowsDir = path.join(process.cwd(), '.github', 'workflows');
 const files = fs.readdirSync(workflowsDir).filter(f => f.endsWith('.yml') || f.endsWith('.yaml'));
@@ -37,7 +37,39 @@ if (buildStep === -1 || validateStep === -1 || buildStep > validateStep) {
   fail('build.yml must build before validate:all so dist-aware checks inspect the current output.');
 }
 
-console.log(`Workflow contracts OK (${files.length} workflows, ${writeWorkflows.length} writer workflows traced).`);
+// A workflow GitHub still lists as active but that no ref defines is invisible from
+// inside the repository - `gh workflow list` showed "ChatGPT Baseline Package" for a
+// month after its file was deleted, and nothing on disk could say whether it was a
+// deliberately manual lane or a dead one. config/retired_workflows.json is where that
+// question is answered, and this keeps the answer honest in the one direction a file
+// of prose can drift: an entry may not claim a workflow is gone while its file is
+// sitting in .github/workflows.
+const retiredPath = 'config/retired_workflows.json';
+if (!exists(retiredPath)) fail(`${retiredPath} is missing; retired workflow names have nowhere to be recorded and nothing distinguishes a manual lane from a dead one.`);
+let retired;
+try { retired = JSON.parse(read(retiredPath)); }
+catch (error) { fail(`${retiredPath} is not valid JSON: ${error.message}`); }
+if (!Array.isArray(retired.workflows)) fail(`${retiredPath} must carry a workflows array.`);
+const fileSet = new Set(files);
+for (const entry of retired.workflows) {
+  for (const field of ['name', 'path', 'decision', 'reason', 'decidedOn', 'decidedBy']) {
+    if (!entry[field]) fail(`${retiredPath}: entry ${entry.name || '(unnamed)'} is missing ${field}. An unexplained retirement is indistinguishable from an oversight.`);
+  }
+  if (!['RETIRED_ONE_OFF', 'MANUAL_ONLY', 'SUPERSEDED'].includes(entry.decision)) {
+    fail(`${retiredPath}: entry ${entry.name} carries unknown decision "${entry.decision}".`);
+  }
+  const base = String(entry.path || '').split('/').pop();
+  if (entry.decision !== 'MANUAL_ONLY' && fileSet.has(base)) {
+    fail(`${retiredPath}: ${entry.name} is recorded as ${entry.decision} but .github/workflows/${base} exists on disk. The record and the repository disagree.`);
+  }
+  if (entry.decision === 'MANUAL_ONLY' && !fileSet.has(base)) {
+    fail(`${retiredPath}: ${entry.name} is recorded as MANUAL_ONLY but .github/workflows/${base} does not exist. A manual lane needs a file to invoke.`);
+  }
+}
+
+console.log(`Workflow contracts OK (${files.length} workflows, ${writeWorkflows.length} writer workflows traced; `
+  + `${retired.workflows.length} name(s) GitHub still lists with no file behind them, each recorded in ${retiredPath} with a decision - `
+  + `${retired.workflows.map((entry) => `${entry.name}=${entry.decision}`).join(', ') || 'none'}).`);
 
 {
   const fsWorkflow = require('fs');

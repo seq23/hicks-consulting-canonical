@@ -1,19 +1,25 @@
 {
-  "generatedAt": "2026-09-05T00:00:53.718Z",
-  "runId": "2026-09-05T00-00-44-972Z",
+  "generatedAt": "2026-09-05T15:21:01.880Z",
+  "runId": "2026-09-05T15-20-55-774Z",
   "mode": "external",
-  "externalSignalCount": 65,
+  "externalSignalCount": 45,
   "fallbackSignalCount": 7,
+  "enabledSourceCount": 7,
+  "stoppedSourceCount": 3,
+  "degradedSourceCount": 4,
+  "fallbackStreak": 0,
+  "fallbackStreakLimit": 3,
+  "namedStops": [],
   "sources": [
     {
       "id": "reddit_rss_blackwomen",
       "name": "Reddit RSS - Black women burnout therapy",
       "url": "https://www.reddit.com/search.rss?q=Black%20women%20burnout%20therapy&sort=new",
-      "status": "ok",
-      "httpStatus": 200,
-      "startedAt": "2026-09-05T00:00:44.973Z",
-      "finishedAt": "2026-09-05T00:00:45.665Z",
-      "signalCount": 20
+      "status": "degraded",
+      "httpStatus": 429,
+      "startedAt": "2026-09-05T15:20:55.775Z",
+      "finishedAt": "2026-09-05T15:20:56.216Z",
+      "signalCount": 0
     },
     {
       "id": "reddit_rss_ai_wellness",
@@ -21,8 +27,8 @@
       "url": "https://www.reddit.com/search.rss?q=AI%20anxiety%20mental%20health&sort=new",
       "status": "degraded",
       "httpStatus": 429,
-      "startedAt": "2026-09-05T00:00:46.166Z",
-      "finishedAt": "2026-09-05T00:00:46.222Z",
+      "startedAt": "2026-09-05T15:20:56.721Z",
+      "finishedAt": "2026-09-05T15:20:56.886Z",
       "signalCount": 0
     },
     {
@@ -31,8 +37,8 @@
       "url": "https://www.reddit.com/search.rss?q=Gen%20Z%20mental%20health%20therapy&sort=new",
       "status": "degraded",
       "httpStatus": 429,
-      "startedAt": "2026-09-05T00:00:46.722Z",
-      "finishedAt": "2026-09-05T00:00:46.776Z",
+      "startedAt": "2026-09-05T15:20:57.389Z",
+      "finishedAt": "2026-09-05T15:20:57.459Z",
       "signalCount": 0
     },
     {
@@ -41,8 +47,8 @@
       "url": "https://www.youtube.com/feeds/videos.xml?search_query=Black%20women%20burnout%20therapy",
       "status": "degraded",
       "httpStatus": 400,
-      "startedAt": "2026-09-05T00:00:47.276Z",
-      "finishedAt": "2026-09-05T00:00:47.393Z",
+      "startedAt": "2026-09-05T15:20:57.962Z",
+      "finishedAt": "2026-09-05T15:20:59.139Z",
       "signalCount": 0
     },
     {
@@ -51,8 +57,8 @@
       "url": "https://news.google.com/rss/search?q=workplace%20mental%20health%20training%20emotional%20intelligence",
       "status": "ok",
       "httpStatus": 200,
-      "startedAt": "2026-09-05T00:00:47.892Z",
-      "finishedAt": "2026-09-05T00:00:48.470Z",
+      "startedAt": "2026-09-05T15:20:59.639Z",
+      "finishedAt": "2026-09-05T15:20:59.831Z",
       "signalCount": 15
     },
     {
@@ -61,8 +67,8 @@
       "url": "https://news.google.com/rss/search?q=faith%20centered%20therapy%20emotional%20healing",
       "status": "ok",
       "httpStatus": 200,
-      "startedAt": "2026-09-05T00:00:48.971Z",
-      "finishedAt": "2026-09-05T00:00:49.416Z",
+      "startedAt": "2026-09-05T15:21:00.335Z",
+      "finishedAt": "2026-09-05T15:21:00.543Z",
       "signalCount": 15
     },
     {
@@ -71,35 +77,38 @@
       "url": "https://interpersonal.stackexchange.com/feeds",
       "status": "ok",
       "httpStatus": 200,
-      "startedAt": "2026-09-05T00:00:49.916Z",
-      "finishedAt": "2026-09-05T00:00:50.212Z",
+      "startedAt": "2026-09-05T15:21:01.044Z",
+      "finishedAt": "2026-09-05T15:21:01.267Z",
       "signalCount": 15
     },
     {
       "id": "quora_public_research_lane",
       "name": "Quora public questions - research lane only",
-      "status": "degraded",
-      "error": "Failed to parse URL from undefined",
-      "startedAt": "2026-09-05T00:00:50.712Z",
-      "finishedAt": "2026-09-05T00:00:51.213Z",
+      "status": "stopped",
+      "namedStop": "SOURCE_DISABLED_BY_CONFIGURATION",
+      "stopReason": "No stable no-auth RSS/API endpoint approved for scheduled production ingestion. Keep as manual research lane until adapter exists.",
+      "startedAt": "2026-09-05T15:21:01.792Z",
+      "finishedAt": "2026-09-05T15:21:01.792Z",
       "signalCount": 0
     },
     {
       "id": "x_twitter_public_research_lane",
       "name": "X/Twitter public posts - research lane only",
-      "status": "degraded",
-      "error": "Failed to parse URL from undefined",
-      "startedAt": "2026-09-05T00:00:51.714Z",
-      "finishedAt": "2026-09-05T00:00:52.215Z",
+      "status": "stopped",
+      "namedStop": "SOURCE_DISABLED_BY_CONFIGURATION",
+      "stopReason": "No no-auth production-safe source. Requires API/secrets or manual research; not used in cron.",
+      "startedAt": "2026-09-05T15:21:01.805Z",
+      "finishedAt": "2026-09-05T15:21:01.805Z",
       "signalCount": 0
     },
     {
       "id": "tiktok_public_research_lane",
       "name": "TikTok public posts - research lane only",
-      "status": "degraded",
-      "error": "Failed to parse URL from undefined",
-      "startedAt": "2026-09-05T00:00:52.716Z",
-      "finishedAt": "2026-09-05T00:00:53.217Z",
+      "status": "stopped",
+      "namedStop": "SOURCE_DISABLED_BY_CONFIGURATION",
+      "stopReason": "No approved no-auth scheduled ingestion endpoint. Keep as manual trend review lane.",
+      "startedAt": "2026-09-05T15:21:01.806Z",
+      "finishedAt": "2026-09-05T15:21:01.806Z",
       "signalCount": 0
     }
   ]
