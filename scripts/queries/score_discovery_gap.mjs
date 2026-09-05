@@ -322,6 +322,72 @@ const observations = read(OBSERVATIONS, { observations: [] });
 const obsByQuery = new Map();
 for (const o of observations.observations || []) obsByQuery.set(norm(o.query), o);
 
+// ------------------------------------------------------------- the quarantine
+//
+// THIS is what made the ingestion lane fail on its own schedule.
+//
+// data/agency/gsc_snapshot.json is refreshed by the agency SEO monitor without a
+// human in the loop, and the merge above admits every query in it. When Search
+// Console started reporting "black therapists near me", "black counselors near
+// me", "black mental health therapist near me" and "black therapist near me",
+// four brand-new targets appeared in this file that imply a place, name none,
+// carry no localized variant and carry no recorded decision - the exact state
+// validate_discovery_gap.js exists to refuse. Nobody wrote them; the pipeline
+// manufactured them, then the next validation run blocked main over them.
+//
+// Admitting an undecided query silently is the real defect. It is also the
+// dangerous one: blue_ocean_eligible defaulted to true, so the drafting cycle
+// could have written a page for a service this practice does not provide,
+// aimed at a place it does not serve, before anyone had read the query.
+//
+// So a bare location-implying query is not admitted - it is QUARANTINED. It
+// keeps being measured, it is named on the console every run, it cannot be
+// drafted against (blueOceanEligibility refuses `targeted: null`), and it
+// carries a date by which a human has to decide. The validator passes with a
+// named stop while that date is in the future and hard-fails once it passes, so
+// the quarantine can never become a parking space.
+const QUARANTINE_WINDOW_DAYS = 14;
+const isoDay = (d) => d.toISOString().slice(0, 10);
+const today = new Date();
+
+const hasGovernedVariant = new Set(
+  [...byQuery.values()]
+    .filter((t) => t && t.intent === 'localized_variant' && t.localizes)
+    .map((t) => norm(t.localizes))
+);
+const isGoverned = (t) => (
+  hasGovernedVariant.has(norm(t.query))
+  || (t.targeting && t.targeting.targeted === false)
+  || Boolean(t.targeting && t.targeting.targeted === true && String(t.targeting.how || '').trim())
+);
+const isAwaiting = (t) => Boolean(t.targeting && t.targeting.decision === 'AWAITING_TARGETING_DECISION');
+
+const quarantined = [];
+for (const t of byQuery.values()) {
+  const q = norm(t.query);
+  const bare = impliesLocation(q) && !carriesLocation(q) && t.intent !== 'localized_variant';
+  if (!bare || isGoverned(t)) {
+    // A localized variant was written, or a decision was recorded. Lift the
+    // quarantine rather than leave a stale "awaiting" note beside a settled one.
+    if (isAwaiting(t)) delete t.targeting;
+    continue;
+  }
+  // Idempotent: an existing quarantine keeps its own first_seen and decide_by,
+  // so the clock starts when the query first appeared and cannot be reset by
+  // re-running this script.
+  if (!isAwaiting(t)) {
+    t.targeting = {
+      targeted: null,
+      decision: 'AWAITING_TARGETING_DECISION',
+      first_seen: isoDay(today),
+      decide_by: isoDay(new Date(today.getTime() + QUARANTINE_WINDOW_DAYS * 86400000)),
+      why: 'Newly measured in Search Console. It implies a place and names none, so it cannot be answered as typed, and nobody has yet decided whether this practice should answer it at all.',
+      how_to_decide: `Either add a localized_variant row in ${TARGETS} whose "localizes" is this query and whose primaryPage is a page that genuinely answers it, or record targeting.targeted=false with "why" and "so_what_happens_instead". Until then blue_ocean_eligible is false, so no content generator may draft against it.`,
+    };
+  }
+  quarantined.push(t.query);
+}
+
 let scored = 0;
 for (const t of byQuery.values()) {
   t.lead_intent_tier = leadIntentTier(t.query);
@@ -367,13 +433,19 @@ doc.discovery_gap_pass = {
   blue_ocean_gate: {
     by: 'scripts/lib/demand_titles.js#blueOceanEligibility, written to target_queries[].blue_ocean_eligible',
     why: 'An OPEN occupancy verdict is a statement about WHO the observer cited, not about whether the citations were about this query. Surname-matched queries ("hicks", "carol hicks", "kerry hicks") and queries with no service or location anchor return Hickory PA/NC, Hicksville NY and unrelated practitioners; treating those as open ground is a false blue-ocean signal. Content generation reads blue_ocean_eligible; occupancy.verdict is left untouched.',
-    ineligible_reasons: ['BRAND_OR_PERSON_NAME_NAVIGATIONAL', 'NO_SERVICE_OR_LOCATION_ANCHOR', 'ALREADY_HELD_BY_US', 'EMPTY_QUERY'],
+    ineligible_reasons: ['BRAND_OR_PERSON_NAME_NAVIGATIONAL', 'NO_SERVICE_OR_LOCATION_ANCHOR', 'ALREADY_HELD_BY_US', 'EMPTY_QUERY', 'SERVICE_NOT_PROVIDED', 'AWAITING_TARGETING_DECISION'],
   },
   refused_sources: [
     'data/intake/normalized_query_signals.json - 151 RSS titles and subreddit names ("/r/BlackWomens", "reddit.com: search results - ..."). Topic signals, not queries anyone searched. The normalizer tags every one status "candidate" for exactly this reason.',
     'any modelled or estimated search volume - no live paid keyword source exists on this account.',
   ],
   observed_queries_with_no_landing_page: unlandable,
+  quarantined_awaiting_targeting_decision: {
+    queries: quarantined,
+    window_days: QUARANTINE_WINDOW_DAYS,
+    why: 'A query that implies a place and names none cannot be answered as typed. These arrived from a Search Console refresh nobody reviewed, so they are measured but not admitted: blue_ocean_eligible is false and no generator may draft against them until a localized variant or a recorded non-target decision exists.',
+    enforced_by: 'scripts/lib/demand_titles.js#blueOceanEligibility (AWAITING_TARGETING_DECISION) and _ops/validators/validate_discovery_gap.js, which hard-fails once decide_by passes.',
+  },
   lead_intent_classifier: {
     T1_LOCAL_READY: 'near me / open now / in <City ST> / in-network / takes insurance / accepting new clients',
     T2_COST_IN_MARKET: 'how much / cost / price / fee / sliding scale / does insurance cover / out of pocket',

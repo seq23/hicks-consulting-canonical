@@ -1,4 +1,6 @@
 #!/usr/bin/env node
+import protocolModule from '../../_ops/validation/protocol.js';
+const { emitFinding } = protocolModule;
 import fs from 'node:fs';
 const errors = [];
 const required = [
@@ -25,4 +27,4 @@ if (fs.existsSync('data/distribution/provider_receipt.json')) {
   if (receipt.provider_success_claimed === true && !['SUCCESS'].includes(receipt.indexnow?.status) && !['SUCCESS'].includes(receipt.gsc_sitemap_submission?.status) && !['SUCCESS'].includes(receipt.priority_url_inspection?.status)) errors.push('receipt-provider-truth');
 }
 console.log(JSON.stringify({ ok: !errors.length, url_count: batch.length, provider_success_claimed: manifest.provider_success_claimed, errors }, null, 2));
-if (errors.length) process.exit(1);
+if (errors.length) { emitFinding(errors.map((e)=>`- ${e}`), { summary: `distribution-manifest-error(s)=${errors.length}` }); process.exit(1); }

@@ -28,8 +28,10 @@
  * loop is the same "exists but proves nothing" defect it is here to prevent.
  */
 const fs = require('fs');
+const { emitFinding } = require('../validation/protocol');
 
 const problems = [];
+const stops = [];
 const fail = (m) => problems.push(m);
 const readText = (p) => { if (!fs.existsSync(p)) { fail(`missing ${p}`); return ''; } return fs.readFileSync(p, 'utf8'); };
 const readJson = (p) => { try { return JSON.parse(readText(p)); } catch (e) { fail(`unreadable JSON: ${p} (${e.message})`); return null; } };
@@ -181,12 +183,19 @@ if (surname.length && refused === 0) {
 // not to target must actually bind. blueOceanEligibility is what content
 // generation reads, so the refusal is asserted through that function rather than
 // trusted to a note.
-const IMPLIES_A_PLACE = /\b(near me|nearby|near by|open now|around here)\b/i;
+// Same set as IMPLIES_LOCATION in scripts/queries/score_discovery_gap.mjs. The
+// two lists must not drift: a phrase the scorer quarantines but this validator
+// does not look at is a governed row nothing checks, and a phrase this validator
+// demands governance for but the scorer never quarantines blocks main with no
+// automated way to reach a green state.
+const IMPLIES_A_PLACE = /\b(near me|nearby|near by|open now|around here|close to me)\b/i;
 const localizedFor = new Set(rows.filter((r) => r && r.intent === 'localized_variant' && r.localizes).map((r) => String(r.localizes).toLowerCase()));
 const bare = rows.filter((r) => r && r.query && IMPLIES_A_PLACE.test(r.query) && r.intent !== 'localized_variant');
 
+const TODAY = new Date().toISOString().slice(0, 10);
 let governed = 0;
 let notTargeted = 0;
+let awaiting = 0;
 for (const row of bare) {
   const q = String(row.query);
   const targeting = row.targeting || null;
@@ -202,6 +211,44 @@ for (const row of bare) {
   }
   if (localizedFor.has(q.toLowerCase())) { governed++; continue; }
   if (targeting && targeting.targeted === true && String(targeting.how || '').trim()) { governed++; continue; }
+
+  // QUARANTINED, awaiting a decision. This is a LEGITIMATE STOP, not a failure,
+  // and it is why this lane no longer pages anyone at 02:00 over a query the
+  // pipeline invented for itself.
+  //
+  // data/agency/gsc_snapshot.json is refreshed with no human in the loop, and
+  // score_discovery_gap.mjs merges every query in it into the target set. A
+  // brand-new location-implying query therefore appears ungoverned through
+  // nobody's fault. Failing on it is wrong - nothing is broken, a decision is
+  // simply outstanding. Passing silently is also wrong - that is the "undecided
+  // is indistinguishable from forgotten" defect this section exists to prevent.
+  //
+  // So: green, named on the console, drafting blocked, and a deadline. Past
+  // decide_by it becomes a hard finding, because by then it HAS been forgotten.
+  if (targeting && targeting.targeted === null && targeting.decision === 'AWAITING_TARGETING_DECISION') {
+    const by = String(targeting.decide_by || '');
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(by)) {
+      fail(`"${q}" is quarantined awaiting a targeting decision with no usable decide_by date, so the quarantine has no deadline and would sit there for ever.`);
+      continue;
+    }
+    if (!String(targeting.why || '').trim() || !String(targeting.how_to_decide || '').trim()) {
+      fail(`"${q}" is quarantined awaiting a targeting decision without saying why it is held or how to decide it.`);
+      continue;
+    }
+    if (!row.blue_ocean_eligible || row.blue_ocean_eligible.eligible !== false) {
+      fail(`"${q}" is quarantined awaiting a targeting decision but is still blue-ocean eligible, so the drafting cycle can write a page for a query nobody has approved.`);
+      continue;
+    }
+    if (by < TODAY) {
+      fail(`"${q}" has been quarantined awaiting a targeting decision since ${targeting.first_seen || 'an unrecorded date'} and its decide_by date of ${by} has passed. Either add a localized_variant row that resolves it, or record targeting.targeted=false with a reason.`);
+      continue;
+    }
+    stops.push(`"${q}" - measured, quarantined, not drafted against; decide by ${by}.`);
+    awaiting++;
+    governed++;
+    continue;
+  }
+
   fail(`"${q}" implies a location, names none, and carries neither a localized variant nor a recorded decision not to target it. Ungoverned: nobody can tell this apart from an oversight.`);
 }
 if (!bare.length) {
@@ -215,6 +262,10 @@ try {
   if (!probe || probe.eligible !== false) {
     fail('scripts/lib/demand_titles.js#blueOceanEligibility ignores targeting.targeted:false, so a recorded decision not to target a query does not actually stop content being drafted for it.');
   }
+  const held = blueOceanEligibility({ query: 'therapist near me', targeting: { targeted: null, decision: 'AWAITING_TARGETING_DECISION', why: 'fixture' }, occupancy: { verdict: 'OPEN' } });
+  if (!held || held.eligible !== false || held.reason !== 'AWAITING_TARGETING_DECISION') {
+    fail('scripts/lib/demand_titles.js#blueOceanEligibility ignores targeting.targeted:null, so a query quarantined pending a targeting decision can still be drafted against - the quarantine would be a comment, not a control.');
+  }
   const control = blueOceanEligibility({ query: 'therapist near me memphis', occupancy: { verdict: 'OPEN' } });
   if (!control || control.eligible !== true) {
     fail('blueOceanEligibility now refuses an ordinary anchored target - the non-target gate has been widened into a blanket refusal.');
@@ -224,9 +275,26 @@ try {
 }
 
 // ---------------------------------------------------------------------- verdict
+// The orchestrator distinguishes a validator that FOUND something from one that
+// CRASHED, and it does that by looking for the finding marker. Reporting through
+// console.error alone made a real, actionable finding here report as
+// "Validator exited 1 without the registered finding protocol" - an execution
+// hard fail - which reads as a broken validator and sends whoever is paged
+// hunting for a missing dependency instead of at the four ungoverned queries the
+// validator had correctly identified. The registry declares
+// findingProtocol: VALIDATION_FINDING for this check; this is that declaration
+// being true.
 if (problems.length) {
-  console.error('Discovery-gap contract FAILED:');
-  for (const p of problems) console.error(`  - ${p}`);
+  emitFinding(
+    ['Discovery-gap contract FAILED:', ...problems.map((p) => `  - ${p}`)],
+    { summary: `discovery-gap-defect(s)=${problems.length}` }
+  );
   process.exit(1);
 }
-console.log(`Discovery-gap contract OK: ${examined} targets examined, all gated; ${refused} refused as navigational, unanchored or not-a-service-we-provide; ${carried} readings carried forward as stale rather than destroyed; ${governed}/${bare.length} location-implying "near me" targets governed (${notTargeted} recorded as never to be targeted, and the refusal proved binding through blueOceanEligibility); scorer invoked by ${invoking.map((i) => i.file).join(', ')} and its output committed.`);
+
+// Rule 0: a stop is only legitimate if it is named and someone can see it.
+if (stops.length) {
+  console.log(`NAMED STOP: ${stops.length} location-implying quer(y|ies) are quarantined awaiting a targeting decision. They are measured, they cannot be drafted against, and each carries a deadline:`);
+  for (const stop of stops) console.log(`  - ${stop}`);
+}
+console.log(`Discovery-gap contract OK: ${examined} targets examined, all gated; ${refused} refused as navigational, unanchored or not-a-service-we-provide; ${carried} readings carried forward as stale rather than destroyed; ${governed}/${bare.length} location-implying "near me" targets governed (${notTargeted} recorded as never to be targeted, ${awaiting} quarantined awaiting a dated decision and provably undraftable, and the refusal proved binding through blueOceanEligibility); scorer invoked by ${invoking.map((i) => i.file).join(', ')} and its output committed.`);

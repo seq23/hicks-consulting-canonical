@@ -1,4 +1,6 @@
 #!/usr/bin/env node
+import protocolModule from '../../_ops/validation/protocol.js';
+const { emitFinding } = protocolModule;
 import fs from 'node:fs';
 import crypto from 'node:crypto';
 
@@ -34,4 +36,4 @@ for(const rec of state.records||[]){
   if(!hashes.includes(rec.sha256)) errors.push(`baseline-editorial-identity-drift:${rec.id}`);
 }
 console.log(JSON.stringify({ok:!errors.length,repo:manifest.repo,protected_files:manifest.files.length,baseline_editorial_records:state.baseline_count,current_editorial_records:current.length,policy:manifest.policy,state_policy:state.policy,errors},null,2));
-if(errors.length) process.exit(1);
+if(errors.length){ emitFinding(errors.map((e)=>`- ${e}`),{summary:`protected-editorial-core-error(s)=${errors.length}`}); process.exit(1); }

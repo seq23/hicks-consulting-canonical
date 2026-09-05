@@ -74,6 +74,20 @@
       "rationale": "Proves warning findings remain non-blocking while hard findings, validator syntax errors, and runtime crashes remain release-blocking."
     },
     {
+      "id": "finding-protocol-conformance",
+      "npmScript": "validate:finding-protocol",
+      "entrypoint": "_ops/validators/validate_finding_protocol_conformance.js",
+      "severity": "HARD_FAIL",
+      "blocksRelease": true,
+      "group": "governance",
+      "owner": "repo-maintainers",
+      "scope": "validator finding-protocol conformance",
+      "ciInvocation": "MATRIX_ONLY",
+      "findingProtocol": "VALIDATION_FINDING",
+      "enabled": true,
+      "rationale": "Every registered check declares findingProtocol VALIDATION_FINDING, and the orchestrator relies on that declaration to tell a validator that FOUND something from one that CRASHED. Nothing verified the claim, and for eight checks it was false - they reported real findings with a bare console.error and exit 1. On 2026-09-04 that turned a correct discovery-gap finding into 'Execution hard fail: 1 / Hard fail findings: 0' on main: the summary said no check had found anything and a validator was broken, and both were untrue. This guard asserts statically that every declaring validator can emit the marker and that every non-zero exit site is reached through an emission, then proves it behaviourally - driving validate_discovery_gap.js to a real failure and requiring the marker, and running the real orchestrator over a marked and an unmarked fixture to confirm it still classifies them differently. Hard-fails if it examines zero checks, zero exit sites, or runs zero probes."
+    },
+    {
       "id": "preflight",
       "npmScript": "validate:preflight",
       "entrypoint": "_ops/validators/validate_preflight.js",

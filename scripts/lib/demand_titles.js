@@ -189,6 +189,27 @@ function blueOceanEligibility(target) {
   if (target && target.targeting && target.targeting.targeted === false) {
     return { eligible: false, reason: 'SERVICE_NOT_PROVIDED', note: String(target.targeting.why || 'Recorded decision not to target this query.') };
   }
+  // A query Search Console has only just started reporting, which implies a place
+  // and names none, is QUARANTINED until someone decides what to do with it.
+  //
+  // These arrive on their own: the agency monitor refreshes
+  // data/agency/gsc_snapshot.json, and the next `ingest:all` merges every new
+  // query into the target set. Before this branch existed the new row was
+  // eligible immediately, so the drafting cycle could propose a page for a
+  // service this practice may not provide, for a place it may not serve, before
+  // any human had looked at the query at all. "Undecided" is not "approved".
+  //
+  // The quarantine is deliberately not a permanent parking space: the row
+  // carries a `decide_by` date, and validate_discovery_gap.js hard-fails once
+  // that date passes. Green while the decision is pending and visible, red once
+  // it has been ignored.
+  if (target && target.targeting && target.targeting.targeted === null) {
+    return {
+      eligible: false,
+      reason: 'AWAITING_TARGETING_DECISION',
+      note: String(target.targeting.why || 'Newly measured location-implying query, quarantined until a targeting decision is recorded.')
+    };
+  }
   if (BRAND_TOKEN.test(q)) {
     return { eligible: false, reason: 'BRAND_OR_PERSON_NAME_NAVIGATIONAL', note: 'Surname-matched query. The live observer returns Hickory/Hicksville and unrelated Hicks practitioners for these; an OPEN verdict on them is noise, not open ground.' };
   }
