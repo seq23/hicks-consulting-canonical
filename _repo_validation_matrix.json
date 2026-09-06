@@ -29,6 +29,7 @@
         "conversion-contract",
         "training-inquiry",
         "source-health",
+        "social-ingestion-stops",
         "ingestion-freshness",
         "query-signal-schema",
         "query-clusters",
@@ -89,6 +90,7 @@
       "description": "Content-intelligence ingestion, observability, provider-resilience, and publishing-governance checks.",
       "checks": [
         "source-health",
+        "social-ingestion-stops",
         "ingestion-freshness",
         "query-signal-schema",
         "query-clusters",
@@ -169,6 +171,7 @@
         "conversion-contract",
         "training-inquiry",
         "source-health",
+        "social-ingestion-stops",
         "ingestion-freshness",
         "query-signal-schema",
         "query-clusters",

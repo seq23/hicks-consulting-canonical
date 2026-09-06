@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-05T00:00:55.211Z",
+  "generatedAt": "2026-09-05T15:21:06.461Z",
   "publishMode": "full_safe_autonomy",
   "items": [
     {
@@ -40,10 +40,10 @@
       },
       "targetWords": 2500,
       "minimumWords": 2000,
-      "sourceSignalCount": 14,
+      "sourceSignalCount": 12,
       "score": 100,
       "publishMode": "full_safe_autonomy",
-      "autonomyStatus": "SYSTEM_BLOCKED",
+      "autonomyStatus": "DISCOVERED",
       "routineApprovalRequired": false,
       "llmGeneratedRequired": true,
       "publicOnlyAfterApproval": false,
@@ -444,7 +444,7 @@
       },
       "targetWords": 1400,
       "minimumWords": 1120,
-      "sourceSignalCount": 7,
+      "sourceSignalCount": 5,
       "score": 100,
       "publishMode": "full_safe_autonomy",
       "autonomyStatus": "DISCOVERED",
@@ -501,7 +501,7 @@
       },
       "targetWords": 1400,
       "minimumWords": 1120,
-      "sourceSignalCount": 140,
+      "sourceSignalCount": 126,
       "score": 100,
       "publishMode": "full_safe_autonomy",
       "autonomyStatus": "DISCOVERED",
@@ -528,23 +528,6 @@
       "contentType": "insight",
       "title": "How do I find a Black woman therapist who actually gets it?",
       "suggestedRoute": "/resources/insights/how-do-i-find-a-black-woman-therapist-who-actually-gets-it/",
-      "targetWords": 900,
-      "minimumWords": 720,
-      "sourceSignalCount": 2,
-      "score": 40,
-      "publishMode": "full_safe_autonomy",
-      "llmGeneratedRequired": true,
-      "publicOnlyAfterApproval": false,
-      "createdAt": "2026-07-17T16:00:29.742Z",
-      "humanizationChecklist": [
-        "Use plain human language rather than generic therapy marketing copy.",
-        "Vary sentence rhythm and paragraph length.",
-        "Include concrete examples without inventing client stories.",
-        "Avoid exaggerated claims, guarantees, diagnosis, or pressure language.",
-        "Keep Monika Hicks / Hicks Consulting entity references consistent.",
-        "End with an approved conversion path only after value is delivered."
-      ],
-      "conversionPath": "https://monika-hicks.clientsecure.me/",
       "sections": [
         "Short answer",
         "Before you start",
@@ -554,10 +537,6 @@
         "How to tell it is working",
         "Next step"
       ],
-      "llmPrompt": "Create a humanized insight draft for Hicks Consulting.\nTitle: How do I find a Black woman therapist who actually gets it?\nThis page exists to answer exactly one real question a person typed or said: \"How do I find a Black woman therapist who actually gets it?\". Answer THAT question, in that person's words, in the first two sentences. Do not broaden it into a general overview of Black women healing beyond survival; other pages on this site cover other questions in the same area and this one must not overlap them.\nMinimum words: 720. Target words: 900.\nWrite in a warm, grounded, specific voice. Do not diagnose. Do not guarantee outcomes. Do not invent client stories.\nInclude these sections: Short answer; Before you start; Step by step; What to say; What gets in the way; How to tell it is working; Next step.\nApproved conversion path after value is delivered: https://monika-hicks.clientsecure.me/",
-      "queueType": "content_brief",
-      "autonomyStatus": "DISCOVERED",
-      "routineApprovalRequired": false,
       "demandPhrasing": {
         "source": "config/demand_phrasings.json",
         "familyId": "black_women_healing",
@@ -577,7 +556,28 @@
             "queryCount": 3
           }
         ]
-      }
+      },
+      "targetWords": 900,
+      "minimumWords": 720,
+      "sourceSignalCount": 1,
+      "score": 20,
+      "publishMode": "full_safe_autonomy",
+      "autonomyStatus": "DISCOVERED",
+      "routineApprovalRequired": false,
+      "llmGeneratedRequired": true,
+      "publicOnlyAfterApproval": false,
+      "createdAt": "2026-07-17T16:00:29.742Z",
+      "humanizationChecklist": [
+        "Use plain human language rather than generic therapy marketing copy.",
+        "Vary sentence rhythm and paragraph length.",
+        "Include concrete examples without inventing client stories.",
+        "Avoid exaggerated claims, guarantees, diagnosis, or pressure language.",
+        "Keep Monika Hicks / Hicks Consulting entity references consistent.",
+        "End with an approved conversion path only after value is delivered."
+      ],
+      "conversionPath": "https://monika-hicks.clientsecure.me/",
+      "llmPrompt": "Create a humanized insight draft for Hicks Consulting.\nTitle: How do I find a Black woman therapist who actually gets it?\nThis page exists to answer exactly one real question a person typed or said: \"How do I find a Black woman therapist who actually gets it?\". Answer THAT question, in that person's words, in the first two sentences. Do not broaden it into a general overview of Black women healing beyond survival; other pages on this site cover other questions in the same area and this one must not overlap them.\nMinimum words: 720. Target words: 900.\nWrite in a warm, grounded, specific voice. Do not diagnose. Do not guarantee outcomes. Do not invent client stories.\nInclude these sections: Short answer; Before you start; Step by step; What to say; What gets in the way; How to tell it is working; Next step.\nApproved conversion path after value is delivered: https://monika-hicks.clientsecure.me/",
+      "queueType": "content_brief"
     },
     {
       "id": "brief-genz_millennial_mental_health-whitepaper",
@@ -701,23 +701,6 @@
       "contentType": "article",
       "title": "Why does setting a boundary make me feel like the bad guy?",
       "suggestedRoute": "/resources/articles/why-does-setting-a-boundary-make-me-feel-like-the-bad-guy/",
-      "targetWords": 1200,
-      "minimumWords": 960,
-      "sourceSignalCount": 3,
-      "score": 60,
-      "publishMode": "full_safe_autonomy",
-      "llmGeneratedRequired": true,
-      "publicOnlyAfterApproval": false,
-      "createdAt": "2026-07-17T16:00:29.742Z",
-      "humanizationChecklist": [
-        "Use plain human language rather than generic therapy marketing copy.",
-        "Vary sentence rhythm and paragraph length.",
-        "Include concrete examples without inventing client stories.",
-        "Avoid exaggerated claims, guarantees, diagnosis, or pressure language.",
-        "Keep Monika Hicks / Hicks Consulting entity references consistent.",
-        "End with an approved conversion path only after value is delivered."
-      ],
-      "conversionPath": "https://monika-hicks.clientsecure.me/",
       "sections": [
         "Short answer",
         "What is actually happening",
@@ -727,10 +710,6 @@
         "What helps",
         "When to get support"
       ],
-      "llmPrompt": "Create a humanized article draft for Hicks Consulting.\nTitle: Why does setting a boundary make me feel like the bad guy?\nThis page exists to answer exactly one real question a person typed or said: \"Why does setting a boundary make me feel like the bad guy?\". Answer THAT question, in that person's words, in the first two sentences. Do not broaden it into a general overview of Burnout, boundaries, and over-functioning; other pages on this site cover other questions in the same area and this one must not overlap them.\nMinimum words: 960. Target words: 1200.\nWrite in a warm, grounded, specific voice. Do not diagnose. Do not guarantee outcomes. Do not invent client stories.\nInclude these sections: Short answer; What is actually happening; Why it shows up this way; What it is not; What usually makes it worse; What helps; When to get support.\nApproved conversion path after value is delivered: https://monika-hicks.clientsecure.me/",
-      "queueType": "content_brief",
-      "autonomyStatus": "DISCOVERED",
-      "routineApprovalRequired": false,
       "demandPhrasing": {
         "source": "config/demand_phrasings.json",
         "familyId": "burnout_boundaries",
@@ -750,7 +729,28 @@
             "queryCount": 2
           }
         ]
-      }
+      },
+      "targetWords": 1200,
+      "minimumWords": 960,
+      "sourceSignalCount": 2,
+      "score": 40,
+      "publishMode": "full_safe_autonomy",
+      "autonomyStatus": "DISCOVERED",
+      "routineApprovalRequired": false,
+      "llmGeneratedRequired": true,
+      "publicOnlyAfterApproval": false,
+      "createdAt": "2026-07-17T16:00:29.742Z",
+      "humanizationChecklist": [
+        "Use plain human language rather than generic therapy marketing copy.",
+        "Vary sentence rhythm and paragraph length.",
+        "Include concrete examples without inventing client stories.",
+        "Avoid exaggerated claims, guarantees, diagnosis, or pressure language.",
+        "Keep Monika Hicks / Hicks Consulting entity references consistent.",
+        "End with an approved conversion path only after value is delivered."
+      ],
+      "conversionPath": "https://monika-hicks.clientsecure.me/",
+      "llmPrompt": "Create a humanized article draft for Hicks Consulting.\nTitle: Why does setting a boundary make me feel like the bad guy?\nThis page exists to answer exactly one real question a person typed or said: \"Why does setting a boundary make me feel like the bad guy?\". Answer THAT question, in that person's words, in the first two sentences. Do not broaden it into a general overview of Burnout, boundaries, and over-functioning; other pages on this site cover other questions in the same area and this one must not overlap them.\nMinimum words: 960. Target words: 1200.\nWrite in a warm, grounded, specific voice. Do not diagnose. Do not guarantee outcomes. Do not invent client stories.\nInclude these sections: Short answer; What is actually happening; Why it shows up this way; What it is not; What usually makes it worse; What helps; When to get support.\nApproved conversion path after value is delivered: https://monika-hicks.clientsecure.me/",
+      "queueType": "content_brief"
     },
     {
       "id": "brief-faith_centered_support-article",

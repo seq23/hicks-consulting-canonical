@@ -27,6 +27,10 @@ function readJson(file, fallback) {
 const sourceConfig = readJson('config/social_sources.json', { sources: [] });
 const policy = readJson('config/social_ingestion_policy.json', { throttle: { delayMs: 750, maxRetries: 1, timeoutMs: 10000 }, max_items_per_source_per_run: 25 });
 const sources = sourceConfig.sources || [];
+// Three consecutive scheduled runs is roughly ten days on the twice-weekly cron.
+// Read by validate_social_ingestion_stops.js, which is the thing that escalates.
+const FALLBACK_STREAK_LIMIT = Number(policy.fallback_streak_limit || 3);
+
 
 function normalizeTitle(raw) {
   return String(raw || '')
@@ -86,10 +90,33 @@ function slugify(text) {
   return String(text || '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '').slice(0, 80) || 'signal';
 }
 
+// A source carrying `enabled: false` and a written `reasonDisabled` is a decision,
+// not an outage. Before this, every such lane was handed to fetchSource() anyway -
+// and because the three research lanes hold no `url` at all, each one came back
+// `status: "degraded", error: "Failed to parse URL from undefined"` on every
+// scheduled run. Three permanent fake failures sat in source_health.json next to
+// the real ones, so nothing downstream and nobody reading the file could tell a
+// platform this repo has no credential for from a feed that had actually gone
+// down. They are now STOPPED, by name, carrying the reason verbatim, and never
+// fetched. A named stop is green; it is not a failure.
+function stoppedRun(source) {
+  const at = new Date().toISOString();
+  return {
+    ...source,
+    status: 'stopped',
+    namedStop: 'SOURCE_DISABLED_BY_CONFIGURATION',
+    stopReason: source.reasonDisabled || 'Marked enabled:false in config/social_sources.json with no reason recorded.',
+    startedAt: at,
+    finishedAt: at,
+    signals: []
+  };
+}
+
 (async () => {
   const runId = new Date().toISOString().replace(/[:.]/g, '-');
   const runs = [];
   for (const source of sources) {
+    if (source.enabled === false) { runs.push(stoppedRun(source)); continue; }
     runs.push(await fetchSource(source));
     await sleep(policy.throttle?.delayMs || 750);
   }
@@ -97,19 +124,54 @@ function slugify(text) {
   const fallbackSignals = seedQueries.map(title => ({ id: `seed-${slugify(title)}`, title, query: title, source: 'seed_query_fallback', sourceType: 'seed', tags: classifySignal(title), collectedAt: new Date().toISOString() }));
   const mode = externalSignals.length && externalSignals.length >= fallbackSignals.length ? 'external' : externalSignals.length ? 'mixed' : 'fallback';
   const signals = mode === 'fallback' ? fallbackSignals : [...externalSignals, ...fallbackSignals].slice(0, 75);
+  // Zero external signal is a real event and it must be SAID. Before this the run
+  // printed "Social signal ingestion complete: 7 signals (fallback mode)" and
+  // exited 0 - "complete", with a count made entirely of the seven hard-coded
+  // seedQueries above, and no line anywhere naming the outage. The scheduled lane
+  // stayed green while the clustering, scoring and drafting downstream of it ran
+  // on seven constant strings.
+  //
+  // The lane still must not exit 1: one transient fetch failure across a set of
+  // no-auth public feeds is normal and paging on it would be noise. So a
+  // fallback-only run is a NAMED STOP - green, loud, and COUNTED. The streak is
+  // what turns "the feeds were flaky on Tuesday" into "this ingestion has been
+  // dead for ten days"; validate_social_ingestion_stops.js hard-fails once it
+  // reaches SOCIAL_FALLBACK_STREAK_LIMIT, so the named stop cannot become a
+  // parking space.
+  const priorHealth = readJson('data/intake/source_health.json', {});
+  const enabledRuns = runs.filter((run) => run.status !== 'stopped');
+  const namedStops = [];
+  const fallbackStreak = mode === 'fallback' ? Number(priorHealth.fallbackStreak || 0) + 1 : 0;
+  if (!enabledRuns.length) {
+    namedStops.push({
+      stop: 'SOCIAL_SOURCES_NONE_ENABLED',
+      detail: `config/social_sources.json lists ${sources.length} source(s) and every one is enabled:false, so nothing was fetched. Downstream clustering runs on the ${fallbackSignals.length} seed queries only.`
+    });
+  } else if (mode === 'fallback') {
+    namedStops.push({
+      stop: 'SOCIAL_SOURCES_ALL_DEGRADED',
+      detail: `${enabledRuns.length} of ${enabledRuns.length} enabled source(s) returned no usable signal, so no external demand was ingested. Downstream clustering runs on the ${fallbackSignals.length} seed queries only. Consecutive fallback-only runs: ${fallbackStreak}.`
+    });
+  }
   const sourceHealth = {
     generatedAt: new Date().toISOString(),
     runId,
     mode,
     externalSignalCount: externalSignals.length,
     fallbackSignalCount: fallbackSignals.length,
-    sources: runs.map(({ id, name, url, status, httpStatus, error, startedAt, finishedAt, signals }) => ({ id, name, url, status, httpStatus, error, startedAt, finishedAt, signalCount: signals.length }))
+    enabledSourceCount: enabledRuns.length,
+    stoppedSourceCount: runs.length - enabledRuns.length,
+    degradedSourceCount: enabledRuns.filter((run) => run.status === 'degraded').length,
+    fallbackStreak,
+    fallbackStreakLimit: FALLBACK_STREAK_LIMIT,
+    namedStops,
+    sources: runs.map(({ id, name, url, status, httpStatus, error, namedStop, stopReason, startedAt, finishedAt, signals }) => ({ id, name, url, status, httpStatus, error, namedStop, stopReason, startedAt, finishedAt, signalCount: signals.length }))
   };
   const payload = {
     generatedAt: sourceHealth.generatedAt,
     runId,
     mode,
-    productionRule: 'No-auth ingestion must degrade gracefully. Source failure is logged as degraded and must not break local builds. Strict scheduled mode may fail on fallback-only output.',
+    productionRule: `No-auth ingestion must degrade gracefully: a source failure is logged as degraded, a source disabled by configuration is logged as a named stop, and neither exits non-zero. A fallback-only run is a named stop, not a success - it is counted, and validate_social_ingestion_stops.js hard-fails once ${FALLBACK_STREAK_LIMIT} consecutive fallback-only runs are recorded.`,
     post2027Use: 'Signals feed normalized query clusters, atlas expansion, fan-out surfaces, and scheduled drafting after 2027-01-01.',
     sourceHealth: sourceHealth.sources,
     signals
@@ -142,5 +204,7 @@ function slugify(text) {
   const measuredSignals = priorSignals.filter((s) => (s?.sourceType === 'gsc_search_analytics' || s?.evidence_tier === 'T1')
     && !scrapedQueries.has(String(s?.query || '').trim().toLowerCase()));
   fs.writeFileSync(path.join(outDir, 'query_signals_post_2027.json'), JSON.stringify({ generatedAt: payload.generatedAt, querySignals: [...signals, ...measuredSignals] }, null, 2) + '\n');
-  console.log(`Social signal ingestion complete: ${signals.length} signals (${mode} mode).`);
+  for (const stop of namedStops) console.log(`NAMED STOP: ${stop.stop} - ${stop.detail}`);
+  for (const run of runs.filter((r) => r.status === 'stopped')) console.log(`NAMED STOP: ${run.namedStop} - ${run.id}: ${run.stopReason}`);
+  console.log(`Social signal ingestion: ${externalSignals.length} external signal(s) from ${enabledRuns.filter((r) => r.status === 'ok').length}/${enabledRuns.length} enabled source(s), ${sourceHealth.stoppedSourceCount} stopped by configuration; ${signals.length} signal(s) written in ${mode} mode.`);
 })();

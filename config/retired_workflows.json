@@ -1,0 +1,21 @@
+{
+  "purpose": "GitHub keeps listing a workflow as active for as long as one historical run exists, even after its file is gone from every ref. `gh workflow list` therefore shows names that nothing in this repository defines, and there is no way to tell those apart from a live workflow that simply has not fired yet - the 'exists but nothing invokes it' defect, seen from the outside. Every such name is recorded here with the decision behind it. validate_workflows.js asserts this file stays honest: an entry may not name a workflow file that is present on disk.",
+  "authority": "docs/runbooks/VALIDATION_MATRIX.md",
+  "workflows": [
+    {
+      "name": "ChatGPT Baseline Package",
+      "githubWorkflowId": 330768679,
+      "path": ".github/workflows/chatgpt-baseline-package.yml",
+      "decision": "RETIRED_ONE_OFF",
+      "onDiskOnAnyRef": false,
+      "reason": "A single-use packaging job that zipped the working tree into a repo-source artifact so an external audit could read it. It was never on main: its only trigger was `on: push` restricted to the branch chatgpt/audit-remediation-20260809, it ran once on 2026-08-10 (run 31347624072, success, artifact retention 1 day, long expired), and the file was deleted from that branch afterwards. No ref in this repository contains it, so it cannot run again and there is nothing to invoke.",
+      "lastRun": "2026-08-10T01:38:19Z",
+      "lastRunId": 31347624072,
+      "lastRunConclusion": "success",
+      "disabledOnGitHub": true,
+      "decidedOn": "2026-09-05",
+      "decidedBy": "repo-maintainers",
+      "reinstateBy": "Commit a workflow file at the recorded path and remove this entry. Nothing here suppresses a real workflow; the entry is a claim that no file exists, and validate_workflows.js fails if that claim stops being true."
+    }
+  ]
+}
