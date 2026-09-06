@@ -5755,7 +5755,457 @@
       "diagnosis": [
         "EXACT_QUERY_NOT_IN_PRIMARY_SEARCH_SURFACES"
       ]
+    },
+    {
+      "query": "black therapists near me",
+      "primaryPage": "/",
+      "status": "ok",
+      "observedAt": "2026-09-06T14:27:56.310Z",
+      "provider": "openrouter_web_search",
+      "model": "openai/gpt-4o-mini",
+      "observationType": "LIVE_WEB_SURFACING",
+      "rankVerified": false,
+      "providerAnswered": true,
+      "citationCount": 10,
+      "siteSurfaced": false,
+      "citations": [
+        {
+          "url": "https://library.cod.edu/evaluating/SIFT",
+          "title": "SIFT your sources - Evaluating Sources - COD Library at College of DuPage"
+        },
+        {
+          "url": "https://libguides.csun.edu/evaluating-sources/evaluating-websites-and-online-sources",
+          "title": "Evaluating Websites & Online Sources - Evaluating Sources - LibGuides at California State University, Northridge"
+        },
+        {
+          "url": "https://libguides.wwu.edu/evaluating_sources/fact_checking",
+          "title": "Fact Checking Online Sources - Evaluating Sources - Library Guides at Western Washington University"
+        },
+        {
+          "url": "https://library.cf.edu/research101/evaluatesources",
+          "title": "Evaluate Web Sources - Research 101 - CF Library at College of Central Florida"
+        },
+        {
+          "url": "https://libguides.lib.cwu.edu/c.php?g=1178197&p=8613288",
+          "title": "Evaluating Sources - Research Strategies - LibGuides at Central Washington University"
+        },
+        {
+          "url": "https://brevard.libguides.com/eval/investigate",
+          "title": "Investigate the Source - Evaluating Information: Stop, Investigate, Find, Trace - Subject Guides at Brevard College"
+        },
+        {
+          "url": "https://library.ccsf.edu/afam/research",
+          "title": "Research Skills - African American Studies - CCSF Library at City College of San Francisco"
+        },
+        {
+          "url": "https://researchguides.ccc.edu/research101/evaluatingsources",
+          "title": "Evaluating Sources - Research 101 - LibGuides at City Colleges of Chicago"
+        },
+        {
+          "url": "https://guides.library.utoronto.ca/citc16/SIFT",
+          "title": "SIFT: Evaluating Web Sources - CITC16H3: Planning and Governing the Metropolis - Research Guides at University of Toronto"
+        },
+        {
+          "url": "https://learn.library.wisc.edu/evaluating-sources-tips",
+          "title": "Evaluating Sources Basics | UW-Madison Libraries"
+        }
+      ],
+      "searchQueries": [],
+      "competitors": [
+        {
+          "url": "https://library.cod.edu/evaluating/SIFT",
+          "resolvedUrl": "https://library.cod.edu/evaluating/SIFT",
+          "status": "ok",
+          "httpStatus": 200,
+          "title": "SIFT your sources - Evaluating Sources - COD Library at College of DuPage",
+          "h1": "Evaluating Sources: SIFT your sources",
+          "headings": [
+            "SIFT",
+            "Use Lateral Reading to Check Your Sources",
+            "SIFT Method in action",
+            "Lateral Reading: Use Click Restraint",
+            "Library Comments Form",
+            "SIFT: The Four Moves",
+            "Practice Your Skills"
+          ],
+          "textChars": 6778
+        },
+        {
+          "url": "https://libguides.csun.edu/evaluating-sources/evaluating-websites-and-online-sources",
+          "resolvedUrl": "https://libguides.csun.edu/evaluating-sources/evaluating-websites-and-online-sources",
+          "status": "ok",
+          "httpStatus": 200,
+          "title": "Evaluating Websites & Online Sources - Evaluating Sources - LibGuides at California State University, Northridge",
+          "h1": "Evaluating Sources: Evaluating Websites & Online Sources",
+          "headings": [
+            "Sort Fact from Fiction with Lateral Reading",
+            "Evaluating AI-Generated Information",
+            "Ask a Librarian",
+            "Lateral Reading and Evaluating Websites & Online Sources",
+            "What Should You Investigate?",
+            "Steps to Lateral Reading",
+            "Reading Laterally",
+            "Investigating a Source",
+            "Search the Organization",
+            "Search the Author",
+            "Look Beyond the About Us Page",
+            "Don't Read Vertically — Read Laterally"
+          ],
+          "textChars": 6348
+        },
+        {
+          "url": "https://libguides.wwu.edu/evaluating_sources/fact_checking",
+          "resolvedUrl": "https://libguides.wwu.edu/evaluating_sources/fact_checking",
+          "status": "ok",
+          "httpStatus": 200,
+          "title": "Fact Checking Online Sources - Evaluating Sources - Library Guides at Western Washington University",
+          "h1": "Evaluating Sources",
+          "headings": [
+            "Librarian",
+            "How do you determine which online sources to trust?"
+          ],
+          "textChars": 3553
+        }
+      ],
+      "ownPage": {
+        "route": "/",
+        "sourceFile": "pages/index.html",
+        "status": "ok",
+        "title": "Hicks Consulting | Therapy for Individuals & Mental Health Trainings for Organizations",
+        "description": "Virtual therapy serving Memphis and Tennessee, plus coaching, groups, and organizational training that help women and teams build healthier patterns.",
+        "h1": "Mental health support for high-achieving women and healthier organizations.",
+        "textChars": 10181,
+        "internalLinks": 37,
+        "canonical": ""
+      },
+      "diagnosis": [
+        "EXACT_QUERY_NOT_IN_PRIMARY_SEARCH_SURFACES",
+        "SITE_NOT_SURFACED_IN_GROUNDED_OBSERVATION",
+        "COMPETITOR_DEEPER_ANSWER_STRUCTURE"
+      ]
+    },
+    {
+      "query": "mental health therapy near me",
+      "primaryPage": "/therapist-near-me-memphis/",
+      "status": "ok",
+      "observedAt": "2026-09-06T14:27:56.310Z",
+      "provider": "openrouter_web_search",
+      "model": "openai/gpt-4o-mini",
+      "observationType": "LIVE_WEB_SURFACING",
+      "rankVerified": false,
+      "providerAnswered": true,
+      "citationCount": 6,
+      "siteSurfaced": true,
+      "citations": [
+        {
+          "url": "https://www.hicksconsulting.org/",
+          "title": "Hicks Consulting | Therapy for Individuals & Mental Health ..."
+        },
+        {
+          "url": "https://www.hicksconsulting.org/therapist-near-me-memphis",
+          "title": "Therapist Near Me in Memphis: How to Find One Who Can ..."
+        },
+        {
+          "url": "https://www.hicksconsulting.org/black-therapist-memphis",
+          "title": "Black Therapist Serving Memphis, TN - Hicks Consulting"
+        },
+        {
+          "url": "https://www.hicksconsulting.org/female-therapist-memphis",
+          "title": "Female Therapist in Memphis: What Gender Fit Changes, and ..."
+        },
+        {
+          "url": "https://www.hicksconsulting.org/christian-therapist-memphis",
+          "title": "Christian Therapists in Memphis: How Faith Fits Into Therapy"
+        },
+        {
+          "url": "https://www.hicksconsulting.org/psychologist-vs-therapist-memphis",
+          "title": "Do You Need a Psychologist, a Therapist, or a Psychiatrist?"
+        }
+      ],
+      "searchQueries": [],
+      "competitors": [],
+      "ownPage": {
+        "route": "/therapist-near-me-memphis/",
+        "sourceFile": "pages/therapist-near-me-memphis/index.html",
+        "status": "ok",
+        "title": "Therapist Near Me in Memphis: How to Find One Who Can Actually See You | Hicks Consulting",
+        "description": "What “therapist near me” really has to mean in a three-state metro like Memphis, what to ask on the first call, what a first session involves, and what care costs here.",
+        "h1": "Therapist Near Me in Memphis: How to Find One Who Can Actually See You",
+        "textChars": 13584,
+        "internalLinks": 44,
+        "canonical": ""
+      },
+      "diagnosis": [
+        "EXACT_QUERY_NOT_IN_PRIMARY_SEARCH_SURFACES"
+      ]
+    },
+    {
+      "query": "black counselors near me",
+      "primaryPage": "/black-therapist-memphis/",
+      "status": "ok",
+      "observedAt": "2026-09-06T14:27:56.310Z",
+      "provider": "openrouter_web_search",
+      "model": "openai/gpt-4o-mini",
+      "observationType": "LIVE_WEB_SURFACING",
+      "rankVerified": false,
+      "providerAnswered": true,
+      "citationCount": 6,
+      "siteSurfaced": true,
+      "citations": [
+        {
+          "url": "https://www.hicksconsulting.org/black-therapist-memphis",
+          "title": "Black Therapist Serving Memphis, TN - Hicks Consulting"
+        },
+        {
+          "url": "https://www.hicksconsulting.org/therapy",
+          "title": "Virtual Therapy Serving Memphis & Tennessee"
+        },
+        {
+          "url": "https://www.hicksconsulting.org/female-therapist-memphis",
+          "title": "Female Therapist in Memphis: What Gender Fit Changes, and ..."
+        },
+        {
+          "url": "https://www.hicksconsulting.org/therapist-near-me-memphis",
+          "title": "Therapist Near Me in Memphis: How to Find One Who Can ..."
+        },
+        {
+          "url": "https://www.hicksconsulting.org/christian-therapist-memphis",
+          "title": "Christian Therapists in Memphis: How Faith Fits Into Therapy"
+        },
+        {
+          "url": "https://www.hicksconsulting.org/psychologist-vs-therapist-memphis",
+          "title": "Do You Need a Psychologist, a Therapist, or a Psychiatrist?"
+        }
+      ],
+      "searchQueries": [],
+      "competitors": [],
+      "ownPage": {
+        "route": "/black-therapist-memphis/",
+        "sourceFile": "pages/black-therapist-memphis/index.html",
+        "status": "ok",
+        "title": "Black Therapist Serving Memphis, TN | Hicks Consulting",
+        "description": "Virtual therapy with Monika Hicks, LCSW, a Black woman therapist serving eligible clients in Memphis and across Tennessee.",
+        "h1": "Virtual therapy with a Black woman therapist serving Memphis.",
+        "textChars": 5582,
+        "internalLinks": 32,
+        "canonical": ""
+      },
+      "diagnosis": [
+        "EXACT_QUERY_NOT_IN_PRIMARY_SEARCH_SURFACES"
+      ]
+    },
+    {
+      "query": "black female therapist near me",
+      "primaryPage": "/female-therapist-memphis/",
+      "status": "ok",
+      "observedAt": "2026-09-06T14:27:56.310Z",
+      "provider": "openrouter_web_search",
+      "model": "openai/gpt-4o-mini",
+      "observationType": "LIVE_WEB_SURFACING",
+      "rankVerified": false,
+      "providerAnswered": true,
+      "citationCount": 5,
+      "siteSurfaced": true,
+      "citations": [
+        {
+          "url": "https://www.hicksconsulting.org/",
+          "title": "Hicks Consulting | Therapy for Individuals & Mental Health ..."
+        },
+        {
+          "url": "https://www.hicksconsulting.org/female-therapist-memphis",
+          "title": "Female Therapist in Memphis: What Gender Fit Changes, and ..."
+        },
+        {
+          "url": "https://www.hicksconsulting.org/therapist-near-me-memphis",
+          "title": "Therapist Near Me in Memphis: How to Find One Who Can ..."
+        },
+        {
+          "url": "https://www.hicksconsulting.org/anxiety-therapist-memphis",
+          "title": "Anxiety Therapist Serving Memphis, TN - Hicks Consulting"
+        },
+        {
+          "url": "https://www.hicksconsulting.org/psychologist-vs-therapist-memphis",
+          "title": "Do You Need a Psychologist, a Therapist, or a Psychiatrist?"
+        }
+      ],
+      "searchQueries": [],
+      "competitors": [],
+      "ownPage": {
+        "route": "/female-therapist-memphis/",
+        "sourceFile": "pages/female-therapist-memphis/index.html",
+        "status": "ok",
+        "title": "Female Therapist in Memphis: What Gender Fit Changes, and What It Does Not | Hicks Consulting",
+        "description": "Why wanting a female therapist is a legitimate filter rather than a preference to apologise for, what it does and does not predict, and how to test for it on a consult call in Memphis.",
+        "h1": "Female Therapist in Memphis: What Gender Fit Changes, and What It Does Not",
+        "textChars": 11388,
+        "internalLinks": 44,
+        "canonical": ""
+      },
+      "diagnosis": [
+        "EXACT_QUERY_NOT_IN_PRIMARY_SEARCH_SURFACES"
+      ]
+    },
+    {
+      "query": "black mental health therapist near me",
+      "primaryPage": "/black-therapist-memphis/",
+      "status": "ok",
+      "observedAt": "2026-09-06T14:27:56.310Z",
+      "provider": "openrouter_web_search",
+      "model": "openai/gpt-4o-mini",
+      "observationType": "LIVE_WEB_SURFACING",
+      "rankVerified": false,
+      "providerAnswered": true,
+      "citationCount": 5,
+      "siteSurfaced": true,
+      "citations": [
+        {
+          "url": "https://www.hicksconsulting.org/",
+          "title": "Hicks Consulting | Therapy for Individuals & Mental Health ..."
+        },
+        {
+          "url": "https://www.hicksconsulting.org/therapist-near-me-memphis",
+          "title": "Therapist Near Me in Memphis: How to Find One Who Can ..."
+        },
+        {
+          "url": "https://www.hicksconsulting.org/female-therapist-memphis",
+          "title": "Female Therapist in Memphis: What Gender Fit Changes, and ..."
+        },
+        {
+          "url": "https://www.hicksconsulting.org/anxiety-therapist-memphis",
+          "title": "Anxiety Therapist Serving Memphis, TN - Hicks Consulting"
+        },
+        {
+          "url": "https://www.hicksconsulting.org/psychologist-vs-therapist-memphis",
+          "title": "Do You Need a Psychologist, a Therapist, or a Psychiatrist?"
+        }
+      ],
+      "searchQueries": [],
+      "competitors": [],
+      "ownPage": {
+        "route": "/black-therapist-memphis/",
+        "sourceFile": "pages/black-therapist-memphis/index.html",
+        "status": "ok",
+        "title": "Black Therapist Serving Memphis, TN | Hicks Consulting",
+        "description": "Virtual therapy with Monika Hicks, LCSW, a Black woman therapist serving eligible clients in Memphis and across Tennessee.",
+        "h1": "Virtual therapy with a Black woman therapist serving Memphis.",
+        "textChars": 5582,
+        "internalLinks": 32,
+        "canonical": ""
+      },
+      "diagnosis": [
+        "EXACT_QUERY_NOT_IN_PRIMARY_SEARCH_SURFACES"
+      ]
+    },
+    {
+      "query": "black therapist near me",
+      "primaryPage": "/black-therapist-memphis/",
+      "status": "ok",
+      "observedAt": "2026-09-06T14:27:56.310Z",
+      "provider": "openrouter_web_search",
+      "model": "openai/gpt-4o-mini",
+      "observationType": "LIVE_WEB_SURFACING",
+      "rankVerified": false,
+      "providerAnswered": true,
+      "citationCount": 5,
+      "siteSurfaced": true,
+      "citations": [
+        {
+          "url": "https://www.hicksconsulting.org/",
+          "title": "Hicks Consulting | Therapy for Individuals & Mental Health ..."
+        },
+        {
+          "url": "https://www.hicksconsulting.org/female-therapist-memphis",
+          "title": "Female Therapist in Memphis: What Gender Fit Changes, and ..."
+        },
+        {
+          "url": "https://www.hicksconsulting.org/therapist-near-me-memphis",
+          "title": "Therapist Near Me in Memphis: How to Find One Who Can ..."
+        },
+        {
+          "url": "https://www.hicksconsulting.org/anxiety-therapist-memphis",
+          "title": "Anxiety Therapist Serving Memphis, TN - Hicks Consulting"
+        },
+        {
+          "url": "https://www.hicksconsulting.org/psychologist-vs-therapist-memphis",
+          "title": "Do You Need a Psychologist, a Therapist, or a Psychiatrist?"
+        }
+      ],
+      "searchQueries": [],
+      "competitors": [],
+      "ownPage": {
+        "route": "/black-therapist-memphis/",
+        "sourceFile": "pages/black-therapist-memphis/index.html",
+        "status": "ok",
+        "title": "Black Therapist Serving Memphis, TN | Hicks Consulting",
+        "description": "Virtual therapy with Monika Hicks, LCSW, a Black woman therapist serving eligible clients in Memphis and across Tennessee.",
+        "h1": "Virtual therapy with a Black woman therapist serving Memphis.",
+        "textChars": 5582,
+        "internalLinks": 32,
+        "canonical": ""
+      },
+      "diagnosis": [
+        "EXACT_QUERY_NOT_IN_PRIMARY_SEARCH_SURFACES"
+      ]
+    },
+    {
+      "query": "christian therapists near me",
+      "primaryPage": "/christian-therapist-memphis/",
+      "status": "ok",
+      "observedAt": "2026-09-06T14:27:56.310Z",
+      "provider": "openrouter_web_search",
+      "model": "openai/gpt-4o-mini",
+      "observationType": "LIVE_WEB_SURFACING",
+      "rankVerified": false,
+      "providerAnswered": true,
+      "citationCount": 7,
+      "siteSurfaced": true,
+      "citations": [
+        {
+          "url": "https://www.hicksconsulting.org/christian-therapist-memphis",
+          "title": "Christian Therapists in Memphis: How Faith Fits Into Therapy"
+        },
+        {
+          "url": "https://www.hicksconsulting.org/therapist-near-me-memphis",
+          "title": "Therapist Near Me in Memphis: How to Find One Who Can ..."
+        },
+        {
+          "url": "https://www.hicksconsulting.org/black-therapist-memphis",
+          "title": "Black Therapist Serving Memphis, TN - Hicks Consulting"
+        },
+        {
+          "url": "https://www.hicksconsulting.org/therapy",
+          "title": "Virtual Therapy Serving Memphis & Tennessee"
+        },
+        {
+          "url": "https://www.hicksconsulting.org/female-therapist-memphis",
+          "title": "Female Therapist in Memphis: What Gender Fit Changes, and ..."
+        },
+        {
+          "url": "https://www.hicksconsulting.org/",
+          "title": "Hicks Consulting | Therapy for Individuals & Mental Health ..."
+        },
+        {
+          "url": "https://www.hicksconsulting.org/psychologist-vs-therapist-memphis",
+          "title": "Do You Need a Psychologist, a Therapist, or a Psychiatrist?"
+        }
+      ],
+      "searchQueries": [],
+      "competitors": [],
+      "ownPage": {
+        "route": "/christian-therapist-memphis/",
+        "sourceFile": "pages/christian-therapist-memphis/index.html",
+        "status": "ok",
+        "title": "Christian Therapists in Memphis: How Faith Fits Into Therapy | Hicks Consulting",
+        "description": "Three different things people mean by “Christian therapist”, which of them are licensed clinical care, what to ask so you get the one you want, and how faith is handled at Hicks Consulting.",
+        "h1": "Christian Therapists in Memphis: How Faith Fits Into Therapy",
+        "textChars": 11715,
+        "internalLinks": 43,
+        "canonical": ""
+      },
+      "diagnosis": [
+        "EXACT_QUERY_NOT_IN_PRIMARY_SEARCH_SURFACES"
+      ]
     }
   ],
-  "updatedAt": "2026-09-05T14:27:58.696Z"
+  "updatedAt": "2026-09-06T14:27:56.310Z"
 }
