@@ -1,6 +1,6 @@
 {
   "schemaVersion": "2.0.0",
-  "generatedAt": "2026-09-06T14:27:56.310Z",
+  "generatedAt": "2026-09-07T14:31:22.453Z",
   "policy": "Hicks may autonomously apply bounded technical/search-alignment repairs. Substantive clinical claims and unsupported treatment assertions are never auto-generated from competitor content.",
   "items": [
     {
@@ -11,6 +11,7 @@
         "MULTIPLE_HICKS_PAGES_FOR_QUERY",
         "EXACT_QUERY_NOT_IN_PRIMARY_SEARCH_SURFACES",
         "SITE_NOT_SURFACED_IN_GROUNDED_OBSERVATION",
+        "COMPETITOR_BROADER_VISIBLE_COVERAGE",
         "COMPETITOR_DEEPER_ANSWER_STRUCTURE"
       ],
       "evidence": {
@@ -25,24 +26,24 @@
         ],
         "competitorUrls": [
           {
-            "url": "https://library.cod.edu/evaluating/SIFT",
-            "title": "SIFT your sources - Evaluating Sources - COD Library at College of DuPage"
+            "url": "https://lifestance.com/provider/therapist/ny/hicks",
+            "title": "Find Therapists In Hicks, New York - LifeStance Health"
           },
           {
-            "url": "https://libguides.csun.edu/evaluating-sources/evaluating-websites-and-online-sources",
-            "title": "Evaluating Websites & Online Sources - Evaluating Sources - LibGuides at California State University, Northridge"
+            "url": "https://www.blacktherapistsmatter.com/",
+            "title": "Find Your Black Therapist Near You | BTM - Start Your Wellness Journey Today"
           },
           {
-            "url": "https://libguides.wwu.edu/evaluating_sources/fact_checking",
-            "title": "Fact Checking Online Sources - Evaluating Sources - Library Guides at Western Washington University"
+            "url": "https://www.cliniciansofcolor.org/clinician-articles/how-to-find-a-black-therapist-near-you/",
+            "title": "How to find a Black therapist near you - Clinicians of Color Directory"
           },
           {
-            "url": "https://library.cf.edu/research101/evaluatesources",
-            "title": "Evaluate Web Sources - Research 101 - CF Library at College of Central Florida"
+            "url": "https://www.localtherapistdirectory.com/therapist-listings/",
+            "title": "Therapist Listings | Local Therapist Directory"
           },
           {
-            "url": "https://libguides.lib.cwu.edu/c.php?g=1178197&p=8613288",
-            "title": "Evaluating Sources - Research Strategies - LibGuides at Central Washington University"
+            "url": "https://www.find-a-therapist.com/black-therapists-near-me",
+            "title": "7 Black Therapists Near Me in 2024: African American Counselors"
           }
         ]
       },
@@ -147,9 +148,9 @@
       "evidence": {
         "groundedSiteSurfaced": true,
         "groundedProviderAnswered": true,
-        "gscImpressions": 5,
+        "gscImpressions": 7,
         "gscClicks": 0,
-        "gscAveragePosition": 8.2,
+        "gscAveragePosition": 8.43,
         "gscPages": [
           "/black-therapist-memphis/"
         ],
@@ -197,20 +198,15 @@
     {
       "query": "mental health diagnosis near me",
       "primaryPage": "/psychologist-vs-therapist-memphis/",
-      "status": "WRONG_PAGE",
-      "reasons": [
-        "WRONG_HICKS_PAGE_RANKING",
-        "AVERAGE_POSITION_OUTSIDE_TOP_10"
-      ],
+      "status": "UNKNOWN",
+      "reasons": [],
       "evidence": {
         "groundedSiteSurfaced": null,
         "groundedProviderAnswered": false,
-        "gscImpressions": 1,
+        "gscImpressions": 0,
         "gscClicks": 0,
-        "gscAveragePosition": 25,
-        "gscPages": [
-          "/"
-        ],
+        "gscAveragePosition": 0,
+        "gscPages": [],
         "competitorUrls": []
       },
       "safeRepairEligible": false,
