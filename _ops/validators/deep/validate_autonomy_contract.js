@@ -10,6 +10,15 @@ if(runtime.routineApprovalRequired!==true)errors.push('routine-approval-not-requ
 if(runtime.exceptionBehavior!=='skip_record_continue')errors.push('exception-behavior');
 if(!Array.isArray(ownership.protectedFacts)||ownership.protectedFacts.length<8)errors.push('protected-facts');
 const allowed=new Set(['DISCOVERED','SCORED','ADMITTED','DRAFTING','DRAFTED','VALIDATING','REPAIRING','VALIDATED_SAFE','SCHEDULED','PUBLISHED','DISTRIBUTED','MEASURED','FAILED_RETRYABLE','SKIPPED_DUPLICATE_INTENT','SKIPPED_UNSUPPORTED_CLAIM','SKIPPED_PROTECTED_OWNER','SKIPPED_PROHIBITED_ACTION','SYSTEM_BLOCKED']);
+// The per-item release gate below is the only thing standing between an
+// autonomously drafted page and a client's live site, and it was asserted with a
+// bare `for` over queue.items. On an empty or unreadable queue that loop runs
+// zero times, finds nothing, and the check reports PASS - a validator passing
+// while examining nothing. The queue is never legitimately empty: this repo has
+// carried candidates in it continuously since Full Safe Autonomy landed, and an
+// empty one means the file was truncated or the migration failed, both of which
+// must be loud.
+if(!Array.isArray(queue.items)||queue.items.length===0)errors.push('autonomy-queue-empty: data/autonomy/queue.json holds zero items, so the per-item human release gate below would be asserted against nothing. Refusing to pass on an empty loop.');
 for(const item of queue.items||[]){ const s=item.state||item.autonomyStatus||item.status; if(!allowed.has(s))errors.push(`invalid-state:${item.id}:${s}`); if(item.routineApprovalRequired!==true||item.publicOnlyAfterApproval!==true)errors.push(`approval-gate-missing:${item.id}`); }
 for(const file of ['scripts/autonomy/run_cycle.mjs','scripts/publishing/run_safe_publish.mjs','scripts/autonomy/run_post_publish_email.mjs','.github/workflows/autonomy-cycle.yml','.github/workflows/autonomy-self-heal.yml']) if(!fs.existsSync(file))errors.push(`missing:${file}`);
 // The release boundary is asserted against the gate itself, not against prose on a

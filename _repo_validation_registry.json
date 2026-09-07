@@ -818,6 +818,20 @@
       "rationale": "Proves the runtime is hands-off while preserving protected-fact and skip-record-continue boundaries."
     },
     {
+      "id": "autonomy-queue-approval-gate",
+      "npmScript": "validate:autonomy-queue-approval-gate",
+      "entrypoint": "_ops/validators/validate_autonomy_queue_approval_gate.js",
+      "severity": "HARD_FAIL",
+      "blocksRelease": true,
+      "group": "autonomy-runtime",
+      "owner": "automation",
+      "scope": "the human release gate survives migration into the autonomy queue, and every workflow that writes that queue validates it",
+      "ciInvocation": "MATRIX_ONLY",
+      "findingProtocol": "VALIDATION_FINDING",
+      "enabled": true,
+      "rationale": "scripts/autonomy/migrate_queue.mjs is the only writer that puts new items into data/autonomy/queue.json and it hard-coded routineApprovalRequired/publicOnlyAfterApproval to false. It predates the human release gate of 2026-08-27; when that gate landed the 15 items already in the queue were repaired to true and the writer was not, so the defect re-armed on every item migrated afterwards. process_manifest.js#requiresIndividualApproval reads exactly those flags, so false means a standing approval may release the piece to a client live site with nobody having agreed to it. The Editorial Continuity Sidecar then migrated three such items on 2026-09-01 and validated with the six-check authority-modernization profile, which did not contain autonomy-contract, so it pushed a state its own job could not see; Content Publish run 34127601153 and Social Ingestion went red on a state they did not create. autonomy-contract catches the resulting data but nothing caught the writer or the coverage hole. This drives the real migrator in a sandbox and requires the migrated item to carry both flags true, proves through the publisher own standingApprovalFor that a gated item is refused and an ungated one is swept in, and requires every workflow running a queue writer to run a profile containing autonomy-contract. Hard-fails if the migrator moves zero probes, if the live queue is empty, or if it traces zero writer workflows."
+    },
+    {
       "id": "safe-harbor-behavior",
       "npmScript": "validate:safe-harbor-behavior",
       "entrypoint": "_ops/validators/deep/validate_safe_harbor_behavior.mjs",

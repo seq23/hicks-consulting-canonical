@@ -69,6 +69,7 @@
     "validate:authority-modernization": "node _ops/validation/run_validation_matrix.js --profile authority-modernization",
     "validate:autonomy-contract": "node _ops/validators/deep/validate_autonomy_contract.js",
     "validate:autonomy-cycle-e2e": "node _ops/validators/deep/validate_autonomy_cycle_e2e.mjs",
+    "validate:autonomy-queue-approval-gate": "node _ops/validators/validate_autonomy_queue_approval_gate.js",
     "validate:build-determinism": "node _ops/validators/deep/validate_build_determinism.js",
     "validate:canonical": "node _ops/validators/validate_canonical_url_contract.js",
     "validate:client-decision-attribution": "node _ops/validators/deep/validate_client_decision_attribution.js",

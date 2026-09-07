@@ -25,8 +25,34 @@ for (const sourceItem of source.items || []) {
     conversionPath: sourceItem.conversionPath,
     sections: sourceItem.sections,
     state: 'DISCOVERED',
-    routineApprovalRequired: false,
-    publicOnlyAfterApproval: false,
+    // An item in data/autonomy/queue.json can reach release. These two flags are
+    // the human release gate: process_manifest.js#requiresIndividualApproval
+    // treats either one being true as "this piece needs Monika's own named
+    // approval, whatever its date", and standingApprovalFor then refuses to let
+    // a standing window sweep it in.
+    //
+    // This wrote `false` on every migrated item - stripping that gate off each
+    // new candidate as it entered the queue. It predates the gate landing on
+    // 2026-08-27; the 15 items already in the queue were repaired to `true` then
+    // and the writer was not, so the defect re-armed on every item migrated
+    // afterwards. On 2026-09-01 the continuity sidecar migrated three and pushed
+    // them, and every lane running the full validation profile has been red
+    // since: Content Publish run 34127601153 hard-failed autonomy-contract with
+    // approval-gate-missing on exactly those three.
+    //
+    // The red run was the cheap half of the damage. The expensive half is that
+    // a queue item carrying `false` is one a standing approval is allowed to
+    // release to a client's live site with nobody having agreed to it.
+    //
+    // `true` here is the value _ops/validators/deep/validate_autonomy_contract.js
+    // has always required. Note this is the autonomy queue only: the pre-draft
+    // brief surfaces below (data/social/publish_queue.json,
+    // data/intake/content_brief_candidates.json) legitimately carry `false`,
+    // because drafting a candidate needs no approval - only releasing one does.
+    // Held together by _ops/validators/validate_autonomy_queue_approval_gate.js,
+    // which drives this script and asserts the flags survive migration.
+    routineApprovalRequired: true,
+    publicOnlyAfterApproval: true,
     source: 'legacy_generated_queue_migration',
     legacy: { publishMode: sourceItem.publishMode, approvalStatus: sourceItem.approvalStatus, status: sourceItem.status },
     createdAt: sourceItem.createdAt || nowIso(clock),
