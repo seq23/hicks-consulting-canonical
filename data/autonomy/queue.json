@@ -717,7 +717,7 @@
         "How to tell it is working",
         "Next step"
       ],
-      "state": "DISCOVERED",
+      "state": "SKIPPED_PROHIBITED_ACTION",
       "routineApprovalRequired": true,
       "publicOnlyAfterApproval": true,
       "source": "legacy_generated_queue_migration",
@@ -739,6 +739,18 @@
           "to": "DISCOVERED",
           "at": "2026-08-29T14:45:30.271Z",
           "reason": "Title reconciled to the upstream demand-grounded brief before any page existed."
+        },
+        {
+          "from": "DISCOVERED",
+          "to": "SCORED",
+          "at": "2026-09-08T14:44:59.652Z",
+          "reason": "Candidate score normalized for autonomous admission."
+        },
+        {
+          "from": "SCORED",
+          "to": "SKIPPED_PROHIBITED_ACTION",
+          "at": "2026-09-08T14:44:59.652Z",
+          "reason": "Candidate did not meet the configured admission score."
         }
       ],
       "demandPhrasing": {
@@ -760,7 +772,7 @@
           }
         ]
       },
-      "updatedAt": "2026-08-29T14:45:30.271Z"
+      "updatedAt": "2026-09-08T14:44:59.652Z"
     },
     {
       "id": "brief-burnout_boundaries-whitepaper",
@@ -794,7 +806,7 @@
         "Risks and limitations",
         "Recommended next steps"
       ],
-      "state": "DISCOVERED",
+      "state": "FAILED_RETRYABLE",
       "routineApprovalRequired": true,
       "publicOnlyAfterApproval": true,
       "source": "legacy_generated_queue_migration",
@@ -816,6 +828,48 @@
           "to": "DISCOVERED",
           "at": "2026-08-29T14:45:30.271Z",
           "reason": "Title reconciled to the upstream demand-grounded brief before any page existed."
+        },
+        {
+          "from": "DISCOVERED",
+          "to": "SCORED",
+          "at": "2026-09-08T14:44:59.652Z",
+          "reason": "Candidate score normalized for autonomous admission."
+        },
+        {
+          "from": "SCORED",
+          "to": "ADMITTED",
+          "at": "2026-09-08T14:44:59.652Z",
+          "reason": "Candidate admitted inside the existing content policy and ownership boundaries."
+        },
+        {
+          "from": "ADMITTED",
+          "to": "DRAFTING",
+          "at": "2026-09-08T14:44:59.652Z",
+          "reason": "Structured LLM drafting started."
+        },
+        {
+          "from": "DRAFTING",
+          "to": "DRAFTED",
+          "at": "2026-09-08T14:44:59.652Z",
+          "reason": "Structured draft produced."
+        },
+        {
+          "from": "DRAFTED",
+          "to": "VALIDATING",
+          "at": "2026-09-08T14:44:59.652Z",
+          "reason": "Safe Harbor validation started."
+        },
+        {
+          "from": "VALIDATING",
+          "to": "REPAIRING",
+          "at": "2026-09-08T14:44:59.652Z",
+          "reason": "Repairable Safe Harbor findings detected."
+        },
+        {
+          "from": "REPAIRING",
+          "to": "FAILED_RETRYABLE",
+          "at": "2026-09-08T14:44:59.652Z",
+          "reason": "Autonomy cycle error."
         }
       ],
       "demandPhrasing": {
@@ -838,7 +892,10 @@
           }
         ]
       },
-      "updatedAt": "2026-08-29T14:45:30.271Z"
+      "updatedAt": "2026-09-08T14:44:59.652Z",
+      "providerGate": null,
+      "attempts": 1,
+      "lastError": "Expected ',' or ']' after array element in JSON at position 6450"
     },
     {
       "id": "brief-ai_digital_wellness-guide",

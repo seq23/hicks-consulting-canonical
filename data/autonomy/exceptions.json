@@ -198,6 +198,35 @@
       "createdAt": "2026-09-05T00:00:55.453Z",
       "blocksOtherWork": false,
       "clientActionRequired": false
+    },
+    {
+      "id": "exception-brief-general_emotional_wellness-fanout-1788878699710",
+      "candidateId": "brief-general_emotional_wellness-fanout",
+      "decision": "SKIPPED_PROHIBITED_ACTION",
+      "findings": [
+        {
+          "code": "LOW_ADMISSION_SCORE",
+          "severity": "advisory"
+        }
+      ],
+      "createdAt": "2026-09-08T14:44:59.652Z",
+      "blocksOtherWork": false,
+      "clientActionRequired": false
+    },
+    {
+      "id": "exception-brief-burnout_boundaries-whitepaper-1788878741143",
+      "candidateId": "brief-burnout_boundaries-whitepaper",
+      "decision": "FAILED_RETRYABLE",
+      "findings": [
+        {
+          "code": "AUTONOMY_RUNTIME_ERROR",
+          "severity": "retryable",
+          "message": "Expected ',' or ']' after array element in JSON at position 6450"
+        }
+      ],
+      "createdAt": "2026-09-08T14:44:59.652Z",
+      "blocksOtherWork": false,
+      "clientActionRequired": false
     }
   ]
 }
