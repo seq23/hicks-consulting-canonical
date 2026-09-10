@@ -1,16 +1,17 @@
 {
   "schema_version": "1.0",
-  "observed_at": "2026-09-09T13:28:23.856Z",
-  "source_receipt_id": "2026-09-09T13-28-23.856Z-34357263122",
+  "observed_at": "2026-09-10T13:25:45.636Z",
+  "source_receipt_id": "2026-09-10T13-25-45.636Z-34482551229",
   "distribution_state": "OBSERVED",
   "sitemap_refresh_status": "SUCCESS",
   "indexnow_status": "SUCCESS",
   "gsc_sitemap_status": "SUCCESS",
-  "gsc_inspection_status": "SUCCESS",
+  "gsc_inspection_status": "PARTIAL",
   "inspected_urls": 17,
   "inspection_verdict_counts": {
     "PASS": 4,
-    "NEUTRAL": 13
+    "NEUTRAL": 12,
+    "UNKNOWN": 1
   },
   "verified_external_citations_delta": 0,
   "recommended_action": "FEED_OBSERVED_INDEX_STATUS_INTO_AUTHORITY_YIELD_REVIEW",
