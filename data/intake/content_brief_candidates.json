@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-08T14:44:59.290Z",
+  "generatedAt": "2026-09-11T14:44:26.434Z",
   "policy": "full_safe_autonomy_llm_humanized_prewrite_validated",
   "candidates": [
     {
@@ -40,7 +40,7 @@
       },
       "targetWords": 2500,
       "minimumWords": 2000,
-      "sourceSignalCount": 11,
+      "sourceSignalCount": 14,
       "score": 100,
       "publishMode": "full_safe_autonomy",
       "autonomyStatus": "SYSTEM_BLOCKED",
@@ -97,7 +97,7 @@
       },
       "targetWords": 1400,
       "minimumWords": 1120,
-      "sourceSignalCount": 6,
+      "sourceSignalCount": 7,
       "score": 100,
       "publishMode": "full_safe_autonomy",
       "autonomyStatus": "DISCOVERED",
@@ -629,7 +629,7 @@
       ],
       "llmPrompt": "Create a humanized fanout draft for Hicks Consulting.\nTitle: How do I stop replaying a conversation from three days ago?\nThis page exists to answer exactly one real question a person typed or said: \"How do I stop replaying a conversation from three days ago?\". Answer THAT question, in that person's words, in the first two sentences. Do not broaden it into a general overview of General emotional wellness and intentional living; other pages on this site cover other questions in the same area and this one must not overlap them.\nMinimum words: 720. Target words: 900.\nWrite in a warm, grounded, specific voice. Do not diagnose. Do not guarantee outcomes. Do not invent client stories.\nInclude these sections: Short answer; Before you start; Step by step; What to say; What gets in the way; How to tell it is working; Next step.\nApproved conversion path after value is delivered: https://monika-hicks.clientsecure.me/",
       "queueType": "content_brief",
-      "autonomyStatus": "DISCOVERED",
+      "autonomyStatus": "SKIPPED_PROHIBITED_ACTION",
       "routineApprovalRequired": false,
       "demandPhrasing": {
         "source": "config/demand_phrasings.json",
@@ -687,7 +687,7 @@
       ],
       "llmPrompt": "Create a humanized whitepaper draft for Hicks Consulting.\nTitle: Why do I feel guilty every time I say no?\nThis page exists to answer exactly one real question a person typed or said: \"Why do I feel guilty every time I say no?\". Answer THAT question, in that person's words, in the first two sentences. Do not broaden it into a general overview of Burnout, boundaries, and over-functioning; other pages on this site cover other questions in the same area and this one must not overlap them.\nMinimum words: 2000. Target words: 2500.\nWrite in a warm, grounded, specific voice. Do not diagnose. Do not guarantee outcomes. Do not invent client stories.\nInclude these sections: Executive summary; The question people are actually asking; What the evidence shows; Audience analysis; Framework; Implementation guidance; Risks and limitations; Recommended next steps.\nApproved conversion path after value is delivered: https://monika-hicks.clientsecure.me/",
       "queueType": "content_brief",
-      "autonomyStatus": "DISCOVERED",
+      "autonomyStatus": "FAILED_RETRYABLE",
       "routineApprovalRequired": false,
       "demandPhrasing": {
         "source": "config/demand_phrasings.json",

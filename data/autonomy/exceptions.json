@@ -227,6 +227,36 @@
       "createdAt": "2026-09-08T14:44:59.652Z",
       "blocksOtherWork": false,
       "clientActionRequired": false
+    },
+    {
+      "id": "exception-brief-burnout_boundaries-whitepaper-1789137929017",
+      "candidateId": "brief-burnout_boundaries-whitepaper",
+      "decision": "REPAIR_REQUIRED",
+      "findings": [
+        {
+          "code": "THIN_CONTENT",
+          "severity": "repairable",
+          "message": "Draft has 662 words; minimum is 2000."
+        }
+      ],
+      "createdAt": "2026-09-11T14:44:26.721Z",
+      "blocksOtherWork": false,
+      "clientActionRequired": false
+    },
+    {
+      "id": "exception-brief-ai_digital_wellness-guide-1789137964664",
+      "candidateId": "brief-ai_digital_wellness-guide",
+      "decision": "REPAIR_REQUIRED",
+      "findings": [
+        {
+          "code": "THIN_CONTENT",
+          "severity": "repairable",
+          "message": "Draft has 436 words; minimum is 1120."
+        }
+      ],
+      "createdAt": "2026-09-11T14:44:26.721Z",
+      "blocksOtherWork": false,
+      "clientActionRequired": false
     }
   ]
 }

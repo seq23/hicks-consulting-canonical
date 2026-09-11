@@ -3,14 +3,14 @@
   "runtimeMode": "FULL_SAFE_AUTONOMY",
   "paused": false,
   "emergencyStop": false,
-  "lastCycleAt": "2026-09-08T14:44:59.652Z",
+  "lastCycleAt": "2026-09-11T14:44:26.721Z",
   "lastCycleStatus": "COMPLETED_NO_NEW_SCHEDULED_ITEMS",
   "currentPhase": "IDLE",
   "counts": {
     "system_blocked": 2,
     "skipped_prohibited_action": 3,
-    "failed_retryable": 1,
-    "discovered": 12
+    "failed_retryable": 2,
+    "discovered": 11
   },
   "velocityContract": "data/system/publishing_velocity_contract.json",
   "draftingProvider": {
@@ -21,7 +21,7 @@
       "LLM_API_KEY",
       "LLM_MODEL"
     ],
-    "lastSuccessfulDraftAt": "2026-09-08T14:44:59.652Z",
+    "lastSuccessfulDraftAt": "2026-09-11T14:44:26.721Z",
     "lastProviderGate": null
   }
 }
