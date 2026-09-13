@@ -1,6 +1,6 @@
 {
   "schemaVersion": "2.0.0",
-  "generatedAt": "2026-09-12T14:29:41.837Z",
+  "generatedAt": "2026-09-13T14:28:58.948Z",
   "policy": "Hicks may autonomously apply bounded technical/search-alignment repairs. Substantive clinical claims and unsupported treatment assertions are never auto-generated from competitor content.",
   "items": [
     {
@@ -8,14 +8,16 @@
       "primaryPage": "/black-therapist-memphis/",
       "status": "OBSERVED",
       "reasons": [
-        "EXACT_QUERY_NOT_IN_PRIMARY_SEARCH_SURFACES"
+        "EXACT_QUERY_NOT_IN_PRIMARY_SEARCH_SURFACES",
+        "SITE_NOT_SURFACED_IN_GROUNDED_OBSERVATION",
+        "NO_GROUNDED_CITATIONS_RETURNED"
       ],
       "evidence": {
-        "groundedSiteSurfaced": true,
+        "groundedSiteSurfaced": false,
         "groundedProviderAnswered": true,
-        "gscImpressions": 13,
+        "gscImpressions": 14,
         "gscClicks": 0,
-        "gscAveragePosition": 8.23,
+        "gscAveragePosition": 8.29,
         "gscPages": [
           "/black-therapist-memphis/"
         ],
@@ -29,10 +31,12 @@
       "primaryPage": "/black-therapist-memphis/",
       "status": "OBSERVED",
       "reasons": [
-        "EXACT_QUERY_NOT_IN_PRIMARY_SEARCH_SURFACES"
+        "EXACT_QUERY_NOT_IN_PRIMARY_SEARCH_SURFACES",
+        "SITE_NOT_SURFACED_IN_GROUNDED_OBSERVATION",
+        "NO_GROUNDED_CITATIONS_RETURNED"
       ],
       "evidence": {
-        "groundedSiteSurfaced": true,
+        "groundedSiteSurfaced": false,
         "groundedProviderAnswered": true,
         "gscImpressions": 6,
         "gscClicks": 0,
@@ -79,12 +83,12 @@
             "title": "Find a Therapist - Clinicians of Color Directory"
           },
           {
-            "url": "https://blackdoctors.com/therapists",
-            "title": "Find a Black Therapist Near You"
+            "url": "https://www.cliniciansofcolor.org/",
+            "title": "Clinicians of Color Directory - Find a Therapist of Color Near You"
           },
           {
-            "url": "https://static1.squarespace.com/static/6464985103179a0ba1521bd2/t/64ccb4bf463aaf530c1824ea/1691137216145/Where+To+FInd+A+Black+Therapist_.pdf",
-            "title": "WHERE TO FIND A BLACK THERAPIST?"
+            "url": "https://blackdoctors.com/therapists",
+            "title": "Find a Black Therapist Near You"
           }
         ]
       },
@@ -96,14 +100,16 @@
       "primaryPage": "/black-therapist-memphis/",
       "status": "OBSERVED",
       "reasons": [
-        "EXACT_QUERY_NOT_IN_PRIMARY_SEARCH_SURFACES"
+        "EXACT_QUERY_NOT_IN_PRIMARY_SEARCH_SURFACES",
+        "SITE_NOT_SURFACED_IN_GROUNDED_OBSERVATION",
+        "NO_GROUNDED_CITATIONS_RETURNED"
       ],
       "evidence": {
-        "groundedSiteSurfaced": true,
+        "groundedSiteSurfaced": false,
         "groundedProviderAnswered": true,
-        "gscImpressions": 4,
+        "gscImpressions": 5,
         "gscClicks": 0,
-        "gscAveragePosition": 8.25,
+        "gscAveragePosition": 8.2,
         "gscPages": [
           "/black-therapist-memphis/"
         ],
@@ -117,10 +123,12 @@
       "primaryPage": "/black-therapist-memphis/",
       "status": "OBSERVED",
       "reasons": [
-        "EXACT_QUERY_NOT_IN_PRIMARY_SEARCH_SURFACES"
+        "EXACT_QUERY_NOT_IN_PRIMARY_SEARCH_SURFACES",
+        "SITE_NOT_SURFACED_IN_GROUNDED_OBSERVATION",
+        "NO_GROUNDED_CITATIONS_RETURNED"
       ],
       "evidence": {
-        "groundedSiteSurfaced": true,
+        "groundedSiteSurfaced": false,
         "groundedProviderAnswered": true,
         "gscImpressions": 3,
         "gscClicks": 0,
@@ -138,10 +146,12 @@
       "primaryPage": "/black-therapist-memphis/",
       "status": "OBSERVED",
       "reasons": [
-        "EXACT_QUERY_NOT_IN_PRIMARY_SEARCH_SURFACES"
+        "EXACT_QUERY_NOT_IN_PRIMARY_SEARCH_SURFACES",
+        "SITE_NOT_SURFACED_IN_GROUNDED_OBSERVATION",
+        "NO_GROUNDED_CITATIONS_RETURNED"
       ],
       "evidence": {
-        "groundedSiteSurfaced": true,
+        "groundedSiteSurfaced": false,
         "groundedProviderAnswered": true,
         "gscImpressions": 4,
         "gscClicks": 0,
@@ -160,10 +170,12 @@
       "status": "OBSERVED",
       "reasons": [
         "AVERAGE_POSITION_OUTSIDE_TOP_10",
-        "EXACT_QUERY_NOT_IN_PRIMARY_SEARCH_SURFACES"
+        "EXACT_QUERY_NOT_IN_PRIMARY_SEARCH_SURFACES",
+        "SITE_NOT_SURFACED_IN_GROUNDED_OBSERVATION",
+        "NO_GROUNDED_CITATIONS_RETURNED"
       ],
       "evidence": {
-        "groundedSiteSurfaced": true,
+        "groundedSiteSurfaced": false,
         "groundedProviderAnswered": true,
         "gscImpressions": 4,
         "gscClicks": 0,
@@ -246,9 +258,9 @@
       "evidence": {
         "groundedSiteSurfaced": null,
         "groundedProviderAnswered": false,
-        "gscImpressions": 2,
+        "gscImpressions": 1,
         "gscClicks": 0,
-        "gscAveragePosition": 29,
+        "gscAveragePosition": 20,
         "gscPages": [
           "/"
         ],
@@ -731,7 +743,7 @@
         "groundedProviderAnswered": false,
         "gscImpressions": 26,
         "gscClicks": 3,
-        "gscAveragePosition": 4.71,
+        "gscAveragePosition": 4.7,
         "gscPages": [
           "/",
           "/faq/",
@@ -752,9 +764,9 @@
       "evidence": {
         "groundedSiteSurfaced": null,
         "groundedProviderAnswered": false,
-        "gscImpressions": 26,
+        "gscImpressions": 29,
         "gscClicks": 1,
-        "gscAveragePosition": 8.79,
+        "gscAveragePosition": 8.82,
         "gscPages": [
           "/",
           "/black-therapist-memphis/"
@@ -772,9 +784,9 @@
       "evidence": {
         "groundedSiteSurfaced": null,
         "groundedProviderAnswered": false,
-        "gscImpressions": 15,
+        "gscImpressions": 16,
         "gscClicks": 0,
-        "gscAveragePosition": 1.6,
+        "gscAveragePosition": 1.88,
         "gscPages": [
           "/"
         ],
@@ -813,9 +825,9 @@
       "evidence": {
         "groundedSiteSurfaced": null,
         "groundedProviderAnswered": false,
-        "gscImpressions": 6,
+        "gscImpressions": 7,
         "gscClicks": 0,
-        "gscAveragePosition": 1.8,
+        "gscAveragePosition": 1.83,
         "gscPages": [
           "/intake-quiz/"
         ],
@@ -1325,17 +1337,15 @@
     {
       "query": "health care facility consulting",
       "primaryPage": "/",
-      "status": "OBSERVED",
+      "status": "UNKNOWN",
       "reasons": [],
       "evidence": {
         "groundedSiteSurfaced": null,
         "groundedProviderAnswered": false,
-        "gscImpressions": 1,
+        "gscImpressions": 0,
         "gscClicks": 0,
-        "gscAveragePosition": 2,
-        "gscPages": [
-          "/"
-        ],
+        "gscAveragePosition": 0,
+        "gscPages": [],
         "competitorUrls": []
       },
       "safeRepairEligible": false,
@@ -1661,19 +1671,15 @@
     {
       "query": "monica hicks",
       "primaryPage": "/",
-      "status": "OBSERVED",
-      "reasons": [
-        "AVERAGE_POSITION_OUTSIDE_TOP_10"
-      ],
+      "status": "UNKNOWN",
+      "reasons": [],
       "evidence": {
         "groundedSiteSurfaced": null,
         "groundedProviderAnswered": false,
-        "gscImpressions": 1,
+        "gscImpressions": 0,
         "gscClicks": 0,
-        "gscAveragePosition": 18,
-        "gscPages": [
-          "/"
-        ],
+        "gscAveragePosition": 0,
+        "gscPages": [],
         "competitorUrls": []
       },
       "safeRepairEligible": false,
