@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-14T00:00:00.000Z",
+  "generatedAt": "2026-09-15T14:45:10.006Z",
   "policy": "full_safe_autonomy_llm_humanized_prewrite_validated",
   "candidates": [
     {
@@ -97,7 +97,7 @@
       },
       "targetWords": 1400,
       "minimumWords": 1120,
-      "sourceSignalCount": 7,
+      "sourceSignalCount": 6,
       "score": 100,
       "publishMode": "full_safe_autonomy",
       "autonomyStatus": "DISCOVERED",
@@ -153,7 +153,7 @@
       },
       "targetWords": 1400,
       "minimumWords": 1120,
-      "sourceSignalCount": 156,
+      "sourceSignalCount": 145,
       "score": 100,
       "publishMode": "full_safe_autonomy",
       "autonomyStatus": "DISCOVERED",
@@ -535,6 +535,378 @@
         "When to seek support"
       ],
       "llmPrompt": "Create a humanized article draft for Hicks Consulting.\nTitle: What do I say when a team member starts crying in a one-on-one?\nThis page exists to answer exactly one real question a person typed or said: \"What do I say when a team member starts crying in a one-on-one?\". Answer THAT question, in that person's words, in the first two sentences. Do not broaden it into a general overview of Workplace emotional intelligence and mental health training; other pages on this site cover other questions in the same area and this one must not overlap them.\nMinimum words: 960. Target words: 1200.\nWrite in a warm, grounded, specific voice. Do not diagnose. Do not guarantee outcomes. Do not invent client stories.\nInclude these sections: Short answer; Who this is for; What it looks like; How to tell the difference; Common mistakes; What to do next; When to seek support.\nApproved conversion path after value is delivered: https://monika-hicks.clientsecure.me/",
+      "queueType": "content_brief"
+    },
+    {
+      "id": "continuity-insight-2027-01-06-f5a51c77642a",
+      "clusterId": "hicks_fanout_038939_b67b687ddd",
+      "clusterTitle": "Faith-centered emotional support",
+      "demandPhrasing": {
+        "source": "config/demand_phrasings.json",
+        "familyId": "faith_centered_support",
+        "clusterId": null,
+        "form": "why",
+        "groundedIn": [
+          "data/intake/query_clusters.json#faith_centered_support",
+          "data/search/target_queries.json query:'christian therapists near me'"
+        ],
+        "evidence": [
+          {
+            "kind": "cluster",
+            "id": "faith_centered_support",
+            "title": "Faith-centered emotional support",
+            "score": 0,
+            "queryCount": 0
+          }
+        ]
+      },
+      "contentType": "insight",
+      "cadence": "daily",
+      "title": "Why do I feel guilty for needing therapy when I have prayed about it?",
+      "suggestedRoute": "/resources/insights/why-do-i-feel-guilty-for-needing-therapy-when-i-have-prayed-about-it/",
+      "proposedScheduledAt": "2027-01-06T13:00:00.000Z",
+      "targetWords": 900,
+      "minimumWords": 720,
+      "sourceSignalCount": 1,
+      "score": 46.46,
+      "publishMode": "full_safe_autonomy",
+      "autonomyStatus": "DISCOVERED",
+      "llmGeneratedRequired": true,
+      "routineApprovalRequired": false,
+      "publicOnlyAfterApproval": false,
+      "continuity_generated": true,
+      "continuityAfter": "2027-01-01",
+      "continuityPolicy": "rolling_120_day_candidate_runway_existing_cadence",
+      "humanizationChecklist": [
+        "Use plain human language rather than generic therapy marketing copy.",
+        "Vary sentence rhythm and paragraph length.",
+        "Include concrete examples without inventing client stories.",
+        "Avoid exaggerated claims, guarantees, diagnosis, or pressure language.",
+        "Keep Monika Hicks / Hicks Consulting entity references consistent.",
+        "End with an approved conversion path only after value is delivered."
+      ],
+      "conversionPath": "https://monika-hicks.clientsecure.me/",
+      "sections": [
+        "Short answer",
+        "What is actually happening",
+        "Why it shows up this way",
+        "What it is not",
+        "What usually makes it worse",
+        "What helps",
+        "When to get support"
+      ],
+      "llmPrompt": "Create a humanized insight draft for Hicks Consulting.\nTitle: Why do I feel guilty for needing therapy when I have prayed about it?\nThis page exists to answer exactly one real question a person typed or said: \"Why do I feel guilty for needing therapy when I have prayed about it?\". Answer THAT question, in that person's words, in the first two sentences. Do not broaden it into a general overview of Faith-centered emotional support; other pages on this site cover other questions in the same area and this one must not overlap them.\nMinimum words: 720. Target words: 900.\nWrite in a warm, grounded, specific voice. Do not diagnose. Do not guarantee outcomes. Do not invent client stories.\nInclude these sections: Short answer; What is actually happening; Why it shows up this way; What it is not; What usually makes it worse; What helps; When to get support.\nApproved conversion path after value is delivered: https://monika-hicks.clientsecure.me/",
+      "queueType": "content_brief"
+    },
+    {
+      "id": "continuity-insight-2027-01-07-d4383709fabf",
+      "clusterId": "hicks_fanout_010374_67876c1925",
+      "clusterTitle": "When Your Body Is Carrying Stress Your Mind Keeps Dismissing: What This Looks Like In Real Life",
+      "demandPhrasing": {
+        "source": "config/demand_phrasings.json",
+        "familyId": "local_access",
+        "clusterId": null,
+        "form": "how",
+        "groundedIn": [
+          "data/search/target_queries.json lead_intent_tier T1/T2/T3 with gsc_measured.impressions > 0",
+          "data/search/free_wins.json"
+        ],
+        "evidence": [
+          {
+            "kind": "measured_queries",
+            "count": 20,
+            "impressions": 30,
+            "examples": [
+              "black therapist near me",
+              "black counselors near me",
+              "black therapists near me",
+              "black mental health therapist near me",
+              "mental health therapy near me"
+            ]
+          }
+        ]
+      },
+      "contentType": "insight",
+      "cadence": "daily",
+      "title": "How do I pick between three therapists who all look fine online?",
+      "suggestedRoute": "/resources/insights/how-do-i-pick-between-three-therapists-who-all-look-fine-online/",
+      "proposedScheduledAt": "2027-01-07T13:00:00.000Z",
+      "targetWords": 900,
+      "minimumWords": 720,
+      "sourceSignalCount": 1,
+      "score": 46.06,
+      "publishMode": "full_safe_autonomy",
+      "autonomyStatus": "DISCOVERED",
+      "llmGeneratedRequired": true,
+      "routineApprovalRequired": false,
+      "publicOnlyAfterApproval": false,
+      "continuity_generated": true,
+      "continuityAfter": "2027-01-01",
+      "continuityPolicy": "rolling_120_day_candidate_runway_existing_cadence",
+      "humanizationChecklist": [
+        "Use plain human language rather than generic therapy marketing copy.",
+        "Vary sentence rhythm and paragraph length.",
+        "Include concrete examples without inventing client stories.",
+        "Avoid exaggerated claims, guarantees, diagnosis, or pressure language.",
+        "Keep Monika Hicks / Hicks Consulting entity references consistent.",
+        "End with an approved conversion path only after value is delivered."
+      ],
+      "conversionPath": "https://monika-hicks.clientsecure.me/",
+      "sections": [
+        "Short answer",
+        "Before you start",
+        "Step by step",
+        "What to say",
+        "What gets in the way",
+        "How to tell it is working",
+        "Next step"
+      ],
+      "llmPrompt": "Create a humanized insight draft for Hicks Consulting.\nTitle: How do I pick between three therapists who all look fine online?\nThis page exists to answer exactly one real question a person typed or said: \"How do I pick between three therapists who all look fine online?\". Answer THAT question, in that person's words, in the first two sentences. Do not broaden it into a general overview of When Your Body Is Carrying Stress Your Mind Keeps Dismissing: What This Looks Like In Real Life; other pages on this site cover other questions in the same area and this one must not overlap them.\nMinimum words: 720. Target words: 900.\nWrite in a warm, grounded, specific voice. Do not diagnose. Do not guarantee outcomes. Do not invent client stories.\nInclude these sections: Short answer; Before you start; Step by step; What to say; What gets in the way; How to tell it is working; Next step.\nApproved conversion path after value is delivered: https://monika-hicks.clientsecure.me/",
+      "queueType": "content_brief"
+    },
+    {
+      "id": "continuity-insight-2027-01-08-c68ae78f6bc4",
+      "clusterId": "hicks_fanout_059206_69a32d717f",
+      "clusterTitle": "AI, social media, and digital emotional overload",
+      "demandPhrasing": {
+        "source": "config/demand_phrasings.json",
+        "familyId": "ai_digital_wellness",
+        "clusterId": null,
+        "form": "what",
+        "groundedIn": [
+          "data/intake/query_clusters.json#ai_digital_wellness",
+          "data/intake/normalized_query_signals.json tag:ai_digital_wellness"
+        ],
+        "evidence": [
+          {
+            "kind": "cluster",
+            "id": "ai_digital_wellness",
+            "title": "AI, social media, and digital emotional overload",
+            "score": 100,
+            "queryCount": 14
+          }
+        ]
+      },
+      "contentType": "insight",
+      "cadence": "daily",
+      "title": "What is AI anxiety and is it a real thing?",
+      "suggestedRoute": "/resources/insights/what-is-ai-anxiety-and-is-it-a-real-thing/",
+      "proposedScheduledAt": "2027-01-08T13:00:00.000Z",
+      "targetWords": 900,
+      "minimumWords": 720,
+      "sourceSignalCount": 1,
+      "score": 45.6,
+      "publishMode": "full_safe_autonomy",
+      "autonomyStatus": "DISCOVERED",
+      "llmGeneratedRequired": true,
+      "routineApprovalRequired": false,
+      "publicOnlyAfterApproval": false,
+      "continuity_generated": true,
+      "continuityAfter": "2027-01-01",
+      "continuityPolicy": "rolling_120_day_candidate_runway_existing_cadence",
+      "humanizationChecklist": [
+        "Use plain human language rather than generic therapy marketing copy.",
+        "Vary sentence rhythm and paragraph length.",
+        "Include concrete examples without inventing client stories.",
+        "Avoid exaggerated claims, guarantees, diagnosis, or pressure language.",
+        "Keep Monika Hicks / Hicks Consulting entity references consistent.",
+        "End with an approved conversion path only after value is delivered."
+      ],
+      "conversionPath": "https://monika-hicks.clientsecure.me/",
+      "sections": [
+        "Short answer",
+        "Who this is for",
+        "What it looks like",
+        "How to tell the difference",
+        "Common mistakes",
+        "What to do next",
+        "When to seek support"
+      ],
+      "llmPrompt": "Create a humanized insight draft for Hicks Consulting.\nTitle: What is AI anxiety and is it a real thing?\nThis page exists to answer exactly one real question a person typed or said: \"What is AI anxiety and is it a real thing?\". Answer THAT question, in that person's words, in the first two sentences. Do not broaden it into a general overview of AI, social media, and digital emotional overload; other pages on this site cover other questions in the same area and this one must not overlap them.\nMinimum words: 720. Target words: 900.\nWrite in a warm, grounded, specific voice. Do not diagnose. Do not guarantee outcomes. Do not invent client stories.\nInclude these sections: Short answer; Who this is for; What it looks like; How to tell the difference; Common mistakes; What to do next; When to seek support.\nApproved conversion path after value is delivered: https://monika-hicks.clientsecure.me/",
+      "queueType": "content_brief"
+    },
+    {
+      "id": "continuity-insight-2027-01-11-c04dd4538b6c",
+      "clusterId": "hicks_fanout_060439_eb52f18b88",
+      "clusterTitle": "General emotional wellness and intentional living",
+      "demandPhrasing": {
+        "source": "config/demand_phrasings.json",
+        "familyId": "general_emotional_wellness",
+        "clusterId": null,
+        "form": "what",
+        "groundedIn": [
+          "data/intake/query_clusters.json#general_emotional_wellness",
+          "data/intake/normalized_query_signals.json tag:general_emotional_wellness"
+        ],
+        "evidence": [
+          {
+            "kind": "cluster",
+            "id": "general_emotional_wellness",
+            "title": "General emotional wellness and intentional living",
+            "score": 100,
+            "queryCount": 156
+          }
+        ]
+      },
+      "contentType": "insight",
+      "cadence": "daily",
+      "title": "What do I do when I wake up already anxious?",
+      "suggestedRoute": "/resources/insights/what-do-i-do-when-i-wake-up-already-anxious/",
+      "proposedScheduledAt": "2027-01-11T13:00:00.000Z",
+      "targetWords": 900,
+      "minimumWords": 720,
+      "sourceSignalCount": 1,
+      "score": 45.6,
+      "publishMode": "full_safe_autonomy",
+      "autonomyStatus": "DISCOVERED",
+      "llmGeneratedRequired": true,
+      "routineApprovalRequired": false,
+      "publicOnlyAfterApproval": false,
+      "continuity_generated": true,
+      "continuityAfter": "2027-01-01",
+      "continuityPolicy": "rolling_120_day_candidate_runway_existing_cadence",
+      "humanizationChecklist": [
+        "Use plain human language rather than generic therapy marketing copy.",
+        "Vary sentence rhythm and paragraph length.",
+        "Include concrete examples without inventing client stories.",
+        "Avoid exaggerated claims, guarantees, diagnosis, or pressure language.",
+        "Keep Monika Hicks / Hicks Consulting entity references consistent.",
+        "End with an approved conversion path only after value is delivered."
+      ],
+      "conversionPath": "https://monika-hicks.clientsecure.me/",
+      "sections": [
+        "Short answer",
+        "Who this is for",
+        "What it looks like",
+        "How to tell the difference",
+        "Common mistakes",
+        "What to do next",
+        "When to seek support"
+      ],
+      "llmPrompt": "Create a humanized insight draft for Hicks Consulting.\nTitle: What do I do when I wake up already anxious?\nThis page exists to answer exactly one real question a person typed or said: \"What do I do when I wake up already anxious?\". Answer THAT question, in that person's words, in the first two sentences. Do not broaden it into a general overview of General emotional wellness and intentional living; other pages on this site cover other questions in the same area and this one must not overlap them.\nMinimum words: 720. Target words: 900.\nWrite in a warm, grounded, specific voice. Do not diagnose. Do not guarantee outcomes. Do not invent client stories.\nInclude these sections: Short answer; Who this is for; What it looks like; How to tell the difference; Common mistakes; What to do next; When to seek support.\nApproved conversion path after value is delivered: https://monika-hicks.clientsecure.me/",
+      "queueType": "content_brief"
+    },
+    {
+      "id": "continuity-insight-2027-01-12-63f2c7d6a42b",
+      "clusterId": "hicks_fanout_045031_d36f01ede2",
+      "clusterTitle": "Workplace emotional intelligence and mental health training",
+      "demandPhrasing": {
+        "source": "config/demand_phrasings.json",
+        "familyId": "workplace_emotional_intelligence",
+        "clusterId": null,
+        "form": "how",
+        "groundedIn": [
+          "data/intake/query_clusters.json#workplace_emotional_intelligence",
+          "data/intake/normalized_query_signals.json tag:workplace_emotional_intelligence",
+          "data/search/target_queries.json query:'memphis small business consulting', 'consultant mental health'"
+        ],
+        "evidence": [
+          {
+            "kind": "cluster",
+            "id": "workplace_emotional_intelligence",
+            "title": "Workplace emotional intelligence and mental health training",
+            "score": 100,
+            "queryCount": 7
+          }
+        ]
+      },
+      "contentType": "insight",
+      "cadence": "daily",
+      "title": "How do I bring up burnout on my team without it becoming an HR issue?",
+      "suggestedRoute": "/resources/insights/how-do-i-bring-up-burnout-on-my-team-without-it-becoming-an-hr-issue/",
+      "proposedScheduledAt": "2027-01-12T13:00:00.000Z",
+      "targetWords": 900,
+      "minimumWords": 720,
+      "sourceSignalCount": 1,
+      "score": 45.14,
+      "publishMode": "full_safe_autonomy",
+      "autonomyStatus": "DISCOVERED",
+      "llmGeneratedRequired": true,
+      "routineApprovalRequired": false,
+      "publicOnlyAfterApproval": false,
+      "continuity_generated": true,
+      "continuityAfter": "2027-01-01",
+      "continuityPolicy": "rolling_120_day_candidate_runway_existing_cadence",
+      "humanizationChecklist": [
+        "Use plain human language rather than generic therapy marketing copy.",
+        "Vary sentence rhythm and paragraph length.",
+        "Include concrete examples without inventing client stories.",
+        "Avoid exaggerated claims, guarantees, diagnosis, or pressure language.",
+        "Keep Monika Hicks / Hicks Consulting entity references consistent.",
+        "End with an approved conversion path only after value is delivered."
+      ],
+      "conversionPath": "https://monika-hicks.clientsecure.me/",
+      "sections": [
+        "Short answer",
+        "Before you start",
+        "Step by step",
+        "What to say",
+        "What gets in the way",
+        "How to tell it is working",
+        "Next step"
+      ],
+      "llmPrompt": "Create a humanized insight draft for Hicks Consulting.\nTitle: How do I bring up burnout on my team without it becoming an HR issue?\nThis page exists to answer exactly one real question a person typed or said: \"How do I bring up burnout on my team without it becoming an HR issue?\". Answer THAT question, in that person's words, in the first two sentences. Do not broaden it into a general overview of Workplace emotional intelligence and mental health training; other pages on this site cover other questions in the same area and this one must not overlap them.\nMinimum words: 720. Target words: 900.\nWrite in a warm, grounded, specific voice. Do not diagnose. Do not guarantee outcomes. Do not invent client stories.\nInclude these sections: Short answer; Before you start; Step by step; What to say; What gets in the way; How to tell it is working; Next step.\nApproved conversion path after value is delivered: https://monika-hicks.clientsecure.me/",
+      "queueType": "content_brief"
+    },
+    {
+      "id": "continuity-article-2027-01-12-0b7ce83b7bd9",
+      "clusterId": "hicks_fanout_038775_63fa4a4f35",
+      "clusterTitle": "Faith-centered emotional support",
+      "demandPhrasing": {
+        "source": "config/demand_phrasings.json",
+        "familyId": "faith_centered_support",
+        "clusterId": null,
+        "form": "what",
+        "groundedIn": [
+          "data/intake/query_clusters.json#faith_centered_support",
+          "data/search/target_queries.json query:'christian therapists near me'"
+        ],
+        "evidence": [
+          {
+            "kind": "cluster",
+            "id": "faith_centered_support",
+            "title": "Faith-centered emotional support",
+            "score": 0,
+            "queryCount": 0
+          }
+        ]
+      },
+      "contentType": "article",
+      "cadence": "weekly",
+      "title": "Can I go to therapy and still trust God?",
+      "suggestedRoute": "/resources/articles/can-i-go-to-therapy-and-still-trust-god/",
+      "proposedScheduledAt": "2027-01-12T13:00:00.000Z",
+      "targetWords": 1200,
+      "minimumWords": 960,
+      "sourceSignalCount": 1,
+      "score": 44.92,
+      "publishMode": "full_safe_autonomy",
+      "autonomyStatus": "DISCOVERED",
+      "llmGeneratedRequired": true,
+      "routineApprovalRequired": false,
+      "publicOnlyAfterApproval": false,
+      "continuity_generated": true,
+      "continuityAfter": "2027-01-01",
+      "continuityPolicy": "rolling_120_day_candidate_runway_existing_cadence",
+      "humanizationChecklist": [
+        "Use plain human language rather than generic therapy marketing copy.",
+        "Vary sentence rhythm and paragraph length.",
+        "Include concrete examples without inventing client stories.",
+        "Avoid exaggerated claims, guarantees, diagnosis, or pressure language.",
+        "Keep Monika Hicks / Hicks Consulting entity references consistent.",
+        "End with an approved conversion path only after value is delivered."
+      ],
+      "conversionPath": "https://monika-hicks.clientsecure.me/",
+      "sections": [
+        "Short answer",
+        "Who this is for",
+        "What it looks like",
+        "How to tell the difference",
+        "Common mistakes",
+        "What to do next",
+        "When to seek support"
+      ],
+      "llmPrompt": "Create a humanized article draft for Hicks Consulting.\nTitle: Can I go to therapy and still trust God?\nThis page exists to answer exactly one real question a person typed or said: \"Can I go to therapy and still trust God?\". Answer THAT question, in that person's words, in the first two sentences. Do not broaden it into a general overview of Faith-centered emotional support; other pages on this site cover other questions in the same area and this one must not overlap them.\nMinimum words: 960. Target words: 1200.\nWrite in a warm, grounded, specific voice. Do not diagnose. Do not guarantee outcomes. Do not invent client stories.\nInclude these sections: Short answer; Who this is for; What it looks like; How to tell the difference; Common mistakes; What to do next; When to seek support.\nApproved conversion path after value is delivered: https://monika-hicks.clientsecure.me/",
       "queueType": "content_brief"
     },
     {
@@ -1054,372 +1426,6 @@
           }
         ]
       }
-    },
-    {
-      "id": "continuity-insight-2027-01-06-f5a51c77642a",
-      "clusterId": "hicks_fanout_038939_b67b687ddd",
-      "clusterTitle": "Faith-centered emotional support",
-      "demandPhrasing": {
-        "source": "config/demand_phrasings.json",
-        "familyId": "faith_centered_support",
-        "clusterId": null,
-        "form": "why",
-        "groundedIn": [
-          "data/intake/query_clusters.json#faith_centered_support",
-          "data/search/target_queries.json query:'christian therapists near me'"
-        ],
-        "evidence": [
-          {
-            "kind": "cluster",
-            "id": "faith_centered_support",
-            "title": "Faith-centered emotional support",
-            "score": 0,
-            "queryCount": 0
-          }
-        ]
-      },
-      "contentType": "insight",
-      "cadence": "daily",
-      "title": "Why do I feel guilty for needing therapy when I have prayed about it?",
-      "suggestedRoute": "/resources/insights/why-do-i-feel-guilty-for-needing-therapy-when-i-have-prayed-about-it/",
-      "proposedScheduledAt": "2027-01-06T13:00:00.000Z",
-      "targetWords": 900,
-      "minimumWords": 720,
-      "sourceSignalCount": 1,
-      "score": 46.46,
-      "publishMode": "full_safe_autonomy",
-      "autonomyStatus": "DISCOVERED",
-      "llmGeneratedRequired": true,
-      "routineApprovalRequired": false,
-      "publicOnlyAfterApproval": false,
-      "continuity_generated": true,
-      "continuityAfter": "2027-01-01",
-      "continuityPolicy": "rolling_120_day_candidate_runway_existing_cadence",
-      "humanizationChecklist": [
-        "Use plain human language rather than generic therapy marketing copy.",
-        "Vary sentence rhythm and paragraph length.",
-        "Include concrete examples without inventing client stories.",
-        "Avoid exaggerated claims, guarantees, diagnosis, or pressure language.",
-        "Keep Monika Hicks / Hicks Consulting entity references consistent.",
-        "End with an approved conversion path only after value is delivered."
-      ],
-      "conversionPath": "https://monika-hicks.clientsecure.me/",
-      "sections": [
-        "Short answer",
-        "What is actually happening",
-        "Why it shows up this way",
-        "What it is not",
-        "What usually makes it worse",
-        "What helps",
-        "When to get support"
-      ],
-      "llmPrompt": "Create a humanized insight draft for Hicks Consulting.\nTitle: Why do I feel guilty for needing therapy when I have prayed about it?\nThis page exists to answer exactly one real question a person typed or said: \"Why do I feel guilty for needing therapy when I have prayed about it?\". Answer THAT question in its own words in the first two sentences. Do not widen it into a general overview of Faith-centered emotional support; other pages on this site answer other questions in the same area and this one must not restate them.\nCadence: daily. Proposed future slot: 2027-01-06T13:00:00.000Z.\nMinimum words: 720. Target words: 900.\nUse an answer-first opening, exact-intent headings, concrete examples, and a checklist or decision framework where useful.\nWrite in a warm, grounded, specific voice. Do not diagnose, guarantee outcomes, or invent client stories.\nInclude these sections: Short answer; What is actually happening; Why it shows up this way; What it is not; What usually makes it worse; What helps; When to get support.\nApproved conversion path after value is delivered: https://monika-hicks.clientsecure.me/.\nThis is an autonomous candidate. It must pass Safe Harbor, duplicate, source, cadence, build, and release validation before it can be scheduled."
-    },
-    {
-      "id": "continuity-insight-2027-01-07-d4383709fabf",
-      "clusterId": "hicks_fanout_010374_67876c1925",
-      "clusterTitle": "When Your Body Is Carrying Stress Your Mind Keeps Dismissing: What This Looks Like In Real Life",
-      "demandPhrasing": {
-        "source": "config/demand_phrasings.json",
-        "familyId": "local_access",
-        "clusterId": null,
-        "form": "how",
-        "groundedIn": [
-          "data/search/target_queries.json lead_intent_tier T1/T2/T3 with gsc_measured.impressions > 0",
-          "data/search/free_wins.json"
-        ],
-        "evidence": [
-          {
-            "kind": "measured_queries",
-            "count": 20,
-            "impressions": 30,
-            "examples": [
-              "black therapist near me",
-              "black counselors near me",
-              "black therapists near me",
-              "black mental health therapist near me",
-              "mental health therapy near me"
-            ]
-          }
-        ]
-      },
-      "contentType": "insight",
-      "cadence": "daily",
-      "title": "How do I pick between three therapists who all look fine online?",
-      "suggestedRoute": "/resources/insights/how-do-i-pick-between-three-therapists-who-all-look-fine-online/",
-      "proposedScheduledAt": "2027-01-07T13:00:00.000Z",
-      "targetWords": 900,
-      "minimumWords": 720,
-      "sourceSignalCount": 1,
-      "score": 46.06,
-      "publishMode": "full_safe_autonomy",
-      "autonomyStatus": "DISCOVERED",
-      "llmGeneratedRequired": true,
-      "routineApprovalRequired": false,
-      "publicOnlyAfterApproval": false,
-      "continuity_generated": true,
-      "continuityAfter": "2027-01-01",
-      "continuityPolicy": "rolling_120_day_candidate_runway_existing_cadence",
-      "humanizationChecklist": [
-        "Use plain human language rather than generic therapy marketing copy.",
-        "Vary sentence rhythm and paragraph length.",
-        "Include concrete examples without inventing client stories.",
-        "Avoid exaggerated claims, guarantees, diagnosis, or pressure language.",
-        "Keep Monika Hicks / Hicks Consulting entity references consistent.",
-        "End with an approved conversion path only after value is delivered."
-      ],
-      "conversionPath": "https://monika-hicks.clientsecure.me/",
-      "sections": [
-        "Short answer",
-        "Before you start",
-        "Step by step",
-        "What to say",
-        "What gets in the way",
-        "How to tell it is working",
-        "Next step"
-      ],
-      "llmPrompt": "Create a humanized insight draft for Hicks Consulting.\nTitle: How do I pick between three therapists who all look fine online?\nThis page exists to answer exactly one real question a person typed or said: \"How do I pick between three therapists who all look fine online?\". Answer THAT question in its own words in the first two sentences. Do not widen it into a general overview of local_access; other pages on this site answer other questions in the same area and this one must not restate them.\nCadence: daily. Proposed future slot: 2027-01-07T13:00:00.000Z.\nMinimum words: 720. Target words: 900.\nUse an answer-first opening, exact-intent headings, concrete examples, and a checklist or decision framework where useful.\nWrite in a warm, grounded, specific voice. Do not diagnose, guarantee outcomes, or invent client stories.\nInclude these sections: Short answer; Before you start; Step by step; What to say; What gets in the way; How to tell it is working; Next step.\nApproved conversion path after value is delivered: https://monika-hicks.clientsecure.me/.\nThis is an autonomous candidate. It must pass Safe Harbor, duplicate, source, cadence, build, and release validation before it can be scheduled."
-    },
-    {
-      "id": "continuity-insight-2027-01-08-c68ae78f6bc4",
-      "clusterId": "hicks_fanout_059206_69a32d717f",
-      "clusterTitle": "AI, social media, and digital emotional overload",
-      "demandPhrasing": {
-        "source": "config/demand_phrasings.json",
-        "familyId": "ai_digital_wellness",
-        "clusterId": null,
-        "form": "what",
-        "groundedIn": [
-          "data/intake/query_clusters.json#ai_digital_wellness",
-          "data/intake/normalized_query_signals.json tag:ai_digital_wellness"
-        ],
-        "evidence": [
-          {
-            "kind": "cluster",
-            "id": "ai_digital_wellness",
-            "title": "AI, social media, and digital emotional overload",
-            "score": 100,
-            "queryCount": 14
-          }
-        ]
-      },
-      "contentType": "insight",
-      "cadence": "daily",
-      "title": "What is AI anxiety and is it a real thing?",
-      "suggestedRoute": "/resources/insights/what-is-ai-anxiety-and-is-it-a-real-thing/",
-      "proposedScheduledAt": "2027-01-08T13:00:00.000Z",
-      "targetWords": 900,
-      "minimumWords": 720,
-      "sourceSignalCount": 1,
-      "score": 45.6,
-      "publishMode": "full_safe_autonomy",
-      "autonomyStatus": "DISCOVERED",
-      "llmGeneratedRequired": true,
-      "routineApprovalRequired": false,
-      "publicOnlyAfterApproval": false,
-      "continuity_generated": true,
-      "continuityAfter": "2027-01-01",
-      "continuityPolicy": "rolling_120_day_candidate_runway_existing_cadence",
-      "humanizationChecklist": [
-        "Use plain human language rather than generic therapy marketing copy.",
-        "Vary sentence rhythm and paragraph length.",
-        "Include concrete examples without inventing client stories.",
-        "Avoid exaggerated claims, guarantees, diagnosis, or pressure language.",
-        "Keep Monika Hicks / Hicks Consulting entity references consistent.",
-        "End with an approved conversion path only after value is delivered."
-      ],
-      "conversionPath": "https://monika-hicks.clientsecure.me/",
-      "sections": [
-        "Short answer",
-        "Who this is for",
-        "What it looks like",
-        "How to tell the difference",
-        "Common mistakes",
-        "What to do next",
-        "When to seek support"
-      ],
-      "llmPrompt": "Create a humanized insight draft for Hicks Consulting.\nTitle: What is AI anxiety and is it a real thing?\nThis page exists to answer exactly one real question a person typed or said: \"What is AI anxiety and is it a real thing?\". Answer THAT question in its own words in the first two sentences. Do not widen it into a general overview of AI, social media, and digital emotional overload; other pages on this site answer other questions in the same area and this one must not restate them.\nCadence: daily. Proposed future slot: 2027-01-08T13:00:00.000Z.\nMinimum words: 720. Target words: 900.\nUse an answer-first opening, exact-intent headings, concrete examples, and a checklist or decision framework where useful.\nWrite in a warm, grounded, specific voice. Do not diagnose, guarantee outcomes, or invent client stories.\nInclude these sections: Short answer; Who this is for; What it looks like; How to tell the difference; Common mistakes; What to do next; When to seek support.\nApproved conversion path after value is delivered: https://monika-hicks.clientsecure.me/.\nThis is an autonomous candidate. It must pass Safe Harbor, duplicate, source, cadence, build, and release validation before it can be scheduled."
-    },
-    {
-      "id": "continuity-insight-2027-01-11-c04dd4538b6c",
-      "clusterId": "hicks_fanout_060439_eb52f18b88",
-      "clusterTitle": "General emotional wellness and intentional living",
-      "demandPhrasing": {
-        "source": "config/demand_phrasings.json",
-        "familyId": "general_emotional_wellness",
-        "clusterId": null,
-        "form": "what",
-        "groundedIn": [
-          "data/intake/query_clusters.json#general_emotional_wellness",
-          "data/intake/normalized_query_signals.json tag:general_emotional_wellness"
-        ],
-        "evidence": [
-          {
-            "kind": "cluster",
-            "id": "general_emotional_wellness",
-            "title": "General emotional wellness and intentional living",
-            "score": 100,
-            "queryCount": 156
-          }
-        ]
-      },
-      "contentType": "insight",
-      "cadence": "daily",
-      "title": "What do I do when I wake up already anxious?",
-      "suggestedRoute": "/resources/insights/what-do-i-do-when-i-wake-up-already-anxious/",
-      "proposedScheduledAt": "2027-01-11T13:00:00.000Z",
-      "targetWords": 900,
-      "minimumWords": 720,
-      "sourceSignalCount": 1,
-      "score": 45.6,
-      "publishMode": "full_safe_autonomy",
-      "autonomyStatus": "DISCOVERED",
-      "llmGeneratedRequired": true,
-      "routineApprovalRequired": false,
-      "publicOnlyAfterApproval": false,
-      "continuity_generated": true,
-      "continuityAfter": "2027-01-01",
-      "continuityPolicy": "rolling_120_day_candidate_runway_existing_cadence",
-      "humanizationChecklist": [
-        "Use plain human language rather than generic therapy marketing copy.",
-        "Vary sentence rhythm and paragraph length.",
-        "Include concrete examples without inventing client stories.",
-        "Avoid exaggerated claims, guarantees, diagnosis, or pressure language.",
-        "Keep Monika Hicks / Hicks Consulting entity references consistent.",
-        "End with an approved conversion path only after value is delivered."
-      ],
-      "conversionPath": "https://monika-hicks.clientsecure.me/",
-      "sections": [
-        "Short answer",
-        "Who this is for",
-        "What it looks like",
-        "How to tell the difference",
-        "Common mistakes",
-        "What to do next",
-        "When to seek support"
-      ],
-      "llmPrompt": "Create a humanized insight draft for Hicks Consulting.\nTitle: What do I do when I wake up already anxious?\nThis page exists to answer exactly one real question a person typed or said: \"What do I do when I wake up already anxious?\". Answer THAT question in its own words in the first two sentences. Do not widen it into a general overview of General emotional wellness and intentional living; other pages on this site answer other questions in the same area and this one must not restate them.\nCadence: daily. Proposed future slot: 2027-01-11T13:00:00.000Z.\nMinimum words: 720. Target words: 900.\nUse an answer-first opening, exact-intent headings, concrete examples, and a checklist or decision framework where useful.\nWrite in a warm, grounded, specific voice. Do not diagnose, guarantee outcomes, or invent client stories.\nInclude these sections: Short answer; Who this is for; What it looks like; How to tell the difference; Common mistakes; What to do next; When to seek support.\nApproved conversion path after value is delivered: https://monika-hicks.clientsecure.me/.\nThis is an autonomous candidate. It must pass Safe Harbor, duplicate, source, cadence, build, and release validation before it can be scheduled."
-    },
-    {
-      "id": "continuity-insight-2027-01-12-63f2c7d6a42b",
-      "clusterId": "hicks_fanout_045031_d36f01ede2",
-      "clusterTitle": "Workplace emotional intelligence and mental health training",
-      "demandPhrasing": {
-        "source": "config/demand_phrasings.json",
-        "familyId": "workplace_emotional_intelligence",
-        "clusterId": null,
-        "form": "how",
-        "groundedIn": [
-          "data/intake/query_clusters.json#workplace_emotional_intelligence",
-          "data/intake/normalized_query_signals.json tag:workplace_emotional_intelligence",
-          "data/search/target_queries.json query:'memphis small business consulting', 'consultant mental health'"
-        ],
-        "evidence": [
-          {
-            "kind": "cluster",
-            "id": "workplace_emotional_intelligence",
-            "title": "Workplace emotional intelligence and mental health training",
-            "score": 100,
-            "queryCount": 7
-          }
-        ]
-      },
-      "contentType": "insight",
-      "cadence": "daily",
-      "title": "How do I bring up burnout on my team without it becoming an HR issue?",
-      "suggestedRoute": "/resources/insights/how-do-i-bring-up-burnout-on-my-team-without-it-becoming-an-hr-issue/",
-      "proposedScheduledAt": "2027-01-12T13:00:00.000Z",
-      "targetWords": 900,
-      "minimumWords": 720,
-      "sourceSignalCount": 1,
-      "score": 45.14,
-      "publishMode": "full_safe_autonomy",
-      "autonomyStatus": "DISCOVERED",
-      "llmGeneratedRequired": true,
-      "routineApprovalRequired": false,
-      "publicOnlyAfterApproval": false,
-      "continuity_generated": true,
-      "continuityAfter": "2027-01-01",
-      "continuityPolicy": "rolling_120_day_candidate_runway_existing_cadence",
-      "humanizationChecklist": [
-        "Use plain human language rather than generic therapy marketing copy.",
-        "Vary sentence rhythm and paragraph length.",
-        "Include concrete examples without inventing client stories.",
-        "Avoid exaggerated claims, guarantees, diagnosis, or pressure language.",
-        "Keep Monika Hicks / Hicks Consulting entity references consistent.",
-        "End with an approved conversion path only after value is delivered."
-      ],
-      "conversionPath": "https://monika-hicks.clientsecure.me/",
-      "sections": [
-        "Short answer",
-        "Before you start",
-        "Step by step",
-        "What to say",
-        "What gets in the way",
-        "How to tell it is working",
-        "Next step"
-      ],
-      "llmPrompt": "Create a humanized insight draft for Hicks Consulting.\nTitle: How do I bring up burnout on my team without it becoming an HR issue?\nThis page exists to answer exactly one real question a person typed or said: \"How do I bring up burnout on my team without it becoming an HR issue?\". Answer THAT question in its own words in the first two sentences. Do not widen it into a general overview of Workplace emotional intelligence and mental health training; other pages on this site answer other questions in the same area and this one must not restate them.\nCadence: daily. Proposed future slot: 2027-01-12T13:00:00.000Z.\nMinimum words: 720. Target words: 900.\nUse an answer-first opening, exact-intent headings, concrete examples, and a checklist or decision framework where useful.\nWrite in a warm, grounded, specific voice. Do not diagnose, guarantee outcomes, or invent client stories.\nInclude these sections: Short answer; Before you start; Step by step; What to say; What gets in the way; How to tell it is working; Next step.\nApproved conversion path after value is delivered: https://monika-hicks.clientsecure.me/.\nThis is an autonomous candidate. It must pass Safe Harbor, duplicate, source, cadence, build, and release validation before it can be scheduled."
-    },
-    {
-      "id": "continuity-article-2027-01-12-0b7ce83b7bd9",
-      "clusterId": "hicks_fanout_038775_63fa4a4f35",
-      "clusterTitle": "Faith-centered emotional support",
-      "demandPhrasing": {
-        "source": "config/demand_phrasings.json",
-        "familyId": "faith_centered_support",
-        "clusterId": null,
-        "form": "what",
-        "groundedIn": [
-          "data/intake/query_clusters.json#faith_centered_support",
-          "data/search/target_queries.json query:'christian therapists near me'"
-        ],
-        "evidence": [
-          {
-            "kind": "cluster",
-            "id": "faith_centered_support",
-            "title": "Faith-centered emotional support",
-            "score": 0,
-            "queryCount": 0
-          }
-        ]
-      },
-      "contentType": "article",
-      "cadence": "weekly",
-      "title": "Can I go to therapy and still trust God?",
-      "suggestedRoute": "/resources/articles/can-i-go-to-therapy-and-still-trust-god/",
-      "proposedScheduledAt": "2027-01-12T13:00:00.000Z",
-      "targetWords": 1200,
-      "minimumWords": 960,
-      "sourceSignalCount": 1,
-      "score": 44.92,
-      "publishMode": "full_safe_autonomy",
-      "autonomyStatus": "DISCOVERED",
-      "llmGeneratedRequired": true,
-      "routineApprovalRequired": false,
-      "publicOnlyAfterApproval": false,
-      "continuity_generated": true,
-      "continuityAfter": "2027-01-01",
-      "continuityPolicy": "rolling_120_day_candidate_runway_existing_cadence",
-      "humanizationChecklist": [
-        "Use plain human language rather than generic therapy marketing copy.",
-        "Vary sentence rhythm and paragraph length.",
-        "Include concrete examples without inventing client stories.",
-        "Avoid exaggerated claims, guarantees, diagnosis, or pressure language.",
-        "Keep Monika Hicks / Hicks Consulting entity references consistent.",
-        "End with an approved conversion path only after value is delivered."
-      ],
-      "conversionPath": "https://monika-hicks.clientsecure.me/",
-      "sections": [
-        "Short answer",
-        "Who this is for",
-        "What it looks like",
-        "How to tell the difference",
-        "Common mistakes",
-        "What to do next",
-        "When to seek support"
-      ],
-      "llmPrompt": "Create a humanized article draft for Hicks Consulting.\nTitle: Can I go to therapy and still trust God?\nThis page exists to answer exactly one real question a person typed or said: \"Can I go to therapy and still trust God?\". Answer THAT question in its own words in the first two sentences. Do not widen it into a general overview of Faith-centered emotional support; other pages on this site answer other questions in the same area and this one must not restate them.\nCadence: weekly. Proposed future slot: 2027-01-12T13:00:00.000Z.\nMinimum words: 960. Target words: 1200.\nUse an answer-first opening, exact-intent headings, concrete examples, and a checklist or decision framework where useful.\nWrite in a warm, grounded, specific voice. Do not diagnose, guarantee outcomes, or invent client stories.\nInclude these sections: Short answer; Who this is for; What it looks like; How to tell the difference; Common mistakes; What to do next; When to seek support.\nApproved conversion path after value is delivered: https://monika-hicks.clientsecure.me/.\nThis is an autonomous candidate. It must pass Safe Harbor, duplicate, source, cadence, build, and release validation before it can be scheduled."
     }
   ]
 }
