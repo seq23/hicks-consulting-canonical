@@ -1,6 +1,6 @@
 {
   "schemaVersion": "2.1.0",
-  "generatedAt": "2026-09-14T14:33:09.478Z",
+  "generatedAt": "2026-09-15T14:31:48.433Z",
   "providerState": "CONNECTED",
   "provider": "openrouter_web_search",
   "stop": null,
@@ -11,15 +11,36 @@
       "query": "black therapist near me",
       "primaryPage": "/black-therapist-memphis/",
       "status": "ok",
-      "observedAt": "2026-09-14T14:33:09.478Z",
+      "observedAt": "2026-09-15T14:31:48.433Z",
       "provider": "openrouter_web_search",
       "model": "openai/gpt-4o-mini",
       "observationType": "LIVE_WEB_SURFACING",
       "rankVerified": false,
       "providerAnswered": true,
-      "citationCount": 0,
-      "siteSurfaced": false,
-      "citations": [],
+      "citationCount": 5,
+      "siteSurfaced": true,
+      "citations": [
+        {
+          "url": "https://www.hicksconsulting.org/therapy",
+          "title": "Virtual Therapy Serving Memphis & Tennessee"
+        },
+        {
+          "url": "https://www.hicksconsulting.org/",
+          "title": "Hicks Consulting | Therapy for Individuals & Mental Health ..."
+        },
+        {
+          "url": "https://www.hicksconsulting.org/black-therapist-memphis",
+          "title": "Black Therapist Serving Memphis, TN - Hicks Consulting"
+        },
+        {
+          "url": "https://www.hicksconsulting.org/female-therapist-memphis",
+          "title": "Female Therapist in Memphis: What Gender Fit Changes, and ..."
+        },
+        {
+          "url": "https://www.hicksconsulting.org/psychologist-vs-therapist-memphis",
+          "title": "Do You Need a Psychologist, a Therapist, or a Psychiatrist?"
+        }
+      ],
       "searchQueries": [],
       "competitors": [],
       "ownPage": {
@@ -34,24 +55,35 @@
         "canonical": ""
       },
       "diagnosis": [
-        "EXACT_QUERY_NOT_IN_PRIMARY_SEARCH_SURFACES",
-        "SITE_NOT_SURFACED_IN_GROUNDED_OBSERVATION",
-        "NO_GROUNDED_CITATIONS_RETURNED"
+        "EXACT_QUERY_NOT_IN_PRIMARY_SEARCH_SURFACES"
       ]
     },
     {
       "query": "black counselors near me",
       "primaryPage": "/black-therapist-memphis/",
       "status": "ok",
-      "observedAt": "2026-09-14T14:33:09.478Z",
+      "observedAt": "2026-09-15T14:31:48.433Z",
       "provider": "openrouter_web_search",
       "model": "openai/gpt-4o-mini",
       "observationType": "LIVE_WEB_SURFACING",
       "rankVerified": false,
       "providerAnswered": true,
-      "citationCount": 0,
-      "siteSurfaced": false,
-      "citations": [],
+      "citationCount": 3,
+      "siteSurfaced": true,
+      "citations": [
+        {
+          "url": "https://www.hicksconsulting.org/therapy",
+          "title": "Virtual Therapy Serving Memphis & Tennessee"
+        },
+        {
+          "url": "https://www.hicksconsulting.org/black-therapist-memphis",
+          "title": "Black Therapist Serving Memphis, TN - Hicks Consulting"
+        },
+        {
+          "url": "https://www.hicksconsulting.org/",
+          "title": "Hicks Consulting | Therapy for Individuals & Mental Health ..."
+        }
+      ],
       "searchQueries": [],
       "competitors": [],
       "ownPage": {
@@ -66,16 +98,14 @@
         "canonical": ""
       },
       "diagnosis": [
-        "EXACT_QUERY_NOT_IN_PRIMARY_SEARCH_SURFACES",
-        "SITE_NOT_SURFACED_IN_GROUNDED_OBSERVATION",
-        "NO_GROUNDED_CITATIONS_RETURNED"
+        "EXACT_QUERY_NOT_IN_PRIMARY_SEARCH_SURFACES"
       ]
     },
     {
       "query": "black therapists near me",
       "primaryPage": "/",
       "status": "ok",
-      "observedAt": "2026-09-14T14:33:09.478Z",
+      "observedAt": "2026-09-15T14:31:48.433Z",
       "provider": "openrouter_web_search",
       "model": "openai/gpt-4o-mini",
       "observationType": "LIVE_WEB_SURFACING",
@@ -86,11 +116,7 @@
       "citations": [
         {
           "url": "https://www.hicksconsulting.org/therapy",
-          "title": "Virtual Therapy Serving Memphis & Tennessee | Hicks Consulting"
-        },
-        {
-          "url": "https://www.hicksconsulting.org/black-therapist-memphis/",
-          "title": "Black Therapist Serving Memphis, TN | Hicks Consulting"
+          "title": "Virtual Therapy Serving Memphis & Tennessee"
         },
         {
           "url": "https://www.hicksconsulting.org/faq",
@@ -101,16 +127,12 @@
           "title": "Find Therapists In Hicks, New York - LifeStance Health"
         },
         {
-          "url": "https://lifestance.com/provider/therapist/il/hicks",
-          "title": "Find Therapists In Hicks, Illinois"
+          "url": "https://nowincluded.com/health-resources/finding-a-therapist",
+          "title": "5 Websites to Find a Black Therapist - NOWINCLUDED"
         },
         {
           "url": "https://www.cliniciansofcolor.org/find-a-therapist",
           "title": "Find a Therapist - Clinicians of Color Directory"
-        },
-        {
-          "url": "https://nowincluded.com/health-resources/finding-a-therapist",
-          "title": "5 Websites to Find a Black Therapist - NOWINCLUDED"
         },
         {
           "url": "https://www.cliniciansofcolor.org/",
@@ -123,63 +145,42 @@
         {
           "url": "https://static1.squarespace.com/static/6464985103179a0ba1521bd2/t/64ccb4bf463aaf530c1824ea/1691137216145/Where+To+FInd+A+Black+Therapist_.pdf",
           "title": "WHERE TO FIND A BLACK THERAPIST?"
+        },
+        {
+          "url": "https://balancedawakening.com/black-therapists-chicago",
+          "title": "Black Therapists in Chicago | Inclusive & Culturally Aware Care"
+        },
+        {
+          "url": "https://www.google.com/maps/search/Therapist+Near+Me",
+          "title": "https://www.google.com/maps/search/Therapist+Near+Me/"
         }
       ],
       "searchQueries": [],
       "competitors": [
         {
           "url": "https://lifestance.com/provider/therapist/ny/hicks",
-          "resolvedUrl": "https://lifestance.com/provider/therapist/ny/hicks/",
-          "status": "ok",
-          "httpStatus": 200,
-          "title": "Find Therapists In Hicks, New York",
-          "h1": "Find Therapists &amp; Therapy Clinicians in <span style=\"white-space: nowrap;\"> Hicks, New York </span>",
-          "headings": [
-            "Find A Provider Near You",
-            "Services",
-            "Conditions",
-            "No providers Found",
-            "FAQs about how to find a LifeStance supported therapist in Hicks, New York",
-            "How do I find a mental health care therapist in Hicks, New York?",
-            "Do mental health care clinicians in Hicks, New York accept insurance?",
-            "How can I make an appointment with a therapist in Hicks, New York?",
-            "What kind of therapy can I get in Hicks, New York?",
-            "Can I receive virtual therapy with a therapist in Hicks, New York if I am logging in from a different state?",
-            "Additional Cities in New York",
-            "Stay Connected with Insights from LifeStance Health",
-            "Quick Links",
-            "Resources",
-            "Latest Discussions from the Blog",
-            "About LifeStance Health"
-          ],
-          "textChars": 19399
+          "status": "fetch_failed",
+          "error": "The operation was aborted due to timeout"
         },
         {
-          "url": "https://lifestance.com/provider/therapist/il/hicks",
-          "resolvedUrl": "https://lifestance.com/provider/therapist/il/hicks/",
+          "url": "https://nowincluded.com/health-resources/finding-a-therapist",
+          "resolvedUrl": "https://nowincluded.com/health-resources/finding-a-therapist/",
           "status": "ok",
           "httpStatus": 200,
-          "title": "Find Therapists In Hicks, Illinois",
-          "h1": "Find Therapists &amp; Therapy Clinicians in <span style=\"white-space: nowrap;\"> Hicks, Illinois </span>",
+          "title": "5 Websites to Find a Black Therapist - NOWINCLUDED",
+          "h1": "5 Websites To Help You Find the Right Therapist",
           "headings": [
-            "Find A Provider Near You",
-            "Services",
-            "Conditions",
-            "No providers Found",
-            "FAQs about how to find a LifeStance supported therapist in Hicks, Illinois",
-            "How do I find a mental health care therapist in Hicks, Illinois?",
-            "Do mental health care clinicians in Hicks, Illinois accept insurance?",
-            "How can I make an appointment with a therapist in Hicks, Illinois?",
-            "What kind of therapy can I get in Hicks, Illinois?",
-            "Can I receive virtual therapy with a therapist in Hicks, Illinois if I am logging in from a different state?",
-            "Additional Cities in Illinois",
-            "Stay Connected with Insights from LifeStance Health",
-            "Quick Links",
-            "Resources",
-            "Latest Discussions from the Blog",
-            "About LifeStance Health"
+            "1. Utilize Specialized Directories and Platforms",
+            "2. Refine Your Search with Specific Terms",
+            "3. Ask for Referrals",
+            "4. Prioritize Cultural Competency",
+            "5. Schedule a Consultation",
+            "Remember:",
+            "You Might Also Like:",
+            "Prostate Cancer Screening Guidelines You Should Know About",
+            "How to Spot Lung Cancer Symptoms in Women"
           ],
-          "textChars": 21050
+          "textChars": 8103
         },
         {
           "url": "https://www.cliniciansofcolor.org/find-a-therapist",
@@ -211,7 +212,6 @@
       },
       "diagnosis": [
         "EXACT_QUERY_NOT_IN_PRIMARY_SEARCH_SURFACES",
-        "COMPETITOR_BROADER_VISIBLE_COVERAGE",
         "COMPETITOR_DEEPER_ANSWER_STRUCTURE"
       ]
     },
@@ -219,15 +219,36 @@
       "query": "black mental health therapist near me",
       "primaryPage": "/black-therapist-memphis/",
       "status": "ok",
-      "observedAt": "2026-09-14T14:33:09.478Z",
+      "observedAt": "2026-09-15T14:31:48.433Z",
       "provider": "openrouter_web_search",
       "model": "openai/gpt-4o-mini",
       "observationType": "LIVE_WEB_SURFACING",
       "rankVerified": false,
       "providerAnswered": true,
-      "citationCount": 0,
-      "siteSurfaced": false,
-      "citations": [],
+      "citationCount": 5,
+      "siteSurfaced": true,
+      "citations": [
+        {
+          "url": "https://www.hicksconsulting.org/",
+          "title": "Hicks Consulting | Therapy for Individuals & Mental Health ..."
+        },
+        {
+          "url": "https://www.hicksconsulting.org/black-therapist-memphis",
+          "title": "Black Therapist Serving Memphis, TN - Hicks Consulting"
+        },
+        {
+          "url": "https://www.hicksconsulting.org/therapy",
+          "title": "Virtual Therapy Serving Memphis & Tennessee"
+        },
+        {
+          "url": "https://www.hicksconsulting.org/female-therapist-memphis",
+          "title": "Female Therapist in Memphis: What Gender Fit Changes, and ..."
+        },
+        {
+          "url": "https://www.hicksconsulting.org/psychologist-vs-therapist-memphis",
+          "title": "Do You Need a Psychologist, a Therapist, or a Psychiatrist?"
+        }
+      ],
       "searchQueries": [],
       "competitors": [],
       "ownPage": {
@@ -242,24 +263,47 @@
         "canonical": ""
       },
       "diagnosis": [
-        "EXACT_QUERY_NOT_IN_PRIMARY_SEARCH_SURFACES",
-        "SITE_NOT_SURFACED_IN_GROUNDED_OBSERVATION",
-        "NO_GROUNDED_CITATIONS_RETURNED"
+        "EXACT_QUERY_NOT_IN_PRIMARY_SEARCH_SURFACES"
       ]
     },
     {
       "query": "african american female therapist near me",
       "primaryPage": "/black-therapist-memphis/",
       "status": "ok",
-      "observedAt": "2026-09-14T14:33:09.478Z",
+      "observedAt": "2026-09-15T14:31:48.433Z",
       "provider": "openrouter_web_search",
       "model": "openai/gpt-4o-mini",
       "observationType": "LIVE_WEB_SURFACING",
       "rankVerified": false,
       "providerAnswered": true,
-      "citationCount": 0,
-      "siteSurfaced": false,
-      "citations": [],
+      "citationCount": 6,
+      "siteSurfaced": true,
+      "citations": [
+        {
+          "url": "https://www.hicksconsulting.org/",
+          "title": "Hicks Consulting | Therapy for Individuals & Mental Health ..."
+        },
+        {
+          "url": "https://www.hicksconsulting.org/female-therapist-memphis",
+          "title": "Female Therapist in Memphis: What Gender Fit Changes, and ..."
+        },
+        {
+          "url": "https://www.hicksconsulting.org/therapy",
+          "title": "Virtual Therapy Serving Memphis & Tennessee"
+        },
+        {
+          "url": "https://www.hicksconsulting.org/black-therapist-memphis",
+          "title": "Black Therapist Serving Memphis, TN - Hicks Consulting"
+        },
+        {
+          "url": "https://www.hicksconsulting.org/faq",
+          "title": "FAQ | Hicks Consulting"
+        },
+        {
+          "url": "https://www.hicksconsulting.org/psychologist-vs-therapist-memphis",
+          "title": "Do You Need a Psychologist, a Therapist, or a Psychiatrist?"
+        }
+      ],
       "searchQueries": [],
       "competitors": [],
       "ownPage": {
@@ -274,24 +318,47 @@
         "canonical": ""
       },
       "diagnosis": [
-        "EXACT_QUERY_NOT_IN_PRIMARY_SEARCH_SURFACES",
-        "SITE_NOT_SURFACED_IN_GROUNDED_OBSERVATION",
-        "NO_GROUNDED_CITATIONS_RETURNED"
+        "EXACT_QUERY_NOT_IN_PRIMARY_SEARCH_SURFACES"
       ]
     },
     {
       "query": "african american psychologist near me",
       "primaryPage": "/black-therapist-memphis/",
       "status": "ok",
-      "observedAt": "2026-09-14T14:33:09.478Z",
+      "observedAt": "2026-09-15T14:31:48.433Z",
       "provider": "openrouter_web_search",
       "model": "openai/gpt-4o-mini",
       "observationType": "LIVE_WEB_SURFACING",
       "rankVerified": false,
       "providerAnswered": true,
-      "citationCount": 0,
-      "siteSurfaced": false,
-      "citations": [],
+      "citationCount": 6,
+      "siteSurfaced": true,
+      "citations": [
+        {
+          "url": "https://www.hicksconsulting.org/therapist-near-me-memphis",
+          "title": "Therapist Near Me in Memphis: How to Find One Who Can ..."
+        },
+        {
+          "url": "https://www.hicksconsulting.org/black-therapist-memphis",
+          "title": "Black Therapist Serving Memphis, TN - Hicks Consulting"
+        },
+        {
+          "url": "https://www.hicksconsulting.org/therapy",
+          "title": "Virtual Therapy Serving Memphis & Tennessee"
+        },
+        {
+          "url": "https://www.hicksconsulting.org/female-therapist-memphis",
+          "title": "Female Therapist in Memphis: What Gender Fit Changes, and ..."
+        },
+        {
+          "url": "https://www.hicksconsulting.org/psychologist-vs-therapist-memphis",
+          "title": "Do You Need a Psychologist, a Therapist, or a Psychiatrist?"
+        },
+        {
+          "url": "https://www.hicksconsulting.org/",
+          "title": "Hicks Consulting | Therapy for Individuals & Mental Health ..."
+        }
+      ],
       "searchQueries": [],
       "competitors": [],
       "ownPage": {
@@ -306,24 +373,35 @@
         "canonical": ""
       },
       "diagnosis": [
-        "EXACT_QUERY_NOT_IN_PRIMARY_SEARCH_SURFACES",
-        "SITE_NOT_SURFACED_IN_GROUNDED_OBSERVATION",
-        "NO_GROUNDED_CITATIONS_RETURNED"
+        "EXACT_QUERY_NOT_IN_PRIMARY_SEARCH_SURFACES"
       ]
     },
     {
       "query": "african american therapist near me",
       "primaryPage": "/black-therapist-memphis/",
       "status": "ok",
-      "observedAt": "2026-09-14T14:33:09.478Z",
+      "observedAt": "2026-09-15T14:31:48.433Z",
       "provider": "openrouter_web_search",
       "model": "openai/gpt-4o-mini",
       "observationType": "LIVE_WEB_SURFACING",
       "rankVerified": false,
       "providerAnswered": true,
-      "citationCount": 0,
-      "siteSurfaced": false,
-      "citations": [],
+      "citationCount": 3,
+      "siteSurfaced": true,
+      "citations": [
+        {
+          "url": "https://www.hicksconsulting.org/",
+          "title": "Hicks Consulting | Therapy for Individuals & Mental Health ..."
+        },
+        {
+          "url": "https://www.hicksconsulting.org/therapy",
+          "title": "Virtual Therapy Serving Memphis & Tennessee"
+        },
+        {
+          "url": "https://www.hicksconsulting.org/black-therapist-memphis",
+          "title": "Black Therapist Serving Memphis, TN - Hicks Consulting"
+        }
+      ],
       "searchQueries": [],
       "competitors": [],
       "ownPage": {
@@ -338,9 +416,7 @@
         "canonical": ""
       },
       "diagnosis": [
-        "EXACT_QUERY_NOT_IN_PRIMARY_SEARCH_SURFACES",
-        "SITE_NOT_SURFACED_IN_GROUNDED_OBSERVATION",
-        "NO_GROUNDED_CITATIONS_RETURNED"
+        "EXACT_QUERY_NOT_IN_PRIMARY_SEARCH_SURFACES"
       ]
     }
   ]

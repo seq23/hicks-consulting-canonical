@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0.0",
-  "generatedAt": "2026-09-14T14:33:09.478Z",
+  "generatedAt": "2026-09-15T14:31:48.433Z",
   "providerState": "CONNECTED",
   "items": [
     {
@@ -27,19 +27,29 @@
       "type": "STRIKING_DISTANCE",
       "query": "black therapist memphis tn",
       "page": "https://www.hicksconsulting.org/black-therapist-memphis/",
-      "position": 10.148148148148149,
-      "impressions": 27,
+      "position": 10.21875,
+      "impressions": 32,
       "ctr": 0,
       "recommendedAction": "Improve answer alignment, title/snippet, and supporting internal links without changing page identity.",
       "confidence": "high"
+    },
+    {
+      "type": "LOW_CTR",
+      "query": "black therapist memphis tn",
+      "page": "https://www.hicksconsulting.org/black-therapist-memphis/",
+      "position": 10.21875,
+      "impressions": 32,
+      "ctr": 0,
+      "recommendedAction": "Review search title and description against the actual query intent.",
+      "confidence": "medium"
     },
     {
       "type": "WRONG_PAGE_RANKING",
       "query": "black therapist memphis tn",
       "page": "https://www.hicksconsulting.org/black-therapist-memphis/",
       "expectedPage": "/",
-      "position": 10.148148148148149,
-      "impressions": 27,
+      "position": 10.21875,
+      "impressions": 32,
       "recommendedAction": "Strengthen query ownership and internal links toward the governed primary page.",
       "confidence": "high"
     },
