@@ -1,6 +1,6 @@
 {
   "schemaVersion": "2.1.0",
-  "generatedAt": "2026-09-16T14:31:37.319Z",
+  "generatedAt": "2026-09-17T14:32:55.902Z",
   "providerState": "CONNECTED",
   "provider": "openrouter_web_search",
   "stop": null,
@@ -11,7 +11,7 @@
       "query": "black therapist near me",
       "primaryPage": "/black-therapist-memphis/",
       "status": "ok",
-      "observedAt": "2026-09-16T14:31:37.319Z",
+      "observedAt": "2026-09-17T14:32:55.902Z",
       "provider": "openrouter_web_search",
       "model": "openai/gpt-4o-mini",
       "observationType": "LIVE_WEB_SURFACING",
@@ -62,7 +62,7 @@
       "query": "black counselors near me",
       "primaryPage": "/black-therapist-memphis/",
       "status": "ok",
-      "observedAt": "2026-09-16T14:31:37.319Z",
+      "observedAt": "2026-09-17T14:32:55.902Z",
       "provider": "openrouter_web_search",
       "model": "openai/gpt-4o-mini",
       "observationType": "LIVE_WEB_SURFACING",
@@ -105,7 +105,7 @@
       "query": "black therapists near me",
       "primaryPage": "/",
       "status": "ok",
-      "observedAt": "2026-09-16T14:31:37.319Z",
+      "observedAt": "2026-09-17T14:32:55.902Z",
       "provider": "openrouter_web_search",
       "model": "openai/gpt-4o-mini",
       "observationType": "LIVE_WEB_SURFACING",
@@ -139,10 +139,6 @@
           "title": "Find a Therapist - Clinicians of Color Directory"
         },
         {
-          "url": "https://www.cliniciansofcolor.org/",
-          "title": "Clinicians of Color Directory - Find a Therapist of Color Near You"
-        },
-        {
           "url": "https://blackdoctors.com/therapists",
           "title": "Find a Black Therapist Near You"
         },
@@ -153,71 +149,23 @@
         {
           "url": "https://balancedawakening.com/black-therapists-chicago",
           "title": "Black Therapists in Chicago | Inclusive & Culturally Aware Care"
+        },
+        {
+          "url": "https://www.google.com/maps/search/Therapist+Near+Me",
+          "title": "https://www.google.com/maps/search/Therapist+Near+Me/"
         }
       ],
       "searchQueries": [],
       "competitors": [
         {
           "url": "https://lifestance.com/provider/therapist/ny/hicks",
-          "resolvedUrl": "https://lifestance.com/provider/therapist/ny/hicks/",
-          "status": "ok",
-          "httpStatus": 200,
-          "title": "Find Therapists In Hicks, New York",
-          "h1": "Find Therapists &amp; Therapy Clinicians in <span style=\"white-space: nowrap;\"> Hicks, New York </span>",
-          "headings": [
-            "Find A Provider Near You",
-            "Services",
-            "Conditions",
-            "Online Appointments Available",
-            "Marquita Leys, Therapist",
-            "Jasmine Mathurin, Therapist",
-            "Kim Butler, Therapist",
-            "Andrea Sicina, Therapist",
-            "Dana Stone, Therapist",
-            "Rebecca Lazo, Therapist",
-            "Kylie Allen, Therapist",
-            "Yuliana Hofstetter, Therapy Clinician",
-            "Col Lal, Therapist",
-            "Tracy Helen Posniak, Therapist",
-            "Aliza Patton, Therapist",
-            "Amber Jade Cosme, Therapy Clinician",
-            "FAQs about how to find a LifeStance supported therapist in Hicks, New York",
-            "How do I find a mental health care therapist in Hicks, New York?",
-            "Do mental health care clinicians in Hicks, New York accept insurance?",
-            "How can I make an appointment with a therapist in Hicks, New York?"
-          ],
-          "textChars": 46023
+          "status": "fetch_failed",
+          "error": "The operation was aborted due to timeout"
         },
         {
           "url": "https://lifestance.com/provider/therapist/il/hicks",
-          "resolvedUrl": "https://lifestance.com/provider/therapist/il/hicks/",
-          "status": "ok",
-          "httpStatus": 200,
-          "title": "Find Therapists In Hicks, Illinois",
-          "h1": "Find Therapists &amp; Therapy Clinicians in <span style=\"white-space: nowrap;\"> Hicks, Illinois </span>",
-          "headings": [
-            "Find A Provider Near You",
-            "Services",
-            "Conditions",
-            "Online Appointments Available",
-            "Asma Amanullah, Therapist",
-            "Danielle Levinson, Therapist",
-            "Tiffany Michalak, Therapist",
-            "Martina Lowery, Therapist",
-            "Nathaniel Catchings, Therapist",
-            "Michelle Harthun, Therapist",
-            "Deanna Brenner, Therapy Clinician",
-            "Vanessa Corley, Therapist",
-            "Layne Hardy, Therapist",
-            "Ann Grossman, Therapist",
-            "Tatyana Smith, Therapist",
-            "Kelly Downs, Therapy Clinician",
-            "FAQs about how to find a LifeStance supported therapist in Hicks, Illinois",
-            "How do I find a mental health care therapist in Hicks, Illinois?",
-            "Do mental health care clinicians in Hicks, Illinois accept insurance?",
-            "How can I make an appointment with a therapist in Hicks, Illinois?"
-          ],
-          "textChars": 48531
+          "status": "fetch_failed",
+          "error": "The operation was aborted due to timeout"
         },
         {
           "url": "https://nowincluded.com/health-resources/finding-a-therapist",
@@ -253,7 +201,6 @@
       },
       "diagnosis": [
         "EXACT_QUERY_NOT_IN_PRIMARY_SEARCH_SURFACES",
-        "COMPETITOR_BROADER_VISIBLE_COVERAGE",
         "COMPETITOR_DEEPER_ANSWER_STRUCTURE"
       ]
     },
@@ -261,7 +208,7 @@
       "query": "black mental health therapist near me",
       "primaryPage": "/black-therapist-memphis/",
       "status": "ok",
-      "observedAt": "2026-09-16T14:31:37.319Z",
+      "observedAt": "2026-09-17T14:32:55.902Z",
       "provider": "openrouter_web_search",
       "model": "openai/gpt-4o-mini",
       "observationType": "LIVE_WEB_SURFACING",
@@ -312,7 +259,7 @@
       "query": "african american psychologist near me",
       "primaryPage": "/black-therapist-memphis/",
       "status": "ok",
-      "observedAt": "2026-09-16T14:31:37.319Z",
+      "observedAt": "2026-09-17T14:32:55.902Z",
       "provider": "openrouter_web_search",
       "model": "openai/gpt-4o-mini",
       "observationType": "LIVE_WEB_SURFACING",
@@ -367,7 +314,7 @@
       "query": "african american therapist near me",
       "primaryPage": "/black-therapist-memphis/",
       "status": "ok",
-      "observedAt": "2026-09-16T14:31:37.319Z",
+      "observedAt": "2026-09-17T14:32:55.902Z",
       "provider": "openrouter_web_search",
       "model": "openai/gpt-4o-mini",
       "observationType": "LIVE_WEB_SURFACING",
@@ -410,7 +357,7 @@
       "query": "african american female therapist near me",
       "primaryPage": "/black-therapist-memphis/",
       "status": "ok",
-      "observedAt": "2026-09-16T14:31:37.319Z",
+      "observedAt": "2026-09-17T14:32:55.902Z",
       "provider": "openrouter_web_search",
       "model": "openai/gpt-4o-mini",
       "observationType": "LIVE_WEB_SURFACING",

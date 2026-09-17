@@ -1,6 +1,6 @@
 {
   "schemaVersion": "2.0.0",
-  "generatedAt": "2026-09-16T14:31:37.319Z",
+  "generatedAt": "2026-09-17T14:32:55.902Z",
   "policy": "Hicks may autonomously apply bounded technical/search-alignment repairs. Substantive clinical claims and unsupported treatment assertions are never auto-generated from competitor content.",
   "items": [
     {
@@ -13,9 +13,9 @@
       "evidence": {
         "groundedSiteSurfaced": true,
         "groundedProviderAnswered": true,
-        "gscImpressions": 14,
+        "gscImpressions": 15,
         "gscClicks": 0,
-        "gscAveragePosition": 8.29,
+        "gscAveragePosition": 8.27,
         "gscPages": [
           "/black-therapist-memphis/"
         ],
@@ -52,7 +52,6 @@
       "reasons": [
         "MULTIPLE_HICKS_PAGES_FOR_QUERY",
         "EXACT_QUERY_NOT_IN_PRIMARY_SEARCH_SURFACES",
-        "COMPETITOR_BROADER_VISIBLE_COVERAGE",
         "COMPETITOR_DEEPER_ANSWER_STRUCTURE"
       ],
       "evidence": {
@@ -83,8 +82,8 @@
             "title": "Find a Therapist - Clinicians of Color Directory"
           },
           {
-            "url": "https://www.cliniciansofcolor.org/",
-            "title": "Clinicians of Color Directory - Find a Therapist of Color Near You"
+            "url": "https://blackdoctors.com/therapists",
+            "title": "Find a Black Therapist Near You"
           }
         ]
       },
@@ -584,8 +583,8 @@
         "groundedSiteSurfaced": null,
         "groundedProviderAnswered": false,
         "gscImpressions": 1,
-        "gscClicks": 1,
-        "gscAveragePosition": 19,
+        "gscClicks": 0,
+        "gscAveragePosition": 47,
         "gscPages": [
           "/"
         ],
@@ -783,9 +782,9 @@
       "evidence": {
         "groundedSiteSurfaced": null,
         "groundedProviderAnswered": false,
-        "gscImpressions": 35,
+        "gscImpressions": 38,
         "gscClicks": 1,
-        "gscAveragePosition": 8.87,
+        "gscAveragePosition": 8.92,
         "gscPages": [
           "/",
           "/black-therapist-memphis/"
@@ -805,9 +804,9 @@
       "evidence": {
         "groundedSiteSurfaced": null,
         "groundedProviderAnswered": false,
-        "gscImpressions": 19,
-        "gscClicks": 3,
-        "gscAveragePosition": 4.5,
+        "gscImpressions": 17,
+        "gscClicks": 2,
+        "gscAveragePosition": 4.93,
         "gscPages": [
           "/",
           "/faq/",
@@ -1795,17 +1794,15 @@
     {
       "query": "russell calame memphis tn",
       "primaryPage": "/",
-      "status": "OBSERVED",
+      "status": "UNKNOWN",
       "reasons": [],
       "evidence": {
         "groundedSiteSurfaced": null,
         "groundedProviderAnswered": false,
-        "gscImpressions": 1,
+        "gscImpressions": 0,
         "gscClicks": 0,
-        "gscAveragePosition": 10,
-        "gscPages": [
-          "/"
-        ],
+        "gscAveragePosition": 0,
+        "gscPages": [],
         "competitorUrls": []
       },
       "safeRepairEligible": false,
