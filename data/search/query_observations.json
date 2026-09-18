@@ -1,6 +1,6 @@
 {
   "schemaVersion": "2.1.0",
-  "generatedAt": "2026-09-17T14:32:55.902Z",
+  "generatedAt": "2026-09-18T14:31:06.518Z",
   "providerState": "CONNECTED",
   "provider": "openrouter_web_search",
   "stop": null,
@@ -11,7 +11,7 @@
       "query": "black therapist near me",
       "primaryPage": "/black-therapist-memphis/",
       "status": "ok",
-      "observedAt": "2026-09-17T14:32:55.902Z",
+      "observedAt": "2026-09-18T14:31:06.518Z",
       "provider": "openrouter_web_search",
       "model": "openai/gpt-4o-mini",
       "observationType": "LIVE_WEB_SURFACING",
@@ -62,7 +62,7 @@
       "query": "black counselors near me",
       "primaryPage": "/black-therapist-memphis/",
       "status": "ok",
-      "observedAt": "2026-09-17T14:32:55.902Z",
+      "observedAt": "2026-09-18T14:31:06.518Z",
       "provider": "openrouter_web_search",
       "model": "openai/gpt-4o-mini",
       "observationType": "LIVE_WEB_SURFACING",
@@ -72,16 +72,16 @@
       "siteSurfaced": true,
       "citations": [
         {
-          "url": "https://www.hicksconsulting.org/",
-          "title": "Hicks Consulting | Therapy for Individuals & Mental Health ..."
-        },
-        {
           "url": "https://www.hicksconsulting.org/therapy",
           "title": "Virtual Therapy Serving Memphis & Tennessee"
         },
         {
           "url": "https://www.hicksconsulting.org/black-therapist-memphis",
           "title": "Black Therapist Serving Memphis, TN - Hicks Consulting"
+        },
+        {
+          "url": "https://www.hicksconsulting.org/",
+          "title": "Hicks Consulting | Therapy for Individuals & Mental Health ..."
         }
       ],
       "searchQueries": [],
@@ -105,7 +105,7 @@
       "query": "black therapists near me",
       "primaryPage": "/",
       "status": "ok",
-      "observedAt": "2026-09-17T14:32:55.902Z",
+      "observedAt": "2026-09-18T14:31:06.518Z",
       "provider": "openrouter_web_search",
       "model": "openai/gpt-4o-mini",
       "observationType": "LIVE_WEB_SURFACING",
@@ -131,12 +131,12 @@
           "title": "Find Therapists In Hicks, Illinois"
         },
         {
-          "url": "https://nowincluded.com/health-resources/finding-a-therapist",
-          "title": "5 Websites to Find a Black Therapist - NOWINCLUDED"
-        },
-        {
           "url": "https://www.cliniciansofcolor.org/find-a-therapist",
           "title": "Find a Therapist - Clinicians of Color Directory"
+        },
+        {
+          "url": "https://nowincluded.com/health-resources/finding-a-therapist",
+          "title": "5 Websites to Find a Black Therapist - NOWINCLUDED"
         },
         {
           "url": "https://blackdoctors.com/therapists",
@@ -168,24 +168,14 @@
           "error": "The operation was aborted due to timeout"
         },
         {
-          "url": "https://nowincluded.com/health-resources/finding-a-therapist",
-          "resolvedUrl": "https://nowincluded.com/health-resources/finding-a-therapist/",
+          "url": "https://www.cliniciansofcolor.org/find-a-therapist",
+          "resolvedUrl": "https://www.cliniciansofcolor.org/find-a-therapist",
           "status": "ok",
-          "httpStatus": 200,
-          "title": "5 Websites to Find a Black Therapist - NOWINCLUDED",
-          "h1": "5 Websites To Help You Find the Right Therapist",
-          "headings": [
-            "1. Utilize Specialized Directories and Platforms",
-            "2. Refine Your Search with Specific Terms",
-            "3. Ask for Referrals",
-            "4. Prioritize Cultural Competency",
-            "5. Schedule a Consultation",
-            "Remember:",
-            "You Might Also Like:",
-            "Prostate Cancer Screening Guidelines You Should Know About",
-            "How to Spot Lung Cancer Symptoms in Women"
-          ],
-          "textChars": 8103
+          "httpStatus": 202,
+          "title": "",
+          "h1": "",
+          "headings": [],
+          "textChars": 0
         }
       ],
       "ownPage": {
@@ -200,15 +190,14 @@
         "canonical": ""
       },
       "diagnosis": [
-        "EXACT_QUERY_NOT_IN_PRIMARY_SEARCH_SURFACES",
-        "COMPETITOR_DEEPER_ANSWER_STRUCTURE"
+        "EXACT_QUERY_NOT_IN_PRIMARY_SEARCH_SURFACES"
       ]
     },
     {
       "query": "black mental health therapist near me",
       "primaryPage": "/black-therapist-memphis/",
       "status": "ok",
-      "observedAt": "2026-09-17T14:32:55.902Z",
+      "observedAt": "2026-09-18T14:31:06.518Z",
       "provider": "openrouter_web_search",
       "model": "openai/gpt-4o-mini",
       "observationType": "LIVE_WEB_SURFACING",
@@ -259,7 +248,7 @@
       "query": "african american psychologist near me",
       "primaryPage": "/black-therapist-memphis/",
       "status": "ok",
-      "observedAt": "2026-09-17T14:32:55.902Z",
+      "observedAt": "2026-09-18T14:31:06.518Z",
       "provider": "openrouter_web_search",
       "model": "openai/gpt-4o-mini",
       "observationType": "LIVE_WEB_SURFACING",
@@ -314,7 +303,7 @@
       "query": "african american therapist near me",
       "primaryPage": "/black-therapist-memphis/",
       "status": "ok",
-      "observedAt": "2026-09-17T14:32:55.902Z",
+      "observedAt": "2026-09-18T14:31:06.518Z",
       "provider": "openrouter_web_search",
       "model": "openai/gpt-4o-mini",
       "observationType": "LIVE_WEB_SURFACING",
@@ -357,7 +346,7 @@
       "query": "african american female therapist near me",
       "primaryPage": "/black-therapist-memphis/",
       "status": "ok",
-      "observedAt": "2026-09-17T14:32:55.902Z",
+      "observedAt": "2026-09-18T14:31:06.518Z",
       "provider": "openrouter_web_search",
       "model": "openai/gpt-4o-mini",
       "observationType": "LIVE_WEB_SURFACING",
