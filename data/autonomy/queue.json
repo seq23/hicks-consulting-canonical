@@ -1019,7 +1019,7 @@
         "How to tell it is working",
         "Next step"
       ],
-      "state": "FAILED_RETRYABLE",
+      "state": "SYSTEM_BLOCKED",
       "routineApprovalRequired": true,
       "publicOnlyAfterApproval": true,
       "source": "legacy_generated_queue_migration",
@@ -1125,6 +1125,48 @@
           "to": "FAILED_RETRYABLE",
           "at": "2026-09-15T14:45:10.363Z",
           "reason": "Candidate did not satisfy the final Safe Harbor gate."
+        },
+        {
+          "from": "FAILED_RETRYABLE",
+          "to": "SCORED",
+          "at": "2026-09-18T14:44:36.996Z",
+          "reason": "Candidate score normalized for autonomous admission."
+        },
+        {
+          "from": "SCORED",
+          "to": "ADMITTED",
+          "at": "2026-09-18T14:44:36.996Z",
+          "reason": "Candidate admitted inside the existing content policy and ownership boundaries."
+        },
+        {
+          "from": "ADMITTED",
+          "to": "DRAFTING",
+          "at": "2026-09-18T14:44:36.996Z",
+          "reason": "Structured LLM drafting started."
+        },
+        {
+          "from": "DRAFTING",
+          "to": "DRAFTED",
+          "at": "2026-09-18T14:44:36.996Z",
+          "reason": "Structured draft produced."
+        },
+        {
+          "from": "DRAFTED",
+          "to": "VALIDATING",
+          "at": "2026-09-18T14:44:36.996Z",
+          "reason": "Safe Harbor validation started."
+        },
+        {
+          "from": "VALIDATING",
+          "to": "REPAIRING",
+          "at": "2026-09-18T14:44:36.996Z",
+          "reason": "Repairable Safe Harbor findings detected."
+        },
+        {
+          "from": "REPAIRING",
+          "to": "SYSTEM_BLOCKED",
+          "at": "2026-09-18T14:44:36.996Z",
+          "reason": "Candidate exhausted 3 Safe Harbor attempts without clearing its findings."
         }
       ],
       "demandPhrasing": {
@@ -1146,14 +1188,14 @@
           }
         ]
       },
-      "updatedAt": "2026-09-15T14:45:10.363Z",
+      "updatedAt": "2026-09-18T14:44:36.996Z",
       "providerGate": null,
-      "attempts": 2,
+      "attempts": 3,
       "findings": [
         {
           "code": "THIN_CONTENT",
           "severity": "repairable",
-          "message": "Draft has 447 words; minimum is 1120."
+          "message": "Draft has 516 words; minimum is 1120."
         }
       ]
     },
@@ -1188,7 +1230,7 @@
         "How to tell it is working",
         "Next step"
       ],
-      "state": "DISCOVERED",
+      "state": "FAILED_RETRYABLE",
       "routineApprovalRequired": true,
       "publicOnlyAfterApproval": true,
       "source": "legacy_generated_queue_migration",
@@ -1210,6 +1252,48 @@
           "to": "DISCOVERED",
           "at": "2026-08-29T14:45:30.271Z",
           "reason": "Title reconciled to the upstream demand-grounded brief before any page existed."
+        },
+        {
+          "from": "DISCOVERED",
+          "to": "SCORED",
+          "at": "2026-09-18T14:44:36.996Z",
+          "reason": "Candidate score normalized for autonomous admission."
+        },
+        {
+          "from": "SCORED",
+          "to": "ADMITTED",
+          "at": "2026-09-18T14:44:36.996Z",
+          "reason": "Candidate admitted inside the existing content policy and ownership boundaries."
+        },
+        {
+          "from": "ADMITTED",
+          "to": "DRAFTING",
+          "at": "2026-09-18T14:44:36.996Z",
+          "reason": "Structured LLM drafting started."
+        },
+        {
+          "from": "DRAFTING",
+          "to": "DRAFTED",
+          "at": "2026-09-18T14:44:36.996Z",
+          "reason": "Structured draft produced."
+        },
+        {
+          "from": "DRAFTED",
+          "to": "VALIDATING",
+          "at": "2026-09-18T14:44:36.996Z",
+          "reason": "Safe Harbor validation started."
+        },
+        {
+          "from": "VALIDATING",
+          "to": "REPAIRING",
+          "at": "2026-09-18T14:44:36.996Z",
+          "reason": "Repairable Safe Harbor findings detected."
+        },
+        {
+          "from": "REPAIRING",
+          "to": "FAILED_RETRYABLE",
+          "at": "2026-09-18T14:44:36.996Z",
+          "reason": "Candidate did not satisfy the final Safe Harbor gate."
         }
       ],
       "demandPhrasing": {
@@ -1232,7 +1316,16 @@
           }
         ]
       },
-      "updatedAt": "2026-08-29T14:45:30.271Z"
+      "updatedAt": "2026-09-18T14:44:36.996Z",
+      "providerGate": null,
+      "attempts": 1,
+      "findings": [
+        {
+          "code": "THIN_CONTENT",
+          "severity": "repairable",
+          "message": "Draft has 602 words; minimum is 1120."
+        }
+      ]
     },
     {
       "id": "brief-general_emotional_wellness-guide",

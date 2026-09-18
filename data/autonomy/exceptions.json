@@ -287,6 +287,36 @@
       "createdAt": "2026-09-15T14:45:10.363Z",
       "blocksOtherWork": false,
       "clientActionRequired": false
+    },
+    {
+      "id": "exception-brief-ai_digital_wellness-guide-1789742756692",
+      "candidateId": "brief-ai_digital_wellness-guide",
+      "decision": "REPAIR_REQUIRED",
+      "findings": [
+        {
+          "code": "THIN_CONTENT",
+          "severity": "repairable",
+          "message": "Draft has 516 words; minimum is 1120."
+        }
+      ],
+      "createdAt": "2026-09-18T14:44:36.996Z",
+      "blocksOtherWork": false,
+      "clientActionRequired": false
+    },
+    {
+      "id": "exception-brief-workplace_emotional_intelligence-guide-1789742807451",
+      "candidateId": "brief-workplace_emotional_intelligence-guide",
+      "decision": "REPAIR_REQUIRED",
+      "findings": [
+        {
+          "code": "THIN_CONTENT",
+          "severity": "repairable",
+          "message": "Draft has 602 words; minimum is 1120."
+        }
+      ],
+      "createdAt": "2026-09-18T14:44:36.996Z",
+      "blocksOtherWork": false,
+      "clientActionRequired": false
     }
   ]
 }
