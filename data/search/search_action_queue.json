@@ -1,6 +1,6 @@
 {
   "schemaVersion": "2.0.0",
-  "generatedAt": "2026-09-20T14:29:17.420Z",
+  "generatedAt": "2026-09-21T14:33:42.075Z",
   "policy": "Hicks may autonomously apply bounded technical/search-alignment repairs. Substantive clinical claims and unsupported treatment assertions are never auto-generated from competitor content.",
   "items": [
     {
@@ -34,9 +34,9 @@
       "evidence": {
         "groundedSiteSurfaced": true,
         "groundedProviderAnswered": true,
-        "gscImpressions": 8,
+        "gscImpressions": 9,
         "gscClicks": 0,
-        "gscAveragePosition": 7.25,
+        "gscAveragePosition": 7.44,
         "gscPages": [
           "/black-therapist-memphis/"
         ],
@@ -73,10 +73,11 @@
       "reasons": [
         "MULTIPLE_HICKS_PAGES_FOR_QUERY",
         "EXACT_QUERY_NOT_IN_PRIMARY_SEARCH_SURFACES",
+        "SITE_NOT_SURFACED_IN_GROUNDED_OBSERVATION",
         "COMPETITOR_DEEPER_ANSWER_STRUCTURE"
       ],
       "evidence": {
-        "groundedSiteSurfaced": true,
+        "groundedSiteSurfaced": false,
         "groundedProviderAnswered": true,
         "gscImpressions": 8,
         "gscClicks": 0,
@@ -91,20 +92,20 @@
             "title": "Find Your Black Therapist Near You | BTM - Start Your Wellness Journey Today"
           },
           {
-            "url": "https://wherewespend.com/black-therapist",
-            "title": "Find a Black Therapist Near You - Where We Spend"
+            "url": "https://www.blacktherapistsmatter.com/therapists-directory",
+            "title": "BTM - Therapists Directory"
           },
           {
-            "url": "https://hicks-corporation.socialdirect.one/",
-            "title": "https://hicks-corporation.socialdirect.one/"
+            "url": "https://www.chicagoblacktherapists.com/directory",
+            "title": "Chicago Black Therapist Directory — Chicago Black Therapists"
           },
           {
-            "url": "https://africanamericantherapists.com/",
-            "title": "AfricanAmericanTherapists.com"
+            "url": "https://mentalhealthmatch.com/browse-therapists/tennessee/nashville/black-therapists",
+            "title": "Black Therapists in Nashville, TN | Mental Health Match"
           },
           {
-            "url": "https://africanamericantherapists.com/african-american-therapists-in-brooklyn",
-            "title": "Black therapists in Brooklyn | AfricanAmericanTherapists.com"
+            "url": "https://www.justdavia.com/blog/directories-for-therapists-of-color",
+            "title": "16 Directories for Therapists of Color"
           }
         ]
       },
@@ -612,19 +613,15 @@
     {
       "query": "trauma center near me",
       "primaryPage": "/emergency-crisis-notice/",
-      "status": "WRONG_PAGE",
-      "reasons": [
-        "WRONG_HICKS_PAGE_RANKING"
-      ],
+      "status": "UNKNOWN",
+      "reasons": [],
       "evidence": {
         "groundedSiteSurfaced": null,
         "groundedProviderAnswered": false,
-        "gscImpressions": 1,
+        "gscImpressions": 0,
         "gscClicks": 0,
-        "gscAveragePosition": 1,
-        "gscPages": [
-          "/"
-        ],
+        "gscAveragePosition": 0,
+        "gscPages": [],
         "competitorUrls": []
       },
       "safeRepairEligible": false,
@@ -776,7 +773,7 @@
       "evidence": {
         "groundedSiteSurfaced": null,
         "groundedProviderAnswered": false,
-        "gscImpressions": 44,
+        "gscImpressions": 47,
         "gscClicks": 1,
         "gscAveragePosition": 7.8,
         "gscPages": [
@@ -798,9 +795,9 @@
       "evidence": {
         "groundedSiteSurfaced": null,
         "groundedProviderAnswered": false,
-        "gscImpressions": 16,
+        "gscImpressions": 15,
         "gscClicks": 2,
-        "gscAveragePosition": 4.86,
+        "gscAveragePosition": 4.87,
         "gscPages": [
           "/",
           "/faq/",
@@ -819,9 +816,9 @@
       "evidence": {
         "groundedSiteSurfaced": null,
         "groundedProviderAnswered": false,
-        "gscImpressions": 13,
+        "gscImpressions": 11,
         "gscClicks": 0,
-        "gscAveragePosition": 2.54,
+        "gscAveragePosition": 2.73,
         "gscPages": [
           "/"
         ],
@@ -935,15 +932,18 @@
     {
       "query": "black therapist",
       "primaryPage": "/black-therapist-memphis/",
-      "status": "OBSERVED",
-      "reasons": [],
+      "status": "CANNIBALIZATION_REVIEW",
+      "reasons": [
+        "MULTIPLE_HICKS_PAGES_FOR_QUERY"
+      ],
       "evidence": {
         "groundedSiteSurfaced": null,
         "groundedProviderAnswered": false,
-        "gscImpressions": 6,
+        "gscImpressions": 7,
         "gscClicks": 0,
-        "gscAveragePosition": 5.83,
+        "gscAveragePosition": 3.92,
         "gscPages": [
+          "/",
           "/black-therapist-memphis/"
         ],
         "competitorUrls": []
@@ -1247,9 +1247,9 @@
       "evidence": {
         "groundedSiteSurfaced": null,
         "groundedProviderAnswered": false,
-        "gscImpressions": 3,
+        "gscImpressions": 5,
         "gscClicks": 0,
-        "gscAveragePosition": 8.5,
+        "gscAveragePosition": 8.13,
         "gscPages": [
           "/resources/articles/the-quiet-anger-that-builds-when-you-are-always-the-reliable-one/"
         ],

@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0.0",
-  "generatedAt": "2026-09-20T14:29:17.420Z",
+  "generatedAt": "2026-09-21T14:33:42.075Z",
   "providerState": "CONNECTED",
   "items": [
     {
@@ -24,11 +24,21 @@
       "confidence": "high"
     },
     {
+      "type": "WRONG_PAGE_RANKING",
+      "query": "black therapist",
+      "page": "https://www.hicksconsulting.org/",
+      "expectedPage": "/black-therapist-memphis/",
+      "position": 2,
+      "impressions": 1,
+      "recommendedAction": "Strengthen query ownership and internal links toward the governed primary page.",
+      "confidence": "high"
+    },
+    {
       "type": "STRIKING_DISTANCE",
       "query": "black therapist memphis tn",
       "page": "https://www.hicksconsulting.org/black-therapist-memphis/",
-      "position": 10.268292682926829,
-      "impressions": 41,
+      "position": 10.272727272727273,
+      "impressions": 44,
       "ctr": 0,
       "recommendedAction": "Improve answer alignment, title/snippet, and supporting internal links without changing page identity.",
       "confidence": "high"
@@ -37,8 +47,8 @@
       "type": "LOW_CTR",
       "query": "black therapist memphis tn",
       "page": "https://www.hicksconsulting.org/black-therapist-memphis/",
-      "position": 10.268292682926829,
-      "impressions": 41,
+      "position": 10.272727272727273,
+      "impressions": 44,
       "ctr": 0,
       "recommendedAction": "Review search title and description against the actual query intent.",
       "confidence": "medium"
@@ -48,8 +58,8 @@
       "query": "black therapist memphis tn",
       "page": "https://www.hicksconsulting.org/black-therapist-memphis/",
       "expectedPage": "/",
-      "position": 10.268292682926829,
-      "impressions": 41,
+      "position": 10.272727272727273,
+      "impressions": 44,
       "recommendedAction": "Strengthen query ownership and internal links toward the governed primary page.",
       "confidence": "high"
     },
@@ -149,16 +159,6 @@
       "page": "https://www.hicksconsulting.org/",
       "expectedPage": "/therapist-near-me-memphis/",
       "position": 35,
-      "impressions": 1,
-      "recommendedAction": "Strengthen query ownership and internal links toward the governed primary page.",
-      "confidence": "high"
-    },
-    {
-      "type": "WRONG_PAGE_RANKING",
-      "query": "trauma center near me",
-      "page": "https://www.hicksconsulting.org/",
-      "expectedPage": "/emergency-crisis-notice/",
-      "position": 1,
       "impressions": 1,
       "recommendedAction": "Strengthen query ownership and internal links toward the governed primary page.",
       "confidence": "high"
