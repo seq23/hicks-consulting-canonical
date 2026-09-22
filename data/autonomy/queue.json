@@ -1294,6 +1294,48 @@
           "to": "FAILED_RETRYABLE",
           "at": "2026-09-18T14:44:36.996Z",
           "reason": "Candidate did not satisfy the final Safe Harbor gate."
+        },
+        {
+          "from": "FAILED_RETRYABLE",
+          "to": "SCORED",
+          "at": "2026-09-22T14:46:30.407Z",
+          "reason": "Candidate score normalized for autonomous admission."
+        },
+        {
+          "from": "SCORED",
+          "to": "ADMITTED",
+          "at": "2026-09-22T14:46:30.407Z",
+          "reason": "Candidate admitted inside the existing content policy and ownership boundaries."
+        },
+        {
+          "from": "ADMITTED",
+          "to": "DRAFTING",
+          "at": "2026-09-22T14:46:30.407Z",
+          "reason": "Structured LLM drafting started."
+        },
+        {
+          "from": "DRAFTING",
+          "to": "DRAFTED",
+          "at": "2026-09-22T14:46:30.407Z",
+          "reason": "Structured draft produced."
+        },
+        {
+          "from": "DRAFTED",
+          "to": "VALIDATING",
+          "at": "2026-09-22T14:46:30.407Z",
+          "reason": "Safe Harbor validation started."
+        },
+        {
+          "from": "VALIDATING",
+          "to": "REPAIRING",
+          "at": "2026-09-22T14:46:30.407Z",
+          "reason": "Repairable Safe Harbor findings detected."
+        },
+        {
+          "from": "REPAIRING",
+          "to": "FAILED_RETRYABLE",
+          "at": "2026-09-22T14:46:30.407Z",
+          "reason": "Candidate did not satisfy the final Safe Harbor gate."
         }
       ],
       "demandPhrasing": {
@@ -1316,14 +1358,14 @@
           }
         ]
       },
-      "updatedAt": "2026-09-18T14:44:36.996Z",
+      "updatedAt": "2026-09-22T14:46:30.407Z",
       "providerGate": null,
-      "attempts": 1,
+      "attempts": 2,
       "findings": [
         {
           "code": "THIN_CONTENT",
           "severity": "repairable",
-          "message": "Draft has 602 words; minimum is 1120."
+          "message": "Draft has 533 words; minimum is 1120."
         }
       ]
     },
@@ -1358,7 +1400,7 @@
         "What helps",
         "When to get support"
       ],
-      "state": "DISCOVERED",
+      "state": "FAILED_RETRYABLE",
       "routineApprovalRequired": true,
       "publicOnlyAfterApproval": true,
       "source": "legacy_generated_queue_migration",
@@ -1380,6 +1422,48 @@
           "to": "DISCOVERED",
           "at": "2026-08-29T14:45:30.271Z",
           "reason": "Title reconciled to the upstream demand-grounded brief before any page existed."
+        },
+        {
+          "from": "DISCOVERED",
+          "to": "SCORED",
+          "at": "2026-09-22T14:46:30.407Z",
+          "reason": "Candidate score normalized for autonomous admission."
+        },
+        {
+          "from": "SCORED",
+          "to": "ADMITTED",
+          "at": "2026-09-22T14:46:30.407Z",
+          "reason": "Candidate admitted inside the existing content policy and ownership boundaries."
+        },
+        {
+          "from": "ADMITTED",
+          "to": "DRAFTING",
+          "at": "2026-09-22T14:46:30.407Z",
+          "reason": "Structured LLM drafting started."
+        },
+        {
+          "from": "DRAFTING",
+          "to": "DRAFTED",
+          "at": "2026-09-22T14:46:30.407Z",
+          "reason": "Structured draft produced."
+        },
+        {
+          "from": "DRAFTED",
+          "to": "VALIDATING",
+          "at": "2026-09-22T14:46:30.407Z",
+          "reason": "Safe Harbor validation started."
+        },
+        {
+          "from": "VALIDATING",
+          "to": "REPAIRING",
+          "at": "2026-09-22T14:46:30.407Z",
+          "reason": "Repairable Safe Harbor findings detected."
+        },
+        {
+          "from": "REPAIRING",
+          "to": "FAILED_RETRYABLE",
+          "at": "2026-09-22T14:46:30.407Z",
+          "reason": "Candidate did not satisfy the final Safe Harbor gate."
         }
       ],
       "demandPhrasing": {
@@ -1401,7 +1485,16 @@
           }
         ]
       },
-      "updatedAt": "2026-08-29T14:45:30.271Z"
+      "updatedAt": "2026-09-22T14:46:30.407Z",
+      "providerGate": null,
+      "attempts": 1,
+      "findings": [
+        {
+          "code": "THIN_CONTENT",
+          "severity": "repairable",
+          "message": "Draft has 573 words; minimum is 1120."
+        }
+      ]
     },
     {
       "id": "brief-black_women_healing-insight",
@@ -2659,6 +2752,55 @@
           "from": null,
           "to": "DISCOVERED",
           "at": "2026-09-21T10:44:22.364Z",
+          "reason": "Migrated from the prior approval-only generated queue."
+        }
+      ]
+    },
+    {
+      "id": "brief-black_women_healing-whitepaper",
+      "clusterId": "black_women_healing",
+      "clusterTitle": "Black women healing beyond survival",
+      "query": "Black women healing beyond survival",
+      "contentType": "white-papers",
+      "title": "I am the first one in my family to go to therapy and nobody understands",
+      "suggestedRoute": "/resources/white-papers/i-am-the-first-one-in-my-family-to-go-to-therapy-and-nobody-understand/",
+      "targetWords": 2500,
+      "minimumWords": 2000,
+      "sourceSignalCount": 5,
+      "score": 100,
+      "llmPrompt": "Create a humanized whitepaper draft for Hicks Consulting.\nTitle: I am the first one in my family to go to therapy and nobody understands\nThis page exists to answer exactly one real question a person typed or said: \"I am the first one in my family to go to therapy and nobody understands\". Answer THAT question, in that person's words, in the first two sentences. Do not broaden it into a general overview of Black women healing beyond survival; other pages on this site cover other questions in the same area and this one must not overlap them.\nMinimum words: 2000. Target words: 2500.\nWrite in a warm, grounded, specific voice. Do not diagnose. Do not guarantee outcomes. Do not invent client stories.\nInclude these sections: Executive summary; The question people are actually asking; What the evidence shows; Audience analysis; Framework; Implementation guidance; Risks and limitations; Recommended next steps.\nApproved conversion path after value is delivered: https://monika-hicks.clientsecure.me/",
+      "humanizationChecklist": [
+        "Use plain human language rather than generic therapy marketing copy.",
+        "Vary sentence rhythm and paragraph length.",
+        "Include concrete examples without inventing client stories.",
+        "Avoid exaggerated claims, guarantees, diagnosis, or pressure language.",
+        "Keep Monika Hicks / Hicks Consulting entity references consistent.",
+        "End with an approved conversion path only after value is delivered."
+      ],
+      "conversionPath": "https://monika-hicks.clientsecure.me/",
+      "sections": [
+        "Executive summary",
+        "The question people are actually asking",
+        "What the evidence shows",
+        "Audience analysis",
+        "Framework",
+        "Implementation guidance",
+        "Risks and limitations",
+        "Recommended next steps"
+      ],
+      "state": "DISCOVERED",
+      "routineApprovalRequired": true,
+      "publicOnlyAfterApproval": true,
+      "source": "legacy_generated_queue_migration",
+      "legacy": {
+        "publishMode": "full_safe_autonomy"
+      },
+      "createdAt": "2026-09-22T14:46:29.783Z",
+      "history": [
+        {
+          "from": null,
+          "to": "DISCOVERED",
+          "at": "2026-09-22T14:46:30.003Z",
           "reason": "Migrated from the prior approval-only generated queue."
         }
       ]
