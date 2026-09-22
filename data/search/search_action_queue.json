@@ -1,6 +1,6 @@
 {
   "schemaVersion": "2.0.0",
-  "generatedAt": "2026-09-21T14:33:42.075Z",
+  "generatedAt": "2026-09-22T14:33:16.394Z",
   "policy": "Hicks may autonomously apply bounded technical/search-alignment repairs. Substantive clinical claims and unsupported treatment assertions are never auto-generated from competitor content.",
   "items": [
     {
@@ -73,11 +73,10 @@
       "reasons": [
         "MULTIPLE_HICKS_PAGES_FOR_QUERY",
         "EXACT_QUERY_NOT_IN_PRIMARY_SEARCH_SURFACES",
-        "SITE_NOT_SURFACED_IN_GROUNDED_OBSERVATION",
         "COMPETITOR_DEEPER_ANSWER_STRUCTURE"
       ],
       "evidence": {
-        "groundedSiteSurfaced": false,
+        "groundedSiteSurfaced": true,
         "groundedProviderAnswered": true,
         "gscImpressions": 8,
         "gscClicks": 0,
@@ -92,20 +91,20 @@
             "title": "Find Your Black Therapist Near You | BTM - Start Your Wellness Journey Today"
           },
           {
+            "url": "https://wherewespend.com/black-therapist",
+            "title": "Find a Black Therapist Near You - Where We Spend"
+          },
+          {
             "url": "https://www.blacktherapistsmatter.com/therapists-directory",
             "title": "BTM - Therapists Directory"
           },
           {
+            "url": "https://blacktherapists.org/",
+            "title": "Home - Black Therapists | Directory of African American Therapists"
+          },
+          {
             "url": "https://www.chicagoblacktherapists.com/directory",
             "title": "Chicago Black Therapist Directory — Chicago Black Therapists"
-          },
-          {
-            "url": "https://mentalhealthmatch.com/browse-therapists/tennessee/nashville/black-therapists",
-            "title": "Black Therapists in Nashville, TN | Mental Health Match"
-          },
-          {
-            "url": "https://www.justdavia.com/blog/directories-for-therapists-of-color",
-            "title": "16 Directories for Therapists of Color"
           }
         ]
       },
@@ -394,7 +393,7 @@
       "evidence": {
         "groundedSiteSurfaced": null,
         "groundedProviderAnswered": false,
-        "gscImpressions": 1,
+        "gscImpressions": 2,
         "gscClicks": 0,
         "gscAveragePosition": 7,
         "gscPages": [
@@ -773,9 +772,9 @@
       "evidence": {
         "groundedSiteSurfaced": null,
         "groundedProviderAnswered": false,
-        "gscImpressions": 47,
+        "gscImpressions": 48,
         "gscClicks": 1,
-        "gscAveragePosition": 7.8,
+        "gscAveragePosition": 7.81,
         "gscPages": [
           "/",
           "/black-therapist-memphis/"
@@ -795,13 +794,17 @@
       "evidence": {
         "groundedSiteSurfaced": null,
         "groundedProviderAnswered": false,
-        "gscImpressions": 15,
+        "gscImpressions": 20,
         "gscClicks": 2,
-        "gscAveragePosition": 4.87,
+        "gscAveragePosition": 3.82,
         "gscPages": [
           "/",
+          "/coaching/",
+          "/corporate-speaking/",
           "/faq/",
-          "/resources/guides/"
+          "/groups/",
+          "/resources/guides/",
+          "/therapy/"
         ],
         "competitorUrls": []
       },
