@@ -84,6 +84,7 @@
     "validate:deep": "node _ops/validation/run_validation_matrix.js --profile deep-autonomy",
     "validate:digital-products": "node _ops/validators/validate_digital_products_contract.js",
     "validate:discovery-gap": "node _ops/validators/validate_discovery_gap.js",
+    "validate:discovery-gap-decisions-due": "node _ops/validators/validate_discovery_gap_decisions_due.js",
     "validate:entities": "node _ops/validators/validate_entity_coverage.js",
     "validate:fanouts": "node _ops/validators/validate_fanout_candidates.js",
     "validate:finding-protocol": "node _ops/validators/validate_finding_protocol_conformance.js",

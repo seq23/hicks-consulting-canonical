@@ -1039,7 +1039,21 @@
       "ciInvocation": "MATRIX_ONLY",
       "findingProtocol": "VALIDATION_FINDING",
       "enabled": true,
-      "rationale": "The discovery-gap scorer must have a caller that keeps its output, must carry an aged openness reading forward as stale rather than overwriting it with UNMEASURED when the 25-query observation window rolls past it, and must gate every target with blue_ocean_eligible so \"not cited\" is never read as \"open ground\". It also asserts that every measured query which implies a location and names none is governed - by a localized variant, or by a recorded decision never to target it that actually binds through blueOceanEligibility - because an undecided row is indistinguishable from a forgotten one. Hard-fails if it examines zero targets."
+      "rationale": "The discovery-gap scorer must have a caller that keeps its output, must carry an aged openness reading forward as stale rather than overwriting it with UNMEASURED when the 25-query observation window rolls past it, and must gate every target with blue_ocean_eligible so \"not cited\" is never read as \"open ground\". It also asserts that every measured query which implies a location and names none is governed - by a localized variant, or by a recorded decision never to target it that actually binds through blueOceanEligibility - because an undecided row is indistinguishable from a forgotten one. A quarantine awaiting a decision must carry a deadline, a reason and blue_ocean_eligible=false; an overdue deadline is NOT judged here - it is reported by discovery-gap-decisions-due as a strong warning, and this check proves on a fixture that the clock cannot turn it red. Hard-fails if it examines zero targets."
+    },
+    {
+      "id": "discovery-gap-decisions-due",
+      "npmScript": "validate:discovery-gap-decisions-due",
+      "entrypoint": "_ops/validators/validate_discovery_gap_decisions_due.js",
+      "severity": "STRONG_WARNING",
+      "blocksRelease": false,
+      "group": "agency-search",
+      "owner": "growth-and-content",
+      "scope": "discovery-gap targeting decisions",
+      "ciInvocation": "MATRIX_ONLY",
+      "findingProtocol": "VALIDATION_FINDING",
+      "enabled": true,
+      "rationale": "Reports every location-implying query whose targeting decision is past its decide_by. The quarantine stays enforced by discovery-gap-contract and blueOceanEligibility, so a late decision is an SEO finding: visible every run, never blocking publishing (2026-09-23: an overdue decide_by turned Content Publish red with no commit behind it). Hard-fails only if it examines nothing."
     },
     {
       "id": "internal-navigation",

@@ -344,8 +344,10 @@ for (const o of observations.observations || []) obsByQuery.set(norm(o.query), o
 // keeps being measured, it is named on the console every run, it cannot be
 // drafted against (blueOceanEligibility refuses `targeted: null`), and it
 // carries a date by which a human has to decide. The validator passes with a
-// named stop while that date is in the future and hard-fails once it passes, so
-// the quarantine can never become a parking space.
+// named stop while that date is in the future; once it passes, the
+// discovery-gap-decisions-due check reports it as a strong warning every run so
+// the quarantine can never become a silent parking space - but a late SEO
+// decision never blocks the release lane (2026-09-23 date-rollover red).
 const QUARANTINE_WINDOW_DAYS = 14;
 const isoDay = (d) => d.toISOString().slice(0, 10);
 const today = new Date();
@@ -444,7 +446,7 @@ doc.discovery_gap_pass = {
     queries: quarantined,
     window_days: QUARANTINE_WINDOW_DAYS,
     why: 'A query that implies a place and names none cannot be answered as typed. These arrived from a Search Console refresh nobody reviewed, so they are measured but not admitted: blue_ocean_eligible is false and no generator may draft against them until a localized variant or a recorded non-target decision exists.',
-    enforced_by: 'scripts/lib/demand_titles.js#blueOceanEligibility (AWAITING_TARGETING_DECISION) and _ops/validators/validate_discovery_gap.js, which hard-fails once decide_by passes.',
+    enforced_by: 'scripts/lib/demand_titles.js#blueOceanEligibility (AWAITING_TARGETING_DECISION) and _ops/validators/validate_discovery_gap.js (hard-fails if the quarantine stops binding) and _ops/validators/validate_discovery_gap_decisions_due.js (strong warning, never blocks a release, once decide_by passes).',
   },
   lead_intent_classifier: {
     T1_LOCAL_READY: 'near me / open now / in <City ST> / in-network / takes insurance / accepting new clients',
