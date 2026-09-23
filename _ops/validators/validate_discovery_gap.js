@@ -188,68 +188,51 @@ if (surname.length && refused === 0) {
 // does not look at is a governed row nothing checks, and a phrase this validator
 // demands governance for but the scorer never quarantines blocks main with no
 // automated way to reach a green state.
-const IMPLIES_A_PLACE = /\b(near me|nearby|near by|open now|around here|close to me)\b/i;
-const localizedFor = new Set(rows.filter((r) => r && r.intent === 'localized_variant' && r.localizes).map((r) => String(r.localizes).toLowerCase()));
-const bare = rows.filter((r) => r && r.query && IMPLIES_A_PLACE.test(r.query) && r.intent !== 'localized_variant');
+// Classification lives in _ops/validation/discovery_gap_governance.js, shared
+// with validate_discovery_gap_decisions_due.js. The CONTROL is judged here and
+// hard-fails; LATENESS (a decide_by that has passed) is reported by the
+// decisions-due check as a strong warning and never blocks a release - see the
+// header of that module for the 2026-09-23 date-rollover red that moved it.
+const { localizedSet, bareTargets, classifyBareTarget } = require('../validation/discovery_gap_governance');
+const localizedFor = localizedSet(rows);
+const bare = bareTargets(rows);
 
 const TODAY = new Date().toISOString().slice(0, 10);
 let governed = 0;
 let notTargeted = 0;
 let awaiting = 0;
+let overdue = 0;
 for (const row of bare) {
-  const q = String(row.query);
-  const targeting = row.targeting || null;
-  if (targeting && targeting.targeted === false) {
-    if (!String(targeting.why || '').trim()) fail(`"${q}" is marked as never to be targeted with no reason recorded.`);
-    if (!String(targeting.so_what_happens_instead || targeting.decision || '').trim()) fail(`"${q}" refuses a page without saying what happens to that searcher instead.`);
-    if (row.blue_ocean_eligible && row.blue_ocean_eligible.eligible !== false) {
-      fail(`"${q}" is marked as never to be targeted but is still blue-ocean eligible, so the drafting cycle will propose a page for it every run.`);
-    }
-    notTargeted++;
-    governed++;
-    continue;
-  }
-  if (localizedFor.has(q.toLowerCase())) { governed++; continue; }
-  if (targeting && targeting.targeted === true && String(targeting.how || '').trim()) { governed++; continue; }
-
-  // QUARANTINED, awaiting a decision. This is a LEGITIMATE STOP, not a failure,
-  // and it is why this lane no longer pages anyone at 02:00 over a query the
-  // pipeline invented for itself.
-  //
-  // data/agency/gsc_snapshot.json is refreshed with no human in the loop, and
-  // score_discovery_gap.mjs merges every query in it into the target set. A
-  // brand-new location-implying query therefore appears ungoverned through
-  // nobody's fault. Failing on it is wrong - nothing is broken, a decision is
-  // simply outstanding. Passing silently is also wrong - that is the "undecided
-  // is indistinguishable from forgotten" defect this section exists to prevent.
-  //
-  // So: green, named on the console, drafting blocked, and a deadline. Past
-  // decide_by it becomes a hard finding, because by then it HAS been forgotten.
-  if (targeting && targeting.targeted === null && targeting.decision === 'AWAITING_TARGETING_DECISION') {
-    const by = String(targeting.decide_by || '');
-    if (!/^\d{4}-\d{2}-\d{2}$/.test(by)) {
-      fail(`"${q}" is quarantined awaiting a targeting decision with no usable decide_by date, so the quarantine has no deadline and would sit there for ever.`);
-      continue;
-    }
-    if (!String(targeting.why || '').trim() || !String(targeting.how_to_decide || '').trim()) {
-      fail(`"${q}" is quarantined awaiting a targeting decision without saying why it is held or how to decide it.`);
-      continue;
-    }
-    if (!row.blue_ocean_eligible || row.blue_ocean_eligible.eligible !== false) {
-      fail(`"${q}" is quarantined awaiting a targeting decision but is still blue-ocean eligible, so the drafting cycle can write a page for a query nobody has approved.`);
-      continue;
-    }
-    if (by < TODAY) {
-      fail(`"${q}" has been quarantined awaiting a targeting decision since ${targeting.first_seen || 'an unrecorded date'} and its decide_by date of ${by} has passed. Either add a localized_variant row that resolves it, or record targeting.targeted=false with a reason.`);
-      continue;
-    }
-    stops.push(`"${q}" - measured, quarantined, not drafted against; decide by ${by}.`);
+  const c = classifyBareTarget(row, localizedFor, TODAY);
+  c.problems.forEach(fail);
+  if (c.problems.length) continue;
+  governed++;
+  if (c.state === 'NOT_TARGETED') notTargeted++;
+  if (c.state === 'AWAITING') {
     awaiting++;
-    governed++;
-    continue;
+    if (c.overdue) overdue++;
+    stops.push(`"${row.query}" - measured, quarantined, not drafted against; decide by ${c.decideBy}${c.overdue ? ' (OVERDUE - reported by discovery-gap-decisions-due)' : ''}.`);
   }
+}
 
-  fail(`"${q}" implies a location, names none, and carries neither a localized variant nor a recorded decision not to target it. Ungoverned: nobody can tell this apart from an oversight.`);
+// The clock must not be able to turn this check red. A fully governed
+// quarantine whose deadline passed long ago is still a governed, undraftable
+// row; if the classifier ever reports it as a problem, the release lane goes
+// back to failing on date rollover with no commit behind it.
+{
+  const fixture = {
+    query: 'fixture therapist near me',
+    targeting: { targeted: null, decision: 'AWAITING_TARGETING_DECISION', first_seen: '2000-01-01', decide_by: '2000-01-15', why: 'fixture', how_to_decide: 'fixture' },
+    blue_ocean_eligible: { eligible: false, reason: 'AWAITING_TARGETING_DECISION' },
+  };
+  const late = classifyBareTarget(fixture, new Set(), '2099-01-01');
+  if (late.problems.length || late.state !== 'AWAITING' || late.overdue !== true) {
+    fail('an overdue but otherwise governed quarantine is classified as a release-blocking problem (or its lateness is lost). Lateness is the decisions-due check\'s strong warning; making it a hard fail here turns main red on a date rollover with no commit behind it.');
+  }
+  const leaky = classifyBareTarget({ ...fixture, blue_ocean_eligible: { eligible: true, reason: 'OPEN' } }, new Set(), '1999-01-01');
+  if (!leaky.problems.length) {
+    fail('a quarantined query that is still blue-ocean eligible passes the classifier - the quarantine has stopped being a control.');
+  }
 }
 if (!bare.length) {
   fail('no bare "near me" targets found - this section examined nothing and must not pass on an empty loop.');
@@ -297,4 +280,4 @@ if (stops.length) {
   console.log(`NAMED STOP: ${stops.length} location-implying quer(y|ies) are quarantined awaiting a targeting decision. They are measured, they cannot be drafted against, and each carries a deadline:`);
   for (const stop of stops) console.log(`  - ${stop}`);
 }
-console.log(`Discovery-gap contract OK: ${examined} targets examined, all gated; ${refused} refused as navigational, unanchored or not-a-service-we-provide; ${carried} readings carried forward as stale rather than destroyed; ${governed}/${bare.length} location-implying "near me" targets governed (${notTargeted} recorded as never to be targeted, ${awaiting} quarantined awaiting a dated decision and provably undraftable, and the refusal proved binding through blueOceanEligibility); scorer invoked by ${invoking.map((i) => i.file).join(', ')} and its output committed.`);
+console.log(`Discovery-gap contract OK: ${examined} targets examined, all gated; ${refused} refused as navigational, unanchored or not-a-service-we-provide; ${carried} readings carried forward as stale rather than destroyed; ${governed}/${bare.length} location-implying "near me" targets governed (${notTargeted} recorded as never to be targeted, ${awaiting} quarantined awaiting a dated decision and provably undraftable (${overdue} overdue), and the refusal proved binding through blueOceanEligibility); scorer invoked by ${invoking.map((i) => i.file).join(', ')} and its output committed.`);

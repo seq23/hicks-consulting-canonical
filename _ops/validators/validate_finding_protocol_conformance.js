@@ -250,6 +250,7 @@ const sandbox = fs.mkdtempSync(path.join(os.tmpdir(), 'hicks-finding-protocol-')
 try {
   for (const rel of [
     '_ops/validation/protocol.js',
+    '_ops/validation/discovery_gap_governance.js',
     '_ops/validators/validate_discovery_gap.js',
     'scripts/lib/demand_titles.js',
     'scripts/queries/score_discovery_gap.mjs',
