@@ -1,6 +1,6 @@
 {
   "schemaVersion": "2.1.0",
-  "generatedAt": "2026-09-22T14:33:16.394Z",
+  "generatedAt": "2026-09-23T14:33:07.004Z",
   "providerState": "CONNECTED",
   "provider": "openrouter_web_search",
   "stop": null,
@@ -11,7 +11,7 @@
       "query": "black therapist near me",
       "primaryPage": "/black-therapist-memphis/",
       "status": "ok",
-      "observedAt": "2026-09-22T14:33:16.394Z",
+      "observedAt": "2026-09-23T14:33:07.004Z",
       "provider": "openrouter_web_search",
       "model": "openai/gpt-4o-mini",
       "observationType": "LIVE_WEB_SURFACING",
@@ -47,10 +47,53 @@
       ]
     },
     {
+      "query": "african american therapist near me",
+      "primaryPage": "/black-therapist-memphis/",
+      "status": "ok",
+      "observedAt": "2026-09-23T14:33:07.004Z",
+      "provider": "openrouter_web_search",
+      "model": "openai/gpt-4o-mini",
+      "observationType": "LIVE_WEB_SURFACING",
+      "rankVerified": false,
+      "providerAnswered": true,
+      "citationCount": 3,
+      "siteSurfaced": true,
+      "citations": [
+        {
+          "url": "https://www.hicksconsulting.org/",
+          "title": "Hicks Consulting | Therapy for Individuals & Mental Health ..."
+        },
+        {
+          "url": "https://www.hicksconsulting.org/therapy",
+          "title": "Virtual Therapy Serving Memphis & Tennessee"
+        },
+        {
+          "url": "https://www.hicksconsulting.org/black-therapist-memphis",
+          "title": "Black Therapist Serving Memphis, TN - Hicks Consulting"
+        }
+      ],
+      "searchQueries": [],
+      "competitors": [],
+      "ownPage": {
+        "route": "/black-therapist-memphis/",
+        "sourceFile": "pages/black-therapist-memphis/index.html",
+        "status": "ok",
+        "title": "Black Therapist Serving Memphis, TN | Hicks Consulting",
+        "description": "Virtual therapy with Monika Hicks, LCSW, a Black woman therapist serving eligible clients in Memphis and across Tennessee.",
+        "h1": "Virtual therapy with a Black woman therapist serving Memphis.",
+        "textChars": 5582,
+        "internalLinks": 32,
+        "canonical": ""
+      },
+      "diagnosis": [
+        "EXACT_QUERY_NOT_IN_PRIMARY_SEARCH_SURFACES"
+      ]
+    },
+    {
       "query": "black counselors near me",
       "primaryPage": "/black-therapist-memphis/",
       "status": "ok",
-      "observedAt": "2026-09-22T14:33:16.394Z",
+      "observedAt": "2026-09-23T14:33:07.004Z",
       "provider": "openrouter_web_search",
       "model": "openai/gpt-4o-mini",
       "observationType": "LIVE_WEB_SURFACING",
@@ -93,7 +136,7 @@
       "query": "black mental health therapist near me",
       "primaryPage": "/black-therapist-memphis/",
       "status": "ok",
-      "observedAt": "2026-09-22T14:33:16.394Z",
+      "observedAt": "2026-09-23T14:33:07.004Z",
       "provider": "openrouter_web_search",
       "model": "openai/gpt-4o-mini",
       "observationType": "LIVE_WEB_SURFACING",
@@ -132,7 +175,7 @@
       "query": "black therapists near me",
       "primaryPage": "/",
       "status": "ok",
-      "observedAt": "2026-09-22T14:33:16.394Z",
+      "observedAt": "2026-09-23T14:33:07.004Z",
       "provider": "openrouter_web_search",
       "model": "openai/gpt-4o-mini",
       "observationType": "LIVE_WEB_SURFACING",
@@ -150,40 +193,52 @@
           "title": "FAQ | Hicks Consulting"
         },
         {
-          "url": "https://www.blacktherapistsmatter.com/",
-          "title": "Find Your Black Therapist Near You | BTM - Start Your Wellness Journey Today"
-        },
-        {
           "url": "https://wherewespend.com/black-therapist",
           "title": "Find a Black Therapist Near You - Where We Spend"
         },
         {
-          "url": "https://www.blacktherapistsmatter.com/therapists-directory",
-          "title": "BTM - Therapists Directory"
+          "url": "https://www.blacktherapistsmatter.com/",
+          "title": "Find Your Black Therapist Near You | BTM - Start Your Wellness Journey Today"
+        },
+        {
+          "url": "https://hicks-corporation.socialdirect.one/",
+          "title": "https://hicks-corporation.socialdirect.one/"
+        },
+        {
+          "url": "https://africanamericantherapists.com/",
+          "title": "AfricanAmericanTherapists.com"
+        },
+        {
+          "url": "https://africanamericantherapists.com/african-american-therapists-in-brooklyn",
+          "title": "Black therapists in Brooklyn | AfricanAmericanTherapists.com"
+        },
+        {
+          "url": "https://yourcbhn.org/directory-landing/",
+          "title": "CBHN Black Health & Wellness Provider Directory"
         },
         {
           "url": "https://blacktherapists.org/",
           "title": "Home - Black Therapists | Directory of African American Therapists"
         },
         {
-          "url": "https://www.chicagoblacktherapists.com/directory",
-          "title": "Chicago Black Therapist Directory — Chicago Black Therapists"
-        },
-        {
-          "url": "https://directory.thebbx.com/challenge.html?redirect_to=/listing/therapist/hartford",
-          "title": "Listings in Therapist near Hartford | The Black Business Exchange Directory"
-        },
-        {
-          "url": "https://www.blacktherapistsinaz.org/",
-          "title": "Mental Health Professional Directory - Find Mental Health Professionals - Black Therapists in AZ"
-        },
-        {
-          "url": "https://africanamericantherapists.com/african-american-therapists-directory/african-american-therapists-in-the-midwest/african-american-therapists-in-the-chicago-area",
-          "title": "Black psychologists, therapists, counselors and psychiatrists in Chicago | AfricanAmericanTherapists.com"
+          "url": "https://www.blacktherapistsmatter.com/therapists-directory",
+          "title": "BTM - Therapists Directory"
         }
       ],
       "searchQueries": [],
       "competitors": [
+        {
+          "url": "https://wherewespend.com/black-therapist",
+          "resolvedUrl": "https://wherewespend.com/black-therapist/",
+          "status": "ok",
+          "httpStatus": 200,
+          "title": "Find a Black Therapist Near You - Where We Spend",
+          "h1": "Looking for a Black therapist near you?",
+          "headings": [
+            "\"+message+\""
+          ],
+          "textChars": 588
+        },
         {
           "url": "https://www.blacktherapistsmatter.com/",
           "resolvedUrl": "https://www.blacktherapistsmatter.com/",
@@ -216,47 +271,14 @@
           "textChars": 5309
         },
         {
-          "url": "https://wherewespend.com/black-therapist",
-          "resolvedUrl": "https://wherewespend.com/black-therapist/",
+          "url": "https://hicks-corporation.socialdirect.one/",
+          "resolvedUrl": "https://hicks-corporation.socialdirect.one/",
           "status": "ok",
           "httpStatus": 200,
-          "title": "Find a Black Therapist Near You - Where We Spend",
-          "h1": "Looking for a Black therapist near you?",
-          "headings": [
-            "\"+message+\""
-          ],
-          "textChars": 588
-        },
-        {
-          "url": "https://www.blacktherapistsmatter.com/therapists-directory",
-          "resolvedUrl": "https://www.blacktherapistsmatter.com/therapists-directory",
-          "status": "ok",
-          "httpStatus": 200,
-          "title": "BTM - Therapists Directory",
-          "h1": "<span style=\"font-weight:bold;\" class=\"wixui-rich-text__text\"><span style=\"font-family:droid-serif-w01-regular,serif;\" class=\"wixui-rich-text__text\"><span style=\"font-size:50px;\" class=\"wixui-rich-text__text\"><span style=\"color:#FFFFFF;\" class=\"wixui-rich-text__text\"><span style=\"letter-spacing:normal;\" class=\"wixui-rich-text__text\">Find Your Therapist</span></span></span></span></span>",
-          "headings": [
-            "Connect with culturally competent mental health professionals dedicated to Black communities",
-            "Specialities",
-            "Virtual Sessions",
-            "Reset",
-            "Dr. Victoria Malone",
-            "Nicole Sublette",
-            "Andre Charley",
-            "Christopher Briggman",
-            "Kimberly Ward",
-            "Reynette Romain",
-            "Kervin K Searles",
-            "Tameka L. Gant, LPC-MHSP",
-            "Karla Lewis",
-            "LaTraci Aldridge",
-            "Jessica Reed LPC-S",
-            "Kimberly Applewhite",
-            "Join our directory and connect with clients seeking culturally competent mental health support",
-            "We welcome brand partnerships, sponsorships, and collaborations. Please contact us through the website&nbsp; or email to start the conversation.",
-            "Home About Us Find a Therapist Blog Contact Us",
-            "A wellness directory committed to helping you find Black mental health and wellness providers near you."
-          ],
-          "textChars": 6768
+          "title": "",
+          "h1": "",
+          "headings": [],
+          "textChars": 0
         }
       ],
       "ownPage": {
@@ -276,25 +298,25 @@
       ]
     },
     {
-      "query": "african american psychologist near me",
+      "query": "african american female therapist near me",
       "primaryPage": "/black-therapist-memphis/",
       "status": "ok",
-      "observedAt": "2026-09-22T14:33:16.394Z",
+      "observedAt": "2026-09-23T14:33:07.004Z",
       "provider": "openrouter_web_search",
       "model": "openai/gpt-4o-mini",
       "observationType": "LIVE_WEB_SURFACING",
       "rankVerified": false,
       "providerAnswered": true,
-      "citationCount": 6,
+      "citationCount": 5,
       "siteSurfaced": true,
       "citations": [
         {
-          "url": "https://www.hicksconsulting.org/",
-          "title": "Hicks Consulting | Therapy for Individuals & Mental Health ..."
+          "url": "https://www.hicksconsulting.org/female-therapist-memphis",
+          "title": "Female Therapist in Memphis: What Gender Fit Changes, and ..."
         },
         {
-          "url": "https://www.hicksconsulting.org/therapist-near-me-memphis",
-          "title": "Therapist Near Me in Memphis: How to Find One Who Can ..."
+          "url": "https://www.hicksconsulting.org/",
+          "title": "Hicks Consulting | Therapy for Individuals & Mental Health ..."
         },
         {
           "url": "https://www.hicksconsulting.org/black-therapist-memphis",
@@ -303,10 +325,6 @@
         {
           "url": "https://www.hicksconsulting.org/therapy",
           "title": "Virtual Therapy Serving Memphis & Tennessee"
-        },
-        {
-          "url": "https://www.hicksconsulting.org/female-therapist-memphis",
-          "title": "Female Therapist in Memphis: What Gender Fit Changes, and ..."
         },
         {
           "url": "https://www.hicksconsulting.org/psychologist-vs-therapist-memphis",
@@ -331,53 +349,10 @@
       ]
     },
     {
-      "query": "african american therapist near me",
+      "query": "african american psychologist near me",
       "primaryPage": "/black-therapist-memphis/",
       "status": "ok",
-      "observedAt": "2026-09-22T14:33:16.394Z",
-      "provider": "openrouter_web_search",
-      "model": "openai/gpt-4o-mini",
-      "observationType": "LIVE_WEB_SURFACING",
-      "rankVerified": false,
-      "providerAnswered": true,
-      "citationCount": 3,
-      "siteSurfaced": true,
-      "citations": [
-        {
-          "url": "https://www.hicksconsulting.org/",
-          "title": "Hicks Consulting | Therapy for Individuals & Mental Health ..."
-        },
-        {
-          "url": "https://www.hicksconsulting.org/therapy",
-          "title": "Virtual Therapy Serving Memphis & Tennessee"
-        },
-        {
-          "url": "https://www.hicksconsulting.org/resources",
-          "title": "Resources | Hicks Consulting"
-        }
-      ],
-      "searchQueries": [],
-      "competitors": [],
-      "ownPage": {
-        "route": "/black-therapist-memphis/",
-        "sourceFile": "pages/black-therapist-memphis/index.html",
-        "status": "ok",
-        "title": "Black Therapist Serving Memphis, TN | Hicks Consulting",
-        "description": "Virtual therapy with Monika Hicks, LCSW, a Black woman therapist serving eligible clients in Memphis and across Tennessee.",
-        "h1": "Virtual therapy with a Black woman therapist serving Memphis.",
-        "textChars": 5582,
-        "internalLinks": 32,
-        "canonical": ""
-      },
-      "diagnosis": [
-        "EXACT_QUERY_NOT_IN_PRIMARY_SEARCH_SURFACES"
-      ]
-    },
-    {
-      "query": "african american female therapist near me",
-      "primaryPage": "/black-therapist-memphis/",
-      "status": "ok",
-      "observedAt": "2026-09-22T14:33:16.394Z",
+      "observedAt": "2026-09-23T14:33:07.004Z",
       "provider": "openrouter_web_search",
       "model": "openai/gpt-4o-mini",
       "observationType": "LIVE_WEB_SURFACING",
@@ -391,16 +366,16 @@
           "title": "Hicks Consulting | Therapy for Individuals & Mental Health ..."
         },
         {
-          "url": "https://www.hicksconsulting.org/female-therapist-memphis",
-          "title": "Female Therapist in Memphis: What Gender Fit Changes, and ..."
-        },
-        {
           "url": "https://www.hicksconsulting.org/black-therapist-memphis",
           "title": "Black Therapist Serving Memphis, TN - Hicks Consulting"
         },
         {
           "url": "https://www.hicksconsulting.org/therapy",
           "title": "Virtual Therapy Serving Memphis & Tennessee"
+        },
+        {
+          "url": "https://www.hicksconsulting.org/female-therapist-memphis",
+          "title": "Female Therapist in Memphis: What Gender Fit Changes, and ..."
         },
         {
           "url": "https://www.hicksconsulting.org/psychologist-vs-therapist-memphis",
