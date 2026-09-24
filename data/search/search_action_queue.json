@@ -1,6 +1,6 @@
 {
   "schemaVersion": "2.0.0",
-  "generatedAt": "2026-09-23T14:33:07.004Z",
+  "generatedAt": "2026-09-24T14:33:38.787Z",
   "policy": "Hicks may autonomously apply bounded technical/search-alignment repairs. Substantive clinical claims and unsupported treatment assertions are never auto-generated from competitor content.",
   "items": [
     {
@@ -125,8 +125,8 @@
             "title": "AfricanAmericanTherapists.com"
           },
           {
-            "url": "https://africanamericantherapists.com/african-american-therapists-in-brooklyn",
-            "title": "Black therapists in Brooklyn | AfricanAmericanTherapists.com"
+            "url": "https://blacktherapists.org/",
+            "title": "Home - Black Therapists | Directory of African American Therapists"
           }
         ]
       },
@@ -223,9 +223,9 @@
       "evidence": {
         "groundedSiteSurfaced": null,
         "groundedProviderAnswered": false,
-        "gscImpressions": 3,
+        "gscImpressions": 4,
         "gscClicks": 0,
-        "gscAveragePosition": 9.33,
+        "gscAveragePosition": 9.5,
         "gscPages": [
           "/black-therapist-memphis/"
         ],
@@ -650,20 +650,15 @@
     {
       "query": "therapists near me",
       "primaryPage": "/therapist-near-me-memphis/",
-      "status": "WRONG_PAGE",
-      "reasons": [
-        "WRONG_HICKS_PAGE_RANKING",
-        "AVERAGE_POSITION_OUTSIDE_TOP_10"
-      ],
+      "status": "UNKNOWN",
+      "reasons": [],
       "evidence": {
         "groundedSiteSurfaced": null,
         "groundedProviderAnswered": false,
-        "gscImpressions": 1,
+        "gscImpressions": 0,
         "gscClicks": 0,
-        "gscAveragePosition": 35,
-        "gscPages": [
-          "/"
-        ],
+        "gscAveragePosition": 0,
+        "gscPages": [],
         "competitorUrls": []
       },
       "safeRepairEligible": false,
@@ -832,7 +827,7 @@
       "evidence": {
         "groundedSiteSurfaced": null,
         "groundedProviderAnswered": false,
-        "gscImpressions": 51,
+        "gscImpressions": 53,
         "gscClicks": 1,
         "gscAveragePosition": 7.81,
         "gscPages": [
@@ -854,7 +849,7 @@
       "evidence": {
         "groundedSiteSurfaced": null,
         "groundedProviderAnswered": false,
-        "gscImpressions": 20,
+        "gscImpressions": 19,
         "gscClicks": 2,
         "gscAveragePosition": 3.82,
         "gscPages": [
@@ -1151,9 +1146,9 @@
       "evidence": {
         "groundedSiteSurfaced": null,
         "groundedProviderAnswered": false,
-        "gscImpressions": 3,
+        "gscImpressions": 4,
         "gscClicks": 0,
-        "gscAveragePosition": 21.67,
+        "gscAveragePosition": 21.25,
         "gscPages": [
           "/therapy/"
         ],
@@ -1402,17 +1397,19 @@
     {
       "query": "boundary problem at work",
       "primaryPage": "/resources/insights/what-boundary-problems-really-sound-like-in-professional-women-why-women-minimize-it/",
-      "status": "OBSERVED",
+      "status": "CANNIBALIZATION_REVIEW",
       "reasons": [
+        "MULTIPLE_HICKS_PAGES_FOR_QUERY",
         "AVERAGE_POSITION_OUTSIDE_TOP_10"
       ],
       "evidence": {
         "groundedSiteSurfaced": null,
         "groundedProviderAnswered": false,
-        "gscImpressions": 1,
+        "gscImpressions": 3,
         "gscClicks": 0,
-        "gscAveragePosition": 49,
+        "gscAveragePosition": 52.75,
         "gscPages": [
+          "/resources/insights/what-boundary-problems-really-sound-like-in-professional-women-what-this-looks-like-i/",
           "/resources/insights/what-boundary-problems-really-sound-like-in-professional-women-why-women-minimize-it/"
         ],
         "competitorUrls": []
