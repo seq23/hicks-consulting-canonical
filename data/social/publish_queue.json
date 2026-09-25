@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-22T14:46:29.798Z",
+  "generatedAt": "2026-09-25T14:46:27.791Z",
   "publishMode": "full_safe_autonomy",
   "items": [
     {
@@ -40,7 +40,7 @@
       },
       "targetWords": 2500,
       "minimumWords": 2000,
-      "sourceSignalCount": 18,
+      "sourceSignalCount": 13,
       "score": 100,
       "publishMode": "full_safe_autonomy",
       "autonomyStatus": "SYSTEM_BLOCKED",
@@ -444,7 +444,7 @@
       },
       "targetWords": 1400,
       "minimumWords": 1120,
-      "sourceSignalCount": 6,
+      "sourceSignalCount": 7,
       "score": 100,
       "publishMode": "full_safe_autonomy",
       "autonomyStatus": "FAILED_RETRYABLE",
@@ -501,10 +501,10 @@
       },
       "targetWords": 1400,
       "minimumWords": 1120,
-      "sourceSignalCount": 170,
+      "sourceSignalCount": 182,
       "score": 100,
       "publishMode": "full_safe_autonomy",
-      "autonomyStatus": "DISCOVERED",
+      "autonomyStatus": "FAILED_RETRYABLE",
       "routineApprovalRequired": false,
       "llmGeneratedRequired": true,
       "publicOnlyAfterApproval": false,

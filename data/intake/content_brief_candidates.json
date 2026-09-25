@@ -1,14 +1,14 @@
 {
-  "generatedAt": "2026-09-22T14:46:29.798Z",
+  "generatedAt": "2026-09-25T14:46:27.791Z",
   "policy": "full_safe_autonomy_llm_humanized_prewrite_validated",
   "candidates": [
     {
-      "id": "brief-black_women_healing-whitepaper",
-      "clusterId": "black_women_healing",
-      "clusterTitle": "Black women healing beyond survival",
+      "id": "brief-ai_digital_wellness-whitepaper",
+      "clusterId": "ai_digital_wellness",
+      "clusterTitle": "AI, social media, and digital emotional overload",
       "contentType": "whitepaper",
-      "title": "I am the first one in my family to go to therapy and nobody understands",
-      "suggestedRoute": "/resources/white-papers/i-am-the-first-one-in-my-family-to-go-to-therapy-and-nobody-understand/",
+      "title": "Why do I feel worse after an hour on my phone?",
+      "suggestedRoute": "/resources/white-papers/why-do-i-feel-worse-after-an-hour-on-my-phone/",
       "sections": [
         "Executive summary",
         "The question people are actually asking",
@@ -21,66 +21,9 @@
       ],
       "demandPhrasing": {
         "source": "config/demand_phrasings.json",
-        "familyId": "black_women_healing",
-        "clusterId": null,
-        "form": "complaint",
-        "groundedIn": [
-          "data/intake/query_clusters.json#black_women_healing",
-          "data/intake/normalized_query_signals.json tag:black_women",
-          "data/search/target_queries.json query:'black female therapist near me', 'therapy for high-achieving Black women Memphis'"
-        ],
-        "evidence": [
-          {
-            "kind": "cluster",
-            "id": "black_women_healing",
-            "title": "Black women healing beyond survival",
-            "score": 100,
-            "queryCount": 5
-          }
-        ]
-      },
-      "targetWords": 2500,
-      "minimumWords": 2000,
-      "sourceSignalCount": 5,
-      "score": 100,
-      "publishMode": "full_safe_autonomy",
-      "autonomyStatus": "DISCOVERED",
-      "routineApprovalRequired": false,
-      "llmGeneratedRequired": true,
-      "publicOnlyAfterApproval": false,
-      "createdAt": "2026-09-22T14:46:29.783Z",
-      "humanizationChecklist": [
-        "Use plain human language rather than generic therapy marketing copy.",
-        "Vary sentence rhythm and paragraph length.",
-        "Include concrete examples without inventing client stories.",
-        "Avoid exaggerated claims, guarantees, diagnosis, or pressure language.",
-        "Keep Monika Hicks / Hicks Consulting entity references consistent.",
-        "End with an approved conversion path only after value is delivered."
-      ],
-      "conversionPath": "https://monika-hicks.clientsecure.me/",
-      "llmPrompt": "Create a humanized whitepaper draft for Hicks Consulting.\nTitle: I am the first one in my family to go to therapy and nobody understands\nThis page exists to answer exactly one real question a person typed or said: \"I am the first one in my family to go to therapy and nobody understands\". Answer THAT question, in that person's words, in the first two sentences. Do not broaden it into a general overview of Black women healing beyond survival; other pages on this site cover other questions in the same area and this one must not overlap them.\nMinimum words: 2000. Target words: 2500.\nWrite in a warm, grounded, specific voice. Do not diagnose. Do not guarantee outcomes. Do not invent client stories.\nInclude these sections: Executive summary; The question people are actually asking; What the evidence shows; Audience analysis; Framework; Implementation guidance; Risks and limitations; Recommended next steps.\nApproved conversion path after value is delivered: https://monika-hicks.clientsecure.me/"
-    },
-    {
-      "id": "brief-ai_digital_wellness-guide",
-      "clusterId": "ai_digital_wellness",
-      "clusterTitle": "AI, social media, and digital emotional overload",
-      "contentType": "guide",
-      "title": "How do I stop doomscrolling at two in the morning?",
-      "suggestedRoute": "/resources/guides/how-do-i-stop-doomscrolling-at-two-in-the-morning/",
-      "sections": [
-        "Short answer",
-        "Before you start",
-        "Step by step",
-        "What to say",
-        "What gets in the way",
-        "How to tell it is working",
-        "Next step"
-      ],
-      "demandPhrasing": {
-        "source": "config/demand_phrasings.json",
         "familyId": "ai_digital_wellness",
         "clusterId": null,
-        "form": "how",
+        "form": "why",
         "groundedIn": [
           "data/intake/query_clusters.json#ai_digital_wellness",
           "data/intake/normalized_query_signals.json tag:ai_digital_wellness"
@@ -95,16 +38,16 @@
           }
         ]
       },
-      "targetWords": 1400,
-      "minimumWords": 1120,
-      "sourceSignalCount": 17,
+      "targetWords": 2500,
+      "minimumWords": 2000,
+      "sourceSignalCount": 13,
       "score": 100,
       "publishMode": "full_safe_autonomy",
       "autonomyStatus": "SYSTEM_BLOCKED",
       "routineApprovalRequired": false,
       "llmGeneratedRequired": true,
       "publicOnlyAfterApproval": false,
-      "createdAt": "2026-05-22T16:29:09.108Z",
+      "createdAt": "2026-08-28T18:49:42.938Z",
       "humanizationChecklist": [
         "Use plain human language rather than generic therapy marketing copy.",
         "Vary sentence rhythm and paragraph length.",
@@ -114,7 +57,7 @@
         "End with an approved conversion path only after value is delivered."
       ],
       "conversionPath": "https://monika-hicks.clientsecure.me/",
-      "llmPrompt": "Create a humanized guide draft for Hicks Consulting.\nTitle: How do I stop doomscrolling at two in the morning?\nThis page exists to answer exactly one real question a person typed or said: \"How do I stop doomscrolling at two in the morning?\". Answer THAT question, in that person's words, in the first two sentences. Do not broaden it into a general overview of AI, social media, and digital emotional overload; other pages on this site cover other questions in the same area and this one must not overlap them.\nMinimum words: 1120. Target words: 1400.\nWrite in a warm, grounded, specific voice. Do not diagnose. Do not guarantee outcomes. Do not invent client stories.\nInclude these sections: Short answer; Before you start; Step by step; What to say; What gets in the way; How to tell it is working; Next step.\nApproved conversion path after value is delivered: https://monika-hicks.clientsecure.me/"
+      "llmPrompt": "Create a humanized whitepaper draft for Hicks Consulting.\nTitle: Why do I feel worse after an hour on my phone?\nThis page exists to answer exactly one real question a person typed or said: \"Why do I feel worse after an hour on my phone?\". Answer THAT question, in that person's words, in the first two sentences. Do not broaden it into a general overview of AI, social media, and digital emotional overload; other pages on this site cover other questions in the same area and this one must not overlap them.\nMinimum words: 2000. Target words: 2500.\nWrite in a warm, grounded, specific voice. Do not diagnose. Do not guarantee outcomes. Do not invent client stories.\nInclude these sections: Executive summary; The question people are actually asking; What the evidence shows; Audience analysis; Framework; Implementation guidance; Risks and limitations; Recommended next steps.\nApproved conversion path after value is delivered: https://monika-hicks.clientsecure.me/"
     },
     {
       "id": "brief-workplace_emotional_intelligence-guide",
@@ -154,7 +97,7 @@
       },
       "targetWords": 1400,
       "minimumWords": 1120,
-      "sourceSignalCount": 6,
+      "sourceSignalCount": 7,
       "score": 100,
       "publishMode": "full_safe_autonomy",
       "autonomyStatus": "FAILED_RETRYABLE",
@@ -210,10 +153,10 @@
       },
       "targetWords": 1400,
       "minimumWords": 1120,
-      "sourceSignalCount": 170,
+      "sourceSignalCount": 182,
       "score": 100,
       "publishMode": "full_safe_autonomy",
-      "autonomyStatus": "DISCOVERED",
+      "autonomyStatus": "FAILED_RETRYABLE",
       "routineApprovalRequired": false,
       "llmGeneratedRequired": true,
       "publicOnlyAfterApproval": false,
@@ -228,6 +171,63 @@
       ],
       "conversionPath": "https://monika-hicks.clientsecure.me/",
       "llmPrompt": "Create a humanized guide draft for Hicks Consulting.\nTitle: Why do I feel numb instead of sad?\nThis page exists to answer exactly one real question a person typed or said: \"Why do I feel numb instead of sad?\". Answer THAT question, in that person's words, in the first two sentences. Do not broaden it into a general overview of General emotional wellness and intentional living; other pages on this site cover other questions in the same area and this one must not overlap them.\nMinimum words: 1120. Target words: 1400.\nWrite in a warm, grounded, specific voice. Do not diagnose. Do not guarantee outcomes. Do not invent client stories.\nInclude these sections: Short answer; What is actually happening; Why it shows up this way; What it is not; What usually makes it worse; What helps; When to get support.\nApproved conversion path after value is delivered: https://monika-hicks.clientsecure.me/"
+    },
+    {
+      "id": "brief-black_women_healing-article",
+      "clusterId": "black_women_healing",
+      "clusterTitle": "Black women healing beyond survival",
+      "contentType": "article",
+      "title": "Why do I feel like I have to be strong for everybody?",
+      "suggestedRoute": "/resources/articles/why-do-i-feel-like-i-have-to-be-strong-for-everybody/",
+      "sections": [
+        "Short answer",
+        "What is actually happening",
+        "Why it shows up this way",
+        "What it is not",
+        "What usually makes it worse",
+        "What helps",
+        "When to get support"
+      ],
+      "demandPhrasing": {
+        "source": "config/demand_phrasings.json",
+        "familyId": "black_women_healing",
+        "clusterId": null,
+        "form": "why",
+        "groundedIn": [
+          "data/intake/query_clusters.json#black_women_healing",
+          "data/intake/normalized_query_signals.json tag:black_women",
+          "data/search/target_queries.json query:'black female therapist near me', 'therapy for high-achieving Black women Memphis'"
+        ],
+        "evidence": [
+          {
+            "kind": "cluster",
+            "id": "black_women_healing",
+            "title": "Black women healing beyond survival",
+            "score": 60,
+            "queryCount": 3
+          }
+        ]
+      },
+      "targetWords": 1200,
+      "minimumWords": 960,
+      "sourceSignalCount": 2,
+      "score": 40,
+      "publishMode": "full_safe_autonomy",
+      "autonomyStatus": "SYSTEM_BLOCKED",
+      "routineApprovalRequired": false,
+      "llmGeneratedRequired": true,
+      "publicOnlyAfterApproval": false,
+      "createdAt": "2026-08-28T18:49:42.938Z",
+      "humanizationChecklist": [
+        "Use plain human language rather than generic therapy marketing copy.",
+        "Vary sentence rhythm and paragraph length.",
+        "Include concrete examples without inventing client stories.",
+        "Avoid exaggerated claims, guarantees, diagnosis, or pressure language.",
+        "Keep Monika Hicks / Hicks Consulting entity references consistent.",
+        "End with an approved conversion path only after value is delivered."
+      ],
+      "conversionPath": "https://monika-hicks.clientsecure.me/",
+      "llmPrompt": "Create a humanized article draft for Hicks Consulting.\nTitle: Why do I feel like I have to be strong for everybody?\nThis page exists to answer exactly one real question a person typed or said: \"Why do I feel like I have to be strong for everybody?\". Answer THAT question, in that person's words, in the first two sentences. Do not broaden it into a general overview of Black women healing beyond survival; other pages on this site cover other questions in the same area and this one must not overlap them.\nMinimum words: 960. Target words: 1200.\nWrite in a warm, grounded, specific voice. Do not diagnose. Do not guarantee outcomes. Do not invent client stories.\nInclude these sections: Short answer; What is actually happening; Why it shows up this way; What it is not; What usually makes it worse; What helps; When to get support.\nApproved conversion path after value is delivered: https://monika-hicks.clientsecure.me/"
     },
     {
       "id": "brief-burnout_boundaries-insight",
@@ -1345,122 +1345,6 @@
       "queueType": "content_brief"
     },
     {
-      "id": "brief-ai_digital_wellness-whitepaper",
-      "clusterId": "ai_digital_wellness",
-      "clusterTitle": "AI, social media, and digital emotional overload",
-      "contentType": "whitepaper",
-      "title": "Why do I feel worse after an hour on my phone?",
-      "suggestedRoute": "/resources/white-papers/why-do-i-feel-worse-after-an-hour-on-my-phone/",
-      "sections": [
-        "Executive summary",
-        "The question people are actually asking",
-        "What the evidence shows",
-        "Audience analysis",
-        "Framework",
-        "Implementation guidance",
-        "Risks and limitations",
-        "Recommended next steps"
-      ],
-      "demandPhrasing": {
-        "source": "config/demand_phrasings.json",
-        "familyId": "ai_digital_wellness",
-        "clusterId": null,
-        "form": "why",
-        "groundedIn": [
-          "data/intake/query_clusters.json#ai_digital_wellness",
-          "data/intake/normalized_query_signals.json tag:ai_digital_wellness"
-        ],
-        "evidence": [
-          {
-            "kind": "cluster",
-            "id": "ai_digital_wellness",
-            "title": "AI, social media, and digital emotional overload",
-            "score": 100,
-            "queryCount": 13
-          }
-        ]
-      },
-      "targetWords": 2500,
-      "minimumWords": 2000,
-      "sourceSignalCount": 18,
-      "score": 100,
-      "publishMode": "full_safe_autonomy",
-      "autonomyStatus": "SYSTEM_BLOCKED",
-      "routineApprovalRequired": false,
-      "llmGeneratedRequired": true,
-      "publicOnlyAfterApproval": false,
-      "createdAt": "2026-08-28T18:49:42.938Z",
-      "humanizationChecklist": [
-        "Use plain human language rather than generic therapy marketing copy.",
-        "Vary sentence rhythm and paragraph length.",
-        "Include concrete examples without inventing client stories.",
-        "Avoid exaggerated claims, guarantees, diagnosis, or pressure language.",
-        "Keep Monika Hicks / Hicks Consulting entity references consistent.",
-        "End with an approved conversion path only after value is delivered."
-      ],
-      "conversionPath": "https://monika-hicks.clientsecure.me/",
-      "llmPrompt": "Create a humanized whitepaper draft for Hicks Consulting.\nTitle: Why do I feel worse after an hour on my phone?\nThis page exists to answer exactly one real question a person typed or said: \"Why do I feel worse after an hour on my phone?\". Answer THAT question, in that person's words, in the first two sentences. Do not broaden it into a general overview of AI, social media, and digital emotional overload; other pages on this site cover other questions in the same area and this one must not overlap them.\nMinimum words: 2000. Target words: 2500.\nWrite in a warm, grounded, specific voice. Do not diagnose. Do not guarantee outcomes. Do not invent client stories.\nInclude these sections: Executive summary; The question people are actually asking; What the evidence shows; Audience analysis; Framework; Implementation guidance; Risks and limitations; Recommended next steps.\nApproved conversion path after value is delivered: https://monika-hicks.clientsecure.me/",
-      "queueType": "content_brief"
-    },
-    {
-      "id": "brief-black_women_healing-article",
-      "clusterId": "black_women_healing",
-      "clusterTitle": "Black women healing beyond survival",
-      "contentType": "article",
-      "title": "Why do I feel like I have to be strong for everybody?",
-      "suggestedRoute": "/resources/articles/why-do-i-feel-like-i-have-to-be-strong-for-everybody/",
-      "sections": [
-        "Short answer",
-        "What is actually happening",
-        "Why it shows up this way",
-        "What it is not",
-        "What usually makes it worse",
-        "What helps",
-        "When to get support"
-      ],
-      "demandPhrasing": {
-        "source": "config/demand_phrasings.json",
-        "familyId": "black_women_healing",
-        "clusterId": null,
-        "form": "why",
-        "groundedIn": [
-          "data/intake/query_clusters.json#black_women_healing",
-          "data/intake/normalized_query_signals.json tag:black_women",
-          "data/search/target_queries.json query:'black female therapist near me', 'therapy for high-achieving Black women Memphis'"
-        ],
-        "evidence": [
-          {
-            "kind": "cluster",
-            "id": "black_women_healing",
-            "title": "Black women healing beyond survival",
-            "score": 60,
-            "queryCount": 3
-          }
-        ]
-      },
-      "targetWords": 1200,
-      "minimumWords": 960,
-      "sourceSignalCount": 2,
-      "score": 40,
-      "publishMode": "full_safe_autonomy",
-      "autonomyStatus": "SYSTEM_BLOCKED",
-      "routineApprovalRequired": false,
-      "llmGeneratedRequired": true,
-      "publicOnlyAfterApproval": false,
-      "createdAt": "2026-08-28T18:49:42.938Z",
-      "humanizationChecklist": [
-        "Use plain human language rather than generic therapy marketing copy.",
-        "Vary sentence rhythm and paragraph length.",
-        "Include concrete examples without inventing client stories.",
-        "Avoid exaggerated claims, guarantees, diagnosis, or pressure language.",
-        "Keep Monika Hicks / Hicks Consulting entity references consistent.",
-        "End with an approved conversion path only after value is delivered."
-      ],
-      "conversionPath": "https://monika-hicks.clientsecure.me/",
-      "llmPrompt": "Create a humanized article draft for Hicks Consulting.\nTitle: Why do I feel like I have to be strong for everybody?\nThis page exists to answer exactly one real question a person typed or said: \"Why do I feel like I have to be strong for everybody?\". Answer THAT question, in that person's words, in the first two sentences. Do not broaden it into a general overview of Black women healing beyond survival; other pages on this site cover other questions in the same area and this one must not overlap them.\nMinimum words: 960. Target words: 1200.\nWrite in a warm, grounded, specific voice. Do not diagnose. Do not guarantee outcomes. Do not invent client stories.\nInclude these sections: Short answer; What is actually happening; Why it shows up this way; What it is not; What usually makes it worse; What helps; When to get support.\nApproved conversion path after value is delivered: https://monika-hicks.clientsecure.me/",
-      "queueType": "content_brief"
-    },
-    {
       "id": "brief-genz_millennial_mental_health-faq",
       "clusterId": "genz_millennial_mental_health",
       "clusterTitle": "Gen Z and millennial mental health language",
@@ -1632,6 +1516,63 @@
           }
         ]
       }
+    },
+    {
+      "id": "brief-ai_digital_wellness-guide",
+      "clusterId": "ai_digital_wellness",
+      "clusterTitle": "AI, social media, and digital emotional overload",
+      "contentType": "guide",
+      "title": "How do I stop doomscrolling at two in the morning?",
+      "suggestedRoute": "/resources/guides/how-do-i-stop-doomscrolling-at-two-in-the-morning/",
+      "sections": [
+        "Short answer",
+        "Before you start",
+        "Step by step",
+        "What to say",
+        "What gets in the way",
+        "How to tell it is working",
+        "Next step"
+      ],
+      "demandPhrasing": {
+        "source": "config/demand_phrasings.json",
+        "familyId": "ai_digital_wellness",
+        "clusterId": null,
+        "form": "how",
+        "groundedIn": [
+          "data/intake/query_clusters.json#ai_digital_wellness",
+          "data/intake/normalized_query_signals.json tag:ai_digital_wellness"
+        ],
+        "evidence": [
+          {
+            "kind": "cluster",
+            "id": "ai_digital_wellness",
+            "title": "AI, social media, and digital emotional overload",
+            "score": 100,
+            "queryCount": 13
+          }
+        ]
+      },
+      "targetWords": 1400,
+      "minimumWords": 1120,
+      "sourceSignalCount": 17,
+      "score": 100,
+      "publishMode": "full_safe_autonomy",
+      "autonomyStatus": "SYSTEM_BLOCKED",
+      "routineApprovalRequired": false,
+      "llmGeneratedRequired": true,
+      "publicOnlyAfterApproval": false,
+      "createdAt": "2026-05-22T16:29:09.108Z",
+      "humanizationChecklist": [
+        "Use plain human language rather than generic therapy marketing copy.",
+        "Vary sentence rhythm and paragraph length.",
+        "Include concrete examples without inventing client stories.",
+        "Avoid exaggerated claims, guarantees, diagnosis, or pressure language.",
+        "Keep Monika Hicks / Hicks Consulting entity references consistent.",
+        "End with an approved conversion path only after value is delivered."
+      ],
+      "conversionPath": "https://monika-hicks.clientsecure.me/",
+      "llmPrompt": "Create a humanized guide draft for Hicks Consulting.\nTitle: How do I stop doomscrolling at two in the morning?\nThis page exists to answer exactly one real question a person typed or said: \"How do I stop doomscrolling at two in the morning?\". Answer THAT question, in that person's words, in the first two sentences. Do not broaden it into a general overview of AI, social media, and digital emotional overload; other pages on this site cover other questions in the same area and this one must not overlap them.\nMinimum words: 1120. Target words: 1400.\nWrite in a warm, grounded, specific voice. Do not diagnose. Do not guarantee outcomes. Do not invent client stories.\nInclude these sections: Short answer; Before you start; Step by step; What to say; What gets in the way; How to tell it is working; Next step.\nApproved conversion path after value is delivered: https://monika-hicks.clientsecure.me/",
+      "queueType": "content_brief"
     },
     {
       "id": "brief-black_women_healing-insight",
@@ -1920,6 +1861,65 @@
           }
         ]
       }
+    },
+    {
+      "id": "brief-black_women_healing-whitepaper",
+      "clusterId": "black_women_healing",
+      "clusterTitle": "Black women healing beyond survival",
+      "contentType": "whitepaper",
+      "title": "I am the first one in my family to go to therapy and nobody understands",
+      "suggestedRoute": "/resources/white-papers/i-am-the-first-one-in-my-family-to-go-to-therapy-and-nobody-understand/",
+      "sections": [
+        "Executive summary",
+        "The question people are actually asking",
+        "What the evidence shows",
+        "Audience analysis",
+        "Framework",
+        "Implementation guidance",
+        "Risks and limitations",
+        "Recommended next steps"
+      ],
+      "demandPhrasing": {
+        "source": "config/demand_phrasings.json",
+        "familyId": "black_women_healing",
+        "clusterId": null,
+        "form": "complaint",
+        "groundedIn": [
+          "data/intake/query_clusters.json#black_women_healing",
+          "data/intake/normalized_query_signals.json tag:black_women",
+          "data/search/target_queries.json query:'black female therapist near me', 'therapy for high-achieving Black women Memphis'"
+        ],
+        "evidence": [
+          {
+            "kind": "cluster",
+            "id": "black_women_healing",
+            "title": "Black women healing beyond survival",
+            "score": 100,
+            "queryCount": 5
+          }
+        ]
+      },
+      "targetWords": 2500,
+      "minimumWords": 2000,
+      "sourceSignalCount": 5,
+      "score": 100,
+      "publishMode": "full_safe_autonomy",
+      "autonomyStatus": "DISCOVERED",
+      "routineApprovalRequired": false,
+      "llmGeneratedRequired": true,
+      "publicOnlyAfterApproval": false,
+      "createdAt": "2026-09-22T14:46:29.783Z",
+      "humanizationChecklist": [
+        "Use plain human language rather than generic therapy marketing copy.",
+        "Vary sentence rhythm and paragraph length.",
+        "Include concrete examples without inventing client stories.",
+        "Avoid exaggerated claims, guarantees, diagnosis, or pressure language.",
+        "Keep Monika Hicks / Hicks Consulting entity references consistent.",
+        "End with an approved conversion path only after value is delivered."
+      ],
+      "conversionPath": "https://monika-hicks.clientsecure.me/",
+      "llmPrompt": "Create a humanized whitepaper draft for Hicks Consulting.\nTitle: I am the first one in my family to go to therapy and nobody understands\nThis page exists to answer exactly one real question a person typed or said: \"I am the first one in my family to go to therapy and nobody understands\". Answer THAT question, in that person's words, in the first two sentences. Do not broaden it into a general overview of Black women healing beyond survival; other pages on this site cover other questions in the same area and this one must not overlap them.\nMinimum words: 2000. Target words: 2500.\nWrite in a warm, grounded, specific voice. Do not diagnose. Do not guarantee outcomes. Do not invent client stories.\nInclude these sections: Executive summary; The question people are actually asking; What the evidence shows; Audience analysis; Framework; Implementation guidance; Risks and limitations; Recommended next steps.\nApproved conversion path after value is delivered: https://monika-hicks.clientsecure.me/",
+      "queueType": "content_brief"
     }
   ]
 }

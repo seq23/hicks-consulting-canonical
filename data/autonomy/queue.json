@@ -1230,7 +1230,7 @@
         "How to tell it is working",
         "Next step"
       ],
-      "state": "FAILED_RETRYABLE",
+      "state": "SYSTEM_BLOCKED",
       "routineApprovalRequired": true,
       "publicOnlyAfterApproval": true,
       "source": "legacy_generated_queue_migration",
@@ -1336,6 +1336,48 @@
           "to": "FAILED_RETRYABLE",
           "at": "2026-09-22T14:46:30.407Z",
           "reason": "Candidate did not satisfy the final Safe Harbor gate."
+        },
+        {
+          "from": "FAILED_RETRYABLE",
+          "to": "SCORED",
+          "at": "2026-09-25T14:46:28.165Z",
+          "reason": "Candidate score normalized for autonomous admission."
+        },
+        {
+          "from": "SCORED",
+          "to": "ADMITTED",
+          "at": "2026-09-25T14:46:28.165Z",
+          "reason": "Candidate admitted inside the existing content policy and ownership boundaries."
+        },
+        {
+          "from": "ADMITTED",
+          "to": "DRAFTING",
+          "at": "2026-09-25T14:46:28.165Z",
+          "reason": "Structured LLM drafting started."
+        },
+        {
+          "from": "DRAFTING",
+          "to": "DRAFTED",
+          "at": "2026-09-25T14:46:28.165Z",
+          "reason": "Structured draft produced."
+        },
+        {
+          "from": "DRAFTED",
+          "to": "VALIDATING",
+          "at": "2026-09-25T14:46:28.165Z",
+          "reason": "Safe Harbor validation started."
+        },
+        {
+          "from": "VALIDATING",
+          "to": "REPAIRING",
+          "at": "2026-09-25T14:46:28.165Z",
+          "reason": "Repairable Safe Harbor findings detected."
+        },
+        {
+          "from": "REPAIRING",
+          "to": "SYSTEM_BLOCKED",
+          "at": "2026-09-25T14:46:28.165Z",
+          "reason": "Candidate exhausted 3 Safe Harbor attempts without clearing its findings."
         }
       ],
       "demandPhrasing": {
@@ -1358,14 +1400,14 @@
           }
         ]
       },
-      "updatedAt": "2026-09-22T14:46:30.407Z",
+      "updatedAt": "2026-09-25T14:46:28.165Z",
       "providerGate": null,
-      "attempts": 2,
+      "attempts": 3,
       "findings": [
         {
           "code": "THIN_CONTENT",
           "severity": "repairable",
-          "message": "Draft has 533 words; minimum is 1120."
+          "message": "Draft has 555 words; minimum is 1120."
         }
       ]
     },
@@ -1464,6 +1506,30 @@
           "to": "FAILED_RETRYABLE",
           "at": "2026-09-22T14:46:30.407Z",
           "reason": "Candidate did not satisfy the final Safe Harbor gate."
+        },
+        {
+          "from": "FAILED_RETRYABLE",
+          "to": "SCORED",
+          "at": "2026-09-25T14:46:28.165Z",
+          "reason": "Candidate score normalized for autonomous admission."
+        },
+        {
+          "from": "SCORED",
+          "to": "ADMITTED",
+          "at": "2026-09-25T14:46:28.165Z",
+          "reason": "Candidate admitted inside the existing content policy and ownership boundaries."
+        },
+        {
+          "from": "ADMITTED",
+          "to": "DRAFTING",
+          "at": "2026-09-25T14:46:28.165Z",
+          "reason": "Structured LLM drafting started."
+        },
+        {
+          "from": "DRAFTING",
+          "to": "FAILED_RETRYABLE",
+          "at": "2026-09-25T14:46:28.165Z",
+          "reason": "Autonomy cycle error."
         }
       ],
       "demandPhrasing": {
@@ -1485,16 +1551,17 @@
           }
         ]
       },
-      "updatedAt": "2026-09-22T14:46:30.407Z",
+      "updatedAt": "2026-09-25T14:46:28.165Z",
       "providerGate": null,
-      "attempts": 1,
+      "attempts": 2,
       "findings": [
         {
           "code": "THIN_CONTENT",
           "severity": "repairable",
           "message": "Draft has 573 words; minimum is 1120."
         }
-      ]
+      ],
+      "lastError": "Expected ',' or ']' after array element in JSON at position 2795"
     },
     {
       "id": "brief-black_women_healing-insight",
