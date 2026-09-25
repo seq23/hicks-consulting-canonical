@@ -1,0 +1,37 @@
+{
+  "schemaVersion": "1.0.0",
+  "purpose": "Hand-authored whole-phrase short forms for manifest titles whose <title> would exceed 70 characters (Bing Site Scan flags 'Title too long' above 70). Read by scripts/lib/search_metadata.js searchTitle(); every entry must be used by a published page and every short form must keep the page's meaning - enforced by _ops/validators/validate_search_metadata_contract.js. The manifest title, H1 and headline stay whole; only the <title> uses these.",
+  "maxLength": 70,
+  "sections": {
+    "What This Looks Like In Real Life": "What It Looks Like",
+    "Why Women Minimize It": "Why Women Minimize It",
+    "How It Shows Up In Work And Relationships": "In Work and Relationships",
+    "A Gentler Truth To Consider": "A Gentler Truth",
+    "Next-Step Reflection": "Next-Step Reflection"
+  },
+  "titles": {
+    "What Boundary Problems Really Sound Like in Professional Women": "What Boundary Problems Sound Like for Women",
+    "The Quiet Anger That Builds When You Are Always the Reliable One": "Quiet Anger When You Are the Reliable One",
+    "How Life Transitions Can Shake Women Who Usually Look Put Together": "When Life Transitions Shake Put-Together Women",
+    "Why High-Achieving Women Sometimes Mistake Numbness for Maturity": "Mistaking Numbness for Maturity",
+    "What People-Pleasing Costs Black Women at Work and at Home": "What People-Pleasing Costs Black Women",
+    "How to Tell Whether You Need More Discipline or More Support": "Needing More Discipline or More Support",
+    "How Boundary Guilt Keeps Women Stuck in the Same Exhausting Loops": "How Boundary Guilt Keeps Women Stuck",
+    "Why Emotional Heaviness Does Not Always Look Like Crying": "Emotional Heaviness Without Tears",
+    "What to Do When You Are Tired of Being Everyone’s Safe Place": "Tired of Being Everyone’s Safe Place",
+    "How Burnout Changes the Way You Think About Your Own Life": "How Burnout Changes How You See Your Life",
+    "Why It Can Feel So Hard to Ask for Help Even When You Need It": "Why Asking for Help Feels So Hard",
+    "The Workplace Habits That Keep High-Functioning Women Drained": "Workplace Habits That Keep Women Drained",
+    "What It Means to Be Successful and Still Feel Lost": "Successful and Still Feeling Lost",
+    "How Therapy Can Help When You Are Used to Talking Yourself Out of Your Needs": "Therapy When You Dismiss Your Own Needs",
+    "How Coaching Can Help When You Want to Move Differently Without Starting Over": "Coaching to Change Without Starting Over",
+    "Burnout Recovery for Black Women Who Keep Functioning Through Everything": "Burnout Recovery for Black Women Who Keep Functioning",
+    "A Practical Guide to Life Transitions, Identity Drift, and Starting Again Without Panic": "Life Transitions, Identity Drift, and Starting Again",
+    "Why So Many High-Achieving Black Women Look Fine on Paper but Feel Worn Down in Real Life": "Why High-Achieving Black Women Look Fine but Feel Worn Down",
+    "Burnout or Just Too Much? How to Tell When You’re Carrying More Than You Were Meant to Hold": "Burnout or Just Too Much? How to Tell the Difference",
+    "A Practical Guide to Therapy vs Coaching for High-Achieving Black Women": "Therapy vs Coaching for High-Achieving Black Women",
+    "Female Therapist in Memphis: What Gender Fit Changes, and What It Does Not": "Female Therapist in Memphis: What Gender Fit Changes",
+    "Psychologists in Memphis: Do You Need a Psychologist, a Therapist, or a Psychiatrist?": "Psychologist, Therapist or Psychiatrist in Memphis?",
+    "Looking for a Therapist in Olive Branch, MS: What the State Line Changes": "Therapist in Olive Branch, MS: What the State Line Changes"
+  }
+}

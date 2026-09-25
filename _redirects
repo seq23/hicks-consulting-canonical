@@ -3,6 +3,19 @@
 /coaching /coaching/ 301
 /resources /resources/ 301
 
+# BEGIN LEGACY WIX URLS
+# Wix-era pages Bing still held as 404 on 25 Sep 2026. Each goes to the live page on
+# the same topic; guarded by _ops/validators/validate_redirect_targets.js.
+/services /therapy/ 301
+/services/ /therapy/ 301
+/copy-of-services /therapy/ 301
+/copy-of-services/ /therapy/ 301
+/about-8 /about/ 301
+/about-8/ /about/ 301
+/copy-of-corporate-and-origizational-t /corporate-speaking/ 301
+/copy-of-corporate-and-origizational-t/ /corporate-speaking/ 301
+# END LEGACY WIX URLS
+
 # BEGIN BING DUPLICATE CONSOLIDATION
 /resources/insights/how-boundary-guilt-keeps-women-stuck-in-the-same-exhausting-loops-a-gentler-truth-to/ /resources/articles/how-boundary-guilt-keeps-women-stuck-in-the-same-exhausting-loops/ 301
 /resources/insights/how-boundary-guilt-keeps-women-stuck-in-the-same-exhausting-loops-what-this-looks-lik/ /resources/articles/how-boundary-guilt-keeps-women-stuck-in-the-same-exhausting-loops/ 301
