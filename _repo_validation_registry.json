@@ -1166,6 +1166,34 @@
       "findingProtocol": "VALIDATION_FINDING",
       "enabled": true,
       "rationale": "A sibling repo had three HARD_FAIL blocksRelease gates of exactly this kind - instruction-leak, empty-cells, content-pattern - globbing for built *.html under a gitignored dist/ while CI ran validate:all before npm run build. Every run examined zero pages and exited 0: three release gates structurally incapable of failing, invisible because a pass on zero items reads exactly like a pass on every item. The ordering half was checked here and does not apply: a fresh clone with no dist/, running validate:all with no build first exactly as Validate does, showed 277, 277 and 270 pages, because these gates walk the committed pages/ tree and exclude dist/ by name. This closes the durable half. Each gate is copied into a synthetic repo-shaped directory with no pages and executed there, so __dirname resolves to the empty tree, and must exit non-zero naming the empty surface. It also asserts each gate last covered at least half the HTML under pages/, so a gate that hard-fails on zero but only ever sees a handful is caught too. Hard-fails if it traces zero gates."
+    },
+    {
+      "id": "search-metadata",
+      "npmScript": "validate:search-metadata",
+      "entrypoint": "_ops/validators/validate_search_metadata_contract.js",
+      "severity": "HARD_FAIL",
+      "blocksRelease": true,
+      "group": "agency-search",
+      "owner": "site-operations",
+      "scope": "the shipped <title> and meta description of every sitemap page under pages/, and the resource renderer that writes new ones",
+      "ciInvocation": "MATRIX_ONLY",
+      "findingProtocol": "VALIDATION_FINDING",
+      "enabled": true,
+      "rationale": "On 25 Sep 2026 Bing found 14 duplicate-title and 22 duplicate-description groups on hicksconsulting.org: 78 published pages shipped a ~45-character chop of their real title and topic-templated descriptions, some cut mid-word. This check asserts every sitemap title is at least 30 characters and unique, every manifest page ships its manifest title whole, every description is 110-160 characters, unique, whole-sentence and not boilerplate shared by more than 2 pages, and that scripts/autonomy/lib/render_resource.mjs builds both through scripts/lib/search_metadata.js. It hard-fails if it examines zero pages."
+    },
+    {
+      "id": "redirect-targets",
+      "npmScript": "validate:redirect-targets",
+      "entrypoint": "_ops/validators/validate_redirect_targets.js",
+      "severity": "HARD_FAIL",
+      "blocksRelease": true,
+      "group": "agency-search",
+      "owner": "site-operations",
+      "scope": "every rule in _redirects, and the Wix-era URLs Bing held as 404",
+      "ciInvocation": "MATRIX_ONLY",
+      "findingProtocol": "VALIDATION_FINDING",
+      "enabled": true,
+      "rationale": "On 25 Sep 2026 Bing still held /services, /about-8, /copy-of-services and /copy-of-corporate-and-origizational-t as 404. Each now 301s to the live page on the same topic. This check keeps those redirects in place and proves every internal redirect target is a page that ships (a sitemap page or a deliberately noindexed one), never the home page, with no dead or shadowing rules. It hard-fails if _redirects has zero rules."
     }
   ]
 }
