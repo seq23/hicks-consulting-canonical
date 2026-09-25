@@ -16,10 +16,13 @@
  * and every check still passed. This contract reads the shipped <head> of every
  * sitemap page and asserts:
  *
- *   1. <title> is at least 30 characters and unique across the sitemap;
- *   2. a published manifest page's <title> is its manifest title, whole, plus
- *      the site suffix (scripts/lib/search_metadata.js resourceTitle) - the
- *      truncation cannot come back;
+ *   1. <title> is 30-70 characters (Bing flags "Title too long" above 70) and
+ *      unique across the sitemap;
+ *   2. a published manifest page's <title> is exactly searchTitle(manifest
+ *      title) from scripts/lib/search_metadata.js: the whole title (plus the
+ *      site suffix when it fits), or a hand-authored whole-phrase short form
+ *      from data/search/title_short_forms.json - never a character chop, so the
+ *      truncation cannot come back; every short form must still be in use;
  *   3. the meta description is 110-160 characters, unique, ends on a whole
  *      sentence, and does not end on a chopped word;
  *   4. no 8-word run is shared by the descriptions of more than 2 pages - a
@@ -75,7 +78,7 @@ let manifestChecked = 0;
 for (const { route, file, html, meta } of pages) {
   const { title, description } = meta;
   if (!title) { failures.push(`${file}: no <title>.`); continue; }
-  if (title.length < lib.TITLE_MIN) failures.push(`${file}: <title> is ${title.length} characters ("${title}"); minimum is ${lib.TITLE_MIN}.`);
+  if (title.length < lib.TITLE_MIN || title.length > lib.TITLE_MAX) failures.push(`${file}: <title> is ${title.length} characters ("${title}"); the range is ${lib.TITLE_MIN}-${lib.TITLE_MAX}.`);
   const tkey = title.toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
   if (!titleOwners.has(tkey)) titleOwners.set(tkey, []);
   titleOwners.get(tkey).push(route);
@@ -86,8 +89,9 @@ for (const { route, file, html, meta } of pages) {
   const entry = manifestByRoute.get(route);
   if (entry) {
     manifestChecked += 1;
-    const expected = lib.resourceTitle(entry.title);
-    if (title !== expected) failures.push(`${file}: <title> is "${title}" but the manifest title makes it "${expected}". A shortened or edited title is the 25 Sep truncation defect.`);
+    const expected = lib.searchTitle(entry.title);
+    if (!expected) failures.push(`${file}: manifest title "${entry.title}" has no ${lib.TITLE_MIN}-${lib.TITLE_MAX} character whole-phrase form; add a short form to data/search/title_short_forms.json.`);
+    else if (title !== expected) failures.push(`${file}: <title> is "${title}" but the manifest title makes it "${expected}" (scripts/lib/search_metadata.js searchTitle). A hand-shortened or chopped title is the 25 Sep truncation defect.`);
   }
 
   if (!description) { failures.push(`${file}: no meta description.`); continue; }
@@ -112,15 +116,27 @@ for (const [run, owners] of lib.boilerplateRuns(descByRoute)) {
 
 if (manifestByRoute.size && !manifestChecked) failures.push('0 published manifest pages were found in the sitemap; the manifest-title assertion reached nothing.');
 
+// ------------------------------------------------------------- the short forms
+// Hand-authored short titles are a second list next to the manifest; a stale
+// entry (its title retired or renamed) would be a rule governing nothing.
+const shortForms = lib.loadShortForms();
+const publishedTitles = [...manifestByRoute.values()].map((e) => e.title);
+for (const [full, short] of Object.entries(shortForms.titles)) {
+  const used = publishedTitles.some((t) => t === full || t.startsWith(`${full}: `));
+  if (!used) failures.push(`STALE SHORT FORM: data/search/title_short_forms.json shortens "${full}", which no published manifest page carries.`);
+  if (short.length >= full.length) failures.push(`SHORT FORM NOT SHORTER: "${short}" for "${full}".`);
+}
+if (!Object.keys(shortForms.titles).length) failures.push('data/search/title_short_forms.json is missing or has no titles; long manifest titles cannot be given a compliant <title>.');
+
 // ------------------------------------------------------------- the generator
 const rendererPath = 'scripts/autonomy/lib/render_resource.mjs';
 const renderer = fs.readFileSync(path.join(ROOT, rendererPath), 'utf8');
 const code = renderer.replace(/^\s*\/\/.*$/gm, '');
 if (!/search_metadata\.js/.test(code)) failures.push(`UNLINKED GENERATOR: ${rendererPath} does not load scripts/lib/search_metadata.js, so new pages are titled and described by rules this contract does not govern.`);
 if (/description[\s\S]{0,120}\.slice\(\s*0\s*,\s*\d+\s*\)/.test(code)) failures.push(`CHARACTER-CUT DESCRIPTION: ${rendererPath} cuts a description with .slice(0, N) again; that is how "... with more cla." was made.`);
-if (!/fitDescription\(/.test(code) || !/resourceTitle\(/.test(code)) failures.push(`${rendererPath} must build the description with fitDescription() and the title with resourceTitle().`);
+if (!/fitDescription\(/.test(code) || !/searchTitle\(/.test(code)) failures.push(`${rendererPath} must build the description with fitDescription() and the title with searchTitle().`);
 
 if (failures.length) {
   fail([`Search metadata contract: examined ${pages.length} sitemap page(s), ${manifestChecked} of them manifest pages.`, ...failures]);
 }
-console.log(`Search metadata contract OK (${pages.length} sitemap pages: every <title> at least ${lib.TITLE_MIN} characters and unique, ${manifestChecked} manifest titles shipped whole, every description ${lib.DESC_MIN}-${lib.DESC_MAX} characters, unique, whole-sentence, no 8-word run on more than ${lib.BOILERPLATE_MAX_PAGES} pages; renderer wired to scripts/lib/search_metadata.js).`);
+console.log(`Search metadata contract OK (${pages.length} sitemap pages: every <title> ${lib.TITLE_MIN}-${lib.TITLE_MAX} characters and unique, ${manifestChecked} manifest titles shipped as searchTitle() gives them, every description ${lib.DESC_MIN}-${lib.DESC_MAX} characters, unique, whole-sentence, no 8-word run on more than ${lib.BOILERPLATE_MAX_PAGES} pages; renderer wired to scripts/lib/search_metadata.js).`);

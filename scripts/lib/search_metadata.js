@@ -18,10 +18,11 @@
  *
  * THE RULE
  * --------
- *  - A manifest page's <title> is its manifest title, whole, plus the site
- *    suffix. og:title and twitter:title say the same thing. Never shortened: a
- *    long whole title is better than a short broken one, and the manifest title
- *    is already unique (validate_title_uniqueness_contract.js).
+ *  - A manifest page's <title> is 30-70 characters (Bing flags "Title too
+ *    long" above 70) and always a whole phrase: the manifest title (plus the
+ *    site suffix when it fits), or a short form a person wrote in
+ *    data/search/title_short_forms.json. Never a character-count chop.
+ *    og:title and twitter:title say the same thing. The H1 keeps the full title.
  *  - A description is 110-160 characters, ends on a whole sentence or clause,
  *    and is drawn from the page's own copy (its short answer first), so two
  *    pages cannot share one unless they share their opening.
@@ -32,8 +33,14 @@
  * the same functions, so a new page cannot be born wrong.
  */
 
+const fs = require('fs');
+const path = require('path');
+
 const SITE_SUFFIX = ' | Hicks Consulting';
 const TITLE_MIN = 30;
+// Bing Site Scan flags "Title too long" above 70 characters.
+const TITLE_MAX = 70;
+const SHORT_FORMS_PATH = path.join(__dirname, '..', '..', 'data', 'search', 'title_short_forms.json');
 const DESC_MIN = 110;
 const DESC_MAX = 160;
 
@@ -57,9 +64,54 @@ function stripTags(value) {
   return decodeEntities(String(value || '').replace(/<[^>]+>/g, ' ')).replace(/\s+/g, ' ').trim();
 }
 
-/** The <title> a manifest page must carry. */
-function resourceTitle(title) {
-  return `${String(title || '').trim()}${SITE_SUFFIX}`;
+function loadShortForms() {
+  try {
+    const doc = JSON.parse(fs.readFileSync(SHORT_FORMS_PATH, 'utf8'));
+    return { sections: doc.sections || {}, titles: doc.titles || {} };
+  } catch {
+    return { sections: {}, titles: {} };
+  }
+}
+
+/**
+ * The <title> a manifest page must carry: always a whole phrase, 30-70
+ * characters, never a character-count chop. In order:
+ *   1. the title plus the site suffix, when that fits;
+ *   2. the title alone, when that fits;
+ *   3. a hand-authored short form from data/search/title_short_forms.json -
+ *      either for the whole title, or for a "Parent: Section" insight title
+ *      as short(parent) + ": " + short(section);
+ *   4. the head of the title before its first ": " or "? ", when that is a
+ *      whole phrase of at least 30 characters.
+ * Returns null when none applies; the renderer refuses and the validator fails,
+ * so the fix is a short form written by a person, not a truncation.
+ */
+function searchTitle(title, shortForms = loadShortForms()) {
+  const t = String(title || '').trim();
+  if (!t) return null;
+  const fit = (body) => {
+    if (!body) return null;
+    const withSuffix = `${body}${SITE_SUFFIX}`;
+    if (withSuffix.length <= TITLE_MAX && withSuffix.length >= TITLE_MIN) return withSuffix;
+    if (body.length <= TITLE_MAX && body.length >= TITLE_MIN) return body;
+    return null;
+  };
+  const direct = fit(t);
+  if (direct) return direct;
+
+  if (shortForms.titles[t]) return fit(shortForms.titles[t]);
+  const colon = t.lastIndexOf(': ');
+  if (colon > 0) {
+    const parent = t.slice(0, colon);
+    const section = t.slice(colon + 2);
+    if (Object.prototype.hasOwnProperty.call(shortForms.sections, section)) {
+      const composed = fit(`${shortForms.titles[parent] || parent}: ${shortForms.sections[section]}`);
+      if (composed) return composed;
+    }
+  }
+  const head = t.match(/^(.+?)(?::\s|\?\s)/);
+  if (head) return fit(head[0].endsWith('? ') ? head[1] + '?' : head[1]);
+  return null;
 }
 
 // Meta tags appear with either attribute first; match both.
@@ -252,6 +304,10 @@ function boilerplateRuns(descByRoute) {
 }
 
 module.exports = {
+  TITLE_MAX,
+  SHORT_FORMS_PATH,
+  loadShortForms,
+  searchTitle,
   SHINGLE,
   BOILERPLATE_MAX_PAGES,
   visibleText,
@@ -262,7 +318,6 @@ module.exports = {
   TITLE_MIN,
   DESC_MIN,
   DESC_MAX,
-  resourceTitle,
   readMeta,
   writeMeta,
   descriptionInRange,

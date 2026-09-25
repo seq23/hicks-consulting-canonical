@@ -57,7 +57,10 @@ export function renderResourceHtml({ draft, route, contentType, scheduledAt }) {
   if (!description) {
     throw new Error(`No ${searchMetadata.DESC_MIN}-${searchMetadata.DESC_MAX} character whole-sentence description can be drawn from the draft for ${route}.`);
   }
-  const pageTitle = searchMetadata.resourceTitle(draft.title);
+  const pageTitle = searchMetadata.searchTitle(draft.title);
+  if (!pageTitle) {
+    throw new Error(`No ${searchMetadata.TITLE_MIN}-${searchMetadata.TITLE_MAX} character whole-phrase <title> for "${draft.title}"; add a short form to data/search/title_short_forms.json.`);
+  }
   const schema = {
     '@context': 'https://schema.org', '@type': 'Article', headline: draft.title, description,
     mainEntityOfPage: canonical, datePublished: publishDate, dateModified: publishDate,

@@ -64,7 +64,8 @@ for (const item of items) {
   const file = pageFile(item.route);
   const html = fs.readFileSync(file, 'utf8');
   const meta = lib.readMeta(html);
-  const title = lib.resourceTitle(item.title);
+  const title = lib.searchTitle(item.title);
+  if (!title) { unresolved.push(`${item.route} (no 30-70 character title; add a short form to data/search/title_short_forms.json)`); continue; }
 
   const current = meta.description || '';
   const usable = current && !isBoilerplate(current) && ownersOf(current).length === 1 && lib.finalWordIsWhole(current, html);
@@ -92,7 +93,7 @@ for (const item of items) {
 }
 
 if (unresolved.length) {
-  console.error(`apply_search_metadata: no in-range, unique, whole-sentence description could be drawn from the copy of ${unresolved.length} page(s):\n  ${unresolved.join('\n  ')}`);
+  console.error(`apply_search_metadata: could not give a compliant title and description to ${unresolved.length} page(s):\n  ${unresolved.join('\n  ')}`);
   process.exit(1);
 }
 console.log(`apply_search_metadata: ${items.length} published manifest page(s) examined, ${changed} ${CHECK ? 'would change' : 'rewritten'}.`);
