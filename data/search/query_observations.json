@@ -1,6 +1,6 @@
 {
   "schemaVersion": "2.1.0",
-  "generatedAt": "2026-09-24T14:33:38.787Z",
+  "generatedAt": "2026-09-25T14:34:02.246Z",
   "providerState": "CONNECTED",
   "provider": "openrouter_web_search",
   "stop": null,
@@ -11,7 +11,7 @@
       "query": "black therapist near me",
       "primaryPage": "/black-therapist-memphis/",
       "status": "ok",
-      "observedAt": "2026-09-24T14:33:38.787Z",
+      "observedAt": "2026-09-25T14:34:02.246Z",
       "provider": "openrouter_web_search",
       "model": "openai/gpt-4o-mini",
       "observationType": "LIVE_WEB_SURFACING",
@@ -50,7 +50,7 @@
       "query": "african american therapist near me",
       "primaryPage": "/black-therapist-memphis/",
       "status": "ok",
-      "observedAt": "2026-09-24T14:33:38.787Z",
+      "observedAt": "2026-09-25T14:34:02.246Z",
       "provider": "openrouter_web_search",
       "model": "openai/gpt-4o-mini",
       "observationType": "LIVE_WEB_SURFACING",
@@ -93,7 +93,7 @@
       "query": "black counselors near me",
       "primaryPage": "/black-therapist-memphis/",
       "status": "ok",
-      "observedAt": "2026-09-24T14:33:38.787Z",
+      "observedAt": "2026-09-25T14:34:02.246Z",
       "provider": "openrouter_web_search",
       "model": "openai/gpt-4o-mini",
       "observationType": "LIVE_WEB_SURFACING",
@@ -136,7 +136,7 @@
       "query": "black mental health therapist near me",
       "primaryPage": "/black-therapist-memphis/",
       "status": "ok",
-      "observedAt": "2026-09-24T14:33:38.787Z",
+      "observedAt": "2026-09-25T14:34:02.246Z",
       "provider": "openrouter_web_search",
       "model": "openai/gpt-4o-mini",
       "observationType": "LIVE_WEB_SURFACING",
@@ -175,7 +175,7 @@
       "query": "black therapists near me",
       "primaryPage": "/",
       "status": "ok",
-      "observedAt": "2026-09-24T14:33:38.787Z",
+      "observedAt": "2026-09-25T14:34:02.246Z",
       "provider": "openrouter_web_search",
       "model": "openai/gpt-4o-mini",
       "observationType": "LIVE_WEB_SURFACING",
@@ -185,6 +185,10 @@
       "siteSurfaced": true,
       "citations": [
         {
+          "url": "https://psychworksllc.com/referral-list",
+          "title": "Black Therapists in Cincinnati"
+        },
+        {
           "url": "https://www.hicksconsulting.org/",
           "title": "Hicks Consulting | Therapy for Individuals & Mental Health Trainings for Organizations"
         },
@@ -193,12 +197,12 @@
           "title": "FAQ | Hicks Consulting"
         },
         {
-          "url": "https://wherewespend.com/black-therapist",
-          "title": "Find a Black Therapist Near You - Where We Spend"
-        },
-        {
           "url": "https://www.blacktherapistsmatter.com/",
           "title": "Find Your Black Therapist Near You | BTM - Start Your Wellness Journey Today"
+        },
+        {
+          "url": "https://wherewespend.com/black-therapist",
+          "title": "Find a Black Therapist Near You - Where We Spend"
         },
         {
           "url": "https://hicks-corporation.socialdirect.one/",
@@ -209,35 +213,33 @@
           "title": "AfricanAmericanTherapists.com"
         },
         {
-          "url": "https://blacktherapists.org/",
-          "title": "Home - Black Therapists | Directory of African American Therapists"
-        },
-        {
           "url": "https://africanamericantherapists.com/african-american-therapists-in-brooklyn",
           "title": "Black therapists in Brooklyn | AfricanAmericanTherapists.com"
         },
         {
-          "url": "https://www.blacktherapistsmatter.com/therapists-directory",
-          "title": "BTM - Therapists Directory"
+          "url": "https://blacktherapists.org/",
+          "title": "Home - Black Therapists | Directory of African American Therapists"
         },
         {
-          "url": "https://www.chicagoblacktherapists.com/directory",
-          "title": "Chicago Black Therapist Directory — Chicago Black Therapists"
+          "url": "https://www.blacktherapistsmatter.com/therapists-directory",
+          "title": "BTM - Therapists Directory"
         }
       ],
       "searchQueries": [],
       "competitors": [
         {
-          "url": "https://wherewespend.com/black-therapist",
-          "resolvedUrl": "https://wherewespend.com/black-therapist/",
+          "url": "https://psychworksllc.com/referral-list",
+          "resolvedUrl": "https://psychworksllc.com/referral-list",
           "status": "ok",
           "httpStatus": 200,
-          "title": "Find a Black Therapist Near You - Where We Spend",
-          "h1": "Looking for a Black therapist near you?",
+          "title": "Referral List",
+          "h1": "<span data-ux=\"Element\" class=\"x-el x-el-span c1-87 c1-88 c1-2w c1-v c1-2v c1-89 c1-72 c1-67 c1-8a c1-8b c1-n c1-8c c1-8d c1-8e c1-8f c1-8g c1-8h c1-8i c1-8j c1-8k c1-q c1-8l c1-8m c1-8n c1-8o c1-8p c1-8q c1-8r c1-69 c1-6a c1-6b c1-6c\">Black Therapists in Cincinnati</span>",
           "headings": [
-            "\"+message+\""
+            "Therapists in the Cincinnati Area",
+            "The Cincinnati BIPOC MH Directory for 2023 is here.",
+            "The Oxford, OH Area Mental Health Resources Guide."
           ],
-          "textChars": 588
+          "textChars": 6672
         },
         {
           "url": "https://www.blacktherapistsmatter.com/",
@@ -271,14 +273,16 @@
           "textChars": 5309
         },
         {
-          "url": "https://hicks-corporation.socialdirect.one/",
-          "resolvedUrl": "https://hicks-corporation.socialdirect.one/",
+          "url": "https://wherewespend.com/black-therapist",
+          "resolvedUrl": "https://wherewespend.com/black-therapist/",
           "status": "ok",
           "httpStatus": 200,
-          "title": "",
-          "h1": "",
-          "headings": [],
-          "textChars": 0
+          "title": "Find a Black Therapist Near You - Where We Spend",
+          "h1": "Looking for a Black therapist near you?",
+          "headings": [
+            "\"+message+\""
+          ],
+          "textChars": 588
         }
       ],
       "ownPage": {
@@ -301,7 +305,7 @@
       "query": "african american female therapist near me",
       "primaryPage": "/black-therapist-memphis/",
       "status": "ok",
-      "observedAt": "2026-09-24T14:33:38.787Z",
+      "observedAt": "2026-09-25T14:34:02.246Z",
       "provider": "openrouter_web_search",
       "model": "openai/gpt-4o-mini",
       "observationType": "LIVE_WEB_SURFACING",
@@ -352,7 +356,7 @@
       "query": "african american psychologist near me",
       "primaryPage": "/black-therapist-memphis/",
       "status": "ok",
-      "observedAt": "2026-09-24T14:33:38.787Z",
+      "observedAt": "2026-09-25T14:34:02.246Z",
       "provider": "openrouter_web_search",
       "model": "openai/gpt-4o-mini",
       "observationType": "LIVE_WEB_SURFACING",
