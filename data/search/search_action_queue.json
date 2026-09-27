@@ -1,6 +1,6 @@
 {
   "schemaVersion": "2.0.0",
-  "generatedAt": "2026-09-26T14:30:28.694Z",
+  "generatedAt": "2026-09-27T14:30:35.995Z",
   "policy": "Hicks may autonomously apply bounded technical/search-alignment repairs. Substantive clinical claims and unsupported treatment assertions are never auto-generated from competitor content.",
   "items": [
     {
@@ -14,9 +14,9 @@
       "evidence": {
         "groundedSiteSurfaced": true,
         "groundedProviderAnswered": true,
-        "gscImpressions": 27,
+        "gscImpressions": 30,
         "gscClicks": 0,
-        "gscAveragePosition": 8.15,
+        "gscAveragePosition": 8.1,
         "gscPages": [
           "/black-therapist-memphis/"
         ],
@@ -35,9 +35,9 @@
       "evidence": {
         "groundedSiteSurfaced": true,
         "groundedProviderAnswered": true,
-        "gscImpressions": 16,
+        "gscImpressions": 17,
         "gscClicks": 0,
-        "gscAveragePosition": 9.94,
+        "gscAveragePosition": 9.82,
         "gscPages": [
           "/black-therapist-memphis/"
         ],
@@ -56,9 +56,9 @@
       "evidence": {
         "groundedSiteSurfaced": true,
         "groundedProviderAnswered": true,
-        "gscImpressions": 10,
+        "gscImpressions": 13,
         "gscClicks": 0,
-        "gscAveragePosition": 7.2,
+        "gscAveragePosition": 7.08,
         "gscPages": [
           "/black-therapist-memphis/"
         ],
@@ -94,23 +94,20 @@
       "status": "CANNIBALIZATION_REVIEW",
       "reasons": [
         "MULTIPLE_HICKS_PAGES_FOR_QUERY",
-        "EXACT_QUERY_NOT_IN_PRIMARY_SEARCH_SURFACES"
+        "EXACT_QUERY_NOT_IN_PRIMARY_SEARCH_SURFACES",
+        "COMPETITOR_DEEPER_ANSWER_STRUCTURE"
       ],
       "evidence": {
         "groundedSiteSurfaced": true,
         "groundedProviderAnswered": true,
-        "gscImpressions": 8,
+        "gscImpressions": 10,
         "gscClicks": 0,
-        "gscAveragePosition": 8.5,
+        "gscAveragePosition": 8.39,
         "gscPages": [
           "/",
           "/black-therapist-memphis/"
         ],
         "competitorUrls": [
-          {
-            "url": "https://psychworksllc.com/referral-list",
-            "title": "Black Therapists in Cincinnati"
-          },
           {
             "url": "https://www.mapquest.com/us/georgia/hicks-counseling-llc-532555911",
             "title": "Hicks Counseling, LLC, 2480 Windy Hill Rd SE, #210, Marietta, GA 30067-8644, US - MapQuest"
@@ -126,6 +123,10 @@
           {
             "url": "https://wherewespend.com/black-therapist",
             "title": "Find a Black Therapist Near You - Where We Spend"
+          },
+          {
+            "url": "https://africanamericantherapists.com/",
+            "title": "AfricanAmericanTherapists.com"
           }
         ]
       },
@@ -184,9 +185,9 @@
       "evidence": {
         "groundedSiteSurfaced": null,
         "groundedProviderAnswered": false,
-        "gscImpressions": 7,
+        "gscImpressions": 8,
         "gscClicks": 0,
-        "gscAveragePosition": 10.43,
+        "gscAveragePosition": 10.5,
         "gscPages": [
           "/black-therapist-memphis/"
         ],
@@ -411,15 +412,19 @@
     {
       "query": "black female therapist near me",
       "primaryPage": "/female-therapist-memphis/",
-      "status": "UNKNOWN",
-      "reasons": [],
+      "status": "WRONG_PAGE",
+      "reasons": [
+        "WRONG_HICKS_PAGE_RANKING"
+      ],
       "evidence": {
         "groundedSiteSurfaced": null,
         "groundedProviderAnswered": false,
-        "gscImpressions": 0,
+        "gscImpressions": 1,
         "gscClicks": 0,
-        "gscAveragePosition": 0,
-        "gscPages": [],
+        "gscAveragePosition": 4,
+        "gscPages": [
+          "/black-therapist-memphis/"
+        ],
         "competitorUrls": []
       },
       "safeRepairEligible": false,
@@ -867,9 +872,9 @@
       "evidence": {
         "groundedSiteSurfaced": null,
         "groundedProviderAnswered": false,
-        "gscImpressions": 19,
+        "gscImpressions": 18,
         "gscClicks": 3,
-        "gscAveragePosition": 4.25,
+        "gscAveragePosition": 4.26,
         "gscPages": [
           "/",
           "/coaching/",
@@ -943,7 +948,7 @@
         "groundedProviderAnswered": false,
         "gscImpressions": 10,
         "gscClicks": 0,
-        "gscAveragePosition": 2.9,
+        "gscAveragePosition": 3,
         "gscPages": [
           "/"
         ],
@@ -1023,9 +1028,9 @@
       "evidence": {
         "groundedSiteSurfaced": null,
         "groundedProviderAnswered": false,
-        "gscImpressions": 7,
+        "gscImpressions": 9,
         "gscClicks": 0,
-        "gscAveragePosition": 9.43,
+        "gscAveragePosition": 9,
         "gscPages": [
           "/black-therapist-memphis/"
         ],
@@ -1106,9 +1111,9 @@
       "evidence": {
         "groundedSiteSurfaced": null,
         "groundedProviderAnswered": false,
-        "gscImpressions": 4,
+        "gscImpressions": 6,
         "gscClicks": 0,
-        "gscAveragePosition": 13.75,
+        "gscAveragePosition": 13,
         "gscPages": [
           "/black-therapist-memphis/"
         ],
