@@ -34,6 +34,10 @@ jobs:
       # which on a client site is the normal resting state.
       - name: Release human-approved content that is due
         run: npm run publish:content
+      # Publication changes which manifest pages enter the public sitemap. Repair
+      # their existing metadata before the build and search-metadata validator.
+      - name: Normalize newly published search metadata
+        run: npm run search:metadata
       # Relink the site to what just published.
       #
       # scripts/navigation/build_internal_navigation.mjs writes the category hub
@@ -57,9 +61,8 @@ jobs:
           # Explicit paths. `git add -A` on a scheduled job commits whatever else
           # happens to be in the tree, which on a client site is how unreviewed work
           # reaches production by accident.
-          # pages/ is here for the navigation relink only. The step above writes
-          # nothing else into it: it replaces the generated hub lists, breadcrumb
-          # and related-links blocks and touches no editorial prose.
+          # pages/ includes generated navigation and normalized search metadata;
+          # neither step edits editorial prose.
           #
           # data/cadence/lastmod_ledger.json is committed alongside sitemap.xml
           # because the two are one artefact. scripts/lib/lastmod_ledger.js holds a
