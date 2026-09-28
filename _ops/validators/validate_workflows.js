@@ -91,16 +91,18 @@ console.log(`Workflow contracts OK (${files.length} workflows, ${writeWorkflows.
   }
 
   const publishIndex = workflowText.indexOf('npm run publish:content');
+  const metadataIndex = workflowText.indexOf('run: npm run search:metadata');
   const buildIndex = workflowText.indexOf('npm run build');
   const validateIndex = workflowText.indexOf('npm run validate:all');
   const commitIndex = workflowText.indexOf('Commit published status changes');
 
   if (publishIndex === -1) workflowFail('content-publish.yml missing npm run publish:content.');
+  if (metadataIndex === -1) workflowFail('content-publish.yml missing npm run search:metadata.');
   if (buildIndex === -1) workflowFail('content-publish.yml missing npm run build.');
   if (validateIndex === -1) workflowFail('content-publish.yml missing npm run validate:all.');
   if (commitIndex === -1) workflowFail('content-publish.yml missing Commit published status changes step.');
 
-  if (!(publishIndex < buildIndex && buildIndex < validateIndex && validateIndex < commitIndex)) {
-    workflowFail('content-publish.yml must run publish:content before build before validate:all before commit.');
+  if (!(publishIndex < metadataIndex && metadataIndex < buildIndex && buildIndex < validateIndex && validateIndex < commitIndex)) {
+    workflowFail('content-publish.yml must run publish:content before search:metadata before build before validate:all before commit.');
   }
 }
