@@ -1,6 +1,6 @@
 {
   "schemaVersion": "2.0.0",
-  "generatedAt": "2026-09-27T14:30:35.995Z",
+  "generatedAt": "2026-09-28T14:37:07.476Z",
   "policy": "Hicks may autonomously apply bounded technical/search-alignment repairs. Substantive clinical claims and unsupported treatment assertions are never auto-generated from competitor content.",
   "items": [
     {
@@ -94,8 +94,7 @@
       "status": "CANNIBALIZATION_REVIEW",
       "reasons": [
         "MULTIPLE_HICKS_PAGES_FOR_QUERY",
-        "EXACT_QUERY_NOT_IN_PRIMARY_SEARCH_SURFACES",
-        "COMPETITOR_DEEPER_ANSWER_STRUCTURE"
+        "EXACT_QUERY_NOT_IN_PRIMARY_SEARCH_SURFACES"
       ],
       "evidence": {
         "groundedSiteSurfaced": true,
@@ -117,12 +116,12 @@
             "title": "local search"
           },
           {
-            "url": "https://www.blacktherapistsmatter.com/",
-            "title": "Find Your Black Therapist Near You | BTM - Start Your Wellness Journey Today"
-          },
-          {
             "url": "https://wherewespend.com/black-therapist",
             "title": "Find a Black Therapist Near You - Where We Spend"
+          },
+          {
+            "url": "https://www.blacktherapistsmatter.com/",
+            "title": "Find Your Black Therapist Near You | BTM - Start Your Wellness Journey Today"
           },
           {
             "url": "https://africanamericantherapists.com/",
@@ -850,9 +849,9 @@
       "evidence": {
         "groundedSiteSurfaced": null,
         "groundedProviderAnswered": false,
-        "gscImpressions": 58,
+        "gscImpressions": 65,
         "gscClicks": 1,
-        "gscAveragePosition": 7.27,
+        "gscAveragePosition": 7.63,
         "gscPages": [
           "/",
           "/black-therapist-memphis/"
@@ -922,14 +921,15 @@
       "primaryPage": "/",
       "status": "OBSERVED",
       "reasons": [
+        "IMPRESSIONS_WITHOUT_CLICKS",
         "AVERAGE_POSITION_OUTSIDE_TOP_10"
       ],
       "evidence": {
         "groundedSiteSurfaced": null,
         "groundedProviderAnswered": false,
-        "gscImpressions": 12,
+        "gscImpressions": 21,
         "gscClicks": 0,
-        "gscAveragePosition": 41,
+        "gscAveragePosition": 39.1,
         "gscPages": [
           "/"
         ],
@@ -946,7 +946,7 @@
       "evidence": {
         "groundedSiteSurfaced": null,
         "groundedProviderAnswered": false,
-        "gscImpressions": 10,
+        "gscImpressions": 8,
         "gscClicks": 0,
         "gscAveragePosition": 3,
         "gscPages": [
@@ -1132,9 +1132,9 @@
       "evidence": {
         "groundedSiteSurfaced": null,
         "groundedProviderAnswered": false,
-        "gscImpressions": 4,
+        "gscImpressions": 5,
         "gscClicks": 0,
-        "gscAveragePosition": 6,
+        "gscAveragePosition": 5.83,
         "gscPages": [
           "/resources/articles/why-emotional-heaviness-does-not-always-look-like-crying/",
           "/resources/insights/why-emotional-heaviness-does-not-always-look-like-crying-how-it-shows-up-in-work-and/",
@@ -1176,9 +1176,9 @@
       "evidence": {
         "groundedSiteSurfaced": null,
         "groundedProviderAnswered": false,
-        "gscImpressions": 4,
+        "gscImpressions": 5,
         "gscClicks": 0,
-        "gscAveragePosition": 21.25,
+        "gscAveragePosition": 21.2,
         "gscPages": [
           "/therapy/"
         ],
