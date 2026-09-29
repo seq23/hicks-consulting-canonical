@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0.0",
-  "purpose": "Hand-authored whole-phrase short forms for manifest titles whose <title> would exceed 70 characters (Bing Site Scan flags 'Title too long' above 70). Read by scripts/lib/search_metadata.js searchTitle(); every entry must be used by a published page and every short form must keep the page's meaning - enforced by _ops/validators/validate_search_metadata_contract.js. The manifest title, H1 and headline stay whole; only the <title> uses these.",
+  "purpose": "Hand-authored whole-phrase short forms for manifest titles whose <title> would exceed 70 characters (Bing Site Scan flags 'Title too long' above 70). Read by scripts/lib/search_metadata.js searchTitle(); every entry must be used by a published or scheduled manifest page and every short form must keep the page's meaning - enforced by _ops/validators/validate_search_metadata_contract.js. The manifest title, H1 and headline stay whole; only the <title> uses these.",
   "maxLength": 70,
   "sections": {
     "What This Looks Like In Real Life": "What It Looks Like",
@@ -32,6 +32,23 @@
     "A Practical Guide to Therapy vs Coaching for High-Achieving Black Women": "Therapy vs Coaching for High-Achieving Black Women",
     "Female Therapist in Memphis: What Gender Fit Changes, and What It Does Not": "Female Therapist in Memphis: What Gender Fit Changes",
     "Psychologists in Memphis: Do You Need a Psychologist, a Therapist, or a Psychiatrist?": "Psychologist, Therapist or Psychiatrist in Memphis?",
-    "Looking for a Therapist in Olive Branch, MS: What the State Line Changes": "Therapist in Olive Branch, MS: What the State Line Changes"
+    "Looking for a Therapist in Olive Branch, MS: What the State Line Changes": "Therapist in Olive Branch, MS: What the State Line Changes",
+    "The Emotional Cost of Always Being the One Who Handles It": "The Cost of Always Handling It",
+    "How to Rebuild Self-Trust After a Season of Overextension": "Rebuilding Self-Trust After Overextension",
+    "Why Boundaries Matter More During Good Seasons Than Bad Ones": "Why Boundaries Matter in Good Seasons",
+    "What Relationship Stress Looks Like When You Keep Minimizing Your Own Feelings": "Relationship Stress and Minimizing Feelings",
+    "How to Notice When Overwhelm Is Turning Into Shutdown": "When Overwhelm Turns Into Shutdown",
+    "What Healing Can Look Like for Women Who Are Tired of Performing Fine": "Healing When Tired of Performing Fine",
+    "How to Stop Confusing Capacity With Obligation": "Separating Capacity From Obligation",
+    "What Black Women Deserve From Support That Is Actually Useful": "Useful Support for Black Women",
+    "When Your Nervous System Is Tired but Your Life Keeps Demanding More": "When Your Nervous System Is Tired",
+    "Why Transition Seasons Expose the Parts of You That Need Care": "Transitions and the Parts That Need Care",
+    "How to Leave the Year Without Carrying Every Lesson as Self-Blame": "Year-End Lessons Without Self-Blame",
+    "What It Looks Like to Want a Softer Life Without Wanting a Smaller One": "Wanting a Softer Life, Not a Smaller One",
+    "Why So Many Women Need More Room Before They Need More Advice": "More Room Before More Advice for Women",
+    "How to End the Year More Honest Than You Began It": "Ending the Year With More Honesty",
+    "Relationship Stress, Emotional Labor, and the Need for More Honest Support": "Relationship Stress and Honest Support",
+    "A Gentler Way Forward: Reflection, Recovery, and Rebuilding Trust in Yourself": "A Gentler Way Forward: Recovery and Self-Trust",
+    "The End-of-Year Reset Guide for Black Women Who Are Tired of Holding Everything Together": "Year-End Reset for Black Women Holding Everything Together"
   }
 }

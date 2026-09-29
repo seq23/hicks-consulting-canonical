@@ -120,10 +120,11 @@ if (manifestByRoute.size && !manifestChecked) failures.push('0 published manifes
 // Hand-authored short titles are a second list next to the manifest; a stale
 // entry (its title retired or renamed) would be a rule governing nothing.
 const shortForms = lib.loadShortForms();
-const publishedTitles = [...manifestByRoute.values()].map((e) => e.title);
+// Scheduled legacy content needs whole-phrase forms before its release date.
+const publishedTitles = manifest.filter((e) => e.status === "published" || (e.status === "approved" && e.scheduledAt)).map((e) => e.title);
 for (const [full, short] of Object.entries(shortForms.titles)) {
   const used = publishedTitles.some((t) => t === full || t.startsWith(`${full}: `));
-  if (!used) failures.push(`STALE SHORT FORM: data/search/title_short_forms.json shortens "${full}", which no published manifest page carries.`);
+  if (!used) failures.push(`STALE SHORT FORM: data/search/title_short_forms.json shortens "${full}", which no published or scheduled manifest page carries.`);
   if (short.length >= full.length) failures.push(`SHORT FORM NOT SHORTER: "${short}" for "${full}".`);
 }
 if (!Object.keys(shortForms.titles).length) failures.push('data/search/title_short_forms.json is missing or has no titles; long manifest titles cannot be given a compliant <title>.');
@@ -140,3 +141,9 @@ if (failures.length) {
   fail([`Search metadata contract: examined ${pages.length} sitemap page(s), ${manifestChecked} of them manifest pages.`, ...failures]);
 }
 console.log(`Search metadata contract OK (${pages.length} sitemap pages: every <title> ${lib.TITLE_MIN}-${lib.TITLE_MAX} characters and unique, ${manifestChecked} manifest titles shipped as searchTitle() gives them, every description ${lib.DESC_MIN}-${lib.DESC_MAX} characters, unique, whole-sentence, no 8-word run on more than ${lib.BOILERPLATE_MAX_PAGES} pages; renderer wired to scripts/lib/search_metadata.js).`);
+
+// Exercise the legacy release lane as well as the new-content renderer.
+if (process.env.SKIP_RELEASE_METADATA_REGRESSION !== '1') {
+  try { require('../../scripts/search/verify_release_metadata.cjs').verifyReleaseMetadata(); }
+  catch (error) { fail(`Legacy release metadata regression failed: ${error.message}`); }
+}

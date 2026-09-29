@@ -20,8 +20,8 @@
     },
     {
       "path": "scripts/publishing/run_safe_publish.mjs",
-      "sha256": "a350aef13a03d6eb0265939ca465555dd60f3a5d76da51a1506e8e60afbc0297",
-      "bytes": 3510
+      "sha256": "a252f9a50bf5dd86d53fbe2fb4e2cda265564d14860a663fb1bf3fd83b565932",
+      "bytes": 7411
     },
     {
       "path": ".github/workflows/content-publish.yml",
@@ -44,11 +44,9 @@
       "bytes": 8930
     }
   ],
-  "baseline_refreshed_at": "2026-08-29T17:40:00.000000Z",
-  "baseline_reason": "Re-recorded 2026-08-29 (second refresh that day) after three deliberate, owner-authorised changes. (1) assets/js/admin.js and pages/admin/index.html: five finished pieces whose own record read \"Awaiting client review\" were invisible to the client, because groupFor() called every non-approved item 'draft' and 'draft' was not in CLIENT_GROUPS - so neither renderReview() nor renderBrowse() showed them. A sixth client group, 'awaiting-review', now carries anything finished that says it is waiting on her, with its own filter chip, status option, row label and place in the review panel; genuinely mid-generation drafts are still held back. approvalFor() additionally refuses to treat an item flagged requiresIndividualApproval as covered by a standing window, matching scripts/publishing/process_manifest.js exactly, and a published page the site owner released directly now says so on its own row rather than reading as a decision of hers. (2) .github/workflows/content-publish.yml: scripts/navigation/build_internal_navigation.mjs was invoked by nothing at all, so every release left the site's internal navigation describing the library as it was before that release; the workflow now runs it immediately after a release and commits pages/ and sitemap.xml. The five previous validators of this file all still pass unchanged. Nothing in the human release gate itself was weakened: the standing window still ends 2026-12-31, routineApprovalRequired remains true, and no additional item became releasable.",
+  "baseline_refreshed_at": "2026-09-29T19:00:00Z",
+  "baseline_reason": "Scoped root-cause repair requested by the owner: enforce current search metadata before publishing legacy queued HTML, and record unsafe metadata skips without releasing defective pages. Human approval, dates, cadence, and all other protected files and editorial identity hashes remain unchanged.",
   "baseline_refresh_changed_files": [
-    "pages/admin/index.html",
-    "assets/js/admin.js",
-    ".github/workflows/content-publish.yml"
+    "scripts/publishing/run_safe_publish.mjs"
   ]
 }

@@ -15,9 +15,10 @@ const fs = require('fs');
 const path = require('path');
 const lib = require('../lib/search_metadata');
 
+function applySearchMetadata({ manifest, check = false, allowUnresolved = false } = {}) {
 const root = process.cwd();
-const CHECK = process.argv.includes('--check');
-const manifest = JSON.parse(fs.readFileSync(path.join(root, 'data/admin/content_manifest.json'), 'utf8'));
+const CHECK = check;
+manifest ||= JSON.parse(fs.readFileSync(path.join(root, 'data/admin/content_manifest.json'), 'utf8'));
 
 const pageFile = (route) => path.join(root, 'pages', route.replace(/^\//, '').replace(/\/$/, ''), 'index.html');
 
@@ -28,7 +29,7 @@ const items = manifest
 
 if (!items.length) {
   console.error('apply_search_metadata: 0 published manifest pages found under pages/. Nothing was examined.');
-  process.exit(1);
+  throw new Error('Search metadata repair examined no published pages.');
 }
 
 // Every description on the public site, so a derived one cannot collide with a
@@ -36,10 +37,13 @@ if (!items.length) {
 const sitemap = fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8');
 const sitemapRoutes = [...sitemap.matchAll(/<loc>https?:\/\/[^/]+(\/[^<]*)<\/loc>/g)].map((m) => m[1]);
 const descByRoute = new Map();
+const titleByRoute = new Map();
+const titleKey = (value) => String(value || "").toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
 for (const route of new Set([...sitemapRoutes, ...items.map((i) => i.route)])) {
   const file = pageFile(route);
   if (!fs.existsSync(file)) continue;
-  const { description } = lib.readMeta(fs.readFileSync(file, 'utf8'));
+  const { description, title } = lib.readMeta(fs.readFileSync(file, 'utf8'));
+  if (title) titleByRoute.set(route, titleKey(title));
   if (description) descByRoute.set(route, description);
 }
 const ownersOf = (desc) => [...descByRoute].filter(([, d]) => d === desc).map(([r]) => r);
@@ -65,7 +69,7 @@ for (const item of items) {
   const html = fs.readFileSync(file, 'utf8');
   const meta = lib.readMeta(html);
   const title = lib.searchTitle(item.title);
-  if (!title) { unresolved.push(`${item.route} (no 30-70 character title; add a short form to data/search/title_short_forms.json)`); continue; }
+  if (!title || [...titleByRoute].some(([route, value]) => route !== item.route && value === titleKey(title))) { unresolved.push(item.route); continue; }
 
   const current = meta.description || '';
   const usable = current && !isBoilerplate(current) && ownersOf(current).length === 1 && lib.finalWordIsWhole(current, html);
@@ -84,6 +88,7 @@ for (const item of items) {
     descByRoute.set(item.route, description);
   }
 
+  titleByRoute.set(item.route, titleKey(title));
   const next = lib.writeMeta(html, { title, description });
   if (next !== html) {
     changed += 1;
@@ -94,7 +99,15 @@ for (const item of items) {
 
 if (unresolved.length) {
   console.error(`apply_search_metadata: could not give a compliant title and description to ${unresolved.length} page(s):\n  ${unresolved.join('\n  ')}`);
-  process.exit(1);
+  if (!allowUnresolved) throw new Error('Search metadata repair has unresolved pages.');
 }
 console.log(`apply_search_metadata: ${items.length} published manifest page(s) examined, ${changed} ${CHECK ? 'would change' : 'rewritten'}.`);
-if (CHECK && changed) process.exit(1);
+return { examined: items.length, changed, unresolved };
+}
+module.exports = { applySearchMetadata };
+if (require.main === module) {
+  try {
+    const result = applySearchMetadata({ check: process.argv.includes('--check') });
+    if (process.argv.includes('--check') && result.changed) process.exitCode = 1;
+  } catch (error) { console.error(error.message); process.exitCode = 1; }
+}
