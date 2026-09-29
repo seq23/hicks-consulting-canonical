@@ -1442,7 +1442,7 @@
         "What helps",
         "When to get support"
       ],
-      "state": "FAILED_RETRYABLE",
+      "state": "SYSTEM_BLOCKED",
       "routineApprovalRequired": true,
       "publicOnlyAfterApproval": true,
       "source": "legacy_generated_queue_migration",
@@ -1530,6 +1530,48 @@
           "to": "FAILED_RETRYABLE",
           "at": "2026-09-25T14:46:28.165Z",
           "reason": "Autonomy cycle error."
+        },
+        {
+          "from": "FAILED_RETRYABLE",
+          "to": "SCORED",
+          "at": "2026-09-29T14:48:14.522Z",
+          "reason": "Candidate score normalized for autonomous admission."
+        },
+        {
+          "from": "SCORED",
+          "to": "ADMITTED",
+          "at": "2026-09-29T14:48:14.522Z",
+          "reason": "Candidate admitted inside the existing content policy and ownership boundaries."
+        },
+        {
+          "from": "ADMITTED",
+          "to": "DRAFTING",
+          "at": "2026-09-29T14:48:14.522Z",
+          "reason": "Structured LLM drafting started."
+        },
+        {
+          "from": "DRAFTING",
+          "to": "DRAFTED",
+          "at": "2026-09-29T14:48:14.522Z",
+          "reason": "Structured draft produced."
+        },
+        {
+          "from": "DRAFTED",
+          "to": "VALIDATING",
+          "at": "2026-09-29T14:48:14.522Z",
+          "reason": "Safe Harbor validation started."
+        },
+        {
+          "from": "VALIDATING",
+          "to": "REPAIRING",
+          "at": "2026-09-29T14:48:14.522Z",
+          "reason": "Repairable Safe Harbor findings detected."
+        },
+        {
+          "from": "REPAIRING",
+          "to": "SYSTEM_BLOCKED",
+          "at": "2026-09-29T14:48:14.522Z",
+          "reason": "Autonomy cycle error."
         }
       ],
       "demandPhrasing": {
@@ -1551,9 +1593,9 @@
           }
         ]
       },
-      "updatedAt": "2026-09-25T14:46:28.165Z",
+      "updatedAt": "2026-09-29T14:48:14.522Z",
       "providerGate": null,
-      "attempts": 2,
+      "attempts": 3,
       "findings": [
         {
           "code": "THIN_CONTENT",
@@ -1561,7 +1603,7 @@
           "message": "Draft has 573 words; minimum is 1120."
         }
       ],
-      "lastError": "Expected ',' or ']' after array element in JSON at position 2795"
+      "lastError": "Expected ',' or ']' after array element in JSON at position 8939"
     },
     {
       "id": "brief-black_women_healing-insight",
@@ -1594,7 +1636,7 @@
         "How to tell it is working",
         "Next step"
       ],
-      "state": "DISCOVERED",
+      "state": "SKIPPED_PROHIBITED_ACTION",
       "routineApprovalRequired": true,
       "publicOnlyAfterApproval": true,
       "source": "legacy_generated_queue_migration",
@@ -1616,6 +1658,18 @@
           "to": "DISCOVERED",
           "at": "2026-08-29T14:45:30.271Z",
           "reason": "Title reconciled to the upstream demand-grounded brief before any page existed."
+        },
+        {
+          "from": "DISCOVERED",
+          "to": "SCORED",
+          "at": "2026-09-29T14:48:14.522Z",
+          "reason": "Candidate score normalized for autonomous admission."
+        },
+        {
+          "from": "SCORED",
+          "to": "SKIPPED_PROHIBITED_ACTION",
+          "at": "2026-09-29T14:48:14.522Z",
+          "reason": "Candidate did not meet the configured admission score."
         }
       ],
       "demandPhrasing": {
@@ -1638,7 +1692,7 @@
           }
         ]
       },
-      "updatedAt": "2026-08-29T14:45:30.271Z"
+      "updatedAt": "2026-09-29T14:48:14.522Z"
     },
     {
       "id": "brief-genz_millennial_mental_health-whitepaper",

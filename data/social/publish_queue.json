@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-28T00:00:00.000Z",
+  "generatedAt": "2026-09-29T14:48:14.157Z",
   "publishMode": "full_safe_autonomy",
   "items": [
     {
@@ -40,7 +40,7 @@
       },
       "targetWords": 2500,
       "minimumWords": 2000,
-      "sourceSignalCount": 13,
+      "sourceSignalCount": 16,
       "score": 100,
       "publishMode": "full_safe_autonomy",
       "autonomyStatus": "SYSTEM_BLOCKED",
@@ -501,7 +501,7 @@
       },
       "targetWords": 1400,
       "minimumWords": 1120,
-      "sourceSignalCount": 182,
+      "sourceSignalCount": 183,
       "score": 100,
       "publishMode": "full_safe_autonomy",
       "autonomyStatus": "FAILED_RETRYABLE",
@@ -559,8 +559,8 @@
       },
       "targetWords": 900,
       "minimumWords": 720,
-      "sourceSignalCount": 1,
-      "score": 20,
+      "sourceSignalCount": 2,
+      "score": 40,
       "publishMode": "full_safe_autonomy",
       "autonomyStatus": "DISCOVERED",
       "routineApprovalRequired": false,
@@ -732,8 +732,8 @@
       },
       "targetWords": 1200,
       "minimumWords": 960,
-      "sourceSignalCount": 2,
-      "score": 40,
+      "sourceSignalCount": 3,
+      "score": 60,
       "publishMode": "full_safe_autonomy",
       "autonomyStatus": "DISCOVERED",
       "routineApprovalRequired": false,
@@ -1985,7 +1985,7 @@
         "How to tell it is working",
         "Next step"
       ],
-      "llmPrompt": "Create a humanized insight draft for Hicks Consulting.\nTitle: How do I tell my church I am seeing a counselor?\nThis page exists to answer exactly one real question a person typed or said: \"How do I tell my church I am seeing a counselor?\". Answer THAT question in its own words in the first two sentences. Do not widen it into a general overview of Faith-centered emotional support; other pages on this site answer other questions in the same area and this one must not restate them.\nCadence: daily. Proposed future slot: 2027-01-20T13:00:00.000Z.\nMinimum words: 720. Target words: 900.\nUse an answer-first opening, exact-intent headings, concrete examples, and a checklist or decision framework where useful.\nWrite in a warm, grounded, specific voice. Do not diagnose, guarantee outcomes, or invent client stories.\nInclude these sections: Short answer; Before you start; Step by step; What to say; What gets in the way; How to tell it is working; Next step.\nApproved conversion path after value is delivered: https://monika-hicks.clientsecure.me/.\nThis is an autonomous candidate. It must pass Safe Harbor, duplicate, source, cadence, build, and release validation before it can be scheduled.",
+      "llmPrompt": "Create a humanized insight draft for Hicks Consulting.\nTitle: How do I tell my church I am seeing a counselor?\nThis page exists to answer exactly one real question a person typed or said: \"How do I tell my church I am seeing a counselor?\". Answer THAT question, in that person's words, in the first two sentences. Do not broaden it into a general overview of Faith-centered emotional support; other pages on this site cover other questions in the same area and this one must not overlap them.\nMinimum words: 720. Target words: 900.\nWrite in a warm, grounded, specific voice. Do not diagnose. Do not guarantee outcomes. Do not invent client stories.\nInclude these sections: Short answer; Before you start; Step by step; What to say; What gets in the way; How to tell it is working; Next step.\nApproved conversion path after value is delivered: https://monika-hicks.clientsecure.me/",
       "queueType": "content_brief"
     },
     {
@@ -2051,7 +2051,7 @@
         "How to tell it is working",
         "Next step"
       ],
-      "llmPrompt": "Create a humanized insight draft for Hicks Consulting.\nTitle: What do I ask a therapist on the first phone call?\nThis page exists to answer exactly one real question a person typed or said: \"What do I ask a therapist on the first phone call?\". Answer THAT question in its own words in the first two sentences. Do not widen it into a general overview of local_access; other pages on this site answer other questions in the same area and this one must not restate them.\nCadence: daily. Proposed future slot: 2027-01-21T13:00:00.000Z.\nMinimum words: 720. Target words: 900.\nUse an answer-first opening, exact-intent headings, concrete examples, and a checklist or decision framework where useful.\nWrite in a warm, grounded, specific voice. Do not diagnose, guarantee outcomes, or invent client stories.\nInclude these sections: Short answer; Before you start; Step by step; What to say; What gets in the way; How to tell it is working; Next step.\nApproved conversion path after value is delivered: https://monika-hicks.clientsecure.me/.\nThis is an autonomous candidate. It must pass Safe Harbor, duplicate, source, cadence, build, and release validation before it can be scheduled.",
+      "llmPrompt": "Create a humanized insight draft for Hicks Consulting.\nTitle: What do I ask a therapist on the first phone call?\nThis page exists to answer exactly one real question a person typed or said: \"What do I ask a therapist on the first phone call?\". Answer THAT question, in that person's words, in the first two sentences. Do not broaden it into a general overview of Why So Many Women Need More Room Before They Need More Advice: Next-Step Reflection; other pages on this site cover other questions in the same area and this one must not overlap them.\nMinimum words: 720. Target words: 900.\nWrite in a warm, grounded, specific voice. Do not diagnose. Do not guarantee outcomes. Do not invent client stories.\nInclude these sections: Short answer; Before you start; Step by step; What to say; What gets in the way; How to tell it is working; Next step.\nApproved conversion path after value is delivered: https://monika-hicks.clientsecure.me/",
       "queueType": "content_brief"
     },
     {
@@ -2111,7 +2111,7 @@
         "What not to do",
         "When it is time to talk to someone"
       ],
-      "llmPrompt": "Create a humanized insight draft for Hicks Consulting.\nTitle: I use ChatGPT more than I talk to people and I am not sure that is fine\nThis page exists to answer exactly one real question a person typed or said: \"I use ChatGPT more than I talk to people and I am not sure that is fine\". Answer THAT question in its own words in the first two sentences. Do not widen it into a general overview of AI, social media, and digital emotional overload; other pages on this site answer other questions in the same area and this one must not restate them.\nCadence: daily. Proposed future slot: 2027-01-22T13:00:00.000Z.\nMinimum words: 720. Target words: 900.\nUse an answer-first opening, exact-intent headings, concrete examples, and a checklist or decision framework where useful.\nWrite in a warm, grounded, specific voice. Do not diagnose, guarantee outcomes, or invent client stories.\nInclude these sections: You are not imagining it; What this usually means; The pattern underneath; What to try this week; What not to do; When it is time to talk to someone.\nApproved conversion path after value is delivered: https://monika-hicks.clientsecure.me/.\nThis is an autonomous candidate. It must pass Safe Harbor, duplicate, source, cadence, build, and release validation before it can be scheduled.",
+      "llmPrompt": "Create a humanized insight draft for Hicks Consulting.\nTitle: I use ChatGPT more than I talk to people and I am not sure that is fine\nThis page exists to answer exactly one real question a person typed or said: \"I use ChatGPT more than I talk to people and I am not sure that is fine\". Answer THAT question, in that person's words, in the first two sentences. Do not broaden it into a general overview of AI, social media, and digital emotional overload; other pages on this site cover other questions in the same area and this one must not overlap them.\nMinimum words: 720. Target words: 900.\nWrite in a warm, grounded, specific voice. Do not diagnose. Do not guarantee outcomes. Do not invent client stories.\nInclude these sections: You are not imagining it; What this usually means; The pattern underneath; What to try this week; What not to do; When it is time to talk to someone.\nApproved conversion path after value is delivered: https://monika-hicks.clientsecure.me/",
       "queueType": "content_brief"
     },
     {
@@ -2172,7 +2172,7 @@
         "How to tell it is working",
         "Next step"
       ],
-      "llmPrompt": "Create a humanized insight draft for Hicks Consulting.\nTitle: How do I ask for help without making it a whole thing?\nThis page exists to answer exactly one real question a person typed or said: \"How do I ask for help without making it a whole thing?\". Answer THAT question in its own words in the first two sentences. Do not widen it into a general overview of General emotional wellness and intentional living; other pages on this site answer other questions in the same area and this one must not restate them.\nCadence: daily. Proposed future slot: 2027-01-25T13:00:00.000Z.\nMinimum words: 720. Target words: 900.\nUse an answer-first opening, exact-intent headings, concrete examples, and a checklist or decision framework where useful.\nWrite in a warm, grounded, specific voice. Do not diagnose, guarantee outcomes, or invent client stories.\nInclude these sections: Short answer; Before you start; Step by step; What to say; What gets in the way; How to tell it is working; Next step.\nApproved conversion path after value is delivered: https://monika-hicks.clientsecure.me/.\nThis is an autonomous candidate. It must pass Safe Harbor, duplicate, source, cadence, build, and release validation before it can be scheduled.",
+      "llmPrompt": "Create a humanized insight draft for Hicks Consulting.\nTitle: How do I ask for help without making it a whole thing?\nThis page exists to answer exactly one real question a person typed or said: \"How do I ask for help without making it a whole thing?\". Answer THAT question, in that person's words, in the first two sentences. Do not broaden it into a general overview of General emotional wellness and intentional living; other pages on this site cover other questions in the same area and this one must not overlap them.\nMinimum words: 720. Target words: 900.\nWrite in a warm, grounded, specific voice. Do not diagnose. Do not guarantee outcomes. Do not invent client stories.\nInclude these sections: Short answer; Before you start; Step by step; What to say; What gets in the way; How to tell it is working; Next step.\nApproved conversion path after value is delivered: https://monika-hicks.clientsecure.me/",
       "queueType": "content_brief"
     },
     {
@@ -2234,7 +2234,7 @@
         "What to do next",
         "When to seek support"
       ],
-      "llmPrompt": "Create a humanized insight draft for Hicks Consulting.\nTitle: What is emotional labor at work and why is it never in the job description?\nThis page exists to answer exactly one real question a person typed or said: \"What is emotional labor at work and why is it never in the job description?\". Answer THAT question in its own words in the first two sentences. Do not widen it into a general overview of Workplace emotional intelligence and mental health training; other pages on this site answer other questions in the same area and this one must not restate them.\nCadence: daily. Proposed future slot: 2027-01-26T13:00:00.000Z.\nMinimum words: 720. Target words: 900.\nUse an answer-first opening, exact-intent headings, concrete examples, and a checklist or decision framework where useful.\nWrite in a warm, grounded, specific voice. Do not diagnose, guarantee outcomes, or invent client stories.\nInclude these sections: Short answer; Who this is for; What it looks like; How to tell the difference; Common mistakes; What to do next; When to seek support.\nApproved conversion path after value is delivered: https://monika-hicks.clientsecure.me/.\nThis is an autonomous candidate. It must pass Safe Harbor, duplicate, source, cadence, build, and release validation before it can be scheduled.",
+      "llmPrompt": "Create a humanized insight draft for Hicks Consulting.\nTitle: What is emotional labor at work and why is it never in the job description?\nThis page exists to answer exactly one real question a person typed or said: \"What is emotional labor at work and why is it never in the job description?\". Answer THAT question, in that person's words, in the first two sentences. Do not broaden it into a general overview of Workplace emotional intelligence and mental health training; other pages on this site cover other questions in the same area and this one must not overlap them.\nMinimum words: 720. Target words: 900.\nWrite in a warm, grounded, specific voice. Do not diagnose. Do not guarantee outcomes. Do not invent client stories.\nInclude these sections: Short answer; Who this is for; What it looks like; How to tell the difference; Common mistakes; What to do next; When to seek support.\nApproved conversion path after value is delivered: https://monika-hicks.clientsecure.me/",
       "queueType": "content_brief"
     },
     {
@@ -2296,7 +2296,7 @@
         "What to do next",
         "When to seek support"
       ],
-      "llmPrompt": "Create a humanized article draft for Hicks Consulting.\nTitle: What does burnout actually feel like before it gets bad?\nThis page exists to answer exactly one real question a person typed or said: \"What does burnout actually feel like before it gets bad?\". Answer THAT question in its own words in the first two sentences. Do not widen it into a general overview of Burnout, boundaries, and over-functioning; other pages on this site answer other questions in the same area and this one must not restate them.\nCadence: weekly. Proposed future slot: 2027-01-26T13:00:00.000Z.\nMinimum words: 960. Target words: 1200.\nUse an answer-first opening, exact-intent headings, concrete examples, and a checklist or decision framework where useful.\nWrite in a warm, grounded, specific voice. Do not diagnose, guarantee outcomes, or invent client stories.\nInclude these sections: Short answer; Who this is for; What it looks like; How to tell the difference; Common mistakes; What to do next; When to seek support.\nApproved conversion path after value is delivered: https://monika-hicks.clientsecure.me/.\nThis is an autonomous candidate. It must pass Safe Harbor, duplicate, source, cadence, build, and release validation before it can be scheduled.",
+      "llmPrompt": "Create a humanized article draft for Hicks Consulting.\nTitle: What does burnout actually feel like before it gets bad?\nThis page exists to answer exactly one real question a person typed or said: \"What does burnout actually feel like before it gets bad?\". Answer THAT question, in that person's words, in the first two sentences. Do not broaden it into a general overview of Burnout, boundaries, and over-functioning; other pages on this site cover other questions in the same area and this one must not overlap them.\nMinimum words: 960. Target words: 1200.\nWrite in a warm, grounded, specific voice. Do not diagnose. Do not guarantee outcomes. Do not invent client stories.\nInclude these sections: Short answer; Who this is for; What it looks like; How to tell the difference; Common mistakes; What to do next; When to seek support.\nApproved conversion path after value is delivered: https://monika-hicks.clientsecure.me/",
       "queueType": "content_brief"
     }
   ]
