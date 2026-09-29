@@ -25,8 +25,8 @@
     },
     {
       "path": ".github/workflows/content-publish.yml",
-      "sha256": "83c0cd3f823a70756de98e8ff59e1f326e7c0ae038d5fee39ca5b38c807cdabf",
-      "bytes": 4235
+      "sha256": "73d28fa8ddbe79f239d85fc8a2484d6d0ee367181d85c3540715b6e1c30d4e07",
+      "bytes": 4409
     },
     {
       "path": "pages/admin/index.html",
@@ -45,8 +45,9 @@
     }
   ],
   "baseline_refreshed_at": "2026-09-29T19:00:00Z",
-  "baseline_reason": "Scoped root-cause repair requested by the owner: enforce current search metadata before publishing legacy queued HTML, and record unsafe metadata skips without releasing defective pages. Human approval, dates, cadence, and all other protected files and editorial identity hashes remain unchanged.",
+  "baseline_reason": "Scoped root-cause repair requested by the owner: enforce current search metadata before publishing legacy queued HTML, and record unsafe metadata skips without releasing defective pages. Human approval, dates, cadence, and all other protected files and editorial identity hashes remain unchanged. Relevant publisher and metadata changes now trigger the real publish workflow on main, proving the repaired lane immediately rather than waiting for its next cron.",
   "baseline_refresh_changed_files": [
-    "scripts/publishing/run_safe_publish.mjs"
+    "scripts/publishing/run_safe_publish.mjs",
+    ".github/workflows/content-publish.yml"
   ]
 }

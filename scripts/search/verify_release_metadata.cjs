@@ -23,6 +23,9 @@ function verifyReleaseMetadata() {
     const run = (script, extra = {}) => {
       const result = spawnSync(process.execPath, [script], { cwd: root, env: { ...process.env, PUBLISH_CLOCK: '2026-12-31T23:59:59Z', SKIP_RELEASE_METADATA_REGRESSION: '1', ...extra }, encoding: 'utf8', timeout: 60000, maxBuffer: 8 * 1024 * 1024 });
       assert.equal(result.status, 0, `${script}: ${result.error || result.stderr || result.stdout}`);
+      if (script === 'scripts/site_build.js') {
+        assert.equal(fs.readFileSync(path.join(root, 'dist/data/cadence/lastmod_ledger.json'), 'utf8'), fs.readFileSync(path.join(root, 'data/cadence/lastmod_ledger.json'), 'utf8'), 'Build shipped a stale freshness ledger.');
+      }
       return result;
     };
     // Reproduce the currently failing release date before advancing the clock.
