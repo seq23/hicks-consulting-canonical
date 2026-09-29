@@ -8,6 +8,11 @@ on:
       - main
     paths:
       - 'data/admin/content_manifest.json'
+      - 'scripts/publishing/**'
+      - 'scripts/search/**'
+      - 'scripts/lib/search_metadata.js'
+      - 'data/search/**'
+      - '.github/workflows/content-publish.yml'
 concurrency:
   group: hicks-consulting-content-automation
   cancel-in-progress: false

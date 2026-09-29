@@ -4,6 +4,7 @@ import { analyzeResourceHtml, repairResourceHtml } from '../autonomy/lib/self_he
 import { enqueuePublicationNotification } from '../autonomy/lib/notification.mjs';
 const require = createRequire(import.meta.url);
 const { processManifest, loadApprovedIds } = require('./process_manifest.js');
+const { applySearchMetadata } = require('../search/apply_search_metadata.js');
 
 const clock = process.env.PUBLISH_CLOCK ? new Date(process.env.PUBLISH_CLOCK) : new Date();
 
@@ -55,7 +56,29 @@ for (const item of due) {
   }
 }
 const before = new Map(manifest.map((item) => [item.id, item.status]));
-const result = processManifest(manifest, clock);
+let result = processManifest(manifest, clock);
+// Legacy queued HTML predates the current renderer. Normalize the prospective
+// public corpus before persisting release state; do not touch unapproved pages.
+const metadata = result.publishedCount
+  ? applySearchMetadata({ manifest: result.manifest, allowUnresolved: true })
+  : { unresolved: [] };
+if (metadata.unresolved.length) {
+  const routes = new Set(metadata.unresolved);
+  // A newly due legacy page with no safe metadata stays off the public site.
+  // A broken already-published page remains a real blocker, never a quiet skip.
+  if (manifest.some((item) => item.status === 'published' && routes.has(item.publicPath || item.slug))) {
+    throw new Error('Search metadata repair failed for an already-published page.');
+  }
+  for (const item of due) {
+    if (!routes.has(item.publicPath || item.slug)) continue;
+    item.status = 'skipped_unsafe';
+    item.validationPassed = false;
+    item.skipReason = [{ code: 'SEARCH_METADATA_UNRESOLVED', severity: 'hard', route: item.publicPath || item.slug }];
+    exceptions.items.push({ id: `exception-metadata-${item.id}-${clock.valueOf()}`, candidateId: item.id, decision: 'SKIPPED_UNSAFE_SEARCH_METADATA', findings: item.skipReason, createdAt: nowIso(clock), blocksOtherWork: false, clientActionRequired: false });
+    console.log(`NAMED STOP: SEARCH_METADATA_UNRESOLVED ${item.id} - held off the public site; other approved content continues.`);
+  }
+  result = processManifest(manifest, clock);
+}
 const published = result.manifest.filter((item) => before.get(item.id) !== 'published' && item.status === 'published');
 writeJsonAtomic('data/admin/content_manifest.json', result.manifest);
 writeJsonAtomic('data/autonomy/exceptions.json', exceptions);

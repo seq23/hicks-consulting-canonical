@@ -333,6 +333,9 @@ for (const route of sitemapRoutes) {
 }
 const lastmods = ledgerLib.resolve(ledgerPages, ledger, today);
 ledgerLib.save(ledgerLib.rebuilt(ledgerPages, ledger, today, { prune: true }));
+// data/ was copied before sitemap generation. Publish the refreshed ledger too,
+// or the first build ships yesterday's ledger and the second ships today's.
+copyRecursive(path.join(root, 'data/cadence/lastmod_ledger.json'), path.join(dist, 'data/cadence/lastmod_ledger.json'));
 
 const urls = sitemapRoutes.map(route => `${canonicalDomain}${route}`);
 const sitemap = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">', ...urls.map(url => {
