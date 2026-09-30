@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0.0",
-  "generatedAt": "2026-09-29T14:34:50.451Z",
+  "generatedAt": "2026-09-30T14:37:00.309Z",
   "providerState": "CONNECTED",
   "items": [
     {
@@ -67,8 +67,8 @@
       "type": "STRIKING_DISTANCE",
       "query": "black therapist memphis tn",
       "page": "https://www.hicksconsulting.org/black-therapist-memphis/",
-      "position": 10.245901639344263,
-      "impressions": 61,
+      "position": 10.225806451612904,
+      "impressions": 62,
       "ctr": 0,
       "recommendedAction": "Improve answer alignment, title/snippet, and supporting internal links without changing page identity.",
       "confidence": "high"
@@ -77,8 +77,8 @@
       "type": "LOW_CTR",
       "query": "black therapist memphis tn",
       "page": "https://www.hicksconsulting.org/black-therapist-memphis/",
-      "position": 10.245901639344263,
-      "impressions": 61,
+      "position": 10.225806451612904,
+      "impressions": 62,
       "ctr": 0,
       "recommendedAction": "Review search title and description against the actual query intent.",
       "confidence": "medium"
@@ -88,8 +88,8 @@
       "query": "black therapist memphis tn",
       "page": "https://www.hicksconsulting.org/black-therapist-memphis/",
       "expectedPage": "/",
-      "position": 10.245901639344263,
-      "impressions": 61,
+      "position": 10.225806451612904,
+      "impressions": 62,
       "recommendedAction": "Strengthen query ownership and internal links toward the governed primary page.",
       "confidence": "high"
     },
@@ -186,10 +186,20 @@
     {
       "type": "WRONG_PAGE_RANKING",
       "query": "hicks consulting",
+      "page": "https://www.hicksconsulting.org/contact/",
+      "expectedPage": "/",
+      "position": 4,
+      "impressions": 1,
+      "recommendedAction": "Strengthen query ownership and internal links toward the governed primary page.",
+      "confidence": "high"
+    },
+    {
+      "type": "WRONG_PAGE_RANKING",
+      "query": "hicks consulting",
       "page": "https://www.hicksconsulting.org/corporate-speaking/",
       "expectedPage": "/",
-      "position": 6,
-      "impressions": 2,
+      "position": 7.25,
+      "impressions": 4,
       "recommendedAction": "Strengthen query ownership and internal links toward the governed primary page.",
       "confidence": "high"
     },
@@ -209,6 +219,16 @@
       "page": "https://www.hicksconsulting.org/groups/",
       "expectedPage": "/",
       "position": 3,
+      "impressions": 1,
+      "recommendedAction": "Strengthen query ownership and internal links toward the governed primary page.",
+      "confidence": "high"
+    },
+    {
+      "type": "WRONG_PAGE_RANKING",
+      "query": "hicks consulting",
+      "page": "https://www.hicksconsulting.org/resources/articles/how-coaching-can-help-when-you-want-to-move-differently-without-starting-over/",
+      "expectedPage": "/",
+      "position": 8,
       "impressions": 1,
       "recommendedAction": "Strengthen query ownership and internal links toward the governed primary page.",
       "confidence": "high"
