@@ -1,6 +1,6 @@
 {
   "schemaVersion": "2.0.0",
-  "updatedAt": "2026-09-30T14:37:32.280Z",
+  "updatedAt": "2026-10-01T14:37:40.253Z",
   "repairs": [
     {
       "queries": [
@@ -107,8 +107,39 @@
       ],
       "sourcePolicy": "Uses governed Hicks target-query wording only. Competitor text and clinical claims are not copied or invented.",
       "externalOutcome": "UNPROVEN_PENDING_RETEST"
+    },
+    {
+      "queries": [
+        "black therapists near me"
+      ],
+      "route": "/",
+      "sourceFile": "pages/index.html",
+      "appliedAt": "2026-10-01T14:37:40.253Z",
+      "beforeHash": "9b49146aae6356c1edd7db7affcf21331cff953b999a6e6ab04f96e0bccd2380",
+      "afterHash": "9e50698f927c2b6d41aedffea81f7463fe02ab3636f37c77570a85b19028dad6",
+      "changes": [
+        "governed_query_support_block"
+      ],
+      "sourcePolicy": "Uses governed Hicks target-query wording only. Competitor text and clinical claims are not copied or invented.",
+      "externalOutcome": "UNPROVEN_PENDING_RETEST"
     }
   ],
-  "lastRunRepairs": [],
+  "lastRunRepairs": [
+    {
+      "queries": [
+        "black therapists near me"
+      ],
+      "route": "/",
+      "sourceFile": "pages/index.html",
+      "appliedAt": "2026-10-01T14:37:40.253Z",
+      "beforeHash": "9b49146aae6356c1edd7db7affcf21331cff953b999a6e6ab04f96e0bccd2380",
+      "afterHash": "9e50698f927c2b6d41aedffea81f7463fe02ab3636f37c77570a85b19028dad6",
+      "changes": [
+        "governed_query_support_block"
+      ],
+      "sourcePolicy": "Uses governed Hicks target-query wording only. Competitor text and clinical claims are not copied or invented.",
+      "externalOutcome": "UNPROVEN_PENDING_RETEST"
+    }
+  ],
   "externalOutcome": "UNPROVEN_PENDING_RETEST"
 }

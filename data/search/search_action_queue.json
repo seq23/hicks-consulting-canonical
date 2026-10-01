@@ -1,6 +1,6 @@
 {
   "schemaVersion": "2.0.0",
-  "generatedAt": "2026-09-30T14:37:00.309Z",
+  "generatedAt": "2026-10-01T14:37:09.200Z",
   "policy": "Hicks may autonomously apply bounded technical/search-alignment repairs. Substantive clinical claims and unsupported treatment assertions are never auto-generated from competitor content.",
   "items": [
     {
@@ -14,9 +14,9 @@
       "evidence": {
         "groundedSiteSurfaced": true,
         "groundedProviderAnswered": true,
-        "gscImpressions": 30,
+        "gscImpressions": 29,
         "gscClicks": 0,
-        "gscAveragePosition": 8.1,
+        "gscAveragePosition": 8.17,
         "gscPages": [
           "/black-therapist-memphis/"
         ],
@@ -56,9 +56,9 @@
       "evidence": {
         "groundedSiteSurfaced": true,
         "groundedProviderAnswered": true,
-        "gscImpressions": 14,
+        "gscImpressions": 13,
         "gscClicks": 0,
-        "gscAveragePosition": 7.14,
+        "gscAveragePosition": 7.08,
         "gscPages": [
           "/black-therapist-memphis/"
         ],
@@ -77,9 +77,9 @@
       "evidence": {
         "groundedSiteSurfaced": true,
         "groundedProviderAnswered": true,
-        "gscImpressions": 12,
+        "gscImpressions": 11,
         "gscClicks": 0,
-        "gscAveragePosition": 8,
+        "gscAveragePosition": 8.09,
         "gscPages": [
           "/black-therapist-memphis/"
         ],
@@ -91,19 +91,19 @@
     {
       "query": "black therapists near me",
       "primaryPage": "/",
-      "status": "CANNIBALIZATION_REVIEW",
+      "status": "WRONG_PAGE",
       "reasons": [
-        "MULTIPLE_HICKS_PAGES_FOR_QUERY",
+        "WRONG_HICKS_PAGE_RANKING",
+        "AVERAGE_POSITION_OUTSIDE_TOP_10",
         "EXACT_QUERY_NOT_IN_PRIMARY_SEARCH_SURFACES"
       ],
       "evidence": {
         "groundedSiteSurfaced": true,
         "groundedProviderAnswered": true,
-        "gscImpressions": 10,
+        "gscImpressions": 8,
         "gscClicks": 0,
-        "gscAveragePosition": 8.39,
+        "gscAveragePosition": 10.13,
         "gscPages": [
-          "/",
           "/black-therapist-memphis/"
         ],
         "competitorUrls": [
@@ -129,8 +129,8 @@
           }
         ]
       },
-      "safeRepairEligible": false,
-      "recommendedAction": "Observe or route to content/technical review; do not invent a ranking win."
+      "safeRepairEligible": true,
+      "recommendedAction": "Run bounded search-alignment repair, rebuild, then await the next external observation cycle."
     },
     {
       "query": "african american female therapist near me",
@@ -887,7 +887,7 @@
       "evidence": {
         "groundedSiteSurfaced": null,
         "groundedProviderAnswered": false,
-        "gscImpressions": 67,
+        "gscImpressions": 68,
         "gscClicks": 1,
         "gscAveragePosition": 7.61,
         "gscPages": [
@@ -960,9 +960,9 @@
       "evidence": {
         "groundedSiteSurfaced": null,
         "groundedProviderAnswered": false,
-        "gscImpressions": 15,
+        "gscImpressions": 17,
         "gscClicks": 1,
-        "gscAveragePosition": 4.99,
+        "gscAveragePosition": 4.98,
         "gscPages": [
           "/",
           "/about/",
@@ -988,9 +988,9 @@
       "evidence": {
         "groundedSiteSurfaced": null,
         "groundedProviderAnswered": false,
-        "gscImpressions": 11,
+        "gscImpressions": 10,
         "gscClicks": 0,
-        "gscAveragePosition": 5.45,
+        "gscAveragePosition": 5.5,
         "gscPages": [
           "/",
           "/black-therapist-memphis/"
@@ -1071,7 +1071,7 @@
       "evidence": {
         "groundedSiteSurfaced": null,
         "groundedProviderAnswered": false,
-        "gscImpressions": 8,
+        "gscImpressions": 7,
         "gscClicks": 0,
         "gscAveragePosition": 3,
         "gscPages": [
@@ -1090,9 +1090,9 @@
       "evidence": {
         "groundedSiteSurfaced": null,
         "groundedProviderAnswered": false,
-        "gscImpressions": 6,
+        "gscImpressions": 5,
         "gscClicks": 0,
-        "gscAveragePosition": 1.83,
+        "gscAveragePosition": 2.4,
         "gscPages": [
           "/intake-quiz/"
         ],
@@ -1281,9 +1281,9 @@
       "evidence": {
         "groundedSiteSurfaced": null,
         "groundedProviderAnswered": false,
-        "gscImpressions": 3,
+        "gscImpressions": 2,
         "gscClicks": 0,
-        "gscAveragePosition": 52,
+        "gscAveragePosition": 52.5,
         "gscPages": [
           "/psychologist-vs-therapist-memphis/"
         ],
@@ -1363,9 +1363,9 @@
       "evidence": {
         "groundedSiteSurfaced": null,
         "groundedProviderAnswered": false,
-        "gscImpressions": 2,
+        "gscImpressions": 1,
         "gscClicks": 0,
-        "gscAveragePosition": 4,
+        "gscAveragePosition": 1,
         "gscPages": [
           "/"
         ],
@@ -1398,20 +1398,15 @@
     {
       "query": "i need a black therapist",
       "primaryPage": "/",
-      "status": "CANNIBALIZATION_REVIEW",
-      "reasons": [
-        "MULTIPLE_HICKS_PAGES_FOR_QUERY"
-      ],
+      "status": "UNKNOWN",
+      "reasons": [],
       "evidence": {
         "groundedSiteSurfaced": null,
         "groundedProviderAnswered": false,
-        "gscImpressions": 2,
+        "gscImpressions": 0,
         "gscClicks": 0,
-        "gscAveragePosition": 6.5,
-        "gscPages": [
-          "/",
-          "/black-therapist-memphis/"
-        ],
+        "gscAveragePosition": 0,
+        "gscPages": [],
         "competitorUrls": []
       },
       "safeRepairEligible": false,
@@ -2113,17 +2108,15 @@
     {
       "query": "mental health consulting",
       "primaryPage": "/",
-      "status": "OBSERVED",
+      "status": "UNKNOWN",
       "reasons": [],
       "evidence": {
         "groundedSiteSurfaced": null,
         "groundedProviderAnswered": false,
-        "gscImpressions": 1,
+        "gscImpressions": 0,
         "gscClicks": 0,
-        "gscAveragePosition": 2,
-        "gscPages": [
-          "/"
-        ],
+        "gscAveragePosition": 0,
+        "gscPages": [],
         "competitorUrls": []
       },
       "safeRepairEligible": false,
