@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-29T14:48:14.157Z",
+  "generatedAt": "2026-10-02T14:49:05.213Z",
   "publishMode": "full_safe_autonomy",
   "items": [
     {
@@ -40,7 +40,7 @@
       },
       "targetWords": 2500,
       "minimumWords": 2000,
-      "sourceSignalCount": 16,
+      "sourceSignalCount": 14,
       "score": 100,
       "publishMode": "full_safe_autonomy",
       "autonomyStatus": "SYSTEM_BLOCKED",
@@ -501,10 +501,10 @@
       },
       "targetWords": 1400,
       "minimumWords": 1120,
-      "sourceSignalCount": 183,
+      "sourceSignalCount": 189,
       "score": 100,
       "publishMode": "full_safe_autonomy",
-      "autonomyStatus": "FAILED_RETRYABLE",
+      "autonomyStatus": "SYSTEM_BLOCKED",
       "routineApprovalRequired": false,
       "llmGeneratedRequired": true,
       "publicOnlyAfterApproval": false,
@@ -562,7 +562,7 @@
       "sourceSignalCount": 2,
       "score": 40,
       "publishMode": "full_safe_autonomy",
-      "autonomyStatus": "DISCOVERED",
+      "autonomyStatus": "SKIPPED_PROHIBITED_ACTION",
       "routineApprovalRequired": false,
       "llmGeneratedRequired": true,
       "publicOnlyAfterApproval": false,

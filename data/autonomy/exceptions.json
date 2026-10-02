@@ -406,6 +406,34 @@
       "createdAt": "2026-09-29T14:48:14.522Z",
       "blocksOtherWork": false,
       "clientActionRequired": false
+    },
+    {
+      "id": "exception-brief-genz_millennial_mental_health-whitepaper-1790952545639",
+      "candidateId": "brief-genz_millennial_mental_health-whitepaper",
+      "decision": "SKIPPED_PROHIBITED_ACTION",
+      "findings": [
+        {
+          "code": "LOW_ADMISSION_SCORE",
+          "severity": "advisory"
+        }
+      ],
+      "createdAt": "2026-10-02T14:49:05.580Z",
+      "blocksOtherWork": false,
+      "clientActionRequired": false
+    },
+    {
+      "id": "exception-brief-genz_millennial_mental_health-fanout-1790952545639",
+      "candidateId": "brief-genz_millennial_mental_health-fanout",
+      "decision": "SKIPPED_PROHIBITED_ACTION",
+      "findings": [
+        {
+          "code": "LOW_ADMISSION_SCORE",
+          "severity": "advisory"
+        }
+      ],
+      "createdAt": "2026-10-02T14:49:05.580Z",
+      "blocksOtherWork": false,
+      "clientActionRequired": false
     }
   ]
 }

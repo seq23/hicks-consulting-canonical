@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-29T14:48:14.157Z",
+  "generatedAt": "2026-10-02T14:49:05.213Z",
   "policy": "full_safe_autonomy_llm_humanized_prewrite_validated",
   "candidates": [
     {
@@ -40,7 +40,7 @@
       },
       "targetWords": 2500,
       "minimumWords": 2000,
-      "sourceSignalCount": 16,
+      "sourceSignalCount": 14,
       "score": 100,
       "publishMode": "full_safe_autonomy",
       "autonomyStatus": "SYSTEM_BLOCKED",
@@ -153,10 +153,10 @@
       },
       "targetWords": 1400,
       "minimumWords": 1120,
-      "sourceSignalCount": 183,
+      "sourceSignalCount": 189,
       "score": 100,
       "publishMode": "full_safe_autonomy",
-      "autonomyStatus": "FAILED_RETRYABLE",
+      "autonomyStatus": "SYSTEM_BLOCKED",
       "routineApprovalRequired": false,
       "llmGeneratedRequired": true,
       "publicOnlyAfterApproval": false,
@@ -173,12 +173,69 @@
       "llmPrompt": "Create a humanized guide draft for Hicks Consulting.\nTitle: Why do I feel numb instead of sad?\nThis page exists to answer exactly one real question a person typed or said: \"Why do I feel numb instead of sad?\". Answer THAT question, in that person's words, in the first two sentences. Do not broaden it into a general overview of General emotional wellness and intentional living; other pages on this site cover other questions in the same area and this one must not overlap them.\nMinimum words: 1120. Target words: 1400.\nWrite in a warm, grounded, specific voice. Do not diagnose. Do not guarantee outcomes. Do not invent client stories.\nInclude these sections: Short answer; What is actually happening; Why it shows up this way; What it is not; What usually makes it worse; What helps; When to get support.\nApproved conversion path after value is delivered: https://monika-hicks.clientsecure.me/"
     },
     {
-      "id": "brief-burnout_boundaries-article",
+      "id": "brief-black_women_healing-article",
+      "clusterId": "black_women_healing",
+      "clusterTitle": "Black women healing beyond survival",
+      "contentType": "article",
+      "title": "Why do I feel like I have to be strong for everybody?",
+      "suggestedRoute": "/resources/articles/why-do-i-feel-like-i-have-to-be-strong-for-everybody/",
+      "sections": [
+        "Short answer",
+        "What is actually happening",
+        "Why it shows up this way",
+        "What it is not",
+        "What usually makes it worse",
+        "What helps",
+        "When to get support"
+      ],
+      "demandPhrasing": {
+        "source": "config/demand_phrasings.json",
+        "familyId": "black_women_healing",
+        "clusterId": null,
+        "form": "why",
+        "groundedIn": [
+          "data/intake/query_clusters.json#black_women_healing",
+          "data/intake/normalized_query_signals.json tag:black_women",
+          "data/search/target_queries.json query:'black female therapist near me', 'therapy for high-achieving Black women Memphis'"
+        ],
+        "evidence": [
+          {
+            "kind": "cluster",
+            "id": "black_women_healing",
+            "title": "Black women healing beyond survival",
+            "score": 60,
+            "queryCount": 3
+          }
+        ]
+      },
+      "targetWords": 1200,
+      "minimumWords": 960,
+      "sourceSignalCount": 2,
+      "score": 40,
+      "publishMode": "full_safe_autonomy",
+      "autonomyStatus": "SYSTEM_BLOCKED",
+      "routineApprovalRequired": false,
+      "llmGeneratedRequired": true,
+      "publicOnlyAfterApproval": false,
+      "createdAt": "2026-08-28T18:49:42.938Z",
+      "humanizationChecklist": [
+        "Use plain human language rather than generic therapy marketing copy.",
+        "Vary sentence rhythm and paragraph length.",
+        "Include concrete examples without inventing client stories.",
+        "Avoid exaggerated claims, guarantees, diagnosis, or pressure language.",
+        "Keep Monika Hicks / Hicks Consulting entity references consistent.",
+        "End with an approved conversion path only after value is delivered."
+      ],
+      "conversionPath": "https://monika-hicks.clientsecure.me/",
+      "llmPrompt": "Create a humanized article draft for Hicks Consulting.\nTitle: Why do I feel like I have to be strong for everybody?\nThis page exists to answer exactly one real question a person typed or said: \"Why do I feel like I have to be strong for everybody?\". Answer THAT question, in that person's words, in the first two sentences. Do not broaden it into a general overview of Black women healing beyond survival; other pages on this site cover other questions in the same area and this one must not overlap them.\nMinimum words: 960. Target words: 1200.\nWrite in a warm, grounded, specific voice. Do not diagnose. Do not guarantee outcomes. Do not invent client stories.\nInclude these sections: Short answer; What is actually happening; Why it shows up this way; What it is not; What usually makes it worse; What helps; When to get support.\nApproved conversion path after value is delivered: https://monika-hicks.clientsecure.me/"
+    },
+    {
+      "id": "brief-burnout_boundaries-insight",
       "clusterId": "burnout_boundaries",
       "clusterTitle": "Burnout, boundaries, and over-functioning",
-      "contentType": "article",
-      "title": "Why does setting a boundary make me feel like the bad guy?",
-      "suggestedRoute": "/resources/articles/why-does-setting-a-boundary-make-me-feel-like-the-bad-guy/",
+      "contentType": "insight",
+      "title": "Why am I so tired all the time even when I sleep?",
+      "suggestedRoute": "/resources/insights/why-am-i-so-tired-all-the-time-even-when-i-sleep/",
       "sections": [
         "Short answer",
         "What is actually happening",
@@ -208,73 +265,16 @@
           }
         ]
       },
-      "targetWords": 1200,
-      "minimumWords": 960,
-      "sourceSignalCount": 3,
-      "score": 60,
-      "publishMode": "full_safe_autonomy",
-      "autonomyStatus": "DISCOVERED",
-      "routineApprovalRequired": false,
-      "llmGeneratedRequired": true,
-      "publicOnlyAfterApproval": false,
-      "createdAt": "2026-07-17T16:00:29.742Z",
-      "humanizationChecklist": [
-        "Use plain human language rather than generic therapy marketing copy.",
-        "Vary sentence rhythm and paragraph length.",
-        "Include concrete examples without inventing client stories.",
-        "Avoid exaggerated claims, guarantees, diagnosis, or pressure language.",
-        "Keep Monika Hicks / Hicks Consulting entity references consistent.",
-        "End with an approved conversion path only after value is delivered."
-      ],
-      "conversionPath": "https://monika-hicks.clientsecure.me/",
-      "llmPrompt": "Create a humanized article draft for Hicks Consulting.\nTitle: Why does setting a boundary make me feel like the bad guy?\nThis page exists to answer exactly one real question a person typed or said: \"Why does setting a boundary make me feel like the bad guy?\". Answer THAT question, in that person's words, in the first two sentences. Do not broaden it into a general overview of Burnout, boundaries, and over-functioning; other pages on this site cover other questions in the same area and this one must not overlap them.\nMinimum words: 960. Target words: 1200.\nWrite in a warm, grounded, specific voice. Do not diagnose. Do not guarantee outcomes. Do not invent client stories.\nInclude these sections: Short answer; What is actually happening; Why it shows up this way; What it is not; What usually makes it worse; What helps; When to get support.\nApproved conversion path after value is delivered: https://monika-hicks.clientsecure.me/"
-    },
-    {
-      "id": "brief-black_women_healing-insight",
-      "clusterId": "black_women_healing",
-      "clusterTitle": "Black women healing beyond survival",
-      "contentType": "insight",
-      "title": "How do I find a Black woman therapist who actually gets it?",
-      "suggestedRoute": "/resources/insights/how-do-i-find-a-black-woman-therapist-who-actually-gets-it/",
-      "sections": [
-        "Short answer",
-        "Before you start",
-        "Step by step",
-        "What to say",
-        "What gets in the way",
-        "How to tell it is working",
-        "Next step"
-      ],
-      "demandPhrasing": {
-        "source": "config/demand_phrasings.json",
-        "familyId": "black_women_healing",
-        "clusterId": null,
-        "form": "how",
-        "groundedIn": [
-          "data/intake/query_clusters.json#black_women_healing",
-          "data/intake/normalized_query_signals.json tag:black_women",
-          "data/search/target_queries.json query:'black female therapist near me', 'therapy for high-achieving Black women Memphis'"
-        ],
-        "evidence": [
-          {
-            "kind": "cluster",
-            "id": "black_women_healing",
-            "title": "Black women healing beyond survival",
-            "score": 60,
-            "queryCount": 3
-          }
-        ]
-      },
       "targetWords": 900,
       "minimumWords": 720,
       "sourceSignalCount": 2,
       "score": 40,
       "publishMode": "full_safe_autonomy",
-      "autonomyStatus": "DISCOVERED",
+      "autonomyStatus": "SKIPPED_PROHIBITED_ACTION",
       "routineApprovalRequired": false,
       "llmGeneratedRequired": true,
       "publicOnlyAfterApproval": false,
-      "createdAt": "2026-07-17T16:00:29.742Z",
+      "createdAt": "2026-08-28T18:49:42.938Z",
       "humanizationChecklist": [
         "Use plain human language rather than generic therapy marketing copy.",
         "Vary sentence rhythm and paragraph length.",
@@ -284,7 +284,7 @@
         "End with an approved conversion path only after value is delivered."
       ],
       "conversionPath": "https://monika-hicks.clientsecure.me/",
-      "llmPrompt": "Create a humanized insight draft for Hicks Consulting.\nTitle: How do I find a Black woman therapist who actually gets it?\nThis page exists to answer exactly one real question a person typed or said: \"How do I find a Black woman therapist who actually gets it?\". Answer THAT question, in that person's words, in the first two sentences. Do not broaden it into a general overview of Black women healing beyond survival; other pages on this site cover other questions in the same area and this one must not overlap them.\nMinimum words: 720. Target words: 900.\nWrite in a warm, grounded, specific voice. Do not diagnose. Do not guarantee outcomes. Do not invent client stories.\nInclude these sections: Short answer; Before you start; Step by step; What to say; What gets in the way; How to tell it is working; Next step.\nApproved conversion path after value is delivered: https://monika-hicks.clientsecure.me/"
+      "llmPrompt": "Create a humanized insight draft for Hicks Consulting.\nTitle: Why am I so tired all the time even when I sleep?\nThis page exists to answer exactly one real question a person typed or said: \"Why am I so tired all the time even when I sleep?\". Answer THAT question, in that person's words, in the first two sentences. Do not broaden it into a general overview of Burnout, boundaries, and over-functioning; other pages on this site cover other questions in the same area and this one must not overlap them.\nMinimum words: 720. Target words: 900.\nWrite in a warm, grounded, specific voice. Do not diagnose. Do not guarantee outcomes. Do not invent client stories.\nInclude these sections: Short answer; What is actually happening; Why it shows up this way; What it is not; What usually makes it worse; What helps; When to get support.\nApproved conversion path after value is delivered: https://monika-hicks.clientsecure.me/"
     },
     {
       "id": "brief-genz_millennial_mental_health-whitepaper",
@@ -1717,122 +1717,6 @@
       "queueType": "content_brief"
     },
     {
-      "id": "brief-black_women_healing-article",
-      "clusterId": "black_women_healing",
-      "clusterTitle": "Black women healing beyond survival",
-      "contentType": "article",
-      "title": "Why do I feel like I have to be strong for everybody?",
-      "suggestedRoute": "/resources/articles/why-do-i-feel-like-i-have-to-be-strong-for-everybody/",
-      "sections": [
-        "Short answer",
-        "What is actually happening",
-        "Why it shows up this way",
-        "What it is not",
-        "What usually makes it worse",
-        "What helps",
-        "When to get support"
-      ],
-      "demandPhrasing": {
-        "source": "config/demand_phrasings.json",
-        "familyId": "black_women_healing",
-        "clusterId": null,
-        "form": "why",
-        "groundedIn": [
-          "data/intake/query_clusters.json#black_women_healing",
-          "data/intake/normalized_query_signals.json tag:black_women",
-          "data/search/target_queries.json query:'black female therapist near me', 'therapy for high-achieving Black women Memphis'"
-        ],
-        "evidence": [
-          {
-            "kind": "cluster",
-            "id": "black_women_healing",
-            "title": "Black women healing beyond survival",
-            "score": 60,
-            "queryCount": 3
-          }
-        ]
-      },
-      "targetWords": 1200,
-      "minimumWords": 960,
-      "sourceSignalCount": 2,
-      "score": 40,
-      "publishMode": "full_safe_autonomy",
-      "autonomyStatus": "SYSTEM_BLOCKED",
-      "routineApprovalRequired": false,
-      "llmGeneratedRequired": true,
-      "publicOnlyAfterApproval": false,
-      "createdAt": "2026-08-28T18:49:42.938Z",
-      "humanizationChecklist": [
-        "Use plain human language rather than generic therapy marketing copy.",
-        "Vary sentence rhythm and paragraph length.",
-        "Include concrete examples without inventing client stories.",
-        "Avoid exaggerated claims, guarantees, diagnosis, or pressure language.",
-        "Keep Monika Hicks / Hicks Consulting entity references consistent.",
-        "End with an approved conversion path only after value is delivered."
-      ],
-      "conversionPath": "https://monika-hicks.clientsecure.me/",
-      "llmPrompt": "Create a humanized article draft for Hicks Consulting.\nTitle: Why do I feel like I have to be strong for everybody?\nThis page exists to answer exactly one real question a person typed or said: \"Why do I feel like I have to be strong for everybody?\". Answer THAT question, in that person's words, in the first two sentences. Do not broaden it into a general overview of Black women healing beyond survival; other pages on this site cover other questions in the same area and this one must not overlap them.\nMinimum words: 960. Target words: 1200.\nWrite in a warm, grounded, specific voice. Do not diagnose. Do not guarantee outcomes. Do not invent client stories.\nInclude these sections: Short answer; What is actually happening; Why it shows up this way; What it is not; What usually makes it worse; What helps; When to get support.\nApproved conversion path after value is delivered: https://monika-hicks.clientsecure.me/",
-      "queueType": "content_brief"
-    },
-    {
-      "id": "brief-burnout_boundaries-insight",
-      "clusterId": "burnout_boundaries",
-      "clusterTitle": "Burnout, boundaries, and over-functioning",
-      "contentType": "insight",
-      "title": "Why am I so tired all the time even when I sleep?",
-      "suggestedRoute": "/resources/insights/why-am-i-so-tired-all-the-time-even-when-i-sleep/",
-      "sections": [
-        "Short answer",
-        "What is actually happening",
-        "Why it shows up this way",
-        "What it is not",
-        "What usually makes it worse",
-        "What helps",
-        "When to get support"
-      ],
-      "demandPhrasing": {
-        "source": "config/demand_phrasings.json",
-        "familyId": "burnout_boundaries",
-        "clusterId": null,
-        "form": "why",
-        "groundedIn": [
-          "data/intake/query_clusters.json#burnout_boundaries",
-          "data/intake/normalized_query_signals.json tag:burnout",
-          "data/search/target_queries.json query:'burnout therapist Memphis'"
-        ],
-        "evidence": [
-          {
-            "kind": "cluster",
-            "id": "burnout_boundaries",
-            "title": "Burnout, boundaries, and over-functioning",
-            "score": 40,
-            "queryCount": 2
-          }
-        ]
-      },
-      "targetWords": 900,
-      "minimumWords": 720,
-      "sourceSignalCount": 2,
-      "score": 40,
-      "publishMode": "full_safe_autonomy",
-      "autonomyStatus": "SKIPPED_PROHIBITED_ACTION",
-      "routineApprovalRequired": false,
-      "llmGeneratedRequired": true,
-      "publicOnlyAfterApproval": false,
-      "createdAt": "2026-08-28T18:49:42.938Z",
-      "humanizationChecklist": [
-        "Use plain human language rather than generic therapy marketing copy.",
-        "Vary sentence rhythm and paragraph length.",
-        "Include concrete examples without inventing client stories.",
-        "Avoid exaggerated claims, guarantees, diagnosis, or pressure language.",
-        "Keep Monika Hicks / Hicks Consulting entity references consistent.",
-        "End with an approved conversion path only after value is delivered."
-      ],
-      "conversionPath": "https://monika-hicks.clientsecure.me/",
-      "llmPrompt": "Create a humanized insight draft for Hicks Consulting.\nTitle: Why am I so tired all the time even when I sleep?\nThis page exists to answer exactly one real question a person typed or said: \"Why am I so tired all the time even when I sleep?\". Answer THAT question, in that person's words, in the first two sentences. Do not broaden it into a general overview of Burnout, boundaries, and over-functioning; other pages on this site cover other questions in the same area and this one must not overlap them.\nMinimum words: 720. Target words: 900.\nWrite in a warm, grounded, specific voice. Do not diagnose. Do not guarantee outcomes. Do not invent client stories.\nInclude these sections: Short answer; What is actually happening; Why it shows up this way; What it is not; What usually makes it worse; What helps; When to get support.\nApproved conversion path after value is delivered: https://monika-hicks.clientsecure.me/",
-      "queueType": "content_brief"
-    },
-    {
       "id": "brief-genz_millennial_mental_health-faq",
       "clusterId": "genz_millennial_mental_health",
       "clusterTitle": "Gen Z and millennial mental health language",
@@ -2063,6 +1947,64 @@
       "queueType": "content_brief"
     },
     {
+      "id": "brief-black_women_healing-insight",
+      "clusterId": "black_women_healing",
+      "clusterTitle": "Black women healing beyond survival",
+      "contentType": "insight",
+      "title": "How do I find a Black woman therapist who actually gets it?",
+      "suggestedRoute": "/resources/insights/how-do-i-find-a-black-woman-therapist-who-actually-gets-it/",
+      "sections": [
+        "Short answer",
+        "Before you start",
+        "Step by step",
+        "What to say",
+        "What gets in the way",
+        "How to tell it is working",
+        "Next step"
+      ],
+      "demandPhrasing": {
+        "source": "config/demand_phrasings.json",
+        "familyId": "black_women_healing",
+        "clusterId": null,
+        "form": "how",
+        "groundedIn": [
+          "data/intake/query_clusters.json#black_women_healing",
+          "data/intake/normalized_query_signals.json tag:black_women",
+          "data/search/target_queries.json query:'black female therapist near me', 'therapy for high-achieving Black women Memphis'"
+        ],
+        "evidence": [
+          {
+            "kind": "cluster",
+            "id": "black_women_healing",
+            "title": "Black women healing beyond survival",
+            "score": 60,
+            "queryCount": 3
+          }
+        ]
+      },
+      "targetWords": 900,
+      "minimumWords": 720,
+      "sourceSignalCount": 2,
+      "score": 40,
+      "publishMode": "full_safe_autonomy",
+      "autonomyStatus": "SKIPPED_PROHIBITED_ACTION",
+      "routineApprovalRequired": false,
+      "llmGeneratedRequired": true,
+      "publicOnlyAfterApproval": false,
+      "createdAt": "2026-07-17T16:00:29.742Z",
+      "humanizationChecklist": [
+        "Use plain human language rather than generic therapy marketing copy.",
+        "Vary sentence rhythm and paragraph length.",
+        "Include concrete examples without inventing client stories.",
+        "Avoid exaggerated claims, guarantees, diagnosis, or pressure language.",
+        "Keep Monika Hicks / Hicks Consulting entity references consistent.",
+        "End with an approved conversion path only after value is delivered."
+      ],
+      "conversionPath": "https://monika-hicks.clientsecure.me/",
+      "llmPrompt": "Create a humanized insight draft for Hicks Consulting.\nTitle: How do I find a Black woman therapist who actually gets it?\nThis page exists to answer exactly one real question a person typed or said: \"How do I find a Black woman therapist who actually gets it?\". Answer THAT question, in that person's words, in the first two sentences. Do not broaden it into a general overview of Black women healing beyond survival; other pages on this site cover other questions in the same area and this one must not overlap them.\nMinimum words: 720. Target words: 900.\nWrite in a warm, grounded, specific voice. Do not diagnose. Do not guarantee outcomes. Do not invent client stories.\nInclude these sections: Short answer; Before you start; Step by step; What to say; What gets in the way; How to tell it is working; Next step.\nApproved conversion path after value is delivered: https://monika-hicks.clientsecure.me/",
+      "queueType": "content_brief"
+    },
+    {
       "id": "brief-genz_millennial_mental_health-fanout",
       "clusterId": "genz_millennial_mental_health",
       "clusterTitle": "Gen Z and millennial mental health language",
@@ -2118,6 +2060,64 @@
           }
         ]
       }
+    },
+    {
+      "id": "brief-burnout_boundaries-article",
+      "clusterId": "burnout_boundaries",
+      "clusterTitle": "Burnout, boundaries, and over-functioning",
+      "contentType": "article",
+      "title": "Why does setting a boundary make me feel like the bad guy?",
+      "suggestedRoute": "/resources/articles/why-does-setting-a-boundary-make-me-feel-like-the-bad-guy/",
+      "sections": [
+        "Short answer",
+        "What is actually happening",
+        "Why it shows up this way",
+        "What it is not",
+        "What usually makes it worse",
+        "What helps",
+        "When to get support"
+      ],
+      "demandPhrasing": {
+        "source": "config/demand_phrasings.json",
+        "familyId": "burnout_boundaries",
+        "clusterId": null,
+        "form": "why",
+        "groundedIn": [
+          "data/intake/query_clusters.json#burnout_boundaries",
+          "data/intake/normalized_query_signals.json tag:burnout",
+          "data/search/target_queries.json query:'burnout therapist Memphis'"
+        ],
+        "evidence": [
+          {
+            "kind": "cluster",
+            "id": "burnout_boundaries",
+            "title": "Burnout, boundaries, and over-functioning",
+            "score": 40,
+            "queryCount": 2
+          }
+        ]
+      },
+      "targetWords": 1200,
+      "minimumWords": 960,
+      "sourceSignalCount": 3,
+      "score": 60,
+      "publishMode": "full_safe_autonomy",
+      "autonomyStatus": "DISCOVERED",
+      "routineApprovalRequired": false,
+      "llmGeneratedRequired": true,
+      "publicOnlyAfterApproval": false,
+      "createdAt": "2026-07-17T16:00:29.742Z",
+      "humanizationChecklist": [
+        "Use plain human language rather than generic therapy marketing copy.",
+        "Vary sentence rhythm and paragraph length.",
+        "Include concrete examples without inventing client stories.",
+        "Avoid exaggerated claims, guarantees, diagnosis, or pressure language.",
+        "Keep Monika Hicks / Hicks Consulting entity references consistent.",
+        "End with an approved conversion path only after value is delivered."
+      ],
+      "conversionPath": "https://monika-hicks.clientsecure.me/",
+      "llmPrompt": "Create a humanized article draft for Hicks Consulting.\nTitle: Why does setting a boundary make me feel like the bad guy?\nThis page exists to answer exactly one real question a person typed or said: \"Why does setting a boundary make me feel like the bad guy?\". Answer THAT question, in that person's words, in the first two sentences. Do not broaden it into a general overview of Burnout, boundaries, and over-functioning; other pages on this site cover other questions in the same area and this one must not overlap them.\nMinimum words: 960. Target words: 1200.\nWrite in a warm, grounded, specific voice. Do not diagnose. Do not guarantee outcomes. Do not invent client stories.\nInclude these sections: Short answer; What is actually happening; Why it shows up this way; What it is not; What usually makes it worse; What helps; When to get support.\nApproved conversion path after value is delivered: https://monika-hicks.clientsecure.me/",
+      "queueType": "content_brief"
     },
     {
       "id": "brief-faith_centered_support-article",

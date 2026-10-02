@@ -1726,7 +1726,7 @@
         "Risks and limitations",
         "Recommended next steps"
       ],
-      "state": "DISCOVERED",
+      "state": "SKIPPED_PROHIBITED_ACTION",
       "routineApprovalRequired": true,
       "publicOnlyAfterApproval": true,
       "source": "legacy_generated_queue_migration",
@@ -1748,6 +1748,18 @@
           "to": "DISCOVERED",
           "at": "2026-08-29T14:45:30.271Z",
           "reason": "Title reconciled to the upstream demand-grounded brief before any page existed."
+        },
+        {
+          "from": "DISCOVERED",
+          "to": "SCORED",
+          "at": "2026-10-02T14:49:05.580Z",
+          "reason": "Candidate score normalized for autonomous admission."
+        },
+        {
+          "from": "SCORED",
+          "to": "SKIPPED_PROHIBITED_ACTION",
+          "at": "2026-10-02T14:49:05.580Z",
+          "reason": "Candidate did not meet the configured admission score."
         }
       ],
       "demandPhrasing": {
@@ -1769,7 +1781,7 @@
           }
         ]
       },
-      "updatedAt": "2026-08-29T14:45:30.271Z"
+      "updatedAt": "2026-10-02T14:49:05.580Z"
     },
     {
       "id": "brief-genz_millennial_mental_health-fanout",
@@ -1802,7 +1814,7 @@
         "What to do next",
         "When to seek support"
       ],
-      "state": "DISCOVERED",
+      "state": "SKIPPED_PROHIBITED_ACTION",
       "routineApprovalRequired": true,
       "publicOnlyAfterApproval": true,
       "source": "legacy_generated_queue_migration",
@@ -1824,6 +1836,18 @@
           "to": "DISCOVERED",
           "at": "2026-08-29T14:45:30.271Z",
           "reason": "Title reconciled to the upstream demand-grounded brief before any page existed."
+        },
+        {
+          "from": "DISCOVERED",
+          "to": "SCORED",
+          "at": "2026-10-02T14:49:05.580Z",
+          "reason": "Candidate score normalized for autonomous admission."
+        },
+        {
+          "from": "SCORED",
+          "to": "SKIPPED_PROHIBITED_ACTION",
+          "at": "2026-10-02T14:49:05.580Z",
+          "reason": "Candidate did not meet the configured admission score."
         }
       ],
       "demandPhrasing": {
@@ -1845,7 +1869,7 @@
           }
         ]
       },
-      "updatedAt": "2026-08-29T14:45:30.271Z"
+      "updatedAt": "2026-10-02T14:49:05.580Z"
     },
     {
       "id": "brief-burnout_boundaries-article",
