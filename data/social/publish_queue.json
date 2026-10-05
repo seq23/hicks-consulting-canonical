@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-02T14:49:05.213Z",
+  "generatedAt": "2026-10-05T00:00:00.000Z",
   "publishMode": "full_safe_autonomy",
   "items": [
     {
@@ -620,7 +620,7 @@
       "sourceSignalCount": 1,
       "score": 20,
       "publishMode": "full_safe_autonomy",
-      "autonomyStatus": "DISCOVERED",
+      "autonomyStatus": "SKIPPED_PROHIBITED_ACTION",
       "routineApprovalRequired": false,
       "llmGeneratedRequired": true,
       "publicOnlyAfterApproval": false,
@@ -672,7 +672,7 @@
       ],
       "llmPrompt": "Create a humanized fanout draft for Hicks Consulting.\nTitle: What does it mean to be high-functioning and still not okay?\nThis page exists to answer exactly one real question a person typed or said: \"What does it mean to be high-functioning and still not okay?\". Answer THAT question, in that person's words, in the first two sentences. Do not broaden it into a general overview of Gen Z and millennial mental health language; other pages on this site cover other questions in the same area and this one must not overlap them.\nMinimum words: 720. Target words: 900.\nWrite in a warm, grounded, specific voice. Do not diagnose. Do not guarantee outcomes. Do not invent client stories.\nInclude these sections: Short answer; Who this is for; What it looks like; How to tell the difference; Common mistakes; What to do next; When to seek support.\nApproved conversion path after value is delivered: https://monika-hicks.clientsecure.me/",
       "queueType": "content_brief",
-      "autonomyStatus": "DISCOVERED",
+      "autonomyStatus": "SKIPPED_PROHIBITED_ACTION",
       "routineApprovalRequired": false,
       "demandPhrasing": {
         "source": "config/demand_phrasings.json",
@@ -2297,6 +2297,378 @@
         "When to seek support"
       ],
       "llmPrompt": "Create a humanized article draft for Hicks Consulting.\nTitle: What does burnout actually feel like before it gets bad?\nThis page exists to answer exactly one real question a person typed or said: \"What does burnout actually feel like before it gets bad?\". Answer THAT question, in that person's words, in the first two sentences. Do not broaden it into a general overview of Burnout, boundaries, and over-functioning; other pages on this site cover other questions in the same area and this one must not overlap them.\nMinimum words: 960. Target words: 1200.\nWrite in a warm, grounded, specific voice. Do not diagnose. Do not guarantee outcomes. Do not invent client stories.\nInclude these sections: Short answer; Who this is for; What it looks like; How to tell the difference; Common mistakes; What to do next; When to seek support.\nApproved conversion path after value is delivered: https://monika-hicks.clientsecure.me/",
+      "queueType": "content_brief"
+    },
+    {
+      "id": "continuity-insight-2027-01-27-4a1de71d62dc",
+      "clusterId": "hicks_fanout_069646_1e1adf62c0",
+      "clusterTitle": "Gen Z and millennial mental health language",
+      "demandPhrasing": {
+        "source": "config/demand_phrasings.json",
+        "familyId": "genz_millennial_mental_health",
+        "clusterId": null,
+        "form": "why",
+        "groundedIn": [
+          "data/intake/query_clusters.json#genz_millennial_mental_health",
+          "data/intake/normalized_query_signals.json tag:genz_millennial"
+        ],
+        "evidence": [
+          {
+            "kind": "cluster",
+            "id": "genz_millennial_mental_health",
+            "title": "Gen Z and millennial mental health language",
+            "score": 20,
+            "queryCount": 1
+          }
+        ]
+      },
+      "contentType": "insight",
+      "cadence": "daily",
+      "title": "Why do I keep calling everything a trauma response?",
+      "suggestedRoute": "/resources/insights/why-do-i-keep-calling-everything-a-trauma-response/",
+      "proposedScheduledAt": "2027-01-27T13:00:00.000Z",
+      "targetWords": 900,
+      "minimumWords": 720,
+      "sourceSignalCount": 1,
+      "score": 46.46,
+      "publishMode": "full_safe_autonomy",
+      "autonomyStatus": "DISCOVERED",
+      "llmGeneratedRequired": true,
+      "routineApprovalRequired": false,
+      "publicOnlyAfterApproval": false,
+      "continuity_generated": true,
+      "continuityAfter": "2027-01-01",
+      "continuityPolicy": "rolling_120_day_candidate_runway_existing_cadence",
+      "humanizationChecklist": [
+        "Use plain human language rather than generic therapy marketing copy.",
+        "Vary sentence rhythm and paragraph length.",
+        "Include concrete examples without inventing client stories.",
+        "Avoid exaggerated claims, guarantees, diagnosis, or pressure language.",
+        "Keep Monika Hicks / Hicks Consulting entity references consistent.",
+        "End with an approved conversion path only after value is delivered."
+      ],
+      "conversionPath": "https://monika-hicks.clientsecure.me/",
+      "sections": [
+        "Short answer",
+        "What is actually happening",
+        "Why it shows up this way",
+        "What it is not",
+        "What usually makes it worse",
+        "What helps",
+        "When to get support"
+      ],
+      "llmPrompt": "Create a humanized insight draft for Hicks Consulting.\nTitle: Why do I keep calling everything a trauma response?\nThis page exists to answer exactly one real question a person typed or said: \"Why do I keep calling everything a trauma response?\". Answer THAT question in its own words in the first two sentences. Do not widen it into a general overview of Gen Z and millennial mental health language; other pages on this site answer other questions in the same area and this one must not restate them.\nCadence: daily. Proposed future slot: 2027-01-27T13:00:00.000Z.\nMinimum words: 720. Target words: 900.\nUse an answer-first opening, exact-intent headings, concrete examples, and a checklist or decision framework where useful.\nWrite in a warm, grounded, specific voice. Do not diagnose, guarantee outcomes, or invent client stories.\nInclude these sections: Short answer; What is actually happening; Why it shows up this way; What it is not; What usually makes it worse; What helps; When to get support.\nApproved conversion path after value is delivered: https://monika-hicks.clientsecure.me/.\nThis is an autonomous candidate. It must pass Safe Harbor, duplicate, source, cadence, build, and release validation before it can be scheduled.",
+      "queueType": "content_brief"
+    },
+    {
+      "id": "continuity-insight-2027-01-28-aefce6ee19d6",
+      "clusterId": "hicks_fanout_037953_eabda50b57",
+      "clusterTitle": "Faith-centered emotional support",
+      "demandPhrasing": {
+        "source": "config/demand_phrasings.json",
+        "familyId": "faith_centered_support",
+        "clusterId": null,
+        "form": "what",
+        "groundedIn": [
+          "data/intake/query_clusters.json#faith_centered_support",
+          "data/search/target_queries.json query:'christian therapists near me'"
+        ],
+        "evidence": [
+          {
+            "kind": "cluster",
+            "id": "faith_centered_support",
+            "title": "Faith-centered emotional support",
+            "score": 0,
+            "queryCount": 0
+          }
+        ]
+      },
+      "contentType": "insight",
+      "cadence": "daily",
+      "title": "What do I do when the advice at church is just to have more faith?",
+      "suggestedRoute": "/resources/insights/what-do-i-do-when-the-advice-at-church-is-just-to-have-more-faith/",
+      "proposedScheduledAt": "2027-01-28T13:00:00.000Z",
+      "targetWords": 900,
+      "minimumWords": 720,
+      "sourceSignalCount": 1,
+      "score": 45.93,
+      "publishMode": "full_safe_autonomy",
+      "autonomyStatus": "DISCOVERED",
+      "llmGeneratedRequired": true,
+      "routineApprovalRequired": false,
+      "publicOnlyAfterApproval": false,
+      "continuity_generated": true,
+      "continuityAfter": "2027-01-01",
+      "continuityPolicy": "rolling_120_day_candidate_runway_existing_cadence",
+      "humanizationChecklist": [
+        "Use plain human language rather than generic therapy marketing copy.",
+        "Vary sentence rhythm and paragraph length.",
+        "Include concrete examples without inventing client stories.",
+        "Avoid exaggerated claims, guarantees, diagnosis, or pressure language.",
+        "Keep Monika Hicks / Hicks Consulting entity references consistent.",
+        "End with an approved conversion path only after value is delivered."
+      ],
+      "conversionPath": "https://monika-hicks.clientsecure.me/",
+      "sections": [
+        "Short answer",
+        "Who this is for",
+        "What it looks like",
+        "How to tell the difference",
+        "Common mistakes",
+        "What to do next",
+        "When to seek support"
+      ],
+      "llmPrompt": "Create a humanized insight draft for Hicks Consulting.\nTitle: What do I do when the advice at church is just to have more faith?\nThis page exists to answer exactly one real question a person typed or said: \"What do I do when the advice at church is just to have more faith?\". Answer THAT question in its own words in the first two sentences. Do not widen it into a general overview of Faith-centered emotional support; other pages on this site answer other questions in the same area and this one must not restate them.\nCadence: daily. Proposed future slot: 2027-01-28T13:00:00.000Z.\nMinimum words: 720. Target words: 900.\nUse an answer-first opening, exact-intent headings, concrete examples, and a checklist or decision framework where useful.\nWrite in a warm, grounded, specific voice. Do not diagnose, guarantee outcomes, or invent client stories.\nInclude these sections: Short answer; Who this is for; What it looks like; How to tell the difference; Common mistakes; What to do next; When to seek support.\nApproved conversion path after value is delivered: https://monika-hicks.clientsecure.me/.\nThis is an autonomous candidate. It must pass Safe Harbor, duplicate, source, cadence, build, and release validation before it can be scheduled.",
+      "queueType": "content_brief"
+    },
+    {
+      "id": "continuity-insight-2027-01-29-f15f37231a3f",
+      "clusterId": "hicks_fanout_022511_4893af565a",
+      "clusterTitle": "When Your Nervous System Is Tired but Your Life Keeps Demanding More: Why Women Minimize It",
+      "demandPhrasing": {
+        "source": "config/demand_phrasings.json",
+        "familyId": "local_access",
+        "clusterId": null,
+        "form": "what",
+        "groundedIn": [
+          "data/search/target_queries.json lead_intent_tier T1/T2/T3 with gsc_measured.impressions > 0",
+          "data/search/free_wins.json"
+        ],
+        "evidence": [
+          {
+            "kind": "measured_queries",
+            "count": 34,
+            "impressions": 131,
+            "examples": [
+              "black therapist near me",
+              "african american therapist near me",
+              "black counselors near me",
+              "black mental health therapist near me",
+              "african american female therapist near me"
+            ]
+          }
+        ]
+      },
+      "contentType": "insight",
+      "cadence": "daily",
+      "title": "Can I see a Tennessee therapist if I live in Olive Branch?",
+      "suggestedRoute": "/resources/insights/can-i-see-a-tennessee-therapist-if-i-live-in-olive-branch/",
+      "proposedScheduledAt": "2027-01-29T13:00:00.000Z",
+      "targetWords": 900,
+      "minimumWords": 720,
+      "sourceSignalCount": 1,
+      "score": 45.6,
+      "publishMode": "full_safe_autonomy",
+      "autonomyStatus": "DISCOVERED",
+      "llmGeneratedRequired": true,
+      "routineApprovalRequired": false,
+      "publicOnlyAfterApproval": false,
+      "continuity_generated": true,
+      "continuityAfter": "2027-01-01",
+      "continuityPolicy": "rolling_120_day_candidate_runway_existing_cadence",
+      "humanizationChecklist": [
+        "Use plain human language rather than generic therapy marketing copy.",
+        "Vary sentence rhythm and paragraph length.",
+        "Include concrete examples without inventing client stories.",
+        "Avoid exaggerated claims, guarantees, diagnosis, or pressure language.",
+        "Keep Monika Hicks / Hicks Consulting entity references consistent.",
+        "End with an approved conversion path only after value is delivered."
+      ],
+      "conversionPath": "https://monika-hicks.clientsecure.me/",
+      "sections": [
+        "Short answer",
+        "Who this is for",
+        "What it looks like",
+        "How to tell the difference",
+        "Common mistakes",
+        "What to do next",
+        "When to seek support"
+      ],
+      "llmPrompt": "Create a humanized insight draft for Hicks Consulting.\nTitle: Can I see a Tennessee therapist if I live in Olive Branch?\nThis page exists to answer exactly one real question a person typed or said: \"Can I see a Tennessee therapist if I live in Olive Branch?\". Answer THAT question in its own words in the first two sentences. Do not widen it into a general overview of local_access; other pages on this site answer other questions in the same area and this one must not restate them.\nCadence: daily. Proposed future slot: 2027-01-29T13:00:00.000Z.\nMinimum words: 720. Target words: 900.\nUse an answer-first opening, exact-intent headings, concrete examples, and a checklist or decision framework where useful.\nWrite in a warm, grounded, specific voice. Do not diagnose, guarantee outcomes, or invent client stories.\nInclude these sections: Short answer; Who this is for; What it looks like; How to tell the difference; Common mistakes; What to do next; When to seek support.\nApproved conversion path after value is delivered: https://monika-hicks.clientsecure.me/.\nThis is an autonomous candidate. It must pass Safe Harbor, duplicate, source, cadence, build, and release validation before it can be scheduled.",
+      "queueType": "content_brief"
+    },
+    {
+      "id": "continuity-insight-2027-02-01-26d1cd859b51",
+      "clusterId": "hicks_fanout_003958_f630e3e73c",
+      "clusterTitle": "AI, social media, and digital emotional overload",
+      "demandPhrasing": {
+        "source": "config/demand_phrasings.json",
+        "familyId": "ai_digital_wellness",
+        "clusterId": null,
+        "form": "how",
+        "groundedIn": [
+          "data/intake/query_clusters.json#ai_digital_wellness",
+          "data/intake/normalized_query_signals.json tag:ai_digital_wellness"
+        ],
+        "evidence": [
+          {
+            "kind": "cluster",
+            "id": "ai_digital_wellness",
+            "title": "AI, social media, and digital emotional overload",
+            "score": 100,
+            "queryCount": 14
+          }
+        ]
+      },
+      "contentType": "insight",
+      "cadence": "daily",
+      "title": "How do I set a screen boundary that survives past Tuesday?",
+      "suggestedRoute": "/resources/insights/how-do-i-set-a-screen-boundary-that-survives-past-tuesday/",
+      "proposedScheduledAt": "2027-02-01T13:00:00.000Z",
+      "targetWords": 900,
+      "minimumWords": 720,
+      "sourceSignalCount": 1,
+      "score": 45.6,
+      "publishMode": "full_safe_autonomy",
+      "autonomyStatus": "DISCOVERED",
+      "llmGeneratedRequired": true,
+      "routineApprovalRequired": false,
+      "publicOnlyAfterApproval": false,
+      "continuity_generated": true,
+      "continuityAfter": "2027-01-01",
+      "continuityPolicy": "rolling_120_day_candidate_runway_existing_cadence",
+      "humanizationChecklist": [
+        "Use plain human language rather than generic therapy marketing copy.",
+        "Vary sentence rhythm and paragraph length.",
+        "Include concrete examples without inventing client stories.",
+        "Avoid exaggerated claims, guarantees, diagnosis, or pressure language.",
+        "Keep Monika Hicks / Hicks Consulting entity references consistent.",
+        "End with an approved conversion path only after value is delivered."
+      ],
+      "conversionPath": "https://monika-hicks.clientsecure.me/",
+      "sections": [
+        "Short answer",
+        "Before you start",
+        "Step by step",
+        "What to say",
+        "What gets in the way",
+        "How to tell it is working",
+        "Next step"
+      ],
+      "llmPrompt": "Create a humanized insight draft for Hicks Consulting.\nTitle: How do I set a screen boundary that survives past Tuesday?\nThis page exists to answer exactly one real question a person typed or said: \"How do I set a screen boundary that survives past Tuesday?\". Answer THAT question in its own words in the first two sentences. Do not widen it into a general overview of AI, social media, and digital emotional overload; other pages on this site answer other questions in the same area and this one must not restate them.\nCadence: daily. Proposed future slot: 2027-02-01T13:00:00.000Z.\nMinimum words: 720. Target words: 900.\nUse an answer-first opening, exact-intent headings, concrete examples, and a checklist or decision framework where useful.\nWrite in a warm, grounded, specific voice. Do not diagnose, guarantee outcomes, or invent client stories.\nInclude these sections: Short answer; Before you start; Step by step; What to say; What gets in the way; How to tell it is working; Next step.\nApproved conversion path after value is delivered: https://monika-hicks.clientsecure.me/.\nThis is an autonomous candidate. It must pass Safe Harbor, duplicate, source, cadence, build, and release validation before it can be scheduled.",
+      "queueType": "content_brief"
+    },
+    {
+      "id": "continuity-insight-2027-02-02-a26c1cea0ae8",
+      "clusterId": "hicks_fanout_038185_5ffcd6d344",
+      "clusterTitle": "General emotional wellness and intentional living",
+      "demandPhrasing": {
+        "source": "config/demand_phrasings.json",
+        "familyId": "general_emotional_wellness",
+        "clusterId": null,
+        "form": "what",
+        "groundedIn": [
+          "data/intake/query_clusters.json#general_emotional_wellness",
+          "data/intake/normalized_query_signals.json tag:general_emotional_wellness"
+        ],
+        "evidence": [
+          {
+            "kind": "cluster",
+            "id": "general_emotional_wellness",
+            "title": "General emotional wellness and intentional living",
+            "score": 100,
+            "queryCount": 189
+          }
+        ]
+      },
+      "contentType": "insight",
+      "cadence": "daily",
+      "title": "What is the difference between stress and anxiety?",
+      "suggestedRoute": "/resources/insights/what-is-the-difference-between-stress-and-anxiety/",
+      "proposedScheduledAt": "2027-02-02T13:00:00.000Z",
+      "targetWords": 900,
+      "minimumWords": 720,
+      "sourceSignalCount": 1,
+      "score": 45.14,
+      "publishMode": "full_safe_autonomy",
+      "autonomyStatus": "DISCOVERED",
+      "llmGeneratedRequired": true,
+      "routineApprovalRequired": false,
+      "publicOnlyAfterApproval": false,
+      "continuity_generated": true,
+      "continuityAfter": "2027-01-01",
+      "continuityPolicy": "rolling_120_day_candidate_runway_existing_cadence",
+      "humanizationChecklist": [
+        "Use plain human language rather than generic therapy marketing copy.",
+        "Vary sentence rhythm and paragraph length.",
+        "Include concrete examples without inventing client stories.",
+        "Avoid exaggerated claims, guarantees, diagnosis, or pressure language.",
+        "Keep Monika Hicks / Hicks Consulting entity references consistent.",
+        "End with an approved conversion path only after value is delivered."
+      ],
+      "conversionPath": "https://monika-hicks.clientsecure.me/",
+      "sections": [
+        "Short answer",
+        "Who this is for",
+        "What it looks like",
+        "How to tell the difference",
+        "Common mistakes",
+        "What to do next",
+        "When to seek support"
+      ],
+      "llmPrompt": "Create a humanized insight draft for Hicks Consulting.\nTitle: What is the difference between stress and anxiety?\nThis page exists to answer exactly one real question a person typed or said: \"What is the difference between stress and anxiety?\". Answer THAT question in its own words in the first two sentences. Do not widen it into a general overview of General emotional wellness and intentional living; other pages on this site answer other questions in the same area and this one must not restate them.\nCadence: daily. Proposed future slot: 2027-02-02T13:00:00.000Z.\nMinimum words: 720. Target words: 900.\nUse an answer-first opening, exact-intent headings, concrete examples, and a checklist or decision framework where useful.\nWrite in a warm, grounded, specific voice. Do not diagnose, guarantee outcomes, or invent client stories.\nInclude these sections: Short answer; Who this is for; What it looks like; How to tell the difference; Common mistakes; What to do next; When to seek support.\nApproved conversion path after value is delivered: https://monika-hicks.clientsecure.me/.\nThis is an autonomous candidate. It must pass Safe Harbor, duplicate, source, cadence, build, and release validation before it can be scheduled.",
+      "queueType": "content_brief"
+    },
+    {
+      "id": "continuity-article-2027-02-02-1f4ef4eda6b2",
+      "clusterId": "hicks_fanout_019383_7e672cc847",
+      "clusterTitle": "Workplace emotional intelligence and mental health training",
+      "demandPhrasing": {
+        "source": "config/demand_phrasings.json",
+        "familyId": "workplace_emotional_intelligence",
+        "clusterId": null,
+        "form": "how",
+        "groundedIn": [
+          "data/intake/query_clusters.json#workplace_emotional_intelligence",
+          "data/intake/normalized_query_signals.json tag:workplace_emotional_intelligence",
+          "data/search/target_queries.json query:'memphis small business consulting', 'consultant mental health'"
+        ],
+        "evidence": [
+          {
+            "kind": "cluster",
+            "id": "workplace_emotional_intelligence",
+            "title": "Workplace emotional intelligence and mental health training",
+            "score": 100,
+            "queryCount": 7
+          }
+        ]
+      },
+      "contentType": "article",
+      "cadence": "weekly",
+      "title": "How much does mental health training for a small team actually cost?",
+      "suggestedRoute": "/resources/articles/how-much-does-mental-health-training-for-a-small-team-actually-cost/",
+      "proposedScheduledAt": "2027-02-02T13:00:00.000Z",
+      "targetWords": 1200,
+      "minimumWords": 960,
+      "sourceSignalCount": 1,
+      "score": 44.92,
+      "publishMode": "full_safe_autonomy",
+      "autonomyStatus": "DISCOVERED",
+      "llmGeneratedRequired": true,
+      "routineApprovalRequired": false,
+      "publicOnlyAfterApproval": false,
+      "continuity_generated": true,
+      "continuityAfter": "2027-01-01",
+      "continuityPolicy": "rolling_120_day_candidate_runway_existing_cadence",
+      "humanizationChecklist": [
+        "Use plain human language rather than generic therapy marketing copy.",
+        "Vary sentence rhythm and paragraph length.",
+        "Include concrete examples without inventing client stories.",
+        "Avoid exaggerated claims, guarantees, diagnosis, or pressure language.",
+        "Keep Monika Hicks / Hicks Consulting entity references consistent.",
+        "End with an approved conversion path only after value is delivered."
+      ],
+      "conversionPath": "https://monika-hicks.clientsecure.me/",
+      "sections": [
+        "Short answer",
+        "Before you start",
+        "Step by step",
+        "What to say",
+        "What gets in the way",
+        "How to tell it is working",
+        "Next step"
+      ],
+      "llmPrompt": "Create a humanized article draft for Hicks Consulting.\nTitle: How much does mental health training for a small team actually cost?\nThis page exists to answer exactly one real question a person typed or said: \"How much does mental health training for a small team actually cost?\". Answer THAT question in its own words in the first two sentences. Do not widen it into a general overview of Workplace emotional intelligence and mental health training; other pages on this site answer other questions in the same area and this one must not restate them.\nCadence: weekly. Proposed future slot: 2027-02-02T13:00:00.000Z.\nMinimum words: 960. Target words: 1200.\nUse an answer-first opening, exact-intent headings, concrete examples, and a checklist or decision framework where useful.\nWrite in a warm, grounded, specific voice. Do not diagnose, guarantee outcomes, or invent client stories.\nInclude these sections: Short answer; Before you start; Step by step; What to say; What gets in the way; How to tell it is working; Next step.\nApproved conversion path after value is delivered: https://monika-hicks.clientsecure.me/.\nThis is an autonomous candidate. It must pass Safe Harbor, duplicate, source, cadence, build, and release validation before it can be scheduled.",
       "queueType": "content_brief"
     }
   ]
