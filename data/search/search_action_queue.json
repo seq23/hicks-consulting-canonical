@@ -1,6 +1,6 @@
 {
   "schemaVersion": "2.0.0",
-  "generatedAt": "2026-10-05T14:38:58.286Z",
+  "generatedAt": "2026-10-06T14:34:17.495Z",
   "policy": "Hicks may autonomously apply bounded technical/search-alignment repairs. Substantive clinical claims and unsupported treatment assertions are never auto-generated from competitor content.",
   "items": [
     {
@@ -14,9 +14,9 @@
       "evidence": {
         "groundedSiteSurfaced": true,
         "groundedProviderAnswered": true,
-        "gscImpressions": 34,
+        "gscImpressions": 35,
         "gscClicks": 0,
-        "gscAveragePosition": 8.29,
+        "gscAveragePosition": 8.31,
         "gscPages": [
           "/black-therapist-memphis/"
         ],
@@ -607,19 +607,15 @@
     {
       "query": "therapist for black men near me",
       "primaryPage": "/black-therapist-memphis/",
-      "status": "OBSERVED",
-      "reasons": [
-        "AVERAGE_POSITION_OUTSIDE_TOP_10"
-      ],
+      "status": "UNKNOWN",
+      "reasons": [],
       "evidence": {
         "groundedSiteSurfaced": null,
         "groundedProviderAnswered": false,
-        "gscImpressions": 1,
+        "gscImpressions": 0,
         "gscClicks": 0,
-        "gscAveragePosition": 11,
-        "gscPages": [
-          "/black-therapist-memphis/"
-        ],
+        "gscAveragePosition": 0,
+        "gscPages": [],
         "competitorUrls": []
       },
       "safeRepairEligible": false,
@@ -883,9 +879,9 @@
       "evidence": {
         "groundedSiteSurfaced": null,
         "groundedProviderAnswered": false,
-        "gscImpressions": 66,
+        "gscImpressions": 68,
         "gscClicks": 0,
-        "gscAveragePosition": 7.56,
+        "gscAveragePosition": 7.54,
         "gscPages": [
           "/",
           "/black-therapist-memphis/"
@@ -905,9 +901,9 @@
       "evidence": {
         "groundedSiteSurfaced": null,
         "groundedProviderAnswered": false,
-        "gscImpressions": 46,
+        "gscImpressions": 48,
         "gscClicks": 3,
-        "gscAveragePosition": 3.11,
+        "gscAveragePosition": 3.12,
         "gscPages": [
           "/",
           "/about/",
@@ -1848,15 +1844,19 @@
     {
       "query": "hicks counseling",
       "primaryPage": "/",
-      "status": "UNKNOWN",
-      "reasons": [],
+      "status": "OBSERVED",
+      "reasons": [
+        "AVERAGE_POSITION_OUTSIDE_TOP_10"
+      ],
       "evidence": {
         "groundedSiteSurfaced": null,
         "groundedProviderAnswered": false,
-        "gscImpressions": 0,
+        "gscImpressions": 1,
         "gscClicks": 0,
-        "gscAveragePosition": 0,
-        "gscPages": [],
+        "gscAveragePosition": 27,
+        "gscPages": [
+          "/"
+        ],
         "competitorUrls": []
       },
       "safeRepairEligible": false,
