@@ -434,6 +434,35 @@
       "createdAt": "2026-10-02T14:49:05.580Z",
       "blocksOtherWork": false,
       "clientActionRequired": false
+    },
+    {
+      "id": "exception-brief-burnout_boundaries-article-1791298136416",
+      "candidateId": "brief-burnout_boundaries-article",
+      "decision": "REPAIR_REQUIRED",
+      "findings": [
+        {
+          "code": "THIN_CONTENT",
+          "severity": "repairable",
+          "message": "Draft has 573 words; minimum is 960."
+        }
+      ],
+      "createdAt": "2026-10-06T14:47:57.071Z",
+      "blocksOtherWork": false,
+      "clientActionRequired": false
+    },
+    {
+      "id": "exception-brief-faith_centered_support-article-1791298136416",
+      "candidateId": "brief-faith_centered_support-article",
+      "decision": "SKIPPED_PROHIBITED_ACTION",
+      "findings": [
+        {
+          "code": "LOW_ADMISSION_SCORE",
+          "severity": "advisory"
+        }
+      ],
+      "createdAt": "2026-10-06T14:47:57.071Z",
+      "blocksOtherWork": false,
+      "clientActionRequired": false
     }
   ]
 }
