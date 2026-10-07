@@ -6,6 +6,7 @@ concurrency:
   cancel-in-progress: false
 jobs:
   sitemap-indexing:
+    timeout-minutes: 5  # ~3x median 0.2m over 8 green runs; fault detector, not a budget
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7

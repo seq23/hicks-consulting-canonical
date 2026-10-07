@@ -41,7 +41,7 @@ jobs:
   validate-digital-products:
     name: Validate digital products flow
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 5  # was 15; ~4x median 0.2m over 8 green runs
     steps:
       - name: Checkout
         uses: actions/checkout@v7
