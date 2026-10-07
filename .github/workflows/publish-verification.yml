@@ -36,7 +36,7 @@ jobs:
   verify:
     name: Verify the newest published item is live
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 5  # was 10; ~4x median 0.2m over 8 green runs
     env:
       SITE_URL: ${{ github.event.inputs.site_url || 'https://www.hicksconsulting.org' }}
     steps:

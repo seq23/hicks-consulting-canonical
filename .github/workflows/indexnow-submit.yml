@@ -15,6 +15,7 @@ concurrency:
 
 jobs:
   distribute:
+    timeout-minutes: 7  # ~3x median 2.1m over 8 green runs; fault detector, not a budget
     if: ${{ github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
     env:
