@@ -1,15 +1,15 @@
 {
   "schemaVersion": "1.0.0",
-  "generatedAt": "2026-10-07T14:35:22.171Z",
+  "generatedAt": "2026-10-08T14:37:23.710Z",
   "providerState": "CONNECTED",
   "items": [
     {
       "type": "STRIKING_DISTANCE",
       "query": "black therapist memphis, tn",
       "page": "https://www.hicksconsulting.org/black-therapist-memphis/",
-      "position": 9.818181818181818,
-      "impressions": 11,
-      "ctr": 0.09090909090909091,
+      "position": 9.8,
+      "impressions": 10,
+      "ctr": 0.1,
       "recommendedAction": "Improve answer alignment, title/snippet, and supporting internal links without changing page identity.",
       "confidence": "high"
     },
@@ -18,8 +18,28 @@
       "query": "black therapist memphis, tn",
       "page": "https://www.hicksconsulting.org/black-therapist-memphis/",
       "expectedPage": "/",
-      "position": 9.818181818181818,
-      "impressions": 11,
+      "position": 9.8,
+      "impressions": 10,
+      "recommendedAction": "Strengthen query ownership and internal links toward the governed primary page.",
+      "confidence": "high"
+    },
+    {
+      "type": "STRIKING_DISTANCE",
+      "query": "hicks consulting",
+      "page": "https://www.hicksconsulting.org/corporate-speaking/",
+      "position": 7,
+      "impressions": 12,
+      "ctr": 0.08333333333333333,
+      "recommendedAction": "Improve answer alignment, title/snippet, and supporting internal links without changing page identity.",
+      "confidence": "high"
+    },
+    {
+      "type": "WRONG_PAGE_RANKING",
+      "query": "hicks consulting",
+      "page": "https://www.hicksconsulting.org/corporate-speaking/",
+      "expectedPage": "/",
+      "position": 7,
+      "impressions": 12,
       "recommendedAction": "Strengthen query ownership and internal links toward the governed primary page.",
       "confidence": "high"
     },
@@ -67,8 +87,8 @@
       "type": "STRIKING_DISTANCE",
       "query": "black mental health therapist near me",
       "page": "https://www.hicksconsulting.org/black-therapist-memphis/",
-      "position": 8.1,
-      "impressions": 10,
+      "position": 8.272727272727273,
+      "impressions": 11,
       "ctr": 0,
       "recommendedAction": "Improve answer alignment, title/snippet, and supporting internal links without changing page identity.",
       "confidence": "high"
@@ -87,8 +107,8 @@
       "type": "STRIKING_DISTANCE",
       "query": "black therapist memphis tn",
       "page": "https://www.hicksconsulting.org/black-therapist-memphis/",
-      "position": 10.079365079365079,
-      "impressions": 63,
+      "position": 9.969696969696969,
+      "impressions": 66,
       "ctr": 0,
       "recommendedAction": "Improve answer alignment, title/snippet, and supporting internal links without changing page identity.",
       "confidence": "high"
@@ -97,8 +117,8 @@
       "type": "LOW_CTR",
       "query": "black therapist memphis tn",
       "page": "https://www.hicksconsulting.org/black-therapist-memphis/",
-      "position": 10.079365079365079,
-      "impressions": 63,
+      "position": 9.969696969696969,
+      "impressions": 66,
       "ctr": 0,
       "recommendedAction": "Review search title and description against the actual query intent.",
       "confidence": "medium"
@@ -108,8 +128,8 @@
       "query": "black therapist memphis tn",
       "page": "https://www.hicksconsulting.org/black-therapist-memphis/",
       "expectedPage": "/",
-      "position": 10.079365079365079,
-      "impressions": 63,
+      "position": 9.969696969696969,
+      "impressions": 66,
       "recommendedAction": "Strengthen query ownership and internal links toward the governed primary page.",
       "confidence": "high"
     },
@@ -117,8 +137,8 @@
       "type": "STRIKING_DISTANCE",
       "query": "black therapist near me",
       "page": "https://www.hicksconsulting.org/black-therapist-memphis/",
-      "position": 8.314285714285713,
-      "impressions": 35,
+      "position": 8.38888888888889,
+      "impressions": 36,
       "ctr": 0,
       "recommendedAction": "Improve answer alignment, title/snippet, and supporting internal links without changing page identity.",
       "confidence": "high"
@@ -127,8 +147,8 @@
       "type": "LOW_CTR",
       "query": "black therapist near me",
       "page": "https://www.hicksconsulting.org/black-therapist-memphis/",
-      "position": 8.314285714285713,
-      "impressions": 35,
+      "position": 8.38888888888889,
+      "impressions": 36,
       "ctr": 0,
       "recommendedAction": "Review search title and description against the actual query intent.",
       "confidence": "medium"
@@ -198,18 +218,8 @@
       "query": "hicks consulting",
       "page": "https://www.hicksconsulting.org/contact/",
       "expectedPage": "/",
-      "position": 3.75,
-      "impressions": 4,
-      "recommendedAction": "Strengthen query ownership and internal links toward the governed primary page.",
-      "confidence": "high"
-    },
-    {
-      "type": "WRONG_PAGE_RANKING",
-      "query": "hicks consulting",
-      "page": "https://www.hicksconsulting.org/corporate-speaking/",
-      "expectedPage": "/",
-      "position": 6.444444444444445,
-      "impressions": 9,
+      "position": 4.4,
+      "impressions": 5,
       "recommendedAction": "Strengthen query ownership and internal links toward the governed primary page.",
       "confidence": "high"
     },
@@ -319,6 +329,16 @@
       "page": "https://www.hicksconsulting.org/resources/",
       "expectedPage": "/",
       "position": 5,
+      "impressions": 1,
+      "recommendedAction": "Strengthen query ownership and internal links toward the governed primary page.",
+      "confidence": "high"
+    },
+    {
+      "type": "WRONG_PAGE_RANKING",
+      "query": "monika hicks",
+      "page": "https://www.hicksconsulting.org/resources/insights/the-emotional-cost-of-always-being-the-one-who-handles-it-how-it-shows-up-in-work-and/",
+      "expectedPage": "/",
+      "position": 9,
       "impressions": 1,
       "recommendedAction": "Strengthen query ownership and internal links toward the governed primary page.",
       "confidence": "high"
