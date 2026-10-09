@@ -478,6 +478,36 @@
       "createdAt": "2026-10-09T13:58:09.252Z",
       "blocksOtherWork": false,
       "clientActionRequired": false
+    },
+    {
+      "id": "exception-brief-burnout_boundaries-article-1791557483465",
+      "candidateId": "brief-burnout_boundaries-article",
+      "decision": "REPAIR_REQUIRED",
+      "findings": [
+        {
+          "code": "THIN_CONTENT",
+          "severity": "repairable",
+          "message": "Draft has 526 words; minimum is 960."
+        }
+      ],
+      "createdAt": "2026-10-09T14:50:24.450Z",
+      "blocksOtherWork": false,
+      "clientActionRequired": false
+    },
+    {
+      "id": "exception-brief-black_women_healing-guide-1791557523597",
+      "candidateId": "brief-black_women_healing-guide",
+      "decision": "REPAIR_REQUIRED",
+      "findings": [
+        {
+          "code": "THIN_CONTENT",
+          "severity": "repairable",
+          "message": "Draft has 496 words; minimum is 1120."
+        }
+      ],
+      "createdAt": "2026-10-09T14:50:24.450Z",
+      "blocksOtherWork": false,
+      "clientActionRequired": false
     }
   ]
 }

@@ -1966,6 +1966,48 @@
           "to": "FAILED_RETRYABLE",
           "at": "2026-10-06T14:47:57.071Z",
           "reason": "Candidate did not satisfy the final Safe Harbor gate."
+        },
+        {
+          "from": "FAILED_RETRYABLE",
+          "to": "SCORED",
+          "at": "2026-10-09T14:50:24.450Z",
+          "reason": "Candidate score normalized for autonomous admission."
+        },
+        {
+          "from": "SCORED",
+          "to": "ADMITTED",
+          "at": "2026-10-09T14:50:24.450Z",
+          "reason": "Candidate admitted inside the existing content policy and ownership boundaries."
+        },
+        {
+          "from": "ADMITTED",
+          "to": "DRAFTING",
+          "at": "2026-10-09T14:50:24.450Z",
+          "reason": "Structured LLM drafting started."
+        },
+        {
+          "from": "DRAFTING",
+          "to": "DRAFTED",
+          "at": "2026-10-09T14:50:24.450Z",
+          "reason": "Structured draft produced."
+        },
+        {
+          "from": "DRAFTED",
+          "to": "VALIDATING",
+          "at": "2026-10-09T14:50:24.450Z",
+          "reason": "Safe Harbor validation started."
+        },
+        {
+          "from": "VALIDATING",
+          "to": "REPAIRING",
+          "at": "2026-10-09T14:50:24.450Z",
+          "reason": "Repairable Safe Harbor findings detected."
+        },
+        {
+          "from": "REPAIRING",
+          "to": "FAILED_RETRYABLE",
+          "at": "2026-10-09T14:50:24.450Z",
+          "reason": "Candidate did not satisfy the final Safe Harbor gate."
         }
       ],
       "demandPhrasing": {
@@ -1988,14 +2030,14 @@
           }
         ]
       },
-      "updatedAt": "2026-10-06T14:47:57.071Z",
+      "updatedAt": "2026-10-09T14:50:24.450Z",
       "providerGate": null,
-      "attempts": 1,
+      "attempts": 2,
       "findings": [
         {
           "code": "THIN_CONTENT",
           "severity": "repairable",
-          "message": "Draft has 573 words; minimum is 960."
+          "message": "Draft has 526 words; minimum is 960."
         }
       ]
     },
@@ -2118,7 +2160,7 @@
         "What to do next",
         "When to seek support"
       ],
-      "state": "DISCOVERED",
+      "state": "FAILED_RETRYABLE",
       "routineApprovalRequired": true,
       "publicOnlyAfterApproval": true,
       "source": "legacy_generated_queue_migration",
@@ -2138,6 +2180,48 @@
           "to": "DISCOVERED",
           "at": "2026-08-29T14:45:30.271Z",
           "reason": "Title reconciled to the upstream demand-grounded brief before any page existed."
+        },
+        {
+          "from": "DISCOVERED",
+          "to": "SCORED",
+          "at": "2026-10-09T14:50:24.450Z",
+          "reason": "Candidate score normalized for autonomous admission."
+        },
+        {
+          "from": "SCORED",
+          "to": "ADMITTED",
+          "at": "2026-10-09T14:50:24.450Z",
+          "reason": "Candidate admitted inside the existing content policy and ownership boundaries."
+        },
+        {
+          "from": "ADMITTED",
+          "to": "DRAFTING",
+          "at": "2026-10-09T14:50:24.450Z",
+          "reason": "Structured LLM drafting started."
+        },
+        {
+          "from": "DRAFTING",
+          "to": "DRAFTED",
+          "at": "2026-10-09T14:50:24.450Z",
+          "reason": "Structured draft produced."
+        },
+        {
+          "from": "DRAFTED",
+          "to": "VALIDATING",
+          "at": "2026-10-09T14:50:24.450Z",
+          "reason": "Safe Harbor validation started."
+        },
+        {
+          "from": "VALIDATING",
+          "to": "REPAIRING",
+          "at": "2026-10-09T14:50:24.450Z",
+          "reason": "Repairable Safe Harbor findings detected."
+        },
+        {
+          "from": "REPAIRING",
+          "to": "FAILED_RETRYABLE",
+          "at": "2026-10-09T14:50:24.450Z",
+          "reason": "Candidate did not satisfy the final Safe Harbor gate."
         }
       ],
       "demandPhrasing": {
@@ -2160,7 +2244,16 @@
           }
         ]
       },
-      "updatedAt": "2026-08-29T14:45:30.271Z"
+      "updatedAt": "2026-10-09T14:50:24.450Z",
+      "providerGate": null,
+      "attempts": 1,
+      "findings": [
+        {
+          "code": "THIN_CONTENT",
+          "severity": "repairable",
+          "message": "Draft has 496 words; minimum is 1120."
+        }
+      ]
     },
     {
       "id": "continuity-insight-2027-01-04-3cf2aea5e9d5",
