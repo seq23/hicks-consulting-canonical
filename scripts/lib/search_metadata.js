@@ -266,10 +266,16 @@ function wordsOf(text) {
  * never uses it and it is either very short or the start of a longer word the
  * page does use.
  */
+// No sentence ends on an article, a conjunction or a preposition that needs an
+// object: "...help you move forward with." and "...move for." are the legacy
+// 160-character cut landing on a word the page does use, which the page-word
+// test alone cannot see (13 queued pages on 9 Oct 2026, 0 live).
+const DANGLING_WORDS = new Set(['a', 'an', 'the', 'and', 'or', 'but', 'nor', 'of', 'to', 'for', 'with', 'from', 'into', 'your', 'my', 'our', 'their']);
 function finalWordIsWhole(description, html) {
   const words = wordsOf(description);
   const last = words[words.length - 1];
   if (!last) return false;
+  if (DANGLING_WORDS.has(last)) return false;
   const pageWords = new Set(wordsOf(visibleText(html)));
   if (pageWords.has(last)) return true;
   if (last.length <= 3) return false;
@@ -312,6 +318,7 @@ module.exports = {
   BOILERPLATE_MAX_PAGES,
   visibleText,
   finalWordIsWhole,
+  DANGLING_WORDS,
   shinglesOf,
   boilerplateRuns,
   SITE_SUFFIX,

@@ -137,6 +137,24 @@ if (!/search_metadata\.js/.test(code)) failures.push(`UNLINKED GENERATOR: ${rend
 if (/description[\s\S]{0,120}\.slice\(\s*0\s*,\s*\d+\s*\)/.test(code)) failures.push(`CHARACTER-CUT DESCRIPTION: ${rendererPath} cuts a description with .slice(0, N) again; that is how "... with more cla." was made.`);
 if (!/fitDescription\(/.test(code) || !/searchTitle\(/.test(code)) failures.push(`${rendererPath} must build the description with fitDescription() and the title with searchTitle().`);
 
+// The chop detector must see a cut that lands on a word the page does use.
+const chopPage = '<p>Find the support that may help you move forward with more clarity.</p>';
+const chopProbes = [
+  ['Find the support that may help you move forward with.', false],
+  ['Find the support that may help you move for.', false],
+  ['Find the support that may help you move forward with more clarity.', true],
+];
+for (const [desc, whole] of chopProbes) {
+  if (lib.finalWordIsWhole(desc, chopPage) !== whole) failures.push(`CHOP DETECTOR: finalWordIsWhole("${desc}") should be ${whole}; a description cut on a dangling word would ship.`);
+}
+
+// The release lane must tell the repair which pages it is about to make public,
+// or a queued page can make a live one "unresolvable" and stop every release
+// (8 Oct 2026). The behaviour is pinned by verifyIncumbentPriority() below.
+const publisherPath = 'scripts/publishing/run_safe_publish.mjs';
+const publisher = fs.readFileSync(path.join(ROOT, publisherPath), 'utf8').replace(/^\s*\/\/.*$/gm, '');
+if (!/applySearchMetadata\(\{[^}]*\breleasing\b[^}]*\}\)/.test(publisher)) failures.push(`UNRANKED RELEASE: ${publisherPath} calls applySearchMetadata() without the releasing routes, so queued legacy pages are judged as if live and can block an already-published page.`);
+
 if (failures.length) {
   fail([`Search metadata contract: examined ${pages.length} sitemap page(s), ${manifestChecked} of them manifest pages.`, ...failures]);
 }

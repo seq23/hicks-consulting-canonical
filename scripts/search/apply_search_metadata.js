@@ -15,7 +15,7 @@ const fs = require('fs');
 const path = require('path');
 const lib = require('../lib/search_metadata');
 
-function applySearchMetadata({ manifest, check = false, allowUnresolved = false } = {}) {
+function applySearchMetadata({ manifest, check = false, allowUnresolved = false, releasing = [] } = {}) {
 const root = process.cwd();
 const CHECK = check;
 manifest ||= JSON.parse(fs.readFileSync(path.join(root, 'data/admin/content_manifest.json'), 'utf8'));
@@ -26,6 +26,18 @@ const items = manifest
   .filter((e) => e && e.status === 'published' && e.validationPassed === true && typeof e.slug === 'string' && e.title)
   .map((e) => ({ route: e.publicPath || e.slug, title: e.title }))
   .filter((e) => fs.existsSync(pageFile(e.route)));
+
+// Incumbents before newcomers. `releasing` names the routes this run is about
+// to make public for the first time. Their queued legacy HTML is not public yet
+// and is about to be rewritten, so it must not count against a page that is
+// already live: on 8 Oct 2026 one released page of a templated series was
+// declared "boilerplate" because 42 queued siblings carried the same legacy
+// description, and the release lane refused to run at all. A live page is
+// judged against the live site only; a newcomer is judged against everything
+// settled before it and is held (a NAMED STOP in run_safe_publish) if it
+// cannot be made distinct, never the other way round.
+const releasingSet = new Set(releasing);
+items.sort((a, b) => Number(releasingSet.has(a.route)) - Number(releasingSet.has(b.route)));
 
 if (!items.length) {
   console.error('apply_search_metadata: 0 published manifest pages found under pages/. Nothing was examined.');
@@ -40,6 +52,7 @@ const descByRoute = new Map();
 const titleByRoute = new Map();
 const titleKey = (value) => String(value || "").toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
 for (const route of new Set([...sitemapRoutes, ...items.map((i) => i.route)])) {
+  if (releasingSet.has(route)) continue;
   const file = pageFile(route);
   if (!fs.existsSync(file)) continue;
   const { description, title } = lib.readMeta(fs.readFileSync(file, 'utf8'));
@@ -72,7 +85,12 @@ for (const item of items) {
   if (!title || [...titleByRoute].some(([route, value]) => route !== item.route && value === titleKey(title))) { unresolved.push(item.route); continue; }
 
   const current = meta.description || '';
-  const usable = current && !isBoilerplate(current) && ownersOf(current).length === 1 && lib.finalWordIsWhole(current, html);
+  const newcomer = releasingSet.has(item.route);
+  const usable = current && lib.finalWordIsWhole(current, html) && (newcomer
+    // A newcomer's description is not in descByRoute yet: it may not equal a
+    // settled one, nor push any 8-word run past the boilerplate limit.
+    ? ownersOf(current).length === 0 && !wouldBeBoilerplate(current, item.route)
+    : !isBoilerplate(current) && ownersOf(current).length === 1);
   let description = current;
   if (!(usable && lib.descriptionInRange(current) && lib.endsWhole(current))) {
     // An over-long but otherwise sound description is trimmed at a phrase
@@ -85,8 +103,8 @@ for (const item of items) {
       if (fitted && !taken.has(fitted) && !isBoilerplate(fitted) && !wouldBeBoilerplate(fitted, item.route)) description = fitted;
     }
     if (!description) { unresolved.push(item.route); continue; }
-    descByRoute.set(item.route, description);
   }
+  descByRoute.set(item.route, description);
 
   titleByRoute.set(item.route, titleKey(title));
   const next = lib.writeMeta(html, { title, description });
