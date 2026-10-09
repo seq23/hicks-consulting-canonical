@@ -216,8 +216,14 @@ function processManifest(manifest, now = new Date(), options = {}) {
   // Who approved what, and on what basis, for the run receipt.
   const releases = [];
 
+  // Due and approved, but held by the caller (unsafe copy, no compliant search
+  // metadata). The record is returned untouched; the caller names the stop.
+  const hold = new Set(options.hold || []);
   const updated = manifest.map((item) => {
     if (item.status !== 'approved' || item.validationPassed !== true) {
+      return item;
+    }
+    if (hold.has(item.id)) {
       return item;
     }
 

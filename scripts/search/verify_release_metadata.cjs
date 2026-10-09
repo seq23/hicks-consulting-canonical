@@ -14,6 +14,8 @@ const { spawnSync } = require('node:child_process');
 // untouched, and every newcomer must be held instead. The control run (the
 // newcomers not declared as releasing) must reproduce the defect, so the fixture
 // is proven to reach it.
+const { MANIFEST_STATUSES } = require('../publishing/manifest_statuses.js');
+
 function verifyIncumbentPriority() {
   const { applySearchMetadata } = require('./apply_search_metadata.js');
   const lib = require('../lib/search_metadata');
@@ -86,19 +88,35 @@ function verifyReleaseMetadata() {
     assert.ok(eligible.length > 0, 'Regression must examine the real queued calendar.');
     const released = after.filter((item) => item.status === 'published' && before.find((row) => row.id === item.id).status !== 'published');
     assert.ok(released.length > 0, 'Regression must release real legacy pages.');
+    // A held page keeps its manifest record exactly as it was (still `approved`);
+    // the hold lives in the receipt and exceptions.json. Writing a status of its
+    // own (`skipped_unsafe`, 9 Oct 2026) broke publish-state and the protected
+    // editorial baseline on the next validate:all.
+    const receipt = JSON.parse(fs.readFileSync(path.join(root, 'data/autonomy/receipts/publish-2026-12-31T23-59-59-000Z.json'), 'utf8'));
+    const heldIds = new Set(receipt.skipped.map((entry) => entry.id));
+    const exceptions = JSON.parse(fs.readFileSync(path.join(root, 'data/autonomy/exceptions.json'), 'utf8')).items;
+    const unsafeContent = new Set(exceptions.filter((e) => e.decision === 'SKIPPED_PROHIBITED_ACTION').map((e) => e.candidateId));
     let skipped = 0;
     for (const row of after) {
       const original = before.find((item) => item.id === row.id);
-      if (row.status === 'skipped_unsafe' && original.status !== row.status) {
+      assert.ok(MANIFEST_STATUSES.includes(row.status), `${row.id}: the publisher wrote status "${row.status}", which is not in scripts/publishing/manifest_statuses.js.`);
+      if (heldIds.has(row.id)) {
         skipped++;
-        assert.ok(row.skipReason?.length && row.validationPassed === false, 'Unsafe metadata needs a recorded reason and cannot remain eligible.');
+        assert.deepEqual(row, original, `${row.id} was held but its manifest record changed; a hold must leave the record alone.`);
+        const entry = receipt.skipped.find((e) => e.id === row.id);
+        assert.ok(entry.findings?.length, `${row.id} was held with no recorded reason.`);
+        assert.ok(exceptions.some((e) => e.candidateId === row.id || e.candidateId === row.autonomy?.candidateId), `${row.id} was held with no exception recorded.`);
       }
-      if (row.status !== 'published' && row.status !== 'skipped_unsafe' && pages.has(row.id)) {
+      if (row.status !== 'published' && pages.has(row.id) && !unsafeContent.has(row.id)) {
         const file = path.join(root, 'pages', (row.publicPath || row.slug).replace(/^\//, ''), 'index.html');
-        assert.equal(fs.existsSync(file) ? fs.readFileSync(file, 'utf8') : null, pages.get(row.id), 'Unapproved and future-only page source changed.');
+        assert.equal(fs.existsSync(file) ? fs.readFileSync(file, 'utf8') : null, pages.get(row.id), 'Unapproved, held and future-only page source changed.');
         assert.equal(row.status, original.status);
       }
     }
+    // The state the release lane leaves behind must pass the same gates
+    // validate:all runs on it in the Content Publish job.
+    run('_ops/validators/validate_publish_state.js');
+    run('scripts/authority_scale/validate_protected_editorial_core.mjs');
     run('scripts/navigation/build_internal_navigation.mjs');
     run('scripts/site_build.js');
     run('_ops/validators/validate_search_metadata_contract.js');
@@ -108,7 +126,7 @@ function verifyReleaseMetadata() {
     assert.equal(fs.readFileSync(manifestPath, 'utf8'), stable);
     const repaired = run('scripts/search/apply_search_metadata.js');
     assert.match(repaired.stdout, /0 rewritten/);
-    console.log(`Release metadata regression OK: incumbent-priority fixture held ${fixturePages - 1} queued page(s) and left the live one untouched; ${eligible.length} queued calendar items examined, ${released.length} safe releases, ${skipped} explicitly recorded unsafe skips; public metadata valid, human gate preserved, repeat release idempotent.`);
+    console.log(`Release metadata regression OK: incumbent-priority fixture held ${fixturePages - 1} queued page(s) and left the live one untouched; ${eligible.length} queued calendar items examined, ${released.length} safe releases, ${skipped} held with their records untouched; public metadata valid, human gate preserved, repeat release idempotent.`);
   } finally { fs.rmSync(root, { recursive: true, force: true }); }
 }
 module.exports = { verifyReleaseMetadata, verifyIncumbentPriority };
