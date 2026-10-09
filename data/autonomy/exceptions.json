@@ -463,6 +463,21 @@
       "createdAt": "2026-10-06T14:47:57.071Z",
       "blocksOtherWork": false,
       "clientActionRequired": false
+    },
+    {
+      "id": "exception-metadata-daily-023-4-1791554289252",
+      "candidateId": "daily-023-4",
+      "decision": "SKIPPED_UNSAFE_SEARCH_METADATA",
+      "findings": [
+        {
+          "code": "SEARCH_METADATA_UNRESOLVED",
+          "severity": "hard",
+          "route": "/resources/insights/how-to-rebuild-self-trust-after-a-season-of-overextension-a-gentler-truth-to-consider/"
+        }
+      ],
+      "createdAt": "2026-10-09T13:58:09.252Z",
+      "blocksOtherWork": false,
+      "clientActionRequired": false
     }
   ]
 }
