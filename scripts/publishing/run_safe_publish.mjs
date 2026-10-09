@@ -5,6 +5,7 @@ import { enqueuePublicationNotification } from '../autonomy/lib/notification.mjs
 const require = createRequire(import.meta.url);
 const { processManifest, loadApprovedIds } = require('./process_manifest.js');
 const { applySearchMetadata } = require('../search/apply_search_metadata.js');
+const { MANIFEST_STATUSES } = require('./manifest_statuses.js');
 
 const clock = process.env.PUBLISH_CLOCK ? new Date(process.env.PUBLISH_CLOCK) : new Date();
 
@@ -39,6 +40,13 @@ const dueAll = manifest.filter((item) => item.status === 'approved' && item.vali
 const due = dueAll.filter((item) => approvedIds.has(item.id));
 const awaitingApproval = dueAll.filter((item) => !approvedIds.has(item.id));
 const repairsById = new Map();
+// Held items keep their manifest record exactly as it is (status stays
+// `approved`, see scripts/publishing/manifest_statuses.js); the hold is named
+// here, in exceptions.json and in the receipt, and is re-evaluated every run.
+const held = new Map();
+const recordException = (entry) => {
+  if (!exceptions.items.some((e) => e.candidateId === entry.candidateId && e.decision === entry.decision)) exceptions.items.push(entry);
+};
 for (const item of due) {
   if (!String(item.slug || '').startsWith('/resources/')) continue;
   const sourceFile = routeToSourceFile(item.slug);
@@ -49,14 +57,13 @@ for (const item of due) {
     analysis = analyzeResourceHtml(sourceFile);
   }
   if (!analysis.safe) {
-    item.status = 'skipped_unsafe';
-    item.validationPassed = false;
-    item.skipReason = analysis.findings;
-    exceptions.items.push({ id: `exception-publish-${item.id}-${Date.now()}`, candidateId: item.autonomy?.candidateId || item.id, decision: 'SKIPPED_PROHIBITED_ACTION', findings: analysis.findings, createdAt: nowIso(clock), blocksOtherWork: false, clientActionRequired: analysis.findings.some((finding) => finding.code === 'PROHIBITED_CLAIM') });
+    held.set(item.id, analysis.findings);
+    recordException({ id: `exception-publish-${item.id}-${clock.valueOf()}`, candidateId: item.autonomy?.candidateId || item.id, decision: 'SKIPPED_PROHIBITED_ACTION', findings: analysis.findings, createdAt: nowIso(clock), blocksOtherWork: false, clientActionRequired: analysis.findings.some((finding) => finding.code === 'PROHIBITED_CLAIM') });
+    console.log(`NAMED STOP: UNSAFE_CONTENT ${item.id} - held off the public site; its record stays approved and other approved content continues.`);
   }
 }
 const before = new Map(manifest.map((item) => [item.id, item.status]));
-let result = processManifest(manifest, clock);
+let result = processManifest(manifest, clock, { hold: held.keys() });
 // Legacy queued HTML predates the current renderer. Normalize the prospective
 // public corpus before persisting release state; do not touch unapproved pages.
 // Pages already live are judged against the live site only; the pages this run
@@ -75,15 +82,16 @@ if (metadata.unresolved.length) {
   }
   for (const item of due) {
     if (!routes.has(item.publicPath || item.slug)) continue;
-    item.status = 'skipped_unsafe';
-    item.validationPassed = false;
-    item.skipReason = [{ code: 'SEARCH_METADATA_UNRESOLVED', severity: 'hard', route: item.publicPath || item.slug }];
-    exceptions.items.push({ id: `exception-metadata-${item.id}-${clock.valueOf()}`, candidateId: item.id, decision: 'SKIPPED_UNSAFE_SEARCH_METADATA', findings: item.skipReason, createdAt: nowIso(clock), blocksOtherWork: false, clientActionRequired: false });
-    console.log(`NAMED STOP: SEARCH_METADATA_UNRESOLVED ${item.id} - held off the public site; other approved content continues.`);
+    const findings = [{ code: 'SEARCH_METADATA_UNRESOLVED', severity: 'hard', route: item.publicPath || item.slug }];
+    held.set(item.id, findings);
+    recordException({ id: `exception-metadata-${item.id}-${clock.valueOf()}`, candidateId: item.id, decision: 'SKIPPED_UNSAFE_SEARCH_METADATA', findings, createdAt: nowIso(clock), blocksOtherWork: false, clientActionRequired: false });
+    console.log(`NAMED STOP: SEARCH_METADATA_UNRESOLVED ${item.id} - held off the public site; its record stays approved and other approved content continues.`);
   }
-  result = processManifest(manifest, clock);
+  result = processManifest(manifest, clock, { hold: held.keys() });
 }
 const published = result.manifest.filter((item) => before.get(item.id) !== 'published' && item.status === 'published');
+const unknownStatus = result.manifest.filter((item) => !MANIFEST_STATUSES.includes(item.status));
+if (unknownStatus.length) throw new Error(`Refusing to write manifest statuses outside scripts/publishing/manifest_statuses.js: ${unknownStatus.map((item) => `${item.id}=${item.status}`).join(', ')}`);
 writeJsonAtomic('data/admin/content_manifest.json', result.manifest);
 writeJsonAtomic('data/autonomy/exceptions.json', exceptions);
 const receipt = {
@@ -103,7 +111,7 @@ const receipt = {
     sources: item.autonomy?.sources || [],
     internalLinks: item.autonomy?.internalLinks || []
   })),
-  skipped: due.filter((item) => item.status === 'skipped_unsafe').map((item) => ({ id: item.id, findings: item.skipReason })),
+  skipped: [...held].map(([id, findings]) => ({ id, findings })),
   awaitingHumanApproval: awaitingApproval.map((item) => ({ id: item.id, route: item.slug, scheduledAt: item.scheduledAt })),
   changed: result.changed
 };
