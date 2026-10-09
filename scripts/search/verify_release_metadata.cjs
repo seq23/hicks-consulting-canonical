@@ -5,8 +5,55 @@ const path = require('node:path');
 const assert = require('node:assert/strict');
 const { spawnSync } = require('node:child_process');
 
+// A live page must never be made "unresolvable" by pages that are only queued.
+// 8 Oct 2026: the first released page of a templated series shared its legacy
+// description with 42 queued siblings; judged together, the live page counted as
+// boilerplate, could not be re-derived, and the whole release lane threw. This
+// fixture is that shape in miniature: one incumbent and three newcomers carrying
+// the same description and no other copy. The incumbent must stay resolved and
+// untouched, and every newcomer must be held instead. The control run (the
+// newcomers not declared as releasing) must reproduce the defect, so the fixture
+// is proven to reach it.
+function verifyIncumbentPriority() {
+  const { applySearchMetadata } = require('./apply_search_metadata.js');
+  const lib = require('../lib/search_metadata');
+  const repo = process.cwd();
+  const root = fs.mkdtempSync(path.join(os.tmpdir(), 'hicks-incumbent-priority-'));
+  const shared = 'Consider a more compassionate way to understand overload and depleted capacity, what it can cost, and which kind of support may help next.';
+  assert.ok(lib.descriptionInRange(shared), 'Fixture description must itself be in range.');
+  const names = ['incumbent', 'queued-one', 'queued-two', 'queued-three'];
+  const manifest = names.map((name, i) => ({ id: `fixture-${name}`, status: 'published', validationPassed: true, slug: `/resources/insights/fixture-${name}/`, title: `Fixture Series Page ${i + 1} About Depleted Capacity` }));
+  // The repair reports unresolved pages on stderr; in this fixture that is the
+  // expected outcome, asserted below, so it is captured rather than printed.
+  const quiet = (fn) => { const saved = [console.log, console.error]; console.log = console.error = () => {}; try { return fn(); } finally { [console.log, console.error] = saved; } };
+  try {
+    process.chdir(root);
+    fs.writeFileSync('sitemap.xml', `<urlset><url><loc>https://www.hicksconsulting.org${manifest[0].slug}</loc></url></urlset>`);
+    for (const item of manifest) {
+      const dir = path.join(root, 'pages', item.slug);
+      fs.mkdirSync(dir, { recursive: true });
+      fs.writeFileSync(path.join(dir, 'index.html'), `<html><head><title>${lib.searchTitle(item.title)}</title><meta content="${shared}" name="description"/></head><body><div class="short-answer">${shared}</div></body></html>`);
+    }
+    const incumbentFile = path.join(root, 'pages', manifest[0].slug, 'index.html');
+    const original = fs.readFileSync(incumbentFile, 'utf8');
+    const releasing = manifest.slice(1).map((item) => item.slug);
+    const fixed = quiet(() => applySearchMetadata({ manifest, allowUnresolved: true, releasing }));
+    assert.equal(fixed.examined, manifest.length, `Incumbent-priority fixture examined ${fixed.examined} page(s), expected ${manifest.length}; it checked nothing.`);
+    assert.ok(!fixed.unresolved.includes(manifest[0].slug), 'A live page was made unresolvable by pages that are only queued (the 8 Oct 2026 release-lane failure).');
+    assert.deepEqual([...fixed.unresolved].sort(), [...releasing].sort(), 'Queued pages that cannot be made distinct from a live page must be held, every one of them.');
+    assert.equal(fs.readFileSync(incumbentFile, 'utf8'), original, 'A compliant live page was rewritten because of queued pages.');
+    const control = quiet(() => applySearchMetadata({ manifest, allowUnresolved: true, check: true }));
+    assert.ok(control.unresolved.includes(manifest[0].slug), 'Control lost: judged without the releasing set the fixture no longer reproduces the defect, so it proves nothing.');
+    return manifest.length;
+  } finally {
+    process.chdir(repo);
+    fs.rmSync(root, { recursive: true, force: true });
+  }
+}
+
 // Run the real publisher against the queued calendar, never the working tree.
 function verifyReleaseMetadata() {
+  const fixturePages = verifyIncumbentPriority();
   const repo = process.cwd();
   const root = fs.mkdtempSync(path.join(os.tmpdir(), 'hicks-release-metadata-'));
   try {
@@ -61,8 +108,8 @@ function verifyReleaseMetadata() {
     assert.equal(fs.readFileSync(manifestPath, 'utf8'), stable);
     const repaired = run('scripts/search/apply_search_metadata.js');
     assert.match(repaired.stdout, /0 rewritten/);
-    console.log(`Release metadata regression OK: ${eligible.length} queued calendar items examined, ${released.length} safe releases, ${skipped} explicitly recorded unsafe skips; public metadata valid, human gate preserved, repeat release idempotent.`);
+    console.log(`Release metadata regression OK: incumbent-priority fixture held ${fixturePages - 1} queued page(s) and left the live one untouched; ${eligible.length} queued calendar items examined, ${released.length} safe releases, ${skipped} explicitly recorded unsafe skips; public metadata valid, human gate preserved, repeat release idempotent.`);
   } finally { fs.rmSync(root, { recursive: true, force: true }); }
 }
-module.exports = { verifyReleaseMetadata };
+module.exports = { verifyReleaseMetadata, verifyIncumbentPriority };
 if (require.main === module) verifyReleaseMetadata();

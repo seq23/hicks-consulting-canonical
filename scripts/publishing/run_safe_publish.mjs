@@ -59,14 +59,18 @@ const before = new Map(manifest.map((item) => [item.id, item.status]));
 let result = processManifest(manifest, clock);
 // Legacy queued HTML predates the current renderer. Normalize the prospective
 // public corpus before persisting release state; do not touch unapproved pages.
+// Pages already live are judged against the live site only; the pages this run
+// would release are judged after them, so a queued page can be held but can
+// never make a published page "unresolvable" (scripts/search/apply_search_metadata.js).
+const releasing = result.manifest.filter((item) => item.status === 'published' && before.get(item.id) !== 'published').map((item) => item.publicPath || item.slug);
 const metadata = result.publishedCount
-  ? applySearchMetadata({ manifest: result.manifest, allowUnresolved: true })
+  ? applySearchMetadata({ manifest: result.manifest, allowUnresolved: true, releasing })
   : { unresolved: [] };
 if (metadata.unresolved.length) {
   const routes = new Set(metadata.unresolved);
   // A newly due legacy page with no safe metadata stays off the public site.
   // A broken already-published page remains a real blocker, never a quiet skip.
-  if (manifest.some((item) => item.status === 'published' && routes.has(item.publicPath || item.slug))) {
+  if (manifest.some((item) => before.get(item.id) === 'published' && routes.has(item.publicPath || item.slug))) {
     throw new Error('Search metadata repair failed for an already-published page.');
   }
   for (const item of due) {
