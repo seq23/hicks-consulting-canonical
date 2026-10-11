@@ -33,7 +33,7 @@ if(subjects.some(item => item && /psychologytoday\.com\/us\/therapists\/monika-h
 if(!subjects.some(item => item && /growtherapy\.com/.test(item.url || ''))) fail('Monika Person must include Grow Therapy external evidence.');
 if(!subjects.some(item => item && /eventbrite\.com/.test(item.url || ''))) fail('Monika Person must include current speaking-event evidence.');
 if(/\b\d+\s+years?\s+(?:of\s+)?experience\b/i.test(person.description || '')) fail('Person description must not encode a precise years-of-experience claim without explicit verification.');
-if(orgSchema['@context'] !== 'https://schema.org' || orgSchema['@type'] !== 'Organization') fail('Hicks Consulting schema must be a schema.org Organization.');
+if(orgSchema['@context'] !== 'https://schema.org' || ![].concat(orgSchema['@type']).includes('Organization') || orgSchema['@id'] !== 'https://www.hicksconsulting.org/#organization') fail('Hicks Consulting schema must be a schema.org Organization (an @type array that includes Organization counts) with the canonical #organization @id.');
 if(orgSchema['@id'] !== 'https://www.hicksconsulting.org/#organization') fail('Hicks Consulting canonical Organization @id is incorrect.');
 if(orgSchema.name !== 'Hicks Consulting') fail('Hicks Consulting canonical Organization name is incorrect.');
 if(orgSchema.employee?.['@id'] !== person['@id']) fail('Hicks Consulting Organization must reference Monika canonical Person as employee/lead.');

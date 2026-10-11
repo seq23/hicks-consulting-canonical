@@ -251,9 +251,30 @@ async function handleDigitalProductsRequest(request, env, url) {
   return null;
 }
 
+// The apex (hicksconsulting.org) is attached to this Pages project as a custom
+// domain alongside www, so before 11 Oct 2026 it answered 200 with full copies
+// of every page (canonical pointing at www). Pages _redirects cannot match on
+// host, and every request reaches this worker first, so the apex is folded into
+// www here: 301 for GET/HEAD, 308 for anything carrying a body, path and query
+// preserved. Guarded by _ops/validators/validate_apex_host_redirect.mjs and
+// checked live by scripts/verification/check_apex_redirect.mjs.
+export const APEX_HOST = 'hicksconsulting.org';
+export const CANONICAL_HOST = 'www.hicksconsulting.org';
+export function apexRedirect(request) {
+  const url = new URL(request.url);
+  if (url.hostname !== APEX_HOST) return null;
+  url.hostname = CANONICAL_HOST;
+  url.protocol = 'https:';
+  url.port = '';
+  const status = ['GET', 'HEAD'].includes(request.method) ? 301 : 308;
+  return new Response(null, { status, headers: { location: url.toString(), 'cache-control': 'public, max-age=86400' } });
+}
+
 export default {
   async fetch(request, env, ctx) {
     try {
+      const hostRedirect = apexRedirect(request);
+      if (hostRedirect) return hostRedirect;
       const url = new URL(request.url);
       const adminResponse = await handleAdminRequest(request, env, url);
       if (adminResponse) return adminResponse;

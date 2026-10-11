@@ -89,6 +89,7 @@
         "search-metadata",
         "redirect-targets",
         "search-truth-freshness",
+        "apex-host-redirect",
         "index-coverage-freshness",
         "measured-url-404"
       ]
@@ -118,7 +119,8 @@
         "sitemap-ledger-integrity",
         "llm-atlas-navigation",
         "search-metadata",
-        "redirect-targets"
+        "redirect-targets",
+        "apex-host-redirect"
       ]
     },
     "indexnow": {
@@ -239,6 +241,7 @@
       "description": "Search Console measurement half of the search loop: truth, index coverage, measured-URL 404s.",
       "checks": [
         "search-truth-freshness",
+        "apex-host-redirect",
         "index-coverage-freshness",
         "measured-url-404"
       ]

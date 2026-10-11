@@ -1,6 +1,68 @@
 {
   "schema_version": "1.0",
-  "entries": [],
-  "reason": "Empty by design: hicksconsulting.org is a client site and the client decides content. Qualifying families are recorded as proposals in demand_families.json; nothing is strengthened until the client approves one there.",
-  "approved_families": []
+  "entries": [
+    {
+      "family": "/black-therapist-memphis/",
+      "page": "https://www.hicksconsulting.org/black-therapist-memphis/",
+      "approved_at": "2026-10-11",
+      "approved_by": "site owner (not the client)",
+      "shipped_at": "2026-10-11",
+      "baseline": {
+        "window": {
+          "start_date": "2026-09-11",
+          "end_date": "2026-10-08",
+          "days": 28
+        },
+        "impressions": 226,
+        "clicks": 1,
+        "ctr": 0.4,
+        "weighted_position": 9,
+        "head_query": "black therapist memphis tn"
+      },
+      "source_file": "pages/black-therapist-memphis/index.html",
+      "changes": [
+        "title query-first: \"Black Therapist Serving Memphis, TN | Monika Hicks, LCSW\" (56 chars); og/twitter titles and meta description aligned",
+        "H1 matches the title: \"Black Therapist Serving Memphis, TN\"",
+        "51-word direct answer under the H1: who, where (Memphis and Tennessee, virtual), what she treats, how to book",
+        "question-phrased H2s from measured queries: black therapist Memphis TN, black woman therapist, black therapist near me",
+        "visible trust facts the site already states: LCSW and PLLC, MSSW UT Knoxville 2017 and BS MTSU, culturally aware approach, virtual-only format, private-pay fees and superbill, hours",
+        "visible FAQ of 6 with exactly one matching FAQPage; Person schema linked to the site entity @id with the LCSW credential",
+        "booking CTAs carry ?ref=black-therapist-memphis on the SimplePractice consult link"
+      ],
+      "measure": "28-day impressions, CTR and weighted position for this family in demand_families.json, reviewed from the 2026-11-08 window. Fallback: if CTR is still below 1% at position <= 10 then, rewrite the title and direct answer around the next-largest query (\"black therapist near me\")."
+    },
+    {
+      "family": "/",
+      "page": "https://www.hicksconsulting.org/",
+      "approved_at": "2026-10-11",
+      "approved_by": "site owner (not the client)",
+      "shipped_at": "2026-10-11",
+      "baseline": {
+        "window": {
+          "start_date": "2026-09-11",
+          "end_date": "2026-10-08",
+          "days": 28
+        },
+        "impressions": 144,
+        "clicks": 7,
+        "ctr": 4.9,
+        "weighted_position": 10.8,
+        "head_query": "hicks consulting"
+      },
+      "source_file": "pages/index.html",
+      "changes": [
+        "title names the practice, the therapist and the city: \"Hicks Consulting | Monika Hicks, LCSW | Therapy for Memphis, TN\" (63 chars); the pinned client H1 is kept",
+        "definition paragraph under the H1 naming Hicks Consulting, Monika Hicks, LCSW and Memphis/Tennessee",
+        "new section answering the anxiety-therapist intent, linking /anxiety-therapist-memphis/ and /therapy/",
+        "Organization/ProfessionalService and Person JSON-LD are now the site entities from data/entities/ (shared @ids, founder link)",
+        "visible FAQ of 4 with exactly one matching FAQPage"
+      ],
+      "measure": "28-day impressions, CTR and position for \"hicks consulting\", \"monika hicks\" and \"anxiety therapist\" in demand_families.json, reviewed from the 2026-11-08 window. Fallback: if \"anxiety therapist\" is still past position 30 then, /anxiety-therapist-memphis/ becomes the next strengthening target and the homepage section stays a router."
+    }
+  ],
+  "reason": "2 family(ies) approved in demand_families.json (approved_by names who decided); each approved change is recorded here when it ships.",
+  "approved_families": [
+    "/black-therapist-memphis/",
+    "/"
+  ]
 }

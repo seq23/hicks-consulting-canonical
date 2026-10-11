@@ -74,7 +74,25 @@ for (const f of families.filter((x) => !x.qualifies)) if (f.status !== 'measured
 const ledger = read('strengthening_ledger.json');
 const approved = families.filter((f) => f.status === 'approved').length;
 if (!Array.isArray(ledger.entries)) failures.push('strengthening_ledger.json has no entries array.');
-else if (ledger.entries.length && !approved) failures.push(`strengthening_ledger.json records ${ledger.entries.length} strengthening(s) but the client approved no family; client sites change only on approval.`);
+else {
+  if (ledger.entries.length && !approved) failures.push(`strengthening_ledger.json records ${ledger.entries.length} strengthening(s) but no family is approved; client sites change only on approval.`);
+  const approvedFams = new Map(families.filter((f) => f.status === 'approved').map((f) => [f.family, f]));
+  const isoDate = /^\d{4}-\d{2}-\d{2}$/;
+  for (const f of approvedFams.values()) {
+    if (!String(f.approved_by || '').trim()) failures.push(`family ${f.family} is approved with no approved_by; the record must name who decided.`);
+    if (!isoDate.test(String(f.approved_at || ''))) failures.push(`family ${f.family} is approved with no approved_at date.`);
+    if (!ledger.entries.some((e) => e.family === f.family)) failures.push(`family ${f.family} is approved but strengthening_ledger.json has no entry for it; an approval with nothing shipped is inert.`);
+  }
+  for (const e of ledger.entries) {
+    if (!approvedFams.has(e.family)) failures.push(`ledger entry ${e.family} names a family that is not approved in demand_families.json.`);
+    if (!isoDate.test(String(e.shipped_at || ''))) failures.push(`ledger entry ${e.family} has no shipped_at date.`);
+    if (!Array.isArray(e.changes) || !e.changes.length) failures.push(`ledger entry ${e.family} lists no changes.`);
+    if (!String(e.measure || '').trim()) failures.push(`ledger entry ${e.family} carries no measurement and fallback.`);
+    if (!e.source_file || !fs.existsSync(e.source_file)) failures.push(`ledger entry ${e.family} points at a missing source ${e.source_file}.`);
+  }
+  const listed = new Set(ledger.approved_families || []);
+  if (listed.size !== approvedFams.size || [...approvedFams.keys()].some((k) => !listed.has(k))) failures.push('strengthening_ledger.json approved_families does not match the approved families in demand_families.json.');
+}
 if (!String(ledger.reason || '').trim()) failures.push('strengthening_ledger.json carries no reason.');
 
 if (failures.length) fail([`Search truth freshness: ${rows.length} rows, ${targets.length} targets, ${families.length} families examined.`, ...failures]);
