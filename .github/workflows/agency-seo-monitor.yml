@@ -2,6 +2,11 @@ name: Agency SEO Monitor
 
 on:
   workflow_dispatch:
+    inputs:
+      search_truth_only:
+        description: 'Run only the Search Console measurement job (truth, coverage, sitemaps)'
+        type: boolean
+        default: false
   schedule:
     - cron: '23 14 * * *'
 
@@ -14,6 +19,7 @@ permissions:
 
 jobs:
   monitor:
+    if: ${{ !inputs.search_truth_only }}
     timeout-minutes: 5  # ~3x median 0.3m over 8 green runs; fault detector, not a budget
     runs-on: ubuntu-latest
     env:
@@ -76,3 +82,39 @@ jobs:
           path: |
             data/agency/
             data/search/
+
+  # Measurement half of the search loop (11 Oct 2026). Search Console truth,
+  # URL Inspection rotation and the sitemap record are committed daily so every
+  # later decision reads a file, not a one-off pull. Measurement only: qualifying
+  # demand families are recorded as client proposals; nothing on the site changes.
+  search-truth:
+    timeout-minutes: 10  # new job: ~139 URL inspections at 8 parallel (~6 s each) plus two Search Analytics calls; fault detector, not a budget
+    runs-on: ubuntu-latest
+    env:
+      GSC_SERVICE_ACCOUNT_JSON: ${{ secrets.GSC_SERVICE_ACCOUNT_JSON }}
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 20
+      - run: git pull --rebase origin main
+      - name: Collect Search Console truth, index coverage and sitemaps; build measured targets and family proposals
+        run: npm run search:measure
+      - name: Verify search truth, coverage and measured URLs
+        run: npm run validate:profile:search-truth
+      - name: Commit search truth
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if [[ -z "$(git status --porcelain data/search_intelligence)" ]]; then
+            echo "No search truth changes to commit."; exit 0
+          fi
+          git add data/search_intelligence
+          git commit -m "Refresh Search Console truth and index coverage"
+          for attempt in 1 2 3; do
+            git pull --rebase origin main && git push origin "HEAD:${GITHUB_REF_NAME}" && exit 0
+            sleep $((attempt * 5))
+          done
+          echo "Search truth push failed after 3 attempts." >&2; exit 1
