@@ -1194,6 +1194,48 @@
       "findingProtocol": "VALIDATION_FINDING",
       "enabled": true,
       "rationale": "On 25 Sep 2026 Bing still held /services, /about-8, /copy-of-services and /copy-of-corporate-and-origizational-t as 404. Each now 301s to the live page on the same topic. This check keeps those redirects in place and proves every internal redirect target is a page that ships (a sitemap page or a deliberately noindexed one), never the home page, with no dead or shadowing rules. It hard-fails if _redirects has zero rules."
+    },
+    {
+      "id": "search-truth-freshness",
+      "npmScript": "validate:search-truth-freshness",
+      "entrypoint": "_ops/validators/validate_search_truth_freshness.js",
+      "severity": "HARD_FAIL",
+      "blocksRelease": true,
+      "group": "agency-search",
+      "owner": "site-operations",
+      "ciInvocation": "MATRIX_ONLY",
+      "findingProtocol": "VALIDATION_FINDING",
+      "enabled": true,
+      "scope": "data/search_intelligence gsc_truth, gsc_query_history, target_query_set, demand_families, strengthening_ledger",
+      "rationale": "Until 11 Oct 2026 nothing kept Search Console query x page truth for hicksconsulting.org, so the W41 red-week diagnosis had to be rebuilt by hand. The daily search-truth job now commits it; this check fails when the truth is older than 96h, holds zero rows, a target is not a measured Search Console query, families do not account for every target impression, a qualifying family is not a client proposal, or the strengthening ledger records work the client did not approve."
+    },
+    {
+      "id": "index-coverage-freshness",
+      "npmScript": "validate:index-coverage-freshness",
+      "entrypoint": "_ops/validators/validate_index_coverage_freshness.js",
+      "severity": "HARD_FAIL",
+      "blocksRelease": true,
+      "group": "agency-search",
+      "owner": "site-operations",
+      "ciInvocation": "MATRIX_ONLY",
+      "findingProtocol": "VALIDATION_FINDING",
+      "enabled": true,
+      "scope": "data/search_intelligence/index_coverage.json against sitemap.xml",
+      "rationale": "Index state per sitemap URL (91/111 indexed on 11 Oct 2026) was only ever read by hand in Search Console. The daily URL Inspection rotation commits it; this check fails when it is older than 96h, its counts by coverageState do not match its rows, it covers under 90% of the sitemap, or nothing was inspected recently. It hard-fails on zero rows."
+    },
+    {
+      "id": "measured-url-404",
+      "npmScript": "validate:measured-url-404",
+      "entrypoint": "_ops/validators/validate_measured_url_404.js",
+      "severity": "HARD_FAIL",
+      "blocksRelease": true,
+      "group": "agency-search",
+      "owner": "site-operations",
+      "ciInvocation": "MATRIX_ONLY",
+      "findingProtocol": "VALIDATION_FINDING",
+      "enabled": true,
+      "scope": "every page URL Search Console measured in gsc_truth.json and target_query_set.json",
+      "rationale": "A URL Google shows for a query that 404s on this site throws its impressions away (the Wix-era URLs Bing held as 404 on 25 Sep 2026 were the same defect). This check proves every measured URL is served by a sitemap page, page source, static file or redirect, offline. It hard-fails on zero measured URLs."
     }
   ]
 }

@@ -87,7 +87,10 @@
         "llm-atlas-navigation",
         "content-gate-coverage",
         "search-metadata",
-        "redirect-targets"
+        "redirect-targets",
+        "search-truth-freshness",
+        "index-coverage-freshness",
+        "measured-url-404"
       ]
     },
     "ingestion": {
@@ -231,6 +234,14 @@
         "client-visible-review-queue",
         "owner-publication-attribution"
       ]
+    },
+    "search-truth": {
+      "description": "Search Console measurement half of the search loop: truth, index coverage, measured-URL 404s.",
+      "checks": [
+        "search-truth-freshness",
+        "index-coverage-freshness",
+        "measured-url-404"
+      ]
     }
   },
   "compositeScripts": {
@@ -241,6 +252,7 @@
     "validate:profile:agency": "agency",
     "validate:profile:digital-products": "digital-products",
     "validate:authority-modernization": "authority-modernization",
-    "validate:deep": "deep-autonomy"
+    "validate:deep": "deep-autonomy",
+    "validate:profile:search-truth": "search-truth"
   }
 }
