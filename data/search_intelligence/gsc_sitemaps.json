@@ -1,13 +1,16 @@
 {
   "schema_version": "1.0",
   "property": "sc-domain:hicksconsulting.org",
-  "collected_at": "2026-10-11T17:16:56.066Z",
+  "collected_at": "2026-10-11T17:32:59.813Z",
   "sitemap_url": "https://www.hicksconsulting.org/sitemap.xml",
   "state": "REGISTERED",
   "submitted_this_run": false,
   "listed_before": true,
   "listed_after": true,
-  "note": "Entries other than the www sitemap are recorded only; deleting a Search Console sitemap entry is the client's decision.",
+  "stale_rule": "http:// or apex (hicksconsulting.org) sitemap registrations are deleted; www https sitemap kept (owner decision 2026-10-11)",
+  "deleted_this_run": [
+    "https://hicksconsulting.org/sitemap.xml"
+  ],
   "sitemaps": [
     {
       "path": "https://www.hicksconsulting.org/sitemap.xml",
@@ -24,22 +27,22 @@
         }
       ],
       "role": "canonical_www"
-    },
+    }
+  ],
+  "deletions": [
     {
-      "path": "https://hicksconsulting.org/sitemap.xml",
-      "lastSubmitted": "2026-05-27T22:54:58.645Z",
-      "lastDownloaded": "2026-06-01T22:52:41.327Z",
-      "isPending": false,
-      "errors": 0,
-      "warnings": 0,
-      "contents": [
-        {
-          "type": "web",
-          "submitted": "36",
-          "indexed": "0"
-        }
+      "at": "2026-10-11T17:32:59.813Z",
+      "deleted": [
+        "https://hicksconsulting.org/sitemap.xml"
       ],
-      "role": "other_recorded_not_deleted"
+      "list_before": [
+        "https://www.hicksconsulting.org/sitemap.xml",
+        "https://hicksconsulting.org/sitemap.xml"
+      ],
+      "list_after": [
+        "https://www.hicksconsulting.org/sitemap.xml"
+      ],
+      "decided_by": "site owner, 2026-10-11 (not the client)"
     }
   ]
 }
