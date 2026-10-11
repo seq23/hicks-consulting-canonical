@@ -87,7 +87,8 @@ export function api(token) {
       method: 'POST', headers, body: JSON.stringify({ inspectionUrl: url, siteUrl: PROPERTY, languageCode: 'en-US' })
     }, 3),
     listSitemaps: () => fetchJson(`https://www.googleapis.com/webmasters/v3/sites/${site}/sitemaps`, { headers }),
-    submitSitemap: (feed) => fetchJson(`https://www.googleapis.com/webmasters/v3/sites/${site}/sitemaps/${encodeURIComponent(feed)}`, { method: 'PUT', headers })
+    submitSitemap: (feed) => fetchJson(`https://www.googleapis.com/webmasters/v3/sites/${site}/sitemaps/${encodeURIComponent(feed)}`, { method: 'PUT', headers }),
+    deleteSitemap: (feed) => fetchJson(`https://www.googleapis.com/webmasters/v3/sites/${site}/sitemaps/${encodeURIComponent(feed)}`, { method: 'DELETE', headers })
   };
 }
 

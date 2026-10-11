@@ -9,9 +9,11 @@
 //
 // This is a CLIENT site: the client decides content. A qualifying family is
 // therefore recorded with status "proposal" and a one-line proposed change, and
-// nothing is strengthened. The client approves from this file by setting
-// status "approved" (a later run keeps that status); until then
-// strengthening_ledger.json stays empty and says why.
+// nothing is strengthened until it is approved in this file: status "approved"
+// with approved_by, approved_at and approval_note (a later run keeps all four).
+// Approval comes from the client or, as on 11 Oct 2026, from the site owner on
+// her own decision, and approved_by says which; strengthening_ledger.json records
+// each approved change when it ships.
 import { SI_DIR, readJson, writeJson } from './lib/gsc_client.mjs';
 
 const MIN_IMPRESSIONS = 20;
@@ -59,6 +61,7 @@ for (const [i, f] of families.entries()) {
     f.status = kept ? kept.status : 'proposal';
     if (kept?.approved_by) f.approved_by = kept.approved_by;
     if (kept?.approved_at) f.approved_at = kept.approved_at;
+    if (kept?.approval_note) f.approval_note = kept.approval_note;
     const others = f.queries.slice(1, 3).map((q) => `"${q.query}"`).join(', ');
     f.proposed_change = f.weighted_position <= 10
       ? `Lead ${f.family} with a direct answer to "${f.head_query}" in its title and first paragraph: ${f.impressions} impressions at position ${f.weighted_position} earned ${f.clicks} click(s) (${f.ctr}% CTR).`
@@ -76,7 +79,7 @@ writeJson(OUT, {
   window: set.window,
   truth_collected_at: set.truth_collected_at,
   rule: { grouping: 'one family per landing page (the page Google shows for the query)', min_impressions: MIN_IMPRESSIONS, min_share: MIN_SHARE, floor_this_window: floor, max_weighted_position: MAX_POSITION, top_n: TOP_N },
-  client_approval: 'Client site: qualifying families are PROPOSALS. Nothing is strengthened until the client sets a family\'s status to "approved" in this file.',
+  client_approval: 'Client site: qualifying families are PROPOSALS. A family is strengthened only once its status is "approved" here, with approved_by naming who decided (the client, or the site owner on her own decision) and approved_at.',
   target_count: set.target_count,
   impressions_total: total,
   family_count: families.length,
@@ -91,7 +94,7 @@ writeJson(LEDGER, {
   schema_version: '1.0',
   entries: ledger?.entries || [],
   reason: approved.length
-    ? `${approved.length} family(ies) approved by the client in demand_families.json; strengthening is recorded here only when the approved change ships.`
+    ? `${approved.length} family(ies) approved in demand_families.json (approved_by names who decided); each approved change is recorded here when it ships.`
     : 'Empty by design: hicksconsulting.org is a client site and the client decides content. Qualifying families are recorded as proposals in demand_families.json; nothing is strengthened until the client approves one there.',
   approved_families: approved.map((f) => f.family)
 });

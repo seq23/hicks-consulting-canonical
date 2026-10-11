@@ -83,3 +83,8 @@ jobs:
             cat "$headers"
             exit 1
           fi
+
+      - name: Check apex folds into www (301, path and query preserved)
+        env:
+          APEX_CHECK_WAIT_SECONDS: '120'
+        run: node scripts/verification/check_apex_redirect.mjs

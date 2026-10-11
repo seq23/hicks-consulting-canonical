@@ -15,12 +15,12 @@
     "max_weighted_position": 40,
     "top_n": 12
   },
-  "client_approval": "Client site: qualifying families are PROPOSALS. Nothing is strengthened until the client sets a family's status to \"approved\" in this file.",
+  "client_approval": "Client site: qualifying families are PROPOSALS. A family is strengthened only once its status is \"approved\" here, with approved_by naming who decided (the client, or the site owner on her own decision) and approved_at.",
   "target_count": 76,
   "impressions_total": 406,
   "family_count": 13,
-  "proposal_count": 2,
-  "approved_count": 0,
+  "proposal_count": 0,
+  "approved_count": 2,
   "families": [
     {
       "family": "/black-therapist-memphis/",
@@ -251,8 +251,11 @@
       ],
       "rank": 1,
       "qualifies": true,
-      "status": "proposal",
-      "proposed_change": "Lead /black-therapist-memphis/ with a direct answer to \"black therapist memphis tn\" in its title and first paragraph: 226 impressions at position 9 earned 1 click(s) (0.4% CTR)."
+      "status": "approved",
+      "proposed_change": "Lead /black-therapist-memphis/ with a direct answer to \"black therapist memphis tn\" in its title and first paragraph: 226 impressions at position 9 earned 1 click(s) (0.4% CTR).",
+      "approved_by": "site owner (not the client)",
+      "approved_at": "2026-10-11",
+      "approval_note": "Site owner decided on 2026-10-11 to strengthen both qualifying families now rather than wait on a client flag. Not a client decision; the client did not approve or author this change."
     },
     {
       "family": "/",
@@ -423,8 +426,11 @@
       ],
       "rank": 2,
       "qualifies": true,
-      "status": "proposal",
-      "proposed_change": "Add a section to / that answers \"hicks consulting\" and \"anxiety therapist\", \"monika hicks\": 144 impressions at position 10.8, below page one."
+      "status": "approved",
+      "proposed_change": "Add a section to / that answers \"hicks consulting\" and \"anxiety therapist\", \"monika hicks\": 144 impressions at position 10.8, below page one.",
+      "approved_by": "site owner (not the client)",
+      "approved_at": "2026-10-11",
+      "approval_note": "Site owner decided on 2026-10-11 to strengthen both qualifying families now rather than wait on a client flag. Not a client decision; the client did not approve or author this change."
     },
     {
       "family": "/resources/articles/the-quiet-anger-that-builds-when-you-are-always-the-reliable-one/",

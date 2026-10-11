@@ -1210,6 +1210,20 @@
       "rationale": "Until 11 Oct 2026 nothing kept Search Console query x page truth for hicksconsulting.org, so the W41 red-week diagnosis had to be rebuilt by hand. The daily search-truth job now commits it; this check fails when the truth is older than 96h, holds zero rows, a target is not a measured Search Console query, families do not account for every target impression, a qualifying family is not a client proposal, or the strengthening ledger records work the client did not approve."
     },
     {
+      "id": "apex-host-redirect",
+      "npmScript": "validate:apex-host-redirect",
+      "entrypoint": "_ops/validators/validate_apex_host_redirect.mjs",
+      "severity": "HARD_FAIL",
+      "blocksRelease": true,
+      "group": "agency-search",
+      "owner": "site-operations",
+      "ciInvocation": "MATRIX_ONLY",
+      "findingProtocol": "VALIDATION_FINDING",
+      "enabled": true,
+      "scope": "worker/_worker.js apex fold, sitemap.xml and robots.txt hosts, postdeploy-smoke live check, data/search_intelligence/gsc_sitemaps.json stale registrations",
+      "rationale": "Until 11 Oct 2026 https://hicksconsulting.org/<path> served 200 copies of every page with a www canonical and Search Console held a stale apex sitemap. The worker now 301s the apex to www (path and query kept); this check runs the worker against apex requests, requires every sitemap URL on www, requires the live post-deploy curl check to be wired, and fails if a stale http/apex sitemap registration is still listed once the deleting collector has run."
+    },
+    {
       "id": "index-coverage-freshness",
       "npmScript": "validate:index-coverage-freshness",
       "entrypoint": "_ops/validators/validate_index_coverage_freshness.js",
