@@ -4,7 +4,7 @@
   "profile": "all",
   "max_attempts": 3,
   "dry_run": false,
-  "generated_at": "2026-10-04T11:03:25.423Z",
+  "generated_at": "2026-10-11T09:24:03.268Z",
   "status": "CLEAN",
   "safe_to_push": true,
   "registered_repairs": [
@@ -67,6 +67,12 @@
       "severity": "STRONG_WARNING",
       "blocking": false,
       "repair_command": null
+    },
+    {
+      "id": "discovery-gap-decisions-due",
+      "severity": "STRONG_WARNING",
+      "blocking": false,
+      "repair_command": null
     }
   ],
   "attempts": [
@@ -86,6 +92,11 @@
         },
         {
           "id": "content-pattern-contract",
+          "severity": "STRONG_WARNING",
+          "reason": ""
+        },
+        {
+          "id": "discovery-gap-decisions-due",
           "severity": "STRONG_WARNING",
           "reason": ""
         }
