@@ -1,0 +1,326 @@
+{
+  "schema_version": "1.0",
+  "site": "sc-domain:hicksconsulting.org",
+  "week": "2026-W41",
+  "trigger": "seq23/local-guides-citation-velocity#185",
+  "generated_at": "2026-10-11",
+  "source": "Search Console API searchanalytics, dataState=final, pulled 2026-10-11",
+  "verdict": "VOLATILITY_NO_DEFECT",
+  "cause": "The prior week (Sep 25-Oct 1, 569) was a one-week spike, not the baseline. /resources/ article and insight pages, released or edited Sep 22-25 and re-titled with sitemap lastmod refreshed by the Sep 25 metadata pass (PR #30), drew 317 page-impressions that week (mostly anonymised long-tail, positions 4-7) while Google recrawled and tested them; that exposure ended the next week (68; 33 URLs fell to 0, 158 impressions). Core service pages held: 362 -> 286 page-impressions, homepage position improved 7.8 -> 5.0, property clicks 6 -> 7. W41 (305) is back on the preceding baseline (Sep 4-24 weeks: 243, 312, 393).",
+  "weekly_impressions": [
+    {
+      "start": "2026-08-21",
+      "end": "2026-08-27",
+      "impressions": 136
+    },
+    {
+      "start": "2026-08-28",
+      "end": "2026-09-03",
+      "impressions": 316
+    },
+    {
+      "start": "2026-09-04",
+      "end": "2026-09-10",
+      "impressions": 243
+    },
+    {
+      "start": "2026-09-11",
+      "end": "2026-09-17",
+      "impressions": 312
+    },
+    {
+      "start": "2026-09-18",
+      "end": "2026-09-24",
+      "impressions": 393
+    },
+    {
+      "start": "2026-09-25",
+      "end": "2026-10-01",
+      "impressions": 569
+    },
+    {
+      "start": "2026-10-02",
+      "end": "2026-10-08",
+      "impressions": 305
+    }
+  ],
+  "split": {
+    "resources_pages": {
+      "prior": 317,
+      "cur": 68
+    },
+    "core_pages": {
+      "prior": 362,
+      "cur": 286
+    },
+    "apex_host_urls": {
+      "prior": 66,
+      "cur": 27
+    },
+    "query_attributed": {
+      "prior": 91,
+      "cur": 72
+    },
+    "clicks": {
+      "prior": 6,
+      "cur": 8
+    },
+    "note": "page-dimension sums count each URL shown (679/354); property totals are 569/305"
+  },
+  "top_losing_pages": [
+    {
+      "page": "https://www.hicksconsulting.org/",
+      "impr_prior": 146,
+      "impr_cur": 116,
+      "pos_prior": 7.8,
+      "pos_cur": 5.0,
+      "clicks_prior": 4,
+      "clicks_cur": 4,
+      "live_status": 200,
+      "canonical": "self (www)",
+      "noindex": false,
+      "in_sitemap": true,
+      "git_changes_3wk": "see report"
+    },
+    {
+      "page": "https://www.hicksconsulting.org/resources/articles/how-coaching-can-help-when-you-want-to-move-differently-without-starting-over/",
+      "impr_prior": 30,
+      "impr_cur": 1,
+      "pos_prior": 6.1,
+      "pos_cur": 4,
+      "clicks_prior": 0,
+      "clicks_cur": 0,
+      "live_status": 200,
+      "canonical": "self (www)",
+      "noindex": false,
+      "in_sitemap": true,
+      "git_changes_3wk": "2026-09-25 PR #30 metadata/title pass only"
+    },
+    {
+      "page": "https://www.hicksconsulting.org/resources/insights/the-quiet-anger-that-builds-when-you-are-always-the-reliable-one-a-gentler-truth-to-c/",
+      "impr_prior": 27,
+      "impr_cur": 1,
+      "pos_prior": 5.4,
+      "pos_cur": 10,
+      "clicks_prior": 0,
+      "clicks_cur": 0,
+      "live_status": 200,
+      "canonical": "self (www)",
+      "noindex": false,
+      "in_sitemap": true,
+      "git_changes_3wk": "2026-09-25 PR #30 metadata/title pass only"
+    },
+    {
+      "page": "https://hicksconsulting.org/resources/articles/the-workplace-habits-that-keep-high-functioning-women-drained/",
+      "impr_prior": 23,
+      "impr_cur": 1,
+      "pos_prior": 5.9,
+      "pos_cur": 7,
+      "clicks_prior": 0,
+      "clicks_cur": 0,
+      "live_status": 200,
+      "canonical": "self (www)",
+      "noindex": false,
+      "in_sitemap": true,
+      "git_changes_3wk": "2026-09-25 PR #30 metadata/title pass only"
+    },
+    {
+      "page": "https://www.hicksconsulting.org/black-therapist-memphis/",
+      "impr_prior": 98,
+      "impr_cur": 84,
+      "pos_prior": 9.0,
+      "pos_cur": 8.3,
+      "clicks_prior": 2,
+      "clicks_cur": 2,
+      "live_status": 200,
+      "canonical": "self (www)",
+      "noindex": false,
+      "in_sitemap": true,
+      "git_changes_3wk": "see report"
+    },
+    {
+      "page": "https://www.hicksconsulting.org/resources/articles/the-quiet-anger-that-builds-when-you-are-always-the-reliable-one/",
+      "impr_prior": 16,
+      "impr_cur": 2,
+      "pos_prior": 5.2,
+      "pos_cur": 2.5,
+      "clicks_prior": 0,
+      "clicks_cur": 0,
+      "live_status": 200,
+      "canonical": "self (www)",
+      "noindex": false,
+      "in_sitemap": true,
+      "git_changes_3wk": "2026-09-25 PR #30 metadata/title pass only"
+    },
+    {
+      "page": "https://www.hicksconsulting.org/resources/articles/the-difference-between-being-busy-and-being-emotionally-maxed-out/",
+      "impr_prior": 17,
+      "impr_cur": 3,
+      "pos_prior": 4.6,
+      "pos_cur": 8.3,
+      "clicks_prior": 0,
+      "clicks_cur": 0,
+      "live_status": 200,
+      "canonical": "self (www)",
+      "noindex": false,
+      "in_sitemap": true,
+      "git_changes_3wk": "2026-09-25 PR #30 metadata/title pass only"
+    },
+    {
+      "page": "https://www.hicksconsulting.org/resources/insights/the-workplace-habits-that-keep-high-functioning-women-drained-why-women-minimize-it/",
+      "impr_prior": 13,
+      "impr_cur": 1,
+      "pos_prior": 5.5,
+      "pos_cur": 2,
+      "clicks_prior": 0,
+      "clicks_cur": 0,
+      "live_status": 200,
+      "canonical": "self (www)",
+      "noindex": false,
+      "in_sitemap": true,
+      "git_changes_3wk": "2026-09-25 PR #30 metadata/title pass only"
+    },
+    {
+      "page": "https://www.hicksconsulting.org/therapy/",
+      "impr_prior": 18,
+      "impr_cur": 6,
+      "pos_prior": 6.7,
+      "pos_cur": 14.7,
+      "clicks_prior": 0,
+      "clicks_cur": 0,
+      "live_status": 200,
+      "canonical": "self (www)",
+      "noindex": false,
+      "in_sitemap": true,
+      "git_changes_3wk": "see report"
+    },
+    {
+      "page": "https://www.hicksconsulting.org/resources/guides/boundaries-people-pleasing-and-the-fear-of-letting-people-down/",
+      "impr_prior": 11,
+      "impr_cur": 0,
+      "pos_prior": 6.8,
+      "pos_cur": null,
+      "clicks_prior": 0,
+      "clicks_cur": 0,
+      "live_status": 200,
+      "canonical": "self (www)",
+      "noindex": false,
+      "in_sitemap": true,
+      "git_changes_3wk": "2026-09-25 PR #30 metadata/title pass only"
+    },
+    {
+      "page": "https://hicksconsulting.org/resources/insights/the-workplace-habits-that-keep-high-functioning-women-drained-a-gentler-truth-to-cons/",
+      "impr_prior": 9,
+      "impr_cur": 0,
+      "pos_prior": 5.3,
+      "pos_cur": null,
+      "clicks_prior": 0,
+      "clicks_cur": 0,
+      "live_status": 200,
+      "canonical": "self (www)",
+      "noindex": false,
+      "in_sitemap": true,
+      "git_changes_3wk": "2026-09-25 PR #30 metadata/title pass only"
+    },
+    {
+      "page": "https://www.hicksconsulting.org/resources/insights/how-coaching-can-help-when-you-want-to-move-differently-without-starting-over-a-gentl/",
+      "impr_prior": 9,
+      "impr_cur": 0,
+      "pos_prior": 6.8,
+      "pos_cur": null,
+      "clicks_prior": 0,
+      "clicks_cur": 0,
+      "live_status": 200,
+      "canonical": "self (www)",
+      "noindex": false,
+      "in_sitemap": true,
+      "git_changes_3wk": "2026-09-25 PR #30 metadata/title pass only"
+    },
+    {
+      "page": "https://www.hicksconsulting.org/resources/insights/how-coaching-can-help-when-you-want-to-move-differently-without-starting-over-why-wom/",
+      "impr_prior": 9,
+      "impr_cur": 0,
+      "pos_prior": 3.9,
+      "pos_cur": null,
+      "clicks_prior": 0,
+      "clicks_cur": 0,
+      "live_status": 200,
+      "canonical": "self (www)",
+      "noindex": false,
+      "in_sitemap": true,
+      "git_changes_3wk": "2026-09-25 PR #30 metadata/title pass only"
+    },
+    {
+      "page": "https://www.hicksconsulting.org/resources/articles/when-success-stops-feeling-like-proof-and-starts-feeling-like-pressure/",
+      "impr_prior": 8,
+      "impr_cur": 0,
+      "pos_prior": 5.9,
+      "pos_cur": null,
+      "clicks_prior": 0,
+      "clicks_cur": 0,
+      "live_status": 200,
+      "canonical": "self (www)",
+      "noindex": false,
+      "in_sitemap": true,
+      "git_changes_3wk": "2026-09-25 PR #30 metadata/title pass only"
+    },
+    {
+      "page": "https://www.hicksconsulting.org/contact/",
+      "impr_prior": 14,
+      "impr_cur": 6,
+      "pos_prior": 5.1,
+      "pos_cur": 5.5,
+      "clicks_prior": 0,
+      "clicks_cur": 0,
+      "live_status": 200,
+      "canonical": "self (www)",
+      "noindex": false,
+      "in_sitemap": true,
+      "git_changes_3wk": "see report"
+    }
+  ],
+  "top_losing_queries": [
+    {
+      "query": "black therapist memphis tn",
+      "impr_prior": 21,
+      "impr_cur": 14
+    },
+    {
+      "query": "anxiety therapist",
+      "impr_prior": 12,
+      "impr_cur": 0
+    },
+    {
+      "query": "black therapist near me",
+      "impr_prior": 10,
+      "impr_cur": 8
+    },
+    {
+      "query": "hicks consulting",
+      "impr_prior": 9,
+      "impr_cur": 12
+    },
+    {
+      "query": "monika hicks",
+      "impr_prior": 5,
+      "impr_cur": 3
+    },
+    {
+      "query": "black woman therapist near me",
+      "impr_prior": 3,
+      "impr_cur": 0
+    }
+  ],
+  "checks": {
+    "losing_pages": "top 20 losers: all 200 on www, self-canonical to www (apex copies also canonical to www), no meta robots/X-Robots-Tag noindex, all in sitemap.xml; 40 of 57 declining pages 'Submitted and indexed' in the 2026-10-11 coverage run",
+    "sitemap": "NOT stale. Live www sitemap = repo sitemap.xml (byte-identical), 139 URLs, newest lastmod 2026-10-09, Google downloaded it 2026-10-10 (0 errors). The 135 repo pages absent from it are 54 consolidated 301s and 81 unreleased queue pages that 404 live, so the sitemap equals the live indexable set. The 'stale' flag is Search Console's second registration of https://hicksconsulting.org/sitemap.xml, last downloaded 2026-06-01 (36 URLs then); that URL now serves the same 139-URL file, so it is a stale console record, not a stale sitemap.",
+    "robots": "robots.txt allows Googlebot; no change in 3 weeks",
+    "titles": "PR #30 (2026-09-25) retitled resource pages; positions of those pages when shown stayed 2-10 the following week, so no ranking regression is visible",
+    "portfolio": "Portfolio total flat 1835 -> 1848 (W41 report); excluding Hicks 1266 -> 1543 (+22%); 10 GREEN / 9 WATCH / 4 RED. Not a portfolio-wide dip.",
+    "gbp": "Google Business Profile 'Verification required' is on the owner's account; it affects Maps/local pack, not these organic page impressions (Maps impressions are not in Search Console). Not the cause."
+  },
+  "pre_existing_not_changed_this_week": [
+    "apex hicksconsulting.org serves 200 copies (canonical to www) rather than 301; Google reads them as 'Alternate page with proper canonical tag'; unchanged in repo history, not a W41 cause"
+  ],
+  "action": "none: no defect found; no PR"
+}
