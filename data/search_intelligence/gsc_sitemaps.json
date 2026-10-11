@@ -1,0 +1,45 @@
+{
+  "schema_version": "1.0",
+  "property": "sc-domain:hicksconsulting.org",
+  "collected_at": "2026-10-11T17:10:07.805Z",
+  "sitemap_url": "https://www.hicksconsulting.org/sitemap.xml",
+  "state": "REGISTERED",
+  "submitted_this_run": false,
+  "listed_before": true,
+  "listed_after": true,
+  "note": "Entries other than the www sitemap are recorded only; deleting a Search Console sitemap entry is the client's decision.",
+  "sitemaps": [
+    {
+      "path": "https://www.hicksconsulting.org/sitemap.xml",
+      "lastSubmitted": "2026-10-11T13:29:10.245Z",
+      "lastDownloaded": "2026-10-11T13:29:46.655Z",
+      "isPending": false,
+      "errors": 0,
+      "warnings": 0,
+      "contents": [
+        {
+          "type": "web",
+          "submitted": "139",
+          "indexed": "0"
+        }
+      ],
+      "role": "canonical_www"
+    },
+    {
+      "path": "https://hicksconsulting.org/sitemap.xml",
+      "lastSubmitted": "2026-05-27T22:54:58.645Z",
+      "lastDownloaded": "2026-06-01T22:52:41.327Z",
+      "isPending": false,
+      "errors": 0,
+      "warnings": 0,
+      "contents": [
+        {
+          "type": "web",
+          "submitted": "36",
+          "indexed": "0"
+        }
+      ],
+      "role": "other_recorded_not_deleted"
+    }
+  ]
+}
