@@ -1,7 +1,7 @@
 {
   "schema_version": "2.0",
-  "receipt_id": "2026-10-11T17-33-20.062Z-38159975101",
-  "attempted_at": "2026-10-11T17:33:20.062Z",
+  "receipt_id": "2026-10-12T13-50-48.569Z-38258541292",
+  "attempted_at": "2026-10-12T13:50:48.569Z",
   "publication_trigger": "ONLY_AFTER_EXISTING_CONTENT_PUBLISH_WORKFLOW_SUCCEEDS",
   "chain": [
     "successful_publish",
@@ -15,14 +15,14 @@
   "sitemap_refresh": {
     "status": "SUCCESS",
     "sitemap_url": "https://www.hicksconsulting.org/sitemap.xml",
-    "sitemap_sha256": "3c9c6946df1ef47190cc8caa22426b393f6357816b3526538bc284aa7cfd2945",
-    "url_count": 139
+    "sitemap_sha256": "3cfbf765eaa833ada77f27afcc3baa5ca54aa25ab2fada3c4c1356ee50e827d5",
+    "url_count": 140
   },
   "indexnow": {
     "status": "SUCCESS",
     "attempted": true,
     "http_status": 200,
-    "submitted_urls": 139,
+    "submitted_urls": 140,
     "key_location": "https://www.hicksconsulting.org/indexnow.txt"
   },
   "gsc_sitemap_submission": {
@@ -46,7 +46,7 @@
         "verdict": "PASS",
         "coverage_state": "Submitted and indexed",
         "indexing_state": "INDEXING_ALLOWED",
-        "last_crawl_time": "2026-10-06T06:22:35Z"
+        "last_crawl_time": "2026-10-12T02:19:54Z"
       },
       {
         "url": "https://www.hicksconsulting.org/therapy/",
@@ -125,7 +125,7 @@
         "status": "SUCCESS",
         "http_status": 200,
         "verdict": "NEUTRAL",
-        "coverage_state": "Discovered - currently not indexed",
+        "coverage_state": "URL is unknown to Google",
         "indexing_state": "INDEXING_STATE_UNSPECIFIED",
         "last_crawl_time": null
       },
@@ -152,7 +152,7 @@
         "status": "SUCCESS",
         "http_status": 200,
         "verdict": "NEUTRAL",
-        "coverage_state": "Discovered - currently not indexed",
+        "coverage_state": "URL is unknown to Google",
         "indexing_state": "INDEXING_STATE_UNSPECIFIED",
         "last_crawl_time": null
       },
@@ -197,7 +197,7 @@
   "durable_receipt": {
     "status": "SUCCESS",
     "latest_path": "data/distribution/provider_receipt.json",
-    "history_path": "data/distribution/receipts/2026-10-11T17-33-20.062Z-38159975101.json"
+    "history_path": "data/distribution/receipts/2026-10-12T13-50-48.569Z-38258541292.json"
   },
   "observation_feedback": {
     "status": "SUCCESS",
