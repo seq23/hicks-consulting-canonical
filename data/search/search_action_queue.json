@@ -1,19 +1,19 @@
 {
   "schemaVersion": "2.0.0",
-  "generatedAt": "2026-10-11T14:33:22.863Z",
+  "generatedAt": "2026-10-12T14:44:12.011Z",
   "policy": "Hicks may autonomously apply bounded technical/search-alignment repairs. Substantive clinical claims and unsupported treatment assertions are never auto-generated from competitor content.",
   "items": [
     {
       "query": "black therapist near me",
       "primaryPage": "/black-therapist-memphis/",
-      "status": "OBSERVED",
+      "status": "PROVIDER_ERROR",
       "reasons": [
         "IMPRESSIONS_WITHOUT_CLICKS",
-        "EXACT_QUERY_NOT_IN_PRIMARY_SEARCH_SURFACES"
+        "PROVIDER_ERROR"
       ],
       "evidence": {
-        "groundedSiteSurfaced": true,
-        "groundedProviderAnswered": true,
+        "groundedSiteSurfaced": null,
+        "groundedProviderAnswered": false,
         "gscImpressions": 34,
         "gscClicks": 0,
         "gscAveragePosition": 8.38,
@@ -28,13 +28,13 @@
     {
       "query": "african american therapist near me",
       "primaryPage": "/black-therapist-memphis/",
-      "status": "OBSERVED",
+      "status": "PROVIDER_ERROR",
       "reasons": [
-        "EXACT_QUERY_NOT_IN_PRIMARY_SEARCH_SURFACES"
+        "PROVIDER_ERROR"
       ],
       "evidence": {
-        "groundedSiteSurfaced": true,
-        "groundedProviderAnswered": true,
+        "groundedSiteSurfaced": null,
+        "groundedProviderAnswered": false,
         "gscImpressions": 15,
         "gscClicks": 0,
         "gscAveragePosition": 9.33,
@@ -49,13 +49,13 @@
     {
       "query": "black mental health therapist near me",
       "primaryPage": "/black-therapist-memphis/",
-      "status": "OBSERVED",
+      "status": "PROVIDER_ERROR",
       "reasons": [
-        "EXACT_QUERY_NOT_IN_PRIMARY_SEARCH_SURFACES"
+        "PROVIDER_ERROR"
       ],
       "evidence": {
-        "groundedSiteSurfaced": true,
-        "groundedProviderAnswered": true,
+        "groundedSiteSurfaced": null,
+        "groundedProviderAnswered": false,
         "gscImpressions": 10,
         "gscClicks": 0,
         "gscAveragePosition": 8.2,
@@ -70,13 +70,13 @@
     {
       "query": "black counselors near me",
       "primaryPage": "/black-therapist-memphis/",
-      "status": "OBSERVED",
+      "status": "PROVIDER_ERROR",
       "reasons": [
-        "EXACT_QUERY_NOT_IN_PRIMARY_SEARCH_SURFACES"
+        "PROVIDER_ERROR"
       ],
       "evidence": {
-        "groundedSiteSurfaced": true,
-        "groundedProviderAnswered": true,
+        "groundedSiteSurfaced": null,
+        "groundedProviderAnswered": false,
         "gscImpressions": 8,
         "gscClicks": 0,
         "gscAveragePosition": 6.88,
@@ -91,13 +91,13 @@
     {
       "query": "african american female therapist near me",
       "primaryPage": "/black-therapist-memphis/",
-      "status": "OBSERVED",
+      "status": "PROVIDER_ERROR",
       "reasons": [
-        "EXACT_QUERY_NOT_IN_PRIMARY_SEARCH_SURFACES"
+        "PROVIDER_ERROR"
       ],
       "evidence": {
-        "groundedSiteSurfaced": true,
-        "groundedProviderAnswered": true,
+        "groundedSiteSurfaced": null,
+        "groundedProviderAnswered": false,
         "gscImpressions": 9,
         "gscClicks": 0,
         "gscAveragePosition": 8.11,
@@ -112,13 +112,13 @@
     {
       "query": "african american therapists near me",
       "primaryPage": "/black-therapist-memphis/",
-      "status": "OBSERVED",
+      "status": "PROVIDER_ERROR",
       "reasons": [
-        "EXACT_QUERY_NOT_IN_PRIMARY_SEARCH_SURFACES"
+        "PROVIDER_ERROR"
       ],
       "evidence": {
-        "groundedSiteSurfaced": true,
-        "groundedProviderAnswered": true,
+        "groundedSiteSurfaced": null,
+        "groundedProviderAnswered": false,
         "gscImpressions": 8,
         "gscClicks": 0,
         "gscAveragePosition": 9.13,
@@ -136,42 +136,21 @@
       "status": "WRONG_PAGE",
       "reasons": [
         "WRONG_HICKS_PAGE_RANKING",
-        "EXACT_QUERY_NOT_IN_PRIMARY_SEARCH_SURFACES"
+        "PROVIDER_ERROR"
       ],
       "evidence": {
-        "groundedSiteSurfaced": true,
-        "groundedProviderAnswered": true,
+        "groundedSiteSurfaced": null,
+        "groundedProviderAnswered": false,
         "gscImpressions": 6,
         "gscClicks": 0,
         "gscAveragePosition": 9.17,
         "gscPages": [
           "/black-therapist-memphis/"
         ],
-        "competitorUrls": [
-          {
-            "url": "https://www.mapquest.com/us/georgia/hicks-counseling-llc-532555911",
-            "title": "Hicks Counseling, LLC, 2480 Windy Hill Rd SE, #210, Marietta, GA 30067-8644, US - MapQuest"
-          },
-          {
-            "url": "https://www.serpanalytics.com/keyword/local+search",
-            "title": "local search"
-          },
-          {
-            "url": "https://wherewespend.com/black-therapist",
-            "title": "Find a Black Therapist Near You - Where We Spend"
-          },
-          {
-            "url": "https://www.blacktherapistsmatter.com/",
-            "title": "Find Your Black Therapist Near You | BTM - Start Your Wellness Journey Today"
-          },
-          {
-            "url": "https://hicks-corporation.socialdirect.one/",
-            "title": "https://hicks-corporation.socialdirect.one/"
-          }
-        ]
+        "competitorUrls": []
       },
-      "safeRepairEligible": true,
-      "recommendedAction": "Run bounded search-alignment repair, rebuild, then await the next external observation cycle."
+      "safeRepairEligible": false,
+      "recommendedAction": "Observe or route to content/technical review; do not invent a ranking win."
     },
     {
       "query": "black psychologist near me",
@@ -278,9 +257,9 @@
       "evidence": {
         "groundedSiteSurfaced": null,
         "groundedProviderAnswered": false,
-        "gscImpressions": 3,
+        "gscImpressions": 2,
         "gscClicks": 0,
-        "gscAveragePosition": 7.33,
+        "gscAveragePosition": 8,
         "gscPages": [
           "/black-therapist-memphis/"
         ],
@@ -347,17 +326,15 @@
     {
       "query": "black counselor near me",
       "primaryPage": "/black-therapist-memphis/",
-      "status": "OBSERVED",
+      "status": "UNKNOWN",
       "reasons": [],
       "evidence": {
         "groundedSiteSurfaced": null,
         "groundedProviderAnswered": false,
-        "gscImpressions": 1,
+        "gscImpressions": 0,
         "gscClicks": 0,
-        "gscAveragePosition": 8,
-        "gscPages": [
-          "/black-therapist-memphis/"
-        ],
+        "gscAveragePosition": 0,
+        "gscPages": [],
         "competitorUrls": []
       },
       "safeRepairEligible": false,
@@ -366,17 +343,15 @@
     {
       "query": "black couple therapist near me",
       "primaryPage": "/black-therapist-memphis/",
-      "status": "OBSERVED",
+      "status": "UNKNOWN",
       "reasons": [],
       "evidence": {
         "groundedSiteSurfaced": null,
         "groundedProviderAnswered": false,
-        "gscImpressions": 1,
+        "gscImpressions": 0,
         "gscClicks": 0,
-        "gscAveragePosition": 9,
-        "gscPages": [
-          "/black-therapist-memphis/"
-        ],
+        "gscAveragePosition": 0,
+        "gscPages": [],
         "competitorUrls": []
       },
       "safeRepairEligible": false,
@@ -892,9 +867,9 @@
       "evidence": {
         "groundedSiteSurfaced": null,
         "groundedProviderAnswered": false,
-        "gscImpressions": 64,
+        "gscImpressions": 65,
         "gscClicks": 0,
-        "gscAveragePosition": 6.52,
+        "gscAveragePosition": 6.5,
         "gscPages": [
           "/",
           "/black-therapist-memphis/"
@@ -914,15 +889,16 @@
       "evidence": {
         "groundedSiteSurfaced": null,
         "groundedProviderAnswered": false,
-        "gscImpressions": 63,
+        "gscImpressions": 68,
         "gscClicks": 5,
-        "gscAveragePosition": 3.38,
+        "gscAveragePosition": 3.62,
         "gscPages": [
           "/",
           "/corporate-speaking/",
           "/about/",
           "/coaching/",
           "/contact/",
+          "/cookie-policy/",
           "/groups/",
           "/intake-quiz/",
           "/resources/",
@@ -966,9 +942,9 @@
       "evidence": {
         "groundedSiteSurfaced": null,
         "groundedProviderAnswered": false,
-        "gscImpressions": 24,
+        "gscImpressions": 25,
         "gscClicks": 1,
-        "gscAveragePosition": 5.84,
+        "gscAveragePosition": 5.86,
         "gscPages": [
           "/",
           "/about/",
@@ -1056,7 +1032,7 @@
       "evidence": {
         "groundedSiteSurfaced": null,
         "groundedProviderAnswered": false,
-        "gscImpressions": 5,
+        "gscImpressions": 3,
         "gscClicks": 0,
         "gscAveragePosition": 4,
         "gscPages": [

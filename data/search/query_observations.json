@@ -1,372 +1,209 @@
 {
   "schemaVersion": "2.1.0",
-  "generatedAt": "2026-10-11T14:33:22.863Z",
-  "providerState": "CONNECTED",
+  "generatedAt": "2026-10-12T14:44:12.011Z",
+  "providerState": "DEGRADED",
   "provider": "openrouter_web_search",
-  "stop": null,
-  "queriesAnswered": 7,
+  "stop": {
+    "name": "SEARCH_PROVIDER_UNAVAILABLE",
+    "reason": "All 7 query observation(s) returned a provider error. Error states were recorded; no citation rate was recorded."
+  },
+  "queriesAnswered": 0,
   "truthBoundary": "These are live web-search observations and citations returned by OpenRouter's web plugin. They are not literal organic SERP positions, and a citation rate is only meaningful for observations where providerAnswered is true. Use GSC for Google-owned impressions, clicks, CTR, and average position.",
   "observations": [
     {
       "query": "black therapist near me",
       "primaryPage": "/black-therapist-memphis/",
-      "status": "ok",
-      "observedAt": "2026-10-11T14:33:22.863Z",
+      "status": "provider_error",
+      "observedAt": "2026-10-12T14:44:12.011Z",
       "provider": "openrouter_web_search",
       "model": "openai/gpt-4o-mini",
-      "observationType": "LIVE_WEB_SURFACING",
       "rankVerified": false,
-      "providerAnswered": true,
-      "citationCount": 2,
-      "siteSurfaced": true,
-      "citations": [
-        {
-          "url": "https://www.hicksconsulting.org/therapy",
-          "title": "Virtual Therapy Serving Memphis & Tennessee"
-        },
-        {
-          "url": "https://www.hicksconsulting.org/black-therapist-memphis",
-          "title": "Black Therapist Serving Memphis, TN - Hicks Consulting"
-        }
-      ],
-      "searchQueries": [],
-      "competitors": [],
+      "providerAnswered": false,
+      "citationCount": null,
+      "siteSurfaced": null,
+      "citations": [],
+      "error": "403: {\"error\":{\"message\":\"Key limit exceeded (monthly limit). Manage it using https://openrouter.ai/workspaces/default/keys/2f538cb2ded193edd0da028b75d7d7d44276fc05867d3b471b1a93fbc0e1ad92 $14.63 of $0.00 used; resets 2026-11-01T00:00:00.000Z.\",\"code\":403,\"metadata\":{\"limit_source\":\"openrouter_key_limit\",\"remedy_hint\":\"Raise or remove this API key's usage limit at https://openrouter.ai/settings/keys, or use a key without a limit.\",\"scope\":\"key_limit\",\"limit_usd\":0,\"spend_usd\":14.630497551,\"resets_at\"",
       "ownPage": {
         "route": "/black-therapist-memphis/",
         "sourceFile": "pages/black-therapist-memphis/index.html",
         "status": "ok",
-        "title": "Black Therapist Serving Memphis, TN | Hicks Consulting",
-        "description": "Virtual therapy with Monika Hicks, LCSW, a Black woman therapist serving eligible clients in Memphis and across Tennessee.",
-        "h1": "Virtual therapy with a Black woman therapist serving Memphis.",
-        "textChars": 5582,
-        "internalLinks": 32,
+        "title": "Black Therapist Serving Memphis, TN | Monika Hicks, LCSW",
+        "description": "Monika Hicks, LCSW is a Black woman therapist offering virtual therapy in Memphis and across Tennessee for anxiety, burnout and boundaries. Book online.",
+        "h1": "Black Therapist Serving Memphis, TN",
+        "textChars": 7385,
+        "internalLinks": 33,
         "canonical": ""
       },
       "diagnosis": [
-        "EXACT_QUERY_NOT_IN_PRIMARY_SEARCH_SURFACES"
+        "PROVIDER_ERROR"
       ]
     },
     {
       "query": "african american therapist near me",
       "primaryPage": "/black-therapist-memphis/",
-      "status": "ok",
-      "observedAt": "2026-10-11T14:33:22.863Z",
+      "status": "provider_error",
+      "observedAt": "2026-10-12T14:44:12.011Z",
       "provider": "openrouter_web_search",
       "model": "openai/gpt-4o-mini",
-      "observationType": "LIVE_WEB_SURFACING",
       "rankVerified": false,
-      "providerAnswered": true,
-      "citationCount": 3,
-      "siteSurfaced": true,
-      "citations": [
-        {
-          "url": "https://www.hicksconsulting.org/",
-          "title": "Hicks Consulting | Therapy for Individuals & Mental Health ..."
-        },
-        {
-          "url": "https://www.hicksconsulting.org/therapy",
-          "title": "Virtual Therapy Serving Memphis & Tennessee"
-        },
-        {
-          "url": "https://www.hicksconsulting.org/black-therapist-memphis",
-          "title": "Black Therapist Serving Memphis, TN - Hicks Consulting"
-        }
-      ],
-      "searchQueries": [],
-      "competitors": [],
+      "providerAnswered": false,
+      "citationCount": null,
+      "siteSurfaced": null,
+      "citations": [],
+      "error": "403: {\"error\":{\"message\":\"Key limit exceeded (monthly limit). Manage it using https://openrouter.ai/workspaces/default/keys/2f538cb2ded193edd0da028b75d7d7d44276fc05867d3b471b1a93fbc0e1ad92 $14.63 of $0.00 used; resets 2026-11-01T00:00:00.000Z.\",\"code\":403,\"metadata\":{\"limit_source\":\"openrouter_key_limit\",\"remedy_hint\":\"Raise or remove this API key's usage limit at https://openrouter.ai/settings/keys, or use a key without a limit.\",\"scope\":\"key_limit\",\"limit_usd\":0,\"spend_usd\":14.630497551,\"resets_at\"",
       "ownPage": {
         "route": "/black-therapist-memphis/",
         "sourceFile": "pages/black-therapist-memphis/index.html",
         "status": "ok",
-        "title": "Black Therapist Serving Memphis, TN | Hicks Consulting",
-        "description": "Virtual therapy with Monika Hicks, LCSW, a Black woman therapist serving eligible clients in Memphis and across Tennessee.",
-        "h1": "Virtual therapy with a Black woman therapist serving Memphis.",
-        "textChars": 5582,
-        "internalLinks": 32,
+        "title": "Black Therapist Serving Memphis, TN | Monika Hicks, LCSW",
+        "description": "Monika Hicks, LCSW is a Black woman therapist offering virtual therapy in Memphis and across Tennessee for anxiety, burnout and boundaries. Book online.",
+        "h1": "Black Therapist Serving Memphis, TN",
+        "textChars": 7385,
+        "internalLinks": 33,
         "canonical": ""
       },
       "diagnosis": [
-        "EXACT_QUERY_NOT_IN_PRIMARY_SEARCH_SURFACES"
+        "PROVIDER_ERROR"
       ]
     },
     {
       "query": "black mental health therapist near me",
       "primaryPage": "/black-therapist-memphis/",
-      "status": "ok",
-      "observedAt": "2026-10-11T14:33:22.863Z",
+      "status": "provider_error",
+      "observedAt": "2026-10-12T14:44:12.011Z",
       "provider": "openrouter_web_search",
       "model": "openai/gpt-4o-mini",
-      "observationType": "LIVE_WEB_SURFACING",
       "rankVerified": false,
-      "providerAnswered": true,
-      "citationCount": 2,
-      "siteSurfaced": true,
-      "citations": [
-        {
-          "url": "https://www.hicksconsulting.org/black-therapist-memphis",
-          "title": "Black Therapist Serving Memphis, TN - Hicks Consulting"
-        },
-        {
-          "url": "https://www.hicksconsulting.org/therapy",
-          "title": "Virtual Therapy Serving Memphis & Tennessee"
-        }
-      ],
-      "searchQueries": [],
-      "competitors": [],
+      "providerAnswered": false,
+      "citationCount": null,
+      "siteSurfaced": null,
+      "citations": [],
+      "error": "403: {\"error\":{\"message\":\"Key limit exceeded (monthly limit). Manage it using https://openrouter.ai/workspaces/default/keys/2f538cb2ded193edd0da028b75d7d7d44276fc05867d3b471b1a93fbc0e1ad92 $14.63 of $0.00 used; resets 2026-11-01T00:00:00.000Z.\",\"code\":403,\"metadata\":{\"limit_source\":\"openrouter_key_limit\",\"remedy_hint\":\"Raise or remove this API key's usage limit at https://openrouter.ai/settings/keys, or use a key without a limit.\",\"scope\":\"key_limit\",\"limit_usd\":0,\"spend_usd\":14.630497551,\"resets_at\"",
       "ownPage": {
         "route": "/black-therapist-memphis/",
         "sourceFile": "pages/black-therapist-memphis/index.html",
         "status": "ok",
-        "title": "Black Therapist Serving Memphis, TN | Hicks Consulting",
-        "description": "Virtual therapy with Monika Hicks, LCSW, a Black woman therapist serving eligible clients in Memphis and across Tennessee.",
-        "h1": "Virtual therapy with a Black woman therapist serving Memphis.",
-        "textChars": 5582,
-        "internalLinks": 32,
+        "title": "Black Therapist Serving Memphis, TN | Monika Hicks, LCSW",
+        "description": "Monika Hicks, LCSW is a Black woman therapist offering virtual therapy in Memphis and across Tennessee for anxiety, burnout and boundaries. Book online.",
+        "h1": "Black Therapist Serving Memphis, TN",
+        "textChars": 7385,
+        "internalLinks": 33,
         "canonical": ""
       },
       "diagnosis": [
-        "EXACT_QUERY_NOT_IN_PRIMARY_SEARCH_SURFACES"
+        "PROVIDER_ERROR"
       ]
     },
     {
       "query": "black counselors near me",
       "primaryPage": "/black-therapist-memphis/",
-      "status": "ok",
-      "observedAt": "2026-10-11T14:33:22.863Z",
+      "status": "provider_error",
+      "observedAt": "2026-10-12T14:44:12.011Z",
       "provider": "openrouter_web_search",
       "model": "openai/gpt-4o-mini",
-      "observationType": "LIVE_WEB_SURFACING",
       "rankVerified": false,
-      "providerAnswered": true,
-      "citationCount": 2,
-      "siteSurfaced": true,
-      "citations": [
-        {
-          "url": "https://www.hicksconsulting.org/therapy",
-          "title": "Virtual Therapy Serving Memphis & Tennessee"
-        },
-        {
-          "url": "https://www.hicksconsulting.org/black-therapist-memphis",
-          "title": "Black Therapist Serving Memphis, TN - Hicks Consulting"
-        }
-      ],
-      "searchQueries": [],
-      "competitors": [],
+      "providerAnswered": false,
+      "citationCount": null,
+      "siteSurfaced": null,
+      "citations": [],
+      "error": "403: {\"error\":{\"message\":\"Key limit exceeded (monthly limit). Manage it using https://openrouter.ai/workspaces/default/keys/2f538cb2ded193edd0da028b75d7d7d44276fc05867d3b471b1a93fbc0e1ad92 $14.63 of $0.00 used; resets 2026-11-01T00:00:00.000Z.\",\"code\":403,\"metadata\":{\"limit_source\":\"openrouter_key_limit\",\"remedy_hint\":\"Raise or remove this API key's usage limit at https://openrouter.ai/settings/keys, or use a key without a limit.\",\"scope\":\"key_limit\",\"limit_usd\":0,\"spend_usd\":14.630497551,\"resets_at\"",
       "ownPage": {
         "route": "/black-therapist-memphis/",
         "sourceFile": "pages/black-therapist-memphis/index.html",
         "status": "ok",
-        "title": "Black Therapist Serving Memphis, TN | Hicks Consulting",
-        "description": "Virtual therapy with Monika Hicks, LCSW, a Black woman therapist serving eligible clients in Memphis and across Tennessee.",
-        "h1": "Virtual therapy with a Black woman therapist serving Memphis.",
-        "textChars": 5582,
-        "internalLinks": 32,
+        "title": "Black Therapist Serving Memphis, TN | Monika Hicks, LCSW",
+        "description": "Monika Hicks, LCSW is a Black woman therapist offering virtual therapy in Memphis and across Tennessee for anxiety, burnout and boundaries. Book online.",
+        "h1": "Black Therapist Serving Memphis, TN",
+        "textChars": 7385,
+        "internalLinks": 33,
         "canonical": ""
       },
       "diagnosis": [
-        "EXACT_QUERY_NOT_IN_PRIMARY_SEARCH_SURFACES"
+        "PROVIDER_ERROR"
       ]
     },
     {
       "query": "african american female therapist near me",
       "primaryPage": "/black-therapist-memphis/",
-      "status": "ok",
-      "observedAt": "2026-10-11T14:33:22.863Z",
+      "status": "provider_error",
+      "observedAt": "2026-10-12T14:44:12.011Z",
       "provider": "openrouter_web_search",
       "model": "openai/gpt-4o-mini",
-      "observationType": "LIVE_WEB_SURFACING",
       "rankVerified": false,
-      "providerAnswered": true,
-      "citationCount": 6,
-      "siteSurfaced": true,
-      "citations": [
-        {
-          "url": "https://www.hicksconsulting.org/",
-          "title": "Hicks Consulting | Therapy for Individuals & Mental Health ..."
-        },
-        {
-          "url": "https://www.hicksconsulting.org/female-therapist-memphis",
-          "title": "Female Therapist in Memphis: What Gender Fit Changes, and ..."
-        },
-        {
-          "url": "https://www.hicksconsulting.org/black-therapist-memphis",
-          "title": "Black Therapist Serving Memphis, TN - Hicks Consulting"
-        },
-        {
-          "url": "https://www.hicksconsulting.org/therapy",
-          "title": "Virtual Therapy Serving Memphis & Tennessee"
-        },
-        {
-          "url": "https://www.hicksconsulting.org/therapist-near-me-memphis",
-          "title": "Therapist Near Me in Memphis: How to Find One Who Can ..."
-        },
-        {
-          "url": "https://www.hicksconsulting.org/psychologist-vs-therapist-memphis",
-          "title": "Do You Need a Psychologist, a Therapist, or a Psychiatrist?"
-        }
-      ],
-      "searchQueries": [],
-      "competitors": [],
+      "providerAnswered": false,
+      "citationCount": null,
+      "siteSurfaced": null,
+      "citations": [],
+      "error": "403: {\"error\":{\"message\":\"Key limit exceeded (monthly limit). Manage it using https://openrouter.ai/workspaces/default/keys/2f538cb2ded193edd0da028b75d7d7d44276fc05867d3b471b1a93fbc0e1ad92 $14.63 of $0.00 used; resets 2026-11-01T00:00:00.000Z.\",\"code\":403,\"metadata\":{\"limit_source\":\"openrouter_key_limit\",\"remedy_hint\":\"Raise or remove this API key's usage limit at https://openrouter.ai/settings/keys, or use a key without a limit.\",\"scope\":\"key_limit\",\"limit_usd\":0,\"spend_usd\":14.630497551,\"resets_at\"",
       "ownPage": {
         "route": "/black-therapist-memphis/",
         "sourceFile": "pages/black-therapist-memphis/index.html",
         "status": "ok",
-        "title": "Black Therapist Serving Memphis, TN | Hicks Consulting",
-        "description": "Virtual therapy with Monika Hicks, LCSW, a Black woman therapist serving eligible clients in Memphis and across Tennessee.",
-        "h1": "Virtual therapy with a Black woman therapist serving Memphis.",
-        "textChars": 5582,
-        "internalLinks": 32,
+        "title": "Black Therapist Serving Memphis, TN | Monika Hicks, LCSW",
+        "description": "Monika Hicks, LCSW is a Black woman therapist offering virtual therapy in Memphis and across Tennessee for anxiety, burnout and boundaries. Book online.",
+        "h1": "Black Therapist Serving Memphis, TN",
+        "textChars": 7385,
+        "internalLinks": 33,
         "canonical": ""
       },
       "diagnosis": [
-        "EXACT_QUERY_NOT_IN_PRIMARY_SEARCH_SURFACES"
+        "PROVIDER_ERROR"
       ]
     },
     {
       "query": "african american therapists near me",
       "primaryPage": "/black-therapist-memphis/",
-      "status": "ok",
-      "observedAt": "2026-10-11T14:33:22.863Z",
+      "status": "provider_error",
+      "observedAt": "2026-10-12T14:44:12.011Z",
       "provider": "openrouter_web_search",
       "model": "openai/gpt-4o-mini",
-      "observationType": "LIVE_WEB_SURFACING",
       "rankVerified": false,
-      "providerAnswered": true,
-      "citationCount": 3,
-      "siteSurfaced": true,
-      "citations": [
-        {
-          "url": "https://www.hicksconsulting.org/therapy",
-          "title": "Virtual Therapy Serving Memphis & Tennessee"
-        },
-        {
-          "url": "https://www.hicksconsulting.org/",
-          "title": "Hicks Consulting | Therapy for Individuals & Mental Health ..."
-        },
-        {
-          "url": "https://www.hicksconsulting.org/black-therapist-memphis",
-          "title": "Black Therapist Serving Memphis, TN - Hicks Consulting"
-        }
-      ],
-      "searchQueries": [],
-      "competitors": [],
+      "providerAnswered": false,
+      "citationCount": null,
+      "siteSurfaced": null,
+      "citations": [],
+      "error": "403: {\"error\":{\"message\":\"Key limit exceeded (monthly limit). Manage it using https://openrouter.ai/workspaces/default/keys/2f538cb2ded193edd0da028b75d7d7d44276fc05867d3b471b1a93fbc0e1ad92 $14.63 of $0.00 used; resets 2026-11-01T00:00:00.000Z.\",\"code\":403,\"metadata\":{\"limit_source\":\"openrouter_key_limit\",\"remedy_hint\":\"Raise or remove this API key's usage limit at https://openrouter.ai/settings/keys, or use a key without a limit.\",\"scope\":\"key_limit\",\"limit_usd\":0,\"spend_usd\":14.630497551,\"resets_at\"",
       "ownPage": {
         "route": "/black-therapist-memphis/",
         "sourceFile": "pages/black-therapist-memphis/index.html",
         "status": "ok",
-        "title": "Black Therapist Serving Memphis, TN | Hicks Consulting",
-        "description": "Virtual therapy with Monika Hicks, LCSW, a Black woman therapist serving eligible clients in Memphis and across Tennessee.",
-        "h1": "Virtual therapy with a Black woman therapist serving Memphis.",
-        "textChars": 5582,
-        "internalLinks": 32,
+        "title": "Black Therapist Serving Memphis, TN | Monika Hicks, LCSW",
+        "description": "Monika Hicks, LCSW is a Black woman therapist offering virtual therapy in Memphis and across Tennessee for anxiety, burnout and boundaries. Book online.",
+        "h1": "Black Therapist Serving Memphis, TN",
+        "textChars": 7385,
+        "internalLinks": 33,
         "canonical": ""
       },
       "diagnosis": [
-        "EXACT_QUERY_NOT_IN_PRIMARY_SEARCH_SURFACES"
+        "PROVIDER_ERROR"
       ]
     },
     {
       "query": "black therapists near me",
       "primaryPage": "/",
-      "status": "ok",
-      "observedAt": "2026-10-11T14:33:22.863Z",
+      "status": "provider_error",
+      "observedAt": "2026-10-12T14:44:12.011Z",
       "provider": "openrouter_web_search",
       "model": "openai/gpt-4o-mini",
-      "observationType": "LIVE_WEB_SURFACING",
       "rankVerified": false,
-      "providerAnswered": true,
-      "citationCount": 10,
-      "siteSurfaced": true,
-      "citations": [
-        {
-          "url": "https://www.hicksconsulting.org/",
-          "title": "Hicks Consulting | Therapy for Individuals & Mental Health Trainings for Organizations"
-        },
-        {
-          "url": "https://www.hicksconsulting.org/therapy",
-          "title": "Virtual Therapy Serving Memphis & Tennessee"
-        },
-        {
-          "url": "https://www.hicksconsulting.org/faq",
-          "title": "FAQ | Hicks Consulting"
-        },
-        {
-          "url": "https://www.mapquest.com/us/georgia/hicks-counseling-llc-532555911",
-          "title": "Hicks Counseling, LLC, 2480 Windy Hill Rd SE, #210, Marietta, GA 30067-8644, US - MapQuest"
-        },
-        {
-          "url": "https://www.serpanalytics.com/keyword/local+search",
-          "title": "local search"
-        },
-        {
-          "url": "https://wherewespend.com/black-therapist",
-          "title": "Find a Black Therapist Near You - Where We Spend"
-        },
-        {
-          "url": "https://www.blacktherapistsmatter.com/",
-          "title": "Find Your Black Therapist Near You | BTM - Start Your Wellness Journey Today"
-        },
-        {
-          "url": "https://hicks-corporation.socialdirect.one/",
-          "title": "https://hicks-corporation.socialdirect.one/"
-        },
-        {
-          "url": "https://blacktherapistsnetwork.com/",
-          "title": "Black Therapists Directory - African American Therapists & Psychologists"
-        },
-        {
-          "url": "https://africanamericantherapists.com/",
-          "title": "AfricanAmericanTherapists.com"
-        }
-      ],
-      "searchQueries": [],
-      "competitors": [
-        {
-          "url": "https://www.mapquest.com/us/georgia/hicks-counseling-llc-532555911",
-          "resolvedUrl": "https://www.mapquest.com/us/georgia/hicks-counseling-llc-532555911",
-          "status": "ok",
-          "httpStatus": 202,
-          "title": "",
-          "h1": "",
-          "headings": [],
-          "textChars": 0
-        },
-        {
-          "url": "https://www.serpanalytics.com/keyword/local+search",
-          "resolvedUrl": "https://www.serpanalytics.com/keyword/local+search",
-          "status": "ok",
-          "httpStatus": 200,
-          "title": "",
-          "h1": "",
-          "headings": [],
-          "textChars": 1167
-        },
-        {
-          "url": "https://wherewespend.com/black-therapist",
-          "resolvedUrl": "https://wherewespend.com/black-therapist/",
-          "status": "ok",
-          "httpStatus": 200,
-          "title": "Find a Black Therapist Near You - Where We Spend",
-          "h1": "Looking for a Black therapist near you?",
-          "headings": [
-            "\"+message+\""
-          ],
-          "textChars": 588
-        }
-      ],
+      "providerAnswered": false,
+      "citationCount": null,
+      "siteSurfaced": null,
+      "citations": [],
+      "error": "403: {\"error\":{\"message\":\"Key limit exceeded (monthly limit). Manage it using https://openrouter.ai/workspaces/default/keys/2f538cb2ded193edd0da028b75d7d7d44276fc05867d3b471b1a93fbc0e1ad92 $14.63 of $0.00 used; resets 2026-11-01T00:00:00.000Z.\",\"code\":403,\"metadata\":{\"limit_source\":\"openrouter_key_limit\",\"remedy_hint\":\"Raise or remove this API key's usage limit at https://openrouter.ai/settings/keys, or use a key without a limit.\",\"scope\":\"key_limit\",\"limit_usd\":0,\"spend_usd\":14.630497551,\"resets_at\"",
       "ownPage": {
         "route": "/",
         "sourceFile": "pages/index.html",
         "status": "ok",
-        "title": "Hicks Consulting | Virtual Therapy and Organizational Training",
+        "title": "Hicks Consulting | Monika Hicks, LCSW | Therapy for Memphis, TN",
         "description": "Virtual therapy serving Memphis and Tennessee, plus coaching, groups, and organizational training that help women and teams build healthier patterns.",
         "h1": "Mental health support for high-achieving women and healthier organizations.",
-        "textChars": 10373,
-        "internalLinks": 37,
+        "textChars": 12352,
+        "internalLinks": 40,
         "canonical": ""
       },
       "diagnosis": [
-        "EXACT_QUERY_NOT_IN_PRIMARY_SEARCH_SURFACES"
+        "PROVIDER_ERROR"
       ]
     }
   ]
