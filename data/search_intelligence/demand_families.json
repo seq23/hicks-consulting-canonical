@@ -2,11 +2,11 @@
   "schema_version": "1.0",
   "generated_from": "data/search_intelligence/target_query_set.json",
   "window": {
-    "start_date": "2026-09-11",
-    "end_date": "2026-10-08",
+    "start_date": "2026-09-12",
+    "end_date": "2026-10-09",
     "days": 28
   },
-  "truth_collected_at": "2026-10-11T17:31:04.853Z",
+  "truth_collected_at": "2026-10-12T14:44:05.847Z",
   "rule": {
     "grouping": "one family per landing page (the page Google shows for the query)",
     "min_impressions": 20,
@@ -17,26 +17,26 @@
   },
   "client_approval": "Client site: qualifying families are PROPOSALS. A family is strengthened only once its status is \"approved\" here, with approved_by naming who decided (the client, or the site owner on her own decision) and approved_at.",
   "target_count": 76,
-  "impressions_total": 406,
-  "family_count": 13,
+  "impressions_total": 410,
+  "family_count": 14,
   "proposal_count": 0,
   "approved_count": 2,
   "families": [
     {
       "family": "/black-therapist-memphis/",
       "page": "https://www.hicksconsulting.org/black-therapist-memphis/",
-      "impressions": 226,
+      "impressions": 224,
       "clicks": 1,
       "ctr": 0.4,
       "weighted_position": 9,
-      "query_count": 36,
+      "query_count": 34,
       "head_query": "black therapist memphis tn",
       "queries": [
         {
           "query": "black therapist memphis tn",
-          "impressions": 64,
+          "impressions": 65,
           "clicks": 0,
-          "position": 9.4
+          "position": 9.37
         },
         {
           "query": "black therapist near me",
@@ -135,12 +135,6 @@
           "position": 8.33
         },
         {
-          "query": "black women therapist near me",
-          "impressions": 3,
-          "clicks": 0,
-          "position": 7.33
-        },
-        {
           "query": "african american therapists",
           "impressions": 2,
           "clicks": 0,
@@ -159,6 +153,12 @@
           "position": 4.5
         },
         {
+          "query": "black women therapist near me",
+          "impressions": 2,
+          "clicks": 0,
+          "position": 8
+        },
+        {
           "query": "african american female therapist",
           "impressions": 1,
           "clicks": 0,
@@ -171,22 +171,10 @@
           "position": 11
         },
         {
-          "query": "black counselor near me",
-          "impressions": 1,
-          "clicks": 0,
-          "position": 8
-        },
-        {
           "query": "black counselors",
           "impressions": 1,
           "clicks": 0,
           "position": 21
-        },
-        {
-          "query": "black couple therapist near me",
-          "impressions": 1,
-          "clicks": 0,
-          "position": 9
         },
         {
           "query": "black couples therapy near me",
@@ -255,23 +243,29 @@
       "approved_by": "site owner (not the client)",
       "approved_at": "2026-10-11",
       "approval_note": "Site owner decided on 2026-10-11 to strengthen both qualifying families now rather than wait on a client flag. Not a client decision; the client did not approve or author this change.",
-      "proposed_change": "Lead /black-therapist-memphis/ with a direct answer to \"black therapist memphis tn\" in its title and first paragraph: 226 impressions at position 9 earned 1 click(s) (0.4% CTR)."
+      "proposed_change": "Lead /black-therapist-memphis/ with a direct answer to \"black therapist memphis tn\" in its title and first paragraph: 224 impressions at position 9 earned 1 click(s) (0.4% CTR)."
     },
     {
       "family": "/",
       "page": "https://www.hicksconsulting.org/",
-      "impressions": 144,
+      "impressions": 149,
       "clicks": 7,
-      "ctr": 4.9,
-      "weighted_position": 10.8,
-      "query_count": 26,
+      "ctr": 4.7,
+      "weighted_position": 10.5,
+      "query_count": 27,
       "head_query": "hicks consulting",
       "queries": [
         {
           "query": "hicks consulting",
-          "impressions": 63,
+          "impressions": 68,
           "clicks": 5,
-          "position": 3.49
+          "position": 3.51
+        },
+        {
+          "query": "monika hicks",
+          "impressions": 25,
+          "clicks": 1,
+          "position": 4.36
         },
         {
           "query": "anxiety therapist",
@@ -280,14 +274,8 @@
           "position": 39.29
         },
         {
-          "query": "monika hicks",
-          "impressions": 24,
-          "clicks": 1,
-          "position": 4.29
-        },
-        {
           "query": "hicks",
-          "impressions": 5,
+          "impressions": 3,
           "clicks": 0,
           "position": 4
         },
@@ -394,6 +382,12 @@
           "position": 27
         },
         {
+          "query": "hicks's",
+          "impressions": 1,
+          "clicks": 0,
+          "position": 1
+        },
+        {
           "query": "jamie hickman consulting",
           "impressions": 1,
           "clicks": 0,
@@ -430,7 +424,7 @@
       "approved_by": "site owner (not the client)",
       "approved_at": "2026-10-11",
       "approval_note": "Site owner decided on 2026-10-11 to strengthen both qualifying families now rather than wait on a client flag. Not a client decision; the client did not approve or author this change.",
-      "proposed_change": "Add a section to / that answers \"hicks consulting\" and \"anxiety therapist\", \"monika hicks\": 144 impressions at position 10.8, below page one."
+      "proposed_change": "Add a section to / that answers \"hicks consulting\" and \"monika hicks\", \"anxiety therapist\": 149 impressions at position 10.5, below page one."
     },
     {
       "family": "/resources/articles/the-quiet-anger-that-builds-when-you-are-always-the-reliable-one/",
@@ -671,6 +665,28 @@
       "why_not": "1 impressions < floor 20"
     },
     {
+      "family": "/resources/guides/burnout-recovery-for-black-women-who-keep-functioning-through-everything/",
+      "page": "https://hicksconsulting.org/resources/guides/burnout-recovery-for-black-women-who-keep-functioning-through-everything/",
+      "impressions": 1,
+      "clicks": 0,
+      "ctr": 0,
+      "weighted_position": 2,
+      "query_count": 1,
+      "head_query": "burnout recovery for black women",
+      "queries": [
+        {
+          "query": "burnout recovery for black women",
+          "impressions": 1,
+          "clicks": 0,
+          "position": 2
+        }
+      ],
+      "rank": 13,
+      "qualifies": false,
+      "status": "measured_only",
+      "why_not": "1 impressions < floor 20"
+    },
+    {
       "family": "/stress-management-worksheet/",
       "page": "https://www.hicksconsulting.org/stress-management-worksheet/",
       "impressions": 1,
@@ -687,7 +703,7 @@
           "position": 56
         }
       ],
-      "rank": 13,
+      "rank": 14,
       "qualifies": false,
       "status": "measured_only",
       "why_not": "1 impressions < floor 20"
