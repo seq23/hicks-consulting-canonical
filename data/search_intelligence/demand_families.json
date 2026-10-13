@@ -2,11 +2,11 @@
   "schema_version": "1.0",
   "generated_from": "data/search_intelligence/target_query_set.json",
   "window": {
-    "start_date": "2026-09-12",
-    "end_date": "2026-10-09",
+    "start_date": "2026-09-13",
+    "end_date": "2026-10-10",
     "days": 28
   },
-  "truth_collected_at": "2026-10-12T14:44:05.847Z",
+  "truth_collected_at": "2026-10-13T14:39:20.614Z",
   "rule": {
     "grouping": "one family per landing page (the page Google shows for the query)",
     "min_impressions": 20,
@@ -16,7 +16,7 @@
     "top_n": 12
   },
   "client_approval": "Client site: qualifying families are PROPOSALS. A family is strengthened only once its status is \"approved\" here, with approved_by naming who decided (the client, or the site owner on her own decision) and approved_at.",
-  "target_count": 76,
+  "target_count": 77,
   "impressions_total": 410,
   "family_count": 14,
   "proposal_count": 0,
@@ -25,24 +25,24 @@
     {
       "family": "/black-therapist-memphis/",
       "page": "https://www.hicksconsulting.org/black-therapist-memphis/",
-      "impressions": 224,
+      "impressions": 222,
       "clicks": 1,
-      "ctr": 0.4,
-      "weighted_position": 9,
+      "ctr": 0.5,
+      "weighted_position": 8.9,
       "query_count": 34,
       "head_query": "black therapist memphis tn",
       "queries": [
         {
           "query": "black therapist memphis tn",
-          "impressions": 65,
+          "impressions": 60,
           "clicks": 0,
-          "position": 9.37
+          "position": 9.27
         },
         {
           "query": "black therapist near me",
-          "impressions": 34,
+          "impressions": 36,
           "clicks": 0,
-          "position": 8.38
+          "position": 8.19
         },
         {
           "query": "african american therapist near me",
@@ -51,16 +51,16 @@
           "position": 9.33
         },
         {
+          "query": "black therapist memphis, tn",
+          "impressions": 11,
+          "clicks": 1,
+          "position": 9.73
+        },
+        {
           "query": "black mental health therapist near me",
           "impressions": 10,
           "clicks": 0,
           "position": 8.2
-        },
-        {
-          "query": "black therapist memphis, tn",
-          "impressions": 10,
-          "clicks": 1,
-          "position": 9.7
         },
         {
           "query": "african american female therapist near me",
@@ -243,21 +243,21 @@
       "approved_by": "site owner (not the client)",
       "approved_at": "2026-10-11",
       "approval_note": "Site owner decided on 2026-10-11 to strengthen both qualifying families now rather than wait on a client flag. Not a client decision; the client did not approve or author this change.",
-      "proposed_change": "Lead /black-therapist-memphis/ with a direct answer to \"black therapist memphis tn\" in its title and first paragraph: 224 impressions at position 9 earned 1 click(s) (0.4% CTR)."
+      "proposed_change": "Lead /black-therapist-memphis/ with a direct answer to \"black therapist memphis tn\" in its title and first paragraph: 222 impressions at position 8.9 earned 1 click(s) (0.5% CTR)."
     },
     {
       "family": "/",
       "page": "https://www.hicksconsulting.org/",
-      "impressions": 149,
+      "impressions": 151,
       "clicks": 7,
-      "ctr": 4.7,
+      "ctr": 4.6,
       "weighted_position": 10.5,
-      "query_count": 27,
+      "query_count": 28,
       "head_query": "hicks consulting",
       "queries": [
         {
           "query": "hicks consulting",
-          "impressions": 68,
+          "impressions": 70,
           "clicks": 5,
           "position": 3.51
         },
@@ -302,12 +302,6 @@
           "impressions": 2,
           "clicks": 0,
           "position": 11
-        },
-        {
-          "query": "mental health consultant",
-          "impressions": 2,
-          "clicks": 0,
-          "position": 2
         },
         {
           "query": "womens therapist",
@@ -400,6 +394,18 @@
           "position": 22
         },
         {
+          "query": "mental health consultant",
+          "impressions": 1,
+          "clicks": 0,
+          "position": 2
+        },
+        {
+          "query": "richard hicks",
+          "impressions": 1,
+          "clicks": 0,
+          "position": 8
+        },
+        {
           "query": "therapist near me",
           "impressions": 1,
           "clicks": 0,
@@ -424,7 +430,7 @@
       "approved_by": "site owner (not the client)",
       "approved_at": "2026-10-11",
       "approval_note": "Site owner decided on 2026-10-11 to strengthen both qualifying families now rather than wait on a client flag. Not a client decision; the client did not approve or author this change.",
-      "proposed_change": "Add a section to / that answers \"hicks consulting\" and \"monika hicks\", \"anxiety therapist\": 149 impressions at position 10.5, below page one."
+      "proposed_change": "Add a section to / that answers \"hicks consulting\" and \"monika hicks\", \"anxiety therapist\": 151 impressions at position 10.5, below page one."
     },
     {
       "family": "/resources/articles/the-quiet-anger-that-builds-when-you-are-always-the-reliable-one/",
