@@ -3,14 +3,14 @@
   "runtimeMode": "FULL_SAFE_AUTONOMY",
   "paused": false,
   "emergencyStop": false,
-  "lastCycleAt": "2026-10-09T14:50:24.450Z",
+  "lastCycleAt": "2026-10-13T14:52:49.414Z",
   "lastCycleStatus": "COMPLETED_NO_NEW_SCHEDULED_ITEMS",
   "currentPhase": "IDLE",
   "counts": {
-    "system_blocked": 6,
+    "system_blocked": 7,
     "skipped_prohibited_action": 7,
-    "failed_retryable": 2,
-    "discovered": 29
+    "failed_retryable": 1,
+    "discovered": 35
   },
   "velocityContract": "data/system/publishing_velocity_contract.json",
   "draftingProvider": {

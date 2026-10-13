@@ -1902,7 +1902,7 @@
         "What helps",
         "When to get support"
       ],
-      "state": "FAILED_RETRYABLE",
+      "state": "SYSTEM_BLOCKED",
       "routineApprovalRequired": true,
       "publicOnlyAfterApproval": true,
       "source": "legacy_generated_queue_migration",
@@ -2008,6 +2008,30 @@
           "to": "FAILED_RETRYABLE",
           "at": "2026-10-09T14:50:24.450Z",
           "reason": "Candidate did not satisfy the final Safe Harbor gate."
+        },
+        {
+          "from": "FAILED_RETRYABLE",
+          "to": "SCORED",
+          "at": "2026-10-13T14:52:49.414Z",
+          "reason": "Candidate score normalized for autonomous admission."
+        },
+        {
+          "from": "SCORED",
+          "to": "ADMITTED",
+          "at": "2026-10-13T14:52:49.414Z",
+          "reason": "Candidate admitted inside the existing content policy and ownership boundaries."
+        },
+        {
+          "from": "ADMITTED",
+          "to": "DRAFTING",
+          "at": "2026-10-13T14:52:49.414Z",
+          "reason": "Structured LLM drafting started."
+        },
+        {
+          "from": "DRAFTING",
+          "to": "SYSTEM_BLOCKED",
+          "at": "2026-10-13T14:52:49.414Z",
+          "reason": "Autonomy cycle error."
         }
       ],
       "demandPhrasing": {
@@ -2030,16 +2054,17 @@
           }
         ]
       },
-      "updatedAt": "2026-10-09T14:50:24.450Z",
+      "updatedAt": "2026-10-13T14:52:49.414Z",
       "providerGate": null,
-      "attempts": 2,
+      "attempts": 3,
       "findings": [
         {
           "code": "THIN_CONTENT",
           "severity": "repairable",
           "message": "Draft has 526 words; minimum is 960."
         }
-      ]
+      ],
+      "lastError": "LLM request failed 403: {\"error\":{\"message\":\"Key limit exceeded (monthly limit). Manage it using https://openrouter.ai/workspaces/default/keys/2f538cb2ded193edd0da028b75d7d7d44276fc05867d3b471b1a93fbc0e1ad92 $14.63 of $0.00 used; resets 2026-11-01T00:00:00.000Z.\",\"code\":403,\"metadata\":{\"limit_source\":\"openrouter_key_limit\",\"remedy_hint\":\"Raise or remove this API key's usage limit at https://openrouter.ai/settings/keys, or use a key without a limit.\",\"scope\":\"key_limit\",\"limit_usd\":0,\"spend_usd\":14.630497551,\"resets_at\":\"2026-11-01T00:00:00.000Z\"}}}"
     },
     {
       "id": "brief-faith_centered_support-article",
@@ -2222,6 +2247,30 @@
           "to": "FAILED_RETRYABLE",
           "at": "2026-10-09T14:50:24.450Z",
           "reason": "Candidate did not satisfy the final Safe Harbor gate."
+        },
+        {
+          "from": "FAILED_RETRYABLE",
+          "to": "SCORED",
+          "at": "2026-10-13T14:52:49.414Z",
+          "reason": "Candidate score normalized for autonomous admission."
+        },
+        {
+          "from": "SCORED",
+          "to": "ADMITTED",
+          "at": "2026-10-13T14:52:49.414Z",
+          "reason": "Candidate admitted inside the existing content policy and ownership boundaries."
+        },
+        {
+          "from": "ADMITTED",
+          "to": "DRAFTING",
+          "at": "2026-10-13T14:52:49.414Z",
+          "reason": "Structured LLM drafting started."
+        },
+        {
+          "from": "DRAFTING",
+          "to": "FAILED_RETRYABLE",
+          "at": "2026-10-13T14:52:49.414Z",
+          "reason": "Autonomy cycle error."
         }
       ],
       "demandPhrasing": {
@@ -2244,16 +2293,17 @@
           }
         ]
       },
-      "updatedAt": "2026-10-09T14:50:24.450Z",
+      "updatedAt": "2026-10-13T14:52:49.414Z",
       "providerGate": null,
-      "attempts": 1,
+      "attempts": 2,
       "findings": [
         {
           "code": "THIN_CONTENT",
           "severity": "repairable",
           "message": "Draft has 496 words; minimum is 1120."
         }
-      ]
+      ],
+      "lastError": "LLM request failed 403: {\"error\":{\"message\":\"Key limit exceeded (monthly limit). Manage it using https://openrouter.ai/workspaces/default/keys/2f538cb2ded193edd0da028b75d7d7d44276fc05867d3b471b1a93fbc0e1ad92 $14.63 of $0.00 used; resets 2026-11-01T00:00:00.000Z.\",\"code\":403,\"metadata\":{\"limit_source\":\"openrouter_key_limit\",\"remedy_hint\":\"Raise or remove this API key's usage limit at https://openrouter.ai/settings/keys, or use a key without a limit.\",\"scope\":\"key_limit\",\"limit_usd\":0,\"spend_usd\":14.630497551,\"resets_at\":\"2026-11-01T00:00:00.000Z\"}}}"
     },
     {
       "id": "continuity-insight-2027-01-04-3cf2aea5e9d5",
