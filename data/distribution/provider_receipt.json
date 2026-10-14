@@ -1,7 +1,7 @@
 {
   "schema_version": "2.0",
-  "receipt_id": "2026-10-13T13-41-07.489Z-38406935650",
-  "attempted_at": "2026-10-13T13:41:07.489Z",
+  "receipt_id": "2026-10-14T13-28-16.143Z-38572011106",
+  "attempted_at": "2026-10-14T13:28:16.143Z",
   "publication_trigger": "ONLY_AFTER_EXISTING_CONTENT_PUBLISH_WORKFLOW_SUCCEEDS",
   "chain": [
     "successful_publish",
@@ -15,14 +15,14 @@
   "sitemap_refresh": {
     "status": "SUCCESS",
     "sitemap_url": "https://www.hicksconsulting.org/sitemap.xml",
-    "sitemap_sha256": "0fa2cbdaafb8f0c0250f67d1a3cd88d640d01e20b1dff581423d20e43e4731c1",
-    "url_count": 142
+    "sitemap_sha256": "26a99d49d84d425894b3cd72e38e4c555e104d72ba1b5e3650bed89c340a2ed4",
+    "url_count": 143
   },
   "indexnow": {
     "status": "SUCCESS",
     "attempted": true,
     "http_status": 200,
-    "submitted_urls": 142,
+    "submitted_urls": 143,
     "key_location": "https://www.hicksconsulting.org/indexnow.txt"
   },
   "gsc_sitemap_submission": {
@@ -46,7 +46,7 @@
         "verdict": "PASS",
         "coverage_state": "Submitted and indexed",
         "indexing_state": "INDEXING_ALLOWED",
-        "last_crawl_time": "2026-10-12T02:19:54Z"
+        "last_crawl_time": "2026-10-13T22:48:28Z"
       },
       {
         "url": "https://www.hicksconsulting.org/therapy/",
@@ -187,17 +187,17 @@
         "url": "https://www.hicksconsulting.org/resources/articles/when-you-keep-saying-yes/",
         "status": "SUCCESS",
         "http_status": 200,
-        "verdict": "NEUTRAL",
-        "coverage_state": "Discovered - currently not indexed",
-        "indexing_state": "INDEXING_STATE_UNSPECIFIED",
-        "last_crawl_time": null
+        "verdict": "PASS",
+        "coverage_state": "Submitted and indexed",
+        "indexing_state": "INDEXING_ALLOWED",
+        "last_crawl_time": "2026-10-14T08:23:37Z"
       }
     ]
   },
   "durable_receipt": {
     "status": "SUCCESS",
     "latest_path": "data/distribution/provider_receipt.json",
-    "history_path": "data/distribution/receipts/2026-10-13T13-41-07.489Z-38406935650.json"
+    "history_path": "data/distribution/receipts/2026-10-14T13-28-16.143Z-38572011106.json"
   },
   "observation_feedback": {
     "status": "SUCCESS",
