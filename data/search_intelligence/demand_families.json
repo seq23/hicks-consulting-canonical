@@ -2,11 +2,11 @@
   "schema_version": "1.0",
   "generated_from": "data/search_intelligence/target_query_set.json",
   "window": {
-    "start_date": "2026-09-13",
-    "end_date": "2026-10-10",
+    "start_date": "2026-09-14",
+    "end_date": "2026-10-11",
     "days": 28
   },
-  "truth_collected_at": "2026-10-13T14:39:20.614Z",
+  "truth_collected_at": "2026-10-14T14:33:11.104Z",
   "rule": {
     "grouping": "one family per landing page (the page Google shows for the query)",
     "min_impressions": 20,
@@ -16,7 +16,7 @@
     "top_n": 12
   },
   "client_approval": "Client site: qualifying families are PROPOSALS. A family is strengthened only once its status is \"approved\" here, with approved_by naming who decided (the client, or the site owner on her own decision) and approved_at.",
-  "target_count": 77,
+  "target_count": 75,
   "impressions_total": 410,
   "family_count": 14,
   "proposal_count": 0,
@@ -25,9 +25,9 @@
     {
       "family": "/black-therapist-memphis/",
       "page": "https://www.hicksconsulting.org/black-therapist-memphis/",
-      "impressions": 222,
+      "impressions": 223,
       "clicks": 1,
-      "ctr": 0.5,
+      "ctr": 0.4,
       "weighted_position": 8.9,
       "query_count": 34,
       "head_query": "black therapist memphis tn",
@@ -52,9 +52,9 @@
         },
         {
           "query": "black therapist memphis, tn",
-          "impressions": 11,
+          "impressions": 12,
           "clicks": 1,
-          "position": 9.73
+          "position": 9.75
         },
         {
           "query": "black mental health therapist near me",
@@ -243,21 +243,21 @@
       "approved_by": "site owner (not the client)",
       "approved_at": "2026-10-11",
       "approval_note": "Site owner decided on 2026-10-11 to strengthen both qualifying families now rather than wait on a client flag. Not a client decision; the client did not approve or author this change.",
-      "proposed_change": "Lead /black-therapist-memphis/ with a direct answer to \"black therapist memphis tn\" in its title and first paragraph: 222 impressions at position 8.9 earned 1 click(s) (0.5% CTR)."
+      "proposed_change": "Lead /black-therapist-memphis/ with a direct answer to \"black therapist memphis tn\" in its title and first paragraph: 223 impressions at position 8.9 earned 1 click(s) (0.4% CTR)."
     },
     {
       "family": "/",
       "page": "https://www.hicksconsulting.org/",
-      "impressions": 151,
-      "clicks": 7,
-      "ctr": 4.6,
-      "weighted_position": 10.5,
-      "query_count": 28,
+      "impressions": 153,
+      "clicks": 6,
+      "ctr": 3.9,
+      "weighted_position": 10.3,
+      "query_count": 27,
       "head_query": "hicks consulting",
       "queries": [
         {
           "query": "hicks consulting",
-          "impressions": 70,
+          "impressions": 73,
           "clicks": 5,
           "position": 3.51
         },
@@ -388,12 +388,6 @@
           "position": 5
         },
         {
-          "query": "mental health clinic",
-          "impressions": 1,
-          "clicks": 1,
-          "position": 22
-        },
-        {
           "query": "mental health consultant",
           "impressions": 1,
           "clicks": 0,
@@ -430,16 +424,16 @@
       "approved_by": "site owner (not the client)",
       "approved_at": "2026-10-11",
       "approval_note": "Site owner decided on 2026-10-11 to strengthen both qualifying families now rather than wait on a client flag. Not a client decision; the client did not approve or author this change.",
-      "proposed_change": "Add a section to / that answers \"hicks consulting\" and \"monika hicks\", \"anxiety therapist\": 151 impressions at position 10.5, below page one."
+      "proposed_change": "Add a section to / that answers \"hicks consulting\" and \"monika hicks\", \"anxiety therapist\": 153 impressions at position 10.3, below page one."
     },
     {
       "family": "/resources/articles/the-quiet-anger-that-builds-when-you-are-always-the-reliable-one/",
       "page": "https://hicksconsulting.org/resources/articles/the-quiet-anger-that-builds-when-you-are-always-the-reliable-one/",
-      "impressions": 7,
+      "impressions": 6,
       "clicks": 0,
       "ctr": 0,
-      "weighted_position": 7.7,
-      "query_count": 3,
+      "weighted_position": 8.8,
+      "query_count": 2,
       "head_query": "quiet anger",
       "queries": [
         {
@@ -453,37 +447,9 @@
           "impressions": 1,
           "clicks": 0,
           "position": 9
-        },
-        {
-          "query": "what is quiet anger",
-          "impressions": 1,
-          "clicks": 0,
-          "position": 1
         }
       ],
       "rank": 3,
-      "qualifies": false,
-      "status": "measured_only",
-      "why_not": "7 impressions < floor 20"
-    },
-    {
-      "family": "/therapy/",
-      "page": "https://www.hicksconsulting.org/therapy/",
-      "impressions": 6,
-      "clicks": 0,
-      "ctr": 0,
-      "weighted_position": 21.2,
-      "query_count": 1,
-      "head_query": "online therapy memphis",
-      "queries": [
-        {
-          "query": "online therapy memphis",
-          "impressions": 6,
-          "clicks": 0,
-          "position": 21.17
-        }
-      ],
-      "rank": 4,
       "qualifies": false,
       "status": "measured_only",
       "why_not": "6 impressions < floor 20"
@@ -505,7 +471,7 @@
           "position": 6
         }
       ],
-      "rank": 5,
+      "rank": 4,
       "qualifies": false,
       "status": "measured_only",
       "why_not": "5 impressions < floor 20"
@@ -531,6 +497,28 @@
           "impressions": 2,
           "clicks": 0,
           "position": 69
+        }
+      ],
+      "rank": 5,
+      "qualifies": false,
+      "status": "measured_only",
+      "why_not": "5 impressions < floor 20"
+    },
+    {
+      "family": "/therapy/",
+      "page": "https://www.hicksconsulting.org/therapy/",
+      "impressions": 5,
+      "clicks": 0,
+      "ctr": 0,
+      "weighted_position": 21.4,
+      "query_count": 1,
+      "head_query": "online therapy memphis",
+      "queries": [
+        {
+          "query": "online therapy memphis",
+          "impressions": 5,
+          "clicks": 0,
+          "position": 21.4
         }
       ],
       "rank": 6,
@@ -561,28 +549,6 @@
       "why_not": "4 impressions < floor 20"
     },
     {
-      "family": "/resources/insights/what-boundary-problems-really-sound-like-in-professional-women-why-women-minimize-it/",
-      "page": "https://www.hicksconsulting.org/resources/insights/what-boundary-problems-really-sound-like-in-professional-women-why-women-minimize-it/",
-      "impressions": 3,
-      "clicks": 0,
-      "ctr": 0,
-      "weighted_position": 56.3,
-      "query_count": 1,
-      "head_query": "boundary problem at work",
-      "queries": [
-        {
-          "query": "boundary problem at work",
-          "impressions": 3,
-          "clicks": 0,
-          "position": 56.33
-        }
-      ],
-      "rank": 8,
-      "qualifies": false,
-      "status": "measured_only",
-      "why_not": "3 impressions < floor 20"
-    },
-    {
       "family": "/intake-quiz/",
       "page": "https://www.hicksconsulting.org/intake-quiz/",
       "impressions": 2,
@@ -597,6 +563,28 @@
           "impressions": 2,
           "clicks": 0,
           "position": 3
+        }
+      ],
+      "rank": 8,
+      "qualifies": false,
+      "status": "measured_only",
+      "why_not": "2 impressions < floor 20"
+    },
+    {
+      "family": "/resources/insights/what-boundary-problems-really-sound-like-in-professional-women-what-this-looks-like-i/",
+      "page": "https://www.hicksconsulting.org/resources/insights/what-boundary-problems-really-sound-like-in-professional-women-what-this-looks-like-i/",
+      "impressions": 2,
+      "clicks": 0,
+      "ctr": 0,
+      "weighted_position": 60,
+      "query_count": 1,
+      "head_query": "boundary problem at work",
+      "queries": [
+        {
+          "query": "boundary problem at work",
+          "impressions": 2,
+          "clicks": 0,
+          "position": 60
         }
       ],
       "rank": 9,
