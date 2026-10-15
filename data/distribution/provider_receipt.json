@@ -1,7 +1,7 @@
 {
   "schema_version": "2.0",
-  "receipt_id": "2026-10-14T13-28-16.143Z-38572011106",
-  "attempted_at": "2026-10-14T13:28:16.143Z",
+  "receipt_id": "2026-10-15T13-31-28.584Z-38743393240",
+  "attempted_at": "2026-10-15T13:31:28.584Z",
   "publication_trigger": "ONLY_AFTER_EXISTING_CONTENT_PUBLISH_WORKFLOW_SUCCEEDS",
   "chain": [
     "successful_publish",
@@ -15,14 +15,14 @@
   "sitemap_refresh": {
     "status": "SUCCESS",
     "sitemap_url": "https://www.hicksconsulting.org/sitemap.xml",
-    "sitemap_sha256": "26a99d49d84d425894b3cd72e38e4c555e104d72ba1b5e3650bed89c340a2ed4",
-    "url_count": 143
+    "sitemap_sha256": "914e30bb64ffd29c61d31f912012c779d0407fb8ea354af552dccd45eb2c44f7",
+    "url_count": 144
   },
   "indexnow": {
     "status": "SUCCESS",
     "attempted": true,
     "http_status": 200,
-    "submitted_urls": 143,
+    "submitted_urls": 144,
     "key_location": "https://www.hicksconsulting.org/indexnow.txt"
   },
   "gsc_sitemap_submission": {
@@ -103,15 +103,6 @@
         "last_crawl_time": "2026-10-13T09:49:18Z"
       },
       {
-        "url": "https://www.hicksconsulting.org/resources/guides/life-transitions-for-high-achieving-black-women/",
-        "status": "SUCCESS",
-        "http_status": 200,
-        "verdict": "PASS",
-        "coverage_state": "Submitted and indexed",
-        "indexing_state": "INDEXING_ALLOWED",
-        "last_crawl_time": "2026-09-14T16:32:23Z"
-      },
-      {
         "url": "https://www.hicksconsulting.org/resources/guides/self-worth-identity-and-the-pressure-to-be-exceptional/",
         "status": "SUCCESS",
         "http_status": 200,
@@ -119,6 +110,15 @@
         "coverage_state": "Submitted and indexed",
         "indexing_state": "INDEXING_ALLOWED",
         "last_crawl_time": "2026-09-15T15:39:29Z"
+      },
+      {
+        "url": "https://www.hicksconsulting.org/resources/guides/relationship-stress-emotional-labor-and-the-need-for-more-honest-support/",
+        "status": "SUCCESS",
+        "http_status": 200,
+        "verdict": "NEUTRAL",
+        "coverage_state": "URL is unknown to Google",
+        "indexing_state": "INDEXING_STATE_UNSPECIFIED",
+        "last_crawl_time": null
       },
       {
         "url": "https://www.hicksconsulting.org/resources/white-papers/the-burnout-and-boundaries-playbook-for-high-achieving-black-women/",
@@ -197,7 +197,7 @@
   "durable_receipt": {
     "status": "SUCCESS",
     "latest_path": "data/distribution/provider_receipt.json",
-    "history_path": "data/distribution/receipts/2026-10-14T13-28-16.143Z-38572011106.json"
+    "history_path": "data/distribution/receipts/2026-10-15T13-31-28.584Z-38743393240.json"
   },
   "observation_feedback": {
     "status": "SUCCESS",
