@@ -538,6 +538,21 @@
       "createdAt": "2026-10-13T14:52:49.414Z",
       "blocksOtherWork": false,
       "clientActionRequired": false
+    },
+    {
+      "id": "exception-metadata-daily-024-4-1792071042197",
+      "candidateId": "daily-024-4",
+      "decision": "SKIPPED_UNSAFE_SEARCH_METADATA",
+      "findings": [
+        {
+          "code": "SEARCH_METADATA_UNRESOLVED",
+          "severity": "hard",
+          "route": "/resources/insights/why-boundaries-matter-more-during-good-seasons-than-bad-ones-a-gentler-truth-to-consi/"
+        }
+      ],
+      "createdAt": "2026-10-15T13:30:42.197Z",
+      "blocksOtherWork": false,
+      "clientActionRequired": false
     }
   ]
 }
