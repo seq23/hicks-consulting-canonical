@@ -2,11 +2,11 @@
   "schema_version": "1.0",
   "generated_from": "data/search_intelligence/target_query_set.json",
   "window": {
-    "start_date": "2026-09-14",
-    "end_date": "2026-10-11",
+    "start_date": "2026-09-15",
+    "end_date": "2026-10-12",
     "days": 28
   },
-  "truth_collected_at": "2026-10-14T14:33:11.104Z",
+  "truth_collected_at": "2026-10-15T14:33:52.256Z",
   "rule": {
     "grouping": "one family per landing page (the page Google shows for the query)",
     "min_impressions": 20,
@@ -16,8 +16,8 @@
     "top_n": 12
   },
   "client_approval": "Client site: qualifying families are PROPOSALS. A family is strengthened only once its status is \"approved\" here, with approved_by naming who decided (the client, or the site owner on her own decision) and approved_at.",
-  "target_count": 75,
-  "impressions_total": 410,
+  "target_count": 74,
+  "impressions_total": 405,
   "family_count": 14,
   "proposal_count": 0,
   "approved_count": 2,
@@ -29,20 +29,20 @@
       "clicks": 1,
       "ctr": 0.4,
       "weighted_position": 8.9,
-      "query_count": 34,
+      "query_count": 33,
       "head_query": "black therapist memphis tn",
       "queries": [
         {
           "query": "black therapist memphis tn",
-          "impressions": 60,
+          "impressions": 59,
           "clicks": 0,
-          "position": 9.27
+          "position": 9.15
         },
         {
           "query": "black therapist near me",
           "impressions": 36,
           "clicks": 0,
-          "position": 8.19
+          "position": 8.28
         },
         {
           "query": "african american therapist near me",
@@ -52,9 +52,9 @@
         },
         {
           "query": "black therapist memphis, tn",
-          "impressions": 12,
+          "impressions": 13,
           "clicks": 1,
-          "position": 9.75
+          "position": 9.77
         },
         {
           "query": "black mental health therapist near me",
@@ -99,16 +99,16 @@
           "position": 10.67
         },
         {
+          "query": "black therapist",
+          "impressions": 6,
+          "clicks": 0,
+          "position": 5.5
+        },
+        {
           "query": "black therapists near me",
           "impressions": 6,
           "clicks": 0,
           "position": 9.17
-        },
-        {
-          "query": "black therapist",
-          "impressions": 5,
-          "clicks": 0,
-          "position": 5.2
         },
         {
           "query": "african american therapist",
@@ -213,12 +213,6 @@
           "position": 11
         },
         {
-          "query": "couples counseling black therapist",
-          "impressions": 1,
-          "clicks": 0,
-          "position": 8
-        },
-        {
           "query": "i have bcbs of tn",
           "impressions": 1,
           "clicks": 0,
@@ -251,15 +245,15 @@
       "impressions": 153,
       "clicks": 6,
       "ctr": 3.9,
-      "weighted_position": 10.3,
+      "weighted_position": 10.1,
       "query_count": 27,
       "head_query": "hicks consulting",
       "queries": [
         {
           "query": "hicks consulting",
-          "impressions": 73,
+          "impressions": 72,
           "clicks": 5,
-          "position": 3.51
+          "position": 3.47
         },
         {
           "query": "monika hicks",
@@ -298,6 +292,12 @@
           "position": 2
         },
         {
+          "query": "medical it consulting services",
+          "impressions": 2,
+          "clicks": 0,
+          "position": 5
+        },
+        {
           "query": "memphis small business consulting",
           "impressions": 2,
           "clicks": 0,
@@ -314,12 +314,6 @@
           "impressions": 1,
           "clicks": 0,
           "position": 41
-        },
-        {
-          "query": "behavioral health consultant",
-          "impressions": 1,
-          "clicks": 0,
-          "position": 4
         },
         {
           "query": "committed to recovery",
@@ -394,16 +388,16 @@
           "position": 2
         },
         {
+          "query": "monica hicks",
+          "impressions": 1,
+          "clicks": 0,
+          "position": 30
+        },
+        {
           "query": "richard hicks",
           "impressions": 1,
           "clicks": 0,
           "position": 8
-        },
-        {
-          "query": "therapist near me",
-          "impressions": 1,
-          "clicks": 0,
-          "position": 47
         },
         {
           "query": "therapist near me black",
@@ -424,23 +418,23 @@
       "approved_by": "site owner (not the client)",
       "approved_at": "2026-10-11",
       "approval_note": "Site owner decided on 2026-10-11 to strengthen both qualifying families now rather than wait on a client flag. Not a client decision; the client did not approve or author this change.",
-      "proposed_change": "Add a section to / that answers \"hicks consulting\" and \"monika hicks\", \"anxiety therapist\": 153 impressions at position 10.3, below page one."
+      "proposed_change": "Add a section to / that answers \"hicks consulting\" and \"monika hicks\", \"anxiety therapist\": 153 impressions at position 10.1, below page one."
     },
     {
       "family": "/resources/articles/the-quiet-anger-that-builds-when-you-are-always-the-reliable-one/",
       "page": "https://hicksconsulting.org/resources/articles/the-quiet-anger-that-builds-when-you-are-always-the-reliable-one/",
-      "impressions": 6,
+      "impressions": 5,
       "clicks": 0,
       "ctr": 0,
-      "weighted_position": 8.8,
+      "weighted_position": 8.4,
       "query_count": 2,
       "head_query": "quiet anger",
       "queries": [
         {
           "query": "quiet anger",
-          "impressions": 5,
+          "impressions": 4,
           "clicks": 0,
-          "position": 8.8
+          "position": 8.25
         },
         {
           "query": "quite angry",
@@ -450,56 +444,6 @@
         }
       ],
       "rank": 3,
-      "qualifies": false,
-      "status": "measured_only",
-      "why_not": "6 impressions < floor 20"
-    },
-    {
-      "family": "/resources/articles/why-emotional-heaviness-does-not-always-look-like-crying/",
-      "page": "https://hicksconsulting.org/resources/articles/why-emotional-heaviness-does-not-always-look-like-crying/",
-      "impressions": 5,
-      "clicks": 0,
-      "ctr": 0,
-      "weighted_position": 6,
-      "query_count": 1,
-      "head_query": "emotional heaviness",
-      "queries": [
-        {
-          "query": "emotional heaviness",
-          "impressions": 5,
-          "clicks": 0,
-          "position": 6
-        }
-      ],
-      "rank": 4,
-      "qualifies": false,
-      "status": "measured_only",
-      "why_not": "5 impressions < floor 20"
-    },
-    {
-      "family": "/resources/white-papers/therapy-vs-coaching-guide/",
-      "page": "https://hicksconsulting.org/resources/white-papers/therapy-vs-coaching-guide/",
-      "impressions": 5,
-      "clicks": 0,
-      "ctr": 0,
-      "weighted_position": 56.8,
-      "query_count": 2,
-      "head_query": "coaching & therapy",
-      "queries": [
-        {
-          "query": "coaching & therapy",
-          "impressions": 3,
-          "clicks": 0,
-          "position": 48.67
-        },
-        {
-          "query": "coaching for therapists",
-          "impressions": 2,
-          "clicks": 0,
-          "position": 69
-        }
-      ],
-      "rank": 5,
       "qualifies": false,
       "status": "measured_only",
       "why_not": "5 impressions < floor 20"
@@ -521,7 +465,7 @@
           "position": 21.4
         }
       ],
-      "rank": 6,
+      "rank": 4,
       "qualifies": false,
       "status": "measured_only",
       "why_not": "5 impressions < floor 20"
@@ -543,7 +487,35 @@
           "position": 19.5
         }
       ],
-      "rank": 7,
+      "rank": 5,
+      "qualifies": false,
+      "status": "measured_only",
+      "why_not": "4 impressions < floor 20"
+    },
+    {
+      "family": "/resources/white-papers/therapy-vs-coaching-guide/",
+      "page": "https://hicksconsulting.org/resources/white-papers/therapy-vs-coaching-guide/",
+      "impressions": 4,
+      "clicks": 0,
+      "ctr": 0,
+      "weighted_position": 58.8,
+      "query_count": 2,
+      "head_query": "coaching & therapy",
+      "queries": [
+        {
+          "query": "coaching & therapy",
+          "impressions": 2,
+          "clicks": 0,
+          "position": 48.5
+        },
+        {
+          "query": "coaching for therapists",
+          "impressions": 2,
+          "clicks": 0,
+          "position": 69
+        }
+      ],
+      "rank": 6,
       "qualifies": false,
       "status": "measured_only",
       "why_not": "4 impressions < floor 20"
@@ -565,7 +537,7 @@
           "position": 3
         }
       ],
-      "rank": 8,
+      "rank": 7,
       "qualifies": false,
       "status": "measured_only",
       "why_not": "2 impressions < floor 20"
@@ -585,6 +557,28 @@
           "impressions": 2,
           "clicks": 0,
           "position": 60
+        }
+      ],
+      "rank": 8,
+      "qualifies": false,
+      "status": "measured_only",
+      "why_not": "2 impressions < floor 20"
+    },
+    {
+      "family": "/resources/insights/why-emotional-heaviness-does-not-always-look-like-crying-next-step-reflection/",
+      "page": "https://www.hicksconsulting.org/resources/insights/why-emotional-heaviness-does-not-always-look-like-crying-next-step-reflection/",
+      "impressions": 2,
+      "clicks": 0,
+      "ctr": 0,
+      "weighted_position": 9.5,
+      "query_count": 1,
+      "head_query": "emotional heaviness",
+      "queries": [
+        {
+          "query": "emotional heaviness",
+          "impressions": 2,
+          "clicks": 0,
+          "position": 9.5
         }
       ],
       "rank": 9,
