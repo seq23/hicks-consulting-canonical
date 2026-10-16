@@ -2,11 +2,11 @@
   "schema_version": "1.0",
   "generated_from": "data/search_intelligence/target_query_set.json",
   "window": {
-    "start_date": "2026-09-15",
-    "end_date": "2026-10-12",
+    "start_date": "2026-09-16",
+    "end_date": "2026-10-13",
     "days": 28
   },
-  "truth_collected_at": "2026-10-15T14:33:52.256Z",
+  "truth_collected_at": "2026-10-16T14:34:25.220Z",
   "rule": {
     "grouping": "one family per landing page (the page Google shows for the query)",
     "min_impressions": 20,
@@ -16,8 +16,8 @@
     "top_n": 12
   },
   "client_approval": "Client site: qualifying families are PROPOSALS. A family is strengthened only once its status is \"approved\" here, with approved_by naming who decided (the client, or the site owner on her own decision) and approved_at.",
-  "target_count": 74,
-  "impressions_total": 405,
+  "target_count": 73,
+  "impressions_total": 403,
   "family_count": 14,
   "proposal_count": 0,
   "approved_count": 2,
@@ -25,18 +25,18 @@
     {
       "family": "/black-therapist-memphis/",
       "page": "https://www.hicksconsulting.org/black-therapist-memphis/",
-      "impressions": 223,
+      "impressions": 221,
       "clicks": 1,
-      "ctr": 0.4,
+      "ctr": 0.5,
       "weighted_position": 8.9,
       "query_count": 33,
       "head_query": "black therapist memphis tn",
       "queries": [
         {
           "query": "black therapist memphis tn",
-          "impressions": 59,
+          "impressions": 58,
           "clicks": 0,
-          "position": 9.15
+          "position": 9.12
         },
         {
           "query": "black therapist near me",
@@ -54,19 +54,19 @@
           "query": "black therapist memphis, tn",
           "impressions": 13,
           "clicks": 1,
-          "position": 9.77
-        },
-        {
-          "query": "black mental health therapist near me",
-          "impressions": 10,
-          "clicks": 0,
-          "position": 8.2
+          "position": 9.69
         },
         {
           "query": "african american female therapist near me",
           "impressions": 9,
           "clicks": 0,
           "position": 8.11
+        },
+        {
+          "query": "black mental health therapist near me",
+          "impressions": 9,
+          "clicks": 0,
+          "position": 8.33
         },
         {
           "query": "african american therapists near me",
@@ -189,12 +189,6 @@
           "position": 10
         },
         {
-          "query": "black marriage counselors",
-          "impressions": 1,
-          "clicks": 0,
-          "position": 10
-        },
-        {
           "query": "black owned therapist near me",
           "impressions": 1,
           "clicks": 0,
@@ -211,6 +205,12 @@
           "impressions": 1,
           "clicks": 0,
           "position": 11
+        },
+        {
+          "query": "ebony therapist",
+          "impressions": 1,
+          "clicks": 0,
+          "position": 5
         },
         {
           "query": "i have bcbs of tn",
@@ -237,23 +237,23 @@
       "approved_by": "site owner (not the client)",
       "approved_at": "2026-10-11",
       "approval_note": "Site owner decided on 2026-10-11 to strengthen both qualifying families now rather than wait on a client flag. Not a client decision; the client did not approve or author this change.",
-      "proposed_change": "Lead /black-therapist-memphis/ with a direct answer to \"black therapist memphis tn\" in its title and first paragraph: 223 impressions at position 8.9 earned 1 click(s) (0.4% CTR)."
+      "proposed_change": "Lead /black-therapist-memphis/ with a direct answer to \"black therapist memphis tn\" in its title and first paragraph: 221 impressions at position 8.9 earned 1 click(s) (0.5% CTR)."
     },
     {
       "family": "/",
       "page": "https://www.hicksconsulting.org/",
-      "impressions": 153,
+      "impressions": 157,
       "clicks": 6,
-      "ctr": 3.9,
-      "weighted_position": 10.1,
-      "query_count": 27,
+      "ctr": 3.8,
+      "weighted_position": 9.8,
+      "query_count": 26,
       "head_query": "hicks consulting",
       "queries": [
         {
           "query": "hicks consulting",
-          "impressions": 72,
+          "impressions": 76,
           "clicks": 5,
-          "position": 3.47
+          "position": 3.53
         },
         {
           "query": "monika hicks",
@@ -269,9 +269,9 @@
         },
         {
           "query": "hicks",
-          "impressions": 3,
+          "impressions": 4,
           "clicks": 0,
-          "position": 4
+          "position": 3.25
         },
         {
           "query": "christian coaching",
@@ -352,12 +352,6 @@
           "position": 11
         },
         {
-          "query": "dr edmond b hicks jr",
-          "impressions": 1,
-          "clicks": 0,
-          "position": 25
-        },
-        {
           "query": "health consulting",
           "impressions": 1,
           "clicks": 0,
@@ -418,57 +412,7 @@
       "approved_by": "site owner (not the client)",
       "approved_at": "2026-10-11",
       "approval_note": "Site owner decided on 2026-10-11 to strengthen both qualifying families now rather than wait on a client flag. Not a client decision; the client did not approve or author this change.",
-      "proposed_change": "Add a section to / that answers \"hicks consulting\" and \"monika hicks\", \"anxiety therapist\": 153 impressions at position 10.1, below page one."
-    },
-    {
-      "family": "/resources/articles/the-quiet-anger-that-builds-when-you-are-always-the-reliable-one/",
-      "page": "https://hicksconsulting.org/resources/articles/the-quiet-anger-that-builds-when-you-are-always-the-reliable-one/",
-      "impressions": 5,
-      "clicks": 0,
-      "ctr": 0,
-      "weighted_position": 8.4,
-      "query_count": 2,
-      "head_query": "quiet anger",
-      "queries": [
-        {
-          "query": "quiet anger",
-          "impressions": 4,
-          "clicks": 0,
-          "position": 8.25
-        },
-        {
-          "query": "quite angry",
-          "impressions": 1,
-          "clicks": 0,
-          "position": 9
-        }
-      ],
-      "rank": 3,
-      "qualifies": false,
-      "status": "measured_only",
-      "why_not": "5 impressions < floor 20"
-    },
-    {
-      "family": "/therapy/",
-      "page": "https://www.hicksconsulting.org/therapy/",
-      "impressions": 5,
-      "clicks": 0,
-      "ctr": 0,
-      "weighted_position": 21.4,
-      "query_count": 1,
-      "head_query": "online therapy memphis",
-      "queries": [
-        {
-          "query": "online therapy memphis",
-          "impressions": 5,
-          "clicks": 0,
-          "position": 21.4
-        }
-      ],
-      "rank": 4,
-      "qualifies": false,
-      "status": "measured_only",
-      "why_not": "5 impressions < floor 20"
+      "proposed_change": "Lead / with a direct answer to \"hicks consulting\" in its title and first paragraph: 157 impressions at position 9.8 earned 6 click(s) (3.8% CTR)."
     },
     {
       "family": "/llm-atlas/queries/",
@@ -487,6 +431,56 @@
           "position": 19.5
         }
       ],
+      "rank": 3,
+      "qualifies": false,
+      "status": "measured_only",
+      "why_not": "4 impressions < floor 20"
+    },
+    {
+      "family": "/resources/articles/the-quiet-anger-that-builds-when-you-are-always-the-reliable-one/",
+      "page": "https://hicksconsulting.org/resources/articles/the-quiet-anger-that-builds-when-you-are-always-the-reliable-one/",
+      "impressions": 4,
+      "clicks": 0,
+      "ctr": 0,
+      "weighted_position": 8.3,
+      "query_count": 2,
+      "head_query": "quiet anger",
+      "queries": [
+        {
+          "query": "quiet anger",
+          "impressions": 3,
+          "clicks": 0,
+          "position": 8
+        },
+        {
+          "query": "quite angry",
+          "impressions": 1,
+          "clicks": 0,
+          "position": 9
+        }
+      ],
+      "rank": 4,
+      "qualifies": false,
+      "status": "measured_only",
+      "why_not": "4 impressions < floor 20"
+    },
+    {
+      "family": "/therapy/",
+      "page": "https://www.hicksconsulting.org/therapy/",
+      "impressions": 4,
+      "clicks": 0,
+      "ctr": 0,
+      "weighted_position": 21.8,
+      "query_count": 1,
+      "head_query": "online therapy memphis",
+      "queries": [
+        {
+          "query": "online therapy memphis",
+          "impressions": 4,
+          "clicks": 0,
+          "position": 21.75
+        }
+      ],
       "rank": 5,
       "qualifies": false,
       "status": "measured_only",
@@ -495,52 +489,30 @@
     {
       "family": "/resources/white-papers/therapy-vs-coaching-guide/",
       "page": "https://hicksconsulting.org/resources/white-papers/therapy-vs-coaching-guide/",
-      "impressions": 4,
+      "impressions": 3,
       "clicks": 0,
       "ctr": 0,
-      "weighted_position": 58.8,
+      "weighted_position": 62,
       "query_count": 2,
-      "head_query": "coaching & therapy",
+      "head_query": "coaching for therapists",
       "queries": [
-        {
-          "query": "coaching & therapy",
-          "impressions": 2,
-          "clicks": 0,
-          "position": 48.5
-        },
         {
           "query": "coaching for therapists",
           "impressions": 2,
           "clicks": 0,
           "position": 69
+        },
+        {
+          "query": "coaching & therapy",
+          "impressions": 1,
+          "clicks": 0,
+          "position": 48
         }
       ],
       "rank": 6,
       "qualifies": false,
       "status": "measured_only",
-      "why_not": "4 impressions < floor 20"
-    },
-    {
-      "family": "/intake-quiz/",
-      "page": "https://www.hicksconsulting.org/intake-quiz/",
-      "impressions": 2,
-      "clicks": 0,
-      "ctr": 0,
-      "weighted_position": 3,
-      "query_count": 1,
-      "head_query": "intake quiz",
-      "queries": [
-        {
-          "query": "intake quiz",
-          "impressions": 2,
-          "clicks": 0,
-          "position": 3
-        }
-      ],
-      "rank": 7,
-      "qualifies": false,
-      "status": "measured_only",
-      "why_not": "2 impressions < floor 20"
+      "why_not": "3 impressions < floor 20"
     },
     {
       "family": "/resources/insights/what-boundary-problems-really-sound-like-in-professional-women-what-this-looks-like-i/",
@@ -559,7 +531,7 @@
           "position": 60
         }
       ],
-      "rank": 8,
+      "rank": 7,
       "qualifies": false,
       "status": "measured_only",
       "why_not": "2 impressions < floor 20"
@@ -581,10 +553,32 @@
           "position": 9.5
         }
       ],
-      "rank": 9,
+      "rank": 8,
       "qualifies": false,
       "status": "measured_only",
       "why_not": "2 impressions < floor 20"
+    },
+    {
+      "family": "/intake-quiz/",
+      "page": "https://www.hicksconsulting.org/intake-quiz/",
+      "impressions": 1,
+      "clicks": 0,
+      "ctr": 0,
+      "weighted_position": 3,
+      "query_count": 1,
+      "head_query": "intake quiz",
+      "queries": [
+        {
+          "query": "intake quiz",
+          "impressions": 1,
+          "clicks": 0,
+          "position": 3
+        }
+      ],
+      "rank": 9,
+      "qualifies": false,
+      "status": "measured_only",
+      "why_not": "1 impressions < floor 20"
     },
     {
       "family": "/llm-atlas/social-signals/",
