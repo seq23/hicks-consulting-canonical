@@ -2,11 +2,11 @@
   "schema_version": "1.0",
   "generated_from": "data/search_intelligence/target_query_set.json",
   "window": {
-    "start_date": "2026-09-16",
-    "end_date": "2026-10-13",
+    "start_date": "2026-09-17",
+    "end_date": "2026-10-14",
     "days": 28
   },
-  "truth_collected_at": "2026-10-16T14:34:25.220Z",
+  "truth_collected_at": "2026-10-17T14:29:55.182Z",
   "rule": {
     "grouping": "one family per landing page (the page Google shows for the query)",
     "min_impressions": 20,
@@ -16,39 +16,33 @@
     "top_n": 12
   },
   "client_approval": "Client site: qualifying families are PROPOSALS. A family is strengthened only once its status is \"approved\" here, with approved_by naming who decided (the client, or the site owner on her own decision) and approved_at.",
-  "target_count": 73,
-  "impressions_total": 403,
-  "family_count": 14,
+  "target_count": 70,
+  "impressions_total": 391,
+  "family_count": 13,
   "proposal_count": 0,
   "approved_count": 2,
   "families": [
     {
       "family": "/black-therapist-memphis/",
       "page": "https://www.hicksconsulting.org/black-therapist-memphis/",
-      "impressions": 221,
+      "impressions": 209,
       "clicks": 1,
       "ctr": 0.5,
-      "weighted_position": 8.9,
-      "query_count": 33,
+      "weighted_position": 8.8,
+      "query_count": 31,
       "head_query": "black therapist memphis tn",
       "queries": [
         {
           "query": "black therapist memphis tn",
-          "impressions": 58,
+          "impressions": 61,
           "clicks": 0,
-          "position": 9.12
+          "position": 9
         },
         {
           "query": "black therapist near me",
-          "impressions": 36,
+          "impressions": 33,
           "clicks": 0,
-          "position": 8.28
-        },
-        {
-          "query": "african american therapist near me",
-          "impressions": 15,
-          "clicks": 0,
-          "position": 9.33
+          "position": 8.39
         },
         {
           "query": "black therapist memphis, tn",
@@ -57,70 +51,64 @@
           "position": 9.69
         },
         {
-          "query": "african american female therapist near me",
-          "impressions": 9,
+          "query": "african american therapist near me",
+          "impressions": 12,
           "clicks": 0,
-          "position": 8.11
+          "position": 9.17
         },
         {
           "query": "black mental health therapist near me",
           "impressions": 9,
           "clicks": 0,
-          "position": 8.33
+          "position": 8.67
         },
         {
-          "query": "african american therapists near me",
+          "query": "african american female therapist near me",
           "impressions": 8,
           "clicks": 0,
-          "position": 9.13
+          "position": 7.25
         },
         {
           "query": "black counselors near me",
           "impressions": 8,
           "clicks": 0,
-          "position": 6.88
+          "position": 6.75
+        },
+        {
+          "query": "african american therapists near me",
+          "impressions": 7,
+          "clicks": 0,
+          "position": 8.86
         },
         {
           "query": "black mental health therapist",
-          "impressions": 7,
+          "impressions": 6,
           "clicks": 0,
-          "position": 10.28
+          "position": 11.67
         },
         {
           "query": "black therapists",
-          "impressions": 7,
-          "clicks": 0,
-          "position": 7.43
-        },
-        {
-          "query": "black psychologist near me",
           "impressions": 6,
           "clicks": 0,
-          "position": 10.67
-        },
-        {
-          "query": "black therapist",
-          "impressions": 6,
-          "clicks": 0,
-          "position": 5.5
+          "position": 7.5
         },
         {
           "query": "black therapists near me",
           "impressions": 6,
           "clicks": 0,
-          "position": 9.17
+          "position": 7.83
         },
         {
-          "query": "african american therapist",
-          "impressions": 4,
+          "query": "black psychologist near me",
+          "impressions": 5,
           "clicks": 0,
-          "position": 14.5
+          "position": 11
         },
         {
-          "query": "african american psychologist near me",
-          "impressions": 3,
+          "query": "black therapist",
+          "impressions": 5,
           "clicks": 0,
-          "position": 8.67
+          "position": 5.6
         },
         {
           "query": "black grief therapist near me",
@@ -133,6 +121,30 @@
           "impressions": 3,
           "clicks": 0,
           "position": 8.33
+        },
+        {
+          "query": "black women therapist near me",
+          "impressions": 3,
+          "clicks": 0,
+          "position": 7.33
+        },
+        {
+          "query": "african american female therapist",
+          "impressions": 2,
+          "clicks": 0,
+          "position": 13
+        },
+        {
+          "query": "african american psychologist near me",
+          "impressions": 2,
+          "clicks": 0,
+          "position": 8.5
+        },
+        {
+          "query": "african american therapist",
+          "impressions": 2,
+          "clicks": 0,
+          "position": 16
         },
         {
           "query": "african american therapists",
@@ -151,18 +163,6 @@
           "impressions": 2,
           "clicks": 0,
           "position": 4.5
-        },
-        {
-          "query": "black women therapist near me",
-          "impressions": 2,
-          "clicks": 0,
-          "position": 8
-        },
-        {
-          "query": "african american female therapist",
-          "impressions": 1,
-          "clicks": 0,
-          "position": 11
         },
         {
           "query": "african american therapist near me that accept medicaid",
@@ -187,12 +187,6 @@
           "impressions": 1,
           "clicks": 0,
           "position": 10
-        },
-        {
-          "query": "black owned therapist near me",
-          "impressions": 1,
-          "clicks": 0,
-          "position": 7
         },
         {
           "query": "black therapy near me",
@@ -223,12 +217,6 @@
           "impressions": 1,
           "clicks": 0,
           "position": 7
-        },
-        {
-          "query": "therapist near me black women",
-          "impressions": 1,
-          "clicks": 0,
-          "position": 6
         }
       ],
       "rank": 1,
@@ -237,29 +225,29 @@
       "approved_by": "site owner (not the client)",
       "approved_at": "2026-10-11",
       "approval_note": "Site owner decided on 2026-10-11 to strengthen both qualifying families now rather than wait on a client flag. Not a client decision; the client did not approve or author this change.",
-      "proposed_change": "Lead /black-therapist-memphis/ with a direct answer to \"black therapist memphis tn\" in its title and first paragraph: 221 impressions at position 8.9 earned 1 click(s) (0.5% CTR)."
+      "proposed_change": "Lead /black-therapist-memphis/ with a direct answer to \"black therapist memphis tn\" in its title and first paragraph: 209 impressions at position 8.8 earned 1 click(s) (0.5% CTR)."
     },
     {
       "family": "/",
       "page": "https://www.hicksconsulting.org/",
-      "impressions": 157,
+      "impressions": 160,
       "clicks": 6,
       "ctr": 3.8,
       "weighted_position": 9.8,
-      "query_count": 26,
+      "query_count": 27,
       "head_query": "hicks consulting",
       "queries": [
         {
           "query": "hicks consulting",
-          "impressions": 76,
-          "clicks": 5,
-          "position": 3.53
+          "impressions": 75,
+          "clicks": 4,
+          "position": 3.56
         },
         {
           "query": "monika hicks",
-          "impressions": 25,
-          "clicks": 1,
-          "position": 4.36
+          "impressions": 27,
+          "clicks": 2,
+          "position": 4.3
         },
         {
           "query": "anxiety therapist",
@@ -284,6 +272,12 @@
           "impressions": 2,
           "clicks": 0,
           "position": 1
+        },
+        {
+          "query": "hicks counseling",
+          "impressions": 2,
+          "clicks": 0,
+          "position": 17
         },
         {
           "query": "hicks healthcare",
@@ -358,12 +352,6 @@
           "position": 5
         },
         {
-          "query": "hicks counseling",
-          "impressions": 1,
-          "clicks": 0,
-          "position": 27
-        },
-        {
           "query": "hicks's",
           "impressions": 1,
           "clicks": 0,
@@ -374,6 +362,12 @@
           "impressions": 1,
           "clicks": 0,
           "position": 5
+        },
+        {
+          "query": "janice hicks",
+          "impressions": 1,
+          "clicks": 0,
+          "position": 2
         },
         {
           "query": "mental health consultant",
@@ -412,7 +406,7 @@
       "approved_by": "site owner (not the client)",
       "approved_at": "2026-10-11",
       "approval_note": "Site owner decided on 2026-10-11 to strengthen both qualifying families now rather than wait on a client flag. Not a client decision; the client did not approve or author this change.",
-      "proposed_change": "Lead / with a direct answer to \"hicks consulting\" in its title and first paragraph: 157 impressions at position 9.8 earned 6 click(s) (3.8% CTR)."
+      "proposed_change": "Lead / with a direct answer to \"hicks consulting\" in its title and first paragraph: 160 impressions at position 9.8 earned 6 click(s) (3.8% CTR)."
     },
     {
       "family": "/llm-atlas/queries/",
@@ -437,34 +431,6 @@
       "why_not": "4 impressions < floor 20"
     },
     {
-      "family": "/resources/articles/the-quiet-anger-that-builds-when-you-are-always-the-reliable-one/",
-      "page": "https://hicksconsulting.org/resources/articles/the-quiet-anger-that-builds-when-you-are-always-the-reliable-one/",
-      "impressions": 4,
-      "clicks": 0,
-      "ctr": 0,
-      "weighted_position": 8.3,
-      "query_count": 2,
-      "head_query": "quiet anger",
-      "queries": [
-        {
-          "query": "quiet anger",
-          "impressions": 3,
-          "clicks": 0,
-          "position": 8
-        },
-        {
-          "query": "quite angry",
-          "impressions": 1,
-          "clicks": 0,
-          "position": 9
-        }
-      ],
-      "rank": 4,
-      "qualifies": false,
-      "status": "measured_only",
-      "why_not": "4 impressions < floor 20"
-    },
-    {
       "family": "/therapy/",
       "page": "https://www.hicksconsulting.org/therapy/",
       "impressions": 4,
@@ -481,35 +447,35 @@
           "position": 21.75
         }
       ],
-      "rank": 5,
+      "rank": 4,
       "qualifies": false,
       "status": "measured_only",
       "why_not": "4 impressions < floor 20"
     },
     {
-      "family": "/resources/white-papers/therapy-vs-coaching-guide/",
-      "page": "https://hicksconsulting.org/resources/white-papers/therapy-vs-coaching-guide/",
+      "family": "/resources/articles/the-quiet-anger-that-builds-when-you-are-always-the-reliable-one/",
+      "page": "https://hicksconsulting.org/resources/articles/the-quiet-anger-that-builds-when-you-are-always-the-reliable-one/",
       "impressions": 3,
       "clicks": 0,
       "ctr": 0,
-      "weighted_position": 62,
+      "weighted_position": 8.7,
       "query_count": 2,
-      "head_query": "coaching for therapists",
+      "head_query": "quiet anger",
       "queries": [
         {
-          "query": "coaching for therapists",
+          "query": "quiet anger",
           "impressions": 2,
           "clicks": 0,
-          "position": 69
+          "position": 8.5
         },
         {
-          "query": "coaching & therapy",
+          "query": "quite angry",
           "impressions": 1,
           "clicks": 0,
-          "position": 48
+          "position": 9
         }
       ],
-      "rank": 6,
+      "rank": 5,
       "qualifies": false,
       "status": "measured_only",
       "why_not": "3 impressions < floor 20"
@@ -531,7 +497,7 @@
           "position": 60
         }
       ],
-      "rank": 7,
+      "rank": 6,
       "qualifies": false,
       "status": "measured_only",
       "why_not": "2 impressions < floor 20"
@@ -551,6 +517,28 @@
           "impressions": 2,
           "clicks": 0,
           "position": 9.5
+        }
+      ],
+      "rank": 7,
+      "qualifies": false,
+      "status": "measured_only",
+      "why_not": "2 impressions < floor 20"
+    },
+    {
+      "family": "/resources/white-papers/therapy-vs-coaching-guide/",
+      "page": "https://hicksconsulting.org/resources/white-papers/therapy-vs-coaching-guide/",
+      "impressions": 2,
+      "clicks": 0,
+      "ctr": 0,
+      "weighted_position": 69,
+      "query_count": 1,
+      "head_query": "coaching for therapists",
+      "queries": [
+        {
+          "query": "coaching for therapists",
+          "impressions": 2,
+          "clicks": 0,
+          "position": 69
         }
       ],
       "rank": 8,
@@ -603,28 +591,6 @@
       "why_not": "1 impressions < floor 20"
     },
     {
-      "family": "/resources/articles/the-difference-between-being-busy-and-being-emotionally-maxed-out/",
-      "page": "https://hicksconsulting.org/resources/articles/the-difference-between-being-busy-and-being-emotionally-maxed-out/",
-      "impressions": 1,
-      "clicks": 0,
-      "ctr": 0,
-      "weighted_position": 8,
-      "query_count": 1,
-      "head_query": "is busy an emotion",
-      "queries": [
-        {
-          "query": "is busy an emotion",
-          "impressions": 1,
-          "clicks": 0,
-          "position": 8
-        }
-      ],
-      "rank": 11,
-      "qualifies": false,
-      "status": "measured_only",
-      "why_not": "1 impressions < floor 20"
-    },
-    {
       "family": "/resources/articles/what-strong-black-woman-fatigue-can-look-like-in-real-life/",
       "page": "https://www.hicksconsulting.org/resources/articles/what-strong-black-woman-fatigue-can-look-like-in-real-life/",
       "impressions": 1,
@@ -641,7 +607,7 @@
           "position": 11
         }
       ],
-      "rank": 12,
+      "rank": 11,
       "qualifies": false,
       "status": "measured_only",
       "why_not": "1 impressions < floor 20"
@@ -663,7 +629,7 @@
           "position": 2
         }
       ],
-      "rank": 13,
+      "rank": 12,
       "qualifies": false,
       "status": "measured_only",
       "why_not": "1 impressions < floor 20"
@@ -685,7 +651,7 @@
           "position": 56
         }
       ],
-      "rank": 14,
+      "rank": 13,
       "qualifies": false,
       "status": "measured_only",
       "why_not": "1 impressions < floor 20"
