@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0.0",
-  "generatedAt": "2026-10-16T14:34:27.902Z",
+  "generatedAt": "2026-10-17T14:29:57.637Z",
   "providerState": "CONNECTED",
   "items": [
     {
@@ -47,8 +47,8 @@
       "type": "STRIKING_DISTANCE",
       "query": "african american therapist near me",
       "page": "https://www.hicksconsulting.org/black-therapist-memphis/",
-      "position": 9.333333333333334,
-      "impressions": 15,
+      "position": 9.166666666666666,
+      "impressions": 12,
       "ctr": 0,
       "recommendedAction": "Improve answer alignment, title/snippet, and supporting internal links without changing page identity.",
       "confidence": "high"
@@ -68,7 +68,7 @@
       "query": "black mental health therapist",
       "page": "https://www.hicksconsulting.org/black-therapist-memphis/",
       "expectedPage": "/",
-      "position": 11.833333333333334,
+      "position": 11.666666666666666,
       "impressions": 6,
       "recommendedAction": "Strengthen query ownership and internal links toward the governed primary page.",
       "confidence": "high"
@@ -87,8 +87,8 @@
       "type": "STRIKING_DISTANCE",
       "query": "black therapist memphis tn",
       "page": "https://www.hicksconsulting.org/black-therapist-memphis/",
-      "position": 9.436363636363636,
-      "impressions": 55,
+      "position": 9.293103448275861,
+      "impressions": 58,
       "ctr": 0,
       "recommendedAction": "Improve answer alignment, title/snippet, and supporting internal links without changing page identity.",
       "confidence": "high"
@@ -97,8 +97,8 @@
       "type": "LOW_CTR",
       "query": "black therapist memphis tn",
       "page": "https://www.hicksconsulting.org/black-therapist-memphis/",
-      "position": 9.436363636363636,
-      "impressions": 55,
+      "position": 9.293103448275861,
+      "impressions": 58,
       "ctr": 0,
       "recommendedAction": "Review search title and description against the actual query intent.",
       "confidence": "medium"
@@ -108,8 +108,8 @@
       "query": "black therapist memphis tn",
       "page": "https://www.hicksconsulting.org/black-therapist-memphis/",
       "expectedPage": "/",
-      "position": 9.436363636363636,
-      "impressions": 55,
+      "position": 9.293103448275861,
+      "impressions": 58,
       "recommendedAction": "Strengthen query ownership and internal links toward the governed primary page.",
       "confidence": "high"
     },
@@ -117,8 +117,8 @@
       "type": "STRIKING_DISTANCE",
       "query": "black therapist near me",
       "page": "https://www.hicksconsulting.org/black-therapist-memphis/",
-      "position": 8.277777777777779,
-      "impressions": 36,
+      "position": 8.393939393939394,
+      "impressions": 33,
       "ctr": 0,
       "recommendedAction": "Improve answer alignment, title/snippet, and supporting internal links without changing page identity.",
       "confidence": "high"
@@ -127,8 +127,8 @@
       "type": "LOW_CTR",
       "query": "black therapist near me",
       "page": "https://www.hicksconsulting.org/black-therapist-memphis/",
-      "position": 8.277777777777779,
-      "impressions": 36,
+      "position": 8.393939393939394,
+      "impressions": 33,
       "ctr": 0,
       "recommendedAction": "Review search title and description against the actual query intent.",
       "confidence": "medium"
@@ -138,7 +138,7 @@
       "query": "black therapists near me",
       "page": "https://www.hicksconsulting.org/black-therapist-memphis/",
       "expectedPage": "/",
-      "position": 9.166666666666666,
+      "position": 7.833333333333333,
       "impressions": 6,
       "recommendedAction": "Strengthen query ownership and internal links toward the governed primary page.",
       "confidence": "high"
@@ -255,10 +255,30 @@
     },
     {
       "type": "WRONG_PAGE_RANKING",
+      "query": "hicks counseling",
+      "page": "https://www.hicksconsulting.org/contact/",
+      "expectedPage": "/",
+      "position": 7,
+      "impressions": 1,
+      "recommendedAction": "Strengthen query ownership and internal links toward the governed primary page.",
+      "confidence": "high"
+    },
+    {
+      "type": "WRONG_PAGE_RANKING",
       "query": "monika hicks",
       "page": "https://www.hicksconsulting.org/about/",
       "expectedPage": "/",
       "position": 5,
+      "impressions": 1,
+      "recommendedAction": "Strengthen query ownership and internal links toward the governed primary page.",
+      "confidence": "high"
+    },
+    {
+      "type": "WRONG_PAGE_RANKING",
+      "query": "monika hicks",
+      "page": "https://www.hicksconsulting.org/black-therapist-memphis/",
+      "expectedPage": "/",
+      "position": 6,
       "impressions": 1,
       "recommendedAction": "Strengthen query ownership and internal links toward the governed primary page.",
       "confidence": "high"
