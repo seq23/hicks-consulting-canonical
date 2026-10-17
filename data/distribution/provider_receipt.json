@@ -1,7 +1,7 @@
 {
   "schema_version": "2.0",
-  "receipt_id": "2026-10-16T13-30-38.268Z-38908357052",
-  "attempted_at": "2026-10-16T13:30:38.268Z",
+  "receipt_id": "2026-10-17T13-25-08.020Z-39036454585",
+  "attempted_at": "2026-10-17T13:25:08.020Z",
   "publication_trigger": "ONLY_AFTER_EXISTING_CONTENT_PUBLISH_WORKFLOW_SUCCEEDS",
   "chain": [
     "successful_publish",
@@ -115,10 +115,10 @@
         "url": "https://www.hicksconsulting.org/resources/guides/relationship-stress-emotional-labor-and-the-need-for-more-honest-support/",
         "status": "SUCCESS",
         "http_status": 200,
-        "verdict": "NEUTRAL",
-        "coverage_state": "Discovered - currently not indexed",
-        "indexing_state": "INDEXING_STATE_UNSPECIFIED",
-        "last_crawl_time": null
+        "verdict": "PASS",
+        "coverage_state": "Submitted and indexed",
+        "indexing_state": "INDEXING_ALLOWED",
+        "last_crawl_time": "2026-10-16T15:18:00Z"
       },
       {
         "url": "https://www.hicksconsulting.org/resources/white-papers/the-burnout-and-boundaries-playbook-for-high-achieving-black-women/",
@@ -197,7 +197,7 @@
   "durable_receipt": {
     "status": "SUCCESS",
     "latest_path": "data/distribution/provider_receipt.json",
-    "history_path": "data/distribution/receipts/2026-10-16T13-30-38.268Z-38908357052.json"
+    "history_path": "data/distribution/receipts/2026-10-17T13-25-08.020Z-39036454585.json"
   },
   "observation_feedback": {
     "status": "SUCCESS",
