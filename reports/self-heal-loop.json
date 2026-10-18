@@ -4,7 +4,7 @@
   "profile": "all",
   "max_attempts": 3,
   "dry_run": false,
-  "generated_at": "2026-10-11T09:24:03.268Z",
+  "generated_at": "2026-10-18T09:20:32.286Z",
   "status": "CLEAN",
   "safe_to_push": true,
   "registered_repairs": [
@@ -51,12 +51,6 @@
   ],
   "remaining_findings": [
     {
-      "id": "entity-coverage",
-      "severity": "SOFT_WARNING",
-      "blocking": false,
-      "repair_command": null
-    },
-    {
       "id": "word-counts",
       "severity": "SOFT_WARNING",
       "blocking": false,
@@ -80,11 +74,6 @@
       "attempt": 1,
       "validation_exit": 0,
       "findings": [
-        {
-          "id": "entity-coverage",
-          "severity": "SOFT_WARNING",
-          "reason": ""
-        },
         {
           "id": "word-counts",
           "severity": "SOFT_WARNING",
