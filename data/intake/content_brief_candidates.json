@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-16T14:46:51.088Z",
+  "generatedAt": "2026-10-19T00:00:00.000Z",
   "policy": "full_safe_autonomy_llm_humanized_prewrite_validated",
   "candidates": [
     {
@@ -381,7 +381,7 @@
       "sourceSignalCount": 1,
       "score": 46.33,
       "publishMode": "full_safe_autonomy",
-      "autonomyStatus": "DISCOVERED",
+      "autonomyStatus": "SKIPPED_PROHIBITED_ACTION",
       "llmGeneratedRequired": true,
       "routineApprovalRequired": false,
       "publicOnlyAfterApproval": false,
@@ -2932,7 +2932,7 @@
       "sourceSignalCount": 4,
       "score": 80,
       "publishMode": "full_safe_autonomy",
-      "autonomyStatus": "FAILED_RETRYABLE",
+      "autonomyStatus": "SYSTEM_BLOCKED",
       "routineApprovalRequired": false,
       "llmGeneratedRequired": true,
       "publicOnlyAfterApproval": false,
@@ -3036,6 +3036,432 @@
       "conversionPath": "https://monika-hicks.clientsecure.me/",
       "llmPrompt": "Create a humanized whitepaper draft for Hicks Consulting.\nTitle: I am the first one in my family to go to therapy and nobody understands\nThis page exists to answer exactly one real question a person typed or said: \"I am the first one in my family to go to therapy and nobody understands\". Answer THAT question, in that person's words, in the first two sentences. Do not broaden it into a general overview of Black women healing beyond survival; other pages on this site cover other questions in the same area and this one must not overlap them.\nMinimum words: 2000. Target words: 2500.\nWrite in a warm, grounded, specific voice. Do not diagnose. Do not guarantee outcomes. Do not invent client stories.\nInclude these sections: Executive summary; The question people are actually asking; What the evidence shows; Audience analysis; Framework; Implementation guidance; Risks and limitations; Recommended next steps.\nApproved conversion path after value is delivered: https://monika-hicks.clientsecure.me/",
       "queueType": "content_brief"
+    },
+    {
+      "id": "continuity-insight-2027-02-10-d54308caf11d",
+      "clusterId": "hicks_fanout_092562_8fa095fd66",
+      "clusterTitle": "General emotional wellness and intentional living",
+      "demandPhrasing": {
+        "source": "config/demand_phrasings.json",
+        "familyId": "general_emotional_wellness",
+        "clusterId": null,
+        "form": "why",
+        "groundedIn": [
+          "data/intake/query_clusters.json#general_emotional_wellness",
+          "data/intake/normalized_query_signals.json tag:general_emotional_wellness"
+        ],
+        "evidence": [
+          {
+            "kind": "cluster",
+            "id": "general_emotional_wellness",
+            "title": "General emotional wellness and intentional living",
+            "score": 100,
+            "queryCount": 205
+          }
+        ]
+      },
+      "contentType": "insight",
+      "cadence": "daily",
+      "title": "Why do I keep apologizing for things that are not my fault?",
+      "suggestedRoute": "/resources/insights/why-do-i-keep-apologizing-for-things-that-are-not-my-fault/",
+      "proposedScheduledAt": "2027-02-10T13:00:00.000Z",
+      "targetWords": 900,
+      "minimumWords": 720,
+      "sourceSignalCount": 1,
+      "score": 46.46,
+      "publishMode": "full_safe_autonomy",
+      "autonomyStatus": "DISCOVERED",
+      "llmGeneratedRequired": true,
+      "routineApprovalRequired": false,
+      "publicOnlyAfterApproval": false,
+      "continuity_generated": true,
+      "continuityAfter": "2027-01-01",
+      "continuityPolicy": "rolling_120_day_candidate_runway_existing_cadence",
+      "humanizationChecklist": [
+        "Use plain human language rather than generic therapy marketing copy.",
+        "Vary sentence rhythm and paragraph length.",
+        "Include concrete examples without inventing client stories.",
+        "Avoid exaggerated claims, guarantees, diagnosis, or pressure language.",
+        "Keep Monika Hicks / Hicks Consulting entity references consistent.",
+        "End with an approved conversion path only after value is delivered."
+      ],
+      "conversionPath": "https://monika-hicks.clientsecure.me/",
+      "sections": [
+        "Short answer",
+        "What is actually happening",
+        "Why it shows up this way",
+        "What it is not",
+        "What usually makes it worse",
+        "What helps",
+        "When to get support"
+      ],
+      "llmPrompt": "Create a humanized insight draft for Hicks Consulting.\nTitle: Why do I keep apologizing for things that are not my fault?\nThis page exists to answer exactly one real question a person typed or said: \"Why do I keep apologizing for things that are not my fault?\". Answer THAT question in its own words in the first two sentences. Do not widen it into a general overview of General emotional wellness and intentional living; other pages on this site answer other questions in the same area and this one must not restate them.\nCadence: daily. Proposed future slot: 2027-02-10T13:00:00.000Z.\nMinimum words: 720. Target words: 900.\nUse an answer-first opening, exact-intent headings, concrete examples, and a checklist or decision framework where useful.\nWrite in a warm, grounded, specific voice. Do not diagnose, guarantee outcomes, or invent client stories.\nInclude these sections: Short answer; What is actually happening; Why it shows up this way; What it is not; What usually makes it worse; What helps; When to get support.\nApproved conversion path after value is delivered: https://monika-hicks.clientsecure.me/.\nThis is an autonomous candidate. It must pass Safe Harbor, duplicate, source, cadence, build, and release validation before it can be scheduled."
+    },
+    {
+      "id": "continuity-insight-2027-02-11-ecd02f639350",
+      "clusterId": "hicks_fanout_046892_5b6d2672f4",
+      "clusterTitle": "Workplace emotional intelligence and mental health training",
+      "demandPhrasing": {
+        "source": "config/demand_phrasings.json",
+        "familyId": "workplace_emotional_intelligence",
+        "clusterId": null,
+        "form": "what",
+        "groundedIn": [
+          "data/intake/query_clusters.json#workplace_emotional_intelligence",
+          "data/intake/normalized_query_signals.json tag:workplace_emotional_intelligence",
+          "data/search/target_queries.json query:'memphis small business consulting', 'consultant mental health'"
+        ],
+        "evidence": [
+          {
+            "kind": "cluster",
+            "id": "workplace_emotional_intelligence",
+            "title": "Workplace emotional intelligence and mental health training",
+            "score": 100,
+            "queryCount": 5
+          }
+        ]
+      },
+      "contentType": "insight",
+      "cadence": "daily",
+      "title": "What should be in a workplace mental health training that is not a lunch-and-learn?",
+      "suggestedRoute": "/resources/insights/what-should-be-in-a-workplace-mental-health-training-that-is-not-a-lunch-and-lea/",
+      "proposedScheduledAt": "2027-02-11T13:00:00.000Z",
+      "targetWords": 900,
+      "minimumWords": 720,
+      "sourceSignalCount": 1,
+      "score": 45.93,
+      "publishMode": "full_safe_autonomy",
+      "autonomyStatus": "DISCOVERED",
+      "llmGeneratedRequired": true,
+      "routineApprovalRequired": false,
+      "publicOnlyAfterApproval": false,
+      "continuity_generated": true,
+      "continuityAfter": "2027-01-01",
+      "continuityPolicy": "rolling_120_day_candidate_runway_existing_cadence",
+      "humanizationChecklist": [
+        "Use plain human language rather than generic therapy marketing copy.",
+        "Vary sentence rhythm and paragraph length.",
+        "Include concrete examples without inventing client stories.",
+        "Avoid exaggerated claims, guarantees, diagnosis, or pressure language.",
+        "Keep Monika Hicks / Hicks Consulting entity references consistent.",
+        "End with an approved conversion path only after value is delivered."
+      ],
+      "conversionPath": "https://monika-hicks.clientsecure.me/",
+      "sections": [
+        "Short answer",
+        "Who this is for",
+        "What it looks like",
+        "How to tell the difference",
+        "Common mistakes",
+        "What to do next",
+        "When to seek support"
+      ],
+      "llmPrompt": "Create a humanized insight draft for Hicks Consulting.\nTitle: What should be in a workplace mental health training that is not a lunch-and-learn?\nThis page exists to answer exactly one real question a person typed or said: \"What should be in a workplace mental health training that is not a lunch-and-learn?\". Answer THAT question in its own words in the first two sentences. Do not widen it into a general overview of Workplace emotional intelligence and mental health training; other pages on this site answer other questions in the same area and this one must not restate them.\nCadence: daily. Proposed future slot: 2027-02-11T13:00:00.000Z.\nMinimum words: 720. Target words: 900.\nUse an answer-first opening, exact-intent headings, concrete examples, and a checklist or decision framework where useful.\nWrite in a warm, grounded, specific voice. Do not diagnose, guarantee outcomes, or invent client stories.\nInclude these sections: Short answer; Who this is for; What it looks like; How to tell the difference; Common mistakes; What to do next; When to seek support.\nApproved conversion path after value is delivered: https://monika-hicks.clientsecure.me/.\nThis is an autonomous candidate. It must pass Safe Harbor, duplicate, source, cadence, build, and release validation before it can be scheduled."
+    },
+    {
+      "id": "continuity-insight-2027-02-12-a193c7a370d6",
+      "clusterId": "hicks_fanout_097387_c7ba2a37e7",
+      "clusterTitle": "Black women healing beyond survival",
+      "demandPhrasing": {
+        "source": "config/demand_phrasings.json",
+        "familyId": "black_women_healing",
+        "clusterId": null,
+        "form": "why",
+        "groundedIn": [
+          "data/intake/query_clusters.json#black_women_healing",
+          "data/intake/normalized_query_signals.json tag:black_women",
+          "data/search/target_queries.json query:'black female therapist near me', 'therapy for high-achieving Black women Memphis'"
+        ],
+        "evidence": [
+          {
+            "kind": "cluster",
+            "id": "black_women_healing",
+            "title": "Black women healing beyond survival",
+            "score": 60,
+            "queryCount": 3
+          }
+        ]
+      },
+      "contentType": "insight",
+      "cadence": "daily",
+      "title": "Why am I still exhausted after I finally got everything I worked for?",
+      "suggestedRoute": "/resources/insights/why-am-i-still-exhausted-after-i-finally-got-everything-i-worked-for/",
+      "proposedScheduledAt": "2027-02-12T13:00:00.000Z",
+      "targetWords": 900,
+      "minimumWords": 720,
+      "sourceSignalCount": 1,
+      "score": 45.6,
+      "publishMode": "full_safe_autonomy",
+      "autonomyStatus": "DISCOVERED",
+      "llmGeneratedRequired": true,
+      "routineApprovalRequired": false,
+      "publicOnlyAfterApproval": false,
+      "continuity_generated": true,
+      "continuityAfter": "2027-01-01",
+      "continuityPolicy": "rolling_120_day_candidate_runway_existing_cadence",
+      "humanizationChecklist": [
+        "Use plain human language rather than generic therapy marketing copy.",
+        "Vary sentence rhythm and paragraph length.",
+        "Include concrete examples without inventing client stories.",
+        "Avoid exaggerated claims, guarantees, diagnosis, or pressure language.",
+        "Keep Monika Hicks / Hicks Consulting entity references consistent.",
+        "End with an approved conversion path only after value is delivered."
+      ],
+      "conversionPath": "https://monika-hicks.clientsecure.me/",
+      "sections": [
+        "Short answer",
+        "What is actually happening",
+        "Why it shows up this way",
+        "What it is not",
+        "What usually makes it worse",
+        "What helps",
+        "When to get support"
+      ],
+      "llmPrompt": "Create a humanized insight draft for Hicks Consulting.\nTitle: Why am I still exhausted after I finally got everything I worked for?\nThis page exists to answer exactly one real question a person typed or said: \"Why am I still exhausted after I finally got everything I worked for?\". Answer THAT question in its own words in the first two sentences. Do not widen it into a general overview of Black women healing beyond survival; other pages on this site answer other questions in the same area and this one must not restate them.\nCadence: daily. Proposed future slot: 2027-02-12T13:00:00.000Z.\nMinimum words: 720. Target words: 900.\nUse an answer-first opening, exact-intent headings, concrete examples, and a checklist or decision framework where useful.\nWrite in a warm, grounded, specific voice. Do not diagnose, guarantee outcomes, or invent client stories.\nInclude these sections: Short answer; What is actually happening; Why it shows up this way; What it is not; What usually makes it worse; What helps; When to get support.\nApproved conversion path after value is delivered: https://monika-hicks.clientsecure.me/.\nThis is an autonomous candidate. It must pass Safe Harbor, duplicate, source, cadence, build, and release validation before it can be scheduled."
+    },
+    {
+      "id": "continuity-insight-2027-02-15-0e69029572d3",
+      "clusterId": "hicks_fanout_056491_8aba30089c",
+      "clusterTitle": "Burnout, boundaries, and over-functioning",
+      "demandPhrasing": {
+        "source": "config/demand_phrasings.json",
+        "familyId": "burnout_boundaries",
+        "clusterId": null,
+        "form": "complaint",
+        "groundedIn": [
+          "data/intake/query_clusters.json#burnout_boundaries",
+          "data/intake/normalized_query_signals.json tag:burnout",
+          "data/search/target_queries.json query:'burnout therapist Memphis'"
+        ],
+        "evidence": [
+          {
+            "kind": "cluster",
+            "id": "burnout_boundaries",
+            "title": "Burnout, boundaries, and over-functioning",
+            "score": 40,
+            "queryCount": 2
+          }
+        ]
+      },
+      "contentType": "insight",
+      "cadence": "daily",
+      "title": "I am the person everybody calls and I am running on empty",
+      "suggestedRoute": "/resources/insights/i-am-the-person-everybody-calls-and-i-am-running-on-empty/",
+      "proposedScheduledAt": "2027-02-15T13:00:00.000Z",
+      "targetWords": 900,
+      "minimumWords": 720,
+      "sourceSignalCount": 1,
+      "score": 45.39,
+      "publishMode": "full_safe_autonomy",
+      "autonomyStatus": "DISCOVERED",
+      "llmGeneratedRequired": true,
+      "routineApprovalRequired": false,
+      "publicOnlyAfterApproval": false,
+      "continuity_generated": true,
+      "continuityAfter": "2027-01-01",
+      "continuityPolicy": "rolling_120_day_candidate_runway_existing_cadence",
+      "humanizationChecklist": [
+        "Use plain human language rather than generic therapy marketing copy.",
+        "Vary sentence rhythm and paragraph length.",
+        "Include concrete examples without inventing client stories.",
+        "Avoid exaggerated claims, guarantees, diagnosis, or pressure language.",
+        "Keep Monika Hicks / Hicks Consulting entity references consistent.",
+        "End with an approved conversion path only after value is delivered."
+      ],
+      "conversionPath": "https://monika-hicks.clientsecure.me/",
+      "sections": [
+        "You are not imagining it",
+        "What this usually means",
+        "The pattern underneath",
+        "What to try this week",
+        "What not to do",
+        "When it is time to talk to someone"
+      ],
+      "llmPrompt": "Create a humanized insight draft for Hicks Consulting.\nTitle: I am the person everybody calls and I am running on empty\nThis page exists to answer exactly one real question a person typed or said: \"I am the person everybody calls and I am running on empty\". Answer THAT question in its own words in the first two sentences. Do not widen it into a general overview of Burnout, boundaries, and over-functioning; other pages on this site answer other questions in the same area and this one must not restate them.\nCadence: daily. Proposed future slot: 2027-02-15T13:00:00.000Z.\nMinimum words: 720. Target words: 900.\nUse an answer-first opening, exact-intent headings, concrete examples, and a checklist or decision framework where useful.\nWrite in a warm, grounded, specific voice. Do not diagnose, guarantee outcomes, or invent client stories.\nInclude these sections: You are not imagining it; What this usually means; The pattern underneath; What to try this week; What not to do; When it is time to talk to someone.\nApproved conversion path after value is delivered: https://monika-hicks.clientsecure.me/.\nThis is an autonomous candidate. It must pass Safe Harbor, duplicate, source, cadence, build, and release validation before it can be scheduled."
+    },
+    {
+      "id": "continuity-guide-2027-02-15-4d0814975a6c",
+      "clusterId": "hicks_fanout_095922_d1f82a5ad7",
+      "clusterTitle": "Gen Z and millennial mental health language",
+      "demandPhrasing": {
+        "source": "config/demand_phrasings.json",
+        "familyId": "genz_millennial_mental_health",
+        "clusterId": null,
+        "form": "how",
+        "groundedIn": [
+          "data/intake/query_clusters.json#genz_millennial_mental_health",
+          "data/intake/normalized_query_signals.json tag:genz_millennial"
+        ],
+        "evidence": [
+          {
+            "kind": "cluster",
+            "id": "genz_millennial_mental_health",
+            "title": "Gen Z and millennial mental health language",
+            "score": 20,
+            "queryCount": 1
+          }
+        ]
+      },
+      "contentType": "guide",
+      "cadence": "monthly",
+      "title": "How do I talk to my parents about therapy when they think it is dramatic?",
+      "suggestedRoute": "/resources/guides/how-do-i-talk-to-my-parents-about-therapy-when-they-think-it-is-dramatic/",
+      "proposedScheduledAt": "2027-02-15T13:00:00.000Z",
+      "targetWords": 1400,
+      "minimumWords": 1120,
+      "sourceSignalCount": 1,
+      "score": 45.14,
+      "publishMode": "full_safe_autonomy",
+      "autonomyStatus": "DISCOVERED",
+      "llmGeneratedRequired": true,
+      "routineApprovalRequired": false,
+      "publicOnlyAfterApproval": false,
+      "continuity_generated": true,
+      "continuityAfter": "2027-01-01",
+      "continuityPolicy": "rolling_120_day_candidate_runway_existing_cadence",
+      "humanizationChecklist": [
+        "Use plain human language rather than generic therapy marketing copy.",
+        "Vary sentence rhythm and paragraph length.",
+        "Include concrete examples without inventing client stories.",
+        "Avoid exaggerated claims, guarantees, diagnosis, or pressure language.",
+        "Keep Monika Hicks / Hicks Consulting entity references consistent.",
+        "End with an approved conversion path only after value is delivered."
+      ],
+      "conversionPath": "https://monika-hicks.clientsecure.me/",
+      "sections": [
+        "Short answer",
+        "Before you start",
+        "Step by step",
+        "What to say",
+        "What gets in the way",
+        "How to tell it is working",
+        "Next step"
+      ],
+      "llmPrompt": "Create a humanized guide draft for Hicks Consulting.\nTitle: How do I talk to my parents about therapy when they think it is dramatic?\nThis page exists to answer exactly one real question a person typed or said: \"How do I talk to my parents about therapy when they think it is dramatic?\". Answer THAT question in its own words in the first two sentences. Do not widen it into a general overview of Gen Z and millennial mental health language; other pages on this site answer other questions in the same area and this one must not restate them.\nCadence: monthly. Proposed future slot: 2027-02-15T13:00:00.000Z.\nMinimum words: 1120. Target words: 1400.\nUse an answer-first opening, exact-intent headings, concrete examples, and a checklist or decision framework where useful.\nWrite in a warm, grounded, specific voice. Do not diagnose, guarantee outcomes, or invent client stories.\nInclude these sections: Short answer; Before you start; Step by step; What to say; What gets in the way; How to tell it is working; Next step.\nApproved conversion path after value is delivered: https://monika-hicks.clientsecure.me/.\nThis is an autonomous candidate. It must pass Safe Harbor, duplicate, source, cadence, build, and release validation before it can be scheduled."
+    },
+    {
+      "id": "continuity-insight-2027-02-16-4be18cebd2a3",
+      "clusterId": "hicks_fanout_073794_1ee8f91c54",
+      "clusterTitle": "Faith-centered emotional support",
+      "demandPhrasing": {
+        "source": "config/demand_phrasings.json",
+        "familyId": "faith_centered_support",
+        "clusterId": null,
+        "form": "complaint",
+        "groundedIn": [
+          "data/intake/query_clusters.json#faith_centered_support",
+          "data/search/target_queries.json query:'christian therapists near me'"
+        ],
+        "evidence": [
+          {
+            "kind": "cluster",
+            "id": "faith_centered_support",
+            "title": "Faith-centered emotional support",
+            "score": 0,
+            "queryCount": 0
+          }
+        ]
+      },
+      "contentType": "insight",
+      "cadence": "daily",
+      "title": "I was told to give it to God and I am still carrying all of it",
+      "suggestedRoute": "/resources/insights/i-was-told-to-give-it-to-god-and-i-am-still-carrying-all-of-it/",
+      "proposedScheduledAt": "2027-02-16T13:00:00.000Z",
+      "targetWords": 900,
+      "minimumWords": 720,
+      "sourceSignalCount": 1,
+      "score": 44.92,
+      "publishMode": "full_safe_autonomy",
+      "autonomyStatus": "DISCOVERED",
+      "llmGeneratedRequired": true,
+      "routineApprovalRequired": false,
+      "publicOnlyAfterApproval": false,
+      "continuity_generated": true,
+      "continuityAfter": "2027-01-01",
+      "continuityPolicy": "rolling_120_day_candidate_runway_existing_cadence",
+      "humanizationChecklist": [
+        "Use plain human language rather than generic therapy marketing copy.",
+        "Vary sentence rhythm and paragraph length.",
+        "Include concrete examples without inventing client stories.",
+        "Avoid exaggerated claims, guarantees, diagnosis, or pressure language.",
+        "Keep Monika Hicks / Hicks Consulting entity references consistent.",
+        "End with an approved conversion path only after value is delivered."
+      ],
+      "conversionPath": "https://monika-hicks.clientsecure.me/",
+      "sections": [
+        "You are not imagining it",
+        "What this usually means",
+        "The pattern underneath",
+        "What to try this week",
+        "What not to do",
+        "When it is time to talk to someone"
+      ],
+      "llmPrompt": "Create a humanized insight draft for Hicks Consulting.\nTitle: I was told to give it to God and I am still carrying all of it\nThis page exists to answer exactly one real question a person typed or said: \"I was told to give it to God and I am still carrying all of it\". Answer THAT question in its own words in the first two sentences. Do not widen it into a general overview of Faith-centered emotional support; other pages on this site answer other questions in the same area and this one must not restate them.\nCadence: daily. Proposed future slot: 2027-02-16T13:00:00.000Z.\nMinimum words: 720. Target words: 900.\nUse an answer-first opening, exact-intent headings, concrete examples, and a checklist or decision framework where useful.\nWrite in a warm, grounded, specific voice. Do not diagnose, guarantee outcomes, or invent client stories.\nInclude these sections: You are not imagining it; What this usually means; The pattern underneath; What to try this week; What not to do; When it is time to talk to someone.\nApproved conversion path after value is delivered: https://monika-hicks.clientsecure.me/.\nThis is an autonomous candidate. It must pass Safe Harbor, duplicate, source, cadence, build, and release validation before it can be scheduled."
+    },
+    {
+      "id": "continuity-article-2027-02-16-4f0cb96d34fc",
+      "clusterId": "hicks_fanout_020403_4ee0ff62b9",
+      "clusterTitle": "What Relationship Stress Looks Like When You Keep Minimizing Your Own Feelings: A Gentler Truth To Consider",
+      "demandPhrasing": {
+        "source": "config/demand_phrasings.json",
+        "familyId": "local_access",
+        "clusterId": null,
+        "form": "what",
+        "groundedIn": [
+          "data/search/target_queries.json lead_intent_tier T1/T2/T3 with gsc_measured.impressions > 0",
+          "data/search/free_wins.json"
+        ],
+        "evidence": [
+          {
+            "kind": "measured_queries",
+            "count": 34,
+            "impressions": 119,
+            "examples": [
+              "black therapist near me",
+              "african american therapist near me",
+              "african american female therapist near me",
+              "black mental health therapist near me",
+              "african american therapists near me"
+            ]
+          }
+        ]
+      },
+      "contentType": "article",
+      "cadence": "weekly",
+      "title": "What are the red flags that a therapist is not a good fit?",
+      "suggestedRoute": "/resources/articles/what-are-the-red-flags-that-a-therapist-is-not-a-good-fit/",
+      "proposedScheduledAt": "2027-02-16T13:00:00.000Z",
+      "targetWords": 1200,
+      "minimumWords": 960,
+      "sourceSignalCount": 1,
+      "score": 44.77,
+      "publishMode": "full_safe_autonomy",
+      "autonomyStatus": "DISCOVERED",
+      "llmGeneratedRequired": true,
+      "routineApprovalRequired": false,
+      "publicOnlyAfterApproval": false,
+      "continuity_generated": true,
+      "continuityAfter": "2027-01-01",
+      "continuityPolicy": "rolling_120_day_candidate_runway_existing_cadence",
+      "humanizationChecklist": [
+        "Use plain human language rather than generic therapy marketing copy.",
+        "Vary sentence rhythm and paragraph length.",
+        "Include concrete examples without inventing client stories.",
+        "Avoid exaggerated claims, guarantees, diagnosis, or pressure language.",
+        "Keep Monika Hicks / Hicks Consulting entity references consistent.",
+        "End with an approved conversion path only after value is delivered."
+      ],
+      "conversionPath": "https://monika-hicks.clientsecure.me/",
+      "sections": [
+        "Short answer",
+        "Who this is for",
+        "What it looks like",
+        "How to tell the difference",
+        "Common mistakes",
+        "What to do next",
+        "When to seek support"
+      ],
+      "llmPrompt": "Create a humanized article draft for Hicks Consulting.\nTitle: What are the red flags that a therapist is not a good fit?\nThis page exists to answer exactly one real question a person typed or said: \"What are the red flags that a therapist is not a good fit?\". Answer THAT question in its own words in the first two sentences. Do not widen it into a general overview of local_access; other pages on this site answer other questions in the same area and this one must not restate them.\nCadence: weekly. Proposed future slot: 2027-02-16T13:00:00.000Z.\nMinimum words: 960. Target words: 1200.\nUse an answer-first opening, exact-intent headings, concrete examples, and a checklist or decision framework where useful.\nWrite in a warm, grounded, specific voice. Do not diagnose, guarantee outcomes, or invent client stories.\nInclude these sections: Short answer; Who this is for; What it looks like; How to tell the difference; Common mistakes; What to do next; When to seek support.\nApproved conversion path after value is delivered: https://monika-hicks.clientsecure.me/.\nThis is an autonomous candidate. It must pass Safe Harbor, duplicate, source, cadence, build, and release validation before it can be scheduled."
     }
   ]
 }
