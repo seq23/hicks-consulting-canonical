@@ -2,11 +2,11 @@
   "schema_version": "1.0",
   "generated_from": "data/search_intelligence/target_query_set.json",
   "window": {
-    "start_date": "2026-09-18",
-    "end_date": "2026-10-15",
+    "start_date": "2026-09-19",
+    "end_date": "2026-10-16",
     "days": 28
   },
-  "truth_collected_at": "2026-10-18T14:30:31.062Z",
+  "truth_collected_at": "2026-10-19T20:00:47.327Z",
   "rule": {
     "grouping": "one family per landing page (the page Google shows for the query)",
     "min_impressions": 20,
@@ -16,16 +16,16 @@
     "top_n": 12
   },
   "client_approval": "Client site: qualifying families are PROPOSALS. A family is strengthened only once its status is \"approved\" here, with approved_by naming who decided (the client, or the site owner on her own decision) and approved_at.",
-  "target_count": 70,
-  "impressions_total": 403,
-  "family_count": 13,
+  "target_count": 68,
+  "impressions_total": 393,
+  "family_count": 12,
   "proposal_count": 0,
   "approved_count": 2,
   "families": [
     {
       "family": "/black-therapist-memphis/",
       "page": "https://www.hicksconsulting.org/black-therapist-memphis/",
-      "impressions": 212,
+      "impressions": 208,
       "clicks": 1,
       "ctr": 0.5,
       "weighted_position": 8.7,
@@ -34,9 +34,9 @@
       "queries": [
         {
           "query": "black therapist memphis tn",
-          "impressions": 63,
+          "impressions": 60,
           "clicks": 0,
-          "position": 8.87
+          "position": 8.8
         },
         {
           "query": "black therapist near me",
@@ -46,9 +46,9 @@
         },
         {
           "query": "black therapist memphis, tn",
-          "impressions": 16,
+          "impressions": 17,
           "clicks": 1,
-          "position": 9.19
+          "position": 9.06
         },
         {
           "query": "african american therapist near me",
@@ -69,16 +69,16 @@
           "position": 7.25
         },
         {
-          "query": "black counselors near me",
-          "impressions": 8,
-          "clicks": 0,
-          "position": 6.75
-        },
-        {
           "query": "african american therapists near me",
           "impressions": 7,
           "clicks": 0,
           "position": 8.86
+        },
+        {
+          "query": "black counselors near me",
+          "impressions": 7,
+          "clicks": 0,
+          "position": 6.43
         },
         {
           "query": "black mental health therapist",
@@ -106,9 +106,9 @@
         },
         {
           "query": "black therapist",
-          "impressions": 5,
+          "impressions": 4,
           "clicks": 0,
-          "position": 5.6
+          "position": 6.5
         },
         {
           "query": "black grief therapist near me",
@@ -219,15 +219,15 @@
       "approved_by": "site owner (not the client)",
       "approved_at": "2026-10-11",
       "approval_note": "Site owner decided on 2026-10-11 to strengthen both qualifying families now rather than wait on a client flag. Not a client decision; the client did not approve or author this change.",
-      "proposed_change": "Lead /black-therapist-memphis/ with a direct answer to \"black therapist memphis tn\" in its title and first paragraph: 212 impressions at position 8.7 earned 1 click(s) (0.5% CTR)."
+      "proposed_change": "Lead /black-therapist-memphis/ with a direct answer to \"black therapist memphis tn\" in its title and first paragraph: 208 impressions at position 8.7 earned 1 click(s) (0.5% CTR)."
     },
     {
       "family": "/",
       "page": "https://www.hicksconsulting.org/",
-      "impressions": 171,
+      "impressions": 169,
       "clicks": 6,
-      "ctr": 3.5,
-      "weighted_position": 9.5,
+      "ctr": 3.6,
+      "weighted_position": 8.7,
       "query_count": 28,
       "head_query": "hicks consulting",
       "queries": [
@@ -245,9 +245,9 @@
         },
         {
           "query": "anxiety therapist",
-          "impressions": 24,
+          "impressions": 22,
           "clicks": 0,
-          "position": 39.29
+          "position": 35.95
         },
         {
           "query": "hicks",
@@ -406,7 +406,7 @@
       "approved_by": "site owner (not the client)",
       "approved_at": "2026-10-11",
       "approval_note": "Site owner decided on 2026-10-11 to strengthen both qualifying families now rather than wait on a client flag. Not a client decision; the client did not approve or author this change.",
-      "proposed_change": "Lead / with a direct answer to \"hicks consulting\" in its title and first paragraph: 171 impressions at position 9.5 earned 6 click(s) (3.5% CTR)."
+      "proposed_change": "Lead / with a direct answer to \"hicks consulting\" in its title and first paragraph: 169 impressions at position 8.7 earned 6 click(s) (3.6% CTR)."
     },
     {
       "family": "/llm-atlas/queries/",
@@ -431,34 +431,6 @@
       "why_not": "4 impressions < floor 20"
     },
     {
-      "family": "/resources/articles/the-quiet-anger-that-builds-when-you-are-always-the-reliable-one/",
-      "page": "https://hicksconsulting.org/resources/articles/the-quiet-anger-that-builds-when-you-are-always-the-reliable-one/",
-      "impressions": 3,
-      "clicks": 0,
-      "ctr": 0,
-      "weighted_position": 8.7,
-      "query_count": 2,
-      "head_query": "quiet anger",
-      "queries": [
-        {
-          "query": "quiet anger",
-          "impressions": 2,
-          "clicks": 0,
-          "position": 8.5
-        },
-        {
-          "query": "quite angry",
-          "impressions": 1,
-          "clicks": 0,
-          "position": 9
-        }
-      ],
-      "rank": 4,
-      "qualifies": false,
-      "status": "measured_only",
-      "why_not": "3 impressions < floor 20"
-    },
-    {
       "family": "/therapy/",
       "page": "https://www.hicksconsulting.org/therapy/",
       "impressions": 3,
@@ -475,7 +447,7 @@
           "position": 20.67
         }
       ],
-      "rank": 5,
+      "rank": 4,
       "qualifies": false,
       "status": "measured_only",
       "why_not": "3 impressions < floor 20"
@@ -497,32 +469,32 @@
           "position": 60
         }
       ],
-      "rank": 6,
+      "rank": 5,
       "qualifies": false,
       "status": "measured_only",
       "why_not": "2 impressions < floor 20"
     },
     {
-      "family": "/resources/white-papers/therapy-vs-coaching-guide/",
-      "page": "https://hicksconsulting.org/resources/white-papers/therapy-vs-coaching-guide/",
-      "impressions": 2,
+      "family": "/corporate-speaking/",
+      "page": "https://www.hicksconsulting.org/corporate-speaking/",
+      "impressions": 1,
       "clicks": 0,
       "ctr": 0,
-      "weighted_position": 69,
+      "weighted_position": 4,
       "query_count": 1,
-      "head_query": "coaching for therapists",
+      "head_query": "hicks training",
       "queries": [
         {
-          "query": "coaching for therapists",
-          "impressions": 2,
+          "query": "hicks training",
+          "impressions": 1,
           "clicks": 0,
-          "position": 69
+          "position": 4
         }
       ],
-      "rank": 7,
+      "rank": 6,
       "qualifies": false,
       "status": "measured_only",
-      "why_not": "2 impressions < floor 20"
+      "why_not": "1 impressions < floor 20"
     },
     {
       "family": "/intake-quiz/",
@@ -541,7 +513,7 @@
           "position": 3
         }
       ],
-      "rank": 8,
+      "rank": 7,
       "qualifies": false,
       "status": "measured_only",
       "why_not": "1 impressions < floor 20"
@@ -563,7 +535,7 @@
           "position": 1
         }
       ],
-      "rank": 9,
+      "rank": 8,
       "qualifies": false,
       "status": "measured_only",
       "why_not": "1 impressions < floor 20"
@@ -585,7 +557,7 @@
           "position": 11
         }
       ],
-      "rank": 10,
+      "rank": 9,
       "qualifies": false,
       "status": "measured_only",
       "why_not": "1 impressions < floor 20"
@@ -607,7 +579,7 @@
           "position": 2
         }
       ],
-      "rank": 11,
+      "rank": 10,
       "qualifies": false,
       "status": "measured_only",
       "why_not": "1 impressions < floor 20"
@@ -629,7 +601,7 @@
           "position": 9
         }
       ],
-      "rank": 12,
+      "rank": 11,
       "qualifies": false,
       "status": "measured_only",
       "why_not": "1 impressions < floor 20"
@@ -651,7 +623,7 @@
           "position": 56
         }
       ],
-      "rank": 13,
+      "rank": 12,
       "qualifies": false,
       "status": "measured_only",
       "why_not": "1 impressions < floor 20"

@@ -2,33 +2,33 @@
   "schema_version": "1.0",
   "truth_source": "google_search_console_search_analytics",
   "property": "sc-domain:hicksconsulting.org",
-  "collected_at": "2026-10-18T14:30:31.062Z",
+  "collected_at": "2026-10-19T20:00:47.327Z",
   "state": "OK",
   "named_stop": null,
   "window": {
-    "start_date": "2026-09-18",
-    "end_date": "2026-10-15",
+    "start_date": "2026-09-19",
+    "end_date": "2026-10-16",
     "days": 28
   },
   "totals": {
-    "clicks": 27,
-    "impressions": 1669,
-    "ctr": 0.0162,
-    "position": 7.33
+    "clicks": 28,
+    "impressions": 1651,
+    "ctr": 0.017,
+    "position": 7.14
   },
-  "row_count": 95,
-  "query_count": 70,
-  "page_count": 25,
-  "attributed_impressions": 403,
+  "row_count": 92,
+  "query_count": 68,
+  "page_count": 22,
+  "attributed_impressions": 393,
   "truth_boundary": "Rows are query x page for the window. Search Console withholds anonymised queries from query rows, so attributed_impressions is below totals.impressions; the property total is the headline number.",
   "rows": [
     {
       "query": "black therapist memphis tn",
       "page": "https://www.hicksconsulting.org/black-therapist-memphis/",
       "clicks": 0,
-      "impressions": 60,
+      "impressions": 57,
       "ctr": 0,
-      "position": 9.15
+      "position": 9.09
     },
     {
       "query": "black therapist near me",
@@ -50,9 +50,17 @@
       "query": "anxiety therapist",
       "page": "https://www.hicksconsulting.org/",
       "clicks": 0,
-      "impressions": 24,
+      "impressions": 22,
       "ctr": 0,
-      "position": 39.29
+      "position": 35.95
+    },
+    {
+      "query": "black therapist memphis, tn",
+      "page": "https://www.hicksconsulting.org/black-therapist-memphis/",
+      "clicks": 1,
+      "impressions": 17,
+      "ctr": 0.0588,
+      "position": 9.06
     },
     {
       "query": "monika hicks",
@@ -61,14 +69,6 @@
       "impressions": 17,
       "ctr": 0.1176,
       "position": 3.18
-    },
-    {
-      "query": "black therapist memphis, tn",
-      "page": "https://www.hicksconsulting.org/black-therapist-memphis/",
-      "clicks": 1,
-      "impressions": 16,
-      "ctr": 0.0625,
-      "position": 9.19
     },
     {
       "query": "hicks consulting",
@@ -103,14 +103,6 @@
       "position": 7.25
     },
     {
-      "query": "black counselors near me",
-      "page": "https://www.hicksconsulting.org/black-therapist-memphis/",
-      "clicks": 0,
-      "impressions": 8,
-      "ctr": 0,
-      "position": 6.75
-    },
-    {
       "query": "hicks consulting",
       "page": "https://www.hicksconsulting.org/contact/",
       "clicks": 0,
@@ -125,6 +117,14 @@
       "impressions": 7,
       "ctr": 0,
       "position": 8.86
+    },
+    {
+      "query": "black counselors near me",
+      "page": "https://www.hicksconsulting.org/black-therapist-memphis/",
+      "clicks": 0,
+      "impressions": 7,
+      "ctr": 0,
+      "position": 6.43
     },
     {
       "query": "black mental health therapist",
@@ -319,14 +319,6 @@
       "position": 10
     },
     {
-      "query": "coaching for therapists",
-      "page": "https://hicksconsulting.org/resources/white-papers/therapy-vs-coaching-guide/",
-      "clicks": 0,
-      "impressions": 2,
-      "ctr": 0,
-      "position": 69
-    },
-    {
       "query": "health consultant",
       "page": "https://www.hicksconsulting.org/",
       "clicks": 0,
@@ -439,14 +431,6 @@
       "position": 6
     },
     {
-      "query": "quiet anger",
-      "page": "https://hicksconsulting.org/resources/articles/the-quiet-anger-that-builds-when-you-are-always-the-reliable-one/",
-      "clicks": 0,
-      "impressions": 2,
-      "ctr": 0,
-      "position": 8.5
-    },
-    {
       "query": "anxiety therapist * * * *",
       "page": "https://www.hicksconsulting.org/",
       "clicks": 0,
@@ -477,14 +461,6 @@
       "impressions": 1,
       "ctr": 0,
       "position": 10
-    },
-    {
-      "query": "black therapist",
-      "page": "https://www.hicksconsulting.org/",
-      "clicks": 0,
-      "impressions": 1,
-      "ctr": 0,
-      "position": 2
     },
     {
       "query": "black therapy near me",
@@ -615,6 +591,14 @@
       "position": 7
     },
     {
+      "query": "hicks training",
+      "page": "https://www.hicksconsulting.org/corporate-speaking/",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 4
+    },
+    {
       "query": "hicks's",
       "page": "https://www.hicksconsulting.org/",
       "clicks": 0,
@@ -689,14 +673,6 @@
     {
       "query": "monika hicks",
       "page": "https://www.hicksconsulting.org/resources/insights/the-emotional-cost-of-always-being-the-one-who-handles-it-how-it-shows-up-in-work-and/",
-      "clicks": 0,
-      "impressions": 1,
-      "ctr": 0,
-      "position": 9
-    },
-    {
-      "query": "quite angry",
-      "page": "https://www.hicksconsulting.org/resources/articles/the-quiet-anger-that-builds-when-you-are-always-the-reliable-one/",
       "clicks": 0,
       "impressions": 1,
       "ctr": 0,
