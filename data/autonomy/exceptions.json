@@ -597,6 +597,21 @@
       "createdAt": "2026-10-16T14:46:51.472Z",
       "blocksOtherWork": false,
       "clientActionRequired": false
+    },
+    {
+      "id": "exception-metadata-daily-025-1-1792437652688",
+      "candidateId": "daily-025-1",
+      "decision": "SKIPPED_UNSAFE_SEARCH_METADATA",
+      "findings": [
+        {
+          "code": "SEARCH_METADATA_UNRESOLVED",
+          "severity": "hard",
+          "route": "/resources/insights/what-relationship-stress-looks-like-when-you-keep-minimizing-your-own-feelings-what-t/"
+        }
+      ],
+      "createdAt": "2026-10-19T19:20:52.688Z",
+      "blocksOtherWork": false,
+      "clientActionRequired": false
     }
   ]
 }
