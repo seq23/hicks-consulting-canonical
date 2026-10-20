@@ -612,6 +612,34 @@
       "createdAt": "2026-10-19T19:20:52.688Z",
       "blocksOtherWork": false,
       "clientActionRequired": false
+    },
+    {
+      "id": "exception-continuity-insight-2027-01-05-9384d3e9a510-1792507643982",
+      "candidateId": "continuity-insight-2027-01-05-9384d3e9a510",
+      "decision": "SKIPPED_PROHIBITED_ACTION",
+      "findings": [
+        {
+          "code": "LOW_ADMISSION_SCORE",
+          "severity": "advisory"
+        }
+      ],
+      "createdAt": "2026-10-20T14:47:23.920Z",
+      "blocksOtherWork": false,
+      "clientActionRequired": false
+    },
+    {
+      "id": "exception-continuity-article-2027-01-05-48e4f11f7ef3-1792507643982",
+      "candidateId": "continuity-article-2027-01-05-48e4f11f7ef3",
+      "decision": "SKIPPED_PROHIBITED_ACTION",
+      "findings": [
+        {
+          "code": "LOW_ADMISSION_SCORE",
+          "severity": "advisory"
+        }
+      ],
+      "createdAt": "2026-10-20T14:47:23.920Z",
+      "blocksOtherWork": false,
+      "clientActionRequired": false
     }
   ]
 }
