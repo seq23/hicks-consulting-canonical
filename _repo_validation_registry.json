@@ -1224,6 +1224,20 @@
       "rationale": "Until 11 Oct 2026 https://hicksconsulting.org/<path> served 200 copies of every page with a www canonical and Search Console held a stale apex sitemap. The worker now 301s the apex to www (path and query kept); this check runs the worker against apex requests, requires every sitemap URL on www, requires the live post-deploy curl check to be wired, and fails if a stale http/apex sitemap registration is still listed once the deleting collector has run."
     },
     {
+      "id": "edge-cache",
+      "npmScript": "validate:edge-cache",
+      "entrypoint": "_ops/validators/validate_edge_cache_contract.mjs",
+      "severity": "HARD_FAIL",
+      "blocksRelease": true,
+      "group": "agency-search",
+      "owner": "site-operations",
+      "ciInvocation": "MATRIX_ONLY",
+      "findingProtocol": "VALIDATION_FINDING",
+      "enabled": true,
+      "scope": "worker/_worker.js serveStatic/isEdgeCacheable edge cache and the build-id stamp in dist/_worker.js",
+      "rationale": "Until 21 Oct 2026 every HTML request went worker -> ASSETS uncached (cf-cache-status DYNAMIC, 200-320 ms TTFB, Ahrefs Slow page). The worker now edge-caches static GET/HEAD on www keyed by a build id; this runs the real worker with a fake cache and requires MISS then HIT, the origin's browser Cache-Control, no caching of API/admin/forms/POST/query/non-200, the apex 301 first, and a stamped build id."
+    },
+    {
       "id": "index-coverage-freshness",
       "npmScript": "validate:index-coverage-freshness",
       "entrypoint": "_ops/validators/validate_index_coverage_freshness.js",

@@ -96,7 +96,7 @@ if (!read('pages/organizational-training-inquiry/index.html').toLowerCase().incl
 if (/hero-logo-medallion/.test(homepage)) fail('Homepage hero must not include logo overlay on green blazer photo.');
 if (!homepage.includes('/assets/hicks-consulting-logo-full.png')) fail('Homepage header must use full Hicks Consulting logo.');
 if (!homepage.includes('/assets/monika-primary.jpg')) fail('Homepage must keep green blazer hero photo.');
-if (!homepage.includes('/assets/headshot-logo.png')) fail('Homepage must keep clean white-background / colorful-suit Meet Monika portrait.');
+if (!homepage.includes('/assets/headshot-logo.webp')) fail('Homepage must keep clean white-background / colorful-suit Meet Monika portrait (served as the compressed /assets/headshot-logo.webp since 21 Oct 2026; the 1.2 MB PNG was an Ahrefs oversized image).');
 if (!css.includes('content must never depend on JS animation') || !css.includes('opacity: 1 !important')) fail('Animated sections must fail open so homepage content remains visible without JS.');
 
 if (!fs.existsSync(wranglerPath)) fail('wrangler.toml is required so Cloudflare Pages uses the explicit repo deployment contract.');

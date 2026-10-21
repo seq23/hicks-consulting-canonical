@@ -90,6 +90,7 @@
         "redirect-targets",
         "search-truth-freshness",
         "apex-host-redirect",
+        "edge-cache",
         "index-coverage-freshness",
         "measured-url-404"
       ]
@@ -120,7 +121,8 @@
         "llm-atlas-navigation",
         "search-metadata",
         "redirect-targets",
-        "apex-host-redirect"
+        "apex-host-redirect",
+        "edge-cache"
       ]
     },
     "indexnow": {
@@ -242,6 +244,7 @@
       "checks": [
         "search-truth-freshness",
         "apex-host-redirect",
+        "edge-cache",
         "index-coverage-freshness",
         "measured-url-404"
       ]
