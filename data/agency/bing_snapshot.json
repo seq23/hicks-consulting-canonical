@@ -1,7 +1,7 @@
 {
   "provider": "bing",
   "status": "ok",
-  "checkedAt": "2026-10-20T18:32:54.179Z",
+  "checkedAt": "2026-10-21T18:46:26.709Z",
   "siteUrl": "https://www.hicksconsulting.org/",
   "site": null,
   "metrics": {
@@ -548,24 +548,6 @@
       }
     ],
     "crawl": [
-      {
-        "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
-        "AllOtherCodes": 0,
-        "BlockedByRobotsTxt": 0,
-        "Code2xx": 10,
-        "Code301": 1,
-        "Code302": 0,
-        "Code4xx": 0,
-        "Code5xx": 0,
-        "ConnectionTimeout": 0,
-        "ContainsMalware": 0,
-        "CrawledPages": 0,
-        "CrawlErrors": 0,
-        "Date": "/Date(1784505600000)/",
-        "DnsFailures": 0,
-        "InIndex": 1,
-        "InLinks": 5
-      },
       {
         "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
         "AllOtherCodes": 0,
@@ -2167,19 +2149,28 @@
         "DnsFailures": 0,
         "InIndex": 26,
         "InLinks": 8
+      },
+      {
+        "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+        "AllOtherCodes": 0,
+        "BlockedByRobotsTxt": 0,
+        "Code2xx": 83,
+        "Code301": 5,
+        "Code302": 0,
+        "Code4xx": 1,
+        "Code5xx": 0,
+        "ConnectionTimeout": 0,
+        "ContainsMalware": 0,
+        "CrawledPages": 73,
+        "CrawlErrors": 1,
+        "Date": "/Date(1792368000000)/",
+        "DnsFailures": 0,
+        "InIndex": 26,
+        "InLinks": 8
       }
     ]
   },
   "topQueries": [
-    {
-      "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
-      "AvgClickPosition": -1,
-      "AvgImpressionPosition": 4,
-      "Clicks": 1,
-      "Date": "/Date(1751587200000)/",
-      "Impressions": 6,
-      "Query": "hicks consulting"
-    },
     {
       "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
       "AvgClickPosition": -1,
@@ -2188,33 +2179,6 @@
       "Date": "/Date(1752192000000)/",
       "Impressions": 3,
       "Query": "online therapy for black women"
-    },
-    {
-      "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
-      "AvgClickPosition": -1,
-      "AvgImpressionPosition": 8,
-      "Clicks": 0,
-      "Date": "/Date(1752192000000)/",
-      "Impressions": 1,
-      "Query": "erica hart hicks consultants"
-    },
-    {
-      "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
-      "AvgClickPosition": -1,
-      "AvgImpressionPosition": 2,
-      "Clicks": 0,
-      "Date": "/Date(1752192000000)/",
-      "Impressions": 1,
-      "Query": "melissa hicks therapy"
-    },
-    {
-      "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
-      "AvgClickPosition": -1,
-      "AvgImpressionPosition": 10,
-      "Clicks": 0,
-      "Date": "/Date(1752192000000)/",
-      "Impressions": 1,
-      "Query": "rebecca hicks counselor"
     },
     {
       "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
@@ -2228,11 +2192,38 @@
     {
       "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
       "AvgClickPosition": -1,
+      "AvgImpressionPosition": 10,
+      "Clicks": 0,
+      "Date": "/Date(1752192000000)/",
+      "Impressions": 1,
+      "Query": "rebecca hicks counselor"
+    },
+    {
+      "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
+      "AvgClickPosition": -1,
       "AvgImpressionPosition": 1,
       "Clicks": 0,
       "Date": "/Date(1752192000000)/",
       "Impressions": 1,
       "Query": "hicks consultancy"
+    },
+    {
+      "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
+      "AvgClickPosition": -1,
+      "AvgImpressionPosition": 2,
+      "Clicks": 0,
+      "Date": "/Date(1752192000000)/",
+      "Impressions": 1,
+      "Query": "melissa hicks therapy"
+    },
+    {
+      "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
+      "AvgClickPosition": -1,
+      "AvgImpressionPosition": 8,
+      "Clicks": 0,
+      "Date": "/Date(1752192000000)/",
+      "Impressions": 1,
+      "Query": "erica hart hicks consultants"
     },
     {
       "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
@@ -2255,6 +2246,15 @@
     {
       "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
       "AvgClickPosition": -1,
+      "AvgImpressionPosition": 1,
+      "Clicks": 0,
+      "Date": "/Date(1752796800000)/",
+      "Impressions": 1,
+      "Query": "hicks consulting"
+    },
+    {
+      "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
+      "AvgClickPosition": -1,
       "AvgImpressionPosition": 6,
       "Clicks": 0,
       "Date": "/Date(1752796800000)/",
@@ -2264,11 +2264,11 @@
     {
       "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
       "AvgClickPosition": -1,
-      "AvgImpressionPosition": 1,
-      "Clicks": 0,
-      "Date": "/Date(1752796800000)/",
-      "Impressions": 1,
-      "Query": "hicks consulting"
+      "AvgImpressionPosition": 5,
+      "Clicks": 1,
+      "Date": "/Date(1753401600000)/",
+      "Impressions": 2,
+      "Query": "anthony hicks, consultant"
     },
     {
       "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
@@ -2283,28 +2283,10 @@
       "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
       "AvgClickPosition": -1,
       "AvgImpressionPosition": 5,
-      "Clicks": 1,
-      "Date": "/Date(1753401600000)/",
-      "Impressions": 2,
-      "Query": "anthony hicks, consultant"
-    },
-    {
-      "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
-      "AvgClickPosition": -1,
-      "AvgImpressionPosition": 5,
       "Clicks": 0,
       "Date": "/Date(1753401600000)/",
       "Impressions": 2,
       "Query": "hicks consulting | alameda ca"
-    },
-    {
-      "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
-      "AvgClickPosition": -1,
-      "AvgImpressionPosition": 2,
-      "Clicks": 0,
-      "Date": "/Date(1753401600000)/",
-      "Impressions": 1,
-      "Query": "how to manage stress and anxiety john hicks consulting counselling"
     },
     {
       "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
@@ -2345,6 +2327,15 @@
     {
       "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
       "AvgClickPosition": -1,
+      "AvgImpressionPosition": 2,
+      "Clicks": 0,
+      "Date": "/Date(1753401600000)/",
+      "Impressions": 1,
+      "Query": "how to manage stress and anxiety john hicks consulting counselling"
+    },
+    {
+      "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
+      "AvgClickPosition": -1,
       "AvgImpressionPosition": 8,
       "Clicks": 0,
       "Date": "/Date(1770940800000)/",
@@ -2376,7 +2367,7 @@
       "Clicks": 0,
       "Date": "/Date(1771545600000)/",
       "Impressions": 1,
-      "Query": "hicks consulting"
+      "Query": "joyce hicks consulting"
     },
     {
       "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
@@ -2385,7 +2376,7 @@
       "Clicks": 0,
       "Date": "/Date(1771545600000)/",
       "Impressions": 1,
-      "Query": "joyce hicks consulting"
+      "Query": "hicks consulting"
     }
   ],
   "message": "Bing Webmaster API connected and refreshed."

@@ -1,14 +1,14 @@
 {
-  "generatedAt": "2026-10-20T18:32:54.179Z",
+  "generatedAt": "2026-10-21T18:46:26.709Z",
   "policy": {
     "blocking": false,
     "message": "SEO, AEO, GEO, GSC, Bing, and live-health quality findings are advisory. Runtime safety, data integrity, auth, cadence, and truth checks remain release gates."
   },
   "inventory": {
     "totalManifest": 238,
-    "published": 109,
-    "approved": 75,
-    "livePages": 137,
+    "published": 110,
+    "approved": 74,
+    "livePages": 138,
     "sourcePages": 266
   },
   "scores": [
@@ -24,9 +24,9 @@
     {
       "key": "onpage",
       "label": "On-page SEO",
-      "score": 93,
+      "score": 92,
       "summary": "Titles, descriptions, internal linking, and service alignment.",
-      "grade": "A",
+      "grade": "A-",
       "target": 87,
       "targetMet": true
     },
@@ -89,23 +89,23 @@
     "gsc": {
       "provider": "gsc",
       "status": "ok",
-      "checkedAt": "2026-10-20T18:32:54.179Z",
+      "checkedAt": "2026-10-21T18:46:26.709Z",
       "siteUrl": "sc-domain:hicksconsulting.org",
       "dateRange": {
-        "currentStart": "2026-09-20",
-        "currentEnd": "2026-10-17",
-        "previousStart": "2026-08-23",
-        "previousEnd": "2026-09-19"
+        "currentStart": "2026-09-21",
+        "currentEnd": "2026-10-18",
+        "previousStart": "2026-08-24",
+        "previousEnd": "2026-09-20"
       },
       "metrics": {
-        "clicks": 28,
-        "impressions": 1643,
-        "ctr": 0.01704199634814364,
-        "position": 7.023737066342057,
+        "clicks": 30,
+        "impressions": 1637,
+        "ctr": 0.01832620647525962,
+        "position": 6.952351863164325,
         "previousClicks": 15,
-        "previousImpressions": 1043,
-        "previousCtr": 0.014381591562799617,
-        "previousPosition": 7.3595397890699905
+        "previousImpressions": 1062,
+        "previousCtr": 0.014124293785310734,
+        "previousPosition": 7.437853107344632
       },
       "topQueries": [
         {
@@ -125,6 +125,15 @@
           "impressions": 17,
           "ctr": 0.11764705882352941,
           "position": 3.176470588235294
+        },
+        {
+          "keys": [
+            "black therapist memphis tn"
+          ],
+          "clicks": 1,
+          "impressions": 57,
+          "ctr": 0.017543859649122806,
+          "position": 8.596491228070175
         },
         {
           "keys": [
@@ -203,18 +212,9 @@
             "anxiety therapist"
           ],
           "clicks": 0,
-          "impressions": 15,
+          "impressions": 12,
           "ctr": 0,
-          "position": 36.266666666666666
-        },
-        {
-          "keys": [
-            "anxiety therapist * * * *"
-          ],
-          "clicks": 0,
-          "impressions": 1,
-          "ctr": 0,
-          "position": 41
+          "position": 37.583333333333336
         },
         {
           "keys": [
@@ -239,7 +239,7 @@
             "black couples therapist near me"
           ],
           "clicks": 0,
-          "impressions": 2,
+          "impressions": 1,
           "ctr": 0,
           "position": 10
         },
@@ -317,21 +317,12 @@
         },
         {
           "keys": [
-            "black therapist memphis tn"
-          ],
-          "clicks": 0,
-          "impressions": 58,
-          "ctr": 0,
-          "position": 8.741379310344827
-        },
-        {
-          "keys": [
             "black therapist near me"
           ],
           "clicks": 0,
-          "impressions": 33,
+          "impressions": 31,
           "ctr": 0,
-          "position": 8.393939393939394
+          "position": 8.483870967741936
         },
         {
           "keys": [
@@ -557,6 +548,15 @@
           "impressions": 1,
           "ctr": 0,
           "position": 3
+        },
+        {
+          "keys": [
+            "jamie hickman consulting"
+          ],
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 5
         }
       ],
       "topPages": [
@@ -564,19 +564,19 @@
           "keys": [
             "https://www.hicksconsulting.org/"
           ],
-          "clicks": 18,
-          "impressions": 517,
-          "ctr": 0.03481624758220503,
-          "position": 5.854932301740813
+          "clicks": 19,
+          "impressions": 510,
+          "ctr": 0.03725490196078431,
+          "position": 5.631372549019608
         },
         {
           "keys": [
             "https://www.hicksconsulting.org/black-therapist-memphis/"
           ],
-          "clicks": 7,
-          "impressions": 394,
-          "ctr": 0.017766497461928935,
-          "position": 8.530456852791879
+          "clicks": 8,
+          "impressions": 391,
+          "ctr": 0.020460358056265986,
+          "position": 8.531969309462916
         },
         {
           "keys": [
@@ -592,9 +592,9 @@
             "https://www.hicksconsulting.org/corporate-speaking/"
           ],
           "clicks": 1,
-          "impressions": 63,
-          "ctr": 0.015873015873015872,
-          "position": 5.920634920634921
+          "impressions": 62,
+          "ctr": 0.016129032258064516,
+          "position": 6.016129032258065
         },
         {
           "keys": [
@@ -637,9 +637,9 @@
             "https://hicksconsulting.org/privacy-policy/"
           ],
           "clicks": 0,
-          "impressions": 52,
+          "impressions": 53,
           "ctr": 0,
-          "position": 6.673076923076923
+          "position": 6.735849056603773
         },
         {
           "keys": [
@@ -682,9 +682,9 @@
             "https://hicksconsulting.org/resources/articles/why-emotional-heaviness-does-not-always-look-like-crying/"
           ],
           "clicks": 0,
-          "impressions": 5,
+          "impressions": 3,
           "ctr": 0,
-          "position": 7
+          "position": 7.333333333333333
         },
         {
           "keys": [
@@ -715,15 +715,6 @@
         },
         {
           "keys": [
-            "https://hicksconsulting.org/resources/guides/boundaries-people-pleasing-and-the-fear-of-letting-people-down/"
-          ],
-          "clicks": 0,
-          "impressions": 3,
-          "ctr": 0,
-          "position": 3.6666666666666665
-        },
-        {
-          "keys": [
             "https://hicksconsulting.org/resources/insights/the-workplace-habits-that-keep-high-functioning-women-drained-a-gentler-truth-to-cons/"
           ],
           "clicks": 0,
@@ -745,7 +736,7 @@
             "https://www.hicksconsulting.org/about/"
           ],
           "clicks": 0,
-          "impressions": 10,
+          "impressions": 8,
           "ctr": 0,
           "position": 3
         },
@@ -772,27 +763,27 @@
             "https://www.hicksconsulting.org/coaching/"
           ],
           "clicks": 0,
-          "impressions": 49,
+          "impressions": 47,
           "ctr": 0,
-          "position": 10.26530612244898
+          "position": 10.574468085106384
         },
         {
           "keys": [
             "https://www.hicksconsulting.org/contact/"
           ],
           "clicks": 0,
-          "impressions": 45,
+          "impressions": 52,
           "ctr": 0,
-          "position": 5.888888888888889
+          "position": 5.461538461538462
         },
         {
           "keys": [
             "https://www.hicksconsulting.org/cookie-policy/"
           ],
           "clicks": 0,
-          "impressions": 7,
+          "impressions": 8,
           "ctr": 0,
-          "position": 10.428571428571429
+          "position": 9.375
         },
         {
           "keys": [
@@ -810,7 +801,7 @@
           "clicks": 0,
           "impressions": 18,
           "ctr": 0,
-          "position": 9
+          "position": 8.666666666666668
         },
         {
           "keys": [
@@ -826,27 +817,27 @@
             "https://www.hicksconsulting.org/groups/"
           ],
           "clicks": 0,
-          "impressions": 54,
+          "impressions": 53,
           "ctr": 0,
-          "position": 5.166666666666667
+          "position": 5.339622641509434
         },
         {
           "keys": [
             "https://www.hicksconsulting.org/intake-quiz/"
           ],
           "clicks": 0,
-          "impressions": 31,
+          "impressions": 28,
           "ctr": 0,
-          "position": 4.774193548387097
+          "position": 4.785714285714286
         },
         {
           "keys": [
             "https://www.hicksconsulting.org/llm-atlas/"
           ],
           "clicks": 0,
-          "impressions": 1,
+          "impressions": 2,
           "ctr": 0,
-          "position": 10
+          "position": 9
         },
         {
           "keys": [
@@ -925,9 +916,9 @@
             "https://www.hicksconsulting.org/resources/"
           ],
           "clicks": 0,
-          "impressions": 99,
+          "impressions": 97,
           "ctr": 0,
-          "position": 7.08080808080808
+          "position": 7.164948453608248
         },
         {
           "keys": [
@@ -943,9 +934,9 @@
             "https://www.hicksconsulting.org/resources/articles/how-boundary-guilt-keeps-women-stuck-in-the-same-exhausting-loops/"
           ],
           "clicks": 0,
-          "impressions": 2,
+          "impressions": 1,
           "ctr": 0,
-          "position": 5.5
+          "position": 6
         },
         {
           "keys": [
@@ -997,9 +988,9 @@
             "https://www.hicksconsulting.org/resources/articles/the-difference-between-being-busy-and-being-emotionally-maxed-out/"
           ],
           "clicks": 0,
-          "impressions": 26,
+          "impressions": 27,
           "ctr": 0,
-          "position": 5
+          "position": 5.185185185185185
         },
         {
           "keys": [
@@ -1009,6 +1000,15 @@
           "impressions": 2,
           "ctr": 0,
           "position": 5.5
+        },
+        {
+          "keys": [
+            "https://www.hicksconsulting.org/resources/articles/the-quiet-anger-that-builds-when-you-are-always-the-reliable-one/"
+          ],
+          "clicks": 0,
+          "impressions": 23,
+          "ctr": 0,
+          "position": 5
         }
       ],
       "queryPage": [
@@ -1031,6 +1031,16 @@
           "impressions": 17,
           "ctr": 0.11764705882352941,
           "position": 3.176470588235294
+        },
+        {
+          "keys": [
+            "black therapist memphis tn",
+            "https://www.hicksconsulting.org/black-therapist-memphis/"
+          ],
+          "clicks": 1,
+          "impressions": 56,
+          "ctr": 0.017857142857142856,
+          "position": 8.875
         },
         {
           "keys": [
@@ -1128,19 +1138,9 @@
             "https://www.hicksconsulting.org/"
           ],
           "clicks": 0,
-          "impressions": 15,
+          "impressions": 12,
           "ctr": 0,
-          "position": 36.266666666666666
-        },
-        {
-          "keys": [
-            "anxiety therapist * * * *",
-            "https://www.hicksconsulting.org/"
-          ],
-          "clicks": 0,
-          "impressions": 1,
-          "ctr": 0,
-          "position": 41
+          "position": 37.583333333333336
         },
         {
           "keys": [
@@ -1168,7 +1168,7 @@
             "https://www.hicksconsulting.org/black-therapist-memphis/"
           ],
           "clicks": 0,
-          "impressions": 2,
+          "impressions": 1,
           "ctr": 0,
           "position": 10
         },
@@ -1264,23 +1264,13 @@
         },
         {
           "keys": [
-            "black therapist memphis tn",
-            "https://www.hicksconsulting.org/black-therapist-memphis/"
-          ],
-          "clicks": 0,
-          "impressions": 57,
-          "ctr": 0,
-          "position": 9.017543859649123
-        },
-        {
-          "keys": [
             "black therapist near me",
             "https://www.hicksconsulting.org/black-therapist-memphis/"
           ],
           "clicks": 0,
-          "impressions": 33,
+          "impressions": 31,
           "ctr": 0,
-          "position": 8.393939393939394
+          "position": 8.483870967741936
         },
         {
           "keys": [
@@ -1694,16 +1684,6 @@
         },
         {
           "keys": [
-            "mental health consultant",
-            "https://www.hicksconsulting.org/"
-          ],
-          "clicks": 0,
-          "impressions": 1,
-          "ctr": 0,
-          "position": 2
-        },
-        {
-          "keys": [
             "monica hicks",
             "https://www.hicksconsulting.org/"
           ],
@@ -1818,9 +1798,9 @@
             "https://www.hicksconsulting.org/therapy/"
           ],
           "clicks": 0,
-          "impressions": 3,
+          "impressions": 4,
           "ctr": 0,
-          "position": 20.666666666666668
+          "position": 21.25
         },
         {
           "keys": [
@@ -1924,15 +1904,6 @@
         }
       ],
       "daily": [
-        {
-          "keys": [
-            "2026-09-20"
-          ],
-          "clicks": 0,
-          "impressions": 42,
-          "ctr": 0,
-          "position": 8.214285714285715
-        },
         {
           "keys": [
             "2026-09-21"
@@ -2175,6 +2146,15 @@
           "impressions": 23,
           "ctr": 0.08695652173913043,
           "position": 6.304347826086956
+        },
+        {
+          "keys": [
+            "2026-10-18"
+          ],
+          "clicks": 2,
+          "impressions": 36,
+          "ctr": 0.05555555555555555,
+          "position": 5.166666666666667
         }
       ],
       "message": "Search Console API connected and refreshed."
@@ -2182,7 +2162,7 @@
     "bing": {
       "provider": "bing",
       "status": "ok",
-      "checkedAt": "2026-10-20T18:32:54.179Z",
+      "checkedAt": "2026-10-21T18:46:26.709Z",
       "siteUrl": "https://www.hicksconsulting.org/",
       "site": null,
       "metrics": {
@@ -2729,24 +2709,6 @@
           }
         ],
         "crawl": [
-          {
-            "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
-            "AllOtherCodes": 0,
-            "BlockedByRobotsTxt": 0,
-            "Code2xx": 10,
-            "Code301": 1,
-            "Code302": 0,
-            "Code4xx": 0,
-            "Code5xx": 0,
-            "ConnectionTimeout": 0,
-            "ContainsMalware": 0,
-            "CrawledPages": 0,
-            "CrawlErrors": 0,
-            "Date": "/Date(1784505600000)/",
-            "DnsFailures": 0,
-            "InIndex": 1,
-            "InLinks": 5
-          },
           {
             "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
             "AllOtherCodes": 0,
@@ -4348,19 +4310,28 @@
             "DnsFailures": 0,
             "InIndex": 26,
             "InLinks": 8
+          },
+          {
+            "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+            "AllOtherCodes": 0,
+            "BlockedByRobotsTxt": 0,
+            "Code2xx": 83,
+            "Code301": 5,
+            "Code302": 0,
+            "Code4xx": 1,
+            "Code5xx": 0,
+            "ConnectionTimeout": 0,
+            "ContainsMalware": 0,
+            "CrawledPages": 73,
+            "CrawlErrors": 1,
+            "Date": "/Date(1792368000000)/",
+            "DnsFailures": 0,
+            "InIndex": 26,
+            "InLinks": 8
           }
         ]
       },
       "topQueries": [
-        {
-          "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
-          "AvgClickPosition": -1,
-          "AvgImpressionPosition": 4,
-          "Clicks": 1,
-          "Date": "/Date(1751587200000)/",
-          "Impressions": 6,
-          "Query": "hicks consulting"
-        },
         {
           "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
           "AvgClickPosition": -1,
@@ -4369,33 +4340,6 @@
           "Date": "/Date(1752192000000)/",
           "Impressions": 3,
           "Query": "online therapy for black women"
-        },
-        {
-          "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
-          "AvgClickPosition": -1,
-          "AvgImpressionPosition": 8,
-          "Clicks": 0,
-          "Date": "/Date(1752192000000)/",
-          "Impressions": 1,
-          "Query": "erica hart hicks consultants"
-        },
-        {
-          "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
-          "AvgClickPosition": -1,
-          "AvgImpressionPosition": 2,
-          "Clicks": 0,
-          "Date": "/Date(1752192000000)/",
-          "Impressions": 1,
-          "Query": "melissa hicks therapy"
-        },
-        {
-          "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
-          "AvgClickPosition": -1,
-          "AvgImpressionPosition": 10,
-          "Clicks": 0,
-          "Date": "/Date(1752192000000)/",
-          "Impressions": 1,
-          "Query": "rebecca hicks counselor"
         },
         {
           "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
@@ -4409,11 +4353,38 @@
         {
           "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
           "AvgClickPosition": -1,
+          "AvgImpressionPosition": 10,
+          "Clicks": 0,
+          "Date": "/Date(1752192000000)/",
+          "Impressions": 1,
+          "Query": "rebecca hicks counselor"
+        },
+        {
+          "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
+          "AvgClickPosition": -1,
           "AvgImpressionPosition": 1,
           "Clicks": 0,
           "Date": "/Date(1752192000000)/",
           "Impressions": 1,
           "Query": "hicks consultancy"
+        },
+        {
+          "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
+          "AvgClickPosition": -1,
+          "AvgImpressionPosition": 2,
+          "Clicks": 0,
+          "Date": "/Date(1752192000000)/",
+          "Impressions": 1,
+          "Query": "melissa hicks therapy"
+        },
+        {
+          "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
+          "AvgClickPosition": -1,
+          "AvgImpressionPosition": 8,
+          "Clicks": 0,
+          "Date": "/Date(1752192000000)/",
+          "Impressions": 1,
+          "Query": "erica hart hicks consultants"
         },
         {
           "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
@@ -4436,6 +4407,15 @@
         {
           "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
           "AvgClickPosition": -1,
+          "AvgImpressionPosition": 1,
+          "Clicks": 0,
+          "Date": "/Date(1752796800000)/",
+          "Impressions": 1,
+          "Query": "hicks consulting"
+        },
+        {
+          "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
+          "AvgClickPosition": -1,
           "AvgImpressionPosition": 6,
           "Clicks": 0,
           "Date": "/Date(1752796800000)/",
@@ -4445,11 +4425,11 @@
         {
           "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
           "AvgClickPosition": -1,
-          "AvgImpressionPosition": 1,
-          "Clicks": 0,
-          "Date": "/Date(1752796800000)/",
-          "Impressions": 1,
-          "Query": "hicks consulting"
+          "AvgImpressionPosition": 5,
+          "Clicks": 1,
+          "Date": "/Date(1753401600000)/",
+          "Impressions": 2,
+          "Query": "anthony hicks, consultant"
         },
         {
           "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
@@ -4464,28 +4444,10 @@
           "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
           "AvgClickPosition": -1,
           "AvgImpressionPosition": 5,
-          "Clicks": 1,
-          "Date": "/Date(1753401600000)/",
-          "Impressions": 2,
-          "Query": "anthony hicks, consultant"
-        },
-        {
-          "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
-          "AvgClickPosition": -1,
-          "AvgImpressionPosition": 5,
           "Clicks": 0,
           "Date": "/Date(1753401600000)/",
           "Impressions": 2,
           "Query": "hicks consulting | alameda ca"
-        },
-        {
-          "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
-          "AvgClickPosition": -1,
-          "AvgImpressionPosition": 2,
-          "Clicks": 0,
-          "Date": "/Date(1753401600000)/",
-          "Impressions": 1,
-          "Query": "how to manage stress and anxiety john hicks consulting counselling"
         },
         {
           "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
@@ -4526,6 +4488,15 @@
         {
           "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
           "AvgClickPosition": -1,
+          "AvgImpressionPosition": 2,
+          "Clicks": 0,
+          "Date": "/Date(1753401600000)/",
+          "Impressions": 1,
+          "Query": "how to manage stress and anxiety john hicks consulting counselling"
+        },
+        {
+          "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
+          "AvgClickPosition": -1,
           "AvgImpressionPosition": 8,
           "Clicks": 0,
           "Date": "/Date(1770940800000)/",
@@ -4557,7 +4528,7 @@
           "Clicks": 0,
           "Date": "/Date(1771545600000)/",
           "Impressions": 1,
-          "Query": "hicks consulting"
+          "Query": "joyce hicks consulting"
         },
         {
           "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
@@ -4566,7 +4537,7 @@
           "Clicks": 0,
           "Date": "/Date(1771545600000)/",
           "Impressions": 1,
-          "Query": "joyce hicks consulting"
+          "Query": "hicks consulting"
         }
       ],
       "message": "Bing Webmaster API connected and refreshed."
@@ -4574,91 +4545,91 @@
     "live": {
       "provider": "live",
       "status": "ok",
-      "checkedAt": "2026-10-20T18:32:54.179Z",
+      "checkedAt": "2026-10-21T18:46:26.709Z",
       "siteUrl": "https://www.hicksconsulting.org",
       "checks": [
         {
           "route": "/",
           "status": 200,
           "ok": true,
-          "ms": 487,
+          "ms": 550,
           "contentType": "text/html; charset=utf-8"
         },
         {
           "route": "/therapy/",
           "status": 200,
           "ok": true,
-          "ms": 214,
+          "ms": 213,
           "contentType": "text/html; charset=utf-8"
         },
         {
           "route": "/black-therapist-memphis/",
           "status": 200,
           "ok": true,
-          "ms": 145,
+          "ms": 171,
           "contentType": "text/html; charset=utf-8"
         },
         {
           "route": "/anxiety-therapist-memphis/",
           "status": 200,
           "ok": true,
-          "ms": 120,
+          "ms": 179,
           "contentType": "text/html; charset=utf-8"
         },
         {
           "route": "/coaching/",
           "status": 200,
           "ok": true,
-          "ms": 97,
+          "ms": 155,
           "contentType": "text/html; charset=utf-8"
         },
         {
           "route": "/groups/",
           "status": 200,
           "ok": true,
-          "ms": 107,
+          "ms": 179,
           "contentType": "text/html; charset=utf-8"
         },
         {
           "route": "/corporate-speaking/",
           "status": 200,
           "ok": true,
-          "ms": 115,
+          "ms": 175,
           "contentType": "text/html; charset=utf-8"
         },
         {
           "route": "/about/",
           "status": 200,
           "ok": true,
-          "ms": 107,
+          "ms": 185,
           "contentType": "text/html; charset=utf-8"
         },
         {
           "route": "/resources/",
           "status": 200,
           "ok": true,
-          "ms": 80,
+          "ms": 181,
           "contentType": "text/html; charset=utf-8"
         },
         {
           "route": "/sitemap.xml",
           "status": 200,
           "ok": true,
-          "ms": 144,
+          "ms": 157,
           "contentType": "application/xml"
         },
         {
           "route": "/robots.txt",
           "status": 200,
           "ok": true,
-          "ms": 106,
+          "ms": 122,
           "contentType": "text/plain; charset=utf-8"
         },
         {
           "route": "/agency/",
           "status": 200,
           "ok": true,
-          "ms": 97,
+          "ms": 235,
           "contentType": "text/html; charset=utf-8"
         }
       ],
@@ -4672,14 +4643,14 @@
   },
   "trends": {
     "gsc": {
-      "clicks": 28,
-      "impressions": 1643,
-      "ctr": 0.01704199634814364,
-      "position": 7.023737066342057,
+      "clicks": 30,
+      "impressions": 1637,
+      "ctr": 0.01832620647525962,
+      "position": 6.952351863164325,
       "previousClicks": 15,
-      "previousImpressions": 1043,
-      "previousCtr": 0.014381591562799617,
-      "previousPosition": 7.3595397890699905
+      "previousImpressions": 1062,
+      "previousCtr": 0.014124293785310734,
+      "previousPosition": 7.437853107344632
     },
     "bing": {
       "rankAndTraffic": [
@@ -5225,24 +5196,6 @@
         }
       ],
       "crawl": [
-        {
-          "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
-          "AllOtherCodes": 0,
-          "BlockedByRobotsTxt": 0,
-          "Code2xx": 10,
-          "Code301": 1,
-          "Code302": 0,
-          "Code4xx": 0,
-          "Code5xx": 0,
-          "ConnectionTimeout": 0,
-          "ContainsMalware": 0,
-          "CrawledPages": 0,
-          "CrawlErrors": 0,
-          "Date": "/Date(1784505600000)/",
-          "DnsFailures": 0,
-          "InIndex": 1,
-          "InLinks": 5
-        },
         {
           "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
           "AllOtherCodes": 0,
@@ -6844,6 +6797,24 @@
           "DnsFailures": 0,
           "InIndex": 26,
           "InLinks": 8
+        },
+        {
+          "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+          "AllOtherCodes": 0,
+          "BlockedByRobotsTxt": 0,
+          "Code2xx": 83,
+          "Code301": 5,
+          "Code302": 0,
+          "Code4xx": 1,
+          "Code5xx": 0,
+          "ConnectionTimeout": 0,
+          "ContainsMalware": 0,
+          "CrawledPages": 73,
+          "CrawlErrors": 1,
+          "Date": "/Date(1792368000000)/",
+          "DnsFailures": 0,
+          "InIndex": 26,
+          "InLinks": 8
         }
       ]
     }
@@ -6851,7 +6822,7 @@
   "warningCounts": {
     "high": 0,
     "medium": 0,
-    "low": 31
+    "low": 32
   },
   "priorities": [
     {
@@ -6908,6 +6879,13 @@
       "code": "long-title",
       "route": "/resources/insights/what-it-means-to-be-successful-and-still-feel-lost-a-gentler-truth-to-consider/",
       "message": "Title is 69 characters.",
+      "tip": "Shorten the search title while preserving the page H1."
+    },
+    {
+      "severity": "low",
+      "code": "long-title",
+      "route": "/resources/insights/what-relationship-stress-looks-like-when-you-keep-minimizing-your-own-feelings-how-it/",
+      "message": "Title is 70 characters.",
       "tip": "Shorten the search title while preserving the page H1."
     },
     {
@@ -7139,7 +7117,7 @@
     },
     "selfHeal": {
       "schemaVersion": "1.0.0",
-      "lastRunAt": "2026-10-14T16:26:13.956Z",
+      "lastRunAt": "2026-10-21T16:24:27.686Z",
       "status": "COMPLETED",
       "repairs": [],
       "skips": [],
@@ -12496,9 +12474,39 @@
     },
     "freeWins": {
       "schemaVersion": "1.0.0",
-      "generatedAt": "2026-10-20T18:32:56.242Z",
+      "generatedAt": "2026-10-21T18:46:29.499Z",
       "providerState": "CONNECTED",
       "items": [
+        {
+          "type": "STRIKING_DISTANCE",
+          "query": "black therapist memphis tn",
+          "page": "https://www.hicksconsulting.org/black-therapist-memphis/",
+          "position": 8.875,
+          "impressions": 56,
+          "ctr": 0.017857142857142856,
+          "recommendedAction": "Improve answer alignment, title/snippet, and supporting internal links without changing page identity.",
+          "confidence": "high"
+        },
+        {
+          "type": "LOW_CTR",
+          "query": "black therapist memphis tn",
+          "page": "https://www.hicksconsulting.org/black-therapist-memphis/",
+          "position": 8.875,
+          "impressions": 56,
+          "ctr": 0.017857142857142856,
+          "recommendedAction": "Review search title and description against the actual query intent.",
+          "confidence": "medium"
+        },
+        {
+          "type": "WRONG_PAGE_RANKING",
+          "query": "black therapist memphis tn",
+          "page": "https://www.hicksconsulting.org/black-therapist-memphis/",
+          "expectedPage": "/",
+          "position": 8.875,
+          "impressions": 56,
+          "recommendedAction": "Strengthen query ownership and internal links toward the governed primary page.",
+          "confidence": "high"
+        },
         {
           "type": "STRIKING_DISTANCE",
           "query": "black therapist memphis, tn",
@@ -12571,40 +12579,10 @@
         },
         {
           "type": "STRIKING_DISTANCE",
-          "query": "black therapist memphis tn",
-          "page": "https://www.hicksconsulting.org/black-therapist-memphis/",
-          "position": 9.017543859649123,
-          "impressions": 57,
-          "ctr": 0,
-          "recommendedAction": "Improve answer alignment, title/snippet, and supporting internal links without changing page identity.",
-          "confidence": "high"
-        },
-        {
-          "type": "LOW_CTR",
-          "query": "black therapist memphis tn",
-          "page": "https://www.hicksconsulting.org/black-therapist-memphis/",
-          "position": 9.017543859649123,
-          "impressions": 57,
-          "ctr": 0,
-          "recommendedAction": "Review search title and description against the actual query intent.",
-          "confidence": "medium"
-        },
-        {
-          "type": "WRONG_PAGE_RANKING",
-          "query": "black therapist memphis tn",
-          "page": "https://www.hicksconsulting.org/black-therapist-memphis/",
-          "expectedPage": "/",
-          "position": 9.017543859649123,
-          "impressions": 57,
-          "recommendedAction": "Strengthen query ownership and internal links toward the governed primary page.",
-          "confidence": "high"
-        },
-        {
-          "type": "STRIKING_DISTANCE",
           "query": "black therapist near me",
           "page": "https://www.hicksconsulting.org/black-therapist-memphis/",
-          "position": 8.393939393939394,
-          "impressions": 33,
+          "position": 8.483870967741936,
+          "impressions": 31,
           "ctr": 0,
           "recommendedAction": "Improve answer alignment, title/snippet, and supporting internal links without changing page identity.",
           "confidence": "high"
@@ -12613,8 +12591,8 @@
           "type": "LOW_CTR",
           "query": "black therapist near me",
           "page": "https://www.hicksconsulting.org/black-therapist-memphis/",
-          "position": 8.393939393939394,
-          "impressions": 33,
+          "position": 8.483870967741936,
+          "impressions": 31,
           "ctr": 0,
           "recommendedAction": "Review search title and description against the actual query intent.",
           "confidence": "medium"
@@ -12869,7 +12847,7 @@
     },
     "providerHealth": {
       "schemaVersion": "2.0.0",
-      "generatedAt": "2026-10-20T18:32:56.242Z",
+      "generatedAt": "2026-10-21T18:46:29.499Z",
       "truthBoundary": "Live web-search observations are evidence of web surfacing/citations, not verified organic rank, and a 0% citation rate is only meaningful for queries the provider actually answered. GSC average position is the authoritative Google-owned performance metric available to this system.",
       "providers": {
         "openrouter_web_search": {
@@ -12919,7 +12897,7 @@
     },
     "queryObservations": {
       "schemaVersion": "2.1.0",
-      "generatedAt": "2026-10-20T18:32:56.242Z",
+      "generatedAt": "2026-10-21T18:46:29.499Z",
       "providerState": "DEGRADED",
       "provider": "openrouter_web_search",
       "stop": {
@@ -12933,7 +12911,7 @@
           "query": "black therapist near me",
           "primaryPage": "/black-therapist-memphis/",
           "status": "provider_error",
-          "observedAt": "2026-10-20T18:32:56.242Z",
+          "observedAt": "2026-10-21T18:46:29.499Z",
           "provider": "openrouter_web_search",
           "model": "openai/gpt-4o-mini",
           "rankVerified": false,
@@ -12961,7 +12939,7 @@
           "query": "african american therapist near me",
           "primaryPage": "/black-therapist-memphis/",
           "status": "provider_error",
-          "observedAt": "2026-10-20T18:32:56.242Z",
+          "observedAt": "2026-10-21T18:46:29.499Z",
           "provider": "openrouter_web_search",
           "model": "openai/gpt-4o-mini",
           "rankVerified": false,
@@ -12989,7 +12967,7 @@
           "query": "black mental health therapist near me",
           "primaryPage": "/black-therapist-memphis/",
           "status": "provider_error",
-          "observedAt": "2026-10-20T18:32:56.242Z",
+          "observedAt": "2026-10-21T18:46:29.499Z",
           "provider": "openrouter_web_search",
           "model": "openai/gpt-4o-mini",
           "rankVerified": false,
@@ -13017,7 +12995,7 @@
           "query": "african american female therapist near me",
           "primaryPage": "/black-therapist-memphis/",
           "status": "provider_error",
-          "observedAt": "2026-10-20T18:32:56.242Z",
+          "observedAt": "2026-10-21T18:46:29.499Z",
           "provider": "openrouter_web_search",
           "model": "openai/gpt-4o-mini",
           "rankVerified": false,
@@ -13045,7 +13023,7 @@
           "query": "african american therapists near me",
           "primaryPage": "/black-therapist-memphis/",
           "status": "provider_error",
-          "observedAt": "2026-10-20T18:32:56.242Z",
+          "observedAt": "2026-10-21T18:46:29.499Z",
           "provider": "openrouter_web_search",
           "model": "openai/gpt-4o-mini",
           "rankVerified": false,
@@ -13073,7 +13051,7 @@
           "query": "black counselors near me",
           "primaryPage": "/black-therapist-memphis/",
           "status": "provider_error",
-          "observedAt": "2026-10-20T18:32:56.242Z",
+          "observedAt": "2026-10-21T18:46:29.499Z",
           "provider": "openrouter_web_search",
           "model": "openai/gpt-4o-mini",
           "rankVerified": false,
@@ -13101,7 +13079,7 @@
           "query": "black therapists near me",
           "primaryPage": "/",
           "status": "provider_error",
-          "observedAt": "2026-10-20T18:32:56.242Z",
+          "observedAt": "2026-10-21T18:46:29.499Z",
           "provider": "openrouter_web_search",
           "model": "openai/gpt-4o-mini",
           "rankVerified": false,
@@ -13129,7 +13107,7 @@
     },
     "searchActions": {
       "schemaVersion": "2.0.0",
-      "generatedAt": "2026-10-20T18:32:56.242Z",
+      "generatedAt": "2026-10-21T18:46:29.499Z",
       "policy": "Hicks may autonomously apply bounded technical/search-alignment repairs. Substantive clinical claims and unsupported treatment assertions are never auto-generated from competitor content.",
       "items": [
         {
@@ -13143,9 +13121,9 @@
           "evidence": {
             "groundedSiteSurfaced": null,
             "groundedProviderAnswered": false,
-            "gscImpressions": 33,
+            "gscImpressions": 31,
             "gscClicks": 0,
-            "gscAveragePosition": 8.39,
+            "gscAveragePosition": 8.48,
             "gscPages": [
               "/black-therapist-memphis/"
             ],
@@ -13386,7 +13364,7 @@
           "evidence": {
             "groundedSiteSurfaced": null,
             "groundedProviderAnswered": false,
-            "gscImpressions": 2,
+            "gscImpressions": 1,
             "gscClicks": 0,
             "gscAveragePosition": 10,
             "gscPages": [
@@ -14025,18 +14003,17 @@
           "primaryPage": "/",
           "status": "CANNIBALIZATION_REVIEW",
           "reasons": [
-            "MULTIPLE_HICKS_PAGES_FOR_QUERY",
-            "IMPRESSIONS_WITHOUT_CLICKS"
+            "MULTIPLE_HICKS_PAGES_FOR_QUERY"
           ],
           "evidence": {
             "groundedSiteSurfaced": null,
             "groundedProviderAnswered": false,
-            "gscImpressions": 60,
-            "gscClicks": 0,
-            "gscAveragePosition": 6.18,
+            "gscImpressions": 59,
+            "gscClicks": 1,
+            "gscAveragePosition": 6.1,
             "gscPages": [
-              "/",
-              "/black-therapist-memphis/"
+              "/black-therapist-memphis/",
+              "/"
             ],
             "competitorUrls": []
           },
@@ -14084,9 +14061,9 @@
           "evidence": {
             "groundedSiteSurfaced": null,
             "groundedProviderAnswered": false,
-            "gscImpressions": 15,
+            "gscImpressions": 12,
             "gscClicks": 0,
-            "gscAveragePosition": 36.27,
+            "gscAveragePosition": 37.58,
             "gscPages": [
               "/"
             ],
@@ -14226,9 +14203,9 @@
           "evidence": {
             "groundedSiteSurfaced": null,
             "groundedProviderAnswered": false,
-            "gscImpressions": 3,
+            "gscImpressions": 4,
             "gscClicks": 0,
-            "gscAveragePosition": 20.67,
+            "gscAveragePosition": 21.25,
             "gscPages": [
               "/therapy/"
             ],
@@ -14587,19 +14564,15 @@
         {
           "query": "anxiety therapist * * * *",
           "primaryPage": "/",
-          "status": "OBSERVED",
-          "reasons": [
-            "AVERAGE_POSITION_OUTSIDE_TOP_10"
-          ],
+          "status": "UNKNOWN",
+          "reasons": [],
           "evidence": {
             "groundedSiteSurfaced": null,
             "groundedProviderAnswered": false,
-            "gscImpressions": 1,
+            "gscImpressions": 0,
             "gscClicks": 0,
-            "gscAveragePosition": 41,
-            "gscPages": [
-              "/"
-            ],
+            "gscAveragePosition": 0,
+            "gscPages": [],
             "competitorUrls": []
           },
           "safeRepairEligible": false,
@@ -15419,17 +15392,15 @@
         {
           "query": "mental health consultant",
           "primaryPage": "/",
-          "status": "OBSERVED",
+          "status": "UNKNOWN",
           "reasons": [],
           "evidence": {
             "groundedSiteSurfaced": null,
             "groundedProviderAnswered": false,
-            "gscImpressions": 1,
+            "gscImpressions": 0,
             "gscClicks": 0,
-            "gscAveragePosition": 2,
-            "gscPages": [
-              "/"
-            ],
+            "gscAveragePosition": 0,
+            "gscPages": [],
             "competitorUrls": []
           },
           "safeRepairEligible": false,
@@ -16273,7 +16244,7 @@
     },
     "searchRepairs": {
       "schemaVersion": "2.0.0",
-      "updatedAt": "2026-10-20T18:32:56.979Z",
+      "updatedAt": "2026-10-21T18:46:30.603Z",
       "repairs": [
         {
           "queries": [
