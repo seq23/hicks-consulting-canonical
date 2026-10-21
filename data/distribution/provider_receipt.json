@@ -1,7 +1,7 @@
 {
   "schema_version": "2.0",
-  "receipt_id": "2026-10-20T18-00-47.777Z-39470992785",
-  "attempted_at": "2026-10-20T18:00:47.777Z",
+  "receipt_id": "2026-10-21T18-06-17.561Z-39649667226",
+  "attempted_at": "2026-10-21T18:06:17.561Z",
   "publication_trigger": "ONLY_AFTER_EXISTING_CONTENT_PUBLISH_WORKFLOW_SUCCEEDS",
   "chain": [
     "successful_publish",
@@ -15,14 +15,14 @@
   "sitemap_refresh": {
     "status": "SUCCESS",
     "sitemap_url": "https://www.hicksconsulting.org/sitemap.xml",
-    "sitemap_sha256": "6db41f6c1e167914bfd2bc0b3f02d00d1c45cd10594c59611af7d7d654aa9066",
-    "url_count": 145
+    "sitemap_sha256": "c52289c55e56cbe2a882bb8a27505bb3b38712ee0af8292d946877cf84ca6f3f",
+    "url_count": 146
   },
   "indexnow": {
     "status": "SUCCESS",
     "attempted": true,
     "http_status": 200,
-    "submitted_urls": 145,
+    "submitted_urls": 146,
     "key_location": "https://www.hicksconsulting.org/indexnow.txt"
   },
   "gsc_sitemap_submission": {
@@ -100,7 +100,7 @@
         "verdict": "PASS",
         "coverage_state": "Submitted and indexed",
         "indexing_state": "INDEXING_ALLOWED",
-        "last_crawl_time": "2026-10-13T09:49:18Z"
+        "last_crawl_time": "2026-10-21T00:19:40Z"
       },
       {
         "url": "https://www.hicksconsulting.org/resources/guides/self-worth-identity-and-the-pressure-to-be-exceptional/",
@@ -136,7 +136,7 @@
         "verdict": "PASS",
         "coverage_state": "Submitted and indexed",
         "indexing_state": "INDEXING_ALLOWED",
-        "last_crawl_time": "2026-09-21T14:07:54Z"
+        "last_crawl_time": "2026-10-21T05:21:40Z"
       },
       {
         "url": "https://www.hicksconsulting.org/resources/insights/why-successful-black-women-still-feel-worn-down/",
@@ -197,7 +197,7 @@
   "durable_receipt": {
     "status": "SUCCESS",
     "latest_path": "data/distribution/provider_receipt.json",
-    "history_path": "data/distribution/receipts/2026-10-20T18-00-47.777Z-39470992785.json"
+    "history_path": "data/distribution/receipts/2026-10-21T18-06-17.561Z-39649667226.json"
   },
   "observation_feedback": {
     "status": "SUCCESS",
