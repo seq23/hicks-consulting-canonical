@@ -455,4 +455,26 @@ try { require('./install_clarity_inline')(dist); } catch (error) { console.error
 
 require('./agency/generate_agency_report').generate();
 
+// Stamp the edge-cache build id into dist/_worker.js: a hash of everything else
+// in dist/, so the id changes exactly when shipped content changes (and the
+// build stays deterministic). See BUILD_ID in worker/_worker.js.
+(function stampEdgeCacheBuildId() {
+  const workerDest = path.join(dist, '_worker.js');
+  if (!fs.existsSync(workerDest)) return;
+  const crypto = require('crypto');
+  const hash = crypto.createHash('sha256');
+  const files = [];
+  (function walk(dir) {
+    for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+      const full = path.join(dir, entry.name);
+      if (entry.isDirectory()) walk(full); else if (full !== workerDest) files.push(full);
+    }
+  })(dist);
+  for (const file of files.sort()) { hash.update(path.relative(dist, file)); hash.update(fs.readFileSync(file)); }
+  const workerText = fs.readFileSync(workerDest, 'utf8');
+  if (!workerText.includes("'__HICKS_BUILD_ID__'")) throw new Error('dist/_worker.js has no __HICKS_BUILD_ID__ placeholder to stamp');
+  hash.update(workerText);
+  fs.writeFileSync(workerDest, workerText.replace("'__HICKS_BUILD_ID__'", `'${hash.digest('hex').slice(0, 16)}'`));
+})();
+
 console.log('Build complete:', dist);

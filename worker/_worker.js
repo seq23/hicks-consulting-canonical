@@ -270,6 +270,55 @@ export function apexRedirect(request) {
   return new Response(null, { status, headers: { location: url.toString(), 'cache-control': 'public, max-age=86400' } });
 }
 
+// Edge cache for the static site (21 Oct 2026). Every request reaches this
+// worker (it must, so the apex can be folded into www), and it used to hand every
+// page straight to env.ASSETS: HTML came back cf-cache-status DYNAMIC with a
+// 200-320 ms TTFB and Ahrefs flagged slow pages. Static GET/HEAD responses on the
+// canonical host are now kept in the colo's cache, keyed by the build id the
+// build stamps in below, so a deploy never serves a previous build's page.
+// Browsers keep the origin's own Cache-Control (max-age=0, must-revalidate).
+// Never cached: /api, /admin, /agency, /preview, the form routes, anything not
+// GET/HEAD, anything with a query string or credentials, and any non-200.
+// Guarded by _ops/validators/validate_edge_cache_contract.mjs.
+export const BUILD_ID = '__HICKS_BUILD_ID__';
+export const EDGE_CACHE_TTL_SECONDS = 86400;
+const EDGE_CACHE_EXCLUDED_PREFIXES = ['/api/', '/admin', '/agency', '/preview'];
+export function isEdgeCacheable(request) {
+  if (!['GET', 'HEAD'].includes(request.method)) return false;
+  const url = new URL(request.url);
+  if (url.hostname !== CANONICAL_HOST || url.search) return false;
+  if (EDGE_CACHE_EXCLUDED_PREFIXES.some((prefix) => url.pathname === prefix.replace(/\/$/, '') || url.pathname.startsWith(prefix))) return false;
+  if (Object.values(FORM_DATABASE_FORMS).some((form) => form.route === url.pathname)) return false;
+  if (request.headers.has('authorization') || request.headers.has('cookie') && /admin/i.test(request.headers.get('cookie'))) return false;
+  return true;
+}
+export function edgeCacheKey(request) {
+  const url = new URL(request.url);
+  return new Request(`${url.origin}${url.pathname}?__build=${BUILD_ID}`, { method: 'GET' });
+}
+function forBrowser(response, status, method) {
+  const out = new Response(method === 'HEAD' ? null : response.body, response);
+  const original = out.headers.get('x-origin-cache-control');
+  out.headers.delete('x-origin-cache-control');
+  if (original) out.headers.set('cache-control', original);
+  out.headers.set('x-edge-cache', status);
+  return out;
+}
+export async function serveStatic(request, env, ctx, cacheStore = (typeof caches !== 'undefined' ? caches.default : null)) {
+  if (!cacheStore || !isEdgeCacheable(request)) return env.ASSETS.fetch(request);
+  const key = edgeCacheKey(request);
+  const hit = await cacheStore.match(key).catch(() => null);
+  if (hit) return forBrowser(hit, 'HIT', request.method);
+  const response = await env.ASSETS.fetch(new Request(request.url, { method: 'GET', headers: request.headers }));
+  if (response.status !== 200 || response.headers.has('set-cookie')) return request.method === 'HEAD' ? new Response(null, response) : response;
+  const stored = new Response(response.clone().body, response);
+  stored.headers.set('x-origin-cache-control', response.headers.get('cache-control') || 'public, max-age=0, must-revalidate');
+  stored.headers.set('cache-control', `public, max-age=${EDGE_CACHE_TTL_SECONDS}`);
+  const put = cacheStore.put(key, stored).catch((error) => console.error('EDGE_CACHE_PUT_FAILED', error && error.message));
+  if (ctx && typeof ctx.waitUntil === 'function') ctx.waitUntil(put); else await put;
+  return forBrowser(response, 'MISS', request.method);
+}
+
 export default {
   async fetch(request, env, ctx) {
     try {
@@ -288,7 +337,7 @@ export default {
         if (!verifyAdminPasswordHash(request)) return jsonResponse({ ok: false, error: 'Admin password did not match.' }, 401);
         return handleContentDecision(request, env, url.pathname.slice('/api/content/'.length));
       }
-      if (env.ASSETS && typeof env.ASSETS.fetch === 'function') return env.ASSETS.fetch(request);
+      if (env.ASSETS && typeof env.ASSETS.fetch === 'function') return await serveStatic(request, env, ctx);
       return jsonResponse({ ok: false, error: 'Static asset binding is not available.' }, 500);
     } catch (error) { console.error('WORKER_RUNTIME_ERROR', error); return jsonResponse({ ok: false, error: 'Worker runtime error.' }, 500); }
   }

@@ -72,6 +72,7 @@
     "validate:agency-quality": "node _ops/validators/validate_agency_quality.js",
     "validate:all": "node _ops/validation/run_validation_matrix.js --profile all",
     "validate:apex-host-redirect": "node _ops/validators/validate_apex_host_redirect.mjs",
+    "validate:edge-cache": "node _ops/validators/validate_edge_cache_contract.mjs",
     "validate:authority-distribution": "node scripts/authority_scale/validate_distribution_manifest.mjs",
     "validate:authority-fanout": "node scripts/authority_scale/validate_max_fanout.mjs",
     "validate:authority-modernization": "node _ops/validation/run_validation_matrix.js --profile authority-modernization",
