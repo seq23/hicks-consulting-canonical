@@ -1,9 +1,6 @@
 {
   "@context": "https://schema.org",
-  "@type": [
-    "Organization",
-    "ProfessionalService"
-  ],
+  "@type": "Organization",
   "@id": "https://www.hicksconsulting.org/#organization",
   "name": "Hicks Consulting",
   "legalName": "Hicks Consulting PLLC",
@@ -35,14 +32,17 @@
       "url": "https://memphisvoyager.com/interview/hidden-gems-meet-monika-hicks-of-hicks-consulting/"
     },
     {
-      "@type": "Event",
+      "@type": "WebPage",
       "name": "The M.I.A. Foundation Worth Fighting For Weekend Workshop & Gala",
       "url": "https://www.eventbrite.com/e/the-mia-foundation-worth-fighting-for-weekend-workshop-gala-tickets-1998116018800"
     },
     {
       "@type": "ProfilePage",
       "name": "Hicks Consulting PLLC provider record",
-      "url": "https://healthprovidersdata.com/hipaa/codes/NPI-1740023480-hicks-consulting-pllc"
+      "url": "https://healthprovidersdata.com/hipaa/codes/NPI-1740023480-hicks-consulting-pllc",
+      "mainEntity": {
+        "@id": "https://www.hicksconsulting.org/#organization"
+      }
     }
   ],
   "makesOffer": [
