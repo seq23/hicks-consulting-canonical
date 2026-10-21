@@ -2,11 +2,11 @@
   "schema_version": "1.0",
   "generated_from": "data/search_intelligence/target_query_set.json",
   "window": {
-    "start_date": "2026-09-20",
-    "end_date": "2026-10-17",
+    "start_date": "2026-09-21",
+    "end_date": "2026-10-18",
     "days": 28
   },
-  "truth_collected_at": "2026-10-20T18:32:54.239Z",
+  "truth_collected_at": "2026-10-21T18:46:17.713Z",
   "rule": {
     "grouping": "one family per landing page (the page Google shows for the query)",
     "min_impressions": 20,
@@ -16,8 +16,8 @@
     "top_n": 12
   },
   "client_approval": "Client site: qualifying families are PROPOSALS. A family is strengthened only once its status is \"approved\" here, with approved_by naming who decided (the client, or the site owner on her own decision) and approved_at.",
-  "target_count": 67,
-  "impressions_total": 382,
+  "target_count": 65,
+  "impressions_total": 374,
   "family_count": 12,
   "proposal_count": 0,
   "approved_count": 2,
@@ -25,24 +25,24 @@
     {
       "family": "/black-therapist-memphis/",
       "page": "https://www.hicksconsulting.org/black-therapist-memphis/",
-      "impressions": 207,
-      "clicks": 1,
-      "ctr": 0.5,
+      "impressions": 203,
+      "clicks": 2,
+      "ctr": 1,
       "weighted_position": 8.7,
       "query_count": 29,
       "head_query": "black therapist memphis tn",
       "queries": [
         {
           "query": "black therapist memphis tn",
-          "impressions": 60,
-          "clicks": 0,
-          "position": 8.74
+          "impressions": 59,
+          "clicks": 1,
+          "position": 8.6
         },
         {
           "query": "black therapist near me",
-          "impressions": 33,
+          "impressions": 31,
           "clicks": 0,
-          "position": 8.39
+          "position": 8.48
         },
         {
           "query": "black therapist memphis, tn",
@@ -153,12 +153,6 @@
           "position": 11.5
         },
         {
-          "query": "black couples therapist near me",
-          "impressions": 2,
-          "clicks": 0,
-          "position": 10
-        },
-        {
           "query": "black female therapist near me",
           "impressions": 2,
           "clicks": 0,
@@ -169,6 +163,12 @@
           "impressions": 1,
           "clicks": 0,
           "position": 21
+        },
+        {
+          "query": "black couples therapist near me",
+          "impressions": 1,
+          "clicks": 0,
+          "position": 10
         },
         {
           "query": "black couples therapy near me",
@@ -213,16 +213,16 @@
       "approved_by": "site owner (not the client)",
       "approved_at": "2026-10-11",
       "approval_note": "Site owner decided on 2026-10-11 to strengthen both qualifying families now rather than wait on a client flag. Not a client decision; the client did not approve or author this change.",
-      "proposed_change": "Lead /black-therapist-memphis/ with a direct answer to \"black therapist memphis tn\" in its title and first paragraph: 207 impressions at position 8.7 earned 1 click(s) (0.5% CTR)."
+      "proposed_change": "Lead /black-therapist-memphis/ with a direct answer to \"black therapist memphis tn\" in its title and first paragraph: 203 impressions at position 8.7 earned 2 click(s) (1% CTR)."
     },
     {
       "family": "/",
       "page": "https://www.hicksconsulting.org/",
-      "impressions": 157,
+      "impressions": 152,
       "clicks": 6,
-      "ctr": 3.8,
-      "weighted_position": 7.7,
-      "query_count": 28,
+      "ctr": 3.9,
+      "weighted_position": 7.1,
+      "query_count": 26,
       "head_query": "hicks consulting",
       "queries": [
         {
@@ -239,9 +239,9 @@
         },
         {
           "query": "anxiety therapist",
-          "impressions": 15,
+          "impressions": 12,
           "clicks": 0,
-          "position": 36.27
+          "position": 37.58
         },
         {
           "query": "hicks",
@@ -290,12 +290,6 @@
           "impressions": 2,
           "clicks": 0,
           "position": 1
-        },
-        {
-          "query": "anxiety therapist * * * *",
-          "impressions": 1,
-          "clicks": 0,
-          "position": 41
         },
         {
           "query": "committed to recovery memphis tn",
@@ -352,12 +346,6 @@
           "position": 2
         },
         {
-          "query": "mental health consultant",
-          "impressions": 1,
-          "clicks": 0,
-          "position": 2
-        },
-        {
           "query": "monica hicks",
           "impressions": 1,
           "clicks": 0,
@@ -400,7 +388,7 @@
       "approved_by": "site owner (not the client)",
       "approved_at": "2026-10-11",
       "approval_note": "Site owner decided on 2026-10-11 to strengthen both qualifying families now rather than wait on a client flag. Not a client decision; the client did not approve or author this change.",
-      "proposed_change": "Lead / with a direct answer to \"hicks consulting\" in its title and first paragraph: 157 impressions at position 7.7 earned 6 click(s) (3.8% CTR)."
+      "proposed_change": "Lead / with a direct answer to \"hicks consulting\" in its title and first paragraph: 152 impressions at position 7.1 earned 6 click(s) (3.9% CTR)."
     },
     {
       "family": "/llm-atlas/queries/",
@@ -425,6 +413,28 @@
       "why_not": "4 impressions < floor 20"
     },
     {
+      "family": "/therapy/",
+      "page": "https://www.hicksconsulting.org/therapy/",
+      "impressions": 4,
+      "clicks": 0,
+      "ctr": 0,
+      "weighted_position": 21.3,
+      "query_count": 1,
+      "head_query": "online therapy memphis",
+      "queries": [
+        {
+          "query": "online therapy memphis",
+          "impressions": 4,
+          "clicks": 0,
+          "position": 21.25
+        }
+      ],
+      "rank": 4,
+      "qualifies": false,
+      "status": "measured_only",
+      "why_not": "4 impressions < floor 20"
+    },
+    {
       "family": "/corporate-speaking/",
       "page": "https://www.hicksconsulting.org/corporate-speaking/",
       "impressions": 3,
@@ -439,28 +449,6 @@
           "impressions": 3,
           "clicks": 0,
           "position": 5
-        }
-      ],
-      "rank": 4,
-      "qualifies": false,
-      "status": "measured_only",
-      "why_not": "3 impressions < floor 20"
-    },
-    {
-      "family": "/therapy/",
-      "page": "https://www.hicksconsulting.org/therapy/",
-      "impressions": 3,
-      "clicks": 0,
-      "ctr": 0,
-      "weighted_position": 20.7,
-      "query_count": 1,
-      "head_query": "online therapy memphis",
-      "queries": [
-        {
-          "query": "online therapy memphis",
-          "impressions": 3,
-          "clicks": 0,
-          "position": 20.67
         }
       ],
       "rank": 5,
