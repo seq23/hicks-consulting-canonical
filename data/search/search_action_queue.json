@@ -1,6 +1,6 @@
 {
   "schemaVersion": "2.0.0",
-  "generatedAt": "2026-10-21T18:46:29.499Z",
+  "generatedAt": "2026-10-22T18:39:17.623Z",
   "policy": "Hicks may autonomously apply bounded technical/search-alignment repairs. Substantive clinical claims and unsupported treatment assertions are never auto-generated from competitor content.",
   "items": [
     {
@@ -141,9 +141,9 @@
       "evidence": {
         "groundedSiteSurfaced": null,
         "groundedProviderAnswered": false,
-        "gscImpressions": 6,
+        "gscImpressions": 7,
         "gscClicks": 0,
-        "gscAveragePosition": 7.83,
+        "gscAveragePosition": 7.71,
         "gscPages": [
           "/black-therapist-memphis/"
         ],
@@ -181,7 +181,7 @@
       "evidence": {
         "groundedSiteSurfaced": null,
         "groundedProviderAnswered": false,
-        "gscImpressions": 3,
+        "gscImpressions": 1,
         "gscClicks": 0,
         "gscAveragePosition": 8,
         "gscPages": [
@@ -252,17 +252,15 @@
     {
       "query": "black couples therapist near me",
       "primaryPage": "/black-therapist-memphis/",
-      "status": "OBSERVED",
+      "status": "UNKNOWN",
       "reasons": [],
       "evidence": {
         "groundedSiteSurfaced": null,
         "groundedProviderAnswered": false,
-        "gscImpressions": 1,
+        "gscImpressions": 0,
         "gscClicks": 0,
-        "gscAveragePosition": 10,
-        "gscPages": [
-          "/black-therapist-memphis/"
-        ],
+        "gscAveragePosition": 0,
+        "gscPages": [],
         "competitorUrls": []
       },
       "safeRepairEligible": false,
@@ -870,14 +868,14 @@
       "evidence": {
         "groundedSiteSurfaced": null,
         "groundedProviderAnswered": false,
-        "gscImpressions": 71,
-        "gscClicks": 4,
-        "gscAveragePosition": 3.59,
+        "gscImpressions": 81,
+        "gscClicks": 5,
+        "gscAveragePosition": 4.04,
         "gscPages": [
           "/",
+          "/coaching/",
           "/corporate-speaking/",
           "/about/",
-          "/coaching/",
           "/contact/",
           "/cookie-policy/",
           "/groups/",
@@ -903,7 +901,7 @@
         "groundedProviderAnswered": false,
         "gscImpressions": 59,
         "gscClicks": 1,
-        "gscAveragePosition": 6.1,
+        "gscAveragePosition": 6.07,
         "gscPages": [
           "/black-therapist-memphis/",
           "/"
@@ -923,9 +921,9 @@
       "evidence": {
         "groundedSiteSurfaced": null,
         "groundedProviderAnswered": false,
-        "gscImpressions": 35,
+        "gscImpressions": 29,
         "gscClicks": 2,
-        "gscAveragePosition": 6.41,
+        "gscAveragePosition": 6.21,
         "gscPages": [
           "/",
           "/about/",
@@ -968,18 +966,19 @@
     {
       "query": "black therapist memphis, tn",
       "primaryPage": "/",
-      "status": "WRONG_PAGE",
+      "status": "CANNIBALIZATION_REVIEW",
       "reasons": [
-        "WRONG_HICKS_PAGE_RANKING"
+        "MULTIPLE_HICKS_PAGES_FOR_QUERY"
       ],
       "evidence": {
         "groundedSiteSurfaced": null,
         "groundedProviderAnswered": false,
-        "gscImpressions": 17,
+        "gscImpressions": 22,
         "gscClicks": 1,
-        "gscAveragePosition": 9.06,
+        "gscAveragePosition": 8.45,
         "gscPages": [
-          "/black-therapist-memphis/"
+          "/black-therapist-memphis/",
+          "/"
         ],
         "competitorUrls": []
       },
@@ -1035,9 +1034,9 @@
       "evidence": {
         "groundedSiteSurfaced": null,
         "groundedProviderAnswered": false,
-        "gscImpressions": 5,
+        "gscImpressions": 4,
         "gscClicks": 0,
-        "gscAveragePosition": 2.8,
+        "gscAveragePosition": 3.25,
         "gscPages": [
           "/"
         ],
@@ -1089,8 +1088,9 @@
     {
       "query": "online therapy memphis",
       "primaryPage": "/therapy/",
-      "status": "OBSERVED",
+      "status": "CANNIBALIZATION_REVIEW",
       "reasons": [
+        "MULTIPLE_HICKS_PAGES_FOR_QUERY",
         "AVERAGE_POSITION_OUTSIDE_TOP_10"
       ],
       "evidence": {
@@ -1098,8 +1098,9 @@
         "groundedProviderAnswered": false,
         "gscImpressions": 4,
         "gscClicks": 0,
-        "gscAveragePosition": 21.25,
+        "gscAveragePosition": 19.83,
         "gscPages": [
+          "/anxiety-therapist-memphis/",
           "/therapy/"
         ],
         "competitorUrls": []
@@ -1207,21 +1208,15 @@
     {
       "query": "boundary problem at work",
       "primaryPage": "/resources/insights/what-boundary-problems-really-sound-like-in-professional-women-why-women-minimize-it/",
-      "status": "CANNIBALIZATION_REVIEW",
-      "reasons": [
-        "MULTIPLE_HICKS_PAGES_FOR_QUERY",
-        "AVERAGE_POSITION_OUTSIDE_TOP_10"
-      ],
+      "status": "UNKNOWN",
+      "reasons": [],
       "evidence": {
         "groundedSiteSurfaced": null,
         "groundedProviderAnswered": false,
-        "gscImpressions": 2,
+        "gscImpressions": 0,
         "gscClicks": 0,
-        "gscAveragePosition": 60,
-        "gscPages": [
-          "/resources/insights/what-boundary-problems-really-sound-like-in-professional-women-what-this-looks-like-i/",
-          "/resources/insights/what-boundary-problems-really-sound-like-in-professional-women-why-women-minimize-it/"
-        ],
+        "gscAveragePosition": 0,
+        "gscPages": [],
         "competitorUrls": []
       },
       "safeRepairEligible": false,
@@ -1435,20 +1430,15 @@
     {
       "query": "womens therapist",
       "primaryPage": "/",
-      "status": "CANNIBALIZATION_REVIEW",
-      "reasons": [
-        "MULTIPLE_HICKS_PAGES_FOR_QUERY"
-      ],
+      "status": "UNKNOWN",
+      "reasons": [],
       "evidence": {
         "groundedSiteSurfaced": null,
         "groundedProviderAnswered": false,
-        "gscImpressions": 2,
+        "gscImpressions": 0,
         "gscClicks": 0,
-        "gscAveragePosition": 1,
-        "gscPages": [
-          "/",
-          "/contact/"
-        ],
+        "gscAveragePosition": 0,
+        "gscPages": [],
         "competitorUrls": []
       },
       "safeRepairEligible": false,
@@ -2040,9 +2030,9 @@
       "evidence": {
         "groundedSiteSurfaced": null,
         "groundedProviderAnswered": false,
-        "gscImpressions": 3,
+        "gscImpressions": 6,
         "gscClicks": 0,
-        "gscAveragePosition": 5,
+        "gscAveragePosition": 6.5,
         "gscPages": [
           "/corporate-speaking/"
         ],
