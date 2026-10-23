@@ -2,11 +2,11 @@
   "schema_version": "1.0",
   "generated_from": "data/search_intelligence/target_query_set.json",
   "window": {
-    "start_date": "2026-09-22",
-    "end_date": "2026-10-19",
+    "start_date": "2026-09-23",
+    "end_date": "2026-10-20",
     "days": 28
   },
-  "truth_collected_at": "2026-10-22T18:39:13.910Z",
+  "truth_collected_at": "2026-10-23T18:30:30.777Z",
   "rule": {
     "grouping": "one family per landing page (the page Google shows for the query)",
     "min_impressions": 20,
@@ -16,16 +16,16 @@
     "top_n": 12
   },
   "client_approval": "Client site: qualifying families are PROPOSALS. A family is strengthened only once its status is \"approved\" here, with approved_by naming who decided (the client, or the site owner on her own decision) and approved_at.",
-  "target_count": 66,
-  "impressions_total": 421,
-  "family_count": 12,
+  "target_count": 65,
+  "impressions_total": 416,
+  "family_count": 13,
   "proposal_count": 1,
   "approved_count": 2,
   "families": [
     {
       "family": "/black-therapist-memphis/",
       "page": "https://www.hicksconsulting.org/black-therapist-memphis/",
-      "impressions": 208,
+      "impressions": 204,
       "clicks": 2,
       "ctr": 1,
       "weighted_position": 8.6,
@@ -36,19 +36,19 @@
           "query": "black therapist memphis tn",
           "impressions": 59,
           "clicks": 1,
-          "position": 8.52
+          "position": 8.47
         },
         {
           "query": "black therapist near me",
-          "impressions": 31,
+          "impressions": 29,
           "clicks": 0,
-          "position": 8.48
+          "position": 8.41
         },
         {
           "query": "black therapist memphis, tn",
           "impressions": 22,
           "clicks": 1,
-          "position": 8.86
+          "position": 8.73
         },
         {
           "query": "african american therapist near me",
@@ -100,15 +100,15 @@
         },
         {
           "query": "black psychologist near me",
-          "impressions": 5,
+          "impressions": 4,
           "clicks": 0,
-          "position": 11
+          "position": 11.75
         },
         {
           "query": "black therapist",
-          "impressions": 4,
+          "impressions": 3,
           "clicks": 0,
-          "position": 6.5
+          "position": 7
         },
         {
           "query": "black woman therapist near me",
@@ -219,29 +219,29 @@
       "approved_by": "site owner (not the client)",
       "approved_at": "2026-10-11",
       "approval_note": "Site owner decided on 2026-10-11 to strengthen both qualifying families now rather than wait on a client flag. Not a client decision; the client did not approve or author this change.",
-      "proposed_change": "Lead /black-therapist-memphis/ with a direct answer to \"black therapist memphis tn\" in its title and first paragraph: 208 impressions at position 8.6 earned 2 click(s) (1% CTR)."
+      "proposed_change": "Lead /black-therapist-memphis/ with a direct answer to \"black therapist memphis tn\" in its title and first paragraph: 204 impressions at position 8.6 earned 2 click(s) (1% CTR)."
     },
     {
       "family": "/",
       "page": "https://www.hicksconsulting.org/",
-      "impressions": 153,
-      "clicks": 7,
-      "ctr": 4.6,
-      "weighted_position": 7.1,
-      "query_count": 25,
+      "impressions": 146,
+      "clicks": 5,
+      "ctr": 3.4,
+      "weighted_position": 7.2,
+      "query_count": 23,
       "head_query": "hicks consulting",
       "queries": [
         {
           "query": "hicks consulting",
-          "impressions": 81,
-          "clicks": 5,
-          "position": 3.84
+          "impressions": 79,
+          "clicks": 4,
+          "position": 3.81
         },
         {
           "query": "monika hicks",
-          "impressions": 29,
-          "clicks": 2,
-          "position": 4.65
+          "impressions": 26,
+          "clicks": 1,
+          "position": 4.85
         },
         {
           "query": "anxiety therapist",
@@ -316,12 +316,6 @@
           "position": 2
         },
         {
-          "query": "courtney bevins",
-          "impressions": 1,
-          "clicks": 0,
-          "position": 11
-        },
-        {
           "query": "health consulting",
           "impressions": 1,
           "clicks": 0,
@@ -332,12 +326,6 @@
           "impressions": 1,
           "clicks": 0,
           "position": 1
-        },
-        {
-          "query": "jamie hickman consulting",
-          "impressions": 1,
-          "clicks": 0,
-          "position": 5
         },
         {
           "query": "janice hicks",
@@ -388,23 +376,23 @@
       "approved_by": "site owner (not the client)",
       "approved_at": "2026-10-11",
       "approval_note": "Site owner decided on 2026-10-11 to strengthen both qualifying families now rather than wait on a client flag. Not a client decision; the client did not approve or author this change.",
-      "proposed_change": "Lead / with a direct answer to \"hicks consulting\" in its title and first paragraph: 153 impressions at position 7.1 earned 7 click(s) (4.6% CTR)."
+      "proposed_change": "Lead / with a direct answer to \"hicks consulting\" in its title and first paragraph: 146 impressions at position 7.2 earned 5 click(s) (3.4% CTR)."
     },
     {
       "family": "/contact/",
       "page": "https://www.hicksconsulting.org/contact/",
-      "impressions": 40,
+      "impressions": 45,
       "clicks": 0,
       "ctr": 0,
-      "weighted_position": 4.5,
+      "weighted_position": 4.6,
       "query_count": 2,
       "head_query": "hicks consulting llc",
       "queries": [
         {
           "query": "hicks consulting llc",
-          "impressions": 39,
+          "impressions": 44,
           "clicks": 0,
-          "position": 4.44
+          "position": 4.53
         },
         {
           "query": "email",
@@ -416,7 +404,7 @@
       "rank": 3,
       "qualifies": true,
       "status": "proposal",
-      "proposed_change": "Lead /contact/ with a direct answer to \"hicks consulting llc\" in its title and first paragraph: 40 impressions at position 4.5 earned 0 click(s) (0% CTR)."
+      "proposed_change": "Lead /contact/ with a direct answer to \"hicks consulting llc\" in its title and first paragraph: 45 impressions at position 4.6 earned 0 click(s) (0% CTR)."
     },
     {
       "family": "/corporate-speaking/",
@@ -485,6 +473,28 @@
       "why_not": "4 impressions < floor 20"
     },
     {
+      "family": "/anxiety-therapist-memphis/",
+      "page": "https://www.hicksconsulting.org/anxiety-therapist-memphis/",
+      "impressions": 1,
+      "clicks": 0,
+      "ctr": 0,
+      "weighted_position": 39,
+      "query_count": 1,
+      "head_query": "anxiety treatment memphis",
+      "queries": [
+        {
+          "query": "anxiety treatment memphis",
+          "impressions": 1,
+          "clicks": 0,
+          "position": 39
+        }
+      ],
+      "rank": 7,
+      "qualifies": false,
+      "status": "measured_only",
+      "why_not": "1 impressions < floor 20"
+    },
+    {
       "family": "/intake-quiz/",
       "page": "https://www.hicksconsulting.org/intake-quiz/",
       "impressions": 1,
@@ -501,7 +511,7 @@
           "position": 3
         }
       ],
-      "rank": 7,
+      "rank": 8,
       "qualifies": false,
       "status": "measured_only",
       "why_not": "1 impressions < floor 20"
@@ -523,7 +533,7 @@
           "position": 1
         }
       ],
-      "rank": 8,
+      "rank": 9,
       "qualifies": false,
       "status": "measured_only",
       "why_not": "1 impressions < floor 20"
@@ -545,7 +555,7 @@
           "position": 11
         }
       ],
-      "rank": 9,
+      "rank": 10,
       "qualifies": false,
       "status": "measured_only",
       "why_not": "1 impressions < floor 20"
@@ -567,7 +577,7 @@
           "position": 2
         }
       ],
-      "rank": 10,
+      "rank": 11,
       "qualifies": false,
       "status": "measured_only",
       "why_not": "1 impressions < floor 20"
@@ -589,7 +599,7 @@
           "position": 9
         }
       ],
-      "rank": 11,
+      "rank": 12,
       "qualifies": false,
       "status": "measured_only",
       "why_not": "1 impressions < floor 20"
@@ -611,7 +621,7 @@
           "position": 56
         }
       ],
-      "rank": 12,
+      "rank": 13,
       "qualifies": false,
       "status": "measured_only",
       "why_not": "1 impressions < floor 20"
