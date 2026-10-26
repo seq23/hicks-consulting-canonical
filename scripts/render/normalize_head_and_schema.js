@@ -35,6 +35,23 @@
  *    fees in data/entities/service_schema.json - the same numbers /faq/ states
  *    in prose - ship as Service nodes with an Offer, on the service routes only.
  *
+ * 4. The same fees in visible text (checklist c5). The c3 pass put $200/$165/$85
+ *    into the markup of five routes by topic, and four of them - /, /therapy/,
+ *    /coaching/ and /good-faith-estimate/ - never showed a price to a reader.
+ *    Markup a page's visible text does not support is what Google treats as
+ *    deceptive, and the penalty is every rich result on the domain, so the
+ *    Search Readiness audit flagged the homepage on 26 Oct 2026. The fix is not
+ *    to delete the prices: it is to emit the visible fee list from the SAME
+ *    data file, in the same pass, so the text and the Offer can never disagree.
+ *    A route whose own source already states every fee (/faq/, which is where
+ *    the numbers are published) is left alone. /coaching/ left the route list
+ *    instead of gaining the block: coaching is non-clinical and is not sold at
+ *    the therapy session fees, so a priced therapy Offer there is a claim that
+ *    page cannot back either way.
+ *    Guarded by _ops/validators/validate_search_readiness_surfaces.js, which
+ *    now fails any built page that carries a priced Offer the page's own
+ *    visible text does not state.
+ *
  * It also adds the root manifest and icon links, which belong with the root
  * files the build now emits.
  *
@@ -109,6 +126,43 @@ function serviceNodes(config) {
   };
 }
 
+const FEE_BLOCK_ID = 'hicks-session-fees';
+
+// The visible counterpart of serviceNodes(), built from the same config so a fee
+// can never be stated in one and not the other. Rendered before </main> so it
+// reads as the last word of the page rather than footer boilerplate.
+function feeBlock(config) {
+  const items = config.services
+    .map((service) => `<li><strong>$${escapeHtml(service.price)}</strong> &mdash; ${escapeHtml(service.name)}</li>`)
+    .join('');
+  return `<section class="section" id="${FEE_BLOCK_ID}" aria-label="Session fees">` +
+    '<div class="container narrow">' +
+    '<span class="section-label">Session fees</span>' +
+    '<h2>What a session costs</h2>' +
+    `<ul>${items}</ul>` +
+    '<p>Hicks Consulting is a private-pay practice. A superbill can be provided for possible ' +
+    'out-of-network reimbursement. <a href="/faq/">See the full FAQ</a>.</p>' +
+    '</div></section>';
+}
+
+function escapeHtml(value) {
+  return String(value).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+}
+
+// Text a reader sees: script, style and tags removed. The audit that flagged the
+// homepage reads the page the same way, so this is the test it will apply.
+function visibleText(html) {
+  return html
+    .replace(/<script[\s\S]*?<\/script>/gi, ' ')
+    .replace(/<style[\s\S]*?<\/style>/gi, ' ')
+    .replace(/<[^>]+>/g, ' ');
+}
+
+function statesEveryFee(html, config) {
+  const text = visibleText(html);
+  return config.services.every((service) => text.includes(String(service.price)));
+}
+
 function setMeta(html, attr, name, content) {
   const existing = new RegExp(`<meta[^>]*${attr}=["']${name}["'][^>]*>`, 'i');
   const tag = `<meta ${attr}="${name}" content="${content}"/>`;
@@ -158,6 +212,18 @@ function normalizeHtml(html, route, serviceConfig) {
     out = out.replace('</head>', `${payload}</head>`);
   }
 
+  // 4. The same fees where a reader can see them. A route that already states
+  // every fee in its own source keeps its own words; a route that does not gets
+  // the block, so no page carries a price its visible text withholds.
+  if (serviceConfig.routes.includes(route) && !out.includes(`id="${FEE_BLOCK_ID}"`)
+      && !statesEveryFee(out, serviceConfig)) {
+    // </main> is where it reads as the last word of the page; </body> is the
+    // fallback so a page with no <main> still shows the fee it claims, rather
+    // than shipping an Offer no reader can check.
+    const anchor = out.includes('</main>') ? '</main>' : out.includes('</body>') ? '</body>' : null;
+    if (anchor) out = out.replace(anchor, `${feeBlock(serviceConfig)}${anchor}`);
+  }
+
   return out;
 }
 
@@ -175,6 +241,8 @@ function normalize(dist, root) {
   const skip = new Set(['admin', 'preview', 'assets', 'data']);
   let rewritten = 0;
   const servicePagesSeen = [];
+  const feePagesSeen = [];
+  const unsupportedPrices = [];
 
   (function walk(dir) {
     for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
@@ -194,14 +262,24 @@ function normalize(dist, root) {
         rewritten++;
       }
       if (next.includes('id="hicks-service-offers"')) servicePagesSeen.push(route);
+      if (next.includes(`id="${FEE_BLOCK_ID}"`)) feePagesSeen.push(route);
+      if (next.includes('id="hicks-service-offers"') && !statesEveryFee(next, serviceConfig)) {
+        unsupportedPrices.push(route);
+      }
     }
   })(dist);
 
   // Rule 0: a pass that exits having done nothing is a defect, not a pass.
   if (!rewritten) throw new Error('normalize_head_and_schema: rewrote 0 pages, so it governs nothing.');
   if (!servicePagesSeen.length) throw new Error('normalize_head_and_schema: no service route received the priced Offer nodes.');
+  if (!feePagesSeen.length) throw new Error('normalize_head_and_schema: no service route received the visible fee block, so the pass that is meant to make the prices readable did nothing.');
+  // checklist c5: a priced Offer on a page that never shows the price is the
+  // defect this pass exists to prevent, so it refuses to ship one.
+  if (unsupportedPrices.length) {
+    throw new Error(`normalize_head_and_schema: priced Offers on page(s) whose visible text states no fee: ${unsupportedPrices.join(', ')}`);
+  }
 
-  console.log(`head and schema: normalized ${rewritten} page(s); priced Offers on ${servicePagesSeen.length} service route(s)`);
+  console.log(`head and schema: normalized ${rewritten} page(s); priced Offers on ${servicePagesSeen.length} service route(s); visible fee block on ${feePagesSeen.length}`);
 }
 
-module.exports = { normalize, referenceOrganization, isOrgNode, ORG_ID, OG_IMAGE };
+module.exports = { normalize, referenceOrganization, isOrgNode, feeBlock, statesEveryFee, ORG_ID, OG_IMAGE, FEE_BLOCK_ID };

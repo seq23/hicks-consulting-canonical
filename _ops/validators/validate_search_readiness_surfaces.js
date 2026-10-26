@@ -16,6 +16,13 @@
  *       entity twice, so no answer engine could tell what entity the site is.
  *   c3  No node anywhere stated a price, so nothing could read what a session
  *       costs.
+ *   c5  (26 Oct 2026) The c3 fix then published $200/$165/$85 in the markup of
+ *       five routes chosen by topic, four of which never showed a fee to a
+ *       reader - the homepage among them. Markup the visible page does not
+ *       support is treated as deceptive and the penalty is every rich result on
+ *       the domain. Every page that carries a priced Offer must state that
+ *       price in its own visible text, whether the fee block stamped it or the
+ *       page's own prose did.
  *
  * It asserts the BUILT output, because every one of these facts is stamped at
  * build time by scripts/render/normalize_head_and_schema.js: checking pages/
@@ -122,8 +129,17 @@ function deepNodes(value, out = []) {
 const typesOf = (node) => (Array.isArray(node['@type']) ? node['@type'] : [node['@type']]).filter((t) => typeof t === 'string');
 const isOrg = (node) => typesOf(node).some((t) => ORG_TYPES.test(t));
 
+// The text a reader (and the owner's audit) sees: script, style and tags gone.
+function visibleText(html) {
+  return html
+    .replace(/<script[\s\S]*?<\/script>/gi, ' ')
+    .replace(/<style[\s\S]*?<\/style>/gi, ' ')
+    .replace(/<[^>]+>/g, ' ');
+}
+
 let examined = 0;
 const servicePagesWithPrice = [];
+const pagesStatingFees = [];
 
 (function walk(dir) {
   for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
@@ -176,12 +192,30 @@ const servicePagesWithPrice = [];
       if (!priced.length) errors.push(`no-priced-offer: ${route} is a service route but carries no Service with a priced Offer.`);
       else servicePagesWithPrice.push(route);
     }
+
+    // c5: no page states a price in markup that its visible text withholds.
+    // Checked on every built page, not just the service routes, because the
+    // defect is a page carrying the claim - however it got there.
+    const offerPrices = [...new Set(deepNodes(nodes)
+      .filter((n) => typesOf(n).includes('Offer') && n.price !== undefined && Number(n.price) !== 0)
+      .map((n) => String(n.price).replace(/\.0+$/, '')))];
+    if (offerPrices.length) {
+      const text = visibleText(html);
+      const hidden = offerPrices.filter((price) => !text.includes(price));
+      if (hidden.length) {
+        errors.push(`price-not-visible: ${route} carries Offer price(s) ${hidden.map((p) => `$${p}`).join(', ')} that its visible text never states. Markup the page does not support costs the whole domain its rich results: either show the fee on the page or take the route off data/entities/service_schema.json routes.`);
+      } else {
+        pagesStatingFees.push(route);
+      }
+    }
   }
 })(dist);
 
 if (!examined) fail('SEARCH READINESS: examined 0 built pages. This check proves nothing.');
 if (!servicePagesWithPrice.length) errors.push('no-priced-offer-anywhere: not one service route carried a priced Offer, so no answer engine can read what a session costs.');
+// Rule 0 for the c5 half: a run that found no priced page at all examined nothing.
+if (!pagesStatingFees.length && !errors.length) fail('SEARCH READINESS: not one built page carried a priced Offer, so the c5 price-visibility check examined nothing.');
 
 if (errors.length) fail([`SEARCH READINESS SURFACE: ${errors.length} finding(s) across ${examined} built page(s).`, ...errors.map((e) => `- ${e}`)].join('\n'));
 
-console.log(`Search readiness surfaces OK: ${examined} built pages, ${rootFiles.length} root files, og card ${ogSize.width}x${ogSize.height}, priced Offers on ${servicePagesWithPrice.length} service route(s)`);
+console.log(`Search readiness surfaces OK: ${examined} built pages, ${rootFiles.length} root files, og card ${ogSize.width}x${ogSize.height}, priced Offers on ${servicePagesWithPrice.length} service route(s), every fee visible on ${pagesStatingFees.length} page(s)`);
