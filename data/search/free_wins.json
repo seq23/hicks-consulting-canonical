@@ -1,15 +1,15 @@
 {
   "schemaVersion": "1.0.0",
-  "generatedAt": "2026-10-25T17:42:18.183Z",
+  "generatedAt": "2026-10-26T15:15:41.049Z",
   "providerState": "CONNECTED",
   "items": [
     {
       "type": "STRIKING_DISTANCE",
       "query": "black therapist memphis tn",
       "page": "https://www.hicksconsulting.org/black-therapist-memphis/",
-      "position": 8.553571428571429,
-      "impressions": 56,
-      "ctr": 0.017857142857142856,
+      "position": 8.415094339622641,
+      "impressions": 53,
+      "ctr": 0.018867924528301886,
       "recommendedAction": "Improve answer alignment, title/snippet, and supporting internal links without changing page identity.",
       "confidence": "high"
     },
@@ -17,9 +17,9 @@
       "type": "LOW_CTR",
       "query": "black therapist memphis tn",
       "page": "https://www.hicksconsulting.org/black-therapist-memphis/",
-      "position": 8.553571428571429,
-      "impressions": 56,
-      "ctr": 0.017857142857142856,
+      "position": 8.415094339622641,
+      "impressions": 53,
+      "ctr": 0.018867924528301886,
       "recommendedAction": "Review search title and description against the actual query intent.",
       "confidence": "medium"
     },
@@ -28,8 +28,8 @@
       "query": "black therapist memphis tn",
       "page": "https://www.hicksconsulting.org/black-therapist-memphis/",
       "expectedPage": "/",
-      "position": 8.553571428571429,
-      "impressions": 56,
+      "position": 8.415094339622641,
+      "impressions": 53,
       "recommendedAction": "Strengthen query ownership and internal links toward the governed primary page.",
       "confidence": "high"
     },
@@ -135,16 +135,6 @@
     },
     {
       "type": "WRONG_PAGE_RANKING",
-      "query": "emotional heaviness",
-      "page": "https://www.hicksconsulting.org/resources/insights/why-emotional-heaviness-does-not-always-look-like-crying-next-step-reflection/",
-      "expectedPage": "/resources/articles/why-emotional-heaviness-does-not-always-look-like-crying/",
-      "position": 9,
-      "impressions": 1,
-      "recommendedAction": "Strengthen query ownership and internal links toward the governed primary page.",
-      "confidence": "high"
-    },
-    {
-      "type": "WRONG_PAGE_RANKING",
       "query": "hicks consulting",
       "page": "https://www.hicksconsulting.org/about/",
       "expectedPage": "/",
@@ -154,12 +144,22 @@
       "confidence": "high"
     },
     {
+      "type": "STRIKING_DISTANCE",
+      "query": "hicks consulting",
+      "page": "https://www.hicksconsulting.org/contact/",
+      "position": 5.3,
+      "impressions": 10,
+      "ctr": 0,
+      "recommendedAction": "Improve answer alignment, title/snippet, and supporting internal links without changing page identity.",
+      "confidence": "high"
+    },
+    {
       "type": "WRONG_PAGE_RANKING",
       "query": "hicks consulting",
       "page": "https://www.hicksconsulting.org/contact/",
       "expectedPage": "/",
-      "position": 5.111111111111111,
-      "impressions": 9,
+      "position": 5.3,
+      "impressions": 10,
       "recommendedAction": "Strengthen query ownership and internal links toward the governed primary page.",
       "confidence": "high"
     },
@@ -198,8 +198,8 @@
       "query": "hicks consulting",
       "page": "https://www.hicksconsulting.org/request-consult/",
       "expectedPage": "/",
-      "position": 11,
-      "impressions": 1,
+      "position": 7,
+      "impressions": 2,
       "recommendedAction": "Strengthen query ownership and internal links toward the governed primary page.",
       "confidence": "high"
     },
@@ -208,8 +208,8 @@
       "query": "hicks consulting",
       "page": "https://www.hicksconsulting.org/resources/",
       "expectedPage": "/",
-      "position": 3.7142857142857144,
-      "impressions": 7,
+      "position": 3.375,
+      "impressions": 8,
       "recommendedAction": "Strengthen query ownership and internal links toward the governed primary page.",
       "confidence": "high"
     },
@@ -288,8 +288,8 @@
       "query": "hicks consulting llc",
       "page": "https://www.hicksconsulting.org/groups/",
       "expectedPage": "/contact/",
-      "position": 6.666666666666667,
-      "impressions": 6,
+      "position": 6.142857142857143,
+      "impressions": 7,
       "recommendedAction": "Strengthen query ownership and internal links toward the governed primary page.",
       "confidence": "high"
     },
@@ -298,8 +298,8 @@
       "query": "hicks consulting llc",
       "page": "https://www.hicksconsulting.org/privacy-policy/",
       "expectedPage": "/contact/",
-      "position": 6.5,
-      "impressions": 2,
+      "position": 7.333333333333333,
+      "impressions": 3,
       "recommendedAction": "Strengthen query ownership and internal links toward the governed primary page.",
       "confidence": "high"
     },

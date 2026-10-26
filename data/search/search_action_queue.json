@@ -1,6 +1,6 @@
 {
   "schemaVersion": "2.0.0",
-  "generatedAt": "2026-10-25T17:42:18.183Z",
+  "generatedAt": "2026-10-26T15:15:41.049Z",
   "policy": "Hicks may autonomously apply bounded technical/search-alignment repairs. Substantive clinical claims and unsupported treatment assertions are never auto-generated from competitor content.",
   "items": [
     {
@@ -9,8 +9,7 @@
       "status": "CANNIBALIZATION_REVIEW",
       "reasons": [
         "MULTIPLE_HICKS_PAGES_FOR_QUERY",
-        "IMPRESSIONS_WITHOUT_CLICKS",
-        "PROVIDER_ERROR"
+        "IMPRESSIONS_WITHOUT_CLICKS"
       ],
       "evidence": {
         "groundedSiteSurfaced": null,
@@ -30,10 +29,8 @@
     {
       "query": "african american therapist near me",
       "primaryPage": "/black-therapist-memphis/",
-      "status": "PROVIDER_ERROR",
-      "reasons": [
-        "PROVIDER_ERROR"
-      ],
+      "status": "OBSERVED",
+      "reasons": [],
       "evidence": {
         "groundedSiteSurfaced": null,
         "groundedProviderAnswered": false,
@@ -51,10 +48,8 @@
     {
       "query": "black mental health therapist near me",
       "primaryPage": "/black-therapist-memphis/",
-      "status": "PROVIDER_ERROR",
-      "reasons": [
-        "PROVIDER_ERROR"
-      ],
+      "status": "OBSERVED",
+      "reasons": [],
       "evidence": {
         "groundedSiteSurfaced": null,
         "groundedProviderAnswered": false,
@@ -72,10 +67,8 @@
     {
       "query": "african american female therapist near me",
       "primaryPage": "/black-therapist-memphis/",
-      "status": "PROVIDER_ERROR",
-      "reasons": [
-        "PROVIDER_ERROR"
-      ],
+      "status": "OBSERVED",
+      "reasons": [],
       "evidence": {
         "groundedSiteSurfaced": null,
         "groundedProviderAnswered": false,
@@ -93,10 +86,8 @@
     {
       "query": "african american therapists near me",
       "primaryPage": "/black-therapist-memphis/",
-      "status": "PROVIDER_ERROR",
-      "reasons": [
-        "PROVIDER_ERROR"
-      ],
+      "status": "OBSERVED",
+      "reasons": [],
       "evidence": {
         "groundedSiteSurfaced": null,
         "groundedProviderAnswered": false,
@@ -114,10 +105,8 @@
     {
       "query": "black counselors near me",
       "primaryPage": "/black-therapist-memphis/",
-      "status": "PROVIDER_ERROR",
-      "reasons": [
-        "PROVIDER_ERROR"
-      ],
+      "status": "OBSERVED",
+      "reasons": [],
       "evidence": {
         "groundedSiteSurfaced": null,
         "groundedProviderAnswered": false,
@@ -137,8 +126,7 @@
       "primaryPage": "/",
       "status": "WRONG_PAGE",
       "reasons": [
-        "WRONG_HICKS_PAGE_RANKING",
-        "PROVIDER_ERROR"
+        "WRONG_HICKS_PAGE_RANKING"
       ],
       "evidence": {
         "groundedSiteSurfaced": null,
@@ -379,17 +367,15 @@
     {
       "query": "black family therapist near me",
       "primaryPage": "/black-therapist-memphis/",
-      "status": "OBSERVED",
+      "status": "UNKNOWN",
       "reasons": [],
       "evidence": {
         "groundedSiteSurfaced": null,
         "groundedProviderAnswered": false,
-        "gscImpressions": 1,
+        "gscImpressions": 0,
         "gscClicks": 0,
-        "gscAveragePosition": 10,
-        "gscPages": [
-          "/black-therapist-memphis/"
-        ],
+        "gscAveragePosition": 0,
+        "gscPages": [],
         "competitorUrls": []
       },
       "safeRepairEligible": false,
@@ -693,17 +679,15 @@
     {
       "query": "therapist near me black female",
       "primaryPage": "/black-therapist-memphis/",
-      "status": "OBSERVED",
+      "status": "UNKNOWN",
       "reasons": [],
       "evidence": {
         "groundedSiteSurfaced": null,
         "groundedProviderAnswered": false,
-        "gscImpressions": 1,
+        "gscImpressions": 0,
         "gscClicks": 0,
-        "gscAveragePosition": 7,
-        "gscPages": [
-          "/black-therapist-memphis/"
-        ],
+        "gscAveragePosition": 0,
+        "gscPages": [],
         "competitorUrls": []
       },
       "safeRepairEligible": false,
@@ -906,9 +890,9 @@
       "evidence": {
         "groundedSiteSurfaced": null,
         "groundedProviderAnswered": false,
-        "gscImpressions": 87,
+        "gscImpressions": 91,
         "gscClicks": 4,
-        "gscAveragePosition": 4.76,
+        "gscAveragePosition": 4.44,
         "gscPages": [
           "/",
           "/coaching/",
@@ -939,9 +923,9 @@
       "evidence": {
         "groundedSiteSurfaced": null,
         "groundedProviderAnswered": false,
-        "gscImpressions": 58,
+        "gscImpressions": 54,
         "gscClicks": 1,
-        "gscAveragePosition": 6.53,
+        "gscAveragePosition": 4.71,
         "gscPages": [
           "/black-therapist-memphis/",
           "/"
@@ -962,9 +946,9 @@
       "evidence": {
         "groundedSiteSurfaced": null,
         "groundedProviderAnswered": false,
-        "gscImpressions": 46,
+        "gscImpressions": 48,
         "gscClicks": 0,
-        "gscAveragePosition": 5.02,
+        "gscAveragePosition": 5.07,
         "gscPages": [
           "/privacy-policy/",
           "/",
@@ -1041,9 +1025,9 @@
       "evidence": {
         "groundedSiteSurfaced": null,
         "groundedProviderAnswered": false,
-        "gscImpressions": 12,
+        "gscImpressions": 3,
         "gscClicks": 0,
-        "gscAveragePosition": 37.58,
+        "gscAveragePosition": 40.67,
         "gscPages": [
           "/"
         ],
@@ -1102,9 +1086,9 @@
       "evidence": {
         "groundedSiteSurfaced": null,
         "groundedProviderAnswered": false,
-        "gscImpressions": 8,
+        "gscImpressions": 9,
         "gscClicks": 0,
-        "gscAveragePosition": 7.5,
+        "gscAveragePosition": 7.62,
         "gscPages": [
           "/corporate-speaking/",
           "/groups/",
@@ -1123,9 +1107,9 @@
       "evidence": {
         "groundedSiteSurfaced": null,
         "groundedProviderAnswered": false,
-        "gscImpressions": 3,
+        "gscImpressions": 4,
         "gscClicks": 0,
-        "gscAveragePosition": 3.67,
+        "gscAveragePosition": 4,
         "gscPages": [
           "/"
         ],
@@ -1966,19 +1950,15 @@
     {
       "query": "emotional heaviness",
       "primaryPage": "/resources/articles/why-emotional-heaviness-does-not-always-look-like-crying/",
-      "status": "WRONG_PAGE",
-      "reasons": [
-        "WRONG_HICKS_PAGE_RANKING"
-      ],
+      "status": "UNKNOWN",
+      "reasons": [],
       "evidence": {
         "groundedSiteSurfaced": null,
         "groundedProviderAnswered": false,
-        "gscImpressions": 1,
+        "gscImpressions": 0,
         "gscClicks": 0,
-        "gscAveragePosition": 9,
-        "gscPages": [
-          "/resources/insights/why-emotional-heaviness-does-not-always-look-like-crying-next-step-reflection/"
-        ],
+        "gscAveragePosition": 0,
+        "gscPages": [],
         "competitorUrls": []
       },
       "safeRepairEligible": false,

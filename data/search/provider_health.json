@@ -1,11 +1,11 @@
 {
   "schemaVersion": "2.0.0",
-  "generatedAt": "2026-10-25T17:42:18.183Z",
+  "generatedAt": "2026-10-26T15:15:41.049Z",
   "truthBoundary": "Live web-search observations are evidence of web surfacing/citations, not verified organic rank, and a 0% citation rate is only meaningful for queries the provider actually answered. GSC average position is the authoritative Google-owned performance metric available to this system.",
   "providers": {
     "openrouter_web_search": {
-      "state": "DEGRADED",
-      "configured": true,
+      "state": "DISABLED_BY_OWNER_POLICY",
+      "configured": false,
       "capabilities": {
         "liveWeb": true,
         "groundedCitations": true,
@@ -15,8 +15,8 @@
       "model": "openai/gpt-4o-mini",
       "queriesAnswered": 0,
       "lastStop": {
-        "name": "SEARCH_PROVIDER_UNAVAILABLE",
-        "reason": "All 7 query observation(s) returned a provider error. Error states were recorded; no citation rate was recorded."
+        "name": "PAID_PROBE_DISABLED_BY_OWNER_POLICY",
+        "reason": "The OpenRouter web plugin bills per request and is off by owner policy (11 Oct 2026, nothing paid). No live query observation was attempted and no citation rate was recorded. Dispatch paid-citation-probe.yml with confirm_paid: true to run it once."
       },
       "costBoundary": "Paid per request on OpenRouter; the workflow enforces a bounded daily query panel via LIVE_QUERY_LIMIT."
     },
