@@ -1,7 +1,7 @@
 {
   "schema_version": "2.0",
-  "receipt_id": "2026-10-25T17-04-54.135Z-40214711779",
-  "attempted_at": "2026-10-25T17:04:54.135Z",
+  "receipt_id": "2026-10-26T06-02-25.076Z-40277502830",
+  "attempted_at": "2026-10-26T06:02:25.076Z",
   "publication_trigger": "ONLY_AFTER_EXISTING_CONTENT_PUBLISH_WORKFLOW_SUCCEEDS",
   "chain": [
     "successful_publish",
@@ -15,14 +15,14 @@
   "sitemap_refresh": {
     "status": "SUCCESS",
     "sitemap_url": "https://www.hicksconsulting.org/sitemap.xml",
-    "sitemap_sha256": "3301ee752b15af645adf746cc7f0d97709d23ea07df97dfe0a2d9f8530cbf2b9",
-    "url_count": 147
+    "sitemap_sha256": "e1b5d95ad9f9fa0b28352d1690e60a4802fa67b0f1887fbf2a9a15141d89ac1f",
+    "url_count": 150
   },
   "indexnow": {
     "status": "SUCCESS",
     "attempted": true,
     "http_status": 200,
-    "submitted_urls": 147,
+    "submitted_urls": 150,
     "key_location": "https://www.hicksconsulting.org/indexnow.txt"
   },
   "gsc_sitemap_submission": {
@@ -46,7 +46,7 @@
         "verdict": "PASS",
         "coverage_state": "Submitted and indexed",
         "indexing_state": "INDEXING_ALLOWED",
-        "last_crawl_time": "2026-10-13T22:48:28Z"
+        "last_crawl_time": "2026-10-19T17:11:47Z"
       },
       {
         "url": "https://www.hicksconsulting.org/therapy/",
@@ -197,7 +197,7 @@
   "durable_receipt": {
     "status": "SUCCESS",
     "latest_path": "data/distribution/provider_receipt.json",
-    "history_path": "data/distribution/receipts/2026-10-25T17-04-54.135Z-40214711779.json"
+    "history_path": "data/distribution/receipts/2026-10-26T06-02-25.076Z-40277502830.json"
   },
   "observation_feedback": {
     "status": "SUCCESS",
