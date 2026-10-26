@@ -2,7 +2,7 @@
   "schemaVersion": "1.0.0",
   "validator": "content-pattern-contract",
   "spec": ".clarity/content-pattern-spec.json",
-  "generatedAt": "2026-08-29T16:39:22.916Z",
+  "generatedAt": "2026-10-26T03:59:11.243Z",
   "enforcement": "report",
   "pagesChecked": 270,
   "status": "REPORTED",
@@ -39,8 +39,8 @@
     {
       "id": "checklist",
       "blocking": false,
-      "pagesMissing": 15,
-      "coveragePct": 94.4,
+      "pagesMissing": 14,
+      "coveragePct": 94.8,
       "why": "no checklist or numbered protocol (agent request #1, 730 occurrences)"
     },
     {
@@ -53,8 +53,8 @@
     {
       "id": "concrete_numbers",
       "blocking": false,
-      "pagesMissing": 259,
-      "coveragePct": 4.1,
+      "pagesMissing": 258,
+      "coveragePct": 4.4,
       "why": "no concrete cost or timeline figures (agent request #5, 365 occurrences)"
     },
     {
@@ -67,8 +67,8 @@
     {
       "id": "faq",
       "blocking": false,
-      "pagesMissing": 255,
-      "coveragePct": 5.6,
+      "pagesMissing": 254,
+      "coveragePct": 5.9,
       "why": "no FAQ block or FAQPage schema (agent request #9)"
     },
     {
@@ -88,15 +88,15 @@
     {
       "id": "definition_callout",
       "blocking": false,
-      "pagesMissing": 256,
-      "coveragePct": 5.2,
+      "pagesMissing": 255,
+      "coveragePct": 5.6,
       "why": "no definition callout (agent requested 196 times) - this is what an answer engine lifts for \"what is X\""
     },
     {
       "id": "trust_block",
       "blocking": false,
-      "pagesMissing": 23,
-      "coveragePct": 91.5,
+      "pagesMissing": 22,
+      "coveragePct": 91.9,
       "why": "no trust or authorship block (agent requested 215 times) - entity clarity is a citation factor"
     }
   ],
@@ -112,7 +112,6 @@
       "pages/emergency-crisis-notice/index.html",
       "pages/good-faith-estimate/index.html",
       "pages/groups/index.html",
-      "pages/index.html",
       "pages/intake-quiz/index.html",
       "pages/organizational-training-inquiry/index.html",
       "pages/request-consult/index.html",
@@ -152,7 +151,6 @@
     "concrete_numbers": [
       "pages/about/index.html",
       "pages/anxiety-therapist-memphis/index.html",
-      "pages/black-therapist-memphis/index.html",
       "pages/book-discovery-call/index.html",
       "pages/coaching/index.html",
       "pages/contact/index.html",
@@ -174,7 +172,8 @@
       "pages/request-consult/index.html",
       "pages/resources/articles/burnout-or-just-too-much/index.html",
       "pages/resources/articles/how-boundary-guilt-keeps-women-stuck-in-the-same-exhausting-loops/index.html",
-      "pages/resources/articles/how-burnout-changes-the-way-you-think-about-your-own-life/index.html"
+      "pages/resources/articles/how-burnout-changes-the-way-you-think-about-your-own-life/index.html",
+      "pages/resources/articles/how-burnout-shows-up-before-you-ever-call-it-burnout/index.html"
     ],
     "named_sources": [
       "pages/llm-atlas/answer-surfaces/index.html",
@@ -193,7 +192,6 @@
       "pages/corporate-speaking/index.html",
       "pages/emergency-crisis-notice/index.html",
       "pages/good-faith-estimate/index.html",
-      "pages/index.html",
       "pages/intake-quiz/index.html",
       "pages/llm-atlas/answer-surfaces/index.html",
       "pages/llm-atlas/clusters/index.html",
@@ -210,7 +208,8 @@
       "pages/resources/articles/how-burnout-changes-the-way-you-think-about-your-own-life/index.html",
       "pages/resources/articles/how-burnout-shows-up-before-you-ever-call-it-burnout/index.html",
       "pages/resources/articles/how-coaching-can-help-when-you-want-to-move-differently-without-starting-over/index.html",
-      "pages/resources/articles/how-life-transitions-can-shake-women-who-usually-look-put-together/index.html"
+      "pages/resources/articles/how-life-transitions-can-shake-women-who-usually-look-put-together/index.html",
+      "pages/resources/articles/how-therapy-can-help-when-you-are-used-to-talking-yourself-out-of-your-needs/index.html"
     ],
     "structured_data": [],
     "recommendation_summary": [
@@ -251,7 +250,6 @@
       "pages/faq/index.html",
       "pages/good-faith-estimate/index.html",
       "pages/groups/index.html",
-      "pages/index.html",
       "pages/llm-atlas/answer-surfaces/index.html",
       "pages/llm-atlas/clusters/index.html",
       "pages/llm-atlas/fanouts/index.html",
@@ -265,11 +263,11 @@
       "pages/resources/articles/burnout-or-just-too-much/index.html",
       "pages/resources/articles/how-boundary-guilt-keeps-women-stuck-in-the-same-exhausting-loops/index.html",
       "pages/resources/articles/how-burnout-changes-the-way-you-think-about-your-own-life/index.html",
-      "pages/resources/articles/how-burnout-shows-up-before-you-ever-call-it-burnout/index.html"
+      "pages/resources/articles/how-burnout-shows-up-before-you-ever-call-it-burnout/index.html",
+      "pages/resources/articles/how-coaching-can-help-when-you-want-to-move-differently-without-starting-over/index.html"
     ],
     "trust_block": [
       "pages/anxiety-therapist-memphis/index.html",
-      "pages/black-therapist-memphis/index.html",
       "pages/book-discovery-call/index.html",
       "pages/contact/index.html",
       "pages/emergency-crisis-notice/index.html",

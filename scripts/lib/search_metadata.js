@@ -38,10 +38,20 @@ const path = require('path');
 
 const SITE_SUFFIX = ' | Hicks Consulting';
 const TITLE_MIN = 30;
-// Bing Site Scan flags "Title too long" above 70 characters.
-const TITLE_MAX = 70;
+// Bing Site Scan flags "Title too long" above 70, but Google truncates the
+// result line well before that. The owner's Search Readiness Checklist (item
+// b1) sets the ceiling at 65, and on 25 Oct 2026 it failed this site with 27
+// titles between 66 and 70 - all of them written to this constant, not by hand.
+// Tightening it here repairs every one of them through
+// scripts/search/apply_search_metadata.js and tightens
+// validate_search_metadata_contract.js in the same move, since the guard reads
+// these constants rather than its own copy.
+const TITLE_MAX = 65;
 const SHORT_FORMS_PATH = path.join(__dirname, '..', '..', 'data', 'search', 'title_short_forms.json');
-const DESC_MIN = 110;
+// Likewise checklist item b2: a 110-character description is a snippet Google
+// pads with scraped copy. 23 pages sat between 110 and 119, every one of them
+// legal under the old floor.
+const DESC_MIN = 120;
 const DESC_MAX = 160;
 
 function decodeEntities(value) {
@@ -173,6 +183,32 @@ function sentencesOf(text) {
 }
 
 /**
+ * The longest leading clause of `sentence` that keeps `acc` inside the range,
+ * cut at a comma, semicolon, colon or dash and closed with a full stop.
+ *
+ * This exists because raising DESC_MIN to 120 opened a gap the sentence-level
+ * loop could not cross: a page whose first sentence runs 111 characters and
+ * whose second would take it to 161 has plenty of usable copy and no whole
+ * number of sentences that lands in 120-160. Eleven insight pages sat in that
+ * gap on 25 Oct 2026. Cutting the following sentence at a clause boundary is
+ * the same whole-phrase rule fitPassage() already applies to an over-long first
+ * sentence, applied one sentence later; it never chops mid-phrase.
+ */
+function extendToClause(acc, sentence) {
+  const boundary = /[,;:—–]\s|\s[—–-]\s/g;
+  let best = null;
+  let m;
+  while ((m = boundary.exec(sentence))) {
+    const cut = sentence.slice(0, m.index).replace(/[\s,;:—–-]+$/, '');
+    if (!cut) continue;
+    const candidate = `${acc} ${cut}.`;
+    if (candidate.length > DESC_MAX) break;
+    if (candidate.length >= DESC_MIN) best = candidate;
+  }
+  return best;
+}
+
+/**
  * Fit one passage of page copy into DESC_MIN..DESC_MAX without breaking a
  * phrase. Tries, in order: the passage as is; whole leading sentences; the
  * first sentence cut back to its last clause boundary (comma, semicolon, colon,
@@ -188,7 +224,11 @@ function fitPassage(passage) {
   let acc = '';
   for (const sentence of sentences) {
     const next = acc ? `${acc} ${sentence}` : sentence;
-    if (next.length > DESC_MAX) break;
+    if (next.length > DESC_MAX) {
+      const clause = acc ? extendToClause(acc, sentence) : null;
+      if (clause) return clause;
+      break;
+    }
     acc = next;
     if (descriptionInRange(acc)) return acc;
   }
@@ -224,7 +264,11 @@ function fitDescription(passages) {
     if (acc.length >= DESC_MIN) continue;
     for (const sentence of list.slice(i + 1).flatMap(sentencesOf)) {
       const next = `${acc} ${sentence}`;
-      if (next.length > DESC_MAX) break;
+      if (next.length > DESC_MAX) {
+        const clause = extendToClause(acc, sentence);
+        if (clause) return clause;
+        break;
+      }
       acc = next;
       if (descriptionInRange(acc)) return acc;
     }

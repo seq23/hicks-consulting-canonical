@@ -18,7 +18,7 @@
  *       costs.
  *
  * It asserts the BUILT output, because every one of these facts is stamped at
- * build time by scripts/build/normalize_head_and_schema.js: checking pages/
+ * build time by scripts/render/normalize_head_and_schema.js: checking pages/
  * would prove nothing about what ships. It reads the repo, never the network.
  *
  * The price check is the one that matters most and the easiest to let rot: the

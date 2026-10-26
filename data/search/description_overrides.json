@@ -1,0 +1,16 @@
+{
+  "schemaVersion": "1.0.0",
+  "purpose": "Hand-authored meta descriptions for pages whose own copy cannot yield a unique 120-160 character passage. The templated insight siblings share their body copy with the parent article and with each other, so after the owner's Search Readiness Checklist item b2 raised the floor from 110 to 120 characters, eleven of them had no in-range passage left that was not already taken by a sibling or counted as boilerplate. Read by scripts/search/apply_search_metadata.js as the first candidate for its route; it still has to pass the same range, uniqueness and boilerplate rules as a derived one. Every entry must be the description its route actually ships, so a stale entry fails _ops/validators/validate_search_metadata_contract.js rather than sitting unused.",
+  "range": {
+    "min": 120,
+    "max": 160
+  },
+  "descriptions": {
+    "/resources/insights/how-coaching-can-help-when-you-want-to-move-differently-without-starting-over-a-gentl/": "Wanting to move differently does not mean starting over. A gentler way to read the urge to change, and what coaching can realistically hold.",
+    "/resources/insights/how-therapy-can-help-when-you-are-used-to-talking-yourself-out-of-your-needs-next-ste/": "Practical questions for anyone used to talking themselves out of their own needs, and one next step toward structured therapeutic support.",
+    "/resources/insights/what-boundary-problems-really-sound-like-in-professional-women-how-it-shows-up-in-wor/": "Unclear boundaries at work show up as scope creep, constant availability, blurred decision rights, and one person carrying everyone's comfort.",
+    "/resources/insights/what-relationship-stress-looks-like-when-you-keep-minimizing-your-own-feelings-a-gent/": "Minimizing your own feelings is usually a learned protection, not a flaw. A gentler way to read the relationship stress it quietly creates.",
+    "/resources/insights/what-to-do-when-you-are-tired-of-being-everyone-s-safe-place-a-gentler-truth-to-consi/": "Being the person everyone leans on is not a flaw to correct. A gentler reading of the pattern, and what it quietly costs to keep carrying it.",
+    "/resources/insights/what-to-do-when-you-are-tired-of-being-everyone-s-safe-place-next-step-reflection/": "Practical questions for the woman who is tired of being everyone's safe place, and one manageable next step before the pattern deepens further."
+  }
+}

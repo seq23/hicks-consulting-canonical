@@ -391,8 +391,8 @@ fs.writeFileSync(path.join(root, 'llms.txt'), llms + '\n');
 fs.writeFileSync(path.join(dist, 'llms.txt'), llms + '\n');
 
 // Deliberately after the sitemap/lastmod ledger above: see the header comment
-// in scripts/build/normalize_head_and_schema.js for why order matters here.
-require('./build/normalize_head_and_schema').normalize(dist, root);
+// in scripts/render/normalize_head_and_schema.js for why order matters here.
+require('./render/normalize_head_and_schema').normalize(dist, root);
 
 const workerSource = path.join(root, 'worker', '_worker.js');
 if (fs.existsSync(workerSource)) {

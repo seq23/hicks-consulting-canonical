@@ -15,9 +15,13 @@
 /copy-of-corporate-and-origizational-t /corporate-speaking/ 301
 /copy-of-corporate-and-origizational-t/ /corporate-speaking/ 301
 # Search Console still measured impressions for the Wix-era home duplicate on
-# 25 Oct 2026 and it answered 404, so those impressions went nowhere.
-/copy-of-home / 301
-/copy-of-home/ / 301
+# 25 Oct 2026 and it answered 404, so those impressions went nowhere. It goes to
+# the main service page, not to /, for the reason rule 3 of
+# validate_redirect_targets.js gives: a redirect to the home page is a soft 404
+# to a search engine, which throws the impressions away a second time. This is
+# the same target /services already uses.
+/copy-of-home /therapy/ 301
+/copy-of-home/ /therapy/ 301
 # END LEGACY WIX URLS
 
 # BEGIN BING DUPLICATE CONSOLIDATION
