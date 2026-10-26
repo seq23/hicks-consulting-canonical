@@ -2,41 +2,41 @@
   "schema_version": "1.0",
   "truth_source": "google_search_console_search_analytics",
   "property": "sc-domain:hicksconsulting.org",
-  "collected_at": "2026-10-25T17:42:17.837Z",
+  "collected_at": "2026-10-26T15:15:36.256Z",
   "state": "OK",
   "named_stop": null,
   "window": {
-    "start_date": "2026-09-25",
-    "end_date": "2026-10-22",
+    "start_date": "2026-09-26",
+    "end_date": "2026-10-23",
     "days": 28
   },
   "totals": {
-    "clicks": 33,
-    "impressions": 1623,
-    "ctr": 0.0203,
-    "position": 6.7
+    "clicks": 30,
+    "impressions": 1538,
+    "ctr": 0.0195,
+    "position": 6.51
   },
-  "row_count": 97,
-  "query_count": 62,
-  "page_count": 26,
-  "attributed_impressions": 428,
+  "row_count": 94,
+  "query_count": 59,
+  "page_count": 25,
+  "attributed_impressions": 420,
   "truth_boundary": "Rows are query x page for the window. Search Console withholds anonymised queries from query rows, so attributed_impressions is below totals.impressions; the property total is the headline number.",
   "rows": [
     {
       "query": "black therapist memphis tn",
       "page": "https://www.hicksconsulting.org/black-therapist-memphis/",
       "clicks": 1,
-      "impressions": 56,
-      "ctr": 0.0179,
-      "position": 8.55
+      "impressions": 53,
+      "ctr": 0.0189,
+      "position": 8.42
     },
     {
       "query": "hicks consulting",
       "page": "https://www.hicksconsulting.org/",
       "clicks": 2,
-      "impressions": 33,
-      "ctr": 0.0606,
-      "position": 2.03
+      "impressions": 34,
+      "ctr": 0.0588,
+      "position": 2
     },
     {
       "query": "hicks consulting llc",
@@ -87,20 +87,20 @@
       "position": 3.23
     },
     {
-      "query": "anxiety therapist",
-      "page": "https://www.hicksconsulting.org/",
-      "clicks": 0,
-      "impressions": 12,
-      "ctr": 0,
-      "position": 37.58
-    },
-    {
       "query": "hicks consulting llc",
       "page": "https://www.hicksconsulting.org/",
       "clicks": 0,
       "impressions": 11,
       "ctr": 0,
       "position": 1.73
+    },
+    {
+      "query": "hicks consulting",
+      "page": "https://www.hicksconsulting.org/contact/",
+      "clicks": 0,
+      "impressions": 10,
+      "ctr": 0,
+      "position": 5.3
     },
     {
       "query": "black therapist",
@@ -112,11 +112,11 @@
     },
     {
       "query": "hicks consulting",
-      "page": "https://www.hicksconsulting.org/contact/",
+      "page": "https://www.hicksconsulting.org/resources/",
       "clicks": 0,
-      "impressions": 9,
+      "impressions": 8,
       "ctr": 0,
-      "position": 5.11
+      "position": 3.38
     },
     {
       "query": "african american female therapist near me",
@@ -135,12 +135,20 @@
       "position": 9.14
     },
     {
-      "query": "hicks consulting",
-      "page": "https://www.hicksconsulting.org/resources/",
+      "query": "hicks consulting llc",
+      "page": "https://www.hicksconsulting.org/groups/",
       "clicks": 0,
       "impressions": 7,
       "ctr": 0,
-      "position": 3.71
+      "position": 6.14
+    },
+    {
+      "query": "hicks training",
+      "page": "https://www.hicksconsulting.org/corporate-speaking/",
+      "clicks": 0,
+      "impressions": 7,
+      "ctr": 0,
+      "position": 6.86
     },
     {
       "query": "african american therapist near me",
@@ -157,22 +165,6 @@
       "impressions": 6,
       "ctr": 0,
       "position": 7.83
-    },
-    {
-      "query": "hicks consulting llc",
-      "page": "https://www.hicksconsulting.org/groups/",
-      "clicks": 0,
-      "impressions": 6,
-      "ctr": 0,
-      "position": 6.67
-    },
-    {
-      "query": "hicks training",
-      "page": "https://www.hicksconsulting.org/corporate-speaking/",
-      "clicks": 0,
-      "impressions": 6,
-      "ctr": 0,
-      "position": 6.5
     },
     {
       "query": "black therapists",
@@ -207,6 +199,14 @@
       "position": 9.25
     },
     {
+      "query": "hicks",
+      "page": "https://www.hicksconsulting.org/",
+      "clicks": 0,
+      "impressions": 4,
+      "ctr": 0,
+      "position": 4
+    },
+    {
       "query": "hicks consulting",
       "page": "https://www.hicksconsulting.org/coaching/",
       "clicks": 1,
@@ -221,6 +221,14 @@
       "impressions": 4,
       "ctr": 0,
       "position": 19.5
+    },
+    {
+      "query": "anxiety therapist",
+      "page": "https://www.hicksconsulting.org/",
+      "clicks": 0,
+      "impressions": 3,
+      "ctr": 0,
+      "position": 40.67
     },
     {
       "query": "black counselors near me",
@@ -255,20 +263,20 @@
       "position": 7.33
     },
     {
-      "query": "hicks",
-      "page": "https://www.hicksconsulting.org/",
-      "clicks": 0,
-      "impressions": 3,
-      "ctr": 0,
-      "position": 3.67
-    },
-    {
       "query": "hicks consulting",
       "page": "https://www.hicksconsulting.org/groups/",
       "clicks": 0,
       "impressions": 3,
       "ctr": 0,
       "position": 3
+    },
+    {
+      "query": "hicks consulting llc",
+      "page": "https://www.hicksconsulting.org/privacy-policy/",
+      "clicks": 0,
+      "impressions": 3,
+      "ctr": 0,
+      "position": 7.33
     },
     {
       "query": "online therapy memphis",
@@ -301,14 +309,6 @@
       "impressions": 2,
       "ctr": 0,
       "position": 16
-    },
-    {
-      "query": "black therapist memphis tn",
-      "page": "https://www.hicksconsulting.org/",
-      "clicks": 0,
-      "impressions": 2,
-      "ctr": 0,
-      "position": 4.5
     },
     {
       "query": "christian coaching",
@@ -344,19 +344,19 @@
     },
     {
       "query": "hicks consulting",
+      "page": "https://www.hicksconsulting.org/request-consult/",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 7
+    },
+    {
+      "query": "hicks consulting",
       "page": "https://www.hicksconsulting.org/resources/articles/how-coaching-can-help-when-you-want-to-move-differently-without-starting-over/",
       "clicks": 0,
       "impressions": 2,
       "ctr": 0,
       "position": 8
-    },
-    {
-      "query": "hicks consulting llc",
-      "page": "https://www.hicksconsulting.org/privacy-policy/",
-      "clicks": 0,
-      "impressions": 2,
-      "ctr": 0,
-      "position": 6.5
     },
     {
       "query": "hicks healthcare",
@@ -439,14 +439,6 @@
       "position": 12
     },
     {
-      "query": "black family therapist near me",
-      "page": "https://www.hicksconsulting.org/black-therapist-memphis/",
-      "clicks": 0,
-      "impressions": 1,
-      "ctr": 0,
-      "position": 10
-    },
-    {
       "query": "black female psychologist near me",
       "page": "https://www.hicksconsulting.org/black-therapist-memphis/",
       "clicks": 0,
@@ -461,6 +453,14 @@
       "impressions": 1,
       "ctr": 0,
       "position": 5
+    },
+    {
+      "query": "black therapist memphis tn",
+      "page": "https://www.hicksconsulting.org/",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 1
     },
     {
       "query": "black therapist memphis, tn",
@@ -551,28 +551,12 @@
       "position": 7
     },
     {
-      "query": "emotional heaviness",
-      "page": "https://www.hicksconsulting.org/resources/insights/why-emotional-heaviness-does-not-always-look-like-crying-next-step-reflection/",
-      "clicks": 0,
-      "impressions": 1,
-      "ctr": 0,
-      "position": 9
-    },
-    {
       "query": "health consulting",
       "page": "https://www.hicksconsulting.org/",
       "clicks": 0,
       "impressions": 1,
       "ctr": 0,
       "position": 5
-    },
-    {
-      "query": "hicks consulting",
-      "page": "https://www.hicksconsulting.org/request-consult/",
-      "clicks": 0,
-      "impressions": 1,
-      "ctr": 0,
-      "position": 11
     },
     {
       "query": "hicks consulting",
@@ -773,14 +757,6 @@
       "impressions": 1,
       "ctr": 0,
       "position": 6
-    },
-    {
-      "query": "therapist near me black female",
-      "page": "https://www.hicksconsulting.org/black-therapist-memphis/",
-      "clicks": 0,
-      "impressions": 1,
-      "ctr": 0,
-      "position": 7
     },
     {
       "query": "therapists memphis",
