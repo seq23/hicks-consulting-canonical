@@ -1,9 +1,10 @@
 {
-  "_comment": "The published session fees, exactly as /faq/ states them. One source of truth: scripts/build/normalize_head_and_schema.js emits these as Service nodes with an Offer, and _ops/validators/validate_priced_service_schema.js fails if they ever drift from the FAQ answer.",
+  "_comment": "The published session fees, exactly as /faq/ states them. One source of truth: scripts/render/normalize_head_and_schema.js emits these as Service nodes with an Offer AND as the visible fee block on any route that does not already state them, and _ops/validators/validate_search_readiness_surfaces.js fails if they drift from the FAQ answer or if a page carries a price its visible text withholds (checklist c5).",
+  "_routes_comment": "Therapy session fees only. /coaching/ is not here: the coaching page states that coaching is non-clinical and distinct from therapy, so it is not sold at these fees and a priced therapy Offer is a claim that page cannot support.",
   "faqSourceRoute": "/faq/",
   "faqSourceAnswer": "$200 Initial intake / Psychiatric evaluation, 60 minute session $165, 30 minute session $85.",
   "priceCurrency": "USD",
-  "routes": ["/", "/therapy/", "/coaching/", "/faq/", "/good-faith-estimate/"],
+  "routes": ["/", "/therapy/", "/faq/", "/good-faith-estimate/"],
   "services": [
     {
       "name": "Initial intake and psychiatric evaluation",
