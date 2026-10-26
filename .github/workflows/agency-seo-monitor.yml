@@ -43,16 +43,16 @@ jobs:
       - name: Refresh live, GSC, and Bing snapshots
         run: npm run agency:refresh
         continue-on-error: true
-      - name: Build GSC free-wins and live grounded query observations
+      - name: Build GSC free-wins (live grounded observation is off by owner policy)
         run: npm run autonomy:measure
         env:
-          # Pinned to OpenRouter. The previous provider's grounded-search tool is
-          # hard-blocked for this project: plain generation returns 200, but any
-          # request carrying the grounding tool returns 429 RESOURCE_EXHAUSTED,
-          # reproduced across three models and persistent, so every observation
-          # failed and no citation evidence was ever produced.
-          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
-          OPENROUTER_SEARCH_MODEL: openai/gpt-4o-mini
+          # No OPENROUTER_API_KEY and no model here on purpose. The live grounded
+          # observation inside this step uses OpenRouter's web plugin, which bills
+          # PER REQUEST; running it on this daily schedule pinned to
+          # openai/gpt-4o-mini was a standing daily charge against the owner's
+          # 11 Oct 2026 policy that nothing is paid. The observer now records the
+          # NAMED STOP PAID_PROBE_DISABLED_BY_OWNER_POLICY and exits 0. The probe
+          # still exists: paid-citation-probe.yml, dispatch only, confirm_paid.
           LIVE_QUERY_LIMIT: '7'
         continue-on-error: true
       - name: Apply bounded autonomous search repairs

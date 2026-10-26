@@ -15,12 +15,28 @@ const fs = require('fs');
 const path = require('path');
 const lib = require('../lib/search_metadata');
 
+/**
+ * Hand-authored descriptions for routes whose own copy cannot yield a unique
+ * in-range passage. See data/search/description_overrides.json for why eleven
+ * templated insight siblings need one. An override is only ever a CANDIDATE: it
+ * goes through the same range, uniqueness and boilerplate checks as a derived
+ * description, so it cannot smuggle a duplicate onto the site.
+ */
+function loadDescriptionOverrides(root) {
+  try {
+    return JSON.parse(fs.readFileSync(path.join(root, 'data/search/description_overrides.json'), 'utf8')).descriptions || {};
+  } catch {
+    return {};
+  }
+}
+
 function applySearchMetadata({ manifest, check = false, allowUnresolved = false, releasing = [] } = {}) {
 const root = process.cwd();
 const CHECK = check;
 manifest ||= JSON.parse(fs.readFileSync(path.join(root, 'data/admin/content_manifest.json'), 'utf8'));
 
 const pageFile = (route) => path.join(root, 'pages', route.replace(/^\//, '').replace(/\/$/, ''), 'index.html');
+const descriptionOverrides = loadDescriptionOverrides(root);
 
 const items = manifest
   .filter((e) => e && e.status === 'published' && e.validationPassed === true && typeof e.slug === 'string' && e.title)
@@ -95,7 +111,8 @@ for (const item of items) {
   if (!(usable && lib.descriptionInRange(current) && lib.endsWhole(current))) {
     // An over-long but otherwise sound description is trimmed at a phrase
     // boundary first; a shared, templated or chopped one is never reused.
-    const candidates = [...(usable ? [current] : []), ...lib.pagePassages(html)];
+    const override = descriptionOverrides[item.route];
+    const candidates = [...(override ? [override] : []), ...(usable ? [current] : []), ...lib.pagePassages(html)];
     const taken = new Set([...descByRoute].filter(([r]) => r !== item.route).map(([, d]) => d));
     description = null;
     for (let i = 0; i < candidates.length && !description; i += 1) {

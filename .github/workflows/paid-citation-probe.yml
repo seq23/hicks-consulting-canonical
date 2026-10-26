@@ -1,0 +1,80 @@
+name: Paid Citation Probe
+
+# The ONLY lane allowed to spend money, and it has no schedule.
+#
+# The live query observer uses OpenRouter's web plugin, which bills per request
+# whatever model it carries, so it cannot be made free the way the drafting lane
+# was. Owner policy, 11 Oct 2026: nothing is paid. It therefore runs only when a
+# human dispatches this workflow and types confirm_paid: true, which is the only
+# place CONFIRM_PAID is ever set. Everywhere else the observer records the named
+# stop PAID_PROBE_DISABLED_BY_OWNER_POLICY and exits 0.
+
+on:
+  workflow_dispatch:
+    inputs:
+      confirm_paid:
+        description: 'Yes, spend money on this run (OpenRouter web plugin, billed per request)'
+        type: boolean
+        default: false
+      model:
+        description: 'OpenRouter model for the probe'
+        type: string
+        default: 'openai/gpt-4o-mini'
+      query_limit:
+        description: 'How many panel queries to observe (1-25)'
+        type: string
+        default: '7'
+
+# It commits observations, so it shares the writers' concurrency group.
+concurrency:
+  group: hicks-consulting-content-automation
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  probe:
+    if: ${{ inputs.confirm_paid }}
+    timeout-minutes: 10
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 20
+      - run: git pull --rebase origin main
+      - run: npm ci
+      - name: Observe the measurement panel (PAID)
+        run: npm run search:observe
+        env:
+          CONFIRM_PAID: 'true'
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          OPENROUTER_SEARCH_MODEL: ${{ inputs.model }}
+          LIVE_QUERY_LIMIT: ${{ inputs.query_limit }}
+      - name: Score the window the probe just produced
+        run: npm run queries:discovery-gap
+      - name: Commit the observations
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if [[ -n "$(git status --porcelain data/search)" ]]; then
+            git add data/search
+            git commit -m "Paid citation probe: refresh live query observations"
+            git push
+          else
+            echo "No observation changes to commit."
+          fi
+
+  # A dispatch that did not tick the box must SAY so, not look like a silent
+  # success. This is the named stop a person sees in the Actions log.
+  refuse:
+    if: ${{ !inputs.confirm_paid }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Refuse to spend money
+        run: |
+          echo "NAMED_STOP: PAID_PROBE_DISABLED_BY_OWNER_POLICY - this probe calls OpenRouter's web plugin, which bills per request."
+          echo "Owner policy, 11 Oct 2026: nothing paid. Re-dispatch with confirm_paid: true to run it once."

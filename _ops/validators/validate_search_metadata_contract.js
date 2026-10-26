@@ -129,6 +129,24 @@ for (const [full, short] of Object.entries(shortForms.titles)) {
 }
 if (!Object.keys(shortForms.titles).length) failures.push('data/search/title_short_forms.json is missing or has no titles; long manifest titles cannot be given a compliant <title>.');
 
+// --------------------------------------------------- the description overrides
+// Same shape, same risk. data/search/description_overrides.json carries
+// hand-authored descriptions for the templated insight siblings whose own copy
+// has no unique 120-160 character passage left. An entry that is NOT the
+// description its route ships is a rule governing nothing - either the route
+// went away, or the generator quietly won and the hand-written line is dead
+// text nobody will ever see again. Both fail here rather than rotting.
+const overridesPath = 'data/search/description_overrides.json';
+let overrides = {};
+try { overrides = JSON.parse(fs.readFileSync(path.join(ROOT, overridesPath), 'utf8')).descriptions || {}; } catch { overrides = {}; }
+for (const [route, text] of Object.entries(overrides)) {
+  const file = path.join(ROOT, 'pages', route.replace(/^\//, '').replace(/\/$/, ''), 'index.html');
+  if (!fs.existsSync(file)) { failures.push(`STALE DESCRIPTION OVERRIDE: ${overridesPath} holds one for ${route}, which has no page source.`); continue; }
+  if (!lib.descriptionInRange(text)) { failures.push(`DESCRIPTION OVERRIDE OUT OF RANGE: ${route} is ${text.length} characters; the range is ${lib.DESC_MIN}-${lib.DESC_MAX}.`); continue; }
+  const shipped = lib.readMeta(fs.readFileSync(file, 'utf8')).description;
+  if (shipped !== text) failures.push(`UNUSED DESCRIPTION OVERRIDE: ${overridesPath} writes a description for ${route} that the page does not ship. Remove the entry or re-run \`npm run search:metadata\`.`);
+}
+
 // ------------------------------------------------------------- the generator
 const rendererPath = 'scripts/autonomy/lib/render_resource.mjs';
 const renderer = fs.readFileSync(path.join(ROOT, rendererPath), 'utf8');

@@ -147,8 +147,17 @@ function injectOrganizationSchemaSitewide() {
 copyRecursive(pages, dist);
 copyRecursive(path.join(root, 'assets'), path.join(dist, 'assets'));
 copyRecursive(path.join(root, 'data'), path.join(dist, 'data'));
-['robots.txt','_headers','_redirects','llms.txt','answers.json','coverage.json','indexnow.txt','0ccfc65ebb714f0a804be19ff50c9be4.txt'].forEach(file => {
+['robots.txt','_headers','_redirects','llms.txt','answers.json','coverage.json','indexnow.txt','site.webmanifest','0ccfc65ebb714f0a804be19ff50c9be4.txt'].forEach(file => {
   copyRecursive(path.join(root, file), path.join(dist, file));
+});
+
+// Browsers and Lighthouse ask for these at the ROOT, not under /assets/, whatever
+// the <link> tags say: /favicon.ico is requested by every browser with no tag at
+// all, and /apple-touch-icon.png by iOS when it adds a page to the home screen.
+// All three answered 404 on 25 Oct 2026. They are copied from assets/ rather
+// than committed twice, so the icon has one source of truth.
+[['favicon.ico', 'favicon.ico'], ['apple-touch-icon.png', 'apple-touch-icon.png']].forEach(([from, to]) => {
+  copyRecursive(path.join(root, 'assets', from), path.join(dist, to));
 });
 injectPersonSchema();
 injectOrganizationSchema();
@@ -380,6 +389,10 @@ const llms = [
 ].join('\n');
 fs.writeFileSync(path.join(root, 'llms.txt'), llms + '\n');
 fs.writeFileSync(path.join(dist, 'llms.txt'), llms + '\n');
+
+// Deliberately after the sitemap/lastmod ledger above: see the header comment
+// in scripts/render/normalize_head_and_schema.js for why order matters here.
+require('./render/normalize_head_and_schema').normalize(dist, root);
 
 const workerSource = path.join(root, 'worker', '_worker.js');
 if (fs.existsSync(workerSource)) {

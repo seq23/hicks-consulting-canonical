@@ -17,6 +17,10 @@ try {
   // run_cycle enforces title uniqueness through scripts/lib/demand_titles.js, so
   // the isolated fixture must carry it or the cycle cannot start.
   copyDir('scripts/lib', 'scripts/lib');
+  // llm_provider.mjs routes every model call through the free router, so the
+  // fixture needs it and the config it reads, or the cycle cannot even load.
+  copyDir('scripts/llm', 'scripts/llm');
+  copyDir('config', 'config');
   fs.mkdirSync(path.join(temp, 'config'), { recursive: true });
   fs.cpSync(path.join(repo, 'config/demand_phrasings.json'), path.join(temp, 'config/demand_phrasings.json'));
   copyDir('pages/resources/articles/why-high-achieving-women-sometimes-mistake-numbness-for-maturity', 'pages/resources/articles/why-high-achieving-women-sometimes-mistake-numbness-for-maturity');
@@ -147,6 +151,8 @@ function buildRepairSandbox({ minimumWords, repairPayload }) {
   const put = (rel, value) => { const full = path.join(dir, rel); fs.mkdirSync(path.dirname(full), { recursive: true }); fs.writeFileSync(full, `${JSON.stringify(value, null, 2)}\n`); };
   fs.cpSync(path.join(repo, 'scripts/autonomy'), path.join(dir, 'scripts/autonomy'), { recursive: true });
   fs.cpSync(path.join(repo, 'scripts/lib'), path.join(dir, 'scripts/lib'), { recursive: true });
+  fs.cpSync(path.join(repo, 'scripts/llm'), path.join(dir, 'scripts/llm'), { recursive: true });
+  fs.cpSync(path.join(repo, 'config'), path.join(dir, 'config'), { recursive: true });
   fs.mkdirSync(path.join(dir, 'config'), { recursive: true });
   fs.cpSync(path.join(repo, 'config/demand_phrasings.json'), path.join(dir, 'config/demand_phrasings.json'));
   fs.cpSync(path.join(repo, 'pages/resources/articles/why-high-achieving-women-sometimes-mistake-numbness-for-maturity'), path.join(dir, 'pages/resources/articles/why-high-achieving-women-sometimes-mistake-numbness-for-maturity'), { recursive: true });
@@ -202,8 +208,12 @@ async function runRepairScenario({ minimumWords, repairPayload, cycles, maxAttem
         cwd: dir,
         env: {
           ...process.env,
-          LLM_API_URL: `http://127.0.0.1:${port}/v1/chat/completions`,
-          LLM_API_KEY: 'stub', LLM_MODEL: 'stub-model', LLM_PROVIDER: 'openai_compatible',
+          // The drafting lane goes through scripts/llm/free_router.mjs now, which
+          // takes its endpoint from config/llm_routing.json and accepts an
+          // override only on loopback. That is how this stub is reached; there
+          // is no longer any way to point it at a real provider.
+          FREE_ROUTER_TEST_ENDPOINT: `http://127.0.0.1:${port}/v1/chat/completions`,
+          OPENROUTER_API_KEY: 'stub',
           LLM_FIXTURE_PATH: '', AUTONOMY_CLOCK: '2026-08-06T22:00:00.000Z',
           AUTONOMY_MAX_ITEMS: '1', AUTONOMY_MAX_ATTEMPTS: String(maxAttempts)
         },

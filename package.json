@@ -72,7 +72,6 @@
     "validate:agency-quality": "node _ops/validators/validate_agency_quality.js",
     "validate:all": "node _ops/validation/run_validation_matrix.js --profile all",
     "validate:apex-host-redirect": "node _ops/validators/validate_apex_host_redirect.mjs",
-    "validate:edge-cache": "node _ops/validators/validate_edge_cache_contract.mjs",
     "validate:authority-distribution": "node scripts/authority_scale/validate_distribution_manifest.mjs",
     "validate:authority-fanout": "node scripts/authority_scale/validate_max_fanout.mjs",
     "validate:authority-modernization": "node _ops/validation/run_validation_matrix.js --profile authority-modernization",
@@ -94,6 +93,7 @@
     "validate:digital-products": "node _ops/validators/validate_digital_products_contract.js",
     "validate:discovery-gap": "node _ops/validators/validate_discovery_gap.js",
     "validate:discovery-gap-decisions-due": "node _ops/validators/validate_discovery_gap_decisions_due.js",
+    "validate:edge-cache": "node _ops/validators/validate_edge_cache_contract.mjs",
     "validate:entities": "node _ops/validators/validate_entity_coverage.js",
     "validate:fanouts": "node _ops/validators/validate_fanout_candidates.js",
     "validate:finding-protocol": "node _ops/validators/validate_finding_protocol_conformance.js",
@@ -142,6 +142,7 @@
     "validate:safe-harbor-behavior": "node _ops/validators/deep/validate_safe_harbor_behavior.mjs",
     "validate:search-intelligence": "node _ops/validators/validate_search_intelligence_contract.js",
     "validate:search-metadata": "node _ops/validators/validate_search_metadata_contract.js",
+    "validate:search-readiness-surfaces": "node _ops/validators/validate_search_readiness_surfaces.js",
     "validate:search-truth-freshness": "node _ops/validators/validate_search_truth_freshness.js",
     "validate:self-heal-e2e": "node _ops/validators/deep/validate_self_heal_e2e.mjs",
     "validate:self-heal-integrity": "node _ops/validators/validate_self_heal_integrity.js",
@@ -152,11 +153,13 @@
     "validate:social-firehose": "node _ops/validators/validate_social_firehose_contract.js",
     "validate:social-ingestion-stops": "node _ops/validators/validate_social_ingestion_stops.js",
     "validate:source-health": "node _ops/validators/validate_source_health.js",
+    "validate:three-click-reach": "node _ops/validators/validate_three_click_reach.js",
     "validate:throttle": "node _ops/validators/validate_throttle_contract.js",
     "validate:title-uniqueness": "node _ops/validators/validate_title_uniqueness_contract.js",
     "validate:training-inquiry": "node _ops/validators/validate_training_inquiry_contract.js",
     "validate:velocity-immutability": "node _ops/validators/deep/validate_velocity_immutability.js",
     "validate:word-counts": "node _ops/validators/validate_resource_word_counts.js",
-    "validate:workflows": "node _ops/validators/validate_workflows.js"
+    "validate:workflows": "node _ops/validators/validate_workflows.js",
+    "validate:zero-paid-llm": "node _ops/validators/validate_zero_paid_llm.js"
   }
 }

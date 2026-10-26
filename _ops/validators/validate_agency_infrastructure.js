@@ -88,7 +88,10 @@ for (const token of ['workflow_dispatch:', 'schedule:', 'contents: write', 'npm 
 if (/^    continue-on-error:\s*true\s*$/m.test(workflow)) {
   issues.push('Agency monitor job must not mask build/contract failures with job-wide continue-on-error.');
 }
-for (const step of ['Refresh live, GSC, and Bing snapshots', 'Build GSC free-wins and live grounded query observations']) {
+// The second step was renamed on 26 Oct 2026 when the paid grounded observation
+// moved out of this daily schedule and behind paid-citation-probe.yml. The
+// requirement is unchanged: a provider-facing step must never block the run.
+for (const step of ['Refresh live, GSC, and Bing snapshots', 'Build GSC free-wins (live grounded observation is off by owner policy)']) {
   const escaped = step.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
   if (!new RegExp(`- name: ${escaped}\\n[\\s\\S]*?continue-on-error: true`).test(workflow)) issues.push(`Provider-facing agency step must remain nonblocking: ${step}`);
 }
