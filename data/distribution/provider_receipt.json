@@ -1,7 +1,7 @@
 {
   "schema_version": "2.0",
-  "receipt_id": "2026-10-26T06-02-25.076Z-40277502830",
-  "attempted_at": "2026-10-26T06:02:25.076Z",
+  "receipt_id": "2026-10-26T14-48-06.003Z-40343011160",
+  "attempted_at": "2026-10-26T14:48:06.003Z",
   "publication_trigger": "ONLY_AFTER_EXISTING_CONTENT_PUBLISH_WORKFLOW_SUCCEEDS",
   "chain": [
     "successful_publish",
@@ -15,14 +15,14 @@
   "sitemap_refresh": {
     "status": "SUCCESS",
     "sitemap_url": "https://www.hicksconsulting.org/sitemap.xml",
-    "sitemap_sha256": "e1b5d95ad9f9fa0b28352d1690e60a4802fa67b0f1887fbf2a9a15141d89ac1f",
-    "url_count": 150
+    "sitemap_sha256": "c8055b3c1403f773451848380f866223da7c981750ad4bcffdde0de984d6a598",
+    "url_count": 151
   },
   "indexnow": {
     "status": "SUCCESS",
     "attempted": true,
     "http_status": 200,
-    "submitted_urls": 150,
+    "submitted_urls": 151,
     "key_location": "https://www.hicksconsulting.org/indexnow.txt"
   },
   "gsc_sitemap_submission": {
@@ -46,7 +46,7 @@
         "verdict": "PASS",
         "coverage_state": "Submitted and indexed",
         "indexing_state": "INDEXING_ALLOWED",
-        "last_crawl_time": "2026-10-19T17:11:47Z"
+        "last_crawl_time": "2026-10-26T08:42:42Z"
       },
       {
         "url": "https://www.hicksconsulting.org/therapy/",
@@ -145,7 +145,7 @@
         "verdict": "PASS",
         "coverage_state": "Submitted and indexed",
         "indexing_state": "INDEXING_ALLOWED",
-        "last_crawl_time": "2026-09-13T21:07:13Z"
+        "last_crawl_time": "2026-10-26T10:35:11Z"
       },
       {
         "url": "https://www.hicksconsulting.org/resources/articles/burnout-or-just-too-much/",
@@ -154,7 +154,7 @@
         "verdict": "PASS",
         "coverage_state": "Submitted and indexed",
         "indexing_state": "INDEXING_ALLOWED",
-        "last_crawl_time": "2026-10-12T18:27:37Z"
+        "last_crawl_time": "2026-10-20T10:35:01Z"
       },
       {
         "url": "https://www.hicksconsulting.org/resources/guides/boundaries-for-black-women/",
@@ -190,14 +190,14 @@
         "verdict": "PASS",
         "coverage_state": "Submitted and indexed",
         "indexing_state": "INDEXING_ALLOWED",
-        "last_crawl_time": "2026-10-14T08:23:37Z"
+        "last_crawl_time": "2026-10-26T09:57:42Z"
       }
     ]
   },
   "durable_receipt": {
     "status": "SUCCESS",
     "latest_path": "data/distribution/provider_receipt.json",
-    "history_path": "data/distribution/receipts/2026-10-26T06-02-25.076Z-40277502830.json"
+    "history_path": "data/distribution/receipts/2026-10-26T14-48-06.003Z-40343011160.json"
   },
   "observation_feedback": {
     "status": "SUCCESS",
