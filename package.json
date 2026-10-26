@@ -153,11 +153,13 @@
     "validate:social-firehose": "node _ops/validators/validate_social_firehose_contract.js",
     "validate:social-ingestion-stops": "node _ops/validators/validate_social_ingestion_stops.js",
     "validate:source-health": "node _ops/validators/validate_source_health.js",
+    "validate:three-click-reach": "node _ops/validators/validate_three_click_reach.js",
     "validate:throttle": "node _ops/validators/validate_throttle_contract.js",
     "validate:title-uniqueness": "node _ops/validators/validate_title_uniqueness_contract.js",
     "validate:training-inquiry": "node _ops/validators/validate_training_inquiry_contract.js",
     "validate:velocity-immutability": "node _ops/validators/deep/validate_velocity_immutability.js",
     "validate:word-counts": "node _ops/validators/validate_resource_word_counts.js",
-    "validate:workflows": "node _ops/validators/validate_workflows.js"
+    "validate:workflows": "node _ops/validators/validate_workflows.js",
+    "validate:zero-paid-llm": "node _ops/validators/validate_zero_paid_llm.js"
   }
 }

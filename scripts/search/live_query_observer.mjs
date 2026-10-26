@@ -1,3 +1,4 @@
+import { paidProbeGate } from '../llm/free_router.mjs';
 import fs from 'node:fs';
 import path from 'node:path';
 import { readJson, writeJsonAtomic, nowIso, routeToSourceFile } from '../autonomy/lib/io.mjs';
@@ -33,7 +34,9 @@ function openRouterCitations(body){
  return {text,searchQueries:[],chunks};
 }
 async function openRouterObserve(query,primaryPage,env){
- const model=env.OPENROUTER_SEARCH_MODEL||'openai/gpt-4o-mini';
+ // No default model: if the probe is dispatched, the workflow names the model explicitly.
+ const model=env.OPENROUTER_SEARCH_MODEL;
+ if(!model)throw new Error('OPENROUTER_SEARCH_MODEL is not set; the paid probe lane names its model explicitly.');
  const endpoint=env.OPENROUTER_API_URL||OPENROUTER_ENDPOINT;
  const prompt=`Use web search to investigate this exact local search query: ${JSON.stringify(query)}. We are evaluating https://www.hicksconsulting.org${primaryPage}. Identify which public web sources a live web search surfaces for this query, whether Hicks Consulting is among the cited sources, and the strongest competing pages or directories. Do not invent organic rank. Keep the answer factual and concise.`;
  const r=await fetch(endpoint,{method:'POST',headers:{'content-type':'application/json',authorization:`Bearer ${env.OPENROUTER_API_KEY}`},body:JSON.stringify({model,plugins:[{id:'web',engine:WEB_ENGINE,mode:WEB_MODE,max_results:Number(env.OPENROUTER_WEB_MAX_RESULTS||10)}],messages:[{role:'user',content:prompt}]}),signal:AbortSignal.timeout(Number(env.OPENROUTER_SEARCH_TIMEOUT_MS||45000))});
@@ -46,7 +49,16 @@ async function openRouterObserve(query,primaryPage,env){
 function diagnosis(query,own,citations,siteSurfaced,competitors=[]){const q=query.toLowerCase();const combined=`${own.title||''} ${own.description||''} ${own.h1||''}`.toLowerCase();const reasons=[];if(own.status!=='ok')reasons.push('TARGET_PAGE_MISSING');if(!combined.includes(q))reasons.push('EXACT_QUERY_NOT_IN_PRIMARY_SEARCH_SURFACES');if((own.description||'').length<80)reasons.push('WEAK_META_DESCRIPTION');if((own.internalLinks||0)<3)reasons.push('WEAK_INTERNAL_AUTHORITY');if(!siteSurfaced)reasons.push('SITE_NOT_SURFACED_IN_GROUNDED_OBSERVATION');if(citations.length===0)reasons.push('NO_GROUNDED_CITATIONS_RETURNED');const healthy=competitors.filter(c=>c.status==='ok');if(healthy.some(c=>(c.textChars||0)>(own.textChars||0)*1.35))reasons.push('COMPETITOR_BROADER_VISIBLE_COVERAGE');if(healthy.some(c=>(c.headings||[]).length>8))reasons.push('COMPETITOR_DEEPER_ANSWER_STRUCTURE');return reasons;}
 export async function runLiveQueryObservation(env=process.env,clock=new Date()){
  const targets=readJson('data/search/target_queries.json',{queries:[]});
- const configured=Boolean(env.OPENROUTER_API_KEY);
+ // The OpenRouter web plugin bills PER REQUEST, whatever model it carries, so
+ // this lane cannot be made free the way the drafting lane was: it is paid by
+ // construction. Until 26 Oct 2026 it ran on the daily agency-seo-monitor
+ // schedule pinned to openai/gpt-4o-mini, which is a standing daily charge
+ // against the owner's 11 Oct 2026 policy that nothing is paid. It is now a
+ // dispatch-only probe: paid-citation-probe.yml is the only workflow that sets
+ // CONFIRM_PAID, and only when a human dispatches it with confirm_paid: true.
+ // Blocked is a NAMED STOP that exits 0, never a silent empty run.
+ const allowed=paidProbeGate('live query observation (OpenRouter web plugin)',env);
+ const configured=allowed&&Boolean(env.OPENROUTER_API_KEY);
  const limit=Math.max(1,Math.min(25,Number(env.LIVE_QUERY_LIMIT||targets.queries.length||7)));
  const observations=[];
  if(configured){
@@ -64,16 +76,17 @@ export async function runLiveQueryObservation(env=process.env,clock=new Date()){
     // A provider failure is NOT evidence of zero citations. siteSurfaced and
     // citationCount stay null so nothing downstream can read this observation as a
     // measured 0% citation rate; only providerAnswered:true observations carry that.
-    observations.push({query:target.query,primaryPage:target.primaryPage,status:'provider_error',observedAt:nowIso(clock),provider:'openrouter_web_search',model:env.OPENROUTER_SEARCH_MODEL||'openai/gpt-4o-mini',rankVerified:false,providerAnswered:false,citationCount:null,siteSurfaced:null,citations:[],error:e.message,ownPage:own,diagnosis:['PROVIDER_ERROR']});
+    observations.push({query:target.query,primaryPage:target.primaryPage,status:'provider_error',observedAt:nowIso(clock),provider:'openrouter_web_search',model:env.OPENROUTER_SEARCH_MODEL||null,rankVerified:false,providerAnswered:false,citationCount:null,siteSurfaced:null,citations:[],error:e.message,ownPage:own,diagnosis:['PROVIDER_ERROR']});
    }
   }
  }
  const answered=observations.filter(o=>o.status==='ok');
- const state=configured?(answered.length?'CONNECTED':'DEGRADED'):'NOT_CONFIGURED';
+ const state=!allowed?'DISABLED_BY_OWNER_POLICY':configured?(answered.length?'CONNECTED':'DEGRADED'):'NOT_CONFIGURED';
  // Rule 0: this stage never exits having quietly done nothing. When it cannot observe,
  // it names the stop and the reason instead of reporting an empty, healthy-looking run.
  let stop=null;
- if(!configured)stop={name:'SEARCH_PROVIDER_NOT_CONFIGURED',reason:'OPENROUTER_API_KEY is not set, so no live query observation was attempted. No citation rate was recorded.'};
+ if(!allowed)stop={name:'PAID_PROBE_DISABLED_BY_OWNER_POLICY',reason:'The OpenRouter web plugin bills per request and is off by owner policy (11 Oct 2026, nothing paid). No live query observation was attempted and no citation rate was recorded. Dispatch paid-citation-probe.yml with confirm_paid: true to run it once.'};
+ else if(!configured)stop={name:'SEARCH_PROVIDER_NOT_CONFIGURED',reason:'OPENROUTER_API_KEY is not set, so no live query observation was attempted. No citation rate was recorded.'};
  else if(!targets.queries.length)stop={name:'NO_GOVERNED_TARGET_QUERIES',reason:'data/search/target_queries.json carries no queries to observe.'};
  else if(!answered.length)stop={name:'SEARCH_PROVIDER_UNAVAILABLE',reason:`All ${observations.length} query observation(s) returned a provider error. Error states were recorded; no citation rate was recorded.`};
  const out={schemaVersion:'2.1.0',generatedAt:nowIso(clock),providerState:state,provider:'openrouter_web_search',stop,queriesAnswered:answered.length,truthBoundary:'These are live web-search observations and citations returned by OpenRouter\'s web plugin. They are not literal organic SERP positions, and a citation rate is only meaningful for observations where providerAnswered is true. Use GSC for Google-owned impressions, clicks, CTR, and average position.',observations};

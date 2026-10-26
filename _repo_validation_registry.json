@@ -1278,6 +1278,34 @@
       "enabled": true,
       "scope": "dist/ root files, og:image tags, organization-family JSON-LD and priced Service Offers, against data/entities/service_schema.json and the FAQ",
       "rationale": "The owner's Search Readiness Checklist failed hicksconsulting.org on four items on 25 Oct 2026: /favicon.ico, /apple-touch-icon.png and /site.webmanifest all 404 (a9); og:image a 2000x2000 logo with no width or height (b6); every page's first organization node an anonymous publisher blank node with no logo or sameAs (c1); no priced Offer anywhere (c3). Each is stamped at build time, so this check asserts the built output and hard-fails on zero pages. It also fails when the schema's session fees drift from the prose on /faq/, which would publish a wrong price to answer engines."
+    },
+    {
+      "id": "three-click-reach",
+      "npmScript": "validate:three-click-reach",
+      "entrypoint": "_ops/validators/validate_three_click_reach.js",
+      "severity": "HARD_FAIL",
+      "blocksRelease": true,
+      "group": "agency-search",
+      "owner": "site-operations",
+      "ciInvocation": "MATRIX_ONLY",
+      "findingProtocol": "VALIDATION_FINDING",
+      "enabled": true,
+      "scope": "every sitemap.xml URL, walked breadth-first from dist/index.html through the links the built pages carry",
+      "rationale": "The owner's Search Readiness Checklist item b7 failed on 25 Oct 2026 with eight orphans: the whole /llm-atlas/ family. Those pages link to each other and to the home page, which validate_llm_atlas_navigation already proved, but nothing linked INTO them - a ring nothing can enter, in the sitemap on no click path at all. This checks reachability itself rather than the one link that fixed it, so any later navigation change that restores the orphan state fails here instead of waiting a week for the live checklist. Hard-fails if it reaches zero pages."
+    },
+    {
+      "id": "zero-paid-llm",
+      "npmScript": "validate:zero-paid-llm",
+      "entrypoint": "_ops/validators/validate_zero_paid_llm.js",
+      "severity": "HARD_FAIL",
+      "blocksRelease": true,
+      "group": "agency-search",
+      "owner": "site-operations",
+      "ciInvocation": "MATRIX_ONLY",
+      "findingProtocol": "VALIDATION_FINDING",
+      "enabled": true,
+      "scope": "config/llm_routing.json, scripts/llm/free_router.mjs, every script that reaches a model provider, every workflow, docs/cost/zero-paid-llm.md and CLAUDE.md",
+      "rationale": "Owner policy 11 Oct 2026: nothing paid. Until 26 Oct 2026 this repo had no routing config and no router: scripts/autonomy/lib/llm_provider.mjs POSTed to whatever secrets.LLM_API_URL and secrets.LLM_MODEL named, and the daily agency-seo-monitor schedule ran OpenRouter's per-request-billed web plugin pinned to openai/gpt-4o-mini. Search Readiness items i3 and i10. This fails on a non-$0 model, an undated snapshot, a script calling a provider outside the router, a probe lane with a schedule or without confirm_paid, a scheduled workflow naming a paid model or passing a non-router key, or the written rule going missing from the doc or CLAUDE.md."
     }
   ]
 }
