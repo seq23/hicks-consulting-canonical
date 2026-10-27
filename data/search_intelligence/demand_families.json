@@ -2,11 +2,11 @@
   "schema_version": "1.0",
   "generated_from": "data/search_intelligence/target_query_set.json",
   "window": {
-    "start_date": "2026-09-26",
-    "end_date": "2026-10-23",
+    "start_date": "2026-09-27",
+    "end_date": "2026-10-24",
     "days": 28
   },
-  "truth_collected_at": "2026-10-26T15:15:36.256Z",
+  "truth_collected_at": "2026-10-27T14:38:39.981Z",
   "rule": {
     "grouping": "one family per landing page (the page Google shows for the query)",
     "min_impressions": 20,
@@ -16,8 +16,8 @@
     "top_n": 12
   },
   "client_approval": "Client site: qualifying families are PROPOSALS. A family is strengthened only once its status is \"approved\" here, with approved_by naming who decided (the client, or the site owner on her own decision) and approved_at.",
-  "target_count": 59,
-  "impressions_total": 420,
+  "target_count": 58,
+  "impressions_total": 419,
   "family_count": 12,
   "proposal_count": 1,
   "approved_count": 2,
@@ -34,9 +34,9 @@
       "queries": [
         {
           "query": "black therapist memphis tn",
-          "impressions": 54,
+          "impressions": 55,
           "clicks": 1,
-          "position": 8.28
+          "position": 8.26
         },
         {
           "query": "black therapist near me",
@@ -99,12 +99,6 @@
           "position": 9.25
         },
         {
-          "query": "black counselors near me",
-          "impressions": 3,
-          "clicks": 0,
-          "position": 6.67
-        },
-        {
           "query": "black psychologist near me",
           "impressions": 3,
           "clicks": 0,
@@ -139,6 +133,12 @@
           "impressions": 2,
           "clicks": 0,
           "position": 16
+        },
+        {
+          "query": "black counselors near me",
+          "impressions": 2,
+          "clicks": 0,
+          "position": 6
         },
         {
           "query": "black couples therapy near me",
@@ -200,24 +200,24 @@
     {
       "family": "/",
       "page": "https://www.hicksconsulting.org/",
-      "impressions": 172,
+      "impressions": 169,
       "clicks": 5,
-      "ctr": 2.9,
-      "weighted_position": 4.7,
-      "query_count": 22,
+      "ctr": 3,
+      "weighted_position": 4.1,
+      "query_count": 21,
       "head_query": "hicks consulting",
       "queries": [
         {
           "query": "hicks consulting",
-          "impressions": 91,
+          "impressions": 92,
           "clicks": 4,
-          "position": 3.9
+          "position": 3.94
         },
         {
           "query": "monika hicks",
-          "impressions": 28,
+          "impressions": 27,
           "clicks": 1,
-          "position": 4.86
+          "position": 5
         },
         {
           "query": "health consultant",
@@ -230,12 +230,6 @@
           "impressions": 4,
           "clicks": 0,
           "position": 4
-        },
-        {
-          "query": "anxiety therapist",
-          "impressions": 3,
-          "clicks": 0,
-          "position": 40.67
         },
         {
           "query": "christian coaching",
@@ -346,23 +340,23 @@
       "approved_by": "site owner (not the client)",
       "approved_at": "2026-10-11",
       "approval_note": "Site owner decided on 2026-10-11 to strengthen both qualifying families now rather than wait on a client flag. Not a client decision; the client did not approve or author this change.",
-      "proposed_change": "Lead / with a direct answer to \"hicks consulting\" in its title and first paragraph: 172 impressions at position 4.7 earned 5 click(s) (2.9% CTR)."
+      "proposed_change": "Lead / with a direct answer to \"hicks consulting\" in its title and first paragraph: 169 impressions at position 4.1 earned 5 click(s) (3% CTR)."
     },
     {
       "family": "/contact/",
       "page": "https://www.hicksconsulting.org/contact/",
-      "impressions": 49,
+      "impressions": 51,
       "clicks": 0,
       "ctr": 0,
-      "weighted_position": 4.7,
+      "weighted_position": 4.8,
       "query_count": 2,
       "head_query": "hicks consulting llc",
       "queries": [
         {
           "query": "hicks consulting llc",
-          "impressions": 48,
+          "impressions": 50,
           "clicks": 0,
-          "position": 4.69
+          "position": 4.74
         },
         {
           "query": "email",
@@ -374,7 +368,7 @@
       "rank": 3,
       "qualifies": true,
       "status": "proposal",
-      "proposed_change": "Lead /contact/ with a direct answer to \"hicks consulting llc\" in its title and first paragraph: 49 impressions at position 4.7 earned 0 click(s) (0% CTR)."
+      "proposed_change": "Lead /contact/ with a direct answer to \"hicks consulting llc\" in its title and first paragraph: 51 impressions at position 4.8 earned 0 click(s) (0% CTR)."
     },
     {
       "family": "/corporate-speaking/",
