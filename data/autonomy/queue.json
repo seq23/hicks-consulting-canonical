@@ -2688,7 +2688,7 @@
         "What to do next",
         "When to seek support"
       ],
-      "state": "DISCOVERED",
+      "state": "SKIPPED_PROHIBITED_ACTION",
       "routineApprovalRequired": true,
       "publicOnlyAfterApproval": true,
       "source": "legacy_generated_queue_migration",
@@ -2703,8 +2703,21 @@
           "to": "DISCOVERED",
           "at": "2026-09-14T10:44:38.506Z",
           "reason": "Migrated from the prior approval-only generated queue."
+        },
+        {
+          "from": "DISCOVERED",
+          "to": "SCORED",
+          "at": "2026-10-27T19:35:39.898Z",
+          "reason": "Candidate score normalized for autonomous admission."
+        },
+        {
+          "from": "SCORED",
+          "to": "SKIPPED_PROHIBITED_ACTION",
+          "at": "2026-10-27T19:35:39.898Z",
+          "reason": "Candidate did not meet the configured admission score."
         }
-      ]
+      ],
+      "updatedAt": "2026-10-27T19:35:39.898Z"
     },
     {
       "id": "continuity-insight-2027-01-11-c04dd4538b6c",
@@ -2737,7 +2750,7 @@
         "What to do next",
         "When to seek support"
       ],
-      "state": "DISCOVERED",
+      "state": "SKIPPED_PROHIBITED_ACTION",
       "routineApprovalRequired": true,
       "publicOnlyAfterApproval": true,
       "source": "legacy_generated_queue_migration",
@@ -2752,8 +2765,21 @@
           "to": "DISCOVERED",
           "at": "2026-09-14T10:44:38.506Z",
           "reason": "Migrated from the prior approval-only generated queue."
+        },
+        {
+          "from": "DISCOVERED",
+          "to": "SCORED",
+          "at": "2026-10-27T19:35:39.898Z",
+          "reason": "Candidate score normalized for autonomous admission."
+        },
+        {
+          "from": "SCORED",
+          "to": "SKIPPED_PROHIBITED_ACTION",
+          "at": "2026-10-27T19:35:39.898Z",
+          "reason": "Candidate did not meet the configured admission score."
         }
-      ]
+      ],
+      "updatedAt": "2026-10-27T19:35:39.898Z"
     },
     {
       "id": "continuity-insight-2027-01-12-63f2c7d6a42b",
@@ -4756,6 +4782,103 @@
           "from": null,
           "to": "DISCOVERED",
           "at": "2026-10-26T16:56:48.266Z",
+          "reason": "Migrated from the prior approval-only generated queue."
+        }
+      ]
+    },
+    {
+      "id": "brief-faith_centered_support-whitepaper",
+      "clusterId": "faith_centered_support",
+      "clusterTitle": "Faith-centered emotional support",
+      "query": "Faith-centered emotional support",
+      "contentType": "white-papers",
+      "title": "How do I grieve when everyone keeps telling me it was God's plan?",
+      "suggestedRoute": "/resources/white-papers/how-do-i-grieve-when-everyone-keeps-telling-me-it-was-god-s-plan/",
+      "targetWords": 2500,
+      "minimumWords": 2000,
+      "sourceSignalCount": 2,
+      "score": 40,
+      "llmPrompt": "Create a humanized whitepaper draft for Hicks Consulting.\nTitle: How do I grieve when everyone keeps telling me it was God's plan?\nThis page exists to answer exactly one real question a person typed or said: \"How do I grieve when everyone keeps telling me it was God's plan?\". Answer THAT question, in that person's words, in the first two sentences. Do not broaden it into a general overview of Faith-centered emotional support; other pages on this site cover other questions in the same area and this one must not overlap them.\nMinimum words: 2000. Target words: 2500.\nWrite in a warm, grounded, specific voice. Do not diagnose. Do not guarantee outcomes. Do not invent client stories.\nInclude these sections: Executive summary; The question people are actually asking; What the evidence shows; Audience analysis; Framework; Implementation guidance; Risks and limitations; Recommended next steps.\nApproved conversion path after value is delivered: https://monika-hicks.clientsecure.me/",
+      "humanizationChecklist": [
+        "Use plain human language rather than generic therapy marketing copy.",
+        "Vary sentence rhythm and paragraph length.",
+        "Include concrete examples without inventing client stories.",
+        "Avoid exaggerated claims, guarantees, diagnosis, or pressure language.",
+        "Keep Monika Hicks / Hicks Consulting entity references consistent.",
+        "End with an approved conversion path only after value is delivered."
+      ],
+      "conversionPath": "https://monika-hicks.clientsecure.me/",
+      "sections": [
+        "Executive summary",
+        "The question people are actually asking",
+        "What the evidence shows",
+        "Audience analysis",
+        "Framework",
+        "Implementation guidance",
+        "Risks and limitations",
+        "Recommended next steps"
+      ],
+      "state": "DISCOVERED",
+      "routineApprovalRequired": true,
+      "publicOnlyAfterApproval": true,
+      "source": "legacy_generated_queue_migration",
+      "legacy": {
+        "publishMode": "full_safe_autonomy"
+      },
+      "createdAt": "2026-10-27T19:35:39.585Z",
+      "history": [
+        {
+          "from": null,
+          "to": "DISCOVERED",
+          "at": "2026-10-27T19:35:39.743Z",
+          "reason": "Migrated from the prior approval-only generated queue."
+        }
+      ]
+    },
+    {
+      "id": "brief-genz_millennial_mental_health-article",
+      "clusterId": "genz_millennial_mental_health",
+      "clusterTitle": "Gen Z and millennial mental health language",
+      "query": "Gen Z and millennial mental health language",
+      "contentType": "articles",
+      "title": "Why does everyone my age seem burned out at thirty?",
+      "suggestedRoute": "/resources/articles/why-does-everyone-my-age-seem-burned-out-at-thirty/",
+      "targetWords": 1200,
+      "minimumWords": 960,
+      "sourceSignalCount": 1,
+      "score": 20,
+      "llmPrompt": "Create a humanized article draft for Hicks Consulting.\nTitle: Why does everyone my age seem burned out at thirty?\nThis page exists to answer exactly one real question a person typed or said: \"Why does everyone my age seem burned out at thirty?\". Answer THAT question, in that person's words, in the first two sentences. Do not broaden it into a general overview of Gen Z and millennial mental health language; other pages on this site cover other questions in the same area and this one must not overlap them.\nMinimum words: 960. Target words: 1200.\nWrite in a warm, grounded, specific voice. Do not diagnose. Do not guarantee outcomes. Do not invent client stories.\nInclude these sections: Short answer; What is actually happening; Why it shows up this way; What it is not; What usually makes it worse; What helps; When to get support.\nApproved conversion path after value is delivered: https://monika-hicks.clientsecure.me/",
+      "humanizationChecklist": [
+        "Use plain human language rather than generic therapy marketing copy.",
+        "Vary sentence rhythm and paragraph length.",
+        "Include concrete examples without inventing client stories.",
+        "Avoid exaggerated claims, guarantees, diagnosis, or pressure language.",
+        "Keep Monika Hicks / Hicks Consulting entity references consistent.",
+        "End with an approved conversion path only after value is delivered."
+      ],
+      "conversionPath": "https://monika-hicks.clientsecure.me/",
+      "sections": [
+        "Short answer",
+        "What is actually happening",
+        "Why it shows up this way",
+        "What it is not",
+        "What usually makes it worse",
+        "What helps",
+        "When to get support"
+      ],
+      "state": "DISCOVERED",
+      "routineApprovalRequired": true,
+      "publicOnlyAfterApproval": true,
+      "source": "legacy_generated_queue_migration",
+      "legacy": {
+        "publishMode": "full_safe_autonomy"
+      },
+      "createdAt": "2026-10-27T19:35:39.586Z",
+      "history": [
+        {
+          "from": null,
+          "to": "DISCOVERED",
+          "at": "2026-10-27T19:35:39.743Z",
           "reason": "Migrated from the prior approval-only generated queue."
         }
       ]

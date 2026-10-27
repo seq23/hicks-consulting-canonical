@@ -713,6 +713,34 @@
       "createdAt": "2026-10-27T13:34:59.612Z",
       "blocksOtherWork": false,
       "clientActionRequired": false
+    },
+    {
+      "id": "exception-continuity-insight-2027-01-08-c68ae78f6bc4-1793129739943",
+      "candidateId": "continuity-insight-2027-01-08-c68ae78f6bc4",
+      "decision": "SKIPPED_PROHIBITED_ACTION",
+      "findings": [
+        {
+          "code": "LOW_ADMISSION_SCORE",
+          "severity": "advisory"
+        }
+      ],
+      "createdAt": "2026-10-27T19:35:39.898Z",
+      "blocksOtherWork": false,
+      "clientActionRequired": false
+    },
+    {
+      "id": "exception-continuity-insight-2027-01-11-c04dd4538b6c-1793129739943",
+      "candidateId": "continuity-insight-2027-01-11-c04dd4538b6c",
+      "decision": "SKIPPED_PROHIBITED_ACTION",
+      "findings": [
+        {
+          "code": "LOW_ADMISSION_SCORE",
+          "severity": "advisory"
+        }
+      ],
+      "createdAt": "2026-10-27T19:35:39.898Z",
+      "blocksOtherWork": false,
+      "clientActionRequired": false
     }
   ]
 }
