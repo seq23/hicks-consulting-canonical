@@ -698,6 +698,21 @@
       "createdAt": "2026-10-23T18:40:39.468Z",
       "blocksOtherWork": false,
       "clientActionRequired": false
+    },
+    {
+      "id": "exception-metadata-daily-026-2-1793108099612",
+      "candidateId": "daily-026-2",
+      "decision": "SKIPPED_UNSAFE_SEARCH_METADATA",
+      "findings": [
+        {
+          "code": "SEARCH_METADATA_UNRESOLVED",
+          "severity": "hard",
+          "route": "/resources/insights/how-to-notice-when-overwhelm-is-turning-into-shutdown-why-women-minimize-it/"
+        }
+      ],
+      "createdAt": "2026-10-27T13:34:59.612Z",
+      "blocksOtherWork": false,
+      "clientActionRequired": false
     }
   ]
 }
