@@ -1,15 +1,15 @@
 {
   "schemaVersion": "1.0.0",
-  "generatedAt": "2026-10-26T15:15:41.049Z",
+  "generatedAt": "2026-10-27T14:38:43.252Z",
   "providerState": "CONNECTED",
   "items": [
     {
       "type": "STRIKING_DISTANCE",
       "query": "black therapist memphis tn",
       "page": "https://www.hicksconsulting.org/black-therapist-memphis/",
-      "position": 8.415094339622641,
-      "impressions": 53,
-      "ctr": 0.018867924528301886,
+      "position": 8.38888888888889,
+      "impressions": 54,
+      "ctr": 0.018518518518518517,
       "recommendedAction": "Improve answer alignment, title/snippet, and supporting internal links without changing page identity.",
       "confidence": "high"
     },
@@ -17,9 +17,9 @@
       "type": "LOW_CTR",
       "query": "black therapist memphis tn",
       "page": "https://www.hicksconsulting.org/black-therapist-memphis/",
-      "position": 8.415094339622641,
-      "impressions": 53,
-      "ctr": 0.018867924528301886,
+      "position": 8.38888888888889,
+      "impressions": 54,
+      "ctr": 0.018518518518518517,
       "recommendedAction": "Review search title and description against the actual query intent.",
       "confidence": "medium"
     },
@@ -28,8 +28,8 @@
       "query": "black therapist memphis tn",
       "page": "https://www.hicksconsulting.org/black-therapist-memphis/",
       "expectedPage": "/",
-      "position": 8.415094339622641,
-      "impressions": 53,
+      "position": 8.38888888888889,
+      "impressions": 54,
       "recommendedAction": "Strengthen query ownership and internal links toward the governed primary page.",
       "confidence": "high"
     },
@@ -198,8 +198,8 @@
       "query": "hicks consulting",
       "page": "https://www.hicksconsulting.org/request-consult/",
       "expectedPage": "/",
-      "position": 7,
-      "impressions": 2,
+      "position": 6.666666666666667,
+      "impressions": 3,
       "recommendedAction": "Strengthen query ownership and internal links toward the governed primary page.",
       "confidence": "high"
     },
@@ -208,8 +208,8 @@
       "query": "hicks consulting",
       "page": "https://www.hicksconsulting.org/resources/",
       "expectedPage": "/",
-      "position": 3.375,
-      "impressions": 8,
+      "position": 3.3333333333333335,
+      "impressions": 9,
       "recommendedAction": "Strengthen query ownership and internal links toward the governed primary page.",
       "confidence": "high"
     },
@@ -286,10 +286,20 @@
     {
       "type": "WRONG_PAGE_RANKING",
       "query": "hicks consulting llc",
+      "page": "https://www.hicksconsulting.org/emergency-crisis-notice/",
+      "expectedPage": "/contact/",
+      "position": 9,
+      "impressions": 1,
+      "recommendedAction": "Strengthen query ownership and internal links toward the governed primary page.",
+      "confidence": "high"
+    },
+    {
+      "type": "WRONG_PAGE_RANKING",
+      "query": "hicks consulting llc",
       "page": "https://www.hicksconsulting.org/groups/",
       "expectedPage": "/contact/",
-      "position": 6.142857142857143,
-      "impressions": 7,
+      "position": 5.75,
+      "impressions": 8,
       "recommendedAction": "Strengthen query ownership and internal links toward the governed primary page.",
       "confidence": "high"
     },
