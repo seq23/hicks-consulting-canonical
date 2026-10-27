@@ -1,4 +1,6 @@
+# Keep contact links readable without Cloudflare's email-decode JavaScript.
 /*
+  Cache-Control: public, max-age=0, must-revalidate, no-transform
   X-Frame-Options: SAMEORIGIN
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
