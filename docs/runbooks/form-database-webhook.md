@@ -39,6 +39,17 @@ FORM_DATABASE_WEBHOOK_URL = the Google Apps Script web app URL ending in /exec
 FORM_DATABASE_SHARED_SECRET = the shared secret stored in Apps Script properties
 ```
 
+`BLOCKED_LEAD_DOMAINS` is an optional, comma-separated deployment variable.
+Keep its values in the site's private settings; do not commit real domains.
+Entries and submitted email domains are trimmed and compared case-insensitively
+by exact domain (subdomains are independent entries). Empty or unset means no
+blocks. Both the Advanced Mode worker and Pages Functions apply it to all three
+forms after field validation and consent checks, before webhook dispatch.
+Matches receive the normal success shape, including the worksheet download for
+lead magnets, and are neither forwarded nor logged. An allowed lead still needs
+confirmed webhook receipt before success. No redeploy of source is needed to
+change the list; configure the setting through the site's deployment environment.
+
 Legacy variables may remain during migration:
 
 ```text

@@ -129,3 +129,9 @@ for (const token of ['FORM DATABASE', 'FORM_DATABASE_WEBHOOK_URL', 'FORM_DATABAS
 }
 
 console.log(`Form database contract OK (${formContracts.length} forms POST to Apps Script, manually follow Google redirect with pristine GET, and require ok:true before user success).`);
+
+// Registered with this existing form-database validator in validate:all.
+const behavior = require('child_process').spawnSync(process.execPath,
+  ['_ops/validators/deep/verify_lead_domain_setting.mjs'], { encoding: 'utf8' });
+if (behavior.status !== 0) fail(`Lead-domain setting behavior failed: ${behavior.stderr || behavior.stdout || behavior.error}`);
+process.stdout.write(behavior.stdout);
