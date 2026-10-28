@@ -79,6 +79,7 @@ for (const { route, file, html, meta } of pages) {
   const { title, description } = meta;
   if (!title) { failures.push(`${file}: no <title>.`); continue; }
   if (title.length < lib.TITLE_MIN || title.length > lib.TITLE_MAX) failures.push(`${file}: <title> is ${title.length} characters ("${title}"); the range is ${lib.TITLE_MIN}-${lib.TITLE_MAX}.`);
+  if (!title.includes('Hicks Consulting')) failures.push(`${file}: <title> must name Hicks Consulting (checklist b10).`);
   const tkey = title.toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
   if (!titleOwners.has(tkey)) titleOwners.set(tkey, []);
   titleOwners.get(tkey).push(route);
@@ -128,6 +129,18 @@ for (const [full, short] of Object.entries(shortForms.titles)) {
   if (short.length >= full.length) failures.push(`SHORT FORM NOT SHORTER: "${short}" for "${full}".`);
 }
 if (!Object.keys(shortForms.titles).length) failures.push('data/search/title_short_forms.json is missing or has no titles; long manifest titles cannot be given a compliant <title>.');
+
+// Insight parents are hand-authored whole phrases too, kept separate from
+// article short forms so an insight can retain both its topic and its angle.
+for (const [parent, short] of Object.entries(shortForms.insightParents || {})) {
+  if (!publishedTitles.some((t) => t.startsWith(`${parent}: `))) failures.push(`STALE INSIGHT PARENT: ${parent}`);
+  if (!short || short.length >= parent.length) failures.push(`INSIGHT PARENT NOT SHORTER: ${parent}`);
+}
+// New and scheduled pages must retain their brand before publication too.
+for (const title of publishedTitles) {
+  const fitted = lib.searchTitle(title);
+  if (!fitted || !fitted.includes('Hicks Consulting')) failures.push(`UNBRANDED RENDERER TITLE: ${title}`);
+}
 
 // --------------------------------------------------- the description overrides
 // Same shape, same risk. data/search/description_overrides.json carries

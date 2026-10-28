@@ -17,6 +17,8 @@ try {
   // run_cycle enforces title uniqueness through scripts/lib/demand_titles.js, so
   // the isolated fixture must carry it or the cycle cannot start.
   copyDir('scripts/lib', 'scripts/lib');
+  // Use a title that fits with the mandatory site name (checklist b10).
+  // This fixture exercises scheduling, not the long-title refusal boundary.
   // llm_provider.mjs routes every model call through the free router, so the
   // fixture needs it and the config it reads, or the cycle cannot even load.
   copyDir('scripts/llm', 'scripts/llm');
@@ -44,7 +46,7 @@ try {
   }]);
   writeJson('data/autonomy/queue.json', { schemaVersion: '1.0.0', items: [{
     id: 'fixture-candidate', state: 'SCORED', score: 95, contentType: 'articles',
-    title: 'A Grounded Way to Notice Overload Before It Builds', query: 'how to notice emotional overload',
+    title: 'Notice Overload Before It Builds', query: 'how to notice emotional overload',
     clusterId: 'fixture-cluster', minimumWords: 220, targetWords: 420,
     suggestedRoute: '/resources/articles/notice-overload-before-it-builds/'
   }] });
@@ -57,7 +59,7 @@ try {
     'When overload feels intense, persistent, or connected to safety concerns, seek appropriate professional or crisis support. An educational article cannot assess an individual situation. It can only offer general reflection questions and encourage a thoughtful next step.'
   ].join('\n\n');
   writeJson('fixtures/safe-draft.json', {
-    title: 'A Grounded Way to Notice Overload Before It Builds',
+    title: 'Notice Overload Before It Builds',
     description: 'A practical, non-diagnostic reflection on noticing overload and choosing a manageable next step.',
     shortAnswer: 'Notice observable changes, separate facts from self-judgment, reduce one source of pressure, and choose the next form of support that fits the situation.',
     sections: [
@@ -97,7 +99,8 @@ try {
   if (!fs.existsSync(generated)) fail('autonomy cycle did not render the public resource page.');
   else {
     const html = fs.readFileSync(generated, 'utf8');
-    if (!html.includes('<h1>A Grounded Way to Notice Overload Before It Builds</h1>')) fail('rendered resource is missing its public H1.');
+    if (!html.includes('<h1>Notice Overload Before It Builds</h1>')) fail('rendered resource is missing its public H1.');
+    if (!html.includes('<title>Notice Overload Before It Builds | Hicks Consulting</title>')) fail('rendered title must preserve the site name.');
     if (!html.includes('Monika Hicks, LCSW')) fail('rendered resource is missing authorship identity.');
   }
 
@@ -135,7 +138,7 @@ try {
 // ---------------------------------------------------------------------------
 const PARAGRAPH = 'Overload can build quietly when someone is carrying several responsibilities at once. It may show up as irritability, mental fog, avoidance, or the sense that even ordinary decisions require too much effort. Noticing these signs is not the same as diagnosing yourself. It is a practical way to pause, gather information, and decide what kind of support would be useful. A grounded check-in begins with observable details, such as what has changed in sleep, concentration, patience, and recovery time. ';
 const goodDraft = (sectionCount) => ({
-  title: 'A Grounded Way to Notice Overload Before It Builds',
+  title: 'Notice Overload Before It Builds',
   description: 'A practical, non-diagnostic reflection on noticing overload and choosing a manageable next step.',
   shortAnswer: 'Notice observable changes, separate facts from self-judgment, reduce one source of pressure, and choose the next form of support that fits the situation.',
   sections: Array.from({ length: sectionCount }, (unused, index) => ({ heading: `Grounded step ${index + 1}`, body: PARAGRAPH.repeat(2) })),
@@ -169,7 +172,7 @@ function buildRepairSandbox({ minimumWords, repairPayload }) {
   put('data/admin/content_manifest.json', []);
   put('data/autonomy/queue.json', { schemaVersion: '1.0.0', items: [{
     id: 'repair-candidate', state: 'SCORED', score: 95, contentType: 'articles',
-    title: 'A Grounded Way to Notice Overload Before It Builds', query: 'notice overload',
+    title: 'Notice Overload Before It Builds', query: 'notice overload',
     clusterId: 'repair-cluster', minimumWords, targetWords: minimumWords + 400,
     suggestedRoute: '/resources/articles/notice-overload-before-it-builds/'
   }] });

@@ -20,7 +20,7 @@
  * --------
  *  - A manifest page's <title> is 30-70 characters (Bing flags "Title too
  *    long" above 70) and always a whole phrase: the manifest title (plus the
- *    site suffix when it fits), or a short form a person wrote in
+ *    site suffix), or a short form a person wrote in
  *    data/search/title_short_forms.json. Never a character-count chop.
  *    og:title and twitter:title say the same thing. The H1 keeps the full title.
  *  - A description is 110-160 characters, ends on a whole sentence or clause,
@@ -77,17 +77,17 @@ function stripTags(value) {
 function loadShortForms() {
   try {
     const doc = JSON.parse(fs.readFileSync(SHORT_FORMS_PATH, 'utf8'));
-    return { sections: doc.sections || {}, titles: doc.titles || {} };
+    return { sections: doc.sections || {}, titles: doc.titles || {}, insightParents: doc.insightParents || {} };
   } catch {
     return { sections: {}, titles: {} };
   }
 }
 
 /**
- * The <title> a manifest page must carry: always a whole phrase, 30-70
- * characters, never a character-count chop. In order:
+ * The <title> a manifest page must carry: always a whole phrase, 30-65
+ * characters, always branded, never a character-count chop. In order:
  *   1. the title plus the site suffix, when that fits;
- *   2. the title alone, when that fits;
+ *   2. a title that already names Hicks Consulting, when it fits;
  *   3. a hand-authored short form from data/search/title_short_forms.json -
  *      either for the whole title, or for a "Parent: Section" insight title
  *      as short(parent) + ": " + short(section);
@@ -103,7 +103,8 @@ function searchTitle(title, shortForms = loadShortForms()) {
     if (!body) return null;
     const withSuffix = `${body}${SITE_SUFFIX}`;
     if (withSuffix.length <= TITLE_MAX && withSuffix.length >= TITLE_MIN) return withSuffix;
-    if (body.length <= TITLE_MAX && body.length >= TITLE_MIN) return body;
+    // A long title must use a whole-phrase short form, never lose its brand.
+    if (body.includes('Hicks Consulting') && body.length <= TITLE_MAX && body.length >= TITLE_MIN) return body;
     return null;
   };
   const direct = fit(t);
@@ -115,7 +116,7 @@ function searchTitle(title, shortForms = loadShortForms()) {
     const parent = t.slice(0, colon);
     const section = t.slice(colon + 2);
     if (Object.prototype.hasOwnProperty.call(shortForms.sections, section)) {
-      const composed = fit(`${shortForms.titles[parent] || parent}: ${shortForms.sections[section]}`);
+      const composed = fit(`${shortForms.insightParents?.[parent] || shortForms.titles[parent] || parent}: ${shortForms.sections[section]}`);
       if (composed) return composed;
     }
   }

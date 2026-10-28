@@ -37,6 +37,13 @@ function isValidEmail(value) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(String(value || '').trim());
 }
 
+// Deployment-owned policy: keep real blocked domains out of this public repo.
+function isBlockedLead(email, env) {
+  const domain = String(email).trim().toLowerCase().split('@').pop();
+  return String(env.BLOCKED_LEAD_DOMAINS || '').split(',')
+    .map((value) => value.trim().toLowerCase()).filter(Boolean).includes(domain);
+}
+
 function createSubmissionId() {
   try {
     if (globalThis.crypto && typeof globalThis.crypto.randomUUID === 'function') {
@@ -112,6 +119,10 @@ async function postJsonToWebhook(webhookUrl, body) {
 }
 
 async function sendFormDatabaseSubmission({ env, request, formType, fields }) {
+  // A blocked submission gets the normal success response without dispatch,
+  // logging its sender, or requiring a configured downstream webhook.
+  if (isBlockedLead(fields.email, env)) return { ok: true, submissionId: createSubmissionId(), queued: false };
+
   const form = FORM_DATABASE_FORMS[formType];
   const { webhookUrl, sharedSecret } = getFormDatabaseConfig(env, formType);
 

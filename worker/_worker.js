@@ -13,6 +13,13 @@ function jsonResponse(body, status = 200) {
 
 function clean(value) { return String(value || '').replace(/[\u0000-\u001F\u007F]/g, ' ').replace(/\s+/g, ' ').trim(); }
 function isValidEmail(value) { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(String(value || '').trim()); }
+// Deployment-owned policy: keep real blocked domains out of this public repo.
+function isBlockedLead(email, env) {
+  const domain = String(email).trim().toLowerCase().split('@').pop();
+  return String(env.BLOCKED_LEAD_DOMAINS || '').split(',')
+    .map((value) => value.trim().toLowerCase()).filter(Boolean).includes(domain);
+}
+
 function createSubmissionId() {
   try { if (globalThis.crypto && typeof globalThis.crypto.randomUUID === 'function') return globalThis.crypto.randomUUID(); } catch (error) {}
   return `form_${Date.now()}_${Math.random().toString(36).slice(2, 12)}`;
@@ -56,6 +63,10 @@ async function postJsonToWebhook(webhookUrl, body) {
 }
 
 async function sendFormDatabaseSubmission({ env, request, formType, fields }) {
+  // A blocked submission gets the normal success response without dispatch,
+  // logging its sender, or requiring a configured downstream webhook.
+  if (isBlockedLead(fields.email, env)) return { ok: true, submissionId: createSubmissionId(), queued: false };
+
   const { webhookUrl, sharedSecret } = getFormDatabaseConfig(env, formType);
   if (fields && fields.diagnostic === 'cloudflare-runtime') return { ok: true, submissionId: 'diagnostic-only', queued: false, diagnostic: { runtimeReached: true, formType, hasWebhookUrl: Boolean(webhookUrl), webhookHost: webhookUrl ? new URL(webhookUrl).host : null, hasSharedSecret: Boolean(sharedSecret) } };
   const form = FORM_DATABASE_FORMS[formType];
