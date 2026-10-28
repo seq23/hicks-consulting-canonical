@@ -460,8 +460,8 @@ ${footer}
   fs.writeFileSync(path.join(dist, '404.html'), html);
 })();
 
-// Microsoft Clarity. The project (y7l3sgr1el) already existed but no tag was ever
-// installed, so it recorded nothing. Emitted here rather than as a separate npm
+// Microsoft Clarity, scoped to public form/buy pages (Search Readiness e9).
+// Emitted here rather than as a separate npm
 // step because validate_agency_infrastructure pins package.json "build" to
 // exactly this script.
 try { require('./install_clarity_inline')(dist); } catch (error) { console.error('clarity:', error.message); }

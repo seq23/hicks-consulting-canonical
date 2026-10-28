@@ -51,6 +51,13 @@ if (!fs.existsSync(dist)) fail('SEARCH READINESS: dist/ does not exist. Run `npm
 const errors = [];
 const skip = new Set(['admin', 'preview', 'assets', 'data']);
 
+// e9: the build must not record reading/browsing, admin or preview pages.
+try {
+  console.log(require('./deep/verify_clarity_scope')(dist));
+} catch (error) {
+  errors.push(`clarity-scope: ${error.message}`);
+}
+
 // ------------------------------------------------- a9: the root files browsers ask for
 const rootFiles = ['favicon.ico', 'apple-touch-icon.png', 'site.webmanifest'];
 for (const file of rootFiles) {

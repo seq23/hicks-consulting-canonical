@@ -1276,7 +1276,7 @@
       "ciInvocation": "MATRIX_ONLY",
       "findingProtocol": "VALIDATION_FINDING",
       "enabled": true,
-      "scope": "dist/ root files, og:image tags, organization-family JSON-LD and priced Service Offers, against data/entities/service_schema.json and the FAQ",
+      "scope": "dist/ root files, og:image tags, organization-family JSON-LD, priced Service Offers, and conversion-only Clarity recording (including behavioral fixtures)",
       "rationale": "The owner's Search Readiness Checklist failed hicksconsulting.org on four items on 25 Oct 2026: /favicon.ico, /apple-touch-icon.png and /site.webmanifest all 404 (a9); og:image a 2000x2000 logo with no width or height (b6); every page's first organization node an anonymous publisher blank node with no logo or sameAs (c1); no priced Offer anywhere (c3). Each is stamped at build time, so this check asserts the built output and hard-fails on zero pages. It also fails when the schema's session fees drift from the prose on /faq/, which would publish a wrong price to answer engines."
     },
     {
