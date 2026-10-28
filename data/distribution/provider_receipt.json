@@ -1,7 +1,7 @@
 {
   "schema_version": "2.0",
-  "receipt_id": "2026-10-27T13-36-06.536Z-40513413290",
-  "attempted_at": "2026-10-27T13:36:06.536Z",
+  "receipt_id": "2026-10-28T13-23-44.696Z-40695979654",
+  "attempted_at": "2026-10-28T13:23:44.696Z",
   "publication_trigger": "ONLY_AFTER_EXISTING_CONTENT_PUBLISH_WORKFLOW_SUCCEEDS",
   "chain": [
     "successful_publish",
@@ -15,14 +15,14 @@
   "sitemap_refresh": {
     "status": "SUCCESS",
     "sitemap_url": "https://www.hicksconsulting.org/sitemap.xml",
-    "sitemap_sha256": "cf0f0826b7058ed31c3da21db6e58e20bfb633f3567a182dce8059a55181270f",
-    "url_count": 152
+    "sitemap_sha256": "cbb433ccf1c658d6e697d0a761a7a5bf1b205560fddffd5cd66065f6c0aac5ae",
+    "url_count": 153
   },
   "indexnow": {
     "status": "SUCCESS",
     "attempted": true,
     "http_status": 200,
-    "submitted_urls": 152,
+    "submitted_urls": 153,
     "key_location": "https://www.hicksconsulting.org/indexnow.txt"
   },
   "gsc_sitemap_submission": {
@@ -55,7 +55,7 @@
         "verdict": "PASS",
         "coverage_state": "Submitted and indexed",
         "indexing_state": "INDEXING_ALLOWED",
-        "last_crawl_time": "2026-10-17T23:17:38Z"
+        "last_crawl_time": "2026-10-28T04:23:41Z"
       },
       {
         "url": "https://www.hicksconsulting.org/coaching/",
@@ -100,7 +100,7 @@
         "verdict": "PASS",
         "coverage_state": "Submitted and indexed",
         "indexing_state": "INDEXING_ALLOWED",
-        "last_crawl_time": "2026-10-21T00:19:40Z"
+        "last_crawl_time": "2026-10-27T19:38:42Z"
       },
       {
         "url": "https://www.hicksconsulting.org/resources/guides/self-worth-identity-and-the-pressure-to-be-exceptional/",
@@ -197,7 +197,7 @@
   "durable_receipt": {
     "status": "SUCCESS",
     "latest_path": "data/distribution/provider_receipt.json",
-    "history_path": "data/distribution/receipts/2026-10-27T13-36-06.536Z-40513413290.json"
+    "history_path": "data/distribution/receipts/2026-10-28T13-23-44.696Z-40695979654.json"
   },
   "observation_feedback": {
     "status": "SUCCESS",
