@@ -2,11 +2,11 @@
   "schema_version": "1.0",
   "generated_from": "data/search_intelligence/target_query_set.json",
   "window": {
-    "start_date": "2026-09-28",
-    "end_date": "2026-10-25",
+    "start_date": "2026-09-29",
+    "end_date": "2026-10-26",
     "days": 28
   },
-  "truth_collected_at": "2026-10-28T14:28:44.973Z",
+  "truth_collected_at": "2026-10-29T14:29:32.744Z",
   "rule": {
     "grouping": "one family per landing page (the page Google shows for the query)",
     "min_impressions": 20,
@@ -16,9 +16,9 @@
     "top_n": 12
   },
   "client_approval": "Client site: qualifying families are PROPOSALS. A family is strengthened only once its status is \"approved\" here, with approved_by naming who decided (the client, or the site owner on her own decision) and approved_at.",
-  "target_count": 59,
-  "impressions_total": 416,
-  "family_count": 12,
+  "target_count": 57,
+  "impressions_total": 415,
+  "family_count": 10,
   "proposal_count": 1,
   "approved_count": 2,
   "families": [
@@ -29,14 +29,14 @@
       "clicks": 2,
       "ctr": 1.1,
       "weighted_position": 8.2,
-      "query_count": 26,
+      "query_count": 25,
       "head_query": "black therapist memphis tn",
       "queries": [
         {
           "query": "black therapist memphis tn",
-          "impressions": 53,
+          "impressions": 54,
           "clicks": 1,
-          "position": 8.23
+          "position": 8.12
         },
         {
           "query": "black therapist memphis, tn",
@@ -99,6 +99,12 @@
           "position": 9.25
         },
         {
+          "query": "black women therapist near me",
+          "impressions": 4,
+          "clicks": 0,
+          "position": 5.75
+        },
+        {
           "query": "black female therapist near me",
           "impressions": 3,
           "clicks": 0,
@@ -109,12 +115,6 @@
           "impressions": 3,
           "clicks": 0,
           "position": 12
-        },
-        {
-          "query": "black women therapist near me",
-          "impressions": 3,
-          "clicks": 0,
-          "position": 7.33
         },
         {
           "query": "african american female therapist",
@@ -133,12 +133,6 @@
           "impressions": 2,
           "clicks": 0,
           "position": 6
-        },
-        {
-          "query": "black woman therapist near me",
-          "impressions": 2,
-          "clicks": 0,
-          "position": 7
         },
         {
           "query": "african american therapist",
@@ -200,24 +194,24 @@
     {
       "family": "/",
       "page": "https://www.hicksconsulting.org/",
-      "impressions": 165,
+      "impressions": 166,
       "clicks": 4,
       "ctr": 2.4,
       "weighted_position": 4.3,
-      "query_count": 22,
+      "query_count": 23,
       "head_query": "hicks consulting",
       "queries": [
         {
           "query": "hicks consulting",
-          "impressions": 85,
+          "impressions": 87,
           "clicks": 3,
-          "position": 3.88
+          "position": 3.86
         },
         {
           "query": "monika hicks",
-          "impressions": 31,
+          "impressions": 29,
           "clicks": 1,
-          "position": 5.2
+          "position": 5.41
         },
         {
           "query": "health consultant",
@@ -334,6 +328,12 @@
           "position": 1
         },
         {
+          "query": "therapy near me",
+          "impressions": 1,
+          "clicks": 0,
+          "position": 10
+        },
+        {
           "query": "tracie hicks",
           "impressions": 1,
           "clicks": 0,
@@ -346,23 +346,23 @@
       "approved_by": "site owner (not the client)",
       "approved_at": "2026-10-11",
       "approval_note": "Site owner decided on 2026-10-11 to strengthen both qualifying families now rather than wait on a client flag. Not a client decision; the client did not approve or author this change.",
-      "proposed_change": "Lead / with a direct answer to \"hicks consulting\" in its title and first paragraph: 165 impressions at position 4.3 earned 4 click(s) (2.4% CTR)."
+      "proposed_change": "Lead / with a direct answer to \"hicks consulting\" in its title and first paragraph: 166 impressions at position 4.3 earned 4 click(s) (2.4% CTR)."
     },
     {
       "family": "/contact/",
       "page": "https://www.hicksconsulting.org/contact/",
-      "impressions": 51,
+      "impressions": 53,
       "clicks": 0,
       "ctr": 0,
-      "weighted_position": 4.8,
+      "weighted_position": 4.9,
       "query_count": 2,
       "head_query": "hicks consulting llc",
       "queries": [
         {
           "query": "hicks consulting llc",
-          "impressions": 50,
+          "impressions": 52,
           "clicks": 0,
-          "position": 4.74
+          "position": 4.88
         },
         {
           "query": "email",
@@ -374,7 +374,7 @@
       "rank": 3,
       "qualifies": true,
       "status": "proposal",
-      "proposed_change": "Lead /contact/ with a direct answer to \"hicks consulting llc\" in its title and first paragraph: 51 impressions at position 4.8 earned 0 click(s) (0% CTR)."
+      "proposed_change": "Lead /contact/ with a direct answer to \"hicks consulting llc\" in its title and first paragraph: 53 impressions at position 4.9 earned 0 click(s) (0% CTR)."
     },
     {
       "family": "/corporate-speaking/",
@@ -421,89 +421,45 @@
       "why_not": "6 impressions < floor 20"
     },
     {
-      "family": "/llm-atlas/queries/",
-      "page": "https://www.hicksconsulting.org/llm-atlas/queries/",
-      "impressions": 4,
-      "clicks": 0,
-      "ctr": 0,
-      "weighted_position": 19.5,
-      "query_count": 1,
-      "head_query": "llm query mapping",
-      "queries": [
-        {
-          "query": "llm query mapping",
-          "impressions": 4,
-          "clicks": 0,
-          "position": 19.5
-        }
-      ],
-      "rank": 6,
-      "qualifies": false,
-      "status": "measured_only",
-      "why_not": "4 impressions < floor 20"
-    },
-    {
       "family": "/anxiety-therapist-memphis/",
       "page": "https://www.hicksconsulting.org/anxiety-therapist-memphis/",
-      "impressions": 1,
+      "impressions": 2,
       "clicks": 0,
       "ctr": 0,
-      "weighted_position": 39,
+      "weighted_position": 32,
       "query_count": 1,
       "head_query": "anxiety treatment memphis",
       "queries": [
         {
           "query": "anxiety treatment memphis",
+          "impressions": 2,
+          "clicks": 0,
+          "position": 32
+        }
+      ],
+      "rank": 6,
+      "qualifies": false,
+      "status": "measured_only",
+      "why_not": "2 impressions < floor 20"
+    },
+    {
+      "family": "/llm-atlas/queries/",
+      "page": "https://www.hicksconsulting.org/llm-atlas/queries/",
+      "impressions": 1,
+      "clicks": 0,
+      "ctr": 0,
+      "weighted_position": 19,
+      "query_count": 1,
+      "head_query": "llm query mapping",
+      "queries": [
+        {
+          "query": "llm query mapping",
           "impressions": 1,
           "clicks": 0,
-          "position": 39
+          "position": 19
         }
       ],
       "rank": 7,
-      "qualifies": false,
-      "status": "measured_only",
-      "why_not": "1 impressions < floor 20"
-    },
-    {
-      "family": "/intake-quiz/",
-      "page": "https://www.hicksconsulting.org/intake-quiz/",
-      "impressions": 1,
-      "clicks": 0,
-      "ctr": 0,
-      "weighted_position": 3,
-      "query_count": 1,
-      "head_query": "intake quiz",
-      "queries": [
-        {
-          "query": "intake quiz",
-          "impressions": 1,
-          "clicks": 0,
-          "position": 3
-        }
-      ],
-      "rank": 8,
-      "qualifies": false,
-      "status": "measured_only",
-      "why_not": "1 impressions < floor 20"
-    },
-    {
-      "family": "/llm-atlas/social-signals/",
-      "page": "https://www.hicksconsulting.org/llm-atlas/social-signals/",
-      "impressions": 1,
-      "clicks": 0,
-      "ctr": 0,
-      "weighted_position": 1,
-      "query_count": 1,
-      "head_query": "social signals for llms?",
-      "queries": [
-        {
-          "query": "social signals for llms?",
-          "impressions": 1,
-          "clicks": 0,
-          "position": 1
-        }
-      ],
-      "rank": 9,
       "qualifies": false,
       "status": "measured_only",
       "why_not": "1 impressions < floor 20"
@@ -525,7 +481,7 @@
           "position": 11
         }
       ],
-      "rank": 10,
+      "rank": 8,
       "qualifies": false,
       "status": "measured_only",
       "why_not": "1 impressions < floor 20"
@@ -547,7 +503,7 @@
           "position": 2
         }
       ],
-      "rank": 11,
+      "rank": 9,
       "qualifies": false,
       "status": "measured_only",
       "why_not": "1 impressions < floor 20"
@@ -569,7 +525,7 @@
           "position": 56
         }
       ],
-      "rank": 12,
+      "rank": 10,
       "qualifies": false,
       "status": "measured_only",
       "why_not": "1 impressions < floor 20"
