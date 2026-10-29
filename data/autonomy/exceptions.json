@@ -741,6 +741,21 @@
       "createdAt": "2026-10-27T19:35:39.898Z",
       "blocksOtherWork": false,
       "clientActionRequired": false
+    },
+    {
+      "id": "exception-metadata-daily-026-4-1793280222103",
+      "candidateId": "daily-026-4",
+      "decision": "SKIPPED_UNSAFE_SEARCH_METADATA",
+      "findings": [
+        {
+          "code": "SEARCH_METADATA_UNRESOLVED",
+          "severity": "hard",
+          "route": "/resources/insights/how-to-notice-when-overwhelm-is-turning-into-shutdown-a-gentler-truth-to-consider/"
+        }
+      ],
+      "createdAt": "2026-10-29T13:23:42.103Z",
+      "blocksOtherWork": false,
+      "clientActionRequired": false
     }
   ]
 }
