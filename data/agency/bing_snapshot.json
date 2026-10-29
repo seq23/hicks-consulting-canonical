@@ -1,23 +1,11 @@
 {
   "provider": "bing",
   "status": "ok",
-  "checkedAt": "2026-10-28T14:28:43.839Z",
+  "checkedAt": "2026-10-29T14:29:32.013Z",
   "siteUrl": "https://www.hicksconsulting.org/",
   "site": null,
   "metrics": {
     "rankAndTraffic": [
-      {
-        "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
-        "Clicks": 0,
-        "Date": "/Date(1785196800000)/",
-        "Impressions": 0
-      },
-      {
-        "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
-        "Clicks": 0,
-        "Date": "/Date(1785283200000)/",
-        "Impressions": 0
-      },
       {
         "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
         "Clicks": 0,
@@ -545,27 +533,21 @@
         "Clicks": 0,
         "Date": "/Date(1792886400000)/",
         "Impressions": 0
+      },
+      {
+        "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+        "Clicks": 0,
+        "Date": "/Date(1792972800000)/",
+        "Impressions": 0
+      },
+      {
+        "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+        "Clicks": 0,
+        "Date": "/Date(1793059200000)/",
+        "Impressions": 0
       }
     ],
     "crawl": [
-      {
-        "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
-        "AllOtherCodes": 0,
-        "BlockedByRobotsTxt": 0,
-        "Code2xx": 10,
-        "Code301": 1,
-        "Code302": 0,
-        "Code4xx": 0,
-        "Code5xx": 0,
-        "ConnectionTimeout": 0,
-        "ContainsMalware": 0,
-        "CrawledPages": 1,
-        "CrawlErrors": 0,
-        "Date": "/Date(1785110400000)/",
-        "DnsFailures": 0,
-        "InIndex": 0,
-        "InLinks": 5
-      },
       {
         "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
         "AllOtherCodes": 0,
@@ -2167,6 +2149,24 @@
         "DnsFailures": 0,
         "InIndex": 44,
         "InLinks": 10
+      },
+      {
+        "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+        "AllOtherCodes": 1,
+        "BlockedByRobotsTxt": 0,
+        "Code2xx": 93,
+        "Code301": 5,
+        "Code302": 0,
+        "Code4xx": 0,
+        "Code5xx": 0,
+        "ConnectionTimeout": 1,
+        "ContainsMalware": 0,
+        "CrawledPages": 63,
+        "CrawlErrors": 1,
+        "Date": "/Date(1793145600000)/",
+        "DnsFailures": 0,
+        "InIndex": 53,
+        "InLinks": 10
       }
     ]
   },
@@ -2210,6 +2210,15 @@
     {
       "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
       "AvgClickPosition": -1,
+      "AvgImpressionPosition": 5,
+      "Clicks": 1,
+      "Date": "/Date(1753401600000)/",
+      "Impressions": 2,
+      "Query": "anthony hicks, consultant"
+    },
+    {
+      "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
+      "AvgClickPosition": -1,
       "AvgImpressionPosition": 2,
       "Clicks": 1,
       "Date": "/Date(1753401600000)/",
@@ -2220,19 +2229,28 @@
       "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
       "AvgClickPosition": -1,
       "AvgImpressionPosition": 5,
-      "Clicks": 1,
-      "Date": "/Date(1753401600000)/",
-      "Impressions": 2,
-      "Query": "anthony hicks, consultant"
-    },
-    {
-      "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
-      "AvgClickPosition": -1,
-      "AvgImpressionPosition": 5,
       "Clicks": 0,
       "Date": "/Date(1753401600000)/",
       "Impressions": 2,
       "Query": "hicks consulting | alameda ca"
+    },
+    {
+      "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
+      "AvgClickPosition": -1,
+      "AvgImpressionPosition": 6,
+      "Clicks": 0,
+      "Date": "/Date(1753401600000)/",
+      "Impressions": 1,
+      "Query": "hicks consulting llc"
+    },
+    {
+      "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
+      "AvgClickPosition": -1,
+      "AvgImpressionPosition": 8,
+      "Clicks": 0,
+      "Date": "/Date(1753401600000)/",
+      "Impressions": 1,
+      "Query": "www norman hicks consulting"
     },
     {
       "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
@@ -2260,24 +2278,6 @@
       "Date": "/Date(1753401600000)/",
       "Impressions": 1,
       "Query": "how to manage stress and anxiety john hicks consulting counselling"
-    },
-    {
-      "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
-      "AvgClickPosition": -1,
-      "AvgImpressionPosition": 8,
-      "Clicks": 0,
-      "Date": "/Date(1753401600000)/",
-      "Impressions": 1,
-      "Query": "www norman hicks consulting"
-    },
-    {
-      "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
-      "AvgClickPosition": -1,
-      "AvgImpressionPosition": 6,
-      "Clicks": 0,
-      "Date": "/Date(1753401600000)/",
-      "Impressions": 1,
-      "Query": "hicks consulting llc"
     },
     {
       "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
@@ -2313,7 +2313,7 @@
       "Clicks": 0,
       "Date": "/Date(1771545600000)/",
       "Impressions": 1,
-      "Query": "hicks consulting"
+      "Query": "joyce hicks consulting"
     },
     {
       "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
@@ -2322,7 +2322,7 @@
       "Clicks": 0,
       "Date": "/Date(1771545600000)/",
       "Impressions": 1,
-      "Query": "joyce hicks consulting"
+      "Query": "hicks consulting"
     }
   ],
   "message": "Bing Webmaster API connected and refreshed."
