@@ -55,6 +55,7 @@ Passing checks produce no warning. Execution failures are not downgraded by the 
 | `query-traceability` | `validate:queries` | Soft warning | `content-operations` | `content-operations` | content planning and traceability | Non-blocking |
 | `above-fold` | `validate:abovefold` | Strong warning | `conversion-ux` | `product-experience` | public conversion experience | Non-blocking |
 | `entity-coverage` | `validate:entities` | Soft warning | `semantic-data` | `growth-and-content` | entity and metadata consistency | Non-blocking |
+| `entity-graph` | `validate:entity-graph` | Hard fail | `agency-search` | `site-operations` | published JSON-LD sameAs/name/logo/description vs data/entities; weekly entity-backlink-watch wired | Blocks |
 | `conversion-contract` | `validate:conversion` | Strong warning | `conversion-ux` | `product-experience` | public conversion experience | Non-blocking |
 | `training-inquiry` | `validate:training-inquiry` | Hard fail | `data-capture` | `platform-operations` | public form submission and durable capture | Blocks |
 | `source-health` | `validate:source-health` | Soft warning | `ingestion` | `content-intelligence` | content-intelligence inputs | Non-blocking |

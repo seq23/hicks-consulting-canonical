@@ -1,0 +1,76 @@
+name: Entity Backlink Watch
+
+# Weekly watch over the sameAs profiles the site publishes in JSON-LD
+# (data/entities/org_schema.json, data/entities/person_schema.json; inputs in
+# config/entity_watch.json). scripts/authority/entity_backlink_watch.mjs fetches
+# every profile, checks it still resolves and links back to the site, and records
+# JS-rendered or walled profiles as `unverifiable`, never as a pass.
+#
+# Self-heal: a profile that answers 404/410 to every agent is removed from its
+# entity source, and a pending profile that now resolves is promoted into sameAs.
+# A heal is rebuilt and re-validated with the full matrix, and pushed only if
+# clean. (Actions in this repo may not open pull requests, so this follows the
+# repo-self-heal.yml pattern: validate, then push.) A missing link-back is a
+# NAMED STOP in the run summary naming the exact profile field to edit; only the
+# account holder can change it.
+#
+# Saturday 09:23 UTC is clear of every other lane in the shared
+# hicks-consulting-content-automation group.
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '23 9 * * 6'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: hicks-consulting-content-automation
+  cancel-in-progress: false
+
+jobs:
+  watch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8  # 3 agents x 20s per profile is the worst case; a fault detector, not a budget
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 20
+          cache: npm
+      - run: git pull --rebase origin main
+      - name: Fetch every sameAs profile, check link-back, self-heal
+        id: watch
+        run: node scripts/authority/entity_backlink_watch.mjs --apply
+      - name: Upload the watch report
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: hicks-entity-backlink-watch
+          if-no-files-found: error
+          path: reports/entity-backlink-watch.json
+      - name: Rebuild and re-validate a healed entity graph
+        if: steps.watch.outputs.changed == 'true'
+        run: |
+          npm ci
+          npm run build
+          npm run validate:all
+      - name: Push the re-validated heal
+        if: steps.watch.outputs.changed == 'true'
+        run: |
+          git config user.name "hicks-entity-watch-bot"
+          git config user.email "actions@github.com"
+          git add -- data/entities config/entity_watch.json
+          if git diff --cached --quiet; then
+            echo "The watch reported a change but nothing differs on disk."
+            exit 1
+          fi
+          MESSAGE="$(node -e '
+            const r = JSON.parse(require("fs").readFileSync("reports/entity-backlink-watch.json", "utf8"));
+            process.stdout.write(`Entity watch: ${r.changes.join("; ")}`);
+          ')"
+          git commit -m "$MESSAGE"
+          git push origin main

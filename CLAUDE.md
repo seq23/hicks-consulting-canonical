@@ -53,3 +53,13 @@ are pinned by `_ops/validators/validate_search_readiness_surfaces.js`,
 `_ops/validators/validate_three_click_reach.js` and
 `_ops/validators/validate_search_metadata_contract.js`, so a regression fails on the pull request
 rather than a week later in production.
+
+## Entity graph and sameAs watch
+
+The site's identity (Organization and principal) is defined once, in `data/entities/org_schema.json`
+and `data/entities/person_schema.json`; `config/entity_watch.json` names them and holds
+`profiles_pending` (named but unclaimed profiles, which never enter `sameAs` until they resolve).
+`_ops/validators/validate_entity_graph.js` fails if any published JSON-LD drifts from those files.
+`.github/workflows/entity-backlink-watch.yml` runs `scripts/authority/entity_backlink_watch.mjs`
+weekly: it removes a profile that is 404/410 to every agent, promotes a pending profile that now
+resolves, and names a missing link-back as a NAMED STOP (only the account holder can fix it).

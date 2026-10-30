@@ -95,6 +95,7 @@
     "validate:discovery-gap-decisions-due": "node _ops/validators/validate_discovery_gap_decisions_due.js",
     "validate:edge-cache": "node _ops/validators/validate_edge_cache_contract.mjs",
     "validate:entities": "node _ops/validators/validate_entity_coverage.js",
+    "validate:entity-graph": "node _ops/validators/validate_entity_graph.js",
     "validate:fanouts": "node _ops/validators/validate_fanout_candidates.js",
     "validate:finding-protocol": "node _ops/validators/validate_finding_protocol_conformance.js",
     "validate:form-database": "node _ops/validators/validate_form_database_contract.js",

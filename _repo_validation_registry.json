@@ -1306,6 +1306,20 @@
       "enabled": true,
       "scope": "config/llm_routing.json, scripts/llm/free_router.mjs, every script that reaches a model provider, every workflow, docs/cost/zero-paid-llm.md and CLAUDE.md",
       "rationale": "Owner policy 11 Oct 2026: nothing paid. Until 26 Oct 2026 this repo had no routing config and no router: scripts/autonomy/lib/llm_provider.mjs POSTed to whatever secrets.LLM_API_URL and secrets.LLM_MODEL named, and the daily agency-seo-monitor schedule ran OpenRouter's per-request-billed web plugin pinned to openai/gpt-4o-mini. Search Readiness items i3 and i10. This fails on a non-$0 model, an undated snapshot, a script calling a provider outside the router, a probe lane with a schedule or without confirm_paid, a scheduled workflow naming a paid model or passing a non-router key, or the written rule going missing from the doc or CLAUDE.md."
+    },
+    {
+      "id": "entity-graph",
+      "npmScript": "validate:entity-graph",
+      "entrypoint": "_ops/validators/validate_entity_graph.js",
+      "severity": "HARD_FAIL",
+      "blocksRelease": true,
+      "group": "agency-search",
+      "owner": "site-operations",
+      "ciInvocation": "MATRIX_ONLY",
+      "findingProtocol": "VALIDATION_FINDING",
+      "enabled": true,
+      "scope": "config/entity_watch.json, data/entities/org_schema.json, data/entities/person_schema.json, JSON-LD in pages/ and dist/, .github/workflows/entity-backlink-watch.yml",
+      "rationale": "Authority audit, 30 Oct 2026: nothing compared the sameAs, name, logo and description the pages publish against the entity sources, and nothing watched whether those profiles still resolve or link back. This fails on an empty or self-referencing sameAs, a pending profile already live, any published entity node that drifts from its source, an entity no page publishes, or the weekly watch workflow going missing or unscheduled."
     }
   ]
 }
