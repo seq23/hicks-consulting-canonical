@@ -2,11 +2,11 @@
   "schema_version": "1.0",
   "generated_from": "data/search_intelligence/target_query_set.json",
   "window": {
-    "start_date": "2026-09-29",
-    "end_date": "2026-10-26",
+    "start_date": "2026-09-30",
+    "end_date": "2026-10-27",
     "days": 28
   },
-  "truth_collected_at": "2026-10-29T14:29:32.744Z",
+  "truth_collected_at": "2026-10-30T14:29:40.019Z",
   "rule": {
     "grouping": "one family per landing page (the page Google shows for the query)",
     "min_impressions": 20,
@@ -16,9 +16,9 @@
     "top_n": 12
   },
   "client_approval": "Client site: qualifying families are PROPOSALS. A family is strengthened only once its status is \"approved\" here, with approved_by naming who decided (the client, or the site owner on her own decision) and approved_at.",
-  "target_count": 57,
-  "impressions_total": 415,
-  "family_count": 10,
+  "target_count": 56,
+  "impressions_total": 411,
+  "family_count": 9,
   "proposal_count": 1,
   "approved_count": 2,
   "families": [
@@ -28,27 +28,27 @@
       "impressions": 175,
       "clicks": 2,
       "ctr": 1.1,
-      "weighted_position": 8.2,
+      "weighted_position": 8.1,
       "query_count": 25,
       "head_query": "black therapist memphis tn",
       "queries": [
         {
           "query": "black therapist memphis tn",
-          "impressions": 54,
+          "impressions": 53,
           "clicks": 1,
-          "position": 8.12
+          "position": 8.03
         },
         {
           "query": "black therapist memphis, tn",
-          "impressions": 25,
+          "impressions": 27,
           "clicks": 1,
-          "position": 8.36
+          "position": 8.22
         },
         {
           "query": "black therapist near me",
-          "impressions": 24,
+          "impressions": 23,
           "clicks": 0,
-          "position": 8.12
+          "position": 8.09
         },
         {
           "query": "black therapist",
@@ -63,22 +63,28 @@
           "position": 7.29
         },
         {
-          "query": "black mental health therapist near me",
-          "impressions": 7,
-          "clicks": 0,
-          "position": 9.14
-        },
-        {
           "query": "african american therapist near me",
           "impressions": 6,
           "clicks": 0,
           "position": 8.5
         },
         {
+          "query": "black mental health therapist near me",
+          "impressions": 6,
+          "clicks": 0,
+          "position": 9.17
+        },
+        {
           "query": "black therapists near me",
           "impressions": 6,
           "clicks": 0,
           "position": 7.83
+        },
+        {
+          "query": "black female therapist near me",
+          "impressions": 5,
+          "clicks": 0,
+          "position": 5
         },
         {
           "query": "black therapists",
@@ -99,22 +105,16 @@
           "position": 9.25
         },
         {
-          "query": "black women therapist near me",
-          "impressions": 4,
-          "clicks": 0,
-          "position": 5.75
-        },
-        {
-          "query": "black female therapist near me",
-          "impressions": 3,
-          "clicks": 0,
-          "position": 5
-        },
-        {
           "query": "black psychologist near me",
           "impressions": 3,
           "clicks": 0,
           "position": 12
+        },
+        {
+          "query": "black women therapist near me",
+          "impressions": 3,
+          "clicks": 0,
+          "position": 5
         },
         {
           "query": "african american female therapist",
@@ -189,23 +189,23 @@
       "approved_by": "site owner (not the client)",
       "approved_at": "2026-10-11",
       "approval_note": "Site owner decided on 2026-10-11 to strengthen both qualifying families now rather than wait on a client flag. Not a client decision; the client did not approve or author this change.",
-      "proposed_change": "Lead /black-therapist-memphis/ with a direct answer to \"black therapist memphis tn\" in its title and first paragraph: 175 impressions at position 8.2 earned 2 click(s) (1.1% CTR)."
+      "proposed_change": "Lead /black-therapist-memphis/ with a direct answer to \"black therapist memphis tn\" in its title and first paragraph: 175 impressions at position 8.1 earned 2 click(s) (1.1% CTR)."
     },
     {
       "family": "/",
       "page": "https://www.hicksconsulting.org/",
-      "impressions": 166,
+      "impressions": 163,
       "clicks": 4,
-      "ctr": 2.4,
+      "ctr": 2.5,
       "weighted_position": 4.3,
       "query_count": 23,
       "head_query": "hicks consulting",
       "queries": [
         {
           "query": "hicks consulting",
-          "impressions": 87,
+          "impressions": 85,
           "clicks": 3,
-          "position": 3.86
+          "position": 3.81
         },
         {
           "query": "monika hicks",
@@ -238,12 +238,6 @@
           "position": 17
         },
         {
-          "query": "hicks healthcare",
-          "impressions": 2,
-          "clicks": 0,
-          "position": 2
-        },
-        {
           "query": "medical it consulting services",
           "impressions": 2,
           "clicks": 0,
@@ -268,22 +262,28 @@
           "position": 12
         },
         {
-          "query": "consultant mental health",
-          "impressions": 1,
-          "clicks": 0,
-          "position": 2
-        },
-        {
           "query": "consulting services",
           "impressions": 1,
           "clicks": 0,
           "position": 2
         },
         {
+          "query": "emotional wellness",
+          "impressions": 1,
+          "clicks": 0,
+          "position": 1
+        },
+        {
           "query": "health consulting",
           "impressions": 1,
           "clicks": 0,
           "position": 5
+        },
+        {
+          "query": "hicks healthcare",
+          "impressions": 1,
+          "clicks": 0,
+          "position": 1
         },
         {
           "query": "hicks's",
@@ -346,7 +346,7 @@
       "approved_by": "site owner (not the client)",
       "approved_at": "2026-10-11",
       "approval_note": "Site owner decided on 2026-10-11 to strengthen both qualifying families now rather than wait on a client flag. Not a client decision; the client did not approve or author this change.",
-      "proposed_change": "Lead / with a direct answer to \"hicks consulting\" in its title and first paragraph: 166 impressions at position 4.3 earned 4 click(s) (2.4% CTR)."
+      "proposed_change": "Lead / with a direct answer to \"hicks consulting\" in its title and first paragraph: 163 impressions at position 4.3 earned 4 click(s) (2.5% CTR)."
     },
     {
       "family": "/contact/",
@@ -465,28 +465,6 @@
       "why_not": "1 impressions < floor 20"
     },
     {
-      "family": "/resources/articles/what-strong-black-woman-fatigue-can-look-like-in-real-life/",
-      "page": "https://www.hicksconsulting.org/resources/articles/what-strong-black-woman-fatigue-can-look-like-in-real-life/",
-      "impressions": 1,
-      "clicks": 0,
-      "ctr": 0,
-      "weighted_position": 11,
-      "query_count": 1,
-      "head_query": "black woman fatigue",
-      "queries": [
-        {
-          "query": "black woman fatigue",
-          "impressions": 1,
-          "clicks": 0,
-          "position": 11
-        }
-      ],
-      "rank": 8,
-      "qualifies": false,
-      "status": "measured_only",
-      "why_not": "1 impressions < floor 20"
-    },
-    {
       "family": "/resources/guides/burnout-recovery-for-black-women-who-keep-functioning-through-everything/",
       "page": "https://hicksconsulting.org/resources/guides/burnout-recovery-for-black-women-who-keep-functioning-through-everything/",
       "impressions": 1,
@@ -503,7 +481,7 @@
           "position": 2
         }
       ],
-      "rank": 9,
+      "rank": 8,
       "qualifies": false,
       "status": "measured_only",
       "why_not": "1 impressions < floor 20"
@@ -525,7 +503,7 @@
           "position": 56
         }
       ],
-      "rank": 10,
+      "rank": 9,
       "qualifies": false,
       "status": "measured_only",
       "why_not": "1 impressions < floor 20"
