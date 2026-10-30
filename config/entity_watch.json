@@ -1,0 +1,12 @@
+{
+  "$comment": "Inputs for the entity-graph check and the weekly sameAs watch. The sameAs lists themselves live in the entity sources below (the published schema files) and nowhere else; this file only names them. profiles_pending holds profiles that are named but not yet claimed or not yet resolving: they never enter sameAs until the watch sees them resolve. Read by _ops/validators/validate_entity_graph.js and scripts/authority/entity_backlink_watch.mjs.",
+  "site_host": "www.hicksconsulting.org",
+  "link_back_needle": "hicksconsulting.org",
+  "entity_sources": [
+    { "file": "data/entities/org_schema.json", "role": "organization" },
+    { "file": "data/entities/person_schema.json", "role": "principal" }
+  ],
+  "profiles_pending": [],
+  "workflow": ".github/workflows/entity-backlink-watch.yml",
+  "report": "reports/entity-backlink-watch.json"
+}
