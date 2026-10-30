@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-10-27T19:35:38.150Z",
-  "runId": "2026-10-27T19-35-32-119Z",
+  "generatedAt": "2026-10-30T14:42:17.161Z",
+  "runId": "2026-10-30T14-42-11-695Z",
   "mode": "external",
-  "externalSignalCount": 49,
+  "externalSignalCount": 70,
   "fallbackSignalCount": 7,
   "enabledSourceCount": 7,
   "stoppedSourceCount": 3,
@@ -17,9 +17,9 @@
       "url": "https://www.reddit.com/search.rss?q=Black%20women%20burnout%20therapy&sort=new",
       "status": "ok",
       "httpStatus": 200,
-      "startedAt": "2026-10-27T19:35:32.119Z",
-      "finishedAt": "2026-10-27T19:35:33.176Z",
-      "signalCount": 4
+      "startedAt": "2026-10-30T14:42:11.696Z",
+      "finishedAt": "2026-10-30T14:42:12.392Z",
+      "signalCount": 25
     },
     {
       "id": "reddit_rss_ai_wellness",
@@ -27,8 +27,8 @@
       "url": "https://www.reddit.com/search.rss?q=AI%20anxiety%20mental%20health&sort=new",
       "status": "degraded",
       "httpStatus": 429,
-      "startedAt": "2026-10-27T19:35:33.676Z",
-      "finishedAt": "2026-10-27T19:35:33.752Z",
+      "startedAt": "2026-10-30T14:42:12.892Z",
+      "finishedAt": "2026-10-30T14:42:12.926Z",
       "signalCount": 0
     },
     {
@@ -37,8 +37,8 @@
       "url": "https://www.reddit.com/search.rss?q=Gen%20Z%20mental%20health%20therapy&sort=new",
       "status": "degraded",
       "httpStatus": 429,
-      "startedAt": "2026-10-27T19:35:34.252Z",
-      "finishedAt": "2026-10-27T19:35:34.450Z",
+      "startedAt": "2026-10-30T14:42:13.425Z",
+      "finishedAt": "2026-10-30T14:42:13.457Z",
       "signalCount": 0
     },
     {
@@ -47,8 +47,8 @@
       "url": "https://www.youtube.com/feeds/videos.xml?search_query=Black%20women%20burnout%20therapy",
       "status": "degraded",
       "httpStatus": 400,
-      "startedAt": "2026-10-27T19:35:34.950Z",
-      "finishedAt": "2026-10-27T19:35:35.094Z",
+      "startedAt": "2026-10-30T14:42:13.957Z",
+      "finishedAt": "2026-10-30T14:42:14.030Z",
       "signalCount": 0
     },
     {
@@ -57,8 +57,8 @@
       "url": "https://news.google.com/rss/search?q=workplace%20mental%20health%20training%20emotional%20intelligence",
       "status": "ok",
       "httpStatus": 200,
-      "startedAt": "2026-10-27T19:35:35.594Z",
-      "finishedAt": "2026-10-27T19:35:36.014Z",
+      "startedAt": "2026-10-30T14:42:14.529Z",
+      "finishedAt": "2026-10-30T14:42:14.967Z",
       "signalCount": 15
     },
     {
@@ -67,8 +67,8 @@
       "url": "https://news.google.com/rss/search?q=faith%20centered%20therapy%20emotional%20healing",
       "status": "ok",
       "httpStatus": 200,
-      "startedAt": "2026-10-27T19:35:36.515Z",
-      "finishedAt": "2026-10-27T19:35:36.844Z",
+      "startedAt": "2026-10-30T14:42:15.466Z",
+      "finishedAt": "2026-10-30T14:42:16.024Z",
       "signalCount": 15
     },
     {
@@ -77,8 +77,8 @@
       "url": "https://interpersonal.stackexchange.com/feeds",
       "status": "ok",
       "httpStatus": 200,
-      "startedAt": "2026-10-27T19:35:37.343Z",
-      "finishedAt": "2026-10-27T19:35:37.648Z",
+      "startedAt": "2026-10-30T14:42:16.525Z",
+      "finishedAt": "2026-10-30T14:42:16.660Z",
       "signalCount": 15
     },
     {
@@ -87,8 +87,8 @@
       "status": "stopped",
       "namedStop": "SOURCE_DISABLED_BY_CONFIGURATION",
       "stopReason": "No stable no-auth RSS/API endpoint approved for scheduled production ingestion. Keep as manual research lane until adapter exists.",
-      "startedAt": "2026-10-27T19:35:38.149Z",
-      "finishedAt": "2026-10-27T19:35:38.149Z",
+      "startedAt": "2026-10-30T14:42:17.160Z",
+      "finishedAt": "2026-10-30T14:42:17.160Z",
       "signalCount": 0
     },
     {
@@ -97,8 +97,8 @@
       "status": "stopped",
       "namedStop": "SOURCE_DISABLED_BY_CONFIGURATION",
       "stopReason": "No no-auth production-safe source. Requires API/secrets or manual research; not used in cron.",
-      "startedAt": "2026-10-27T19:35:38.149Z",
-      "finishedAt": "2026-10-27T19:35:38.149Z",
+      "startedAt": "2026-10-30T14:42:17.160Z",
+      "finishedAt": "2026-10-30T14:42:17.160Z",
       "signalCount": 0
     },
     {
@@ -107,8 +107,8 @@
       "status": "stopped",
       "namedStop": "SOURCE_DISABLED_BY_CONFIGURATION",
       "stopReason": "No approved no-auth scheduled ingestion endpoint. Keep as manual trend review lane.",
-      "startedAt": "2026-10-27T19:35:38.149Z",
-      "finishedAt": "2026-10-27T19:35:38.149Z",
+      "startedAt": "2026-10-30T14:42:17.160Z",
+      "finishedAt": "2026-10-30T14:42:17.160Z",
       "signalCount": 0
     }
   ]

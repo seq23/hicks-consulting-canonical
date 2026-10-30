@@ -771,6 +771,34 @@
       "createdAt": "2026-10-30T13:23:08.390Z",
       "blocksOtherWork": false,
       "clientActionRequired": false
+    },
+    {
+      "id": "exception-continuity-insight-2027-01-12-63f2c7d6a42b-1793371339697",
+      "candidateId": "continuity-insight-2027-01-12-63f2c7d6a42b",
+      "decision": "SKIPPED_PROHIBITED_ACTION",
+      "findings": [
+        {
+          "code": "LOW_ADMISSION_SCORE",
+          "severity": "advisory"
+        }
+      ],
+      "createdAt": "2026-10-30T14:42:19.632Z",
+      "blocksOtherWork": false,
+      "clientActionRequired": false
+    },
+    {
+      "id": "exception-continuity-article-2027-01-12-0b7ce83b7bd9-1793371339697",
+      "candidateId": "continuity-article-2027-01-12-0b7ce83b7bd9",
+      "decision": "SKIPPED_PROHIBITED_ACTION",
+      "findings": [
+        {
+          "code": "LOW_ADMISSION_SCORE",
+          "severity": "advisory"
+        }
+      ],
+      "createdAt": "2026-10-30T14:42:19.632Z",
+      "blocksOtherWork": false,
+      "clientActionRequired": false
     }
   ]
 }
