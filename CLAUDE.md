@@ -4,6 +4,10 @@
 file carries the few rules an agent needs before it touches anything, and each one is read by
 code — none of them is prose only.
 
+## Company brain
+
+Read `~/Brains/friends.md` before any work (business facts, priorities, voice, settled decisions). New business facts go to the brain via Boss OS, not into this repo or memory. Repo how-tos stay in `docs/`.
+
 ## Cost
 
 **Nothing paid.** Owner instruction, 11 Oct 2026: *"nothing should be paid … cut the probes and
