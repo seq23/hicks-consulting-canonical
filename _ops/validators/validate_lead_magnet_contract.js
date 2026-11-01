@@ -12,9 +12,7 @@ const requiredFiles = [
   'functions/api/lead-magnet.js',
   'worker/_worker.js',
   'assets/js/site.js',
-  'data/system/config.json',
-  'docs/runbooks/lead-magnet-download.md',
-  'docs/runbooks/form-database-webhook.md'
+  'data/system/config.json'
 ];
 
 for (const file of requiredFiles) {

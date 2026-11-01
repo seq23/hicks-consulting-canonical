@@ -20,8 +20,8 @@ make them free."*
   `scripts/search/live_query_observer.mjs` — has no schedule. It runs only when a person
   dispatches `.github/workflows/paid-citation-probe.yml` with `confirm_paid: true`.
 - The whole posture, and what it replaced, is in **`docs/cost/zero-paid-llm.md`**.
-- Read by `_ops/validators/validate_zero_paid_llm.js`, which fails if any of the above stops being
-  true — including if this line goes missing.
+- Read by `_ops/validators/validate_zero_paid_llm.js`, which fails if the routing config, the
+  router, a script or a workflow stops keeping it true.
 
 ## Nothing waits on the owner
 

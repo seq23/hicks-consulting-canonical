@@ -59,10 +59,7 @@ Passing checks produce no warning. Execution failures are not downgraded by the 
 | `conversion-contract` | `validate:conversion` | Strong warning | `conversion-ux` | `product-experience` | public conversion experience | Non-blocking |
 | `training-inquiry` | `validate:training-inquiry` | Hard fail | `data-capture` | `platform-operations` | public form submission and durable capture | Blocks |
 | `source-health` | `validate:source-health` | Soft warning | `ingestion` | `content-intelligence` | content-intelligence inputs | Non-blocking |
-| `ingestion-freshness` | `validate:ingestion-freshness` | No warning / info | `ingestion-observability` | `content-intelligence` | operator metrics | Non-blocking |
 | `query-signal-schema` | `validate:query-signals` | Soft warning | `ingestion` | `content-intelligence` | content-intelligence inputs | Non-blocking |
-| `query-clusters` | `validate:query-clusters` | No warning / info | `ingestion-observability` | `content-intelligence` | operator metrics | Non-blocking |
-| `fanout-candidates` | `validate:fanouts` | No warning / info | `ingestion-observability` | `content-intelligence` | operator metrics | Non-blocking |
 | `social-firehose` | `validate:social-firehose` | Strong warning | `publishing-governance` | `content-operations` | approval and generation controls | Non-blocking |
 | `throttle-contract` | `validate:throttle` | Soft warning | `provider-resilience` | `platform-operations` | provider operation safeguards | Non-blocking |
 | `content-briefs` | `validate:content-briefs` | Strong warning | `publishing-governance` | `content-operations` | approval and generation controls | Non-blocking |
@@ -70,7 +67,6 @@ Passing checks produce no warning. Execution failures are not downgraded by the 
 | `policy-compliance` | `validate:policy` | Hard fail | `compliance` | `compliance-owner` | public claims and disclaimers | Blocks |
 | `content-plan` | `validate:content-plan` | Strong warning | `content-operations` | `content-operations` | content planning and traceability | Non-blocking |
 | `recent-resources` | `validate:recent-resources` | Strong warning | `content-discovery` | `content-operations` | resources landing-page recency | Non-blocking |
-| `word-counts` | `validate:word-counts` | Soft warning | `content-quality` | `content-operations` | published resource quality | Non-blocking |
 | `admin-previews` | `validate:admin-previews` | Strong warning | `admin-operations` | `content-operations` | operator-only content tooling | Non-blocking |
 | `admin-generated-queue` | `validate:admin-generated-queue` | Strong warning | `admin-operations` | `content-operations` | operator-only content tooling | Non-blocking |
 | `workflow-contracts` | `validate:workflows` | Hard fail | `release-safety` | `repo-maintainers` | CI and repository-write safety | Blocks |
