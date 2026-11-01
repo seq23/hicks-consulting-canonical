@@ -2,7 +2,8 @@ name: Content Publish
 on:
   workflow_dispatch:
   schedule:
-    - cron: '17 13 * * *'
+    - cron: '17 8 * * *'  # America/Chicago, all year
+      timezone: America/Chicago
   push:
     branches:
       - main

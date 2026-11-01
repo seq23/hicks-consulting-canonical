@@ -14,13 +14,14 @@ name: Entity Backlink Watch
 # NAMED STOP in the run summary naming the exact profile field to edit; only the
 # account holder can change it.
 #
-# Saturday 09:23 UTC is clear of every other lane in the shared
+# Saturday 04:23 CT is clear of every other lane in the shared
 # hicks-consulting-content-automation group.
 
 on:
   workflow_dispatch:
   schedule:
-    - cron: '23 9 * * 6'
+    - cron: '23 4 * * 6'  # America/Chicago, all year
+      timezone: America/Chicago
 
 permissions:
   contents: write

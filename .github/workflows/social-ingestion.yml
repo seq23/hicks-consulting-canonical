@@ -3,7 +3,8 @@ name: Social Ingestion
 on:
   workflow_dispatch:
   schedule:
-    - cron: '41 14 * * 2,5'
+    - cron: '41 9 * * 2,5'  # America/Chicago, all year
+      timezone: America/Chicago
 
 concurrency:
   group: hicks-consulting-content-automation
