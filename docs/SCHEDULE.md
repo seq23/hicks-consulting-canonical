@@ -13,6 +13,7 @@ schedule); see the notes below for what moved.
 | Editorial Continuity Sidecar | `editorial-continuity.yml` | Wed 04:10 CT | `10 4 * * 3` |
 | Entity Backlink Watch | `entity-backlink-watch.yml` | Sat 04:23 CT | `23 4 * * 6` |
 | Publish Verification | `publish-verification.yml` | every day 08:47 CT | `47 8 * * *` |
+| Search Loop (shared engine, question pages) | `search-loop.yml` | every day 06:53 CT | `53 6 * * *` |
 | Repo Self-Healing Loop | `repo-self-heal.yml` | Sun 04:07 CT | `7 4 * * 0` |
 | Social Ingestion | `social-ingestion.yml` | Tue, Fri 09:41 CT | `41 9 * * 2,5` |
 

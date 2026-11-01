@@ -145,6 +145,11 @@ function injectOrganizationSchemaSitewide() {
 }
 
 copyRecursive(pages, dist);
+// Search-loop question pages (seq23/search-loop, owner ruling 1 Nov 2026). The
+// shared engine writes them to questions/ at the repo root; they are off-menu
+// (never in the nav), reached through their Related questions blocks, the
+// /questions/ hub generated below, the sitemap and IndexNow.
+copyRecursive(path.join(root, 'questions'), path.join(dist, 'questions'));
 copyRecursive(path.join(root, 'assets'), path.join(dist, 'assets'));
 copyRecursive(path.join(root, 'data'), path.join(dist, 'data'));
 ['robots.txt','_headers','_redirects','llms.txt','answers.json','coverage.json','indexnow.txt','site.webmanifest','0ccfc65ebb714f0a804be19ff50c9be4.txt'].forEach(file => {
@@ -256,6 +261,41 @@ function renderSectionIndexes() {
 
 renderSectionIndexes();
 
+// The /questions/ hub. Every engine page's breadcrumb points here, so it must
+// exist; it is generated from what is in questions/ so a page can never be
+// missing from it. Off-menu: nothing in the nav links to it. It is noindex,follow
+// and stays out of the sitemap (it is a crawl path, not an answer); one generated
+// link from /faq/ (not a menu page) puts every question page three clicks from
+// the home page: home -> /faq/ -> /questions/ -> the page.
+function renderQuestionsHub() {
+  const dir = path.join(root, 'questions');
+  const escapeHtml = (value) => String(value)
+    .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+  const items = (fs.existsSync(dir) ? fs.readdirSync(dir, { withFileTypes: true }) : [])
+    .filter(e => e.isDirectory() && fs.existsSync(path.join(dir, e.name, 'index.html')))
+    .map(e => {
+      const html = fs.readFileSync(path.join(dir, e.name, 'index.html'), 'utf8');
+      const h1 = (html.match(/<h1[^>]*>([\s\S]*?)<\/h1>/i) || [])[1] || e.name;
+      return { route: `/questions/${e.name}/`, title: h1.replace(/<[^>]+>/g, '').trim() };
+    })
+    .sort((a, b) => a.title.localeCompare(b.title));
+  if (!items.length) return [];
+  const list = items.map(i => `<li><a href="${i.route}">${escapeHtml(i.title)}</a></li>`).join('');
+  const html = `<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1" name="viewport"/><meta name="robots" content="noindex,follow"/><title>Questions about therapy, stress and wellbeing | Hicks Consulting</title><meta content="Plain answers to common questions about therapy, coaching, stress, burnout and emotional wellbeing from Hicks Consulting. Educational only, not therapy or medical advice." name="description"/><link href="${canonicalDomain}/questions/" rel="canonical"/><link href="/assets/css/styles.css" rel="stylesheet"/></head><body><main class="container section"><h1>Questions</h1><p>Plain answers to questions people ask about therapy, coaching, stress and emotional wellbeing. Educational only: reading is not therapy, and anyone in crisis should call or text 988.</p><ul id="questions-published">${list}</ul><p><a href="https://monika-hicks.clientsecure.me/">Book your consult with Hicks Consulting</a></p></main></body></html>
+`;
+  fs.mkdirSync(path.join(dist, 'questions'), { recursive: true });
+  fs.writeFileSync(path.join(dist, 'questions', 'index.html'), html);
+  const faqPath = path.join(dist, 'faq', 'index.html');
+  if (!fs.existsSync(faqPath)) throw new Error('questions hub: dist/faq/index.html is missing, so the hub would have no inbound link.');
+  const faq = fs.readFileSync(faqPath, 'utf8');
+  if (!faq.includes('</main>')) throw new Error('questions hub: dist/faq/index.html has no </main> to place the link before.');
+  fs.writeFileSync(faqPath, faq.replace('</main>', '<section class="section related-questions"><div class="container narrow"><h2>More questions</h2><p><a href="/questions/">More questions people ask about therapy, coaching and stress</a></p></div></section></main>'));
+  console.log(`questions hub: listed ${items.length} question page(s), linked from /faq/`);
+  return items.map(i => i.route);
+}
+const questionRoutes = renderQuestionsHub();
+
 // After unpublished resources are pruned, so only pages that actually ship get
 // stamped.
 injectOrganizationSchemaSitewide();
@@ -303,7 +343,7 @@ const llmOnlyRoutes = [
   '/llm-atlas/answer-surfaces/'
 ];
 
-const sitemapRoutes = [...staticPublicRoutes, ...llmOnlyRoutes, ...Array.from(publishedResourceSlugs)];
+const sitemapRoutes = [...staticPublicRoutes, ...llmOnlyRoutes, ...Array.from(publishedResourceSlugs), ...questionRoutes];
 
 // <lastmod> is metadata about the sitemap entry, not page content: emitting it
 // changes nothing on any published page. It was absent on all 95 URLs, which

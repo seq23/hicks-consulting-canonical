@@ -1,0 +1,81 @@
+{
+  "schema": "search-loop-config-v1",
+  "site": "hicksconsulting.org",
+  "base_url": "https://www.hicksconsulting.org",
+  "site_name": "Hicks Consulting",
+  "publisher": { "name": "Hicks Consulting", "url": "https://www.hicksconsulting.org/" },
+  "audience": "adults in Tennessee, and Black women in particular, who are carrying stress, burnout, anxiety, life transitions or relationship strain and are wondering whether therapy, coaching or a support group would help; plus employers looking for workplace mental health training",
+  "voice": "warm, grounded and plain; short sentences; educational only. Never diagnose, never give medical, legal or financial advice, never promise or imply an outcome. No client stories, testimonials or invented people; never speak as the therapist or describe her experiences or opinions. Say that reading is not therapy, and that anyone in crisis should call or text 988. Fees, insurance and availability are never stated.",
+  "topics": [
+    "black therapist memphis",
+    "therapy for black women",
+    "burnout and boundaries for women",
+    "high functioning anxiety in women",
+    "stress you carry in your body",
+    "life transitions and therapy",
+    "faith and mental health",
+    "therapy vs coaching",
+    "virtual therapy in tennessee",
+    "support groups for women",
+    "workplace mental health training",
+    "emotional exhaustion and over-functioning"
+  ],
+  "find": {
+    "exclude_words": ["suicide", "self harm", "overdose", "medication", "dosage", "insurance", "salary", "jobs", "login", "lawsuit", "free download", "torrent"]
+  },
+  "local": { "city": "Memphis", "neighbourhoods": ["Germantown", "Collierville", "Bartlett", "Cordova", "Midtown Memphis"] },
+  "action": { "label": "Book your consult with Hicks Consulting", "url": "https://monika-hicks.clientsecure.me/" },
+  "allowed_link_targets": [
+    "https://www.hicksconsulting.org",
+    "https://monika-hicks.clientsecure.me"
+  ],
+  "mode": "normal",
+  "pace": { "start_per_day": 10, "step_per_week": 5, "cap": 30 },
+  "menu_pages_need_approval": true,
+  "menu_pages": ["/", "/therapy/", "/coaching/", "/groups/", "/corporate-speaking/", "/about/", "/resources/", "/intake-quiz/", "/contact/"],
+  "health_gate": "health",
+  "health": {
+    "real_facts": {
+      "services": [
+        "virtual individual therapy for adults in Tennessee",
+        "virtual coaching (non-clinical, not therapy)",
+        "support groups",
+        "organizational mental health training and speaking",
+        "consulting"
+      ],
+      "hours": "Sunday by appointment only, limited availability; Monday, Wednesday and Thursday 9:00 AM-3:00 PM; Friday 9:00 AM-12:00 PM"
+    }
+  },
+  "protected_paths": [
+    "index.html",
+    "pages",
+    "about", "admin", "agency", "anxiety-therapist-memphis", "black-therapist-memphis", "book-discovery-call",
+    "christian-therapist-memphis", "coaching", "contact", "cookie-policy", "corporate-speaking", "disclaimer",
+    "emergency-crisis-notice", "faq", "female-therapist-memphis", "good-faith-estimate", "groups", "intake-quiz",
+    "llm-atlas", "organizational-training-inquiry", "privacy-policy", "psychologist-vs-therapist-memphis",
+    "request-consult", "resources", "stress-management-worksheet", "terms", "therapist-near-me-memphis",
+    "therapist-olive-branch-ms", "therapy"
+  ],
+  "output": { "dir": "questions", "format": "dir-index", "url_prefix": "/questions/" },
+  "template": {
+    "section_name": "Questions",
+    "stylesheets": ["/assets/css/styles.css"],
+    "og_image": { "url": "https://www.hicksconsulting.org/assets/og-card.png", "width": 1200, "height": 630 },
+    "header_html": "<header class=\"site-header\"><div class=\"nav-wrap\"><a class=\"brand\" href=\"/\"><span class=\"brand-copy\"><strong>Hicks Consulting</strong><span>VIRTUAL CARE · CONSULTING · TRAINING</span></span></a><nav class=\"main-nav\" aria-label=\"Primary\"><a href=\"/\">Home</a><a href=\"/therapy/\">Therapy</a><a href=\"/coaching/\">Coaching</a><a href=\"/groups/\">Groups</a><a href=\"/resources/\">Resources</a><a href=\"/contact/\">Contact</a></nav></div></header>",
+    "footer_html": "<footer><div class=\"container\"><p class=\"footer-note\">This website is for informational purposes only. It is not therapy, medical, legal or financial advice, and it does not provide emergency or crisis services. If you are in crisis, call or text 988. Therapy services are virtual and limited to Tennessee. Coaching is not therapy.</p></div></footer>"
+  },
+  "related": {
+    "max_pages_per_new_page": 2,
+    "scan_dirs": ["."],
+    "skip_dirs": ["_ops", "artifacts", "assets", "config", "data", "dist", "docs", "functions", "pages", "reports", "scripts", "worker", "admin", "agency", "llm-atlas", "preview", "node_modules"]
+  },
+  "gsc": { "site_url_env": "GSC_SITE_URL" },
+  "indexnow": {
+    "key": "0ccfc65ebb714f0a804be19ff50c9be4",
+    "key_location": "https://www.hicksconsulting.org/0ccfc65ebb714f0a804be19ff50c9be4.txt"
+  },
+  "analytics": { "ai_referrals": "none", "ai_bot_hits": "none" },
+  "conversions": { "source": "none" },
+  "shares_audience_with": [],
+  "ledger_dir": "data/search-loop"
+}
