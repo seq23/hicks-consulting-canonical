@@ -15,15 +15,30 @@ for (const file of files) {
     if (!pkg.scripts || !pkg.scripts[script]) fail(`Workflow ${file} references missing npm script: ${script}`);
     if (leafScripts.has(script)) fail(`Workflow ${file} invokes leaf validator ${script} directly; use a registered validation profile.`);
   }
-  if (!/uses:\s+actions\/checkout@v\d+/.test(content)) fail(`Workflow ${file} missing actions/checkout`);
-  if (!/uses:\s+actions\/setup-node@v\d+/.test(content)) fail(`Workflow ${file} missing actions/setup-node`);
+  // A caller of the shared search-loop engine runs no steps of its own: the
+  // engine's reusable workflow checks out and sets up node. It must be pinned
+  // to @v1 with engine_ref v1, so an unpinned or moving engine never runs here.
+  const engineCaller = /^\s+uses:\s*seq23\/search-loop\/\.github\/workflows\/search-loop\.yml@/m.test(content);
+  if (engineCaller) {
+    if (!/^\s+uses:\s*seq23\/search-loop\/\.github\/workflows\/search-loop\.yml@v1\s*$/m.test(content)) fail(`Workflow ${file} calls the search-loop engine but is not pinned to @v1`);
+    if (!/^\s+engine_ref:\s*v1\s*$/m.test(content)) fail(`Workflow ${file} calls the search-loop engine without engine_ref: v1`);
+    if (/^\s+steps:\s*$/m.test(content)) fail(`Workflow ${file} calls the search-loop engine and also runs steps; keep the caller to the one reusable call`);
+  } else {
+    if (!/uses:\s+actions\/checkout@v\d+/.test(content)) fail(`Workflow ${file} missing actions/checkout`);
+    if (!/uses:\s+actions\/setup-node@v\d+/.test(content)) fail(`Workflow ${file} missing actions/setup-node`);
+  }
   const writes = /permissions:[\s\S]*contents:\s*write/.test(content) || /git\s+push/.test(content);
   if (writes) {
     writeWorkflows.push(file);
     if (!/concurrency:[\s\S]*group:\s*hicks-consulting-content-automation/.test(content)) {
       fail(`Writer workflow ${file} must use shared hicks-consulting-content-automation concurrency group.`);
     }
-    if (!/git pull --rebase origin main/.test(content)) {
+    // An engine caller mutates through its commit_command script; that script must pull.
+    const commitScript = (content.match(/^\s+commit_command:\s*bash\s+(\S+)\s*$/m) || [])[1];
+    const pullsIn = engineCaller
+      ? Boolean(commitScript) && fs.existsSync(path.join(process.cwd(), commitScript)) && /git pull --rebase --autostash origin main/.test(fs.readFileSync(path.join(process.cwd(), commitScript), 'utf8'))
+      : /git pull --rebase origin main/.test(content);
+    if (!pullsIn) {
       fail(`Writer workflow ${file} must pull latest main before mutating generated outputs.`);
     }
   }

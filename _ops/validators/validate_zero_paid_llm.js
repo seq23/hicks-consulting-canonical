@@ -117,6 +117,29 @@ const invokes = (text, script) => text.includes(script) || aliasesFor(script).so
 const laneWorkflows = new Set(lanes.map((l) => l.workflow));
 const consumerTokens = [...ROUTERS, ...consumers.flatMap((c) => [c.script, ...(c.invoked_by || [])])];
 
+// A job that is nothing but a call to the shared search-loop engine pinned @v1,
+// with the key inside that job's secrets: block.
+const ENGINE_CALL = /^\s+uses:\s*seq23\/search-loop\/\.github\/workflows\/search-loop\.yml@v1\s*$/;
+function isEngineCall(lines, i) {
+  const ind = lines[i].search(/\S/);
+  let secretsLine = -1;
+  for (let j = i - 1; j >= 0; j--) {
+    const t = lines[j];
+    if (!t.trim()) continue;
+    if (t.search(/\S/) < ind) { if (/^\s+secrets:\s*$/.test(t)) secretsLine = j; break; }
+  }
+  if (secretsLine < 0) return false;
+  const jobInd = lines[secretsLine].search(/\S/);
+  for (let j = secretsLine - 1; j >= 0; j--) {
+    const t = lines[j];
+    if (!t.trim()) continue;
+    if (t.search(/\S/) < jobInd) return false;
+    if (t.search(/\S/) === jobInd && /^\s+(steps|run):/.test(t)) return false;
+    if (t.search(/\S/) === jobInd && ENGINE_CALL.test(t)) return true;
+  }
+  return false;
+}
+
 function stepOf(lines, i) {
   const ind = lines[i].search(/\S/);
   let stepsLine = -1;
@@ -156,6 +179,11 @@ for (const wf of wfs) {
   lines.forEach((line, i) => {
     if (!/OPENROUTER_API_KEY/.test(line) || /^\s*#/.test(line)) return;
     const step = stepOf(lines, i);
+    // The one job-level exception: the shared search-loop engine, pinned @v1,
+    // takes the key as a reusable-workflow secret. The engine itself refuses any
+    // routing file without max_cost_usd 0 and fallback_to_paid false and fails
+    // loud on a non-zero usage.cost, so the key still only reaches $0 models.
+    if (!step && isEngineCall(lines, i)) return;
     if (!step) { fail(`${wf}:${i + 1} passes OPENROUTER_API_KEY at job/workflow level; scope it to the free-router step`); return; }
     if (!consumerTokens.some((t) => invokes(step, t) || step.includes(t))) fail(`${wf}:${i + 1} passes OPENROUTER_API_KEY to a step that runs no registered free-router consumer`);
   });

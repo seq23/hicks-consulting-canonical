@@ -1,0 +1,46 @@
+name: Search Loop
+
+# The shared search growth engine (seq23/search-loop @v1), owner ruling 1 Nov 2026:
+# find easy searches weekly, publish gated question pages daily under /questions/
+# on hicksconsulting.org, check every page at 2/4/8 weeks, strengthen / undo /
+# merge, and upload the weekly report artifact "search-loop-week".
+# Hidden pages only: never in the nav or menu; reached through Related questions
+# blocks between question pages, the /questions/ hub (linked from /faq/), the
+# sitemap and IndexNow. Client-approved pages are read-only to the engine
+# (protected_paths + the site view, .github/scripts/search_loop_site_view.mjs).
+# Throttle every site at once: gh variable set SEARCH_LOOP_MODE --body slow -R seq23/search-loop
+on:
+  schedule:
+    - cron: '53 6 * * *'  # America/Chicago, all year
+      timezone: America/Chicago
+  workflow_dispatch:
+    inputs:
+      stage:
+        description: "auto | find | build | check"
+        required: false
+        default: auto
+        type: string
+
+permissions:
+  contents: write
+  actions: write
+  models: read
+
+concurrency:
+  group: hicks-consulting-content-automation
+  cancel-in-progress: false
+
+jobs:
+  search-loop:
+    uses: seq23/search-loop/.github/workflows/search-loop.yml@v1
+    with:
+      engine_ref: v1
+      stage: ${{ inputs.stage || 'auto' }}
+      setup_command: npm ci && npm run build && node .github/scripts/search_loop_site_view.mjs make
+      commit_command: bash .github/scripts/search_loop_commit.sh
+    secrets:
+      OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+      GSC_SERVICE_ACCOUNT_JSON: ${{ secrets.GSC_SERVICE_ACCOUNT_JSON }}
+      GSC_SITE_URL: ${{ secrets.GSC_SITE_URL }}
+      BING_WEBMASTER_API_KEY: ${{ secrets.BING_WEBMASTER_API_KEY }}
+      INDEXNOW_KEY: ${{ secrets.INDEXNOW_KEY }}

@@ -46,7 +46,9 @@ const lib = require(path.join(ROOT, 'scripts/lib/search_metadata.js'));
 
 const failures = [];
 const rel = (p) => path.relative(ROOT, p).replaceAll(path.sep, '/');
-const pageFile = (route) => path.join(ROOT, 'pages', route.replace(/^\//, '').replace(/\/$/, ''), 'index.html');
+// Search-loop question pages (seq23/search-loop) live at questions/ in the repo
+// root, where the shared engine writes them; every other page's source is under pages/.
+const pageFile = (route) => path.join(ROOT, route.startsWith('/questions/') ? '' : 'pages', route.replace(/^\//, '').replace(/\/$/, ''), 'index.html');
 
 // ------------------------------------------------------------- the corpus
 const sitemapPath = path.join(ROOT, 'sitemap.xml');
@@ -153,7 +155,7 @@ const overridesPath = 'data/search/description_overrides.json';
 let overrides = {};
 try { overrides = JSON.parse(fs.readFileSync(path.join(ROOT, overridesPath), 'utf8')).descriptions || {}; } catch { overrides = {}; }
 for (const [route, text] of Object.entries(overrides)) {
-  const file = path.join(ROOT, 'pages', route.replace(/^\//, '').replace(/\/$/, ''), 'index.html');
+  const file = pageFile(route);
   if (!fs.existsSync(file)) { failures.push(`STALE DESCRIPTION OVERRIDE: ${overridesPath} holds one for ${route}, which has no page source.`); continue; }
   if (!lib.descriptionInRange(text)) { failures.push(`DESCRIPTION OVERRIDE OUT OF RANGE: ${route} is ${text.length} characters; the range is ${lib.DESC_MIN}-${lib.DESC_MAX}.`); continue; }
   const shipped = lib.readMeta(fs.readFileSync(file, 'utf8')).description;

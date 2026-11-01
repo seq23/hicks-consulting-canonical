@@ -10,3 +10,9 @@ yarn-error.log*
 coverage/
 .tmp/
 .cache/
+
+# search loop (seq23/search-loop)
+.search-loop-engine/
+.search-loop-run.log
+.search-loop-site-view.json
+.search-loop-validate.log
