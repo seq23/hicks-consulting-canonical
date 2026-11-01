@@ -13,8 +13,8 @@ name: Publish Verification
 # does not fire. This is schedule-triggered, and it checks the live site over HTTP
 # rather than the repo.
 #
-# 13:47 UTC is 30 minutes after the publish cron at 13:17 - long enough for the
-# Pages build, and clear of Agency SEO Monitor at 14:23. It is deliberately NOT in
+# 08:47 CT is 30 minutes after the publish cron at 08:17 CT - long enough for the
+# Pages build, and clear of Agency SEO Monitor at 09:23 CT. It is deliberately NOT in
 # the hicks-consulting-content-automation concurrency group: this lane writes
 # nothing, and it must be able to run while a publishing lane is queued, since a
 # stuck publishing lane is one of the things it exists to reveal.
@@ -27,7 +27,8 @@ on:
         required: false
         default: https://www.hicksconsulting.org
   schedule:
-    - cron: '47 13 * * *'
+    - cron: '47 8 * * *'  # America/Chicago, all year
+      timezone: America/Chicago
 
 permissions:
   contents: read
