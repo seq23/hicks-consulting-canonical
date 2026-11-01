@@ -1,0 +1,51 @@
+{
+  "schema": "search-loop-discovery-v1",
+  "site": "hicksconsulting.org",
+  "week": "2026-W44",
+  "generated_at": "2026-11-01T17:17:51.790Z",
+  "paid_calls": 0,
+  "cost_usd": 0,
+  "hosts": {
+    "searchconsole.googleapis.com": {
+      "calls": 1,
+      "ok": 1,
+      "failed": 0,
+      "cost_usd": 0
+    },
+    "ssl.bing.com": {
+      "calls": 1,
+      "ok": 1,
+      "failed": 0,
+      "cost_usd": 0
+    },
+    "suggestqueries.google.com": {
+      "calls": 40,
+      "ok": 40,
+      "failed": 0,
+      "cost_usd": 0
+    },
+    "api.bing.com": {
+      "calls": 40,
+      "ok": 40,
+      "failed": 0,
+      "cost_usd": 0
+    }
+  },
+  "sources": {
+    "search_console": "ok: 87 rows",
+    "bing_webmaster": "ok: 17 rows",
+    "suggestqueries.google.com": "ok",
+    "api.bing.com": "ok",
+    "relevance_screen": "not read: every free lane is out — gemini: not read: GEMINI_API_KEY is not passed; workers: not read: CLOUDFLARE_ACCOUNT_ID / CLOUDFLARE_API_TOKEN (usage read) not passed; openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: timed out after 60s (skipped this run); openrouter:nvidia/nemotron-3.5-super-vl:free: timed out after 10s (skipped this run) (openrouter:gemma-4-31b-it:free:http_429, openrouter:gemma-4-26b-a4b-it:free:http_429, openrouter:dots-3-note-preview:free:empty, openrouter:xing4.0-29b-a4b:free:http_429, openrouter:nemotron-3.5-super-vl:free:timeout, all::call budget 240s used) (lexical floor only)"
+  },
+  "competition": "not read: no free, ToS-safe competition signal (SERP scraping is not used)",
+  "notes": [
+    "autocomplete stopped at its budget of 80 calls"
+  ],
+  "counts": {
+    "candidates": 102,
+    "targets": 98,
+    "strengthen_candidates": 4,
+    "dropped_shared_audience": 0
+  }
+}
