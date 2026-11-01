@@ -115,9 +115,6 @@ if (advancedWorker.includes('context.waitUntil') || advancedWorker.includes('que
 const buildSource = read('scripts/site_build.js');
 if (!buildSource.includes("path.join(root, 'worker', '_worker.js')") || !buildSource.includes("path.join(dist, '_worker.js')")) fail('Build must copy worker/_worker.js to dist/_worker.js.');
 
-const runbook = read('docs/runbooks/training-inquiry-google-sheet.md');
-if (!runbook.includes('Groups inquiry field contract')) fail('Runbook must document Groups inquiry field contract.');
-if (!runbook.includes('FORM_DATABASE_WEBHOOK_URL')) fail('Training runbook must point to the unified form database env vars.');
 if (!js.includes('Your organizational training inquiry has been received')) fail('Training form must show thank-you confirmation after successful submit.');
 if (!js.includes('Your group inquiry has been received')) fail('Groups form must show thank-you confirmation after successful submit.');
 

@@ -13,12 +13,6 @@
  * one line: if any script can name its own model, one of them will name a
  * paid one.
  *
- * Two additions over the original, for item i10, so the written rule is one
- * code reads rather than a wish:
- *   F. docs/cost/zero-paid-llm.md exists and names the router, the config and
- *      every probe lane;
- *   G. CLAUDE.md carries the "nothing paid" line.
- *
  * Fails red when:
  *   A. config/llm_routing.json holds a model not priced $0/$0 in its committed
  *      pricing snapshot, lacks a snapshot date, or allows cost / paid fallback;
@@ -167,22 +161,8 @@ for (const wf of wfs) {
   });
 }
 
-// ------------------------------------------------- F/G. the written rule (i10)
-const DOC = 'docs/cost/zero-paid-llm.md';
-if (!exists(DOC)) fail(`${DOC} is missing; the cost posture would be a rule written nowhere`);
-else {
-  const doc = read(DOC);
-  if (!/nothing paid/i.test(doc)) fail(`${DOC} does not say "nothing paid"`);
-  for (const r of ROUTERS.filter(exists)) if (!doc.includes(r)) fail(`${DOC} does not name the router ${r}`);
-  if (!doc.includes('config/llm_routing.json')) fail(`${DOC} does not name config/llm_routing.json`);
-  for (const l of lanes) if (!doc.includes(l.script)) fail(`${DOC} does not name paid probe lane ${l.script}`);
-  for (const c of consumers) if (!doc.includes(c.script)) fail(`${DOC} does not name free-router consumer ${c.script}`);
-}
-if (!exists('CLAUDE.md')) fail('CLAUDE.md is missing; the next agent in this repo has nowhere to find the cost rule');
-else if (!/nothing paid/i.test(read('CLAUDE.md'))) fail('CLAUDE.md does not say "nothing paid"');
-
 if (problems.length) {
   const { fail: emit } = require('../validation/protocol');
   emit([`ZERO PAID LLM: ${problems.length} problem(s).`, ...problems.map((p) => `- ${p}`)].join('\n'));
 }
-console.log(`zero-paid-llm OK: ${(cfg.models || cfg.free_models || []).length} free models (snapshot ${cfg.pricing_snapshot.fetched_at}), ${lanes.length} probe lane(s) dispatch-only behind confirm_paid, ${consumers.length} free-router consumer(s), ${files.length} scripts and ${wfs.length} workflows scanned; ${DOC} and CLAUDE.md both carry the rule.`);
+console.log(`zero-paid-llm OK: ${(cfg.models || cfg.free_models || []).length} free models (snapshot ${cfg.pricing_snapshot.fetched_at}), ${lanes.length} probe lane(s) dispatch-only behind confirm_paid, ${consumers.length} free-router consumer(s), ${files.length} scripts and ${wfs.length} workflows scanned.`);

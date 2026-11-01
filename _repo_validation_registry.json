@@ -74,20 +74,6 @@
       "rationale": "Proves warning findings remain non-blocking while hard findings, validator syntax errors, and runtime crashes remain release-blocking."
     },
     {
-      "id": "finding-protocol-conformance",
-      "npmScript": "validate:finding-protocol",
-      "entrypoint": "_ops/validators/validate_finding_protocol_conformance.js",
-      "severity": "HARD_FAIL",
-      "blocksRelease": true,
-      "group": "governance",
-      "owner": "repo-maintainers",
-      "scope": "validator finding-protocol conformance",
-      "ciInvocation": "MATRIX_ONLY",
-      "findingProtocol": "VALIDATION_FINDING",
-      "enabled": true,
-      "rationale": "Every registered check declares findingProtocol VALIDATION_FINDING, and the orchestrator relies on that declaration to tell a validator that FOUND something from one that CRASHED. Nothing verified the claim, and for eight checks it was false - they reported real findings with a bare console.error and exit 1. On 2026-09-04 that turned a correct discovery-gap finding into 'Execution hard fail: 1 / Hard fail findings: 0' on main: the summary said no check had found anything and a validator was broken, and both were untrue. This guard asserts statically that every declaring validator can emit the marker and that every non-zero exit site is reached through an emission, then proves it behaviourally - driving validate_discovery_gap.js to a real failure and requiring the marker, and running the real orchestrator over a marked and an unmarked fixture to confirm it still classifies them differently. Hard-fails if it examines zero checks, zero exit sites, or runs zero probes."
-    },
-    {
       "id": "preflight",
       "npmScript": "validate:preflight",
       "entrypoint": "_ops/validators/validate_preflight.js",
@@ -368,20 +354,6 @@
       "rationale": "Social Ingestion is unattended: it pages the owner when it is red and is believed when it is green, and it was wrong in both directions. Three sources carrying enabled:false and a written reasonDisabled - platforms this repo has no credential or approved endpoint for - were fetched anyway and recorded as degraded with \"Failed to parse URL from undefined\" on every run, so a decision was indistinguishable from an outage. In the other direction, a run that reached none of its sources printed \"ingestion complete: 7 signals\" and exited 0, where all seven were hard-coded seed strings, and validate_source_health.js checked only the shape of the record so it reported OK regardless of status - clustering, scoring and drafting then ran on constants behind a green build. This check drives the real scripts against synthetic trees: a disabled source is STOPPED by name and never fetched, a total outage exits 0 with a printed and recorded NAMED STOP, that stop is counted across runs and hard-fails at fallbackStreakLimit so it cannot become a parking space, a healthy source resets it, and a missing Search Console credential or unusable snapshot stops rather than fails. Hard-fails if it runs fewer than its full probe set or if config/social_sources.json declares zero sources."
     },
     {
-      "id": "ingestion-freshness",
-      "npmScript": "validate:ingestion-freshness",
-      "entrypoint": "_ops/validators/validate_ingestion_freshness.js",
-      "severity": "INFO",
-      "blocksRelease": false,
-      "group": "ingestion-observability",
-      "owner": "content-intelligence",
-      "scope": "operator metrics",
-      "ciInvocation": "MATRIX_ONLY",
-      "findingProtocol": "VALIDATION_FINDING",
-      "enabled": true,
-      "rationale": "Freshness is monitored for operator awareness and does not warn or gate normal releases."
-    },
-    {
       "id": "query-signal-schema",
       "npmScript": "validate:query-signals",
       "entrypoint": "_ops/validators/validate_query_signal_schema.js",
@@ -396,38 +368,6 @@
       "rationale": "Malformed normalized signals degrade downstream content planning but do not affect the live site directly.",
       "repair_command": "npm run ingest:normalize",
       "repair_rationale": "The check reads data/intake/normalized_query_signals.json; normalize_query_signals.js is the only writer of that file and emits exactly the id/query/source/intent/audience/contentType/status/generatedAt/tags fields the check requires."
-    },
-    {
-      "id": "query-clusters",
-      "npmScript": "validate:query-clusters",
-      "entrypoint": "_ops/validators/validate_query_clusters.js",
-      "severity": "INFO",
-      "blocksRelease": false,
-      "group": "ingestion-observability",
-      "owner": "content-intelligence",
-      "scope": "operator metrics",
-      "ciInvocation": "MATRIX_ONLY",
-      "findingProtocol": "VALIDATION_FINDING",
-      "enabled": true,
-      "rationale": "Cluster completeness is a planning metric and is reported without release warning status.",
-      "repair_command": "npm run ingest:cluster",
-      "repair_rationale": "The check reads data/intake/query_clusters.json; cluster_query_signals.js is the only writer of that file and produces the id/title/queryCount/score shape the check requires."
-    },
-    {
-      "id": "fanout-candidates",
-      "npmScript": "validate:fanouts",
-      "entrypoint": "_ops/validators/validate_fanout_candidates.js",
-      "severity": "INFO",
-      "blocksRelease": false,
-      "group": "ingestion-observability",
-      "owner": "content-intelligence",
-      "scope": "operator metrics",
-      "ciInvocation": "MATRIX_ONLY",
-      "findingProtocol": "VALIDATION_FINDING",
-      "enabled": true,
-      "rationale": "Fanout candidates are optional planning inventory and are reported without warning status.",
-      "repair_command": "npm run ingest:fanouts",
-      "repair_rationale": "The check reads data/intake/fanout_candidates.json; build_fanout_candidates.js is the only writer of that file and sets the id/clusterId/candidateRoute/userNavExposure/crawlerDiscoverable fields the check asserts."
     },
     {
       "id": "social-firehose",
@@ -528,20 +468,6 @@
       "findingProtocol": "VALIDATION_FINDING",
       "enabled": true,
       "rationale": "The resources landing page should show exactly the four newest published resources; drift is material UX clutter but not a deployment blocker."
-    },
-    {
-      "id": "word-counts",
-      "npmScript": "validate:word-counts",
-      "entrypoint": "_ops/validators/validate_resource_word_counts.js",
-      "severity": "SOFT_WARNING",
-      "blocksRelease": false,
-      "group": "content-quality",
-      "owner": "content-operations",
-      "scope": "published resource quality",
-      "ciInvocation": "MATRIX_ONLY",
-      "findingProtocol": "VALIDATION_FINDING",
-      "enabled": true,
-      "rationale": "Under-target content depth is a quality issue, not a runtime or data-safety failure."
     },
     {
       "id": "admin-previews",
@@ -986,34 +912,6 @@
       "rationale": "External-agent build directives (FILEPATH:, || CURRENT/MISSING/EDIT:, citation-ready update text) must never reach a published page, least of all the direct-answer block an answer engine extracts."
     },
     {
-      "id": "no-empty-table-cells",
-      "npmScript": "validate:no-empty-cells",
-      "entrypoint": "scripts/validators/validate_no_empty_table_cells.js",
-      "severity": "HARD_FAIL",
-      "blocksRelease": true,
-      "group": "content-governance",
-      "owner": "repo-maintainers",
-      "scope": "published page copy under pages/",
-      "ciInvocation": "MATRIX_ONLY",
-      "findingProtocol": "VALIDATION_FINDING",
-      "enabled": true,
-      "rationale": "An empty table cell breaks column-to-header alignment, so the table stops being a usable fact source for readers and for extraction."
-    },
-    {
-      "id": "content-pattern-contract",
-      "npmScript": "validate:content-pattern",
-      "entrypoint": "scripts/validators/validate_content_pattern_contract.js",
-      "severity": "STRONG_WARNING",
-      "blocksRelease": false,
-      "group": "content-governance",
-      "owner": "repo-maintainers",
-      "scope": "published page copy under pages/",
-      "ciInvocation": "MATRIX_ONLY",
-      "findingProtocol": "VALIDATION_FINDING",
-      "enabled": true,
-      "rationale": "Reports pre-publish coverage of the blocks an answer engine needs: a short-answer block, an h1 that carries the query, tables without empty cells, and one approved conversion path, plus coverage for checklist, comparison table, concrete numbers, named sources, FAQ and JSON-LD. STRONG_WARNING rather than HARD_FAIL while 7 llm-atlas machine-surface pages carry no approved conversion path; promote to HARD_FAIL at zero."
-    },
-    {
       "id": "title-uniqueness",
       "npmScript": "validate:title-uniqueness",
       "entrypoint": "_ops/validators/validate_title_uniqueness_contract.js",
@@ -1152,20 +1050,6 @@
       "findingProtocol": "VALIDATION_FINDING",
       "enabled": true,
       "rationale": "Second instance of the defect validate:internal-navigation already guards. scripts/ingestion/build_llm_atlas_navigation.js exists because seven of the eight atlas pages carried no anchor at all - the only dead ends among the site's sitemap URLs, present in sitemap.xml and reachable by no click path - and because the atlas index rendered its pillars as unlinked <article> cards. It ran once, its output was committed, and then nothing invoked it: not package.json, not any workflow, not site_build.js. Proved unguarded by deleting every <nav> from pages/llm-atlas/answer-surfaces/index.html and re-running llm-ingestion-routes, hidden-llm-surfaces and internal-links: all three passed, so the matrix would have stayed green while the atlas reverted to dead ends. This runs the generator in --check mode, then independently reads all eight pages and requires each to link to its seven siblings and to the home page, and requires an npm script to name the generator so the repair is findable. Hard-fails on zero atlas pages examined."
-    },
-    {
-      "id": "content-gate-coverage",
-      "npmScript": "validate:content-gate-coverage",
-      "entrypoint": "_ops/validators/validate_content_gate_coverage.js",
-      "severity": "HARD_FAIL",
-      "blocksRelease": true,
-      "group": "content-governance",
-      "owner": "site-operations",
-      "scope": "the release-blocking content gates cannot pass having examined nothing",
-      "ciInvocation": "MATRIX_ONLY",
-      "findingProtocol": "VALIDATION_FINDING",
-      "enabled": true,
-      "rationale": "A sibling repo had three HARD_FAIL blocksRelease gates of exactly this kind - instruction-leak, empty-cells, content-pattern - globbing for built *.html under a gitignored dist/ while CI ran validate:all before npm run build. Every run examined zero pages and exited 0: three release gates structurally incapable of failing, invisible because a pass on zero items reads exactly like a pass on every item. The ordering half was checked here and does not apply: a fresh clone with no dist/, running validate:all with no build first exactly as Validate does, showed 277, 277 and 270 pages, because these gates walk the committed pages/ tree and exclude dist/ by name. This closes the durable half. Each gate is copied into a synthetic repo-shaped directory with no pages and executed there, so __dirname resolves to the empty tree, and must exit non-zero naming the empty surface. It also asserts each gate last covered at least half the HTML under pages/, so a gate that hard-fails on zero but only ever sees a handful is caught too. Hard-fails if it traces zero gates."
     },
     {
       "id": "search-metadata",

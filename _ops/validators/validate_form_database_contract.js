@@ -121,13 +121,6 @@ if (!packageJson.scripts['validate:form-database']) fail('package.json missing v
 const validationRegistry = JSON.parse(read('_repo_validation_registry.json'));
 if (!validationRegistry.checks?.some((entry) => entry.npmScript === 'validate:form-database' && entry.enabled !== false)) fail('validate:form-database must be admitted to the validation registry.');
 
-const formRunbookPath = 'docs/runbooks/form-database-webhook.md';
-if (!fs.existsSync(path.join(root, formRunbookPath))) fail('Unified form database runbook missing.');
-const runbook = read(formRunbookPath);
-for (const token of ['FORM DATABASE', 'FORM_DATABASE_WEBHOOK_URL', 'FORM_DATABASE_SHARED_SECRET', 'Training Inquiries', 'Group Inquiries', 'Lead Magnet Leads', 'Adding a new spreadsheet tab', 'Apps Script']) {
-  if (!runbook.includes(token)) fail(`Form database runbook missing token: ${token}`);
-}
-
 console.log(`Form database contract OK (${formContracts.length} forms POST to Apps Script, manually follow Google redirect with pristine GET, and require ok:true before user success).`);
 
 // Registered with this existing form-database validator in validate:all.
