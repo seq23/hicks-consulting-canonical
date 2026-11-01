@@ -16,7 +16,13 @@ if ! npm run validate:all > .search-loop-validate.log 2>&1; then
 fi
 git config user.name "github-actions[bot]"
 git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-git add questions data/search-loop _redirects sitemap.xml llms.txt data/cadence/lastmod_ledger.json 2>/dev/null || true
+# Only paths that exist: one missing pathspec (no questions/ yet) makes git add
+# stage nothing at all, which silently dropped the first run's ledger.
+paths=()
+for p in questions data/search-loop _redirects sitemap.xml llms.txt data/cadence/lastmod_ledger.json; do
+  [ -e "$p" ] && paths+=("$p")
+done
+git add -- "${paths[@]}"
 if git diff --cached --quiet; then echo "search-loop: nothing to commit"; exit 0; fi
 git commit -q -m "search loop: daily question pages, checks and ledger"
 for i in 1 2 3 4 5; do
