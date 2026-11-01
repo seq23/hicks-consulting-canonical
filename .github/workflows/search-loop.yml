@@ -10,6 +10,8 @@ name: Search Loop
 # (protected_paths + the site view, .github/scripts/search_loop_site_view.mjs).
 # Throttle every site at once: gh variable set SEARCH_LOOP_MODE --body slow -R seq23/search-loop
 on:
+  push:  # PROOF-RUN-ONLY: removed before merge
+    branches: [search-loop-adopt]
   schedule:
     - cron: '53 6 * * *'  # America/Chicago, all year
       timezone: America/Chicago
