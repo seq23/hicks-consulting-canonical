@@ -1,6 +1,83 @@
 {
   "schema": "search-loop-pages-v1",
-  "pages": [],
+  "pages": [
+    {
+      "slug": "african-american-psychologist-near-me",
+      "query": "african american psychologist near me",
+      "score": 52.2,
+      "signals": {
+        "words": 5,
+        "question": false,
+        "gsc_position": 9,
+        "gsc_impressions": 1,
+        "gsc_page": "https://www.hicksconsulting.org/black-therapist-memphis/",
+        "competition": "not read: no free, ToS-safe competition signal (SERP scraping is not used)"
+      },
+      "rel": "questions/african-american-psychologist-near-me/index.html",
+      "route": "/questions/african-american-psychologist-near-me/",
+      "url": "https://www.hicksconsulting.org/questions/african-american-psychologist-near-me/",
+      "published_at": "2026-11-02",
+      "status": "live",
+      "hash": "d17cd88bc62aa3176938eb97c2996849d53b6e02bdb0d488661e3055472d66ef",
+      "model": "free-route",
+      "facts": [
+        "https://988lifeline.org/"
+      ],
+      "linked_from": [],
+      "checks": {}
+    },
+    {
+      "slug": "find-a-black-therapist",
+      "query": "find a black therapist",
+      "score": 45,
+      "signals": {
+        "words": 4,
+        "question": false,
+        "bing_suggest": true,
+        "local": true,
+        "google_suggest": true,
+        "competition": "not read: no free, ToS-safe competition signal (SERP scraping is not used)"
+      },
+      "rel": "questions/find-a-black-therapist/index.html",
+      "route": "/questions/find-a-black-therapist/",
+      "url": "https://www.hicksconsulting.org/questions/find-a-black-therapist/",
+      "published_at": "2026-11-02",
+      "status": "live",
+      "hash": "136e240e3727bda5cad548b0cd03d3d7c2d911ae6ff3418917eafc5ac93e050d",
+      "model": "free-route",
+      "facts": [
+        "https://www.nimh.nih.gov/health/statistics/mental-illness",
+        "https://www.samhsa.gov/find-help/988"
+      ],
+      "linked_from": [],
+      "checks": {}
+    },
+    {
+      "slug": "therapy-near-me",
+      "query": "therapy near me",
+      "score": 40.4,
+      "signals": {
+        "words": 3,
+        "question": false,
+        "gsc_position": 10,
+        "gsc_impressions": 1,
+        "gsc_page": "https://www.hicksconsulting.org/",
+        "competition": "not read: no free, ToS-safe competition signal (SERP scraping is not used)"
+      },
+      "rel": "questions/therapy-near-me/index.html",
+      "route": "/questions/therapy-near-me/",
+      "url": "https://www.hicksconsulting.org/questions/therapy-near-me/",
+      "published_at": "2026-11-02",
+      "status": "live",
+      "hash": "c9abecc1bbe21f04613535c19883223aaf597fdca654b02363948034ca9d31fd",
+      "model": "free-route",
+      "facts": [
+        "https://www.who.int/news-room/fact-sheets/detail/mental-health-at-work"
+      ],
+      "linked_from": [],
+      "checks": {}
+    }
+  ],
   "dropped": [
     {
       "query": "black therapist near me",
@@ -18,6 +95,179 @@
       "at": "2026-11-02",
       "reason": [
         "off-audience: why"
+      ]
+    },
+    {
+      "query": "black mental health therapist near me",
+      "at": "2026-11-02",
+      "reason": [
+        "b5 FAQ answer is 35 words (needs 40-60): \"What is the difference between therapy and coachin\"",
+        "b5 FAQ answer is 34 words (needs 40-60): \"Are virtual sessions available across Tennessee?\"",
+        "b5 FAQ answer is 32 words (needs 40-60): \"What should I do if I am in immediate crisis?\"",
+        "b5 FAQ answer is 29 words (needs 40-60): \"Do employers offer mental health training?\""
+      ]
+    },
+    {
+      "query": "african american therapist near me",
+      "at": "2026-11-02",
+      "reason": [
+        "health: outcome or treatment claim \"guarantees\""
+      ]
+    },
+    {
+      "query": "black psychologist near me",
+      "at": "2026-11-02",
+      "reason": [
+        "b4 direct answer must define: \"X is ...\"",
+        "b5 FAQ answer is 38 words (needs 40-60): \"Are virtual therapy sessions available across Tenn\"",
+        "b5 FAQ answer is 35 words (needs 40-60): \"What should I expect during a workplace mental hea\"",
+        "b5 FAQ answer is 38 words (needs 40-60): \"How do I know if I need a support group or individ\"",
+        "health: outcome or treatment claim \"heal\""
+      ]
+    },
+    {
+      "query": "hicks consulting llc",
+      "at": "2026-11-02",
+      "reason": [
+        "b10 title must name \"Hicks Consulting\" exactly once (found 2)",
+        "b4 direct answer under the H1 is 39 words (needs 40-60)",
+        "b5 FAQ answer is 23 words (needs 40-60): \"What services does Hicks Consulting LLC provide?\"",
+        "b5 FAQ answer is 22 words (needs 40-60): \"Is coaching the same as therapy?\"",
+        "b5 FAQ answer is 27 words (needs 40-60): \"What are the hours for Hicks Consulting LLC?\""
+      ]
+    },
+    {
+      "query": "memphis small business consulting",
+      "at": "2026-11-02",
+      "reason": [
+        "off-audience: This search refers to business operations or financial consulting rather than mental health therapy, coaching, or workpl"
+      ]
+    },
+    {
+      "query": "committed to recovery memphis tn",
+      "at": "2026-11-02",
+      "reason": [
+        "off-audience: The search term 'committed to recovery memphis tn' refers to a specific addiction treatment center program and does not "
+      ]
+    },
+    {
+      "query": "find a black therapist near me",
+      "at": "2026-11-02",
+      "reason": [
+        "b4 direct answer under the H1 is 38 words (needs 40-60)",
+        "b5 FAQ answer is 34 words (needs 40-60): \"What is the difference between therapy and coachin\"",
+        "b5 FAQ answer is 32 words (needs 40-60): \"Are virtual sessions available across Tennessee?\"",
+        "b5 FAQ answer is 33 words (needs 40-60): \"What should I do if I am in a crisis?\"",
+        "b5 FAQ answer is 29 words (needs 40-60): \"How do I know if a support group is right for me?\""
+      ]
+    },
+    {
+      "query": "richard hicks",
+      "at": "2026-11-02",
+      "reason": [
+        "off-audience: The search term 'richard hicks' does not match the practice focus, audience, or services of Hicks Consulting."
+      ]
+    },
+    {
+      "query": "christian coaching",
+      "at": "2026-11-02",
+      "reason": [
+        "b4 direct answer under the H1 is 18 words (needs 40-60)",
+        "b5 FAQ answer is 36 words (needs 40-60): \"Do I need to be a Christian to benefit from Christ\"",
+        "b5 FAQ answer is 37 words (needs 40-60): \"How long does Christian coaching usually last?\"",
+        "b5 FAQ answer is 35 words (needs 40-60): \"What is the difference between Christian coaching \"",
+        "b9 574 words of visible text (needs 600+ for a guide) — thin"
+      ]
+    },
+    {
+      "query": "hicks training",
+      "at": "2026-11-02",
+      "reason": [
+        "the answer was not the JSON object asked for, with every key filled"
+      ]
+    },
+    {
+      "query": "monika hicks",
+      "at": "2026-11-02",
+      "reason": [
+        "b5 FAQ answer is 39 words (needs 40-60): \"What is the difference between therapy and coachin\"",
+        "b5 FAQ answer is 37 words (needs 40-60): \"Are virtual sessions available across Tennessee?\"",
+        "health: outcome or treatment claim \"heal\""
+      ]
+    },
+    {
+      "query": "african american female therapist",
+      "at": "2026-11-02",
+      "reason": [
+        "b4 direct answer under the H1 is 34 words (needs 40-60)",
+        "b5 FAQ answer is 29 words (needs 40-60): \"What is the difference between therapy and coachin\"",
+        "b5 FAQ answer is 33 words (needs 40-60): \"Is virtual therapy as effective as in-person thera\"",
+        "b5 FAQ answer is 34 words (needs 40-60): \"How do I know if I need a support group or individ\"",
+        "invented: unsourced statistic \"Research shows virtual therapy achieves outcomes comparable to face-to-face care\""
+      ]
+    },
+    {
+      "query": "black woman therapist",
+      "at": "2026-11-02",
+      "reason": [
+        "b4 direct answer under the H1 is 39 words (needs 40-60)",
+        "b5 FAQ answer is 37 words (needs 40-60): \"Are virtual sessions as effective as in-person vis\"",
+        "b5 FAQ answer is 30 words (needs 40-60): \"What can employers expect from workplace mental he\"",
+        "b5 FAQ answer is 35 words (needs 40-60): \"How do support groups differ from individual thera\"",
+        "facts: needs at least one fact whose source URL answered 200"
+      ]
+    },
+    {
+      "query": "african american therapist memphis tn",
+      "at": "2026-11-02",
+      "reason": [
+        "b4 direct answer under the H1 is 22 words (needs 40-60)",
+        "b4 direct answer must define: \"X is ...\"",
+        "b5 FAQ answer is 32 words (needs 40-60): \"Are sessions available online with Hicks Consultin\"",
+        "health: outcome or treatment claim \"cure\""
+      ]
+    },
+    {
+      "query": "black psychologist memphis tn",
+      "at": "2026-11-02",
+      "reason": [
+        "b4 direct answer under the H1 is 61 words (needs 40-60)",
+        "b4 direct answer must define: \"X is ...\"",
+        "b5 FAQ answer is 39 words (needs 40-60): \"How do employers benefit from mental health traini\""
+      ]
+    },
+    {
+      "query": "black female therapist memphis tn",
+      "at": "2026-11-02",
+      "reason": [
+        "facts: needs at least one fact whose source URL answered 200"
+      ]
+    },
+    {
+      "query": "black women therapist memphis tn",
+      "at": "2026-11-02",
+      "reason": [
+        "the answer was not the JSON object asked for, with every key filled"
+      ]
+    },
+    {
+      "query": "black women therapist in memphis",
+      "at": "2026-11-02",
+      "reason": [
+        "b5 FAQ answer is 38 words (needs 40-60): \"How do I know if I need a support group?\"",
+        "b5 FAQ answer is 39 words (needs 40-60): \"What should I do in an immediate mental health cri\"",
+        "b5 FAQ answer is 35 words (needs 40-60): \"Can employers request mental health training for s\"",
+        "health: outcome or treatment claim \"heal\""
+      ]
+    },
+    {
+      "query": "black african american therapist near me",
+      "at": "2026-11-02",
+      "reason": [
+        "b5 FAQ answer is 37 words (needs 40-60): \"What is the difference between therapy and coachin\"",
+        "b5 FAQ answer is 32 words (needs 40-60): \"What services does Hicks Consulting provide?\"",
+        "b5 FAQ answer is 32 words (needs 40-60): \"Where can I find more specific information about M\"",
+        "b5 FAQ answer is 32 words (needs 40-60): \"What should I do if I am in an immediate crisis?\""
       ]
     }
   ]
