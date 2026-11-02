@@ -2,11 +2,11 @@
   "schema_version": "1.0",
   "generated_from": "data/search_intelligence/target_query_set.json",
   "window": {
-    "start_date": "2026-10-02",
-    "end_date": "2026-10-29",
+    "start_date": "2026-10-03",
+    "end_date": "2026-10-30",
     "days": 28
   },
-  "truth_collected_at": "2026-11-01T15:25:25.033Z",
+  "truth_collected_at": "2026-11-02T15:26:47.747Z",
   "rule": {
     "grouping": "one family per landing page (the page Google shows for the query)",
     "min_impressions": 20,
@@ -16,8 +16,8 @@
     "top_n": 12
   },
   "client_approval": "Client site: qualifying families are PROPOSALS. A family is strengthened only once its status is \"approved\" here, with approved_by naming who decided (the client, or the site owner on her own decision) and approved_at.",
-  "target_count": 52,
-  "impressions_total": 402,
+  "target_count": 50,
+  "impressions_total": 388,
   "family_count": 9,
   "proposal_count": 1,
   "approved_count": 2,
@@ -25,11 +25,11 @@
     {
       "family": "/black-therapist-memphis/",
       "page": "https://www.hicksconsulting.org/black-therapist-memphis/",
-      "impressions": 164,
-      "clicks": 2,
-      "ctr": 1.2,
+      "impressions": 159,
+      "clicks": 1,
+      "ctr": 0.6,
       "weighted_position": 7.7,
-      "query_count": 23,
+      "query_count": 22,
       "head_query": "black therapist memphis tn",
       "queries": [
         {
@@ -40,15 +40,15 @@
         },
         {
           "query": "black therapist memphis, tn",
-          "impressions": 27,
-          "clicks": 1,
-          "position": 8.22
+          "impressions": 24,
+          "clicks": 0,
+          "position": 8.09
         },
         {
           "query": "black therapist near me",
-          "impressions": 14,
+          "impressions": 13,
           "clicks": 0,
-          "position": 7.57
+          "position": 7.46
         },
         {
           "query": "black therapist",
@@ -147,12 +147,6 @@
           "position": 9
         },
         {
-          "query": "black woman therapist",
-          "impressions": 1,
-          "clicks": 0,
-          "position": 11
-        },
-        {
           "query": "ebony therapist",
           "impressions": 1,
           "clicks": 0,
@@ -177,23 +171,23 @@
       "approved_by": "site owner (not the client)",
       "approved_at": "2026-10-11",
       "approval_note": "Site owner decided on 2026-10-11 to strengthen both qualifying families now rather than wait on a client flag. Not a client decision; the client did not approve or author this change.",
-      "proposed_change": "Lead /black-therapist-memphis/ with a direct answer to \"black therapist memphis tn\" in its title and first paragraph: 164 impressions at position 7.7 earned 2 click(s) (1.2% CTR)."
+      "proposed_change": "Lead /black-therapist-memphis/ with a direct answer to \"black therapist memphis tn\" in its title and first paragraph: 159 impressions at position 7.7 earned 1 click(s) (0.6% CTR)."
     },
     {
       "family": "/",
       "page": "https://www.hicksconsulting.org/",
-      "impressions": 163,
+      "impressions": 150,
       "clicks": 4,
-      "ctr": 2.5,
-      "weighted_position": 4.6,
-      "query_count": 21,
+      "ctr": 2.7,
+      "weighted_position": 4.7,
+      "query_count": 20,
       "head_query": "hicks consulting",
       "queries": [
         {
           "query": "hicks consulting",
-          "impressions": 88,
+          "impressions": 78,
           "clicks": 3,
-          "position": 4.35
+          "position": 4.67
         },
         {
           "query": "monika hicks",
@@ -209,21 +203,15 @@
         },
         {
           "query": "hicks",
-          "impressions": 4,
+          "impressions": 3,
           "clicks": 0,
-          "position": 4
+          "position": 2.33
         },
         {
           "query": "christian coaching",
           "impressions": 2,
           "clicks": 0,
           "position": 10
-        },
-        {
-          "query": "committed to recovery memphis tn",
-          "impressions": 2,
-          "clicks": 0,
-          "position": 12.5
         },
         {
           "query": "hicks counseling",
@@ -242,6 +230,12 @@
           "impressions": 2,
           "clicks": 0,
           "position": 5
+        },
+        {
+          "query": "committed to recovery memphis tn",
+          "impressions": 1,
+          "clicks": 0,
+          "position": 16
         },
         {
           "query": "consultant",
@@ -272,12 +266,6 @@
           "impressions": 1,
           "clicks": 0,
           "position": 2
-        },
-        {
-          "query": "memphis small business consulting",
-          "impressions": 1,
-          "clicks": 0,
-          "position": 11
         },
         {
           "query": "monica hicks",
@@ -322,23 +310,23 @@
       "approved_by": "site owner (not the client)",
       "approved_at": "2026-10-11",
       "approval_note": "Site owner decided on 2026-10-11 to strengthen both qualifying families now rather than wait on a client flag. Not a client decision; the client did not approve or author this change.",
-      "proposed_change": "Lead / with a direct answer to \"hicks consulting\" in its title and first paragraph: 163 impressions at position 4.6 earned 4 click(s) (2.5% CTR)."
+      "proposed_change": "Lead / with a direct answer to \"hicks consulting\" in its title and first paragraph: 150 impressions at position 4.7 earned 4 click(s) (2.7% CTR)."
     },
     {
       "family": "/contact/",
       "page": "https://www.hicksconsulting.org/contact/",
-      "impressions": 53,
+      "impressions": 56,
       "clicks": 0,
       "ctr": 0,
-      "weighted_position": 4.9,
+      "weighted_position": 5,
       "query_count": 2,
       "head_query": "hicks consulting llc",
       "queries": [
         {
           "query": "hicks consulting llc",
-          "impressions": 52,
+          "impressions": 55,
           "clicks": 0,
-          "position": 4.88
+          "position": 5
         },
         {
           "query": "email",
@@ -350,29 +338,29 @@
       "rank": 3,
       "qualifies": true,
       "status": "proposal",
-      "proposed_change": "Lead /contact/ with a direct answer to \"hicks consulting llc\" in its title and first paragraph: 53 impressions at position 4.9 earned 0 click(s) (0% CTR)."
+      "proposed_change": "Lead /contact/ with a direct answer to \"hicks consulting llc\" in its title and first paragraph: 56 impressions at position 5 earned 0 click(s) (0% CTR)."
     },
     {
       "family": "/corporate-speaking/",
       "page": "https://www.hicksconsulting.org/corporate-speaking/",
-      "impressions": 12,
+      "impressions": 13,
       "clicks": 0,
       "ctr": 0,
-      "weighted_position": 7.4,
+      "weighted_position": 7.3,
       "query_count": 1,
       "head_query": "hicks training",
       "queries": [
         {
           "query": "hicks training",
-          "impressions": 12,
+          "impressions": 13,
           "clicks": 0,
-          "position": 7.42
+          "position": 7.31
         }
       ],
       "rank": 4,
       "qualifies": false,
       "status": "measured_only",
-      "why_not": "12 impressions < floor 20"
+      "why_not": "13 impressions < floor 20"
     },
     {
       "family": "/therapy/",
