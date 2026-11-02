@@ -799,6 +799,21 @@
       "createdAt": "2026-10-30T14:42:19.632Z",
       "blocksOtherWork": false,
       "clientActionRequired": false
+    },
+    {
+      "id": "exception-metadata-daily-027-1-1793629294886",
+      "candidateId": "daily-027-1",
+      "decision": "SKIPPED_UNSAFE_SEARCH_METADATA",
+      "findings": [
+        {
+          "code": "SEARCH_METADATA_UNRESOLVED",
+          "severity": "hard",
+          "route": "/resources/insights/what-healing-can-look-like-for-women-who-are-tired-of-performing-fine-what-this-looks/"
+        }
+      ],
+      "createdAt": "2026-11-02T14:21:34.886Z",
+      "blocksOtherWork": false,
+      "clientActionRequired": false
     }
   ]
 }
