@@ -16,14 +16,14 @@
  * and every check still passed. This contract reads the shipped <head> of every
  * sitemap page and asserts:
  *
- *   1. <title> is 30-70 characters (Bing flags "Title too long" above 70) and
- *      unique across the sitemap;
+ *   1. <title> is unique across the sitemap and not under 75% of TITLE_MIN
+ *      (over TITLE_MAX is a note, never a failure: the generator trims);
  *   2. a published manifest page's <title> is exactly searchTitle(manifest
  *      title) from scripts/lib/search_metadata.js: the whole title (plus the
  *      site suffix when it fits), or a hand-authored whole-phrase short form
  *      from data/search/title_short_forms.json - never a character chop, so the
  *      truncation cannot come back; every short form must still be in use;
- *   3. the meta description is 110-160 characters, unique, ends on a whole
+ *   3. the meta description is not under 75% of DESC_MIN (over is a note), unique, ends on a whole
  *      sentence, and does not end on a chopped word;
  *   4. no 8-word run is shared by the descriptions of more than 2 pages - a
  *      templated or appended sentence is a duplicate with the nouns swapped;
@@ -39,12 +39,13 @@
  */
 const fs = require('fs');
 const path = require('path');
-const { fail } = require('../validation/protocol');
+const { fail, warn } = require('../validation/protocol');
 
 const ROOT = process.cwd();
 const lib = require(path.join(ROOT, 'scripts/lib/search_metadata.js'));
 
 const failures = [];
+const notes = [];
 const rel = (p) => path.relative(ROOT, p).replaceAll(path.sep, '/');
 // Search-loop question pages (seq23/search-loop) live at questions/ in the repo
 // root, where the shared engine writes them; every other page's source is under pages/.
@@ -80,7 +81,8 @@ let manifestChecked = 0;
 for (const { route, file, html, meta } of pages) {
   const { title, description } = meta;
   if (!title) { failures.push(`${file}: no <title>.`); continue; }
-  if (title.length < lib.TITLE_MIN || title.length > lib.TITLE_MAX) failures.push(`${file}: <title> is ${title.length} characters ("${title}"); the range is ${lib.TITLE_MIN}-${lib.TITLE_MAX}.`);
+  if (lib.titleLengthFails(title)) failures.push(`${file}: <title> is ${title.length} characters ("${title}"), under 75% of the ${lib.TITLE_MIN}-character floor.`);
+  else if (title.length < lib.TITLE_MIN || title.length > lib.TITLE_MAX) notes.push(`${file}: <title> is ${title.length} characters; the generator aims for ${lib.TITLE_MIN}-${lib.TITLE_MAX}.`);
   if (!title.includes('Hicks Consulting')) failures.push(`${file}: <title> must name Hicks Consulting (checklist b10).`);
   const tkey = title.toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
   if (!titleOwners.has(tkey)) titleOwners.set(tkey, []);
@@ -98,7 +100,8 @@ for (const { route, file, html, meta } of pages) {
   }
 
   if (!description) { failures.push(`${file}: no meta description.`); continue; }
-  if (!lib.descriptionInRange(description)) failures.push(`${file}: meta description is ${description.length} characters; the range is ${lib.DESC_MIN}-${lib.DESC_MAX}. ("${description}")`);
+  if (lib.descriptionLengthFails(description)) failures.push(`${file}: meta description is ${description.length} characters, under 75% of the ${lib.DESC_MIN}-character floor. ("${description}")`);
+  else if (!lib.descriptionInRange(description)) notes.push(`${file}: meta description is ${description.length} characters; the generator aims for ${lib.DESC_MIN}-${lib.DESC_MAX}.`);
   if (!lib.endsWhole(description)) failures.push(`${file}: meta description does not end on a whole sentence: "${description}"`);
   else if (!lib.finalWordIsWhole(description, html)) failures.push(`${file}: meta description ends on a chopped word: "${description}"`);
   if (!descOwners.has(description)) descOwners.set(description, []);
@@ -157,7 +160,8 @@ try { overrides = JSON.parse(fs.readFileSync(path.join(ROOT, overridesPath), 'ut
 for (const [route, text] of Object.entries(overrides)) {
   const file = pageFile(route);
   if (!fs.existsSync(file)) { failures.push(`STALE DESCRIPTION OVERRIDE: ${overridesPath} holds one for ${route}, which has no page source.`); continue; }
-  if (!lib.descriptionInRange(text)) { failures.push(`DESCRIPTION OVERRIDE OUT OF RANGE: ${route} is ${text.length} characters; the range is ${lib.DESC_MIN}-${lib.DESC_MAX}.`); continue; }
+  if (lib.descriptionLengthFails(text)) { failures.push(`DESCRIPTION OVERRIDE TOO SHORT: ${route} is ${text.length} characters, under 75% of the ${lib.DESC_MIN}-character floor.`); continue; }
+  if (!lib.descriptionInRange(text)) notes.push(`DESCRIPTION OVERRIDE: ${route} is ${text.length} characters; the generator aims for ${lib.DESC_MIN}-${lib.DESC_MAX}.`);
   const shipped = lib.readMeta(fs.readFileSync(file, 'utf8')).description;
   if (shipped !== text) failures.push(`UNUSED DESCRIPTION OVERRIDE: ${overridesPath} writes a description for ${route} that the page does not ship. Remove the entry or re-run \`npm run search:metadata\`.`);
 }
@@ -181,6 +185,19 @@ for (const [desc, whole] of chopProbes) {
   if (lib.finalWordIsWhole(desc, chopPage) !== whole) failures.push(`CHOP DETECTOR: finalWordIsWhole("${desc}") should be ${whole}; a description cut on a dangling word would ship.`);
 }
 
+// Length rule (owner ruling 2 Nov 2026): over a ceiling never fails; under a
+// floor fails only below 75% of it. Probed so a re-tightening shows up here.
+const lengthProbes = [
+  [lib.titleLengthFails('x'.repeat(200)), false, 'a 200-character title'],
+  [lib.titleLengthFails('x'.repeat(Math.ceil(lib.TITLE_MIN * 0.75))), false, 'a title at 75% of the floor'],
+  [lib.titleLengthFails('x'.repeat(Math.ceil(lib.TITLE_MIN * 0.75) - 1)), true, 'a title under 75% of the floor'],
+  [lib.descriptionLengthFails('x'.repeat(400)), false, 'a 400-character description'],
+  [lib.descriptionLengthFails('x'.repeat(Math.ceil(lib.DESC_MIN * 0.75) - 1)), true, 'a description under 75% of the floor'],
+];
+for (const [got, want, label] of lengthProbes) {
+  if (got !== want) failures.push(`LENGTH RULE: ${label} should ${want ? '' : 'not '}fail.`);
+}
+
 // The release lane must tell the repair which pages it is about to make public,
 // or a queued page can make a live one "unresolvable" and stop every release
 // (8 Oct 2026). The behaviour is pinned by verifyIncumbentPriority() below.
@@ -188,10 +205,11 @@ const publisherPath = 'scripts/publishing/run_safe_publish.mjs';
 const publisher = fs.readFileSync(path.join(ROOT, publisherPath), 'utf8').replace(/^\s*\/\/.*$/gm, '');
 if (!/applySearchMetadata\(\{[^}]*\breleasing\b[^}]*\}\)/.test(publisher)) failures.push(`UNRANKED RELEASE: ${publisherPath} calls applySearchMetadata() without the releasing routes, so queued legacy pages are judged as if live and can block an already-published page.`);
 
+if (notes.length) warn(notes, `Search metadata: ${notes.length} length note(s); not a failure (over a ceiling never fails).`);
 if (failures.length) {
   fail([`Search metadata contract: examined ${pages.length} sitemap page(s), ${manifestChecked} of them manifest pages.`, ...failures]);
 }
-console.log(`Search metadata contract OK (${pages.length} sitemap pages: every <title> ${lib.TITLE_MIN}-${lib.TITLE_MAX} characters and unique, ${manifestChecked} manifest titles shipped as searchTitle() gives them, every description ${lib.DESC_MIN}-${lib.DESC_MAX} characters, unique, whole-sentence, no 8-word run on more than ${lib.BOILERPLATE_MAX_PAGES} pages; renderer wired to scripts/lib/search_metadata.js).`);
+console.log(`Search metadata contract OK (${pages.length} sitemap pages: every <title> at least 75% of ${lib.TITLE_MIN} characters and unique, ${manifestChecked} manifest titles shipped as searchTitle() gives them, every description at least 75% of ${lib.DESC_MIN} characters, unique, whole-sentence, no 8-word run on more than ${lib.BOILERPLATE_MAX_PAGES} pages; renderer wired to scripts/lib/search_metadata.js).`);
 
 // Exercise the legacy release lane as well as the new-content renderer.
 if (process.env.SKIP_RELEASE_METADATA_REGRESSION !== '1') {
