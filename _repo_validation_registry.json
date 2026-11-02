@@ -1059,7 +1059,7 @@
       "blocksRelease": true,
       "group": "agency-search",
       "owner": "site-operations",
-      "scope": "the shipped <title> and meta description of every sitemap page under pages/, and the resource renderer that writes new ones",
+      "scope": "the shipped <title> and meta description of every sitemap page under pages/, and the resource renderer that writes new ones; lengths over a ceiling are notes, under a floor fail only below 75% of it",
       "ciInvocation": "MATRIX_ONLY",
       "findingProtocol": "VALIDATION_FINDING",
       "enabled": true,

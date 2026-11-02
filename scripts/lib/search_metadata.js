@@ -167,6 +167,15 @@ function writeMeta(html, { title, description }) {
   return out;
 }
 
+// Owner ruling 2 Nov 2026 (no petty validation): a title or description over
+// its ceiling never fails a check (the generator above trims to fit), and one
+// under its floor fails only below 75% of it. The guards read these helpers,
+// never their own numbers; the generator still aims for MIN..MAX.
+const FLOOR_SLACK = 0.75;
+const failsFloor = (n, min) => n < Math.ceil(min * FLOOR_SLACK);
+const titleLengthFails = (text) => failsFloor(String(text || '').length, TITLE_MIN);
+const descriptionLengthFails = (text) => failsFloor(String(text || '').length, DESC_MIN);
+
 function descriptionInRange(text) {
   const n = String(text || '').length;
   return n >= DESC_MIN && n <= DESC_MAX;
@@ -355,6 +364,9 @@ function boilerplateRuns(descByRoute) {
 }
 
 module.exports = {
+  FLOOR_SLACK,
+  titleLengthFails,
+  descriptionLengthFails,
   TITLE_MAX,
   SHORT_FORMS_PATH,
   loadShortForms,
