@@ -1,5 +1,24 @@
 {
   "schema": "search-loop-pages-v1",
   "pages": [],
-  "dropped": []
+  "dropped": [
+    {
+      "query": "black therapist near me",
+      "at": "2026-11-02",
+      "reason": [
+        "b5 FAQ answer is 32 words (needs 40-60): \"Is reading this website a substitute for therapy?\"",
+        "b5 FAQ answer is 24 words (needs 40-60): \"Can I receive therapy if I live in Tennessee?\"",
+        "b5 FAQ answer is 30 words (needs 40-60): \"What should I do if I am in a crisis?\"",
+        "b5 FAQ answer is 25 words (needs 40-60): \"Do you offer services for businesses?\"",
+        "health: outcome or treatment claim \"guarantees\""
+      ]
+    },
+    {
+      "query": "black therapist that accept medicaid near me",
+      "at": "2026-11-02",
+      "reason": [
+        "off-audience: why"
+      ]
+    }
+  ]
 }
