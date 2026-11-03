@@ -82,7 +82,7 @@ function verifyReleaseMetadata() {
     run('scripts/navigation/build_internal_navigation.mjs');
     run('scripts/site_build.js');
     run('_ops/validators/validate_search_metadata_contract.js');
-    run('scripts/publishing/run_safe_publish.mjs');
+    const release = run('scripts/publishing/run_safe_publish.mjs');
     const after = JSON.parse(fs.readFileSync(manifestPath));
     const eligible = before.filter((item) => item.status === 'approved' && item.validationPassed && item.scheduledAt <= '2026-12-31T23:59:59Z' && !item.requiresIndividualApproval);
     assert.ok(eligible.length > 0, 'Regression must examine the real queued calendar.');
@@ -113,6 +113,14 @@ function verifyReleaseMetadata() {
         assert.equal(row.status, original.status);
       }
     }
+    // Rule zero: every held, due item is named on the run itself, with its age,
+    // not only in the receipt. A run that holds work and prints none of it is the
+    // 9 Oct - 3 Nov 2026 silent stall.
+    assert.ok(skipped > 0, 'Regression must hold at least one real queued page to prove holds are named.');
+    const named = release.stdout.match(/NAMED STOP: HELD_DUE_ITEMS (\d+) approved, due item\(s\) held off the site, oldest scheduled \d{4}-\d{2}-\d{2} \((\d+) day/);
+    assert.ok(named, 'A run that held due items did not name them (NAMED STOP: HELD_DUE_ITEMS).');
+    assert.equal(Number(named[1]), skipped, 'HELD_DUE_ITEMS count disagrees with the receipt.');
+    for (const id of heldIds) assert.ok(release.stdout.includes(id), `${id} was held but the run output never names it.`);
     // The state the release lane leaves behind must pass the same gates
     // validate:all runs on it in the Content Publish job.
     run('_ops/validators/validate_publish_state.js');
