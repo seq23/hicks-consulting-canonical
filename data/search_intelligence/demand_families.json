@@ -2,11 +2,11 @@
   "schema_version": "1.0",
   "generated_from": "data/search_intelligence/target_query_set.json",
   "window": {
-    "start_date": "2026-10-03",
-    "end_date": "2026-10-30",
+    "start_date": "2026-10-04",
+    "end_date": "2026-10-31",
     "days": 28
   },
-  "truth_collected_at": "2026-11-02T15:26:47.747Z",
+  "truth_collected_at": "2026-11-03T15:24:55.753Z",
   "rule": {
     "grouping": "one family per landing page (the page Google shows for the query)",
     "min_impressions": 20,
@@ -16,7 +16,7 @@
     "top_n": 12
   },
   "client_approval": "Client site: qualifying families are PROPOSALS. A family is strengthened only once its status is \"approved\" here, with approved_by naming who decided (the client, or the site owner on her own decision) and approved_at.",
-  "target_count": 50,
+  "target_count": 48,
   "impressions_total": 388,
   "family_count": 9,
   "proposal_count": 1,
@@ -25,7 +25,7 @@
     {
       "family": "/black-therapist-memphis/",
       "page": "https://www.hicksconsulting.org/black-therapist-memphis/",
-      "impressions": 159,
+      "impressions": 156,
       "clicks": 1,
       "ctr": 0.6,
       "weighted_position": 7.7,
@@ -34,9 +34,9 @@
       "queries": [
         {
           "query": "black therapist memphis tn",
-          "impressions": 50,
+          "impressions": 48,
           "clicks": 1,
-          "position": 7.94
+          "position": 7.89
         },
         {
           "query": "black therapist memphis, tn",
@@ -46,9 +46,9 @@
         },
         {
           "query": "black therapist near me",
-          "impressions": 13,
+          "impressions": 12,
           "clicks": 0,
-          "position": 7.46
+          "position": 7.33
         },
         {
           "query": "black therapist",
@@ -171,23 +171,23 @@
       "approved_by": "site owner (not the client)",
       "approved_at": "2026-10-11",
       "approval_note": "Site owner decided on 2026-10-11 to strengthen both qualifying families now rather than wait on a client flag. Not a client decision; the client did not approve or author this change.",
-      "proposed_change": "Lead /black-therapist-memphis/ with a direct answer to \"black therapist memphis tn\" in its title and first paragraph: 159 impressions at position 7.7 earned 1 click(s) (0.6% CTR)."
+      "proposed_change": "Lead /black-therapist-memphis/ with a direct answer to \"black therapist memphis tn\" in its title and first paragraph: 156 impressions at position 7.7 earned 1 click(s) (0.6% CTR)."
     },
     {
       "family": "/",
       "page": "https://www.hicksconsulting.org/",
-      "impressions": 150,
+      "impressions": 152,
       "clicks": 4,
-      "ctr": 2.7,
-      "weighted_position": 4.7,
-      "query_count": 20,
+      "ctr": 2.6,
+      "weighted_position": 4.4,
+      "query_count": 17,
       "head_query": "hicks consulting",
       "queries": [
         {
           "query": "hicks consulting",
-          "impressions": 78,
+          "impressions": 85,
           "clicks": 3,
-          "position": 4.67
+          "position": 4.48
         },
         {
           "query": "monika hicks",
@@ -206,18 +206,6 @@
           "impressions": 3,
           "clicks": 0,
           "position": 2.33
-        },
-        {
-          "query": "christian coaching",
-          "impressions": 2,
-          "clicks": 0,
-          "position": 10
-        },
-        {
-          "query": "hicks counseling",
-          "impressions": 2,
-          "clicks": 0,
-          "position": 17
         },
         {
           "query": "hicks's",
@@ -254,12 +242,6 @@
           "impressions": 1,
           "clicks": 0,
           "position": 1
-        },
-        {
-          "query": "health consulting",
-          "impressions": 1,
-          "clicks": 0,
-          "position": 5
         },
         {
           "query": "janice hicks",
@@ -310,16 +292,16 @@
       "approved_by": "site owner (not the client)",
       "approved_at": "2026-10-11",
       "approval_note": "Site owner decided on 2026-10-11 to strengthen both qualifying families now rather than wait on a client flag. Not a client decision; the client did not approve or author this change.",
-      "proposed_change": "Lead / with a direct answer to \"hicks consulting\" in its title and first paragraph: 150 impressions at position 4.7 earned 4 click(s) (2.7% CTR)."
+      "proposed_change": "Lead / with a direct answer to \"hicks consulting\" in its title and first paragraph: 152 impressions at position 4.4 earned 4 click(s) (2.6% CTR)."
     },
     {
       "family": "/contact/",
       "page": "https://www.hicksconsulting.org/contact/",
-      "impressions": 56,
+      "impressions": 57,
       "clicks": 0,
       "ctr": 0,
-      "weighted_position": 5,
-      "query_count": 2,
+      "weighted_position": 5.1,
+      "query_count": 3,
       "head_query": "hicks consulting llc",
       "queries": [
         {
@@ -333,12 +315,18 @@
           "impressions": 1,
           "clicks": 0,
           "position": 7
+        },
+        {
+          "query": "hicks counseling",
+          "impressions": 1,
+          "clicks": 0,
+          "position": 7
         }
       ],
       "rank": 3,
       "qualifies": true,
       "status": "proposal",
-      "proposed_change": "Lead /contact/ with a direct answer to \"hicks consulting llc\" in its title and first paragraph: 56 impressions at position 5 earned 0 click(s) (0% CTR)."
+      "proposed_change": "Lead /contact/ with a direct answer to \"hicks consulting llc\" in its title and first paragraph: 57 impressions at position 5.1 earned 0 click(s) (0% CTR)."
     },
     {
       "family": "/corporate-speaking/",
