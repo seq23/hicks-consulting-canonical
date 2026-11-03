@@ -511,6 +511,10 @@ ${footer}
 // exactly this script.
 try { require('./install_clarity_inline')(dist); } catch (error) { console.error('clarity:', error.message); }
 
+// Cloudflare Web Analytics on every public page; see install_cf_beacon.js for why
+// it ships from the build. Not caught: a blocked or missing beacon fails the build.
+require('./install_cf_beacon')(dist, path.join(root, '_headers'));
+
 require('./agency/generate_agency_report').generate();
 
 // Stamp the edge-cache build id into dist/_worker.js: a hash of everything else
