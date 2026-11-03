@@ -8,7 +8,24 @@
       "not_read": "no free analytics source configured for this site (analytics.ai_referrals)"
     },
     "2026-11-03": {
-      "not_read": "no free analytics source configured for this site (analytics.ai_referrals)"
+      "ai_visitors_not_read": "this zone's plan has no referrer field, and the Cloudflare Web Analytics beacon is not on the site (not in the home page, 1 page load(s) in 7 days): turn on Web Analytics for hicksconsulting.org",
+      "ai_bot_hits": {
+        "total": 322,
+        "by_bot": {
+          "DuckAssistBot": 10,
+          "Amazonbot": 41,
+          "Meta-ExternalAgent": 114,
+          "Perplexity-User": 14,
+          "GPTBot (OpenAI training)": 6,
+          "PerplexityBot": 12,
+          "ChatGPT-User (ChatGPT fetch)": 20,
+          "OAI-SearchBot (ChatGPT search)": 21,
+          "Claude-User": 21,
+          "ClaudeBot": 30,
+          "Bytespider": 12,
+          "CCBot (Common Crawl)": 21
+        }
+      }
     }
   }
 }
