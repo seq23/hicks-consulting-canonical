@@ -1,5 +1,44 @@
 {
   "schemaVersion": "1.0.0",
   "note": "Written by scripts/publishing/redraft_held.mjs. One line per redraft attempt on an unpublished Resources post.",
-  "items": []
+  "items": [
+    {
+      "id": "daily-024-4",
+      "route": "/resources/insights/why-boundaries-matter-more-during-good-seasons-than-bad-ones-a-gentler-truth-to-consi/",
+      "before": 0.9700854700854701,
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "after": 0,
+      "outcome": "REDRAFTED",
+      "passages": 11,
+      "at": "2026-11-03T12:32:27.748Z"
+    },
+    {
+      "id": "daily-024-5",
+      "route": "/resources/insights/why-boundaries-matter-more-during-good-seasons-than-bad-ones-next-step-reflection/",
+      "before": 0.9651162790697675,
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "outcome": "REJECTED_WORDING (too short)",
+      "at": "2026-11-03T12:32:27.748Z"
+    },
+    {
+      "id": "daily-025-1",
+      "route": "/resources/insights/what-relationship-stress-looks-like-when-you-keep-minimizing-your-own-feelings-what-t/",
+      "before": 0.8132295719844358,
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "after": 0,
+      "outcome": "REDRAFTED",
+      "passages": 11,
+      "at": "2026-11-03T12:32:27.748Z"
+    },
+    {
+      "id": "daily-026-2",
+      "route": "/resources/insights/how-to-notice-when-overwhelm-is-turning-into-shutdown-why-women-minimize-it/",
+      "before": 1,
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "after": 0,
+      "outcome": "REDRAFTED",
+      "passages": 11,
+      "at": "2026-11-03T12:32:27.748Z"
+    }
+  ]
 }
