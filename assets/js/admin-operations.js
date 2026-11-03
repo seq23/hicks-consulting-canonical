@@ -1,23 +1,15 @@
 (() => {
   'use strict';
 
-  const AUTH_HASH_KEY = 'hc_admin_password_hash_v1';
   const $ = (id) => document.getElementById(id);
 
+  // The session token from shared-admin-gate.js; empty when signed out.
   function getAuthHash() {
-    try {
-      return localStorage.getItem(AUTH_HASH_KEY) || sessionStorage.getItem(AUTH_HASH_KEY) || '';
-    } catch {
-      return '';
-    }
+    return window.HicksAdminGate?.getToken?.() || '';
   }
 
   function headers(extra = {}) {
-    const hash = getAuthHash();
-    return {
-      ...extra,
-      ...(hash ? { 'x-admin-password-hash': hash } : {})
-    };
+    return window.HicksAdminGate ? window.HicksAdminGate.authHeaders(extra) : { ...extra };
   }
 
   function escapeHtml(value) {

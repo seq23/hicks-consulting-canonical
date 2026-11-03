@@ -1,4 +1,4 @@
-import { handleAdminRequest, handleContentDecision, verifyAdminPasswordHash } from './admin_runtime.mjs';
+import { handleAdminRequest, handleContentDecision, requireAdminSession } from './admin_runtime.mjs';
 const LEAD_MAGNET_DOWNLOAD_PATH = '/assets/downloads/stress-management-made-simple.pdf';
 
 const FORM_DATABASE_FORMS = {
@@ -109,7 +109,8 @@ const DIGITAL_PRODUCTS_ALLOWED_STATUSES = new Set(['draft', 'ready_for_approval'
 function slugifyProduct(value) { return clean(value).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '').slice(0, 90); }
 
 async function requireDigitalProductsAdmin(request, env) {
-  if (!verifyAdminPasswordHash(request)) return { ok: false, response: jsonResponse({ ok: false, error: 'Admin password did not match.' }, 401) };
+  const denied = await requireAdminSession(request, env);
+  if (denied) return { ok: false, response: denied };
   return { ok: true };
 }
 
@@ -343,9 +344,10 @@ export default {
       const digitalProductsResponse = await handleDigitalProductsRequest(request, env, url);
       if (digitalProductsResponse) return digitalProductsResponse;
       // Content decisions. Same shape and same gate as /api/digital-products/*:
-      // the password hash header is checked before anything is read or written.
+      // the admin session is checked before anything is read or written.
       if (url.pathname.startsWith('/api/content/')) {
-        if (!verifyAdminPasswordHash(request)) return jsonResponse({ ok: false, error: 'Admin password did not match.' }, 401);
+        const denied = await requireAdminSession(request, env);
+        if (denied) return denied;
         return handleContentDecision(request, env, url.pathname.slice('/api/content/'.length));
       }
       if (env.ASSETS && typeof env.ASSETS.fetch === 'function') return await serveStatic(request, env, ctx);

@@ -4,18 +4,21 @@
 
 `/admin/` is the owner/VA control room for Full Safe Autonomy. `/agency/` is the SEO/AEO/GEO performance dashboard. `/admin/digitalproducts/` remains the product-management lane.
 
-All three use the same owner-selected password: `blackgirlmagic`.
+All three share one password, checked by the server.
 
 ## 2. Access model
 
-- the browser hashes the entered password with SHA-256;
-- the exact approved hash is stored in the shared gate script;
-- the successful hash is remembered locally so `/admin`, `/agency`, and digital products unlock together;
-- Lock clears the stored hash for all three routes;
-- command and product API requests send the same hash in `x-admin-password-hash`;
-- no signed session, CSRF token, login rate limit, or separate server-authentication setup is required.
+- the sign-in form sends the typed password once, over HTTPS, to `POST /api/admin/login`;
+- the server checks it against the `ADMIN_PASSWORD_HASH` Cloudflare Pages secret (PBKDF2, or the legacy SHA-256 hex until the password is rotated) and returns a 30-day signed session token, signed with the `ADMIN_SESSION_SECRET` secret;
+- the token is remembered locally so `/admin`, `/agency`, and digital products unlock together; Lock clears it;
+- every admin API call sends the token in `x-admin-session`; a client-sent password hash is never accepted;
+- 5 wrong passwords from one IP lock that IP out for 15 minutes (generic message);
+- either secret missing is a NAMED STOP: every admin call returns `503 ADMIN_AUTH_SECRET_MISSING` and nothing opens;
+- no password or hash lives in this repo or in browser code (`_ops/validators/deep/validate_admin_security_behavior.mjs`).
 
-This is a lightweight convenience gate, not real security. A technically capable visitor can inspect browser code and recover the hash. Therefore:
+Changing either secret in Cloudflare Pages signs everyone out.
+
+Keep these regardless:
 
 - never put provider credentials, private clinical data, or other secrets in page HTML or dashboard JSON;
 - keep GitHub, LLM, email, GSC, Bing, IndexNow, Cloudflare, KV, and R2 credentials server-side;
@@ -37,7 +40,7 @@ Every action must return a real receipt or a truthful provider-not-configured er
 
 ## 4. Operator check
 
-1. Open `/admin/` and enter `blackgirlmagic`.
+1. Open `/admin/` and enter the shared password.
 2. Confirm the command center unlocks.
 3. Open `/agency/` in the same browser and confirm it is unlocked without a second password entry.
 4. Open `/admin/digitalproducts/` and confirm the same gate state applies.

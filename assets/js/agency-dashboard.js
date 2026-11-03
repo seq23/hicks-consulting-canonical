@@ -230,9 +230,9 @@
   async function unlockAgency(event) {
     event.preventDefault();
     $('agency-login-message').textContent = 'Checking password…';
-    const ok = await gate.unlock($('agency-password').value);
-    if (!ok) {
-      showLogin('Password did not match.');
+    const result = await gate.signIn($('agency-password').value);
+    if (!result.ok) {
+      showLogin(result.message);
       return;
     }
     $('agency-password').value = '';

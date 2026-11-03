@@ -1,44 +1,79 @@
 (() => {
   'use strict';
-  const PASSWORD_HASH = 'c7ef3319e6cf6aab9035156df95f18dfec2ba2178f733940eda688758805708b';
-  const AUTH_HASH_KEY = 'hc_admin_password_hash_v1';
+  // One sign-in for /admin, /agency and /admin/digitalproducts. The typed password
+  // goes to the server once (POST /api/admin/login, HTTPS); the server checks it
+  // against a Cloudflare secret and returns a signed session token, which every
+  // admin call sends as x-admin-session. No password or hash lives in this file.
+  const SESSION_TOKEN_KEY = 'hc_admin_session_v2';
+  const LEGACY_HASH_KEY = 'hc_admin_password_hash_v1';
   const SESSION_KEY = 'hc_admin_unlocked';
+  const SESSION_HEADER = 'x-admin-session';
 
-  async function sha256(value) {
-    const bytes = new TextEncoder().encode(String(value || ''));
-    const digest = await crypto.subtle.digest('SHA-256', bytes);
-    return Array.from(new Uint8Array(digest)).map((byte) => byte.toString(16).padStart(2, '0')).join('');
-  }
-
-  function getStoredHash() {
-    try { return localStorage.getItem(AUTH_HASH_KEY) || sessionStorage.getItem(AUTH_HASH_KEY) || ''; }
+  function storageGet(key) {
+    try { return localStorage.getItem(key) || sessionStorage.getItem(key) || ''; }
     catch { return ''; }
   }
 
-  function remember(hash) {
-    try { localStorage.setItem(AUTH_HASH_KEY, hash); }
-    catch { try { sessionStorage.setItem(AUTH_HASH_KEY, hash); } catch {} }
+  function tokenExpiry(token) {
+    const parts = String(token || '').split('.');
+    return parts.length === 4 ? Number(parts[1]) * 1000 : 0;
+  }
+
+  function getToken() {
+    const token = storageGet(SESSION_TOKEN_KEY);
+    return tokenExpiry(token) > Date.now() ? token : '';
+  }
+
+  function remember(token) {
+    try { localStorage.setItem(SESSION_TOKEN_KEY, token); }
+    catch { try { sessionStorage.setItem(SESSION_TOKEN_KEY, token); } catch {} }
     try { sessionStorage.setItem(SESSION_KEY, 'true'); } catch {}
   }
 
   function lock() {
-    try { localStorage.removeItem(AUTH_HASH_KEY); } catch {}
-    try { sessionStorage.removeItem(AUTH_HASH_KEY); } catch {}
+    for (const key of [SESSION_TOKEN_KEY, LEGACY_HASH_KEY]) {
+      try { localStorage.removeItem(key); } catch {}
+      try { sessionStorage.removeItem(key); } catch {}
+    }
     try { sessionStorage.removeItem(SESSION_KEY); } catch {}
   }
 
+  // Resolves { ok: true } or { ok: false, message } with a message the login
+  // form can show as it is.
+  async function signIn(password) {
+    let response;
+    let body = {};
+    try {
+      response = await fetch('/api/admin/login', {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({ password: String(password || '').trim() }),
+        cache: 'no-store',
+        credentials: 'same-origin'
+      });
+      body = await response.json().catch(() => ({}));
+    } catch {
+      return { ok: false, message: 'Could not reach the site. Check your connection and try again.' };
+    }
+    if (response.ok && body.ok && body.token) {
+      remember(body.token);
+      return { ok: true };
+    }
+    return { ok: false, message: body.error || 'Password did not match.' };
+  }
+
   async function unlock(password) {
-    const hash = await sha256(password);
-    if (hash !== PASSWORD_HASH) return false;
-    remember(hash);
-    return true;
+    return (await signIn(password)).ok;
   }
 
-  function isUnlocked() { return getStoredHash() === PASSWORD_HASH; }
+  // An old stored hash is useless now; drop it so nothing keeps sending it.
+  try { localStorage.removeItem(LEGACY_HASH_KEY); sessionStorage.removeItem(LEGACY_HASH_KEY); } catch {}
+
+  function isUnlocked() { return Boolean(getToken()); }
   function authHeaders(extra = {}) {
-    const hash = getStoredHash();
-    return { ...extra, ...(hash === PASSWORD_HASH ? { 'x-admin-password-hash': hash } : {}) };
+    const token = getToken();
+    return { ...extra, ...(token ? { [SESSION_HEADER]: token } : {}) };
   }
 
-  window.HicksAdminGate = { PASSWORD_HASH, AUTH_HASH_KEY, SESSION_KEY, sha256, unlock, lock, isUnlocked, getStoredHash, authHeaders };
+  window.HicksAdminGate = { SESSION_KEY, SESSION_HEADER, signIn, unlock, lock, isUnlocked, getToken, authHeaders };
 })();

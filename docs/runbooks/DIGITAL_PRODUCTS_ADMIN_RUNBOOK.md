@@ -37,7 +37,7 @@ Use `/admin/digitalproducts/`. The design intentionally follows the current `/ad
 
 - `DIGITAL_PRODUCTS_KV`: KV namespace for product metadata.
 - `DIGITAL_PRODUCT_FILES`: R2 bucket for uploaded PDFs and covers.
-- Admin mutation access currently uses the repository's existing password/hash gate implemented by `functions/api/digital-products/_shared.js` and `worker/admin_runtime.mjs`; `DIGITAL_PRODUCTS_ADMIN_TOKEN` is not the active mutation-auth contract.
+- Admin mutation access uses the shared server-side admin session (`requireAdminSession` in `worker/admin_runtime.mjs`, see `docs/runbooks/ADMIN_COMMAND_CENTER.md`); `DIGITAL_PRODUCTS_ADMIN_TOKEN` is not the active mutation-auth contract.
 - Optional `DIGITAL_PRODUCT_FILES_PUBLIC_BASE_URL`: public R2/custom-domain base URL for uploaded files.
 
 ## Placeholder Rule

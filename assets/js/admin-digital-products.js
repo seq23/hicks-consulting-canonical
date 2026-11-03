@@ -47,44 +47,11 @@ function wireMobileNav() {
 }
 
 const HicksAdminGate = window.HicksAdminGate;
-const ADMIN_PASSWORD_HASH = 'c7ef3319e6cf6aab9035156df95f18dfec2ba2178f733940eda688758805708b';
 const SESSION_KEY = 'hc_admin_unlocked';
-const ADMIN_AUTH_HASH_KEY = 'hc_admin_password_hash_v1';
 let PRODUCTS = [];
 
-async function sha256(value) {
-  const bytes = new TextEncoder().encode(value);
-  const digest = await crypto.subtle.digest('SHA-256', bytes);
-  return Array.from(new Uint8Array(digest)).map(b => b.toString(16).padStart(2, '0')).join('');
-}
-
-function getAdminAuthHash() {
-  try {
-    return localStorage.getItem(ADMIN_AUTH_HASH_KEY) || sessionStorage.getItem(ADMIN_AUTH_HASH_KEY) || '';
-  } catch (error) {
-    return '';
-  }
-}
-
-function setAdminAuthHash(hash) {
-  try {
-    localStorage.setItem(ADMIN_AUTH_HASH_KEY, hash);
-  } catch (error) {
-    try { sessionStorage.setItem(ADMIN_AUTH_HASH_KEY, hash); } catch (innerError) {}
-  }
-}
-
-function clearAdminAuthHash() {
-  try { localStorage.removeItem(ADMIN_AUTH_HASH_KEY); } catch (error) {}
-  try { sessionStorage.removeItem(ADMIN_AUTH_HASH_KEY); } catch (error) {}
-}
-
 function adminAuthHeaders(extra = {}) {
-  const hash = getAdminAuthHash();
-  return {
-    ...extra,
-    ...(hash ? { 'x-admin-password-hash': hash } : {})
-  };
+  return HicksAdminGate ? HicksAdminGate.authHeaders(extra) : { ...extra };
 }
 
 function escapeHtml(value) {
@@ -287,21 +254,18 @@ async function renderAdmin() {
 
 async function unlockAdmin() {
   const password = document.getElementById('admin-password').value.trim();
-  const sharedOk = HicksAdminGate ? await HicksAdminGate.unlock(password) : false;
-  const hash = sharedOk ? ADMIN_PASSWORD_HASH : await sha256(password);
-  if (hash !== ADMIN_PASSWORD_HASH) {
-    document.getElementById('login-message').textContent = 'Password did not match.';
+  const result = HicksAdminGate ? await HicksAdminGate.signIn(password) : { ok: false, message: 'Password did not match.' };
+  if (!result.ok) {
+    document.getElementById('login-message').textContent = result.message;
     return;
   }
   sessionStorage.setItem(SESSION_KEY, 'true');
-  setAdminAuthHash(hash);
   document.getElementById('login-message').textContent = '';
   await renderAdmin();
 }
 
 function lockAdmin() {
   sessionStorage.removeItem(SESSION_KEY);
-  clearAdminAuthHash();
   HicksAdminGate?.lock?.();
   document.getElementById('admin-panel').hidden = true;
   document.getElementById('login-panel').hidden = false;
@@ -314,12 +278,11 @@ window.lockAdmin = lockAdmin;
 document.addEventListener('DOMContentLoaded', async () => {
   wireMobileNav();
   wireThemeToggle();
-  const storedHash = getAdminAuthHash();
-  if (storedHash === ADMIN_PASSWORD_HASH || HicksAdminGate?.isUnlocked?.()) {
+  if (HicksAdminGate?.isUnlocked?.()) {
     sessionStorage.setItem(SESSION_KEY, 'true');
     await renderAdmin();
   } else {
     sessionStorage.removeItem(SESSION_KEY);
-    clearAdminAuthHash();
+    HicksAdminGate?.lock?.();
   }
 });

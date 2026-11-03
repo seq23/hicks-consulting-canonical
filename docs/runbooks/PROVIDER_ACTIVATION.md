@@ -13,7 +13,7 @@ wrangler secret put GITHUB_BRANCH
 wrangler secret put INQUIRY_SHARED_SECRET
 ```
 
-The `/admin/`, `/agency/`, and `/admin/digitalproducts/` routes use the owner-approved shared client-side `blackgirlmagic` convenience gate. No admin-auth secret installation is required. Do not place provider secrets or private data in browser-visible dashboard payloads.
+The `/admin/`, `/agency/`, and `/admin/digitalproducts/` routes use one shared password, checked server-side against the `ADMIN_PASSWORD_HASH` and `ADMIN_SESSION_SECRET` Cloudflare Pages secrets (see `docs/runbooks/ADMIN_COMMAND_CENTER.md`). Do not place provider secrets or private data in browser-visible dashboard payloads.
 
 The GitHub token must be fine-grained, limited to this repository, and granted only the minimum required permissions:
 

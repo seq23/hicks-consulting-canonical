@@ -1,4 +1,4 @@
-import { verifyAdminPasswordHash } from '../../../worker/admin_runtime.mjs';
+import { requireAdminSession } from '../../../worker/admin_runtime.mjs';
 const SEED_CATALOG_URL = '/data/products/digital_products.json';
 const KV_KEY = 'digital_products_catalog_v1';
 const ALLOWED_TYPES = new Set(['free', 'premium']);
@@ -23,7 +23,8 @@ export function slugify(value) {
 }
 
 export async function requireAdmin(request, env) {
-  if (!verifyAdminPasswordHash(request)) return { ok: false, response: jsonResponse({ ok: false, error: 'Admin password did not match.' }, 401) };
+  const denied = await requireAdminSession(request, env);
+  if (denied) return { ok: false, response: denied };
   return { ok: true };
 }
 

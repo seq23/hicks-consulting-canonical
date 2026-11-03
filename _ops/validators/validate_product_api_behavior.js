@@ -8,8 +8,7 @@ const worker = fs.readFileSync('worker/_worker.js', 'utf8');
 
 const requiredShared = [
   'export function mergeProduct',
-  'verifyAdminPasswordHash',
-  'Admin password did not match.',
+  'requireAdminSession',
   'if (!incoming.downloadUrl && existing && existing.downloadUrl) merged.downloadUrl = existing.downloadUrl;',
   'if (!incoming.coverImageUrl && existing && existing.coverImageUrl) merged.coverImageUrl = existing.coverImageUrl;',
   "merged.checkoutStatus = 'live';",
@@ -23,7 +22,8 @@ for (const forbidden of ['DIGITAL_PRODUCTS_ADMIN_TOKEN', 'x-admin-token']) {
   if (shared.includes(forbidden)) fail(`Digital products shared API still references deprecated auth: ${forbidden}`);
   if (worker.includes(forbidden)) fail(`Worker still references deprecated auth: ${forbidden}`);
 }
-if (!worker.includes('verifyAdminPasswordHash')) fail('Worker must use the shared password-hash gate for digital product write endpoints.');
+if (!worker.includes('requireAdminSession')) fail('Worker must use the shared server-side admin session gate for digital product write endpoints.');
+for (const source of [shared, worker]) if (source.includes('x-admin-password-hash')) fail('Admin auth must never accept a client-sent password hash.');
 if (!publish.includes("checkoutStatus: item.productType === 'premium' ? 'live' : item.checkoutStatus")) {
   fail('Publish endpoint must promote premium checkoutStatus to live only during publish action.');
 }

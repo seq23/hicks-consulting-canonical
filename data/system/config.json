@@ -18,8 +18,7 @@
   },
   "admin": {
     "path": "/admin/",
-    "passwordHint": "Shared convenience gate for /admin, /agency, and /admin/digitalproducts; password is blackgirlmagic.",
-    "auth": "shared_client_side_sha256",
+    "auth": "server_session_pbkdf2_or_sha256_secret",
     "controlRoom": "optional_alternative_panel"
   },
   "repo": {
