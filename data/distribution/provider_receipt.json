@@ -1,7 +1,7 @@
 {
   "schema_version": "2.0",
-  "receipt_id": "2026-11-03T11-57-48.409Z-41631702299",
-  "attempted_at": "2026-11-03T11:57:48.409Z",
+  "receipt_id": "2026-11-03T12-34-18.358Z-41636805645",
+  "attempted_at": "2026-11-03T12:34:18.358Z",
   "publication_trigger": "ONLY_AFTER_EXISTING_CONTENT_PUBLISH_WORKFLOW_SUCCEEDS",
   "chain": [
     "successful_publish",
@@ -15,14 +15,14 @@
   "sitemap_refresh": {
     "status": "SUCCESS",
     "sitemap_url": "https://www.hicksconsulting.org/sitemap.xml",
-    "sitemap_sha256": "ef3c76aca2d0d0d86979120fdee0dbd6ac7a751053673cb19d8362243981e26c",
-    "url_count": 162
+    "sitemap_sha256": "258ae0aff4b0aa016e96c9343190213ee738a169a778e346efc25ef5b84a659a",
+    "url_count": 165
   },
   "indexnow": {
     "status": "SUCCESS",
     "attempted": true,
     "http_status": 200,
-    "submitted_urls": 162,
+    "submitted_urls": 165,
     "key_location": "https://www.hicksconsulting.org/indexnow.txt"
   },
   "gsc_sitemap_submission": {
@@ -143,7 +143,7 @@
         "status": "SUCCESS",
         "http_status": 200,
         "verdict": "NEUTRAL",
-        "coverage_state": "URL is unknown to Google",
+        "coverage_state": "Discovered - currently not indexed",
         "indexing_state": "INDEXING_STATE_UNSPECIFIED",
         "last_crawl_time": null
       },
@@ -179,7 +179,7 @@
         "status": "SUCCESS",
         "http_status": 200,
         "verdict": "NEUTRAL",
-        "coverage_state": "URL is unknown to Google",
+        "coverage_state": "Discovered - currently not indexed",
         "indexing_state": "INDEXING_STATE_UNSPECIFIED",
         "last_crawl_time": null
       },
@@ -188,7 +188,7 @@
         "status": "SUCCESS",
         "http_status": 200,
         "verdict": "NEUTRAL",
-        "coverage_state": "URL is unknown to Google",
+        "coverage_state": "Discovered - currently not indexed",
         "indexing_state": "INDEXING_STATE_UNSPECIFIED",
         "last_crawl_time": null
       }
@@ -197,7 +197,7 @@
   "durable_receipt": {
     "status": "SUCCESS",
     "latest_path": "data/distribution/provider_receipt.json",
-    "history_path": "data/distribution/receipts/2026-11-03T11-57-48.409Z-41631702299.json"
+    "history_path": "data/distribution/receipts/2026-11-03T12-34-18.358Z-41636805645.json"
   },
   "observation_feedback": {
     "status": "SUCCESS",
