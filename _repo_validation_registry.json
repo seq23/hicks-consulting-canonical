@@ -1204,6 +1204,20 @@
       "enabled": true,
       "scope": "config/entity_watch.json, data/entities/org_schema.json, data/entities/person_schema.json, JSON-LD in pages/ and dist/, .github/workflows/entity-backlink-watch.yml",
       "rationale": "Authority audit, 30 Oct 2026: nothing compared the sameAs, name, logo and description the pages publish against the entity sources, and nothing watched whether those profiles still resolve or link back. This fails on an empty or self-referencing sameAs, a pending profile already live, any published entity node that drifts from its source, an entity no page publishes, or the weekly watch workflow going missing or unscheduled."
+    },
+    {
+      "id": "redraft-lane",
+      "npmScript": "validate:redraft-lane",
+      "entrypoint": "_ops/validators/validate_redraft_lane.mjs",
+      "severity": "HARD_FAIL",
+      "blocksRelease": true,
+      "group": "publishing",
+      "owner": "site-operations",
+      "scope": "scripts/publishing/redraft_held.mjs: rewording of scheduled Resources posts that copy live pages, before release",
+      "ciInvocation": "MATRIX_ONLY",
+      "findingProtocol": "VALIDATION_FINDING",
+      "enabled": true,
+      "rationale": "Owner ruling 3 Nov 2026: Resources posts publish automatically, every quality gate stays. From 9 Oct the daily calendar lost slots to copy holds with nothing to redraft them. Runs the real lane on a fixture of a live insight and its copied sibling with a stubbed model: a rewrite that still copies or speaks in the first person is refused with the page untouched, a distinct one is kept and shares no 8-word run with the live page, and published or already-live routes are never touched. Hard-fails on zero items examined."
     }
   ]
 }

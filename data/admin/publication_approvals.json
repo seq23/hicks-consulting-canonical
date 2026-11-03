@@ -1,9 +1,21 @@
 {
   "schemaVersion": "1.0.0",
-  "note": "The human release gate for hicksconsulting.org. An item in data/admin/content_manifest.json publishes only when a named human has approved it, by one of exactly two routes: its id appears in `approvals` with a real approvedBy, or its scheduledAt falls inside a bounded window in `standing_approvals` that a named human agreed to. status:'approved' in the manifest means a machine validated it, not that anyone agreed to publish it - scripts/autonomy/run_cycle.mjs writes that status itself, so before this file existed the daily Content Publish cron released LLM-drafted pages to a client's live site with nobody in the loop. 113 such items were queued one per day into the future. Neither route is open-ended: per-item approval names one id, and a standing approval names an end date past which nothing publishes.",
+  "note": "The human release gate for hicksconsulting.org. An item in data/admin/content_manifest.json publishes only when a named human has approved it, by one of exactly two routes: its id appears in `approvals` with a real approvedBy, or its scheduledAt falls inside a bounded window in `standing_approvals` that a named human agreed to. status:'approved' in the manifest means a machine validated it, not that anyone agreed to publish it - scripts/autonomy/run_cycle.mjs writes that status itself, so before this file existed the daily Content Publish cron released LLM-drafted pages to a client's live site with nobody in the loop. 113 such items were queued one per day into the future. Per-item approval names one id. Client standing approvals end on the date she agreed to. Since 3 Nov 2026 the owner window (kind owner-automatic-release, listed first) releases every scheduled Resources post on its date by owner ruling; every quality gate and any decline she records in publication_declines.json still stop a piece.",
   "how_to_approve": "node scripts/admin/approve_publication.mjs --id <manifest id> --by \"<person>\" [--note \"<why>\"]. Reachable only through the Admin Operations workflow_dispatch, never from a cron.",
   "how_to_record_standing_approval": "Standing approvals are not written by a script. A person adds one entry to standing_approvals below, by hand, in a reviewed commit, recording an approval a named human actually gave for a bounded date range. There is deliberately no CLI for it: a command that writes a standing approval is a bulk approve-all, which is the exact thing this gate exists to prevent. scripts/admin/approve_publication.mjs remains the only tool, it still writes one id at a time, and it is still required for anything outside a standing window.",
   "standing_approvals": [
+    {
+      "id": "standing-owner-2026-11-03-resources-automatic",
+      "kind": "owner-automatic-release",
+      "approvedBy": "Sequoia Taylor (site owner)",
+      "approvedAt": "2026-11-03",
+      "scope": "Every scheduled Resources post in data/admin/content_manifest.json (daily insights, weekly articles, monthly guides, quarterly pieces) publishes automatically on its scheduledAt. Every quality gate still applies: the duplicate-text and search-metadata holds, the unsafe-content and claim checks, and a per-item decline in publication_declines.json. A post that fails a gate is held and named, never forced.",
+      "scheduledThrough": "2099-12-31",
+      "recordedBy": "Site owner (Sequoia Taylor), via Claude",
+      "recordedAt": "2026-11-03",
+      "basis": "Owner ruling in chat, 3 Nov 2026, verbatim: \"Make sure the client didn't set them not to post or something but these posts should be automatic\". Checked first: Monika set no hold, pause, decline or don't-post instruction anywhere (data/autonomy/state.json, feedback_queue.json, exceptions.json, data/admin/publication_declines.json, her own commits). Recorded in the friends brain the same day.",
+      "note": "Listed first so every release it covers is attributed to the owner, never to Monika: her June window below stays as the record of what she approved, but a piece she never saw is not released under her name. The end date is a far bound, not a calendar: the ruling stands until the owner changes this entry."
+    },
     {
       "id": "standing-monika-2026-editorial-calendar",
       "approvedBy": "Monika Hicks, LCSW",

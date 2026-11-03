@@ -61,6 +61,7 @@ const published = manifest.filter((item) => item.status === 'published');
 let examined = 0;
 let byClientApproval = 0;
 let byOwner = 0;
+let byOwnerWindow = 0;
 
 for (const item of published) {
   const at = Date.parse(item.publishedAt || item.scheduledAt || '');
@@ -68,7 +69,15 @@ for (const item of published) {
   examined += 1;
 
   const owner = item.ownerPublication || null;
-  const clientApproved = perItem.has(item.id) || Boolean(standingApprovalFor(item, standing));
+  const window = perItem.has(item.id) ? null : standingApprovalFor(item, standing);
+  // The owner's automatic-release window (3 Nov 2026) is the owner's decision, not
+  // the client's: it must never carry her name.
+  if (window && window.kind === 'owner-automatic-release' && at >= Date.parse(`${window.approvedAt}T00:00:00.000Z`)) {
+    if (CLIENT_NAMES.test(String(window.approvedBy || ''))) errors.push(`owner-window-attributed-to-the-client:${item.id}`);
+    byOwnerWindow += 1;
+    continue;
+  }
+  const clientApproved = perItem.has(item.id) || Boolean(window);
 
   if (owner) {
     const who = String(owner.publishedBy || '').trim();
@@ -111,6 +120,6 @@ if (errors.length) {
 console.log(
   `Every release since the gate was sealed on ${sealedOn} names who made it `
   + `(${examined} examined: ${byClientApproval} released on a named client approval, `
-  + `${byOwner} published directly by the site owner, each carrying a reason and stating plainly that the client approved nothing; `
+  + `${byOwnerWindow} released under the owner's automatic window, ${byOwner} published directly by the site owner, each carrying a reason and stating plainly that the client approved nothing; `
   + `no owner publication is written in the client's name).`
 );

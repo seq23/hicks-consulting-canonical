@@ -65,14 +65,16 @@ const perItemIds = new Set(
     .map((e) => e.id)
 );
 
-const gated = manifest.filter((item) => requiresIndividualApproval(item));
-
-// Rule 0. If nothing carries the flag this check has proved nothing, and the
-// most likely reason is that the flag was quietly dropped from the manifest -
-// which is exactly the regression it exists to catch.
-if (!gated.length) {
-  errors.push('examined-no-items -- no manifest item requires individual approval, so this gate governs nothing');
-}
+// Owner ruling, 3 Nov 2026: scheduled Resources posts publish automatically, under
+// an owner-signed window (kind 'owner-automatic-release'). The six guides lost
+// their flag on that ruling, so the real manifest may carry no flagged item. The
+// flag still exists (the autonomy queue writes it) and must still beat every
+// window, including the owner's, so a fixture carrying it is always checked
+// alongside any real ones: this check can never be inert.
+const FIXTURE = { id: 'fx-individual-approval-required', title: 'Fixture', status: 'approved', validationPassed: true, slug: '/resources/insights/fx-individual-approval-required/', scheduledAt: '2026-11-04T13:00:00.000Z', requiresIndividualApproval: true };
+const gated = [...manifest.filter((item) => requiresIndividualApproval(item)), FIXTURE];
+const CLIENT = /monika/i;
+const isOwnerWindow = (entry) => entry && entry.kind === 'owner-automatic-release' && !CLIENT.test(String(entry.approvedBy || ''));
 if (!standing.length) {
   errors.push('no-standing-approval-in-force -- with no window to be swept in by, this check cannot prove the flag beats one');
 }
@@ -106,14 +108,27 @@ for (const item of manifest) {
   if (!item.scheduledAt) continue;
   postBaselineChecked += 1;
   if (requiresIndividualApproval(item)) continue;
-  // Not flagged. If a standing window reaches it, it will publish on a decision
-  // she never made about a piece she has never seen.
+  // Not flagged. It may publish only under the owner's automatic-release window,
+  // and the release must be attributed to the owner: if Monika's window is the one
+  // that covers it, it would publish on a decision she never made about a piece
+  // she has never seen, in her name.
   const covering = standingApprovalFor(item, standing);
-  if (covering) {
-    errors.push(`post-baseline-item-swept-in-by-a-standing-window:${item.id} (scheduled ${item.scheduledAt}, window ${covering.scheduledThrough})`);
-  } else {
-    errors.push(`post-baseline-item-carries-no-individual-approval-requirement:${item.id} -- it is held today only by its date, which is what this gate replaced`);
+  const pageCovering = sandbox.approvalFor(item);
+  if (!covering) {
+    errors.push(`post-baseline-item-carries-no-individual-approval-requirement-and-no-owner-window:${item.id} -- it is held today only by its date, which is what this gate replaced`);
+  } else if (!isOwnerWindow(covering)) {
+    errors.push(`post-baseline-item-swept-in-by-the-client's-window:${item.id} (scheduled ${item.scheduledAt}, window ${covering.id || covering.scheduledThrough})`);
+  } else if (!isOwnerWindow(pageCovering)) {
+    errors.push(`admin-page-attributes-a-post-baseline-item-to-someone-other-than-the-owner:${item.id}`);
   }
+}
+
+// Her "no" beats every window, on the publisher and on the page.
+for (const d of declines.declines || []) {
+  const item = manifest.find((x) => x && x.id === d.id);
+  if (!item) continue;
+  if (standingApprovalFor(item, standing)) errors.push(`publisher-releases-a-declined-item-under-a-window:${item.id}`);
+  if (sandbox.approvalFor(item) && !perItemIds.has(item.id)) errors.push(`admin-page-shows-a-declined-item-as-approved:${item.id}`);
 }
 
 const approvedIds = loadApprovedIds();
@@ -121,7 +136,7 @@ const approvedIds = loadApprovedIds();
 for (const item of gated) {
   if (perItemIds.has(item.id)) continue; // She approved this one by name. That is the route that works.
   if (standingApprovalFor(item, standing)) errors.push(`publisher-covers-it-by-a-standing-window:${item.id}`);
-  if (approvedIds.has(item.id)) errors.push(`loadApprovedIds-returns-it-without-a-per-item-approval:${item.id}`);
+  if (item !== FIXTURE && approvedIds.has(item.id)) errors.push(`loadApprovedIds-returns-it-without-a-per-item-approval:${item.id}`);
   if (sandbox.approvalFor(item)) errors.push(`admin-page-shows-it-as-already-approved:${item.id}`);
   // A flagged item with no date is the old stuck state (five siblings sat at
   // scheduledAt:null and reached no view at all). It must carry a real date.
@@ -137,7 +152,7 @@ for (const item of gated) {
   if (!Number.isFinite(at)) continue;
   simulated += 1;
   // One second past its scheduled time: due, validated, and still not releasable.
-  const result = processManifest(manifest, new Date(at + 1000));
+  const result = processManifest(item === FIXTURE ? [...manifest, FIXTURE] : manifest, new Date(at + 1000));
   const released = (result.releases || []).map((r) => r.id);
   if (released.includes(item.id)) {
     errors.push(`a-publish-run-on-its-own-date-released-it:${item.id}`);
@@ -163,5 +178,5 @@ console.log(
   `Individual-approval gate holds (${gated.length} item(s) require a named per-item decision; `
   + `${standing.length} standing window(s) in force cover none of them, the admin page agrees on every one, `
   + `${simulated} simulated publish run(s) on their own scheduled dates released nothing, `
-  + `and all ${postBaselineChecked} scheduled item(s) outside the June editorial baseline carry the requirement rather than relying on a date).`
+  + `and all ${postBaselineChecked} scheduled item(s) outside the June editorial baseline either carry the requirement or are released under the owner's automatic window, never the client's).`
 );

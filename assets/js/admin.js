@@ -147,6 +147,9 @@ function approvalFor(item) {
   // key wrong is not cosmetic -- it silently pushed 111 already-approved items
   // back into 'waiting for your OK', asking Monika to re-approve her own June
   // decision while the publisher released them anyway.
+  // A decline she recorded beats any standing window, matching
+  // scripts/publishing/process_manifest.js#standingApprovalFor.
+  if (((DECLINE_RECORD || {}).declines || []).some((entry) => entry && entry.id === item.id)) return null;
   const standingLists = [record.standing_approvals, record.standingApprovals, record.standing, record.ranges, record.dateRangeApprovals];
   for (const list of standingLists) {
     if (!Array.isArray(list)) continue;

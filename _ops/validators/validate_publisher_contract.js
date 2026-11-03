@@ -126,13 +126,23 @@ assert(byId(outsideByItem, 'out-of-window').status === 'published', 'per-item ap
 const outsideRelease = outsideByItem.releases.find((entry) => entry.id === 'out-of-window');
 assert(outsideRelease.basis === 'per-item', 'a per-item release must be recorded as per-item, not standing');
 
-// And the live record: whatever is committed must keep 2027 content blocked.
+// And the live record. A client window may not reach past the date she agreed to
+// (2026-12-31). Past that, only the owner's automatic-release window (owner ruling,
+// 3 Nov 2026: Resources posts publish automatically) may reach, and it must name
+// the owner - never Monika - and say when it was decided, so nothing past her date
+// is ever released in her name.
 const liveDoc = JSON.parse(fs.readFileSync(APPROVALS_PATH, 'utf8'));
 for (const entry of liveDoc.standing_approvals || []) {
-  assert(
-    typeof entry.scheduledThrough === 'string' && entry.scheduledThrough <= '2026-12-31',
-    `standing approval ${entry.id} extends to ${entry.scheduledThrough}; no committed standing approval may reach past 2026-12-31 without a new client decision`
-  );
+  const ownerWindow = entry.kind === 'owner-automatic-release';
+  if (ownerWindow) {
+    assert(!/monika/i.test(String(entry.approvedBy || '')) && /site owner/i.test(String(entry.approvedBy || '')), `owner window ${entry.id} must name the site owner, never the client`);
+    assert(/^\d{4}-\d{2}-\d{2}$/.test(String(entry.approvedAt || '')), `owner window ${entry.id} must record the date of the ruling`);
+  } else {
+    assert(
+      typeof entry.scheduledThrough === 'string' && entry.scheduledThrough <= '2026-12-31',
+      `standing approval ${entry.id} extends to ${entry.scheduledThrough}; no client standing approval may reach past 2026-12-31 without a new client decision`
+    );
+  }
   assert(entry.approvedBy && entry.recordedBy && entry.basis, `standing approval ${entry.id} must record approvedBy, recordedBy and the basis it rests on`);
 }
 
