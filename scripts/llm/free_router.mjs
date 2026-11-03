@@ -115,7 +115,7 @@ function endpointFor(cfg, env) {
   return { endpoint: override, isTest: true };
 }
 
-export async function freeChat({ messages, max_tokens = 1500, temperature = 0.2, purpose = 'unspecified', timeoutMs = 120000, env = process.env, root } = {}) {
+export async function freeChat({ messages, max_tokens = 1500, temperature = 0.2, purpose = 'unspecified', timeoutMs = 120000, env = process.env, root, reasoning } = {}) {
   const cfg = loadConfig(root);
   assertFreeConfig(cfg);
   const { endpoint, isTest } = endpointFor(cfg, env);
@@ -137,7 +137,7 @@ export async function freeChat({ messages, max_tokens = 1500, temperature = 0.2,
       res = await fetch(endpoint, {
         method: 'POST',
         headers: { authorization: `Bearer ${key}`, 'content-type': 'application/json' },
-        body: JSON.stringify({ model, messages, max_tokens, temperature, usage: { include: true }, provider: { max_price: { prompt: 0, completion: 0, request: 0 } } }),
+        body: JSON.stringify({ model, messages, max_tokens, temperature, ...(reasoning ? { reasoning } : {}), usage: { include: true }, provider: { max_price: { prompt: 0, completion: 0, request: 0 } } }),
         signal: AbortSignal.timeout(timeoutMs),
       });
       data = await res.json().catch(() => ({}));
@@ -159,7 +159,7 @@ export async function freeChat({ messages, max_tokens = 1500, temperature = 0.2,
     }
     const choice = (data.choices && data.choices[0]) || {};
     const content = (choice.message && choice.message.content) || '';
-    if (!String(content).trim()) { receipt.attempts.push({ model, status: 'empty' }); continue; }
+    if (!String(content).trim()) { receipt.attempts.push({ model, status: 'empty', finish_reason: choice.finish_reason || null }); continue; }
     receipt.attempts.push({ model, status: 'ok' });
     receipt.outcome = 'free_model_answered';
     receipt.model = data.model || model;
