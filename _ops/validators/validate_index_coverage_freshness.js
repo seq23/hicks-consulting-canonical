@@ -42,10 +42,19 @@ if (!same(tally('coverageState'), doc.summary?.by_coverage_state)) failures.push
 if (!same(tally('verdict'), doc.summary?.by_verdict)) failures.push('summary.by_verdict does not match the rows.');
 const seen = new Set();
 for (const r of rows) { if (seen.has(r.url)) failures.push(`${r.url} is listed twice.`); seen.add(r.url); }
-const sitemap = [...fs.readFileSync(path.join(ROOT, 'sitemap.xml'), 'utf8').matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1].trim());
+const entries = [...fs.readFileSync(path.join(ROOT, 'sitemap.xml'), 'utf8').matchAll(/<url>\s*<loc>([^<]+)<\/loc>(?:\s*<lastmod>([^<]+)<\/lastmod>)?/g)].map((m) => ({ url: m[1].trim(), lastmod: m[2] || null }));
+const sitemap = entries.map((e) => e.url);
 const covered = sitemap.filter((u) => seen.has(u)).length;
+// "Pages published since the last run are picked up by the next one": a URL the collection has not
+// seen and whose sitemap lastmod is on or after the collection day is new since that run, and is not
+// counted against it. A release of several overdue calendar slots at once (3 Nov 2026: 6 in one run)
+// is otherwise a false "the rotation stopped".
+const collectedDay = String(doc.collected_at || '').slice(0, 10);
+const newSince = entries.filter((e) => !seen.has(e.url) && e.lastmod && collectedDay && e.lastmod.slice(0, 10) >= collectedDay).length;
+const judged = sitemap.length - newSince;
 if (!sitemap.length) failures.push('sitemap.xml lists 0 URLs.');
-else if (covered / sitemap.length < MIN_SITEMAP_SHARE) failures.push(`covers ${covered}/${sitemap.length} current sitemap URLs (< ${MIN_SITEMAP_SHARE * 100}%).`);
+else if (!judged) failures.push(`every sitemap URL is newer than the collection of ${collectedDay}; nothing to judge it on.`);
+else if (covered / judged < MIN_SITEMAP_SHARE) failures.push(`covers ${covered}/${judged} sitemap URLs that existed at the last collection (< ${MIN_SITEMAP_SHARE * 100}%; ${newSince} newer URL(s) wait for the next run).`);
 if (doc.state !== 'NAMED_STOP') {
   const recent = rows.filter((r) => r.inspected_at && hours(r.inspected_at) <= MAX_AGE_HOURS).length;
   if (!recent) failures.push(`no URL was inspected in the last ${MAX_AGE_HOURS}h.`);
@@ -53,4 +62,4 @@ if (doc.state !== 'NAMED_STOP') {
   if (never && doc.inspected_this_run >= rows.length) failures.push(`${never} URL(s) NOT_INSPECTED although the run inspected ${doc.inspected_this_run}.`);
 }
 if (failures.length) fail([`Index coverage freshness: ${rows.length} URLs examined.`, ...failures]);
-console.log(`Index coverage freshness OK (${doc.state}, collected ${age.toFixed(1)}h ago, ${rows.length} URLs covering ${covered}/${sitemap.length} sitemap URLs; by coverageState ${JSON.stringify(doc.summary.by_coverage_state)}).`);
+console.log(`Index coverage freshness OK (${doc.state}, collected ${age.toFixed(1)}h ago, ${rows.length} URLs covering ${covered}/${judged} sitemap URLs that existed at the last collection (+${newSince} newer); by coverageState ${JSON.stringify(doc.summary.by_coverage_state)}).`);
