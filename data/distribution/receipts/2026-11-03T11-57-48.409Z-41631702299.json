@@ -1,0 +1,209 @@
+{
+  "schema_version": "2.0",
+  "receipt_id": "2026-11-03T11-57-48.409Z-41631702299",
+  "attempted_at": "2026-11-03T11:57:48.409Z",
+  "publication_trigger": "ONLY_AFTER_EXISTING_CONTENT_PUBLISH_WORKFLOW_SUCCEEDS",
+  "chain": [
+    "successful_publish",
+    "sitemap_refresh",
+    "indexnow",
+    "gsc_sitemap_submission",
+    "priority_url_inspection_where_configured",
+    "durable_distribution_receipt",
+    "observation_feedback"
+  ],
+  "sitemap_refresh": {
+    "status": "SUCCESS",
+    "sitemap_url": "https://www.hicksconsulting.org/sitemap.xml",
+    "sitemap_sha256": "ef3c76aca2d0d0d86979120fdee0dbd6ac7a751053673cb19d8362243981e26c",
+    "url_count": 162
+  },
+  "indexnow": {
+    "status": "SUCCESS",
+    "attempted": true,
+    "http_status": 200,
+    "submitted_urls": 162,
+    "key_location": "https://www.hicksconsulting.org/indexnow.txt"
+  },
+  "gsc_sitemap_submission": {
+    "status": "SUCCESS",
+    "attempted": true,
+    "http_status": 204,
+    "site_url": "sc-domain:hicksconsulting.org",
+    "sitemap_url": "https://www.hicksconsulting.org/sitemap.xml"
+  },
+  "priority_url_inspection": {
+    "status": "SUCCESS",
+    "attempted": true,
+    "requested_urls": 17,
+    "inspected_urls": 17,
+    "failed_urls": 0,
+    "results": [
+      {
+        "url": "https://www.hicksconsulting.org/",
+        "status": "SUCCESS",
+        "http_status": 200,
+        "verdict": "PASS",
+        "coverage_state": "Submitted and indexed",
+        "indexing_state": "INDEXING_ALLOWED",
+        "last_crawl_time": "2026-11-03T08:30:11Z"
+      },
+      {
+        "url": "https://www.hicksconsulting.org/therapy/",
+        "status": "SUCCESS",
+        "http_status": 200,
+        "verdict": "PASS",
+        "coverage_state": "Submitted and indexed",
+        "indexing_state": "INDEXING_ALLOWED",
+        "last_crawl_time": "2026-10-28T04:23:41Z"
+      },
+      {
+        "url": "https://www.hicksconsulting.org/coaching/",
+        "status": "SUCCESS",
+        "http_status": 200,
+        "verdict": "PASS",
+        "coverage_state": "Submitted and indexed",
+        "indexing_state": "INDEXING_ALLOWED",
+        "last_crawl_time": "2026-10-13T18:51:57Z"
+      },
+      {
+        "url": "https://www.hicksconsulting.org/corporate-speaking/",
+        "status": "SUCCESS",
+        "http_status": 200,
+        "verdict": "PASS",
+        "coverage_state": "Submitted and indexed",
+        "indexing_state": "INDEXING_ALLOWED",
+        "last_crawl_time": "2026-10-13T09:24:22Z"
+      },
+      {
+        "url": "https://www.hicksconsulting.org/organizational-training-inquiry/",
+        "status": "SUCCESS",
+        "http_status": 200,
+        "verdict": "PASS",
+        "coverage_state": "Submitted and indexed",
+        "indexing_state": "INDEXING_ALLOWED",
+        "last_crawl_time": "2026-10-14T09:31:27Z"
+      },
+      {
+        "url": "https://www.hicksconsulting.org/contact/",
+        "status": "SUCCESS",
+        "http_status": 200,
+        "verdict": "PASS",
+        "coverage_state": "Submitted and indexed",
+        "indexing_state": "INDEXING_ALLOWED",
+        "last_crawl_time": "2026-10-17T03:29:11Z"
+      },
+      {
+        "url": "https://www.hicksconsulting.org/resources/",
+        "status": "SUCCESS",
+        "http_status": 200,
+        "verdict": "PASS",
+        "coverage_state": "Submitted and indexed",
+        "indexing_state": "INDEXING_ALLOWED",
+        "last_crawl_time": "2026-10-27T19:38:42Z"
+      },
+      {
+        "url": "https://www.hicksconsulting.org/resources/guides/boundaries-for-black-women/",
+        "status": "SUCCESS",
+        "http_status": 200,
+        "verdict": "PASS",
+        "coverage_state": "Submitted and indexed",
+        "indexing_state": "INDEXING_ALLOWED",
+        "last_crawl_time": "2026-10-13T07:49:22Z"
+      },
+      {
+        "url": "https://www.hicksconsulting.org/resources/white-papers/therapy-vs-coaching-guide/",
+        "status": "SUCCESS",
+        "http_status": 200,
+        "verdict": "PASS",
+        "coverage_state": "Submitted and indexed",
+        "indexing_state": "INDEXING_ALLOWED",
+        "last_crawl_time": "2026-10-12T21:11:48Z"
+      },
+      {
+        "url": "https://www.hicksconsulting.org/resources/insights/when-rest-feels-like-guilt/",
+        "status": "SUCCESS",
+        "http_status": 200,
+        "verdict": "PASS",
+        "coverage_state": "Submitted and indexed",
+        "indexing_state": "INDEXING_ALLOWED",
+        "last_crawl_time": "2026-10-22T21:19:41Z"
+      },
+      {
+        "url": "https://www.hicksconsulting.org/resources/articles/when-you-keep-saying-yes/",
+        "status": "SUCCESS",
+        "http_status": 200,
+        "verdict": "PASS",
+        "coverage_state": "Submitted and indexed",
+        "indexing_state": "INDEXING_ALLOWED",
+        "last_crawl_time": "2026-10-26T09:57:42Z"
+      },
+      {
+        "url": "https://www.hicksconsulting.org/resources/guides/what-therapy-and-coaching-cost-hicks-consulting/",
+        "status": "SUCCESS",
+        "http_status": 200,
+        "verdict": "NEUTRAL",
+        "coverage_state": "URL is unknown to Google",
+        "indexing_state": "INDEXING_STATE_UNSPECIFIED",
+        "last_crawl_time": null
+      },
+      {
+        "url": "https://www.hicksconsulting.org/resources/guides/online-therapy-memphis-how-virtual-sessions-work/",
+        "status": "SUCCESS",
+        "http_status": 200,
+        "verdict": "NEUTRAL",
+        "coverage_state": "URL is unknown to Google",
+        "indexing_state": "INDEXING_STATE_UNSPECIFIED",
+        "last_crawl_time": null
+      },
+      {
+        "url": "https://www.hicksconsulting.org/resources/guides/memphis-area-service-area-what-is-available-where-you-live/",
+        "status": "SUCCESS",
+        "http_status": 200,
+        "verdict": "NEUTRAL",
+        "coverage_state": "URL is unknown to Google",
+        "indexing_state": "INDEXING_STATE_UNSPECIFIED",
+        "last_crawl_time": null
+      },
+      {
+        "url": "https://www.hicksconsulting.org/resources/guides/how-to-choose-a-therapist-near-you/",
+        "status": "SUCCESS",
+        "http_status": 200,
+        "verdict": "NEUTRAL",
+        "coverage_state": "URL is unknown to Google",
+        "indexing_state": "INDEXING_STATE_UNSPECIFIED",
+        "last_crawl_time": null
+      },
+      {
+        "url": "https://www.hicksconsulting.org/resources/guides/therapy-vs-coaching-vs-organizational-training/",
+        "status": "SUCCESS",
+        "http_status": 200,
+        "verdict": "NEUTRAL",
+        "coverage_state": "URL is unknown to Google",
+        "indexing_state": "INDEXING_STATE_UNSPECIFIED",
+        "last_crawl_time": null
+      },
+      {
+        "url": "https://www.hicksconsulting.org/resources/guides/memphis-organizational-mental-health-training/",
+        "status": "SUCCESS",
+        "http_status": 200,
+        "verdict": "NEUTRAL",
+        "coverage_state": "URL is unknown to Google",
+        "indexing_state": "INDEXING_STATE_UNSPECIFIED",
+        "last_crawl_time": null
+      }
+    ]
+  },
+  "durable_receipt": {
+    "status": "SUCCESS",
+    "latest_path": "data/distribution/provider_receipt.json",
+    "history_path": "data/distribution/receipts/2026-11-03T11-57-48.409Z-41631702299.json"
+  },
+  "observation_feedback": {
+    "status": "SUCCESS",
+    "path": "data/distribution/observation_feedback.json"
+  },
+  "provider_success_claimed": true,
+  "verified_external_citations_delta": 0,
+  "truth_boundary": "Provider submission or inspection is not proof of indexing, search visibility, LLM surfacing, external reference, or citation."
+}

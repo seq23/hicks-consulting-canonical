@@ -1,7 +1,7 @@
 {
   "schema_version": "2.0",
-  "receipt_id": "2026-11-03T11-43-34.346Z-41629803902",
-  "attempted_at": "2026-11-03T11:43:34.346Z",
+  "receipt_id": "2026-11-03T11-57-48.409Z-41631702299",
+  "attempted_at": "2026-11-03T11:57:48.409Z",
   "publication_trigger": "ONLY_AFTER_EXISTING_CONTENT_PUBLISH_WORKFLOW_SUCCEEDS",
   "chain": [
     "successful_publish",
@@ -15,14 +15,14 @@
   "sitemap_refresh": {
     "status": "SUCCESS",
     "sitemap_url": "https://www.hicksconsulting.org/sitemap.xml",
-    "sitemap_sha256": "c86f9e8c81e608510c7dcd9ce65b76a0a68ecc7757d1f41c73ab5e2fec604028",
-    "url_count": 156
+    "sitemap_sha256": "ef3c76aca2d0d0d86979120fdee0dbd6ac7a751053673cb19d8362243981e26c",
+    "url_count": 162
   },
   "indexnow": {
     "status": "SUCCESS",
     "attempted": true,
     "http_status": 200,
-    "submitted_urls": 156,
+    "submitted_urls": 162,
     "key_location": "https://www.hicksconsulting.org/indexnow.txt"
   },
   "gsc_sitemap_submission": {
@@ -103,60 +103,6 @@
         "last_crawl_time": "2026-10-27T19:38:42Z"
       },
       {
-        "url": "https://www.hicksconsulting.org/resources/guides/self-worth-identity-and-the-pressure-to-be-exceptional/",
-        "status": "SUCCESS",
-        "http_status": 200,
-        "verdict": "PASS",
-        "coverage_state": "Submitted and indexed",
-        "indexing_state": "INDEXING_ALLOWED",
-        "last_crawl_time": "2026-09-15T15:39:29Z"
-      },
-      {
-        "url": "https://www.hicksconsulting.org/resources/guides/relationship-stress-emotional-labor-and-the-need-for-more-honest-support/",
-        "status": "SUCCESS",
-        "http_status": 200,
-        "verdict": "PASS",
-        "coverage_state": "Submitted and indexed",
-        "indexing_state": "INDEXING_ALLOWED",
-        "last_crawl_time": "2026-10-16T15:18:00Z"
-      },
-      {
-        "url": "https://www.hicksconsulting.org/resources/white-papers/the-burnout-and-boundaries-playbook-for-high-achieving-black-women/",
-        "status": "SUCCESS",
-        "http_status": 200,
-        "verdict": "PASS",
-        "coverage_state": "Submitted and indexed",
-        "indexing_state": "INDEXING_ALLOWED",
-        "last_crawl_time": "2026-10-13T00:56:48Z"
-      },
-      {
-        "url": "https://www.hicksconsulting.org/resources/white-papers/a-practical-guide-to-life-transitions-identity-drift-and-starting-again-without-panic/",
-        "status": "SUCCESS",
-        "http_status": 200,
-        "verdict": "PASS",
-        "coverage_state": "Submitted and indexed",
-        "indexing_state": "INDEXING_ALLOWED",
-        "last_crawl_time": "2026-10-21T05:21:40Z"
-      },
-      {
-        "url": "https://www.hicksconsulting.org/resources/insights/why-successful-black-women-still-feel-worn-down/",
-        "status": "SUCCESS",
-        "http_status": 200,
-        "verdict": "PASS",
-        "coverage_state": "Submitted and indexed",
-        "indexing_state": "INDEXING_ALLOWED",
-        "last_crawl_time": "2026-10-26T10:35:11Z"
-      },
-      {
-        "url": "https://www.hicksconsulting.org/resources/articles/burnout-or-just-too-much/",
-        "status": "SUCCESS",
-        "http_status": 200,
-        "verdict": "PASS",
-        "coverage_state": "Submitted and indexed",
-        "indexing_state": "INDEXING_ALLOWED",
-        "last_crawl_time": "2026-10-20T10:35:01Z"
-      },
-      {
         "url": "https://www.hicksconsulting.org/resources/guides/boundaries-for-black-women/",
         "status": "SUCCESS",
         "http_status": 200,
@@ -191,13 +137,67 @@
         "coverage_state": "Submitted and indexed",
         "indexing_state": "INDEXING_ALLOWED",
         "last_crawl_time": "2026-10-26T09:57:42Z"
+      },
+      {
+        "url": "https://www.hicksconsulting.org/resources/guides/what-therapy-and-coaching-cost-hicks-consulting/",
+        "status": "SUCCESS",
+        "http_status": 200,
+        "verdict": "NEUTRAL",
+        "coverage_state": "URL is unknown to Google",
+        "indexing_state": "INDEXING_STATE_UNSPECIFIED",
+        "last_crawl_time": null
+      },
+      {
+        "url": "https://www.hicksconsulting.org/resources/guides/online-therapy-memphis-how-virtual-sessions-work/",
+        "status": "SUCCESS",
+        "http_status": 200,
+        "verdict": "NEUTRAL",
+        "coverage_state": "URL is unknown to Google",
+        "indexing_state": "INDEXING_STATE_UNSPECIFIED",
+        "last_crawl_time": null
+      },
+      {
+        "url": "https://www.hicksconsulting.org/resources/guides/memphis-area-service-area-what-is-available-where-you-live/",
+        "status": "SUCCESS",
+        "http_status": 200,
+        "verdict": "NEUTRAL",
+        "coverage_state": "URL is unknown to Google",
+        "indexing_state": "INDEXING_STATE_UNSPECIFIED",
+        "last_crawl_time": null
+      },
+      {
+        "url": "https://www.hicksconsulting.org/resources/guides/how-to-choose-a-therapist-near-you/",
+        "status": "SUCCESS",
+        "http_status": 200,
+        "verdict": "NEUTRAL",
+        "coverage_state": "URL is unknown to Google",
+        "indexing_state": "INDEXING_STATE_UNSPECIFIED",
+        "last_crawl_time": null
+      },
+      {
+        "url": "https://www.hicksconsulting.org/resources/guides/therapy-vs-coaching-vs-organizational-training/",
+        "status": "SUCCESS",
+        "http_status": 200,
+        "verdict": "NEUTRAL",
+        "coverage_state": "URL is unknown to Google",
+        "indexing_state": "INDEXING_STATE_UNSPECIFIED",
+        "last_crawl_time": null
+      },
+      {
+        "url": "https://www.hicksconsulting.org/resources/guides/memphis-organizational-mental-health-training/",
+        "status": "SUCCESS",
+        "http_status": 200,
+        "verdict": "NEUTRAL",
+        "coverage_state": "URL is unknown to Google",
+        "indexing_state": "INDEXING_STATE_UNSPECIFIED",
+        "last_crawl_time": null
       }
     ]
   },
   "durable_receipt": {
     "status": "SUCCESS",
     "latest_path": "data/distribution/provider_receipt.json",
-    "history_path": "data/distribution/receipts/2026-11-03T11-43-34.346Z-41629803902.json"
+    "history_path": "data/distribution/receipts/2026-11-03T11-57-48.409Z-41631702299.json"
   },
   "observation_feedback": {
     "status": "SUCCESS",
