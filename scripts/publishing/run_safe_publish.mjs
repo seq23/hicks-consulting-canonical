@@ -1,3 +1,4 @@
+import fs from 'node:fs';
 import { createRequire } from 'node:module';
 import { readJson, writeJsonAtomic, nowIso, routeToSourceFile } from '../autonomy/lib/io.mjs';
 import { analyzeResourceHtml, repairResourceHtml } from '../autonomy/lib/self_heal.mjs';
@@ -118,9 +119,41 @@ const receipt = {
 writeJsonAtomic(`data/autonomy/receipts/${receipt.receiptId}.json`, receipt);
 if (published.length) enqueuePublicationNotification(receipt, clock);
 console.log(JSON.stringify({ ok: true, ...receipt }, null, 2));
+// Rule zero: a held or waiting cadence slot must be visible on the run, not only
+// in a receipt nobody opens. From 9 Oct to 3 Nov 2026 the daily calendar lost 8
+// of 43 slots to SEARCH_METADATA_UNRESOLVED holds while every run ended green on
+// "NOTHING TO PUBLISH ... await a human decision" - wrong on both counts: the
+// held items were already approved, and no human decision can release them. A
+// metadata hold means the queued body repeats text already live, so no distinct
+// description exists; only a redraft clears it, and the drafting lane reports
+// its own provider state in data/autonomy/state.json. Held, not failed (exit 0):
+// the next run re-checks, but the stop is named on every run and in the job
+// summary until it clears.
+const dayMs = 24 * 60 * 60 * 1000;
+const sinceOf = (rows) => rows.map((row) => row.scheduledAt).filter(Boolean).sort()[0] || null;
+const ageDays = (iso) => (iso ? Math.max(0, Math.floor((clock.valueOf() - Date.parse(iso)) / dayMs)) : 0);
+const heldRows = [...held.keys()].map((id) => manifest.find((item) => item.id === id)).filter(Boolean);
+const stops = [];
+if (heldRows.length) {
+  const since = sinceOf(heldRows);
+  const metadataHolds = [...held.values()].filter((findings) => findings.some((f) => f.code === 'SEARCH_METADATA_UNRESOLVED')).length;
+  const drafting = autonomyState.draftingProvider?.status || 'UNKNOWN';
+  stops.push(`NAMED STOP: HELD_DUE_ITEMS ${heldRows.length} approved, due item(s) held off the site, oldest scheduled ${String(since).slice(0, 10)} (${ageDays(since)} day(s)); ${metadataHolds} for SEARCH_METADATA_UNRESOLVED (the queued body repeats text already live, so it needs a redraft, not an approval; drafting provider: ${drafting}). Ids: ${heldRows.map((row) => row.id).join(', ')}.`);
+}
+if (awaitingApproval.length) {
+  const since = sinceOf(awaitingApproval);
+  stops.push(`NAMED STOP: AWAITING_APPROVAL ${awaitingApproval.length} due item(s) need a per-item human approval, oldest scheduled ${String(since).slice(0, 10)} (${ageDays(since)} day(s)). Ids: ${awaitingApproval.map((item) => item.id).join(', ')}. Approve with: node scripts/admin/approve_publication.mjs --id <id> --by "<person>" (Admin Operations, workflow_dispatch only).`);
+}
+for (const line of stops) {
+  console.log(`\n${line}`);
+  if (process.env.GITHUB_ACTIONS) console.log(`::warning title=Content Publish held work::${line.replace(/%/g, '%25').replace(/\r?\n/g, '%0A')}`);
+}
+if (process.env.GITHUB_STEP_SUMMARY) {
+  const summary = [`### Content Publish ${receipt.receiptId}`, `- Published: ${published.length}`, `- Held (approved, due, not releasable): ${heldRows.length}`, `- Awaiting a per-item approval: ${awaitingApproval.length}`, ...stops.map((line) => `- ${line}`)].join('\n');
+  fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY, `${summary}\n`);
+}
 if (!published.length) {
-  // A successful run. Nothing was due and approved, which on a client site is the
-  // normal resting state, not a fault.
-  console.log(`\nNOTHING TO PUBLISH - this is a successful run. ${awaitingApproval.length} item(s) are due and validated but await a human decision.`);
-  console.log('Approve with: node scripts/admin/approve_publication.mjs --id <id> --by "<person>"  (Admin Operations, workflow_dispatch only)');
+  // A successful run: on a client site nothing due is the normal resting state.
+  // Anything due but not released is named above, never folded into this line.
+  console.log(`\nNOTHING PUBLISHED - this is a successful run. Held: ${heldRows.length}. Awaiting a per-item approval: ${awaitingApproval.length}.`);
 }
