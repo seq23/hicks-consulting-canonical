@@ -157,8 +157,24 @@ function requiresIndividualApproval(item) {
 // Returns the standing approval covering this item, or null. Null is the answer
 // for anything scheduled past every window's end date, and for anything that
 // requires an individual decision whatever its date.
+// A decline beats any standing window. Monika declines from /admin/, which writes
+// data/admin/publication_declines.json; before 3 Nov 2026 nothing needed to read
+// it here because her own window covered only the calendar she had reviewed. The
+// owner's automatic-release window (publication_approvals.json, 3 Nov 2026) covers
+// every scheduled Resources post, so her "no" on one piece must stop that piece.
+const DECLINES_PATH = path.join(process.cwd(), 'data', 'admin', 'publication_declines.json');
+function declinedIds() {
+  try {
+    const doc = JSON.parse(fs.readFileSync(DECLINES_PATH, 'utf8'));
+    return new Set((doc.declines || []).filter((e) => e && typeof e.id === 'string').map((e) => e.id));
+  } catch {
+    return new Set();
+  }
+}
+
 function standingApprovalFor(item, standingApprovals, scheduledAt) {
   if (requiresIndividualApproval(item)) return null;
+  if (item && declinedIds().has(item.id)) return null;
   const at = scheduledAt instanceof Date ? scheduledAt.valueOf() : Date.parse(item.scheduledAt);
   if (!Number.isFinite(at)) return null;
   return standingApprovals.find((entry) => at <= entry.throughMs) || null;

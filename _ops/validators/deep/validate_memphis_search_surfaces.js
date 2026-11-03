@@ -104,7 +104,14 @@ for(const page of localized){
     // not by a distant date: these six were previously held out of the standing
     // window by being scheduled into 2027, which delayed finished work by four
     // months for a reason that has nothing to do with when it runs.
-    if(item.requiresIndividualApproval!==true) errors.push(`unpublished-without-an-individual-approval-requirement:${page.route}`);
+    // Owner ruling 3 Nov 2026: scheduled Resources posts publish automatically, so
+    // an unpublished one needs either its own flag or the owner's window - never
+    // Monika's window, which covers only the calendar she reviewed.
+    if(item.requiresIndividualApproval!==true){
+      const {loadStandingApprovals,standingApprovalFor}=require(require('path').join(process.cwd(),'scripts/publishing/process_manifest.js'));
+      const w=standingApprovalFor(item,loadStandingApprovals());
+      if(!w||w.kind!=='owner-automatic-release'||/monika/i.test(String(w.approvedBy||''))) errors.push(`unpublished-without-an-individual-approval-requirement-or-the-owner-window:${page.route}`);
+    }
     if(sitemap.includes(`https://www.hicksconsulting.org${page.route}`)) errors.push(`unpublished-but-in-sitemap:${page.route}`);
   }
 }

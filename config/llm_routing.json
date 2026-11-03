@@ -69,6 +69,14 @@
         "autonomy:cycle"
       ],
       "purpose": "drafts structured educational resources and repairs failed drafts"
+    },
+    {
+      "script": "scripts/publishing/redraft_held.mjs",
+      "invoked_by": [
+        ".github/workflows/content-publish.yml",
+        "redraft:held"
+      ],
+      "purpose": "rewords the passages of a scheduled Resources post that copy pages already live, before the release step judges it"
     }
   ]
 }

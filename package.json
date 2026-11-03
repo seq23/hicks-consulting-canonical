@@ -153,6 +153,8 @@
     "validate:training-inquiry": "node _ops/validators/validate_training_inquiry_contract.js",
     "validate:velocity-immutability": "node _ops/validators/deep/validate_velocity_immutability.js",
     "validate:workflows": "node _ops/validators/validate_workflows.js",
-    "validate:zero-paid-llm": "node _ops/validators/validate_zero_paid_llm.js"
+    "validate:zero-paid-llm": "node _ops/validators/validate_zero_paid_llm.js",
+    "redraft:held": "node scripts/publishing/redraft_held.mjs",
+    "validate:redraft-lane": "node _ops/validators/validate_redraft_lane.mjs"
   }
 }
