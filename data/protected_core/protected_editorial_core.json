@@ -20,12 +20,12 @@
     },
     {
       "path": "scripts/publishing/run_safe_publish.mjs",
-      "sha256": "439468a356ba459d9a5fb1793f5b580e9789441d8f8c202152d20da49da725a9",
+      "sha256": "be714a22f30267105cb0af49a2b113df5497819a958136d14f126df105b17da3",
       "bytes": 7411
     },
     {
       "path": ".github/workflows/content-publish.yml",
-      "sha256": "9acebac287ef7fc36e02bcb0e17bad22691e6a419f0754700aa8eca206d221f1",
+      "sha256": "33def543f677cb882efd53ef2062a027c32531c47014cfd0605360f3e3ed17d3",
       "bytes": 4559
     },
     {
@@ -44,10 +44,10 @@
       "bytes": 8930
     }
   ],
-  "baseline_refreshed_at": "2026-11-03T12:00:00Z",
-  "baseline_reason": "Owner-ordered security repair (3 Nov 2026): admin auth moved server-side. The admin password hash is no longer in the repo or browser code; the server checks the password against a Cloudflare Pages secret, issues signed sessions and locks out repeated failures. Only the admin auth code changed; human approval, dates, cadence, all other protected files and editorial identity hashes remain unchanged.",
+  "baseline_refreshed_at": "2026-11-03T20:00:00Z",
+  "baseline_reason": "Owner-approved (3 Nov 2026): queued calendar posts are written by the shared search-loop engine writer before release (content-publish.yml step replaces the retired redraft lane), and a release re-renders an engine-written post with its real publish date (run_safe_publish.mjs). Human approval, release time, cadence and slots are unchanged; an engine-written sibling may carry a slightly differentiated title, with the approved title kept in approvedTitle and checked as its identity.",
   "baseline_refresh_changed_files": [
-    "worker/admin_runtime.mjs",
-    "assets/js/admin.js"
+    "scripts/publishing/run_safe_publish.mjs",
+    ".github/workflows/content-publish.yml"
   ]
 }

@@ -77,3 +77,4 @@ You almost certainly do not. If a measurement genuinely cannot be made any other
 `paid_probe_lanes` in `config/llm_routing.json`, give it its own dispatch-only workflow with a
 `confirm_paid` input defaulting to false, and call `paidProbeGate()` before the request. Never add
 a paid fallback to the router, and never put a probe lane on a schedule.
+- **Engine consumers** (`config/llm_routing.json` `engine_consumers`, 3 Nov 2026): `scripts/publishing/write_calendar_slots.mjs` runs the shared search-loop engine's writer in-process, checked out at `seq23/search-loop@v1`, whose lanes are $0 only with no paid fallback; `_ops/validators/validate_zero_paid_llm.js` allows its model keys only in that step of a workflow that pins the engine at v1.

@@ -343,7 +343,12 @@ const llmOnlyRoutes = [
   '/llm-atlas/answer-surfaces/'
 ];
 
-const sitemapRoutes = [...staticPublicRoutes, ...llmOnlyRoutes, ...Array.from(publishedResourceSlugs), ...questionRoutes];
+// Copy-cat insights whose canonical names their parent article (owner approval, 3 Nov 2026;
+// scripts/publishing/canonicalize_copy_insights.mjs) stay live for readers but leave the sitemap,
+// so the sitemap never lists a URL that says another page is the one to index.
+const canonicalToParentFile = path.join(root, 'data', 'editorial', 'canonical_to_parent.json');
+const canonicalToParent = new Set(fs.existsSync(canonicalToParentFile) ? JSON.parse(fs.readFileSync(canonicalToParentFile, 'utf8')).items.map((x) => x.route) : []);
+const sitemapRoutes = [...staticPublicRoutes, ...llmOnlyRoutes, ...Array.from(publishedResourceSlugs).filter((r) => !canonicalToParent.has(r)), ...questionRoutes];
 
 // <lastmod> is metadata about the sitemap entry, not page content: emitting it
 // changes nothing on any published page. It was absent on all 95 URLs, which

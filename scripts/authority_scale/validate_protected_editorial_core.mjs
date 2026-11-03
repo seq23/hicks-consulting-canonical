@@ -11,9 +11,12 @@ function canonicalHash(obj, mutableFields){
   return sha(Buffer.from(JSON.stringify(clean,Object.keys(clean).sort())));
 }
 function nativePublicationTransitionVariants(obj){
+  // An engine-written sibling slot may carry a slightly differentiated title (owner, 3 Nov 2026);
+  // its identity is the approved title it keeps in approvedTitle.
   const variants=[obj];
-  if(obj && (obj.status === 'published' || obj.status === 'revoked') && !Object.prototype.hasOwnProperty.call(obj,'previewPath') && obj.publicPath){
-    const reconstructed={...obj,previewPath:`/preview${String(obj.publicPath).startsWith('/') ? obj.publicPath : `/${obj.publicPath}`}`};
+  if(obj && obj.approvedTitle){ const restored={...obj,title:obj.approvedTitle}; delete restored.approvedTitle; variants.push(restored); }
+  for(const v of [...variants]) if(v && (v.status === 'published' || v.status === 'revoked') && !Object.prototype.hasOwnProperty.call(v,'previewPath') && v.publicPath){
+    const reconstructed={...v,previewPath:`/preview${String(v.publicPath).startsWith('/') ? v.publicPath : `/${v.publicPath}`}`};
     variants.push(reconstructed);
   }
   return variants;

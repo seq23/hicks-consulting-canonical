@@ -1206,18 +1206,32 @@
       "rationale": "Authority audit, 30 Oct 2026: nothing compared the sameAs, name, logo and description the pages publish against the entity sources, and nothing watched whether those profiles still resolve or link back. This fails on an empty or self-referencing sameAs, a pending profile already live, any published entity node that drifts from its source, an entity no page publishes, or the weekly watch workflow going missing or unscheduled."
     },
     {
-      "id": "redraft-lane",
-      "npmScript": "validate:redraft-lane",
-      "entrypoint": "_ops/validators/validate_redraft_lane.mjs",
+      "id": "calendar-writer",
+      "npmScript": "validate:calendar-writer",
+      "entrypoint": "_ops/validators/validate_calendar_writer.mjs",
       "severity": "HARD_FAIL",
       "blocksRelease": true,
       "group": "publishing",
       "owner": "site-operations",
-      "scope": "scripts/publishing/redraft_held.mjs: rewording of scheduled Resources posts that copy live pages, before release",
+      "scope": "scripts/publishing/write_calendar_slots.mjs: the shared search-loop engine's writer replaces queued calendar posts slot for slot before release",
       "ciInvocation": "MATRIX_ONLY",
       "findingProtocol": "VALIDATION_FINDING",
       "enabled": true,
-      "rationale": "Owner ruling 3 Nov 2026: Resources posts publish automatically, every quality gate stays. From 9 Oct the daily calendar lost slots to copy holds with nothing to redraft them. Runs the real lane on a fixture of a live insight and its copied sibling with a stubbed model: a rewrite that still copies or speaks in the first person is refused with the page untouched, a distinct one is kept and shares no 8-word run with the live page, and published or already-live routes are never touched. Hard-fails on zero items examined."
+      "rationale": "Owner ruling 3 Nov 2026: every queued Resources post is written by the engine's writer in page shape (answer first, question headings, FAQ + FAQPage, specific sources, Monika Hicks, LCSW byline, real publish date) at under 30% shared with any live page; the 58 queued posts were template clones sharing 55-98% with live pages. Runs the real writer on a fixture of real pages with a stub engine. Replaces the redraft-lane guard (redraft_held.mjs retired)."
+    },
+    {
+      "id": "copy-insight-canonicals",
+      "npmScript": "validate:copy-insight-canonicals",
+      "entrypoint": "_ops/validators/validate_copy_insight_canonicals.mjs",
+      "severity": "HARD_FAIL",
+      "blocksRelease": true,
+      "group": "publishing",
+      "owner": "site-operations",
+      "scope": "data/editorial/canonical_to_parent.json: live insights that near-copy their parent article",
+      "ciInvocation": "MATRIX_ONLY",
+      "findingProtocol": "VALIDATION_FINDING",
+      "enabled": true,
+      "rationale": "Owner approval 3 Nov 2026: the 31 live insights sharing half or more of their text with the parent article they extend name that article as canonical and leave the sitemap, so one page carries each search; they stay live for readers."
     }
   ]
 }

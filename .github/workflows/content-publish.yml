@@ -1,6 +1,12 @@
 name: Content Publish
 on:
   workflow_dispatch:
+    inputs:
+      write_all:
+        description: 'Write every approved calendar slot the engine has not written yet (backfill), not only the next 10 days'
+        required: false
+        default: false
+        type: boolean
   schedule:
     - cron: '17 8 * * *'  # America/Chicago, all year
       timezone: America/Chicago
@@ -21,7 +27,7 @@ permissions:
   contents: write
 jobs:
   publish:
-    timeout-minutes: 15  # release ~0.3m; the redraft lane is budgeted at 6m of free-model calls plus slack
+    timeout-minutes: 40  # release ~0.3m; the calendar writer is budgeted at 20m of free-model calls (25m step cap)
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
@@ -29,7 +35,7 @@ jobs:
           fetch-depth: 0
       - uses: actions/setup-node@v7
         with:
-          node-version: 20
+          node-version: 22
       - run: git pull --rebase origin main
       - run: npm ci
       # Publishes only items a named human approved in
@@ -39,17 +45,32 @@ jobs:
       # LLM-drafted pages to a client's live site daily, 113 of them queued into the
       # future. With nothing approved it publishes nothing, says so, and exits 0 -
       # which on a client site is the normal resting state.
-      # Owner ruling 3 Nov 2026: Resources posts publish automatically on schedule.
-      # A queued post whose body copies pages already live is held by the
-      # metadata/duplicate-text gate; this rewords only the copied passages on a
-      # free model (scripts/llm/free_router.mjs, $0 only, no paid fallback) so the
-      # release step below can judge it again. Never touches a published page.
-      # A missing key or no free model is a NAMED STOP, not a failure.
-      - name: Redraft due Resources posts that copy live pages (free models only)
-        timeout-minutes: 9
+      # Owner ruling 3 Nov 2026: Resources posts publish automatically on schedule, and every
+      # queued calendar post is written by the shared search-loop engine's writer (seq23/search-loop
+      # src/slot.mjs, free model lanes only, no paid fallback), slot for slot: approved title kept,
+      # answer first, question headings, FAQ + FAQPage, sources specific to the post, under 30% of its
+      # text shared with any live page. This replaced scripts/publishing/redraft_held.mjs, which only
+      # reworded the template clones. Never touches a published page. A missing key or no free model
+      # is a NAMED STOP, not a failure; an unwritten slot keeps its old page, which the release gate
+      # below keeps holding.
+      - name: Check out the shared search-loop engine (the calendar writer)
+        uses: actions/checkout@v7
+        with:
+          repository: seq23/search-loop
+          ref: v1.5.0
+          path: .search-loop-engine
+      - name: Write upcoming calendar slots with the engine's writer (free models only)
+        timeout-minutes: 25
         env:
+          SEARCH_LOOP_ENGINE_DIR: .search-loop-engine
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
-        run: node scripts/publishing/redraft_held.mjs
+          GEMINI_API_KEY: ${{ secrets.SEARCH_LOOP_GEMINI_API_KEY }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.SEARCH_LOOP_CF_USAGE_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.SEARCH_LOOP_CF_ACCOUNT_ID }}
+          CLOUDFLARE_WORKERS_AI_TOKEN: ${{ secrets.SEARCH_LOOP_CF_WORKERS_AI_TOKEN }}
+          WRITE_ALL: ${{ inputs.write_all && 'true' || 'false' }}
+        run: |
+          if [ "$WRITE_ALL" = "true" ]; then node scripts/publishing/write_calendar_slots.mjs --all --max 60; else node scripts/publishing/write_calendar_slots.mjs --max 4; fi
       - name: Release human-approved content that is due
         run: npm run publish:content
       # Relink the site to what just published.
@@ -91,7 +112,7 @@ jobs:
           # scripts/cadence_gate.js flags as uniform_lastmod and the exact failure
           # the ledger exists to prevent. Committing it holds the date at 08-31.
           # Guarded by validate:sitemap-ledger-integrity.
-          git add data/admin/content_manifest.json data/autonomy/exceptions.json data/autonomy/redrafts.json data/autonomy/receipts data/social pages sitemap.xml data/cadence/lastmod_ledger.json 2>/dev/null || true
+          git add data/admin/content_manifest.json data/autonomy/exceptions.json data/editorial/engine_drafts data/editorial/engine_writer_log.json data/search-loop/reserved-titles.json data/admin/legacy_title_grandfather.json data/search/title_short_forms.json data/autonomy/receipts data/social pages sitemap.xml data/cadence/lastmod_ledger.json 2>/dev/null || true
           if git diff --cached --quiet; then
             echo "No release changes to commit - nothing was both due and human-approved."
           else

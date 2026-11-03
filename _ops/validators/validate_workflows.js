@@ -17,11 +17,16 @@ for (const file of files) {
   }
   // A caller of the shared search-loop engine runs no steps of its own: the
   // engine's reusable workflow checks out and sets up node. It must be pinned
-  // to @v1 with engine_ref v1, so an unpinned or moving engine never runs here.
+  // to @v1 (or an exact v1.x.y) with the same engine_ref, so an unpinned engine never runs here.
   const engineCaller = /^\s+uses:\s*seq23\/search-loop\/\.github\/workflows\/search-loop\.yml@/m.test(content);
   if (engineCaller) {
-    if (!/^\s+uses:\s*seq23\/search-loop\/\.github\/workflows\/search-loop\.yml@v1\s*$/m.test(content)) fail(`Workflow ${file} calls the search-loop engine but is not pinned to @v1`);
-    if (!/^\s+engine_ref:\s*v1\s*$/m.test(content)) fail(`Workflow ${file} calls the search-loop engine without engine_ref: v1`);
+    // v1, or an exact v1.x.y tag (3 Nov 2026: Hicks pins the release it was built against); the
+    // reusable workflow and engine_ref must name the same tag.
+    const usesTag = (content.match(/^\s+uses:\s*seq23\/search-loop\/\.github\/workflows\/search-loop\.yml@(v1(?:\.\d+\.\d+)?)\s*$/m) || [])[1];
+    const refTag = (content.match(/^\s+engine_ref:\s*(v1(?:\.\d+\.\d+)?)\s*$/m) || [])[1];
+    if (!usesTag) fail(`Workflow ${file} calls the search-loop engine but is not pinned to @v1 or an exact v1.x.y tag`);
+    if (!refTag) fail(`Workflow ${file} calls the search-loop engine without engine_ref: v1 or an exact v1.x.y tag`);
+    if (usesTag && refTag && usesTag !== refTag) fail(`Workflow ${file} pins the engine workflow at ${usesTag} but engine_ref at ${refTag}`);
     if (/^\s+steps:\s*$/m.test(content)) fail(`Workflow ${file} calls the search-loop engine and also runs steps; keep the caller to the one reusable call`);
   } else {
     if (!/uses:\s+actions\/checkout@v\d+/.test(content)) fail(`Workflow ${file} missing actions/checkout`);

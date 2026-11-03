@@ -3,6 +3,7 @@ import { createRequire } from 'node:module';
 import { readJson, writeJsonAtomic, nowIso, routeToSourceFile } from '../autonomy/lib/io.mjs';
 import { analyzeResourceHtml, repairResourceHtml } from '../autonomy/lib/self_heal.mjs';
 import { enqueuePublicationNotification } from '../autonomy/lib/notification.mjs';
+import { writeResource } from '../autonomy/lib/render_resource.mjs';
 const require = createRequire(import.meta.url);
 const { processManifest, loadApprovedIds } = require('./process_manifest.js');
 const { applySearchMetadata } = require('../search/apply_search_metadata.js');
@@ -45,12 +46,20 @@ const repairsById = new Map();
 // `approved`, see scripts/publishing/manifest_statuses.js); the hold is named
 // here, in exceptions.json and in the receipt, and is re-evaluated every run.
 const held = new Map();
+const restamped = new Map(); // engine-written pages re-dated for release; restored if they end up held
 const recordException = (entry) => {
   if (!exceptions.items.some((e) => e.candidateId === entry.candidateId && e.decision === entry.decision)) exceptions.items.push(entry);
 };
 for (const item of due) {
   if (!String(item.slug || '').startsWith('/resources/')) continue;
   const sourceFile = routeToSourceFile(item.slug);
+  // Engine-written posts (scripts/publishing/write_calendar_slots.mjs) show the day they actually
+  // go live, never the slot date of an overdue slot: re-render from the stored draft with today's date.
+  if (item.engineDraft?.draftFile && fs.existsSync(item.engineDraft.draftFile)) {
+    const stored = JSON.parse(fs.readFileSync(item.engineDraft.draftFile, 'utf8'));
+    if (fs.existsSync(sourceFile)) restamped.set(item.id, { file: sourceFile, original: fs.readFileSync(sourceFile, 'utf8') });
+    writeResource({ draft: stored.draft, route: item.slug, contentType: item.contentType, scheduledAt: item.scheduledAt, publishedAt: clock });
+  }
   let analysis = analyzeResourceHtml(sourceFile);
   if (!analysis.blocked && analysis.findings.some((finding) => finding.severity === 'repairable')) {
     const repairs = repairResourceHtml(sourceFile, analysis, { canonical: `https://www.hicksconsulting.org${item.slug}`, date: String(item.scheduledAt).slice(0, 10), title: item.title });
@@ -91,6 +100,8 @@ if (metadata.unresolved.length) {
   result = processManifest(manifest, clock, { hold: held.keys() });
 }
 const published = result.manifest.filter((item) => before.get(item.id) !== 'published' && item.status === 'published');
+// A held page is left exactly as it was: undo the release-day re-date on anything not released.
+for (const [id, { file, original }] of restamped) if (!published.some((item) => item.id === id)) fs.writeFileSync(file, original);
 const unknownStatus = result.manifest.filter((item) => !MANIFEST_STATUSES.includes(item.status));
 if (unknownStatus.length) throw new Error(`Refusing to write manifest statuses outside scripts/publishing/manifest_statuses.js: ${unknownStatus.map((item) => `${item.id}=${item.status}`).join(', ')}`);
 writeJsonAtomic('data/admin/content_manifest.json', result.manifest);
