@@ -39,6 +39,7 @@ const lib = require('../lib/search_metadata.js');
 export const LOOKAHEAD_DAYS = 7;
 export const MAX_SHARED = 0.25;     // share of the page's passage runs that may still match live text
 export const MIN_SHARED_TO_REDRAFT = 0.15;
+export const MAX_STRAY = 0.05;  // share of reworded 8-word runs that may still match live text
 export const DEFAULT_MAX_ITEMS = 4;
 const LOG_PATH = 'data/autonomy/redrafts.json';
 const LOG_KEEP = 300;
@@ -107,10 +108,22 @@ export function loadLog(root) {
   return fs.existsSync(file) ? JSON.parse(fs.readFileSync(file, 'utf8')) : { schemaVersion: '1.0.0', note: 'Written by scripts/publishing/redraft_held.mjs. One line per redraft attempt on an unpublished Resources post.', items: [] };
 }
 
-function buildMessages(item, passages, voice) {
+// The original wording is NOT shown to the model: shown it, free models kept 8-16%
+// of its 8-word runs even after a retry naming them (3 Nov 2026). It gets the
+// title, the section each passage sits under and the length to aim for, and
+// writes the passage fresh.
+function sectionOf(html, at) {
+  const before = html.slice(0, at);
+  const all = [...before.matchAll(/<h2[^>]*>([\s\S]*?)<\/h2>/gi)];
+  const bodyStart = html.search(/class="[^"]*article-body[^"]*"/i);
+  if (!all.length || (bodyStart >= 0 && at < bodyStart)) return 'Opening summary of the whole article';
+  return lib.stripTags(all[all.length - 1][1]);
+}
+
+function buildMessages(item, passages, voice, html) {
   return [
-    { role: 'system', content: `You reword passages of an educational article for Hicks Consulting, a virtual therapy and coaching practice. Voice: ${voice} Write fresh wording that is specific to the article's title; do not reuse phrases from the input. Plain text only: no numbers, no statistics, no links, no first person (never I, me or my), no promises or outcomes, no diagnosis or medication. Keep each passage about the same length and meaning, and make the first passage one or two whole sentences of 120 to 160 characters. Answer with JSON only: {"passages": ["...", "..."]} with exactly as many entries as given, in the same order.` },
-    { role: 'user', content: JSON.stringify({ title: item.title, passages: passages.map((p) => p.text) }) },
+    { role: 'system', content: `You write passages of an educational article for Hicks Consulting, a virtual therapy and coaching practice. Voice: ${voice} Write original wording specific to the article's title. Plain text only: no numbers, no statistics, no links, no first person (never I, me or my), no promises or outcomes, no diagnosis or medication, and no crisis lines or phone numbers (the page already carries its crisis and educational notes). Each passage must be about the requested length, and the first passage one or two whole sentences of 120 to 160 characters. Answer with JSON only: {"passages": ["...", "..."]} with exactly as many entries as requested, in the same order.` },
+    { role: 'user', content: JSON.stringify({ title: item.title, passages: passages.map((p) => ({ section: sectionOf(html, p.start), length_characters: p.text.length })) }) },
   ];
 }
 
@@ -163,15 +176,33 @@ export async function redraftHeld({ root = process.cwd(), chat, isApproved, now 
     if (before < MIN_SHARED_TO_REDRAFT) { results.push({ id: item.id, route, outcome: 'NOT_COPIED', before }); continue; }
     const copied = passages.filter((p) => [...lib.shinglesOf(p.text)].some((r) => liveRuns.has(r)));
     if (!copied.length) { results.push({ id: item.id, route, outcome: 'REJECTED_NOTHING_EDITABLE', before }); continue; }
-    const answer = await chat(buildMessages(item, copied, voice));
-    if (!answer.ok) { stop = answer; break; }
-    const rewritten = parseAnswer(answer.answer, copied.length);
-    const record = { id: item.id, route, before, model: answer.model };
+    // One pass, then one retry that names the phrases still copied: free models
+    // keep a few original phrases (3 Nov 2026: 6 of 208 runs on daily-024-4).
+    let messages = buildMessages(item, copied, voice, original);
+    let rewritten = null;
+    let model = null;
+    let sharedRuns = [];
+    let total = 0;
+    let stopped = false;
+    for (let attempt = 0; attempt < 2; attempt += 1) {
+      const answer = await chat(messages);
+      if (!answer.ok) { stop = answer; stopped = true; break; }
+      model = answer.model;
+      rewritten = parseAnswer(answer.answer, copied.length);
+      if (!rewritten) break;
+      const ownRuns = new Set();
+      sharedRuns = [];
+      total = 0;
+      for (const text of rewritten) for (const r of lib.shinglesOf(text)) { total += 1; if (liveRuns.has(r) && !ownRuns.has(r)) sharedRuns.push(r); ownRuns.add(r); }
+      if (!sharedRuns.length) break;
+      messages = [...messages, { role: 'assistant', content: answer.answer }, { role: 'user', content: `These phrases already appear on other pages of the site; rewrite every passage that contains them in different words and answer with the same JSON shape: ${JSON.stringify([...new Set(sharedRuns)].slice(0, 40))}` }];
+    }
+    if (stopped) break;
+    const record = { id: item.id, route, before, model };
     if (!rewritten) { results.push({ ...record, outcome: 'REJECTED_UNREADABLE_ANSWER' }); continue; }
-    const ownRuns = new Set();
-    let stillCopied = false;
-    for (const text of rewritten) for (const r of lib.shinglesOf(text)) { if (liveRuns.has(r) || ownRuns.has(r)) stillCopied = true; ownRuns.add(r); }
-    if (stillCopied) { results.push({ ...record, outcome: 'REJECTED_STILL_COPIED' }); continue; }
+    // A stray shared phrase is tolerated up to MAX_STRAY of the reworded runs; the
+    // description the release step will use must share none (checked below).
+    if (!total || sharedRuns.length / total > MAX_STRAY) { results.push({ ...record, outcome: 'REJECTED_STILL_COPIED', shared: sharedRuns.length, of: total }); continue; }
     const problem = rewritten.map(wordingProblem).find(Boolean);
     if (problem) { results.push({ ...record, outcome: `REJECTED_WORDING (${problem})` }); continue; }
     let next = original;
@@ -218,7 +249,9 @@ async function main() {
   const clock = process.env.PUBLISH_CLOCK ? new Date(process.env.PUBLISH_CLOCK) : new Date();
   // The repo's free router: $0/$0 models only, provider.max_price 0, cost read back.
   const chat = async (messages) => {
-    const r = await freeChat({ messages, max_tokens: 2500, temperature: 0.5, purpose: 'redraft copied Resources passages' });
+    // Reasoning off: on 3 Nov 2026 three free models spent the whole token budget
+    // thinking and returned empty content (NO_FREE_MODEL_ANSWERED on the first run).
+    const r = await freeChat({ messages, max_tokens: 4000, temperature: 0.5, purpose: 'redraft copied Resources passages', reasoning: { enabled: false } });
     return r.ok ? { ok: true, answer: r.content, model: r.model } : { ok: false, stop: r.stop, reason: r.receipt?.stop_detail || '' };
   };
   const max = Number(process.env.REDRAFT_MAX || DEFAULT_MAX_ITEMS);
