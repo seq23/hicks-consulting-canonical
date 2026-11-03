@@ -2936,7 +2936,7 @@
         "What to do next",
         "When to seek support"
       ],
-      "state": "DISCOVERED",
+      "state": "SKIPPED_PROHIBITED_ACTION",
       "routineApprovalRequired": true,
       "publicOnlyAfterApproval": true,
       "source": "legacy_generated_queue_migration",
@@ -2951,8 +2951,21 @@
           "to": "DISCOVERED",
           "at": "2026-09-21T10:44:22.364Z",
           "reason": "Migrated from the prior approval-only generated queue."
+        },
+        {
+          "from": "DISCOVERED",
+          "to": "SCORED",
+          "at": "2026-11-03T15:45:43.493Z",
+          "reason": "Candidate score normalized for autonomous admission."
+        },
+        {
+          "from": "SCORED",
+          "to": "SKIPPED_PROHIBITED_ACTION",
+          "at": "2026-11-03T15:45:43.493Z",
+          "reason": "Candidate did not meet the configured admission score."
         }
-      ]
+      ],
+      "updatedAt": "2026-11-03T15:45:43.493Z"
     },
     {
       "id": "continuity-insight-2027-01-14-e7058378aa4e",
@@ -2985,7 +2998,7 @@
         "What helps",
         "When to get support"
       ],
-      "state": "DISCOVERED",
+      "state": "SKIPPED_PROHIBITED_ACTION",
       "routineApprovalRequired": true,
       "publicOnlyAfterApproval": true,
       "source": "legacy_generated_queue_migration",
@@ -3000,8 +3013,21 @@
           "to": "DISCOVERED",
           "at": "2026-09-21T10:44:22.364Z",
           "reason": "Migrated from the prior approval-only generated queue."
+        },
+        {
+          "from": "DISCOVERED",
+          "to": "SCORED",
+          "at": "2026-11-03T15:45:43.493Z",
+          "reason": "Candidate score normalized for autonomous admission."
+        },
+        {
+          "from": "SCORED",
+          "to": "SKIPPED_PROHIBITED_ACTION",
+          "at": "2026-11-03T15:45:43.493Z",
+          "reason": "Candidate did not meet the configured admission score."
         }
-      ]
+      ],
+      "updatedAt": "2026-11-03T15:45:43.493Z"
     },
     {
       "id": "continuity-insight-2027-01-15-91081557f0cd",

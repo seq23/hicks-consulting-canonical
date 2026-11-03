@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-30T14:42:19.271Z",
+  "generatedAt": "2026-11-03T15:45:43.117Z",
   "policy": "full_safe_autonomy_llm_humanized_prewrite_validated",
   "candidates": [
     {
@@ -97,7 +97,7 @@
       },
       "targetWords": 1400,
       "minimumWords": 1120,
-      "sourceSignalCount": 7,
+      "sourceSignalCount": 6,
       "score": 100,
       "publishMode": "full_safe_autonomy",
       "autonomyStatus": "SYSTEM_BLOCKED",
@@ -153,7 +153,7 @@
       },
       "targetWords": 1400,
       "minimumWords": 1120,
-      "sourceSignalCount": 213,
+      "sourceSignalCount": 218,
       "score": 100,
       "publishMode": "full_safe_autonomy",
       "autonomyStatus": "SYSTEM_BLOCKED",
@@ -210,8 +210,8 @@
       },
       "targetWords": 1200,
       "minimumWords": 960,
-      "sourceSignalCount": 3,
-      "score": 60,
+      "sourceSignalCount": 2,
+      "score": 40,
       "publishMode": "full_safe_autonomy",
       "autonomyStatus": "SYSTEM_BLOCKED",
       "routineApprovalRequired": false,
@@ -267,8 +267,8 @@
       },
       "targetWords": 900,
       "minimumWords": 720,
-      "sourceSignalCount": 2,
-      "score": 40,
+      "sourceSignalCount": 1,
+      "score": 20,
       "publishMode": "full_safe_autonomy",
       "autonomyStatus": "SKIPPED_PROHIBITED_ACTION",
       "routineApprovalRequired": false,
@@ -287,12 +287,12 @@
       "llmPrompt": "Create a humanized insight draft for Hicks Consulting.\nTitle: Why am I so tired all the time even when I sleep?\nThis page exists to answer exactly one real question a person typed or said: \"Why am I so tired all the time even when I sleep?\". Answer THAT question, in that person's words, in the first two sentences. Do not broaden it into a general overview of Burnout, boundaries, and over-functioning; other pages on this site cover other questions in the same area and this one must not overlap them.\nMinimum words: 720. Target words: 900.\nWrite in a warm, grounded, specific voice. Do not diagnose. Do not guarantee outcomes. Do not invent client stories.\nInclude these sections: Short answer; What is actually happening; Why it shows up this way; What it is not; What usually makes it worse; What helps; When to get support.\nApproved conversion path after value is delivered: https://monika-hicks.clientsecure.me/"
     },
     {
-      "id": "brief-faith_centered_support-whitepaper",
-      "clusterId": "faith_centered_support",
-      "clusterTitle": "Faith-centered emotional support",
+      "id": "brief-genz_millennial_mental_health-whitepaper",
+      "clusterId": "genz_millennial_mental_health",
+      "clusterTitle": "Gen Z and millennial mental health language",
       "contentType": "whitepaper",
-      "title": "How do I grieve when everyone keeps telling me it was God's plan?",
-      "suggestedRoute": "/resources/white-papers/how-do-i-grieve-when-everyone-keeps-telling-me-it-was-god-s-plan/",
+      "title": "Am I traumatized or was that just a hard year?",
+      "suggestedRoute": "/resources/white-papers/am-i-traumatized-or-was-that-just-a-hard-year/",
       "sections": [
         "Executive summary",
         "The question people are actually asking",
@@ -305,65 +305,9 @@
       ],
       "demandPhrasing": {
         "source": "config/demand_phrasings.json",
-        "familyId": "faith_centered_support",
-        "clusterId": null,
-        "form": "how",
-        "groundedIn": [
-          "data/intake/query_clusters.json#faith_centered_support",
-          "data/search/target_queries.json query:'christian therapists near me'"
-        ],
-        "evidence": [
-          {
-            "kind": "cluster",
-            "id": "faith_centered_support",
-            "title": "Faith-centered emotional support",
-            "score": 40,
-            "queryCount": 2
-          }
-        ]
-      },
-      "targetWords": 2500,
-      "minimumWords": 2000,
-      "sourceSignalCount": 2,
-      "score": 40,
-      "publishMode": "full_safe_autonomy",
-      "autonomyStatus": "DISCOVERED",
-      "routineApprovalRequired": false,
-      "llmGeneratedRequired": true,
-      "publicOnlyAfterApproval": false,
-      "createdAt": "2026-10-27T19:35:39.585Z",
-      "humanizationChecklist": [
-        "Use plain human language rather than generic therapy marketing copy.",
-        "Vary sentence rhythm and paragraph length.",
-        "Include concrete examples without inventing client stories.",
-        "Avoid exaggerated claims, guarantees, diagnosis, or pressure language.",
-        "Keep Monika Hicks / Hicks Consulting entity references consistent.",
-        "End with an approved conversion path only after value is delivered."
-      ],
-      "conversionPath": "https://monika-hicks.clientsecure.me/",
-      "llmPrompt": "Create a humanized whitepaper draft for Hicks Consulting.\nTitle: How do I grieve when everyone keeps telling me it was God's plan?\nThis page exists to answer exactly one real question a person typed or said: \"How do I grieve when everyone keeps telling me it was God's plan?\". Answer THAT question, in that person's words, in the first two sentences. Do not broaden it into a general overview of Faith-centered emotional support; other pages on this site cover other questions in the same area and this one must not overlap them.\nMinimum words: 2000. Target words: 2500.\nWrite in a warm, grounded, specific voice. Do not diagnose. Do not guarantee outcomes. Do not invent client stories.\nInclude these sections: Executive summary; The question people are actually asking; What the evidence shows; Audience analysis; Framework; Implementation guidance; Risks and limitations; Recommended next steps.\nApproved conversion path after value is delivered: https://monika-hicks.clientsecure.me/"
-    },
-    {
-      "id": "brief-genz_millennial_mental_health-article",
-      "clusterId": "genz_millennial_mental_health",
-      "clusterTitle": "Gen Z and millennial mental health language",
-      "contentType": "article",
-      "title": "Why does everyone my age seem burned out at thirty?",
-      "suggestedRoute": "/resources/articles/why-does-everyone-my-age-seem-burned-out-at-thirty/",
-      "sections": [
-        "Short answer",
-        "What is actually happening",
-        "Why it shows up this way",
-        "What it is not",
-        "What usually makes it worse",
-        "What helps",
-        "When to get support"
-      ],
-      "demandPhrasing": {
-        "source": "config/demand_phrasings.json",
         "familyId": "genz_millennial_mental_health",
         "clusterId": null,
-        "form": "why",
+        "form": "what",
         "groundedIn": [
           "data/intake/query_clusters.json#genz_millennial_mental_health",
           "data/intake/normalized_query_signals.json tag:genz_millennial"
@@ -378,16 +322,16 @@
           }
         ]
       },
-      "targetWords": 1200,
-      "minimumWords": 960,
+      "targetWords": 2500,
+      "minimumWords": 2000,
       "sourceSignalCount": 1,
       "score": 20,
       "publishMode": "full_safe_autonomy",
-      "autonomyStatus": "DISCOVERED",
+      "autonomyStatus": "SKIPPED_PROHIBITED_ACTION",
       "routineApprovalRequired": false,
       "llmGeneratedRequired": true,
       "publicOnlyAfterApproval": false,
-      "createdAt": "2026-10-27T19:35:39.586Z",
+      "createdAt": "2026-08-28T18:49:42.939Z",
       "humanizationChecklist": [
         "Use plain human language rather than generic therapy marketing copy.",
         "Vary sentence rhythm and paragraph length.",
@@ -397,7 +341,7 @@
         "End with an approved conversion path only after value is delivered."
       ],
       "conversionPath": "https://monika-hicks.clientsecure.me/",
-      "llmPrompt": "Create a humanized article draft for Hicks Consulting.\nTitle: Why does everyone my age seem burned out at thirty?\nThis page exists to answer exactly one real question a person typed or said: \"Why does everyone my age seem burned out at thirty?\". Answer THAT question, in that person's words, in the first two sentences. Do not broaden it into a general overview of Gen Z and millennial mental health language; other pages on this site cover other questions in the same area and this one must not overlap them.\nMinimum words: 960. Target words: 1200.\nWrite in a warm, grounded, specific voice. Do not diagnose. Do not guarantee outcomes. Do not invent client stories.\nInclude these sections: Short answer; What is actually happening; Why it shows up this way; What it is not; What usually makes it worse; What helps; When to get support.\nApproved conversion path after value is delivered: https://monika-hicks.clientsecure.me/"
+      "llmPrompt": "Create a humanized whitepaper draft for Hicks Consulting.\nTitle: Am I traumatized or was that just a hard year?\nThis page exists to answer exactly one real question a person typed or said: \"Am I traumatized or was that just a hard year?\". Answer THAT question, in that person's words, in the first two sentences. Do not broaden it into a general overview of Gen Z and millennial mental health language; other pages on this site cover other questions in the same area and this one must not overlap them.\nMinimum words: 2000. Target words: 2500.\nWrite in a warm, grounded, specific voice. Do not diagnose. Do not guarantee outcomes. Do not invent client stories.\nInclude these sections: Executive summary; The question people are actually asking; What the evidence shows; Audience analysis; Framework; Implementation guidance; Risks and limitations; Recommended next steps.\nApproved conversion path after value is delivered: https://monika-hicks.clientsecure.me/"
     },
     {
       "id": "continuity-insight-2027-01-04-3cf2aea5e9d5",
@@ -876,7 +820,7 @@
       "sourceSignalCount": 1,
       "score": 45.14,
       "publishMode": "full_safe_autonomy",
-      "autonomyStatus": "DISCOVERED",
+      "autonomyStatus": "SKIPPED_PROHIBITED_ACTION",
       "llmGeneratedRequired": true,
       "routineApprovalRequired": false,
       "publicOnlyAfterApproval": false,
@@ -937,7 +881,7 @@
       "sourceSignalCount": 1,
       "score": 44.92,
       "publishMode": "full_safe_autonomy",
-      "autonomyStatus": "DISCOVERED",
+      "autonomyStatus": "SKIPPED_PROHIBITED_ACTION",
       "llmGeneratedRequired": true,
       "routineApprovalRequired": false,
       "publicOnlyAfterApproval": false,
@@ -3607,64 +3551,6 @@
       "queueType": "content_brief"
     },
     {
-      "id": "brief-genz_millennial_mental_health-whitepaper",
-      "clusterId": "genz_millennial_mental_health",
-      "clusterTitle": "Gen Z and millennial mental health language",
-      "contentType": "whitepaper",
-      "title": "Am I traumatized or was that just a hard year?",
-      "suggestedRoute": "/resources/white-papers/am-i-traumatized-or-was-that-just-a-hard-year/",
-      "sections": [
-        "Executive summary",
-        "The question people are actually asking",
-        "What the evidence shows",
-        "Audience analysis",
-        "Framework",
-        "Implementation guidance",
-        "Risks and limitations",
-        "Recommended next steps"
-      ],
-      "demandPhrasing": {
-        "source": "config/demand_phrasings.json",
-        "familyId": "genz_millennial_mental_health",
-        "clusterId": null,
-        "form": "what",
-        "groundedIn": [
-          "data/intake/query_clusters.json#genz_millennial_mental_health",
-          "data/intake/normalized_query_signals.json tag:genz_millennial"
-        ],
-        "evidence": [
-          {
-            "kind": "cluster",
-            "id": "genz_millennial_mental_health",
-            "title": "Gen Z and millennial mental health language",
-            "score": 20,
-            "queryCount": 1
-          }
-        ]
-      },
-      "targetWords": 2500,
-      "minimumWords": 2000,
-      "sourceSignalCount": 1,
-      "score": 20,
-      "publishMode": "full_safe_autonomy",
-      "autonomyStatus": "SKIPPED_PROHIBITED_ACTION",
-      "routineApprovalRequired": false,
-      "llmGeneratedRequired": true,
-      "publicOnlyAfterApproval": false,
-      "createdAt": "2026-08-28T18:49:42.939Z",
-      "humanizationChecklist": [
-        "Use plain human language rather than generic therapy marketing copy.",
-        "Vary sentence rhythm and paragraph length.",
-        "Include concrete examples without inventing client stories.",
-        "Avoid exaggerated claims, guarantees, diagnosis, or pressure language.",
-        "Keep Monika Hicks / Hicks Consulting entity references consistent.",
-        "End with an approved conversion path only after value is delivered."
-      ],
-      "conversionPath": "https://monika-hicks.clientsecure.me/",
-      "llmPrompt": "Create a humanized whitepaper draft for Hicks Consulting.\nTitle: Am I traumatized or was that just a hard year?\nThis page exists to answer exactly one real question a person typed or said: \"Am I traumatized or was that just a hard year?\". Answer THAT question, in that person's words, in the first two sentences. Do not broaden it into a general overview of Gen Z and millennial mental health language; other pages on this site cover other questions in the same area and this one must not overlap them.\nMinimum words: 2000. Target words: 2500.\nWrite in a warm, grounded, specific voice. Do not diagnose. Do not guarantee outcomes. Do not invent client stories.\nInclude these sections: Executive summary; The question people are actually asking; What the evidence shows; Audience analysis; Framework; Implementation guidance; Risks and limitations; Recommended next steps.\nApproved conversion path after value is delivered: https://monika-hicks.clientsecure.me/",
-      "queueType": "content_brief"
-    },
-    {
       "id": "brief-genz_millennial_mental_health-fanout",
       "clusterId": "genz_millennial_mental_health",
       "clusterTitle": "Gen Z and millennial mental health language",
@@ -3951,6 +3837,121 @@
       ],
       "conversionPath": "https://monika-hicks.clientsecure.me/",
       "llmPrompt": "Create a humanized whitepaper draft for Hicks Consulting.\nTitle: I am the first one in my family to go to therapy and nobody understands\nThis page exists to answer exactly one real question a person typed or said: \"I am the first one in my family to go to therapy and nobody understands\". Answer THAT question, in that person's words, in the first two sentences. Do not broaden it into a general overview of Black women healing beyond survival; other pages on this site cover other questions in the same area and this one must not overlap them.\nMinimum words: 2000. Target words: 2500.\nWrite in a warm, grounded, specific voice. Do not diagnose. Do not guarantee outcomes. Do not invent client stories.\nInclude these sections: Executive summary; The question people are actually asking; What the evidence shows; Audience analysis; Framework; Implementation guidance; Risks and limitations; Recommended next steps.\nApproved conversion path after value is delivered: https://monika-hicks.clientsecure.me/",
+      "queueType": "content_brief"
+    },
+    {
+      "id": "brief-faith_centered_support-whitepaper",
+      "clusterId": "faith_centered_support",
+      "clusterTitle": "Faith-centered emotional support",
+      "contentType": "whitepaper",
+      "title": "How do I grieve when everyone keeps telling me it was God's plan?",
+      "suggestedRoute": "/resources/white-papers/how-do-i-grieve-when-everyone-keeps-telling-me-it-was-god-s-plan/",
+      "sections": [
+        "Executive summary",
+        "The question people are actually asking",
+        "What the evidence shows",
+        "Audience analysis",
+        "Framework",
+        "Implementation guidance",
+        "Risks and limitations",
+        "Recommended next steps"
+      ],
+      "demandPhrasing": {
+        "source": "config/demand_phrasings.json",
+        "familyId": "faith_centered_support",
+        "clusterId": null,
+        "form": "how",
+        "groundedIn": [
+          "data/intake/query_clusters.json#faith_centered_support",
+          "data/search/target_queries.json query:'christian therapists near me'"
+        ],
+        "evidence": [
+          {
+            "kind": "cluster",
+            "id": "faith_centered_support",
+            "title": "Faith-centered emotional support",
+            "score": 40,
+            "queryCount": 2
+          }
+        ]
+      },
+      "targetWords": 2500,
+      "minimumWords": 2000,
+      "sourceSignalCount": 2,
+      "score": 40,
+      "publishMode": "full_safe_autonomy",
+      "autonomyStatus": "DISCOVERED",
+      "routineApprovalRequired": false,
+      "llmGeneratedRequired": true,
+      "publicOnlyAfterApproval": false,
+      "createdAt": "2026-10-27T19:35:39.585Z",
+      "humanizationChecklist": [
+        "Use plain human language rather than generic therapy marketing copy.",
+        "Vary sentence rhythm and paragraph length.",
+        "Include concrete examples without inventing client stories.",
+        "Avoid exaggerated claims, guarantees, diagnosis, or pressure language.",
+        "Keep Monika Hicks / Hicks Consulting entity references consistent.",
+        "End with an approved conversion path only after value is delivered."
+      ],
+      "conversionPath": "https://monika-hicks.clientsecure.me/",
+      "llmPrompt": "Create a humanized whitepaper draft for Hicks Consulting.\nTitle: How do I grieve when everyone keeps telling me it was God's plan?\nThis page exists to answer exactly one real question a person typed or said: \"How do I grieve when everyone keeps telling me it was God's plan?\". Answer THAT question, in that person's words, in the first two sentences. Do not broaden it into a general overview of Faith-centered emotional support; other pages on this site cover other questions in the same area and this one must not overlap them.\nMinimum words: 2000. Target words: 2500.\nWrite in a warm, grounded, specific voice. Do not diagnose. Do not guarantee outcomes. Do not invent client stories.\nInclude these sections: Executive summary; The question people are actually asking; What the evidence shows; Audience analysis; Framework; Implementation guidance; Risks and limitations; Recommended next steps.\nApproved conversion path after value is delivered: https://monika-hicks.clientsecure.me/",
+      "queueType": "content_brief"
+    },
+    {
+      "id": "brief-genz_millennial_mental_health-article",
+      "clusterId": "genz_millennial_mental_health",
+      "clusterTitle": "Gen Z and millennial mental health language",
+      "contentType": "article",
+      "title": "Why does everyone my age seem burned out at thirty?",
+      "suggestedRoute": "/resources/articles/why-does-everyone-my-age-seem-burned-out-at-thirty/",
+      "sections": [
+        "Short answer",
+        "What is actually happening",
+        "Why it shows up this way",
+        "What it is not",
+        "What usually makes it worse",
+        "What helps",
+        "When to get support"
+      ],
+      "demandPhrasing": {
+        "source": "config/demand_phrasings.json",
+        "familyId": "genz_millennial_mental_health",
+        "clusterId": null,
+        "form": "why",
+        "groundedIn": [
+          "data/intake/query_clusters.json#genz_millennial_mental_health",
+          "data/intake/normalized_query_signals.json tag:genz_millennial"
+        ],
+        "evidence": [
+          {
+            "kind": "cluster",
+            "id": "genz_millennial_mental_health",
+            "title": "Gen Z and millennial mental health language",
+            "score": 20,
+            "queryCount": 1
+          }
+        ]
+      },
+      "targetWords": 1200,
+      "minimumWords": 960,
+      "sourceSignalCount": 1,
+      "score": 20,
+      "publishMode": "full_safe_autonomy",
+      "autonomyStatus": "DISCOVERED",
+      "routineApprovalRequired": false,
+      "llmGeneratedRequired": true,
+      "publicOnlyAfterApproval": false,
+      "createdAt": "2026-10-27T19:35:39.586Z",
+      "humanizationChecklist": [
+        "Use plain human language rather than generic therapy marketing copy.",
+        "Vary sentence rhythm and paragraph length.",
+        "Include concrete examples without inventing client stories.",
+        "Avoid exaggerated claims, guarantees, diagnosis, or pressure language.",
+        "Keep Monika Hicks / Hicks Consulting entity references consistent.",
+        "End with an approved conversion path only after value is delivered."
+      ],
+      "conversionPath": "https://monika-hicks.clientsecure.me/",
+      "llmPrompt": "Create a humanized article draft for Hicks Consulting.\nTitle: Why does everyone my age seem burned out at thirty?\nThis page exists to answer exactly one real question a person typed or said: \"Why does everyone my age seem burned out at thirty?\". Answer THAT question, in that person's words, in the first two sentences. Do not broaden it into a general overview of Gen Z and millennial mental health language; other pages on this site cover other questions in the same area and this one must not overlap them.\nMinimum words: 960. Target words: 1200.\nWrite in a warm, grounded, specific voice. Do not diagnose. Do not guarantee outcomes. Do not invent client stories.\nInclude these sections: Short answer; What is actually happening; Why it shows up this way; What it is not; What usually makes it worse; What helps; When to get support.\nApproved conversion path after value is delivered: https://monika-hicks.clientsecure.me/",
       "queueType": "content_brief"
     }
   ]
