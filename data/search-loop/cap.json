@@ -1,8 +1,8 @@
 {
   "schema": "search-loop-cap-v1",
-  "max_live_pages": 18,
+  "max_live_pages": 21,
   "config_value": null,
-  "reason": "down from 20 to 18: Google impressions fell to 1231 in the last 28 days from 1554 in the 28 before",
+  "reason": "3 Nov 2026 blitz (Sequoia asked for it): raised from 18 to 21 for one blitz of question pages; the weekly results check resumes from here",
   "last_eval_week": "2026-W45",
   "history": [
     {
@@ -17,11 +17,29 @@
       "from": 20,
       "to": 18,
       "reason": "down from 20 to 18: Google impressions fell to 1231 in the last 28 days from 1554 in the 28 before"
+    },
+    {
+      "at": "2026-11-03T14:12:42.473Z",
+      "week": "2026-W45",
+      "from": 18,
+      "to": 21,
+      "reason": "3 Nov 2026 blitz (Sequoia asked for it): raised from 18 to 21 for one blitz of question pages; the weekly results check resumes from here",
+      "blitz": true
     }
   ],
   "held": {},
   "impressions": {
     "last_28": 1231,
     "prev_28": 1554
-  }
+  },
+  "blitz": [
+    {
+      "date": "2026-11-03",
+      "by": "Sequoia",
+      "what": "one-day blitz of question pages; the per-day cap of 1 and the live cap were lifted for this blitz only; not a breach",
+      "max_per_day_override": 30,
+      "cap_from": 18,
+      "cap_to": 21
+    }
+  ]
 }
