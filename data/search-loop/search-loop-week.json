@@ -2,9 +2,9 @@
   "schema": "search-loop-week-v1",
   "week": "2026-W45",
   "site": "hicksconsulting.org",
-  "generated_at": "2026-11-02T14:32:58.725Z",
+  "generated_at": "2026-11-03T12:55:38.931Z",
   "state": "running",
-  "published": 3,
+  "published": 7,
   "indexed": "not read: no page old enough to inspect yet (14 days)",
   "pace": 10,
   "ai_visitors": "not read: no free analytics source configured for this site (analytics.ai_referrals)",
@@ -13,9 +13,20 @@
   "wins": 0,
   "undone": 0,
   "merged": 0,
+  "held_by_cap": 0,
+  "redirected": [],
+  "cap": {
+    "max_live_pages": 18,
+    "live": 7,
+    "room": 11,
+    "why": "down from 20 to 18: Google impressions fell to 1231 in the last 28 days from 1554 in the 28 before"
+  },
   "notes": [
-    "IndexNow: 3 new page(s) not live yet; submitted when they answer 200",
-    "pace: held at 10/day: indexing not read (no pages old enough to measure)"
+    "cap: down from 20 to 18: Google impressions fell to 1231 in the last 28 days from 1554 in the 28 before",
+    "BUILD distinct gate: 14 search(es) had the same intent as an existing page and were skipped (published pages are frozen on this site, so no strengthen brief)",
+    "BUILD: published pages are frozen on this site, so no existing page was edited to link the 4 new page(s); link them from the site's own build or nav",
+    "BUILD gate notes (not blocking): 3 published page(s) are outside a length or style aim; each is listed under gate_notes in pages.json",
+    "CHECK: published pages are frozen on this site; checkpoints are recorded, no page is strengthened, undone or merged"
   ],
-  "run_url": "https://github.com/seq23/hicks-consulting-canonical/actions/runs/41462974199"
+  "run_url": "https://github.com/seq23/hicks-consulting-canonical/actions/runs/41639803133"
 }

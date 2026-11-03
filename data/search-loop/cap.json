@@ -1,0 +1,27 @@
+{
+  "schema": "search-loop-cap-v1",
+  "max_live_pages": 18,
+  "config_value": null,
+  "reason": "down from 20 to 18: Google impressions fell to 1231 in the last 28 days from 1554 in the 28 before",
+  "last_eval_week": "2026-W45",
+  "history": [
+    {
+      "at": "2026-11-03T13:34:39.095Z",
+      "from": null,
+      "to": 20,
+      "reason": "started at 20: the site's 3 distinct live engine page(s), raised to the starting floor of 20"
+    },
+    {
+      "at": "2026-11-03T12:55:38.931Z",
+      "week": "2026-W45",
+      "from": 20,
+      "to": 18,
+      "reason": "down from 20 to 18: Google impressions fell to 1231 in the last 28 days from 1554 in the 28 before"
+    }
+  ],
+  "held": {},
+  "impressions": {
+    "last_28": 1231,
+    "prev_28": 1554
+  }
+}
