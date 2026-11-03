@@ -35,9 +35,9 @@ concurrency:
 
 jobs:
   search-loop:
-    uses: seq23/search-loop/.github/workflows/search-loop.yml@v1.5.0
+    uses: seq23/search-loop/.github/workflows/search-loop.yml@v1.5.1
     with:
-      engine_ref: v1.5.0
+      engine_ref: v1.5.1
       stage: ${{ inputs.stage || 'auto' }}
       setup_command: npm ci && npm run build && node scripts/publishing/write_calendar_slots.mjs --reserved-only && node .github/scripts/search_loop_site_view.mjs make
       commit_command: bash .github/scripts/search_loop_commit.sh
