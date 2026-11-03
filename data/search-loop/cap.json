@@ -1,8 +1,8 @@
 {
   "schema": "search-loop-cap-v1",
-  "max_live_pages": 21,
+  "max_live_pages": 18,
   "config_value": null,
-  "reason": "3 Nov 2026 blitz (Sequoia asked for it): raised from 18 to 21 for one blitz of question pages; the weekly results check resumes from here",
+  "reason": "held at 18 after the 3 Nov 2026 blitz (Sequoia asked for it; 9 pages, recorded under blitz); weekly results check resumes",
   "last_eval_week": "2026-W45",
   "history": [
     {
@@ -25,6 +25,14 @@
       "to": 21,
       "reason": "3 Nov 2026 blitz (Sequoia asked for it): raised from 18 to 21 for one blitz of question pages; the weekly results check resumes from here",
       "blitz": true
+    },
+    {
+      "at": "2026-11-03T14:30:01.273Z",
+      "week": "2026-W45",
+      "from": 21,
+      "to": 18,
+      "reason": "3 Nov 2026 blitz done: 9 pages published under the blitz; cap back to 18 (16 live), the per-day cap back to 1",
+      "blitz": true
     }
   ],
   "held": {},
@@ -39,7 +47,9 @@
       "what": "one-day blitz of question pages; the per-day cap of 1 and the live cap were lifted for this blitz only; not a breach",
       "max_per_day_override": 30,
       "cap_from": 18,
-      "cap_to": 21
+      "cap_to": 21,
+      "published": 9,
+      "cap_after": 18
     }
   ]
 }
