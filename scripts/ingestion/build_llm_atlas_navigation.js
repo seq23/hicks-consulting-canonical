@@ -84,7 +84,7 @@ for (const page of pages) {
 function block(page) {
   const others = pages.filter((p) => p.route !== page.route);
   const items = others.map((p) => `<li><a href="${p.route}">${esc(p.label)}</a></li>`).join('');
-  const heading = page.slug ? 'Other LLM Atlas surfaces' : 'LLM Atlas surfaces';
+  const heading = page.slug ? 'Other LLM Atlas surfaces' : 'What other LLM Atlas surfaces are there?';
   return `<section class="section" data-nav="atlas"><div class="container narrow">`
     + `<nav class="atlas-nav" aria-label="LLM Atlas surfaces"><h2>${heading}</h2>`
     + `<ul>${items}</ul>`
