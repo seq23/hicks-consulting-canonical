@@ -15,8 +15,8 @@
     },
     {
       "path": "worker/admin_runtime.mjs",
-      "sha256": "7d1b488b9c8b1acf6b35f3867ca77e3d7cdd82ada018ecce9765c21158491276",
-      "bytes": 11371
+      "sha256": "5e900a741c3bdbc989c8d4528c7525da4c5c4ddd95e4af31192db42963244ae3",
+      "bytes": 30046
     },
     {
       "path": "scripts/publishing/run_safe_publish.mjs",
@@ -35,8 +35,8 @@
     },
     {
       "path": "assets/js/admin.js",
-      "sha256": "97b436c055fcc9bc80ab82c9416466138d4f06e79553d98f6ea1cb7a336c554b",
-      "bytes": 46475
+      "sha256": "935640ffba78e953d2c5789160a7079d2c55829dbbd5872363ab25e2b725e033",
+      "bytes": 45540
     },
     {
       "path": "scripts/autonomy/lib/safe_harbor.mjs",
@@ -44,10 +44,10 @@
       "bytes": 8930
     }
   ],
-  "baseline_refreshed_at": "2026-09-29T19:00:00Z",
-  "baseline_reason": "Scoped root-cause repair requested by the owner: enforce current search metadata before publishing legacy queued HTML, and record unsafe metadata skips without releasing defective pages. Human approval, dates, cadence, and all other protected files and editorial identity hashes remain unchanged. Relevant publisher and metadata changes now trigger the real publish workflow on main, proving the repaired lane immediately rather than waiting for its next cron.",
+  "baseline_refreshed_at": "2026-11-03T12:00:00Z",
+  "baseline_reason": "Owner-ordered security repair (3 Nov 2026): admin auth moved server-side. The admin password hash is no longer in the repo or browser code; the server checks the password against a Cloudflare Pages secret, issues signed sessions and locks out repeated failures. Only the admin auth code changed; human approval, dates, cadence, all other protected files and editorial identity hashes remain unchanged.",
   "baseline_refresh_changed_files": [
-    "scripts/publishing/run_safe_publish.mjs",
-    ".github/workflows/content-publish.yml"
+    "worker/admin_runtime.mjs",
+    "assets/js/admin.js"
   ]
 }

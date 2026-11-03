@@ -12,7 +12,7 @@ A 99.9% hands-off search/content operating system that preserves Hicks Consultin
 4. Full Safe Autonomy queue lifecycle, LLM adapter, Safe Harbor validation/repair/skip behavior, cadence-preserving scheduling, autonomous publisher, post-publication explanation email, accepted-output freeze, rollback, feedback queue, measurement, competitor observation, and bounded self-healing.
 5. Original client-facing `/admin/` experience restored as the primary workflow, with the optional Real Operations panel retained as a clearly labeled alternative.
 6. Original `/admin/digitalproducts/` manager preserved, including add/update, upload, Publish Live, Hide from Site, KV/R2 persistence contracts, and backup tools.
-7. Shared lightweight `blackgirlmagic` gate across `/admin/`, `/agency/`, and `/admin/digitalproducts/`; no visible `unknown` states.
+7. Shared server-checked password gate across `/admin/`, `/agency/`, and `/admin/digitalproducts/`; no visible `unknown` states.
 8. `/agency/` remediated to 0 High findings, 0 Medium findings, 0 similarity pairs, and 92/A- live content quality.
 9. GSC, Bing, GitHub operations, IndexNow, email, LLM, and search-provider integration code with exact connection instructions, provider links, setup-required states, and connection-test actions.
 10. Site-driven deep validation with 58 registered checks and 62 isolated probes, including full autonomy lifecycle, deterministic build, rollback, Digital Products, and cadence-preservation proofs.

@@ -67,24 +67,26 @@ for (const token of [
 if (js.includes('admin-api-token') || js.includes('x-admin-token')) fail('Admin JS must not depend on deprecated visible API token auth.');
 
 const sharedGate = fs.readFileSync('assets/js/shared-admin-gate.js', 'utf8');
-for (const token of ['window.HicksAdminGate', 'x-admin-password-hash', 'c7ef3319e6cf6aab9035156df95f18dfec2ba2178f733940eda688758805708b']) {
+for (const token of ['window.HicksAdminGate', 'x-admin-session', '/api/admin/login']) {
   if (!sharedGate.includes(token)) fail(`Shared admin gate missing token: ${token}`);
 }
+if (/[0-9a-f]{64}/i.test(sharedGate) || sharedGate.includes('x-admin-password-hash')) fail('Shared admin gate must not carry or send a password hash.');
 
 const fn = fs.readFileSync('functions/api/digital-products/_shared.js', 'utf8');
-for (const token of ['DIGITAL_PRODUCTS_KV', 'DIGITAL_PRODUCT_FILES', 'verifyAdminPasswordHash', 'Admin password did not match.', 'priceLabel', 'gumroadUrl', 'placeholder']) {
+for (const token of ['DIGITAL_PRODUCTS_KV', 'DIGITAL_PRODUCT_FILES', 'requireAdminSession', 'priceLabel', 'gumroadUrl', 'placeholder']) {
   if (!fn.includes(token)) fail(`Digital products API shared contract missing token: ${token}`);
 }
 if (fn.includes('DIGITAL_PRODUCTS_ADMIN_TOKEN') || fn.includes('x-admin-token')) fail('Digital products shared API must not require deprecated token auth.');
 
 const worker = fs.readFileSync('worker/_worker.js', 'utf8');
-for (const token of ['verifyAdminPasswordHash', 'Admin password did not match.']) {
+for (const token of ['requireAdminSession']) {
   if (!worker.includes(token)) fail(`Worker digital products gate missing token: ${token}`);
 }
 const adminRuntime = fs.readFileSync('worker/admin_runtime.mjs', 'utf8');
-for (const token of ['x-admin-password-hash', 'c7ef3319e6cf6aab9035156df95f18dfec2ba2178f733940eda688758805708b']) {
+for (const token of ['x-admin-session', 'ADMIN_PASSWORD_HASH', 'ADMIN_AUTH_SECRET_MISSING']) {
   if (!adminRuntime.includes(token)) fail(`Shared admin runtime missing token: ${token}`);
 }
+if (/['"][0-9a-f]{64}['"]/i.test(adminRuntime)) fail('Shared admin runtime must not hard-code a password hash.');
 if (worker.includes('DIGITAL_PRODUCTS_ADMIN_TOKEN') || worker.includes('x-admin-token')) fail('Worker must not require deprecated digital products token auth.');
 
 console.log('Digital product upload/admin contract OK');

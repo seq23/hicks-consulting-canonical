@@ -7,7 +7,7 @@
 // uses for data/autonomy/state.json. What is mirrored exactly is the part that
 // matters here: the auth check, the JSON error shape, and one decision per call.
 import { handleContentDecision } from '../../../worker/admin_runtime.mjs';
-import { verifyAdminPasswordHash } from '../../../worker/admin_runtime.mjs';
+import { requireAdminSession } from '../../../worker/admin_runtime.mjs';
 
 export function jsonResponse(body, status = 200) {
   return new Response(JSON.stringify(body), {
@@ -20,7 +20,8 @@ export function jsonResponse(body, status = 200) {
 }
 
 export async function requireAdmin(request, env) {
-  if (!verifyAdminPasswordHash(request)) return { ok: false, response: jsonResponse({ ok: false, error: 'Admin password did not match.' }, 401) };
+  const denied = await requireAdminSession(request, env);
+  if (denied) return { ok: false, response: denied };
   return { ok: true };
 }
 

@@ -5,7 +5,7 @@ compatibility_date = "2026-05-02"
 [vars]
 TRAINING_INQUIRY_WEBHOOK_URL = "https://script.google.com/macros/s/AKfycbx7TneKS_mq6eJfcBpSxtzhgUzgjubYXKw5i8BAeisz7Z0YilvqVjOWdbwBAVqbYKtj/exec"
 # INQUIRY_SHARED_SECRET must be installed with: wrangler secret put INQUIRY_SHARED_SECRET
-# GITHUB_ADMIN_TOKEN and provider credentials must be Cloudflare secrets. The shared admin/agency convenience gate uses the fixed client-side password requested by the owner.
+# GITHUB_ADMIN_TOKEN, ADMIN_PASSWORD_HASH, ADMIN_SESSION_SECRET and provider credentials must be Cloudflare Pages secrets.
 
 [[kv_namespaces]]
 binding = "DIGITAL_PRODUCTS_KV"

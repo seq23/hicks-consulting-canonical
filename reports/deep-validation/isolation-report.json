@@ -1124,7 +1124,7 @@
       "group": "admin-access",
       "command": "node _ops/validation/run_validation_matrix.js --check admin-security-behavior",
       "registered_severity": "HARD_FAIL",
-      "rationale": "Proves the exact owner-approved blackgirlmagic hash, one shared lightweight gate across admin surfaces, simple hash-header API compatibility, and removal of the unauthorized signed-session/CSRF layer.",
+      "rationale": "Proves admin auth is server-side: a client-sent hash is refused, the password signs in, repeated failures lock out, and a missing secret fails closed (503), never open.",
       "exit_status": 0,
       "duration_seconds": 0.159,
       "finding_marker": false,
@@ -1135,7 +1135,7 @@
       "authoritative_source_mutated": false,
       "changed_paths": [],
       "changed_path_count": 0,
-      "stdout_tail": "Validation registry: hicks-consulting-canonical (2 checks, check=admin-security-behavior)\nPASS  validation-registry \u2014 Validation registry contract OK (58 checks, 8 profiles, 2 release gates).\nPASS  admin-security-behavior \u2014 Shared lightweight admin/agency gate behavior OK (exact blackgirlmagic hash, common gate across all admin surfaces, simple hash-header compatibility, and no stale signed-session/CSRF layer).\n\nVALIDATION REGISTRY SUMMARY\nPass: 2\nHard fail findings: 0\nExecution hard fail: 0\nStrong warning: 0\nSoft warning: 0\nInfo finding: 0\nVALIDATION RESULT: PASS",
+      "stdout_tail": "Validation registry: hicks-consulting-canonical (2 checks, check=admin-security-behavior)\nPASS  validation-registry \u2014 Validation registry contract OK (58 checks, 8 profiles, 2 release gates).\nPASS  admin-security-behavior \u2014 Shared lightweight admin/agency gate behavior OK (server-side auth, common gate across all admin surfaces, simple hash-header compatibility, and no stale signed-session/CSRF layer).\n\nVALIDATION REGISTRY SUMMARY\nPass: 2\nHard fail findings: 0\nExecution hard fail: 0\nStrong warning: 0\nSoft warning: 0\nInfo finding: 0\nVALIDATION RESULT: PASS",
       "stderr_tail": ""
     },
     {

@@ -5,7 +5,7 @@
 - `/admin/` is reconciled to the original client-facing queue and instructions as the primary experience.
 - The optional **Real operations** section remains collapsed and secondary for clients who choose to use direct workflow buttons.
 - `/admin/digitalproducts/` retains the original product-manager experience and behavior contracts.
-- `/admin/`, `/agency/`, and `/admin/digitalproducts/` use the same `blackgirlmagic` password.
+- `/admin/`, `/agency/`, and `/admin/digitalproducts/` use the same password, checked server-side.
 - No visible status on these pages uses `unknown`.
 
 ## Agency remediation

@@ -1,4 +1,3 @@
-const ADMIN_PASSWORD_HASH = 'c7ef3319e6cf6aab9035156df95f18dfec2ba2178f733940eda688758805708b';
 
 function adminKv(env, preferred) {
   return env[preferred] || env.DIGITAL_PRODUCTS_KV || null;
@@ -39,8 +38,158 @@ function constantTimeEqual(leftValue, rightValue) {
   return difference === 0;
 }
 
-export function verifyAdminPasswordHash(request) {
-  return constantTimeEqual(request.headers.get('x-admin-password-hash') || '', ADMIN_PASSWORD_HASH);
+/* ------------------------------------------------------------------ *
+ * Admin authentication.
+ *
+ * The browser sends the typed password once, over HTTPS, to /api/admin/login.
+ * The server checks it against the ADMIN_PASSWORD_HASH Cloudflare secret and
+ * hands back a signed session token; every other admin call carries that token
+ * in x-admin-session. Nothing the browser holds is ever compared directly
+ * against the stored secret, and no hash of the password lives in this repo.
+ *
+ * ADMIN_PASSWORD_HASH formats:
+ *   pbkdf2-sha256$<iterations>$<salt base64>$<hash base64>   (iterations <= 100000, the Workers limit)
+ *   <64 hex>  SHA-256 of the password
+ * ADMIN_SESSION_SECRET signs session tokens. Rotating either secret signs everyone out.
+ * Either secret missing is a NAMED STOP (503 ADMIN_AUTH_SECRET_MISSING): admin
+ * stays closed, never open.
+ * ------------------------------------------------------------------ */
+
+export const ADMIN_SESSION_HEADER = 'x-admin-session';
+const ADMIN_SESSION_TTL_SECONDS = 60 * 60 * 24 * 30;
+export const ADMIN_LOCKOUT_MAX_FAILURES = 5;
+const ADMIN_LOCKOUT_SECONDS = 15 * 60;
+const ADMIN_PBKDF2_PREFIX = 'pbkdf2-sha256$';
+const ADMIN_SIGN_IN_FAILED = 'Password did not match.';
+const ADMIN_LOCKED_OUT = 'Too many attempts. Try again in 15 minutes.';
+const memoryLockouts = new Map();
+
+function base64ToBytes(value) {
+  const binary = atob(String(value || '').replace(/-/g, '+').replace(/_/g, '/'));
+  return Uint8Array.from(binary, (char) => char.charCodeAt(0));
+}
+
+function bytesToBase64url(bytes) {
+  let binary = '';
+  for (const byte of new Uint8Array(bytes)) binary += String.fromCharCode(byte);
+  return btoa(binary).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
+}
+
+function bytesToHex(bytes) {
+  return [...new Uint8Array(bytes)].map((byte) => byte.toString(16).padStart(2, '0')).join('');
+}
+
+function adminSecrets(env) {
+  const passwordHash = String(env?.ADMIN_PASSWORD_HASH || '').trim();
+  const sessionSecret = String(env?.ADMIN_SESSION_SECRET || '').trim();
+  const validHash = /^[0-9a-f]{64}$/i.test(passwordHash) || passwordHash.startsWith(ADMIN_PBKDF2_PREFIX);
+  if (!validHash || sessionSecret.length < 32) return null;
+  return { passwordHash, sessionSecret };
+}
+
+function secretMissingResponse() {
+  console.error('ADMIN_AUTH_SECRET_MISSING: set ADMIN_PASSWORD_HASH and ADMIN_SESSION_SECRET as Cloudflare Pages secrets');
+  return json({ ok: false, status: 'ADMIN_AUTH_SECRET_MISSING', error: 'Admin sign-in is not configured. Nothing was changed.' }, 503);
+}
+
+export async function verifyAdminPassword(password, storedHash) {
+  const typed = String(password || '');
+  if (!typed || !storedHash) return false;
+  if (storedHash.startsWith(ADMIN_PBKDF2_PREFIX)) {
+    const [, iterationsText, saltText, hashText] = storedHash.split('$');
+    const iterations = Number(iterationsText);
+    if (!Number.isInteger(iterations) || iterations < 10000 || !saltText || !hashText) return false;
+    const expected = base64ToBytes(hashText);
+    const key = await crypto.subtle.importKey('raw', new TextEncoder().encode(typed), 'PBKDF2', false, ['deriveBits']);
+    const bits = await crypto.subtle.deriveBits({ name: 'PBKDF2', hash: 'SHA-256', salt: base64ToBytes(saltText), iterations }, key, expected.length * 8);
+    return constantTimeEqual(bytesToHex(bits), bytesToHex(expected));
+  }
+  const digest = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(typed));
+  return constantTimeEqual(bytesToHex(digest), storedHash.toLowerCase());
+}
+
+async function sessionSignature(secrets, payload) {
+  const key = await crypto.subtle.importKey(
+    'raw',
+    new TextEncoder().encode(`${secrets.sessionSecret}|${secrets.passwordHash}`),
+    { name: 'HMAC', hash: 'SHA-256' },
+    false,
+    ['sign']
+  );
+  return bytesToBase64url(await crypto.subtle.sign('HMAC', key, new TextEncoder().encode(payload)));
+}
+
+async function issueSessionToken(secrets, nowMs = Date.now()) {
+  const expiresAt = Math.floor(nowMs / 1000) + ADMIN_SESSION_TTL_SECONDS;
+  const payload = `v1.${expiresAt}.${randomToken()}`;
+  return { token: `${payload}.${await sessionSignature(secrets, payload)}`, expiresAt };
+}
+
+async function verifySessionToken(secrets, token, nowMs = Date.now()) {
+  const parts = String(token || '').split('.');
+  if (parts.length !== 4 || parts[0] !== 'v1') return false;
+  const expiresAt = Number(parts[1]);
+  if (!Number.isFinite(expiresAt) || expiresAt * 1000 <= nowMs) return false;
+  const expected = await sessionSignature(secrets, parts.slice(0, 3).join('.'));
+  return constantTimeEqual(parts[3], expected);
+}
+
+function clientIp(request) {
+  return request.headers.get('cf-connecting-ip') || request.headers.get('x-forwarded-for')?.split(',')[0]?.trim() || 'unknown';
+}
+
+async function readLockout(env, ip) {
+  const kv = adminKv(env, 'ADMIN_AUTH_KV');
+  const key = `admin:auth-lockout:${ip}`;
+  let record = null;
+  if (kv?.get) record = await kv.get(key, 'json').catch(() => null);
+  else record = memoryLockouts.get(key) || null;
+  return { kv, key, record: record && typeof record === 'object' ? record : { failures: 0, lockedUntil: 0 } };
+}
+
+async function writeLockout(state, record) {
+  if (state.kv?.put) {
+    await state.kv.put(state.key, JSON.stringify(record), { expirationTtl: ADMIN_LOCKOUT_SECONDS });
+  } else {
+    memoryLockouts.set(state.key, record);
+  }
+}
+
+async function clearLockout(state) {
+  if (state.kv?.delete) await state.kv.delete(state.key).catch(() => {});
+  else memoryLockouts.delete(state.key);
+}
+
+async function handleAdminLogin(request, env) {
+  if (request.method !== 'POST') return json({ ok: false, error: 'Method not allowed.' }, 405);
+  const secrets = adminSecrets(env);
+  if (!secrets) return secretMissingResponse();
+  const state = await readLockout(env, clientIp(request));
+  const now = Date.now();
+  if (Number(state.record.lockedUntil || 0) > now) {
+    return json({ ok: false, error: ADMIN_LOCKED_OUT }, 429, { 'retry-after': String(ADMIN_LOCKOUT_SECONDS) });
+  }
+  const incoming = await request.json().catch(() => ({}));
+  const password = typeof incoming.password === 'string' ? incoming.password.slice(0, 1024) : '';
+  if (await verifyAdminPassword(password, secrets.passwordHash)) {
+    await clearLockout(state);
+    return json({ ok: true, ...(await issueSessionToken(secrets, now)) });
+  }
+  const failures = Number(state.record.failures || 0) + 1;
+  const locked = failures >= ADMIN_LOCKOUT_MAX_FAILURES;
+  await writeLockout(state, { failures: locked ? 0 : failures, lockedUntil: locked ? now + ADMIN_LOCKOUT_SECONDS * 1000 : 0 });
+  if (locked) return json({ ok: false, error: ADMIN_LOCKED_OUT }, 429, { 'retry-after': String(ADMIN_LOCKOUT_SECONDS) });
+  return json({ ok: false, error: ADMIN_SIGN_IN_FAILED }, 401);
+}
+
+// The one gate every admin write goes through: /api/admin/*, /api/content/*,
+// and /api/digital-products/* writes. Returns null when the caller is signed in,
+// otherwise the response to send (401, or the 503 named stop).
+export async function requireAdminSession(request, env) {
+  const secrets = adminSecrets(env);
+  if (!secrets) return secretMissingResponse();
+  if (await verifySessionToken(secrets, request.headers.get(ADMIN_SESSION_HEADER))) return null;
+  return json({ ok: false, error: 'Admin sign-in required.' }, 401);
 }
 
 async function readAssetJson(request, env, assetPath, fallback) {
@@ -395,7 +544,7 @@ const CONTENT_DECISIONS = {
 
 // Auth is not re-implemented here. Both entry points into this - /api/admin/content/*
 // below and /api/content/* in worker/_worker.js - pass through the same
-// verifyAdminPasswordHash check the digital-products endpoints use.
+// requireAdminSession check the digital-products endpoints use.
 export async function handleContentDecision(request, env, decision) {
   const handler = CONTENT_DECISIONS[decision];
   if (!handler) return json({ ok: false, error: 'Unknown content action.' }, 404);
@@ -417,11 +566,6 @@ export async function handleContentDecision(request, env, decision) {
   }
 }
 
-function requireGate(request) {
-  return verifyAdminPasswordHash(request)
-    ? null
-    : json({ ok: false, error: 'Admin password did not match.' }, 401);
-}
 
 function setupRequiredResponse(error, receipt) {
   return json({
@@ -436,7 +580,8 @@ function setupRequiredResponse(error, receipt) {
 
 export async function handleAdminRequest(request, env, url) {
   if (!url.pathname.startsWith('/api/admin/')) return null;
-  const denied = requireGate(request);
+  if (url.pathname === '/api/admin/login') return handleAdminLogin(request, env);
+  const denied = await requireAdminSession(request, env);
   if (denied) return denied;
 
   if (url.pathname.startsWith('/api/admin/content/')) {
@@ -530,4 +675,4 @@ export async function handleAdminRequest(request, env, url) {
   return json({ ok: false, error: 'Admin endpoint not found.' }, 404);
 }
 
-export { ADMIN_PASSWORD_HASH, json as adminJson, constantTimeEqual, requireDecider };
+export { json as adminJson, constantTimeEqual, requireDecider };

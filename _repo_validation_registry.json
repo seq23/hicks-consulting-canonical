@@ -779,11 +779,11 @@
       "blocksRelease": true,
       "group": "admin-access",
       "owner": "site-operations",
-      "scope": "shared lightweight password gate across /admin, /agency, and digital products",
+      "scope": "server-side admin sign-in, session and lockout across /admin, /agency, and digital products",
       "ciInvocation": "MATRIX_ONLY",
       "findingProtocol": "VALIDATION_FINDING",
       "enabled": true,
-      "rationale": "Proves the exact owner-approved blackgirlmagic hash, one shared lightweight gate across admin surfaces, simple hash-header API compatibility, and removal of the unauthorized signed-session/CSRF layer."
+      "rationale": "Proves admin auth is server-side: a client-sent hash is refused, the password signs in, repeated failures lock out, and a missing secret fails closed (503), never open."
     },
     {
       "id": "admin-publisher-agreement",

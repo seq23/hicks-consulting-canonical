@@ -30,9 +30,9 @@ They are sitemap-listed and internally linked. They are not doorway pages and ar
 
 ## Admin and growth command center
 
-- `/admin/` and `/agency/` use the same lightweight client-side password gate (`blackgirlmagic`) for owner convenience.
+- `/admin/` and `/agency/` share one password, checked server-side (see `docs/runbooks/ADMIN_COMMAND_CENTER.md`).
 - `/agency/` reports SEO/AEO/GEO, GSC/Bing, query ownership, free wins, competitor observations, and self-healing receipts.
-- This gate is not high-security protection: the password hash is present in browser code, operational JSON is non-secret, and provider credentials remain server-side.
+- No password or hash is in browser code or this repo; operational JSON is non-secret, and provider credentials remain server-side.
 - No routine content approval queue exists.
 
 ## Local commands
