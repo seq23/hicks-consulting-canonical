@@ -8,6 +8,10 @@ name: Search Loop
 # blocks between question pages, the /questions/ hub (linked from /faq/), the
 # sitemap and IndexNow. Client-approved pages are read-only to the engine
 # (protected_paths + the site view, .github/scripts/search_loop_site_view.mjs).
+# Owner ruling 3 Nov 2026: the lane stays as a search-acceleration lane at 1 page a day (cap.max_per_day),
+# hyper-local to Memphis-area communities (virtual, Tennessee only), never on a query a calendar post
+# answers (reserved_titles, written by scripts/publishing/write_calendar_slots.mjs), Monika Hicks, LCSW
+# as the byline (author); each question page is linked from one related calendar post.
 # Throttle every site at once: gh variable set SEARCH_LOOP_MODE --body slow -R seq23/search-loop
 on:
   schedule:
@@ -31,11 +35,11 @@ concurrency:
 
 jobs:
   search-loop:
-    uses: seq23/search-loop/.github/workflows/search-loop.yml@v1
+    uses: seq23/search-loop/.github/workflows/search-loop.yml@v1.5.0
     with:
-      engine_ref: v1
+      engine_ref: v1.5.0
       stage: ${{ inputs.stage || 'auto' }}
-      setup_command: npm ci && npm run build && node .github/scripts/search_loop_site_view.mjs make
+      setup_command: npm ci && npm run build && node scripts/publishing/write_calendar_slots.mjs --reserved-only && node .github/scripts/search_loop_site_view.mjs make
       commit_command: bash .github/scripts/search_loop_commit.sh
     secrets:
       OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}

@@ -1,0 +1,300 @@
+{
+  "schemaVersion": "1.0.0",
+  "note": "Written by scripts/publishing/write_calendar_slots.mjs.",
+  "items": [
+    {
+      "id": "daily-024-5",
+      "route": "/resources/insights/why-boundaries-matter-more-during-good-seasons-than-bad-ones-next-step-reflection/",
+      "scheduledAt": "2026-10-16T13:00:00.000Z",
+      "at": "2026-11-03T13:16:27.739Z",
+      "model": "gemini:gemini-3.5-flash-lite",
+      "outcome": "SLOT_DRAFT_REJECTED",
+      "reason": "first person found (I, me, my); the writer never speaks as the therapist; the direct answer carries a disclaimer or crisis line; the first sentences are the answer only (the page shows its own note)"
+    },
+    {
+      "id": "daily-026-4",
+      "route": "/resources/insights/how-to-notice-when-overwhelm-is-turning-into-shutdown-a-gentler-truth-to-consider/",
+      "scheduledAt": "2026-10-29T13:00:00.000Z",
+      "at": "2026-11-03T13:16:27.739Z",
+      "model": "gemini:gemini-3.1-flash-lite",
+      "outcome": "SLOT_DRAFT_REJECTED",
+      "reason": "the piece is 1661 words; it must be 800-1200; first person found (I, me, my); the writer never speaks as the therapist"
+    },
+    {
+      "id": "daily-026-5",
+      "route": "/resources/insights/how-to-notice-when-overwhelm-is-turning-into-shutdown-next-step-reflection/",
+      "scheduledAt": "2026-10-30T13:00:00.000Z",
+      "at": "2026-11-03T13:16:27.739Z",
+      "model": "gemini:gemini-3.5-flash-lite",
+      "outcome": "SLOT_DRAFT_REJECTED",
+      "reason": "the piece is 1464 words; it must be 800-1200"
+    },
+    {
+      "id": "daily-027-1",
+      "route": "/resources/insights/what-healing-can-look-like-for-women-who-are-tired-of-performing-fine-what-this-looks/",
+      "scheduledAt": "2026-11-02T13:00:00.000Z",
+      "at": "2026-11-03T13:16:27.739Z",
+      "model": "gemini:gemini-3.5-flash-lite",
+      "outcome": "SLOT_DRAFT_REJECTED",
+      "reason": "the piece is 1561 words; it must be 800-1200; every source is one other pages already cite; use sources specific to this topic; first person found (I, me, my); the writer never speaks as the therapist"
+    },
+    {
+      "id": "weekly-027",
+      "route": "/resources/articles/what-healing-can-look-like-for-women-who-are-tired-of-performing-fine/",
+      "scheduledAt": "2026-11-03T13:00:00.000Z",
+      "at": "2026-11-03T13:16:27.739Z",
+      "model": "gemini:gemini-3.5-flash-lite",
+      "outcome": "SLOT_DRAFT_REJECTED",
+      "reason": "the answer was not the JSON object asked for, with every key filled"
+    },
+    {
+      "id": "daily-027-2",
+      "route": "/resources/insights/what-healing-can-look-like-for-women-who-are-tired-of-performing-fine-why-women-minim/",
+      "scheduledAt": "2026-11-03T13:00:00.000Z",
+      "at": "2026-11-03T13:16:27.739Z",
+      "model": "gemini:gemini-3.5-flash-lite",
+      "outcome": "SLOT_DRAFT_REJECTED",
+      "reason": "first person found (I, me, my); the writer never speaks as the therapist"
+    },
+    {
+      "id": "daily-027-3",
+      "route": "/resources/insights/what-healing-can-look-like-for-women-who-are-tired-of-performing-fine-how-it-shows-up/",
+      "scheduledAt": "2026-11-04T13:00:00.000Z",
+      "at": "2026-11-03T13:16:27.739Z",
+      "model": "gemini:gemini-3.5-flash-lite",
+      "outcome": "SLOT_DRAFT_REJECTED",
+      "reason": "the piece is 1486 words; it must be 800-1200"
+    },
+    {
+      "id": "daily-024-5",
+      "route": "/resources/insights/why-boundaries-matter-more-during-good-seasons-than-bad-ones-next-step-reflection/",
+      "scheduledAt": "2026-10-16T13:00:00.000Z",
+      "at": "2026-11-03T13:20:59.208Z",
+      "model": "gemini:gemini-3.5-flash-lite",
+      "outcome": "WRITTEN",
+      "words": 1046,
+      "maxShared": 0.051,
+      "sharedWith": "/resources/articles/what-to-do-when-you-are-tired-of-being-everyone-s-safe-place/",
+      "questionLinks": [
+        "/questions/african-american-psychologist-near-me/"
+      ],
+      "title": "Why Boundaries Matter More During Good Seasons Than Bad Ones: Next-Step Reflection",
+      "approvedTitle": "Why Boundaries Matter More During Good Seasons Than Bad Ones: Next-Step Reflection",
+      "firstSentences": "Boundaries matter during good seasons because calm periods are when people build the habits and limits that protect them when stress returns. Without clear lines during stable times, it is easy to overcommit, accept new demands, and drain the energy needed for future transitions."
+    },
+    {
+      "id": "daily-026-4",
+      "route": "/resources/insights/how-to-notice-when-overwhelm-is-turning-into-shutdown-a-gentler-truth-to-consider/",
+      "scheduledAt": "2026-10-29T13:00:00.000Z",
+      "at": "2026-11-03T13:20:59.208Z",
+      "model": "gemini:gemini-3.5-flash-lite",
+      "outcome": "WRITTEN",
+      "words": 1025,
+      "maxShared": 0.053,
+      "sharedWith": "/resources/articles/what-to-do-when-you-are-tired-of-being-everyone-s-safe-place/",
+      "questionLinks": [
+        "/questions/find-a-black-therapist/"
+      ],
+      "title": "How to Notice When Overwhelm Is Turning Into Shutdown: A Gentler Truth To Consider",
+      "approvedTitle": "How to Notice When Overwhelm Is Turning Into Shutdown: A Gentler Truth To Consider",
+      "firstSentences": "When overwhelm turns into shutdown, stress shifts from a racing feeling to a heavy numbness. You might stop replying to messages, cancel plans, or stare at a wall instead of working."
+    },
+    {
+      "id": "daily-026-5",
+      "route": "/resources/insights/how-to-notice-when-overwhelm-is-turning-into-shutdown-next-step-reflection/",
+      "scheduledAt": "2026-10-30T13:00:00.000Z",
+      "at": "2026-11-03T13:20:59.208Z",
+      "model": "gemini:gemini-3.5-flash-lite",
+      "outcome": "WRITTEN",
+      "words": 1031,
+      "maxShared": 0.051,
+      "sharedWith": "/resources/articles/how-to-tell-whether-you-need-more-discipline-or-more-support/",
+      "questionLinks": [
+        "/questions/therapy-near-me/"
+      ],
+      "title": "How to Notice When Overwhelm Is Turning Into Shutdown: Next-Step Reflection",
+      "approvedTitle": "How to Notice When Overwhelm Is Turning Into Shutdown: Next-Step Reflection",
+      "firstSentences": "Overwhelm often feels loud, fast, and frantic. Shutdown feels quiet, flat, and distant."
+    },
+    {
+      "id": "daily-027-1",
+      "route": "/resources/insights/what-healing-can-look-like-for-women-who-are-tired-of-performing-fine-what-this-looks/",
+      "scheduledAt": "2026-11-02T13:00:00.000Z",
+      "at": "2026-11-03T13:20:59.208Z",
+      "model": "gemini:gemini-3.5-flash-lite",
+      "outcome": "WRITTEN",
+      "words": 1072,
+      "maxShared": 0.053,
+      "sharedWith": "/resources/articles/what-to-do-when-you-are-tired-of-being-everyone-s-safe-place/",
+      "questionLinks": [],
+      "title": "What Healing Can Look Like for Women Who Are Tired of Performing Fine: What Daily Life Actually Shows",
+      "approvedTitle": "What Healing Can Look Like for Women Who Are Tired of Performing Fine: What This Looks Like In Real Life",
+      "firstSentences": "Healing often looks remarkably ordinary in daily life. It appears as a pause before answering a text, a decision to leave dishes in the sink, or allowing a hard feeling to exist without immediate fixing."
+    },
+    {
+      "id": "weekly-027",
+      "route": "/resources/articles/what-healing-can-look-like-for-women-who-are-tired-of-performing-fine/",
+      "scheduledAt": "2026-11-03T13:00:00.000Z",
+      "at": "2026-11-03T13:20:59.208Z",
+      "model": "gemini:gemini-3.5-flash-lite",
+      "outcome": "WRITTEN",
+      "words": 1199,
+      "maxShared": 0.044,
+      "sharedWith": "/resources/articles/what-to-do-when-you-are-tired-of-being-everyone-s-safe-place/",
+      "questionLinks": [],
+      "title": "What Healing Can Look Like for Women Who Are Tired of Performing Fine",
+      "approvedTitle": "What Healing Can Look Like for Women Who Are Tired of Performing Fine",
+      "firstSentences": "Healing when you are tired of performing fine means letting go of the constant need to prove you are okay. It looks like allowing yourself to feel tired without guilt, setting small boundaries, and seeking spaces where you do not have to hold everything together."
+    },
+    {
+      "id": "daily-027-2",
+      "route": "/resources/insights/what-healing-can-look-like-for-women-who-are-tired-of-performing-fine-why-women-minim/",
+      "scheduledAt": "2026-11-03T13:00:00.000Z",
+      "at": "2026-11-03T13:20:59.208Z",
+      "model": "gemini:gemini-3.5-flash-lite",
+      "outcome": "WRITTEN",
+      "words": 1001,
+      "maxShared": 0.049,
+      "sharedWith": "/christian-therapist-memphis/",
+      "questionLinks": [],
+      "title": "What Healing Can Look Like for Women Who Are Tired of Performing Fine: Why Women Minimize Their Own Pain",
+      "approvedTitle": "What Healing Can Look Like for Women Who Are Tired of Performing Fine: Why Women Minimize It",
+      "firstSentences": "Many women minimize their stress because past survival depended on staying strong and functional. When the world expects constant competence, acknowledging pain can feel risky or weak."
+    },
+    {
+      "id": "daily-027-3",
+      "route": "/resources/insights/what-healing-can-look-like-for-women-who-are-tired-of-performing-fine-how-it-shows-up/",
+      "scheduledAt": "2026-11-04T13:00:00.000Z",
+      "at": "2026-11-03T13:20:59.208Z",
+      "model": "gemini:gemini-3.5-flash-lite",
+      "outcome": "WRITTEN",
+      "words": 916,
+      "maxShared": 0.06,
+      "sharedWith": "/resources/articles/what-to-do-when-you-are-tired-of-being-everyone-s-safe-place/",
+      "questionLinks": [],
+      "title": "What Healing Can Look Like for Women Who Are Tired of Performing Fine: How It Shows Up In Work And Relationships",
+      "approvedTitle": "What Healing Can Look Like for Women Who Are Tired of Performing Fine: How It Shows Up In Work And Relationships",
+      "firstSentences": "Healing shows up as a quiet refusal to carry everything alone. At work, it looks like taking breaks without guilt and setting clear boundaries on tasks."
+    },
+    {
+      "id": "daily-024-5",
+      "route": "/resources/insights/why-boundaries-matter-more-during-good-seasons-than-bad-ones-next-step-reflection/",
+      "scheduledAt": "2026-10-16T13:00:00.000Z",
+      "at": "2026-11-03T13:25:35.005Z",
+      "model": "gemini:gemini-3.5-flash-lite",
+      "outcome": "SLOT_DRAFT_REJECTED",
+      "reason": "the piece is 777 words; it must be 800-1200"
+    },
+    {
+      "id": "daily-026-4",
+      "route": "/resources/insights/how-to-notice-when-overwhelm-is-turning-into-shutdown-a-gentler-truth-to-consider/",
+      "scheduledAt": "2026-10-29T13:00:00.000Z",
+      "at": "2026-11-03T13:25:35.005Z",
+      "model": "gemini:gemini-3.5-flash-lite",
+      "outcome": "SLOT_DRAFT_REJECTED",
+      "reason": "\"A Gentler Truth To Consider\" is the calendar's generic suffix; give this piece a specific angle of its own (for example \"The Signs in Your Body\" or \"What to Do the Day It Happens\"), different from every sibling"
+    },
+    {
+      "id": "daily-026-5",
+      "route": "/resources/insights/how-to-notice-when-overwhelm-is-turning-into-shutdown-next-step-reflection/",
+      "scheduledAt": "2026-10-30T13:00:00.000Z",
+      "at": "2026-11-03T13:25:35.005Z",
+      "model": "gemini:gemini-3.5-flash-lite",
+      "outcome": "WRITTEN",
+      "words": 1038,
+      "maxShared": 0.049,
+      "sharedWith": "/resources/articles/why-high-achieving-women-sometimes-mistake-numbness-for-maturity/",
+      "questionLinks": [
+        "/questions/therapy-near-me/"
+      ],
+      "title": "How to Notice When Overwhelm Is Turning Into Shutdown: Mapping the Internal Shift Before It Locks",
+      "approvedTitle": "How to Notice When Overwhelm Is Turning Into Shutdown: Next-Step Reflection",
+      "firstSentences": "Overwhelm turns into shutdown when your nervous system decides fighting or running is no longer possible. You stop feeling the urgency, the panic, or even the irritation."
+    },
+    {
+      "id": "daily-027-3",
+      "route": "/resources/insights/what-healing-can-look-like-for-women-who-are-tired-of-performing-fine-how-it-shows-up/",
+      "scheduledAt": "2026-11-04T13:00:00.000Z",
+      "at": "2026-11-03T13:25:35.005Z",
+      "model": "gemini:gemini-3.5-flash-lite",
+      "outcome": "WRITTEN",
+      "words": 824,
+      "maxShared": 0.064,
+      "sharedWith": "/resources/articles/what-to-do-when-you-are-tired-of-being-everyone-s-safe-place/",
+      "questionLinks": [],
+      "title": "What Healing Can Look Like for Women Who Are Tired of Performing Fine: The Signs in Your Body and Daily Schedule",
+      "approvedTitle": "What Healing Can Look Like for Women Who Are Tired of Performing Fine: How It Shows Up In Work And Relationships",
+      "firstSentences": "Healing often begins when strong women stop pushing through physical exhaustion and emotional numbness. It looks like setting realistic boundaries at work, speaking honestly about needs in close relationships, and allowing ordinary rest without guilt or self-criticism."
+    },
+    {
+      "id": "daily-024-5",
+      "route": "/resources/insights/why-boundaries-matter-more-during-good-seasons-than-bad-ones-next-step-reflection/",
+      "scheduledAt": "2026-10-16T13:00:00.000Z",
+      "at": "2026-11-03T13:28:12.399Z",
+      "model": "gemini:gemini-3.5-flash-lite",
+      "outcome": "SLOT_DRAFT_REJECTED",
+      "reason": "every source is one other pages already cite; use sources specific to this topic; the direct answer carries a disclaimer or crisis line; the first sentences are the answer only (the page shows its own note)"
+    },
+    {
+      "id": "daily-026-4",
+      "route": "/resources/insights/how-to-notice-when-overwhelm-is-turning-into-shutdown-a-gentler-truth-to-consider/",
+      "scheduledAt": "2026-10-29T13:00:00.000Z",
+      "at": "2026-11-03T13:28:12.399Z",
+      "model": "gemini:gemini-3.5-flash-lite",
+      "outcome": "SLOT_DRAFT_REJECTED",
+      "reason": "\"A Gentler Truth To Consider\" is the calendar's generic suffix; give this piece a specific angle of its own (for example \"The Signs in Your Body\" or \"What to Do the Day It Happens\"), different from every sibling"
+    },
+    {
+      "id": "daily-024-5",
+      "route": "/resources/insights/why-boundaries-matter-more-during-good-seasons-than-bad-ones-next-step-reflection/",
+      "scheduledAt": "2026-10-16T13:00:00.000Z",
+      "at": "2026-11-03T13:29:38.278Z",
+      "model": "gemini:gemini-3.5-flash-lite",
+      "outcome": "SLOT_DRAFT_REJECTED",
+      "reason": "\"Next-Step Reflection\" is the calendar's generic suffix; give this piece a specific angle of its own (for example \"The Signs in Your Body\" or \"What to Do the Day It Happens\"), different from every sibling"
+    },
+    {
+      "id": "daily-026-4",
+      "route": "/resources/insights/how-to-notice-when-overwhelm-is-turning-into-shutdown-a-gentler-truth-to-consider/",
+      "scheduledAt": "2026-10-29T13:00:00.000Z",
+      "at": "2026-11-03T13:29:38.278Z",
+      "model": "gemini:gemini-3.5-flash-lite",
+      "outcome": "SLOT_DRAFT_REJECTED",
+      "reason": "\"A Gentler Truth To Consider\" is the calendar's generic suffix; give this piece a specific angle of its own (for example \"The Signs in Your Body\" or \"What to Do the Day It Happens\"), different from every sibling"
+    },
+    {
+      "id": "daily-024-5",
+      "route": "/resources/insights/why-boundaries-matter-more-during-good-seasons-than-bad-ones-next-step-reflection/",
+      "scheduledAt": "2026-10-16T13:00:00.000Z",
+      "at": "2026-11-03T13:30:54.693Z",
+      "model": "gemini:gemini-3.5-flash-lite",
+      "outcome": "WRITTEN",
+      "words": 831,
+      "maxShared": 0.067,
+      "sharedWith": "/resources/articles/how-to-tell-whether-you-need-more-discipline-or-more-support/",
+      "questionLinks": [
+        "/questions/african-american-psychologist-near-me/"
+      ],
+      "title": "Why Boundaries Matter More During Good Seasons Than Bad Ones: Protecting Peace When Life Is Good",
+      "approvedTitle": "Why Boundaries Matter More During Good Seasons Than Bad Ones: Next-Step Reflection",
+      "firstSentences": "Good seasons feel calm, but they also bring invisible new demands. When life is going well, people often lower their guard and take on extra commitments simply because they have the energy."
+    },
+    {
+      "id": "daily-026-4",
+      "route": "/resources/insights/how-to-notice-when-overwhelm-is-turning-into-shutdown-a-gentler-truth-to-consider/",
+      "scheduledAt": "2026-10-29T13:00:00.000Z",
+      "at": "2026-11-03T13:30:54.693Z",
+      "model": "gemini:gemini-3.5-flash-lite",
+      "outcome": "WRITTEN",
+      "words": 1010,
+      "maxShared": 0.055,
+      "sharedWith": "/resources/articles/what-to-do-when-you-are-tired-of-being-everyone-s-safe-place/",
+      "questionLinks": [
+        "/questions/find-a-black-therapist/"
+      ],
+      "title": "How to Notice When Overwhelm Is Turning Into Shutdown: When You Just Stop Functioning",
+      "approvedTitle": "How to Notice When Overwhelm Is Turning Into Shutdown: A Gentler Truth To Consider",
+      "firstSentences": "Overwhelm turns into shutdown when high stress stops looking like frantic rushing and starts looking like total numbness. You might find yourself staring at simple tasks, avoiding messages, or feeling completely disconnected from your body and emotions."
+    }
+  ]
+}

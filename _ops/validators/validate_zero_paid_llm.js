@@ -116,10 +116,17 @@ const aliasesFor = (script) => Object.entries(pkgScripts).filter(([, v]) => Stri
 const invokes = (text, script) => text.includes(script) || aliasesFor(script).some((a) => new RegExp(`npm run ${a.replace(/[:.]/g, '\\$&')}(\\s|$|")`, 'm').test(text));
 const laneWorkflows = new Set(lanes.map((l) => l.workflow));
 const consumerTokens = [...ROUTERS, ...consumers.flatMap((c) => [c.script, ...(c.invoked_by || [])])];
+// Scripts that run the shared search-loop engine's own writer in-process (owner ruling 3 Nov 2026:
+// the Hicks calendar is written by the engine's writer). Allowed only in a workflow that checks the
+// engine out pinned at v1 (seq23/search-loop), whose lanes refuse anything but $0 models, and only in
+// the step that runs that script.
+const engineConsumers = (cfg && cfg.engine_consumers) || [];
+for (const c of engineConsumers) if (!exists(c.script)) fail(`engine consumer missing: ${c.script}`);
+const ENGINE_CHECKOUT = /^\s+repository:\s*seq23\/search-loop\s*\n\s+ref:\s*v1(?:\.\d+){0,2}\s*$/m;
 
 // A job that is nothing but a call to the shared search-loop engine pinned @v1,
 // with the key inside that job's secrets: block.
-const ENGINE_CALL = /^\s+uses:\s*seq23\/search-loop\/\.github\/workflows\/search-loop\.yml@v1\s*$/;
+const ENGINE_CALL = /^\s+uses:\s*seq23\/search-loop\/\.github\/workflows\/search-loop\.yml@v1(?:\.\d+){0,2}\s*$/;
 function isEngineCall(lines, i) {
   const ind = lines[i].search(/\S/);
   let secretsLine = -1;
@@ -177,7 +184,8 @@ for (const wf of wfs) {
   // The search-loop engine's Gemini lane is $0 only with the vetted no-billing key: the one line
   // `GEMINI_API_KEY: ${{ secrets.SEARCH_LOOP_GEMINI_API_KEY }}` in an engine caller is that lane.
   // Any other Gemini/OpenAI/Anthropic/Perplexity key, or that line outside an engine caller, fails.
-  const engineCaller = /^\s+uses:\s*seq23\/search-loop\/\.github\/workflows\/search-loop\.yml@v\d+\s*$/m.test(text);
+  const engineCheckout = ENGINE_CHECKOUT.test(text) && engineConsumers.some((c) => invokes(text, c.script));
+  const engineCaller = engineCheckout || /^\s+uses:\s*seq23\/search-loop\/\.github\/workflows\/search-loop\.yml@v\d+(?:\.\d+){0,2}\s*$/m.test(text);
   const keyText = engineCaller ? text.split('\n').filter((l) => !/^\s+GEMINI_API_KEY:\s*\$\{\{\s*secrets\.SEARCH_LOOP_GEMINI_API_KEY\s*\}\}\s*$/.test(l)).join('\n') : text;
   if (OTHER_MODEL_KEYS.test(keyText)) fail(`${wf} is scheduled and passes a non-router model key (${keyText.match(OTHER_MODEL_KEYS)[1]})`);
   const lines = text.split('\n');
@@ -190,6 +198,7 @@ for (const wf of wfs) {
     // loud on a non-zero usage.cost, so the key still only reaches $0 models.
     if (!step && isEngineCall(lines, i)) return;
     if (!step) { fail(`${wf}:${i + 1} passes OPENROUTER_API_KEY at job/workflow level; scope it to the free-router step`); return; }
+    if (engineCheckout && engineConsumers.some((c) => invokes(step, c.script) || step.includes(c.script))) return;
     if (!consumerTokens.some((t) => invokes(step, t) || step.includes(t))) fail(`${wf}:${i + 1} passes OPENROUTER_API_KEY to a step that runs no registered free-router consumer`);
   });
 }
@@ -198,4 +207,4 @@ if (problems.length) {
   const { fail: emit } = require('../validation/protocol');
   emit([`ZERO PAID LLM: ${problems.length} problem(s).`, ...problems.map((p) => `- ${p}`)].join('\n'));
 }
-console.log(`zero-paid-llm OK: ${(cfg.models || cfg.free_models || []).length} free models (snapshot ${cfg.pricing_snapshot.fetched_at}), ${lanes.length} probe lane(s) dispatch-only behind confirm_paid, ${consumers.length} free-router consumer(s), ${files.length} scripts and ${wfs.length} workflows scanned.`);
+console.log(`zero-paid-llm OK: ${(cfg.models || cfg.free_models || []).length} free models (snapshot ${cfg.pricing_snapshot.fetched_at}), ${lanes.length} probe lane(s) dispatch-only behind confirm_paid, ${consumers.length} free-router consumer(s), ${engineConsumers.length} engine consumer(s), ${files.length} scripts and ${wfs.length} workflows scanned.`);

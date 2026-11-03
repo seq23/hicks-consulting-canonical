@@ -69,14 +69,16 @@
         "autonomy:cycle"
       ],
       "purpose": "drafts structured educational resources and repairs failed drafts"
-    },
+    }
+  ],
+  "engine_consumers": [
     {
-      "script": "scripts/publishing/redraft_held.mjs",
+      "script": "scripts/publishing/write_calendar_slots.mjs",
       "invoked_by": [
         ".github/workflows/content-publish.yml",
-        "redraft:held"
+        "calendar:write"
       ],
-      "purpose": "rewords the passages of a scheduled Resources post that copy pages already live, before the release step judges it"
+      "purpose": "writes queued calendar posts with the shared search-loop engine's writer (seq23/search-loop @v1, src/slot.mjs; $0 lanes only, no paid fallback), slot for slot, before the release step"
     }
   ]
 }
