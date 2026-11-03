@@ -223,7 +223,8 @@ export async function writeSlots({ root = process.cwd(), engine, cfg, now = new 
   const slots = manifest
     .filter((item) => item.status === 'approved' && item.scheduledAt && (all || Date.parse(item.scheduledAt) <= horizon))
     .filter((item) => String(routeOf(item)).startsWith('/resources/') && !live.has(routeOf(item)))
-    .filter((item) => !item.engineDraft)
+    // Not yet written, or written but still held a day past its slot (the release gate refused it): rewrite, at most 3 times.
+    .filter((item) => !item.engineDraft || (Date.parse(item.scheduledAt) < now.valueOf() - 86400000 && Date.parse(item.engineDraft.writtenAt) < now.valueOf() - 6 * 3600000 && (item.engineDraft.rewrites || 0) < 3))
     .sort((a, b) => String(a.scheduledAt).localeCompare(String(b.scheduledAt)))
     .slice(0, max);
   const results = [];
@@ -243,6 +244,12 @@ export async function writeSlots({ root = process.cwd(), engine, cfg, now = new 
       const tabTitle = lib.stripTags((html.match(/<title>([^<]*)<\/title>/i) || [])[1] || '');
       if (takenTitles.has(tabTitle.toLowerCase())) return [`the browser-tab title "${tabTitle}" is already another page's; give a different "title_lead"`];
       shared = sharedWithLive(html, live, route);
+      // The release gate needs a whole-sentence description that repeats no live text (SEARCH_METADATA_UNRESOLVED otherwise).
+      const fitted = lib.fitDescription(lib.pagePassages(html));
+      if (!fitted) return ['no 120-160 character whole-sentence description can be drawn from the page; make "meta_description" and the opening answer whole sentences of that length'];
+      const liveRuns = new Set(); for (const p of live.values()) if (p.route !== route) for (const r of p.runs) liveRuns.add(r);
+      const copiedDesc = [...lib.shinglesOf(fitted)].filter((r) => liveRuns.has(r));
+      if (copiedDesc.length) return [`the description "${fitted}" repeats wording already on the site (${copiedDesc.slice(0, 3).map((r) => `"${r}"`).join(', ')}); write it in new words`];
       if (shared.max >= MAX_SHARED_WITH_ANY) return [`${Math.round(shared.max * 100)}% of the text is already on ${shared.where}; it must be under ${MAX_SHARED_WITH_ANY * 100}% with every live page. Never reuse these phrases: ${shared.phrases.slice(0, 25).map((p) => `"${p}"`).join(', ')}`];
       return [];
     };
@@ -276,7 +283,8 @@ export async function writeSlots({ root = process.cwd(), engine, cfg, now = new 
     fs.writeFileSync(path.join(root, draftFile), JSON.stringify({ id: item.id, route, contentType: type, draft: toSiteDraft(item, r.draft, links), engine: r.draft }, null, 2) + '\n');
     if (r.draft.h1 && r.draft.h1 !== item.title) { recordTitleChange(root, item.title, r.draft.h1, r.draft.title_lead); item.approvedTitle ||= item.title; item.title = r.draft.h1; }
     takenTitles.add(lib.stripTags((html.match(/<title>([^<]*)<\/title>/i) || [])[1] || '').toLowerCase());
-    item.engineDraft = { writtenAt: now.toISOString(), model: r.model, words: r.words, maxShared: out.maxShared, draftFile, question: r.draft.question || item.title };
+    const rewrites = item.engineDraft ? (item.engineDraft.rewrites || 0) + 1 : 0;
+    item.engineDraft = { rewrites, writtenAt: now.toISOString(), model: r.model, words: r.words, maxShared: out.maxShared, draftFile, question: r.draft.question || item.title };
     results.push(out);
     log(`WRITTEN ${item.id}: ${r.words} words, ${Math.round(shared.max * 100)}% max shared (${shared.where})`);
   }

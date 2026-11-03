@@ -54,8 +54,8 @@ const letters = (n) => { let s = ''; n += 1; while (n > 0) { s = String.fromChar
 const fresh = (n) => Array.from({ length: n }, () => `vo${letters(counter++)}q`).join(' ');
 const distinctDraft = () => ({
   h1: `${COPY.title.split(':')[0]}: The Quiet Signs at Work`, angle: 'The Quiet Signs at Work', title_lead: 'Good-Season Boundaries: Quiet Signs', question: 'what are the quiet signs at work?',
-  meta_description: `Quiet signs ${fresh(14)} matter at work and at home, and noticing them early helps you choose support sooner and with less pressure.`,
-  direct_answer: `The quiet signs are ${fresh(40)}.`,
+  meta_description: `Quiet signs like ${fresh(3)} matter at work and at home; noticing them early helps you choose support sooner, with less pressure.`,
+  direct_answer: `The quiet signs are ${fresh(5)} and small shifts in how you work and rest. They show up early, in sleep, in tone, and in how you answer messages. ${fresh(20)}.`,
   sections: [1, 2, 3, 4].map((i) => ({ heading: `What does sign ${letters(counter++)} look like at work?`, paragraphs: [`Signal ${fresh(80)}.`, `Pattern ${fresh(70)}.`] })),
   faq: [1, 2, 3, 4].map(() => ({ q: `Is ${fresh(5)} normal?`, a: `Often ${fresh(45)}.` })),
   facts: [{ claim: 'The 988 Lifeline answers calls and texts at any time.', source_url: 'https://988lifeline.org/', source_name: '988 Lifeline', verified: true }],
@@ -84,7 +84,7 @@ let examined = 0;
 {
   const { out, fx, m, after } = await run(distinctDraft);
   examined += out.examined;
-  if (outcomeOf(out, COPY) !== 'WRITTEN') fail(`a distinct draft was not written (outcome ${outcomeOf(out, COPY)})`);
+  if (outcomeOf(out, COPY) !== 'WRITTEN') fail(`a distinct draft was not written (outcome ${outcomeOf(out, COPY)}: ${(out.results.find((r) => r.id === COPY.id) || {}).reason})`);
   const html = after.copy;
   const answerAt = html.indexOf('class="short-answer"'); const calloutAt = html.indexOf('resource-callout');
   if (!(answerAt > 0 && calloutAt > answerAt) || !html.includes(CALLOUT.slice(0, 40))) fail('the 988 note is not in its own callout right after the answer');
