@@ -2,13 +2,13 @@
   "schema": "search-loop-week-v1",
   "week": "2026-W45",
   "site": "hicksconsulting.org",
-  "generated_at": "2026-11-03T14:11:06.008Z",
+  "generated_at": "2026-11-04T12:56:36.728Z",
   "state": "running",
-  "published": 7,
+  "published": 16,
   "indexed": "not read: no page old enough to inspect yet (14 days)",
   "pace": 1,
-  "ai_visitors": "not read: no free analytics source configured for this site (analytics.ai_referrals)",
-  "ai_bot_hits": 322,
+  "ai_visitors": 0,
+  "ai_bot_hits": 729,
   "conversions": "not read: no conversion source configured for this site (form fills / checkouts)",
   "wins": 0,
   "undone": 0,
@@ -17,12 +17,13 @@
   "redirected": [],
   "cap": {
     "max_live_pages": 18,
-    "live": 7,
-    "room": 11,
-    "why": "down from 20 to 18: Google impressions fell to 1231 in the last 28 days from 1554 in the 28 before"
+    "live": 16,
+    "room": 2,
+    "why": "held at 18 after the 3 Nov 2026 blitz (Sequoia asked for it; 9 pages, recorded under blitz); weekly results check resumes"
   },
   "notes": [
+    "BUILD published 0 of quota 1: 0 draft(s) failed the gate and were dropped; 0 got no answer from the free model and stay queued",
     "CHECK: published pages are frozen on this site; checkpoints are recorded, no page is strengthened, undone or merged"
   ],
-  "run_url": "https://github.com/seq23/hicks-consulting-canonical/actions/runs/41651152686"
+  "run_url": "https://github.com/seq23/hicks-consulting-canonical/actions/runs/41833598860"
 }
