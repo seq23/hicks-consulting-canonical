@@ -2,11 +2,11 @@
   "schema_version": "1.0",
   "generated_from": "data/search_intelligence/target_query_set.json",
   "window": {
-    "start_date": "2026-10-04",
-    "end_date": "2026-10-31",
+    "start_date": "2026-10-05",
+    "end_date": "2026-11-01",
     "days": 28
   },
-  "truth_collected_at": "2026-11-03T15:24:55.753Z",
+  "truth_collected_at": "2026-11-04T15:25:47.794Z",
   "rule": {
     "grouping": "one family per landing page (the page Google shows for the query)",
     "min_impressions": 20,
@@ -16,8 +16,8 @@
     "top_n": 12
   },
   "client_approval": "Client site: qualifying families are PROPOSALS. A family is strengthened only once its status is \"approved\" here, with approved_by naming who decided (the client, or the site owner on her own decision) and approved_at.",
-  "target_count": 48,
-  "impressions_total": 388,
+  "target_count": 49,
+  "impressions_total": 383,
   "family_count": 9,
   "proposal_count": 1,
   "approved_count": 2,
@@ -25,24 +25,24 @@
     {
       "family": "/black-therapist-memphis/",
       "page": "https://www.hicksconsulting.org/black-therapist-memphis/",
-      "impressions": 156,
+      "impressions": 155,
       "clicks": 1,
       "ctr": 0.6,
-      "weighted_position": 7.7,
+      "weighted_position": 7.6,
       "query_count": 22,
       "head_query": "black therapist memphis tn",
       "queries": [
         {
           "query": "black therapist memphis tn",
-          "impressions": 48,
+          "impressions": 47,
           "clicks": 1,
-          "position": 7.89
+          "position": 7.85
         },
         {
           "query": "black therapist memphis, tn",
-          "impressions": 24,
+          "impressions": 25,
           "clicks": 0,
-          "position": 8.09
+          "position": 8.04
         },
         {
           "query": "black therapist near me",
@@ -70,9 +70,9 @@
         },
         {
           "query": "african american therapist near me",
-          "impressions": 7,
+          "impressions": 6,
           "clicks": 0,
-          "position": 8.29
+          "position": 8.33
         },
         {
           "query": "black female therapist near me",
@@ -171,23 +171,23 @@
       "approved_by": "site owner (not the client)",
       "approved_at": "2026-10-11",
       "approval_note": "Site owner decided on 2026-10-11 to strengthen both qualifying families now rather than wait on a client flag. Not a client decision; the client did not approve or author this change.",
-      "proposed_change": "Lead /black-therapist-memphis/ with a direct answer to \"black therapist memphis tn\" in its title and first paragraph: 156 impressions at position 7.7 earned 1 click(s) (0.6% CTR)."
+      "proposed_change": "Lead /black-therapist-memphis/ with a direct answer to \"black therapist memphis tn\" in its title and first paragraph: 155 impressions at position 7.6 earned 1 click(s) (0.6% CTR)."
     },
     {
       "family": "/",
       "page": "https://www.hicksconsulting.org/",
-      "impressions": 152,
+      "impressions": 148,
       "clicks": 4,
-      "ctr": 2.6,
-      "weighted_position": 4.4,
-      "query_count": 17,
+      "ctr": 2.7,
+      "weighted_position": 4.5,
+      "query_count": 18,
       "head_query": "hicks consulting",
       "queries": [
         {
           "query": "hicks consulting",
-          "impressions": 85,
+          "impressions": 80,
           "clicks": 3,
-          "position": 4.48
+          "position": 4.41
         },
         {
           "query": "monika hicks",
@@ -268,6 +268,12 @@
           "position": 4
         },
         {
+          "query": "therapist near me",
+          "impressions": 1,
+          "clicks": 0,
+          "position": 25
+        },
+        {
           "query": "therapist near me black",
           "impressions": 1,
           "clicks": 0,
@@ -292,7 +298,7 @@
       "approved_by": "site owner (not the client)",
       "approved_at": "2026-10-11",
       "approval_note": "Site owner decided on 2026-10-11 to strengthen both qualifying families now rather than wait on a client flag. Not a client decision; the client did not approve or author this change.",
-      "proposed_change": "Lead / with a direct answer to \"hicks consulting\" in its title and first paragraph: 152 impressions at position 4.4 earned 4 click(s) (2.6% CTR)."
+      "proposed_change": "Lead / with a direct answer to \"hicks consulting\" in its title and first paragraph: 148 impressions at position 4.5 earned 4 click(s) (2.7% CTR)."
     },
     {
       "family": "/contact/",
