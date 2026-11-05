@@ -2,11 +2,11 @@
   "schema_version": "1.0",
   "generated_from": "data/search_intelligence/target_query_set.json",
   "window": {
-    "start_date": "2026-10-05",
-    "end_date": "2026-11-01",
+    "start_date": "2026-10-06",
+    "end_date": "2026-11-02",
     "days": 28
   },
-  "truth_collected_at": "2026-11-04T15:25:47.794Z",
+  "truth_collected_at": "2026-11-05T15:25:10.972Z",
   "rule": {
     "grouping": "one family per landing page (the page Google shows for the query)",
     "min_impressions": 20,
@@ -16,25 +16,25 @@
     "top_n": 12
   },
   "client_approval": "Client site: qualifying families are PROPOSALS. A family is strengthened only once its status is \"approved\" here, with approved_by naming who decided (the client, or the site owner on her own decision) and approved_at.",
-  "target_count": 49,
-  "impressions_total": 383,
-  "family_count": 9,
+  "target_count": 46,
+  "impressions_total": 374,
+  "family_count": 7,
   "proposal_count": 1,
   "approved_count": 2,
   "families": [
     {
       "family": "/black-therapist-memphis/",
       "page": "https://www.hicksconsulting.org/black-therapist-memphis/",
-      "impressions": 155,
+      "impressions": 151,
       "clicks": 1,
-      "ctr": 0.6,
+      "ctr": 0.7,
       "weighted_position": 7.6,
-      "query_count": 22,
+      "query_count": 21,
       "head_query": "black therapist memphis tn",
       "queries": [
         {
           "query": "black therapist memphis tn",
-          "impressions": 47,
+          "impressions": 46,
           "clicks": 1,
           "position": 7.85
         },
@@ -46,9 +46,9 @@
         },
         {
           "query": "black therapist near me",
-          "impressions": 12,
+          "impressions": 11,
           "clicks": 0,
-          "position": 7.33
+          "position": 7
         },
         {
           "query": "black therapist",
@@ -64,9 +64,9 @@
         },
         {
           "query": "black mental health therapist near me",
-          "impressions": 8,
+          "impressions": 7,
           "clicks": 0,
-          "position": 9.13
+          "position": 9
         },
         {
           "query": "african american therapist near me",
@@ -153,12 +153,6 @@
           "position": 5
         },
         {
-          "query": "i have bcbs of tn",
-          "impressions": 1,
-          "clicks": 0,
-          "position": 3
-        },
-        {
           "query": "in person black therapist near me",
           "impressions": 1,
           "clicks": 0,
@@ -171,27 +165,27 @@
       "approved_by": "site owner (not the client)",
       "approved_at": "2026-10-11",
       "approval_note": "Site owner decided on 2026-10-11 to strengthen both qualifying families now rather than wait on a client flag. Not a client decision; the client did not approve or author this change.",
-      "proposed_change": "Lead /black-therapist-memphis/ with a direct answer to \"black therapist memphis tn\" in its title and first paragraph: 155 impressions at position 7.6 earned 1 click(s) (0.6% CTR)."
+      "proposed_change": "Lead /black-therapist-memphis/ with a direct answer to \"black therapist memphis tn\" in its title and first paragraph: 151 impressions at position 7.6 earned 1 click(s) (0.7% CTR)."
     },
     {
       "family": "/",
       "page": "https://www.hicksconsulting.org/",
-      "impressions": 148,
-      "clicks": 4,
-      "ctr": 2.7,
-      "weighted_position": 4.5,
+      "impressions": 145,
+      "clicks": 2,
+      "ctr": 1.4,
+      "weighted_position": 4.4,
       "query_count": 18,
       "head_query": "hicks consulting",
       "queries": [
         {
           "query": "hicks consulting",
-          "impressions": 80,
-          "clicks": 3,
-          "position": 4.41
+          "impressions": 79,
+          "clicks": 1,
+          "position": 4.29
         },
         {
           "query": "monika hicks",
-          "impressions": 27,
+          "impressions": 25,
           "clicks": 1,
           "position": 5.48
         },
@@ -298,7 +292,7 @@
       "approved_by": "site owner (not the client)",
       "approved_at": "2026-10-11",
       "approval_note": "Site owner decided on 2026-10-11 to strengthen both qualifying families now rather than wait on a client flag. Not a client decision; the client did not approve or author this change.",
-      "proposed_change": "Lead / with a direct answer to \"hicks consulting\" in its title and first paragraph: 148 impressions at position 4.5 earned 4 click(s) (2.7% CTR)."
+      "proposed_change": "Lead / with a direct answer to \"hicks consulting\" in its title and first paragraph: 145 impressions at position 4.4 earned 2 click(s) (1.4% CTR)."
     },
     {
       "family": "/contact/",
@@ -401,28 +395,6 @@
       "why_not": "2 impressions < floor 20"
     },
     {
-      "family": "/llm-atlas/queries/",
-      "page": "https://www.hicksconsulting.org/llm-atlas/queries/",
-      "impressions": 1,
-      "clicks": 0,
-      "ctr": 0,
-      "weighted_position": 19,
-      "query_count": 1,
-      "head_query": "llm query mapping",
-      "queries": [
-        {
-          "query": "llm query mapping",
-          "impressions": 1,
-          "clicks": 0,
-          "position": 19
-        }
-      ],
-      "rank": 7,
-      "qualifies": false,
-      "status": "measured_only",
-      "why_not": "1 impressions < floor 20"
-    },
-    {
       "family": "/resources/guides/burnout-recovery-for-black-women-who-keep-functioning-through-everything/",
       "page": "https://hicksconsulting.org/resources/guides/burnout-recovery-for-black-women-who-keep-functioning-through-everything/",
       "impressions": 1,
@@ -439,29 +411,7 @@
           "position": 2
         }
       ],
-      "rank": 8,
-      "qualifies": false,
-      "status": "measured_only",
-      "why_not": "1 impressions < floor 20"
-    },
-    {
-      "family": "/stress-management-worksheet/",
-      "page": "https://www.hicksconsulting.org/stress-management-worksheet/",
-      "impressions": 1,
-      "clicks": 0,
-      "ctr": 0,
-      "weighted_position": 56,
-      "query_count": 1,
-      "head_query": "stress management worksheets for adults",
-      "queries": [
-        {
-          "query": "stress management worksheets for adults",
-          "impressions": 1,
-          "clicks": 0,
-          "position": 56
-        }
-      ],
-      "rank": 9,
+      "rank": 7,
       "qualifies": false,
       "status": "measured_only",
       "why_not": "1 impressions < floor 20"
