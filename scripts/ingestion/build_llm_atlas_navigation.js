@@ -50,6 +50,17 @@ const CHECK = process.argv.includes('--check');
 const SURFACES = ['fanouts', 'queries', 'pillars', 'clusters', 'social-signals',
   'source-health', 'answer-surfaces'];
 
+// The site's one action (search-loop.config.json `action`), read from the one place it is named,
+// so the atlas can never drift to a second booking link. Boss OS Search Readiness f9 (5 Nov 2026):
+// /llm-atlas/social-signals/ ended with no way to book; all seven surfaces did.
+const ACTION = (() => {
+  const cfg = JSON.parse(fs.readFileSync(path.join(root, 'search-loop.config.json'), 'utf8'));
+  const url = String(cfg.action?.url || '').trim();
+  const text = String(cfg.action?.label || '').trim();
+  if (!url || !text) throw new Error('search-loop.config.json must name action.url and action.label');
+  return { url, text };
+})();
+
 const BLOCK_RE = /<section[^>]+data-nav="atlas"[\s\S]*?<\/section>/i;
 const ANCHOR_RE = /<a\b[^>]*?\bhref="([^"]+)"/gi;
 
@@ -88,7 +99,8 @@ function block(page) {
   return `<section class="section" data-nav="atlas"><div class="container narrow">`
     + `<nav class="atlas-nav" aria-label="LLM Atlas surfaces"><h2>${heading}</h2>`
     + `<ul>${items}</ul>`
-    + `<p><a href="/">Hicks Consulting home</a></p></nav></div></section>`;
+    + `<p><a href="/">Hicks Consulting home</a></p>`
+    + `<p><a class="atlas-action" href="${ACTION.url}">${esc(ACTION.text)}</a></p></nav></div></section>`;
 }
 
 const changed = [];
