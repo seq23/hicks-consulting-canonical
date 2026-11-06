@@ -842,6 +842,34 @@
       "createdAt": "2026-11-03T15:45:43.493Z",
       "blocksOtherWork": false,
       "clientActionRequired": false
+    },
+    {
+      "id": "exception-continuity-insight-2027-01-15-91081557f0cd-1793979933184",
+      "candidateId": "continuity-insight-2027-01-15-91081557f0cd",
+      "decision": "SKIPPED_PROHIBITED_ACTION",
+      "findings": [
+        {
+          "code": "LOW_ADMISSION_SCORE",
+          "severity": "advisory"
+        }
+      ],
+      "createdAt": "2026-11-06T15:45:33.121Z",
+      "blocksOtherWork": false,
+      "clientActionRequired": false
+    },
+    {
+      "id": "exception-continuity-guide-2027-01-15-52095c8199f7-1793979933184",
+      "candidateId": "continuity-guide-2027-01-15-52095c8199f7",
+      "decision": "SKIPPED_PROHIBITED_ACTION",
+      "findings": [
+        {
+          "code": "LOW_ADMISSION_SCORE",
+          "severity": "advisory"
+        }
+      ],
+      "createdAt": "2026-11-06T15:45:33.121Z",
+      "blocksOtherWork": false,
+      "clientActionRequired": false
     }
   ]
 }

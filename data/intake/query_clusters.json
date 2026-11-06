@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-03T15:45:42.296Z",
+  "generatedAt": "2026-11-06T15:45:32.173Z",
   "clusters": [
     {
       "id": "black_women_healing",
@@ -21,7 +21,36 @@
           "audience": "Black women",
           "contentType": "service",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
+        },
+        {
+          "id": "reddit_rss_blackwomen-black-women-you-are-loved-and-always-have-been",
+          "query": "Black women, you are loved and always have been. 💙💙🩵🩵💙💙💙💙💙💙💙💙💙💙💙💙🗣️✊🏿",
+          "source": "reddit_rss_blackwomen",
+          "sourceType": "rss",
+          "tags": [
+            "black_women"
+          ],
+          "intent": "informational",
+          "audience": "Black women",
+          "contentType": "answer",
+          "status": "candidate",
+          "generatedAt": "2026-11-06T15:45:31.766Z"
+        },
+        {
+          "id": "reddit_rss_blackwomen-what-is-a-low-maintenance-hairstyle-that-would-be-worn-by-a-black-woman-who-want",
+          "query": "What is a low maintenance hairstyle that would be worn by a black woman who wants to be perceived as serious and professional?",
+          "source": "reddit_rss_blackwomen",
+          "sourceType": "rss",
+          "tags": [
+            "ai_digital_wellness",
+            "black_women"
+          ],
+          "intent": "informational",
+          "audience": "Black women",
+          "contentType": "answer",
+          "status": "candidate",
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "seed-black-women-burnout-and-boundaries",
@@ -36,11 +65,11 @@
           "audience": "Black women",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         }
       ],
-      "queryCount": 2,
-      "score": 40,
+      "queryCount": 4,
+      "score": 80,
       "targetPage": "/llm-atlas/clusters/",
       "status": "active"
     },
@@ -51,6 +80,21 @@
         "burnout"
       ],
       "signals": [
+        {
+          "id": "google_news_workplace_mental_health-the-emotional-recession-global-declines-in-emotional-intelligence-and-its-impact",
+          "query": "The Emotional Recession: global declines in emotional intelligence and its impact on organizational retention, burnout, and workforce resilience - Frontiers",
+          "source": "google_news_workplace_mental_health",
+          "sourceType": "rss",
+          "tags": [
+            "burnout",
+            "workplace_emotional_intelligence"
+          ],
+          "intent": "commercial",
+          "audience": "Organizations and teams",
+          "contentType": "service",
+          "status": "candidate",
+          "generatedAt": "2026-11-06T15:45:31.766Z"
+        },
         {
           "id": "seed-millennial-women-burnout-motherhood-work",
           "query": "millennial women burnout motherhood work",
@@ -65,11 +109,11 @@
           "audience": "Gen Z and millennial clients",
           "contentType": "service",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         }
       ],
-      "queryCount": 1,
-      "score": 20,
+      "queryCount": 2,
+      "score": 40,
       "targetPage": "/llm-atlas/clusters/",
       "status": "active"
     },
@@ -81,8 +125,8 @@
       ],
       "signals": [
         {
-          "id": "reddit_rss_blackwomen-my-bf-m24-just-made-a-comment-about-my-f24-arm-hair",
-          "query": "My bf (M24) just made a comment about my (F24) arm hair",
+          "id": "reddit_rss_blackwomen-one-pair-of-ankle-boots-two-different-outfits-which-style-wins",
+          "query": "One Pair of Ankle Boots, Two Different Outfits — Which Style Wins? 🤎",
           "source": "reddit_rss_blackwomen",
           "sourceType": "rss",
           "tags": [
@@ -92,7 +136,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "google_news_workplace_mental_health-workplace-mental-health-training-emotional-intelligence-google-news",
@@ -107,7 +151,7 @@
           "audience": "Organizations and teams",
           "contentType": "service",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "google_news_workplace_mental_health-emotional-intelligence-training-improves-stress-regulation-and-performance-in-hi",
@@ -121,35 +165,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
-        },
-        {
-          "id": "google_news_workplace_mental_health-keeping-retail-employees-engaged-with-emotionally-intelligent-leaders-jackson-le",
-          "query": "Keeping Retail Employees Engaged With Emotionally Intelligent Leaders - Jackson Lewis",
-          "source": "google_news_workplace_mental_health",
-          "sourceType": "rss",
-          "tags": [
-            "ai_digital_wellness"
-          ],
-          "intent": "informational",
-          "audience": "Clients seeking emotional wellness support",
-          "contentType": "answer",
-          "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
-        },
-        {
-          "id": "google_news_workplace_mental_health-chinese-college-teachers-emotional-intelligence-and-mental-health-a-chain-mediat",
-          "query": "Chinese college teachers’ emotional intelligence and mental health: a chain mediation model involving student relationship quality - Frontiers",
-          "source": "google_news_workplace_mental_health",
-          "sourceType": "rss",
-          "tags": [
-            "ai_digital_wellness"
-          ],
-          "intent": "informational",
-          "audience": "Clients seeking emotional wellness support",
-          "contentType": "answer",
-          "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "google_news_faith_centered_therapy-faith-centered-therapy-emotional-healing-google-news",
@@ -164,22 +180,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "service",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
-        },
-        {
-          "id": "google_news_faith_centered_therapy-where-faith-meets-professional-care-renewed-life-christian-counseling-center-bri",
-          "query": "Where Faith Meets Professional Care: Renewed Life Christian Counseling Center Brings Hope to Delaware Families - Delaware LIVE News",
-          "source": "google_news_faith_centered_therapy",
-          "sourceType": "rss",
-          "tags": [
-            "ai_digital_wellness",
-            "faith_centered_support"
-          ],
-          "intent": "informational",
-          "audience": "Clients seeking emotional wellness support",
-          "contentType": "answer",
-          "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "google_news_faith_centered_therapy-resonance-across-cultures-and-faiths-examining-the-violin-music-s-role-in-emotio",
@@ -194,11 +195,11 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
-          "id": "google_news_faith_centered_therapy-all-in-solutions-detox-emphasizes-comprehensive-healing-approach-during-detoxifi",
-          "query": "All In Solutions Detox Emphasizes Comprehensive Healing Approach During Detoxification Process - MetroWest Daily News",
+          "id": "google_news_faith_centered_therapy-funnybone-sparks-online-debate-says-being-born-again-doesn-t-erase-trauma-daily-",
+          "query": "Funnybone sparks online debate, says being born again doesn’t erase trauma - Daily Post Nigeria",
           "source": "google_news_faith_centered_therapy",
           "sourceType": "rss",
           "tags": [
@@ -208,7 +209,22 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
+        },
+        {
+          "id": "google_news_faith_centered_therapy-prioritizing-faith-and-family-after-being-diagnosed-with-cancer-focus-on-the-fam",
+          "query": "Prioritizing Faith and Family After Being Diagnosed With Cancer - Focus on the Family",
+          "source": "google_news_faith_centered_therapy",
+          "sourceType": "rss",
+          "tags": [
+            "ai_digital_wellness",
+            "faith_centered_support"
+          ],
+          "intent": "informational",
+          "audience": "Clients seeking emotional wellness support",
+          "contentType": "answer",
+          "status": "candidate",
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "stackexchange_interpersonal_forum-parents-indirectly-preventing-me-going-to-fight-in-ukraine-trenches-closed",
@@ -222,21 +238,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
-        },
-        {
-          "id": "stackexchange_interpersonal_forum-how-to-gain-trust-after-failing-to-support-my-wife-in-a-difficult-moment",
-          "query": "How to gain trust after failing to support my wife in a difficult moment",
-          "source": "stackexchange_interpersonal_forum",
-          "sourceType": "rss",
-          "tags": [
-            "ai_digital_wellness"
-          ],
-          "intent": "informational",
-          "audience": "Clients seeking emotional wellness support",
-          "contentType": "answer",
-          "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "seed-ai-anxiety-and-emotional-wellness",
@@ -250,10 +252,10 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         }
       ],
-      "queryCount": 12,
+      "queryCount": 9,
       "score": 100,
       "targetPage": "/llm-atlas/clusters/",
       "status": "active"
@@ -277,7 +279,7 @@
           "audience": "Gen Z and millennial clients",
           "contentType": "service",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         }
       ],
       "queryCount": 1,
@@ -293,6 +295,34 @@
       ],
       "signals": [
         {
+          "id": "reddit_rss_blackwomen-me-and-le-bois-at-the-blacked-hq-to-hax-into-le-bibisi-cuck-porn-to-get-le-israe",
+          "query": "Me and le bois at the blacked hq to hax into le bibisi cuck porn to get le israeli secrets on how bibisi therapy works 💀♠",
+          "source": "reddit_rss_blackwomen",
+          "sourceType": "rss",
+          "tags": [
+            "workplace_emotional_intelligence"
+          ],
+          "intent": "commercial",
+          "audience": "Organizations and teams",
+          "contentType": "service",
+          "status": "candidate",
+          "generatedAt": "2026-11-06T15:45:31.766Z"
+        },
+        {
+          "id": "google_news_workplace_mental_health-what-does-emotional-intelligence-have-to-do-with-being-happy-at-work-news-medica",
+          "query": "What does emotional intelligence have to do with being happy at work? - News-Medical",
+          "source": "google_news_workplace_mental_health",
+          "sourceType": "rss",
+          "tags": [
+            "workplace_emotional_intelligence"
+          ],
+          "intent": "informational",
+          "audience": "Organizations and teams",
+          "contentType": "answer",
+          "status": "candidate",
+          "generatedAt": "2026-11-06T15:45:31.766Z"
+        },
+        {
           "id": "google_news_workplace_mental_health-the-moderating-role-of-emotional-intelligence-in-the-relationship-between-workpl",
           "query": "The moderating role of emotional intelligence in the relationship between workplace civility and job satisfaction: a multi-university behavioral study - Nature",
           "source": "google_news_workplace_mental_health",
@@ -304,7 +334,7 @@
           "audience": "Organizations and teams",
           "contentType": "service",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "google_news_workplace_mental_health-emotional-intelligence-and-ems-leadership-caring-for-mental-health-after-a-tough",
@@ -318,7 +348,7 @@
           "audience": "Organizations and teams",
           "contentType": "service",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "google_news_workplace_mental_health-transform-workplace-mental-health-with-a-skills-based-approach-shrm",
@@ -332,7 +362,7 @@
           "audience": "Organizations and teams",
           "contentType": "service",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "google_news_workplace_mental_health-how-emotional-intelligence-improves-workplace-safety-forbes",
@@ -346,7 +376,7 @@
           "audience": "Organizations and teams",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "google_news_workplace_mental_health-nursing-curricula-must-include-emotional-intelligence-to-prepare-today-s-healthc",
@@ -360,7 +390,21 @@
           "audience": "Organizations and teams",
           "contentType": "service",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
+        },
+        {
+          "id": "google_news_workplace_mental_health-well-being-intelligence-a-skill-set-for-the-new-world-of-work-mit-sloan-manageme",
+          "query": "Well-Being Intelligence: A Skill Set for the New World of Work - MIT Sloan Management Review",
+          "source": "google_news_workplace_mental_health",
+          "sourceType": "rss",
+          "tags": [
+            "workplace_emotional_intelligence"
+          ],
+          "intent": "commercial",
+          "audience": "Organizations and teams",
+          "contentType": "service",
+          "status": "candidate",
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "google_news_workplace_mental_health-2023-work-in-america-survey-workplaces-as-engines-of-psychological-health-and-we",
@@ -374,10 +418,10 @@
           "audience": "Organizations and teams",
           "contentType": "service",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         }
       ],
-      "queryCount": 6,
+      "queryCount": 9,
       "score": 100,
       "targetPage": "/llm-atlas/clusters/",
       "status": "active"
@@ -388,11 +432,40 @@
       "tags": [
         "faith_centered_support"
       ],
-      "signals": [],
-      "queryCount": 0,
-      "score": 0,
+      "signals": [
+        {
+          "id": "google_news_faith_centered_therapy-how-the-serenity-prayer-helps-manage-emotional-reactions-and-supports-mental-hea",
+          "query": "How the Serenity Prayer Helps Manage Emotional Reactions and Supports Mental Health - Verywell Mind",
+          "source": "google_news_faith_centered_therapy",
+          "sourceType": "rss",
+          "tags": [
+            "faith_centered_support"
+          ],
+          "intent": "informational",
+          "audience": "Clients seeking emotional wellness support",
+          "contentType": "answer",
+          "status": "candidate",
+          "generatedAt": "2026-11-06T15:45:31.766Z"
+        },
+        {
+          "id": "google_news_faith_centered_therapy-the-relationships-between-prayer-and-emotional-well-being-as-well-as-sexual-abst",
+          "query": "The relationships between prayer and emotional well-being as well as sexual abstinence among diagnosed with obsessive-compulsive sexual behaviors - Nature",
+          "source": "google_news_faith_centered_therapy",
+          "sourceType": "rss",
+          "tags": [
+            "faith_centered_support"
+          ],
+          "intent": "informational",
+          "audience": "Clients seeking emotional wellness support",
+          "contentType": "answer",
+          "status": "candidate",
+          "generatedAt": "2026-11-06T15:45:31.766Z"
+        }
+      ],
+      "queryCount": 2,
+      "score": 40,
       "targetPage": "/llm-atlas/clusters/",
-      "status": "seed"
+      "status": "active"
     },
     {
       "id": "general_emotional_wellness",
@@ -413,7 +486,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "reddit_rss_blackwomen-blackgirlshealing",
@@ -427,7 +500,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "reddit_rss_blackwomen-most-suffering-is-abuse-inequality-let-s-end-the-violence-harmful-labels-hardcor",
@@ -441,11 +514,11 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
-          "id": "reddit_rss_blackwomen-what",
-          "query": "What?",
+          "id": "reddit_rss_blackwomen-i-25f-don-t-know-if-i-should-stay-with-my-bf-26m",
+          "query": "I (25F) don’t know if I should stay with my bf (26M)",
           "source": "reddit_rss_blackwomen",
           "sourceType": "rss",
           "tags": [
@@ -455,11 +528,11 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
-          "id": "reddit_rss_blackwomen-27-f4m-pa-eastcoast-looking-for-something-genuine",
-          "query": "27 [F4M] #PA #Eastcoast looking for something genuine",
+          "id": "reddit_rss_blackwomen-what-lantern-corps-would-hazbin-hotel-characters-be-in",
+          "query": "What Lantern Corps would Hazbin Hotel Characters be in?",
           "source": "reddit_rss_blackwomen",
           "sourceType": "rss",
           "tags": [
@@ -469,11 +542,11 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
-          "id": "reddit_rss_blackwomen-who-s-your-favorite-character-that-you-headcanon-as-being-on-the-spectrum",
-          "query": "Who’s your favorite character that you headcanon as being on the spectrum?",
+          "id": "reddit_rss_blackwomen-how-young-americans-voted-in-the-midterm-election",
+          "query": "How Young Americans voted in the midterm election",
           "source": "reddit_rss_blackwomen",
           "sourceType": "rss",
           "tags": [
@@ -483,11 +556,11 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
-          "id": "reddit_rss_blackwomen-yoonchae-lara-dancing-gnarly-to-unloveu",
-          "query": "Yoonchae & Lara dancing gnarly to unloveu",
+          "id": "reddit_rss_blackwomen-life-as-a-black-bottom-am-i-just-very-unlucky",
+          "query": "Life as a black bottom... Am I just very unlucky ?",
           "source": "reddit_rss_blackwomen",
           "sourceType": "rss",
           "tags": [
@@ -497,11 +570,11 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
-          "id": "reddit_rss_blackwomen-the-hate-towards-kids-moms-is-insufferable",
-          "query": "The hate towards kids/moms is insufferable",
+          "id": "reddit_rss_blackwomen-the-issue-with-this-dance-video-is-being-blown-way-out-of-proportion",
+          "query": "The issue with this dance video is being blown way out of proportion",
           "source": "reddit_rss_blackwomen",
           "sourceType": "rss",
           "tags": [
@@ -511,11 +584,11 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
-          "id": "reddit_rss_blackwomen-re-gg-horsebit-mules-size-42-bnnu-from-to-only",
-          "query": "Re🏡 - GG Horsebit Mules - Size 42 - BNNU - 🛳️ from 🇺🇸 to 🇺🇸 only! 🐶🚫🚭🏡",
+          "id": "reddit_rss_blackwomen-weaning-off-synthetic-hormones",
+          "query": "weaning off synthetic hormones...",
           "source": "reddit_rss_blackwomen",
           "sourceType": "rss",
           "tags": [
@@ -525,11 +598,11 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
-          "id": "reddit_rss_blackwomen-watershed",
-          "query": "Watershed",
+          "id": "reddit_rss_blackwomen-do-people-with-adhd-react-differently-to-having-their-drinks-spiked",
+          "query": "Do people with ADHD react differently to having their drinks spiked?",
           "source": "reddit_rss_blackwomen",
           "sourceType": "rss",
           "tags": [
@@ -539,11 +612,11 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
-          "id": "reddit_rss_blackwomen-revelation-chapter-2-3",
-          "query": "Revelation (Chapter 2-3)",
+          "id": "reddit_rss_blackwomen-my-ex-husband-sa-d-me-as-a-teen-and-it-s-eating-me-alive-today",
+          "query": "My ex husband SA’d me as a teen and it’s eating me alive today.",
           "source": "reddit_rss_blackwomen",
           "sourceType": "rss",
           "tags": [
@@ -553,11 +626,25 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
-          "id": "reddit_rss_blackwomen-i-found-out",
-          "query": "I found out",
+          "id": "reddit_rss_blackwomen-gaslighting-vs-coercive-control-how-can-the-distinction-help-without-becoming-a-",
+          "query": "Gaslighting vs coercive control: how can the distinction help without becoming a checklist?",
+          "source": "reddit_rss_blackwomen",
+          "sourceType": "rss",
+          "tags": [
+            "general_emotional_wellness"
+          ],
+          "intent": "comparison",
+          "audience": "Clients seeking emotional wellness support",
+          "contentType": "comparison",
+          "status": "candidate",
+          "generatedAt": "2026-11-06T15:45:31.766Z"
+        },
+        {
+          "id": "reddit_rss_blackwomen-exit-poll-results-for-governor-and-senate-races-source-nbcnews",
+          "query": "Exit poll results for Governor and senate races (source: nbcnews)",
           "source": "reddit_rss_blackwomen",
           "sourceType": "rss",
           "tags": [
@@ -567,11 +654,11 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
-          "id": "reddit_rss_blackwomen-my-ex-28-f-recently-got-married-and-it-s-brought-back-a-lot-of-unresolved-emotio",
-          "query": "My ex (28/F) recently got married, and it's brought back a lot of unresolved emotions. How do I (32/M) navigate this while being in a new relationship?",
+          "id": "reddit_rss_blackwomen-how-to-deal-with-childhood-bully-trauma-as-an-adult",
+          "query": "How to deal with childhood bully trauma as an adult",
           "source": "reddit_rss_blackwomen",
           "sourceType": "rss",
           "tags": [
@@ -581,11 +668,11 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
-          "id": "reddit_rss_blackwomen-seeking-biblical-spiritual-advice-on-how-to-know-when-it-s-time-to-give-up",
-          "query": "Seeking biblical/spiritual advice on how to know when it’s time to give up",
+          "id": "reddit_rss_blackwomen-my-partner-has-depression-advice",
+          "query": "My partner has depression, advice",
           "source": "reddit_rss_blackwomen",
           "sourceType": "rss",
           "tags": [
@@ -595,11 +682,11 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
-          "id": "reddit_rss_blackwomen-27-f4m-pa-eastcoast-looking-for-genuine-relationship",
-          "query": "27 [F4M] #PA #Eastcoast looking for genuine relationship",
+          "id": "reddit_rss_blackwomen-relationship-of-6-years-ruined",
+          "query": "relationship of 6 years ruined",
           "source": "reddit_rss_blackwomen",
           "sourceType": "rss",
           "tags": [
@@ -609,11 +696,11 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
-          "id": "reddit_rss_blackwomen-uss-illuminar-encounter-with-q-part-5",
-          "query": "USS Illuminar: Encounter With Q, Part 5",
+          "id": "reddit_rss_blackwomen-reunion-predictions",
+          "query": "Reunion Predictions",
           "source": "reddit_rss_blackwomen",
           "sourceType": "rss",
           "tags": [
@@ -623,11 +710,11 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
-          "id": "reddit_rss_blackwomen-uss-illuminar-encounter-with-q-part-4",
-          "query": "USS Illuminar: Encounter With Q, Part 4",
+          "id": "reddit_rss_blackwomen-lum-is-among-the-25-more-biggest-anime-characters-yet-to-appear-in-an-episode-wh",
+          "query": "Lum is among the 25 (More) Biggest Anime Characters Yet to Appear in an Episode. Who should go in next?",
           "source": "reddit_rss_blackwomen",
           "sourceType": "rss",
           "tags": [
@@ -637,11 +724,11 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
-          "id": "reddit_rss_blackwomen-wts-decanting-600-of-my-personal-niche-and-designer-fragrances-decant",
-          "query": "[WTS] Decanting 600+ Of My Personal Niche and Designer Fragrances (Decant)",
+          "id": "reddit_rss_blackwomen-am-i-wrong-in-not-siding-with-my-girl-friend-in-her-breakup",
+          "query": "Am I wrong in not siding with my girl friend in her breakup?",
           "source": "reddit_rss_blackwomen",
           "sourceType": "rss",
           "tags": [
@@ -651,11 +738,11 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
-          "id": "reddit_rss_blackwomen-the-midgame-between-the-battle-of-ice-trojan-horse-of-winterfell-spoilers-extend",
-          "query": "The Midgame: Between the Battle of Ice/Trojan Horse of Winterfell (Spoilers Extended)",
+          "id": "reddit_rss_blackwomen-dmfortrade",
+          "query": "DMforTRADE",
           "source": "reddit_rss_blackwomen",
           "sourceType": "rss",
           "tags": [
@@ -665,63 +752,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
-        },
-        {
-          "id": "reddit_rss_blackwomen-black-fashionistas-for-black-designers-women-who-wear-onalaja",
-          "query": "Black Fashionistas For Black Designers: Women Who Wear Onalaja...",
-          "source": "reddit_rss_blackwomen",
-          "sourceType": "rss",
-          "tags": [
-            "general_emotional_wellness"
-          ],
-          "intent": "informational",
-          "audience": "Clients seeking emotional wellness support",
-          "contentType": "answer",
-          "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
-        },
-        {
-          "id": "reddit_rss_blackwomen-the-anti-aes-ads-in-michigan-are-insane",
-          "query": "The anti-AES ads in Michigan are insane",
-          "source": "reddit_rss_blackwomen",
-          "sourceType": "rss",
-          "tags": [
-            "general_emotional_wellness"
-          ],
-          "intent": "informational",
-          "audience": "Clients seeking emotional wellness support",
-          "contentType": "answer",
-          "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
-        },
-        {
-          "id": "reddit_rss_blackwomen-steals-of-the-day-11-03-2026-20-items",
-          "query": "Steals of the day ! (11/03/2026) (20 Items)",
-          "source": "reddit_rss_blackwomen",
-          "sourceType": "rss",
-          "tags": [
-            "general_emotional_wellness"
-          ],
-          "intent": "informational",
-          "audience": "Clients seeking emotional wellness support",
-          "contentType": "answer",
-          "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
-        },
-        {
-          "id": "reddit_rss_blackwomen-the-subjects-are-complete",
-          "query": "The subjects are complete!",
-          "source": "reddit_rss_blackwomen",
-          "sourceType": "rss",
-          "tags": [
-            "general_emotional_wellness"
-          ],
-          "intent": "informational",
-          "audience": "Clients seeking emotional wellness support",
-          "contentType": "answer",
-          "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "google_news_faith_centered_therapy-google-news",
@@ -735,7 +766,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "google_news_workplace_mental_health-emotional-intelligence-for-safety-pros-safety-health-magazine",
@@ -749,7 +780,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "google_news_workplace_mental_health-emotional-intelligence-and-holistic-student-development-an-assessment-of-psychol",
@@ -763,7 +794,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "google_news_workplace_mental_health-5-ways-to-improve-employee-mental-health-american-psychological-association-apa",
@@ -777,25 +808,11 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
-          "id": "google_news_workplace_mental_health-3-pillars-for-leading-with-emotional-intelligence-shrm",
-          "query": "3 Pillars for Leading with Emotional Intelligence - SHRM",
-          "source": "google_news_workplace_mental_health",
-          "sourceType": "rss",
-          "tags": [
-            "general_emotional_wellness"
-          ],
-          "intent": "informational",
-          "audience": "Clients seeking emotional wellness support",
-          "contentType": "answer",
-          "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
-        },
-        {
-          "id": "google_news_faith_centered_therapy-meet-la-toya-cameron-hill-bold-journey-magazine",
-          "query": "Meet La-Toya Cameron Hill - Bold Journey Magazine",
+          "id": "google_news_faith_centered_therapy-where-brevard-residents-can-get-help-after-monday-s-flooding-florida-today",
+          "query": "Where Brevard residents can get help after Monday's flooding - Florida Today",
           "source": "google_news_faith_centered_therapy",
           "sourceType": "rss",
           "tags": [
@@ -805,11 +822,11 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
-          "id": "google_news_faith_centered_therapy-embracing-whole-person-health-assemblies-of-god",
-          "query": "Embracing Whole-Person Health - Assemblies of God",
+          "id": "google_news_faith_centered_therapy-secretary-kennedy-announces-100-million-investment-in-great-american-recovery-hh",
+          "query": "Secretary Kennedy Announces $100 Million Investment in Great American Recovery - HHS.gov",
           "source": "google_news_faith_centered_therapy",
           "sourceType": "rss",
           "tags": [
@@ -819,63 +836,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
-        },
-        {
-          "id": "google_news_faith_centered_therapy-nigeria-s-economic-situation-increasing-stress-anxiety-emotional-fatigue-gegele-",
-          "query": "Nigeria’s economic situation increasing stress, anxiety, emotional fatigue – Gegele, talk therapist - The Sun Nigeria",
-          "source": "google_news_faith_centered_therapy",
-          "sourceType": "rss",
-          "tags": [
-            "general_emotional_wellness"
-          ],
-          "intent": "informational",
-          "audience": "Clients seeking emotional wellness support",
-          "contentType": "answer",
-          "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
-        },
-        {
-          "id": "google_news_faith_centered_therapy-many-people-mislabel-emotional-struggle-as-spiritual-funke-adetuberu-tribune-onl",
-          "query": "Many people mislabel emotional struggle as spiritual —Funke Adetuberu - Tribune Online",
-          "source": "google_news_faith_centered_therapy",
-          "sourceType": "rss",
-          "tags": [
-            "general_emotional_wellness"
-          ],
-          "intent": "informational",
-          "audience": "Clients seeking emotional wellness support",
-          "contentType": "answer",
-          "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
-        },
-        {
-          "id": "google_news_faith_centered_therapy-meet-silina-destine-bold-journey-magazine",
-          "query": "Meet Silina Destine - Bold Journey Magazine",
-          "source": "google_news_faith_centered_therapy",
-          "sourceType": "rss",
-          "tags": [
-            "general_emotional_wellness"
-          ],
-          "intent": "informational",
-          "audience": "Clients seeking emotional wellness support",
-          "contentType": "answer",
-          "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
-        },
-        {
-          "id": "google_news_faith_centered_therapy-can-religion-and-spirituality-have-a-place-in-therapy-experts-say-yes-american-p",
-          "query": "Can religion and spirituality have a place in therapy? Experts say yes - American Psychological Association (APA)",
-          "source": "google_news_faith_centered_therapy",
-          "sourceType": "rss",
-          "tags": [
-            "general_emotional_wellness"
-          ],
-          "intent": "commercial",
-          "audience": "Clients seeking emotional wellness support",
-          "contentType": "service",
-          "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "google_news_faith_centered_therapy-all-in-solutions-wellness-center-emphasizes-emotional-healing-during-detox-proce",
@@ -889,11 +850,11 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
-          "id": "google_news_faith_centered_therapy-all-in-solutions-wellness-center-emphasizes-mind-body-healing-approach-during-de",
-          "query": "All In Solutions Wellness Center Emphasizes Mind-Body Healing Approach During Detox Process - The News-Star",
+          "id": "google_news_faith_centered_therapy-black-african-american-national-alliance-on-mental-illness-nami",
+          "query": "Black/African American - National Alliance on Mental Illness (NAMI)",
           "source": "google_news_faith_centered_therapy",
           "sourceType": "rss",
           "tags": [
@@ -903,11 +864,11 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
-          "id": "google_news_faith_centered_therapy-community-highlights-meet-karina-sandoval-of-therapy-by-karina-voyagephoenix",
-          "query": "Community Highlights: Meet Karina Sandoval of Therapy By Karina - VoyagePhoenix",
+          "id": "google_news_faith_centered_therapy-can-religion-and-spirituality-have-a-place-in-therapy-experts-say-yes-american-p",
+          "query": "Can religion and spirituality have a place in therapy? Experts say yes - American Psychological Association (APA)",
           "source": "google_news_faith_centered_therapy",
           "sourceType": "rss",
           "tags": [
@@ -917,11 +878,11 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "service",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
-          "id": "google_news_faith_centered_therapy-inspiring-conversations-with-angela-bates-of-genesis-counseling-service-inc-voya",
-          "query": "Inspiring Conversations with Angela Bates of Genesis Counseling Service, Inc. - Voyage Baltimore",
+          "id": "google_news_faith_centered_therapy-how-estranged-parents-and-adult-children-can-heal-greater-good-the-science-of-a-",
+          "query": "How Estranged Parents and Adult Children Can Heal - Greater Good: The Science of a Meaningful Life",
           "source": "google_news_faith_centered_therapy",
           "sourceType": "rss",
           "tags": [
@@ -931,7 +892,35 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
+        },
+        {
+          "id": "google_news_faith_centered_therapy-how-to-use-schema-therapy-to-stop-life-playing-on-repeat-psyche",
+          "query": "How to use schema therapy to stop life playing on repeat - Psyche",
+          "source": "google_news_faith_centered_therapy",
+          "sourceType": "rss",
+          "tags": [
+            "general_emotional_wellness"
+          ],
+          "intent": "commercial",
+          "audience": "Clients seeking emotional wellness support",
+          "contentType": "service",
+          "status": "candidate",
+          "generatedAt": "2026-11-06T15:45:31.766Z"
+        },
+        {
+          "id": "google_news_faith_centered_therapy-types-of-trauma-and-how-to-heal-cleveland-clinic-health-essentials",
+          "query": "Types of Trauma and How To Heal - Cleveland Clinic Health Essentials",
+          "source": "google_news_faith_centered_therapy",
+          "sourceType": "rss",
+          "tags": [
+            "general_emotional_wellness"
+          ],
+          "intent": "informational",
+          "audience": "Clients seeking emotional wellness support",
+          "contentType": "answer",
+          "status": "candidate",
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "stackexchange_interpersonal_forum-recent-questions-interpersonal-skills-stack-exchange",
@@ -945,7 +934,21 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
+        },
+        {
+          "id": "stackexchange_interpersonal_forum-how-can-i-gradually-move-an-online-romantic-relationship-with-a-shy-person-towar",
+          "query": "How can I gradually move an online romantic relationship with a shy person towards meeting in person?",
+          "source": "stackexchange_interpersonal_forum",
+          "sourceType": "rss",
+          "tags": [
+            "general_emotional_wellness"
+          ],
+          "intent": "informational",
+          "audience": "Clients seeking emotional wellness support",
+          "contentType": "answer",
+          "status": "candidate",
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "stackexchange_interpersonal_forum-shortened-version-of-indian-names",
@@ -959,7 +962,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "stackexchange_interpersonal_forum-how-can-i-get-the-other-person-x2019-s-consent-with-a-high-success-rate-and-take",
@@ -973,7 +976,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "stackexchange_interpersonal_forum-when-do-i-start-adding-condiments-to-my-meal-at-dinner",
@@ -987,7 +990,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "stackexchange_interpersonal_forum-how-do-i-add-to-a-conversation-without-people-getting-defensive-that-x27-s-not-w",
@@ -1001,7 +1004,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "stackexchange_interpersonal_forum-how-to-say-x27-i-x27-m-sorry-x27-to-a-small-local-business",
@@ -1015,7 +1018,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "stackexchange_interpersonal_forum-how-do-i-prevent-myself-from-coming-off-as-stuck-up-or-conceited-when-discussing",
@@ -1029,7 +1032,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "stackexchange_interpersonal_forum-how-do-speakers-handle-public-speaking-on-difficult-topics-without-your-voice-br",
@@ -1043,7 +1046,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "stackexchange_interpersonal_forum-how-to-pass-on-a-question-when-you-cannot-answer-efficiently",
@@ -1057,7 +1060,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "stackexchange_interpersonal_forum-how-does-a-single-person-influence-the-team-towards-consensus-and-a-positive-cha",
@@ -1071,7 +1074,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "stackexchange_interpersonal_forum-how-to-help-a-6yo-girl-overcome-her-breast-obsession",
@@ -1085,7 +1088,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "stackexchange_interpersonal_forum-is-it-meaningful-to-attribute-emotions-to-an-organization-closed",
@@ -1099,7 +1102,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "stackexchange_interpersonal_forum-is-it-appropriate-for-foreigners-to-thank-us-veterans-for-their-service",
@@ -1113,7 +1116,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "seed-black-community-emotional-wellness-and-healing",
@@ -1127,7 +1130,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "gsc-hicks-consulting",
@@ -1141,7 +1144,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "gsc-black-therapist-memphis-tn",
@@ -1155,7 +1158,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "gsc-mental-health-near-me",
@@ -1169,7 +1172,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "gsc-therapist-near-me",
@@ -1183,7 +1186,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "gsc-african-american-therapists-near-me",
@@ -1197,7 +1200,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "gsc-behavior-health-consultant",
@@ -1211,7 +1214,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "gsc-behavioral-health-consultant",
@@ -1225,7 +1228,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "gsc-black-female-therapist-near-me",
@@ -1239,7 +1242,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "gsc-black-mental-health-therapist",
@@ -1253,7 +1256,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "gsc-black-mental-health-therapist-near-me",
@@ -1267,7 +1270,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "gsc-black-therapist",
@@ -1281,7 +1284,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "gsc-black-therapist-memphis-tn",
@@ -1295,7 +1298,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "gsc-black-therapist-near-me",
@@ -1309,7 +1312,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "gsc-black-therapists-near-me",
@@ -1323,7 +1326,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "gsc-black-women-therapist",
@@ -1337,7 +1340,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "gsc-cancer-consultants-near-me",
@@ -1351,7 +1354,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "gsc-carmen-hicks",
@@ -1365,7 +1368,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "gsc-carol-hicks",
@@ -1379,7 +1382,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "gsc-christian-therapists-near-me",
@@ -1393,7 +1396,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "gsc-clinical-support-mental-health",
@@ -1407,7 +1410,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "gsc-cons-of-being-a-therapist",
@@ -1421,7 +1424,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "gsc-consultant",
@@ -1435,7 +1438,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "gsc-consultant-mental-health",
@@ -1449,7 +1452,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "gsc-female-therapist-near-me",
@@ -1463,7 +1466,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "gsc-free-therapy-session",
@@ -1477,7 +1480,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "service",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "gsc-grief-counseling-germantown-tn",
@@ -1491,7 +1494,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "gsc-heal-consulting",
@@ -1505,7 +1508,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "gsc-health-care-facility-consulting",
@@ -1519,7 +1522,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "gsc-healthcare-consultant",
@@ -1533,7 +1536,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "gsc-healthcare-consulting-firms-near-me",
@@ -1547,7 +1550,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "gsc-healthcare-consulting-tennessee",
@@ -1561,7 +1564,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "gsc-herman-hicks",
@@ -1575,7 +1578,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "gsc-hicks",
@@ -1589,7 +1592,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "gsc-hicks-convention-services-memphis",
@@ -1603,7 +1606,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "gsc-hicks-convention-services-memphis-tn",
@@ -1617,7 +1620,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "gsc-hicks-counseling",
@@ -1631,7 +1634,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "gsc-hicks-health",
@@ -1645,7 +1648,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "gsc-hicks-healthcare",
@@ -1659,7 +1662,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "gsc-hicks-memphis",
@@ -1673,7 +1676,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "gsc-hicks-strong",
@@ -1687,7 +1690,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "gsc-jacques-causey-memphis-tn",
@@ -1701,7 +1704,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "gsc-jhicks-consulting",
@@ -1715,7 +1718,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "gsc-jill-hicks-consulting",
@@ -1729,7 +1732,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "gsc-kelita-hicks",
@@ -1743,7 +1746,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "gsc-kerry-hicks",
@@ -1757,7 +1760,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "gsc-lance-hicks",
@@ -1771,7 +1774,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "gsc-marie-hicks",
@@ -1785,7 +1788,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "gsc-memphis-small-business-consulting",
@@ -1799,7 +1802,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "gsc-memphis-therapist",
@@ -1813,7 +1816,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "gsc-mental-cancer",
@@ -1827,7 +1830,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "gsc-mental-health",
@@ -1841,7 +1844,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "gsc-mental-health-clinic",
@@ -1855,7 +1858,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "gsc-mental-health-diagnosis-near-me",
@@ -1869,7 +1872,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "gsc-mental-health-service",
@@ -1883,7 +1886,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "gsc-mental-health-services",
@@ -1897,7 +1900,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "gsc-mental-health-services-memphis",
@@ -1911,7 +1914,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "gsc-mental-health-therapist",
@@ -1925,7 +1928,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "gsc-mental-health-therapy-near-me",
@@ -1939,7 +1942,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "service",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "gsc-mental-therapist",
@@ -1953,7 +1956,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "gsc-monica-hicks",
@@ -1967,7 +1970,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "gsc-monika-hicks",
@@ -1981,7 +1984,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "gsc-oneclick-hicks",
@@ -1995,7 +1998,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "gsc-oneclick-hicks-com",
@@ -2009,7 +2012,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "gsc-online-therapy-memphis",
@@ -2023,7 +2026,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "service",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "gsc-psychologists-near-me",
@@ -2037,7 +2040,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "gsc-rebecca-hicks",
@@ -2051,7 +2054,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "gsc-russell-calame-memphis-tn",
@@ -2065,7 +2068,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "gsc-therapist",
@@ -2079,7 +2082,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "gsc-therapist-germantown-tn",
@@ -2093,7 +2096,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "gsc-therapist-in-olive-branch-ms",
@@ -2107,7 +2110,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "gsc-therapist-near-me-for-mental-health",
@@ -2121,7 +2124,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "gsc-therapists-near-me",
@@ -2135,7 +2138,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "gsc-trauma-center-near-me",
@@ -2149,7 +2152,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "gsc-vanessa-hicks",
@@ -2163,7 +2166,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "gsc-vanessa-hicks-msw-lcsw",
@@ -2177,7 +2180,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "gsc-victoria-hicks",
@@ -2191,7 +2194,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "gsc-hicks-management",
@@ -2205,7 +2208,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "gsc-christian-counseling-centers",
@@ -2219,7 +2222,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "gsc-african-american-female-therapist-near-me",
@@ -2233,7 +2236,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "gsc-african-american-psychologist-near-me",
@@ -2247,7 +2250,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "gsc-african-american-therapist",
@@ -2261,7 +2264,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "gsc-african-american-therapist-near-me",
@@ -2275,7 +2278,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "gsc-african-american-therapists",
@@ -2289,7 +2292,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "gsc-black-counselors-near-me",
@@ -2303,7 +2306,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "gsc-black-psychologist-near-me",
@@ -2317,7 +2320,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "gsc-black-therapists",
@@ -2331,7 +2334,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "gsc-christian-counseling-memphis",
@@ -2345,7 +2348,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "gsc-committed-to-recovery-memphis-tn",
@@ -2359,7 +2362,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "gsc-i-need-a-black-therapist",
@@ -2373,7 +2376,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "gsc-intake-quiz",
@@ -2387,7 +2390,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "gsc-mental-health-consulting",
@@ -2401,7 +2404,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "gsc-psychological-practitioner",
@@ -2415,7 +2418,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "gsc-psychologist-or-psychotherapist",
@@ -2429,7 +2432,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "gsc-therapist-black-women",
@@ -2443,7 +2446,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "gsc-therapist-psychologist",
@@ -2457,7 +2460,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "gsc-african-american-therapy-near-me",
@@ -2471,7 +2474,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "service",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "gsc-black-couples-therapy-near-me",
@@ -2485,7 +2488,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "service",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "gsc-black-marriage-counselor-near-me",
@@ -2499,7 +2502,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "gsc-black-therapy-near-me",
@@ -2513,7 +2516,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "service",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "gsc-black-women-therapist-near-me",
@@ -2527,7 +2530,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "gsc-consulting-near-me",
@@ -2541,7 +2544,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "gsc-psychology-and-therapist",
@@ -2555,7 +2558,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "gsc-therapist-for-black-men-near-me",
@@ -2569,7 +2572,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "gsc-therapy-consultant",
@@ -2583,7 +2586,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "service",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "gsc-black-couples-therapist-near-me",
@@ -2597,7 +2600,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "gsc-dr-edmond-b-hicks-jr",
@@ -2611,7 +2614,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "gsc-female-black-therapist-near-me",
@@ -2625,7 +2628,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "gsc-therapist-in-memphis",
@@ -2639,7 +2642,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "gsc-african-american-female-therapist",
@@ -2653,7 +2656,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "gsc-black-christian-therapist-near-me",
@@ -2667,7 +2670,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "gsc-black-counselor-near-me",
@@ -2681,7 +2684,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "gsc-black-couple-therapist-near-me",
@@ -2695,7 +2698,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "gsc-boundary-problem-at-work",
@@ -2709,7 +2712,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "gsc-mental-health-consultant",
@@ -2723,7 +2726,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "gsc-what-is-quiet-anger",
@@ -2737,7 +2740,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "gsc-black-marriage-counselors",
@@ -2751,7 +2754,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "gsc-coaching-therapy",
@@ -2765,7 +2768,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "service",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "gsc-couples-counseling-black-therapist",
@@ -2779,7 +2782,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "gsc-emotional-heaviness",
@@ -2793,7 +2796,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "gsc-quiet-anger",
@@ -2807,7 +2810,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "gsc-african-american-therapist-near-me-that-accept-medicaid",
@@ -2821,7 +2824,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "gsc-anxiety-therapist",
@@ -2835,7 +2838,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "gsc-black-owned-therapist-near-me",
@@ -2849,7 +2852,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "gsc-coaching-for-therapists",
@@ -2863,7 +2866,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "service",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "gsc-committed-to-recovery",
@@ -2877,7 +2880,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "gsc-is-busy-an-emotion",
@@ -2891,7 +2894,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "gsc-quite-angry",
@@ -2905,7 +2908,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "gsc-therapist-near-me-black-women",
@@ -2919,7 +2922,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "gsc-anxiety-therapist",
@@ -2933,7 +2936,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "gsc-black-grief-therapist-near-me",
@@ -2947,7 +2950,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "gsc-courtney-bevins",
@@ -2961,7 +2964,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "gsc-jamie-hickman-consulting",
@@ -2975,7 +2978,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "gsc-womens-therapist",
@@ -2989,7 +2992,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "gsc-black-counselors",
@@ -3003,7 +3006,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "gsc-black-family-therapist-near-me",
@@ -3017,7 +3020,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "gsc-black-woman-therapist-near-me",
@@ -3031,7 +3034,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "gsc-health-consultant",
@@ -3045,7 +3048,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "gsc-therapist-near-me-black-female",
@@ -3059,7 +3062,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "gsc-black-woman-fatigue",
@@ -3073,7 +3076,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "gsc-llm-query-mapping",
@@ -3087,7 +3090,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "gsc-social-signals-for-llms",
@@ -3101,7 +3104,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "gsc-black-woman-therapist",
@@ -3115,7 +3118,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "gsc-christian-coaching",
@@ -3129,7 +3132,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "service",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "gsc-health-consulting",
@@ -3143,7 +3146,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "gsc-therapists-memphis",
@@ -3157,7 +3160,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "gsc-i-have-bcbs-of-tn",
@@ -3171,7 +3174,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "gsc-stress-management-worksheets-for-adults",
@@ -3185,7 +3188,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "gsc-burnout-recovery-for-black-women",
@@ -3199,7 +3202,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "gsc-consulting-services",
@@ -3213,7 +3216,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "gsc-hicks-s",
@@ -3227,7 +3230,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "gsc-richard-hicks",
@@ -3241,7 +3244,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "gsc-therapist-near-me-black",
@@ -3255,7 +3258,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "gsc-ebony-therapist",
@@ -3269,7 +3272,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "gsc-janice-hicks",
@@ -3283,7 +3286,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "gsc-medical-it-consulting-services",
@@ -3297,7 +3300,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "gsc-hicks-training",
@@ -3311,7 +3314,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "gsc-sherri-hicks",
@@ -3325,7 +3328,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "gsc-tracie-hicks",
@@ -3339,7 +3342,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "gsc-anxiety-treatment-memphis",
@@ -3353,7 +3356,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "gsc-black-female-psychologist-near-me",
@@ -3367,7 +3370,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "gsc-black-therapist-that-accept-medicaid-near-me",
@@ -3381,7 +3384,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "gsc-email",
@@ -3395,7 +3398,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "gsc-hicks-consulting-llc",
@@ -3409,7 +3412,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "gsc-in-person-black-therapist-near-me",
@@ -3423,7 +3426,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "gsc-emotional-wellness",
@@ -3437,7 +3440,7 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "answer",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         },
         {
           "id": "gsc-therapy-near-me",
@@ -3451,10 +3454,10 @@
           "audience": "Clients seeking emotional wellness support",
           "contentType": "service",
           "status": "candidate",
-          "generatedAt": "2026-11-03T15:45:41.742Z"
+          "generatedAt": "2026-11-06T15:45:31.766Z"
         }
       ],
-      "queryCount": 218,
+      "queryCount": 213,
       "score": 100,
       "targetPage": "/llm-atlas/clusters/",
       "status": "active"

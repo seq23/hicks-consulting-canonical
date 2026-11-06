@@ -3060,7 +3060,7 @@
         "What helps",
         "When to get support"
       ],
-      "state": "DISCOVERED",
+      "state": "SKIPPED_PROHIBITED_ACTION",
       "routineApprovalRequired": true,
       "publicOnlyAfterApproval": true,
       "source": "legacy_generated_queue_migration",
@@ -3075,8 +3075,21 @@
           "to": "DISCOVERED",
           "at": "2026-09-21T10:44:22.364Z",
           "reason": "Migrated from the prior approval-only generated queue."
+        },
+        {
+          "from": "DISCOVERED",
+          "to": "SCORED",
+          "at": "2026-11-06T15:45:33.121Z",
+          "reason": "Candidate score normalized for autonomous admission."
+        },
+        {
+          "from": "SCORED",
+          "to": "SKIPPED_PROHIBITED_ACTION",
+          "at": "2026-11-06T15:45:33.121Z",
+          "reason": "Candidate did not meet the configured admission score."
         }
-      ]
+      ],
+      "updatedAt": "2026-11-06T15:45:33.121Z"
     },
     {
       "id": "continuity-guide-2027-01-15-52095c8199f7",
@@ -3109,7 +3122,7 @@
         "What helps",
         "When to get support"
       ],
-      "state": "DISCOVERED",
+      "state": "SKIPPED_PROHIBITED_ACTION",
       "routineApprovalRequired": true,
       "publicOnlyAfterApproval": true,
       "source": "legacy_generated_queue_migration",
@@ -3124,8 +3137,21 @@
           "to": "DISCOVERED",
           "at": "2026-09-21T10:44:22.364Z",
           "reason": "Migrated from the prior approval-only generated queue."
+        },
+        {
+          "from": "DISCOVERED",
+          "to": "SCORED",
+          "at": "2026-11-06T15:45:33.121Z",
+          "reason": "Candidate score normalized for autonomous admission."
+        },
+        {
+          "from": "SCORED",
+          "to": "SKIPPED_PROHIBITED_ACTION",
+          "at": "2026-11-06T15:45:33.121Z",
+          "reason": "Candidate did not meet the configured admission score."
         }
-      ]
+      ],
+      "updatedAt": "2026-11-06T15:45:33.121Z"
     },
     {
       "id": "continuity-insight-2027-01-18-a845ef7dc98c",

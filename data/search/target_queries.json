@@ -8,9 +8,9 @@
       "status": "discovered_from_gsc",
       "provenance": "google_search_console query/page pair, joined by scripts/queries/score_discovery_gap.mjs",
       "gsc_measured": {
-        "impressions": 12,
+        "impressions": 11,
         "clicks": 0,
-        "average_position": 4.45,
+        "average_position": 4.3,
         "window_start": null,
         "window_end": null,
         "source": "google_search_console"
@@ -39,9 +39,9 @@
       "status": "discovered_from_gsc",
       "provenance": "google_search_console query/page pair, joined by scripts/queries/score_discovery_gap.mjs",
       "gsc_measured": {
-        "impressions": 9,
+        "impressions": 8,
         "clicks": 0,
-        "average_position": 6.89,
+        "average_position": 6.88,
         "window_start": null,
         "window_end": null,
         "source": "google_search_console"
@@ -70,9 +70,9 @@
       "status": "discovered_from_gsc",
       "provenance": "google_search_console query/page pair, joined by scripts/queries/score_discovery_gap.mjs",
       "gsc_measured": {
-        "impressions": 8,
+        "impressions": 7,
         "clicks": 0,
-        "average_position": 9.13,
+        "average_position": 9,
         "window_start": null,
         "window_end": null,
         "source": "google_search_console"
@@ -101,9 +101,9 @@
       "status": "discovered_from_gsc",
       "provenance": "google_search_console query/page pair, joined by scripts/queries/score_discovery_gap.mjs",
       "gsc_measured": {
-        "impressions": 7,
+        "impressions": 6,
         "clicks": 0,
-        "average_position": 8.29,
+        "average_position": 8.33,
         "window_start": null,
         "window_end": null,
         "source": "google_search_console"
@@ -1252,7 +1252,7 @@
       "gsc_measured": {
         "impressions": 1,
         "clicks": 0,
-        "average_position": 47,
+        "average_position": 25,
         "window_start": null,
         "window_end": null,
         "source": "google_search_console"
@@ -1394,7 +1394,7 @@
       "gsc_measured": {
         "impressions": 1,
         "clicks": 0,
-        "average_position": 35,
+        "average_position": 41,
         "window_start": null,
         "window_end": null,
         "source": "google_search_console"
@@ -1682,9 +1682,9 @@
       "status": "discovered_from_gsc",
       "provenance": "google_search_console query/page pair, joined by scripts/queries/score_discovery_gap.mjs",
       "gsc_measured": {
-        "impressions": 85,
-        "clicks": 3,
-        "average_position": 5.42,
+        "impressions": 77,
+        "clicks": 1,
+        "average_position": 5.03,
         "window_start": null,
         "window_end": null,
         "source": "google_search_console"
@@ -1757,9 +1757,9 @@
       "status": "discovered_from_gsc",
       "provenance": "google_search_console query/page pair, joined by scripts/queries/score_discovery_gap.mjs",
       "gsc_measured": {
-        "impressions": 48,
+        "impressions": 42,
         "clicks": 1,
-        "average_position": 4.52,
+        "average_position": 4.46,
         "window_start": null,
         "window_end": null,
         "source": "google_search_console"
@@ -1803,9 +1803,9 @@
       "status": "discovered_from_gsc",
       "provenance": "google_search_console query/page pair, joined by scripts/queries/score_discovery_gap.mjs",
       "gsc_measured": {
-        "impressions": 27,
+        "impressions": 24,
         "clicks": 1,
-        "average_position": 6.51,
+        "average_position": 6.28,
         "window_start": null,
         "window_end": null,
         "source": "google_search_console"
@@ -1833,9 +1833,9 @@
       "status": "discovered_from_gsc",
       "provenance": "google_search_console query/page pair, joined by scripts/queries/score_discovery_gap.mjs",
       "gsc_measured": {
-        "impressions": 24,
+        "impressions": 23,
         "clicks": 0,
-        "average_position": 7.36,
+        "average_position": 7.3,
         "window_start": null,
         "window_end": null,
         "source": "google_search_console"
@@ -5474,7 +5474,7 @@
     }
   ],
   "discovery_gap_pass": {
-    "at": "2026-11-03T15:45:41.811Z",
+    "at": "2026-11-06T15:45:31.814Z",
     "by": "scripts/queries/score_discovery_gap.mjs",
     "why": "The observer read a 7-query hand-written list while Search Console reported 46 queries that actually put this practice in front of someone. The measured list is now the target list, ordered so the observer spends its 25-query budget on the queries a client arrives through.",
     "expansion_sources": [
