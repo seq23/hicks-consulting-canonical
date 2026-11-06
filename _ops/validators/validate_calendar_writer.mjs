@@ -17,7 +17,7 @@
 import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
-import { writeSlots, MAX_SHARED_WITH_ANY, sharedWithLive, readLive, CALLOUT } from '../../scripts/publishing/write_calendar_slots.mjs';
+import { writeSlots, MAX_SHARED_WITH_ANY, sharedWithLive, readLive, CALLOUT, recordTitleChange } from '../../scripts/publishing/write_calendar_slots.mjs';
 import { createRequire } from 'node:module';
 import { renderResourceHtml } from '../../scripts/autonomy/lib/render_resource.mjs';
 
@@ -107,6 +107,31 @@ let examined = 0;
   if (!/<time datetime="2026-11-04">/.test(released) || /datePublished":"2026-10-20/.test(released)) fail('a release shows the overdue slot date instead of the release day');
   }
   fs.rmSync(fx.dir, { recursive: true, force: true });
+}
+// 5. A retitled slot never leaves its old short form behind (Content Publish red on 5 Nov 2026,
+//    run 42043953958: daily-026-4 was retitled, and its old full title's short form stayed keyed
+//    to a title no page carried, because a broader stem short form also covered it). A stem that
+//    another title still uses is kept.
+{
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'hicks-forms-'));
+  const STEM = 'How to Notice When Overwhelm Is Turning Into Shutdown';
+  const FROM = `${STEM}: When You Just Stop Functioning`;
+  const TO = `${STEM}: Navigating the Total Loss of Momentum`;
+  const formsFile = path.join(dir, 'data/search/title_short_forms.json');
+  const write = (titles) => { fs.mkdirSync(path.dirname(formsFile), { recursive: true }); fs.writeFileSync(formsFile, JSON.stringify({ sections: {}, titles }, null, 2)); };
+  const titles = () => JSON.parse(fs.readFileSync(formsFile, 'utf8')).titles;
+  write({ [STEM]: 'Overwhelm Into Shutdown', [FROM]: 'When Overwhelm Turns Into Shutdown' });
+  recordTitleChange(dir, FROM, TO, 'Overwhelm Turning Into Shutdown', [`${STEM}: Mapping the Internal Shift`]);
+  if (Object.prototype.hasOwnProperty.call(titles(), FROM)) fail('a retitled slot left its old title\'s short form behind (STALE SHORT FORM)');
+  if (!titles()[STEM]) fail('a stem short form another title still uses was dropped');
+  write({ [FROM]: 'When Overwhelm Turns Into Shutdown' });
+  recordTitleChange(dir, FROM, TO, null, []);
+  if (Object.prototype.hasOwnProperty.call(titles(), FROM)) fail('a retitle with no title_lead left the old short form behind');
+  write({ [STEM]: 'Overwhelm Into Shutdown' });
+  recordTitleChange(dir, STEM, 'A Different Title', null, [`${STEM}: Mapping the Internal Shift`]);
+  if (!titles()[STEM]) fail('a short form still carried by another title was dropped on retitle');
+  fs.rmSync(dir, { recursive: true, force: true });
+  examined++;
 }
 if (!examined) fail('examined-no-items -- the writer picked nothing from the fixture, so this check proves nothing');
 if (errors.length) { console.log('VALIDATION_FINDING check=calendar-writer'); console.error(`HARD FAIL  calendar-writer (${errors.length})`); for (const e of errors) console.error(`  ${e}`); process.exit(1); }
