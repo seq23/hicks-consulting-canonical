@@ -1,7 +1,7 @@
 {
   "schema_version": "2.0",
-  "receipt_id": "2026-11-04T14-28-42.167Z-41847902350",
-  "attempted_at": "2026-11-04T14:28:42.167Z",
+  "receipt_id": "2026-11-06T14-23-39.265Z-42233481335",
+  "attempted_at": "2026-11-06T14:23:39.265Z",
   "publication_trigger": "ONLY_AFTER_EXISTING_CONTENT_PUBLISH_WORKFLOW_SUCCEEDS",
   "chain": [
     "successful_publish",
@@ -15,14 +15,14 @@
   "sitemap_refresh": {
     "status": "SUCCESS",
     "sitemap_url": "https://www.hicksconsulting.org/sitemap.xml",
-    "sitemap_sha256": "33aa9736ff9a3d7a321457c487fc44c1eb794e129621ee6e1d3a6ba6c95839e4",
-    "url_count": 153
+    "sitemap_sha256": "ad325b724c206b2f5d83740c967e0b8c095f46da3f9ded0fd4ec9c4325825265",
+    "url_count": 155
   },
   "indexnow": {
     "status": "SUCCESS",
     "attempted": true,
     "http_status": 200,
-    "submitted_urls": 153,
+    "submitted_urls": 155,
     "key_location": "https://www.hicksconsulting.org/indexnow.txt"
   },
   "gsc_sitemap_submission": {
@@ -82,7 +82,7 @@
         "verdict": "PASS",
         "coverage_state": "Submitted and indexed",
         "indexing_state": "INDEXING_ALLOWED",
-        "last_crawl_time": "2026-10-14T09:31:27Z"
+        "last_crawl_time": "2026-11-04T18:39:39Z"
       },
       {
         "url": "https://www.hicksconsulting.org/contact/",
@@ -91,7 +91,7 @@
         "verdict": "PASS",
         "coverage_state": "Submitted and indexed",
         "indexing_state": "INDEXING_ALLOWED",
-        "last_crawl_time": "2026-10-17T03:29:11Z"
+        "last_crawl_time": "2026-11-04T22:09:10Z"
       },
       {
         "url": "https://www.hicksconsulting.org/resources/",
@@ -136,7 +136,7 @@
         "verdict": "PASS",
         "coverage_state": "Submitted and indexed",
         "indexing_state": "INDEXING_ALLOWED",
-        "last_crawl_time": "2026-10-26T09:57:42Z"
+        "last_crawl_time": "2026-11-05T10:14:05Z"
       },
       {
         "url": "https://www.hicksconsulting.org/resources/guides/what-therapy-and-coaching-cost-hicks-consulting/",
@@ -197,7 +197,7 @@
   "durable_receipt": {
     "status": "SUCCESS",
     "latest_path": "data/distribution/provider_receipt.json",
-    "history_path": "data/distribution/receipts/2026-11-04T14-28-42.167Z-41847902350.json"
+    "history_path": "data/distribution/receipts/2026-11-06T14-23-39.265Z-42233481335.json"
   },
   "observation_feedback": {
     "status": "SUCCESS",
