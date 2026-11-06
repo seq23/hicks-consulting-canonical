@@ -180,8 +180,13 @@ export function siblingsOf(item, manifest) {
  * A sibling that took its own angle keeps every title rule whole: the legacy title ledger names the
  * new title in place of the approved one (it never grows), and the new title gets its whole-phrase
  * short form for <title> (data/search/title_short_forms.json), from the engine's title_lead.
+ * The old title's own short form is dropped whenever no remaining title still carries it, even
+ * when the new title needs no short form of its own: a short form left keyed to a title no page
+ * carries is a STALE SHORT FORM hard fail (Content Publish, 5 Nov 2026, run 42043953958, when
+ * daily-026-4 was retitled to a title that already fit). `titlesInUse` are the other manifest
+ * titles after the change.
  */
-export function recordTitleChange(root, from, to, lead) {
+export function recordTitleChange(root, from, to, lead, titlesInUse = []) {
   const ledgerFile = path.join(root, 'data/admin/legacy_title_grandfather.json');
   if (fs.existsSync(ledgerFile)) {
     const ledger = JSON.parse(fs.readFileSync(ledgerFile, 'utf8'));
@@ -189,11 +194,14 @@ export function recordTitleChange(root, from, to, lead) {
     if (i >= 0) { ledger.titles[i] = to; fs.writeFileSync(ledgerFile, JSON.stringify(ledger, null, 2) + '\n'); }
   }
   const formsFile = path.join(root, 'data/search/title_short_forms.json');
-  if (fs.existsSync(formsFile) && lead && !lib.searchTitle(to)) {
+  if (fs.existsSync(formsFile)) {
     const forms = JSON.parse(fs.readFileSync(formsFile, 'utf8'));
-    if (forms.titles[from] && !Object.keys(forms.titles).some((k) => k !== from && from.startsWith(`${k}: `))) delete forms.titles[from];
-    forms.titles[to] = lead;
-    fs.writeFileSync(formsFile, JSON.stringify(forms, null, 2) + '\n');
+    const before = JSON.stringify(forms);
+    const needsLead = lead && !lib.searchTitle(to);
+    const stillUsed = [to, ...titlesInUse].some((t) => t === from || String(t).startsWith(`${from}: `));
+    if (Object.prototype.hasOwnProperty.call(forms.titles, from) && !stillUsed) delete forms.titles[from];
+    if (needsLead) forms.titles[to] = lead;
+    if (JSON.stringify(forms) !== before) fs.writeFileSync(formsFile, JSON.stringify(forms, null, 2) + '\n');
   }
 }
 
@@ -281,7 +289,7 @@ export async function writeSlots({ root = process.cwd(), engine, cfg, now = new 
     const draftFile = path.join(DRAFT_DIR, `${item.id}.json`);
     fs.mkdirSync(path.join(root, DRAFT_DIR), { recursive: true });
     fs.writeFileSync(path.join(root, draftFile), JSON.stringify({ id: item.id, route, contentType: type, draft: toSiteDraft(item, r.draft, links), engine: r.draft }, null, 2) + '\n');
-    if (r.draft.h1 && r.draft.h1 !== item.title) { recordTitleChange(root, item.title, r.draft.h1, r.draft.title_lead); item.approvedTitle ||= item.title; item.title = r.draft.h1; }
+    if (r.draft.h1 && r.draft.h1 !== item.title) { recordTitleChange(root, item.title, r.draft.h1, r.draft.title_lead, manifest.filter((x) => x !== item && x.status !== 'revoked').map((x) => x.title)); item.approvedTitle ||= item.title; item.title = r.draft.h1; }
     takenTitles.add(lib.stripTags((html.match(/<title>([^<]*)<\/title>/i) || [])[1] || '').toLowerCase());
     const rewrites = item.engineDraft ? (item.engineDraft.rewrites || 0) + 1 : 0;
     item.engineDraft = { rewrites, writtenAt: now.toISOString(), model: r.model, words: r.words, maxShared: out.maxShared, draftFile, question: r.draft.question || item.title };

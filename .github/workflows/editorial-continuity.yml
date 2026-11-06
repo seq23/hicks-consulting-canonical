@@ -37,4 +37,13 @@ jobs:
           git add data/authority_scale data/continuity data/intake/content_brief_candidates.json data/social/publish_queue.json data/autonomy/queue.json
           if git diff --cached --quiet; then echo "No continuity changes."; exit 0; fi
           git commit -m "chore: replenish autonomous editorial continuity at locked velocity"
-          git push
+          # The push is retried on top of a fresh main: on 4 Nov 2026 (run 41813203973) GitHub
+          # answered one push with "Internal Server Error" and the week's work was lost.
+          for i in 1 2 3; do
+            if git push; then exit 0; fi
+            echo "push attempt $i failed; rebasing on origin/main and retrying"
+            sleep $((i * 15))
+            git pull --rebase origin main
+          done
+          echo "::error title=Editorial continuity::NAMED STOP [PUSH_FAILED] three pushes to main failed; the replenished data was not saved"
+          exit 1
