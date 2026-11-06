@@ -427,6 +427,42 @@
       "model": "gemini:gemini-3.5-flash-lite",
       "outcome": "SLOT_DRAFT_REJECTED",
       "reason": "first person found (I, me, my); the writer never speaks as the therapist"
+    },
+    {
+      "id": "daily-026-4",
+      "route": "/resources/insights/how-to-notice-when-overwhelm-is-turning-into-shutdown-a-gentler-truth-to-consider/",
+      "scheduledAt": "2026-10-29T13:00:00.000Z",
+      "at": "2026-11-06T23:27:30.073Z",
+      "model": "gemini:gemini-3.5-flash-lite",
+      "outcome": "SLOT_DRAFT_REJECTED",
+      "reason": "every source is one other pages already cite; use sources specific to this topic"
+    },
+    {
+      "id": "weekly-028",
+      "route": "/resources/articles/how-to-stop-confusing-capacity-with-obligation/",
+      "scheduledAt": "2026-11-10T13:00:00.000Z",
+      "at": "2026-11-06T23:27:30.073Z",
+      "model": "gemini:gemini-3.5-flash-lite",
+      "outcome": "SLOT_DRAFT_REJECTED",
+      "reason": "every source is one other pages already cite; use sources specific to this topic; first person found (I, me, my); the writer never speaks as the therapist"
+    },
+    {
+      "id": "daily-028-2",
+      "route": "/resources/insights/how-to-stop-confusing-capacity-with-obligation-why-women-minimize-it/",
+      "scheduledAt": "2026-11-10T13:00:00.000Z",
+      "at": "2026-11-06T23:27:30.073Z",
+      "model": "gemini:gemini-3.5-flash-lite",
+      "outcome": "SLOT_DRAFT_REJECTED",
+      "reason": "every source is one other pages already cite; use sources specific to this topic"
+    },
+    {
+      "id": "daily-028-3",
+      "route": "/resources/insights/how-to-stop-confusing-capacity-with-obligation-how-it-shows-up-in-work-and-relationsh/",
+      "scheduledAt": "2026-11-11T13:00:00.000Z",
+      "at": "2026-11-06T23:27:30.073Z",
+      "model": "gemini:gemini-3.5-flash-lite",
+      "outcome": "SLOT_DRAFT_REJECTED",
+      "reason": "every source is one other pages already cite; use sources specific to this topic"
     }
   ]
 }
