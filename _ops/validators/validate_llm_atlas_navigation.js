@@ -97,6 +97,11 @@ const routes = pageFiles.map((file) => {
   return rel && rel !== '.' ? `/llm-atlas/${rel}/` : '/llm-atlas/';
 });
 
+// The site's one action (search-loop.config.json action.url): every atlas page ends in it (f9).
+const loopCfg = JSON.parse(fs.readFileSync(path.join(root, 'search-loop.config.json'), 'utf8'));
+const actionUrl = String(loopCfg.action?.url || '').trim();
+if (!actionUrl) errors.push('no-one-action: search-loop.config.json names no action.url, so no atlas page can be held to it.');
+
 let deadEnds = 0;
 for (let index = 0; index < pageFiles.length; index += 1) {
   const file = pageFiles[index];
@@ -114,6 +119,9 @@ for (let index = 0; index < pageFiles.length; index += 1) {
   const missingSiblings = routes.filter((route, other) => other !== index && !hrefs.has(route));
   if (missingSiblings.length) {
     errors.push(`atlas-nav-incomplete: ${rel} does not link to ${missingSiblings.join(', ')}.`);
+  }
+  if (actionUrl && !hrefs.has(actionUrl)) {
+    errors.push(`atlas-no-action: ${rel} does not link to the site's one action (${actionUrl}), so a reader who arrives has no way to book.`);
   }
   if (!hrefs.has('/')) {
     errors.push(`atlas-no-way-out: ${rel} carries no link to the site home page, so a reader who arrives cannot leave.`);
@@ -135,5 +143,5 @@ if (errors.length) fail(errors);
 console.log(
   `LLM Atlas navigation is current and complete (generator run in --check mode over ${receipt.atlas_pages} atlas ` +
     `page(s), 0 stale; ${pageFiles.length} page(s) read independently, ${deadEnds} dead end(s), every page linking to ` +
-    `all ${pageFiles.length - 1} siblings and to the site home page; regenerate with npm run ${namedBy.join(' / ')}).`
+    `all ${pageFiles.length - 1} siblings, the site home page and the one action; regenerate with npm run ${namedBy.join(' / ')}).`
 );

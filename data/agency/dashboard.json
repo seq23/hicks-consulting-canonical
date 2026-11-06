@@ -6,9 +6,9 @@
   },
   "inventory": {
     "totalManifest": 238,
-    "published": 132,
-    "approved": 52,
-    "livePages": 177,
+    "published": 134,
+    "approved": 50,
+    "livePages": 179,
     "sourcePages": 266
   },
   "scores": [
@@ -24,9 +24,9 @@
     {
       "key": "onpage",
       "label": "On-page SEO",
-      "score": 93,
+      "score": 92,
       "summary": "Titles, descriptions, internal linking, and service alignment.",
-      "grade": "A",
+      "grade": "A-",
       "target": 87,
       "targetMet": true
     },
@@ -60,9 +60,9 @@
     {
       "key": "geo",
       "label": "GEO",
-      "score": 93,
+      "score": 92,
       "summary": "Entity clarity, author evidence, supporting sources, and citation readiness.",
-      "grade": "A",
+      "grade": "A-",
       "target": 87,
       "targetMet": true
     },
@@ -6654,7 +6654,21 @@
     {
       "severity": "medium",
       "code": "service-connection",
+      "route": "/resources/insights/what-healing-can-look-like-for-women-who-are-tired-of-performing-fine-a-gentler-truth/",
+      "message": "Resource has no contextual service link.",
+      "tip": "Connect the topic to the most relevant therapy, coaching, group, or training page."
+    },
+    {
+      "severity": "medium",
+      "code": "service-connection",
       "route": "/resources/insights/what-healing-can-look-like-for-women-who-are-tired-of-performing-fine-how-it-shows-up/",
+      "message": "Resource has no contextual service link.",
+      "tip": "Connect the topic to the most relevant therapy, coaching, group, or training page."
+    },
+    {
+      "severity": "medium",
+      "code": "service-connection",
+      "route": "/resources/insights/what-healing-can-look-like-for-women-who-are-tired-of-performing-fine-next-step-refle/",
       "message": "Resource has no contextual service link.",
       "tip": "Connect the topic to the most relevant therapy, coaching, group, or training page."
     },
@@ -6690,20 +6704,6 @@
       "severity": "medium",
       "code": "service-connection",
       "route": "/resources/insights/how-to-stop-confusing-capacity-with-obligation-what-this-looks-like-in-real-life/",
-      "message": "Resource has no contextual service link.",
-      "tip": "Connect the topic to the most relevant therapy, coaching, group, or training page."
-    },
-    {
-      "severity": "medium",
-      "code": "service-connection",
-      "route": "/resources/insights/what-healing-can-look-like-for-women-who-are-tired-of-performing-fine-a-gentler-truth/",
-      "message": "Resource has no contextual service link.",
-      "tip": "Connect the topic to the most relevant therapy, coaching, group, or training page."
-    },
-    {
-      "severity": "medium",
-      "code": "service-connection",
-      "route": "/resources/insights/what-healing-can-look-like-for-women-who-are-tired-of-performing-fine-next-step-refle/",
       "message": "Resource has no contextual service link.",
       "tip": "Connect the topic to the most relevant therapy, coaching, group, or training page."
     },
