@@ -1,6 +1,6 @@
 {
   "schemaVersion": "2.0.0",
-  "generatedAt": "2026-11-05T15:25:17.239Z",
+  "generatedAt": "2026-11-06T15:25:19.731Z",
   "policy": "Hicks may autonomously apply bounded technical/search-alignment repairs. Substantive clinical claims and unsupported treatment assertions are never auto-generated from competitor content.",
   "items": [
     {
@@ -33,9 +33,9 @@
       "evidence": {
         "groundedSiteSurfaced": null,
         "groundedProviderAnswered": false,
-        "gscImpressions": 9,
+        "gscImpressions": 8,
         "gscClicks": 0,
-        "gscAveragePosition": 6.89,
+        "gscAveragePosition": 6.88,
         "gscPages": [
           "/black-therapist-memphis/"
         ],
@@ -730,15 +730,20 @@
     {
       "query": "therapists near me",
       "primaryPage": "/therapist-near-me-memphis/",
-      "status": "UNKNOWN",
-      "reasons": [],
+      "status": "WRONG_PAGE",
+      "reasons": [
+        "WRONG_HICKS_PAGE_RANKING",
+        "AVERAGE_POSITION_OUTSIDE_TOP_10"
+      ],
       "evidence": {
         "groundedSiteSurfaced": null,
         "groundedProviderAnswered": false,
-        "gscImpressions": 0,
+        "gscImpressions": 1,
         "gscClicks": 0,
-        "gscAveragePosition": 0,
-        "gscPages": [],
+        "gscAveragePosition": 41,
+        "gscPages": [
+          "/"
+        ],
         "competitorUrls": []
       },
       "safeRepairEligible": false,
@@ -926,9 +931,9 @@
       "evidence": {
         "groundedSiteSurfaced": null,
         "groundedProviderAnswered": false,
-        "gscImpressions": 79,
+        "gscImpressions": 77,
         "gscClicks": 1,
-        "gscAveragePosition": 5.07,
+        "gscAveragePosition": 5.03,
         "gscPages": [
           "/coaching/",
           "/",
@@ -986,9 +991,9 @@
       "evidence": {
         "groundedSiteSurfaced": null,
         "groundedProviderAnswered": false,
-        "gscImpressions": 46,
+        "gscImpressions": 42,
         "gscClicks": 1,
-        "gscAveragePosition": 4.5,
+        "gscAveragePosition": 4.46,
         "gscPages": [
           "/black-therapist-memphis/",
           "/"
@@ -1008,9 +1013,9 @@
       "evidence": {
         "groundedSiteSurfaced": null,
         "groundedProviderAnswered": false,
-        "gscImpressions": 25,
+        "gscImpressions": 24,
         "gscClicks": 1,
-        "gscAveragePosition": 6.29,
+        "gscAveragePosition": 6.28,
         "gscPages": [
           "/",
           "/about/",
@@ -1040,9 +1045,9 @@
       "evidence": {
         "groundedSiteSurfaced": null,
         "groundedProviderAnswered": false,
-        "gscImpressions": 25,
+        "gscImpressions": 23,
         "gscClicks": 0,
-        "gscAveragePosition": 7.34,
+        "gscAveragePosition": 7.3,
         "gscPages": [
           "/",
           "/black-therapist-memphis/"
