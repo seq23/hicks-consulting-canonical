@@ -1220,6 +1220,20 @@
       "rationale": "Owner ruling 3 Nov 2026: every queued Resources post is written by the engine's writer in page shape (answer first, question headings, FAQ + FAQPage, specific sources, Monika Hicks, LCSW byline, real publish date) at under 30% shared with any live page; the 58 queued posts were template clones sharing 55-98% with live pages. Runs the real writer on a fixture of real pages with a stub engine. Replaces the redraft-lane guard (redraft_held.mjs retired)."
     },
     {
+      "id": "search-loop-caller-pin",
+      "npmScript": "validate:search-loop-caller-pin",
+      "entrypoint": "_ops/validators/validate_search_loop_caller_pin.js",
+      "severity": "HARD_FAIL",
+      "blocksRelease": true,
+      "group": "publishing",
+      "owner": "site-operations",
+      "scope": ".github/workflows/search-loop.yml: the shared engine pin (uses@ and engine_ref) matches, is at or above v1.6.2, and is at or above the version every input/secret it passes needs",
+      "ciInvocation": "MATRIX_ONLY",
+      "findingProtocol": "VALIDATION_FINDING",
+      "enabled": true,
+      "rationale": "Search Loop was red daily from 5 Nov 2026 with NAMED STOP [NOTHING_DONE]: the caller passed v1.7.0 inputs (#65) but stayed pinned at v1.5.1, whose run with an exhausted target queue and no due checkpoint exits red; v1.6.2 counts a CHECK that measured live pages and retries old-gate drops."
+    },
+    {
       "id": "copy-insight-canonicals",
       "npmScript": "validate:copy-insight-canonicals",
       "entrypoint": "_ops/validators/validate_copy_insight_canonicals.mjs",
