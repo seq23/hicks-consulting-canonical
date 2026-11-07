@@ -2,11 +2,11 @@
   "schema_version": "1.0",
   "generated_from": "data/search_intelligence/target_query_set.json",
   "window": {
-    "start_date": "2026-10-07",
-    "end_date": "2026-11-03",
+    "start_date": "2026-10-08",
+    "end_date": "2026-11-04",
     "days": 28
   },
-  "truth_collected_at": "2026-11-06T15:25:17.703Z",
+  "truth_collected_at": "2026-11-07T15:24:47.993Z",
   "rule": {
     "grouping": "one family per landing page (the page Google shows for the query)",
     "min_impressions": 20,
@@ -16,25 +16,25 @@
     "top_n": 12
   },
   "client_approval": "Client site: qualifying families are PROPOSALS. A family is strengthened only once its status is \"approved\" here, with approved_by naming who decided (the client, or the site owner on her own decision) and approved_at.",
-  "target_count": 47,
-  "impressions_total": 365,
-  "family_count": 7,
+  "target_count": 48,
+  "impressions_total": 375,
+  "family_count": 8,
   "proposal_count": 1,
   "approved_count": 2,
   "families": [
     {
       "family": "/black-therapist-memphis/",
       "page": "https://www.hicksconsulting.org/black-therapist-memphis/",
-      "impressions": 144,
+      "impressions": 148,
       "clicks": 1,
       "ctr": 0.7,
-      "weighted_position": 7.6,
-      "query_count": 21,
+      "weighted_position": 7.7,
+      "query_count": 22,
       "head_query": "black therapist memphis tn",
       "queries": [
         {
           "query": "black therapist memphis tn",
-          "impressions": 42,
+          "impressions": 44,
           "clicks": 1,
           "position": 7.77
         },
@@ -42,13 +42,13 @@
           "query": "black therapist memphis, tn",
           "impressions": 23,
           "clicks": 0,
-          "position": 7.96
+          "position": 7.82
         },
         {
-          "query": "black therapist near me",
-          "impressions": 11,
+          "query": "black mental health therapist near me",
+          "impressions": 13,
           "clicks": 0,
-          "position": 7
+          "position": 8.77
         },
         {
           "query": "black therapist",
@@ -60,19 +60,19 @@
           "query": "african american female therapist near me",
           "impressions": 8,
           "clicks": 0,
-          "position": 6.88
+          "position": 6.13
         },
         {
-          "query": "black mental health therapist near me",
-          "impressions": 7,
+          "query": "black therapist near me",
+          "impressions": 8,
           "clicks": 0,
-          "position": 9
+          "position": 6.75
         },
         {
           "query": "african american therapist near me",
-          "impressions": 6,
+          "impressions": 7,
           "clicks": 0,
-          "position": 8.33
+          "position": 8.43
         },
         {
           "query": "black female therapist near me",
@@ -82,21 +82,15 @@
         },
         {
           "query": "black therapists near me",
-          "impressions": 6,
-          "clicks": 0,
-          "position": 7.67
-        },
-        {
-          "query": "black therapists",
           "impressions": 5,
           "clicks": 0,
-          "position": 7.2
+          "position": 7.6
         },
         {
-          "query": "african american therapists near me",
-          "impressions": 3,
+          "query": "african american psychologist near me",
+          "impressions": 4,
           "clicks": 0,
-          "position": 8.67
+          "position": 12.25
         },
         {
           "query": "black mental health therapist",
@@ -105,10 +99,10 @@
           "position": 7
         },
         {
-          "query": "black psychologist near me",
+          "query": "black therapists",
           "impressions": 3,
           "clicks": 0,
-          "position": 12
+          "position": 6.67
         },
         {
           "query": "black women therapist near me",
@@ -123,13 +117,19 @@
           "position": 6
         },
         {
+          "query": "black psychologist near me",
+          "impressions": 2,
+          "clicks": 0,
+          "position": 12
+        },
+        {
           "query": "african american female therapist",
           "impressions": 1,
           "clicks": 0,
           "position": 15
         },
         {
-          "query": "african american psychologist near me",
+          "query": "african american therapists near me",
           "impressions": 1,
           "clicks": 0,
           "position": 9
@@ -139,6 +139,12 @@
           "impressions": 1,
           "clicks": 0,
           "position": 1
+        },
+        {
+          "query": "black in person therapist near me",
+          "impressions": 1,
+          "clicks": 0,
+          "position": 11
         },
         {
           "query": "black therapist that accept medicaid near me",
@@ -165,35 +171,35 @@
       "approved_by": "site owner (not the client)",
       "approved_at": "2026-10-11",
       "approval_note": "Site owner decided on 2026-10-11 to strengthen both qualifying families now rather than wait on a client flag. Not a client decision; the client did not approve or author this change.",
-      "proposed_change": "Lead /black-therapist-memphis/ with a direct answer to \"black therapist memphis tn\" in its title and first paragraph: 144 impressions at position 7.6 earned 1 click(s) (0.7% CTR)."
+      "proposed_change": "Lead /black-therapist-memphis/ with a direct answer to \"black therapist memphis tn\" in its title and first paragraph: 148 impressions at position 7.7 earned 1 click(s) (0.7% CTR)."
     },
     {
       "family": "/",
       "page": "https://www.hicksconsulting.org/",
-      "impressions": 143,
+      "impressions": 147,
       "clicks": 2,
       "ctr": 1.4,
-      "weighted_position": 4.6,
-      "query_count": 19,
+      "weighted_position": 4.4,
+      "query_count": 18,
       "head_query": "hicks consulting",
       "queries": [
         {
           "query": "hicks consulting",
-          "impressions": 77,
+          "impressions": 84,
           "clicks": 1,
-          "position": 4.25
-        },
-        {
-          "query": "monika hicks",
-          "impressions": 24,
-          "clicks": 1,
-          "position": 5.5
+          "position": 3.98
         },
         {
           "query": "health consultant",
           "impressions": 22,
           "clicks": 0,
           "position": 1
+        },
+        {
+          "query": "monika hicks",
+          "impressions": 22,
+          "clicks": 1,
+          "position": 5.46
         },
         {
           "query": "hicks",
@@ -268,12 +274,6 @@
           "position": 25
         },
         {
-          "query": "therapist near me black",
-          "impressions": 1,
-          "clicks": 0,
-          "position": 6
-        },
-        {
           "query": "therapists near me",
           "impressions": 1,
           "clicks": 0,
@@ -298,15 +298,15 @@
       "approved_by": "site owner (not the client)",
       "approved_at": "2026-10-11",
       "approval_note": "Site owner decided on 2026-10-11 to strengthen both qualifying families now rather than wait on a client flag. Not a client decision; the client did not approve or author this change.",
-      "proposed_change": "Lead / with a direct answer to \"hicks consulting\" in its title and first paragraph: 143 impressions at position 4.6 earned 2 click(s) (1.4% CTR)."
+      "proposed_change": "Lead / with a direct answer to \"hicks consulting\" in its title and first paragraph: 147 impressions at position 4.4 earned 2 click(s) (1.4% CTR)."
     },
     {
       "family": "/contact/",
       "page": "https://www.hicksconsulting.org/contact/",
-      "impressions": 57,
+      "impressions": 58,
       "clicks": 0,
       "ctr": 0,
-      "weighted_position": 5.1,
+      "weighted_position": 5,
       "query_count": 3,
       "head_query": "hicks consulting llc",
       "queries": [
@@ -317,13 +317,13 @@
           "position": 5
         },
         {
-          "query": "email",
-          "impressions": 1,
+          "query": "hicks counseling",
+          "impressions": 2,
           "clicks": 0,
-          "position": 7
+          "position": 5
         },
         {
-          "query": "hicks counseling",
+          "query": "email",
           "impressions": 1,
           "clicks": 0,
           "position": 7
@@ -332,7 +332,7 @@
       "rank": 3,
       "qualifies": true,
       "status": "proposal",
-      "proposed_change": "Lead /contact/ with a direct answer to \"hicks consulting llc\" in its title and first paragraph: 57 impressions at position 5.1 earned 0 click(s) (0% CTR)."
+      "proposed_change": "Lead /contact/ with a direct answer to \"hicks consulting llc\" in its title and first paragraph: 58 impressions at position 5 earned 0 click(s) (0% CTR)."
     },
     {
       "family": "/corporate-speaking/",
@@ -401,6 +401,28 @@
       "why_not": "2 impressions < floor 20"
     },
     {
+      "family": "/resources/articles/when-you-keep-saying-yes/",
+      "page": "https://www.hicksconsulting.org/resources/articles/when-you-keep-saying-yes/",
+      "impressions": 1,
+      "clicks": 0,
+      "ctr": 0,
+      "weighted_position": 1,
+      "query_count": 1,
+      "head_query": "yes difficult",
+      "queries": [
+        {
+          "query": "yes difficult",
+          "impressions": 1,
+          "clicks": 0,
+          "position": 1
+        }
+      ],
+      "rank": 7,
+      "qualifies": false,
+      "status": "measured_only",
+      "why_not": "1 impressions < floor 20"
+    },
+    {
       "family": "/resources/guides/burnout-recovery-for-black-women-who-keep-functioning-through-everything/",
       "page": "https://hicksconsulting.org/resources/guides/burnout-recovery-for-black-women-who-keep-functioning-through-everything/",
       "impressions": 1,
@@ -417,7 +439,7 @@
           "position": 2
         }
       ],
-      "rank": 7,
+      "rank": 8,
       "qualifies": false,
       "status": "measured_only",
       "why_not": "1 impressions < floor 20"
