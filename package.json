@@ -156,6 +156,7 @@
     "validate:zero-paid-llm": "node _ops/validators/validate_zero_paid_llm.js",
     "calendar:write": "node scripts/publishing/write_calendar_slots.mjs",
     "validate:calendar-writer": "node _ops/validators/validate_calendar_writer.mjs",
+    "validate:search-loop-caller-pin": "node _ops/validators/validate_search_loop_caller_pin.js",
     "validate:copy-insight-canonicals": "node _ops/validators/validate_copy_insight_canonicals.mjs"
   }
 }
