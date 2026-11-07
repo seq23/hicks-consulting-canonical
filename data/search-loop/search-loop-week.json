@@ -2,9 +2,9 @@
   "schema": "search-loop-week-v1",
   "week": "2026-W45",
   "site": "hicksconsulting.org",
-  "generated_at": "2026-11-07T12:55:47.044Z",
+  "generated_at": "2026-11-07T16:08:44.614Z",
   "state": "running",
-  "published": 16,
+  "published": 17,
   "indexed": "not read: no page old enough to inspect yet (14 days)",
   "pace": 1,
   "ai_visitors": 0,
@@ -17,13 +17,40 @@
   "redirected": [],
   "cap": {
     "max_live_pages": 18,
-    "live": 16,
-    "room": 2,
+    "live": 17,
+    "room": 1,
     "why": "held at 18 after the 3 Nov 2026 blitz (Sequoia asked for it; 9 pages, recorded under blitz); weekly results check resumes"
   },
   "notes": [
-    "BUILD published 0 of quota 1: 0 draft(s) failed the gate and were dropped; 0 got no answer from the free model and stay queued",
-    "CHECK: published pages are frozen on this site; checkpoints are recorded, no page is strengthened, undone or merged"
+    "BUILD: published pages are frozen on this site, so no existing page was edited to link the 1 new page(s); link them from the site's own build or nav",
+    "CHECK: published pages are frozen on this site; checkpoints are recorded, no page is strengthened, undone or merged",
+    "IndexNow: 1 new page(s) not live yet; submitted when they answer 200"
   ],
-  "run_url": "https://github.com/seq23/hicks-consulting-canonical/actions/runs/42374612207"
+  "lanes": {
+    "ratio": {
+      "can_be_one": 2,
+      "striking": 1
+    },
+    "can_be_one": {
+      "pages": 0,
+      "measured": 0,
+      "top3": 0,
+      "hit_rate": "not read: no page in this lane has reached its 2-week check yet"
+    },
+    "striking": {
+      "pages": 17,
+      "measured": 0,
+      "top3": 0,
+      "hit_rate": "not read: no page in this lane has reached its 2-week check yet"
+    },
+    "weights": {
+      "neighbour": 35,
+      "unanswered": 30,
+      "weak_top10": 40,
+      "demand": 10
+    },
+    "weight_changes": [],
+    "competition": "not read: no free, ToS-safe competition signal (SERP scraping is not used)"
+  },
+  "run_url": "https://github.com/seq23/hicks-consulting-canonical/actions/runs/42389778164"
 }
