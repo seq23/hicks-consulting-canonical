@@ -2,11 +2,11 @@
   "schema_version": "1.0",
   "generated_from": "data/search_intelligence/target_query_set.json",
   "window": {
-    "start_date": "2026-10-08",
-    "end_date": "2026-11-04",
+    "start_date": "2026-10-09",
+    "end_date": "2026-11-05",
     "days": 28
   },
-  "truth_collected_at": "2026-11-07T15:24:47.993Z",
+  "truth_collected_at": "2026-11-08T15:25:05.718Z",
   "rule": {
     "grouping": "one family per landing page (the page Google shows for the query)",
     "min_impressions": 20,
@@ -16,176 +16,25 @@
     "top_n": 12
   },
   "client_approval": "Client site: qualifying families are PROPOSALS. A family is strengthened only once its status is \"approved\" here, with approved_by naming who decided (the client, or the site owner on her own decision) and approved_at.",
-  "target_count": 48,
-  "impressions_total": 375,
-  "family_count": 8,
+  "target_count": 50,
+  "impressions_total": 380,
+  "family_count": 9,
   "proposal_count": 1,
   "approved_count": 2,
   "families": [
     {
-      "family": "/black-therapist-memphis/",
-      "page": "https://www.hicksconsulting.org/black-therapist-memphis/",
-      "impressions": 148,
-      "clicks": 1,
-      "ctr": 0.7,
-      "weighted_position": 7.7,
-      "query_count": 22,
-      "head_query": "black therapist memphis tn",
-      "queries": [
-        {
-          "query": "black therapist memphis tn",
-          "impressions": 44,
-          "clicks": 1,
-          "position": 7.77
-        },
-        {
-          "query": "black therapist memphis, tn",
-          "impressions": 23,
-          "clicks": 0,
-          "position": 7.82
-        },
-        {
-          "query": "black mental health therapist near me",
-          "impressions": 13,
-          "clicks": 0,
-          "position": 8.77
-        },
-        {
-          "query": "black therapist",
-          "impressions": 10,
-          "clicks": 0,
-          "position": 6.7
-        },
-        {
-          "query": "african american female therapist near me",
-          "impressions": 8,
-          "clicks": 0,
-          "position": 6.13
-        },
-        {
-          "query": "black therapist near me",
-          "impressions": 8,
-          "clicks": 0,
-          "position": 6.75
-        },
-        {
-          "query": "african american therapist near me",
-          "impressions": 7,
-          "clicks": 0,
-          "position": 8.43
-        },
-        {
-          "query": "black female therapist near me",
-          "impressions": 6,
-          "clicks": 0,
-          "position": 5
-        },
-        {
-          "query": "black therapists near me",
-          "impressions": 5,
-          "clicks": 0,
-          "position": 7.6
-        },
-        {
-          "query": "african american psychologist near me",
-          "impressions": 4,
-          "clicks": 0,
-          "position": 12.25
-        },
-        {
-          "query": "black mental health therapist",
-          "impressions": 3,
-          "clicks": 0,
-          "position": 7
-        },
-        {
-          "query": "black therapists",
-          "impressions": 3,
-          "clicks": 0,
-          "position": 6.67
-        },
-        {
-          "query": "black women therapist near me",
-          "impressions": 3,
-          "clicks": 0,
-          "position": 5
-        },
-        {
-          "query": "black counselors near me",
-          "impressions": 2,
-          "clicks": 0,
-          "position": 6
-        },
-        {
-          "query": "black psychologist near me",
-          "impressions": 2,
-          "clicks": 0,
-          "position": 12
-        },
-        {
-          "query": "african american female therapist",
-          "impressions": 1,
-          "clicks": 0,
-          "position": 15
-        },
-        {
-          "query": "african american therapists near me",
-          "impressions": 1,
-          "clicks": 0,
-          "position": 9
-        },
-        {
-          "query": "black female psychologist near me",
-          "impressions": 1,
-          "clicks": 0,
-          "position": 1
-        },
-        {
-          "query": "black in person therapist near me",
-          "impressions": 1,
-          "clicks": 0,
-          "position": 11
-        },
-        {
-          "query": "black therapist that accept medicaid near me",
-          "impressions": 1,
-          "clicks": 0,
-          "position": 9
-        },
-        {
-          "query": "ebony therapist",
-          "impressions": 1,
-          "clicks": 0,
-          "position": 5
-        },
-        {
-          "query": "in person black therapist near me",
-          "impressions": 1,
-          "clicks": 0,
-          "position": 10
-        }
-      ],
-      "rank": 1,
-      "qualifies": true,
-      "status": "approved",
-      "approved_by": "site owner (not the client)",
-      "approved_at": "2026-10-11",
-      "approval_note": "Site owner decided on 2026-10-11 to strengthen both qualifying families now rather than wait on a client flag. Not a client decision; the client did not approve or author this change.",
-      "proposed_change": "Lead /black-therapist-memphis/ with a direct answer to \"black therapist memphis tn\" in its title and first paragraph: 148 impressions at position 7.7 earned 1 click(s) (0.7% CTR)."
-    },
-    {
       "family": "/",
       "page": "https://www.hicksconsulting.org/",
-      "impressions": 147,
+      "impressions": 152,
       "clicks": 2,
-      "ctr": 1.4,
-      "weighted_position": 4.4,
+      "ctr": 1.3,
+      "weighted_position": 4.7,
       "query_count": 18,
       "head_query": "hicks consulting",
       "queries": [
         {
           "query": "hicks consulting",
-          "impressions": 84,
+          "impressions": 89,
           "clicks": 1,
           "position": 3.98
         },
@@ -220,6 +69,12 @@
           "position": 5
         },
         {
+          "query": "addiction therapy near me",
+          "impressions": 1,
+          "clicks": 0,
+          "position": 41
+        },
+        {
           "query": "committed to recovery memphis tn",
           "impressions": 1,
           "clicks": 0,
@@ -230,12 +85,6 @@
           "impressions": 1,
           "clicks": 0,
           "position": 12
-        },
-        {
-          "query": "consulting services",
-          "impressions": 1,
-          "clicks": 0,
-          "position": 2
         },
         {
           "query": "emotional wellness",
@@ -292,13 +141,164 @@
           "position": 2
         }
       ],
+      "rank": 1,
+      "qualifies": true,
+      "status": "approved",
+      "approved_by": "site owner (not the client)",
+      "approved_at": "2026-10-11",
+      "approval_note": "Site owner decided on 2026-10-11 to strengthen both qualifying families now rather than wait on a client flag. Not a client decision; the client did not approve or author this change.",
+      "proposed_change": "Lead / with a direct answer to \"hicks consulting\" in its title and first paragraph: 152 impressions at position 4.7 earned 2 click(s) (1.3% CTR)."
+    },
+    {
+      "family": "/black-therapist-memphis/",
+      "page": "https://www.hicksconsulting.org/black-therapist-memphis/",
+      "impressions": 146,
+      "clicks": 1,
+      "ctr": 0.7,
+      "weighted_position": 7.7,
+      "query_count": 22,
+      "head_query": "black therapist memphis tn",
+      "queries": [
+        {
+          "query": "black therapist memphis tn",
+          "impressions": 46,
+          "clicks": 1,
+          "position": 7.87
+        },
+        {
+          "query": "black therapist memphis, tn",
+          "impressions": 23,
+          "clicks": 0,
+          "position": 7.82
+        },
+        {
+          "query": "black mental health therapist near me",
+          "impressions": 13,
+          "clicks": 0,
+          "position": 8.77
+        },
+        {
+          "query": "black therapist",
+          "impressions": 9,
+          "clicks": 0,
+          "position": 6.56
+        },
+        {
+          "query": "african american female therapist near me",
+          "impressions": 8,
+          "clicks": 0,
+          "position": 6.13
+        },
+        {
+          "query": "african american therapist near me",
+          "impressions": 7,
+          "clicks": 0,
+          "position": 8.43
+        },
+        {
+          "query": "black female therapist near me",
+          "impressions": 6,
+          "clicks": 0,
+          "position": 5
+        },
+        {
+          "query": "black therapist near me",
+          "impressions": 6,
+          "clicks": 0,
+          "position": 6.17
+        },
+        {
+          "query": "black therapists near me",
+          "impressions": 5,
+          "clicks": 0,
+          "position": 7.6
+        },
+        {
+          "query": "african american psychologist near me",
+          "impressions": 4,
+          "clicks": 0,
+          "position": 12.25
+        },
+        {
+          "query": "black mental health therapist",
+          "impressions": 3,
+          "clicks": 0,
+          "position": 7
+        },
+        {
+          "query": "black therapists",
+          "impressions": 3,
+          "clicks": 0,
+          "position": 6.67
+        },
+        {
+          "query": "black counselors near me",
+          "impressions": 2,
+          "clicks": 0,
+          "position": 6
+        },
+        {
+          "query": "black psychologist near me",
+          "impressions": 2,
+          "clicks": 0,
+          "position": 12
+        },
+        {
+          "query": "black women therapist near me",
+          "impressions": 2,
+          "clicks": 0,
+          "position": 3.5
+        },
+        {
+          "query": "african american female therapist",
+          "impressions": 1,
+          "clicks": 0,
+          "position": 15
+        },
+        {
+          "query": "african american therapists near me",
+          "impressions": 1,
+          "clicks": 0,
+          "position": 9
+        },
+        {
+          "query": "black female psychologist near me",
+          "impressions": 1,
+          "clicks": 0,
+          "position": 1
+        },
+        {
+          "query": "black in person therapist near me",
+          "impressions": 1,
+          "clicks": 0,
+          "position": 11
+        },
+        {
+          "query": "black therapist that accept medicaid near me",
+          "impressions": 1,
+          "clicks": 0,
+          "position": 9
+        },
+        {
+          "query": "ebony therapist",
+          "impressions": 1,
+          "clicks": 0,
+          "position": 5
+        },
+        {
+          "query": "in person black therapist near me",
+          "impressions": 1,
+          "clicks": 0,
+          "position": 10
+        }
+      ],
       "rank": 2,
       "qualifies": true,
       "status": "approved",
       "approved_by": "site owner (not the client)",
       "approved_at": "2026-10-11",
       "approval_note": "Site owner decided on 2026-10-11 to strengthen both qualifying families now rather than wait on a client flag. Not a client decision; the client did not approve or author this change.",
-      "proposed_change": "Lead / with a direct answer to \"hicks consulting\" in its title and first paragraph: 147 impressions at position 4.4 earned 2 click(s) (1.4% CTR)."
+      "proposed_change": "Lead /black-therapist-memphis/ with a direct answer to \"black therapist memphis tn\" in its title and first paragraph: 146 impressions at position 7.7 earned 1 click(s) (0.7% CTR)."
     },
     {
       "family": "/contact/",
@@ -401,6 +401,34 @@
       "why_not": "2 impressions < floor 20"
     },
     {
+      "family": "/resources/guides/how-to-choose-a-therapist-near-you/",
+      "page": "https://www.hicksconsulting.org/resources/guides/how-to-choose-a-therapist-near-you/",
+      "impressions": 2,
+      "clicks": 0,
+      "ctr": 0,
+      "weighted_position": 7,
+      "query_count": 2,
+      "head_query": "nearest therapist near me",
+      "queries": [
+        {
+          "query": "nearest therapist near me",
+          "impressions": 1,
+          "clicks": 0,
+          "position": 11
+        },
+        {
+          "query": "which option makes sense if i need to book a california therapist quickly but i’m hesitant to emotionally reinvest unless the fit seems strong? i’m looking for someone who works with people navigating a new stage of life, offers online sessions, can see me within about a week, and has transparent pricing or takes my insurance—can you help me draft a short message to send to a few therapists and a checklist to decide after the first call/session so i don’t waste time?",
+          "impressions": 1,
+          "clicks": 0,
+          "position": 3
+        }
+      ],
+      "rank": 7,
+      "qualifies": false,
+      "status": "measured_only",
+      "why_not": "2 impressions < floor 20"
+    },
+    {
       "family": "/resources/articles/when-you-keep-saying-yes/",
       "page": "https://www.hicksconsulting.org/resources/articles/when-you-keep-saying-yes/",
       "impressions": 1,
@@ -417,7 +445,7 @@
           "position": 1
         }
       ],
-      "rank": 7,
+      "rank": 8,
       "qualifies": false,
       "status": "measured_only",
       "why_not": "1 impressions < floor 20"
@@ -439,7 +467,7 @@
           "position": 2
         }
       ],
-      "rank": 8,
+      "rank": 9,
       "qualifies": false,
       "status": "measured_only",
       "why_not": "1 impressions < floor 20"
