@@ -4,7 +4,7 @@
   "profile": "all",
   "max_attempts": 3,
   "dry_run": false,
-  "generated_at": "2026-11-01T10:14:30.038Z",
+  "generated_at": "2026-11-08T10:14:29.482Z",
   "status": "CLEAN",
   "safe_to_push": true,
   "registered_repairs": [
@@ -12,16 +12,6 @@
       "id": "query-signal-schema",
       "severity": "SOFT_WARNING",
       "repair_command": "npm run ingest:normalize"
-    },
-    {
-      "id": "query-clusters",
-      "severity": "INFO",
-      "repair_command": "npm run ingest:cluster"
-    },
-    {
-      "id": "fanout-candidates",
-      "severity": "INFO",
-      "repair_command": "npm run ingest:fanouts"
     },
     {
       "id": "content-briefs",
@@ -51,13 +41,13 @@
   ],
   "remaining_findings": [
     {
-      "id": "word-counts",
-      "severity": "SOFT_WARNING",
+      "id": "sitemap-parity",
+      "severity": "STRONG_WARNING",
       "blocking": false,
       "repair_command": null
     },
     {
-      "id": "content-pattern-contract",
+      "id": "internal-links",
       "severity": "STRONG_WARNING",
       "blocking": false,
       "repair_command": null
@@ -75,12 +65,12 @@
       "validation_exit": 0,
       "findings": [
         {
-          "id": "word-counts",
-          "severity": "SOFT_WARNING",
+          "id": "sitemap-parity",
+          "severity": "STRONG_WARNING",
           "reason": ""
         },
         {
-          "id": "content-pattern-contract",
+          "id": "internal-links",
           "severity": "STRONG_WARNING",
           "reason": ""
         },
