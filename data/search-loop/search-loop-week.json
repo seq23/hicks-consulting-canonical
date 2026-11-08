@@ -2,13 +2,13 @@
   "schema": "search-loop-week-v1",
   "week": "2026-W45",
   "site": "hicksconsulting.org",
-  "generated_at": "2026-11-07T16:08:44.614Z",
+  "generated_at": "2026-11-08T12:55:49.547Z",
   "state": "running",
-  "published": 17,
+  "published": 18,
   "indexed": "not read: no page old enough to inspect yet (14 days)",
   "pace": 1,
   "ai_visitors": 0,
-  "ai_bot_hits": 1476,
+  "ai_bot_hits": 1681,
   "conversions": "not read: no conversion source configured for this site (form fills / checkouts)",
   "wins": 0,
   "undone": 0,
@@ -17,14 +17,15 @@
   "redirected": [],
   "cap": {
     "max_live_pages": 18,
-    "live": 17,
-    "room": 1,
+    "live": 18,
+    "room": 0,
     "why": "held at 18 after the 3 Nov 2026 blitz (Sequoia asked for it; 9 pages, recorded under blitz); weekly results check resumes"
   },
   "notes": [
+    "BUILD held by the cap: 18 live engine page(s), cap 18 (held at 18 after the 3 Nov 2026 blitz (Sequoia asked for it; 9 pages, recorded under blitz); weekly results check resumes); 0 more page(s) today would have gone over it, those searches stay queued",
     "BUILD: published pages are frozen on this site, so no existing page was edited to link the 1 new page(s); link them from the site's own build or nav",
-    "CHECK: published pages are frozen on this site; checkpoints are recorded, no page is strengthened, undone or merged",
-    "IndexNow: 1 new page(s) not live yet; submitted when they answer 200"
+    "BUILD gate notes (not blocking): 1 published page(s) are outside a length or style aim; each is listed under gate_notes in pages.json",
+    "CHECK: published pages are frozen on this site; checkpoints are recorded, no page is strengthened, undone or merged"
   ],
   "lanes": {
     "ratio": {
@@ -38,7 +39,7 @@
       "hit_rate": "not read: no page in this lane has reached its 2-week check yet"
     },
     "striking": {
-      "pages": 17,
+      "pages": 18,
       "measured": 0,
       "top3": 0,
       "hit_rate": "not read: no page in this lane has reached its 2-week check yet"
@@ -52,5 +53,5 @@
     "weight_changes": [],
     "competition": "not read: no free, ToS-safe competition signal (SERP scraping is not used)"
   },
-  "run_url": "https://github.com/seq23/hicks-consulting-canonical/actions/runs/42389778164"
+  "run_url": "https://github.com/seq23/hicks-consulting-canonical/actions/runs/42482503046"
 }
