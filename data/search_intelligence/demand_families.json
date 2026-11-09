@@ -2,11 +2,11 @@
   "schema_version": "1.0",
   "generated_from": "data/search_intelligence/target_query_set.json",
   "window": {
-    "start_date": "2026-10-09",
-    "end_date": "2026-11-05",
+    "start_date": "2026-10-10",
+    "end_date": "2026-11-06",
     "days": 28
   },
-  "truth_collected_at": "2026-11-08T15:25:05.718Z",
+  "truth_collected_at": "2026-11-09T15:25:43.511Z",
   "rule": {
     "grouping": "one family per landing page (the page Google shows for the query)",
     "min_impressions": 20,
@@ -17,26 +17,26 @@
   },
   "client_approval": "Client site: qualifying families are PROPOSALS. A family is strengthened only once its status is \"approved\" here, with approved_by naming who decided (the client, or the site owner on her own decision) and approved_at.",
   "target_count": 50,
-  "impressions_total": 380,
-  "family_count": 9,
+  "impressions_total": 404,
+  "family_count": 8,
   "proposal_count": 1,
   "approved_count": 2,
   "families": [
     {
       "family": "/",
       "page": "https://www.hicksconsulting.org/",
-      "impressions": 152,
-      "clicks": 2,
-      "ctr": 1.3,
-      "weighted_position": 4.7,
+      "impressions": 172,
+      "clicks": 4,
+      "ctr": 2.3,
+      "weighted_position": 4.3,
       "query_count": 18,
       "head_query": "hicks consulting",
       "queries": [
         {
           "query": "hicks consulting",
-          "impressions": 89,
-          "clicks": 1,
-          "position": 3.98
+          "impressions": 111,
+          "clicks": 3,
+          "position": 3.57
         },
         {
           "query": "health consultant",
@@ -46,21 +46,15 @@
         },
         {
           "query": "monika hicks",
-          "impressions": 22,
+          "impressions": 21,
           "clicks": 1,
-          "position": 5.46
+          "position": 5.43
         },
         {
           "query": "hicks",
           "impressions": 3,
           "clicks": 0,
           "position": 2.33
-        },
-        {
-          "query": "hicks's",
-          "impressions": 2,
-          "clicks": 0,
-          "position": 1
         },
         {
           "query": "medical it consulting services",
@@ -88,6 +82,12 @@
         },
         {
           "query": "emotional wellness",
+          "impressions": 1,
+          "clicks": 0,
+          "position": 1
+        },
+        {
+          "query": "hicks's",
           "impressions": 1,
           "clicks": 0,
           "position": 1
@@ -147,12 +147,12 @@
       "approved_by": "site owner (not the client)",
       "approved_at": "2026-10-11",
       "approval_note": "Site owner decided on 2026-10-11 to strengthen both qualifying families now rather than wait on a client flag. Not a client decision; the client did not approve or author this change.",
-      "proposed_change": "Lead / with a direct answer to \"hicks consulting\" in its title and first paragraph: 152 impressions at position 4.7 earned 2 click(s) (1.3% CTR)."
+      "proposed_change": "Lead / with a direct answer to \"hicks consulting\" in its title and first paragraph: 172 impressions at position 4.3 earned 4 click(s) (2.3% CTR)."
     },
     {
       "family": "/black-therapist-memphis/",
       "page": "https://www.hicksconsulting.org/black-therapist-memphis/",
-      "impressions": 146,
+      "impressions": 145,
       "clicks": 1,
       "ctr": 0.7,
       "weighted_position": 7.7,
@@ -161,9 +161,9 @@
       "queries": [
         {
           "query": "black therapist memphis tn",
-          "impressions": 46,
+          "impressions": 45,
           "clicks": 1,
-          "position": 7.87
+          "position": 7.89
         },
         {
           "query": "black therapist memphis, tn",
@@ -298,23 +298,23 @@
       "approved_by": "site owner (not the client)",
       "approved_at": "2026-10-11",
       "approval_note": "Site owner decided on 2026-10-11 to strengthen both qualifying families now rather than wait on a client flag. Not a client decision; the client did not approve or author this change.",
-      "proposed_change": "Lead /black-therapist-memphis/ with a direct answer to \"black therapist memphis tn\" in its title and first paragraph: 146 impressions at position 7.7 earned 1 click(s) (0.7% CTR)."
+      "proposed_change": "Lead /black-therapist-memphis/ with a direct answer to \"black therapist memphis tn\" in its title and first paragraph: 145 impressions at position 7.7 earned 1 click(s) (0.7% CTR)."
     },
     {
       "family": "/contact/",
       "page": "https://www.hicksconsulting.org/contact/",
-      "impressions": 58,
+      "impressions": 61,
       "clicks": 0,
       "ctr": 0,
-      "weighted_position": 5,
+      "weighted_position": 5.1,
       "query_count": 3,
       "head_query": "hicks consulting llc",
       "queries": [
         {
           "query": "hicks consulting llc",
-          "impressions": 55,
+          "impressions": 58,
           "clicks": 0,
-          "position": 5
+          "position": 5.03
         },
         {
           "query": "hicks counseling",
@@ -332,12 +332,12 @@
       "rank": 3,
       "qualifies": true,
       "status": "proposal",
-      "proposed_change": "Lead /contact/ with a direct answer to \"hicks consulting llc\" in its title and first paragraph: 58 impressions at position 5 earned 0 click(s) (0% CTR)."
+      "proposed_change": "Lead /contact/ with a direct answer to \"hicks consulting llc\" in its title and first paragraph: 61 impressions at position 5.1 earned 0 click(s) (0% CTR)."
     },
     {
       "family": "/corporate-speaking/",
       "page": "https://www.hicksconsulting.org/corporate-speaking/",
-      "impressions": 13,
+      "impressions": 14,
       "clicks": 0,
       "ctr": 0,
       "weighted_position": 7.3,
@@ -346,37 +346,71 @@
       "queries": [
         {
           "query": "hicks training",
-          "impressions": 13,
+          "impressions": 14,
           "clicks": 0,
-          "position": 7.31
+          "position": 7.29
         }
       ],
       "rank": 4,
       "qualifies": false,
       "status": "measured_only",
-      "why_not": "13 impressions < floor 20"
+      "why_not": "14 impressions < floor 20"
     },
     {
       "family": "/therapy/",
       "page": "https://www.hicksconsulting.org/therapy/",
-      "impressions": 5,
+      "impressions": 6,
       "clicks": 0,
       "ctr": 0,
-      "weighted_position": 20,
+      "weighted_position": 19,
       "query_count": 1,
       "head_query": "online therapy memphis",
       "queries": [
         {
           "query": "online therapy memphis",
-          "impressions": 5,
+          "impressions": 6,
           "clicks": 0,
-          "position": 20
+          "position": 19
         }
       ],
       "rank": 5,
       "qualifies": false,
       "status": "measured_only",
-      "why_not": "5 impressions < floor 20"
+      "why_not": "6 impressions < floor 20"
+    },
+    {
+      "family": "/resources/guides/how-to-choose-a-therapist-near-you/",
+      "page": "https://www.hicksconsulting.org/resources/guides/how-to-choose-a-therapist-near-you/",
+      "impressions": 3,
+      "clicks": 0,
+      "ctr": 0,
+      "weighted_position": 11.3,
+      "query_count": 3,
+      "head_query": "how to map key experts in a therapy area",
+      "queries": [
+        {
+          "query": "how to map key experts in a therapy area",
+          "impressions": 1,
+          "clicks": 0,
+          "position": 20
+        },
+        {
+          "query": "nearest therapist near me",
+          "impressions": 1,
+          "clicks": 0,
+          "position": 11
+        },
+        {
+          "query": "which option makes sense if i need to book a california therapist quickly but i’m hesitant to emotionally reinvest unless the fit seems strong? i’m looking for someone who works with people navigating a new stage of life, offers online sessions, can see me within about a week, and has transparent pricing or takes my insurance—can you help me draft a short message to send to a few therapists and a checklist to decide after the first call/session so i don’t waste time?",
+          "impressions": 1,
+          "clicks": 0,
+          "position": 3
+        }
+      ],
+      "rank": 6,
+      "qualifies": false,
+      "status": "measured_only",
+      "why_not": "3 impressions < floor 20"
     },
     {
       "family": "/anxiety-therapist-memphis/",
@@ -393,34 +427,6 @@
           "impressions": 2,
           "clicks": 0,
           "position": 32
-        }
-      ],
-      "rank": 6,
-      "qualifies": false,
-      "status": "measured_only",
-      "why_not": "2 impressions < floor 20"
-    },
-    {
-      "family": "/resources/guides/how-to-choose-a-therapist-near-you/",
-      "page": "https://www.hicksconsulting.org/resources/guides/how-to-choose-a-therapist-near-you/",
-      "impressions": 2,
-      "clicks": 0,
-      "ctr": 0,
-      "weighted_position": 7,
-      "query_count": 2,
-      "head_query": "nearest therapist near me",
-      "queries": [
-        {
-          "query": "nearest therapist near me",
-          "impressions": 1,
-          "clicks": 0,
-          "position": 11
-        },
-        {
-          "query": "which option makes sense if i need to book a california therapist quickly but i’m hesitant to emotionally reinvest unless the fit seems strong? i’m looking for someone who works with people navigating a new stage of life, offers online sessions, can see me within about a week, and has transparent pricing or takes my insurance—can you help me draft a short message to send to a few therapists and a checklist to decide after the first call/session so i don’t waste time?",
-          "impressions": 1,
-          "clicks": 0,
-          "position": 3
         }
       ],
       "rank": 7,
@@ -446,28 +452,6 @@
         }
       ],
       "rank": 8,
-      "qualifies": false,
-      "status": "measured_only",
-      "why_not": "1 impressions < floor 20"
-    },
-    {
-      "family": "/resources/guides/burnout-recovery-for-black-women-who-keep-functioning-through-everything/",
-      "page": "https://hicksconsulting.org/resources/guides/burnout-recovery-for-black-women-who-keep-functioning-through-everything/",
-      "impressions": 1,
-      "clicks": 0,
-      "ctr": 0,
-      "weighted_position": 2,
-      "query_count": 1,
-      "head_query": "burnout recovery for black women",
-      "queries": [
-        {
-          "query": "burnout recovery for black women",
-          "impressions": 1,
-          "clicks": 0,
-          "position": 2
-        }
-      ],
-      "rank": 9,
       "qualifies": false,
       "status": "measured_only",
       "why_not": "1 impressions < floor 20"
