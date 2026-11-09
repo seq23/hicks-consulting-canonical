@@ -1,7 +1,7 @@
 {
   "schema_version": "2.0",
-  "receipt_id": "2026-11-08T14-22-06.826Z-42489446812",
-  "attempted_at": "2026-11-08T14:22:06.826Z",
+  "receipt_id": "2026-11-09T14-24-36.390Z-42634346253",
+  "attempted_at": "2026-11-09T14:24:36.390Z",
   "publication_trigger": "ONLY_AFTER_EXISTING_CONTENT_PUBLISH_WORKFLOW_SUCCEEDS",
   "chain": [
     "successful_publish",
@@ -15,14 +15,14 @@
   "sitemap_refresh": {
     "status": "SUCCESS",
     "sitemap_url": "https://www.hicksconsulting.org/sitemap.xml",
-    "sitemap_sha256": "7475298d95ef0605a846731f91c00b0ef13839c87906aac90110c8009c910743",
-    "url_count": 157
+    "sitemap_sha256": "529f65eb16fa39ddaa33e8e59739cedf51b5f0f7bf11aa4ca9092634054138ac",
+    "url_count": 158
   },
   "indexnow": {
     "status": "SUCCESS",
     "attempted": true,
     "http_status": 200,
-    "submitted_urls": 157,
+    "submitted_urls": 158,
     "key_location": "https://www.hicksconsulting.org/indexnow.txt"
   },
   "gsc_sitemap_submission": {
@@ -55,7 +55,7 @@
         "verdict": "PASS",
         "coverage_state": "Submitted and indexed",
         "indexing_state": "INDEXING_ALLOWED",
-        "last_crawl_time": "2026-10-28T04:23:41Z"
+        "last_crawl_time": "2026-11-05T06:29:11Z"
       },
       {
         "url": "https://www.hicksconsulting.org/coaching/",
@@ -197,7 +197,7 @@
   "durable_receipt": {
     "status": "SUCCESS",
     "latest_path": "data/distribution/provider_receipt.json",
-    "history_path": "data/distribution/receipts/2026-11-08T14-22-06.826Z-42489446812.json"
+    "history_path": "data/distribution/receipts/2026-11-09T14-24-36.390Z-42634346253.json"
   },
   "observation_feedback": {
     "status": "SUCCESS",
