@@ -1,9 +1,9 @@
 {
   "schema": "search-loop-cap-v1",
-  "max_live_pages": 18,
+  "max_live_pages": 16,
   "config_value": null,
-  "reason": "held at 18 after the 3 Nov 2026 blitz (Sequoia asked for it; 9 pages, recorded under blitz); weekly results check resumes",
-  "last_eval_week": "2026-W45",
+  "reason": "down from 18 to 16: Google impressions fell to 1107 in the last 28 days from 1641 in the 28 before",
+  "last_eval_week": "2026-W46",
   "history": [
     {
       "at": "2026-11-03T13:34:39.095Z",
@@ -33,12 +33,21 @@
       "to": 18,
       "reason": "3 Nov 2026 blitz done: 9 pages published under the blitz; cap back to 18 (16 live), the per-day cap back to 1",
       "blitz": true
+    },
+    {
+      "at": "2026-11-09T12:56:27.044Z",
+      "week": "2026-W46",
+      "from": 18,
+      "to": 16,
+      "reason": "down from 18 to 16: Google impressions fell to 1107 in the last 28 days from 1641 in the 28 before"
     }
   ],
-  "held": {},
+  "held": {
+    "2026-11-09": 1
+  },
   "impressions": {
-    "last_28": 1231,
-    "prev_28": 1554
+    "last_28": 1107,
+    "prev_28": 1641
   },
   "blitz": [
     {
