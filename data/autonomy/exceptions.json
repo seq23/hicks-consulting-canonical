@@ -870,6 +870,36 @@
       "createdAt": "2026-11-06T15:45:33.121Z",
       "blocksOtherWork": false,
       "clientActionRequired": false
+    },
+    {
+      "id": "exception-metadata-weekly-028-1794320688565",
+      "candidateId": "weekly-028",
+      "decision": "SKIPPED_UNSAFE_SEARCH_METADATA",
+      "findings": [
+        {
+          "code": "SEARCH_METADATA_UNRESOLVED",
+          "severity": "hard",
+          "route": "/resources/articles/how-to-stop-confusing-capacity-with-obligation/"
+        }
+      ],
+      "createdAt": "2026-11-10T14:24:48.565Z",
+      "blocksOtherWork": false,
+      "clientActionRequired": false
+    },
+    {
+      "id": "exception-metadata-daily-028-2-1794320688565",
+      "candidateId": "daily-028-2",
+      "decision": "SKIPPED_UNSAFE_SEARCH_METADATA",
+      "findings": [
+        {
+          "code": "SEARCH_METADATA_UNRESOLVED",
+          "severity": "hard",
+          "route": "/resources/insights/how-to-stop-confusing-capacity-with-obligation-why-women-minimize-it/"
+        }
+      ],
+      "createdAt": "2026-11-10T14:24:48.565Z",
+      "blocksOtherWork": false,
+      "clientActionRequired": false
     }
   ]
 }
