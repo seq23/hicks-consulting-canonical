@@ -35,11 +35,12 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Validate all profiles
-        run: npm run validate:all
-
+      # Build first: search-readiness (c3) and clarity-scope govern the built dist/.
       - name: Build site
         run: npm run build
+
+      - name: Validate all profiles
+        run: npm run validate:all
 
       - name: Run local prepush gate
         run: npm run release:prepush:local

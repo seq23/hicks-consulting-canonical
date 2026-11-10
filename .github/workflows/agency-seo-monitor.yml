@@ -62,8 +62,6 @@ jobs:
           SEARCH_AUTO_REPAIR: '1'
       - name: Build dashboard and advisory QA report
         run: npm run build
-      - name: Verify agency search-intelligence contract
-        run: npm run validate:profile:agency
       - name: Commit monitoring snapshots
         run: |
           git config user.name "github-actions[bot]"
