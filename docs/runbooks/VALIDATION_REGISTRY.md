@@ -56,6 +56,7 @@ Passing checks produce no warning. Execution failures are not downgraded by the 
 | `above-fold` | `validate:abovefold` | Strong warning | `conversion-ux` | `product-experience` | public conversion experience | Non-blocking |
 | `entity-coverage` | `validate:entities` | Hard fail | `semantic-data` | `growth-and-content` | PART (restored 10 Nov 2026): Person is "Monika Hicks, LCSW"; only verified profiles in sameAs | Blocks |
 | `search-readiness-surfaces` | `validate:search-readiness-surfaces` | Hard fail | `agency-search` | `site-operations` | PART c3 (restored 10 Nov 2026): Offer prices equal the visible and /faq/ fees | Blocks |
+| `clarity-scope` | `validate:clarity-scope` | Hard fail | `compliance` | `site-operations` | Clarity loads only on public form/purchase pages (restored 10 Nov 2026, was e9) | Blocks |
 | `sitemap-ledger-integrity` | `validate:sitemap-ledger-integrity` | Hard fail | `publishing` | `site-operations` | sitemap.xml and its lastmod ledger are committed together (restored 10 Nov 2026) | Blocks |
 | `memphis-search-surfaces` | `validate:memphis-search-surfaces` | Hard fail | `public-site` | `search-and-content` | PART (restored 10 Nov 2026): each therapist page states Tennessee and virtual | Blocks |
 | `velocity-immutability` | `validate:velocity-immutability` | Hard fail | `publishing-safety` | `content-operations` | PART (restored 10 Nov 2026): 227 baseline records keep slug and scheduledAt; no new slot collisions | Blocks |

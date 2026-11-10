@@ -114,6 +114,7 @@
     "validate:search-readiness-surfaces": "node _ops/validators/validate_search_readiness_surfaces.js",
     "validate:site-intent-preservation": "node _ops/validators/deep/validate_site_intent_preservation.js",
     "validate:sitemap-ledger-integrity": "node _ops/validators/validate_sitemap_ledger_integrity.js",
-    "validate:velocity-immutability": "node _ops/validators/deep/validate_velocity_immutability.js"
+    "validate:velocity-immutability": "node _ops/validators/deep/validate_velocity_immutability.js",
+    "validate:clarity-scope": "node _ops/validators/validate_clarity_scope.js"
   }
 }
