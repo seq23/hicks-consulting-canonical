@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-11-06T15:45:31.302Z",
-  "runId": "2026-11-06T15-45-25-450Z",
+  "generatedAt": "2026-11-10T15:44:35.971Z",
+  "runId": "2026-11-10T15-44-30-265Z",
   "mode": "external",
   "productionRule": "No-auth ingestion must degrade gracefully: a source failure is logged as degraded, a source disabled by configuration is logged as a named stop, and neither exits non-zero. A fallback-only run is a named stop, not a success - it is counted, and validate_social_ingestion_stops.js hard-fails once 3 consecutive fallback-only runs are recorded.",
   "post2027Use": "Signals feed normalized query clusters, atlas expansion, fan-out surfaces, and scheduled drafting after 2027-01-01.",
@@ -11,8 +11,8 @@
       "url": "https://www.reddit.com/search.rss?q=Black%20women%20burnout%20therapy&sort=new",
       "status": "ok",
       "httpStatus": 200,
-      "startedAt": "2026-11-06T15:45:25.450Z",
-      "finishedAt": "2026-11-06T15:45:26.301Z",
+      "startedAt": "2026-11-10T15:44:30.265Z",
+      "finishedAt": "2026-11-10T15:44:31.123Z",
       "signalCount": 25
     },
     {
@@ -21,8 +21,8 @@
       "url": "https://www.reddit.com/search.rss?q=AI%20anxiety%20mental%20health&sort=new",
       "status": "degraded",
       "httpStatus": 429,
-      "startedAt": "2026-11-06T15:45:26.803Z",
-      "finishedAt": "2026-11-06T15:45:26.883Z",
+      "startedAt": "2026-11-10T15:44:31.624Z",
+      "finishedAt": "2026-11-10T15:44:31.703Z",
       "signalCount": 0
     },
     {
@@ -31,8 +31,8 @@
       "url": "https://www.reddit.com/search.rss?q=Gen%20Z%20mental%20health%20therapy&sort=new",
       "status": "degraded",
       "httpStatus": 429,
-      "startedAt": "2026-11-06T15:45:27.383Z",
-      "finishedAt": "2026-11-06T15:45:27.462Z",
+      "startedAt": "2026-11-10T15:44:32.202Z",
+      "finishedAt": "2026-11-10T15:44:32.279Z",
       "signalCount": 0
     },
     {
@@ -41,8 +41,8 @@
       "url": "https://www.youtube.com/feeds/videos.xml?search_query=Black%20women%20burnout%20therapy",
       "status": "degraded",
       "httpStatus": 400,
-      "startedAt": "2026-11-06T15:45:27.961Z",
-      "finishedAt": "2026-11-06T15:45:28.121Z",
+      "startedAt": "2026-11-10T15:44:32.780Z",
+      "finishedAt": "2026-11-10T15:44:32.882Z",
       "signalCount": 0
     },
     {
@@ -51,8 +51,8 @@
       "url": "https://news.google.com/rss/search?q=workplace%20mental%20health%20training%20emotional%20intelligence",
       "status": "ok",
       "httpStatus": 200,
-      "startedAt": "2026-11-06T15:45:28.622Z",
-      "finishedAt": "2026-11-06T15:45:29.228Z",
+      "startedAt": "2026-11-10T15:44:33.382Z",
+      "finishedAt": "2026-11-10T15:44:33.923Z",
       "signalCount": 15
     },
     {
@@ -61,8 +61,8 @@
       "url": "https://news.google.com/rss/search?q=faith%20centered%20therapy%20emotional%20healing",
       "status": "ok",
       "httpStatus": 200,
-      "startedAt": "2026-11-06T15:45:29.728Z",
-      "finishedAt": "2026-11-06T15:45:30.096Z",
+      "startedAt": "2026-11-10T15:44:34.423Z",
+      "finishedAt": "2026-11-10T15:44:34.783Z",
       "signalCount": 15
     },
     {
@@ -71,8 +71,8 @@
       "url": "https://interpersonal.stackexchange.com/feeds",
       "status": "ok",
       "httpStatus": 200,
-      "startedAt": "2026-11-06T15:45:30.596Z",
-      "finishedAt": "2026-11-06T15:45:30.801Z",
+      "startedAt": "2026-11-10T15:44:35.284Z",
+      "finishedAt": "2026-11-10T15:44:35.469Z",
       "signalCount": 15
     },
     {
@@ -81,8 +81,8 @@
       "status": "stopped",
       "namedStop": "SOURCE_DISABLED_BY_CONFIGURATION",
       "stopReason": "No stable no-auth RSS/API endpoint approved for scheduled production ingestion. Keep as manual research lane until adapter exists.",
-      "startedAt": "2026-11-06T15:45:31.301Z",
-      "finishedAt": "2026-11-06T15:45:31.301Z",
+      "startedAt": "2026-11-10T15:44:35.970Z",
+      "finishedAt": "2026-11-10T15:44:35.970Z",
       "signalCount": 0
     },
     {
@@ -91,8 +91,8 @@
       "status": "stopped",
       "namedStop": "SOURCE_DISABLED_BY_CONFIGURATION",
       "stopReason": "No no-auth production-safe source. Requires API/secrets or manual research; not used in cron.",
-      "startedAt": "2026-11-06T15:45:31.301Z",
-      "finishedAt": "2026-11-06T15:45:31.301Z",
+      "startedAt": "2026-11-10T15:44:35.970Z",
+      "finishedAt": "2026-11-10T15:44:35.970Z",
       "signalCount": 0
     },
     {
@@ -101,8 +101,8 @@
       "status": "stopped",
       "namedStop": "SOURCE_DISABLED_BY_CONFIGURATION",
       "stopReason": "No approved no-auth scheduled ingestion endpoint. Keep as manual trend review lane.",
-      "startedAt": "2026-11-06T15:45:31.301Z",
-      "finishedAt": "2026-11-06T15:45:31.301Z",
+      "startedAt": "2026-11-10T15:44:35.970Z",
+      "finishedAt": "2026-11-10T15:44:35.970Z",
       "signalCount": 0
     }
   ],
@@ -117,7 +117,7 @@
         "black_women",
         "burnout"
       ],
-      "collectedAt": "2026-11-06T15:45:26.301Z"
+      "collectedAt": "2026-11-10T15:44:31.123Z"
     },
     {
       "id": "reddit_rss_blackwomen-r-blackwomens",
@@ -128,7 +128,7 @@
       "tags": [
         "general_emotional_wellness"
       ],
-      "collectedAt": "2026-11-06T15:45:26.301Z"
+      "collectedAt": "2026-11-10T15:44:31.123Z"
     },
     {
       "id": "reddit_rss_blackwomen-blackgirlshealing",
@@ -139,7 +139,7 @@
       "tags": [
         "general_emotional_wellness"
       ],
-      "collectedAt": "2026-11-06T15:45:26.301Z"
+      "collectedAt": "2026-11-10T15:44:31.123Z"
     },
     {
       "id": "reddit_rss_blackwomen-most-suffering-is-abuse-inequality-let-s-end-the-violence-harmful-labels-hardcor",
@@ -150,239 +150,238 @@
       "tags": [
         "general_emotional_wellness"
       ],
-      "collectedAt": "2026-11-06T15:45:26.301Z"
+      "collectedAt": "2026-11-10T15:44:31.123Z"
     },
     {
-      "id": "reddit_rss_blackwomen-i-25f-don-t-know-if-i-should-stay-with-my-bf-26m",
-      "title": "I (25F) don’t know if I should stay with my bf (26M)",
-      "query": "I (25F) don’t know if I should stay with my bf (26M)",
-      "source": "reddit_rss_blackwomen",
-      "sourceType": "rss",
-      "tags": [
-        "general_emotional_wellness"
-      ],
-      "collectedAt": "2026-11-06T15:45:26.301Z"
-    },
-    {
-      "id": "reddit_rss_blackwomen-what-lantern-corps-would-hazbin-hotel-characters-be-in",
-      "title": "What Lantern Corps would Hazbin Hotel Characters be in?",
-      "query": "What Lantern Corps would Hazbin Hotel Characters be in?",
-      "source": "reddit_rss_blackwomen",
-      "sourceType": "rss",
-      "tags": [
-        "general_emotional_wellness"
-      ],
-      "collectedAt": "2026-11-06T15:45:26.301Z"
-    },
-    {
-      "id": "reddit_rss_blackwomen-how-young-americans-voted-in-the-midterm-election",
-      "title": "How Young Americans voted in the midterm election",
-      "query": "How Young Americans voted in the midterm election",
-      "source": "reddit_rss_blackwomen",
-      "sourceType": "rss",
-      "tags": [
-        "general_emotional_wellness"
-      ],
-      "collectedAt": "2026-11-06T15:45:26.301Z"
-    },
-    {
-      "id": "reddit_rss_blackwomen-life-as-a-black-bottom-am-i-just-very-unlucky",
-      "title": "Life as a black bottom... Am I just very unlucky ?",
-      "query": "Life as a black bottom... Am I just very unlucky ?",
-      "source": "reddit_rss_blackwomen",
-      "sourceType": "rss",
-      "tags": [
-        "general_emotional_wellness"
-      ],
-      "collectedAt": "2026-11-06T15:45:26.301Z"
-    },
-    {
-      "id": "reddit_rss_blackwomen-the-issue-with-this-dance-video-is-being-blown-way-out-of-proportion",
-      "title": "The issue with this dance video is being blown way out of proportion",
-      "query": "The issue with this dance video is being blown way out of proportion",
-      "source": "reddit_rss_blackwomen",
-      "sourceType": "rss",
-      "tags": [
-        "general_emotional_wellness"
-      ],
-      "collectedAt": "2026-11-06T15:45:26.301Z"
-    },
-    {
-      "id": "reddit_rss_blackwomen-weaning-off-synthetic-hormones",
-      "title": "weaning off synthetic hormones...",
-      "query": "weaning off synthetic hormones...",
-      "source": "reddit_rss_blackwomen",
-      "sourceType": "rss",
-      "tags": [
-        "general_emotional_wellness"
-      ],
-      "collectedAt": "2026-11-06T15:45:26.301Z"
-    },
-    {
-      "id": "reddit_rss_blackwomen-one-pair-of-ankle-boots-two-different-outfits-which-style-wins",
-      "title": "One Pair of Ankle Boots, Two Different Outfits — Which Style Wins? 🤎",
-      "query": "One Pair of Ankle Boots, Two Different Outfits — Which Style Wins? 🤎",
+      "id": "reddit_rss_blackwomen-please-help-15-000-worth-of-designer-items-stolen-at-canter-s-deli-parking-lot-o",
+      "title": "PLEASE HELP: $15,000 Worth of Designer Items Stolen at Canter’s Deli Parking Lot on Fairfax, LA — Does Anyone Recognize These Vehicles?",
+      "query": "PLEASE HELP: $15,000 Worth of Designer Items Stolen at Canter’s Deli Parking Lot on Fairfax, LA — Does Anyone Recognize These Vehicles?",
       "source": "reddit_rss_blackwomen",
       "sourceType": "rss",
       "tags": [
         "ai_digital_wellness"
       ],
-      "collectedAt": "2026-11-06T15:45:26.301Z"
+      "collectedAt": "2026-11-10T15:44:31.123Z"
     },
     {
-      "id": "reddit_rss_blackwomen-do-people-with-adhd-react-differently-to-having-their-drinks-spiked",
-      "title": "Do people with ADHD react differently to having their drinks spiked?",
-      "query": "Do people with ADHD react differently to having their drinks spiked?",
+      "id": "reddit_rss_blackwomen-31m-scandinavia",
+      "title": "[31M] Scandinavia",
+      "query": "[31M] Scandinavia",
       "source": "reddit_rss_blackwomen",
       "sourceType": "rss",
       "tags": [
         "general_emotional_wellness"
       ],
-      "collectedAt": "2026-11-06T15:45:26.301Z"
+      "collectedAt": "2026-11-10T15:44:31.123Z"
     },
     {
-      "id": "reddit_rss_blackwomen-my-ex-husband-sa-d-me-as-a-teen-and-it-s-eating-me-alive-today",
-      "title": "My ex husband SA’d me as a teen and it’s eating me alive today.",
-      "query": "My ex husband SA’d me as a teen and it’s eating me alive today.",
+      "id": "reddit_rss_blackwomen-it-s-been-a-wild-ride",
+      "title": "It’s been a wild ride",
+      "query": "It’s been a wild ride",
       "source": "reddit_rss_blackwomen",
       "sourceType": "rss",
       "tags": [
         "general_emotional_wellness"
       ],
-      "collectedAt": "2026-11-06T15:45:26.301Z"
+      "collectedAt": "2026-11-10T15:44:31.123Z"
     },
     {
-      "id": "reddit_rss_blackwomen-gaslighting-vs-coercive-control-how-can-the-distinction-help-without-becoming-a-",
-      "title": "Gaslighting vs coercive control: how can the distinction help without becoming a checklist?",
-      "query": "Gaslighting vs coercive control: how can the distinction help without becoming a checklist?",
+      "id": "reddit_rss_blackwomen-wts-price-reduction-patagonia-arcteryx-barbour-sitka-fjallraven-north-face-hh-68",
+      "title": "[wts] Price reduction + Patagonia, Arcteryx, Barbour, Sitka, Fjallraven, North Face, HH, 686, On Clouds, Vuori.",
+      "query": "[wts] Price reduction + Patagonia, Arcteryx, Barbour, Sitka, Fjallraven, North Face, HH, 686, On Clouds, Vuori.",
       "source": "reddit_rss_blackwomen",
       "sourceType": "rss",
       "tags": [
         "general_emotional_wellness"
       ],
-      "collectedAt": "2026-11-06T15:45:26.301Z"
+      "collectedAt": "2026-11-10T15:44:31.123Z"
     },
     {
-      "id": "reddit_rss_blackwomen-exit-poll-results-for-governor-and-senate-races-source-nbcnews",
-      "title": "Exit poll results for Governor and senate races (source: nbcnews)",
-      "query": "Exit poll results for Governor and senate races (source: nbcnews)",
+      "id": "reddit_rss_blackwomen-title-please-help-15-000-worth-of-designer-items-stolen-at-canter-s-deli-parking",
+      "title": "Title: PLEASE HELP: $15,000 Worth of Designer Items Stolen at Canter’s Deli Parking Lot on Fairfax, LA — Does Anyone Recognize These Vehicles?",
+      "query": "Title: PLEASE HELP: $15,000 Worth of Designer Items Stolen at Canter’s Deli Parking Lot on Fairfax, LA — Does Anyone Recognize These Vehicles?",
+      "source": "reddit_rss_blackwomen",
+      "sourceType": "rss",
+      "tags": [
+        "ai_digital_wellness"
+      ],
+      "collectedAt": "2026-11-10T15:44:31.123Z"
+    },
+    {
+      "id": "reddit_rss_blackwomen-give-me-the-tools-and-let-me-keep-my-dignity",
+      "title": "Give Me the Tools and Let Me Keep My Dignity",
+      "query": "Give Me the Tools and Let Me Keep My Dignity",
       "source": "reddit_rss_blackwomen",
       "sourceType": "rss",
       "tags": [
         "general_emotional_wellness"
       ],
-      "collectedAt": "2026-11-06T15:45:26.301Z"
+      "collectedAt": "2026-11-10T15:44:31.123Z"
     },
     {
-      "id": "reddit_rss_blackwomen-black-women-you-are-loved-and-always-have-been",
-      "title": "Black women, you are loved and always have been. 💙💙🩵🩵💙💙💙💙💙💙💙💙💙💙💙💙🗣️✊🏿",
-      "query": "Black women, you are loved and always have been. 💙💙🩵🩵💙💙💙💙💙💙💙💙💙💙💙💙🗣️✊🏿",
-      "source": "reddit_rss_blackwomen",
-      "sourceType": "rss",
-      "tags": [
-        "black_women"
-      ],
-      "collectedAt": "2026-11-06T15:45:26.301Z"
-    },
-    {
-      "id": "reddit_rss_blackwomen-how-to-deal-with-childhood-bully-trauma-as-an-adult",
-      "title": "How to deal with childhood bully trauma as an adult",
-      "query": "How to deal with childhood bully trauma as an adult",
+      "id": "reddit_rss_blackwomen-feel-like-i-ve-hit-a-wall",
+      "title": "Feel like I've hit a wall",
+      "query": "Feel like I've hit a wall",
       "source": "reddit_rss_blackwomen",
       "sourceType": "rss",
       "tags": [
         "general_emotional_wellness"
       ],
-      "collectedAt": "2026-11-06T15:45:26.301Z"
+      "collectedAt": "2026-11-10T15:44:31.123Z"
     },
     {
-      "id": "reddit_rss_blackwomen-my-partner-has-depression-advice",
-      "title": "My partner has depression, advice",
-      "query": "My partner has depression, advice",
+      "id": "reddit_rss_blackwomen-hysterectomy",
+      "title": "Hysterectomy",
+      "query": "Hysterectomy",
       "source": "reddit_rss_blackwomen",
       "sourceType": "rss",
       "tags": [
         "general_emotional_wellness"
       ],
-      "collectedAt": "2026-11-06T15:45:26.301Z"
+      "collectedAt": "2026-11-10T15:44:31.123Z"
     },
     {
-      "id": "reddit_rss_blackwomen-me-and-le-bois-at-the-blacked-hq-to-hax-into-le-bibisi-cuck-porn-to-get-le-israe",
-      "title": "Me and le bois at the blacked hq to hax into le bibisi cuck porn to get le israeli secrets on how bibisi therapy works 💀♠",
-      "query": "Me and le bois at the blacked hq to hax into le bibisi cuck porn to get le israeli secrets on how bibisi therapy works 💀♠",
-      "source": "reddit_rss_blackwomen",
-      "sourceType": "rss",
-      "tags": [
-        "workplace_emotional_intelligence"
-      ],
-      "collectedAt": "2026-11-06T15:45:26.301Z"
-    },
-    {
-      "id": "reddit_rss_blackwomen-what-is-a-low-maintenance-hairstyle-that-would-be-worn-by-a-black-woman-who-want",
-      "title": "What is a low maintenance hairstyle that would be worn by a black woman who wants to be perceived as serious and professional?",
-      "query": "What is a low maintenance hairstyle that would be worn by a black woman who wants to be perceived as serious and professional?",
-      "source": "reddit_rss_blackwomen",
-      "sourceType": "rss",
-      "tags": [
-        "ai_digital_wellness",
-        "black_women"
-      ],
-      "collectedAt": "2026-11-06T15:45:26.301Z"
-    },
-    {
-      "id": "reddit_rss_blackwomen-relationship-of-6-years-ruined",
-      "title": "relationship of 6 years ruined",
-      "query": "relationship of 6 years ruined",
+      "id": "reddit_rss_blackwomen-cosplay-potential-or-nah",
+      "title": "Cosplay Potential or nah?",
+      "query": "Cosplay Potential or nah?",
       "source": "reddit_rss_blackwomen",
       "sourceType": "rss",
       "tags": [
         "general_emotional_wellness"
       ],
-      "collectedAt": "2026-11-06T15:45:26.301Z"
+      "collectedAt": "2026-11-10T15:44:31.123Z"
     },
     {
-      "id": "reddit_rss_blackwomen-reunion-predictions",
-      "title": "Reunion Predictions",
-      "query": "Reunion Predictions",
+      "id": "reddit_rss_blackwomen-we-ll-get-em-next-time",
+      "title": "We’ll get em next time",
+      "query": "We’ll get em next time",
       "source": "reddit_rss_blackwomen",
       "sourceType": "rss",
       "tags": [
         "general_emotional_wellness"
       ],
-      "collectedAt": "2026-11-06T15:45:26.301Z"
+      "collectedAt": "2026-11-10T15:44:31.123Z"
     },
     {
-      "id": "reddit_rss_blackwomen-lum-is-among-the-25-more-biggest-anime-characters-yet-to-appear-in-an-episode-wh",
-      "title": "Lum is among the 25 (More) Biggest Anime Characters Yet to Appear in an Episode. Who should go in next?",
-      "query": "Lum is among the 25 (More) Biggest Anime Characters Yet to Appear in an Episode. Who should go in next?",
+      "id": "reddit_rss_blackwomen-benefit-of-staying-single-81-rejecting-rejection",
+      "title": "Benefit of Staying Single #81: Rejecting Rejection",
+      "query": "Benefit of Staying Single #81: Rejecting Rejection",
       "source": "reddit_rss_blackwomen",
       "sourceType": "rss",
       "tags": [
         "general_emotional_wellness"
       ],
-      "collectedAt": "2026-11-06T15:45:26.301Z"
+      "collectedAt": "2026-11-10T15:44:31.123Z"
     },
     {
-      "id": "reddit_rss_blackwomen-am-i-wrong-in-not-siding-with-my-girl-friend-in-her-breakup",
-      "title": "Am I wrong in not siding with my girl friend in her breakup?",
-      "query": "Am I wrong in not siding with my girl friend in her breakup?",
+      "id": "reddit_rss_blackwomen-interview-with-the-roots-in-the-april-1999-issue-of-xxl-things-fall-apart-era",
+      "title": "Interview with The Roots in the April 1999 issue of XXL (Things Fall Apart era).",
+      "query": "Interview with The Roots in the April 1999 issue of XXL (Things Fall Apart era).",
       "source": "reddit_rss_blackwomen",
       "sourceType": "rss",
       "tags": [
         "general_emotional_wellness"
       ],
-      "collectedAt": "2026-11-06T15:45:26.301Z"
+      "collectedAt": "2026-11-10T15:44:31.123Z"
     },
     {
-      "id": "reddit_rss_blackwomen-dmfortrade",
-      "title": "DMforTRADE",
-      "query": "DMforTRADE",
+      "id": "reddit_rss_blackwomen-house-oversight-committee-releases-report-on-the-federal-government-s-mishandlin",
+      "title": "House Oversight Committee Releases Report on the Federal Government’s Mishandling of Epstein and Maxwell Criminal Investigations",
+      "query": "House Oversight Committee Releases Report on the Federal Government’s Mishandling of Epstein and Maxwell Criminal Investigations",
       "source": "reddit_rss_blackwomen",
       "sourceType": "rss",
       "tags": [
         "general_emotional_wellness"
       ],
-      "collectedAt": "2026-11-06T15:45:26.301Z"
+      "collectedAt": "2026-11-10T15:44:31.123Z"
+    },
+    {
+      "id": "reddit_rss_blackwomen-should-a-woman-like-myself-really-be-dating",
+      "title": "Should a woman like myself really be dating?",
+      "query": "Should a woman like myself really be dating?",
+      "source": "reddit_rss_blackwomen",
+      "sourceType": "rss",
+      "tags": [
+        "general_emotional_wellness"
+      ],
+      "collectedAt": "2026-11-10T15:44:31.123Z"
+    },
+    {
+      "id": "reddit_rss_blackwomen-closet-clean-out-re-bv-cc-lp-monc",
+      "title": "Closet clean out re🏡 BV CC LP Monc",
+      "query": "Closet clean out re🏡 BV CC LP Monc",
+      "source": "reddit_rss_blackwomen",
+      "sourceType": "rss",
+      "tags": [
+        "general_emotional_wellness"
+      ],
+      "collectedAt": "2026-11-10T15:44:31.123Z"
+    },
+    {
+      "id": "reddit_rss_blackwomen-the-last-winter-of-sordland-part-one-a-country-living-on-promises",
+      "title": "THE LAST WINTER OF SORDLAND,part one:A Country Living on Promises",
+      "query": "THE LAST WINTER OF SORDLAND,part one:A Country Living on Promises",
+      "source": "reddit_rss_blackwomen",
+      "sourceType": "rss",
+      "tags": [
+        "general_emotional_wellness"
+      ],
+      "collectedAt": "2026-11-10T15:44:31.123Z"
+    },
+    {
+      "id": "reddit_rss_blackwomen-my-mom-f74-blames-me-for-all-of-her-happiness-after-my-stepfathers-m70-infidelit",
+      "title": "My mom (F74) blames me for all of her happiness after my stepfathers (M70) infidelity.",
+      "query": "My mom (F74) blames me for all of her happiness after my stepfathers (M70) infidelity.",
+      "source": "reddit_rss_blackwomen",
+      "sourceType": "rss",
+      "tags": [
+        "general_emotional_wellness"
+      ],
+      "collectedAt": "2026-11-10T15:44:31.123Z"
+    },
+    {
+      "id": "reddit_rss_blackwomen-i-feel-like-an-awful-person-and-my-wife-deserves-better-than-this",
+      "title": "I feel like an awful person and my wife deserves better than this",
+      "query": "I feel like an awful person and my wife deserves better than this",
+      "source": "reddit_rss_blackwomen",
+      "sourceType": "rss",
+      "tags": [
+        "general_emotional_wellness"
+      ],
+      "collectedAt": "2026-11-10T15:44:31.123Z"
+    },
+    {
+      "id": "reddit_rss_blackwomen-red-bag-lover-checking-in",
+      "title": "Red bag lover checking in! 🍒👜",
+      "query": "Red bag lover checking in! 🍒👜",
+      "source": "reddit_rss_blackwomen",
+      "sourceType": "rss",
+      "tags": [
+        "general_emotional_wellness"
+      ],
+      "collectedAt": "2026-11-10T15:44:31.123Z"
+    },
+    {
+      "id": "reddit_rss_blackwomen-34m-do-you-wanna-play-some-dungeons-dragons-or-star-wars-roleplay-wanna-learn-ne",
+      "title": "34M | Do you wanna play some Dungeons & Dragons or Star Wars Roleplay? Wanna learn? Newcomers welcome! | Part II",
+      "query": "34M | Do you wanna play some Dungeons & Dragons or Star Wars Roleplay? Wanna learn? Newcomers welcome! | Part II",
+      "source": "reddit_rss_blackwomen",
+      "sourceType": "rss",
+      "tags": [
+        "general_emotional_wellness"
+      ],
+      "collectedAt": "2026-11-10T15:44:31.123Z"
+    },
+    {
+      "id": "reddit_rss_blackwomen-tl-dr-my-mom-f74-blames-me-for-her-unhappiness-because-i-refuse-to-forgive-my-st",
+      "title": "**TL;DR** My mom (F74) blames me for her unhappiness because I refuse to forgive my stepfather (M70). Am I wrong?",
+      "query": "**TL;DR** My mom (F74) blames me for her unhappiness because I refuse to forgive my stepfather (M70). Am I wrong?",
+      "source": "reddit_rss_blackwomen",
+      "sourceType": "rss",
+      "tags": [
+        "general_emotional_wellness"
+      ],
+      "collectedAt": "2026-11-10T15:44:31.123Z"
     },
     {
       "id": "google_news_workplace_mental_health-workplace-mental-health-training-emotional-intelligence-google-news",
@@ -394,7 +393,7 @@
         "ai_digital_wellness",
         "workplace_emotional_intelligence"
       ],
-      "collectedAt": "2026-11-06T15:45:29.228Z"
+      "collectedAt": "2026-11-10T15:44:33.923Z"
     },
     {
       "id": "google_news_workplace_mental_health-google-news",
@@ -405,7 +404,7 @@
       "tags": [
         "general_emotional_wellness"
       ],
-      "collectedAt": "2026-11-06T15:45:29.228Z"
+      "collectedAt": "2026-11-10T15:44:33.923Z"
     },
     {
       "id": "google_news_workplace_mental_health-what-does-emotional-intelligence-have-to-do-with-being-happy-at-work-news-medica",
@@ -416,7 +415,7 @@
       "tags": [
         "workplace_emotional_intelligence"
       ],
-      "collectedAt": "2026-11-06T15:45:29.228Z"
+      "collectedAt": "2026-11-10T15:44:33.923Z"
     },
     {
       "id": "google_news_workplace_mental_health-the-moderating-role-of-emotional-intelligence-in-the-relationship-between-workpl",
@@ -427,7 +426,7 @@
       "tags": [
         "workplace_emotional_intelligence"
       ],
-      "collectedAt": "2026-11-06T15:45:29.228Z"
+      "collectedAt": "2026-11-10T15:44:33.923Z"
     },
     {
       "id": "google_news_workplace_mental_health-emotional-intelligence-and-ems-leadership-caring-for-mental-health-after-a-tough",
@@ -438,7 +437,7 @@
       "tags": [
         "workplace_emotional_intelligence"
       ],
-      "collectedAt": "2026-11-06T15:45:29.228Z"
+      "collectedAt": "2026-11-10T15:44:33.923Z"
     },
     {
       "id": "google_news_workplace_mental_health-emotional-intelligence-for-safety-pros-safety-health-magazine",
@@ -449,7 +448,7 @@
       "tags": [
         "general_emotional_wellness"
       ],
-      "collectedAt": "2026-11-06T15:45:29.228Z"
+      "collectedAt": "2026-11-10T15:44:33.923Z"
     },
     {
       "id": "google_news_workplace_mental_health-emotional-intelligence-training-improves-stress-regulation-and-performance-in-hi",
@@ -460,7 +459,7 @@
       "tags": [
         "ai_digital_wellness"
       ],
-      "collectedAt": "2026-11-06T15:45:29.228Z"
+      "collectedAt": "2026-11-10T15:44:33.923Z"
     },
     {
       "id": "google_news_workplace_mental_health-emotional-intelligence-and-holistic-student-development-an-assessment-of-psychol",
@@ -471,7 +470,7 @@
       "tags": [
         "general_emotional_wellness"
       ],
-      "collectedAt": "2026-11-06T15:45:29.228Z"
+      "collectedAt": "2026-11-10T15:44:33.923Z"
     },
     {
       "id": "google_news_workplace_mental_health-transform-workplace-mental-health-with-a-skills-based-approach-shrm",
@@ -482,7 +481,7 @@
       "tags": [
         "workplace_emotional_intelligence"
       ],
-      "collectedAt": "2026-11-06T15:45:29.228Z"
+      "collectedAt": "2026-11-10T15:44:33.923Z"
     },
     {
       "id": "google_news_workplace_mental_health-how-emotional-intelligence-improves-workplace-safety-forbes",
@@ -493,7 +492,7 @@
       "tags": [
         "workplace_emotional_intelligence"
       ],
-      "collectedAt": "2026-11-06T15:45:29.228Z"
+      "collectedAt": "2026-11-10T15:44:33.923Z"
     },
     {
       "id": "google_news_workplace_mental_health-nursing-curricula-must-include-emotional-intelligence-to-prepare-today-s-healthc",
@@ -504,7 +503,18 @@
       "tags": [
         "workplace_emotional_intelligence"
       ],
-      "collectedAt": "2026-11-06T15:45:29.228Z"
+      "collectedAt": "2026-11-10T15:44:33.923Z"
+    },
+    {
+      "id": "google_news_workplace_mental_health-develop-a-responsive-mental-health-strategy-mental-health-america",
+      "title": "Develop a responsive mental health strategy - Mental Health America",
+      "query": "Develop a responsive mental health strategy - Mental Health America",
+      "source": "google_news_workplace_mental_health",
+      "sourceType": "rss",
+      "tags": [
+        "general_emotional_wellness"
+      ],
+      "collectedAt": "2026-11-10T15:44:33.923Z"
     },
     {
       "id": "google_news_workplace_mental_health-5-ways-to-improve-employee-mental-health-american-psychological-association-apa",
@@ -515,7 +525,7 @@
       "tags": [
         "general_emotional_wellness"
       ],
-      "collectedAt": "2026-11-06T15:45:29.228Z"
+      "collectedAt": "2026-11-10T15:44:33.923Z"
     },
     {
       "id": "google_news_workplace_mental_health-well-being-intelligence-a-skill-set-for-the-new-world-of-work-mit-sloan-manageme",
@@ -526,30 +536,18 @@
       "tags": [
         "workplace_emotional_intelligence"
       ],
-      "collectedAt": "2026-11-06T15:45:29.228Z"
+      "collectedAt": "2026-11-10T15:44:33.923Z"
     },
     {
-      "id": "google_news_workplace_mental_health-the-emotional-recession-global-declines-in-emotional-intelligence-and-its-impact",
-      "title": "The Emotional Recession: global declines in emotional intelligence and its impact on organizational retention, burnout, and workforce resilience - Frontiers",
-      "query": "The Emotional Recession: global declines in emotional intelligence and its impact on organizational retention, burnout, and workforce resilience - Frontiers",
+      "id": "google_news_workplace_mental_health-chinese-college-teachers-emotional-intelligence-and-mental-health-a-chain-mediat",
+      "title": "Chinese college teachers’ emotional intelligence and mental health: a chain mediation model involving student relationship quality - Frontiers",
+      "query": "Chinese college teachers’ emotional intelligence and mental health: a chain mediation model involving student relationship quality - Frontiers",
       "source": "google_news_workplace_mental_health",
       "sourceType": "rss",
       "tags": [
-        "burnout",
-        "workplace_emotional_intelligence"
+        "ai_digital_wellness"
       ],
-      "collectedAt": "2026-11-06T15:45:29.228Z"
-    },
-    {
-      "id": "google_news_workplace_mental_health-2023-work-in-america-survey-workplaces-as-engines-of-psychological-health-and-we",
-      "title": "2023 Work in America Survey: Workplaces as engines of psychological health and well-being - American Psychological Association (APA)",
-      "query": "2023 Work in America Survey: Workplaces as engines of psychological health and well-being - American Psychological Association (APA)",
-      "source": "google_news_workplace_mental_health",
-      "sourceType": "rss",
-      "tags": [
-        "workplace_emotional_intelligence"
-      ],
-      "collectedAt": "2026-11-06T15:45:29.228Z"
+      "collectedAt": "2026-11-10T15:44:33.923Z"
     },
     {
       "id": "google_news_faith_centered_therapy-faith-centered-therapy-emotional-healing-google-news",
@@ -561,7 +559,7 @@
         "ai_digital_wellness",
         "faith_centered_support"
       ],
-      "collectedAt": "2026-11-06T15:45:30.096Z"
+      "collectedAt": "2026-11-10T15:44:34.783Z"
     },
     {
       "id": "google_news_faith_centered_therapy-google-news",
@@ -572,18 +570,7 @@
       "tags": [
         "general_emotional_wellness"
       ],
-      "collectedAt": "2026-11-06T15:45:30.096Z"
-    },
-    {
-      "id": "google_news_faith_centered_therapy-where-brevard-residents-can-get-help-after-monday-s-flooding-florida-today",
-      "title": "Where Brevard residents can get help after Monday's flooding - Florida Today",
-      "query": "Where Brevard residents can get help after Monday's flooding - Florida Today",
-      "source": "google_news_faith_centered_therapy",
-      "sourceType": "rss",
-      "tags": [
-        "general_emotional_wellness"
-      ],
-      "collectedAt": "2026-11-06T15:45:30.096Z"
+      "collectedAt": "2026-11-10T15:44:34.783Z"
     },
     {
       "id": "google_news_faith_centered_therapy-resonance-across-cultures-and-faiths-examining-the-violin-music-s-role-in-emotio",
@@ -595,7 +582,18 @@
         "ai_digital_wellness",
         "faith_centered_support"
       ],
-      "collectedAt": "2026-11-06T15:45:30.096Z"
+      "collectedAt": "2026-11-10T15:44:34.783Z"
+    },
+    {
+      "id": "google_news_faith_centered_therapy-where-brevard-residents-can-get-help-after-monday-s-flooding-florida-today",
+      "title": "Where Brevard residents can get help after Monday's flooding - Florida Today",
+      "query": "Where Brevard residents can get help after Monday's flooding - Florida Today",
+      "source": "google_news_faith_centered_therapy",
+      "sourceType": "rss",
+      "tags": [
+        "general_emotional_wellness"
+      ],
+      "collectedAt": "2026-11-10T15:44:34.783Z"
     },
     {
       "id": "google_news_faith_centered_therapy-how-the-serenity-prayer-helps-manage-emotional-reactions-and-supports-mental-hea",
@@ -606,7 +604,7 @@
       "tags": [
         "faith_centered_support"
       ],
-      "collectedAt": "2026-11-06T15:45:30.096Z"
+      "collectedAt": "2026-11-10T15:44:34.783Z"
     },
     {
       "id": "google_news_faith_centered_therapy-secretary-kennedy-announces-100-million-investment-in-great-american-recovery-hh",
@@ -617,18 +615,7 @@
       "tags": [
         "general_emotional_wellness"
       ],
-      "collectedAt": "2026-11-06T15:45:30.096Z"
-    },
-    {
-      "id": "google_news_faith_centered_therapy-all-in-solutions-wellness-center-emphasizes-emotional-healing-during-detox-proce",
-      "title": "All In Solutions Wellness Center Emphasizes Emotional Healing During Detox Process - Times-News - XPR - BlueRidgeNow.com",
-      "query": "All In Solutions Wellness Center Emphasizes Emotional Healing During Detox Process - Times-News - XPR - BlueRidgeNow.com",
-      "source": "google_news_faith_centered_therapy",
-      "sourceType": "rss",
-      "tags": [
-        "general_emotional_wellness"
-      ],
-      "collectedAt": "2026-11-06T15:45:30.096Z"
+      "collectedAt": "2026-11-10T15:44:34.783Z"
     },
     {
       "id": "google_news_faith_centered_therapy-black-african-american-national-alliance-on-mental-illness-nami",
@@ -639,7 +626,7 @@
       "tags": [
         "general_emotional_wellness"
       ],
-      "collectedAt": "2026-11-06T15:45:30.096Z"
+      "collectedAt": "2026-11-10T15:44:34.783Z"
     },
     {
       "id": "google_news_faith_centered_therapy-can-religion-and-spirituality-have-a-place-in-therapy-experts-say-yes-american-p",
@@ -650,7 +637,7 @@
       "tags": [
         "general_emotional_wellness"
       ],
-      "collectedAt": "2026-11-06T15:45:30.096Z"
+      "collectedAt": "2026-11-10T15:44:34.783Z"
     },
     {
       "id": "google_news_faith_centered_therapy-how-estranged-parents-and-adult-children-can-heal-greater-good-the-science-of-a-",
@@ -661,7 +648,7 @@
       "tags": [
         "general_emotional_wellness"
       ],
-      "collectedAt": "2026-11-06T15:45:30.096Z"
+      "collectedAt": "2026-11-10T15:44:34.783Z"
     },
     {
       "id": "google_news_faith_centered_therapy-how-to-use-schema-therapy-to-stop-life-playing-on-repeat-psyche",
@@ -672,7 +659,7 @@
       "tags": [
         "general_emotional_wellness"
       ],
-      "collectedAt": "2026-11-06T15:45:30.096Z"
+      "collectedAt": "2026-11-10T15:44:34.783Z"
     },
     {
       "id": "google_news_faith_centered_therapy-the-relationships-between-prayer-and-emotional-well-being-as-well-as-sexual-abst",
@@ -683,7 +670,7 @@
       "tags": [
         "faith_centered_support"
       ],
-      "collectedAt": "2026-11-06T15:45:30.096Z"
+      "collectedAt": "2026-11-10T15:44:34.783Z"
     },
     {
       "id": "google_news_faith_centered_therapy-funnybone-sparks-online-debate-says-being-born-again-doesn-t-erase-trauma-daily-",
@@ -694,7 +681,18 @@
       "tags": [
         "ai_digital_wellness"
       ],
-      "collectedAt": "2026-11-06T15:45:30.096Z"
+      "collectedAt": "2026-11-10T15:44:34.783Z"
+    },
+    {
+      "id": "google_news_faith_centered_therapy-meeting-the-mental-health-needs-of-black-adolescent-boys-child-mind-institute",
+      "title": "Meeting the Mental Health Needs of Black Adolescent Boys - Child Mind Institute",
+      "query": "Meeting the Mental Health Needs of Black Adolescent Boys - Child Mind Institute",
+      "source": "google_news_faith_centered_therapy",
+      "sourceType": "rss",
+      "tags": [
+        "general_emotional_wellness"
+      ],
+      "collectedAt": "2026-11-10T15:44:34.783Z"
     },
     {
       "id": "google_news_faith_centered_therapy-types-of-trauma-and-how-to-heal-cleveland-clinic-health-essentials",
@@ -705,19 +703,18 @@
       "tags": [
         "general_emotional_wellness"
       ],
-      "collectedAt": "2026-11-06T15:45:30.096Z"
+      "collectedAt": "2026-11-10T15:44:34.783Z"
     },
     {
-      "id": "google_news_faith_centered_therapy-prioritizing-faith-and-family-after-being-diagnosed-with-cancer-focus-on-the-fam",
-      "title": "Prioritizing Faith and Family After Being Diagnosed With Cancer - Focus on the Family",
-      "query": "Prioritizing Faith and Family After Being Diagnosed With Cancer - Focus on the Family",
+      "id": "google_news_faith_centered_therapy-the-transformative-power-of-music-in-mental-well-being-psychiatry-org",
+      "title": "The Transformative Power of Music in Mental Well-Being - Psychiatry.org",
+      "query": "The Transformative Power of Music in Mental Well-Being - Psychiatry.org",
       "source": "google_news_faith_centered_therapy",
       "sourceType": "rss",
       "tags": [
-        "ai_digital_wellness",
-        "faith_centered_support"
+        "general_emotional_wellness"
       ],
-      "collectedAt": "2026-11-06T15:45:30.096Z"
+      "collectedAt": "2026-11-10T15:44:34.783Z"
     },
     {
       "id": "stackexchange_interpersonal_forum-recent-questions-interpersonal-skills-stack-exchange",
@@ -728,7 +725,7 @@
       "tags": [
         "general_emotional_wellness"
       ],
-      "collectedAt": "2026-11-06T15:45:30.801Z"
+      "collectedAt": "2026-11-10T15:44:35.469Z"
     },
     {
       "id": "stackexchange_interpersonal_forum-how-can-i-gradually-move-an-online-romantic-relationship-with-a-shy-person-towar",
@@ -739,7 +736,7 @@
       "tags": [
         "general_emotional_wellness"
       ],
-      "collectedAt": "2026-11-06T15:45:30.801Z"
+      "collectedAt": "2026-11-10T15:44:35.469Z"
     },
     {
       "id": "stackexchange_interpersonal_forum-parents-indirectly-preventing-me-going-to-fight-in-ukraine-trenches-closed",
@@ -750,7 +747,7 @@
       "tags": [
         "ai_digital_wellness"
       ],
-      "collectedAt": "2026-11-06T15:45:30.801Z"
+      "collectedAt": "2026-11-10T15:44:35.469Z"
     },
     {
       "id": "stackexchange_interpersonal_forum-shortened-version-of-indian-names",
@@ -761,7 +758,7 @@
       "tags": [
         "general_emotional_wellness"
       ],
-      "collectedAt": "2026-11-06T15:45:30.801Z"
+      "collectedAt": "2026-11-10T15:44:35.469Z"
     },
     {
       "id": "stackexchange_interpersonal_forum-how-can-i-get-the-other-person-x2019-s-consent-with-a-high-success-rate-and-take",
@@ -772,7 +769,7 @@
       "tags": [
         "general_emotional_wellness"
       ],
-      "collectedAt": "2026-11-06T15:45:30.801Z"
+      "collectedAt": "2026-11-10T15:44:35.469Z"
     },
     {
       "id": "stackexchange_interpersonal_forum-when-do-i-start-adding-condiments-to-my-meal-at-dinner",
@@ -783,7 +780,7 @@
       "tags": [
         "general_emotional_wellness"
       ],
-      "collectedAt": "2026-11-06T15:45:30.801Z"
+      "collectedAt": "2026-11-10T15:44:35.469Z"
     },
     {
       "id": "stackexchange_interpersonal_forum-how-do-i-add-to-a-conversation-without-people-getting-defensive-that-x27-s-not-w",
@@ -794,7 +791,7 @@
       "tags": [
         "general_emotional_wellness"
       ],
-      "collectedAt": "2026-11-06T15:45:30.801Z"
+      "collectedAt": "2026-11-10T15:44:35.469Z"
     },
     {
       "id": "stackexchange_interpersonal_forum-how-to-say-x27-i-x27-m-sorry-x27-to-a-small-local-business",
@@ -805,7 +802,7 @@
       "tags": [
         "general_emotional_wellness"
       ],
-      "collectedAt": "2026-11-06T15:45:30.801Z"
+      "collectedAt": "2026-11-10T15:44:35.469Z"
     },
     {
       "id": "stackexchange_interpersonal_forum-how-do-i-prevent-myself-from-coming-off-as-stuck-up-or-conceited-when-discussing",
@@ -816,7 +813,7 @@
       "tags": [
         "general_emotional_wellness"
       ],
-      "collectedAt": "2026-11-06T15:45:30.801Z"
+      "collectedAt": "2026-11-10T15:44:35.469Z"
     },
     {
       "id": "stackexchange_interpersonal_forum-how-do-speakers-handle-public-speaking-on-difficult-topics-without-your-voice-br",
@@ -827,7 +824,7 @@
       "tags": [
         "general_emotional_wellness"
       ],
-      "collectedAt": "2026-11-06T15:45:30.801Z"
+      "collectedAt": "2026-11-10T15:44:35.469Z"
     },
     {
       "id": "stackexchange_interpersonal_forum-how-to-pass-on-a-question-when-you-cannot-answer-efficiently",
@@ -838,7 +835,7 @@
       "tags": [
         "general_emotional_wellness"
       ],
-      "collectedAt": "2026-11-06T15:45:30.801Z"
+      "collectedAt": "2026-11-10T15:44:35.469Z"
     },
     {
       "id": "stackexchange_interpersonal_forum-how-does-a-single-person-influence-the-team-towards-consensus-and-a-positive-cha",
@@ -849,7 +846,7 @@
       "tags": [
         "general_emotional_wellness"
       ],
-      "collectedAt": "2026-11-06T15:45:30.801Z"
+      "collectedAt": "2026-11-10T15:44:35.469Z"
     },
     {
       "id": "stackexchange_interpersonal_forum-how-to-help-a-6yo-girl-overcome-her-breast-obsession",
@@ -860,7 +857,7 @@
       "tags": [
         "general_emotional_wellness"
       ],
-      "collectedAt": "2026-11-06T15:45:30.801Z"
+      "collectedAt": "2026-11-10T15:44:35.469Z"
     },
     {
       "id": "stackexchange_interpersonal_forum-is-it-meaningful-to-attribute-emotions-to-an-organization-closed",
@@ -871,7 +868,7 @@
       "tags": [
         "general_emotional_wellness"
       ],
-      "collectedAt": "2026-11-06T15:45:30.801Z"
+      "collectedAt": "2026-11-10T15:44:35.469Z"
     },
     {
       "id": "stackexchange_interpersonal_forum-is-it-appropriate-for-foreigners-to-thank-us-veterans-for-their-service",
@@ -882,7 +879,7 @@
       "tags": [
         "general_emotional_wellness"
       ],
-      "collectedAt": "2026-11-06T15:45:30.801Z"
+      "collectedAt": "2026-11-10T15:44:35.469Z"
     },
     {
       "id": "seed-black-women-burnout-and-boundaries",
@@ -894,7 +891,7 @@
         "black_women",
         "burnout"
       ],
-      "collectedAt": "2026-11-06T15:45:31.302Z"
+      "collectedAt": "2026-11-10T15:44:35.971Z"
     },
     {
       "id": "seed-ai-anxiety-and-emotional-wellness",
@@ -905,7 +902,7 @@
       "tags": [
         "ai_digital_wellness"
       ],
-      "collectedAt": "2026-11-06T15:45:31.302Z"
+      "collectedAt": "2026-11-10T15:44:35.971Z"
     },
     {
       "id": "seed-gen-z-therapy-language-and-mental-health",
@@ -916,7 +913,7 @@
       "tags": [
         "genz_millennial"
       ],
-      "collectedAt": "2026-11-06T15:45:31.302Z"
+      "collectedAt": "2026-11-10T15:44:35.971Z"
     },
     {
       "id": "seed-millennial-women-burnout-motherhood-work",
@@ -929,7 +926,7 @@
         "burnout",
         "workplace_emotional_intelligence"
       ],
-      "collectedAt": "2026-11-06T15:45:31.302Z"
+      "collectedAt": "2026-11-10T15:44:35.971Z"
     },
     {
       "id": "seed-black-community-emotional-wellness-and-healing",
@@ -940,7 +937,7 @@
       "tags": [
         "general_emotional_wellness"
       ],
-      "collectedAt": "2026-11-06T15:45:31.302Z"
+      "collectedAt": "2026-11-10T15:44:35.971Z"
     }
   ]
 }

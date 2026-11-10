@@ -3184,7 +3184,7 @@
         "What helps",
         "When to get support"
       ],
-      "state": "DISCOVERED",
+      "state": "SKIPPED_PROHIBITED_ACTION",
       "routineApprovalRequired": true,
       "publicOnlyAfterApproval": true,
       "source": "legacy_generated_queue_migration",
@@ -3199,8 +3199,21 @@
           "to": "DISCOVERED",
           "at": "2026-09-21T10:44:22.364Z",
           "reason": "Migrated from the prior approval-only generated queue."
+        },
+        {
+          "from": "DISCOVERED",
+          "to": "SCORED",
+          "at": "2026-11-10T15:44:37.792Z",
+          "reason": "Candidate score normalized for autonomous admission."
+        },
+        {
+          "from": "SCORED",
+          "to": "SKIPPED_PROHIBITED_ACTION",
+          "at": "2026-11-10T15:44:37.792Z",
+          "reason": "Candidate did not meet the configured admission score."
         }
-      ]
+      ],
+      "updatedAt": "2026-11-10T15:44:37.792Z"
     },
     {
       "id": "continuity-insight-2027-01-19-f1275205b75a",
@@ -3233,7 +3246,7 @@
         "How to tell it is working",
         "Next step"
       ],
-      "state": "DISCOVERED",
+      "state": "SKIPPED_PROHIBITED_ACTION",
       "routineApprovalRequired": true,
       "publicOnlyAfterApproval": true,
       "source": "legacy_generated_queue_migration",
@@ -3248,8 +3261,21 @@
           "to": "DISCOVERED",
           "at": "2026-09-21T10:44:22.364Z",
           "reason": "Migrated from the prior approval-only generated queue."
+        },
+        {
+          "from": "DISCOVERED",
+          "to": "SCORED",
+          "at": "2026-11-10T15:44:37.792Z",
+          "reason": "Candidate score normalized for autonomous admission."
+        },
+        {
+          "from": "SCORED",
+          "to": "SKIPPED_PROHIBITED_ACTION",
+          "at": "2026-11-10T15:44:37.792Z",
+          "reason": "Candidate did not meet the configured admission score."
         }
-      ]
+      ],
+      "updatedAt": "2026-11-10T15:44:37.792Z"
     },
     {
       "id": "continuity-article-2027-01-19-93654414ce8a",
@@ -5397,6 +5423,54 @@
           "from": null,
           "to": "DISCOVERED",
           "at": "2026-11-06T23:32:40.639Z",
+          "reason": "Migrated from the prior approval-only generated queue."
+        }
+      ]
+    },
+    {
+      "id": "brief-faith_centered_support-fanout",
+      "clusterId": "faith_centered_support",
+      "clusterTitle": "Faith-centered emotional support",
+      "query": "Faith-centered emotional support",
+      "contentType": "insights",
+      "title": "How do I forgive someone who has not apologized?",
+      "suggestedRoute": "/resources/insights/how-do-i-forgive-someone-who-has-not-apologized/",
+      "targetWords": 900,
+      "minimumWords": 720,
+      "sourceSignalCount": 2,
+      "score": 40,
+      "llmPrompt": "Create a humanized fanout draft for Hicks Consulting.\nTitle: How do I forgive someone who has not apologized?\nThis page exists to answer exactly one real question a person typed or said: \"How do I forgive someone who has not apologized?\". Answer THAT question, in that person's words, in the first two sentences. Do not broaden it into a general overview of Faith-centered emotional support; other pages on this site cover other questions in the same area and this one must not overlap them.\nMinimum words: 720. Target words: 900.\nWrite in a warm, grounded, specific voice. Do not diagnose. Do not guarantee outcomes. Do not invent client stories.\nInclude these sections: Short answer; Before you start; Step by step; What to say; What gets in the way; How to tell it is working; Next step.\nApproved conversion path after value is delivered: https://monika-hicks.clientsecure.me/",
+      "humanizationChecklist": [
+        "Use plain human language rather than generic therapy marketing copy.",
+        "Vary sentence rhythm and paragraph length.",
+        "Include concrete examples without inventing client stories.",
+        "Avoid exaggerated claims, guarantees, diagnosis, or pressure language.",
+        "Keep Monika Hicks / Hicks Consulting entity references consistent.",
+        "End with an approved conversion path only after value is delivered."
+      ],
+      "conversionPath": "https://monika-hicks.clientsecure.me/",
+      "sections": [
+        "Short answer",
+        "Before you start",
+        "Step by step",
+        "What to say",
+        "What gets in the way",
+        "How to tell it is working",
+        "Next step"
+      ],
+      "state": "DISCOVERED",
+      "routineApprovalRequired": true,
+      "publicOnlyAfterApproval": true,
+      "source": "legacy_generated_queue_migration",
+      "legacy": {
+        "publishMode": "full_safe_autonomy"
+      },
+      "createdAt": "2026-11-10T15:44:37.470Z",
+      "history": [
+        {
+          "from": null,
+          "to": "DISCOVERED",
+          "at": "2026-11-10T15:44:37.633Z",
           "reason": "Migrated from the prior approval-only generated queue."
         }
       ]
