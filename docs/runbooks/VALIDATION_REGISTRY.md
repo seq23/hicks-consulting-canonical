@@ -54,14 +54,18 @@ Passing checks produce no warning. Execution failures are not downgraded by the 
 | `llm-ingestion-routes` | `validate:llm-ingestion-routes` | Soft warning | `ai-discoverability` | `growth-and-content` | crawler and LLM extraction surfaces | Non-blocking |
 | `query-traceability` | `validate:queries` | Soft warning | `content-operations` | `content-operations` | content planning and traceability | Non-blocking |
 | `above-fold` | `validate:abovefold` | Strong warning | `conversion-ux` | `product-experience` | public conversion experience | Non-blocking |
-| `entity-coverage` | `validate:entities` | Soft warning | `semantic-data` | `growth-and-content` | entity and metadata consistency | Non-blocking |
+| `entity-coverage` | `validate:entities` | Hard fail | `semantic-data` | `growth-and-content` | PART (restored 10 Nov 2026): Person is "Monika Hicks, LCSW"; only verified profiles in sameAs | Blocks |
+| `search-readiness-surfaces` | `validate:search-readiness-surfaces` | Hard fail | `agency-search` | `site-operations` | PART c3 (restored 10 Nov 2026): Offer prices equal the visible and /faq/ fees | Blocks |
+| `sitemap-ledger-integrity` | `validate:sitemap-ledger-integrity` | Hard fail | `publishing` | `site-operations` | sitemap.xml and its lastmod ledger are committed together (restored 10 Nov 2026) | Blocks |
+| `memphis-search-surfaces` | `validate:memphis-search-surfaces` | Hard fail | `public-site` | `search-and-content` | PART (restored 10 Nov 2026): each therapist page states Tennessee and virtual | Blocks |
+| `velocity-immutability` | `validate:velocity-immutability` | Hard fail | `publishing-safety` | `content-operations` | PART (restored 10 Nov 2026): 227 baseline records keep slug and scheduledAt; no new slot collisions | Blocks |
+| `site-intent-preservation` | `validate:site-intent-preservation` | Hard fail | `public-site` | `site-and-brand` | PART (restored 10 Nov 2026): undeclared-owner-addition only | Blocks |
 | `entity-graph` | `validate:entity-graph` | Hard fail | `agency-search` | `site-operations` | published JSON-LD sameAs/name/logo/description vs data/entities; weekly entity-backlink-watch wired | Blocks |
 | `conversion-contract` | `validate:conversion` | Strong warning | `conversion-ux` | `product-experience` | public conversion experience | Non-blocking |
 | `training-inquiry` | `validate:training-inquiry` | Hard fail | `data-capture` | `platform-operations` | public form submission and durable capture | Blocks |
 | `source-health` | `validate:source-health` | Soft warning | `ingestion` | `content-intelligence` | content-intelligence inputs | Non-blocking |
 | `query-signal-schema` | `validate:query-signals` | Soft warning | `ingestion` | `content-intelligence` | content-intelligence inputs | Non-blocking |
 | `social-firehose` | `validate:social-firehose` | Strong warning | `publishing-governance` | `content-operations` | approval and generation controls | Non-blocking |
-| `throttle-contract` | `validate:throttle` | Soft warning | `provider-resilience` | `platform-operations` | provider operation safeguards | Non-blocking |
 | `content-briefs` | `validate:content-briefs` | Strong warning | `publishing-governance` | `content-operations` | approval and generation controls | Non-blocking |
 | `publish-state` | `validate:publish` | Hard fail | `publishing-safety` | `content-operations` | publication state transitions | Blocks |
 | `policy-compliance` | `validate:policy` | Hard fail | `compliance` | `compliance-owner` | public claims and disclaimers | Blocks |

@@ -11,10 +11,10 @@
         "publisher-contract",
         "lead-magnet",
         "form-database",
+        "entity-coverage",
         "conversion-contract",
         "training-inquiry",
         "social-firehose",
-        "throttle-contract",
         "content-briefs",
         "publish-state",
         "policy-compliance",
@@ -29,6 +29,9 @@
         "kpi-truth",
         "protected-editorial-core",
         "editorial-continuity",
+        "site-intent-preservation",
+        "memphis-search-surfaces",
+        "velocity-immutability",
         "autonomy-contract",
         "autonomy-queue-approval-gate",
         "safe-harbor-behavior",
@@ -42,8 +45,10 @@
         "individual-approval-gate",
         "client-visible-review-queue",
         "owner-publication-attribution",
+        "sitemap-ledger-integrity",
         "live-publication-verification",
         "edge-cache",
+        "search-readiness-surfaces",
         "zero-paid-llm",
         "calendar-writer"
       ]
@@ -52,14 +57,14 @@
       "description": "Content-intelligence ingestion, observability, provider-resilience, and publishing-governance checks.",
       "checks": [
         "social-firehose",
-        "throttle-contract",
         "content-briefs"
       ]
     },
     "sitemap-indexing": {
       "description": "Crawler, sitemap, and hidden LLM surface checks for the indexing workflow.",
       "checks": [
-        "edge-cache"
+        "edge-cache",
+        "sitemap-ledger-integrity"
       ]
     },
     "digital-products": {
@@ -89,10 +94,10 @@
         "publisher-contract",
         "lead-magnet",
         "form-database",
+        "entity-coverage",
         "conversion-contract",
         "training-inquiry",
         "social-firehose",
-        "throttle-contract",
         "content-briefs",
         "publish-state",
         "policy-compliance",
@@ -107,6 +112,9 @@
         "kpi-truth",
         "protected-editorial-core",
         "editorial-continuity",
+        "site-intent-preservation",
+        "memphis-search-surfaces",
+        "velocity-immutability",
         "autonomy-contract",
         "autonomy-queue-approval-gate",
         "safe-harbor-behavior",

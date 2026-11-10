@@ -102,6 +102,20 @@
       "rationale": "Broken synchronous form persistence or webhook confirmation creates direct lead-data loss risk."
     },
     {
+      "id": "entity-coverage",
+      "npmScript": "validate:entities",
+      "entrypoint": "_ops/validators/validate_entity_coverage.js",
+      "severity": "HARD_FAIL",
+      "blocksRelease": true,
+      "group": "semantic-data",
+      "owner": "growth-and-content",
+      "scope": "PART (restored 10 Nov 2026): Person is \"Monika Hicks, LCSW\"; only verified profiles in sameAs",
+      "ciInvocation": "MATRIX_ONLY",
+      "findingProtocol": "VALIDATION_FINDING",
+      "enabled": true,
+      "rationale": "A wrong professional credential or an unverified profile in sameAs is a false identity claim about a licensed therapist (hostile review, 10 Nov 2026)."
+    },
+    {
       "id": "conversion-contract",
       "npmScript": "validate:conversion",
       "entrypoint": "_ops/validators/validate_conversion_contract.js",
@@ -142,20 +156,6 @@
       "findingProtocol": "VALIDATION_FINDING",
       "enabled": true,
       "rationale": "Queue mode and generation caps protect approval boundaries; violations require prompt repair but do not block the static site build."
-    },
-    {
-      "id": "throttle-contract",
-      "npmScript": "validate:throttle",
-      "entrypoint": "_ops/validators/validate_throttle_contract.js",
-      "severity": "SOFT_WARNING",
-      "blocksRelease": false,
-      "group": "provider-resilience",
-      "owner": "platform-operations",
-      "scope": "provider operation safeguards",
-      "ciInvocation": "MATRIX_ONLY",
-      "findingProtocol": "VALIDATION_FINDING",
-      "enabled": true,
-      "rationale": "Throttle drift increases provider instability risk but does not make the current static release unsafe."
     },
     {
       "id": "content-briefs",
@@ -358,6 +358,48 @@
       "repair_rationale": "The check reads data/continuity/editorial_continuity_report.json plus the continuity rows in the brief and queue files; replenish_editorial_candidates.mjs writes exactly those three artifacts at the locked cadence, and the repo editorial-continuity workflow already runs it immediately before validating."
     },
     {
+      "id": "site-intent-preservation",
+      "npmScript": "validate:site-intent-preservation",
+      "entrypoint": "_ops/validators/deep/validate_site_intent_preservation.js",
+      "severity": "HARD_FAIL",
+      "blocksRelease": true,
+      "group": "public-site",
+      "owner": "site-and-brand",
+      "scope": "PART (restored 10 Nov 2026): undeclared-owner-addition only",
+      "ciInvocation": "MATRIX_ONLY",
+      "findingProtocol": "VALIDATION_FINDING",
+      "enabled": true,
+      "rationale": "Preserves the client-approved page shape while proving the specific search-intent additions are present."
+    },
+    {
+      "id": "memphis-search-surfaces",
+      "npmScript": "validate:memphis-search-surfaces",
+      "entrypoint": "_ops/validators/deep/validate_memphis_search_surfaces.js",
+      "severity": "HARD_FAIL",
+      "blocksRelease": true,
+      "group": "public-site",
+      "owner": "search-and-content",
+      "scope": "PART (restored 10 Nov 2026): each therapist page states Tennessee and virtual",
+      "ciInvocation": "MATRIX_ONLY",
+      "findingProtocol": "VALIDATION_FINDING",
+      "enabled": true,
+      "rationale": "Blocks missing, hidden, noncanonical, unlinked, or nonfunctional search landing pages."
+    },
+    {
+      "id": "velocity-immutability",
+      "npmScript": "validate:velocity-immutability",
+      "entrypoint": "_ops/validators/deep/validate_velocity_immutability.js",
+      "severity": "HARD_FAIL",
+      "blocksRelease": true,
+      "group": "publishing-safety",
+      "owner": "content-operations",
+      "scope": "PART (restored 10 Nov 2026): the 227 baseline records keep slug and scheduledAt; no new slot collisions",
+      "ciInvocation": "MATRIX_ONLY",
+      "findingProtocol": "VALIDATION_FINDING",
+      "enabled": true,
+      "rationale": "The existing client publishing velocity and all baseline dates/routes are explicit product requirements."
+    },
+    {
       "id": "autonomy-contract",
       "npmScript": "validate:autonomy-contract",
       "entrypoint": "_ops/validators/deep/validate_autonomy_contract.js",
@@ -540,6 +582,20 @@
       "rationale": "The release gate stops crons and generators publishing to a client's live site; it does not stop the site owner, who published five localized landing pages directly on 2026-08-29. What must never happen is that release being written into data/admin/publication_approvals.json as the client's decision, because one fabricated line makes the whole audit trail worthless. This asserts every item published on or after the gate's sealed_on date is under exactly one of two rules - released on a named client approval, or recorded in ownerPublication with the publisher named, a reason given and the absence of client approval stated - and that no owner publication carries the client's name. Pre-gate releases are out of scope by design. Hard-fails if nothing post-gate exists to examine."
     },
     {
+      "id": "sitemap-ledger-integrity",
+      "npmScript": "validate:sitemap-ledger-integrity",
+      "entrypoint": "_ops/validators/validate_sitemap_ledger_integrity.js",
+      "severity": "HARD_FAIL",
+      "blocksRelease": true,
+      "group": "publishing",
+      "owner": "site-operations",
+      "scope": "sitemap.xml and its lastmod ledger are committed together, by every lane that can separate them",
+      "ciInvocation": "MATRIX_ONLY",
+      "findingProtocol": "VALIDATION_FINDING",
+      "enabled": true,
+      "rationale": "site_build.js writes sitemap.xml and data/cadence/lastmod_ledger.json on every build, and the ledger is what lets an unchanged page keep the <lastmod> it already had. No workflow committed the ledger, so each daily release threw it away and the next build re-stamped every page the release had touched with the build date. Reproduced over four simulated daily runs using Content Publish's own git add scope: one sibling insight moved 2026-08-31 -> 09-01 -> 09-02 -> 09-03 with no content change after the first day, and held at 08-31 once the ledger was staged. That rolling bump is the uniform_lastmod pattern scripts/cadence_gate.js exists to flag, and it destroys the freshness signal answer engines weight most. Asserts the committed sitemap and ledger agree on every dated URL, and derives - rather than lists - the rule that any workflow running a site build and staging pages/ or sitemap.xml must also stage the ledger. Hard-fails on zero sitemap URLs or zero governed workflows."
+    },
+    {
       "id": "live-publication-verification",
       "npmScript": "validate:live-publication-verification",
       "entrypoint": "_ops/validators/validate_live_publication_verification.js",
@@ -566,6 +622,20 @@
       "enabled": true,
       "scope": "worker/_worker.js serveStatic/isEdgeCacheable edge cache and the build-id stamp in dist/_worker.js",
       "rationale": "Until 21 Oct 2026 every HTML request went worker -> ASSETS uncached (cf-cache-status DYNAMIC, 200-320 ms TTFB, Ahrefs Slow page). The worker now edge-caches static GET/HEAD on www keyed by a build id; this runs the real worker with a fake cache and requires MISS then HIT, the origin's browser Cache-Control, no caching of API/admin/forms/POST/query/non-200, the apex 301 first, and a stamped build id."
+    },
+    {
+      "id": "search-readiness-surfaces",
+      "npmScript": "validate:search-readiness-surfaces",
+      "entrypoint": "_ops/validators/validate_search_readiness_surfaces.js",
+      "severity": "HARD_FAIL",
+      "blocksRelease": true,
+      "group": "agency-search",
+      "owner": "site-operations",
+      "ciInvocation": "MATRIX_ONLY",
+      "findingProtocol": "VALIDATION_FINDING",
+      "enabled": true,
+      "scope": "PART c3 (restored 10 Nov 2026): Offer prices equal the visible and /faq/ fees",
+      "rationale": "The owner's Search Readiness Checklist failed hicksconsulting.org on four items on 25 Oct 2026: /favicon.ico, /apple-touch-icon.png and /site.webmanifest all 404 (a9); og:image a 2000x2000 logo with no width or height (b6); every page's first organization node an anonymous publisher blank node with no logo or sameAs (c1); no priced Offer anywhere (c3). Each is stamped at build time, so this check asserts the built output and hard-fails on zero pages. It also fails when the schema's session fees drift from the prose on /faq/, which would publish a wrong price to answer engines."
     },
     {
       "id": "zero-paid-llm",

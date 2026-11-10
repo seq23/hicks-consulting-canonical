@@ -104,11 +104,16 @@
     "validate:safe-harbor-behavior": "node _ops/validators/deep/validate_safe_harbor_behavior.mjs",
     "validate:self-heal-e2e": "node _ops/validators/deep/validate_self_heal_e2e.mjs",
     "validate:social-firehose": "node _ops/validators/validate_social_firehose_contract.js",
-    "validate:throttle": "node _ops/validators/validate_throttle_contract.js",
     "validate:training-inquiry": "node _ops/validators/validate_training_inquiry_contract.js",
     "validate:workflows": "node _ops/validators/validate_workflows.js",
     "validate:zero-paid-llm": "node _ops/validators/validate_zero_paid_llm.js",
     "calendar:write": "node scripts/publishing/write_calendar_slots.mjs",
-    "validate:calendar-writer": "node _ops/validators/validate_calendar_writer.mjs"
+    "validate:calendar-writer": "node _ops/validators/validate_calendar_writer.mjs",
+    "validate:entities": "node _ops/validators/validate_entity_coverage.js",
+    "validate:memphis-search-surfaces": "node _ops/validators/deep/validate_memphis_search_surfaces.js",
+    "validate:search-readiness-surfaces": "node _ops/validators/validate_search_readiness_surfaces.js",
+    "validate:site-intent-preservation": "node _ops/validators/deep/validate_site_intent_preservation.js",
+    "validate:sitemap-ledger-integrity": "node _ops/validators/validate_sitemap_ledger_integrity.js",
+    "validate:velocity-immutability": "node _ops/validators/deep/validate_velocity_immutability.js"
   }
 }
