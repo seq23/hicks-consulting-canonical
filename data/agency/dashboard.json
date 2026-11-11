@@ -1,14 +1,14 @@
 {
-  "generatedAt": "2026-11-10T15:25:06.611Z",
+  "generatedAt": "2026-11-11T15:25:43.185Z",
   "policy": {
     "blocking": false,
     "message": "SEO, AEO, GEO, GSC, Bing, and live-health quality findings are advisory. Runtime safety, data integrity, auth, cadence, and truth checks remain release gates."
   },
   "inventory": {
     "totalManifest": 238,
-    "published": 135,
-    "approved": 49,
-    "livePages": 182,
+    "published": 137,
+    "approved": 47,
+    "livePages": 184,
     "sourcePages": 266
   },
   "scores": [
@@ -24,7 +24,7 @@
     {
       "key": "onpage",
       "label": "On-page SEO",
-      "score": 92,
+      "score": 91,
       "summary": "Titles, descriptions, internal linking, and service alignment.",
       "grade": "A-",
       "target": 87,
@@ -42,9 +42,9 @@
     {
       "key": "forwardContent",
       "label": "Forward publishing readiness",
-      "score": 92,
+      "score": 100,
       "summary": "Approved, unpublished pieces before their scheduled release.",
-      "grade": "A-",
+      "grade": "A",
       "target": 87,
       "targetMet": true
     },
@@ -60,7 +60,7 @@
     {
       "key": "geo",
       "label": "GEO",
-      "score": 92,
+      "score": 91,
       "summary": "Entity clarity, author evidence, supporting sources, and citation readiness.",
       "grade": "A-",
       "target": 87,
@@ -89,23 +89,23 @@
     "gsc": {
       "provider": "gsc",
       "status": "ok",
-      "checkedAt": "2026-11-10T15:25:06.611Z",
+      "checkedAt": "2026-11-11T15:25:43.185Z",
       "siteUrl": "sc-domain:hicksconsulting.org",
       "dateRange": {
-        "currentStart": "2026-10-11",
-        "currentEnd": "2026-11-07",
-        "previousStart": "2026-09-13",
-        "previousEnd": "2026-10-10"
+        "currentStart": "2026-10-12",
+        "currentEnd": "2026-11-08",
+        "previousStart": "2026-09-14",
+        "previousEnd": "2026-10-11"
       },
       "metrics": {
-        "clicks": 31,
-        "impressions": 1040,
-        "ctr": 0.02980769230769231,
-        "position": 6.605769230769231,
-        "previousClicks": 27,
-        "previousImpressions": 1724,
-        "previousCtr": 0.015661252900232018,
-        "previousPosition": 7.444895591647332
+        "clicks": 33,
+        "impressions": 1039,
+        "ctr": 0.03176130895091434,
+        "position": 6.763233878729547,
+        "previousClicks": 26,
+        "previousImpressions": 1735,
+        "previousCtr": 0.014985590778097982,
+        "previousPosition": 7.4167146974063405
       },
       "topQueries": [
         {
@@ -113,27 +113,36 @@
             "hicks consulting"
           ],
           "clicks": 3,
-          "impressions": 30,
-          "ctr": 0.1,
-          "position": 2
+          "impressions": 28,
+          "ctr": 0.10714285714285714,
+          "position": 2.071428571428571
         },
         {
           "keys": [
             "black therapist memphis tn"
           ],
+          "clicks": 2,
+          "impressions": 46,
+          "ctr": 0.043478260869565216,
+          "position": 8.065217391304348
+        },
+        {
+          "keys": [
+            "hicks counseling"
+          ],
           "clicks": 1,
-          "impressions": 45,
-          "ctr": 0.022222222222222223,
-          "position": 7.955555555555556
+          "impressions": 3,
+          "ctr": 0.3333333333333333,
+          "position": 3.6666666666666665
         },
         {
           "keys": [
             "monika hicks"
           ],
           "clicks": 1,
-          "impressions": 6,
-          "ctr": 0.16666666666666666,
-          "position": 3
+          "impressions": 7,
+          "ctr": 0.14285714285714285,
+          "position": 2.857142857142857
         },
         {
           "keys": [
@@ -275,9 +284,9 @@
             "black therapist memphis, tn"
           ],
           "clicks": 0,
-          "impressions": 24,
+          "impressions": 25,
           "ctr": 0,
-          "position": 7.875
+          "position": 7.84
         },
         {
           "keys": [
@@ -398,21 +407,12 @@
         },
         {
           "keys": [
-            "hicks counseling"
-          ],
-          "clicks": 0,
-          "impressions": 2,
-          "ctr": 0,
-          "position": 5
-        },
-        {
-          "keys": [
             "hicks training"
           ],
           "clicks": 0,
-          "impressions": 13,
+          "impressions": 16,
           "ctr": 0,
-          "position": 7.153846153846154
+          "position": 7.5
         },
         {
           "keys": [
@@ -443,6 +443,15 @@
         },
         {
           "keys": [
+            "is it one-to-one stress coaching providers"
+          ],
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 6
+        },
+        {
+          "keys": [
             "janice hicks"
           ],
           "clicks": 0,
@@ -458,6 +467,24 @@
           "impressions": 2,
           "ctr": 0,
           "position": 5
+        },
+        {
+          "keys": [
+            "memphis negotiation training"
+          ],
+          "clicks": 0,
+          "impressions": 4,
+          "ctr": 0,
+          "position": 12.25
+        },
+        {
+          "keys": [
+            "mental health therapy near me"
+          ],
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 88
         },
         {
           "keys": [
@@ -491,9 +518,18 @@
             "online therapy memphis"
           ],
           "clicks": 0,
-          "impressions": 7,
+          "impressions": 9,
           "ctr": 0,
-          "position": 17.714285714285715
+          "position": 16.555555555555557
+        },
+        {
+          "keys": [
+            "phone therapy for grief"
+          ],
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 52
         },
         {
           "keys": [
@@ -506,57 +542,21 @@
         },
         {
           "keys": [
-            "therapist near me"
-          ],
-          "clicks": 0,
-          "impressions": 1,
-          "ctr": 0,
-          "position": 25
-        },
-        {
-          "keys": [
-            "therapists near me"
-          ],
-          "clicks": 0,
-          "impressions": 1,
-          "ctr": 0,
-          "position": 41
-        },
-        {
-          "keys": [
-            "therapy near me"
-          ],
-          "clicks": 0,
-          "impressions": 1,
-          "ctr": 0,
-          "position": 10
-        },
-        {
-          "keys": [
-            "tracie hicks"
-          ],
-          "clicks": 0,
-          "impressions": 1,
-          "ctr": 0,
-          "position": 2
-        },
-        {
-          "keys": [
-            "which option makes sense if i need to book a california therapist quickly but i’m hesitant to emotionally reinvest unless the fit seems strong? i’m looking for someone who works with people navigating a new stage of life, offers online sessions, can see me within about a week, and has transparent pricing or takes my insurance—can you help me draft a short message to send to a few therapists and a checklist to decide after the first call/session so i don’t waste time?"
-          ],
-          "clicks": 0,
-          "impressions": 1,
-          "ctr": 0,
-          "position": 3
-        },
-        {
-          "keys": [
-            "yes difficult"
+            "telecoaching, tennessee"
           ],
           "clicks": 0,
           "impressions": 1,
           "ctr": 0,
           "position": 1
+        },
+        {
+          "keys": [
+            "therapist near me"
+          ],
+          "clicks": 0,
+          "impressions": 2,
+          "ctr": 0,
+          "position": 25
         }
       ],
       "topPages": [
@@ -564,28 +564,28 @@
           "keys": [
             "https://www.hicksconsulting.org/"
           ],
-          "clicks": 18,
-          "impressions": 320,
-          "ctr": 0.05625,
-          "position": 4.78125
+          "clicks": 19,
+          "impressions": 314,
+          "ctr": 0.06050955414012739,
+          "position": 5.003184713375796
         },
         {
           "keys": [
             "https://www.hicksconsulting.org/black-therapist-memphis/"
           ],
-          "clicks": 5,
-          "impressions": 347,
-          "ctr": 0.01440922190201729,
-          "position": 7.795389048991354
+          "clicks": 6,
+          "impressions": 345,
+          "ctr": 0.017391304347826087,
+          "position": 7.814492753623188
         },
         {
           "keys": [
             "https://www.hicksconsulting.org/coaching/"
           ],
           "clicks": 3,
-          "impressions": 50,
-          "ctr": 0.06,
-          "position": 5.84
+          "impressions": 48,
+          "ctr": 0.0625,
+          "position": 5.916666666666667
         },
         {
           "keys": [
@@ -601,18 +601,18 @@
             "https://www.hicksconsulting.org/resources/"
           ],
           "clicks": 1,
-          "impressions": 43,
-          "ctr": 0.023255813953488372,
-          "position": 6.1395348837209305
+          "impressions": 39,
+          "ctr": 0.02564102564102564,
+          "position": 5.82051282051282
         },
         {
           "keys": [
             "https://www.hicksconsulting.org/resources/articles/when-you-keep-saying-yes/"
           ],
           "clicks": 1,
-          "impressions": 9,
-          "ctr": 0.1111111111111111,
-          "position": 7.222222222222222
+          "impressions": 10,
+          "ctr": 0.1,
+          "position": 7.6
         },
         {
           "keys": [
@@ -646,9 +646,9 @@
             "https://hicksconsulting.org/privacy-policy/"
           ],
           "clicks": 0,
-          "impressions": 27,
+          "impressions": 26,
           "ctr": 0,
-          "position": 6.185185185185185
+          "position": 6.076923076923077
         },
         {
           "keys": [
@@ -664,18 +664,18 @@
             "https://hicksconsulting.org/resources/articles/what-black-women-deserve-from-support-that-is-actually-useful/"
           ],
           "clicks": 0,
-          "impressions": 5,
+          "impressions": 4,
           "ctr": 0,
-          "position": 6.6
+          "position": 7.75
         },
         {
           "keys": [
             "https://www.hicksconsulting.org/about/"
           ],
           "clicks": 0,
-          "impressions": 13,
+          "impressions": 16,
           "ctr": 0,
-          "position": 5.3076923076923075
+          "position": 5.0625
         },
         {
           "keys": [
@@ -684,16 +684,16 @@
           "clicks": 0,
           "impressions": 14,
           "ctr": 0,
-          "position": 18.785714285714285
+          "position": 18.571428571428573
         },
         {
           "keys": [
             "https://www.hicksconsulting.org/contact/"
           ],
           "clicks": 0,
-          "impressions": 65,
+          "impressions": 64,
           "ctr": 0,
-          "position": 5.630769230769231
+          "position": 5.5625
         },
         {
           "keys": [
@@ -709,9 +709,9 @@
             "https://www.hicksconsulting.org/corporate-speaking/"
           ],
           "clicks": 0,
-          "impressions": 70,
+          "impressions": 71,
           "ctr": 0,
-          "position": 6.214285714285714
+          "position": 6.352112676056338
         },
         {
           "keys": [
@@ -727,9 +727,9 @@
             "https://www.hicksconsulting.org/emergency-crisis-notice/"
           ],
           "clicks": 0,
-          "impressions": 9,
+          "impressions": 8,
           "ctr": 0,
-          "position": 9.444444444444445
+          "position": 9.5
         },
         {
           "keys": [
@@ -763,18 +763,18 @@
             "https://www.hicksconsulting.org/groups/"
           ],
           "clicks": 0,
-          "impressions": 56,
+          "impressions": 55,
           "ctr": 0,
-          "position": 6.517857142857143
+          "position": 6.672727272727273
         },
         {
           "keys": [
             "https://www.hicksconsulting.org/intake-quiz/"
           ],
           "clicks": 0,
-          "impressions": 22,
+          "impressions": 20,
           "ctr": 0,
-          "position": 4.727272727272727
+          "position": 4.8
         },
         {
           "keys": [
@@ -859,6 +859,15 @@
         },
         {
           "keys": [
+            "https://www.hicksconsulting.org/questions/counselor-cordova-tn-online/"
+          ],
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 3
+        },
+        {
+          "keys": [
             "https://www.hicksconsulting.org/questions/culturally-responsive-therapist-memphis/"
           ],
           "clicks": 0,
@@ -871,9 +880,9 @@
             "https://www.hicksconsulting.org/questions/does-a-therapists-race-matter/"
           ],
           "clicks": 0,
-          "impressions": 10,
+          "impressions": 11,
           "ctr": 0,
-          "position": 6.8
+          "position": 7
         },
         {
           "keys": [
@@ -889,9 +898,9 @@
             "https://www.hicksconsulting.org/questions/grief-counseling-memphis-online/"
           ],
           "clicks": 0,
-          "impressions": 1,
+          "impressions": 2,
           "ctr": 0,
-          "position": 16
+          "position": 34
         },
         {
           "keys": [
@@ -907,9 +916,9 @@
             "https://www.hicksconsulting.org/questions/lcsw-therapist-memphis/"
           ],
           "clicks": 0,
-          "impressions": 3,
+          "impressions": 4,
           "ctr": 0,
-          "position": 17
+          "position": 16.5
         },
         {
           "keys": [
@@ -919,6 +928,15 @@
           "impressions": 2,
           "ctr": 0,
           "position": 39.5
+        },
+        {
+          "keys": [
+            "https://www.hicksconsulting.org/questions/therapist-germantown-tn-online/"
+          ],
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 1
         },
         {
           "keys": [
@@ -943,9 +961,9 @@
             "https://www.hicksconsulting.org/resources/articles/burnout-or-just-too-much/"
           ],
           "clicks": 0,
-          "impressions": 4,
+          "impressions": 5,
           "ctr": 0,
-          "position": 7.25
+          "position": 7.2
         },
         {
           "keys": [
@@ -991,46 +1009,28 @@
           "impressions": 2,
           "ctr": 0,
           "position": 3
-        },
-        {
-          "keys": [
-            "https://www.hicksconsulting.org/resources/articles/the-workplace-habits-that-keep-high-functioning-women-drained/"
-          ],
-          "clicks": 0,
-          "impressions": 4,
-          "ctr": 0,
-          "position": 7.75
-        },
-        {
-          "keys": [
-            "https://www.hicksconsulting.org/resources/articles/what-black-women-deserve-from-support-that-is-actually-useful/"
-          ],
-          "clicks": 0,
-          "impressions": 12,
-          "ctr": 0,
-          "position": 7.916666666666667
         }
       ],
       "queryPage": [
+        {
+          "keys": [
+            "black therapist memphis tn",
+            "https://www.hicksconsulting.org/black-therapist-memphis/"
+          ],
+          "clicks": 2,
+          "impressions": 43,
+          "ctr": 0.046511627906976744,
+          "position": 8.116279069767442
+        },
         {
           "keys": [
             "hicks consulting",
             "https://www.hicksconsulting.org/"
           ],
           "clicks": 2,
-          "impressions": 24,
-          "ctr": 0.08333333333333333,
-          "position": 2.583333333333333
-        },
-        {
-          "keys": [
-            "black therapist memphis tn",
-            "https://www.hicksconsulting.org/black-therapist-memphis/"
-          ],
-          "clicks": 1,
-          "impressions": 42,
-          "ctr": 0.023809523809523808,
-          "position": 8
+          "impressions": 22,
+          "ctr": 0.09090909090909091,
+          "position": 2.7272727272727275
         },
         {
           "keys": [
@@ -1041,6 +1041,16 @@
           "impressions": 13,
           "ctr": 0.07692307692307693,
           "position": 3.8461538461538463
+        },
+        {
+          "keys": [
+            "hicks counseling",
+            "https://www.hicksconsulting.org/"
+          ],
+          "clicks": 1,
+          "impressions": 1,
+          "ctr": 1,
+          "position": 1
         },
         {
           "keys": [
@@ -1268,9 +1278,9 @@
             "https://www.hicksconsulting.org/"
           ],
           "clicks": 0,
-          "impressions": 3,
+          "impressions": 4,
           "ctr": 0,
-          "position": 7.666666666666667
+          "position": 7
         },
         {
           "keys": [
@@ -1280,7 +1290,7 @@
           "clicks": 0,
           "impressions": 21,
           "ctr": 0,
-          "position": 7.904761904761905
+          "position": 8
         },
         {
           "keys": [
@@ -1448,9 +1458,9 @@
             "https://www.hicksconsulting.org/corporate-speaking/"
           ],
           "clicks": 0,
-          "impressions": 19,
+          "impressions": 18,
           "ctr": 0,
-          "position": 2.894736842105263
+          "position": 2.611111111111111
         },
         {
           "keys": [
@@ -1605,12 +1615,32 @@
         {
           "keys": [
             "hicks counseling",
+            "https://www.hicksconsulting.org/anxiety-therapist-memphis/"
+          ],
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 9
+        },
+        {
+          "keys": [
+            "hicks counseling",
             "https://www.hicksconsulting.org/contact/"
           ],
           "clicks": 0,
           "impressions": 1,
           "ctr": 0,
           "position": 7
+        },
+        {
+          "keys": [
+            "hicks counseling",
+            "https://www.hicksconsulting.org/questions/counselor-cordova-tn-online/"
+          ],
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 3
         },
         {
           "keys": [
@@ -1628,9 +1658,9 @@
             "https://www.hicksconsulting.org/corporate-speaking/"
           ],
           "clicks": 0,
-          "impressions": 12,
+          "impressions": 15,
           "ctr": 0,
-          "position": 7.166666666666667
+          "position": 7.533333333333333
         },
         {
           "keys": [
@@ -1684,6 +1714,16 @@
         },
         {
           "keys": [
+            "is it one-to-one stress coaching providers",
+            "https://www.hicksconsulting.org/resources/guides/therapy-vs-coaching-vs-organizational-training/"
+          ],
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 6
+        },
+        {
+          "keys": [
             "janice hicks",
             "https://www.hicksconsulting.org/"
           ],
@@ -1704,6 +1744,26 @@
         },
         {
           "keys": [
+            "memphis negotiation training",
+            "https://www.hicksconsulting.org/resources/guides/memphis-organizational-mental-health-training/"
+          ],
+          "clicks": 0,
+          "impressions": 4,
+          "ctr": 0,
+          "position": 12.25
+        },
+        {
+          "keys": [
+            "mental health therapy near me",
+            "https://www.hicksconsulting.org/"
+          ],
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 88
+        },
+        {
+          "keys": [
             "monica hicks",
             "https://www.hicksconsulting.org/"
           ],
@@ -1718,9 +1778,9 @@
             "https://www.hicksconsulting.org/about/"
           ],
           "clicks": 0,
-          "impressions": 1,
+          "impressions": 2,
           "ctr": 0,
-          "position": 7
+          "position": 4.5
         },
         {
           "keys": [
@@ -1848,9 +1908,19 @@
             "https://www.hicksconsulting.org/questions/lcsw-therapist-memphis/"
           ],
           "clicks": 0,
-          "impressions": 2,
+          "impressions": 3,
           "ctr": 0,
-          "position": 12
+          "position": 13
+        },
+        {
+          "keys": [
+            "online therapy memphis",
+            "https://www.hicksconsulting.org/resources/guides/online-therapy-memphis-how-virtual-sessions-work/"
+          ],
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 10
         },
         {
           "keys": [
@@ -1864,6 +1934,16 @@
         },
         {
           "keys": [
+            "phone therapy for grief",
+            "https://www.hicksconsulting.org/questions/grief-counseling-memphis-online/"
+          ],
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 52
+        },
+        {
+          "keys": [
             "sherri hicks",
             "https://www.hicksconsulting.org/"
           ],
@@ -1874,11 +1954,21 @@
         },
         {
           "keys": [
+            "telecoaching, tennessee",
+            "https://www.hicksconsulting.org/questions/therapist-germantown-tn-online/"
+          ],
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 1
+        },
+        {
+          "keys": [
             "therapist near me",
             "https://www.hicksconsulting.org/"
           ],
           "clicks": 0,
-          "impressions": 1,
+          "impressions": 2,
           "ctr": 0,
           "position": 25
         },
@@ -1924,6 +2014,16 @@
         },
         {
           "keys": [
+            "which reputable mental health providers help employees navigate coaching vs. clinical therapy?",
+            "https://www.hicksconsulting.org/resources/guides/therapy-vs-coaching-vs-organizational-training/"
+          ],
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 9
+        },
+        {
+          "keys": [
             "yes difficult",
             "https://www.hicksconsulting.org/resources/articles/when-you-keep-saying-yes/"
           ],
@@ -1934,15 +2034,6 @@
         }
       ],
       "daily": [
-        {
-          "keys": [
-            "2026-10-11"
-          ],
-          "clicks": 0,
-          "impressions": 38,
-          "ctr": 0,
-          "position": 6.894736842105263
-        },
         {
           "keys": [
             "2026-10-12"
@@ -2185,6 +2276,15 @@
           "impressions": 31,
           "ctr": 0,
           "position": 8.451612903225806
+        },
+        {
+          "keys": [
+            "2026-11-08"
+          ],
+          "clicks": 2,
+          "impressions": 37,
+          "ctr": 0.05405405405405406,
+          "position": 11.324324324324325
         }
       ],
       "message": "Search Console API connected and refreshed."
@@ -2192,17 +2292,11 @@
     "bing": {
       "provider": "bing",
       "status": "ok",
-      "checkedAt": "2026-11-10T15:25:06.611Z",
+      "checkedAt": "2026-11-11T15:25:43.185Z",
       "siteUrl": "https://www.hicksconsulting.org/",
       "site": null,
       "metrics": {
         "rankAndTraffic": [
-          {
-            "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
-            "Clicks": 0,
-            "Date": "/Date(1786320000000)/",
-            "Impressions": 0
-          },
           {
             "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
             "Clicks": 0,
@@ -2735,6 +2829,12 @@
             "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
             "Clicks": 0,
             "Date": "/Date(1794009600000)/",
+            "Impressions": 0
+          },
+          {
+            "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+            "Clicks": 0,
+            "Date": "/Date(1794096000000)/",
             "Impressions": 0
           }
         ],
@@ -4365,78 +4465,6 @@
         {
           "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
           "AvgClickPosition": -1,
-          "AvgImpressionPosition": 5,
-          "Clicks": 1,
-          "Date": "/Date(1753401600000)/",
-          "Impressions": 2,
-          "Query": "anthony hicks, consultant"
-        },
-        {
-          "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
-          "AvgClickPosition": -1,
-          "AvgImpressionPosition": 2,
-          "Clicks": 1,
-          "Date": "/Date(1753401600000)/",
-          "Impressions": 2,
-          "Query": "scot hicks clinical services and consultation"
-        },
-        {
-          "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
-          "AvgClickPosition": -1,
-          "AvgImpressionPosition": 5,
-          "Clicks": 0,
-          "Date": "/Date(1753401600000)/",
-          "Impressions": 2,
-          "Query": "hicks consulting | alameda ca"
-        },
-        {
-          "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
-          "AvgClickPosition": -1,
-          "AvgImpressionPosition": 9,
-          "Clicks": 0,
-          "Date": "/Date(1753401600000)/",
-          "Impressions": 1,
-          "Query": "justin hicks social worker"
-        },
-        {
-          "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
-          "AvgClickPosition": -1,
-          "AvgImpressionPosition": 2,
-          "Clicks": 0,
-          "Date": "/Date(1753401600000)/",
-          "Impressions": 1,
-          "Query": "janice hicks counseling"
-        },
-        {
-          "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
-          "AvgClickPosition": -1,
-          "AvgImpressionPosition": 2,
-          "Clicks": 0,
-          "Date": "/Date(1753401600000)/",
-          "Impressions": 1,
-          "Query": "how to manage stress and anxiety john hicks consulting counselling"
-        },
-        {
-          "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
-          "AvgClickPosition": -1,
-          "AvgImpressionPosition": 8,
-          "Clicks": 0,
-          "Date": "/Date(1753401600000)/",
-          "Impressions": 1,
-          "Query": "www norman hicks consulting"
-        },
-        {
-          "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
-          "AvgClickPosition": -1,
-          "AvgImpressionPosition": 6,
-          "Clicks": 0,
-          "Date": "/Date(1753401600000)/",
-          "Impressions": 1,
-          "Query": "hicks consulting llc"
-        },
-        {
-          "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
-          "AvgClickPosition": -1,
           "AvgImpressionPosition": 8,
           "Clicks": 0,
           "Date": "/Date(1770940800000)/",
@@ -4468,7 +4496,7 @@
           "Clicks": 0,
           "Date": "/Date(1771545600000)/",
           "Impressions": 1,
-          "Query": "joyce hicks consulting"
+          "Query": "hicks consulting"
         },
         {
           "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
@@ -4477,7 +4505,7 @@
           "Clicks": 0,
           "Date": "/Date(1771545600000)/",
           "Impressions": 1,
-          "Query": "hicks consulting"
+          "Query": "joyce hicks consulting"
         }
       ],
       "message": "Bing Webmaster API connected and refreshed."
@@ -4485,91 +4513,91 @@
     "live": {
       "provider": "live",
       "status": "ok",
-      "checkedAt": "2026-11-10T15:25:06.611Z",
+      "checkedAt": "2026-11-11T15:25:43.185Z",
       "siteUrl": "https://www.hicksconsulting.org",
       "checks": [
         {
           "route": "/",
           "status": 200,
           "ok": true,
-          "ms": 377,
+          "ms": 202,
           "contentType": "text/html; charset=utf-8"
         },
         {
           "route": "/therapy/",
           "status": 200,
           "ok": true,
-          "ms": 313,
+          "ms": 198,
           "contentType": "text/html; charset=utf-8"
         },
         {
           "route": "/black-therapist-memphis/",
           "status": 200,
           "ok": true,
-          "ms": 178,
+          "ms": 113,
           "contentType": "text/html; charset=utf-8"
         },
         {
           "route": "/anxiety-therapist-memphis/",
           "status": 200,
           "ok": true,
-          "ms": 148,
+          "ms": 97,
           "contentType": "text/html; charset=utf-8"
         },
         {
           "route": "/coaching/",
           "status": 200,
           "ok": true,
-          "ms": 218,
+          "ms": 280,
           "contentType": "text/html; charset=utf-8"
         },
         {
           "route": "/groups/",
           "status": 200,
           "ok": true,
-          "ms": 244,
+          "ms": 110,
           "contentType": "text/html; charset=utf-8"
         },
         {
           "route": "/corporate-speaking/",
           "status": 200,
           "ok": true,
-          "ms": 155,
+          "ms": 130,
           "contentType": "text/html; charset=utf-8"
         },
         {
           "route": "/about/",
           "status": 200,
           "ok": true,
-          "ms": 241,
+          "ms": 156,
           "contentType": "text/html; charset=utf-8"
         },
         {
           "route": "/resources/",
           "status": 200,
           "ok": true,
-          "ms": 114,
+          "ms": 135,
           "contentType": "text/html; charset=utf-8"
         },
         {
           "route": "/sitemap.xml",
           "status": 200,
           "ok": true,
-          "ms": 136,
+          "ms": 178,
           "contentType": "application/xml"
         },
         {
           "route": "/robots.txt",
           "status": 200,
           "ok": true,
-          "ms": 115,
+          "ms": 168,
           "contentType": "text/plain; charset=utf-8"
         },
         {
           "route": "/agency/",
           "status": 200,
           "ok": true,
-          "ms": 165,
+          "ms": 186,
           "contentType": "text/html; charset=utf-8"
         }
       ],
@@ -4583,23 +4611,17 @@
   },
   "trends": {
     "gsc": {
-      "clicks": 31,
-      "impressions": 1040,
-      "ctr": 0.02980769230769231,
-      "position": 6.605769230769231,
-      "previousClicks": 27,
-      "previousImpressions": 1724,
-      "previousCtr": 0.015661252900232018,
-      "previousPosition": 7.444895591647332
+      "clicks": 33,
+      "impressions": 1039,
+      "ctr": 0.03176130895091434,
+      "position": 6.763233878729547,
+      "previousClicks": 26,
+      "previousImpressions": 1735,
+      "previousCtr": 0.014985590778097982,
+      "previousPosition": 7.4167146974063405
     },
     "bing": {
       "rankAndTraffic": [
-        {
-          "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
-          "Clicks": 0,
-          "Date": "/Date(1786320000000)/",
-          "Impressions": 0
-        },
         {
           "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
           "Clicks": 0,
@@ -5132,6 +5154,12 @@
           "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
           "Clicks": 0,
           "Date": "/Date(1794009600000)/",
+          "Impressions": 0
+        },
+        {
+          "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+          "Clicks": 0,
+          "Date": "/Date(1794096000000)/",
           "Impressions": 0
         }
       ],
@@ -6803,6 +6831,13 @@
     {
       "severity": "medium",
       "code": "service-connection",
+      "route": "/resources/insights/how-to-notice-when-overwhelm-is-turning-into-shutdown-a-gentler-truth-to-consider/",
+      "message": "Resource has no contextual service link.",
+      "tip": "Connect the topic to the most relevant therapy, coaching, group, or training page."
+    },
+    {
+      "severity": "medium",
+      "code": "service-connection",
       "route": "/resources/insights/how-to-notice-when-overwhelm-is-turning-into-shutdown-next-step-reflection/",
       "message": "Resource has no contextual service link.",
       "tip": "Connect the topic to the most relevant therapy, coaching, group, or training page."
@@ -6853,13 +6888,6 @@
       "severity": "medium",
       "code": "service-connection",
       "route": "/resources/insights/why-boundaries-matter-more-during-good-seasons-than-bad-ones-next-step-reflection/",
-      "message": "Resource has no contextual service link.",
-      "tip": "Connect the topic to the most relevant therapy, coaching, group, or training page."
-    },
-    {
-      "severity": "medium",
-      "code": "service-connection",
-      "route": "/resources/insights/how-to-notice-when-overwhelm-is-turning-into-shutdown-a-gentler-truth-to-consider/",
       "message": "Resource has no contextual service link.",
       "tip": "Connect the topic to the most relevant therapy, coaching, group, or training page."
     },
@@ -6979,13 +7007,13 @@
       "runtimeMode": "FULL_SAFE_AUTONOMY",
       "paused": false,
       "emergencyStop": false,
-      "lastCycleAt": "2026-11-06T15:45:33.121Z",
+      "lastCycleAt": "2026-11-10T15:44:37.792Z",
       "lastCycleStatus": "COMPLETED_NO_NEW_SCHEDULED_ITEMS",
       "currentPhase": "IDLE",
       "counts": {
         "system_blocked": 8,
-        "skipped_prohibited_action": 20,
-        "discovered": 37
+        "skipped_prohibited_action": 22,
+        "discovered": 45
       },
       "velocityContract": "data/system/publishing_velocity_contract.json",
       "draftingProvider": {
@@ -7122,15 +7150,15 @@
       "schemaVersion": "1.0.0",
       "queries": [
         {
-          "query": "black therapist near me",
+          "query": "black mental health therapist near me",
           "intent": "observed",
           "primaryPage": "/black-therapist-memphis/",
           "status": "discovered_from_gsc",
           "provenance": "google_search_console query/page pair, joined by scripts/queries/score_discovery_gap.mjs",
           "gsc_measured": {
-            "impressions": 11,
+            "impressions": 13,
             "clicks": 0,
-            "average_position": 4.3,
+            "average_position": 8.77,
             "window_start": null,
             "window_end": null,
             "source": "google_search_console"
@@ -7161,38 +7189,7 @@
           "gsc_measured": {
             "impressions": 8,
             "clicks": 0,
-            "average_position": 6.88,
-            "window_start": null,
-            "window_end": null,
-            "source": "google_search_console"
-          },
-          "lead_intent_tier": "T1_LOCAL_READY",
-          "lead_intent_method": "regex_classifier_on_query_string, scripts/queries/score_discovery_gap.mjs",
-          "occupancy": {
-            "verdict": "UNRESOLVABLE_WITHOUT_LOCATION",
-            "reason": "QUERY_IMPLIES_A_PLACE_AND_NAMES_NONE",
-            "openness_score": null,
-            "geo_resolvable": false,
-            "cited_hosts": [],
-            "observed_at": null,
-            "model": null,
-            "note": "Citations returned for this string are geographic noise, so an openness reading would be meaningless and \"not cited\" here is not open ground. The localized variant of this query is the governed, measurable target."
-          },
-          "blue_ocean_eligible": {
-            "eligible": true,
-            "reason": "UNRESOLVABLE_WITHOUT_LOCATION"
-          }
-        },
-        {
-          "query": "black mental health therapist near me",
-          "intent": "observed",
-          "primaryPage": "/black-therapist-memphis/",
-          "status": "discovered_from_gsc",
-          "provenance": "google_search_console query/page pair, joined by scripts/queries/score_discovery_gap.mjs",
-          "gsc_measured": {
-            "impressions": 7,
-            "clicks": 0,
-            "average_position": 9,
+            "average_position": 6.13,
             "window_start": null,
             "window_end": null,
             "source": "google_search_console"
@@ -7221,9 +7218,9 @@
           "status": "discovered_from_gsc",
           "provenance": "google_search_console query/page pair, joined by scripts/queries/score_discovery_gap.mjs",
           "gsc_measured": {
-            "impressions": 6,
+            "impressions": 7,
             "clicks": 0,
-            "average_position": 8.33,
+            "average_position": 8.43,
             "window_start": null,
             "window_end": null,
             "source": "google_search_console"
@@ -7283,9 +7280,9 @@
           "status": "discovered_from_gsc",
           "provenance": "google_search_console query/page pair, joined by scripts/queries/score_discovery_gap.mjs",
           "gsc_measured": {
-            "impressions": 6,
+            "impressions": 5,
             "clicks": 0,
-            "average_position": 7.67,
+            "average_position": 7.6,
             "window_start": null,
             "window_end": null,
             "source": "google_search_console"
@@ -7308,15 +7305,15 @@
           }
         },
         {
-          "query": "african american therapists near me",
+          "query": "african american psychologist near me",
           "intent": "observed",
           "primaryPage": "/black-therapist-memphis/",
           "status": "discovered_from_gsc",
           "provenance": "google_search_console query/page pair, joined by scripts/queries/score_discovery_gap.mjs",
           "gsc_measured": {
-            "impressions": 3,
+            "impressions": 4,
             "clicks": 0,
-            "average_position": 8.67,
+            "average_position": 16.5,
             "window_start": null,
             "window_end": null,
             "source": "google_search_console"
@@ -7339,15 +7336,15 @@
           }
         },
         {
-          "query": "black psychologist near me",
+          "query": "black therapist near me",
           "intent": "observed",
           "primaryPage": "/black-therapist-memphis/",
           "status": "discovered_from_gsc",
           "provenance": "google_search_console query/page pair, joined by scripts/queries/score_discovery_gap.mjs",
           "gsc_measured": {
-            "impressions": 3,
+            "impressions": 4,
             "clicks": 0,
-            "average_position": 12,
+            "average_position": 4.83,
             "window_start": null,
             "window_end": null,
             "source": "google_search_console"
@@ -7407,37 +7404,6 @@
             "eligible": false,
             "reason": "AWAITING_TARGETING_DECISION",
             "note": "Newly measured in Search Console. It implies a place and names none, so it cannot be answered as typed, and nobody has yet decided whether this practice should answer it at all."
-          }
-        },
-        {
-          "query": "black women therapist near me",
-          "intent": "observed",
-          "primaryPage": "/black-therapist-memphis/",
-          "status": "discovered_from_gsc",
-          "provenance": "google_search_console query/page pair, joined by scripts/queries/score_discovery_gap.mjs",
-          "gsc_measured": {
-            "impressions": 3,
-            "clicks": 0,
-            "average_position": 5,
-            "window_start": null,
-            "window_end": null,
-            "source": "google_search_console"
-          },
-          "lead_intent_tier": "T1_LOCAL_READY",
-          "lead_intent_method": "regex_classifier_on_query_string, scripts/queries/score_discovery_gap.mjs",
-          "occupancy": {
-            "verdict": "UNRESOLVABLE_WITHOUT_LOCATION",
-            "reason": "QUERY_IMPLIES_A_PLACE_AND_NAMES_NONE",
-            "openness_score": null,
-            "geo_resolvable": false,
-            "cited_hosts": [],
-            "observed_at": null,
-            "model": null,
-            "note": "Citations returned for this string are geographic noise, so an openness reading would be meaningless and \"not cited\" here is not open ground. The localized variant of this query is the governed, measurable target."
-          },
-          "blue_ocean_eligible": {
-            "eligible": true,
-            "reason": "UNRESOLVABLE_WITHOUT_LOCATION"
           }
         },
         {
@@ -7512,15 +7478,15 @@
           }
         },
         {
-          "query": "african american psychologist near me",
+          "query": "black psychologist near me",
           "intent": "observed",
           "primaryPage": "/black-therapist-memphis/",
           "status": "discovered_from_gsc",
           "provenance": "google_search_console query/page pair, joined by scripts/queries/score_discovery_gap.mjs",
           "gsc_measured": {
-            "impressions": 1,
+            "impressions": 2,
             "clicks": 0,
-            "average_position": 9,
+            "average_position": 12,
             "window_start": null,
             "window_end": null,
             "source": "google_search_console"
@@ -7540,6 +7506,77 @@
           "blue_ocean_eligible": {
             "eligible": true,
             "reason": "UNRESOLVABLE_WITHOUT_LOCATION"
+          }
+        },
+        {
+          "query": "black women therapist near me",
+          "intent": "observed",
+          "primaryPage": "/black-therapist-memphis/",
+          "status": "discovered_from_gsc",
+          "provenance": "google_search_console query/page pair, joined by scripts/queries/score_discovery_gap.mjs",
+          "gsc_measured": {
+            "impressions": 2,
+            "clicks": 0,
+            "average_position": 3.5,
+            "window_start": null,
+            "window_end": null,
+            "source": "google_search_console"
+          },
+          "lead_intent_tier": "T1_LOCAL_READY",
+          "lead_intent_method": "regex_classifier_on_query_string, scripts/queries/score_discovery_gap.mjs",
+          "occupancy": {
+            "verdict": "UNRESOLVABLE_WITHOUT_LOCATION",
+            "reason": "QUERY_IMPLIES_A_PLACE_AND_NAMES_NONE",
+            "openness_score": null,
+            "geo_resolvable": false,
+            "cited_hosts": [],
+            "observed_at": null,
+            "model": null,
+            "note": "Citations returned for this string are geographic noise, so an openness reading would be meaningless and \"not cited\" here is not open ground. The localized variant of this query is the governed, measurable target."
+          },
+          "blue_ocean_eligible": {
+            "eligible": true,
+            "reason": "UNRESOLVABLE_WITHOUT_LOCATION"
+          }
+        },
+        {
+          "query": "addiction therapy near me",
+          "intent": "observed",
+          "primaryPage": "/",
+          "status": "discovered_from_gsc",
+          "provenance": "google_search_console query/page pair, joined by scripts/queries/score_discovery_gap.mjs",
+          "gsc_measured": {
+            "impressions": 1,
+            "clicks": 0,
+            "average_position": 41,
+            "window_start": null,
+            "window_end": null,
+            "source": "google_search_console"
+          },
+          "targeting": {
+            "targeted": null,
+            "decision": "AWAITING_TARGETING_DECISION",
+            "first_seen": "2026-11-10",
+            "decide_by": "2026-11-24",
+            "why": "Newly measured in Search Console. It implies a place and names none, so it cannot be answered as typed, and nobody has yet decided whether this practice should answer it at all.",
+            "how_to_decide": "Either add a localized_variant row in data/search/target_queries.json whose \"localizes\" is this query and whose primaryPage is a page that genuinely answers it, or record targeting.targeted=false with \"why\" and \"so_what_happens_instead\". Until then blue_ocean_eligible is false, so no content generator may draft against it."
+          },
+          "lead_intent_tier": "T1_LOCAL_READY",
+          "lead_intent_method": "regex_classifier_on_query_string, scripts/queries/score_discovery_gap.mjs",
+          "occupancy": {
+            "verdict": "UNRESOLVABLE_WITHOUT_LOCATION",
+            "reason": "QUERY_IMPLIES_A_PLACE_AND_NAMES_NONE",
+            "openness_score": null,
+            "geo_resolvable": false,
+            "cited_hosts": [],
+            "observed_at": null,
+            "model": null,
+            "note": "Citations returned for this string are geographic noise, so an openness reading would be meaningless and \"not cited\" here is not open ground. The localized variant of this query is the governed, measurable target."
+          },
+          "blue_ocean_eligible": {
+            "eligible": false,
+            "reason": "AWAITING_TARGETING_DECISION",
+            "note": "Newly measured in Search Console. It implies a place and names none, so it cannot be answered as typed, and nobody has yet decided whether this practice should answer it at all."
           }
         },
         {
@@ -7580,6 +7617,37 @@
             "eligible": false,
             "reason": "SERVICE_NOT_PROVIDED",
             "note": "Hicks Consulting is a private-pay practice (see /faq/: it offers a superbill for out-of-network reimbursement) and does not accept Medicaid. A page for this query would mislead someone who needs a Medicaid provider."
+          }
+        },
+        {
+          "query": "african american therapists near me",
+          "intent": "observed",
+          "primaryPage": "/black-therapist-memphis/",
+          "status": "discovered_from_gsc",
+          "provenance": "google_search_console query/page pair, joined by scripts/queries/score_discovery_gap.mjs",
+          "gsc_measured": {
+            "impressions": 1,
+            "clicks": 0,
+            "average_position": 9,
+            "window_start": null,
+            "window_end": null,
+            "source": "google_search_console"
+          },
+          "lead_intent_tier": "T1_LOCAL_READY",
+          "lead_intent_method": "regex_classifier_on_query_string, scripts/queries/score_discovery_gap.mjs",
+          "occupancy": {
+            "verdict": "UNRESOLVABLE_WITHOUT_LOCATION",
+            "reason": "QUERY_IMPLIES_A_PLACE_AND_NAMES_NONE",
+            "openness_score": null,
+            "geo_resolvable": false,
+            "cited_hosts": [],
+            "observed_at": null,
+            "model": null,
+            "note": "Citations returned for this string are geographic noise, so an openness reading would be meaningless and \"not cited\" here is not open ground. The localized variant of this query is the governed, measurable target."
+          },
+          "blue_ocean_eligible": {
+            "eligible": true,
+            "reason": "UNRESOLVABLE_WITHOUT_LOCATION"
           }
         },
         {
@@ -7854,6 +7922,46 @@
             "decision": "AWAITING_TARGETING_DECISION",
             "first_seen": "2026-09-25",
             "decide_by": "2026-10-09",
+            "why": "Newly measured in Search Console. It implies a place and names none, so it cannot be answered as typed, and nobody has yet decided whether this practice should answer it at all.",
+            "how_to_decide": "Either add a localized_variant row in data/search/target_queries.json whose \"localizes\" is this query and whose primaryPage is a page that genuinely answers it, or record targeting.targeted=false with \"why\" and \"so_what_happens_instead\". Until then blue_ocean_eligible is false, so no content generator may draft against it."
+          },
+          "lead_intent_tier": "T1_LOCAL_READY",
+          "lead_intent_method": "regex_classifier_on_query_string, scripts/queries/score_discovery_gap.mjs",
+          "occupancy": {
+            "verdict": "UNRESOLVABLE_WITHOUT_LOCATION",
+            "reason": "QUERY_IMPLIES_A_PLACE_AND_NAMES_NONE",
+            "openness_score": null,
+            "geo_resolvable": false,
+            "cited_hosts": [],
+            "observed_at": null,
+            "model": null,
+            "note": "Citations returned for this string are geographic noise, so an openness reading would be meaningless and \"not cited\" here is not open ground. The localized variant of this query is the governed, measurable target."
+          },
+          "blue_ocean_eligible": {
+            "eligible": false,
+            "reason": "AWAITING_TARGETING_DECISION",
+            "note": "Newly measured in Search Console. It implies a place and names none, so it cannot be answered as typed, and nobody has yet decided whether this practice should answer it at all."
+          }
+        },
+        {
+          "query": "black in person therapist near me",
+          "intent": "observed",
+          "primaryPage": "/black-therapist-memphis/",
+          "status": "discovered_from_gsc",
+          "provenance": "google_search_console query/page pair, joined by scripts/queries/score_discovery_gap.mjs",
+          "gsc_measured": {
+            "impressions": 1,
+            "clicks": 0,
+            "average_position": 11,
+            "window_start": null,
+            "window_end": null,
+            "source": "google_search_console"
+          },
+          "targeting": {
+            "targeted": null,
+            "decision": "AWAITING_TARGETING_DECISION",
+            "first_seen": "2026-11-10",
+            "decide_by": "2026-11-24",
             "why": "Newly measured in Search Console. It implies a place and names none, so it cannot be answered as typed, and nobody has yet decided whether this practice should answer it at all.",
             "how_to_decide": "Either add a localized_variant row in data/search/target_queries.json whose \"localizes\" is this query and whose primaryPage is a page that genuinely answers it, or record targeting.targeted=false with \"why\" and \"so_what_happens_instead\". Until then blue_ocean_eligible is false, so no content generator may draft against it."
           },
@@ -8261,6 +8369,46 @@
           }
         },
         {
+          "query": "nearest therapist near me",
+          "intent": "observed",
+          "primaryPage": "/resources/guides/how-to-choose-a-therapist-near-you/",
+          "status": "discovered_from_gsc",
+          "provenance": "google_search_console query/page pair, joined by scripts/queries/score_discovery_gap.mjs",
+          "gsc_measured": {
+            "impressions": 1,
+            "clicks": 0,
+            "average_position": 11,
+            "window_start": null,
+            "window_end": null,
+            "source": "google_search_console"
+          },
+          "targeting": {
+            "targeted": null,
+            "decision": "AWAITING_TARGETING_DECISION",
+            "first_seen": "2026-11-10",
+            "decide_by": "2026-11-24",
+            "why": "Newly measured in Search Console. It implies a place and names none, so it cannot be answered as typed, and nobody has yet decided whether this practice should answer it at all.",
+            "how_to_decide": "Either add a localized_variant row in data/search/target_queries.json whose \"localizes\" is this query and whose primaryPage is a page that genuinely answers it, or record targeting.targeted=false with \"why\" and \"so_what_happens_instead\". Until then blue_ocean_eligible is false, so no content generator may draft against it."
+          },
+          "lead_intent_tier": "T1_LOCAL_READY",
+          "lead_intent_method": "regex_classifier_on_query_string, scripts/queries/score_discovery_gap.mjs",
+          "occupancy": {
+            "verdict": "UNRESOLVABLE_WITHOUT_LOCATION",
+            "reason": "QUERY_IMPLIES_A_PLACE_AND_NAMES_NONE",
+            "openness_score": null,
+            "geo_resolvable": false,
+            "cited_hosts": [],
+            "observed_at": null,
+            "model": null,
+            "note": "Citations returned for this string are geographic noise, so an openness reading would be meaningless and \"not cited\" here is not open ground. The localized variant of this query is the governed, measurable target."
+          },
+          "blue_ocean_eligible": {
+            "eligible": false,
+            "reason": "AWAITING_TARGETING_DECISION",
+            "note": "Newly measured in Search Console. It implies a place and names none, so it cannot be answered as typed, and nobody has yet decided whether this practice should answer it at all."
+          }
+        },
+        {
           "query": "psychologists near me",
           "intent": "observed",
           "primaryPage": "/psychologist-vs-therapist-memphis/",
@@ -8619,6 +8767,35 @@
           }
         },
         {
+          "query": "which option makes sense if i need to book a california therapist quickly but i’m hesitant to emotionally reinvest unless the fit seems strong? i’m looking for someone who works with people navigating a new stage of life, offers online sessions, can see me within about a week, and has transparent pricing or takes my insurance—can you help me draft a short message to send to a few therapists and a checklist to decide after the first call/session so i don’t waste time?",
+          "intent": "observed",
+          "primaryPage": "/resources/guides/how-to-choose-a-therapist-near-you/",
+          "status": "discovered_from_gsc",
+          "provenance": "google_search_console query/page pair, joined by scripts/queries/score_discovery_gap.mjs",
+          "gsc_measured": {
+            "impressions": 1,
+            "clicks": 0,
+            "average_position": 3,
+            "window_start": null,
+            "window_end": null,
+            "source": "google_search_console"
+          },
+          "lead_intent_tier": "T1_LOCAL_READY",
+          "lead_intent_method": "regex_classifier_on_query_string, scripts/queries/score_discovery_gap.mjs",
+          "occupancy": {
+            "verdict": "UNMEASURED",
+            "reason": "NO_LIVE_OBSERVATION",
+            "openness_score": null,
+            "cited_hosts": [],
+            "observed_at": null,
+            "model": null
+          },
+          "blue_ocean_eligible": {
+            "eligible": true,
+            "reason": "UNMEASURED"
+          }
+        },
+        {
           "query": "christian therapists near me memphis",
           "intent": "localized_variant",
           "primaryPage": "/christian-therapist-memphis/",
@@ -8802,9 +8979,9 @@
           "status": "discovered_from_gsc",
           "provenance": "google_search_console query/page pair, joined by scripts/queries/score_discovery_gap.mjs",
           "gsc_measured": {
-            "impressions": 77,
-            "clicks": 1,
-            "average_position": 5.03,
+            "impressions": 124,
+            "clicks": 3,
+            "average_position": 4.43,
             "window_start": null,
             "window_end": null,
             "source": "google_search_console"
@@ -8847,9 +9024,9 @@
           "status": "discovered_from_gsc",
           "provenance": "google_search_console query/page pair, joined by scripts/queries/score_discovery_gap.mjs",
           "gsc_measured": {
-            "impressions": 55,
+            "impressions": 58,
             "clicks": 0,
-            "average_position": 5.93,
+            "average_position": 5.9,
             "window_start": null,
             "window_end": null,
             "source": "google_search_console"
@@ -8877,9 +9054,9 @@
           "status": "discovered_from_gsc",
           "provenance": "google_search_console query/page pair, joined by scripts/queries/score_discovery_gap.mjs",
           "gsc_measured": {
-            "impressions": 42,
+            "impressions": 50,
             "clicks": 1,
-            "average_position": 4.46,
+            "average_position": 9.21,
             "window_start": null,
             "window_end": null,
             "source": "google_search_console"
@@ -8917,45 +9094,15 @@
           }
         },
         {
-          "query": "monika hicks",
-          "intent": "observed",
-          "primaryPage": "/",
-          "status": "discovered_from_gsc",
-          "provenance": "google_search_console query/page pair, joined by scripts/queries/score_discovery_gap.mjs",
-          "gsc_measured": {
-            "impressions": 24,
-            "clicks": 1,
-            "average_position": 6.28,
-            "window_start": null,
-            "window_end": null,
-            "source": "google_search_console"
-          },
-          "lead_intent_tier": "T4_INFORMATIONAL",
-          "lead_intent_method": "regex_classifier_on_query_string, scripts/queries/score_discovery_gap.mjs",
-          "occupancy": {
-            "verdict": "UNMEASURED",
-            "reason": "NO_LIVE_OBSERVATION",
-            "openness_score": null,
-            "cited_hosts": [],
-            "observed_at": null,
-            "model": null
-          },
-          "blue_ocean_eligible": {
-            "eligible": false,
-            "reason": "BRAND_OR_PERSON_NAME_NAVIGATIONAL",
-            "note": "Surname-matched query. The live observer returns Hickory/Hicksville and unrelated Hicks practitioners for these; an OPEN verdict on them is noise, not open ground."
-          }
-        },
-        {
           "query": "black therapist memphis, tn",
           "intent": "observed",
           "primaryPage": "/",
           "status": "discovered_from_gsc",
           "provenance": "google_search_console query/page pair, joined by scripts/queries/score_discovery_gap.mjs",
           "gsc_measured": {
-            "impressions": 23,
+            "impressions": 24,
             "clicks": 0,
-            "average_position": 7.3,
+            "average_position": 7.79,
             "window_start": null,
             "window_end": null,
             "source": "google_search_console"
@@ -9022,15 +9169,45 @@
           }
         },
         {
+          "query": "monika hicks",
+          "intent": "observed",
+          "primaryPage": "/",
+          "status": "discovered_from_gsc",
+          "provenance": "google_search_console query/page pair, joined by scripts/queries/score_discovery_gap.mjs",
+          "gsc_measured": {
+            "impressions": 21,
+            "clicks": 1,
+            "average_position": 5.97,
+            "window_start": null,
+            "window_end": null,
+            "source": "google_search_console"
+          },
+          "lead_intent_tier": "T4_INFORMATIONAL",
+          "lead_intent_method": "regex_classifier_on_query_string, scripts/queries/score_discovery_gap.mjs",
+          "occupancy": {
+            "verdict": "UNMEASURED",
+            "reason": "NO_LIVE_OBSERVATION",
+            "openness_score": null,
+            "cited_hosts": [],
+            "observed_at": null,
+            "model": null
+          },
+          "blue_ocean_eligible": {
+            "eligible": false,
+            "reason": "BRAND_OR_PERSON_NAME_NAVIGATIONAL",
+            "note": "Surname-matched query. The live observer returns Hickory/Hicksville and unrelated Hicks practitioners for these; an OPEN verdict on them is noise, not open ground."
+          }
+        },
+        {
           "query": "hicks training",
           "intent": "observed",
           "primaryPage": "/corporate-speaking/",
           "status": "discovered_from_gsc",
           "provenance": "google_search_console query/page pair, joined by scripts/queries/score_discovery_gap.mjs",
           "gsc_measured": {
-            "impressions": 13,
+            "impressions": 14,
             "clicks": 0,
-            "average_position": 7.73,
+            "average_position": 7.72,
             "window_start": null,
             "window_end": null,
             "source": "google_search_console"
@@ -9087,38 +9264,9 @@
           "status": "discovered_from_gsc",
           "provenance": "google_search_console query/page pair, joined by scripts/queries/score_discovery_gap.mjs",
           "gsc_measured": {
-            "impressions": 10,
+            "impressions": 9,
             "clicks": 0,
-            "average_position": 6.7,
-            "window_start": null,
-            "window_end": null,
-            "source": "google_search_console"
-          },
-          "lead_intent_tier": "T4_INFORMATIONAL",
-          "lead_intent_method": "regex_classifier_on_query_string, scripts/queries/score_discovery_gap.mjs",
-          "occupancy": {
-            "verdict": "UNMEASURED",
-            "reason": "NO_LIVE_OBSERVATION",
-            "openness_score": null,
-            "cited_hosts": [],
-            "observed_at": null,
-            "model": null
-          },
-          "blue_ocean_eligible": {
-            "eligible": true,
-            "reason": "UNMEASURED"
-          }
-        },
-        {
-          "query": "black therapists",
-          "intent": "observed",
-          "primaryPage": "/black-therapist-memphis/",
-          "status": "discovered_from_gsc",
-          "provenance": "google_search_console query/page pair, joined by scripts/queries/score_discovery_gap.mjs",
-          "gsc_measured": {
-            "impressions": 5,
-            "clicks": 0,
-            "average_position": 7.2,
+            "average_position": 6.56,
             "window_start": null,
             "window_end": null,
             "source": "google_search_console"
@@ -9145,9 +9293,9 @@
           "status": "discovered_from_gsc",
           "provenance": "google_search_console query/page pair, joined by scripts/queries/score_discovery_gap.mjs",
           "gsc_measured": {
-            "impressions": 5,
+            "impressions": 8,
             "clicks": 0,
-            "average_position": 19.67,
+            "average_position": 16.83,
             "window_start": null,
             "window_end": null,
             "source": "google_search_console"
@@ -9224,6 +9372,35 @@
           "blue_ocean_eligible": {
             "eligible": false,
             "reason": "ALREADY_HELD_BY_US"
+          }
+        },
+        {
+          "query": "black therapists",
+          "intent": "observed",
+          "primaryPage": "/black-therapist-memphis/",
+          "status": "discovered_from_gsc",
+          "provenance": "google_search_console query/page pair, joined by scripts/queries/score_discovery_gap.mjs",
+          "gsc_measured": {
+            "impressions": 3,
+            "clicks": 0,
+            "average_position": 6.67,
+            "window_start": null,
+            "window_end": null,
+            "source": "google_search_console"
+          },
+          "lead_intent_tier": "T4_INFORMATIONAL",
+          "lead_intent_method": "regex_classifier_on_query_string, scripts/queries/score_discovery_gap.mjs",
+          "occupancy": {
+            "verdict": "UNMEASURED",
+            "reason": "NO_LIVE_OBSERVATION",
+            "openness_score": null,
+            "cited_hosts": [],
+            "observed_at": null,
+            "model": null
+          },
+          "blue_ocean_eligible": {
+            "eligible": true,
+            "reason": "UNMEASURED"
           }
         },
         {
@@ -9480,7 +9657,7 @@
           }
         },
         {
-          "query": "hicks's",
+          "query": "hicks counseling",
           "intent": "observed",
           "primaryPage": "/",
           "status": "discovered_from_gsc",
@@ -9488,7 +9665,7 @@
           "gsc_measured": {
             "impressions": 2,
             "clicks": 0,
-            "average_position": 1,
+            "average_position": 5,
             "window_start": null,
             "window_end": null,
             "source": "google_search_console"
@@ -10716,36 +10893,6 @@
           }
         },
         {
-          "query": "hicks counseling",
-          "intent": "observed",
-          "primaryPage": "/",
-          "status": "discovered_from_gsc",
-          "provenance": "google_search_console query/page pair, joined by scripts/queries/score_discovery_gap.mjs",
-          "gsc_measured": {
-            "impressions": 1,
-            "clicks": 0,
-            "average_position": 7,
-            "window_start": null,
-            "window_end": null,
-            "source": "google_search_console"
-          },
-          "lead_intent_tier": "T4_INFORMATIONAL",
-          "lead_intent_method": "regex_classifier_on_query_string, scripts/queries/score_discovery_gap.mjs",
-          "occupancy": {
-            "verdict": "UNMEASURED",
-            "reason": "NO_LIVE_OBSERVATION",
-            "openness_score": null,
-            "cited_hosts": [],
-            "observed_at": null,
-            "model": null
-          },
-          "blue_ocean_eligible": {
-            "eligible": false,
-            "reason": "BRAND_OR_PERSON_NAME_NAVIGATIONAL",
-            "note": "Surname-matched query. The live observer returns Hickory/Hicksville and unrelated Hicks practitioners for these; an OPEN verdict on them is noise, not open ground."
-          }
-        },
-        {
           "query": "hicks health",
           "intent": "observed",
           "primaryPage": "/",
@@ -10925,6 +11072,65 @@
             "eligible": false,
             "reason": "BRAND_OR_PERSON_NAME_NAVIGATIONAL",
             "note": "Surname-matched query. The live observer returns Hickory/Hicksville and unrelated Hicks practitioners for these; an OPEN verdict on them is noise, not open ground."
+          }
+        },
+        {
+          "query": "hicks's",
+          "intent": "observed",
+          "primaryPage": "/",
+          "status": "discovered_from_gsc",
+          "provenance": "google_search_console query/page pair, joined by scripts/queries/score_discovery_gap.mjs",
+          "gsc_measured": {
+            "impressions": 1,
+            "clicks": 0,
+            "average_position": 1,
+            "window_start": null,
+            "window_end": null,
+            "source": "google_search_console"
+          },
+          "lead_intent_tier": "T4_INFORMATIONAL",
+          "lead_intent_method": "regex_classifier_on_query_string, scripts/queries/score_discovery_gap.mjs",
+          "occupancy": {
+            "verdict": "UNMEASURED",
+            "reason": "NO_LIVE_OBSERVATION",
+            "openness_score": null,
+            "cited_hosts": [],
+            "observed_at": null,
+            "model": null
+          },
+          "blue_ocean_eligible": {
+            "eligible": false,
+            "reason": "BRAND_OR_PERSON_NAME_NAVIGATIONAL",
+            "note": "Surname-matched query. The live observer returns Hickory/Hicksville and unrelated Hicks practitioners for these; an OPEN verdict on them is noise, not open ground."
+          }
+        },
+        {
+          "query": "how to map key experts in a therapy area",
+          "intent": "observed",
+          "primaryPage": "/resources/guides/how-to-choose-a-therapist-near-you/",
+          "status": "discovered_from_gsc",
+          "provenance": "google_search_console query/page pair, joined by scripts/queries/score_discovery_gap.mjs",
+          "gsc_measured": {
+            "impressions": 1,
+            "clicks": 0,
+            "average_position": 20,
+            "window_start": null,
+            "window_end": null,
+            "source": "google_search_console"
+          },
+          "lead_intent_tier": "T4_INFORMATIONAL",
+          "lead_intent_method": "regex_classifier_on_query_string, scripts/queries/score_discovery_gap.mjs",
+          "occupancy": {
+            "verdict": "UNMEASURED",
+            "reason": "NO_LIVE_OBSERVATION",
+            "openness_score": null,
+            "cited_hosts": [],
+            "observed_at": null,
+            "model": null
+          },
+          "blue_ocean_eligible": {
+            "eligible": true,
+            "reason": "UNMEASURED"
           }
         },
         {
@@ -11552,6 +11758,35 @@
           }
         },
         {
+          "query": "online therapy in tennessee",
+          "intent": "observed",
+          "primaryPage": "/resources/guides/online-therapy-memphis-how-virtual-sessions-work/",
+          "status": "discovered_from_gsc",
+          "provenance": "google_search_console query/page pair, joined by scripts/queries/score_discovery_gap.mjs",
+          "gsc_measured": {
+            "impressions": 1,
+            "clicks": 0,
+            "average_position": 21,
+            "window_start": null,
+            "window_end": null,
+            "source": "google_search_console"
+          },
+          "lead_intent_tier": "T4_INFORMATIONAL",
+          "lead_intent_method": "regex_classifier_on_query_string, scripts/queries/score_discovery_gap.mjs",
+          "occupancy": {
+            "verdict": "UNMEASURED",
+            "reason": "NO_LIVE_OBSERVATION",
+            "openness_score": null,
+            "cited_hosts": [],
+            "observed_at": null,
+            "model": null
+          },
+          "blue_ocean_eligible": {
+            "eligible": true,
+            "reason": "UNMEASURED"
+          }
+        },
+        {
           "query": "psychological practitioner",
           "intent": "observed",
           "primaryPage": "/psychologist-vs-therapist-memphis/",
@@ -12008,6 +12243,36 @@
           "query": "what is quiet anger",
           "intent": "observed",
           "primaryPage": "/resources/articles/the-quiet-anger-that-builds-when-you-are-always-the-reliable-one/",
+          "status": "discovered_from_gsc",
+          "provenance": "google_search_console query/page pair, joined by scripts/queries/score_discovery_gap.mjs",
+          "gsc_measured": {
+            "impressions": 1,
+            "clicks": 0,
+            "average_position": 1,
+            "window_start": null,
+            "window_end": null,
+            "source": "google_search_console"
+          },
+          "lead_intent_tier": "T4_INFORMATIONAL",
+          "lead_intent_method": "regex_classifier_on_query_string, scripts/queries/score_discovery_gap.mjs",
+          "occupancy": {
+            "verdict": "UNMEASURED",
+            "reason": "NO_LIVE_OBSERVATION",
+            "openness_score": null,
+            "cited_hosts": [],
+            "observed_at": null,
+            "model": null
+          },
+          "blue_ocean_eligible": {
+            "eligible": false,
+            "reason": "NO_SERVICE_OR_LOCATION_ANCHOR",
+            "note": "The observer has nothing to anchor retrieval to, so its citation set does not describe this practice's competitive ground."
+          }
+        },
+        {
+          "query": "yes difficult",
+          "intent": "observed",
+          "primaryPage": "/resources/articles/when-you-keep-saying-yes/",
           "status": "discovered_from_gsc",
           "provenance": "google_search_console query/page pair, joined by scripts/queries/score_discovery_gap.mjs",
           "gsc_measured": {
@@ -12594,7 +12859,7 @@
         }
       ],
       "discovery_gap_pass": {
-        "at": "2026-11-06T15:45:31.814Z",
+        "at": "2026-11-10T15:44:36.450Z",
         "by": "scripts/queries/score_discovery_gap.mjs",
         "why": "The observer read a 7-query hand-written list while Search Console reported 46 queries that actually put this practice in front of someone. The measured list is now the target list, ordered so the observer spends its 25-query budget on the queries a client arrives through.",
         "expansion_sources": [
@@ -12627,7 +12892,10 @@
             "in person black therapist near me",
             "therapist near me black",
             "therapist near me black female",
-            "therapy near me"
+            "therapy near me",
+            "addiction therapy near me",
+            "black in person therapist near me",
+            "nearest therapist near me"
           ],
           "window_days": 14,
           "why": "A query that implies a place and names none cannot be answered as typed. These arrived from a Search Console refresh nobody reviewed, so they are measured but not admitted: blue_ocean_eligible is false and no generator may draft against them until a localized variant or a recorded non-target decision exists.",
@@ -12657,17 +12925,17 @@
           "not_measured": "search volume, keyword difficulty, organic rank. The observer says so itself: rankVerified is false on every observation."
         },
         "counts": {
-          "total_targets": 179,
-          "added_this_pass": 0,
+          "total_targets": 186,
+          "added_this_pass": 7,
           "with_openness_reading": 16,
           "lead_intent": {
-            "T1_LOCAL_READY": 51,
-            "T4_INFORMATIONAL": 128
+            "T1_LOCAL_READY": 55,
+            "T4_INFORMATIONAL": 131
           },
           "occupancy": {
-            "UNRESOLVABLE_WITHOUT_LOCATION": 42,
+            "UNRESOLVABLE_WITHOUT_LOCATION": 45,
             "HELD_BY_US": 9,
-            "UNMEASURED": 121,
+            "UNMEASURED": 125,
             "CONTESTED": 7
           }
         }
@@ -12675,16 +12943,16 @@
     },
     "freeWins": {
       "schemaVersion": "1.0.0",
-      "generatedAt": "2026-11-10T15:25:14.995Z",
+      "generatedAt": "2026-11-11T15:25:51.595Z",
       "providerState": "CONNECTED",
       "items": [
         {
           "type": "STRIKING_DISTANCE",
           "query": "black therapist memphis tn",
           "page": "https://www.hicksconsulting.org/black-therapist-memphis/",
-          "position": 8,
-          "impressions": 42,
-          "ctr": 0.023809523809523808,
+          "position": 8.116279069767442,
+          "impressions": 43,
+          "ctr": 0.046511627906976744,
           "recommendedAction": "Improve answer alignment, title/snippet, and supporting internal links without changing page identity.",
           "confidence": "high"
         },
@@ -12693,8 +12961,8 @@
           "query": "black therapist memphis tn",
           "page": "https://www.hicksconsulting.org/black-therapist-memphis/",
           "expectedPage": "/",
-          "position": 8,
-          "impressions": 42,
+          "position": 8.116279069767442,
+          "impressions": 43,
           "recommendedAction": "Strengthen query ownership and internal links toward the governed primary page.",
           "confidence": "high"
         },
@@ -12792,7 +13060,7 @@
           "type": "STRIKING_DISTANCE",
           "query": "black therapist memphis, tn",
           "page": "https://www.hicksconsulting.org/black-therapist-memphis/",
-          "position": 7.904761904761905,
+          "position": 8,
           "impressions": 21,
           "ctr": 0,
           "recommendedAction": "Improve answer alignment, title/snippet, and supporting internal links without changing page identity.",
@@ -12803,7 +13071,7 @@
           "query": "black therapist memphis, tn",
           "page": "https://www.hicksconsulting.org/black-therapist-memphis/",
           "expectedPage": "/",
-          "position": 7.904761904761905,
+          "position": 8,
           "impressions": 21,
           "recommendedAction": "Strengthen query ownership and internal links toward the governed primary page.",
           "confidence": "high"
@@ -12863,8 +13131,8 @@
           "query": "hicks consulting",
           "page": "https://www.hicksconsulting.org/corporate-speaking/",
           "expectedPage": "/",
-          "position": 2.894736842105263,
-          "impressions": 19,
+          "position": 2.611111111111111,
+          "impressions": 18,
           "recommendedAction": "Strengthen query ownership and internal links toward the governed primary page.",
           "confidence": "high"
         },
@@ -13031,9 +13299,29 @@
         {
           "type": "WRONG_PAGE_RANKING",
           "query": "hicks counseling",
+          "page": "https://www.hicksconsulting.org/anxiety-therapist-memphis/",
+          "expectedPage": "/",
+          "position": 9,
+          "impressions": 1,
+          "recommendedAction": "Strengthen query ownership and internal links toward the governed primary page.",
+          "confidence": "high"
+        },
+        {
+          "type": "WRONG_PAGE_RANKING",
+          "query": "hicks counseling",
           "page": "https://www.hicksconsulting.org/contact/",
           "expectedPage": "/",
           "position": 7,
+          "impressions": 1,
+          "recommendedAction": "Strengthen query ownership and internal links toward the governed primary page.",
+          "confidence": "high"
+        },
+        {
+          "type": "WRONG_PAGE_RANKING",
+          "query": "hicks counseling",
+          "page": "https://www.hicksconsulting.org/questions/counselor-cordova-tn-online/",
+          "expectedPage": "/",
+          "position": 3,
           "impressions": 1,
           "recommendedAction": "Strengthen query ownership and internal links toward the governed primary page.",
           "confidence": "high"
@@ -13052,8 +13340,8 @@
           "type": "STRIKING_DISTANCE",
           "query": "hicks training",
           "page": "https://www.hicksconsulting.org/corporate-speaking/",
-          "position": 7.166666666666667,
-          "impressions": 12,
+          "position": 7.533333333333333,
+          "impressions": 15,
           "ctr": 0,
           "recommendedAction": "Improve answer alignment, title/snippet, and supporting internal links without changing page identity.",
           "confidence": "high"
@@ -13080,11 +13368,21 @@
         },
         {
           "type": "WRONG_PAGE_RANKING",
+          "query": "mental health therapy near me",
+          "page": "https://www.hicksconsulting.org/",
+          "expectedPage": "/therapist-near-me-memphis/",
+          "position": 88,
+          "impressions": 1,
+          "recommendedAction": "Strengthen query ownership and internal links toward the governed primary page.",
+          "confidence": "high"
+        },
+        {
+          "type": "WRONG_PAGE_RANKING",
           "query": "monika hicks",
           "page": "https://www.hicksconsulting.org/about/",
           "expectedPage": "/",
-          "position": 7,
-          "impressions": 1,
+          "position": 4.5,
+          "impressions": 2,
           "recommendedAction": "Strengthen query ownership and internal links toward the governed primary page.",
           "confidence": "high"
         },
@@ -13193,8 +13491,18 @@
           "query": "online therapy memphis",
           "page": "https://www.hicksconsulting.org/questions/lcsw-therapist-memphis/",
           "expectedPage": "/therapy/",
-          "position": 12,
-          "impressions": 2,
+          "position": 13,
+          "impressions": 3,
+          "recommendedAction": "Strengthen query ownership and internal links toward the governed primary page.",
+          "confidence": "high"
+        },
+        {
+          "type": "WRONG_PAGE_RANKING",
+          "query": "online therapy memphis",
+          "page": "https://www.hicksconsulting.org/resources/guides/online-therapy-memphis-how-virtual-sessions-work/",
+          "expectedPage": "/therapy/",
+          "position": 10,
+          "impressions": 1,
           "recommendedAction": "Strengthen query ownership and internal links toward the governed primary page.",
           "confidence": "high"
         },
@@ -13204,7 +13512,7 @@
           "page": "https://www.hicksconsulting.org/",
           "expectedPage": "/therapist-near-me-memphis/",
           "position": 25,
-          "impressions": 1,
+          "impressions": 2,
           "recommendedAction": "Strengthen query ownership and internal links toward the governed primary page.",
           "confidence": "high"
         },
@@ -13228,7 +13536,7 @@
     },
     "providerHealth": {
       "schemaVersion": "2.0.0",
-      "generatedAt": "2026-11-10T15:25:14.995Z",
+      "generatedAt": "2026-11-11T15:25:51.595Z",
       "truthBoundary": "Live web-search observations are evidence of web surfacing/citations, not verified organic rank, and a 0% citation rate is only meaningful for queries the provider actually answered. GSC average position is the authoritative Google-owned performance metric available to this system.",
       "providers": {
         "openrouter_web_search": {
@@ -13278,7 +13586,7 @@
     },
     "queryObservations": {
       "schemaVersion": "2.1.0",
-      "generatedAt": "2026-11-10T15:25:14.995Z",
+      "generatedAt": "2026-11-11T15:25:51.595Z",
       "providerState": "DISABLED_BY_OWNER_POLICY",
       "provider": "openrouter_web_search",
       "stop": {
@@ -13291,24 +13599,21 @@
     },
     "searchActions": {
       "schemaVersion": "2.0.0",
-      "generatedAt": "2026-11-10T15:25:14.995Z",
+      "generatedAt": "2026-11-11T15:25:51.595Z",
       "policy": "Hicks may autonomously apply bounded technical/search-alignment repairs. Substantive clinical claims and unsupported treatment assertions are never auto-generated from competitor content.",
       "items": [
         {
-          "query": "black therapist near me",
+          "query": "black mental health therapist near me",
           "primaryPage": "/black-therapist-memphis/",
-          "status": "CANNIBALIZATION_REVIEW",
-          "reasons": [
-            "MULTIPLE_HICKS_PAGES_FOR_QUERY"
-          ],
+          "status": "OBSERVED",
+          "reasons": [],
           "evidence": {
             "groundedSiteSurfaced": null,
             "groundedProviderAnswered": false,
-            "gscImpressions": 4,
+            "gscImpressions": 13,
             "gscClicks": 0,
-            "gscAveragePosition": 4.83,
+            "gscAveragePosition": 8.77,
             "gscPages": [
-              "/",
               "/black-therapist-memphis/"
             ],
             "competitorUrls": []
@@ -13327,25 +13632,6 @@
             "gscImpressions": 8,
             "gscClicks": 0,
             "gscAveragePosition": 6.13,
-            "gscPages": [
-              "/black-therapist-memphis/"
-            ],
-            "competitorUrls": []
-          },
-          "safeRepairEligible": false,
-          "recommendedAction": "Observe or route to content/technical review; do not invent a ranking win."
-        },
-        {
-          "query": "black mental health therapist near me",
-          "primaryPage": "/black-therapist-memphis/",
-          "status": "OBSERVED",
-          "reasons": [],
-          "evidence": {
-            "groundedSiteSurfaced": null,
-            "groundedProviderAnswered": false,
-            "gscImpressions": 13,
-            "gscClicks": 0,
-            "gscAveragePosition": 8.77,
             "gscPages": [
               "/black-therapist-memphis/"
             ],
@@ -13416,18 +13702,22 @@
           "recommendedAction": "Observe or route to content/technical review; do not invent a ranking win."
         },
         {
-          "query": "african american therapists near me",
+          "query": "african american psychologist near me",
           "primaryPage": "/black-therapist-memphis/",
-          "status": "OBSERVED",
-          "reasons": [],
+          "status": "CANNIBALIZATION_REVIEW",
+          "reasons": [
+            "MULTIPLE_HICKS_PAGES_FOR_QUERY",
+            "AVERAGE_POSITION_OUTSIDE_TOP_10"
+          ],
           "evidence": {
             "groundedSiteSurfaced": null,
             "groundedProviderAnswered": false,
-            "gscImpressions": 1,
+            "gscImpressions": 4,
             "gscClicks": 0,
-            "gscAveragePosition": 9,
+            "gscAveragePosition": 16.5,
             "gscPages": [
-              "/black-therapist-memphis/"
+              "/black-therapist-memphis/",
+              "/questions/african-american-psychologist-near-me/"
             ],
             "competitorUrls": []
           },
@@ -13435,19 +13725,20 @@
           "recommendedAction": "Observe or route to content/technical review; do not invent a ranking win."
         },
         {
-          "query": "black psychologist near me",
+          "query": "black therapist near me",
           "primaryPage": "/black-therapist-memphis/",
-          "status": "OBSERVED",
+          "status": "CANNIBALIZATION_REVIEW",
           "reasons": [
-            "AVERAGE_POSITION_OUTSIDE_TOP_10"
+            "MULTIPLE_HICKS_PAGES_FOR_QUERY"
           ],
           "evidence": {
             "groundedSiteSurfaced": null,
             "groundedProviderAnswered": false,
-            "gscImpressions": 2,
+            "gscImpressions": 4,
             "gscClicks": 0,
-            "gscAveragePosition": 12,
+            "gscAveragePosition": 4.83,
             "gscPages": [
+              "/",
               "/black-therapist-memphis/"
             ],
             "competitorUrls": []
@@ -13467,25 +13758,6 @@
             "gscClicks": 0,
             "gscAveragePosition": 0,
             "gscPages": [],
-            "competitorUrls": []
-          },
-          "safeRepairEligible": false,
-          "recommendedAction": "Observe or route to content/technical review; do not invent a ranking win."
-        },
-        {
-          "query": "black women therapist near me",
-          "primaryPage": "/black-therapist-memphis/",
-          "status": "OBSERVED",
-          "reasons": [],
-          "evidence": {
-            "groundedSiteSurfaced": null,
-            "groundedProviderAnswered": false,
-            "gscImpressions": 2,
-            "gscClicks": 0,
-            "gscAveragePosition": 3.5,
-            "gscPages": [
-              "/black-therapist-memphis/"
-            ],
             "competitorUrls": []
           },
           "safeRepairEligible": false,
@@ -13528,22 +13800,60 @@
           "recommendedAction": "Observe or route to content/technical review; do not invent a ranking win."
         },
         {
-          "query": "african american psychologist near me",
+          "query": "black psychologist near me",
           "primaryPage": "/black-therapist-memphis/",
-          "status": "CANNIBALIZATION_REVIEW",
+          "status": "OBSERVED",
           "reasons": [
-            "MULTIPLE_HICKS_PAGES_FOR_QUERY",
             "AVERAGE_POSITION_OUTSIDE_TOP_10"
           ],
           "evidence": {
             "groundedSiteSurfaced": null,
             "groundedProviderAnswered": false,
-            "gscImpressions": 4,
+            "gscImpressions": 2,
             "gscClicks": 0,
-            "gscAveragePosition": 16.5,
+            "gscAveragePosition": 12,
             "gscPages": [
-              "/black-therapist-memphis/",
-              "/questions/african-american-psychologist-near-me/"
+              "/black-therapist-memphis/"
+            ],
+            "competitorUrls": []
+          },
+          "safeRepairEligible": false,
+          "recommendedAction": "Observe or route to content/technical review; do not invent a ranking win."
+        },
+        {
+          "query": "black women therapist near me",
+          "primaryPage": "/black-therapist-memphis/",
+          "status": "OBSERVED",
+          "reasons": [],
+          "evidence": {
+            "groundedSiteSurfaced": null,
+            "groundedProviderAnswered": false,
+            "gscImpressions": 2,
+            "gscClicks": 0,
+            "gscAveragePosition": 3.5,
+            "gscPages": [
+              "/black-therapist-memphis/"
+            ],
+            "competitorUrls": []
+          },
+          "safeRepairEligible": false,
+          "recommendedAction": "Observe or route to content/technical review; do not invent a ranking win."
+        },
+        {
+          "query": "addiction therapy near me",
+          "primaryPage": "/",
+          "status": "OBSERVED",
+          "reasons": [
+            "AVERAGE_POSITION_OUTSIDE_TOP_10"
+          ],
+          "evidence": {
+            "groundedSiteSurfaced": null,
+            "groundedProviderAnswered": false,
+            "gscImpressions": 1,
+            "gscClicks": 0,
+            "gscAveragePosition": 41,
+            "gscPages": [
+              "/"
             ],
             "competitorUrls": []
           },
@@ -13562,6 +13872,25 @@
             "gscClicks": 0,
             "gscAveragePosition": 0,
             "gscPages": [],
+            "competitorUrls": []
+          },
+          "safeRepairEligible": false,
+          "recommendedAction": "Observe or route to content/technical review; do not invent a ranking win."
+        },
+        {
+          "query": "african american therapists near me",
+          "primaryPage": "/black-therapist-memphis/",
+          "status": "OBSERVED",
+          "reasons": [],
+          "evidence": {
+            "groundedSiteSurfaced": null,
+            "groundedProviderAnswered": false,
+            "gscImpressions": 1,
+            "gscClicks": 0,
+            "gscAveragePosition": 9,
+            "gscPages": [
+              "/black-therapist-memphis/"
+            ],
             "competitorUrls": []
           },
           "safeRepairEligible": false,
@@ -13700,6 +14029,27 @@
             "gscClicks": 0,
             "gscAveragePosition": 0,
             "gscPages": [],
+            "competitorUrls": []
+          },
+          "safeRepairEligible": false,
+          "recommendedAction": "Observe or route to content/technical review; do not invent a ranking win."
+        },
+        {
+          "query": "black in person therapist near me",
+          "primaryPage": "/black-therapist-memphis/",
+          "status": "OBSERVED",
+          "reasons": [
+            "AVERAGE_POSITION_OUTSIDE_TOP_10"
+          ],
+          "evidence": {
+            "groundedSiteSurfaced": null,
+            "groundedProviderAnswered": false,
+            "gscImpressions": 1,
+            "gscClicks": 0,
+            "gscAveragePosition": 11,
+            "gscPages": [
+              "/black-therapist-memphis/"
+            ],
             "competitorUrls": []
           },
           "safeRepairEligible": false,
@@ -13882,15 +14232,41 @@
         {
           "query": "mental health therapy near me",
           "primaryPage": "/therapist-near-me-memphis/",
-          "status": "UNKNOWN",
-          "reasons": [],
+          "status": "WRONG_PAGE",
+          "reasons": [
+            "WRONG_HICKS_PAGE_RANKING",
+            "AVERAGE_POSITION_OUTSIDE_TOP_10"
+          ],
           "evidence": {
             "groundedSiteSurfaced": null,
             "groundedProviderAnswered": false,
-            "gscImpressions": 0,
+            "gscImpressions": 1,
             "gscClicks": 0,
-            "gscAveragePosition": 0,
-            "gscPages": [],
+            "gscAveragePosition": 88,
+            "gscPages": [
+              "/"
+            ],
+            "competitorUrls": []
+          },
+          "safeRepairEligible": false,
+          "recommendedAction": "Observe or route to content/technical review; do not invent a ranking win."
+        },
+        {
+          "query": "nearest therapist near me",
+          "primaryPage": "/resources/guides/how-to-choose-a-therapist-near-you/",
+          "status": "OBSERVED",
+          "reasons": [
+            "AVERAGE_POSITION_OUTSIDE_TOP_10"
+          ],
+          "evidence": {
+            "groundedSiteSurfaced": null,
+            "groundedProviderAnswered": false,
+            "gscImpressions": 1,
+            "gscClicks": 0,
+            "gscAveragePosition": 11,
+            "gscPages": [
+              "/resources/guides/how-to-choose-a-therapist-near-you/"
+            ],
             "competitorUrls": []
           },
           "safeRepairEligible": false,
@@ -13958,7 +14334,7 @@
           "evidence": {
             "groundedSiteSurfaced": null,
             "groundedProviderAnswered": false,
-            "gscImpressions": 1,
+            "gscImpressions": 2,
             "gscClicks": 0,
             "gscAveragePosition": 25,
             "gscPages": [
@@ -14073,6 +14449,25 @@
             "gscClicks": 0,
             "gscAveragePosition": 0,
             "gscPages": [],
+            "competitorUrls": []
+          },
+          "safeRepairEligible": false,
+          "recommendedAction": "Observe or route to content/technical review; do not invent a ranking win."
+        },
+        {
+          "query": "which option makes sense if i need to book a california therapist quickly but i’m hesitant to emotionally reinvest unless the fit seems strong? i’m looking for someone who works with people navigating a new stage of life, offers online sessions, can see me within about a week, and has transparent pricing or takes my insurance—can you help me draft a short message to send to a few therapists and a checklist to decide after the first call/session so i don’t waste time?",
+          "primaryPage": "/resources/guides/how-to-choose-a-therapist-near-you/",
+          "status": "OBSERVED",
+          "reasons": [],
+          "evidence": {
+            "groundedSiteSurfaced": null,
+            "groundedProviderAnswered": false,
+            "gscImpressions": 1,
+            "gscClicks": 0,
+            "gscAveragePosition": 3,
+            "gscPages": [
+              "/resources/guides/how-to-choose-a-therapist-near-you/"
+            ],
             "competitorUrls": []
           },
           "safeRepairEligible": false,
@@ -14224,9 +14619,9 @@
           "evidence": {
             "groundedSiteSurfaced": null,
             "groundedProviderAnswered": false,
-            "gscImpressions": 124,
+            "gscImpressions": 121,
             "gscClicks": 3,
-            "gscAveragePosition": 4.43,
+            "gscAveragePosition": 4.42,
             "gscPages": [
               "/",
               "/coaching/",
@@ -14285,45 +14680,15 @@
           "evidence": {
             "groundedSiteSurfaced": null,
             "groundedProviderAnswered": false,
-            "gscImpressions": 50,
-            "gscClicks": 1,
-            "gscAveragePosition": 9.21,
+            "gscImpressions": 51,
+            "gscClicks": 2,
+            "gscAveragePosition": 9.23,
             "gscPages": [
               "/black-therapist-memphis/",
               "/",
               "/coaching/",
               "/corporate-speaking/",
               "/groups/",
-              "/therapy/"
-            ],
-            "competitorUrls": []
-          },
-          "safeRepairEligible": false,
-          "recommendedAction": "Observe or route to content/technical review; do not invent a ranking win."
-        },
-        {
-          "query": "monika hicks",
-          "primaryPage": "/",
-          "status": "CANNIBALIZATION_REVIEW",
-          "reasons": [
-            "MULTIPLE_HICKS_PAGES_FOR_QUERY"
-          ],
-          "evidence": {
-            "groundedSiteSurfaced": null,
-            "groundedProviderAnswered": false,
-            "gscImpressions": 21,
-            "gscClicks": 1,
-            "gscAveragePosition": 5.97,
-            "gscPages": [
-              "/",
-              "/about/",
-              "/black-therapist-memphis/",
-              "/coaching/",
-              "/corporate-speaking/",
-              "/groups/",
-              "/intake-quiz/",
-              "/resources/",
-              "/resources/articles/the-workplace-habits-that-keep-high-functioning-women-drained/",
               "/therapy/"
             ],
             "competitorUrls": []
@@ -14342,9 +14707,9 @@
           "evidence": {
             "groundedSiteSurfaced": null,
             "groundedProviderAnswered": false,
-            "gscImpressions": 24,
+            "gscImpressions": 25,
             "gscClicks": 0,
-            "gscAveragePosition": 7.79,
+            "gscAveragePosition": 7.5,
             "gscPages": [
               "/",
               "/black-therapist-memphis/"
@@ -14376,6 +14741,36 @@
           "recommendedAction": "Observe or route to content/technical review; do not invent a ranking win."
         },
         {
+          "query": "monika hicks",
+          "primaryPage": "/",
+          "status": "CANNIBALIZATION_REVIEW",
+          "reasons": [
+            "MULTIPLE_HICKS_PAGES_FOR_QUERY"
+          ],
+          "evidence": {
+            "groundedSiteSurfaced": null,
+            "groundedProviderAnswered": false,
+            "gscImpressions": 22,
+            "gscClicks": 1,
+            "gscAveragePosition": 5.72,
+            "gscPages": [
+              "/",
+              "/about/",
+              "/black-therapist-memphis/",
+              "/coaching/",
+              "/corporate-speaking/",
+              "/groups/",
+              "/intake-quiz/",
+              "/resources/",
+              "/resources/articles/the-workplace-habits-that-keep-high-functioning-women-drained/",
+              "/therapy/"
+            ],
+            "competitorUrls": []
+          },
+          "safeRepairEligible": false,
+          "recommendedAction": "Observe or route to content/technical review; do not invent a ranking win."
+        },
+        {
           "query": "hicks training",
           "primaryPage": "/corporate-speaking/",
           "status": "CANNIBALIZATION_REVIEW",
@@ -14385,9 +14780,9 @@
           "evidence": {
             "groundedSiteSurfaced": null,
             "groundedProviderAnswered": false,
-            "gscImpressions": 14,
+            "gscImpressions": 17,
             "gscClicks": 0,
-            "gscAveragePosition": 7.72,
+            "gscAveragePosition": 7.84,
             "gscPages": [
               "/corporate-speaking/",
               "/groups/",
@@ -14435,25 +14830,6 @@
           "recommendedAction": "Observe or route to content/technical review; do not invent a ranking win."
         },
         {
-          "query": "black therapists",
-          "primaryPage": "/black-therapist-memphis/",
-          "status": "OBSERVED",
-          "reasons": [],
-          "evidence": {
-            "groundedSiteSurfaced": null,
-            "groundedProviderAnswered": false,
-            "gscImpressions": 3,
-            "gscClicks": 0,
-            "gscAveragePosition": 6.67,
-            "gscPages": [
-              "/black-therapist-memphis/"
-            ],
-            "competitorUrls": []
-          },
-          "safeRepairEligible": false,
-          "recommendedAction": "Observe or route to content/technical review; do not invent a ranking win."
-        },
-        {
           "query": "online therapy memphis",
           "primaryPage": "/therapy/",
           "status": "CANNIBALIZATION_REVIEW",
@@ -14464,13 +14840,14 @@
           "evidence": {
             "groundedSiteSurfaced": null,
             "groundedProviderAnswered": false,
-            "gscImpressions": 8,
+            "gscImpressions": 10,
             "gscClicks": 0,
-            "gscAveragePosition": 16.83,
+            "gscAveragePosition": 15.67,
             "gscPages": [
               "/anxiety-therapist-memphis/",
               "/questions/grief-counseling-memphis-online/",
               "/questions/lcsw-therapist-memphis/",
+              "/resources/guides/online-therapy-memphis-how-virtual-sessions-work/",
               "/therapy/"
             ],
             "competitorUrls": []
@@ -14491,6 +14868,25 @@
             "gscImpressions": 3,
             "gscClicks": 0,
             "gscAveragePosition": 7,
+            "gscPages": [
+              "/black-therapist-memphis/"
+            ],
+            "competitorUrls": []
+          },
+          "safeRepairEligible": false,
+          "recommendedAction": "Observe or route to content/technical review; do not invent a ranking win."
+        },
+        {
+          "query": "black therapists",
+          "primaryPage": "/black-therapist-memphis/",
+          "status": "OBSERVED",
+          "reasons": [],
+          "evidence": {
+            "groundedSiteSurfaced": null,
+            "groundedProviderAnswered": false,
+            "gscImpressions": 3,
+            "gscClicks": 0,
+            "gscAveragePosition": 6.67,
             "gscPages": [
               "/black-therapist-memphis/"
             ],
@@ -14642,18 +15038,24 @@
           "recommendedAction": "Observe or route to content/technical review; do not invent a ranking win."
         },
         {
-          "query": "hicks's",
+          "query": "hicks counseling",
           "primaryPage": "/",
-          "status": "OBSERVED",
-          "reasons": [],
+          "status": "CANNIBALIZATION_REVIEW",
+          "reasons": [
+            "MULTIPLE_HICKS_PAGES_FOR_QUERY"
+          ],
           "evidence": {
             "groundedSiteSurfaced": null,
             "groundedProviderAnswered": false,
-            "gscImpressions": 1,
-            "gscClicks": 0,
-            "gscAveragePosition": 1,
+            "gscImpressions": 5,
+            "gscClicks": 1,
+            "gscAveragePosition": 4.6,
             "gscPages": [
-              "/"
+              "/",
+              "/anxiety-therapist-memphis/",
+              "/contact/",
+              "/questions/counselor-cordova-tn-online/",
+              "/questions/hicks-counseling/"
             ],
             "competitorUrls": []
           },
@@ -15344,28 +15746,6 @@
           "recommendedAction": "Observe or route to content/technical review; do not invent a ranking win."
         },
         {
-          "query": "hicks counseling",
-          "primaryPage": "/",
-          "status": "CANNIBALIZATION_REVIEW",
-          "reasons": [
-            "MULTIPLE_HICKS_PAGES_FOR_QUERY"
-          ],
-          "evidence": {
-            "groundedSiteSurfaced": null,
-            "groundedProviderAnswered": false,
-            "gscImpressions": 2,
-            "gscClicks": 0,
-            "gscAveragePosition": 5,
-            "gscPages": [
-              "/contact/",
-              "/questions/hicks-counseling/"
-            ],
-            "competitorUrls": []
-          },
-          "safeRepairEligible": false,
-          "recommendedAction": "Observe or route to content/technical review; do not invent a ranking win."
-        },
-        {
           "query": "hicks health",
           "primaryPage": "/",
           "status": "UNKNOWN",
@@ -15445,6 +15825,46 @@
             "gscClicks": 0,
             "gscAveragePosition": 0,
             "gscPages": [],
+            "competitorUrls": []
+          },
+          "safeRepairEligible": false,
+          "recommendedAction": "Observe or route to content/technical review; do not invent a ranking win."
+        },
+        {
+          "query": "hicks's",
+          "primaryPage": "/",
+          "status": "OBSERVED",
+          "reasons": [],
+          "evidence": {
+            "groundedSiteSurfaced": null,
+            "groundedProviderAnswered": false,
+            "gscImpressions": 1,
+            "gscClicks": 0,
+            "gscAveragePosition": 1,
+            "gscPages": [
+              "/"
+            ],
+            "competitorUrls": []
+          },
+          "safeRepairEligible": false,
+          "recommendedAction": "Observe or route to content/technical review; do not invent a ranking win."
+        },
+        {
+          "query": "how to map key experts in a therapy area",
+          "primaryPage": "/resources/guides/how-to-choose-a-therapist-near-you/",
+          "status": "OBSERVED",
+          "reasons": [
+            "AVERAGE_POSITION_OUTSIDE_TOP_10"
+          ],
+          "evidence": {
+            "groundedSiteSurfaced": null,
+            "groundedProviderAnswered": false,
+            "gscImpressions": 1,
+            "gscClicks": 0,
+            "gscAveragePosition": 20,
+            "gscPages": [
+              "/resources/guides/how-to-choose-a-therapist-near-you/"
+            ],
             "competitorUrls": []
           },
           "safeRepairEligible": false,
@@ -15797,6 +16217,27 @@
           "recommendedAction": "Observe or route to content/technical review; do not invent a ranking win."
         },
         {
+          "query": "online therapy in tennessee",
+          "primaryPage": "/resources/guides/online-therapy-memphis-how-virtual-sessions-work/",
+          "status": "OBSERVED",
+          "reasons": [
+            "AVERAGE_POSITION_OUTSIDE_TOP_10"
+          ],
+          "evidence": {
+            "groundedSiteSurfaced": null,
+            "groundedProviderAnswered": false,
+            "gscImpressions": 1,
+            "gscClicks": 0,
+            "gscAveragePosition": 21,
+            "gscPages": [
+              "/resources/guides/online-therapy-memphis-how-virtual-sessions-work/"
+            ],
+            "competitorUrls": []
+          },
+          "safeRepairEligible": false,
+          "recommendedAction": "Observe or route to content/technical review; do not invent a ranking win."
+        },
+        {
           "query": "psychological practitioner",
           "primaryPage": "/psychologist-vs-therapist-memphis/",
           "status": "UNKNOWN",
@@ -16067,6 +16508,25 @@
             "gscClicks": 0,
             "gscAveragePosition": 0,
             "gscPages": [],
+            "competitorUrls": []
+          },
+          "safeRepairEligible": false,
+          "recommendedAction": "Observe or route to content/technical review; do not invent a ranking win."
+        },
+        {
+          "query": "yes difficult",
+          "primaryPage": "/resources/articles/when-you-keep-saying-yes/",
+          "status": "OBSERVED",
+          "reasons": [],
+          "evidence": {
+            "groundedSiteSurfaced": null,
+            "groundedProviderAnswered": false,
+            "gscImpressions": 1,
+            "gscClicks": 0,
+            "gscAveragePosition": 1,
+            "gscPages": [
+              "/resources/articles/when-you-keep-saying-yes/"
+            ],
             "competitorUrls": []
           },
           "safeRepairEligible": false,
@@ -16518,7 +16978,7 @@
     },
     "searchRepairs": {
       "schemaVersion": "2.0.0",
-      "updatedAt": "2026-11-10T15:25:15.163Z",
+      "updatedAt": "2026-11-11T15:25:51.805Z",
       "repairs": [
         {
           "queries": [
