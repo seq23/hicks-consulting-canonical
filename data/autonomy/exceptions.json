@@ -928,6 +928,21 @@
       "createdAt": "2026-11-10T15:44:37.792Z",
       "blocksOtherWork": false,
       "clientActionRequired": false
+    },
+    {
+      "id": "exception-metadata-daily-028-4-1794493717568",
+      "candidateId": "daily-028-4",
+      "decision": "SKIPPED_UNSAFE_SEARCH_METADATA",
+      "findings": [
+        {
+          "code": "SEARCH_METADATA_UNRESOLVED",
+          "severity": "hard",
+          "route": "/resources/insights/how-to-stop-confusing-capacity-with-obligation-a-gentler-truth-to-consider/"
+        }
+      ],
+      "createdAt": "2026-11-12T14:28:37.568Z",
+      "blocksOtherWork": false,
+      "clientActionRequired": false
     }
   ]
 }
