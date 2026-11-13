@@ -958,6 +958,20 @@
       "createdAt": "2026-11-13T14:23:52.420Z",
       "blocksOtherWork": false,
       "clientActionRequired": false
+    },
+    {
+      "id": "exception-continuity-article-2027-01-19-93654414ce8a-1794584687178",
+      "candidateId": "continuity-article-2027-01-19-93654414ce8a",
+      "decision": "SKIPPED_PROHIBITED_ACTION",
+      "findings": [
+        {
+          "code": "LOW_ADMISSION_SCORE",
+          "severity": "advisory"
+        }
+      ],
+      "createdAt": "2026-11-13T15:44:47.114Z",
+      "blocksOtherWork": false,
+      "clientActionRequired": false
     }
   ]
 }

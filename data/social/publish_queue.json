@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-11T00:00:00.000Z",
+  "generatedAt": "2026-11-13T15:44:46.745Z",
   "publishMode": "full_safe_autonomy",
   "items": [
     {
@@ -40,7 +40,7 @@
       },
       "targetWords": 2500,
       "minimumWords": 2000,
-      "sourceSignalCount": 10,
+      "sourceSignalCount": 9,
       "score": 100,
       "publishMode": "full_safe_autonomy",
       "autonomyStatus": "SYSTEM_BLOCKED",
@@ -501,7 +501,7 @@
       },
       "targetWords": 1400,
       "minimumWords": 1120,
-      "sourceSignalCount": 229,
+      "sourceSignalCount": 215,
       "score": 100,
       "publishMode": "full_safe_autonomy",
       "autonomyStatus": "SYSTEM_BLOCKED",
@@ -559,8 +559,8 @@
       },
       "targetWords": 900,
       "minimumWords": 720,
-      "sourceSignalCount": 2,
-      "score": 40,
+      "sourceSignalCount": 1,
+      "score": 20,
       "publishMode": "full_safe_autonomy",
       "autonomyStatus": "SKIPPED_PROHIBITED_ACTION",
       "routineApprovalRequired": false,
@@ -4636,7 +4636,7 @@
         "What to do next",
         "When to seek support"
       ],
-      "llmPrompt": "Create a humanized insight draft for Hicks Consulting.\nTitle: What does a panic attack actually feel like?\nThis page exists to answer exactly one real question a person typed or said: \"What does a panic attack actually feel like?\". Answer THAT question in its own words in the first two sentences. Do not widen it into a general overview of General emotional wellness and intentional living; other pages on this site answer other questions in the same area and this one must not restate them.\nCadence: daily. Proposed future slot: 2027-03-08T13:00:00.000Z.\nMinimum words: 720. Target words: 900.\nUse an answer-first opening, exact-intent headings, concrete examples, and a checklist or decision framework where useful.\nWrite in a warm, grounded, specific voice. Do not diagnose, guarantee outcomes, or invent client stories.\nInclude these sections: Short answer; Who this is for; What it looks like; How to tell the difference; Common mistakes; What to do next; When to seek support.\nApproved conversion path after value is delivered: https://monika-hicks.clientsecure.me/.\nThis is an autonomous candidate. It must pass Safe Harbor, duplicate, source, cadence, build, and release validation before it can be scheduled.",
+      "llmPrompt": "Create a humanized insight draft for Hicks Consulting.\nTitle: What does a panic attack actually feel like?\nThis page exists to answer exactly one real question a person typed or said: \"What does a panic attack actually feel like?\". Answer THAT question, in that person's words, in the first two sentences. Do not broaden it into a general overview of General emotional wellness and intentional living; other pages on this site cover other questions in the same area and this one must not overlap them.\nMinimum words: 720. Target words: 900.\nWrite in a warm, grounded, specific voice. Do not diagnose. Do not guarantee outcomes. Do not invent client stories.\nInclude these sections: Short answer; Who this is for; What it looks like; How to tell the difference; Common mistakes; What to do next; When to seek support.\nApproved conversion path after value is delivered: https://monika-hicks.clientsecure.me/",
       "queueType": "content_brief"
     },
     {
@@ -4698,7 +4698,7 @@
         "What to do next",
         "When to seek support"
       ],
-      "llmPrompt": "Create a humanized insight draft for Hicks Consulting.\nTitle: What do I do when the person burning out is me and I am the boss?\nThis page exists to answer exactly one real question a person typed or said: \"What do I do when the person burning out is me and I am the boss?\". Answer THAT question in its own words in the first two sentences. Do not widen it into a general overview of Workplace emotional intelligence and mental health training; other pages on this site answer other questions in the same area and this one must not restate them.\nCadence: daily. Proposed future slot: 2027-03-09T13:00:00.000Z.\nMinimum words: 720. Target words: 900.\nUse an answer-first opening, exact-intent headings, concrete examples, and a checklist or decision framework where useful.\nWrite in a warm, grounded, specific voice. Do not diagnose, guarantee outcomes, or invent client stories.\nInclude these sections: Short answer; Who this is for; What it looks like; How to tell the difference; Common mistakes; What to do next; When to seek support.\nApproved conversion path after value is delivered: https://monika-hicks.clientsecure.me/.\nThis is an autonomous candidate. It must pass Safe Harbor, duplicate, source, cadence, build, and release validation before it can be scheduled.",
+      "llmPrompt": "Create a humanized insight draft for Hicks Consulting.\nTitle: What do I do when the person burning out is me and I am the boss?\nThis page exists to answer exactly one real question a person typed or said: \"What do I do when the person burning out is me and I am the boss?\". Answer THAT question, in that person's words, in the first two sentences. Do not broaden it into a general overview of Workplace emotional intelligence and mental health training; other pages on this site cover other questions in the same area and this one must not overlap them.\nMinimum words: 720. Target words: 900.\nWrite in a warm, grounded, specific voice. Do not diagnose. Do not guarantee outcomes. Do not invent client stories.\nInclude these sections: Short answer; Who this is for; What it looks like; How to tell the difference; Common mistakes; What to do next; When to seek support.\nApproved conversion path after value is delivered: https://monika-hicks.clientsecure.me/",
       "queueType": "content_brief"
     },
     {
@@ -4760,7 +4760,7 @@
         "What helps",
         "When to get support"
       ],
-      "llmPrompt": "Create a humanized article draft for Hicks Consulting.\nTitle: Why do I feel guilty for wanting an easier life?\nThis page exists to answer exactly one real question a person typed or said: \"Why do I feel guilty for wanting an easier life?\". Answer THAT question in its own words in the first two sentences. Do not widen it into a general overview of Black women healing beyond survival; other pages on this site answer other questions in the same area and this one must not restate them.\nCadence: weekly. Proposed future slot: 2027-03-09T13:00:00.000Z.\nMinimum words: 960. Target words: 1200.\nUse an answer-first opening, exact-intent headings, concrete examples, and a checklist or decision framework where useful.\nWrite in a warm, grounded, specific voice. Do not diagnose, guarantee outcomes, or invent client stories.\nInclude these sections: Short answer; What is actually happening; Why it shows up this way; What it is not; What usually makes it worse; What helps; When to get support.\nApproved conversion path after value is delivered: https://monika-hicks.clientsecure.me/.\nThis is an autonomous candidate. It must pass Safe Harbor, duplicate, source, cadence, build, and release validation before it can be scheduled.",
+      "llmPrompt": "Create a humanized article draft for Hicks Consulting.\nTitle: Why do I feel guilty for wanting an easier life?\nThis page exists to answer exactly one real question a person typed or said: \"Why do I feel guilty for wanting an easier life?\". Answer THAT question, in that person's words, in the first two sentences. Do not broaden it into a general overview of Black women healing beyond survival; other pages on this site cover other questions in the same area and this one must not overlap them.\nMinimum words: 960. Target words: 1200.\nWrite in a warm, grounded, specific voice. Do not diagnose. Do not guarantee outcomes. Do not invent client stories.\nInclude these sections: Short answer; What is actually happening; Why it shows up this way; What it is not; What usually makes it worse; What helps; When to get support.\nApproved conversion path after value is delivered: https://monika-hicks.clientsecure.me/",
       "queueType": "content_brief"
     },
     {
@@ -4822,7 +4822,7 @@
         "What to do next",
         "When to seek support"
       ],
-      "llmPrompt": "Create a humanized insight draft for Hicks Consulting.\nTitle: What is the difference between being tired and being burned out?\nThis page exists to answer exactly one real question a person typed or said: \"What is the difference between being tired and being burned out?\". Answer THAT question in its own words in the first two sentences. Do not widen it into a general overview of Burnout, boundaries, and over-functioning; other pages on this site answer other questions in the same area and this one must not restate them.\nCadence: daily. Proposed future slot: 2027-03-10T13:00:00.000Z.\nMinimum words: 720. Target words: 900.\nUse an answer-first opening, exact-intent headings, concrete examples, and a checklist or decision framework where useful.\nWrite in a warm, grounded, specific voice. Do not diagnose, guarantee outcomes, or invent client stories.\nInclude these sections: Short answer; Who this is for; What it looks like; How to tell the difference; Common mistakes; What to do next; When to seek support.\nApproved conversion path after value is delivered: https://monika-hicks.clientsecure.me/.\nThis is an autonomous candidate. It must pass Safe Harbor, duplicate, source, cadence, build, and release validation before it can be scheduled.",
+      "llmPrompt": "Create a humanized insight draft for Hicks Consulting.\nTitle: What is the difference between being tired and being burned out?\nThis page exists to answer exactly one real question a person typed or said: \"What is the difference between being tired and being burned out?\". Answer THAT question, in that person's words, in the first two sentences. Do not broaden it into a general overview of Burnout, boundaries, and over-functioning; other pages on this site cover other questions in the same area and this one must not overlap them.\nMinimum words: 720. Target words: 900.\nWrite in a warm, grounded, specific voice. Do not diagnose. Do not guarantee outcomes. Do not invent client stories.\nInclude these sections: Short answer; Who this is for; What it looks like; How to tell the difference; Common mistakes; What to do next; When to seek support.\nApproved conversion path after value is delivered: https://monika-hicks.clientsecure.me/",
       "queueType": "content_brief"
     },
     {
@@ -4883,7 +4883,69 @@
         "How to tell it is working",
         "Next step"
       ],
-      "llmPrompt": "Create a humanized insight draft for Hicks Consulting.\nTitle: How do I make friends again after a few years of just working?\nThis page exists to answer exactly one real question a person typed or said: \"How do I make friends again after a few years of just working?\". Answer THAT question in its own words in the first two sentences. Do not widen it into a general overview of Gen Z and millennial mental health language; other pages on this site answer other questions in the same area and this one must not restate them.\nCadence: daily. Proposed future slot: 2027-03-11T13:00:00.000Z.\nMinimum words: 720. Target words: 900.\nUse an answer-first opening, exact-intent headings, concrete examples, and a checklist or decision framework where useful.\nWrite in a warm, grounded, specific voice. Do not diagnose, guarantee outcomes, or invent client stories.\nInclude these sections: Short answer; Before you start; Step by step; What to say; What gets in the way; How to tell it is working; Next step.\nApproved conversion path after value is delivered: https://monika-hicks.clientsecure.me/.\nThis is an autonomous candidate. It must pass Safe Harbor, duplicate, source, cadence, build, and release validation before it can be scheduled.",
+      "llmPrompt": "Create a humanized insight draft for Hicks Consulting.\nTitle: How do I make friends again after a few years of just working?\nThis page exists to answer exactly one real question a person typed or said: \"How do I make friends again after a few years of just working?\". Answer THAT question, in that person's words, in the first two sentences. Do not broaden it into a general overview of Gen Z and millennial mental health language; other pages on this site cover other questions in the same area and this one must not overlap them.\nMinimum words: 720. Target words: 900.\nWrite in a warm, grounded, specific voice. Do not diagnose. Do not guarantee outcomes. Do not invent client stories.\nInclude these sections: Short answer; Before you start; Step by step; What to say; What gets in the way; How to tell it is working; Next step.\nApproved conversion path after value is delivered: https://monika-hicks.clientsecure.me/",
+      "queueType": "content_brief"
+    },
+    {
+      "id": "brief-faith_centered_support-faq",
+      "clusterId": "faith_centered_support",
+      "clusterTitle": "Faith-centered emotional support",
+      "contentType": "faq",
+      "title": "How does virtual therapy work if I do not have a private room at home?",
+      "suggestedRoute": "/resources/insights/how-does-virtual-therapy-work-if-i-do-not-have-a-private-room-at-home/",
+      "sections": [
+        "Short answer",
+        "Before you start",
+        "Step by step",
+        "What to say",
+        "What gets in the way",
+        "How to tell it is working",
+        "Next step"
+      ],
+      "demandPhrasing": {
+        "source": "config/demand_phrasings.json",
+        "familyId": "local_access",
+        "clusterId": null,
+        "form": "how",
+        "groundedIn": [
+          "data/search/target_queries.json lead_intent_tier T1/T2/T3 with gsc_measured.impressions > 0",
+          "data/search/free_wins.json"
+        ],
+        "evidence": [
+          {
+            "kind": "measured_queries",
+            "count": 36,
+            "impressions": 71,
+            "examples": [
+              "black mental health therapist near me",
+              "african american female therapist near me",
+              "african american therapist near me",
+              "black female therapist near me",
+              "black therapists near me"
+            ]
+          }
+        ]
+      },
+      "targetWords": 700,
+      "minimumWords": 560,
+      "sourceSignalCount": 2,
+      "score": 40,
+      "publishMode": "full_safe_autonomy",
+      "autonomyStatus": "DISCOVERED",
+      "routineApprovalRequired": false,
+      "llmGeneratedRequired": true,
+      "publicOnlyAfterApproval": false,
+      "createdAt": "2026-11-13T15:44:46.724Z",
+      "humanizationChecklist": [
+        "Use plain human language rather than generic therapy marketing copy.",
+        "Vary sentence rhythm and paragraph length.",
+        "Include concrete examples without inventing client stories.",
+        "Avoid exaggerated claims, guarantees, diagnosis, or pressure language.",
+        "Keep Monika Hicks / Hicks Consulting entity references consistent.",
+        "End with an approved conversion path only after value is delivered."
+      ],
+      "conversionPath": "https://monika-hicks.clientsecure.me/",
+      "llmPrompt": "Create a humanized faq draft for Hicks Consulting.\nTitle: How does virtual therapy work if I do not have a private room at home?\nThis page exists to answer exactly one real question a person typed or said: \"How does virtual therapy work if I do not have a private room at home?\". Answer THAT question, in that person's words, in the first two sentences. Do not broaden it into a general overview of Faith-centered emotional support; other pages on this site cover other questions in the same area and this one must not overlap them.\nMinimum words: 560. Target words: 700.\nWrite in a warm, grounded, specific voice. Do not diagnose. Do not guarantee outcomes. Do not invent client stories.\nInclude these sections: Short answer; Before you start; Step by step; What to say; What gets in the way; How to tell it is working; Next step.\nApproved conversion path after value is delivered: https://monika-hicks.clientsecure.me/",
       "queueType": "content_brief"
     }
   ]
