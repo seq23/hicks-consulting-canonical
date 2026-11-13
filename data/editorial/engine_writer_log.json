@@ -759,6 +759,42 @@
       "model": "gemini:gemini-3-flash-preview",
       "outcome": "SLOT_DRAFT_REJECTED",
       "reason": "first person found (I, me, my); the writer never speaks as the therapist"
+    },
+    {
+      "id": "weekly-028",
+      "route": "/resources/articles/how-to-stop-confusing-capacity-with-obligation/",
+      "scheduledAt": "2026-11-10T13:00:00.000Z",
+      "at": "2026-11-13T14:20:02.719Z",
+      "model": "gemini:gemini-3.5-flash-lite",
+      "outcome": "SLOT_DRAFT_REJECTED",
+      "reason": "the answer was not the JSON object asked for, with every key filled"
+    },
+    {
+      "id": "daily-028-2",
+      "route": "/resources/insights/how-to-stop-confusing-capacity-with-obligation-why-women-minimize-it/",
+      "scheduledAt": "2026-11-10T13:00:00.000Z",
+      "at": "2026-11-13T14:20:02.719Z",
+      "model": "gemini:gemini-3.5-flash-lite",
+      "outcome": "SLOT_DRAFT_REJECTED",
+      "reason": "every source is one other pages already cite; use sources specific to this topic"
+    },
+    {
+      "id": "daily-028-4",
+      "route": "/resources/insights/how-to-stop-confusing-capacity-with-obligation-a-gentler-truth-to-consider/",
+      "scheduledAt": "2026-11-12T13:00:00.000Z",
+      "at": "2026-11-13T14:20:02.719Z",
+      "model": "gemini:gemini-3.5-flash-lite",
+      "outcome": "SLOT_DRAFT_REJECTED",
+      "reason": "every source is one other pages already cite; use sources specific to this topic"
+    },
+    {
+      "id": "daily-028-5",
+      "route": "/resources/insights/how-to-stop-confusing-capacity-with-obligation-next-step-reflection/",
+      "scheduledAt": "2026-11-13T13:00:00.000Z",
+      "at": "2026-11-13T14:20:02.719Z",
+      "model": "gemini:gemini-3.5-flash-lite",
+      "outcome": "SLOT_DRAFT_REJECTED",
+      "reason": "every source is one other pages already cite; use sources specific to this topic; first person found (I, me, my); the writer never speaks as the therapist"
     }
   ]
 }

@@ -943,6 +943,21 @@
       "createdAt": "2026-11-12T14:28:37.568Z",
       "blocksOtherWork": false,
       "clientActionRequired": false
+    },
+    {
+      "id": "exception-metadata-daily-028-5-1794579832420",
+      "candidateId": "daily-028-5",
+      "decision": "SKIPPED_UNSAFE_SEARCH_METADATA",
+      "findings": [
+        {
+          "code": "SEARCH_METADATA_UNRESOLVED",
+          "severity": "hard",
+          "route": "/resources/insights/how-to-stop-confusing-capacity-with-obligation-next-step-reflection/"
+        }
+      ],
+      "createdAt": "2026-11-13T14:23:52.420Z",
+      "blocksOtherWork": false,
+      "clientActionRequired": false
     }
   ]
 }
