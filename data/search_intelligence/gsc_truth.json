@@ -2,33 +2,33 @@
   "schema_version": "1.0",
   "truth_source": "google_search_console_search_analytics",
   "property": "sc-domain:hicksconsulting.org",
-  "collected_at": "2026-11-13T15:24:43.127Z",
+  "collected_at": "2026-11-14T15:25:13.054Z",
   "state": "OK",
   "named_stop": null,
   "window": {
-    "start_date": "2026-10-14",
-    "end_date": "2026-11-10",
+    "start_date": "2026-10-15",
+    "end_date": "2026-11-11",
     "days": 28
   },
   "totals": {
-    "clicks": 33,
-    "impressions": 1038,
-    "ctr": 0.0318,
-    "position": 7.15
+    "clicks": 30,
+    "impressions": 1023,
+    "ctr": 0.0293,
+    "position": 7.18
   },
-  "row_count": 107,
-  "query_count": 61,
-  "page_count": 32,
-  "attributed_impressions": 441,
+  "row_count": 104,
+  "query_count": 59,
+  "page_count": 33,
+  "attributed_impressions": 430,
   "truth_boundary": "Rows are query x page for the window. Search Console withholds anonymised queries from query rows, so attributed_impressions is below totals.impressions; the property total is the headline number.",
   "rows": [
     {
       "query": "black therapist memphis tn",
       "page": "https://www.hicksconsulting.org/black-therapist-memphis/",
       "clicks": 2,
-      "impressions": 42,
-      "ctr": 0.0476,
-      "position": 8.17
+      "impressions": 38,
+      "ctr": 0.0526,
+      "position": 8.24
     },
     {
       "query": "hicks consulting llc",
@@ -47,6 +47,14 @@
       "position": 1
     },
     {
+      "query": "hicks consulting",
+      "page": "https://www.hicksconsulting.org/",
+      "clicks": 2,
+      "impressions": 22,
+      "ctr": 0.0909,
+      "position": 3
+    },
+    {
       "query": "black therapist memphis, tn",
       "page": "https://www.hicksconsulting.org/black-therapist-memphis/",
       "clicks": 0,
@@ -56,19 +64,11 @@
     },
     {
       "query": "hicks consulting",
-      "page": "https://www.hicksconsulting.org/",
-      "clicks": 2,
-      "impressions": 20,
-      "ctr": 0.1,
-      "position": 2.8
-    },
-    {
-      "query": "hicks consulting",
       "page": "https://www.hicksconsulting.org/corporate-speaking/",
       "clicks": 0,
-      "impressions": 19,
+      "impressions": 20,
       "ctr": 0,
-      "position": 2.74
+      "position": 2.7
     },
     {
       "query": "hicks consulting",
@@ -87,52 +87,60 @@
       "position": 7.53
     },
     {
-      "query": "black mental health therapist near me",
-      "page": "https://www.hicksconsulting.org/black-therapist-memphis/",
-      "clicks": 0,
-      "impressions": 13,
-      "ctr": 0,
-      "position": 8.77
-    },
-    {
       "query": "hicks consulting",
       "page": "https://www.hicksconsulting.org/coaching/",
       "clicks": 1,
-      "impressions": 13,
-      "ctr": 0.0769,
-      "position": 3.85
+      "impressions": 14,
+      "ctr": 0.0714,
+      "position": 4
     },
     {
       "query": "hicks consulting llc",
       "page": "https://www.hicksconsulting.org/",
       "clicks": 0,
-      "impressions": 13,
+      "impressions": 14,
       "ctr": 0,
-      "position": 2.08
+      "position": 2.21
     },
     {
       "query": "hicks consulting",
       "page": "https://www.hicksconsulting.org/groups/",
       "clicks": 0,
-      "impressions": 11,
+      "impressions": 12,
       "ctr": 0,
-      "position": 3.64
+      "position": 3.83
     },
     {
       "query": "hicks consulting",
       "page": "https://www.hicksconsulting.org/therapy/",
       "clicks": 0,
+      "impressions": 12,
+      "ctr": 0,
+      "position": 3.83
+    },
+    {
+      "query": "black mental health therapist near me",
+      "page": "https://www.hicksconsulting.org/black-therapist-memphis/",
+      "clicks": 0,
       "impressions": 11,
       "ctr": 0,
-      "position": 3.64
+      "position": 8.64
     },
     {
       "query": "hicks consulting llc",
       "page": "https://www.hicksconsulting.org/groups/",
       "clicks": 0,
-      "impressions": 10,
+      "impressions": 11,
       "ctr": 0,
-      "position": 6.3
+      "position": 6.09
+    },
+    {
+      "query": "african american female therapist near me",
+      "page": "https://www.hicksconsulting.org/black-therapist-memphis/",
+      "clicks": 0,
+      "impressions": 9,
+      "ctr": 0,
+      "position": 6.44
     },
     {
       "query": "hicks consulting",
@@ -151,28 +159,12 @@
       "position": 3.11
     },
     {
-      "query": "african american female therapist near me",
-      "page": "https://www.hicksconsulting.org/black-therapist-memphis/",
-      "clicks": 0,
-      "impressions": 8,
-      "ctr": 0,
-      "position": 6.13
-    },
-    {
       "query": "black therapist",
       "page": "https://www.hicksconsulting.org/black-therapist-memphis/",
       "clicks": 0,
       "impressions": 8,
       "ctr": 0,
-      "position": 6.5
-    },
-    {
-      "query": "african american therapist near me",
-      "page": "https://www.hicksconsulting.org/black-therapist-memphis/",
-      "clicks": 0,
-      "impressions": 7,
-      "ctr": 0,
-      "position": 8.43
+      "position": 7.25
     },
     {
       "query": "black female therapist near me",
@@ -191,28 +183,20 @@
       "position": 6.67
     },
     {
-      "query": "monika hicks",
-      "page": "https://www.hicksconsulting.org/",
-      "clicks": 1,
-      "impressions": 6,
-      "ctr": 0.1667,
-      "position": 3
-    },
-    {
-      "query": "black therapists near me",
+      "query": "african american therapist near me",
       "page": "https://www.hicksconsulting.org/black-therapist-memphis/",
       "clicks": 0,
       "impressions": 5,
       "ctr": 0,
-      "position": 7.6
+      "position": 8.4
     },
     {
-      "query": "black therapist memphis tn",
+      "query": "monika hicks",
       "page": "https://www.hicksconsulting.org/",
       "clicks": 0,
-      "impressions": 4,
+      "impressions": 5,
       "ctr": 0,
-      "position": 7.25
+      "position": 3.4
     },
     {
       "query": "black therapist memphis, tn",
@@ -221,6 +205,14 @@
       "impressions": 4,
       "ctr": 0,
       "position": 7
+    },
+    {
+      "query": "hicks consulting llc",
+      "page": "https://www.hicksconsulting.org/corporate-speaking/",
+      "clicks": 0,
+      "impressions": 4,
+      "ctr": 0,
+      "position": 5.75
     },
     {
       "query": "hicks consulting llc",
@@ -239,36 +231,28 @@
       "position": 12.25
     },
     {
-      "query": "african american psychologist near me",
+      "query": "black therapist memphis tn",
+      "page": "https://www.hicksconsulting.org/",
+      "clicks": 0,
+      "impressions": 3,
+      "ctr": 0,
+      "position": 9.33
+    },
+    {
+      "query": "black therapists near me",
       "page": "https://www.hicksconsulting.org/black-therapist-memphis/",
       "clicks": 0,
       "impressions": 3,
       "ctr": 0,
-      "position": 8
+      "position": 8.33
     },
     {
-      "query": "black mental health therapist",
-      "page": "https://www.hicksconsulting.org/black-therapist-memphis/",
+      "query": "grief counseling memphis tn",
+      "page": "https://www.hicksconsulting.org/questions/grief-counseling-memphis-online/",
       "clicks": 0,
       "impressions": 3,
       "ctr": 0,
-      "position": 7
-    },
-    {
-      "query": "black therapists",
-      "page": "https://www.hicksconsulting.org/black-therapist-memphis/",
-      "clicks": 0,
-      "impressions": 3,
-      "ctr": 0,
-      "position": 6.67
-    },
-    {
-      "query": "hicks consulting llc",
-      "page": "https://www.hicksconsulting.org/corporate-speaking/",
-      "clicks": 0,
-      "impressions": 3,
-      "ctr": 0,
-      "position": 6.33
+      "position": 44.33
     },
     {
       "query": "monika hicks",
@@ -303,6 +287,14 @@
       "position": 9.67
     },
     {
+      "query": "african american psychologist near me",
+      "page": "https://www.hicksconsulting.org/black-therapist-memphis/",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 7.5
+    },
+    {
       "query": "anxiety treatment memphis",
       "page": "https://www.hicksconsulting.org/anxiety-therapist-memphis/",
       "clicks": 0,
@@ -311,44 +303,12 @@
       "position": 32
     },
     {
-      "query": "black counselors near me",
+      "query": "black therapists",
       "page": "https://www.hicksconsulting.org/black-therapist-memphis/",
       "clicks": 0,
       "impressions": 2,
       "ctr": 0,
-      "position": 6
-    },
-    {
-      "query": "black psychologist near me",
-      "page": "https://www.hicksconsulting.org/black-therapist-memphis/",
-      "clicks": 0,
-      "impressions": 2,
-      "ctr": 0,
-      "position": 12
-    },
-    {
-      "query": "black therapist near me",
-      "page": "https://www.hicksconsulting.org/black-therapist-memphis/",
-      "clicks": 0,
-      "impressions": 2,
-      "ctr": 0,
-      "position": 7.5
-    },
-    {
-      "query": "black women therapist near me",
-      "page": "https://www.hicksconsulting.org/black-therapist-memphis/",
-      "clicks": 0,
-      "impressions": 2,
-      "ctr": 0,
-      "position": 3.5
-    },
-    {
-      "query": "grief counseling memphis tn",
-      "page": "https://www.hicksconsulting.org/questions/grief-counseling-memphis-online/",
-      "clicks": 0,
-      "impressions": 2,
-      "ctr": 0,
-      "position": 46
+      "position": 7
     },
     {
       "query": "hicks",
@@ -365,6 +325,14 @@
       "impressions": 2,
       "ctr": 0,
       "position": 7.5
+    },
+    {
+      "query": "hicks consulting llc",
+      "page": "https://www.hicksconsulting.org/coaching/",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 4.5
     },
     {
       "query": "monika hicks",
@@ -439,14 +407,6 @@
       "position": 41
     },
     {
-      "query": "african american female therapist",
-      "page": "https://www.hicksconsulting.org/black-therapist-memphis/",
-      "clicks": 0,
-      "impressions": 1,
-      "ctr": 0,
-      "position": 15
-    },
-    {
       "query": "african american psychologist near me",
       "page": "https://www.hicksconsulting.org/questions/african-american-psychologist-near-me/",
       "clicks": 0,
@@ -463,14 +423,6 @@
       "position": 10
     },
     {
-      "query": "african american therapists near me",
-      "page": "https://www.hicksconsulting.org/black-therapist-memphis/",
-      "clicks": 0,
-      "impressions": 1,
-      "ctr": 0,
-      "position": 9
-    },
-    {
       "query": "black female psychologist near me",
       "page": "https://www.hicksconsulting.org/black-therapist-memphis/",
       "clicks": 0,
@@ -485,6 +437,22 @@
       "impressions": 1,
       "ctr": 0,
       "position": 11
+    },
+    {
+      "query": "black mental health therapist",
+      "page": "https://www.hicksconsulting.org/black-therapist-memphis/",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 7
+    },
+    {
+      "query": "black psychologist near me",
+      "page": "https://www.hicksconsulting.org/black-therapist-memphis/",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 12
     },
     {
       "query": "black therapist memphis tn",
@@ -527,6 +495,14 @@
       "position": 1
     },
     {
+      "query": "black therapist near me",
+      "page": "https://www.hicksconsulting.org/black-therapist-memphis/",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 8
+    },
+    {
       "query": "black therapist that accept medicaid near me",
       "page": "https://www.hicksconsulting.org/black-therapist-memphis/",
       "clicks": 0,
@@ -541,6 +517,14 @@
       "impressions": 1,
       "ctr": 0,
       "position": 6
+    },
+    {
+      "query": "black women therapist near me",
+      "page": "https://www.hicksconsulting.org/black-therapist-memphis/",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 1
     },
     {
       "query": "committed to recovery memphis tn",
@@ -608,19 +592,19 @@
     },
     {
       "query": "hicks consulting llc",
-      "page": "https://www.hicksconsulting.org/coaching/",
-      "clicks": 0,
-      "impressions": 1,
-      "ctr": 0,
-      "position": 5
-    },
-    {
-      "query": "hicks consulting llc",
       "page": "https://www.hicksconsulting.org/emergency-crisis-notice/",
       "clicks": 0,
       "impressions": 1,
       "ctr": 0,
       "position": 9
+    },
+    {
+      "query": "hicks consulting llc",
+      "page": "https://www.hicksconsulting.org/therapy/",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 4
     },
     {
       "query": "hicks counseling",
@@ -637,14 +621,6 @@
       "impressions": 1,
       "ctr": 0,
       "position": 9
-    },
-    {
-      "query": "hicks counseling",
-      "page": "https://www.hicksconsulting.org/contact/",
-      "clicks": 0,
-      "impressions": 1,
-      "ctr": 0,
-      "position": 7
     },
     {
       "query": "hicks counseling",
@@ -703,6 +679,14 @@
       "position": 10
     },
     {
+      "query": "intitle:\"black women coach\" (\"work with me\" or \"testimonials\" or \"client results\" or \"client stories\") -site:linkedin.com -site:facebook.com -site:instagram.com -site:youtube.com -site:tiktok.com -site:x.com -site:reddit.com -site:medium.com -site:.gov -site:.edu -\"what is\" -\"how to\" -vs",
+      "page": "https://www.hicksconsulting.org/resources/articles/what-black-women-deserve-from-support-that-is-actually-useful/",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 6
+    },
+    {
       "query": "is it one-to-one stress coaching providers",
       "page": "https://www.hicksconsulting.org/resources/guides/therapy-vs-coaching-vs-organizational-training/",
       "clicks": 0,
@@ -711,28 +695,12 @@
       "position": 6
     },
     {
-      "query": "janice hicks",
-      "page": "https://www.hicksconsulting.org/",
-      "clicks": 0,
-      "impressions": 1,
-      "ctr": 0,
-      "position": 2
-    },
-    {
       "query": "mental health therapy near me",
       "page": "https://www.hicksconsulting.org/",
       "clicks": 0,
       "impressions": 1,
       "ctr": 0,
       "position": 88
-    },
-    {
-      "query": "monika hicks",
-      "page": "https://www.hicksconsulting.org/black-therapist-memphis/",
-      "clicks": 0,
-      "impressions": 1,
-      "ctr": 0,
-      "position": 6
     },
     {
       "query": "monika hicks",
@@ -853,6 +821,14 @@
       "impressions": 1,
       "ctr": 0,
       "position": 10
+    },
+    {
+      "query": "what reliable workplace mental health programs provide clear pathways for coaching vs. clinical therapy?",
+      "page": "https://www.hicksconsulting.org/resources/guides/therapy-vs-coaching-vs-organizational-training/",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 4
     },
     {
       "query": "which option makes sense if i need to book a california therapist quickly but i’m hesitant to emotionally reinvest unless the fit seems strong? i’m looking for someone who works with people navigating a new stage of life, offers online sessions, can see me within about a week, and has transparent pricing or takes my insurance—can you help me draft a short message to send to a few therapists and a checklist to decide after the first call/session so i don’t waste time?",

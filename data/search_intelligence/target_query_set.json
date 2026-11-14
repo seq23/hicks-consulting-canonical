@@ -3,14 +3,14 @@
   "generated_from": "data/search_intelligence/gsc_truth.json",
   "property": "sc-domain:hicksconsulting.org",
   "window": {
-    "start_date": "2026-10-14",
-    "end_date": "2026-11-10",
+    "start_date": "2026-10-15",
+    "end_date": "2026-11-11",
     "days": 28
   },
-  "truth_collected_at": "2026-11-13T15:24:43.127Z",
+  "truth_collected_at": "2026-11-14T15:25:13.054Z",
   "measurement_rule": "Every target is a Search Console query row (source gsc_truth) with a positive 28-day impression count. Nothing unmeasured is admitted.",
-  "target_count": 61,
-  "impressions_total": 441,
+  "target_count": 59,
+  "impressions_total": 430,
   "dropped_count": 0,
   "dropped": [],
   "targets": [
@@ -19,22 +19,22 @@
       "source": "gsc_truth",
       "measurement": {
         "metric": "impressions_28d",
-        "value": 118,
-        "window": "2026-10-14..2026-11-10",
-        "collected_at": "2026-11-13T15:24:43.127Z"
+        "value": 124,
+        "window": "2026-10-15..2026-11-11",
+        "collected_at": "2026-11-14T15:25:13.054Z"
       },
-      "impressions": 118,
+      "impressions": 124,
       "clicks": 3,
-      "position": 3.48,
+      "position": 3.55,
       "landing_page": "https://www.hicksconsulting.org/",
       "pages": [
         {
           "page": "https://www.hicksconsulting.org/",
-          "impressions": 20
+          "impressions": 22
         },
         {
           "page": "https://www.hicksconsulting.org/corporate-speaking/",
-          "impressions": 19
+          "impressions": 20
         },
         {
           "page": "https://www.hicksconsulting.org/resources/",
@@ -42,15 +42,15 @@
         },
         {
           "page": "https://www.hicksconsulting.org/coaching/",
-          "impressions": 13
+          "impressions": 14
         },
         {
           "page": "https://www.hicksconsulting.org/groups/",
-          "impressions": 11
+          "impressions": 12
         },
         {
           "page": "https://www.hicksconsulting.org/therapy/",
-          "impressions": 11
+          "impressions": 12
         },
         {
           "page": "https://www.hicksconsulting.org/about/",
@@ -87,13 +87,13 @@
       "source": "gsc_truth",
       "measurement": {
         "metric": "impressions_28d",
-        "value": 58,
-        "window": "2026-10-14..2026-11-10",
-        "collected_at": "2026-11-13T15:24:43.127Z"
+        "value": 63,
+        "window": "2026-10-15..2026-11-11",
+        "collected_at": "2026-11-14T15:25:13.054Z"
       },
-      "impressions": 58,
+      "impressions": 63,
       "clicks": 0,
-      "position": 5.03,
+      "position": 4.95,
       "landing_page": "https://www.hicksconsulting.org/contact/",
       "pages": [
         {
@@ -102,30 +102,34 @@
         },
         {
           "page": "https://www.hicksconsulting.org/",
-          "impressions": 13
+          "impressions": 14
         },
         {
           "page": "https://www.hicksconsulting.org/groups/",
-          "impressions": 10
+          "impressions": 11
+        },
+        {
+          "page": "https://www.hicksconsulting.org/corporate-speaking/",
+          "impressions": 4
         },
         {
           "page": "https://www.hicksconsulting.org/privacy-policy/",
           "impressions": 4
         },
         {
-          "page": "https://www.hicksconsulting.org/corporate-speaking/",
-          "impressions": 3
+          "page": "https://www.hicksconsulting.org/coaching/",
+          "impressions": 2
         },
         {
           "page": "https://hicksconsulting.org/privacy-policy/",
           "impressions": 1
         },
         {
-          "page": "https://www.hicksconsulting.org/coaching/",
+          "page": "https://www.hicksconsulting.org/emergency-crisis-notice/",
           "impressions": 1
         },
         {
-          "page": "https://www.hicksconsulting.org/emergency-crisis-notice/",
+          "page": "https://www.hicksconsulting.org/therapy/",
           "impressions": 1
         }
       ]
@@ -135,22 +139,22 @@
       "source": "gsc_truth",
       "measurement": {
         "metric": "impressions_28d",
-        "value": 50,
-        "window": "2026-10-14..2026-11-10",
-        "collected_at": "2026-11-13T15:24:43.127Z"
+        "value": 45,
+        "window": "2026-10-15..2026-11-11",
+        "collected_at": "2026-11-14T15:25:13.054Z"
       },
-      "impressions": 50,
+      "impressions": 45,
       "clicks": 2,
-      "position": 8.24,
+      "position": 8.47,
       "landing_page": "https://www.hicksconsulting.org/black-therapist-memphis/",
       "pages": [
         {
           "page": "https://www.hicksconsulting.org/black-therapist-memphis/",
-          "impressions": 42
+          "impressions": 38
         },
         {
           "page": "https://www.hicksconsulting.org/",
-          "impressions": 4
+          "impressions": 3
         },
         {
           "page": "https://www.hicksconsulting.org/coaching/",
@@ -176,8 +180,8 @@
       "measurement": {
         "metric": "impressions_28d",
         "value": 24,
-        "window": "2026-10-14..2026-11-10",
-        "collected_at": "2026-11-13T15:24:43.127Z"
+        "window": "2026-10-15..2026-11-11",
+        "collected_at": "2026-11-14T15:25:13.054Z"
       },
       "impressions": 24,
       "clicks": 0,
@@ -200,8 +204,8 @@
       "measurement": {
         "metric": "impressions_28d",
         "value": 22,
-        "window": "2026-10-14..2026-11-10",
-        "collected_at": "2026-11-13T15:24:43.127Z"
+        "window": "2026-10-15..2026-11-11",
+        "collected_at": "2026-11-14T15:25:13.054Z"
       },
       "impressions": 22,
       "clicks": 0,
@@ -219,18 +223,18 @@
       "source": "gsc_truth",
       "measurement": {
         "metric": "impressions_28d",
-        "value": 22,
-        "window": "2026-10-14..2026-11-10",
-        "collected_at": "2026-11-13T15:24:43.127Z"
+        "value": 20,
+        "window": "2026-10-15..2026-11-11",
+        "collected_at": "2026-11-14T15:25:13.054Z"
       },
-      "impressions": 22,
-      "clicks": 1,
-      "position": 5.27,
+      "impressions": 20,
+      "clicks": 0,
+      "position": 5.45,
       "landing_page": "https://www.hicksconsulting.org/",
       "pages": [
         {
           "page": "https://www.hicksconsulting.org/",
-          "impressions": 6
+          "impressions": 5
         },
         {
           "page": "https://www.hicksconsulting.org/resources/articles/the-workplace-habits-that-keep-high-functioning-women-drained/",
@@ -257,10 +261,6 @@
           "impressions": 2
         },
         {
-          "page": "https://www.hicksconsulting.org/black-therapist-memphis/",
-          "impressions": 1
-        },
-        {
           "page": "https://www.hicksconsulting.org/intake-quiz/",
           "impressions": 1
         },
@@ -276,8 +276,8 @@
       "measurement": {
         "metric": "impressions_28d",
         "value": 17,
-        "window": "2026-10-14..2026-11-10",
-        "collected_at": "2026-11-13T15:24:43.127Z"
+        "window": "2026-10-15..2026-11-11",
+        "collected_at": "2026-11-14T15:25:13.054Z"
       },
       "impressions": 17,
       "clicks": 0,
@@ -303,18 +303,18 @@
       "source": "gsc_truth",
       "measurement": {
         "metric": "impressions_28d",
-        "value": 13,
-        "window": "2026-10-14..2026-11-10",
-        "collected_at": "2026-11-13T15:24:43.127Z"
+        "value": 11,
+        "window": "2026-10-15..2026-11-11",
+        "collected_at": "2026-11-14T15:25:13.054Z"
       },
-      "impressions": 13,
+      "impressions": 11,
       "clicks": 0,
-      "position": 8.77,
+      "position": 8.64,
       "landing_page": "https://www.hicksconsulting.org/black-therapist-memphis/",
       "pages": [
         {
           "page": "https://www.hicksconsulting.org/black-therapist-memphis/",
-          "impressions": 13
+          "impressions": 11
         }
       ]
     },
@@ -324,8 +324,8 @@
       "measurement": {
         "metric": "impressions_28d",
         "value": 11,
-        "window": "2026-10-14..2026-11-10",
-        "collected_at": "2026-11-13T15:24:43.127Z"
+        "window": "2026-10-15..2026-11-11",
+        "collected_at": "2026-11-14T15:25:13.054Z"
       },
       "impressions": 11,
       "clicks": 0,
@@ -359,18 +359,18 @@
       "source": "gsc_truth",
       "measurement": {
         "metric": "impressions_28d",
-        "value": 8,
-        "window": "2026-10-14..2026-11-10",
-        "collected_at": "2026-11-13T15:24:43.127Z"
+        "value": 9,
+        "window": "2026-10-15..2026-11-11",
+        "collected_at": "2026-11-14T15:25:13.054Z"
       },
-      "impressions": 8,
+      "impressions": 9,
       "clicks": 0,
-      "position": 6.13,
+      "position": 6.44,
       "landing_page": "https://www.hicksconsulting.org/black-therapist-memphis/",
       "pages": [
         {
           "page": "https://www.hicksconsulting.org/black-therapist-memphis/",
-          "impressions": 8
+          "impressions": 9
         }
       ]
     },
@@ -380,12 +380,12 @@
       "measurement": {
         "metric": "impressions_28d",
         "value": 8,
-        "window": "2026-10-14..2026-11-10",
-        "collected_at": "2026-11-13T15:24:43.127Z"
+        "window": "2026-10-15..2026-11-11",
+        "collected_at": "2026-11-14T15:25:13.054Z"
       },
       "impressions": 8,
       "clicks": 0,
-      "position": 6.5,
+      "position": 7.25,
       "landing_page": "https://www.hicksconsulting.org/black-therapist-memphis/",
       "pages": [
         {
@@ -395,33 +395,13 @@
       ]
     },
     {
-      "query": "african american therapist near me",
-      "source": "gsc_truth",
-      "measurement": {
-        "metric": "impressions_28d",
-        "value": 7,
-        "window": "2026-10-14..2026-11-10",
-        "collected_at": "2026-11-13T15:24:43.127Z"
-      },
-      "impressions": 7,
-      "clicks": 0,
-      "position": 8.43,
-      "landing_page": "https://www.hicksconsulting.org/black-therapist-memphis/",
-      "pages": [
-        {
-          "page": "https://www.hicksconsulting.org/black-therapist-memphis/",
-          "impressions": 7
-        }
-      ]
-    },
-    {
       "query": "black female therapist near me",
       "source": "gsc_truth",
       "measurement": {
         "metric": "impressions_28d",
         "value": 6,
-        "window": "2026-10-14..2026-11-10",
-        "collected_at": "2026-11-13T15:24:43.127Z"
+        "window": "2026-10-15..2026-11-11",
+        "collected_at": "2026-11-14T15:25:13.054Z"
       },
       "impressions": 6,
       "clicks": 0,
@@ -435,17 +415,17 @@
       ]
     },
     {
-      "query": "black therapists near me",
+      "query": "african american therapist near me",
       "source": "gsc_truth",
       "measurement": {
         "metric": "impressions_28d",
         "value": 5,
-        "window": "2026-10-14..2026-11-10",
-        "collected_at": "2026-11-13T15:24:43.127Z"
+        "window": "2026-10-15..2026-11-11",
+        "collected_at": "2026-11-14T15:25:13.054Z"
       },
       "impressions": 5,
       "clicks": 0,
-      "position": 7.6,
+      "position": 8.4,
       "landing_page": "https://www.hicksconsulting.org/black-therapist-memphis/",
       "pages": [
         {
@@ -459,13 +439,13 @@
       "source": "gsc_truth",
       "measurement": {
         "metric": "impressions_28d",
-        "value": 5,
-        "window": "2026-10-14..2026-11-10",
-        "collected_at": "2026-11-13T15:24:43.127Z"
+        "value": 4,
+        "window": "2026-10-15..2026-11-11",
+        "collected_at": "2026-11-14T15:25:13.054Z"
       },
-      "impressions": 5,
+      "impressions": 4,
       "clicks": 1,
-      "position": 4.6,
+      "position": 4,
       "landing_page": "https://www.hicksconsulting.org/",
       "pages": [
         {
@@ -474,10 +454,6 @@
         },
         {
           "page": "https://www.hicksconsulting.org/anxiety-therapist-memphis/",
-          "impressions": 1
-        },
-        {
-          "page": "https://www.hicksconsulting.org/contact/",
           "impressions": 1
         },
         {
@@ -491,37 +467,13 @@
       ]
     },
     {
-      "query": "african american psychologist near me",
-      "source": "gsc_truth",
-      "measurement": {
-        "metric": "impressions_28d",
-        "value": 4,
-        "window": "2026-10-14..2026-11-10",
-        "collected_at": "2026-11-13T15:24:43.127Z"
-      },
-      "impressions": 4,
-      "clicks": 0,
-      "position": 12.25,
-      "landing_page": "https://www.hicksconsulting.org/black-therapist-memphis/",
-      "pages": [
-        {
-          "page": "https://www.hicksconsulting.org/black-therapist-memphis/",
-          "impressions": 3
-        },
-        {
-          "page": "https://www.hicksconsulting.org/questions/african-american-psychologist-near-me/",
-          "impressions": 1
-        }
-      ]
-    },
-    {
       "query": "memphis negotiation training",
       "source": "gsc_truth",
       "measurement": {
         "metric": "impressions_28d",
         "value": 4,
-        "window": "2026-10-14..2026-11-10",
-        "collected_at": "2026-11-13T15:24:43.127Z"
+        "window": "2026-10-15..2026-11-11",
+        "collected_at": "2026-11-14T15:25:13.054Z"
       },
       "impressions": 4,
       "clicks": 0,
@@ -535,17 +487,41 @@
       ]
     },
     {
-      "query": "black mental health therapist",
+      "query": "african american psychologist near me",
       "source": "gsc_truth",
       "measurement": {
         "metric": "impressions_28d",
         "value": 3,
-        "window": "2026-10-14..2026-11-10",
-        "collected_at": "2026-11-13T15:24:43.127Z"
+        "window": "2026-10-15..2026-11-11",
+        "collected_at": "2026-11-14T15:25:13.054Z"
       },
       "impressions": 3,
       "clicks": 0,
-      "position": 7,
+      "position": 13.33,
+      "landing_page": "https://www.hicksconsulting.org/black-therapist-memphis/",
+      "pages": [
+        {
+          "page": "https://www.hicksconsulting.org/black-therapist-memphis/",
+          "impressions": 2
+        },
+        {
+          "page": "https://www.hicksconsulting.org/questions/african-american-psychologist-near-me/",
+          "impressions": 1
+        }
+      ]
+    },
+    {
+      "query": "black therapists near me",
+      "source": "gsc_truth",
+      "measurement": {
+        "metric": "impressions_28d",
+        "value": 3,
+        "window": "2026-10-15..2026-11-11",
+        "collected_at": "2026-11-14T15:25:13.054Z"
+      },
+      "impressions": 3,
+      "clicks": 0,
+      "position": 8.33,
       "landing_page": "https://www.hicksconsulting.org/black-therapist-memphis/",
       "pages": [
         {
@@ -555,45 +531,21 @@
       ]
     },
     {
-      "query": "black therapist near me",
+      "query": "grief counseling memphis tn",
       "source": "gsc_truth",
       "measurement": {
         "metric": "impressions_28d",
         "value": 3,
-        "window": "2026-10-14..2026-11-10",
-        "collected_at": "2026-11-13T15:24:43.127Z"
+        "window": "2026-10-15..2026-11-11",
+        "collected_at": "2026-11-14T15:25:13.054Z"
       },
       "impressions": 3,
       "clicks": 0,
-      "position": 5.33,
-      "landing_page": "https://www.hicksconsulting.org/black-therapist-memphis/",
+      "position": 44.33,
+      "landing_page": "https://www.hicksconsulting.org/questions/grief-counseling-memphis-online/",
       "pages": [
         {
-          "page": "https://www.hicksconsulting.org/black-therapist-memphis/",
-          "impressions": 2
-        },
-        {
-          "page": "https://www.hicksconsulting.org/",
-          "impressions": 1
-        }
-      ]
-    },
-    {
-      "query": "black therapists",
-      "source": "gsc_truth",
-      "measurement": {
-        "metric": "impressions_28d",
-        "value": 3,
-        "window": "2026-10-14..2026-11-10",
-        "collected_at": "2026-11-13T15:24:43.127Z"
-      },
-      "impressions": 3,
-      "clicks": 0,
-      "position": 6.67,
-      "landing_page": "https://www.hicksconsulting.org/black-therapist-memphis/",
-      "pages": [
-        {
-          "page": "https://www.hicksconsulting.org/black-therapist-memphis/",
+          "page": "https://www.hicksconsulting.org/questions/grief-counseling-memphis-online/",
           "impressions": 3
         }
       ]
@@ -604,8 +556,8 @@
       "measurement": {
         "metric": "impressions_28d",
         "value": 3,
-        "window": "2026-10-14..2026-11-10",
-        "collected_at": "2026-11-13T15:24:43.127Z"
+        "window": "2026-10-15..2026-11-11",
+        "collected_at": "2026-11-14T15:25:13.054Z"
       },
       "impressions": 3,
       "clicks": 0,
@@ -624,8 +576,8 @@
       "measurement": {
         "metric": "impressions_28d",
         "value": 2,
-        "window": "2026-10-14..2026-11-10",
-        "collected_at": "2026-11-13T15:24:43.127Z"
+        "window": "2026-10-15..2026-11-11",
+        "collected_at": "2026-11-14T15:25:13.054Z"
       },
       "impressions": 2,
       "clicks": 0,
@@ -639,81 +591,45 @@
       ]
     },
     {
-      "query": "black counselors near me",
+      "query": "black therapist near me",
       "source": "gsc_truth",
       "measurement": {
         "metric": "impressions_28d",
         "value": 2,
-        "window": "2026-10-14..2026-11-10",
-        "collected_at": "2026-11-13T15:24:43.127Z"
+        "window": "2026-10-15..2026-11-11",
+        "collected_at": "2026-11-14T15:25:13.054Z"
       },
       "impressions": 2,
       "clicks": 0,
-      "position": 6,
-      "landing_page": "https://www.hicksconsulting.org/black-therapist-memphis/",
+      "position": 4.5,
+      "landing_page": "https://www.hicksconsulting.org/",
       "pages": [
         {
+          "page": "https://www.hicksconsulting.org/",
+          "impressions": 1
+        },
+        {
           "page": "https://www.hicksconsulting.org/black-therapist-memphis/",
-          "impressions": 2
+          "impressions": 1
         }
       ]
     },
     {
-      "query": "black psychologist near me",
+      "query": "black therapists",
       "source": "gsc_truth",
       "measurement": {
         "metric": "impressions_28d",
         "value": 2,
-        "window": "2026-10-14..2026-11-10",
-        "collected_at": "2026-11-13T15:24:43.127Z"
+        "window": "2026-10-15..2026-11-11",
+        "collected_at": "2026-11-14T15:25:13.054Z"
       },
       "impressions": 2,
       "clicks": 0,
-      "position": 12,
+      "position": 7,
       "landing_page": "https://www.hicksconsulting.org/black-therapist-memphis/",
       "pages": [
         {
           "page": "https://www.hicksconsulting.org/black-therapist-memphis/",
-          "impressions": 2
-        }
-      ]
-    },
-    {
-      "query": "black women therapist near me",
-      "source": "gsc_truth",
-      "measurement": {
-        "metric": "impressions_28d",
-        "value": 2,
-        "window": "2026-10-14..2026-11-10",
-        "collected_at": "2026-11-13T15:24:43.127Z"
-      },
-      "impressions": 2,
-      "clicks": 0,
-      "position": 3.5,
-      "landing_page": "https://www.hicksconsulting.org/black-therapist-memphis/",
-      "pages": [
-        {
-          "page": "https://www.hicksconsulting.org/black-therapist-memphis/",
-          "impressions": 2
-        }
-      ]
-    },
-    {
-      "query": "grief counseling memphis tn",
-      "source": "gsc_truth",
-      "measurement": {
-        "metric": "impressions_28d",
-        "value": 2,
-        "window": "2026-10-14..2026-11-10",
-        "collected_at": "2026-11-13T15:24:43.127Z"
-      },
-      "impressions": 2,
-      "clicks": 0,
-      "position": 46,
-      "landing_page": "https://www.hicksconsulting.org/questions/grief-counseling-memphis-online/",
-      "pages": [
-        {
-          "page": "https://www.hicksconsulting.org/questions/grief-counseling-memphis-online/",
           "impressions": 2
         }
       ]
@@ -724,8 +640,8 @@
       "measurement": {
         "metric": "impressions_28d",
         "value": 2,
-        "window": "2026-10-14..2026-11-10",
-        "collected_at": "2026-11-13T15:24:43.127Z"
+        "window": "2026-10-15..2026-11-11",
+        "collected_at": "2026-11-14T15:25:13.054Z"
       },
       "impressions": 2,
       "clicks": 0,
@@ -744,8 +660,8 @@
       "measurement": {
         "metric": "impressions_28d",
         "value": 2,
-        "window": "2026-10-14..2026-11-10",
-        "collected_at": "2026-11-13T15:24:43.127Z"
+        "window": "2026-10-15..2026-11-11",
+        "collected_at": "2026-11-14T15:25:13.054Z"
       },
       "impressions": 2,
       "clicks": 0,
@@ -764,8 +680,8 @@
       "measurement": {
         "metric": "impressions_28d",
         "value": 1,
-        "window": "2026-10-14..2026-11-10",
-        "collected_at": "2026-11-13T15:24:43.127Z"
+        "window": "2026-10-15..2026-11-11",
+        "collected_at": "2026-11-14T15:25:13.054Z"
       },
       "impressions": 1,
       "clicks": 0,
@@ -779,57 +695,17 @@
       ]
     },
     {
-      "query": "african american female therapist",
-      "source": "gsc_truth",
-      "measurement": {
-        "metric": "impressions_28d",
-        "value": 1,
-        "window": "2026-10-14..2026-11-10",
-        "collected_at": "2026-11-13T15:24:43.127Z"
-      },
-      "impressions": 1,
-      "clicks": 0,
-      "position": 15,
-      "landing_page": "https://www.hicksconsulting.org/black-therapist-memphis/",
-      "pages": [
-        {
-          "page": "https://www.hicksconsulting.org/black-therapist-memphis/",
-          "impressions": 1
-        }
-      ]
-    },
-    {
       "query": "african american therapist near me in person",
       "source": "gsc_truth",
       "measurement": {
         "metric": "impressions_28d",
         "value": 1,
-        "window": "2026-10-14..2026-11-10",
-        "collected_at": "2026-11-13T15:24:43.127Z"
+        "window": "2026-10-15..2026-11-11",
+        "collected_at": "2026-11-14T15:25:13.054Z"
       },
       "impressions": 1,
       "clicks": 0,
       "position": 10,
-      "landing_page": "https://www.hicksconsulting.org/black-therapist-memphis/",
-      "pages": [
-        {
-          "page": "https://www.hicksconsulting.org/black-therapist-memphis/",
-          "impressions": 1
-        }
-      ]
-    },
-    {
-      "query": "african american therapists near me",
-      "source": "gsc_truth",
-      "measurement": {
-        "metric": "impressions_28d",
-        "value": 1,
-        "window": "2026-10-14..2026-11-10",
-        "collected_at": "2026-11-13T15:24:43.127Z"
-      },
-      "impressions": 1,
-      "clicks": 0,
-      "position": 9,
       "landing_page": "https://www.hicksconsulting.org/black-therapist-memphis/",
       "pages": [
         {
@@ -844,8 +720,8 @@
       "measurement": {
         "metric": "impressions_28d",
         "value": 1,
-        "window": "2026-10-14..2026-11-10",
-        "collected_at": "2026-11-13T15:24:43.127Z"
+        "window": "2026-10-15..2026-11-11",
+        "collected_at": "2026-11-14T15:25:13.054Z"
       },
       "impressions": 1,
       "clicks": 0,
@@ -864,12 +740,52 @@
       "measurement": {
         "metric": "impressions_28d",
         "value": 1,
-        "window": "2026-10-14..2026-11-10",
-        "collected_at": "2026-11-13T15:24:43.127Z"
+        "window": "2026-10-15..2026-11-11",
+        "collected_at": "2026-11-14T15:25:13.054Z"
       },
       "impressions": 1,
       "clicks": 0,
       "position": 11,
+      "landing_page": "https://www.hicksconsulting.org/black-therapist-memphis/",
+      "pages": [
+        {
+          "page": "https://www.hicksconsulting.org/black-therapist-memphis/",
+          "impressions": 1
+        }
+      ]
+    },
+    {
+      "query": "black mental health therapist",
+      "source": "gsc_truth",
+      "measurement": {
+        "metric": "impressions_28d",
+        "value": 1,
+        "window": "2026-10-15..2026-11-11",
+        "collected_at": "2026-11-14T15:25:13.054Z"
+      },
+      "impressions": 1,
+      "clicks": 0,
+      "position": 7,
+      "landing_page": "https://www.hicksconsulting.org/black-therapist-memphis/",
+      "pages": [
+        {
+          "page": "https://www.hicksconsulting.org/black-therapist-memphis/",
+          "impressions": 1
+        }
+      ]
+    },
+    {
+      "query": "black psychologist near me",
+      "source": "gsc_truth",
+      "measurement": {
+        "metric": "impressions_28d",
+        "value": 1,
+        "window": "2026-10-15..2026-11-11",
+        "collected_at": "2026-11-14T15:25:13.054Z"
+      },
+      "impressions": 1,
+      "clicks": 0,
+      "position": 12,
       "landing_page": "https://www.hicksconsulting.org/black-therapist-memphis/",
       "pages": [
         {
@@ -884,8 +800,8 @@
       "measurement": {
         "metric": "impressions_28d",
         "value": 1,
-        "window": "2026-10-14..2026-11-10",
-        "collected_at": "2026-11-13T15:24:43.127Z"
+        "window": "2026-10-15..2026-11-11",
+        "collected_at": "2026-11-14T15:25:13.054Z"
       },
       "impressions": 1,
       "clicks": 0,
@@ -904,12 +820,32 @@
       "measurement": {
         "metric": "impressions_28d",
         "value": 1,
-        "window": "2026-10-14..2026-11-10",
-        "collected_at": "2026-11-13T15:24:43.127Z"
+        "window": "2026-10-15..2026-11-11",
+        "collected_at": "2026-11-14T15:25:13.054Z"
       },
       "impressions": 1,
       "clicks": 0,
       "position": 6,
+      "landing_page": "https://www.hicksconsulting.org/black-therapist-memphis/",
+      "pages": [
+        {
+          "page": "https://www.hicksconsulting.org/black-therapist-memphis/",
+          "impressions": 1
+        }
+      ]
+    },
+    {
+      "query": "black women therapist near me",
+      "source": "gsc_truth",
+      "measurement": {
+        "metric": "impressions_28d",
+        "value": 1,
+        "window": "2026-10-15..2026-11-11",
+        "collected_at": "2026-11-14T15:25:13.054Z"
+      },
+      "impressions": 1,
+      "clicks": 0,
+      "position": 1,
       "landing_page": "https://www.hicksconsulting.org/black-therapist-memphis/",
       "pages": [
         {
@@ -924,8 +860,8 @@
       "measurement": {
         "metric": "impressions_28d",
         "value": 1,
-        "window": "2026-10-14..2026-11-10",
-        "collected_at": "2026-11-13T15:24:43.127Z"
+        "window": "2026-10-15..2026-11-11",
+        "collected_at": "2026-11-14T15:25:13.054Z"
       },
       "impressions": 1,
       "clicks": 0,
@@ -944,8 +880,8 @@
       "measurement": {
         "metric": "impressions_28d",
         "value": 1,
-        "window": "2026-10-14..2026-11-10",
-        "collected_at": "2026-11-13T15:24:43.127Z"
+        "window": "2026-10-15..2026-11-11",
+        "collected_at": "2026-11-14T15:25:13.054Z"
       },
       "impressions": 1,
       "clicks": 0,
@@ -964,8 +900,8 @@
       "measurement": {
         "metric": "impressions_28d",
         "value": 1,
-        "window": "2026-10-14..2026-11-10",
-        "collected_at": "2026-11-13T15:24:43.127Z"
+        "window": "2026-10-15..2026-11-11",
+        "collected_at": "2026-11-14T15:25:13.054Z"
       },
       "impressions": 1,
       "clicks": 0,
@@ -984,8 +920,8 @@
       "measurement": {
         "metric": "impressions_28d",
         "value": 1,
-        "window": "2026-10-14..2026-11-10",
-        "collected_at": "2026-11-13T15:24:43.127Z"
+        "window": "2026-10-15..2026-11-11",
+        "collected_at": "2026-11-14T15:25:13.054Z"
       },
       "impressions": 1,
       "clicks": 0,
@@ -1004,8 +940,8 @@
       "measurement": {
         "metric": "impressions_28d",
         "value": 1,
-        "window": "2026-10-14..2026-11-10",
-        "collected_at": "2026-11-13T15:24:43.127Z"
+        "window": "2026-10-15..2026-11-11",
+        "collected_at": "2026-11-14T15:25:13.054Z"
       },
       "impressions": 1,
       "clicks": 0,
@@ -1024,8 +960,8 @@
       "measurement": {
         "metric": "impressions_28d",
         "value": 1,
-        "window": "2026-10-14..2026-11-10",
-        "collected_at": "2026-11-13T15:24:43.127Z"
+        "window": "2026-10-15..2026-11-11",
+        "collected_at": "2026-11-14T15:25:13.054Z"
       },
       "impressions": 1,
       "clicks": 0,
@@ -1044,8 +980,8 @@
       "measurement": {
         "metric": "impressions_28d",
         "value": 1,
-        "window": "2026-10-14..2026-11-10",
-        "collected_at": "2026-11-13T15:24:43.127Z"
+        "window": "2026-10-15..2026-11-11",
+        "collected_at": "2026-11-14T15:25:13.054Z"
       },
       "impressions": 1,
       "clicks": 0,
@@ -1059,13 +995,33 @@
       ]
     },
     {
+      "query": "intitle:\"black women coach\" (\"work with me\" or \"testimonials\" or \"client results\" or \"client stories\") -site:linkedin.com -site:facebook.com -site:instagram.com -site:youtube.com -site:tiktok.com -site:x.com -site:reddit.com -site:medium.com -site:.gov -site:.edu -\"what is\" -\"how to\" -vs",
+      "source": "gsc_truth",
+      "measurement": {
+        "metric": "impressions_28d",
+        "value": 1,
+        "window": "2026-10-15..2026-11-11",
+        "collected_at": "2026-11-14T15:25:13.054Z"
+      },
+      "impressions": 1,
+      "clicks": 0,
+      "position": 6,
+      "landing_page": "https://www.hicksconsulting.org/resources/articles/what-black-women-deserve-from-support-that-is-actually-useful/",
+      "pages": [
+        {
+          "page": "https://www.hicksconsulting.org/resources/articles/what-black-women-deserve-from-support-that-is-actually-useful/",
+          "impressions": 1
+        }
+      ]
+    },
+    {
       "query": "is it one-to-one stress coaching providers",
       "source": "gsc_truth",
       "measurement": {
         "metric": "impressions_28d",
         "value": 1,
-        "window": "2026-10-14..2026-11-10",
-        "collected_at": "2026-11-13T15:24:43.127Z"
+        "window": "2026-10-15..2026-11-11",
+        "collected_at": "2026-11-14T15:25:13.054Z"
       },
       "impressions": 1,
       "clicks": 0,
@@ -1079,33 +1035,13 @@
       ]
     },
     {
-      "query": "janice hicks",
-      "source": "gsc_truth",
-      "measurement": {
-        "metric": "impressions_28d",
-        "value": 1,
-        "window": "2026-10-14..2026-11-10",
-        "collected_at": "2026-11-13T15:24:43.127Z"
-      },
-      "impressions": 1,
-      "clicks": 0,
-      "position": 2,
-      "landing_page": "https://www.hicksconsulting.org/",
-      "pages": [
-        {
-          "page": "https://www.hicksconsulting.org/",
-          "impressions": 1
-        }
-      ]
-    },
-    {
       "query": "mental health therapy near me",
       "source": "gsc_truth",
       "measurement": {
         "metric": "impressions_28d",
         "value": 1,
-        "window": "2026-10-14..2026-11-10",
-        "collected_at": "2026-11-13T15:24:43.127Z"
+        "window": "2026-10-15..2026-11-11",
+        "collected_at": "2026-11-14T15:25:13.054Z"
       },
       "impressions": 1,
       "clicks": 0,
@@ -1124,8 +1060,8 @@
       "measurement": {
         "metric": "impressions_28d",
         "value": 1,
-        "window": "2026-10-14..2026-11-10",
-        "collected_at": "2026-11-13T15:24:43.127Z"
+        "window": "2026-10-15..2026-11-11",
+        "collected_at": "2026-11-14T15:25:13.054Z"
       },
       "impressions": 1,
       "clicks": 0,
@@ -1144,8 +1080,8 @@
       "measurement": {
         "metric": "impressions_28d",
         "value": 1,
-        "window": "2026-10-14..2026-11-10",
-        "collected_at": "2026-11-13T15:24:43.127Z"
+        "window": "2026-10-15..2026-11-11",
+        "collected_at": "2026-11-14T15:25:13.054Z"
       },
       "impressions": 1,
       "clicks": 0,
@@ -1164,8 +1100,8 @@
       "measurement": {
         "metric": "impressions_28d",
         "value": 1,
-        "window": "2026-10-14..2026-11-10",
-        "collected_at": "2026-11-13T15:24:43.127Z"
+        "window": "2026-10-15..2026-11-11",
+        "collected_at": "2026-11-14T15:25:13.054Z"
       },
       "impressions": 1,
       "clicks": 0,
@@ -1184,8 +1120,8 @@
       "measurement": {
         "metric": "impressions_28d",
         "value": 1,
-        "window": "2026-10-14..2026-11-10",
-        "collected_at": "2026-11-13T15:24:43.127Z"
+        "window": "2026-10-15..2026-11-11",
+        "collected_at": "2026-11-14T15:25:13.054Z"
       },
       "impressions": 1,
       "clicks": 0,
@@ -1204,8 +1140,8 @@
       "measurement": {
         "metric": "impressions_28d",
         "value": 1,
-        "window": "2026-10-14..2026-11-10",
-        "collected_at": "2026-11-13T15:24:43.127Z"
+        "window": "2026-10-15..2026-11-11",
+        "collected_at": "2026-11-14T15:25:13.054Z"
       },
       "impressions": 1,
       "clicks": 0,
@@ -1224,8 +1160,8 @@
       "measurement": {
         "metric": "impressions_28d",
         "value": 1,
-        "window": "2026-10-14..2026-11-10",
-        "collected_at": "2026-11-13T15:24:43.127Z"
+        "window": "2026-10-15..2026-11-11",
+        "collected_at": "2026-11-14T15:25:13.054Z"
       },
       "impressions": 1,
       "clicks": 0,
@@ -1244,8 +1180,8 @@
       "measurement": {
         "metric": "impressions_28d",
         "value": 1,
-        "window": "2026-10-14..2026-11-10",
-        "collected_at": "2026-11-13T15:24:43.127Z"
+        "window": "2026-10-15..2026-11-11",
+        "collected_at": "2026-11-14T15:25:13.054Z"
       },
       "impressions": 1,
       "clicks": 0,
@@ -1264,8 +1200,8 @@
       "measurement": {
         "metric": "impressions_28d",
         "value": 1,
-        "window": "2026-10-14..2026-11-10",
-        "collected_at": "2026-11-13T15:24:43.127Z"
+        "window": "2026-10-15..2026-11-11",
+        "collected_at": "2026-11-14T15:25:13.054Z"
       },
       "impressions": 1,
       "clicks": 0,
@@ -1284,8 +1220,8 @@
       "measurement": {
         "metric": "impressions_28d",
         "value": 1,
-        "window": "2026-10-14..2026-11-10",
-        "collected_at": "2026-11-13T15:24:43.127Z"
+        "window": "2026-10-15..2026-11-11",
+        "collected_at": "2026-11-14T15:25:13.054Z"
       },
       "impressions": 1,
       "clicks": 0,
@@ -1304,8 +1240,8 @@
       "measurement": {
         "metric": "impressions_28d",
         "value": 1,
-        "window": "2026-10-14..2026-11-10",
-        "collected_at": "2026-11-13T15:24:43.127Z"
+        "window": "2026-10-15..2026-11-11",
+        "collected_at": "2026-11-14T15:25:13.054Z"
       },
       "impressions": 1,
       "clicks": 0,
@@ -1324,8 +1260,8 @@
       "measurement": {
         "metric": "impressions_28d",
         "value": 1,
-        "window": "2026-10-14..2026-11-10",
-        "collected_at": "2026-11-13T15:24:43.127Z"
+        "window": "2026-10-15..2026-11-11",
+        "collected_at": "2026-11-14T15:25:13.054Z"
       },
       "impressions": 1,
       "clicks": 0,
@@ -1344,8 +1280,8 @@
       "measurement": {
         "metric": "impressions_28d",
         "value": 1,
-        "window": "2026-10-14..2026-11-10",
-        "collected_at": "2026-11-13T15:24:43.127Z"
+        "window": "2026-10-15..2026-11-11",
+        "collected_at": "2026-11-14T15:25:13.054Z"
       },
       "impressions": 1,
       "clicks": 0,
@@ -1359,13 +1295,33 @@
       ]
     },
     {
+      "query": "what reliable workplace mental health programs provide clear pathways for coaching vs. clinical therapy?",
+      "source": "gsc_truth",
+      "measurement": {
+        "metric": "impressions_28d",
+        "value": 1,
+        "window": "2026-10-15..2026-11-11",
+        "collected_at": "2026-11-14T15:25:13.054Z"
+      },
+      "impressions": 1,
+      "clicks": 0,
+      "position": 4,
+      "landing_page": "https://www.hicksconsulting.org/resources/guides/therapy-vs-coaching-vs-organizational-training/",
+      "pages": [
+        {
+          "page": "https://www.hicksconsulting.org/resources/guides/therapy-vs-coaching-vs-organizational-training/",
+          "impressions": 1
+        }
+      ]
+    },
+    {
       "query": "which option makes sense if i need to book a california therapist quickly but i’m hesitant to emotionally reinvest unless the fit seems strong? i’m looking for someone who works with people navigating a new stage of life, offers online sessions, can see me within about a week, and has transparent pricing or takes my insurance—can you help me draft a short message to send to a few therapists and a checklist to decide after the first call/session so i don’t waste time?",
       "source": "gsc_truth",
       "measurement": {
         "metric": "impressions_28d",
         "value": 1,
-        "window": "2026-10-14..2026-11-10",
-        "collected_at": "2026-11-13T15:24:43.127Z"
+        "window": "2026-10-15..2026-11-11",
+        "collected_at": "2026-11-14T15:25:13.054Z"
       },
       "impressions": 1,
       "clicks": 0,
@@ -1384,8 +1340,8 @@
       "measurement": {
         "metric": "impressions_28d",
         "value": 1,
-        "window": "2026-10-14..2026-11-10",
-        "collected_at": "2026-11-13T15:24:43.127Z"
+        "window": "2026-10-15..2026-11-11",
+        "collected_at": "2026-11-14T15:25:13.054Z"
       },
       "impressions": 1,
       "clicks": 0,
@@ -1404,8 +1360,8 @@
       "measurement": {
         "metric": "impressions_28d",
         "value": 1,
-        "window": "2026-10-14..2026-11-10",
-        "collected_at": "2026-11-13T15:24:43.127Z"
+        "window": "2026-10-15..2026-11-11",
+        "collected_at": "2026-11-14T15:25:13.054Z"
       },
       "impressions": 1,
       "clicks": 0,
