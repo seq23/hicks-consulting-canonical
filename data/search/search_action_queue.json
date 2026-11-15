@@ -1,6 +1,6 @@
 {
   "schemaVersion": "2.0.0",
-  "generatedAt": "2026-11-14T15:25:23.062Z",
+  "generatedAt": "2026-11-15T15:25:31.675Z",
   "policy": "Hicks may autonomously apply bounded technical/search-alignment repairs. Substantive clinical claims and unsupported treatment assertions are never auto-generated from competitor content.",
   "items": [
     {
@@ -253,7 +253,7 @@
       "evidence": {
         "groundedSiteSurfaced": null,
         "groundedProviderAnswered": false,
-        "gscImpressions": 1,
+        "gscImpressions": 2,
         "gscClicks": 0,
         "gscAveragePosition": 41,
         "gscPages": [
@@ -1056,15 +1056,14 @@
       "evidence": {
         "groundedSiteSurfaced": null,
         "groundedProviderAnswered": false,
-        "gscImpressions": 124,
+        "gscImpressions": 126,
         "gscClicks": 3,
-        "gscAveragePosition": 4.51,
+        "gscAveragePosition": 4.38,
         "gscPages": [
           "/",
           "/coaching/",
           "/about/",
           "/contact/",
-          "/cookie-policy/",
           "/corporate-speaking/",
           "/faq/",
           "/groups/",
@@ -1118,7 +1117,7 @@
       "evidence": {
         "groundedSiteSurfaced": null,
         "groundedProviderAnswered": false,
-        "gscImpressions": 45,
+        "gscImpressions": 41,
         "gscClicks": 2,
         "gscAveragePosition": 9.6,
         "gscPages": [
@@ -1145,9 +1144,9 @@
       "evidence": {
         "groundedSiteSurfaced": null,
         "groundedProviderAnswered": false,
-        "gscImpressions": 24,
+        "gscImpressions": 20,
         "gscClicks": 0,
-        "gscAveragePosition": 7.45,
+        "gscAveragePosition": 7.47,
         "gscPages": [
           "/",
           "/black-therapist-memphis/"
@@ -1183,23 +1182,20 @@
       "primaryPage": "/",
       "status": "CANNIBALIZATION_REVIEW",
       "reasons": [
-        "MULTIPLE_HICKS_PAGES_FOR_QUERY",
-        "IMPRESSIONS_WITHOUT_CLICKS"
+        "MULTIPLE_HICKS_PAGES_FOR_QUERY"
       ],
       "evidence": {
         "groundedSiteSurfaced": null,
         "groundedProviderAnswered": false,
-        "gscImpressions": 20,
+        "gscImpressions": 12,
         "gscClicks": 0,
-        "gscAveragePosition": 5.73,
+        "gscAveragePosition": 3.74,
         "gscPages": [
           "/",
           "/about/",
           "/coaching/",
           "/corporate-speaking/",
           "/groups/",
-          "/intake-quiz/",
-          "/resources/",
           "/resources/articles/the-workplace-habits-that-keep-high-functioning-women-drained/",
           "/therapy/"
         ],
@@ -1259,9 +1255,9 @@
       "evidence": {
         "groundedSiteSurfaced": null,
         "groundedProviderAnswered": false,
-        "gscImpressions": 11,
+        "gscImpressions": 15,
         "gscClicks": 0,
-        "gscAveragePosition": 16.27,
+        "gscAveragePosition": 19,
         "gscPages": [
           "/anxiety-therapist-memphis/",
           "/questions/grief-counseling-memphis-online/",
@@ -1382,13 +1378,15 @@
       "query": "pet loss grief counselor memphis",
       "primaryPage": "/questions/grief-counseling-memphis-online/",
       "status": "OBSERVED",
-      "reasons": [],
+      "reasons": [
+        "AVERAGE_POSITION_OUTSIDE_TOP_10"
+      ],
       "evidence": {
         "groundedSiteSurfaced": null,
         "groundedProviderAnswered": false,
-        "gscImpressions": 3,
+        "gscImpressions": 4,
         "gscClicks": 0,
-        "gscAveragePosition": 9.67,
+        "gscAveragePosition": 11,
         "gscPages": [
           "/questions/grief-counseling-memphis-online/"
         ],
@@ -1530,9 +1528,9 @@
       "evidence": {
         "groundedSiteSurfaced": null,
         "groundedProviderAnswered": false,
-        "gscImpressions": 3,
+        "gscImpressions": 4,
         "gscClicks": 0,
-        "gscAveragePosition": 44.33,
+        "gscAveragePosition": 45.25,
         "gscPages": [
           "/questions/grief-counseling-memphis-online/"
         ],
@@ -1549,9 +1547,9 @@
       "evidence": {
         "groundedSiteSurfaced": null,
         "groundedProviderAnswered": false,
-        "gscImpressions": 2,
+        "gscImpressions": 1,
         "gscClicks": 0,
-        "gscAveragePosition": 3,
+        "gscAveragePosition": 5,
         "gscPages": [
           "/"
         ],
@@ -2866,17 +2864,15 @@
     {
       "query": "sherri hicks",
       "primaryPage": "/",
-      "status": "OBSERVED",
+      "status": "UNKNOWN",
       "reasons": [],
       "evidence": {
         "groundedSiteSurfaced": null,
         "groundedProviderAnswered": false,
-        "gscImpressions": 1,
+        "gscImpressions": 0,
         "gscClicks": 0,
-        "gscAveragePosition": 4,
-        "gscPages": [
-          "/"
-        ],
+        "gscAveragePosition": 0,
+        "gscPages": [],
         "competitorUrls": []
       },
       "safeRepairEligible": false,
@@ -3048,17 +3044,15 @@
     {
       "query": "tracie hicks",
       "primaryPage": "/",
-      "status": "OBSERVED",
+      "status": "UNKNOWN",
       "reasons": [],
       "evidence": {
         "groundedSiteSurfaced": null,
         "groundedProviderAnswered": false,
-        "gscImpressions": 1,
+        "gscImpressions": 0,
         "gscClicks": 0,
-        "gscAveragePosition": 2,
-        "gscPages": [
-          "/"
-        ],
+        "gscAveragePosition": 0,
+        "gscPages": [],
         "competitorUrls": []
       },
       "safeRepairEligible": false,
