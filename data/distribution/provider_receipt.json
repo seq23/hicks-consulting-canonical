@@ -1,7 +1,7 @@
 {
   "schema_version": "2.0",
-  "receipt_id": "2026-11-14T14-22-56.758Z-43604551521",
-  "attempted_at": "2026-11-14T14:22:56.758Z",
+  "receipt_id": "2026-11-15T14-21-52.993Z-43723931558",
+  "attempted_at": "2026-11-15T14:21:52.993Z",
   "publication_trigger": "ONLY_AFTER_EXISTING_CONTENT_PUBLISH_WORKFLOW_SUCCEEDS",
   "chain": [
     "successful_publish",
@@ -15,14 +15,14 @@
   "sitemap_refresh": {
     "status": "SUCCESS",
     "sitemap_url": "https://www.hicksconsulting.org/sitemap.xml",
-    "sitemap_sha256": "513597e49e7fbe9fba586f64cf3ed2565ed1e01052c1793282ffa3b3d4347a18",
-    "url_count": 160
+    "sitemap_sha256": "d24159107f84fb6b9743dabc4fafda615118da1989a66ba3b0f76e07c6ca9887",
+    "url_count": 161
   },
   "indexnow": {
     "status": "SUCCESS",
     "attempted": true,
     "http_status": 200,
-    "submitted_urls": 160,
+    "submitted_urls": 161,
     "key_location": "https://www.hicksconsulting.org/indexnow.txt"
   },
   "gsc_sitemap_submission": {
@@ -172,7 +172,7 @@
         "verdict": "PASS",
         "coverage_state": "Submitted and indexed",
         "indexing_state": "INDEXING_ALLOWED",
-        "last_crawl_time": "2026-11-03T17:18:34Z"
+        "last_crawl_time": "2026-11-04T02:47:28Z"
       },
       {
         "url": "https://www.hicksconsulting.org/resources/guides/therapy-vs-coaching-vs-organizational-training/",
@@ -197,7 +197,7 @@
   "durable_receipt": {
     "status": "SUCCESS",
     "latest_path": "data/distribution/provider_receipt.json",
-    "history_path": "data/distribution/receipts/2026-11-14T14-22-56.758Z-43604551521.json"
+    "history_path": "data/distribution/receipts/2026-11-15T14-21-52.993Z-43723931558.json"
   },
   "observation_feedback": {
     "status": "SUCCESS",
