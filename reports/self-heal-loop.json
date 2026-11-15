@@ -4,34 +4,14 @@
   "profile": "all",
   "max_attempts": 3,
   "dry_run": false,
-  "generated_at": "2026-11-08T10:14:29.482Z",
+  "generated_at": "2026-11-15T10:13:33.395Z",
   "status": "CLEAN",
   "safe_to_push": true,
   "registered_repairs": [
     {
-      "id": "query-signal-schema",
-      "severity": "SOFT_WARNING",
-      "repair_command": "npm run ingest:normalize"
-    },
-    {
       "id": "content-briefs",
       "severity": "STRONG_WARNING",
       "repair_command": "npm run ingest:briefs"
-    },
-    {
-      "id": "indexnow",
-      "severity": "SOFT_WARNING",
-      "repair_command": "npm run indexnow:emit"
-    },
-    {
-      "id": "improvement-recommendations",
-      "severity": "STRONG_WARNING",
-      "repair_command": "npm run authority:improvements"
-    },
-    {
-      "id": "authority-distribution",
-      "severity": "HARD_FAIL",
-      "repair_command": "npm run authority:distribution-manifest"
     },
     {
       "id": "editorial-continuity",
@@ -39,47 +19,12 @@
       "repair_command": "npm run continuity:replenish"
     }
   ],
-  "remaining_findings": [
-    {
-      "id": "sitemap-parity",
-      "severity": "STRONG_WARNING",
-      "blocking": false,
-      "repair_command": null
-    },
-    {
-      "id": "internal-links",
-      "severity": "STRONG_WARNING",
-      "blocking": false,
-      "repair_command": null
-    },
-    {
-      "id": "discovery-gap-decisions-due",
-      "severity": "STRONG_WARNING",
-      "blocking": false,
-      "repair_command": null
-    }
-  ],
+  "remaining_findings": [],
   "attempts": [
     {
       "attempt": 1,
       "validation_exit": 0,
-      "findings": [
-        {
-          "id": "sitemap-parity",
-          "severity": "STRONG_WARNING",
-          "reason": ""
-        },
-        {
-          "id": "internal-links",
-          "severity": "STRONG_WARNING",
-          "reason": ""
-        },
-        {
-          "id": "discovery-gap-decisions-due",
-          "severity": "STRONG_WARNING",
-          "reason": ""
-        }
-      ],
+      "findings": [],
       "repaired": [],
       "result": "CLEAN"
     }
