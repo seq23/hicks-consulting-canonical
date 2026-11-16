@@ -3,14 +3,14 @@
   "generated_from": "data/search_intelligence/gsc_truth.json",
   "property": "sc-domain:hicksconsulting.org",
   "window": {
-    "start_date": "2026-10-16",
-    "end_date": "2026-11-12",
+    "start_date": "2026-10-17",
+    "end_date": "2026-11-13",
     "days": 28
   },
-  "truth_collected_at": "2026-11-15T15:25:20.493Z",
+  "truth_collected_at": "2026-11-16T15:34:59.514Z",
   "measurement_rule": "Every target is a Search Console query row (source gsc_truth) with a positive 28-day impression count. Nothing unmeasured is admitted.",
   "target_count": 59,
-  "impressions_total": 423,
+  "impressions_total": 433,
   "dropped_count": 0,
   "dropped": [],
   "targets": [
@@ -19,22 +19,22 @@
       "source": "gsc_truth",
       "measurement": {
         "metric": "impressions_28d",
-        "value": 126,
-        "window": "2026-10-16..2026-11-12",
-        "collected_at": "2026-11-15T15:25:20.493Z"
+        "value": 129,
+        "window": "2026-10-17..2026-11-13",
+        "collected_at": "2026-11-16T15:34:59.514Z"
       },
-      "impressions": 126,
+      "impressions": 129,
       "clicks": 3,
-      "position": 3.54,
+      "position": 3.51,
       "landing_page": "https://www.hicksconsulting.org/",
       "pages": [
         {
           "page": "https://www.hicksconsulting.org/",
-          "impressions": 23
+          "impressions": 24
         },
         {
           "page": "https://www.hicksconsulting.org/corporate-speaking/",
-          "impressions": 21
+          "impressions": 22
         },
         {
           "page": "https://www.hicksconsulting.org/resources/",
@@ -46,7 +46,7 @@
         },
         {
           "page": "https://www.hicksconsulting.org/groups/",
-          "impressions": 12
+          "impressions": 13
         },
         {
           "page": "https://www.hicksconsulting.org/therapy/",
@@ -84,8 +84,8 @@
       "measurement": {
         "metric": "impressions_28d",
         "value": 63,
-        "window": "2026-10-16..2026-11-12",
-        "collected_at": "2026-11-15T15:25:20.493Z"
+        "window": "2026-10-17..2026-11-13",
+        "collected_at": "2026-11-16T15:34:59.514Z"
       },
       "impressions": 63,
       "clicks": 0,
@@ -135,18 +135,18 @@
       "source": "gsc_truth",
       "measurement": {
         "metric": "impressions_28d",
-        "value": 41,
-        "window": "2026-10-16..2026-11-12",
-        "collected_at": "2026-11-15T15:25:20.493Z"
+        "value": 42,
+        "window": "2026-10-17..2026-11-13",
+        "collected_at": "2026-11-16T15:34:59.514Z"
       },
-      "impressions": 41,
+      "impressions": 42,
       "clicks": 2,
-      "position": 8.53,
+      "position": 8.57,
       "landing_page": "https://www.hicksconsulting.org/black-therapist-memphis/",
       "pages": [
         {
           "page": "https://www.hicksconsulting.org/black-therapist-memphis/",
-          "impressions": 34
+          "impressions": 35
         },
         {
           "page": "https://www.hicksconsulting.org/",
@@ -176,8 +176,8 @@
       "measurement": {
         "metric": "impressions_28d",
         "value": 22,
-        "window": "2026-10-16..2026-11-12",
-        "collected_at": "2026-11-15T15:25:20.493Z"
+        "window": "2026-10-17..2026-11-13",
+        "collected_at": "2026-11-16T15:34:59.514Z"
       },
       "impressions": 22,
       "clicks": 0,
@@ -191,22 +191,74 @@
       ]
     },
     {
-      "query": "black therapist memphis, tn",
+      "query": "monika hicks",
       "source": "gsc_truth",
       "measurement": {
         "metric": "impressions_28d",
         "value": 20,
-        "window": "2026-10-16..2026-11-12",
-        "collected_at": "2026-11-15T15:25:20.493Z"
+        "window": "2026-10-17..2026-11-13",
+        "collected_at": "2026-11-16T15:34:59.514Z"
       },
       "impressions": 20,
+      "clicks": 1,
+      "position": 3.05,
+      "landing_page": "https://www.hicksconsulting.org/",
+      "pages": [
+        {
+          "page": "https://www.hicksconsulting.org/",
+          "impressions": 5
+        },
+        {
+          "page": "https://www.hicksconsulting.org/resources/articles/the-workplace-habits-that-keep-high-functioning-women-drained/",
+          "impressions": 3
+        },
+        {
+          "page": "https://www.hicksconsulting.org/about/",
+          "impressions": 2
+        },
+        {
+          "page": "https://www.hicksconsulting.org/coaching/",
+          "impressions": 2
+        },
+        {
+          "page": "https://www.hicksconsulting.org/corporate-speaking/",
+          "impressions": 2
+        },
+        {
+          "page": "https://www.hicksconsulting.org/groups/",
+          "impressions": 2
+        },
+        {
+          "page": "https://www.hicksconsulting.org/therapy/",
+          "impressions": 2
+        },
+        {
+          "page": "https://www.hicksconsulting.org/intake-quiz/",
+          "impressions": 1
+        },
+        {
+          "page": "https://www.hicksconsulting.org/resources/",
+          "impressions": 1
+        }
+      ]
+    },
+    {
+      "query": "black therapist memphis, tn",
+      "source": "gsc_truth",
+      "measurement": {
+        "metric": "impressions_28d",
+        "value": 19,
+        "window": "2026-10-17..2026-11-13",
+        "collected_at": "2026-11-16T15:34:59.514Z"
+      },
+      "impressions": 19,
       "clicks": 0,
-      "position": 7.75,
+      "position": 7.79,
       "landing_page": "https://www.hicksconsulting.org/black-therapist-memphis/",
       "pages": [
         {
           "page": "https://www.hicksconsulting.org/black-therapist-memphis/",
-          "impressions": 16
+          "impressions": 15
         },
         {
           "page": "https://www.hicksconsulting.org/",
@@ -219,18 +271,18 @@
       "source": "gsc_truth",
       "measurement": {
         "metric": "impressions_28d",
-        "value": 17,
-        "window": "2026-10-16..2026-11-12",
-        "collected_at": "2026-11-15T15:25:20.493Z"
+        "value": 16,
+        "window": "2026-10-17..2026-11-13",
+        "collected_at": "2026-11-16T15:34:59.514Z"
       },
-      "impressions": 17,
+      "impressions": 16,
       "clicks": 0,
-      "position": 7.59,
+      "position": 7.82,
       "landing_page": "https://www.hicksconsulting.org/corporate-speaking/",
       "pages": [
         {
           "page": "https://www.hicksconsulting.org/corporate-speaking/",
-          "impressions": 15
+          "impressions": 14
         },
         {
           "page": "https://www.hicksconsulting.org/groups/",
@@ -248,8 +300,8 @@
       "measurement": {
         "metric": "impressions_28d",
         "value": 15,
-        "window": "2026-10-16..2026-11-12",
-        "collected_at": "2026-11-15T15:25:20.493Z"
+        "window": "2026-10-17..2026-11-13",
+        "collected_at": "2026-11-16T15:34:59.514Z"
       },
       "impressions": 15,
       "clicks": 0,
@@ -279,57 +331,13 @@
       ]
     },
     {
-      "query": "monika hicks",
-      "source": "gsc_truth",
-      "measurement": {
-        "metric": "impressions_28d",
-        "value": 12,
-        "window": "2026-10-16..2026-11-12",
-        "collected_at": "2026-11-15T15:25:20.493Z"
-      },
-      "impressions": 12,
-      "clicks": 0,
-      "position": 4.42,
-      "landing_page": "https://www.hicksconsulting.org/",
-      "pages": [
-        {
-          "page": "https://www.hicksconsulting.org/",
-          "impressions": 4
-        },
-        {
-          "page": "https://www.hicksconsulting.org/resources/articles/the-workplace-habits-that-keep-high-functioning-women-drained/",
-          "impressions": 3
-        },
-        {
-          "page": "https://www.hicksconsulting.org/about/",
-          "impressions": 1
-        },
-        {
-          "page": "https://www.hicksconsulting.org/coaching/",
-          "impressions": 1
-        },
-        {
-          "page": "https://www.hicksconsulting.org/corporate-speaking/",
-          "impressions": 1
-        },
-        {
-          "page": "https://www.hicksconsulting.org/groups/",
-          "impressions": 1
-        },
-        {
-          "page": "https://www.hicksconsulting.org/therapy/",
-          "impressions": 1
-        }
-      ]
-    },
-    {
       "query": "black mental health therapist near me",
       "source": "gsc_truth",
       "measurement": {
         "metric": "impressions_28d",
         "value": 11,
-        "window": "2026-10-16..2026-11-12",
-        "collected_at": "2026-11-15T15:25:20.493Z"
+        "window": "2026-10-17..2026-11-13",
+        "collected_at": "2026-11-16T15:34:59.514Z"
       },
       "impressions": 11,
       "clicks": 0,
@@ -348,8 +356,8 @@
       "measurement": {
         "metric": "impressions_28d",
         "value": 9,
-        "window": "2026-10-16..2026-11-12",
-        "collected_at": "2026-11-15T15:25:20.493Z"
+        "window": "2026-10-17..2026-11-13",
+        "collected_at": "2026-11-16T15:34:59.514Z"
       },
       "impressions": 9,
       "clicks": 0,
@@ -368,8 +376,8 @@
       "measurement": {
         "metric": "impressions_28d",
         "value": 8,
-        "window": "2026-10-16..2026-11-12",
-        "collected_at": "2026-11-15T15:25:20.493Z"
+        "window": "2026-10-17..2026-11-13",
+        "collected_at": "2026-11-16T15:34:59.514Z"
       },
       "impressions": 8,
       "clicks": 0,
@@ -388,8 +396,8 @@
       "measurement": {
         "metric": "impressions_28d",
         "value": 6,
-        "window": "2026-10-16..2026-11-12",
-        "collected_at": "2026-11-15T15:25:20.493Z"
+        "window": "2026-10-17..2026-11-13",
+        "collected_at": "2026-11-16T15:34:59.514Z"
       },
       "impressions": 6,
       "clicks": 0,
@@ -408,8 +416,8 @@
       "measurement": {
         "metric": "impressions_28d",
         "value": 5,
-        "window": "2026-10-16..2026-11-12",
-        "collected_at": "2026-11-15T15:25:20.493Z"
+        "window": "2026-10-17..2026-11-13",
+        "collected_at": "2026-11-16T15:34:59.514Z"
       },
       "impressions": 5,
       "clicks": 0,
@@ -428,8 +436,8 @@
       "measurement": {
         "metric": "impressions_28d",
         "value": 4,
-        "window": "2026-10-16..2026-11-12",
-        "collected_at": "2026-11-15T15:25:20.493Z"
+        "window": "2026-10-17..2026-11-13",
+        "collected_at": "2026-11-16T15:34:59.514Z"
       },
       "impressions": 4,
       "clicks": 0,
@@ -448,8 +456,8 @@
       "measurement": {
         "metric": "impressions_28d",
         "value": 4,
-        "window": "2026-10-16..2026-11-12",
-        "collected_at": "2026-11-15T15:25:20.493Z"
+        "window": "2026-10-17..2026-11-13",
+        "collected_at": "2026-11-16T15:34:59.514Z"
       },
       "impressions": 4,
       "clicks": 1,
@@ -480,8 +488,8 @@
       "measurement": {
         "metric": "impressions_28d",
         "value": 4,
-        "window": "2026-10-16..2026-11-12",
-        "collected_at": "2026-11-15T15:25:20.493Z"
+        "window": "2026-10-17..2026-11-13",
+        "collected_at": "2026-11-16T15:34:59.514Z"
       },
       "impressions": 4,
       "clicks": 0,
@@ -500,8 +508,8 @@
       "measurement": {
         "metric": "impressions_28d",
         "value": 4,
-        "window": "2026-10-16..2026-11-12",
-        "collected_at": "2026-11-15T15:25:20.493Z"
+        "window": "2026-10-17..2026-11-13",
+        "collected_at": "2026-11-16T15:34:59.514Z"
       },
       "impressions": 4,
       "clicks": 0,
@@ -520,8 +528,8 @@
       "measurement": {
         "metric": "impressions_28d",
         "value": 3,
-        "window": "2026-10-16..2026-11-12",
-        "collected_at": "2026-11-15T15:25:20.493Z"
+        "window": "2026-10-17..2026-11-13",
+        "collected_at": "2026-11-16T15:34:59.514Z"
       },
       "impressions": 3,
       "clicks": 0,
@@ -544,8 +552,8 @@
       "measurement": {
         "metric": "impressions_28d",
         "value": 3,
-        "window": "2026-10-16..2026-11-12",
-        "collected_at": "2026-11-15T15:25:20.493Z"
+        "window": "2026-10-17..2026-11-13",
+        "collected_at": "2026-11-16T15:34:59.514Z"
       },
       "impressions": 3,
       "clicks": 0,
@@ -564,8 +572,8 @@
       "measurement": {
         "metric": "impressions_28d",
         "value": 2,
-        "window": "2026-10-16..2026-11-12",
-        "collected_at": "2026-11-15T15:25:20.493Z"
+        "window": "2026-10-17..2026-11-13",
+        "collected_at": "2026-11-16T15:34:59.514Z"
       },
       "impressions": 2,
       "clicks": 0,
@@ -584,8 +592,8 @@
       "measurement": {
         "metric": "impressions_28d",
         "value": 2,
-        "window": "2026-10-16..2026-11-12",
-        "collected_at": "2026-11-15T15:25:20.493Z"
+        "window": "2026-10-17..2026-11-13",
+        "collected_at": "2026-11-16T15:34:59.514Z"
       },
       "impressions": 2,
       "clicks": 0,
@@ -604,8 +612,8 @@
       "measurement": {
         "metric": "impressions_28d",
         "value": 2,
-        "window": "2026-10-16..2026-11-12",
-        "collected_at": "2026-11-15T15:25:20.493Z"
+        "window": "2026-10-17..2026-11-13",
+        "collected_at": "2026-11-16T15:34:59.514Z"
       },
       "impressions": 2,
       "clicks": 0,
@@ -628,8 +636,8 @@
       "measurement": {
         "metric": "impressions_28d",
         "value": 2,
-        "window": "2026-10-16..2026-11-12",
-        "collected_at": "2026-11-15T15:25:20.493Z"
+        "window": "2026-10-17..2026-11-13",
+        "collected_at": "2026-11-16T15:34:59.514Z"
       },
       "impressions": 2,
       "clicks": 0,
@@ -648,8 +656,8 @@
       "measurement": {
         "metric": "impressions_28d",
         "value": 2,
-        "window": "2026-10-16..2026-11-12",
-        "collected_at": "2026-11-15T15:25:20.493Z"
+        "window": "2026-10-17..2026-11-13",
+        "collected_at": "2026-11-16T15:34:59.514Z"
       },
       "impressions": 2,
       "clicks": 0,
@@ -668,8 +676,8 @@
       "measurement": {
         "metric": "impressions_28d",
         "value": 2,
-        "window": "2026-10-16..2026-11-12",
-        "collected_at": "2026-11-15T15:25:20.493Z"
+        "window": "2026-10-17..2026-11-13",
+        "collected_at": "2026-11-16T15:34:59.514Z"
       },
       "impressions": 2,
       "clicks": 0,
@@ -688,8 +696,8 @@
       "measurement": {
         "metric": "impressions_28d",
         "value": 1,
-        "window": "2026-10-16..2026-11-12",
-        "collected_at": "2026-11-15T15:25:20.493Z"
+        "window": "2026-10-17..2026-11-13",
+        "collected_at": "2026-11-16T15:34:59.514Z"
       },
       "impressions": 1,
       "clicks": 0,
@@ -708,8 +716,8 @@
       "measurement": {
         "metric": "impressions_28d",
         "value": 1,
-        "window": "2026-10-16..2026-11-12",
-        "collected_at": "2026-11-15T15:25:20.493Z"
+        "window": "2026-10-17..2026-11-13",
+        "collected_at": "2026-11-16T15:34:59.514Z"
       },
       "impressions": 1,
       "clicks": 0,
@@ -728,8 +736,8 @@
       "measurement": {
         "metric": "impressions_28d",
         "value": 1,
-        "window": "2026-10-16..2026-11-12",
-        "collected_at": "2026-11-15T15:25:20.493Z"
+        "window": "2026-10-17..2026-11-13",
+        "collected_at": "2026-11-16T15:34:59.514Z"
       },
       "impressions": 1,
       "clicks": 0,
@@ -748,8 +756,8 @@
       "measurement": {
         "metric": "impressions_28d",
         "value": 1,
-        "window": "2026-10-16..2026-11-12",
-        "collected_at": "2026-11-15T15:25:20.493Z"
+        "window": "2026-10-17..2026-11-13",
+        "collected_at": "2026-11-16T15:34:59.514Z"
       },
       "impressions": 1,
       "clicks": 0,
@@ -768,8 +776,8 @@
       "measurement": {
         "metric": "impressions_28d",
         "value": 1,
-        "window": "2026-10-16..2026-11-12",
-        "collected_at": "2026-11-15T15:25:20.493Z"
+        "window": "2026-10-17..2026-11-13",
+        "collected_at": "2026-11-16T15:34:59.514Z"
       },
       "impressions": 1,
       "clicks": 0,
@@ -788,8 +796,8 @@
       "measurement": {
         "metric": "impressions_28d",
         "value": 1,
-        "window": "2026-10-16..2026-11-12",
-        "collected_at": "2026-11-15T15:25:20.493Z"
+        "window": "2026-10-17..2026-11-13",
+        "collected_at": "2026-11-16T15:34:59.514Z"
       },
       "impressions": 1,
       "clicks": 0,
@@ -808,8 +816,8 @@
       "measurement": {
         "metric": "impressions_28d",
         "value": 1,
-        "window": "2026-10-16..2026-11-12",
-        "collected_at": "2026-11-15T15:25:20.493Z"
+        "window": "2026-10-17..2026-11-13",
+        "collected_at": "2026-11-16T15:34:59.514Z"
       },
       "impressions": 1,
       "clicks": 0,
@@ -828,8 +836,8 @@
       "measurement": {
         "metric": "impressions_28d",
         "value": 1,
-        "window": "2026-10-16..2026-11-12",
-        "collected_at": "2026-11-15T15:25:20.493Z"
+        "window": "2026-10-17..2026-11-13",
+        "collected_at": "2026-11-16T15:34:59.514Z"
       },
       "impressions": 1,
       "clicks": 0,
@@ -848,8 +856,8 @@
       "measurement": {
         "metric": "impressions_28d",
         "value": 1,
-        "window": "2026-10-16..2026-11-12",
-        "collected_at": "2026-11-15T15:25:20.493Z"
+        "window": "2026-10-17..2026-11-13",
+        "collected_at": "2026-11-16T15:34:59.514Z"
       },
       "impressions": 1,
       "clicks": 0,
@@ -868,8 +876,8 @@
       "measurement": {
         "metric": "impressions_28d",
         "value": 1,
-        "window": "2026-10-16..2026-11-12",
-        "collected_at": "2026-11-15T15:25:20.493Z"
+        "window": "2026-10-17..2026-11-13",
+        "collected_at": "2026-11-16T15:34:59.514Z"
       },
       "impressions": 1,
       "clicks": 0,
@@ -888,8 +896,8 @@
       "measurement": {
         "metric": "impressions_28d",
         "value": 1,
-        "window": "2026-10-16..2026-11-12",
-        "collected_at": "2026-11-15T15:25:20.493Z"
+        "window": "2026-10-17..2026-11-13",
+        "collected_at": "2026-11-16T15:34:59.514Z"
       },
       "impressions": 1,
       "clicks": 0,
@@ -908,8 +916,8 @@
       "measurement": {
         "metric": "impressions_28d",
         "value": 1,
-        "window": "2026-10-16..2026-11-12",
-        "collected_at": "2026-11-15T15:25:20.493Z"
+        "window": "2026-10-17..2026-11-13",
+        "collected_at": "2026-11-16T15:34:59.514Z"
       },
       "impressions": 1,
       "clicks": 0,
@@ -928,8 +936,8 @@
       "measurement": {
         "metric": "impressions_28d",
         "value": 1,
-        "window": "2026-10-16..2026-11-12",
-        "collected_at": "2026-11-15T15:25:20.493Z"
+        "window": "2026-10-17..2026-11-13",
+        "collected_at": "2026-11-16T15:34:59.514Z"
       },
       "impressions": 1,
       "clicks": 0,
@@ -948,8 +956,8 @@
       "measurement": {
         "metric": "impressions_28d",
         "value": 1,
-        "window": "2026-10-16..2026-11-12",
-        "collected_at": "2026-11-15T15:25:20.493Z"
+        "window": "2026-10-17..2026-11-13",
+        "collected_at": "2026-11-16T15:34:59.514Z"
       },
       "impressions": 1,
       "clicks": 0,
@@ -968,8 +976,8 @@
       "measurement": {
         "metric": "impressions_28d",
         "value": 1,
-        "window": "2026-10-16..2026-11-12",
-        "collected_at": "2026-11-15T15:25:20.493Z"
+        "window": "2026-10-17..2026-11-13",
+        "collected_at": "2026-11-16T15:34:59.514Z"
       },
       "impressions": 1,
       "clicks": 0,
@@ -988,8 +996,8 @@
       "measurement": {
         "metric": "impressions_28d",
         "value": 1,
-        "window": "2026-10-16..2026-11-12",
-        "collected_at": "2026-11-15T15:25:20.493Z"
+        "window": "2026-10-17..2026-11-13",
+        "collected_at": "2026-11-16T15:34:59.514Z"
       },
       "impressions": 1,
       "clicks": 0,
@@ -1008,8 +1016,8 @@
       "measurement": {
         "metric": "impressions_28d",
         "value": 1,
-        "window": "2026-10-16..2026-11-12",
-        "collected_at": "2026-11-15T15:25:20.493Z"
+        "window": "2026-10-17..2026-11-13",
+        "collected_at": "2026-11-16T15:34:59.514Z"
       },
       "impressions": 1,
       "clicks": 0,
@@ -1028,8 +1036,8 @@
       "measurement": {
         "metric": "impressions_28d",
         "value": 1,
-        "window": "2026-10-16..2026-11-12",
-        "collected_at": "2026-11-15T15:25:20.493Z"
+        "window": "2026-10-17..2026-11-13",
+        "collected_at": "2026-11-16T15:34:59.514Z"
       },
       "impressions": 1,
       "clicks": 0,
@@ -1048,8 +1056,8 @@
       "measurement": {
         "metric": "impressions_28d",
         "value": 1,
-        "window": "2026-10-16..2026-11-12",
-        "collected_at": "2026-11-15T15:25:20.493Z"
+        "window": "2026-10-17..2026-11-13",
+        "collected_at": "2026-11-16T15:34:59.514Z"
       },
       "impressions": 1,
       "clicks": 0,
@@ -1068,8 +1076,8 @@
       "measurement": {
         "metric": "impressions_28d",
         "value": 1,
-        "window": "2026-10-16..2026-11-12",
-        "collected_at": "2026-11-15T15:25:20.493Z"
+        "window": "2026-10-17..2026-11-13",
+        "collected_at": "2026-11-16T15:34:59.514Z"
       },
       "impressions": 1,
       "clicks": 0,
@@ -1088,8 +1096,8 @@
       "measurement": {
         "metric": "impressions_28d",
         "value": 1,
-        "window": "2026-10-16..2026-11-12",
-        "collected_at": "2026-11-15T15:25:20.493Z"
+        "window": "2026-10-17..2026-11-13",
+        "collected_at": "2026-11-16T15:34:59.514Z"
       },
       "impressions": 1,
       "clicks": 0,
@@ -1108,8 +1116,8 @@
       "measurement": {
         "metric": "impressions_28d",
         "value": 1,
-        "window": "2026-10-16..2026-11-12",
-        "collected_at": "2026-11-15T15:25:20.493Z"
+        "window": "2026-10-17..2026-11-13",
+        "collected_at": "2026-11-16T15:34:59.514Z"
       },
       "impressions": 1,
       "clicks": 0,
@@ -1128,8 +1136,8 @@
       "measurement": {
         "metric": "impressions_28d",
         "value": 1,
-        "window": "2026-10-16..2026-11-12",
-        "collected_at": "2026-11-15T15:25:20.493Z"
+        "window": "2026-10-17..2026-11-13",
+        "collected_at": "2026-11-16T15:34:59.514Z"
       },
       "impressions": 1,
       "clicks": 0,
@@ -1148,8 +1156,8 @@
       "measurement": {
         "metric": "impressions_28d",
         "value": 1,
-        "window": "2026-10-16..2026-11-12",
-        "collected_at": "2026-11-15T15:25:20.493Z"
+        "window": "2026-10-17..2026-11-13",
+        "collected_at": "2026-11-16T15:34:59.514Z"
       },
       "impressions": 1,
       "clicks": 0,
@@ -1168,8 +1176,8 @@
       "measurement": {
         "metric": "impressions_28d",
         "value": 1,
-        "window": "2026-10-16..2026-11-12",
-        "collected_at": "2026-11-15T15:25:20.493Z"
+        "window": "2026-10-17..2026-11-13",
+        "collected_at": "2026-11-16T15:34:59.514Z"
       },
       "impressions": 1,
       "clicks": 0,
@@ -1188,8 +1196,8 @@
       "measurement": {
         "metric": "impressions_28d",
         "value": 1,
-        "window": "2026-10-16..2026-11-12",
-        "collected_at": "2026-11-15T15:25:20.493Z"
+        "window": "2026-10-17..2026-11-13",
+        "collected_at": "2026-11-16T15:34:59.514Z"
       },
       "impressions": 1,
       "clicks": 0,
@@ -1208,8 +1216,8 @@
       "measurement": {
         "metric": "impressions_28d",
         "value": 1,
-        "window": "2026-10-16..2026-11-12",
-        "collected_at": "2026-11-15T15:25:20.493Z"
+        "window": "2026-10-17..2026-11-13",
+        "collected_at": "2026-11-16T15:34:59.514Z"
       },
       "impressions": 1,
       "clicks": 0,
@@ -1228,8 +1236,8 @@
       "measurement": {
         "metric": "impressions_28d",
         "value": 1,
-        "window": "2026-10-16..2026-11-12",
-        "collected_at": "2026-11-15T15:25:20.493Z"
+        "window": "2026-10-17..2026-11-13",
+        "collected_at": "2026-11-16T15:34:59.514Z"
       },
       "impressions": 1,
       "clicks": 0,
@@ -1248,8 +1256,8 @@
       "measurement": {
         "metric": "impressions_28d",
         "value": 1,
-        "window": "2026-10-16..2026-11-12",
-        "collected_at": "2026-11-15T15:25:20.493Z"
+        "window": "2026-10-17..2026-11-13",
+        "collected_at": "2026-11-16T15:34:59.514Z"
       },
       "impressions": 1,
       "clicks": 0,
@@ -1268,8 +1276,8 @@
       "measurement": {
         "metric": "impressions_28d",
         "value": 1,
-        "window": "2026-10-16..2026-11-12",
-        "collected_at": "2026-11-15T15:25:20.493Z"
+        "window": "2026-10-17..2026-11-13",
+        "collected_at": "2026-11-16T15:34:59.514Z"
       },
       "impressions": 1,
       "clicks": 0,
@@ -1288,8 +1296,8 @@
       "measurement": {
         "metric": "impressions_28d",
         "value": 1,
-        "window": "2026-10-16..2026-11-12",
-        "collected_at": "2026-11-15T15:25:20.493Z"
+        "window": "2026-10-17..2026-11-13",
+        "collected_at": "2026-11-16T15:34:59.514Z"
       },
       "impressions": 1,
       "clicks": 0,
@@ -1308,8 +1316,8 @@
       "measurement": {
         "metric": "impressions_28d",
         "value": 1,
-        "window": "2026-10-16..2026-11-12",
-        "collected_at": "2026-11-15T15:25:20.493Z"
+        "window": "2026-10-17..2026-11-13",
+        "collected_at": "2026-11-16T15:34:59.514Z"
       },
       "impressions": 1,
       "clicks": 0,
@@ -1328,8 +1336,8 @@
       "measurement": {
         "metric": "impressions_28d",
         "value": 1,
-        "window": "2026-10-16..2026-11-12",
-        "collected_at": "2026-11-15T15:25:20.493Z"
+        "window": "2026-10-17..2026-11-13",
+        "collected_at": "2026-11-16T15:34:59.514Z"
       },
       "impressions": 1,
       "clicks": 0,
@@ -1348,8 +1356,8 @@
       "measurement": {
         "metric": "impressions_28d",
         "value": 1,
-        "window": "2026-10-16..2026-11-12",
-        "collected_at": "2026-11-15T15:25:20.493Z"
+        "window": "2026-10-17..2026-11-13",
+        "collected_at": "2026-11-16T15:34:59.514Z"
       },
       "impressions": 1,
       "clicks": 0,

@@ -2,11 +2,11 @@
   "schema_version": "1.0",
   "generated_from": "data/search_intelligence/target_query_set.json",
   "window": {
-    "start_date": "2026-10-16",
-    "end_date": "2026-11-12",
+    "start_date": "2026-10-17",
+    "end_date": "2026-11-13",
     "days": 28
   },
-  "truth_collected_at": "2026-11-15T15:25:20.493Z",
+  "truth_collected_at": "2026-11-16T15:34:59.514Z",
   "rule": {
     "grouping": "one family per landing page (the page Google shows for the query)",
     "min_impressions": 20,
@@ -17,7 +17,7 @@
   },
   "client_approval": "Client site: qualifying families are PROPOSALS. A family is strengthened only once its status is \"approved\" here, with approved_by naming who decided (the client, or the site owner on her own decision) and approved_at.",
   "target_count": 59,
-  "impressions_total": 423,
+  "impressions_total": 433,
   "family_count": 16,
   "proposal_count": 1,
   "approved_count": 2,
@@ -25,18 +25,18 @@
     {
       "family": "/",
       "page": "https://www.hicksconsulting.org/",
-      "impressions": 180,
-      "clicks": 4,
-      "ctr": 2.2,
-      "weighted_position": 4.7,
+      "impressions": 191,
+      "clicks": 5,
+      "ctr": 2.6,
+      "weighted_position": 4.5,
       "query_count": 16,
       "head_query": "hicks consulting",
       "queries": [
         {
           "query": "hicks consulting",
-          "impressions": 126,
+          "impressions": 129,
           "clicks": 3,
-          "position": 3.54
+          "position": 3.51
         },
         {
           "query": "health consultant",
@@ -46,9 +46,9 @@
         },
         {
           "query": "monika hicks",
-          "impressions": 12,
-          "clicks": 0,
-          "position": 4.42
+          "impressions": 20,
+          "clicks": 1,
+          "position": 3.05
         },
         {
           "query": "hicks counseling",
@@ -135,7 +135,7 @@
       "approved_by": "site owner (not the client)",
       "approved_at": "2026-10-11",
       "approval_note": "Site owner decided on 2026-10-11 to strengthen both qualifying families now rather than wait on a client flag. Not a client decision; the client did not approve or author this change.",
-      "proposed_change": "Lead / with a direct answer to \"hicks consulting\" in its title and first paragraph: 180 impressions at position 4.7 earned 4 click(s) (2.2% CTR)."
+      "proposed_change": "Lead / with a direct answer to \"hicks consulting\" in its title and first paragraph: 191 impressions at position 4.5 earned 5 click(s) (2.6% CTR)."
     },
     {
       "family": "/black-therapist-memphis/",
@@ -149,15 +149,15 @@
       "queries": [
         {
           "query": "black therapist memphis tn",
-          "impressions": 41,
+          "impressions": 42,
           "clicks": 2,
-          "position": 8.53
+          "position": 8.57
         },
         {
           "query": "black therapist memphis, tn",
-          "impressions": 20,
+          "impressions": 19,
           "clicks": 0,
-          "position": 7.75
+          "position": 7.79
         },
         {
           "query": "black mental health therapist near me",
@@ -307,24 +307,24 @@
     {
       "family": "/corporate-speaking/",
       "page": "https://www.hicksconsulting.org/corporate-speaking/",
-      "impressions": 17,
+      "impressions": 16,
       "clicks": 0,
       "ctr": 0,
-      "weighted_position": 7.6,
+      "weighted_position": 7.8,
       "query_count": 1,
       "head_query": "hicks training",
       "queries": [
         {
           "query": "hicks training",
-          "impressions": 17,
+          "impressions": 16,
           "clicks": 0,
-          "position": 7.59
+          "position": 7.82
         }
       ],
       "rank": 4,
       "qualifies": false,
       "status": "measured_only",
-      "why_not": "17 impressions < floor 20"
+      "why_not": "16 impressions < floor 20"
     },
     {
       "family": "/questions/lcsw-therapist-memphis/",
