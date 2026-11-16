@@ -1,8 +1,8 @@
 {
   "schema": "search-loop-discovery-v1",
   "site": "hicksconsulting.org",
-  "week": "2026-W46",
-  "generated_at": "2026-11-09T12:56:27.044Z",
+  "week": "2026-W47",
+  "generated_at": "2026-11-16T13:05:32.136Z",
   "paid_calls": 0,
   "cost_usd": 0,
   "hosts": {
@@ -32,12 +32,12 @@
     }
   },
   "sources": {
-    "search_console": "ok: 88 rows",
-    "bing_webmaster": "ok: 13 rows",
+    "search_console": "ok: 103 rows",
+    "bing_webmaster": "ok: 5 rows",
     "easy_wins": "ok: 14 easy win(s) in Search Console",
     "suggestqueries.google.com": "ok",
     "api.bing.com": "ok",
-    "relevance_screen": "ok: kept 8 of 75 (free model)",
+    "relevance_screen": "ok: kept 33 of 69 (free model)",
     "top10": "not read: no BRAVE_SEARCH_API_KEY"
   },
   "notes": [
@@ -49,8 +49,8 @@
       "can_be_one": 2,
       "striking": 1
     },
-    "can_be_one": 3,
-    "striking": 5,
+    "can_be_one": 22,
+    "striking": 11,
     "weights": {
       "neighbour": 35,
       "unanswered": 30,
@@ -59,9 +59,9 @@
     }
   },
   "counts": {
-    "candidates": 83,
-    "targets": 8,
-    "strengthen_candidates": 4,
+    "candidates": 79,
+    "targets": 33,
+    "strengthen_candidates": 6,
     "dropped_shared_audience": 0
   }
 }

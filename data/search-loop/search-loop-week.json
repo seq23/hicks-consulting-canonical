@@ -1,28 +1,30 @@
 {
   "schema": "search-loop-week-v1",
-  "week": "2026-W46",
+  "week": "2026-W47",
   "site": "hicksconsulting.org",
-  "generated_at": "2026-11-15T12:56:11.148Z",
+  "generated_at": "2026-11-16T13:05:32.136Z",
   "state": "running",
   "published": 0,
-  "indexed": "not read: no page old enough to inspect yet (14 days)",
+  "indexed": 3,
   "pace": 1,
   "ai_visitors": 0,
-  "ai_bot_hits": 1824,
+  "ai_bot_hits": 2163,
   "conversions": "not read: no conversion source configured for this site (form fills / checkouts)",
-  "wins": 0,
+  "wins": 1,
   "undone": 0,
   "merged": 0,
   "held_by_cap": 7,
   "redirected": [],
   "cap": {
-    "max_live_pages": 16,
+    "max_live_pages": 14,
     "live": 18,
     "room": 0,
-    "why": "down from 18 to 16: Google impressions fell to 1107 in the last 28 days from 1641 in the 28 before"
+    "why": "down from 16 to 14: Google impressions fell to 1017 in the last 28 days from 1651 in the 28 before"
   },
   "notes": [
-    "BUILD held by the cap: 18 live engine page(s), cap 16 (down from 18 to 16: Google impressions fell to 1107 in the last 28 days from 1641 in the 28 before); 1 more page(s) today would have gone over it, those searches stay queued",
+    "FIND top10: not read: no BRAVE_SEARCH_API_KEY",
+    "cap: down from 16 to 14: Google impressions fell to 1017 in the last 28 days from 1651 in the 28 before",
+    "BUILD held by the cap: 18 live engine page(s), cap 14 (down from 16 to 14: Google impressions fell to 1017 in the last 28 days from 1651 in the 28 before); 1 more page(s) today would have gone over it, those searches stay queued",
     "CHECK: published pages are frozen on this site; checkpoints are recorded, no page is strengthened, undone or merged"
   ],
   "lanes": {
@@ -38,9 +40,9 @@
     },
     "striking": {
       "pages": 18,
-      "measured": 0,
+      "measured": 3,
       "top3": 0,
-      "hit_rate": "not read: no page in this lane has reached its 2-week check yet"
+      "hit_rate": 0
     },
     "weights": {
       "neighbour": 35,
@@ -51,5 +53,5 @@
     "weight_changes": [],
     "competition": "not read: no BRAVE_SEARCH_API_KEY"
   },
-  "run_url": "https://github.com/seq23/hicks-consulting-canonical/actions/runs/43716340612"
+  "run_url": "https://github.com/seq23/hicks-consulting-canonical/actions/runs/43872443544"
 }
