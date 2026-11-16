@@ -1,7 +1,7 @@
 {
   "schema_version": "2.0",
-  "receipt_id": "2026-11-15T14-21-52.993Z-43723931558",
-  "attempted_at": "2026-11-15T14:21:52.993Z",
+  "receipt_id": "2026-11-16T14-44-41.324Z-43888914691",
+  "attempted_at": "2026-11-16T14:44:41.324Z",
   "publication_trigger": "ONLY_AFTER_EXISTING_CONTENT_PUBLISH_WORKFLOW_SUCCEEDS",
   "chain": [
     "successful_publish",
@@ -15,14 +15,14 @@
   "sitemap_refresh": {
     "status": "SUCCESS",
     "sitemap_url": "https://www.hicksconsulting.org/sitemap.xml",
-    "sitemap_sha256": "d24159107f84fb6b9743dabc4fafda615118da1989a66ba3b0f76e07c6ca9887",
-    "url_count": 161
+    "sitemap_sha256": "53999fa555b5c245668dfb01f7e6fe2ff1f824618fa5d8cd3fb7dd7c7382b309",
+    "url_count": 162
   },
   "indexnow": {
     "status": "SUCCESS",
     "attempted": true,
     "http_status": 200,
-    "submitted_urls": 161,
+    "submitted_urls": 162,
     "key_location": "https://www.hicksconsulting.org/indexnow.txt"
   },
   "gsc_sitemap_submission": {
@@ -73,7 +73,7 @@
         "verdict": "PASS",
         "coverage_state": "Submitted and indexed",
         "indexing_state": "INDEXING_ALLOWED",
-        "last_crawl_time": "2026-11-03T18:39:59Z"
+        "last_crawl_time": "2026-11-07T07:29:58Z"
       },
       {
         "url": "https://www.hicksconsulting.org/organizational-training-inquiry/",
@@ -197,7 +197,7 @@
   "durable_receipt": {
     "status": "SUCCESS",
     "latest_path": "data/distribution/provider_receipt.json",
-    "history_path": "data/distribution/receipts/2026-11-15T14-21-52.993Z-43723931558.json"
+    "history_path": "data/distribution/receipts/2026-11-16T14-44-41.324Z-43888914691.json"
   },
   "observation_feedback": {
     "status": "SUCCESS",
