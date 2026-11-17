@@ -90,6 +90,7 @@
     if (!target) return;
     const item = latestFeatured(products, 'premium');
     if (!item) return;
+    target.hidden = false;
     const href = actionHref(item);
     const button = href && item.checkoutStatus === 'live'
       ? `<a class="button" href="${escapeHtml(href)}" target="_blank" rel="noopener noreferrer">${escapeHtml(actionLabel(item))}</a>`

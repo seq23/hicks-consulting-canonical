@@ -27,28 +27,29 @@ for(const route of moneyPages){
 
 // Homepage dual-pathway contract: individual healing and organizational training must remain visibly separated.
 const homepage = fs.readFileSync('pages/index.html', 'utf8');
+// Behaviour, not wording (client-approved rewrite, 17 Nov 2026): both pathways, both CTAs, the
+// booking link, the training inquiry route and the six signature trainings by name.
 const homepageRequired = [
-  'Mental health support for high-achieving women and healthier organizations.',
   'Work With Me (Individuals)',
   'Book a Training (Organizations)',
   'For Individuals Seeking Healing &amp; Support',
   'For Organizations &amp; Teams',
-  'licensed mental health professional',
-  'medication management',
-  'keynote speaking',
   'Burnout-Proofing the Workplace',
-  'Trauma-Informed Leadership in Real-World Settings',
+  'Trauma-Informed Leadership',
+  'Managing Emotional Load in High-Responsibility Teams',
   'The Human Side of Retention',
   '/organizational-training-inquiry/',
+  '/corporate-speaking/',
+  '/therapy/',
   'https://monika-hicks.clientsecure.me/'
 ];
 for (const token of homepageRequired) {
   if (!homepage.includes(token)) fail(`Homepage dual-pathway contract missing token: ${token}`);
 }
 
-const individualSection = (homepage.match(/<section class="section soft-tone" id="individual-support">[\s\S]*?<\/section>/) || [''])[0];
-const individualPathway = (homepage.match(/<span class="section-label">For Individuals Seeking Healing &amp; Support<\/span>[\s\S]*?<a class="button" data-form-key="therapy"/) || [''])[0];
-for (const block of [individualSection, individualPathway]) {
+const individualPathway = (homepage.match(/<h3>For Individuals Seeking Healing &amp; Support<\/h3>[\s\S]*?<\/article>/) || [''])[0];
+if (!individualPathway) fail('Homepage individual pathway card is missing.');
+for (const block of [individualPathway]) {
   if (/trauma/i.test(block)) fail('Individual homepage pathway must not position trauma as an individual-client focus.');
 }
 
@@ -57,20 +58,15 @@ if (homepage.includes('Book a Consult</a><a class="button alt" href="/corporate-
 }
 
 const homepageRestoredProof = [
-  'luxury-fade-words',
-  'Grounded care.',
-  'Intentional healing.',
-  'Room to exhale.',
-  'Client reviews',
   'What clients are saying',
   'Monika is easy to talk to and makes it easier to open up.',
-  'Memphis Voyager',
   'memphisvoyager.com/interview/hidden-gems-meet-monika-hicks-of-hicks-consulting/',
-  'Verified profiles',
   'psychology-today-badge.png',
   'therapy-for-black-girls-badge.png',
   'providers.therapyforblackgirls.com/listing/monika-hicks-lcsw/'
 ];
+// The client is an LCSW: no review or heading may call her "Dr." (owner rule).
+if (/\bDr\.?\s+Hicks\b/.test(homepage)) fail('Homepage must not call Monika "Dr. Hicks"; she is an LCSW.');
 for (const token of homepageRestoredProof) {
   if (!homepage.includes(token)) fail(`Homepage restored credibility/proof feature missing token: ${token}`);
 }
