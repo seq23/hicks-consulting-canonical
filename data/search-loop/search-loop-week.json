@@ -2,15 +2,15 @@
   "schema": "search-loop-week-v1",
   "week": "2026-W47",
   "site": "hicksconsulting.org",
-  "generated_at": "2026-11-16T13:05:32.136Z",
+  "generated_at": "2026-11-17T12:56:18.913Z",
   "state": "running",
   "published": 0,
-  "indexed": 3,
+  "indexed": 16,
   "pace": 1,
   "ai_visitors": 0,
-  "ai_bot_hits": 2163,
+  "ai_bot_hits": 2120,
   "conversions": "not read: no conversion source configured for this site (form fills / checkouts)",
-  "wins": 1,
+  "wins": 7,
   "undone": 0,
   "merged": 0,
   "held_by_cap": 7,
@@ -22,8 +22,6 @@
     "why": "down from 16 to 14: Google impressions fell to 1017 in the last 28 days from 1651 in the 28 before"
   },
   "notes": [
-    "FIND top10: not read: no BRAVE_SEARCH_API_KEY",
-    "cap: down from 16 to 14: Google impressions fell to 1017 in the last 28 days from 1651 in the 28 before",
     "BUILD held by the cap: 18 live engine page(s), cap 14 (down from 16 to 14: Google impressions fell to 1017 in the last 28 days from 1651 in the 28 before); 1 more page(s) today would have gone over it, those searches stay queued",
     "CHECK: published pages are frozen on this site; checkpoints are recorded, no page is strengthened, undone or merged"
   ],
@@ -40,9 +38,9 @@
     },
     "striking": {
       "pages": 18,
-      "measured": 3,
-      "top3": 0,
-      "hit_rate": 0
+      "measured": 16,
+      "top3": 1,
+      "hit_rate": 0.06
     },
     "weights": {
       "neighbour": 35,
@@ -53,5 +51,5 @@
     "weight_changes": [],
     "competition": "not read: no BRAVE_SEARCH_API_KEY"
   },
-  "run_url": "https://github.com/seq23/hicks-consulting-canonical/actions/runs/43872443544"
+  "run_url": "https://github.com/seq23/hicks-consulting-canonical/actions/runs/44087790371"
 }
