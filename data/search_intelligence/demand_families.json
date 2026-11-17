@@ -2,11 +2,11 @@
   "schema_version": "1.0",
   "generated_from": "data/search_intelligence/target_query_set.json",
   "window": {
-    "start_date": "2026-10-17",
-    "end_date": "2026-11-13",
+    "start_date": "2026-10-18",
+    "end_date": "2026-11-14",
     "days": 28
   },
-  "truth_collected_at": "2026-11-16T15:34:59.514Z",
+  "truth_collected_at": "2026-11-17T15:25:19.178Z",
   "rule": {
     "grouping": "one family per landing page (the page Google shows for the query)",
     "min_impressions": 20,
@@ -16,27 +16,27 @@
     "top_n": 12
   },
   "client_approval": "Client site: qualifying families are PROPOSALS. A family is strengthened only once its status is \"approved\" here, with approved_by naming who decided (the client, or the site owner on her own decision) and approved_at.",
-  "target_count": 59,
-  "impressions_total": 433,
-  "family_count": 16,
+  "target_count": 61,
+  "impressions_total": 443,
+  "family_count": 17,
   "proposal_count": 1,
   "approved_count": 2,
   "families": [
     {
       "family": "/",
       "page": "https://www.hicksconsulting.org/",
-      "impressions": 191,
+      "impressions": 200,
       "clicks": 5,
-      "ctr": 2.6,
-      "weighted_position": 4.5,
+      "ctr": 2.5,
+      "weighted_position": 4.4,
       "query_count": 16,
       "head_query": "hicks consulting",
       "queries": [
         {
           "query": "hicks consulting",
-          "impressions": 129,
+          "impressions": 138,
           "clicks": 3,
-          "position": 3.51
+          "position": 3.37
         },
         {
           "query": "health consultant",
@@ -135,23 +135,23 @@
       "approved_by": "site owner (not the client)",
       "approved_at": "2026-10-11",
       "approval_note": "Site owner decided on 2026-10-11 to strengthen both qualifying families now rather than wait on a client flag. Not a client decision; the client did not approve or author this change.",
-      "proposed_change": "Lead / with a direct answer to \"hicks consulting\" in its title and first paragraph: 191 impressions at position 4.5 earned 5 click(s) (2.6% CTR)."
+      "proposed_change": "Lead / with a direct answer to \"hicks consulting\" in its title and first paragraph: 200 impressions at position 4.4 earned 5 click(s) (2.5% CTR)."
     },
     {
       "family": "/black-therapist-memphis/",
       "page": "https://www.hicksconsulting.org/black-therapist-memphis/",
-      "impressions": 118,
+      "impressions": 120,
       "clicks": 2,
       "ctr": 1.7,
       "weighted_position": 8,
-      "query_count": 20,
+      "query_count": 21,
       "head_query": "black therapist memphis tn",
       "queries": [
         {
           "query": "black therapist memphis tn",
-          "impressions": 42,
+          "impressions": 43,
           "clicks": 2,
-          "position": 8.57
+          "position": 8.58
         },
         {
           "query": "black therapist memphis, tn",
@@ -262,6 +262,12 @@
           "position": 1
         },
         {
+          "query": "female african american therapist near me",
+          "impressions": 1,
+          "clicks": 0,
+          "position": 6
+        },
+        {
           "query": "in person black therapist near me",
           "impressions": 1,
           "clicks": 0,
@@ -274,7 +280,7 @@
       "approved_by": "site owner (not the client)",
       "approved_at": "2026-10-11",
       "approval_note": "Site owner decided on 2026-10-11 to strengthen both qualifying families now rather than wait on a client flag. Not a client decision; the client did not approve or author this change.",
-      "proposed_change": "Lead /black-therapist-memphis/ with a direct answer to \"black therapist memphis tn\" in its title and first paragraph: 118 impressions at position 8 earned 2 click(s) (1.7% CTR)."
+      "proposed_change": "Lead /black-therapist-memphis/ with a direct answer to \"black therapist memphis tn\" in its title and first paragraph: 120 impressions at position 8 earned 2 click(s) (1.7% CTR)."
     },
     {
       "family": "/contact/",
@@ -305,28 +311,6 @@
       "proposed_change": "Lead /contact/ with a direct answer to \"hicks consulting llc\" in its title and first paragraph: 64 impressions at position 5 earned 0 click(s) (0% CTR)."
     },
     {
-      "family": "/corporate-speaking/",
-      "page": "https://www.hicksconsulting.org/corporate-speaking/",
-      "impressions": 16,
-      "clicks": 0,
-      "ctr": 0,
-      "weighted_position": 7.8,
-      "query_count": 1,
-      "head_query": "hicks training",
-      "queries": [
-        {
-          "query": "hicks training",
-          "impressions": 16,
-          "clicks": 0,
-          "position": 7.82
-        }
-      ],
-      "rank": 4,
-      "qualifies": false,
-      "status": "measured_only",
-      "why_not": "16 impressions < floor 20"
-    },
-    {
       "family": "/questions/lcsw-therapist-memphis/",
       "page": "https://www.hicksconsulting.org/questions/lcsw-therapist-memphis/",
       "impressions": 15,
@@ -343,10 +327,32 @@
           "position": 18.8
         }
       ],
-      "rank": 5,
+      "rank": 4,
       "qualifies": false,
       "status": "measured_only",
       "why_not": "15 impressions < floor 20"
+    },
+    {
+      "family": "/corporate-speaking/",
+      "page": "https://www.hicksconsulting.org/corporate-speaking/",
+      "impressions": 14,
+      "clicks": 0,
+      "ctr": 0,
+      "weighted_position": 8.2,
+      "query_count": 1,
+      "head_query": "hicks training",
+      "queries": [
+        {
+          "query": "hicks training",
+          "impressions": 14,
+          "clicks": 0,
+          "position": 8.15
+        }
+      ],
+      "rank": 5,
+      "qualifies": false,
+      "status": "measured_only",
+      "why_not": "14 impressions < floor 20"
     },
     {
       "family": "/questions/grief-counseling-memphis-online/",
@@ -573,6 +579,28 @@
       "why_not": "1 impressions < floor 20"
     },
     {
+      "family": "/questions/therapy-for-black-professional-women-tennessee/",
+      "page": "https://www.hicksconsulting.org/questions/therapy-for-black-professional-women-tennessee/",
+      "impressions": 1,
+      "clicks": 0,
+      "ctr": 0,
+      "weighted_position": 66,
+      "query_count": 1,
+      "head_query": "therapy for black executives",
+      "queries": [
+        {
+          "query": "therapy for black executives",
+          "impressions": 1,
+          "clicks": 0,
+          "position": 66
+        }
+      ],
+      "rank": 14,
+      "qualifies": false,
+      "status": "measured_only",
+      "why_not": "1 impressions < floor 20"
+    },
+    {
       "family": "/resources/articles/what-black-women-deserve-from-support-that-is-actually-useful/",
       "page": "https://www.hicksconsulting.org/resources/articles/what-black-women-deserve-from-support-that-is-actually-useful/",
       "impressions": 1,
@@ -589,7 +617,7 @@
           "position": 6
         }
       ],
-      "rank": 14,
+      "rank": 15,
       "qualifies": false,
       "status": "measured_only",
       "why_not": "1 impressions < floor 20"
@@ -611,7 +639,7 @@
           "position": 21
         }
       ],
-      "rank": 15,
+      "rank": 16,
       "qualifies": false,
       "status": "measured_only",
       "why_not": "1 impressions < floor 20"
@@ -633,7 +661,7 @@
           "position": 100
         }
       ],
-      "rank": 16,
+      "rank": 17,
       "qualifies": false,
       "status": "measured_only",
       "why_not": "1 impressions < floor 20"
