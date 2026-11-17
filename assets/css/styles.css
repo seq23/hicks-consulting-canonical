@@ -1583,6 +1583,10 @@ footer {
   gap: 1.4rem;
   align-items: stretch;
 }
+/* Until a premium workbook is featured, its card stays hidden and the free worksheet spans the row. */
+.featured-download-grid:has(> [hidden]) {
+  grid-template-columns: 1fr;
+}
 .expanded-resource-taxonomy {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }

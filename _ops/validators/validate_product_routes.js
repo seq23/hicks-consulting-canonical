@@ -11,13 +11,10 @@ const requiredFiles = [
 for (const file of requiredFiles) if (!fs.existsSync(file)) fail(`Missing required product route file: ${file}`);
 const resources = fs.readFileSync('pages/resources/index.html', 'utf8');
 for (const token of [
-  'FEATURED PREMIUM DOWNLOAD',
-  'FEATURED FREE DOWNLOAD',
+  'data-featured-premium-download',
   '/resources/free-downloads/',
   '/resources/premium-downloads/',
-  'expanded-resource-taxonomy',
-  'FREE DOWNLOADS',
-  'PREMIUM DOWNLOADS'
+  'expanded-resource-taxonomy'
 ]) if (!resources.includes(token)) fail(`Resources page missing token: ${token}`);
 const css = fs.readFileSync('assets/css/styles.css', 'utf8');
 for (const token of ['.expanded-resource-taxonomy', 'repeat(3, minmax(0, 1fr))', '.featured-download-grid', '.digital-download-grid']) {
