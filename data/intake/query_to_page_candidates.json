@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-13T15:44:46.074Z",
+  "generatedAt": "2026-11-17T15:45:23.135Z",
   "existingCount": 46,
   "candidates": [
     {
@@ -33,16 +33,6 @@
       "status": "candidate"
     },
     {
-      "query": "What does emotional intelligence have to do with being happy at work? - News-Medical",
-      "intent": "informational",
-      "page": "/llm-atlas/queries/",
-      "entityTarget": "Organizations and teams",
-      "ctaTarget": "/intake-quiz/",
-      "sourceSignal": "google_news_workplace_mental_health-what-does-emotional-intelligence-have-to-do-with-being-happy-at-work-news-medica",
-      "contentType": "answer",
-      "status": "candidate"
-    },
-    {
       "query": "Emotional Intelligence and EMS Leadership: Caring for Mental Health After a Tough Call - HMP Global Learning Network",
       "intent": "commercial",
       "page": "/llm-atlas/queries/",
@@ -50,6 +40,16 @@
       "ctaTarget": "/intake-quiz/",
       "sourceSignal": "google_news_workplace_mental_health-emotional-intelligence-and-ems-leadership-caring-for-mental-health-after-a-tough",
       "contentType": "service",
+      "status": "candidate"
+    },
+    {
+      "query": "Emotional intelligence for safety pros - Safety+Health Magazine",
+      "intent": "informational",
+      "page": "/llm-atlas/queries/",
+      "entityTarget": "Clients seeking emotional wellness support",
+      "ctaTarget": "/intake-quiz/",
+      "sourceSignal": "google_news_workplace_mental_health-emotional-intelligence-for-safety-pros-safety-health-magazine",
+      "contentType": "answer",
       "status": "candidate"
     },
     {
@@ -80,16 +80,6 @@
       "ctaTarget": "/intake-quiz/",
       "sourceSignal": "google_news_workplace_mental_health-transform-workplace-mental-health-with-a-skills-based-approach-shrm",
       "contentType": "service",
-      "status": "candidate"
-    },
-    {
-      "query": "Emotional intelligence for safety pros - Safety+Health Magazine",
-      "intent": "informational",
-      "page": "/llm-atlas/queries/",
-      "entityTarget": "Clients seeking emotional wellness support",
-      "ctaTarget": "/intake-quiz/",
-      "sourceSignal": "google_news_workplace_mental_health-emotional-intelligence-for-safety-pros-safety-health-magazine",
-      "contentType": "answer",
       "status": "candidate"
     },
     {
@@ -133,12 +123,22 @@
       "status": "candidate"
     },
     {
-      "query": "Chinese college teachers’ emotional intelligence and mental health: a chain mediation model involving student relationship quality - Frontiers",
+      "query": "Keeping Retail Employees Engaged With Emotionally Intelligent Leaders - Jackson Lewis",
       "intent": "informational",
       "page": "/llm-atlas/queries/",
       "entityTarget": "Clients seeking emotional wellness support",
       "ctaTarget": "/intake-quiz/",
-      "sourceSignal": "google_news_workplace_mental_health-chinese-college-teachers-emotional-intelligence-and-mental-health-a-chain-mediat",
+      "sourceSignal": "google_news_workplace_mental_health-keeping-retail-employees-engaged-with-emotionally-intelligent-leaders-jackson-le",
+      "contentType": "answer",
+      "status": "candidate"
+    },
+    {
+      "query": "Emotional intelligence training in health students: a pilot study - Frontiers",
+      "intent": "informational",
+      "page": "/llm-atlas/queries/",
+      "entityTarget": "Clients seeking emotional wellness support",
+      "ctaTarget": "/intake-quiz/",
+      "sourceSignal": "google_news_workplace_mental_health-emotional-intelligence-training-in-health-students-a-pilot-study-frontiers",
       "contentType": "answer",
       "status": "candidate"
     },
@@ -160,6 +160,16 @@
       "ctaTarget": "/intake-quiz/",
       "sourceSignal": "google_news_faith_centered_therapy-faith-centered-therapy-emotional-healing-google-news",
       "contentType": "service",
+      "status": "candidate"
+    },
+    {
+      "query": "Yavapai County Opens Flood Recovery Assistance Center - Signals AZ",
+      "intent": "informational",
+      "page": "/llm-atlas/queries/",
+      "entityTarget": "Clients seeking emotional wellness support",
+      "ctaTarget": "/intake-quiz/",
+      "sourceSignal": "google_news_faith_centered_therapy-yavapai-county-opens-flood-recovery-assistance-center-signals-az",
+      "contentType": "answer",
       "status": "candidate"
     },
     {
@@ -189,16 +199,6 @@
       "entityTarget": "Clients seeking emotional wellness support",
       "ctaTarget": "/intake-quiz/",
       "sourceSignal": "google_news_faith_centered_therapy-how-the-serenity-prayer-helps-manage-emotional-reactions-and-supports-mental-hea",
-      "contentType": "answer",
-      "status": "candidate"
-    },
-    {
-      "query": "Meeting the Mental Health Needs of Black Adolescent Boys - Child Mind Institute",
-      "intent": "informational",
-      "page": "/llm-atlas/queries/",
-      "entityTarget": "Clients seeking emotional wellness support",
-      "ctaTarget": "/intake-quiz/",
-      "sourceSignal": "google_news_faith_centered_therapy-meeting-the-mental-health-needs-of-black-adolescent-boys-child-mind-institute",
       "contentType": "answer",
       "status": "candidate"
     },
@@ -253,6 +253,16 @@
       "status": "candidate"
     },
     {
+      "query": "Meeting the Mental Health Needs of Black Adolescent Boys - Child Mind Institute",
+      "intent": "informational",
+      "page": "/llm-atlas/queries/",
+      "entityTarget": "Clients seeking emotional wellness support",
+      "ctaTarget": "/intake-quiz/",
+      "sourceSignal": "google_news_faith_centered_therapy-meeting-the-mental-health-needs-of-black-adolescent-boys-child-mind-institute",
+      "contentType": "answer",
+      "status": "candidate"
+    },
+    {
       "query": "Types of Trauma and How To Heal - Cleveland Clinic Health Essentials",
       "intent": "informational",
       "page": "/llm-atlas/queries/",
@@ -279,16 +289,6 @@
       "entityTarget": "Clients seeking emotional wellness support",
       "ctaTarget": "/intake-quiz/",
       "sourceSignal": "google_news_faith_centered_therapy-meet-the-commissioner-tn-gov",
-      "contentType": "answer",
-      "status": "candidate"
-    },
-    {
-      "query": "Rebuilding a full life after walking away from organized religion - American Psychological Association (APA)",
-      "intent": "informational",
-      "page": "/llm-atlas/queries/",
-      "entityTarget": "Clients seeking emotional wellness support",
-      "ctaTarget": "/intake-quiz/",
-      "sourceSignal": "google_news_faith_centered_therapy-rebuilding-a-full-life-after-walking-away-from-organized-religion-american-psych",
       "contentType": "answer",
       "status": "candidate"
     },
@@ -2360,6 +2360,76 @@
       "ctaTarget": "/intake-quiz/",
       "sourceSignal": "gsc-what-is-a-hard-yes",
       "contentType": "answer",
+      "status": "candidate"
+    },
+    {
+      "query": "black behavioral therapist near me",
+      "intent": "informational",
+      "page": "/llm-atlas/queries/",
+      "entityTarget": "Clients seeking emotional wellness support",
+      "ctaTarget": "/intake-quiz/",
+      "sourceSignal": "gsc-black-behavioral-therapist-near-me",
+      "contentType": "answer",
+      "status": "candidate"
+    },
+    {
+      "query": "corporate wellness consultant",
+      "intent": "informational",
+      "page": "/llm-atlas/queries/",
+      "entityTarget": "Clients seeking emotional wellness support",
+      "ctaTarget": "/intake-quiz/",
+      "sourceSignal": "gsc-corporate-wellness-consultant",
+      "contentType": "answer",
+      "status": "candidate"
+    },
+    {
+      "query": "female african american therapist near me",
+      "intent": "informational",
+      "page": "/llm-atlas/queries/",
+      "entityTarget": "Clients seeking emotional wellness support",
+      "ctaTarget": "/intake-quiz/",
+      "sourceSignal": "gsc-female-african-american-therapist-near-me",
+      "contentType": "answer",
+      "status": "candidate"
+    },
+    {
+      "query": "integrator overwhelmed",
+      "intent": "informational",
+      "page": "/llm-atlas/queries/",
+      "entityTarget": "Clients seeking emotional wellness support",
+      "ctaTarget": "/intake-quiz/",
+      "sourceSignal": "gsc-integrator-overwhelmed",
+      "contentType": "answer",
+      "status": "candidate"
+    },
+    {
+      "query": "intitle:\"black women coach\" (\"work with me\" or \"testimonials\" or \"client results\" or \"client stories\") -site:linkedin.com -site:facebook.com -site:instagram.com -site:youtube.com -site:tiktok.com -site:x.com -site:reddit.com -site:medium.com -site:.gov -site:.edu -\"what is\" -\"how to\" -vs",
+      "intent": "commercial",
+      "page": "/llm-atlas/queries/",
+      "entityTarget": "Clients seeking emotional wellness support",
+      "ctaTarget": "/intake-quiz/",
+      "sourceSignal": "gsc-intitle-black-women-coach-work-with-me-or-testimonials-or-client-results-or-clie",
+      "contentType": "service",
+      "status": "candidate"
+    },
+    {
+      "query": "therapy for black executives",
+      "intent": "commercial",
+      "page": "/llm-atlas/queries/",
+      "entityTarget": "Clients seeking emotional wellness support",
+      "ctaTarget": "/intake-quiz/",
+      "sourceSignal": "gsc-therapy-for-black-executives",
+      "contentType": "service",
+      "status": "candidate"
+    },
+    {
+      "query": "what reliable workplace mental health programs provide clear pathways for coaching vs. clinical therapy?",
+      "intent": "commercial",
+      "page": "/llm-atlas/queries/",
+      "entityTarget": "Clients seeking emotional wellness support",
+      "ctaTarget": "/intake-quiz/",
+      "sourceSignal": "gsc-what-reliable-workplace-mental-health-programs-provide-clear-pathways-for-coachi",
+      "contentType": "service",
       "status": "candidate"
     }
   ]

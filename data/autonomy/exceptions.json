@@ -987,6 +987,20 @@
       "createdAt": "2026-11-17T14:29:24.572Z",
       "blocksOtherWork": false,
       "clientActionRequired": false
+    },
+    {
+      "id": "exception-continuity-insight-2027-01-20-315c7aab6808-1794930324184",
+      "candidateId": "continuity-insight-2027-01-20-315c7aab6808",
+      "decision": "SKIPPED_PROHIBITED_ACTION",
+      "findings": [
+        {
+          "code": "LOW_ADMISSION_SCORE",
+          "severity": "advisory"
+        }
+      ],
+      "createdAt": "2026-11-17T15:45:24.124Z",
+      "blocksOtherWork": false,
+      "clientActionRequired": false
     }
   ]
 }
