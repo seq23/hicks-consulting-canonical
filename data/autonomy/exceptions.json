@@ -972,6 +972,21 @@
       "createdAt": "2026-11-13T15:44:47.114Z",
       "blocksOtherWork": false,
       "clientActionRequired": false
+    },
+    {
+      "id": "exception-metadata-daily-029-2-1794925764572",
+      "candidateId": "daily-029-2",
+      "decision": "SKIPPED_UNSAFE_SEARCH_METADATA",
+      "findings": [
+        {
+          "code": "SEARCH_METADATA_UNRESOLVED",
+          "severity": "hard",
+          "route": "/resources/insights/what-black-women-deserve-from-support-that-is-actually-useful-why-women-minimize-it/"
+        }
+      ],
+      "createdAt": "2026-11-17T14:29:24.572Z",
+      "blocksOtherWork": false,
+      "clientActionRequired": false
     }
   ]
 }
