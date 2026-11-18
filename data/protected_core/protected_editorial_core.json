@@ -25,8 +25,8 @@
     },
     {
       "path": ".github/workflows/content-publish.yml",
-      "sha256": "33def543f677cb882efd53ef2062a027c32531c47014cfd0605360f3e3ed17d3",
-      "bytes": 4559
+      "sha256": "29b7c44d1aa546be4b9b7ec4c435ecd1f6fd18470b00bb821720636caf691c30",
+      "bytes": 7025
     },
     {
       "path": "pages/admin/index.html",
@@ -44,10 +44,9 @@
       "bytes": 8930
     }
   ],
-  "baseline_refreshed_at": "2026-11-03T20:00:00Z",
-  "baseline_reason": "Owner-approved (3 Nov 2026): queued calendar posts are written by the shared search-loop engine writer before release (content-publish.yml step replaces the retired redraft lane), and a release re-renders an engine-written post with its real publish date (run_safe_publish.mjs). Human approval, release time, cadence and slots are unchanged; an engine-written sibling may carry a slightly differentiated title, with the approved title kept in approvedTitle and checked as its identity.",
+  "baseline_refreshed_at": "2026-11-18T21:00:00Z",
+  "baseline_reason": "Owner-approved (18 Nov 2026, push-race repair across her repos): content-publish.yml's commit step rebases onto the moved main and retries its push (a bare git push failed whenever another job pushed first). Release behaviour, approval, cadence and slots are unchanged.",
   "baseline_refresh_changed_files": [
-    "scripts/publishing/run_safe_publish.mjs",
     ".github/workflows/content-publish.yml"
   ]
 }
