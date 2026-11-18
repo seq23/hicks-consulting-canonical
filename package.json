@@ -107,6 +107,7 @@
     "validate:training-inquiry": "node _ops/validators/validate_training_inquiry_contract.js",
     "validate:workflows": "node _ops/validators/validate_workflows.js",
     "validate:zero-paid-llm": "node _ops/validators/validate_zero_paid_llm.js",
+    "validate:workflow-push": "node _ops/validators/validate_workflow_push.mjs",
     "calendar:write": "node scripts/publishing/write_calendar_slots.mjs",
     "validate:calendar-writer": "node _ops/validators/validate_calendar_writer.mjs",
     "validate:entities": "node _ops/validators/validate_entity_coverage.js",

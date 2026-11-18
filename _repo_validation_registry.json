@@ -678,6 +678,20 @@
       "findingProtocol": "VALIDATION_FINDING",
       "enabled": true,
       "rationale": "Owner ruling 3 Nov 2026: every queued Resources post is written by the engine's writer in page shape (answer first, question headings, FAQ + FAQPage, specific sources, Monika Hicks, LCSW byline, real publish date) at under 30% shared with any live page; the 58 queued posts were template clones sharing 55-98% with live pages. Runs the real writer on a fixture of real pages with a stub engine. Replaces the redraft-lane guard (redraft_held.mjs retired)."
+    },
+    {
+      "id": "workflow-push",
+      "npmScript": "validate:workflow-push",
+      "entrypoint": "_ops/validators/validate_workflow_push.mjs",
+      "severity": "HARD_FAIL",
+      "blocksRelease": true,
+      "group": "repo-operations",
+      "owner": "site-operations",
+      "ciInvocation": "MATRIX_ONLY",
+      "findingProtocol": "VALIDATION_FINDING",
+      "enabled": true,
+      "scope": ".github/workflows/*.yml and .github/scripts/*.sh: every git push from CI",
+      "rationale": "18 Nov 2026: p-n-p's Daily Authority Cycle went red on a bare `git push` after main moved (rejected, fetch first); nine workflows here had the same shape. This fails on any push from CI with no pull --rebase and retry loop (force pushes to a job's own branch and tag pushes are exempt), and proves itself on the pre-fix shape every run."
     }
   ]
 }

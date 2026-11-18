@@ -104,7 +104,8 @@ jobs:
           ')"
           echo "Committing as: $MESSAGE"
           git commit -m "$MESSAGE"
-          git push origin main
+          # main moves under this job: rebase onto it and retry (bare push rejected, p-n-p 18 Nov 2026).
+          for i in 1 2 3; do git pull --rebase --autostash -q origin main && git push origin main && break; [ "$i" = 3 ] && exit 1; sleep $((i*10)); done
       - name: Fail the lane if the tree could not be healed
         if: always()
         run: |
