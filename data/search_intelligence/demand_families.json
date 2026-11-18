@@ -2,11 +2,11 @@
   "schema_version": "1.0",
   "generated_from": "data/search_intelligence/target_query_set.json",
   "window": {
-    "start_date": "2026-10-18",
-    "end_date": "2026-11-14",
+    "start_date": "2026-10-19",
+    "end_date": "2026-11-15",
     "days": 28
   },
-  "truth_collected_at": "2026-11-17T15:25:19.178Z",
+  "truth_collected_at": "2026-11-18T15:25:24.002Z",
   "rule": {
     "grouping": "one family per landing page (the page Google shows for the query)",
     "min_impressions": 20,
@@ -16,39 +16,39 @@
     "top_n": 12
   },
   "client_approval": "Client site: qualifying families are PROPOSALS. A family is strengthened only once its status is \"approved\" here, with approved_by naming who decided (the client, or the site owner on her own decision) and approved_at.",
-  "target_count": 61,
-  "impressions_total": 443,
-  "family_count": 17,
+  "target_count": 62,
+  "impressions_total": 459,
+  "family_count": 18,
   "proposal_count": 1,
   "approved_count": 2,
   "families": [
     {
       "family": "/",
       "page": "https://www.hicksconsulting.org/",
-      "impressions": 200,
-      "clicks": 5,
-      "ctr": 2.5,
-      "weighted_position": 4.4,
+      "impressions": 216,
+      "clicks": 6,
+      "ctr": 2.8,
+      "weighted_position": 4.2,
       "query_count": 16,
       "head_query": "hicks consulting",
       "queries": [
         {
           "query": "hicks consulting",
-          "impressions": 138,
+          "impressions": 140,
           "clicks": 3,
-          "position": 3.37
+          "position": 3.39
+        },
+        {
+          "query": "monika hicks",
+          "impressions": 34,
+          "clicks": 2,
+          "position": 2.53
         },
         {
           "query": "health consultant",
           "impressions": 22,
           "clicks": 0,
           "position": 1
-        },
-        {
-          "query": "monika hicks",
-          "impressions": 20,
-          "clicks": 1,
-          "position": 3.05
         },
         {
           "query": "hicks counseling",
@@ -135,29 +135,29 @@
       "approved_by": "site owner (not the client)",
       "approved_at": "2026-10-11",
       "approval_note": "Site owner decided on 2026-10-11 to strengthen both qualifying families now rather than wait on a client flag. Not a client decision; the client did not approve or author this change.",
-      "proposed_change": "Lead / with a direct answer to \"hicks consulting\" in its title and first paragraph: 200 impressions at position 4.4 earned 5 click(s) (2.5% CTR)."
+      "proposed_change": "Lead / with a direct answer to \"hicks consulting\" in its title and first paragraph: 216 impressions at position 4.2 earned 6 click(s) (2.8% CTR)."
     },
     {
       "family": "/black-therapist-memphis/",
       "page": "https://www.hicksconsulting.org/black-therapist-memphis/",
       "impressions": 120,
-      "clicks": 2,
-      "ctr": 1.7,
-      "weighted_position": 8,
+      "clicks": 1,
+      "ctr": 0.8,
+      "weighted_position": 8.1,
       "query_count": 21,
       "head_query": "black therapist memphis tn",
       "queries": [
         {
           "query": "black therapist memphis tn",
-          "impressions": 43,
-          "clicks": 2,
-          "position": 8.58
+          "impressions": 42,
+          "clicks": 1,
+          "position": 8.74
         },
         {
           "query": "black therapist memphis, tn",
-          "impressions": 19,
+          "impressions": 20,
           "clicks": 0,
-          "position": 7.79
+          "position": 7.85
         },
         {
           "query": "black mental health therapist near me",
@@ -280,7 +280,7 @@
       "approved_by": "site owner (not the client)",
       "approved_at": "2026-10-11",
       "approval_note": "Site owner decided on 2026-10-11 to strengthen both qualifying families now rather than wait on a client flag. Not a client decision; the client did not approve or author this change.",
-      "proposed_change": "Lead /black-therapist-memphis/ with a direct answer to \"black therapist memphis tn\" in its title and first paragraph: 120 impressions at position 8 earned 2 click(s) (1.7% CTR)."
+      "proposed_change": "Lead /black-therapist-memphis/ with a direct answer to \"black therapist memphis tn\" in its title and first paragraph: 120 impressions at position 8.1 earned 1 click(s) (0.8% CTR)."
     },
     {
       "family": "/contact/",
@@ -311,28 +311,6 @@
       "proposed_change": "Lead /contact/ with a direct answer to \"hicks consulting llc\" in its title and first paragraph: 64 impressions at position 5 earned 0 click(s) (0% CTR)."
     },
     {
-      "family": "/questions/lcsw-therapist-memphis/",
-      "page": "https://www.hicksconsulting.org/questions/lcsw-therapist-memphis/",
-      "impressions": 15,
-      "clicks": 0,
-      "ctr": 0,
-      "weighted_position": 18.8,
-      "query_count": 1,
-      "head_query": "online therapy memphis",
-      "queries": [
-        {
-          "query": "online therapy memphis",
-          "impressions": 15,
-          "clicks": 0,
-          "position": 18.8
-        }
-      ],
-      "rank": 4,
-      "qualifies": false,
-      "status": "measured_only",
-      "why_not": "15 impressions < floor 20"
-    },
-    {
       "family": "/corporate-speaking/",
       "page": "https://www.hicksconsulting.org/corporate-speaking/",
       "impressions": 14,
@@ -347,6 +325,28 @@
           "impressions": 14,
           "clicks": 0,
           "position": 8.15
+        }
+      ],
+      "rank": 4,
+      "qualifies": false,
+      "status": "measured_only",
+      "why_not": "14 impressions < floor 20"
+    },
+    {
+      "family": "/questions/lcsw-therapist-memphis/",
+      "page": "https://www.hicksconsulting.org/questions/lcsw-therapist-memphis/",
+      "impressions": 14,
+      "clicks": 0,
+      "ctr": 0,
+      "weighted_position": 18.5,
+      "query_count": 1,
+      "head_query": "online therapy memphis",
+      "queries": [
+        {
+          "query": "online therapy memphis",
+          "impressions": 14,
+          "clicks": 0,
+          "position": 18.5
         }
       ],
       "rank": 5,
@@ -645,6 +645,28 @@
       "why_not": "1 impressions < floor 20"
     },
     {
+      "family": "/resources/insights/how-to-notice-when-overwhelm-is-turning-into-shutdown-a-gentler-truth-to-consider/",
+      "page": "https://www.hicksconsulting.org/resources/insights/how-to-notice-when-overwhelm-is-turning-into-shutdown-a-gentler-truth-to-consider/",
+      "impressions": 1,
+      "clicks": 0,
+      "ctr": 0,
+      "weighted_position": 10,
+      "query_count": 1,
+      "head_query": "integrator overwhelmed",
+      "queries": [
+        {
+          "query": "integrator overwhelmed",
+          "impressions": 1,
+          "clicks": 0,
+          "position": 10
+        }
+      ],
+      "rank": 17,
+      "qualifies": false,
+      "status": "measured_only",
+      "why_not": "1 impressions < floor 20"
+    },
+    {
       "family": "/resources/insights/how-to-notice-when-overwhelm-is-turning-into-shutdown-why-women-minimize-it/",
       "page": "https://www.hicksconsulting.org/resources/insights/how-to-notice-when-overwhelm-is-turning-into-shutdown-why-women-minimize-it/",
       "impressions": 1,
@@ -661,7 +683,7 @@
           "position": 100
         }
       ],
-      "rank": 17,
+      "rank": 18,
       "qualifies": false,
       "status": "measured_only",
       "why_not": "1 impressions < floor 20"

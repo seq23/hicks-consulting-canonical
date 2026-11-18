@@ -2,10 +2,10 @@
   "schema_version": "1.0",
   "truth_source": "google_search_console_url_inspection",
   "property": "sc-domain:hicksconsulting.org",
-  "collected_at": "2026-11-17T15:27:21.865Z",
+  "collected_at": "2026-11-18T15:27:22.638Z",
   "state": "OK",
   "named_stop": null,
-  "sitemap_url_count": 162,
+  "sitemap_url_count": 163,
   "inspected_this_run": 150,
   "rotation": {
     "per_run_cap": 150,
@@ -15,12 +15,12 @@
   "summary": {
     "by_coverage_state": {
       "Submitted and indexed": 160,
-      "Crawled - currently not indexed": 1,
-      "Discovered - currently not indexed": 1
+      "Crawled - currently not indexed": 2,
+      "URL is unknown to Google": 1
     },
     "by_verdict": {
       "PASS": 160,
-      "NEUTRAL": 2
+      "NEUTRAL": 3
     }
   },
   "truth_boundary": "Google index state per URL at inspected_at. Not a ranking or traffic measure; impressions are in gsc_truth.json.",
@@ -35,7 +35,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://www.hicksconsulting.org/",
       "userCanonical": "https://www.hicksconsulting.org/",
-      "inspected_at": "2026-11-17T15:25:39.647Z"
+      "inspected_at": "2026-11-18T15:25:49.789Z"
     },
     {
       "url": "https://www.hicksconsulting.org/therapy/",
@@ -47,7 +47,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://www.hicksconsulting.org/therapy/",
       "userCanonical": "https://www.hicksconsulting.org/therapy/",
-      "inspected_at": "2026-11-16T15:36:54.582Z"
+      "inspected_at": "2026-11-18T15:25:31.292Z"
     },
     {
       "url": "https://www.hicksconsulting.org/black-therapist-memphis/",
@@ -59,19 +59,19 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://www.hicksconsulting.org/black-therapist-memphis/",
       "userCanonical": "https://www.hicksconsulting.org/black-therapist-memphis/",
-      "inspected_at": "2026-11-17T15:25:26.950Z"
+      "inspected_at": "2026-11-18T15:25:43.608Z"
     },
     {
       "url": "https://www.hicksconsulting.org/anxiety-therapist-memphis/",
       "verdict": "PASS",
       "coverageState": "Submitted and indexed",
-      "lastCrawlTime": "2026-11-05T20:41:53Z",
+      "lastCrawlTime": "2026-11-05T23:59:05Z",
       "indexingState": "INDEXING_ALLOWED",
       "robotsTxtState": "ALLOWED",
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://www.hicksconsulting.org/anxiety-therapist-memphis/",
       "userCanonical": "https://www.hicksconsulting.org/anxiety-therapist-memphis/",
-      "inspected_at": "2026-11-17T15:25:39.649Z"
+      "inspected_at": "2026-11-18T15:25:49.805Z"
     },
     {
       "url": "https://www.hicksconsulting.org/coaching/",
@@ -83,7 +83,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://www.hicksconsulting.org/coaching/",
       "userCanonical": "https://www.hicksconsulting.org/coaching/",
-      "inspected_at": "2026-11-17T15:25:33.309Z"
+      "inspected_at": "2026-11-18T15:25:49.732Z"
     },
     {
       "url": "https://www.hicksconsulting.org/groups/",
@@ -95,7 +95,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://www.hicksconsulting.org/groups/",
       "userCanonical": "https://www.hicksconsulting.org/groups/",
-      "inspected_at": "2026-11-17T15:25:33.264Z"
+      "inspected_at": "2026-11-18T15:25:43.696Z"
     },
     {
       "url": "https://www.hicksconsulting.org/corporate-speaking/",
@@ -107,7 +107,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://www.hicksconsulting.org/corporate-speaking/",
       "userCanonical": "https://www.hicksconsulting.org/corporate-speaking/",
-      "inspected_at": "2026-11-17T15:25:39.727Z"
+      "inspected_at": "2026-11-18T15:25:55.871Z"
     },
     {
       "url": "https://www.hicksconsulting.org/about/",
@@ -119,7 +119,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://www.hicksconsulting.org/about/",
       "userCanonical": "https://www.hicksconsulting.org/about/",
-      "inspected_at": "2026-11-17T15:25:33.299Z"
+      "inspected_at": "2026-11-18T15:25:43.670Z"
     },
     {
       "url": "https://www.hicksconsulting.org/resources/",
@@ -131,7 +131,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://www.hicksconsulting.org/resources/",
       "userCanonical": "https://www.hicksconsulting.org/resources/",
-      "inspected_at": "2026-11-17T15:25:52.556Z"
+      "inspected_at": "2026-11-18T15:26:08.161Z"
     },
     {
       "url": "https://www.hicksconsulting.org/contact/",
@@ -143,7 +143,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://www.hicksconsulting.org/contact/",
       "userCanonical": "https://www.hicksconsulting.org/contact/",
-      "inspected_at": "2026-11-17T15:25:33.325Z"
+      "inspected_at": "2026-11-18T15:25:49.778Z"
     },
     {
       "url": "https://www.hicksconsulting.org/organizational-training-inquiry/",
@@ -155,7 +155,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://www.hicksconsulting.org/organizational-training-inquiry/",
       "userCanonical": "https://www.hicksconsulting.org/organizational-training-inquiry/",
-      "inspected_at": "2026-11-17T15:25:52.432Z"
+      "inspected_at": "2026-11-18T15:26:02.159Z"
     },
     {
       "url": "https://www.hicksconsulting.org/intake-quiz/",
@@ -167,7 +167,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://www.hicksconsulting.org/intake-quiz/",
       "userCanonical": "https://www.hicksconsulting.org/intake-quiz/",
-      "inspected_at": "2026-11-17T15:26:11.670Z"
+      "inspected_at": "2026-11-18T15:26:26.769Z"
     },
     {
       "url": "https://www.hicksconsulting.org/stress-management-worksheet/",
@@ -179,7 +179,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://www.hicksconsulting.org/stress-management-worksheet/",
       "userCanonical": "https://www.hicksconsulting.org/stress-management-worksheet/",
-      "inspected_at": "2026-11-16T15:37:00.904Z"
+      "inspected_at": "2026-11-18T15:25:37.461Z"
     },
     {
       "url": "https://www.hicksconsulting.org/resources/insights/",
@@ -191,7 +191,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://www.hicksconsulting.org/resources/insights/",
       "userCanonical": "https://www.hicksconsulting.org/resources/insights/",
-      "inspected_at": "2026-11-17T15:26:11.693Z"
+      "inspected_at": "2026-11-18T15:26:26.833Z"
     },
     {
       "url": "https://www.hicksconsulting.org/resources/articles/",
@@ -203,7 +203,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://www.hicksconsulting.org/resources/articles/",
       "userCanonical": "https://www.hicksconsulting.org/resources/articles/",
-      "inspected_at": "2026-11-17T15:25:46.112Z"
+      "inspected_at": "2026-11-18T15:26:01.970Z"
     },
     {
       "url": "https://www.hicksconsulting.org/resources/guides/",
@@ -215,7 +215,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://www.hicksconsulting.org/resources/guides/",
       "userCanonical": "https://www.hicksconsulting.org/resources/guides/",
-      "inspected_at": "2026-11-17T15:26:24.331Z"
+      "inspected_at": "2026-11-18T15:26:39.229Z"
     },
     {
       "url": "https://www.hicksconsulting.org/resources/white-papers/",
@@ -227,7 +227,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://www.hicksconsulting.org/resources/white-papers/",
       "userCanonical": "https://www.hicksconsulting.org/resources/white-papers/",
-      "inspected_at": "2026-11-16T15:36:55.071Z"
+      "inspected_at": "2026-11-18T15:25:31.411Z"
     },
     {
       "url": "https://www.hicksconsulting.org/resources/free-downloads/",
@@ -239,7 +239,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://www.hicksconsulting.org/resources/free-downloads/",
       "userCanonical": "https://www.hicksconsulting.org/resources/free-downloads/",
-      "inspected_at": "2026-11-17T15:26:24.522Z"
+      "inspected_at": "2026-11-18T15:26:39.220Z"
     },
     {
       "url": "https://www.hicksconsulting.org/resources/premium-downloads/",
@@ -251,7 +251,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://www.hicksconsulting.org/resources/premium-downloads/",
       "userCanonical": "https://www.hicksconsulting.org/resources/premium-downloads/",
-      "inspected_at": "2026-11-16T15:37:00.906Z"
+      "inspected_at": "2026-11-18T15:25:37.419Z"
     },
     {
       "url": "https://www.hicksconsulting.org/request-consult/",
@@ -263,7 +263,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://www.hicksconsulting.org/request-consult/",
       "userCanonical": "https://www.hicksconsulting.org/request-consult/",
-      "inspected_at": "2026-11-17T15:25:58.803Z"
+      "inspected_at": "2026-11-18T15:26:08.359Z"
     },
     {
       "url": "https://www.hicksconsulting.org/book-discovery-call/",
@@ -275,7 +275,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://www.hicksconsulting.org/book-discovery-call/",
       "userCanonical": "https://www.hicksconsulting.org/book-discovery-call/",
-      "inspected_at": "2026-11-17T15:25:27.011Z"
+      "inspected_at": "2026-11-18T15:25:43.610Z"
     },
     {
       "url": "https://www.hicksconsulting.org/faq/",
@@ -287,7 +287,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://www.hicksconsulting.org/faq/",
       "userCanonical": "https://www.hicksconsulting.org/faq/",
-      "inspected_at": "2026-11-17T15:25:39.728Z"
+      "inspected_at": "2026-11-18T15:25:55.864Z"
     },
     {
       "url": "https://www.hicksconsulting.org/privacy-policy/",
@@ -299,7 +299,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://www.hicksconsulting.org/privacy-policy/",
       "userCanonical": "https://www.hicksconsulting.org/privacy-policy/",
-      "inspected_at": "2026-11-17T15:25:46.185Z"
+      "inspected_at": "2026-11-18T15:26:02.055Z"
     },
     {
       "url": "https://www.hicksconsulting.org/cookie-policy/",
@@ -311,7 +311,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://www.hicksconsulting.org/cookie-policy/",
       "userCanonical": "https://www.hicksconsulting.org/cookie-policy/",
-      "inspected_at": "2026-11-17T15:25:39.703Z"
+      "inspected_at": "2026-11-18T15:25:55.827Z"
     },
     {
       "url": "https://www.hicksconsulting.org/disclaimer/",
@@ -323,7 +323,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://www.hicksconsulting.org/disclaimer/",
       "userCanonical": "https://www.hicksconsulting.org/disclaimer/",
-      "inspected_at": "2026-11-17T15:25:26.952Z"
+      "inspected_at": "2026-11-18T15:25:43.635Z"
     },
     {
       "url": "https://www.hicksconsulting.org/terms/",
@@ -335,7 +335,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://www.hicksconsulting.org/terms/",
       "userCanonical": "https://www.hicksconsulting.org/terms/",
-      "inspected_at": "2026-11-16T15:37:00.866Z"
+      "inspected_at": "2026-11-18T15:25:31.364Z"
     },
     {
       "url": "https://www.hicksconsulting.org/good-faith-estimate/",
@@ -347,7 +347,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://www.hicksconsulting.org/good-faith-estimate/",
       "userCanonical": "https://www.hicksconsulting.org/good-faith-estimate/",
-      "inspected_at": "2026-11-17T15:25:33.354Z"
+      "inspected_at": "2026-11-18T15:25:49.770Z"
     },
     {
       "url": "https://www.hicksconsulting.org/emergency-crisis-notice/",
@@ -359,7 +359,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://www.hicksconsulting.org/emergency-crisis-notice/",
       "userCanonical": "https://www.hicksconsulting.org/emergency-crisis-notice/",
-      "inspected_at": "2026-11-17T15:25:46.176Z"
+      "inspected_at": "2026-11-18T15:26:01.996Z"
     },
     {
       "url": "https://www.hicksconsulting.org/christian-therapist-memphis/",
@@ -383,7 +383,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://www.hicksconsulting.org/female-therapist-memphis/",
       "userCanonical": "https://www.hicksconsulting.org/female-therapist-memphis/",
-      "inspected_at": "2026-11-17T15:25:33.404Z"
+      "inspected_at": "2026-11-18T15:25:49.771Z"
     },
     {
       "url": "https://www.hicksconsulting.org/psychologist-vs-therapist-memphis/",
@@ -395,7 +395,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://www.hicksconsulting.org/psychologist-vs-therapist-memphis/",
       "userCanonical": "https://www.hicksconsulting.org/psychologist-vs-therapist-memphis/",
-      "inspected_at": "2026-11-17T15:25:52.491Z"
+      "inspected_at": "2026-11-18T15:26:08.171Z"
     },
     {
       "url": "https://www.hicksconsulting.org/therapist-near-me-memphis/",
@@ -407,7 +407,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://www.hicksconsulting.org/therapist-near-me-memphis/",
       "userCanonical": "https://www.hicksconsulting.org/therapist-near-me-memphis/",
-      "inspected_at": "2026-11-16T15:37:00.934Z"
+      "inspected_at": "2026-11-18T15:25:37.493Z"
     },
     {
       "url": "https://www.hicksconsulting.org/therapist-olive-branch-ms/",
@@ -431,7 +431,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://www.hicksconsulting.org/llm-atlas/",
       "userCanonical": "https://www.hicksconsulting.org/llm-atlas/",
-      "inspected_at": "2026-11-17T15:25:46.094Z"
+      "inspected_at": "2026-11-18T15:25:56.050Z"
     },
     {
       "url": "https://www.hicksconsulting.org/llm-atlas/fanouts/",
@@ -443,7 +443,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://www.hicksconsulting.org/llm-atlas/fanouts/",
       "userCanonical": "https://www.hicksconsulting.org/llm-atlas/fanouts/",
-      "inspected_at": "2026-11-17T15:25:33.349Z"
+      "inspected_at": "2026-11-18T15:25:49.711Z"
     },
     {
       "url": "https://www.hicksconsulting.org/llm-atlas/queries/",
@@ -455,7 +455,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://www.hicksconsulting.org/llm-atlas/queries/",
       "userCanonical": "https://www.hicksconsulting.org/llm-atlas/queries/",
-      "inspected_at": "2026-11-17T15:25:46.071Z"
+      "inspected_at": "2026-11-18T15:25:56.060Z"
     },
     {
       "url": "https://www.hicksconsulting.org/llm-atlas/pillars/",
@@ -467,7 +467,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://www.hicksconsulting.org/llm-atlas/pillars/",
       "userCanonical": "https://www.hicksconsulting.org/llm-atlas/pillars/",
-      "inspected_at": "2026-11-17T15:25:58.915Z"
+      "inspected_at": "2026-11-18T15:26:14.329Z"
     },
     {
       "url": "https://www.hicksconsulting.org/llm-atlas/clusters/",
@@ -479,7 +479,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://www.hicksconsulting.org/llm-atlas/clusters/",
       "userCanonical": "https://www.hicksconsulting.org/llm-atlas/clusters/",
-      "inspected_at": "2026-11-17T15:25:46.120Z"
+      "inspected_at": "2026-11-18T15:26:01.979Z"
     },
     {
       "url": "https://www.hicksconsulting.org/llm-atlas/social-signals/",
@@ -491,7 +491,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://www.hicksconsulting.org/llm-atlas/social-signals/",
       "userCanonical": "https://www.hicksconsulting.org/llm-atlas/social-signals/",
-      "inspected_at": "2026-11-17T15:25:39.725Z"
+      "inspected_at": "2026-11-18T15:25:55.883Z"
     },
     {
       "url": "https://www.hicksconsulting.org/llm-atlas/source-health/",
@@ -503,7 +503,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://www.hicksconsulting.org/llm-atlas/source-health/",
       "userCanonical": "https://www.hicksconsulting.org/llm-atlas/source-health/",
-      "inspected_at": "2026-11-17T15:25:52.460Z"
+      "inspected_at": "2026-11-18T15:26:02.165Z"
     },
     {
       "url": "https://www.hicksconsulting.org/llm-atlas/answer-surfaces/",
@@ -515,7 +515,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://www.hicksconsulting.org/llm-atlas/answer-surfaces/",
       "userCanonical": "https://www.hicksconsulting.org/llm-atlas/answer-surfaces/",
-      "inspected_at": "2026-11-17T15:25:39.808Z"
+      "inspected_at": "2026-11-18T15:25:55.900Z"
     },
     {
       "url": "https://www.hicksconsulting.org/resources/articles/how-burnout-shows-up-before-you-ever-call-it-burnout/",
@@ -527,7 +527,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://www.hicksconsulting.org/resources/articles/how-burnout-shows-up-before-you-ever-call-it-burnout/",
       "userCanonical": "https://www.hicksconsulting.org/resources/articles/how-burnout-shows-up-before-you-ever-call-it-burnout/",
-      "inspected_at": "2026-11-17T15:25:52.495Z"
+      "inspected_at": "2026-11-18T15:26:08.083Z"
     },
     {
       "url": "https://www.hicksconsulting.org/resources/articles/why-rest-feels-so-hard-when-you-have-been-rewarded-for-overfunctioning/",
@@ -539,7 +539,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://www.hicksconsulting.org/resources/articles/why-rest-feels-so-hard-when-you-have-been-rewarded-for-overfunctioning/",
       "userCanonical": "https://www.hicksconsulting.org/resources/articles/why-rest-feels-so-hard-when-you-have-been-rewarded-for-overfunctioning/",
-      "inspected_at": "2026-11-17T15:26:11.550Z"
+      "inspected_at": "2026-11-18T15:26:20.612Z"
     },
     {
       "url": "https://www.hicksconsulting.org/resources/articles/what-boundary-problems-really-sound-like-in-professional-women/",
@@ -551,7 +551,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://www.hicksconsulting.org/resources/articles/what-boundary-problems-really-sound-like-in-professional-women/",
       "userCanonical": "https://www.hicksconsulting.org/resources/articles/what-boundary-problems-really-sound-like-in-professional-women/",
-      "inspected_at": "2026-11-17T15:26:05.226Z"
+      "inspected_at": "2026-11-18T15:26:20.413Z"
     },
     {
       "url": "https://www.hicksconsulting.org/resources/insights/what-boundary-problems-really-sound-like-in-professional-women-what-this-looks-like-i/",
@@ -563,7 +563,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://www.hicksconsulting.org/resources/insights/what-boundary-problems-really-sound-like-in-professional-women-what-this-looks-like-i/",
       "userCanonical": "https://www.hicksconsulting.org/resources/insights/what-boundary-problems-really-sound-like-in-professional-women-what-this-looks-like-i/",
-      "inspected_at": "2026-11-17T15:26:55.985Z"
+      "inspected_at": "2026-11-18T15:27:04.066Z"
     },
     {
       "url": "https://www.hicksconsulting.org/resources/insights/what-boundary-problems-really-sound-like-in-professional-women-why-women-minimize-it/",
@@ -575,7 +575,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://www.hicksconsulting.org/resources/insights/what-boundary-problems-really-sound-like-in-professional-women-why-women-minimize-it/",
       "userCanonical": "https://www.hicksconsulting.org/resources/insights/what-boundary-problems-really-sound-like-in-professional-women-why-women-minimize-it/",
-      "inspected_at": "2026-11-17T15:26:49.676Z"
+      "inspected_at": "2026-11-18T15:26:58.266Z"
     },
     {
       "url": "https://www.hicksconsulting.org/resources/insights/what-boundary-problems-really-sound-like-in-professional-women-how-it-shows-up-in-wor/",
@@ -587,7 +587,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://www.hicksconsulting.org/resources/insights/what-boundary-problems-really-sound-like-in-professional-women-how-it-shows-up-in-wor/",
       "userCanonical": "https://www.hicksconsulting.org/resources/insights/what-boundary-problems-really-sound-like-in-professional-women-how-it-shows-up-in-wor/",
-      "inspected_at": "2026-11-17T15:26:49.705Z"
+      "inspected_at": "2026-11-18T15:26:59.119Z"
     },
     {
       "url": "https://www.hicksconsulting.org/resources/insights/what-boundary-problems-really-sound-like-in-professional-women-a-gentler-truth-to-con/",
@@ -599,7 +599,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://www.hicksconsulting.org/resources/insights/what-boundary-problems-really-sound-like-in-professional-women-a-gentler-truth-to-con/",
       "userCanonical": "https://www.hicksconsulting.org/resources/insights/what-boundary-problems-really-sound-like-in-professional-women-a-gentler-truth-to-con/",
-      "inspected_at": "2026-11-17T15:26:37.249Z"
+      "inspected_at": "2026-11-18T15:26:51.571Z"
     },
     {
       "url": "https://www.hicksconsulting.org/resources/insights/what-boundary-problems-really-sound-like-in-professional-women-next-step-reflection/",
@@ -611,7 +611,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://www.hicksconsulting.org/resources/insights/what-boundary-problems-really-sound-like-in-professional-women-next-step-reflection/",
       "userCanonical": "https://www.hicksconsulting.org/resources/insights/what-boundary-problems-really-sound-like-in-professional-women-next-step-reflection/",
-      "inspected_at": "2026-11-17T15:26:43.557Z"
+      "inspected_at": "2026-11-18T15:26:57.699Z"
     },
     {
       "url": "https://www.hicksconsulting.org/resources/articles/the-difference-between-being-busy-and-being-emotionally-maxed-out/",
@@ -623,7 +623,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://www.hicksconsulting.org/resources/articles/the-difference-between-being-busy-and-being-emotionally-maxed-out/",
       "userCanonical": "https://www.hicksconsulting.org/resources/articles/the-difference-between-being-busy-and-being-emotionally-maxed-out/",
-      "inspected_at": "2026-11-17T15:26:05.249Z"
+      "inspected_at": "2026-11-18T15:26:20.364Z"
     },
     {
       "url": "https://www.hicksconsulting.org/resources/articles/when-your-body-is-carrying-stress-your-mind-keeps-dismissing/",
@@ -635,7 +635,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://www.hicksconsulting.org/resources/articles/when-your-body-is-carrying-stress-your-mind-keeps-dismissing/",
       "userCanonical": "https://www.hicksconsulting.org/resources/articles/when-your-body-is-carrying-stress-your-mind-keeps-dismissing/",
-      "inspected_at": "2026-11-17T15:25:58.859Z"
+      "inspected_at": "2026-11-18T15:26:14.207Z"
     },
     {
       "url": "https://www.hicksconsulting.org/resources/articles/the-quiet-anger-that-builds-when-you-are-always-the-reliable-one/",
@@ -647,7 +647,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://www.hicksconsulting.org/resources/articles/the-quiet-anger-that-builds-when-you-are-always-the-reliable-one/",
       "userCanonical": "https://www.hicksconsulting.org/resources/articles/the-quiet-anger-that-builds-when-you-are-always-the-reliable-one/",
-      "inspected_at": "2026-11-17T15:25:58.873Z"
+      "inspected_at": "2026-11-18T15:26:14.275Z"
     },
     {
       "url": "https://www.hicksconsulting.org/resources/insights/the-quiet-anger-that-builds-when-you-are-always-the-reliable-one-how-it-shows-up-in-w/",
@@ -659,7 +659,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://www.hicksconsulting.org/resources/insights/the-quiet-anger-that-builds-when-you-are-always-the-reliable-one-how-it-shows-up-in-w/",
       "userCanonical": "https://www.hicksconsulting.org/resources/insights/the-quiet-anger-that-builds-when-you-are-always-the-reliable-one-how-it-shows-up-in-w/",
-      "inspected_at": "2026-11-17T15:26:43.315Z"
+      "inspected_at": "2026-11-18T15:26:53.009Z"
     },
     {
       "url": "https://www.hicksconsulting.org/resources/insights/the-quiet-anger-that-builds-when-you-are-always-the-reliable-one-a-gentler-truth-to-c/",
@@ -671,7 +671,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://www.hicksconsulting.org/resources/insights/the-quiet-anger-that-builds-when-you-are-always-the-reliable-one-a-gentler-truth-to-c/",
       "userCanonical": "https://www.hicksconsulting.org/resources/insights/the-quiet-anger-that-builds-when-you-are-always-the-reliable-one-a-gentler-truth-to-c/",
-      "inspected_at": "2026-11-17T15:26:37.067Z"
+      "inspected_at": "2026-11-18T15:26:51.278Z"
     },
     {
       "url": "https://www.hicksconsulting.org/resources/insights/the-quiet-anger-that-builds-when-you-are-always-the-reliable-one-next-step-reflection/",
@@ -683,7 +683,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://www.hicksconsulting.org/resources/insights/the-quiet-anger-that-builds-when-you-are-always-the-reliable-one-next-step-reflection/",
       "userCanonical": "https://www.hicksconsulting.org/resources/insights/the-quiet-anger-that-builds-when-you-are-always-the-reliable-one-next-step-reflection/",
-      "inspected_at": "2026-11-17T15:26:37.066Z"
+      "inspected_at": "2026-11-18T15:26:51.142Z"
     },
     {
       "url": "https://www.hicksconsulting.org/resources/articles/how-life-transitions-can-shake-women-who-usually-look-put-together/",
@@ -695,7 +695,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://www.hicksconsulting.org/resources/articles/how-life-transitions-can-shake-women-who-usually-look-put-together/",
       "userCanonical": "https://www.hicksconsulting.org/resources/articles/how-life-transitions-can-shake-women-who-usually-look-put-together/",
-      "inspected_at": "2026-11-17T15:26:05.212Z"
+      "inspected_at": "2026-11-18T15:26:14.476Z"
     },
     {
       "url": "https://www.hicksconsulting.org/resources/insights/how-life-transitions-can-shake-women-who-usually-look-put-together-what-this-looks-li/",
@@ -707,7 +707,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://www.hicksconsulting.org/resources/insights/how-life-transitions-can-shake-women-who-usually-look-put-together-what-this-looks-li/",
       "userCanonical": "https://www.hicksconsulting.org/resources/insights/how-life-transitions-can-shake-women-who-usually-look-put-together-what-this-looks-li/",
-      "inspected_at": "2026-11-17T15:26:24.382Z"
+      "inspected_at": "2026-11-18T15:26:39.015Z"
     },
     {
       "url": "https://www.hicksconsulting.org/resources/articles/why-high-achieving-women-sometimes-mistake-numbness-for-maturity/",
@@ -719,7 +719,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://www.hicksconsulting.org/resources/articles/why-high-achieving-women-sometimes-mistake-numbness-for-maturity/",
       "userCanonical": "https://www.hicksconsulting.org/resources/articles/why-high-achieving-women-sometimes-mistake-numbness-for-maturity/",
-      "inspected_at": "2026-11-17T15:26:11.578Z"
+      "inspected_at": "2026-11-18T15:26:20.638Z"
     },
     {
       "url": "https://www.hicksconsulting.org/resources/articles/what-people-pleasing-costs-black-women-at-work-and-at-home/",
@@ -731,7 +731,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://www.hicksconsulting.org/resources/articles/what-people-pleasing-costs-black-women-at-work-and-at-home/",
       "userCanonical": "https://www.hicksconsulting.org/resources/articles/what-people-pleasing-costs-black-women-at-work-and-at-home/",
-      "inspected_at": "2026-11-17T15:26:17.954Z"
+      "inspected_at": "2026-11-18T15:26:28.240Z"
     },
     {
       "url": "https://www.hicksconsulting.org/resources/articles/when-success-stops-feeling-like-proof-and-starts-feeling-like-pressure/",
@@ -743,7 +743,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://www.hicksconsulting.org/resources/articles/when-success-stops-feeling-like-proof-and-starts-feeling-like-pressure/",
       "userCanonical": "https://www.hicksconsulting.org/resources/articles/when-success-stops-feeling-like-proof-and-starts-feeling-like-pressure/",
-      "inspected_at": "2026-11-17T15:26:05.222Z"
+      "inspected_at": "2026-11-18T15:26:15.257Z"
     },
     {
       "url": "https://www.hicksconsulting.org/resources/articles/how-to-tell-whether-you-need-more-discipline-or-more-support/",
@@ -755,7 +755,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://www.hicksconsulting.org/resources/articles/how-to-tell-whether-you-need-more-discipline-or-more-support/",
       "userCanonical": "https://www.hicksconsulting.org/resources/articles/how-to-tell-whether-you-need-more-discipline-or-more-support/",
-      "inspected_at": "2026-11-17T15:25:58.853Z"
+      "inspected_at": "2026-11-18T15:26:08.978Z"
     },
     {
       "url": "https://www.hicksconsulting.org/resources/articles/what-strong-black-woman-fatigue-can-look-like-in-real-life/",
@@ -767,7 +767,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://www.hicksconsulting.org/resources/articles/what-strong-black-woman-fatigue-can-look-like-in-real-life/",
       "userCanonical": "https://www.hicksconsulting.org/resources/articles/what-strong-black-woman-fatigue-can-look-like-in-real-life/",
-      "inspected_at": "2026-11-17T15:26:05.303Z"
+      "inspected_at": "2026-11-18T15:26:20.436Z"
     },
     {
       "url": "https://www.hicksconsulting.org/resources/articles/how-boundary-guilt-keeps-women-stuck-in-the-same-exhausting-loops/",
@@ -779,7 +779,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://www.hicksconsulting.org/resources/articles/how-boundary-guilt-keeps-women-stuck-in-the-same-exhausting-loops/",
       "userCanonical": "https://www.hicksconsulting.org/resources/articles/how-boundary-guilt-keeps-women-stuck-in-the-same-exhausting-loops/",
-      "inspected_at": "2026-11-17T15:25:52.463Z"
+      "inspected_at": "2026-11-18T15:26:02.756Z"
     },
     {
       "url": "https://www.hicksconsulting.org/resources/insights/how-boundary-guilt-keeps-women-stuck-in-the-same-exhausting-loops-how-it-shows-up-in/",
@@ -791,7 +791,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://www.hicksconsulting.org/resources/insights/how-boundary-guilt-keeps-women-stuck-in-the-same-exhausting-loops-how-it-shows-up-in/",
       "userCanonical": "https://www.hicksconsulting.org/resources/insights/how-boundary-guilt-keeps-women-stuck-in-the-same-exhausting-loops-how-it-shows-up-in/",
-      "inspected_at": "2026-11-17T15:26:30.619Z"
+      "inspected_at": "2026-11-18T15:26:39.808Z"
     },
     {
       "url": "https://www.hicksconsulting.org/resources/articles/why-emotional-heaviness-does-not-always-look-like-crying/",
@@ -803,7 +803,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://www.hicksconsulting.org/resources/articles/why-emotional-heaviness-does-not-always-look-like-crying/",
       "userCanonical": "https://www.hicksconsulting.org/resources/articles/why-emotional-heaviness-does-not-always-look-like-crying/",
-      "inspected_at": "2026-11-17T15:26:18.041Z"
+      "inspected_at": "2026-11-18T15:26:33.098Z"
     },
     {
       "url": "https://www.hicksconsulting.org/resources/articles/what-to-do-when-you-are-tired-of-being-everyone-s-safe-place/",
@@ -815,7 +815,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://www.hicksconsulting.org/resources/articles/what-to-do-when-you-are-tired-of-being-everyone-s-safe-place/",
       "userCanonical": "https://www.hicksconsulting.org/resources/articles/what-to-do-when-you-are-tired-of-being-everyone-s-safe-place/",
-      "inspected_at": "2026-11-17T15:26:05.292Z"
+      "inspected_at": "2026-11-18T15:26:20.391Z"
     },
     {
       "url": "https://www.hicksconsulting.org/resources/insights/what-to-do-when-you-are-tired-of-being-everyone-s-safe-place-what-this-looks-like-in/",
@@ -827,7 +827,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://www.hicksconsulting.org/resources/insights/what-to-do-when-you-are-tired-of-being-everyone-s-safe-place-what-this-looks-like-in/",
       "userCanonical": "https://www.hicksconsulting.org/resources/insights/what-to-do-when-you-are-tired-of-being-everyone-s-safe-place-what-this-looks-like-in/",
-      "inspected_at": "2026-11-17T15:26:56.267Z"
+      "inspected_at": "2026-11-18T15:27:09.954Z"
     },
     {
       "url": "https://www.hicksconsulting.org/resources/insights/what-to-do-when-you-are-tired-of-being-everyone-s-safe-place-how-it-shows-up-in-work/",
@@ -839,7 +839,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://www.hicksconsulting.org/resources/insights/what-to-do-when-you-are-tired-of-being-everyone-s-safe-place-how-it-shows-up-in-work/",
       "userCanonical": "https://www.hicksconsulting.org/resources/insights/what-to-do-when-you-are-tired-of-being-everyone-s-safe-place-how-it-shows-up-in-work/",
-      "inspected_at": "2026-11-17T15:26:49.893Z"
+      "inspected_at": "2026-11-18T15:27:03.808Z"
     },
     {
       "url": "https://www.hicksconsulting.org/resources/insights/what-to-do-when-you-are-tired-of-being-everyone-s-safe-place-a-gentler-truth-to-consi/",
@@ -851,7 +851,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://www.hicksconsulting.org/resources/insights/what-to-do-when-you-are-tired-of-being-everyone-s-safe-place-a-gentler-truth-to-consi/",
       "userCanonical": "https://www.hicksconsulting.org/resources/insights/what-to-do-when-you-are-tired-of-being-everyone-s-safe-place-a-gentler-truth-to-consi/",
-      "inspected_at": "2026-11-17T15:26:56.256Z"
+      "inspected_at": "2026-11-18T15:27:09.952Z"
     },
     {
       "url": "https://www.hicksconsulting.org/resources/articles/how-burnout-changes-the-way-you-think-about-your-own-life/",
@@ -863,7 +863,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://www.hicksconsulting.org/resources/articles/how-burnout-changes-the-way-you-think-about-your-own-life/",
       "userCanonical": "https://www.hicksconsulting.org/resources/articles/how-burnout-changes-the-way-you-think-about-your-own-life/",
-      "inspected_at": "2026-11-17T15:25:52.474Z"
+      "inspected_at": "2026-11-18T15:26:08.092Z"
     },
     {
       "url": "https://www.hicksconsulting.org/resources/insights/how-burnout-changes-the-way-you-think-about-your-own-life-what-this-looks-like-in-rea/",
@@ -875,7 +875,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://www.hicksconsulting.org/resources/insights/how-burnout-changes-the-way-you-think-about-your-own-life-what-this-looks-like-in-rea/",
       "userCanonical": "https://www.hicksconsulting.org/resources/insights/how-burnout-changes-the-way-you-think-about-your-own-life-what-this-looks-like-in-rea/",
-      "inspected_at": "2026-11-17T15:26:24.441Z"
+      "inspected_at": "2026-11-18T15:26:39.326Z"
     },
     {
       "url": "https://www.hicksconsulting.org/resources/insights/how-burnout-changes-the-way-you-think-about-your-own-life-why-women-minimize-it/",
@@ -887,7 +887,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://www.hicksconsulting.org/resources/insights/how-burnout-changes-the-way-you-think-about-your-own-life-why-women-minimize-it/",
       "userCanonical": "https://www.hicksconsulting.org/resources/insights/how-burnout-changes-the-way-you-think-about-your-own-life-why-women-minimize-it/",
-      "inspected_at": "2026-11-17T15:26:18.116Z"
+      "inspected_at": "2026-11-18T15:26:32.952Z"
     },
     {
       "url": "https://www.hicksconsulting.org/resources/insights/how-burnout-changes-the-way-you-think-about-your-own-life-how-it-shows-up-in-work-and/",
@@ -899,7 +899,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://www.hicksconsulting.org/resources/insights/how-burnout-changes-the-way-you-think-about-your-own-life-how-it-shows-up-in-work-and/",
       "userCanonical": "https://www.hicksconsulting.org/resources/insights/how-burnout-changes-the-way-you-think-about-your-own-life-how-it-shows-up-in-work-and/",
-      "inspected_at": "2026-11-17T15:26:24.296Z"
+      "inspected_at": "2026-11-18T15:26:34.341Z"
     },
     {
       "url": "https://www.hicksconsulting.org/resources/insights/how-burnout-changes-the-way-you-think-about-your-own-life-a-gentler-truth-to-consider/",
@@ -911,7 +911,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://www.hicksconsulting.org/resources/insights/how-burnout-changes-the-way-you-think-about-your-own-life-a-gentler-truth-to-consider/",
       "userCanonical": "https://www.hicksconsulting.org/resources/insights/how-burnout-changes-the-way-you-think-about-your-own-life-a-gentler-truth-to-consider/",
-      "inspected_at": "2026-11-17T15:26:30.633Z"
+      "inspected_at": "2026-11-18T15:26:40.695Z"
     },
     {
       "url": "https://www.hicksconsulting.org/resources/articles/why-it-can-feel-so-hard-to-ask-for-help-even-when-you-need-it/",
@@ -923,7 +923,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://www.hicksconsulting.org/resources/articles/why-it-can-feel-so-hard-to-ask-for-help-even-when-you-need-it/",
       "userCanonical": "https://www.hicksconsulting.org/resources/articles/why-it-can-feel-so-hard-to-ask-for-help-even-when-you-need-it/",
-      "inspected_at": "2026-11-17T15:26:17.925Z"
+      "inspected_at": "2026-11-18T15:26:26.762Z"
     },
     {
       "url": "https://www.hicksconsulting.org/resources/insights/why-it-can-feel-so-hard-to-ask-for-help-even-when-you-need-it-what-this-looks-like-in/",
@@ -947,7 +947,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://www.hicksconsulting.org/resources/insights/why-it-can-feel-so-hard-to-ask-for-help-even-when-you-need-it-why-women-minimize-it/",
       "userCanonical": "https://www.hicksconsulting.org/resources/insights/why-it-can-feel-so-hard-to-ask-for-help-even-when-you-need-it-why-women-minimize-it/",
-      "inspected_at": "2026-11-16T15:36:54.731Z"
+      "inspected_at": "2026-11-18T15:25:31.342Z"
     },
     {
       "url": "https://www.hicksconsulting.org/resources/insights/why-it-can-feel-so-hard-to-ask-for-help-even-when-you-need-it-how-it-shows-up-in-work/",
@@ -971,7 +971,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://www.hicksconsulting.org/resources/articles/the-workplace-habits-that-keep-high-functioning-women-drained/",
       "userCanonical": "https://www.hicksconsulting.org/resources/articles/the-workplace-habits-that-keep-high-functioning-women-drained/",
-      "inspected_at": "2026-11-17T15:26:05.324Z"
+      "inspected_at": "2026-11-18T15:26:20.464Z"
     },
     {
       "url": "https://www.hicksconsulting.org/resources/insights/the-workplace-habits-that-keep-high-functioning-women-drained-what-this-looks-like-in/",
@@ -983,7 +983,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://www.hicksconsulting.org/resources/insights/the-workplace-habits-that-keep-high-functioning-women-drained-what-this-looks-like-in/",
       "userCanonical": "https://www.hicksconsulting.org/resources/insights/the-workplace-habits-that-keep-high-functioning-women-drained-what-this-looks-like-in/",
-      "inspected_at": "2026-11-17T15:26:43.292Z"
+      "inspected_at": "2026-11-18T15:26:51.781Z"
     },
     {
       "url": "https://www.hicksconsulting.org/resources/insights/the-workplace-habits-that-keep-high-functioning-women-drained-why-women-minimize-it/",
@@ -995,7 +995,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://www.hicksconsulting.org/resources/insights/the-workplace-habits-that-keep-high-functioning-women-drained-why-women-minimize-it/",
       "userCanonical": "https://www.hicksconsulting.org/resources/insights/the-workplace-habits-that-keep-high-functioning-women-drained-why-women-minimize-it/",
-      "inspected_at": "2026-11-17T15:26:43.398Z"
+      "inspected_at": "2026-11-18T15:26:57.241Z"
     },
     {
       "url": "https://www.hicksconsulting.org/resources/insights/the-workplace-habits-that-keep-high-functioning-women-drained-how-it-shows-up-in-work/",
@@ -1007,7 +1007,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://www.hicksconsulting.org/resources/insights/the-workplace-habits-that-keep-high-functioning-women-drained-how-it-shows-up-in-work/",
       "userCanonical": "https://www.hicksconsulting.org/resources/insights/the-workplace-habits-that-keep-high-functioning-women-drained-how-it-shows-up-in-work/",
-      "inspected_at": "2026-11-17T15:26:43.626Z"
+      "inspected_at": "2026-11-18T15:26:57.802Z"
     },
     {
       "url": "https://www.hicksconsulting.org/resources/insights/the-workplace-habits-that-keep-high-functioning-women-drained-a-gentler-truth-to-cons/",
@@ -1019,7 +1019,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://www.hicksconsulting.org/resources/insights/the-workplace-habits-that-keep-high-functioning-women-drained-a-gentler-truth-to-cons/",
       "userCanonical": "https://www.hicksconsulting.org/resources/insights/the-workplace-habits-that-keep-high-functioning-women-drained-a-gentler-truth-to-cons/",
-      "inspected_at": "2026-11-17T15:26:49.737Z"
+      "inspected_at": "2026-11-18T15:27:03.496Z"
     },
     {
       "url": "https://www.hicksconsulting.org/resources/articles/what-it-means-to-be-successful-and-still-feel-lost/",
@@ -1031,7 +1031,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://www.hicksconsulting.org/resources/articles/what-it-means-to-be-successful-and-still-feel-lost/",
       "userCanonical": "https://www.hicksconsulting.org/resources/articles/what-it-means-to-be-successful-and-still-feel-lost/",
-      "inspected_at": "2026-11-17T15:26:11.620Z"
+      "inspected_at": "2026-11-18T15:26:26.781Z"
     },
     {
       "url": "https://www.hicksconsulting.org/resources/insights/what-it-means-to-be-successful-and-still-feel-lost-what-this-looks-like-in-real-life/",
@@ -1043,7 +1043,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://www.hicksconsulting.org/resources/insights/what-it-means-to-be-successful-and-still-feel-lost-what-this-looks-like-in-real-life/",
       "userCanonical": "https://www.hicksconsulting.org/resources/insights/what-it-means-to-be-successful-and-still-feel-lost-what-this-looks-like-in-real-life/",
-      "inspected_at": "2026-11-17T15:26:49.644Z"
+      "inspected_at": "2026-11-18T15:26:57.953Z"
     },
     {
       "url": "https://www.hicksconsulting.org/resources/insights/what-it-means-to-be-successful-and-still-feel-lost-why-women-minimize-it/",
@@ -1067,7 +1067,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://www.hicksconsulting.org/resources/insights/what-it-means-to-be-successful-and-still-feel-lost-a-gentler-truth-to-consider/",
       "userCanonical": "https://www.hicksconsulting.org/resources/insights/what-it-means-to-be-successful-and-still-feel-lost-a-gentler-truth-to-consider/",
-      "inspected_at": "2026-11-17T15:26:49.995Z"
+      "inspected_at": "2026-11-18T15:27:03.957Z"
     },
     {
       "url": "https://www.hicksconsulting.org/resources/articles/how-therapy-can-help-when-you-are-used-to-talking-yourself-out-of-your-needs/",
@@ -1079,7 +1079,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://www.hicksconsulting.org/resources/articles/how-therapy-can-help-when-you-are-used-to-talking-yourself-out-of-your-needs/",
       "userCanonical": "https://www.hicksconsulting.org/resources/articles/how-therapy-can-help-when-you-are-used-to-talking-yourself-out-of-your-needs/",
-      "inspected_at": "2026-11-17T15:25:58.939Z"
+      "inspected_at": "2026-11-18T15:26:14.311Z"
     },
     {
       "url": "https://www.hicksconsulting.org/resources/insights/how-therapy-can-help-when-you-are-used-to-talking-yourself-out-of-your-needs-what-thi/",
@@ -1091,7 +1091,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://www.hicksconsulting.org/resources/insights/how-therapy-can-help-when-you-are-used-to-talking-yourself-out-of-your-needs-what-thi/",
       "userCanonical": "https://www.hicksconsulting.org/resources/insights/how-therapy-can-help-when-you-are-used-to-talking-yourself-out-of-your-needs-what-thi/",
-      "inspected_at": "2026-11-17T15:26:30.856Z"
+      "inspected_at": "2026-11-18T15:26:45.401Z"
     },
     {
       "url": "https://www.hicksconsulting.org/resources/insights/how-therapy-can-help-when-you-are-used-to-talking-yourself-out-of-your-needs-why-wome/",
@@ -1103,7 +1103,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://www.hicksconsulting.org/resources/insights/how-therapy-can-help-when-you-are-used-to-talking-yourself-out-of-your-needs-why-wome/",
       "userCanonical": "https://www.hicksconsulting.org/resources/insights/how-therapy-can-help-when-you-are-used-to-talking-yourself-out-of-your-needs-why-wome/",
-      "inspected_at": "2026-11-17T15:26:30.789Z"
+      "inspected_at": "2026-11-18T15:26:45.472Z"
     },
     {
       "url": "https://www.hicksconsulting.org/resources/insights/how-therapy-can-help-when-you-are-used-to-talking-yourself-out-of-your-needs-how-it-s/",
@@ -1115,7 +1115,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://www.hicksconsulting.org/resources/insights/how-therapy-can-help-when-you-are-used-to-talking-yourself-out-of-your-needs-how-it-s/",
       "userCanonical": "https://www.hicksconsulting.org/resources/insights/how-therapy-can-help-when-you-are-used-to-talking-yourself-out-of-your-needs-how-it-s/",
-      "inspected_at": "2026-11-17T15:26:24.323Z"
+      "inspected_at": "2026-11-18T15:26:38.883Z"
     },
     {
       "url": "https://www.hicksconsulting.org/resources/articles/how-coaching-can-help-when-you-want-to-move-differently-without-starting-over/",
@@ -1127,7 +1127,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://www.hicksconsulting.org/resources/articles/how-coaching-can-help-when-you-want-to-move-differently-without-starting-over/",
       "userCanonical": "https://www.hicksconsulting.org/resources/articles/how-coaching-can-help-when-you-want-to-move-differently-without-starting-over/",
-      "inspected_at": "2026-11-17T15:26:05.170Z"
+      "inspected_at": "2026-11-18T15:26:14.455Z"
     },
     {
       "url": "https://www.hicksconsulting.org/resources/insights/how-coaching-can-help-when-you-want-to-move-differently-without-starting-over-a-gentl/",
@@ -1139,7 +1139,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://www.hicksconsulting.org/resources/insights/how-coaching-can-help-when-you-want-to-move-differently-without-starting-over-a-gentl/",
       "userCanonical": "https://www.hicksconsulting.org/resources/insights/how-coaching-can-help-when-you-want-to-move-differently-without-starting-over-a-gentl/",
-      "inspected_at": "2026-11-17T15:26:37.189Z"
+      "inspected_at": "2026-11-18T15:26:51.502Z"
     },
     {
       "url": "https://www.hicksconsulting.org/resources/articles/the-emotional-cost-of-always-being-the-one-who-handles-it/",
@@ -1151,7 +1151,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://www.hicksconsulting.org/resources/articles/the-emotional-cost-of-always-being-the-one-who-handles-it/",
       "userCanonical": "https://www.hicksconsulting.org/resources/articles/the-emotional-cost-of-always-being-the-one-who-handles-it/",
-      "inspected_at": "2026-11-17T15:26:11.589Z"
+      "inspected_at": "2026-11-18T15:26:21.895Z"
     },
     {
       "url": "https://www.hicksconsulting.org/resources/insights/the-emotional-cost-of-always-being-the-one-who-handles-it-what-this-looks-like-in-rea/",
@@ -1163,7 +1163,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://www.hicksconsulting.org/resources/insights/the-emotional-cost-of-always-being-the-one-who-handles-it-what-this-looks-like-in-rea/",
       "userCanonical": "https://www.hicksconsulting.org/resources/insights/the-emotional-cost-of-always-being-the-one-who-handles-it-what-this-looks-like-in-rea/",
-      "inspected_at": "2026-11-17T15:26:36.962Z"
+      "inspected_at": "2026-11-18T15:26:45.628Z"
     },
     {
       "url": "https://www.hicksconsulting.org/resources/insights/the-emotional-cost-of-always-being-the-one-who-handles-it-why-women-minimize-it/",
@@ -1175,7 +1175,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://www.hicksconsulting.org/resources/insights/the-emotional-cost-of-always-being-the-one-who-handles-it-why-women-minimize-it/",
       "userCanonical": "https://www.hicksconsulting.org/resources/insights/the-emotional-cost-of-always-being-the-one-who-handles-it-why-women-minimize-it/",
-      "inspected_at": "2026-11-17T15:26:30.692Z"
+      "inspected_at": "2026-11-18T15:26:45.135Z"
     },
     {
       "url": "https://www.hicksconsulting.org/resources/insights/the-emotional-cost-of-always-being-the-one-who-handles-it-a-gentler-truth-to-consider/",
@@ -1187,7 +1187,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://www.hicksconsulting.org/resources/insights/the-emotional-cost-of-always-being-the-one-who-handles-it-a-gentler-truth-to-consider/",
       "userCanonical": "https://www.hicksconsulting.org/resources/insights/the-emotional-cost-of-always-being-the-one-who-handles-it-a-gentler-truth-to-consider/",
-      "inspected_at": "2026-11-17T15:26:36.972Z"
+      "inspected_at": "2026-11-18T15:26:46.794Z"
     },
     {
       "url": "https://www.hicksconsulting.org/resources/articles/how-to-rebuild-self-trust-after-a-season-of-overextension/",
@@ -1199,7 +1199,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://www.hicksconsulting.org/resources/articles/how-to-rebuild-self-trust-after-a-season-of-overextension/",
       "userCanonical": "https://www.hicksconsulting.org/resources/articles/how-to-rebuild-self-trust-after-a-season-of-overextension/",
-      "inspected_at": "2026-11-17T15:25:52.553Z"
+      "inspected_at": "2026-11-18T15:26:08.165Z"
     },
     {
       "url": "https://www.hicksconsulting.org/resources/insights/how-to-rebuild-self-trust-after-a-season-of-overextension-what-this-looks-like-in-rea/",
@@ -1211,7 +1211,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://www.hicksconsulting.org/resources/insights/how-to-rebuild-self-trust-after-a-season-of-overextension-what-this-looks-like-in-rea/",
       "userCanonical": "https://www.hicksconsulting.org/resources/insights/how-to-rebuild-self-trust-after-a-season-of-overextension-what-this-looks-like-in-rea/",
-      "inspected_at": "2026-11-17T15:26:30.886Z"
+      "inspected_at": "2026-11-18T15:26:45.454Z"
     },
     {
       "url": "https://www.hicksconsulting.org/resources/insights/how-to-rebuild-self-trust-after-a-season-of-overextension-why-women-minimize-it/",
@@ -1223,7 +1223,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://www.hicksconsulting.org/resources/insights/how-to-rebuild-self-trust-after-a-season-of-overextension-why-women-minimize-it/",
       "userCanonical": "https://www.hicksconsulting.org/resources/insights/how-to-rebuild-self-trust-after-a-season-of-overextension-why-women-minimize-it/",
-      "inspected_at": "2026-11-17T15:26:43.307Z"
+      "inspected_at": "2026-11-18T15:26:52.173Z"
     },
     {
       "url": "https://www.hicksconsulting.org/resources/articles/why-boundaries-matter-more-during-good-seasons-than-bad-ones/",
@@ -1235,7 +1235,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://www.hicksconsulting.org/resources/articles/why-boundaries-matter-more-during-good-seasons-than-bad-ones/",
       "userCanonical": "https://www.hicksconsulting.org/resources/articles/why-boundaries-matter-more-during-good-seasons-than-bad-ones/",
-      "inspected_at": "2026-11-17T15:25:26.930Z"
+      "inspected_at": "2026-11-18T15:25:37.583Z"
     },
     {
       "url": "https://www.hicksconsulting.org/resources/insights/why-boundaries-matter-more-during-good-seasons-than-bad-ones-why-women-minimize-it/",
@@ -1247,19 +1247,19 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://www.hicksconsulting.org/resources/insights/why-boundaries-matter-more-during-good-seasons-than-bad-ones-why-women-minimize-it/",
       "userCanonical": "https://www.hicksconsulting.org/resources/insights/why-boundaries-matter-more-during-good-seasons-than-bad-ones-why-women-minimize-it/",
-      "inspected_at": "2026-11-17T15:25:33.302Z"
+      "inspected_at": "2026-11-18T15:25:43.732Z"
     },
     {
       "url": "https://www.hicksconsulting.org/resources/insights/why-boundaries-matter-more-during-good-seasons-than-bad-ones-how-it-shows-up-in-work/",
       "verdict": "PASS",
       "coverageState": "Submitted and indexed",
-      "lastCrawlTime": "2026-10-14T15:17:19Z",
+      "lastCrawlTime": "2026-11-17T20:18:56Z",
       "indexingState": "INDEXING_ALLOWED",
       "robotsTxtState": "ALLOWED",
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://www.hicksconsulting.org/resources/insights/why-boundaries-matter-more-during-good-seasons-than-bad-ones-how-it-shows-up-in-work/",
       "userCanonical": "https://www.hicksconsulting.org/resources/insights/why-boundaries-matter-more-during-good-seasons-than-bad-ones-how-it-shows-up-in-work/",
-      "inspected_at": "2026-11-17T15:25:26.933Z"
+      "inspected_at": "2026-11-18T15:25:37.550Z"
     },
     {
       "url": "https://www.hicksconsulting.org/resources/insights/why-boundaries-matter-more-during-good-seasons-than-bad-ones-a-gentler-truth-to-consi/",
@@ -1271,7 +1271,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://www.hicksconsulting.org/resources/insights/why-boundaries-matter-more-during-good-seasons-than-bad-ones-a-gentler-truth-to-consi/",
       "userCanonical": "https://www.hicksconsulting.org/resources/insights/why-boundaries-matter-more-during-good-seasons-than-bad-ones-a-gentler-truth-to-consi/",
-      "inspected_at": "2026-11-17T15:27:09.144Z"
+      "inspected_at": "2026-11-18T15:27:22.446Z"
     },
     {
       "url": "https://www.hicksconsulting.org/resources/insights/why-boundaries-matter-more-during-good-seasons-than-bad-ones-next-step-reflection/",
@@ -1283,7 +1283,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://www.hicksconsulting.org/resources/insights/why-boundaries-matter-more-during-good-seasons-than-bad-ones-next-step-reflection/",
       "userCanonical": "https://www.hicksconsulting.org/resources/insights/why-boundaries-matter-more-during-good-seasons-than-bad-ones-next-step-reflection/",
-      "inspected_at": "2026-11-17T15:27:09.018Z"
+      "inspected_at": "2026-11-18T15:27:22.442Z"
     },
     {
       "url": "https://www.hicksconsulting.org/resources/articles/what-relationship-stress-looks-like-when-you-keep-minimizing-your-own-feelings/",
@@ -1295,7 +1295,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://www.hicksconsulting.org/resources/articles/what-relationship-stress-looks-like-when-you-keep-minimizing-your-own-feelings/",
       "userCanonical": "https://www.hicksconsulting.org/resources/articles/what-relationship-stress-looks-like-when-you-keep-minimizing-your-own-feelings/",
-      "inspected_at": "2026-11-17T15:25:26.859Z"
+      "inspected_at": "2026-11-18T15:25:37.469Z"
     },
     {
       "url": "https://www.hicksconsulting.org/resources/insights/what-relationship-stress-looks-like-when-you-keep-minimizing-your-own-feelings-what-t/",
@@ -1319,7 +1319,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://www.hicksconsulting.org/resources/insights/what-relationship-stress-looks-like-when-you-keep-minimizing-your-own-feelings-how-it/",
       "userCanonical": "https://www.hicksconsulting.org/resources/insights/what-relationship-stress-looks-like-when-you-keep-minimizing-your-own-feelings-how-it/",
-      "inspected_at": "2026-11-17T15:25:26.945Z"
+      "inspected_at": "2026-11-18T15:25:43.610Z"
     },
     {
       "url": "https://www.hicksconsulting.org/resources/articles/how-to-notice-when-overwhelm-is-turning-into-shutdown/",
@@ -1331,7 +1331,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://www.hicksconsulting.org/resources/articles/how-to-notice-when-overwhelm-is-turning-into-shutdown/",
       "userCanonical": "https://www.hicksconsulting.org/resources/articles/how-to-notice-when-overwhelm-is-turning-into-shutdown/",
-      "inspected_at": "2026-11-17T15:25:26.942Z"
+      "inspected_at": "2026-11-18T15:25:43.634Z"
     },
     {
       "url": "https://www.hicksconsulting.org/resources/insights/how-to-notice-when-overwhelm-is-turning-into-shutdown-what-this-looks-like-in-real-li/",
@@ -1343,7 +1343,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://www.hicksconsulting.org/resources/insights/how-to-notice-when-overwhelm-is-turning-into-shutdown-what-this-looks-like-in-real-li/",
       "userCanonical": "https://www.hicksconsulting.org/resources/insights/how-to-notice-when-overwhelm-is-turning-into-shutdown-what-this-looks-like-in-real-li/",
-      "inspected_at": "2026-11-16T15:37:01.110Z"
+      "inspected_at": "2026-11-18T15:25:37.462Z"
     },
     {
       "url": "https://www.hicksconsulting.org/resources/insights/how-to-notice-when-overwhelm-is-turning-into-shutdown-why-women-minimize-it/",
@@ -1355,7 +1355,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://www.hicksconsulting.org/resources/insights/how-to-notice-when-overwhelm-is-turning-into-shutdown-why-women-minimize-it/",
       "userCanonical": "https://www.hicksconsulting.org/resources/insights/how-to-notice-when-overwhelm-is-turning-into-shutdown-why-women-minimize-it/",
-      "inspected_at": "2026-11-17T15:27:08.870Z"
+      "inspected_at": "2026-11-18T15:27:22.021Z"
     },
     {
       "url": "https://www.hicksconsulting.org/resources/insights/how-to-notice-when-overwhelm-is-turning-into-shutdown-a-gentler-truth-to-consider/",
@@ -1367,7 +1367,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://www.hicksconsulting.org/resources/insights/how-to-notice-when-overwhelm-is-turning-into-shutdown-a-gentler-truth-to-consider/",
       "userCanonical": "https://www.hicksconsulting.org/resources/insights/how-to-notice-when-overwhelm-is-turning-into-shutdown-a-gentler-truth-to-consider/",
-      "inspected_at": "2026-11-17T15:26:17.966Z"
+      "inspected_at": "2026-11-18T15:26:32.766Z"
     },
     {
       "url": "https://www.hicksconsulting.org/resources/insights/how-to-notice-when-overwhelm-is-turning-into-shutdown-next-step-reflection/",
@@ -1379,7 +1379,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://www.hicksconsulting.org/resources/insights/how-to-notice-when-overwhelm-is-turning-into-shutdown-next-step-reflection/",
       "userCanonical": "https://www.hicksconsulting.org/resources/insights/how-to-notice-when-overwhelm-is-turning-into-shutdown-next-step-reflection/",
-      "inspected_at": "2026-11-17T15:27:15.018Z"
+      "inspected_at": "2026-11-18T15:27:22.638Z"
     },
     {
       "url": "https://www.hicksconsulting.org/resources/articles/what-healing-can-look-like-for-women-who-are-tired-of-performing-fine/",
@@ -1391,7 +1391,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://www.hicksconsulting.org/resources/articles/what-healing-can-look-like-for-women-who-are-tired-of-performing-fine/",
       "userCanonical": "https://www.hicksconsulting.org/resources/articles/what-healing-can-look-like-for-women-who-are-tired-of-performing-fine/",
-      "inspected_at": "2026-11-17T15:27:08.988Z"
+      "inspected_at": "2026-11-18T15:27:22.215Z"
     },
     {
       "url": "https://www.hicksconsulting.org/resources/insights/what-healing-can-look-like-for-women-who-are-tired-of-performing-fine-what-this-looks/",
@@ -1427,7 +1427,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://www.hicksconsulting.org/resources/insights/what-healing-can-look-like-for-women-who-are-tired-of-performing-fine-how-it-shows-up/",
       "userCanonical": "https://www.hicksconsulting.org/resources/insights/what-healing-can-look-like-for-women-who-are-tired-of-performing-fine-how-it-shows-up/",
-      "inspected_at": "2026-11-17T15:26:56.089Z"
+      "inspected_at": "2026-11-18T15:27:09.848Z"
     },
     {
       "url": "https://www.hicksconsulting.org/resources/insights/what-healing-can-look-like-for-women-who-are-tired-of-performing-fine-a-gentler-truth/",
@@ -1439,7 +1439,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://www.hicksconsulting.org/resources/insights/what-healing-can-look-like-for-women-who-are-tired-of-performing-fine-a-gentler-truth/",
       "userCanonical": "https://www.hicksconsulting.org/resources/insights/what-healing-can-look-like-for-women-who-are-tired-of-performing-fine-a-gentler-truth/",
-      "inspected_at": "2026-11-17T15:26:43.550Z"
+      "inspected_at": "2026-11-18T15:26:57.640Z"
     },
     {
       "url": "https://www.hicksconsulting.org/resources/insights/what-healing-can-look-like-for-women-who-are-tired-of-performing-fine-next-step-refle/",
@@ -1451,7 +1451,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://www.hicksconsulting.org/resources/insights/what-healing-can-look-like-for-women-who-are-tired-of-performing-fine-next-step-refle/",
       "userCanonical": "https://www.hicksconsulting.org/resources/insights/what-healing-can-look-like-for-women-who-are-tired-of-performing-fine-next-step-refle/",
-      "inspected_at": "2026-11-17T15:26:49.759Z"
+      "inspected_at": "2026-11-18T15:27:03.635Z"
     },
     {
       "url": "https://www.hicksconsulting.org/resources/insights/how-to-stop-confusing-capacity-with-obligation-what-this-looks-like-in-real-life/",
@@ -1463,7 +1463,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://www.hicksconsulting.org/resources/insights/how-to-stop-confusing-capacity-with-obligation-what-this-looks-like-in-real-life/",
       "userCanonical": "https://www.hicksconsulting.org/resources/insights/how-to-stop-confusing-capacity-with-obligation-what-this-looks-like-in-real-life/",
-      "inspected_at": "2026-11-17T15:26:30.665Z"
+      "inspected_at": "2026-11-18T15:26:44.989Z"
     },
     {
       "url": "https://www.hicksconsulting.org/resources/insights/how-to-stop-confusing-capacity-with-obligation-how-it-shows-up-in-work-and-relationsh/",
@@ -1475,7 +1475,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://www.hicksconsulting.org/resources/insights/how-to-stop-confusing-capacity-with-obligation-how-it-shows-up-in-work-and-relationsh/",
       "userCanonical": "https://www.hicksconsulting.org/resources/insights/how-to-stop-confusing-capacity-with-obligation-how-it-shows-up-in-work-and-relationsh/",
-      "inspected_at": "2026-11-17T15:26:18.105Z"
+      "inspected_at": "2026-11-18T15:26:32.884Z"
     },
     {
       "url": "https://www.hicksconsulting.org/resources/articles/what-black-women-deserve-from-support-that-is-actually-useful/",
@@ -1487,31 +1487,43 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://www.hicksconsulting.org/resources/articles/what-black-women-deserve-from-support-that-is-actually-useful/",
       "userCanonical": "https://www.hicksconsulting.org/resources/articles/what-black-women-deserve-from-support-that-is-actually-useful/",
-      "inspected_at": "2026-11-17T15:25:58.904Z"
+      "inspected_at": "2026-11-18T15:26:14.254Z"
     },
     {
       "url": "https://www.hicksconsulting.org/resources/insights/what-black-women-deserve-from-support-that-is-actually-useful-what-this-looks-like-in/",
+      "verdict": "PASS",
+      "coverageState": "Submitted and indexed",
+      "lastCrawlTime": "2026-11-17T16:47:45Z",
+      "indexingState": "INDEXING_ALLOWED",
+      "robotsTxtState": "ALLOWED",
+      "pageFetchState": "SUCCESSFUL",
+      "googleCanonical": "https://www.hicksconsulting.org/resources/insights/what-black-women-deserve-from-support-that-is-actually-useful-what-this-looks-like-in/",
+      "userCanonical": "https://www.hicksconsulting.org/resources/insights/what-black-women-deserve-from-support-that-is-actually-useful-what-this-looks-like-in/",
+      "inspected_at": "2026-11-18T15:25:49.931Z"
+    },
+    {
+      "url": "https://www.hicksconsulting.org/resources/insights/what-black-women-deserve-from-support-that-is-actually-useful-how-it-shows-up-in-work/",
       "verdict": "NEUTRAL",
-      "coverageState": "Discovered - currently not indexed",
+      "coverageState": "URL is unknown to Google",
       "lastCrawlTime": null,
       "indexingState": "INDEXING_STATE_UNSPECIFIED",
       "robotsTxtState": "ROBOTS_TXT_STATE_UNSPECIFIED",
       "pageFetchState": "PAGE_FETCH_STATE_UNSPECIFIED",
       "googleCanonical": null,
       "userCanonical": null,
-      "inspected_at": "2026-11-17T15:25:39.668Z"
+      "inspected_at": "2026-11-18T15:25:31.308Z"
     },
     {
       "url": "https://www.hicksconsulting.org/resources/guides/burnout-recovery-for-black-women-who-keep-functioning-through-everything/",
-      "verdict": "PASS",
-      "coverageState": "Submitted and indexed",
-      "lastCrawlTime": "2026-10-13T06:58:23Z",
+      "verdict": "NEUTRAL",
+      "coverageState": "Crawled - currently not indexed",
+      "lastCrawlTime": "2026-11-17T18:47:18Z",
       "indexingState": "INDEXING_ALLOWED",
       "robotsTxtState": "ALLOWED",
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://www.hicksconsulting.org/resources/guides/burnout-recovery-for-black-women-who-keep-functioning-through-everything/",
       "userCanonical": "https://www.hicksconsulting.org/resources/guides/burnout-recovery-for-black-women-who-keep-functioning-through-everything/",
-      "inspected_at": "2026-11-17T15:26:11.721Z"
+      "inspected_at": "2026-11-18T15:26:26.822Z"
     },
     {
       "url": "https://www.hicksconsulting.org/resources/guides/anxiety-overwhelm-and-the-cost-of-being-mentally-on-all-the-time/",
@@ -1523,7 +1535,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://www.hicksconsulting.org/resources/guides/anxiety-overwhelm-and-the-cost-of-being-mentally-on-all-the-time/",
       "userCanonical": "https://www.hicksconsulting.org/resources/guides/anxiety-overwhelm-and-the-cost-of-being-mentally-on-all-the-time/",
-      "inspected_at": "2026-11-17T15:26:24.281Z"
+      "inspected_at": "2026-11-18T15:26:33.434Z"
     },
     {
       "url": "https://www.hicksconsulting.org/resources/guides/boundaries-people-pleasing-and-the-fear-of-letting-people-down/",
@@ -1535,7 +1547,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://www.hicksconsulting.org/resources/guides/boundaries-people-pleasing-and-the-fear-of-letting-people-down/",
       "userCanonical": "https://www.hicksconsulting.org/resources/guides/boundaries-people-pleasing-and-the-fear-of-letting-people-down/",
-      "inspected_at": "2026-11-17T15:26:17.938Z"
+      "inspected_at": "2026-11-18T15:26:27.055Z"
     },
     {
       "url": "https://www.hicksconsulting.org/resources/guides/life-transitions-for-high-achieving-black-women/",
@@ -1547,7 +1559,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://www.hicksconsulting.org/resources/guides/life-transitions-for-high-achieving-black-women/",
       "userCanonical": "https://www.hicksconsulting.org/resources/guides/life-transitions-for-high-achieving-black-women/",
-      "inspected_at": "2026-11-17T15:26:30.620Z"
+      "inspected_at": "2026-11-18T15:26:39.528Z"
     },
     {
       "url": "https://www.hicksconsulting.org/resources/guides/self-worth-identity-and-the-pressure-to-be-exceptional/",
@@ -1559,7 +1571,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://www.hicksconsulting.org/resources/guides/self-worth-identity-and-the-pressure-to-be-exceptional/",
       "userCanonical": "https://www.hicksconsulting.org/resources/guides/self-worth-identity-and-the-pressure-to-be-exceptional/",
-      "inspected_at": "2026-11-17T15:26:17.967Z"
+      "inspected_at": "2026-11-18T15:26:32.862Z"
     },
     {
       "url": "https://www.hicksconsulting.org/resources/guides/relationship-stress-emotional-labor-and-the-need-for-more-honest-support/",
@@ -1571,7 +1583,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://www.hicksconsulting.org/resources/guides/relationship-stress-emotional-labor-and-the-need-for-more-honest-support/",
       "userCanonical": "https://www.hicksconsulting.org/resources/guides/relationship-stress-emotional-labor-and-the-need-for-more-honest-support/",
-      "inspected_at": "2026-11-16T15:37:00.569Z"
+      "inspected_at": "2026-11-18T15:25:31.319Z"
     },
     {
       "url": "https://www.hicksconsulting.org/resources/guides/strong-black-woman-fatigue-and-the-weight-of-looking-fine/",
@@ -1583,7 +1595,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://www.hicksconsulting.org/resources/guides/strong-black-woman-fatigue-and-the-weight-of-looking-fine/",
       "userCanonical": "https://www.hicksconsulting.org/resources/guides/strong-black-woman-fatigue-and-the-weight-of-looking-fine/",
-      "inspected_at": "2026-11-17T15:25:46.101Z"
+      "inspected_at": "2026-11-18T15:26:01.926Z"
     },
     {
       "url": "https://www.hicksconsulting.org/resources/white-papers/the-burnout-and-boundaries-playbook-for-high-achieving-black-women/",
@@ -1595,7 +1607,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://www.hicksconsulting.org/resources/white-papers/the-burnout-and-boundaries-playbook-for-high-achieving-black-women/",
       "userCanonical": "https://www.hicksconsulting.org/resources/white-papers/the-burnout-and-boundaries-playbook-for-high-achieving-black-women/",
-      "inspected_at": "2026-11-16T15:36:54.824Z"
+      "inspected_at": "2026-11-18T15:25:31.314Z"
     },
     {
       "url": "https://www.hicksconsulting.org/resources/white-papers/a-practical-guide-to-life-transitions-identity-drift-and-starting-again-without-panic/",
@@ -1607,7 +1619,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://www.hicksconsulting.org/resources/white-papers/a-practical-guide-to-life-transitions-identity-drift-and-starting-again-without-panic/",
       "userCanonical": "https://www.hicksconsulting.org/resources/white-papers/a-practical-guide-to-life-transitions-identity-drift-and-starting-again-without-panic/",
-      "inspected_at": "2026-11-17T15:25:46.077Z"
+      "inspected_at": "2026-11-18T15:25:56.635Z"
     },
     {
       "url": "https://www.hicksconsulting.org/resources/insights/why-successful-black-women-still-feel-worn-down/",
@@ -1619,7 +1631,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://www.hicksconsulting.org/resources/insights/why-successful-black-women-still-feel-worn-down/",
       "userCanonical": "https://www.hicksconsulting.org/resources/insights/why-successful-black-women-still-feel-worn-down/",
-      "inspected_at": "2026-11-16T15:36:54.609Z"
+      "inspected_at": "2026-11-18T15:25:31.317Z"
     },
     {
       "url": "https://www.hicksconsulting.org/resources/articles/burnout-or-just-too-much/",
@@ -1631,7 +1643,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://www.hicksconsulting.org/resources/articles/burnout-or-just-too-much/",
       "userCanonical": "https://www.hicksconsulting.org/resources/articles/burnout-or-just-too-much/",
-      "inspected_at": "2026-11-17T15:25:58.810Z"
+      "inspected_at": "2026-11-18T15:26:08.320Z"
     },
     {
       "url": "https://www.hicksconsulting.org/resources/guides/boundaries-for-black-women/",
@@ -1643,7 +1655,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://www.hicksconsulting.org/resources/guides/boundaries-for-black-women/",
       "userCanonical": "https://www.hicksconsulting.org/resources/guides/boundaries-for-black-women/",
-      "inspected_at": "2026-11-17T15:26:24.293Z"
+      "inspected_at": "2026-11-18T15:26:33.410Z"
     },
     {
       "url": "https://www.hicksconsulting.org/resources/white-papers/therapy-vs-coaching-guide/",
@@ -1655,7 +1667,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://www.hicksconsulting.org/resources/white-papers/therapy-vs-coaching-guide/",
       "userCanonical": "https://www.hicksconsulting.org/resources/white-papers/therapy-vs-coaching-guide/",
-      "inspected_at": "2026-11-16T15:37:01.146Z"
+      "inspected_at": "2026-11-18T15:25:37.450Z"
     },
     {
       "url": "https://www.hicksconsulting.org/resources/insights/when-rest-feels-like-guilt/",
@@ -1679,7 +1691,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://www.hicksconsulting.org/resources/articles/when-you-keep-saying-yes/",
       "userCanonical": "https://www.hicksconsulting.org/resources/articles/when-you-keep-saying-yes/",
-      "inspected_at": "2026-11-17T15:26:11.615Z"
+      "inspected_at": "2026-11-18T15:26:26.618Z"
     },
     {
       "url": "https://www.hicksconsulting.org/resources/guides/what-therapy-and-coaching-cost-hicks-consulting/",
@@ -1691,7 +1703,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://www.hicksconsulting.org/resources/guides/what-therapy-and-coaching-cost-hicks-consulting/",
       "userCanonical": "https://www.hicksconsulting.org/resources/guides/what-therapy-and-coaching-cost-hicks-consulting/",
-      "inspected_at": "2026-11-17T15:27:08.819Z"
+      "inspected_at": "2026-11-18T15:27:17.671Z"
     },
     {
       "url": "https://www.hicksconsulting.org/resources/guides/online-therapy-memphis-how-virtual-sessions-work/",
@@ -1703,7 +1715,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://www.hicksconsulting.org/resources/guides/online-therapy-memphis-how-virtual-sessions-work/",
       "userCanonical": "https://www.hicksconsulting.org/resources/guides/online-therapy-memphis-how-virtual-sessions-work/",
-      "inspected_at": "2026-11-17T15:27:08.674Z"
+      "inspected_at": "2026-11-18T15:27:16.511Z"
     },
     {
       "url": "https://www.hicksconsulting.org/resources/guides/memphis-area-service-area-what-is-available-where-you-live/",
@@ -1715,7 +1727,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://www.hicksconsulting.org/resources/guides/memphis-area-service-area-what-is-available-where-you-live/",
       "userCanonical": "https://www.hicksconsulting.org/resources/guides/memphis-area-service-area-what-is-available-where-you-live/",
-      "inspected_at": "2026-11-17T15:27:02.628Z"
+      "inspected_at": "2026-11-18T15:27:16.108Z"
     },
     {
       "url": "https://www.hicksconsulting.org/resources/guides/how-to-choose-a-therapist-near-you/",
@@ -1727,7 +1739,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://www.hicksconsulting.org/resources/guides/how-to-choose-a-therapist-near-you/",
       "userCanonical": "https://www.hicksconsulting.org/resources/guides/how-to-choose-a-therapist-near-you/",
-      "inspected_at": "2026-11-17T15:27:02.421Z"
+      "inspected_at": "2026-11-18T15:27:11.342Z"
     },
     {
       "url": "https://www.hicksconsulting.org/resources/guides/therapy-vs-coaching-vs-organizational-training/",
@@ -1751,7 +1763,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://www.hicksconsulting.org/resources/guides/memphis-organizational-mental-health-training/",
       "userCanonical": "https://www.hicksconsulting.org/resources/guides/memphis-organizational-mental-health-training/",
-      "inspected_at": "2026-11-17T15:27:08.986Z"
+      "inspected_at": "2026-11-18T15:27:22.366Z"
     },
     {
       "url": "https://www.hicksconsulting.org/questions/black-christian-therapist-near-me-cost/",
@@ -1763,7 +1775,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://www.hicksconsulting.org/questions/black-christian-therapist-near-me-cost/",
       "userCanonical": "https://www.hicksconsulting.org/questions/black-christian-therapist-near-me-cost/",
-      "inspected_at": "2026-11-17T15:26:56.012Z"
+      "inspected_at": "2026-11-18T15:27:04.545Z"
     },
     {
       "url": "https://www.hicksconsulting.org/questions/black-women-seeking-black-therapists/",
@@ -1775,7 +1787,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://www.hicksconsulting.org/questions/black-women-seeking-black-therapists/",
       "userCanonical": "https://www.hicksconsulting.org/questions/black-women-seeking-black-therapists/",
-      "inspected_at": "2026-11-17T15:27:02.768Z"
+      "inspected_at": "2026-11-18T15:27:16.259Z"
     },
     {
       "url": "https://www.hicksconsulting.org/questions/does-a-therapists-race-matter/",
@@ -1787,7 +1799,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://www.hicksconsulting.org/questions/does-a-therapists-race-matter/",
       "userCanonical": "https://www.hicksconsulting.org/questions/does-a-therapists-race-matter/",
-      "inspected_at": "2026-11-17T15:26:56.243Z"
+      "inspected_at": "2026-11-18T15:27:09.783Z"
     },
     {
       "url": "https://www.hicksconsulting.org/questions/culturally-responsive-therapist-memphis/",
@@ -1799,7 +1811,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://www.hicksconsulting.org/questions/culturally-responsive-therapist-memphis/",
       "userCanonical": "https://www.hicksconsulting.org/questions/culturally-responsive-therapist-memphis/",
-      "inspected_at": "2026-11-17T15:26:43.431Z"
+      "inspected_at": "2026-11-18T15:26:57.534Z"
     },
     {
       "url": "https://www.hicksconsulting.org/questions/mental-health-therapist-memphis-tn/",
@@ -1811,7 +1823,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://www.hicksconsulting.org/questions/mental-health-therapist-memphis-tn/",
       "userCanonical": "https://www.hicksconsulting.org/questions/mental-health-therapist-memphis-tn/",
-      "inspected_at": "2026-11-17T15:26:56.082Z"
+      "inspected_at": "2026-11-18T15:27:05.216Z"
     },
     {
       "url": "https://www.hicksconsulting.org/questions/african-american-psychologist-near-me/",
@@ -1835,7 +1847,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://www.hicksconsulting.org/questions/grief-counseling-memphis-online/",
       "userCanonical": "https://www.hicksconsulting.org/questions/grief-counseling-memphis-online/",
-      "inspected_at": "2026-11-17T15:26:49.895Z"
+      "inspected_at": "2026-11-18T15:27:03.806Z"
     },
     {
       "url": "https://www.hicksconsulting.org/questions/find-a-black-therapist/",
@@ -1859,7 +1871,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://www.hicksconsulting.org/questions/lcsw-therapist-memphis/",
       "userCanonical": "https://www.hicksconsulting.org/questions/lcsw-therapist-memphis/",
-      "inspected_at": "2026-11-17T15:27:02.332Z"
+      "inspected_at": "2026-11-18T15:27:10.160Z"
     },
     {
       "url": "https://www.hicksconsulting.org/questions/therapy-near-me/",
@@ -1883,7 +1895,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://www.hicksconsulting.org/questions/counselor-cordova-tn-online/",
       "userCanonical": "https://www.hicksconsulting.org/questions/counselor-cordova-tn-online/",
-      "inspected_at": "2026-11-17T15:27:02.613Z"
+      "inspected_at": "2026-11-18T15:27:15.972Z"
     },
     {
       "url": "https://www.hicksconsulting.org/questions/relationship-stress-counseling-tennessee-online/",
@@ -1895,7 +1907,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://www.hicksconsulting.org/questions/relationship-stress-counseling-tennessee-online/",
       "userCanonical": "https://www.hicksconsulting.org/questions/relationship-stress-counseling-tennessee-online/",
-      "inspected_at": "2026-11-17T15:26:36.964Z"
+      "inspected_at": "2026-11-18T15:26:46.014Z"
     },
     {
       "url": "https://www.hicksconsulting.org/questions/self-esteem-therapist-for-women-tennessee/",
@@ -1907,7 +1919,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://www.hicksconsulting.org/questions/self-esteem-therapist-for-women-tennessee/",
       "userCanonical": "https://www.hicksconsulting.org/questions/self-esteem-therapist-for-women-tennessee/",
-      "inspected_at": "2026-11-17T15:26:37.207Z"
+      "inspected_at": "2026-11-18T15:26:51.642Z"
     },
     {
       "url": "https://www.hicksconsulting.org/questions/solution-focused-therapy-memphis/",
@@ -1919,7 +1931,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://www.hicksconsulting.org/questions/solution-focused-therapy-memphis/",
       "userCanonical": "https://www.hicksconsulting.org/questions/solution-focused-therapy-memphis/",
-      "inspected_at": "2026-11-17T15:27:02.641Z"
+      "inspected_at": "2026-11-18T15:27:16.286Z"
     },
     {
       "url": "https://www.hicksconsulting.org/questions/therapist-germantown-tn-online/",
@@ -1931,7 +1943,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://www.hicksconsulting.org/questions/therapist-germantown-tn-online/",
       "userCanonical": "https://www.hicksconsulting.org/questions/therapist-germantown-tn-online/",
-      "inspected_at": "2026-11-17T15:27:08.679Z"
+      "inspected_at": "2026-11-18T15:27:16.831Z"
     },
     {
       "url": "https://www.hicksconsulting.org/questions/therapy-for-black-professional-women-tennessee/",
@@ -1943,7 +1955,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://www.hicksconsulting.org/questions/therapy-for-black-professional-women-tennessee/",
       "userCanonical": "https://www.hicksconsulting.org/questions/therapy-for-black-professional-women-tennessee/",
-      "inspected_at": "2026-11-17T15:26:56.398Z"
+      "inspected_at": "2026-11-18T15:27:10.129Z"
     },
     {
       "url": "https://www.hicksconsulting.org/questions/hicks-counseling/",
@@ -1955,7 +1967,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://www.hicksconsulting.org/questions/hicks-counseling/",
       "userCanonical": "https://www.hicksconsulting.org/questions/hicks-counseling/",
-      "inspected_at": "2026-11-17T15:27:02.443Z"
+      "inspected_at": "2026-11-18T15:27:15.902Z"
     },
     {
       "url": "https://www.hicksconsulting.org/questions/what-to-expect-at-your-first-session-with-a-black-therapist/",
@@ -1967,7 +1979,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://www.hicksconsulting.org/questions/what-to-expect-at-your-first-session-with-a-black-therapist/",
       "userCanonical": "https://www.hicksconsulting.org/questions/what-to-expect-at-your-first-session-with-a-black-therapist/",
-      "inspected_at": "2026-11-17T15:27:02.348Z"
+      "inspected_at": "2026-11-18T15:27:10.701Z"
     }
   ]
 }
