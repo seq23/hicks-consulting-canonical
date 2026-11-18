@@ -63,7 +63,8 @@ jobs:
           if [[ -n "$(git status --porcelain data/search)" ]]; then
             git add data/search
             git commit -m "Paid citation probe: refresh live query observations"
-            git push
+            # main moves under this job: rebase onto it and retry (bare push rejected, p-n-p 18 Nov 2026).
+            for i in 1 2 3; do git pull --rebase --autostash -q origin "$GITHUB_REF_NAME" && git push origin "HEAD:$GITHUB_REF_NAME" && break; [ "$i" = 3 ] && exit 1; sleep $((i*10)); done
           else
             echo "No observation changes to commit."
           fi

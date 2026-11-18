@@ -35,7 +35,9 @@ for (const file of files) {
   const writes = /permissions:[\s\S]*contents:\s*write/.test(content) || /git\s+push/.test(content);
   if (writes) {
     writeWorkflows.push(file);
-    if (!/concurrency:[\s\S]*group:\s*hicks-consulting-content-automation/.test(content)) {
+    // A pull request's config check (search-loop stage validate, never writes) may take its own group;
+    // every writing run still takes the shared one: `group: ${{ <pull_request> && ... || 'hicks-consulting-content-automation' }}`.
+    if (!/concurrency:[\s\S]*group:\s*(hicks-consulting-content-automation\b|\$\{\{ github\.event_name == 'pull_request' && [^\n]*\|\| 'hicks-consulting-content-automation' \}\})/.test(content)) {
       fail(`Writer workflow ${file} must use shared hicks-consulting-content-automation concurrency group.`);
     }
     // An engine caller mutates through its commit_command script; that script must pull.

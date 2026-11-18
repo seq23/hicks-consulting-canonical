@@ -17,6 +17,13 @@ on:
   schedule:
     - cron: '53 6 * * *'  # America/Chicago, all year
       timezone: America/Chicago
+  # A change to the engine's config or routing is checked on the PR (search-loop v1.12.0
+  # stage validate: config + model-routing checks only, no network, no model call; peace-be-still
+  # 18 Nov 2026 failed every scheduled run on a routing file nothing checked before merge).
+  pull_request:
+    paths:
+      - search-loop.config.json
+      - .github/workflows/search-loop.yml
   workflow_dispatch:
     inputs:
       stage:
@@ -30,11 +37,21 @@ permissions:
   actions: write
 
 concurrency:
-  group: hicks-consulting-content-automation
+  group: ${{ github.event_name == 'pull_request' && format('hicks-consulting-content-automation-pr-{0}', github.ref) || 'hicks-consulting-content-automation' }}
   cancel-in-progress: false
 
 jobs:
+  # The config check runs at v1.12.0 (validate only: it never publishes, so the pin below
+  # that holds published pages steady does not apply to it). The config and routing are committed, so it needs no site setup.
+  config-check:
+    if: github.event_name == 'pull_request'
+    uses: seq23/search-loop/.github/workflows/search-loop.yml@v1.12.0
+    with:
+      engine_ref: v1.12.0
+      stage: validate
+
   search-loop:
+    if: github.event_name != 'pull_request'
     uses: seq23/search-loop/.github/workflows/search-loop.yml@v1.7.0
     with:
       open_loops_business: friends

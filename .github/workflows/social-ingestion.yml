@@ -73,7 +73,8 @@ jobs:
           if [[ -n "$(git status --porcelain data/intake data/search data/social data/autonomy pages/resources pages/llm-atlas llms.txt sitemap.xml data/cadence/lastmod_ledger.json)" ]]; then
             git add data/intake data/search data/social data/autonomy pages/resources pages/llm-atlas llms.txt sitemap.xml data/cadence/lastmod_ledger.json
             git commit -m "Update autonomous content intelligence and scheduled resources"
-            git push
+            # main moves under this job: rebase onto it and retry (bare push rejected, p-n-p 18 Nov 2026).
+            for i in 1 2 3; do git pull --rebase --autostash -q origin "$GITHUB_REF_NAME" && git push origin "HEAD:$GITHUB_REF_NAME" && break; [ "$i" = 3 ] && exit 1; sleep $((i*10)); done
           else
             echo "No social ingestion changes to commit."
           fi
