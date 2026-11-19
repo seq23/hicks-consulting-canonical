@@ -1,7 +1,7 @@
 {
   "schema_version": "2.0",
-  "receipt_id": "2026-11-18T21-25-14.780Z-44401240961",
-  "attempted_at": "2026-11-18T21:25:14.780Z",
+  "receipt_id": "2026-11-19T22-13-26.828Z-44626493829",
+  "attempted_at": "2026-11-19T22:13:26.828Z",
   "publication_trigger": "ONLY_AFTER_EXISTING_CONTENT_PUBLISH_WORKFLOW_SUCCEEDS",
   "chain": [
     "successful_publish",
@@ -33,11 +33,11 @@
     "sitemap_url": "https://www.hicksconsulting.org/sitemap.xml"
   },
   "priority_url_inspection": {
-    "status": "SUCCESS",
+    "status": "PARTIAL",
     "attempted": true,
     "requested_urls": 17,
     "inspected_urls": 17,
-    "failed_urls": 0,
+    "failed_urls": 2,
     "results": [
       {
         "url": "https://www.hicksconsulting.org/",
@@ -50,12 +50,12 @@
       },
       {
         "url": "https://www.hicksconsulting.org/therapy/",
-        "status": "SUCCESS",
-        "http_status": 200,
-        "verdict": "PASS",
-        "coverage_state": "Submitted and indexed",
-        "indexing_state": "INDEXING_ALLOWED",
-        "last_crawl_time": "2026-11-05T06:29:11Z"
+        "status": "FAILED",
+        "http_status": 503,
+        "verdict": "UNKNOWN",
+        "coverage_state": "UNKNOWN",
+        "indexing_state": "UNKNOWN",
+        "last_crawl_time": null
       },
       {
         "url": "https://www.hicksconsulting.org/coaching/",
@@ -140,12 +140,12 @@
       },
       {
         "url": "https://www.hicksconsulting.org/resources/guides/what-therapy-and-coaching-cost-hicks-consulting/",
-        "status": "SUCCESS",
-        "http_status": 200,
-        "verdict": "PASS",
-        "coverage_state": "Submitted and indexed",
-        "indexing_state": "INDEXING_ALLOWED",
-        "last_crawl_time": "2026-11-03T12:53:52Z"
+        "status": "FAILED",
+        "http_status": 503,
+        "verdict": "UNKNOWN",
+        "coverage_state": "UNKNOWN",
+        "indexing_state": "UNKNOWN",
+        "last_crawl_time": null
       },
       {
         "url": "https://www.hicksconsulting.org/resources/guides/online-therapy-memphis-how-virtual-sessions-work/",
@@ -197,7 +197,7 @@
   "durable_receipt": {
     "status": "SUCCESS",
     "latest_path": "data/distribution/provider_receipt.json",
-    "history_path": "data/distribution/receipts/2026-11-18T21-25-14.780Z-44401240961.json"
+    "history_path": "data/distribution/receipts/2026-11-19T22-13-26.828Z-44626493829.json"
   },
   "observation_feedback": {
     "status": "SUCCESS",
