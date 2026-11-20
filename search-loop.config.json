@@ -238,5 +238,6 @@
   "reserved_titles": "data/search-loop/reserved-titles.json",
   "distinct": {
     "near_dup": 0.3
-  }
+  },
+  "gate": { "banned_patterns": ["\\btailored\\b", "\\bunlock(s|ed|ing)?\\b", "\\belevate\\b", "\\bdive in\\b", "\\bdelve", "\\bseamless\\b", "\\bempower\\b", "\\bembark", "\\bai-powered\\b", "\\bsparkles?\\b"] }
 }
