@@ -167,6 +167,28 @@ if (!governed.length) {
   );
 }
 
+// ---------------------------------------------------------------- C. shared chrome
+// A nav or footer change is one edit to every page, not new content on each: it
+// must not move lastmod. A change inside <main> must. Proven on the real built
+// speaking page, so a chrome markup change that escapes the strip fails here.
+{
+  const ledgerLib = require(path.join(ROOT, 'scripts', 'lib', 'lastmod_ledger.js'));
+  const builtPage = path.join(ROOT, 'dist', 'corporate-speaking', 'index.html');
+  if (!fs.existsSync(builtPage)) fail('chrome-check-no-input: dist/corporate-speaking/index.html is missing; run the build first.');
+  const page = fs.readFileSync(builtPage, 'utf8');
+  const navLink = page.match(/<nav class="main-nav"[\s\S]*?<a href="\/about\/">About<\/a>/);
+  const footerLink = page.match(/<footer><div class="container footer-grid">[\s\S]*?<a href="\/faq\/">FAQ<\/a>/);
+  if (!navLink || !footerLink || !page.includes('</main>')) fail('chrome-check-no-input: the built speaking page has no site nav, footer grid or <main>; the chrome check examined nothing.');
+  const hash = (html) => ledgerLib.contentHash(ledgerLib.hashInput(html));
+  const navEdit = page.replace('<a href="/about/">About</a>', '<a href="/about/">About us</a>');
+  const footerEdit = page.replace('<a href="/faq/">FAQ</a>', '<a href="/faq/">Questions</a>');
+  const bodyEdit = page.replace('</main>', '<p>changed</p></main>');
+  if (navEdit === page || footerEdit === page) fail('chrome-check-no-input: the nav/footer edit did not apply.');
+  if (hash(navEdit) !== hash(page)) findings.push('chrome-moves-lastmod: a nav-only change altered the page hash, so one nav edit would re-date every page.');
+  if (hash(footerEdit) !== hash(page)) findings.push('chrome-moves-lastmod: a footer-only change altered the page hash, so one footer edit would re-date every page.');
+  if (hash(bodyEdit) === hash(page)) findings.push('content-ignored: a change inside <main> did not alter the page hash, so real edits would keep a stale lastmod.');
+}
+
 if (findings.length) fail(findings);
 
 console.log(
