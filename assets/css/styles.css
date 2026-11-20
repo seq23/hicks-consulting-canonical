@@ -1170,6 +1170,7 @@ footer {
   color: var(--charcoal);
 }
 .inquiry-form textarea { min-height: 11rem; resize: vertical; }
+:root[data-theme='dark'] .inquiry-form { color-scheme: dark; }
 .hours-card { padding: clamp(1rem, 2.5vw, 1.6rem); }
 .hours-list { margin: .2rem 0 0; padding-left: 1.1rem; }
 .hours-list li { margin: .35rem 0; }
@@ -1879,7 +1880,8 @@ footer {
 .sp-closing { margin-block: clamp(48px, 7vw, 88px) 0; padding: clamp(36px, 5vw, 64px) clamp(20px, 4vw, 56px); background: var(--sp-closing); border-radius: 26px; color: var(--sp-closing-text); text-align: center; }
 .speaking .sp-closing h2 { font-size: clamp(1.8rem, 3.2vw, 2.5rem); color: var(--sp-closing-text); }
 .sp-closing > p { margin: 16px auto 0; max-width: 32rem; color: var(--sp-closing-soft); }
-.sp-inquiry { max-width: 720px; margin: 28px auto 0; text-align: left; }
+.sp-inquiry { max-width: 720px; margin: 28px auto 0; text-align: left; background: var(--cream-soft); -webkit-backdrop-filter: none; backdrop-filter: none; }
+:root[data-theme='dark'] .sp-inquiry { background: var(--cream-soft); }
 .sp-closing .form-status:empty { display: none; }
 .sp-closing-email, .sp-closing-links { font-size: .92rem; }
 .sp-closing-email a, .sp-closing-links a { color: var(--sp-closing-link); }
