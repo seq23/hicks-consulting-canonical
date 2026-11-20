@@ -28,7 +28,11 @@ for (const file of files) {
     if (!refTag) fail(`Workflow ${file} calls the search-loop engine without engine_ref: v1 or an exact v1.x.y tag`);
     if (usesTag && refTag && usesTag !== refTag) fail(`Workflow ${file} pins the engine workflow at ${usesTag} but engine_ref at ${refTag}`);
     if (/^\s+steps:\s*$/m.test(content)) fail(`Workflow ${file} calls the search-loop engine and also runs steps; keep the caller to the one reusable call`);
-  } else {
+  } else if (/^\s+uses:\s*seq23\/seq-bin\/\.github\/workflows\/ship-ready-baseline\.yml@/m.test(content)) {
+    // The shared ship-ready baseline: a read-only check, pinned to @v1, one reusable call and no steps.
+    if (!/^\s+uses:\s*seq23\/seq-bin\/\.github\/workflows\/ship-ready-baseline\.yml@v1\s*$/m.test(content)) fail(`Workflow ${file} calls ship-ready-baseline but is not pinned to @v1`);
+    if (/^\s+steps:\s*$/m.test(content)) fail(`Workflow ${file} calls ship-ready-baseline and also runs steps; keep the caller to the one reusable call`);
+} else {
     if (!/uses:\s+actions\/checkout@v\d+/.test(content)) fail(`Workflow ${file} missing actions/checkout`);
     if (!/uses:\s+actions\/setup-node@v\d+/.test(content)) fail(`Workflow ${file} missing actions/setup-node`);
   }

@@ -62,9 +62,9 @@ const distinctDraft = () => ({
 });
 const engineWith = (make) => ({ draftSlot: async (cfg, slot, { check }) => { const d = make(); const problems = await check(d); return problems.length ? { ok: false, stop: 'SLOT_DRAFT_REJECTED', reason: problems.join('; '), model: 'stub' } : { ok: true, draft: d, model: 'stub', words: 1000, attempts: 1 }; } });
 
-async function run(make) {
+async function run(make, cfg = {}) {
   const fx = fixture();
-  const out = await writeSlots({ root: fx.dir, engine: engineWith(make), cfg: {}, now: new Date('2026-11-03T13:00:00Z'), log: () => {} });
+  const out = await writeSlots({ root: fx.dir, engine: engineWith(make), cfg, now: new Date('2026-11-03T13:00:00Z'), log: () => {} });
   const m = JSON.parse(fs.readFileSync(path.join(fx.dir, 'data/admin/content_manifest.json'), 'utf8'));
   return { out, fx, m, after: { live: fx.read(LIVE), copy: fx.read(COPY), twin: fx.read(TWIN) } };
 }
@@ -107,6 +107,19 @@ let examined = 0;
   if (!/<time datetime="2026-11-04">/.test(released) || /datePublished":"2026-10-20/.test(released)) fail('a release shows the overdue slot date instead of the release day');
   }
   fs.rmSync(fx.dir, { recursive: true, force: true });
+}
+// 4b. A draft with one of the site's banned words (gate.banned_patterns) is refused; the same draft
+//     without it is written (20 Nov 2026: "tailored" reached a live insight).
+{
+  const cfg = JSON.parse(fs.readFileSync(path.join(ROOT, 'search-loop.config.json'), 'utf8'));
+  if (!(cfg.gate?.banned_patterns || []).some((s) => new RegExp(s, 'i').test('tailored'))) fail('search-loop.config.json gate.banned_patterns does not refuse "tailored"');
+  const bad = await run(() => { const d = distinctDraft(); d.sections[1].paragraphs[0] += ' Support is tailored to you.'; return d; }, cfg);
+  examined += bad.out.examined;
+  if (outcomeOf(bad.out, COPY) !== 'SLOT_DRAFT_REJECTED') fail(`a draft saying "tailored" was not refused (outcome ${outcomeOf(bad.out, COPY)})`);
+  if (bad.after.copy !== bad.fx.copyHtml) fail('a draft refused for a banned word changed the queued page');
+  const good = await run(distinctDraft, cfg);
+  if (outcomeOf(good.out, COPY) !== 'WRITTEN') fail(`a clean draft was refused under the banned-word list (outcome ${outcomeOf(good.out, COPY)}: ${(good.out.results.find((r) => r.id === COPY.id) || {}).reason})`);
+  fs.rmSync(bad.fx.dir, { recursive: true, force: true }); fs.rmSync(good.fx.dir, { recursive: true, force: true });
 }
 // 5. A retitled slot never leaves its old short form behind (Content Publish red on 5 Nov 2026,
 //    run 42043953958: daily-026-4 was retitled, and its old full title's short form stayed keyed
