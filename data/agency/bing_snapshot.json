@@ -1,17 +1,11 @@
 {
   "provider": "bing",
   "status": "ok",
-  "checkedAt": "2026-11-19T22:41:34.189Z",
+  "checkedAt": "2026-11-20T22:15:51.030Z",
   "siteUrl": "https://www.hicksconsulting.org/",
   "site": null,
   "metrics": {
     "rankAndTraffic": [
-      {
-        "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
-        "Clicks": 0,
-        "Date": "/Date(1787184000000)/",
-        "Impressions": 0
-      },
       {
         "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
         "Clicks": 0,
@@ -545,27 +539,15 @@
         "Clicks": 0,
         "Date": "/Date(1794873600000)/",
         "Impressions": 0
+      },
+      {
+        "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+        "Clicks": 0,
+        "Date": "/Date(1794960000000)/",
+        "Impressions": 0
       }
     ],
     "crawl": [
-      {
-        "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
-        "AllOtherCodes": 0,
-        "BlockedByRobotsTxt": 0,
-        "Code2xx": 12,
-        "Code301": 1,
-        "Code302": 0,
-        "Code4xx": 0,
-        "Code5xx": 0,
-        "ConnectionTimeout": 0,
-        "ContainsMalware": 0,
-        "CrawledPages": 4,
-        "CrawlErrors": 0,
-        "Date": "/Date(1787011200000)/",
-        "DnsFailures": 0,
-        "InIndex": 0,
-        "InLinks": 7
-      },
       {
         "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
         "AllOtherCodes": 0,
@@ -2167,6 +2149,24 @@
         "DnsFailures": 0,
         "InIndex": 120,
         "InLinks": 14
+      },
+      {
+        "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+        "AllOtherCodes": 4,
+        "BlockedByRobotsTxt": 0,
+        "Code2xx": 138,
+        "Code301": 4,
+        "Code302": 0,
+        "Code4xx": 0,
+        "Code5xx": 0,
+        "ConnectionTimeout": 0,
+        "ContainsMalware": 0,
+        "CrawledPages": 72,
+        "CrawlErrors": 2,
+        "Date": "/Date(1795046400000)/",
+        "DnsFailures": 0,
+        "InIndex": 120,
+        "InLinks": 14
       }
     ]
   },
@@ -2205,7 +2205,7 @@
       "Clicks": 0,
       "Date": "/Date(1771545600000)/",
       "Impressions": 1,
-      "Query": "joyce hicks consulting"
+      "Query": "hicks consulting"
     },
     {
       "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
@@ -2214,7 +2214,7 @@
       "Clicks": 0,
       "Date": "/Date(1771545600000)/",
       "Impressions": 1,
-      "Query": "hicks consulting"
+      "Query": "joyce hicks consulting"
     }
   ],
   "message": "Bing Webmaster API connected and refreshed."

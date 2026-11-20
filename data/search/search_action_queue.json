@@ -1,19 +1,21 @@
 {
   "schemaVersion": "2.0.0",
-  "generatedAt": "2026-11-19T22:41:42.560Z",
+  "generatedAt": "2026-11-20T22:15:59.381Z",
   "policy": "Hicks may autonomously apply bounded technical/search-alignment repairs. Substantive clinical claims and unsupported treatment assertions are never auto-generated from competitor content.",
   "items": [
     {
       "query": "black mental health therapist near me",
       "primaryPage": "/black-therapist-memphis/",
       "status": "OBSERVED",
-      "reasons": [],
+      "reasons": [
+        "AVERAGE_POSITION_OUTSIDE_TOP_10"
+      ],
       "evidence": {
         "groundedSiteSurfaced": null,
         "groundedProviderAnswered": false,
-        "gscImpressions": 11,
+        "gscImpressions": 12,
         "gscClicks": 0,
-        "gscAveragePosition": 8.64,
+        "gscAveragePosition": 10.17,
         "gscPages": [
           "/black-therapist-memphis/"
         ],
@@ -105,27 +107,6 @@
       "recommendedAction": "Observe or route to content/technical review; do not invent a ranking win."
     },
     {
-      "query": "black therapists near me",
-      "primaryPage": "/",
-      "status": "WRONG_PAGE",
-      "reasons": [
-        "WRONG_HICKS_PAGE_RANKING"
-      ],
-      "evidence": {
-        "groundedSiteSurfaced": null,
-        "groundedProviderAnswered": false,
-        "gscImpressions": 2,
-        "gscClicks": 0,
-        "gscAveragePosition": 9,
-        "gscPages": [
-          "/black-therapist-memphis/"
-        ],
-        "competitorUrls": []
-      },
-      "safeRepairEligible": false,
-      "recommendedAction": "Observe or route to content/technical review; do not invent a ranking win."
-    },
-    {
       "query": "addiction therapy near me",
       "primaryPage": "/",
       "status": "OBSERVED",
@@ -195,6 +176,27 @@
         "gscAveragePosition": 4.5,
         "gscPages": [
           "/",
+          "/black-therapist-memphis/"
+        ],
+        "competitorUrls": []
+      },
+      "safeRepairEligible": false,
+      "recommendedAction": "Observe or route to content/technical review; do not invent a ranking win."
+    },
+    {
+      "query": "black therapists near me",
+      "primaryPage": "/",
+      "status": "WRONG_PAGE",
+      "reasons": [
+        "WRONG_HICKS_PAGE_RANKING"
+      ],
+      "evidence": {
+        "groundedSiteSurfaced": null,
+        "groundedProviderAnswered": false,
+        "gscImpressions": 2,
+        "gscClicks": 0,
+        "gscAveragePosition": 9,
+        "gscPages": [
           "/black-therapist-memphis/"
         ],
         "competitorUrls": []
@@ -1152,35 +1154,6 @@
       "recommendedAction": "Observe or route to content/technical review; do not invent a ranking win."
     },
     {
-      "query": "hicks consulting llc",
-      "primaryPage": "/contact/",
-      "status": "CANNIBALIZATION_REVIEW",
-      "reasons": [
-        "MULTIPLE_HICKS_PAGES_FOR_QUERY",
-        "IMPRESSIONS_WITHOUT_CLICKS"
-      ],
-      "evidence": {
-        "groundedSiteSurfaced": null,
-        "groundedProviderAnswered": false,
-        "gscImpressions": 24,
-        "gscClicks": 0,
-        "gscAveragePosition": 5.92,
-        "gscPages": [
-          "/",
-          "/coaching/",
-          "/contact/",
-          "/corporate-speaking/",
-          "/emergency-crisis-notice/",
-          "/groups/",
-          "/privacy-policy/",
-          "/therapy/"
-        ],
-        "competitorUrls": []
-      },
-      "safeRepairEligible": false,
-      "recommendedAction": "Observe or route to content/technical review; do not invent a ranking win."
-    },
-    {
       "query": "black therapist memphis tn",
       "primaryPage": "/",
       "status": "CANNIBALIZATION_REVIEW",
@@ -1190,15 +1163,72 @@
       "evidence": {
         "groundedSiteSurfaced": null,
         "groundedProviderAnswered": false,
-        "gscImpressions": 42,
+        "gscImpressions": 43,
         "gscClicks": 1,
-        "gscAveragePosition": 9.67,
+        "gscAveragePosition": 9.7,
         "gscPages": [
           "/black-therapist-memphis/",
           "/",
           "/coaching/",
           "/corporate-speaking/",
           "/groups/",
+          "/therapy/"
+        ],
+        "competitorUrls": []
+      },
+      "safeRepairEligible": false,
+      "recommendedAction": "Observe or route to content/technical review; do not invent a ranking win."
+    },
+    {
+      "query": "monika hicks",
+      "primaryPage": "/",
+      "status": "CANNIBALIZATION_REVIEW",
+      "reasons": [
+        "MULTIPLE_HICKS_PAGES_FOR_QUERY"
+      ],
+      "evidence": {
+        "groundedSiteSurfaced": null,
+        "groundedProviderAnswered": false,
+        "gscImpressions": 43,
+        "gscClicks": 2,
+        "gscAveragePosition": 2.64,
+        "gscPages": [
+          "/",
+          "/about/",
+          "/coaching/",
+          "/corporate-speaking/",
+          "/groups/",
+          "/intake-quiz/",
+          "/resources/",
+          "/resources/articles/the-workplace-habits-that-keep-high-functioning-women-drained/",
+          "/therapy/"
+        ],
+        "competitorUrls": []
+      },
+      "safeRepairEligible": false,
+      "recommendedAction": "Observe or route to content/technical review; do not invent a ranking win."
+    },
+    {
+      "query": "hicks consulting llc",
+      "primaryPage": "/contact/",
+      "status": "CANNIBALIZATION_REVIEW",
+      "reasons": [
+        "MULTIPLE_HICKS_PAGES_FOR_QUERY"
+      ],
+      "evidence": {
+        "groundedSiteSurfaced": null,
+        "groundedProviderAnswered": false,
+        "gscImpressions": 19,
+        "gscClicks": 0,
+        "gscAveragePosition": 6.14,
+        "gscPages": [
+          "/",
+          "/coaching/",
+          "/contact/",
+          "/corporate-speaking/",
+          "/emergency-crisis-notice/",
+          "/groups/",
+          "/privacy-policy/",
           "/therapy/"
         ],
         "competitorUrls": []
@@ -1228,35 +1258,6 @@
       "recommendedAction": "Observe or route to content/technical review; do not invent a ranking win."
     },
     {
-      "query": "monika hicks",
-      "primaryPage": "/",
-      "status": "CANNIBALIZATION_REVIEW",
-      "reasons": [
-        "MULTIPLE_HICKS_PAGES_FOR_QUERY"
-      ],
-      "evidence": {
-        "groundedSiteSurfaced": null,
-        "groundedProviderAnswered": false,
-        "gscImpressions": 35,
-        "gscClicks": 2,
-        "gscAveragePosition": 2.81,
-        "gscPages": [
-          "/",
-          "/about/",
-          "/coaching/",
-          "/corporate-speaking/",
-          "/groups/",
-          "/intake-quiz/",
-          "/resources/",
-          "/resources/articles/the-workplace-habits-that-keep-high-functioning-women-drained/",
-          "/therapy/"
-        ],
-        "competitorUrls": []
-      },
-      "safeRepairEligible": false,
-      "recommendedAction": "Observe or route to content/technical review; do not invent a ranking win."
-    },
-    {
       "query": "black therapist memphis, tn",
       "primaryPage": "/",
       "status": "CANNIBALIZATION_REVIEW",
@@ -1266,9 +1267,9 @@
       "evidence": {
         "groundedSiteSurfaced": null,
         "groundedProviderAnswered": false,
-        "gscImpressions": 16,
+        "gscImpressions": 17,
         "gscClicks": 0,
-        "gscAveragePosition": 7.41,
+        "gscAveragePosition": 7.58,
         "gscPages": [
           "/",
           "/black-therapist-memphis/"
@@ -1305,6 +1306,23 @@
       "recommendedAction": "Observe or route to content/technical review; do not invent a ranking win."
     },
     {
+      "query": "anxiety therapist",
+      "primaryPage": "/",
+      "status": "UNKNOWN",
+      "reasons": [],
+      "evidence": {
+        "groundedSiteSurfaced": null,
+        "groundedProviderAnswered": false,
+        "gscImpressions": 0,
+        "gscClicks": 0,
+        "gscAveragePosition": 0,
+        "gscPages": [],
+        "competitorUrls": []
+      },
+      "safeRepairEligible": false,
+      "recommendedAction": "Observe or route to content/technical review; do not invent a ranking win."
+    },
+    {
       "query": "hicks training",
       "primaryPage": "/corporate-speaking/",
       "status": "CANNIBALIZATION_REVIEW",
@@ -1322,23 +1340,6 @@
           "/groups/",
           "/request-consult/"
         ],
-        "competitorUrls": []
-      },
-      "safeRepairEligible": false,
-      "recommendedAction": "Observe or route to content/technical review; do not invent a ranking win."
-    },
-    {
-      "query": "anxiety therapist",
-      "primaryPage": "/",
-      "status": "UNKNOWN",
-      "reasons": [],
-      "evidence": {
-        "groundedSiteSurfaced": null,
-        "groundedProviderAnswered": false,
-        "gscImpressions": 0,
-        "gscClicks": 0,
-        "gscAveragePosition": 0,
-        "gscPages": [],
         "competitorUrls": []
       },
       "safeRepairEligible": false,
@@ -1511,9 +1512,9 @@
       "evidence": {
         "groundedSiteSurfaced": null,
         "groundedProviderAnswered": false,
-        "gscImpressions": 2,
+        "gscImpressions": 1,
         "gscClicks": 0,
-        "gscAveragePosition": 32,
+        "gscAveragePosition": 25,
         "gscPages": [
           "/anxiety-therapist-memphis/"
         ],
@@ -2478,6 +2479,25 @@
         "gscClicks": 0,
         "gscAveragePosition": 0,
         "gscPages": [],
+        "competitorUrls": []
+      },
+      "safeRepairEligible": false,
+      "recommendedAction": "Observe or route to content/technical review; do not invent a ranking win."
+    },
+    {
+      "query": "integrator overwhelmed",
+      "primaryPage": "/resources/insights/how-to-notice-when-overwhelm-is-turning-into-shutdown-a-gentler-truth-to-consider/",
+      "status": "OBSERVED",
+      "reasons": [],
+      "evidence": {
+        "groundedSiteSurfaced": null,
+        "groundedProviderAnswered": false,
+        "gscImpressions": 1,
+        "gscClicks": 0,
+        "gscAveragePosition": 10,
+        "gscPages": [
+          "/resources/insights/how-to-notice-when-overwhelm-is-turning-into-shutdown-a-gentler-truth-to-consider/"
+        ],
         "competitorUrls": []
       },
       "safeRepairEligible": false,
