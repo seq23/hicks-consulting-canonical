@@ -1,17 +1,11 @@
 {
   "provider": "bing",
   "status": "ok",
-  "checkedAt": "2026-11-20T22:15:51.030Z",
+  "checkedAt": "2026-11-21T20:55:39.946Z",
   "siteUrl": "https://www.hicksconsulting.org/",
   "site": null,
   "metrics": {
     "rankAndTraffic": [
-      {
-        "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
-        "Clicks": 0,
-        "Date": "/Date(1787270400000)/",
-        "Impressions": 0
-      },
       {
         "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
         "Clicks": 0,
@@ -545,27 +539,15 @@
         "Clicks": 0,
         "Date": "/Date(1794960000000)/",
         "Impressions": 0
+      },
+      {
+        "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+        "Clicks": 0,
+        "Date": "/Date(1795046400000)/",
+        "Impressions": 0
       }
     ],
     "crawl": [
-      {
-        "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
-        "AllOtherCodes": 0,
-        "BlockedByRobotsTxt": 0,
-        "Code2xx": 12,
-        "Code301": 1,
-        "Code302": 0,
-        "Code4xx": 0,
-        "Code5xx": 0,
-        "ConnectionTimeout": 0,
-        "ContainsMalware": 0,
-        "CrawledPages": 1,
-        "CrawlErrors": 0,
-        "Date": "/Date(1787097600000)/",
-        "DnsFailures": 0,
-        "InIndex": 0,
-        "InLinks": 7
-      },
       {
         "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
         "AllOtherCodes": 0,
@@ -2166,6 +2148,24 @@
         "Date": "/Date(1795046400000)/",
         "DnsFailures": 0,
         "InIndex": 120,
+        "InLinks": 14
+      },
+      {
+        "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+        "AllOtherCodes": 4,
+        "BlockedByRobotsTxt": 0,
+        "Code2xx": 145,
+        "Code301": 4,
+        "Code302": 0,
+        "Code4xx": 0,
+        "Code5xx": 0,
+        "ConnectionTimeout": 0,
+        "ContainsMalware": 0,
+        "CrawledPages": 81,
+        "CrawlErrors": 1,
+        "Date": "/Date(1795132800000)/",
+        "DnsFailures": 0,
+        "InIndex": 126,
         "InLinks": 14
       }
     ]
