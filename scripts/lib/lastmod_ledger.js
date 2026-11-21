@@ -54,6 +54,19 @@ function buildDate() {
   return new Date().toISOString().slice(0, 10);
 }
 
+/**
+ * The part of a rendered page whose change means "this page changed": the page
+ * minus the byte-identical site-wide parts - the canonical organization node,
+ * the site header (brand + nav) and the site footer grid. Renaming one nav tab
+ * is not new content on every page (see site_build.js).
+ */
+function hashInput(html) {
+  return String(html)
+    .replace(/<script id="hicks-organization-schema"[\s\S]*?<\/script>/, '')
+    .replace(/<header class="site-header">[\s\S]*?<\/header>/, '')
+    .replace(/<footer><div class="container footer-grid">[\s\S]*?<\/footer>/, '');
+}
+
 function contentHash(payload) {
   return crypto.createHash('sha256').update(payload).digest('hex');
 }
@@ -150,4 +163,4 @@ function save(ledger, ledgerPath = DEFAULT_PATH) {
   fs.renameSync(tmp, ledgerPath);
 }
 
-module.exports = { SCHEMA, DEFAULT_PATH, buildDate, contentHash, hasFullHistory, lastCommitDate, load, resolve, rebuilt, save };
+module.exports = { SCHEMA, DEFAULT_PATH, buildDate, contentHash, hashInput, hasFullHistory, lastCommitDate, load, resolve, rebuilt, save };
