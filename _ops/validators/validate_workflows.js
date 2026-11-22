@@ -32,7 +32,7 @@ for (const file of files) {
     // The shared ship-ready baseline: a read-only check, pinned to @v1, one reusable call and no steps.
     if (!/^\s+uses:\s*seq23\/seq-bin\/\.github\/workflows\/ship-ready-baseline\.yml@v1\s*$/m.test(content)) fail(`Workflow ${file} calls ship-ready-baseline but is not pinned to @v1`);
     if (/^\s+steps:\s*$/m.test(content)) fail(`Workflow ${file} calls ship-ready-baseline and also runs steps; keep the caller to the one reusable call`);
-} else {
+  } else {
     if (!/uses:\s+actions\/checkout@v\d+/.test(content)) fail(`Workflow ${file} missing actions/checkout`);
     if (!/uses:\s+actions\/setup-node@v\d+/.test(content)) fail(`Workflow ${file} missing actions/setup-node`);
   }

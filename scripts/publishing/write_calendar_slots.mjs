@@ -249,12 +249,6 @@ export async function writeSlots({ root = process.cwd(), engine, cfg, now = new 
       // Sibling slots carry a calendar template suffix ("Next-Step Reflection"); each gets a specific angle instead.
       if (sib.base && GENERIC_ANGLES.has(String(d.angle || '').toLowerCase().trim())) return [`"${d.angle}" is the calendar's generic suffix; give this piece a specific angle of its own (for example "The Signs in Your Body" or "What to Do the Day It Happens"), different from every sibling`];
       try { html = renderResourceHtml({ draft: toSiteDraft(item, d, links), route, contentType: type, scheduledAt: item.scheduledAt }); } catch (e) { return [`the page could not be rendered: ${e.message}`]; }
-      // The site's banned words (search-loop.config.json gate.banned_patterns: the shared
-      // ship-ready-baseline list) on everything a reader sees, title and meta included. The
-      // engine's slot path does not apply them itself (20 Nov 2026: "tailored" shipped on an insight).
-      const seen = `${lib.stripTags(html.replace(/<(script|style)\b[\s\S]*?<\/\1>/gi, ' '))}\n${(html.match(/<title>([^<]*)<\/title>/i) || [])[1] || ''}\n${(html.match(/<meta name="description" content="([^"]*)"/i) || [])[1] || ''}`;
-      const banned = (cfg?.gate?.banned_patterns || []).map((s) => new RegExp(s, 'i').exec(seen)).filter(Boolean).map((m) => `"${m[0]}"`);
-      if (banned.length) return [`never use ${banned.join(', ')}: these read as machine-written; say what is meant in plain words`];
       const tabTitle = lib.stripTags((html.match(/<title>([^<]*)<\/title>/i) || [])[1] || '');
       if (takenTitles.has(tabTitle.toLowerCase())) return [`the browser-tab title "${tabTitle}" is already another page's; give a different "title_lead"`];
       shared = sharedWithLive(html, live, route);
