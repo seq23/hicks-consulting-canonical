@@ -2,11 +2,11 @@
   "schema_version": "1.0",
   "generated_from": "data/search_intelligence/target_query_set.json",
   "window": {
-    "start_date": "2026-10-22",
-    "end_date": "2026-11-18",
+    "start_date": "2026-10-23",
+    "end_date": "2026-11-19",
     "days": 28
   },
-  "truth_collected_at": "2026-11-21T20:55:42.757Z",
+  "truth_collected_at": "2026-11-22T21:06:32.971Z",
   "rule": {
     "grouping": "one family per landing page (the page Google shows for the query)",
     "min_impressions": 20,
@@ -16,8 +16,8 @@
     "top_n": 12
   },
   "client_approval": "Client site: qualifying families are PROPOSALS. A family is strengthened only once its status is \"approved\" here, with approved_by naming who decided (the client, or the site owner on her own decision) and approved_at.",
-  "target_count": 58,
-  "impressions_total": 362,
+  "target_count": 57,
+  "impressions_total": 361,
   "family_count": 18,
   "proposal_count": 1,
   "approved_count": 2,
@@ -25,10 +25,10 @@
     {
       "family": "/corporate-speaking/",
       "page": "https://www.hicksconsulting.org/corporate-speaking/",
-      "impressions": 135,
+      "impressions": 133,
       "clicks": 2,
       "ctr": 1.5,
-      "weighted_position": 3.6,
+      "weighted_position": 3.5,
       "query_count": 2,
       "head_query": "hicks consulting",
       "queries": [
@@ -40,15 +40,15 @@
         },
         {
           "query": "hicks training",
-          "impressions": 12,
+          "impressions": 10,
           "clicks": 0,
-          "position": 7.92
+          "position": 7.9
         }
       ],
       "rank": 1,
       "qualifies": true,
       "status": "proposal",
-      "proposed_change": "Lead /corporate-speaking/ with a direct answer to \"hicks consulting\" in its title and first paragraph: 135 impressions at position 3.6 earned 2 click(s) (1.5% CTR)."
+      "proposed_change": "Lead /corporate-speaking/ with a direct answer to \"hicks consulting\" in its title and first paragraph: 133 impressions at position 3.5 earned 2 click(s) (1.5% CTR)."
     },
     {
       "family": "/black-therapist-memphis/",
@@ -56,7 +56,7 @@
       "impressions": 107,
       "clicks": 1,
       "ctr": 0.9,
-      "weighted_position": 8.6,
+      "weighted_position": 8.8,
       "query_count": 18,
       "head_query": "black therapist memphis tn",
       "queries": [
@@ -64,13 +64,13 @@
           "query": "black therapist memphis tn",
           "impressions": 46,
           "clicks": 1,
-          "position": 9.11
+          "position": 9.37
         },
         {
           "query": "black therapist memphis, tn",
-          "impressions": 19,
+          "impressions": 20,
           "clicks": 0,
-          "position": 8.63
+          "position": 8.75
         },
         {
           "query": "black mental health therapist near me",
@@ -104,9 +104,15 @@
         },
         {
           "query": "black therapist",
-          "impressions": 3,
+          "impressions": 2,
           "clicks": 0,
-          "position": 8.33
+          "position": 9
+        },
+        {
+          "query": "african american grief counselors near me",
+          "impressions": 1,
+          "clicks": 0,
+          "position": 10
         },
         {
           "query": "african american therapist near me in person",
@@ -161,12 +167,6 @@
           "impressions": 1,
           "clicks": 0,
           "position": 6
-        },
-        {
-          "query": "in person black therapist near me",
-          "impressions": 1,
-          "clicks": 0,
-          "position": 10
         }
       ],
       "rank": 2,
@@ -175,7 +175,7 @@
       "approved_by": "site owner (not the client)",
       "approved_at": "2026-10-11",
       "approval_note": "Site owner decided on 2026-10-11 to strengthen both qualifying families now rather than wait on a client flag. Not a client decision; the client did not approve or author this change.",
-      "proposed_change": "Lead /black-therapist-memphis/ with a direct answer to \"black therapist memphis tn\" in its title and first paragraph: 107 impressions at position 8.6 earned 1 click(s) (0.9% CTR)."
+      "proposed_change": "Lead /black-therapist-memphis/ with a direct answer to \"black therapist memphis tn\" in its title and first paragraph: 107 impressions at position 8.8 earned 1 click(s) (0.9% CTR)."
     },
     {
       "family": "/",
@@ -183,8 +183,8 @@
       "impressions": 61,
       "clicks": 3,
       "ctr": 4.9,
-      "weighted_position": 7.2,
-      "query_count": 15,
+      "weighted_position": 7.8,
+      "query_count": 14,
       "head_query": "monika hicks",
       "queries": [
         {
@@ -201,7 +201,7 @@
         },
         {
           "query": "addiction therapy near me",
-          "impressions": 2,
+          "impressions": 3,
           "clicks": 0,
           "position": 41
         },
@@ -222,12 +222,6 @@
           "impressions": 1,
           "clicks": 0,
           "position": 20
-        },
-        {
-          "query": "black therapist near me",
-          "impressions": 1,
-          "clicks": 0,
-          "position": 1
         },
         {
           "query": "committed to recovery memphis tn",
@@ -284,7 +278,7 @@
       "approved_by": "site owner (not the client)",
       "approved_at": "2026-10-11",
       "approval_note": "Site owner decided on 2026-10-11 to strengthen both qualifying families now rather than wait on a client flag. Not a client decision; the client did not approve or author this change.",
-      "proposed_change": "Lead / with a direct answer to \"monika hicks\" in its title and first paragraph: 61 impressions at position 7.2 earned 3 click(s) (4.9% CTR)."
+      "proposed_change": "Lead / with a direct answer to \"monika hicks\" in its title and first paragraph: 61 impressions at position 7.8 earned 3 click(s) (4.9% CTR)."
     },
     {
       "family": "/groups/",
@@ -461,6 +455,28 @@
       "why_not": "3 impressions < floor 20"
     },
     {
+      "family": "/questions/therapy-for-black-professional-women-tennessee/",
+      "page": "https://www.hicksconsulting.org/questions/therapy-for-black-professional-women-tennessee/",
+      "impressions": 2,
+      "clicks": 0,
+      "ctr": 0,
+      "weighted_position": 40.5,
+      "query_count": 1,
+      "head_query": "therapy for black executives",
+      "queries": [
+        {
+          "query": "therapy for black executives",
+          "impressions": 2,
+          "clicks": 0,
+          "position": 40.5
+        }
+      ],
+      "rank": 10,
+      "qualifies": false,
+      "status": "measured_only",
+      "why_not": "2 impressions < floor 20"
+    },
+    {
       "family": "/resources/articles/when-you-keep-saying-yes/",
       "page": "https://www.hicksconsulting.org/resources/articles/when-you-keep-saying-yes/",
       "impressions": 2,
@@ -483,7 +499,7 @@
           "position": 1
         }
       ],
-      "rank": 10,
+      "rank": 11,
       "qualifies": false,
       "status": "measured_only",
       "why_not": "2 impressions < floor 20"
@@ -505,7 +521,7 @@
           "position": 25
         }
       ],
-      "rank": 11,
+      "rank": 12,
       "qualifies": false,
       "status": "measured_only",
       "why_not": "1 impressions < floor 20"
@@ -527,7 +543,7 @@
           "position": 89
         }
       ],
-      "rank": 12,
+      "rank": 13,
       "qualifies": false,
       "status": "measured_only",
       "why_not": "1 impressions < floor 20"
@@ -547,28 +563,6 @@
           "impressions": 1,
           "clicks": 0,
           "position": 1
-        }
-      ],
-      "rank": 13,
-      "qualifies": false,
-      "status": "measured_only",
-      "why_not": "1 impressions < floor 20"
-    },
-    {
-      "family": "/questions/therapy-for-black-professional-women-tennessee/",
-      "page": "https://www.hicksconsulting.org/questions/therapy-for-black-professional-women-tennessee/",
-      "impressions": 1,
-      "clicks": 0,
-      "ctr": 0,
-      "weighted_position": 66,
-      "query_count": 1,
-      "head_query": "therapy for black executives",
-      "queries": [
-        {
-          "query": "therapy for black executives",
-          "impressions": 1,
-          "clicks": 0,
-          "position": 66
         }
       ],
       "rank": 14,
