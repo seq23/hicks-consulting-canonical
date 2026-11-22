@@ -1,6 +1,6 @@
 {
   "schemaVersion": "2.0.0",
-  "generatedAt": "2026-11-21T20:55:48.247Z",
+  "generatedAt": "2026-11-22T21:08:59.166Z",
   "policy": "Hicks may autonomously apply bounded technical/search-alignment repairs. Substantive clinical claims and unsupported treatment assertions are never auto-generated from competitor content.",
   "items": [
     {
@@ -116,7 +116,7 @@
       "evidence": {
         "groundedSiteSurfaced": null,
         "groundedProviderAnswered": false,
-        "gscImpressions": 2,
+        "gscImpressions": 3,
         "gscClicks": 0,
         "gscAveragePosition": 41,
         "gscPages": [
@@ -164,19 +164,15 @@
     {
       "query": "black therapist near me",
       "primaryPage": "/black-therapist-memphis/",
-      "status": "WRONG_PAGE",
-      "reasons": [
-        "WRONG_HICKS_PAGE_RANKING"
-      ],
+      "status": "UNKNOWN",
+      "reasons": [],
       "evidence": {
         "groundedSiteSurfaced": null,
         "groundedProviderAnswered": false,
-        "gscImpressions": 1,
+        "gscImpressions": 0,
         "gscClicks": 0,
-        "gscAveragePosition": 1,
-        "gscPages": [
-          "/"
-        ],
+        "gscAveragePosition": 0,
+        "gscPages": [],
         "competitorUrls": []
       },
       "safeRepairEligible": false,
@@ -672,17 +668,15 @@
     {
       "query": "in person black therapist near me",
       "primaryPage": "/black-therapist-memphis/",
-      "status": "OBSERVED",
+      "status": "UNKNOWN",
       "reasons": [],
       "evidence": {
         "groundedSiteSurfaced": null,
         "groundedProviderAnswered": false,
-        "gscImpressions": 1,
+        "gscImpressions": 0,
         "gscClicks": 0,
-        "gscAveragePosition": 10,
-        "gscPages": [
-          "/black-therapist-memphis/"
-        ],
+        "gscAveragePosition": 0,
+        "gscPages": [],
         "competitorUrls": []
       },
       "safeRepairEligible": false,
@@ -1165,7 +1159,7 @@
         "groundedProviderAnswered": false,
         "gscImpressions": 46,
         "gscClicks": 1,
-        "gscAveragePosition": 9.72,
+        "gscAveragePosition": 9.77,
         "gscPages": [
           "/black-therapist-memphis/",
           "/",
@@ -1257,14 +1251,15 @@
       "primaryPage": "/",
       "status": "CANNIBALIZATION_REVIEW",
       "reasons": [
-        "MULTIPLE_HICKS_PAGES_FOR_QUERY"
+        "MULTIPLE_HICKS_PAGES_FOR_QUERY",
+        "IMPRESSIONS_WITHOUT_CLICKS"
       ],
       "evidence": {
         "groundedSiteSurfaced": null,
         "groundedProviderAnswered": false,
-        "gscImpressions": 19,
+        "gscImpressions": 20,
         "gscClicks": 0,
-        "gscAveragePosition": 7.83,
+        "gscAveragePosition": 7.91,
         "gscPages": [
           "/",
           "/black-therapist-memphis/"
@@ -1319,20 +1314,16 @@
     {
       "query": "hicks training",
       "primaryPage": "/corporate-speaking/",
-      "status": "CANNIBALIZATION_REVIEW",
-      "reasons": [
-        "MULTIPLE_HICKS_PAGES_FOR_QUERY"
-      ],
+      "status": "OBSERVED",
+      "reasons": [],
       "evidence": {
         "groundedSiteSurfaced": null,
         "groundedProviderAnswered": false,
-        "gscImpressions": 12,
+        "gscImpressions": 10,
         "gscClicks": 0,
-        "gscAveragePosition": 7.97,
+        "gscAveragePosition": 7.9,
         "gscPages": [
-          "/corporate-speaking/",
-          "/groups/",
-          "/request-consult/"
+          "/corporate-speaking/"
         ],
         "competitorUrls": []
       },
@@ -1347,9 +1338,9 @@
       "evidence": {
         "groundedSiteSurfaced": null,
         "groundedProviderAnswered": false,
-        "gscImpressions": 3,
+        "gscImpressions": 2,
         "gscClicks": 0,
-        "gscAveragePosition": 8.33,
+        "gscAveragePosition": 9,
         "gscPages": [
           "/black-therapist-memphis/"
         ],
@@ -3156,9 +3147,9 @@
       "evidence": {
         "groundedSiteSurfaced": null,
         "groundedProviderAnswered": false,
-        "gscImpressions": 1,
+        "gscImpressions": 2,
         "gscClicks": 0,
-        "gscAveragePosition": 66,
+        "gscAveragePosition": 40.5,
         "gscPages": [
           "/questions/therapy-for-black-professional-women-tennessee/"
         ],
