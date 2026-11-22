@@ -108,6 +108,12 @@ let examined = 0;
   }
   fs.rmSync(fx.dir, { recursive: true, force: true });
 }
+// 4b. The site's banned-word list refuses "tailored" (20 Nov 2026: it reached a live insight). The
+//     engine's slot path applies gate.banned_patterns itself (search-loop src/slot.mjs, tag v1).
+{
+  const cfg = JSON.parse(fs.readFileSync(path.join(ROOT, 'search-loop.config.json'), 'utf8'));
+  if (!(cfg.gate?.banned_patterns || []).some((s) => new RegExp(s, 'i').test('tailored'))) fail('search-loop.config.json gate.banned_patterns does not refuse "tailored"');
+}
 // 5. A retitled slot never leaves its old short form behind (Content Publish red on 5 Nov 2026,
 //    run 42043953958: daily-026-4 was retitled, and its old full title's short form stayed keyed
 //    to a title no page carried, because a broader stem short form also covered it). A stem that
