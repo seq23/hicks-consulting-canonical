@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-17T15:45:23.135Z",
+  "generatedAt": "2026-11-20T15:45:08.462Z",
   "existingCount": 46,
   "candidates": [
     {
@@ -30,6 +30,16 @@
       "ctaTarget": "/intake-quiz/",
       "sourceSignal": "google_news_workplace_mental_health-the-moderating-role-of-emotional-intelligence-in-the-relationship-between-workpl",
       "contentType": "service",
+      "status": "candidate"
+    },
+    {
+      "query": "What does emotional intelligence have to do with being happy at work? - News-Medical",
+      "intent": "informational",
+      "page": "/llm-atlas/queries/",
+      "entityTarget": "Organizations and teams",
+      "ctaTarget": "/intake-quiz/",
+      "sourceSignal": "google_news_workplace_mental_health-what-does-emotional-intelligence-have-to-do-with-being-happy-at-work-news-medica",
+      "contentType": "answer",
       "status": "candidate"
     },
     {
@@ -83,12 +93,32 @@
       "status": "candidate"
     },
     {
+      "query": "Why mental health needs to be a top priority in the workplace - American Psychological Association (APA)",
+      "intent": "informational",
+      "page": "/llm-atlas/queries/",
+      "entityTarget": "Organizations and teams",
+      "ctaTarget": "/intake-quiz/",
+      "sourceSignal": "google_news_workplace_mental_health-why-mental-health-needs-to-be-a-top-priority-in-the-workplace-american-psycholog",
+      "contentType": "answer",
+      "status": "candidate"
+    },
+    {
       "query": "Nursing Curricula Must Include Emotional Intelligence to Prepare Today’s Healthcare Workforce - ACCT.org",
       "intent": "commercial",
       "page": "/llm-atlas/queries/",
       "entityTarget": "Organizations and teams",
       "ctaTarget": "/intake-quiz/",
       "sourceSignal": "google_news_workplace_mental_health-nursing-curricula-must-include-emotional-intelligence-to-prepare-today-s-healthc",
+      "contentType": "service",
+      "status": "candidate"
+    },
+    {
+      "query": "Well-Being Intelligence: A Skill Set for the New World of Work - MIT Sloan Management Review",
+      "intent": "commercial",
+      "page": "/llm-atlas/queries/",
+      "entityTarget": "Organizations and teams",
+      "ctaTarget": "/intake-quiz/",
+      "sourceSignal": "google_news_workplace_mental_health-well-being-intelligence-a-skill-set-for-the-new-world-of-work-mit-sloan-manageme",
       "contentType": "service",
       "status": "candidate"
     },
@@ -103,43 +133,13 @@
       "status": "candidate"
     },
     {
-      "query": "5 ways to improve employee mental health - American Psychological Association (APA)",
-      "intent": "informational",
-      "page": "/llm-atlas/queries/",
-      "entityTarget": "Clients seeking emotional wellness support",
-      "ctaTarget": "/intake-quiz/",
-      "sourceSignal": "google_news_workplace_mental_health-5-ways-to-improve-employee-mental-health-american-psychological-association-apa",
-      "contentType": "answer",
-      "status": "candidate"
-    },
-    {
-      "query": "Well-Being Intelligence: A Skill Set for the New World of Work - MIT Sloan Management Review",
+      "query": "The Emotional Recession: global declines in emotional intelligence and its impact on organizational retention, burnout, and workforce resilience - Frontiers",
       "intent": "commercial",
       "page": "/llm-atlas/queries/",
       "entityTarget": "Organizations and teams",
       "ctaTarget": "/intake-quiz/",
-      "sourceSignal": "google_news_workplace_mental_health-well-being-intelligence-a-skill-set-for-the-new-world-of-work-mit-sloan-manageme",
+      "sourceSignal": "google_news_workplace_mental_health-the-emotional-recession-global-declines-in-emotional-intelligence-and-its-impact",
       "contentType": "service",
-      "status": "candidate"
-    },
-    {
-      "query": "Keeping Retail Employees Engaged With Emotionally Intelligent Leaders - Jackson Lewis",
-      "intent": "informational",
-      "page": "/llm-atlas/queries/",
-      "entityTarget": "Clients seeking emotional wellness support",
-      "ctaTarget": "/intake-quiz/",
-      "sourceSignal": "google_news_workplace_mental_health-keeping-retail-employees-engaged-with-emotionally-intelligent-leaders-jackson-le",
-      "contentType": "answer",
-      "status": "candidate"
-    },
-    {
-      "query": "Emotional intelligence training in health students: a pilot study - Frontiers",
-      "intent": "informational",
-      "page": "/llm-atlas/queries/",
-      "entityTarget": "Clients seeking emotional wellness support",
-      "ctaTarget": "/intake-quiz/",
-      "sourceSignal": "google_news_workplace_mental_health-emotional-intelligence-training-in-health-students-a-pilot-study-frontiers",
-      "contentType": "answer",
       "status": "candidate"
     },
     {
@@ -163,12 +163,22 @@
       "status": "candidate"
     },
     {
-      "query": "Yavapai County Opens Flood Recovery Assistance Center - Signals AZ",
+      "query": "Embracing Life at Redeemer Ranch | Equine Therapy for Grief, Trauma & Emotional Healing - KTVN",
+      "intent": "commercial",
+      "page": "/llm-atlas/queries/",
+      "entityTarget": "Clients seeking emotional wellness support",
+      "ctaTarget": "/intake-quiz/",
+      "sourceSignal": "google_news_faith_centered_therapy-embracing-life-at-redeemer-ranch-equine-therapy-for-grief-trauma-emotional-heali",
+      "contentType": "service",
+      "status": "candidate"
+    },
+    {
+      "query": "In HelloNation, Healthcare Expert Kim McKenna of Lebanon, KY, Shares How Faith-Based Clinics Offer Behavioral Health Support - Yahoo Finance",
       "intent": "informational",
       "page": "/llm-atlas/queries/",
       "entityTarget": "Clients seeking emotional wellness support",
       "ctaTarget": "/intake-quiz/",
-      "sourceSignal": "google_news_faith_centered_therapy-yavapai-county-opens-flood-recovery-assistance-center-signals-az",
+      "sourceSignal": "google_news_faith_centered_therapy-in-hellonation-healthcare-expert-kim-mckenna-of-lebanon-ky-shares-how-faith-base",
       "contentType": "answer",
       "status": "candidate"
     },
@@ -279,16 +289,6 @@
       "entityTarget": "Clients seeking emotional wellness support",
       "ctaTarget": "/intake-quiz/",
       "sourceSignal": "google_news_faith_centered_therapy-the-transformative-power-of-music-in-mental-well-being-psychiatry-org",
-      "contentType": "answer",
-      "status": "candidate"
-    },
-    {
-      "query": "Meet the Commissioner - TN.gov",
-      "intent": "informational",
-      "page": "/llm-atlas/queries/",
-      "entityTarget": "Clients seeking emotional wellness support",
-      "ctaTarget": "/intake-quiz/",
-      "sourceSignal": "google_news_faith_centered_therapy-meet-the-commissioner-tn-gov",
       "contentType": "answer",
       "status": "candidate"
     },

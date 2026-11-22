@@ -1170,6 +1170,7 @@ footer {
   color: var(--charcoal);
 }
 .inquiry-form textarea { min-height: 11rem; resize: vertical; }
+:root[data-theme='dark'] .inquiry-form { color-scheme: dark; }
 .hours-card { padding: clamp(1rem, 2.5vw, 1.6rem); }
 .hours-list { margin: .2rem 0 0; padding-left: 1.1rem; }
 .hours-list li { margin: .35rem 0; }
@@ -1791,3 +1792,107 @@ footer {
 .command-grid{display:grid;gap:.7rem;grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
 .command-grid button,.command-grid .button{border-radius:14px;padding:.75rem .9rem;text-align:left;font-size:.9rem}
 .command-grid strong,.command-grid b{font-size:.94rem}
+
+/* Speaking page (/corporate-speaking/), from the client's own design (19 Nov 2026).
+   Every rule is scoped to .speaking or an sp- class, so no other page changes.
+   Her layout and spacing are kept; her colours and fonts are mapped onto this
+   theme's tokens so the page matches the site header/footer and works in dark mode. */
+.speaking {
+  --sp-panel: var(--sand);
+  --sp-surface: var(--card);
+  --sp-accent: #8a6a2c;
+  --sp-closing: var(--olive-ink);
+  --sp-closing-text: #f4efe6;
+  --sp-closing-soft: #d8d2c6;
+  --sp-closing-link: var(--gold-soft);
+  display: block;
+  padding-bottom: clamp(16px, 3vw, 32px);
+}
+:root[data-theme='dark'] .speaking {
+  --sp-panel: var(--sand);
+  --sp-accent: var(--gold);
+  --sp-closing: #0b120a;
+  --sp-closing-text: var(--charcoal);
+  --sp-closing-soft: var(--muted);
+}
+.speaking > section { width: var(--content); margin-inline: auto; }
+.sp-panel { background: var(--sp-panel); border-radius: 26px; padding: clamp(40px, 6vw, 72px) clamp(20px, 4vw, 52px); }
+.speaking .sp-title { font-size: clamp(1.6rem, 2.6vw, 2.1rem); margin: 0 0 34px; }
+.speaking .sp-talk p, .speaking .sp-steps p, .speaking .sp-formats-intro p { margin: 0; }
+
+.sp-hero { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr); align-items: center; gap: clamp(24px, 4vw, 56px); padding-block: clamp(40px, 7vw, 84px) clamp(48px, 8vw, 96px); }
+.sp-hero h1 { font-size: clamp(2.1rem, 4.4vw, 3.4rem); line-height: 1.1; margin: 0; text-wrap: balance; }
+.sp-kicker { display: block; margin-bottom: 18px; font-family: 'Manrope', system-ui, sans-serif; font-size: .76rem; font-weight: 700; letter-spacing: .16em; line-height: 1.5; text-transform: uppercase; color: var(--sp-accent); }
+.sp-hero-sub { margin: 22px 0 0; max-width: 34rem; font-size: 1.1rem; color: var(--muted); }
+.sp-hero-copy .button { margin-top: 30px; }
+.sp-hero-art svg { display: block; width: 100%; height: auto; }
+.sp-ring { fill: none; stroke: var(--gold-soft); stroke-width: 1.5; }
+.sp-ring-dash { stroke-dasharray: 2 9; }
+.sp-ring-inner { stroke: var(--olive-deep); opacity: .55; }
+.sp-wave { fill: none; stroke: var(--sp-accent); stroke-width: 3; stroke-linecap: round; }
+.sp-dot { fill: var(--olive-deep); }
+
+.sp-outcome-list { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 26px 44px; }
+.sp-outcome-list li { display: grid; grid-template-columns: 34px minmax(0, 1fr); gap: 14px; align-items: start; }
+.sp-outcome-icon { display: inline-flex; width: 34px; height: 34px; align-items: center; justify-content: center; border-radius: 50%; background: var(--sp-surface); color: var(--olive-deep); }
+.sp-outcome-icon svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+
+.sp-talks { padding-block: clamp(56px, 8vw, 96px); }
+.sp-talk-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; margin-top: 26px; }
+.sp-talk { display: grid; gap: 8px; align-content: start; padding: 26px 26px 28px; background: var(--sp-surface); border: 1px solid var(--line); border-radius: 16px; }
+.speaking .sp-talk h3 { font-size: clamp(1.2rem, 1.6vw, 1.4rem); line-height: 1.22; margin: 0; }
+.speaking .sp-talk-format { font-size: .74rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--sp-accent); }
+.speaking .sp-talk-audience { font-size: .92rem; font-weight: 600; color: var(--olive-deep); }
+.speaking .sp-talk-body { font-size: .96rem; color: var(--muted); }
+
+.sp-formats { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: clamp(24px, 4vw, 60px); padding-block: clamp(48px, 7vw, 84px); align-items: start; }
+.sp-formats-intro h2 { font-size: clamp(1.6rem, 2.6vw, 2.1rem); margin-bottom: 16px; }
+.speaking .sp-formats-intro p { color: var(--muted); }
+.sp-format-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 18px; }
+.sp-format-list li { display: grid; gap: 4px; }
+.sp-format-name { font-weight: 700; color: var(--charcoal); }
+.sp-format-detail { color: var(--muted); font-size: .94rem; }
+
+.sp-speaker { display: grid; grid-template-columns: minmax(0, .62fr) minmax(0, 1fr); gap: clamp(24px, 5vw, 56px); align-items: center; padding-block: clamp(48px, 7vw, 88px); }
+.sp-speaker-photo img { display: block; width: 100%; height: auto; border-radius: 20px; }
+.sp-speaker-copy h2 { font-size: clamp(1.6rem, 2.6vw, 2.05rem); margin-bottom: 16px; }
+.sp-speaker-copy > p { color: var(--muted); margin-bottom: 22px; }
+.sp-credentials { list-style: none; margin: 0; padding: 0; display: grid; gap: 9px; font-size: .95rem; }
+.sp-credentials li { position: relative; padding-left: 20px; }
+.sp-credentials li::before { content: ""; position: absolute; left: 0; top: .66em; width: 7px; height: 7px; border-radius: 50%; background: var(--gold-soft); box-shadow: inset 0 0 0 1px var(--sp-accent); }
+
+.sp-proof { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr); gap: clamp(24px, 4vw, 56px); padding-block: clamp(48px, 7vw, 84px); align-items: start; }
+.sp-proof blockquote { margin: 0; padding: clamp(24px, 3vw, 36px); background: var(--sp-surface); border: 1px solid var(--line); border-radius: 20px; }
+.speaking .sp-proof blockquote p { margin: 0; font-family: 'Playfair Display', Georgia, serif; font-size: clamp(1.08rem, 1.6vw, 1.3rem); line-height: 1.5; color: var(--charcoal); }
+.sp-proof blockquote footer, :root[data-theme='dark'] .sp-proof blockquote footer { margin: 18px 0 0; padding: 0; background: none; border: 0; font-size: .88rem; color: var(--muted); }
+.sp-clients h2 { font-size: 1.15rem; margin-bottom: 16px; }
+.sp-clients ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 16px; }
+.sp-clients li { display: grid; gap: 2px; }
+.sp-client-org { font-weight: 700; color: var(--charcoal); }
+.sp-client-what { font-size: .9rem; color: var(--muted); }
+
+.sp-steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(20px, 3vw, 40px); }
+.sp-steps li { display: grid; gap: 8px; align-content: start; }
+.sp-step-number { display: inline-flex; width: 30px; height: 30px; align-items: center; justify-content: center; border-radius: 50%; border: 1px solid var(--sp-accent); color: var(--sp-accent); font-size: .85rem; font-weight: 700; }
+.speaking .sp-steps h3 { font-size: 1.05rem; line-height: 1.3; margin: 0; }
+.speaking .sp-steps p { font-size: .94rem; color: var(--muted); }
+
+.sp-closing { margin-block: clamp(48px, 7vw, 88px) 0; padding: clamp(36px, 5vw, 64px) clamp(20px, 4vw, 56px); background: var(--sp-closing); border-radius: 26px; color: var(--sp-closing-text); text-align: center; }
+.speaking .sp-closing h2 { font-size: clamp(1.8rem, 3.2vw, 2.5rem); color: var(--sp-closing-text); }
+.sp-closing > p { margin: 16px auto 0; max-width: 32rem; color: var(--sp-closing-soft); }
+.sp-inquiry { max-width: 720px; margin: 28px auto 0; text-align: left; background: var(--cream-soft); -webkit-backdrop-filter: none; backdrop-filter: none; }
+:root[data-theme='dark'] .sp-inquiry { background: var(--cream-soft); }
+.sp-closing .form-status:empty { display: none; }
+.sp-closing-email, .sp-closing-links { font-size: .92rem; }
+.sp-closing-email a, .sp-closing-links a { color: var(--sp-closing-link); }
+:root[data-theme='dark'] .sp-closing-email a, :root[data-theme='dark'] .sp-closing-links a { color: var(--gold); }
+
+@media (max-width: 900px) {
+  .sp-hero, .sp-formats, .sp-speaker, .sp-proof, .sp-talk-grid, .sp-outcome-list, .sp-steps { grid-template-columns: minmax(0, 1fr); }
+  .sp-hero-art { order: -1; max-width: 320px; }
+}
+@media (max-width: 560px) {
+  .sp-hero-art { max-width: 220px; }
+  .sp-talk { padding: 22px 20px 24px; }
+  .sp-inquiry { padding: 1.1rem; }
+}

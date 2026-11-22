@@ -1083,6 +1083,78 @@
       "model": "gemini:gemini-3.1-flash-lite",
       "outcome": "SLOT_DRAFT_REJECTED",
       "reason": "the piece is 1603 words; it must be 800-1200; only 1 distinct sources answered 200 when fetched; give 3-4 real, specific https pages from at least 2 different sources; every source is one other pages already cite; use sources specific to this topic; first person found (I, me, my); the writer never s"
+    },
+    {
+      "id": "weekly-028",
+      "route": "/resources/articles/how-to-stop-confusing-capacity-with-obligation/",
+      "scheduledAt": "2026-11-10T13:00:00.000Z",
+      "at": "2026-11-20T21:47:25.669Z",
+      "model": "gemini:gemini-3.5-flash-lite",
+      "outcome": "SLOT_DRAFT_REJECTED",
+      "reason": "every source is one other pages already cite; use sources specific to this topic"
+    },
+    {
+      "id": "daily-028-2",
+      "route": "/resources/insights/how-to-stop-confusing-capacity-with-obligation-why-women-minimize-it/",
+      "scheduledAt": "2026-11-10T13:00:00.000Z",
+      "at": "2026-11-20T21:47:25.669Z",
+      "model": "gemini:gemini-3.5-flash-lite",
+      "outcome": "SLOT_DRAFT_REJECTED",
+      "reason": "every source is one other pages already cite; use sources specific to this topic; give \"angle\": 2-7 words that finish the base title"
+    },
+    {
+      "id": "daily-028-4",
+      "route": "/resources/insights/how-to-stop-confusing-capacity-with-obligation-a-gentler-truth-to-consider/",
+      "scheduledAt": "2026-11-12T13:00:00.000Z",
+      "at": "2026-11-20T21:47:25.669Z",
+      "model": "gemini:gemini-3.1-flash-lite",
+      "outcome": "SLOT_DRAFT_REJECTED",
+      "reason": "the piece is 1648 words; it must be 800-1200; every source is one other pages already cite; use sources specific to this topic"
+    },
+    {
+      "id": "daily-028-5",
+      "route": "/resources/insights/how-to-stop-confusing-capacity-with-obligation-next-step-reflection/",
+      "scheduledAt": "2026-11-13T13:00:00.000Z",
+      "at": "2026-11-20T21:47:25.669Z",
+      "model": "gemini:gemini-3.1-flash-lite",
+      "outcome": "SLOT_DRAFT_REJECTED",
+      "reason": "the browser-tab title \"How to Stop Confusing Capacity With Obligation | Hicks Consulting\" is already another page's; give a different \"title_lead\""
+    },
+    {
+      "id": "weekly-028",
+      "route": "/resources/articles/how-to-stop-confusing-capacity-with-obligation/",
+      "scheduledAt": "2026-11-10T13:00:00.000Z",
+      "at": "2026-11-21T20:30:41.391Z",
+      "model": "gemini:gemini-3.5-flash-lite",
+      "outcome": "SLOT_DRAFT_REJECTED",
+      "reason": "first person found (I, me, my); the writer never speaks as the therapist"
+    },
+    {
+      "id": "daily-028-2",
+      "route": "/resources/insights/how-to-stop-confusing-capacity-with-obligation-why-women-minimize-it/",
+      "scheduledAt": "2026-11-10T13:00:00.000Z",
+      "at": "2026-11-21T20:30:41.391Z",
+      "model": "gemini:gemini-3.5-flash-lite",
+      "outcome": "SLOT_DRAFT_REJECTED",
+      "reason": "every source is one other pages already cite; use sources specific to this topic"
+    },
+    {
+      "id": "daily-028-4",
+      "route": "/resources/insights/how-to-stop-confusing-capacity-with-obligation-a-gentler-truth-to-consider/",
+      "scheduledAt": "2026-11-12T13:00:00.000Z",
+      "at": "2026-11-21T20:30:41.391Z",
+      "model": "gemini:gemini-3.5-flash-lite",
+      "outcome": "SLOT_DRAFT_REJECTED",
+      "reason": "every source is one other pages already cite; use sources specific to this topic"
+    },
+    {
+      "id": "daily-028-5",
+      "route": "/resources/insights/how-to-stop-confusing-capacity-with-obligation-next-step-reflection/",
+      "scheduledAt": "2026-11-13T13:00:00.000Z",
+      "at": "2026-11-21T20:30:41.391Z",
+      "model": "gemini:gemini-3.5-flash-lite",
+      "outcome": "SLOT_DRAFT_REJECTED",
+      "reason": "every source is one other pages already cite; use sources specific to this topic"
     }
   ]
 }

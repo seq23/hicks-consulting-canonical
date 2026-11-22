@@ -157,37 +157,6 @@
       }
     },
     {
-      "query": "black therapists near me",
-      "intent": "observed",
-      "primaryPage": "/",
-      "status": "discovered_from_gsc",
-      "provenance": "google_search_console query/page pair, joined by scripts/queries/score_discovery_gap.mjs",
-      "gsc_measured": {
-        "impressions": 3,
-        "clicks": 0,
-        "average_position": 8.33,
-        "window_start": null,
-        "window_end": null,
-        "source": "google_search_console"
-      },
-      "lead_intent_tier": "T1_LOCAL_READY",
-      "lead_intent_method": "regex_classifier_on_query_string, scripts/queries/score_discovery_gap.mjs",
-      "occupancy": {
-        "verdict": "UNRESOLVABLE_WITHOUT_LOCATION",
-        "reason": "QUERY_IMPLIES_A_PLACE_AND_NAMES_NONE",
-        "openness_score": null,
-        "geo_resolvable": false,
-        "cited_hosts": [],
-        "observed_at": null,
-        "model": null,
-        "note": "Citations returned for this string are geographic noise, so an openness reading would be meaningless and \"not cited\" here is not open ground. The localized variant of this query is the governed, measurable target."
-      },
-      "blue_ocean_eligible": {
-        "eligible": true,
-        "reason": "UNRESOLVABLE_WITHOUT_LOCATION"
-      }
-    },
-    {
       "query": "addiction therapy near me",
       "intent": "observed",
       "primaryPage": "/",
@@ -308,6 +277,37 @@
         "impressions": 2,
         "clicks": 0,
         "average_position": 4.5,
+        "window_start": null,
+        "window_end": null,
+        "source": "google_search_console"
+      },
+      "lead_intent_tier": "T1_LOCAL_READY",
+      "lead_intent_method": "regex_classifier_on_query_string, scripts/queries/score_discovery_gap.mjs",
+      "occupancy": {
+        "verdict": "UNRESOLVABLE_WITHOUT_LOCATION",
+        "reason": "QUERY_IMPLIES_A_PLACE_AND_NAMES_NONE",
+        "openness_score": null,
+        "geo_resolvable": false,
+        "cited_hosts": [],
+        "observed_at": null,
+        "model": null,
+        "note": "Citations returned for this string are geographic noise, so an openness reading would be meaningless and \"not cited\" here is not open ground. The localized variant of this query is the governed, measurable target."
+      },
+      "blue_ocean_eligible": {
+        "eligible": true,
+        "reason": "UNRESOLVABLE_WITHOUT_LOCATION"
+      }
+    },
+    {
+      "query": "black therapists near me",
+      "intent": "observed",
+      "primaryPage": "/",
+      "status": "discovered_from_gsc",
+      "provenance": "google_search_console query/page pair, joined by scripts/queries/score_discovery_gap.mjs",
+      "gsc_measured": {
+        "impressions": 2,
+        "clicks": 0,
+        "average_position": 9,
         "window_start": null,
         "window_end": null,
         "source": "google_search_console"
@@ -2039,9 +2039,9 @@
       "status": "discovered_from_gsc",
       "provenance": "google_search_console query/page pair, joined by scripts/queries/score_discovery_gap.mjs",
       "gsc_measured": {
-        "impressions": 138,
-        "clicks": 3,
-        "average_position": 4.24,
+        "impressions": 130,
+        "clicks": 2,
+        "average_position": 3.93,
         "window_start": null,
         "window_end": null,
         "source": "google_search_console"
@@ -2078,45 +2078,15 @@
       }
     },
     {
-      "query": "hicks consulting llc",
-      "intent": "observed",
-      "primaryPage": "/contact/",
-      "status": "discovered_from_gsc",
-      "provenance": "google_search_console query/page pair, joined by scripts/queries/score_discovery_gap.mjs",
-      "gsc_measured": {
-        "impressions": 63,
-        "clicks": 0,
-        "average_position": 5.56,
-        "window_start": null,
-        "window_end": null,
-        "source": "google_search_console"
-      },
-      "lead_intent_tier": "T4_INFORMATIONAL",
-      "lead_intent_method": "regex_classifier_on_query_string, scripts/queries/score_discovery_gap.mjs",
-      "occupancy": {
-        "verdict": "UNMEASURED",
-        "reason": "NO_LIVE_OBSERVATION",
-        "openness_score": null,
-        "cited_hosts": [],
-        "observed_at": null,
-        "model": null
-      },
-      "blue_ocean_eligible": {
-        "eligible": false,
-        "reason": "BRAND_OR_PERSON_NAME_NAVIGATIONAL",
-        "note": "Surname-matched query. The live observer returns Hickory/Hicksville and unrelated Hicks practitioners for these; an OPEN verdict on them is noise, not open ground."
-      }
-    },
-    {
       "query": "black therapist memphis tn",
       "intent": "observed",
       "primaryPage": "/",
       "status": "discovered_from_gsc",
       "provenance": "google_search_console query/page pair, joined by scripts/queries/score_discovery_gap.mjs",
       "gsc_measured": {
-        "impressions": 43,
-        "clicks": 2,
-        "average_position": 9.62,
+        "impressions": 42,
+        "clicks": 1,
+        "average_position": 9.67,
         "window_start": null,
         "window_end": null,
         "source": "google_search_console"
@@ -2154,6 +2124,66 @@
       }
     },
     {
+      "query": "monika hicks",
+      "intent": "observed",
+      "primaryPage": "/",
+      "status": "discovered_from_gsc",
+      "provenance": "google_search_console query/page pair, joined by scripts/queries/score_discovery_gap.mjs",
+      "gsc_measured": {
+        "impressions": 35,
+        "clicks": 2,
+        "average_position": 2.81,
+        "window_start": null,
+        "window_end": null,
+        "source": "google_search_console"
+      },
+      "lead_intent_tier": "T4_INFORMATIONAL",
+      "lead_intent_method": "regex_classifier_on_query_string, scripts/queries/score_discovery_gap.mjs",
+      "occupancy": {
+        "verdict": "UNMEASURED",
+        "reason": "NO_LIVE_OBSERVATION",
+        "openness_score": null,
+        "cited_hosts": [],
+        "observed_at": null,
+        "model": null
+      },
+      "blue_ocean_eligible": {
+        "eligible": false,
+        "reason": "BRAND_OR_PERSON_NAME_NAVIGATIONAL",
+        "note": "Surname-matched query. The live observer returns Hickory/Hicksville and unrelated Hicks practitioners for these; an OPEN verdict on them is noise, not open ground."
+      }
+    },
+    {
+      "query": "hicks consulting llc",
+      "intent": "observed",
+      "primaryPage": "/contact/",
+      "status": "discovered_from_gsc",
+      "provenance": "google_search_console query/page pair, joined by scripts/queries/score_discovery_gap.mjs",
+      "gsc_measured": {
+        "impressions": 24,
+        "clicks": 0,
+        "average_position": 5.92,
+        "window_start": null,
+        "window_end": null,
+        "source": "google_search_console"
+      },
+      "lead_intent_tier": "T4_INFORMATIONAL",
+      "lead_intent_method": "regex_classifier_on_query_string, scripts/queries/score_discovery_gap.mjs",
+      "occupancy": {
+        "verdict": "UNMEASURED",
+        "reason": "NO_LIVE_OBSERVATION",
+        "openness_score": null,
+        "cited_hosts": [],
+        "observed_at": null,
+        "model": null
+      },
+      "blue_ocean_eligible": {
+        "eligible": false,
+        "reason": "BRAND_OR_PERSON_NAME_NAVIGATIONAL",
+        "note": "Surname-matched query. The live observer returns Hickory/Hicksville and unrelated Hicks practitioners for these; an OPEN verdict on them is noise, not open ground."
+      }
+    },
+    {
       "query": "health consultant",
       "intent": "observed",
       "primaryPage": "/",
@@ -2183,45 +2213,15 @@
       }
     },
     {
-      "query": "monika hicks",
-      "intent": "observed",
-      "primaryPage": "/",
-      "status": "discovered_from_gsc",
-      "provenance": "google_search_console query/page pair, joined by scripts/queries/score_discovery_gap.mjs",
-      "gsc_measured": {
-        "impressions": 20,
-        "clicks": 1,
-        "average_position": 2.6,
-        "window_start": null,
-        "window_end": null,
-        "source": "google_search_console"
-      },
-      "lead_intent_tier": "T4_INFORMATIONAL",
-      "lead_intent_method": "regex_classifier_on_query_string, scripts/queries/score_discovery_gap.mjs",
-      "occupancy": {
-        "verdict": "UNMEASURED",
-        "reason": "NO_LIVE_OBSERVATION",
-        "openness_score": null,
-        "cited_hosts": [],
-        "observed_at": null,
-        "model": null
-      },
-      "blue_ocean_eligible": {
-        "eligible": false,
-        "reason": "BRAND_OR_PERSON_NAME_NAVIGATIONAL",
-        "note": "Surname-matched query. The live observer returns Hickory/Hicksville and unrelated Hicks practitioners for these; an OPEN verdict on them is noise, not open ground."
-      }
-    },
-    {
       "query": "black therapist memphis, tn",
       "intent": "observed",
       "primaryPage": "/",
       "status": "discovered_from_gsc",
       "provenance": "google_search_console query/page pair, joined by scripts/queries/score_discovery_gap.mjs",
       "gsc_measured": {
-        "impressions": 19,
+        "impressions": 16,
         "clicks": 0,
-        "average_position": 7.5,
+        "average_position": 7.41,
         "window_start": null,
         "window_end": null,
         "source": "google_search_console"
@@ -2265,9 +2265,9 @@
       "status": "discovered_from_gsc",
       "provenance": "google_search_console query/page pair, joined by scripts/queries/score_discovery_gap.mjs",
       "gsc_measured": {
-        "impressions": 15,
+        "impressions": 13,
         "clicks": 0,
-        "average_position": 19,
+        "average_position": 18.83,
         "window_start": null,
         "window_end": null,
         "source": "google_search_console"
@@ -2299,36 +2299,6 @@
       }
     },
     {
-      "query": "hicks training",
-      "intent": "observed",
-      "primaryPage": "/corporate-speaking/",
-      "status": "discovered_from_gsc",
-      "provenance": "google_search_console query/page pair, joined by scripts/queries/score_discovery_gap.mjs",
-      "gsc_measured": {
-        "impressions": 14,
-        "clicks": 0,
-        "average_position": 8.06,
-        "window_start": null,
-        "window_end": null,
-        "source": "google_search_console"
-      },
-      "lead_intent_tier": "T4_INFORMATIONAL",
-      "lead_intent_method": "regex_classifier_on_query_string, scripts/queries/score_discovery_gap.mjs",
-      "occupancy": {
-        "verdict": "UNMEASURED",
-        "reason": "NO_LIVE_OBSERVATION",
-        "openness_score": null,
-        "cited_hosts": [],
-        "observed_at": null,
-        "model": null
-      },
-      "blue_ocean_eligible": {
-        "eligible": false,
-        "reason": "BRAND_OR_PERSON_NAME_NAVIGATIONAL",
-        "note": "Surname-matched query. The live observer returns Hickory/Hicksville and unrelated Hicks practitioners for these; an OPEN verdict on them is noise, not open ground."
-      }
-    },
-    {
       "query": "anxiety therapist",
       "intent": "observed",
       "primaryPage": "/",
@@ -2355,6 +2325,36 @@
       "blue_ocean_eligible": {
         "eligible": true,
         "reason": "UNMEASURED"
+      }
+    },
+    {
+      "query": "hicks training",
+      "intent": "observed",
+      "primaryPage": "/corporate-speaking/",
+      "status": "discovered_from_gsc",
+      "provenance": "google_search_console query/page pair, joined by scripts/queries/score_discovery_gap.mjs",
+      "gsc_measured": {
+        "impressions": 12,
+        "clicks": 0,
+        "average_position": 7.97,
+        "window_start": null,
+        "window_end": null,
+        "source": "google_search_console"
+      },
+      "lead_intent_tier": "T4_INFORMATIONAL",
+      "lead_intent_method": "regex_classifier_on_query_string, scripts/queries/score_discovery_gap.mjs",
+      "occupancy": {
+        "verdict": "UNMEASURED",
+        "reason": "NO_LIVE_OBSERVATION",
+        "openness_score": null,
+        "cited_hosts": [],
+        "observed_at": null,
+        "model": null
+      },
+      "blue_ocean_eligible": {
+        "eligible": false,
+        "reason": "BRAND_OR_PERSON_NAME_NAVIGATIONAL",
+        "note": "Surname-matched query. The live observer returns Hickory/Hicksville and unrelated Hicks practitioners for these; an OPEN verdict on them is noise, not open ground."
       }
     },
     {
@@ -4369,6 +4369,36 @@
       }
     },
     {
+      "query": "integrator overwhelmed",
+      "intent": "observed",
+      "primaryPage": "/resources/insights/how-to-notice-when-overwhelm-is-turning-into-shutdown-a-gentler-truth-to-consider/",
+      "status": "discovered_from_gsc",
+      "provenance": "google_search_console query/page pair, joined by scripts/queries/score_discovery_gap.mjs",
+      "gsc_measured": {
+        "impressions": 1,
+        "clicks": 0,
+        "average_position": 10,
+        "window_start": null,
+        "window_end": null,
+        "source": "google_search_console"
+      },
+      "lead_intent_tier": "T4_INFORMATIONAL",
+      "lead_intent_method": "regex_classifier_on_query_string, scripts/queries/score_discovery_gap.mjs",
+      "occupancy": {
+        "verdict": "UNMEASURED",
+        "reason": "NO_LIVE_OBSERVATION",
+        "openness_score": null,
+        "cited_hosts": [],
+        "observed_at": null,
+        "model": null
+      },
+      "blue_ocean_eligible": {
+        "eligible": false,
+        "reason": "NO_SERVICE_OR_LOCATION_ANCHOR",
+        "note": "The observer has nothing to anchor retrieval to, so its citation set does not describe this practice's competitive ground."
+      }
+    },
+    {
       "query": "is busy an emotion",
       "intent": "observed",
       "primaryPage": "/resources/articles/the-difference-between-being-busy-and-being-emotionally-maxed-out/",
@@ -6269,7 +6299,7 @@
     }
   ],
   "discovery_gap_pass": {
-    "at": "2026-11-17T15:45:22.582Z",
+    "at": "2026-11-20T15:45:08.044Z",
     "by": "scripts/queries/score_discovery_gap.mjs",
     "why": "The observer read a 7-query hand-written list while Search Console reported 46 queries that actually put this practice in front of someone. The measured list is now the target list, ordered so the observer spends its 25-query budget on the queries a client arrives through.",
     "expansion_sources": [
@@ -6296,19 +6326,19 @@
       "queries": [
         "addiction therapy near me",
         "african american therapist near me in person",
+        "black behavioral therapist near me",
         "black family therapist near me",
         "black female psychologist near me",
         "black grief therapist near me",
         "black in person therapist near me",
         "black therapist that accept medicaid near me",
         "black woman therapist near me",
+        "female african american therapist near me",
         "in person black therapist near me",
         "nearest therapist near me",
         "therapist near me black",
         "therapist near me black female",
-        "therapy near me",
-        "black behavioral therapist near me",
-        "female african american therapist near me"
+        "therapy near me"
       ],
       "window_days": 14,
       "why": "A query that implies a place and names none cannot be answered as typed. These arrived from a Search Console refresh nobody reviewed, so they are measured but not admitted: blue_ocean_eligible is false and no generator may draft against them until a localized variant or a recorded non-target decision exists.",
@@ -6338,18 +6368,18 @@
       "not_measured": "search volume, keyword difficulty, organic rank. The observer says so itself: rankVerified is false on every observation."
     },
     "counts": {
-      "total_targets": 204,
-      "added_this_pass": 6,
+      "total_targets": 205,
+      "added_this_pass": 1,
       "with_openness_reading": 16,
       "lead_intent": {
         "T1_LOCAL_READY": 58,
         "T3_SELECTION": 3,
-        "T4_INFORMATIONAL": 143
+        "T4_INFORMATIONAL": 144
       },
       "occupancy": {
         "UNRESOLVABLE_WITHOUT_LOCATION": 48,
         "HELD_BY_US": 9,
-        "UNMEASURED": 140,
+        "UNMEASURED": 141,
         "CONTESTED": 7
       }
     }

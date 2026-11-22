@@ -381,8 +381,10 @@ for (const route of sitemapRoutes) {
   // "the whole library changed today" signal to a crawler. It is excluded so
   // lastmod keeps tracking per-page change; genuinely per-page schema and copy
   // edits still move the date normally.
-  const hashed = fs.readFileSync(rendered, 'utf8')
-    .replace(/<script id="hicks-organization-schema"[\s\S]*?<\/script>/, '');
+  // The site header (nav) and the site footer are the same shared chrome on every
+  // page, so they are excluded for the same reason: renaming one nav tab (the
+  // "Training" -> "Speaking" tab, 20 Nov 2026) is not new content on 269 pages.
+  const hashed = ledgerLib.hashInput(fs.readFileSync(rendered, 'utf8'));
   ledgerPages[url] = { hash: ledgerLib.contentHash(hashed), file: source };
 }
 const lastmods = ledgerLib.resolve(ledgerPages, ledger, today);

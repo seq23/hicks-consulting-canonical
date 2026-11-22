@@ -1,7 +1,7 @@
 {
   "schema_version": "2.0",
-  "receipt_id": "2026-11-19T22-13-26.828Z-44626493829",
-  "attempted_at": "2026-11-19T22:13:26.828Z",
+  "receipt_id": "2026-11-21T20-33-25.136Z-44946871194",
+  "attempted_at": "2026-11-21T20:33:25.136Z",
   "publication_trigger": "ONLY_AFTER_EXISTING_CONTENT_PUBLISH_WORKFLOW_SUCCEEDS",
   "chain": [
     "successful_publish",
@@ -15,7 +15,7 @@
   "sitemap_refresh": {
     "status": "SUCCESS",
     "sitemap_url": "https://www.hicksconsulting.org/sitemap.xml",
-    "sitemap_sha256": "28f487cc474b00edc40f887d33f922a279b7b1bd78aeddf4872b78422d833c08",
+    "sitemap_sha256": "86665da359cffdac5c53fcc93896bdb0d315ee306583af3038fa5649415246c3",
     "url_count": 163
   },
   "indexnow": {
@@ -33,11 +33,11 @@
     "sitemap_url": "https://www.hicksconsulting.org/sitemap.xml"
   },
   "priority_url_inspection": {
-    "status": "PARTIAL",
+    "status": "SUCCESS",
     "attempted": true,
     "requested_urls": 17,
     "inspected_urls": 17,
-    "failed_urls": 2,
+    "failed_urls": 0,
     "results": [
       {
         "url": "https://www.hicksconsulting.org/",
@@ -46,16 +46,16 @@
         "verdict": "PASS",
         "coverage_state": "Submitted and indexed",
         "indexing_state": "INDEXING_ALLOWED",
-        "last_crawl_time": "2026-11-17T12:21:17Z"
+        "last_crawl_time": "2026-11-20T23:51:14Z"
       },
       {
         "url": "https://www.hicksconsulting.org/therapy/",
-        "status": "FAILED",
-        "http_status": 503,
-        "verdict": "UNKNOWN",
-        "coverage_state": "UNKNOWN",
-        "indexing_state": "UNKNOWN",
-        "last_crawl_time": null
+        "status": "SUCCESS",
+        "http_status": 200,
+        "verdict": "PASS",
+        "coverage_state": "Submitted and indexed",
+        "indexing_state": "INDEXING_ALLOWED",
+        "last_crawl_time": "2026-11-05T06:29:11Z"
       },
       {
         "url": "https://www.hicksconsulting.org/coaching/",
@@ -140,12 +140,12 @@
       },
       {
         "url": "https://www.hicksconsulting.org/resources/guides/what-therapy-and-coaching-cost-hicks-consulting/",
-        "status": "FAILED",
-        "http_status": 503,
-        "verdict": "UNKNOWN",
-        "coverage_state": "UNKNOWN",
-        "indexing_state": "UNKNOWN",
-        "last_crawl_time": null
+        "status": "SUCCESS",
+        "http_status": 200,
+        "verdict": "PASS",
+        "coverage_state": "Submitted and indexed",
+        "indexing_state": "INDEXING_ALLOWED",
+        "last_crawl_time": "2026-11-03T12:53:52Z"
       },
       {
         "url": "https://www.hicksconsulting.org/resources/guides/online-therapy-memphis-how-virtual-sessions-work/",
@@ -197,7 +197,7 @@
   "durable_receipt": {
     "status": "SUCCESS",
     "latest_path": "data/distribution/provider_receipt.json",
-    "history_path": "data/distribution/receipts/2026-11-19T22-13-26.828Z-44626493829.json"
+    "history_path": "data/distribution/receipts/2026-11-21T20-33-25.136Z-44946871194.json"
   },
   "observation_feedback": {
     "status": "SUCCESS",

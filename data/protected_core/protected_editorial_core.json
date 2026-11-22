@@ -30,7 +30,7 @@
     },
     {
       "path": "pages/admin/index.html",
-      "sha256": "8851907bec851c33263bb523769dfd77d5df59a7d8f3ee6402ba338109e039d3",
+      "sha256": "e1cf5d41c882814d556332ded3b5c6c408f741ca4f7c0fd1769acbde25404cf3",
       "bytes": 15055
     },
     {
@@ -44,9 +44,9 @@
       "bytes": 8930
     }
   ],
-  "baseline_refreshed_at": "2026-11-18T21:00:00Z",
-  "baseline_reason": "Owner-approved (18 Nov 2026, push-race repair across her repos): content-publish.yml's commit step rebases onto the moved main and retries its push (a bare git push failed whenever another job pushed first). Release behaviour, approval, cadence and slots are unchanged.",
+  "baseline_refreshed_at": "2026-11-20T23:10:00Z",
+  "baseline_reason": "Owner-approved (19 Nov 2026, client request): the site nav tab 'Training' is renamed 'Speaking' on every page, the admin page's shared header included. Only that nav label changed; release behaviour, approval, cadence and slots are unchanged.",
   "baseline_refresh_changed_files": [
-    ".github/workflows/content-publish.yml"
+    "pages/admin/index.html"
   ]
 }

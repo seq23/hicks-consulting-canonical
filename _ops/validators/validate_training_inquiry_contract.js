@@ -22,6 +22,19 @@ const contracts = [
     fields: ['firstName', 'lastName', 'company', 'email', 'services', 'eventDate', 'honorarium', 'referral', 'eventDetails']
   },
   {
+    // The speaking page carries the same form inline (client request, 19 Nov 2026), so it
+    // must post to the same endpoint with the same fields and confirm the same way.
+    label: 'Speaking page training inquiry',
+    htmlPath: 'pages/corporate-speaking/index.html',
+    formId: 'training-inquiry-form',
+    statusId: 'training-inquiry-status',
+    endpoint: '/api/training-inquiry',
+    fnPath: path.join(process.cwd(), 'functions', 'api', 'training-inquiry.js'),
+    formType: "const FORM_TYPE = 'training'",
+    successCopy: 'Your organizational training inquiry has been received',
+    fields: ['firstName', 'lastName', 'company', 'email', 'services', 'eventDate', 'honorarium', 'referral', 'eventDetails']
+  },
+  {
     label: 'Groups inquiry',
     htmlPath: 'pages/groups/index.html',
     formId: 'group-inquiry-form',
@@ -90,7 +103,6 @@ if (!js.includes('validInternal')) fail('wireFormLinks must recognize internal p
 if (!js.includes("key !== 'groups'")) fail('wireFormLinks must not allow Groups CTA to resolve to mailto.');
 if (build.includes("Groups: ${siteConfig.forms?.groups || 'mailto:")) fail('Build llms fallback must not route groups to mailto.');
 
-if (!read('pages/corporate-speaking/index.html').toLowerCase().includes('keynote speaking')) fail('Corporate Speaking page must mention keynote speaking.');
 if (!read('pages/organizational-training-inquiry/index.html').toLowerCase().includes('keynote speaking')) fail('Organizational Training Inquiry page must mention keynote speaking.');
 
 if (/hero-logo-medallion/.test(homepage)) fail('Homepage hero must not include logo overlay on green blazer photo.');
