@@ -62,9 +62,9 @@ const distinctDraft = () => ({
 });
 const engineWith = (make) => ({ draftSlot: async (cfg, slot, { check }) => { const d = make(); const problems = await check(d); return problems.length ? { ok: false, stop: 'SLOT_DRAFT_REJECTED', reason: problems.join('; '), model: 'stub' } : { ok: true, draft: d, model: 'stub', words: 1000, attempts: 1 }; } });
 
-async function run(make, cfg = {}) {
+async function run(make) {
   const fx = fixture();
-  const out = await writeSlots({ root: fx.dir, engine: engineWith(make), cfg, now: new Date('2026-11-03T13:00:00Z'), log: () => {} });
+  const out = await writeSlots({ root: fx.dir, engine: engineWith(make), cfg: {}, now: new Date('2026-11-03T13:00:00Z'), log: () => {} });
   const m = JSON.parse(fs.readFileSync(path.join(fx.dir, 'data/admin/content_manifest.json'), 'utf8'));
   return { out, fx, m, after: { live: fx.read(LIVE), copy: fx.read(COPY), twin: fx.read(TWIN) } };
 }
