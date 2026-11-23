@@ -174,10 +174,21 @@ function addFormGuard(form) {
       .catch(() => {});
   }
 
+  const currentToken = () => {
+    try { if (widgetId !== null && window.turnstile) return window.turnstile.getResponse(widgetId) || ''; } catch (error) {}
+    return '';
+  };
+
   return {
-    fields() {
-      let token = '';
-      try { if (widgetId !== null && window.turnstile) token = window.turnstile.getResponse(widgetId) || ''; } catch (error) {}
+    // A fast submit can beat the invisible check (it takes a few seconds), so
+    // wait up to 5 s for the token. Without one the server still delivers,
+    // under its caps; this only keeps real people on the verified path.
+    async fields() {
+      let token = currentToken();
+      for (let waited = 0; !token && widgetId !== null && waited < 5000; waited += 250) {
+        await new Promise((resolve) => setTimeout(resolve, 250));
+        token = currentToken();
+      }
       return { website: bait.value, turnstileToken: token };
     },
     reset() {
@@ -221,7 +232,6 @@ function wireInquiryForm(config) {
     config.fields.forEach((name) => {
       payload[name] = String(formData.get(name) || '').trim();
     });
-    Object.assign(payload, guard.fields());
 
     const missingRequired = config.required.filter((name) => !payload[name]);
     if (missingRequired.length) {
@@ -237,6 +247,7 @@ function wireInquiryForm(config) {
     setStatus('', '');
 
     try {
+      Object.assign(payload, await guard.fields());
       const response = await submitInquiryPayload(endpoint, payload);
       const result = await response.json().catch(() => ({}));
       if (!response.ok || result.ok !== true) {
@@ -314,8 +325,7 @@ function wireLeadMagnetForm() {
       firstName: String(formData.get('firstName') || '').trim(),
       email: String(formData.get('email') || '').trim(),
       stressContext: String(formData.get('stressContext') || '').trim(),
-      consent: formData.get('consent') === 'yes' ? 'yes' : '',
-      ...guard.fields()
+      consent: formData.get('consent') === 'yes' ? 'yes' : ''
     };
 
     if (!payload.firstName || !payload.email || !payload.consent) {
@@ -331,6 +341,7 @@ function wireLeadMagnetForm() {
     setStatus('', '');
 
     try {
+      Object.assign(payload, await guard.fields());
       const response = await submitInquiryPayload(endpoint, payload);
       const result = await response.json().catch(() => ({}));
       if (!response.ok || result.ok !== true) {
