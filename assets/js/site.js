@@ -153,6 +153,7 @@ function addFormGuard(form) {
   form.appendChild(trap);
 
   let widgetId = null;
+  let widgetFailed = !TURNSTILE_SITE_KEY;
   if (TURNSTILE_SITE_KEY) {
     const slot = document.createElement('div');
     slot.className = 'form-turnstile';
@@ -168,10 +169,11 @@ function addFormGuard(form) {
           appearance: 'interaction-only',
           'response-field': false,
           'before-interactive-callback': () => { slot.style.cssText = ''; },
-          'after-interactive-callback': () => { slot.style.cssText = OFF_SCREEN; }
+          'after-interactive-callback': () => { slot.style.cssText = OFF_SCREEN; },
+          'error-callback': () => { widgetFailed = true; }
         });
       })
-      .catch(() => {});
+      .catch(() => { widgetFailed = true; });
   }
 
   const currentToken = () => {
@@ -180,12 +182,13 @@ function addFormGuard(form) {
   };
 
   return {
-    // A fast submit can beat the invisible check (it takes a few seconds), so
-    // wait up to 5 s for the token. Without one the server still delivers,
-    // under its caps; this only keeps real people on the verified path.
+    // A fast submit can beat the invisible check (the script loads, then the
+    // check takes a few seconds), so wait up to 5 s for the token. Without one
+    // the server still delivers, under its caps; the wait only keeps real
+    // people on the verified path.
     async fields() {
       let token = currentToken();
-      for (let waited = 0; !token && widgetId !== null && waited < 5000; waited += 250) {
+      for (let waited = 0; !token && !widgetFailed && waited < 5000; waited += 250) {
         await new Promise((resolve) => setTimeout(resolve, 250));
         token = currentToken();
       }
