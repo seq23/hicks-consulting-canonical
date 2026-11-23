@@ -114,11 +114,13 @@ async function wireFormLinks() {
 
 
 // Bot guard for the public forms; the server side is worker/form_guard.mjs.
-// TURNSTILE_SITE_KEY stays empty until the Cloudflare Turnstile widget exists.
-// While it is empty no widget loads and the server delivers each inquiry as
-// "unchecked" (under its per-connection and daily caps), so nothing changes for people.
-const TURNSTILE_SITE_KEY = '';
+// Cloudflare Turnstile (Managed, interaction-only) runs off-screen and only moves
+// into the form when Cloudflare asks this visitor to tick a box. Its token is
+// sent with the inquiry; with no token (blocked script, slow network) the
+// server still delivers the inquiry, under its per-connection and daily caps.
+const TURNSTILE_SITE_KEY = '0x4AAAAAAGO0LbmNdAeXEX1G';
 const TURNSTILE_SCRIPT = 'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit';
+const OFF_SCREEN = 'position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden;';
 let turnstileReady = null;
 
 function loadTurnstile() {
@@ -141,7 +143,7 @@ function addFormGuard(form) {
   // only a bot fills it. Its name matches no browser autofill field.
   const trap = document.createElement('div');
   trap.setAttribute('aria-hidden', 'true');
-  trap.style.cssText = 'position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden;';
+  trap.style.cssText = OFF_SCREEN;
   const bait = document.createElement('input');
   bait.type = 'text';
   bait.name = 'hp_website';
@@ -154,12 +156,20 @@ function addFormGuard(form) {
   if (TURNSTILE_SITE_KEY) {
     const slot = document.createElement('div');
     slot.className = 'form-turnstile';
+    slot.style.cssText = OFF_SCREEN;
     const submit = form.querySelector('button[type="submit"]');
-    if (submit && submit.parentNode) submit.parentNode.insertBefore(slot, submit);
-    else form.appendChild(slot);
+    let anchor = submit;
+    while (anchor && anchor.parentNode !== form) anchor = anchor.parentNode;
+    form.insertBefore(slot, anchor || null);
     loadTurnstile()
       .then((turnstile) => {
-        widgetId = turnstile.render(slot, { sitekey: TURNSTILE_SITE_KEY, appearance: 'interaction-only', 'response-field': false });
+        widgetId = turnstile.render(slot, {
+          sitekey: TURNSTILE_SITE_KEY,
+          appearance: 'interaction-only',
+          'response-field': false,
+          'before-interactive-callback': () => { slot.style.cssText = ''; },
+          'after-interactive-callback': () => { slot.style.cssText = OFF_SCREEN; }
+        });
       })
       .catch(() => {});
   }
