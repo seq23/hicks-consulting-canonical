@@ -113,6 +113,69 @@ async function wireFormLinks() {
 
 
 
+// Bot guard for the public forms; the server side is worker/form_guard.mjs.
+// TURNSTILE_SITE_KEY stays empty until the Cloudflare Turnstile widget exists.
+// While it is empty no widget loads and the server delivers each inquiry as
+// "unchecked" (under its per-connection and daily caps), so nothing changes for people.
+const TURNSTILE_SITE_KEY = '';
+const TURNSTILE_SCRIPT = 'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit';
+let turnstileReady = null;
+
+function loadTurnstile() {
+  if (window.turnstile) return Promise.resolve(window.turnstile);
+  if (!turnstileReady) {
+    turnstileReady = new Promise((resolve, reject) => {
+      const script = document.createElement('script');
+      script.src = TURNSTILE_SCRIPT;
+      script.async = true;
+      script.onload = () => (window.turnstile ? resolve(window.turnstile) : reject(new Error('Turnstile did not start')));
+      script.onerror = () => reject(new Error('Turnstile could not load'));
+      document.head.appendChild(script);
+    });
+  }
+  return turnstileReady;
+}
+
+function addFormGuard(form) {
+  // Honeypot: off-screen, out of the tab order and hidden from screen readers, so
+  // only a bot fills it. Its name matches no browser autofill field.
+  const trap = document.createElement('div');
+  trap.setAttribute('aria-hidden', 'true');
+  trap.style.cssText = 'position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden;';
+  const bait = document.createElement('input');
+  bait.type = 'text';
+  bait.name = 'hp_website';
+  bait.tabIndex = -1;
+  bait.autocomplete = 'off';
+  trap.appendChild(bait);
+  form.appendChild(trap);
+
+  let widgetId = null;
+  if (TURNSTILE_SITE_KEY) {
+    const slot = document.createElement('div');
+    slot.className = 'form-turnstile';
+    const submit = form.querySelector('button[type="submit"]');
+    if (submit && submit.parentNode) submit.parentNode.insertBefore(slot, submit);
+    else form.appendChild(slot);
+    loadTurnstile()
+      .then((turnstile) => {
+        widgetId = turnstile.render(slot, { sitekey: TURNSTILE_SITE_KEY, appearance: 'interaction-only', 'response-field': false });
+      })
+      .catch(() => {});
+  }
+
+  return {
+    fields() {
+      let token = '';
+      try { if (widgetId !== null && window.turnstile) token = window.turnstile.getResponse(widgetId) || ''; } catch (error) {}
+      return { website: bait.value, turnstileToken: token };
+    },
+    reset() {
+      try { if (widgetId !== null && window.turnstile) window.turnstile.reset(widgetId); } catch (error) {}
+    }
+  };
+}
+
 async function submitInquiryPayload(endpoint, payload) {
   return fetch(endpoint, {
     method: 'POST',
@@ -128,6 +191,7 @@ function wireInquiryForm(config) {
   const status = document.getElementById(config.statusId);
   const submit = form.querySelector('button[type="submit"]');
   const endpoint = form.getAttribute('data-endpoint') || form.getAttribute('action') || config.endpoint;
+  const guard = addFormGuard(form);
 
   const setStatus = (message, type) => {
     if (!status) return;
@@ -147,6 +211,7 @@ function wireInquiryForm(config) {
     config.fields.forEach((name) => {
       payload[name] = String(formData.get(name) || '').trim();
     });
+    Object.assign(payload, guard.fields());
 
     const missingRequired = config.required.filter((name) => !payload[name]);
     if (missingRequired.length) {
@@ -173,6 +238,7 @@ function wireInquiryForm(config) {
       setStatus(config.successMessage, 'success');
       if (status) status.focus?.();
     } catch (error) {
+      guard.reset();
       setStatus(config.errorMessage, 'error');
       if (submit) {
         submit.disabled = false;
@@ -219,6 +285,7 @@ function wireLeadMagnetForm() {
   const downloadLink = panel ? panel.querySelector('[data-download-url]') : null;
   const submit = form.querySelector('button[type="submit"]');
   const endpoint = form.getAttribute('data-endpoint') || form.getAttribute('action') || '/api/lead-magnet';
+  const guard = addFormGuard(form);
 
   const setStatus = (message, type) => {
     if (!status) return;
@@ -237,7 +304,8 @@ function wireLeadMagnetForm() {
       firstName: String(formData.get('firstName') || '').trim(),
       email: String(formData.get('email') || '').trim(),
       stressContext: String(formData.get('stressContext') || '').trim(),
-      consent: formData.get('consent') === 'yes' ? 'yes' : ''
+      consent: formData.get('consent') === 'yes' ? 'yes' : '',
+      ...guard.fields()
     };
 
     if (!payload.firstName || !payload.email || !payload.consent) {
@@ -268,6 +336,7 @@ function wireLeadMagnetForm() {
       setStatus('Thank you. Your worksheet is ready below.', 'success');
       if (status) status.focus?.();
     } catch (error) {
+      guard.reset();
       setStatus('We could not prepare the download just now. Please try again, or email info@hicksconsulting.org.', 'error');
       if (submit) {
         submit.disabled = false;

@@ -445,6 +445,7 @@ const workerSource = path.join(root, 'worker', '_worker.js');
 if (fs.existsSync(workerSource)) {
   fs.copyFileSync(workerSource, path.join(dist, '_worker.js'));
   copyRecursive(path.join(root, 'worker', 'admin_runtime.mjs'), path.join(dist, 'admin_runtime.mjs'));
+  copyRecursive(path.join(root, 'worker', 'form_guard.mjs'), path.join(dist, 'form_guard.mjs'));
 }
 
 // Cloudflare Pages answers HTTP 200 with index.html for any unmatched path when
