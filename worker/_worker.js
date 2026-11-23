@@ -1,4 +1,5 @@
 import { handleAdminRequest, handleContentDecision, requireAdminSession } from './admin_runtime.mjs';
+import { honeypotFilled, guardSubmission } from './form_guard.mjs';
 const LEAD_MAGNET_DOWNLOAD_PATH = '/assets/downloads/stress-management-made-simple.pdf';
 
 const FORM_DATABASE_FORMS = {
@@ -89,12 +90,20 @@ async function handleFormDatabaseSubmission(request, env, formType) {
   if (!form) return jsonResponse({ ok: false, error: 'Unknown form type.' }, 404);
   let incoming;
   try { incoming = await request.json(); } catch (error) { return jsonResponse({ ok: false, error: 'Invalid JSON payload.' }, 400); }
+  if (honeypotFilled(incoming)) {
+    console.warn('FORM_GUARD_HONEYPOT', JSON.stringify({ formType }));
+    const trapped = { ok: true, submissionId: createSubmissionId(), queued: false };
+    if (form.downloadPath) trapped.downloadPath = form.downloadPath;
+    return jsonResponse(trapped);
+  }
   const fields = {};
   for (const field of form.fields) fields[field] = clean(incoming[field]);
   const missing = form.required.filter((field) => !fields[field]);
   if (missing.length) return jsonResponse({ ok: false, error: `Missing required fields: ${missing.join(', ')}` }, 400);
   if (!isValidEmail(fields.email)) return jsonResponse({ ok: false, error: 'Invalid email address.' }, 400);
   if (form.requireConsent && fields.consent !== 'yes') return jsonResponse({ ok: false, error: 'Consent is required before sending this download.' }, 400);
+  const guard = await guardSubmission({ request, env, incoming, formType });
+  if (!guard.deliver) return jsonResponse({ ok: false, error: guard.error }, guard.status);
   const result = await sendFormDatabaseSubmission({ env, request, formType, fields });
   if (!result.ok) return jsonResponse(result.body, result.status);
   const body = { ok: true, submissionId: result.submissionId, queued: result.queued === true };

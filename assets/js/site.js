@@ -113,6 +113,93 @@ async function wireFormLinks() {
 
 
 
+// Bot guard for the public forms; the server side is worker/form_guard.mjs.
+// Cloudflare Turnstile (Managed, interaction-only) runs off-screen and only moves
+// into the form when Cloudflare asks this visitor to tick a box. Its token is
+// sent with the inquiry; with no token (blocked script, slow network) the
+// server still delivers the inquiry, under its per-connection and daily caps.
+const TURNSTILE_SITE_KEY = '0x4AAAAAAGO0LbmNdAeXEX1G';
+const TURNSTILE_SCRIPT = 'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit';
+const OFF_SCREEN = 'position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden;';
+let turnstileReady = null;
+
+function loadTurnstile() {
+  if (window.turnstile) return Promise.resolve(window.turnstile);
+  if (!turnstileReady) {
+    turnstileReady = new Promise((resolve, reject) => {
+      const script = document.createElement('script');
+      script.src = TURNSTILE_SCRIPT;
+      script.async = true;
+      script.onload = () => (window.turnstile ? resolve(window.turnstile) : reject(new Error('Turnstile did not start')));
+      script.onerror = () => reject(new Error('Turnstile could not load'));
+      document.head.appendChild(script);
+    });
+  }
+  return turnstileReady;
+}
+
+function addFormGuard(form) {
+  // Honeypot: off-screen, out of the tab order and hidden from screen readers, so
+  // only a bot fills it. Its name matches no browser autofill field.
+  const trap = document.createElement('div');
+  trap.setAttribute('aria-hidden', 'true');
+  trap.style.cssText = OFF_SCREEN;
+  const bait = document.createElement('input');
+  bait.type = 'text';
+  bait.name = 'hp_website';
+  bait.tabIndex = -1;
+  bait.autocomplete = 'off';
+  trap.appendChild(bait);
+  form.appendChild(trap);
+
+  let widgetId = null;
+  let widgetFailed = !TURNSTILE_SITE_KEY;
+  if (TURNSTILE_SITE_KEY) {
+    const slot = document.createElement('div');
+    slot.className = 'form-turnstile';
+    slot.style.cssText = OFF_SCREEN;
+    const submit = form.querySelector('button[type="submit"]');
+    let anchor = submit;
+    while (anchor && anchor.parentNode !== form) anchor = anchor.parentNode;
+    form.insertBefore(slot, anchor || null);
+    loadTurnstile()
+      .then((turnstile) => {
+        widgetId = turnstile.render(slot, {
+          sitekey: TURNSTILE_SITE_KEY,
+          appearance: 'interaction-only',
+          'response-field': false,
+          'before-interactive-callback': () => { slot.style.cssText = ''; },
+          'after-interactive-callback': () => { slot.style.cssText = OFF_SCREEN; },
+          'error-callback': () => { widgetFailed = true; }
+        });
+      })
+      .catch(() => { widgetFailed = true; });
+  }
+
+  const currentToken = () => {
+    try { if (widgetId !== null && window.turnstile) return window.turnstile.getResponse(widgetId) || ''; } catch (error) {}
+    return '';
+  };
+
+  return {
+    // A fast submit can beat the invisible check (the script loads, then the
+    // check takes a few seconds), so wait up to 5 s for the token. Without one
+    // the server still delivers, under its caps; the wait only keeps real
+    // people on the verified path.
+    async fields() {
+      let token = currentToken();
+      for (let waited = 0; !token && !widgetFailed && waited < 5000; waited += 250) {
+        await new Promise((resolve) => setTimeout(resolve, 250));
+        token = currentToken();
+      }
+      return { website: bait.value, turnstileToken: token };
+    },
+    reset() {
+      try { if (widgetId !== null && window.turnstile) window.turnstile.reset(widgetId); } catch (error) {}
+    }
+  };
+}
+
 async function submitInquiryPayload(endpoint, payload) {
   return fetch(endpoint, {
     method: 'POST',
@@ -128,6 +215,7 @@ function wireInquiryForm(config) {
   const status = document.getElementById(config.statusId);
   const submit = form.querySelector('button[type="submit"]');
   const endpoint = form.getAttribute('data-endpoint') || form.getAttribute('action') || config.endpoint;
+  const guard = addFormGuard(form);
 
   const setStatus = (message, type) => {
     if (!status) return;
@@ -162,6 +250,7 @@ function wireInquiryForm(config) {
     setStatus('', '');
 
     try {
+      Object.assign(payload, await guard.fields());
       const response = await submitInquiryPayload(endpoint, payload);
       const result = await response.json().catch(() => ({}));
       if (!response.ok || result.ok !== true) {
@@ -173,6 +262,7 @@ function wireInquiryForm(config) {
       setStatus(config.successMessage, 'success');
       if (status) status.focus?.();
     } catch (error) {
+      guard.reset();
       setStatus(config.errorMessage, 'error');
       if (submit) {
         submit.disabled = false;
@@ -219,6 +309,7 @@ function wireLeadMagnetForm() {
   const downloadLink = panel ? panel.querySelector('[data-download-url]') : null;
   const submit = form.querySelector('button[type="submit"]');
   const endpoint = form.getAttribute('data-endpoint') || form.getAttribute('action') || '/api/lead-magnet';
+  const guard = addFormGuard(form);
 
   const setStatus = (message, type) => {
     if (!status) return;
@@ -253,6 +344,7 @@ function wireLeadMagnetForm() {
     setStatus('', '');
 
     try {
+      Object.assign(payload, await guard.fields());
       const response = await submitInquiryPayload(endpoint, payload);
       const result = await response.json().catch(() => ({}));
       if (!response.ok || result.ok !== true) {
@@ -268,6 +360,7 @@ function wireLeadMagnetForm() {
       setStatus('Thank you. Your worksheet is ready below.', 'success');
       if (status) status.focus?.();
     } catch (error) {
+      guard.reset();
       setStatus('We could not prepare the download just now. Please try again, or email info@hicksconsulting.org.', 'error');
       if (submit) {
         submit.disabled = false;

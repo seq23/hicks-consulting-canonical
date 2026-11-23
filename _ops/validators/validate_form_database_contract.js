@@ -128,3 +128,10 @@ const behavior = require('child_process').spawnSync(process.execPath,
   ['_ops/validators/deep/verify_lead_domain_setting.mjs'], { encoding: 'utf8' });
 if (behavior.status !== 0) fail(`Lead-domain setting behavior failed: ${behavior.stderr || behavior.stdout || behavior.error}`);
 process.stdout.write(behavior.stdout);
+
+// Bot/flood guard behaviour (honeypot, Turnstile verdicts, KV caps, outages) and the
+// golden proof that every real inquiry is forwarded byte-for-byte as before.
+const guardBehavior = require('child_process').spawnSync(process.execPath,
+  ['_ops/validators/deep/verify_form_guard.mjs'], { encoding: 'utf8' });
+if (guardBehavior.status !== 0) fail(`Form guard behavior failed: ${guardBehavior.stderr || guardBehavior.stdout || guardBehavior.error}`);
+process.stdout.write(guardBehavior.stdout);

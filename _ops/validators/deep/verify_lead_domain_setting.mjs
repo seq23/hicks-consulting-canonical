@@ -6,10 +6,15 @@ import { pathToFileURL } from 'node:url';
 // Exercise both shipped runtimes. Data URLs let Node run their ESM .js sources
 // without changing this otherwise CommonJS repository's package mode.
 const load = (source) => import(`data:text/javascript;base64,${Buffer.from(source).toString('base64')}`);
+const guardUrl = JSON.stringify(pathToFileURL(path.resolve('worker/form_guard.mjs')).href);
 const workerSource = fs.readFileSync('worker/_worker.js', 'utf8').replace(
-  "'./admin_runtime.mjs'", JSON.stringify(pathToFileURL(path.resolve('worker/admin_runtime.mjs')).href));
+  "'./admin_runtime.mjs'", JSON.stringify(pathToFileURL(path.resolve('worker/admin_runtime.mjs')).href))
+  .replace("'./form_guard.mjs'", guardUrl);
 const worker = (await load(workerSource)).default;
-const functions = await load(fs.readFileSync('functions/api/_lib/form-database.js', 'utf8'));
+const functions = await load(fs.readFileSync('functions/api/_lib/form-database.js', 'utf8')
+  .replace("'../../../worker/form_guard.mjs'", guardUrl));
+// A fresh flood-guard store per request keeps this test about the domain setting.
+const freshKv = () => { const m = new Map(); return { async get(k) { return m.get(k) ?? null; }, async put(k, v) { m.set(k, v); } }; };
 const forms = [
   { type: 'training', route: '/api/training-inquiry', fields: { firstName: 'Test', lastName: 'Lead', company: 'Fixture', services: 'Training', eventDate: '2026-12-01', honorarium: 'Test', eventDetails: 'Fixture only' } },
   { type: 'groups', route: '/api/groups-inquiry', fields: { firstName: 'Test', lastName: 'Lead', groupInterest: 'Test', supportNeed: 'Fixture only' } },
@@ -21,16 +26,18 @@ const runtimes = [
 ];
 const originalFetch = globalThis.fetch;
 const originalWarn = console.warn;
+const originalLog = console.log;
 let calls = 0;
 let warnings = 0;
 let proofs = 0;
 try {
   globalThis.fetch = async () => { calls++; return Response.json({ ok: true }); };
   console.warn = () => { warnings++; };
+  console.log = () => {};
   for (const [name, submit] of runtimes) for (const form of forms) {
     const post = (email, env, extra = {}) => submit(new Request(`https://www.hicksconsulting.org${form.route}`, {
       method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ ...form.fields, email, ...extra })
-    }), env, form.type);
+    }), { DIGITAL_PRODUCTS_KV: freshKv(), ...env }, form.type);
     // Reserved fixture domains only; the real policy is never in this repo.
     const domain = 'blocked.invalid';
     const setting = ` , OTHER.INVALID, ${domain.toUpperCase()} , `;
@@ -68,8 +75,9 @@ try {
     proofs++;
   }
   assert.equal(proofs, 6, 'Every form in both runtimes was exercised');
-  console.log(`Lead-domain setting behavior OK (${proofs} runtime/form pairs; quiet blocked leads never dispatch, exact matching, empty/unset allow, consent and webhook failures preserved).`);
+  originalLog(`Lead-domain setting behavior OK (${proofs} runtime/form pairs; quiet blocked leads never dispatch, exact matching, empty/unset allow, consent and webhook failures preserved).`);
 } finally {
   globalThis.fetch = originalFetch;
   console.warn = originalWarn;
+  console.log = originalLog;
 }

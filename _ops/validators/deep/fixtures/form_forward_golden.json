@@ -1,0 +1,94 @@
+{
+  "worker/training": {
+    "status": 200,
+    "responseKeys": [
+      "ok",
+      "queued",
+      "submissionId"
+    ],
+    "downloadPath": null,
+    "forward": {
+      "url": "https://script.invalid/form-database",
+      "method": "POST",
+      "contentType": "application/json",
+      "body": "{\"inquiryType\":\"training\",\"formType\":\"training\",\"leadMagnet\":\"\",\"submissionId\":\"<id>\",\"submittedAt\":\"<time>\",\"sourcePage\":\"/organizational-training-inquiry/\",\"userAgent\":\"FixtureAgent/1.0\",\"fields\":{\"firstName\":\"Fixture\",\"lastName\":\"Person\",\"company\":\"Fixture Org\",\"email\":\"fixture@example.invalid\",\"services\":\"Keynote Speaker\",\"eventDate\":\"2027-02-10\",\"honorarium\":\"1500\",\"referral\":\"Website\",\"eventDetails\":\"Fixture event details only.\"},\"secret\":\"fixture-form-secret\"}"
+    }
+  },
+  "worker/groups": {
+    "status": 200,
+    "responseKeys": [
+      "ok",
+      "queued",
+      "submissionId"
+    ],
+    "downloadPath": null,
+    "forward": {
+      "url": "https://script.invalid/form-database",
+      "method": "POST",
+      "contentType": "application/json",
+      "body": "{\"inquiryType\":\"groups\",\"formType\":\"groups\",\"leadMagnet\":\"\",\"submissionId\":\"<id>\",\"submittedAt\":\"<time>\",\"sourcePage\":\"/groups/\",\"userAgent\":\"FixtureAgent/1.0\",\"fields\":{\"firstName\":\"Fixture\",\"lastName\":\"Person\",\"email\":\"fixture@example.invalid\",\"phone\":\"555-0100\",\"groupInterest\":\"Fixture group\",\"supportNeed\":\"Fixture support need\",\"availability\":\"Weekday evenings\",\"message\":\"Support need: Fixture support need\\n\\nAvailability: Weekday evenings\\n\\nPhone: 555-0100\\n\\nAdditional message: Fixture message.\",\"preferredAvailability\":\"Weekday evenings\",\"referral\":\"\"},\"secret\":\"fixture-form-secret\"}"
+    }
+  },
+  "worker/lead-magnet": {
+    "status": 200,
+    "responseKeys": [
+      "downloadPath",
+      "ok",
+      "queued",
+      "submissionId"
+    ],
+    "downloadPath": "/assets/downloads/stress-management-made-simple.pdf",
+    "forward": {
+      "url": "https://script.invalid/lead-magnet",
+      "method": "POST",
+      "contentType": "application/json",
+      "body": "{\"inquiryType\":\"lead-magnet\",\"formType\":\"lead-magnet\",\"leadMagnet\":\"stress-management-made-simple\",\"submissionId\":\"<id>\",\"submittedAt\":\"<time>\",\"sourcePage\":\"/stress-management-worksheet/\",\"userAgent\":\"FixtureAgent/1.0\",\"fields\":{\"firstName\":\"Fixture\",\"email\":\"fixture@example.invalid\",\"leadMagnet\":\"stress-management-made-simple\",\"stressContext\":\"work-burnout\",\"consent\":\"yes\",\"sourcePage\":\"/stress-management-worksheet/\",\"submittedAtClient\":\"2026-11-23T15:00:00.000Z\"},\"secret\":\"fixture-form-secret\"}"
+    }
+  },
+  "functions/training": {
+    "status": 200,
+    "responseKeys": [
+      "ok",
+      "queued",
+      "submissionId"
+    ],
+    "downloadPath": null,
+    "forward": {
+      "url": "https://script.invalid/form-database",
+      "method": "POST",
+      "contentType": "application/json",
+      "body": "{\"secret\":\"fixture-form-secret\",\"inquiryType\":\"training\",\"formType\":\"training\",\"leadMagnet\":\"\",\"submissionId\":\"<id>\",\"submittedAt\":\"<time>\",\"sourcePage\":\"/organizational-training-inquiry/\",\"userAgent\":\"FixtureAgent/1.0\",\"fields\":{\"firstName\":\"Fixture\",\"lastName\":\"Person\",\"company\":\"Fixture Org\",\"email\":\"fixture@example.invalid\",\"services\":\"Keynote Speaker\",\"eventDate\":\"2027-02-10\",\"honorarium\":\"1500\",\"referral\":\"Website\",\"eventDetails\":\"Fixture event details only.\"}}"
+    }
+  },
+  "functions/groups": {
+    "status": 200,
+    "responseKeys": [
+      "ok",
+      "queued",
+      "submissionId"
+    ],
+    "downloadPath": null,
+    "forward": {
+      "url": "https://script.invalid/form-database",
+      "method": "POST",
+      "contentType": "application/json",
+      "body": "{\"secret\":\"fixture-form-secret\",\"inquiryType\":\"groups\",\"formType\":\"groups\",\"leadMagnet\":\"\",\"submissionId\":\"<id>\",\"submittedAt\":\"<time>\",\"sourcePage\":\"/groups/\",\"userAgent\":\"FixtureAgent/1.0\",\"fields\":{\"firstName\":\"Fixture\",\"lastName\":\"Person\",\"email\":\"fixture@example.invalid\",\"phone\":\"555-0100\",\"groupInterest\":\"Fixture group\",\"supportNeed\":\"Fixture support need\",\"availability\":\"Weekday evenings\",\"message\":\"Support need: Fixture support need\\n\\nAvailability: Weekday evenings\\n\\nPhone: 555-0100\\n\\nAdditional message: Fixture message.\",\"preferredAvailability\":\"Weekday evenings\",\"referral\":\"\"}}"
+    }
+  },
+  "functions/lead-magnet": {
+    "status": 200,
+    "responseKeys": [
+      "downloadPath",
+      "ok",
+      "queued",
+      "submissionId"
+    ],
+    "downloadPath": "/assets/downloads/stress-management-made-simple.pdf",
+    "forward": {
+      "url": "https://script.invalid/lead-magnet",
+      "method": "POST",
+      "contentType": "application/json",
+      "body": "{\"secret\":\"fixture-lead-secret\",\"inquiryType\":\"lead-magnet\",\"formType\":\"lead-magnet\",\"leadMagnet\":\"stress-management-made-simple\",\"submissionId\":\"<id>\",\"submittedAt\":\"<time>\",\"sourcePage\":\"/stress-management-worksheet/\",\"userAgent\":\"FixtureAgent/1.0\",\"fields\":{\"firstName\":\"Fixture\",\"email\":\"fixture@example.invalid\",\"leadMagnet\":\"stress-management-made-simple\",\"stressContext\":\"work-burnout\",\"consent\":\"yes\",\"sourcePage\":\"/stress-management-worksheet/\",\"submittedAtClient\":\"2026-11-23T15:00:00.000Z\"}}"
+    }
+  }
+}

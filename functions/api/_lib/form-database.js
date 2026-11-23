@@ -1,3 +1,5 @@
+import { honeypotFilled, guardSubmission } from '../../../worker/form_guard.mjs';
+
 const FORM_DATABASE_FORMS = {
   training: {
     sourcePage: '/organizational-training-inquiry/',
@@ -182,6 +184,13 @@ export async function handleFormDatabaseSubmission({ request, env, formType }) {
     return jsonResponse({ ok: false, error: 'Invalid JSON payload.' }, 400);
   }
 
+  if (honeypotFilled(incoming)) {
+    console.warn('FORM_GUARD_HONEYPOT', JSON.stringify({ formType }));
+    const trapped = { ok: true, submissionId: createSubmissionId(), queued: false };
+    if (form.downloadPath) trapped.downloadPath = form.downloadPath;
+    return jsonResponse(trapped);
+  }
+
   const fields = {};
   for (const field of form.fields) {
     fields[field] = clean(incoming[field]);
@@ -200,6 +209,9 @@ export async function handleFormDatabaseSubmission({ request, env, formType }) {
   if (form.requireConsent && fields.consent !== 'yes') {
     return jsonResponse({ ok: false, error: 'Consent is required before sending this download.' }, 400);
   }
+
+  const guard = await guardSubmission({ request, env, incoming, formType });
+  if (!guard.deliver) return jsonResponse({ ok: false, error: guard.error }, guard.status);
 
   const result = await sendFormDatabaseSubmission({ env, request, formType, fields });
   if (!result.ok) return jsonResponse(result.body, result.status);
