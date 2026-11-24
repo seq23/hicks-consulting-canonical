@@ -1,6 +1,6 @@
 {
   "schemaVersion": "2.0.0",
-  "generatedAt": "2026-11-22T21:08:59.166Z",
+  "generatedAt": "2026-11-24T23:56:56.456Z",
   "policy": "Hicks may autonomously apply bounded technical/search-alignment repairs. Substantive clinical claims and unsupported treatment assertions are never auto-generated from competitor content.",
   "items": [
     {
@@ -1124,9 +1124,9 @@
       "evidence": {
         "groundedSiteSurfaced": null,
         "groundedProviderAnswered": false,
-        "gscImpressions": 123,
+        "gscImpressions": 179,
         "gscClicks": 2,
-        "gscAveragePosition": 3.83,
+        "gscAveragePosition": 3.31,
         "gscPages": [
           "/",
           "/about/",
@@ -1157,9 +1157,9 @@
       "evidence": {
         "groundedSiteSurfaced": null,
         "groundedProviderAnswered": false,
-        "gscImpressions": 46,
+        "gscImpressions": 41,
         "gscClicks": 1,
-        "gscAveragePosition": 9.77,
+        "gscAveragePosition": 9.79,
         "gscPages": [
           "/black-therapist-memphis/",
           "/",
@@ -1212,14 +1212,13 @@
       "evidence": {
         "groundedSiteSurfaced": null,
         "groundedProviderAnswered": false,
-        "gscImpressions": 17,
+        "gscImpressions": 13,
         "gscClicks": 0,
-        "gscAveragePosition": 6.02,
+        "gscAveragePosition": 5.96,
         "gscPages": [
           "/",
           "/coaching/",
           "/corporate-speaking/",
-          "/emergency-crisis-notice/",
           "/groups/",
           "/privacy-policy/",
           "/therapy/"
@@ -1280,9 +1279,9 @@
       "evidence": {
         "groundedSiteSurfaced": null,
         "groundedProviderAnswered": false,
-        "gscImpressions": 12,
+        "gscImpressions": 11,
         "gscClicks": 0,
-        "gscAveragePosition": 19.04,
+        "gscAveragePosition": 18.92,
         "gscPages": [
           "/questions/grief-counseling-memphis-online/",
           "/questions/lcsw-therapist-memphis/",
@@ -1314,15 +1313,18 @@
     {
       "query": "hicks training",
       "primaryPage": "/corporate-speaking/",
-      "status": "OBSERVED",
-      "reasons": [],
+      "status": "CANNIBALIZATION_REVIEW",
+      "reasons": [
+        "MULTIPLE_HICKS_PAGES_FOR_QUERY"
+      ],
       "evidence": {
         "groundedSiteSurfaced": null,
         "groundedProviderAnswered": false,
         "gscImpressions": 10,
         "gscClicks": 0,
-        "gscAveragePosition": 7.9,
+        "gscAveragePosition": 6.89,
         "gscPages": [
+          "/coaching/",
           "/corporate-speaking/"
         ],
         "competitorUrls": []
@@ -2301,7 +2303,7 @@
         "groundedProviderAnswered": false,
         "gscImpressions": 1,
         "gscClicks": 0,
-        "gscAveragePosition": 5,
+        "gscAveragePosition": 1,
         "gscPages": [
           "/"
         ],
@@ -2799,15 +2801,20 @@
     {
       "query": "monica hicks",
       "primaryPage": "/",
-      "status": "UNKNOWN",
-      "reasons": [],
+      "status": "WRONG_PAGE",
+      "reasons": [
+        "WRONG_HICKS_PAGE_RANKING",
+        "AVERAGE_POSITION_OUTSIDE_TOP_10"
+      ],
       "evidence": {
         "groundedSiteSurfaced": null,
         "groundedProviderAnswered": false,
-        "gscImpressions": 0,
+        "gscImpressions": 1,
         "gscClicks": 0,
-        "gscAveragePosition": 0,
-        "gscPages": [],
+        "gscAveragePosition": 19,
+        "gscPages": [
+          "/about/"
+        ],
         "competitorUrls": []
       },
       "safeRepairEligible": false,
@@ -3257,9 +3264,9 @@
       "evidence": {
         "groundedSiteSurfaced": null,
         "groundedProviderAnswered": false,
-        "gscImpressions": 1,
+        "gscImpressions": 2,
         "gscClicks": 0,
-        "gscAveragePosition": 1,
+        "gscAveragePosition": 5,
         "gscPages": [
           "/resources/articles/when-you-keep-saying-yes/"
         ],

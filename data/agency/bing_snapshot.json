@@ -1,23 +1,11 @@
 {
   "provider": "bing",
   "status": "ok",
-  "checkedAt": "2026-11-22T21:08:50.800Z",
+  "checkedAt": "2026-11-24T23:56:48.081Z",
   "siteUrl": "https://www.hicksconsulting.org/",
   "site": null,
   "metrics": {
     "rankAndTraffic": [
-      {
-        "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
-        "Clicks": 0,
-        "Date": "/Date(1787443200000)/",
-        "Impressions": 0
-      },
-      {
-        "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
-        "Clicks": 0,
-        "Date": "/Date(1787529600000)/",
-        "Impressions": 0
-      },
       {
         "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
         "Clicks": 0,
@@ -545,45 +533,21 @@
         "Clicks": 0,
         "Date": "/Date(1795132800000)/",
         "Impressions": 0
+      },
+      {
+        "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+        "Clicks": 0,
+        "Date": "/Date(1795219200000)/",
+        "Impressions": 0
+      },
+      {
+        "__type": "RankAndTrafficStats:#Microsoft.Bing.Webmaster.Api",
+        "Clicks": 0,
+        "Date": "/Date(1795305600000)/",
+        "Impressions": 0
       }
     ],
     "crawl": [
-      {
-        "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
-        "AllOtherCodes": 0,
-        "BlockedByRobotsTxt": 0,
-        "Code2xx": 12,
-        "Code301": 1,
-        "Code302": 0,
-        "Code4xx": 0,
-        "Code5xx": 0,
-        "ConnectionTimeout": 0,
-        "ContainsMalware": 0,
-        "CrawledPages": 3,
-        "CrawlErrors": 0,
-        "Date": "/Date(1787356800000)/",
-        "DnsFailures": 0,
-        "InIndex": 0,
-        "InLinks": 7
-      },
-      {
-        "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
-        "AllOtherCodes": 0,
-        "BlockedByRobotsTxt": 0,
-        "Code2xx": 12,
-        "Code301": 1,
-        "Code302": 0,
-        "Code4xx": 0,
-        "Code5xx": 0,
-        "ConnectionTimeout": 0,
-        "ContainsMalware": 0,
-        "CrawledPages": 1,
-        "CrawlErrors": 0,
-        "Date": "/Date(1787443200000)/",
-        "DnsFailures": 0,
-        "InIndex": 0,
-        "InLinks": 7
-      },
       {
         "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
         "AllOtherCodes": 0,
@@ -2167,6 +2131,42 @@
         "DnsFailures": 0,
         "InIndex": 128,
         "InLinks": 14
+      },
+      {
+        "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+        "AllOtherCodes": 4,
+        "BlockedByRobotsTxt": 0,
+        "Code2xx": 152,
+        "Code301": 4,
+        "Code302": 0,
+        "Code4xx": 0,
+        "Code5xx": 0,
+        "ConnectionTimeout": 0,
+        "ContainsMalware": 0,
+        "CrawledPages": 104,
+        "CrawlErrors": 2,
+        "Date": "/Date(1795305600000)/",
+        "DnsFailures": 0,
+        "InIndex": 131,
+        "InLinks": 16
+      },
+      {
+        "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+        "AllOtherCodes": 1,
+        "BlockedByRobotsTxt": 0,
+        "Code2xx": 158,
+        "Code301": 4,
+        "Code302": 0,
+        "Code4xx": 1,
+        "Code5xx": 0,
+        "ConnectionTimeout": 0,
+        "ContainsMalware": 0,
+        "CrawledPages": 101,
+        "CrawlErrors": 4,
+        "Date": "/Date(1795392000000)/",
+        "DnsFailures": 0,
+        "InIndex": 134,
+        "InLinks": 16
       }
     ]
   },
@@ -2205,7 +2205,7 @@
       "Clicks": 0,
       "Date": "/Date(1771545600000)/",
       "Impressions": 1,
-      "Query": "joyce hicks consulting"
+      "Query": "hicks consulting"
     },
     {
       "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
@@ -2214,7 +2214,7 @@
       "Clicks": 0,
       "Date": "/Date(1771545600000)/",
       "Impressions": 1,
-      "Query": "hicks consulting"
+      "Query": "joyce hicks consulting"
     }
   ],
   "message": "Bing Webmaster API connected and refreshed."
