@@ -1,7 +1,7 @@
 {
   "schema_version": "2.0",
-  "receipt_id": "2026-11-24T01-43-04.461Z-45307072381",
-  "attempted_at": "2026-11-24T01:43:04.461Z",
+  "receipt_id": "2026-11-24T23-34-32.080Z-45511087206",
+  "attempted_at": "2026-11-24T23:34:32.080Z",
   "publication_trigger": "ONLY_AFTER_EXISTING_CONTENT_PUBLISH_WORKFLOW_SUCCEEDS",
   "chain": [
     "successful_publish",
@@ -15,14 +15,14 @@
   "sitemap_refresh": {
     "status": "SUCCESS",
     "sitemap_url": "https://www.hicksconsulting.org/sitemap.xml",
-    "sitemap_sha256": "e5376f86ad6dede4c761fde9124c23d5812387fcf6cb286b4e836f0a8c11c0b4",
-    "url_count": 163
+    "sitemap_sha256": "c3825f2e7a8c9bf5c075b21cac1f04e7c7c0d45e0c9ab9f672caed7fcb3df2da",
+    "url_count": 164
   },
   "indexnow": {
     "status": "SUCCESS",
     "attempted": true,
     "http_status": 200,
-    "submitted_urls": 163,
+    "submitted_urls": 164,
     "key_location": "https://www.hicksconsulting.org/indexnow.txt"
   },
   "gsc_sitemap_submission": {
@@ -100,7 +100,7 @@
         "verdict": "PASS",
         "coverage_state": "Submitted and indexed",
         "indexing_state": "INDEXING_ALLOWED",
-        "last_crawl_time": "2026-11-14T10:10:23Z"
+        "last_crawl_time": "2026-11-24T22:20:58Z"
       },
       {
         "url": "https://www.hicksconsulting.org/resources/guides/boundaries-for-black-women/",
@@ -197,7 +197,7 @@
   "durable_receipt": {
     "status": "SUCCESS",
     "latest_path": "data/distribution/provider_receipt.json",
-    "history_path": "data/distribution/receipts/2026-11-24T01-43-04.461Z-45307072381.json"
+    "history_path": "data/distribution/receipts/2026-11-24T23-34-32.080Z-45511087206.json"
   },
   "observation_feedback": {
     "status": "SUCCESS",
