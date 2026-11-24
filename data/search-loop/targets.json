@@ -1,46 +1,49 @@
 {
   "schema": "search-loop-targets-v1",
   "site": "hicksconsulting.org",
-  "week": "2026-W47",
-  "generated_at": "2026-11-16T13:05:32.136Z",
+  "week": "2026-W48",
+  "generated_at": "2026-11-24T00:25:50.351Z",
   "sources": {
-    "search_console": "ok: 103 rows",
+    "search_console": "ok: 99 rows",
     "bing_webmaster": "ok: 5 rows",
-    "easy_wins": "ok: 14 easy win(s) in Search Console",
+    "easy_wins": "ok: 11 easy win(s) in Search Console",
     "suggestqueries.google.com": "ok",
     "api.bing.com": "ok",
-    "relevance_screen": "ok: kept 33 of 69 (free model)",
+    "relevance_screen": "ok: kept 36 of 50 (free model)",
     "top10": "not read: no BRAVE_SEARCH_API_KEY"
   },
   "targets": [
     {
-      "query": "black women therapists near me",
-      "variants": [
-        "black therapist near me for women",
-        "black women therapist near me"
-      ],
+      "query": "counselor midtown memphis tn online",
+      "variants": [],
       "signals": {
         "words": 5,
         "question": false,
-        "google_suggest": true,
-        "bing_suggest": true,
+        "local": true,
+        "place_variant_of": "counselor cordova tn online",
         "neighbour": {
-          "sim": 1,
-          "of": "black women therapist near me",
-          "why": "top 1 with 1 impressions"
+          "sim": 0.6,
+          "of": "counselor cordova tn online",
+          "why": "engine page in the top 3 within 14 days"
+        },
+        "unanswered": {
+          "words": 5,
+          "covered": 0.4,
+          "parts_best_position": 6.5,
+          "parts_rows": 8
         },
         "top10": "not read: no BRAVE_SEARCH_API_KEY"
       },
       "scores": {
-        "striking": 40,
-        "can_be_one": 45
+        "striking": 15,
+        "can_be_one": 51
       },
-      "score": 45,
+      "score": 51,
       "kind": "new",
       "lane": "can_be_one",
       "reasons": [
-        "easy-win neighbour of \"black women therapist near me\" (top 1 with 1 impressions)",
-        "people search it (autocomplete or impressions)"
+        "easy-win neighbour of \"counselor cordova tn online\" (engine page in the top 3 within 14 days)",
+        "no site page answers this 5-word question, and the site holds its parts at position 6.5"
       ]
     },
     {
@@ -49,26 +52,116 @@
       "signals": {
         "words": 6,
         "question": false,
-        "gsc_position": 8.6,
-        "gsc_impressions": 11,
+        "gsc_position": 10.4,
+        "gsc_impressions": 10,
         "gsc_page": "https://www.hicksconsulting.org/black-therapist-memphis/",
         "neighbour": {
           "sim": 0.6,
-          "of": "black therapist near me",
+          "of": "black women therapist near me",
           "why": "top 1 with 1 impressions"
         },
         "top10": "not read: no BRAVE_SEARCH_API_KEY"
       },
       "scores": {
-        "striking": 63.2,
+        "striking": 59.5,
         "can_be_one": 31
       },
-      "score": 63.2,
+      "score": 59.5,
       "kind": "new",
       "lane": "striking",
       "reasons": [
-        "already ranks 8.6 in Search Console (11 impressions)",
+        "already ranks 10.4 in Search Console (10 impressions)",
         "can-be-#1 score 31 too (taken by the striking lane's turn)"
+      ]
+    },
+    {
+      "query": "counselor east memphis tn online",
+      "variants": [],
+      "signals": {
+        "words": 5,
+        "question": false,
+        "local": true,
+        "place_variant_of": "counselor cordova tn online",
+        "neighbour": {
+          "sim": 0.6,
+          "of": "counselor cordova tn online",
+          "why": "engine page in the top 3 within 14 days"
+        },
+        "unanswered": {
+          "words": 5,
+          "covered": 0.4,
+          "parts_best_position": 6.5,
+          "parts_rows": 8
+        },
+        "top10": "not read: no BRAVE_SEARCH_API_KEY"
+      },
+      "scores": {
+        "striking": 15,
+        "can_be_one": 51
+      },
+      "score": 51,
+      "kind": "new",
+      "lane": "can_be_one",
+      "reasons": [
+        "easy-win neighbour of \"counselor cordova tn online\" (engine page in the top 3 within 14 days)",
+        "no site page answers this 5-word question, and the site holds its parts at position 6.5"
+      ]
+    },
+    {
+      "query": "pet loss grief counselor memphis",
+      "variants": [],
+      "signals": {
+        "words": 5,
+        "question": false,
+        "gsc_position": 11,
+        "gsc_impressions": 4,
+        "gsc_page": "https://www.hicksconsulting.org/questions/grief-counseling-memphis-online/",
+        "unanswered": {
+          "words": 5,
+          "covered": 0.4,
+          "parts_best_position": 10,
+          "parts_rows": 1
+        },
+        "top10": "not read: no BRAVE_SEARCH_API_KEY"
+      },
+      "scores": {
+        "striking": 53.8,
+        "can_be_one": 40
+      },
+      "score": 40,
+      "kind": "new",
+      "lane": "can_be_one",
+      "reasons": [
+        "no site page answers this 5-word question, and the site holds its parts at position 10",
+        "people search it (autocomplete or impressions)"
+      ]
+    },
+    {
+      "query": "african american therapist near me",
+      "variants": [],
+      "signals": {
+        "words": 5,
+        "question": false,
+        "gsc_position": 8.3,
+        "gsc_impressions": 3,
+        "gsc_page": "https://www.hicksconsulting.org/black-therapist-memphis/",
+        "neighbour": {
+          "sim": 0.5,
+          "of": "black women therapist near me",
+          "why": "top 1 with 1 impressions"
+        },
+        "top10": "not read: no BRAVE_SEARCH_API_KEY"
+      },
+      "scores": {
+        "striking": 57.5,
+        "can_be_one": 27.5
+      },
+      "score": 57.5,
+      "kind": "new",
+      "lane": "striking",
+      "reasons": [
+        "already ranks 8.3 in Search Console (3 impressions)",
+        "can-be-#1 score 27.5 too (taken by the striking lane's turn)"
       ]
     },
     {
@@ -84,7 +177,7 @@
           "words": 11,
           "covered": 0.27,
           "parts_best_position": 3,
-          "parts_rows": 6
+          "parts_rows": 5
         },
         "top10": "not read: no BRAVE_SEARCH_API_KEY"
       },
@@ -101,58 +194,51 @@
       ]
     },
     {
-      "query": "female black counselors in mental health",
+      "query": "black women christian therapist near me",
       "variants": [],
       "signals": {
         "words": 6,
         "question": false,
-        "bing_suggest": true,
-        "unanswered": {
-          "words": 5,
-          "covered": 0.4,
-          "parts_best_position": 1,
-          "parts_rows": 6
-        },
-        "top10": "not read: no BRAVE_SEARCH_API_KEY"
-      },
-      "scores": {
-        "striking": 20,
-        "can_be_one": 40
-      },
-      "score": 40,
-      "kind": "new",
-      "lane": "can_be_one",
-      "reasons": [
-        "no site page answers this 5-word question, and the site holds its parts at position 1",
-        "people search it (autocomplete or impressions)"
-      ]
-    },
-    {
-      "query": "african american therapist near me",
-      "variants": [],
-      "signals": {
-        "words": 5,
-        "question": false,
-        "gsc_position": 8.4,
-        "gsc_impressions": 5,
-        "gsc_page": "https://www.hicksconsulting.org/black-therapist-memphis/",
+        "google_suggest": true,
         "neighbour": {
-          "sim": 0.5,
-          "of": "black therapist near me",
+          "sim": 0.8,
+          "of": "black women therapist near me",
           "why": "top 1 with 1 impressions"
         },
         "top10": "not read: no BRAVE_SEARCH_API_KEY"
       },
       "scores": {
-        "striking": 59.6,
-        "can_be_one": 27.5
+        "striking": 25,
+        "can_be_one": 38
       },
-      "score": 59.6,
+      "score": 38,
+      "kind": "new",
+      "lane": "can_be_one",
+      "reasons": [
+        "easy-win neighbour of \"black women therapist near me\" (top 1 with 1 impressions)",
+        "people search it (autocomplete or impressions)"
+      ]
+    },
+    {
+      "query": "what is a hard yes",
+      "variants": [],
+      "signals": {
+        "words": 5,
+        "question": true,
+        "gsc_position": 10,
+        "gsc_impressions": 1,
+        "gsc_page": "https://www.hicksconsulting.org/resources/articles/when-you-keep-saying-yes/",
+        "top10": "not read: no BRAVE_SEARCH_API_KEY"
+      },
+      "scores": {
+        "striking": 55.4,
+        "can_be_one": 0
+      },
+      "score": 55.4,
       "kind": "new",
       "lane": "striking",
       "reasons": [
-        "already ranks 8.4 in Search Console (5 impressions)",
-        "can-be-#1 score 27.5 too (taken by the striking lane's turn)"
+        "already ranks 10 in Search Console (1 impressions)"
       ]
     },
     {
@@ -166,7 +252,7 @@
         "gsc_page": "https://www.hicksconsulting.org/black-therapist-memphis/",
         "neighbour": {
           "sim": 0.75,
-          "of": "black therapist near me",
+          "of": "black women therapist near me",
           "why": "top 1 with 1 impressions"
         },
         "top10": "not read: no BRAVE_SEARCH_API_KEY"
@@ -179,7 +265,7 @@
       "kind": "new",
       "lane": "can_be_one",
       "reasons": [
-        "easy-win neighbour of \"black therapist near me\" (top 1 with 1 impressions)",
+        "easy-win neighbour of \"black women therapist near me\" (top 1 with 1 impressions)",
         "people search it (autocomplete or impressions)"
       ]
     },
@@ -187,8 +273,8 @@
       "query": "black female therapist near me",
       "variants": [
         "therapist near me black female",
-        "best black female therapist near me",
-        "female black therapist near me"
+        "female black therapist near me",
+        "best black female therapist near me"
       ],
       "signals": {
         "words": 5,
@@ -197,7 +283,7 @@
         "bing_suggest": true,
         "neighbour": {
           "sim": 0.75,
-          "of": "black female psychologist near me",
+          "of": "black women therapist near me",
           "why": "top 1 with 1 impressions"
         },
         "top10": "not read: no BRAVE_SEARCH_API_KEY"
@@ -210,113 +296,30 @@
       "kind": "new",
       "lane": "can_be_one",
       "reasons": [
-        "easy-win neighbour of \"black female psychologist near me\" (top 1 with 1 impressions)",
+        "easy-win neighbour of \"black women therapist near me\" (top 1 with 1 impressions)",
         "people search it (autocomplete or impressions)"
       ]
     },
     {
-      "query": "what is a hard yes",
+      "query": "african american grief counselors near me",
       "variants": [],
       "signals": {
-        "words": 5,
-        "question": true,
+        "words": 6,
+        "question": false,
         "gsc_position": 10,
         "gsc_impressions": 1,
-        "gsc_page": "https://www.hicksconsulting.org/resources/articles/when-you-keep-saying-yes/",
-        "neighbour": {
-          "sim": 0.5,
-          "of": "yes difficult",
-          "why": "top 1 with 1 impressions"
-        },
+        "gsc_page": "https://www.hicksconsulting.org/black-therapist-memphis/",
         "top10": "not read: no BRAVE_SEARCH_API_KEY"
       },
       "scores": {
-        "striking": 55.4,
-        "can_be_one": 27.5
-      },
-      "score": 55.4,
-      "kind": "new",
-      "lane": "striking",
-      "reasons": [
-        "already ranks 10 in Search Console (1 impressions)",
-        "can-be-#1 score 27.5 too (taken by the striking lane's turn)"
-      ]
-    },
-    {
-      "query": "black female counselors near me",
-      "variants": [
-        "female black counselors near me"
-      ],
-      "signals": {
-        "words": 5,
-        "question": false,
-        "google_suggest": true,
-        "bing_suggest": true,
-        "neighbour": {
-          "sim": 0.75,
-          "of": "black female psychologist near me",
-          "why": "top 1 with 1 impressions"
-        },
-        "top10": "not read: no BRAVE_SEARCH_API_KEY"
-      },
-      "scores": {
-        "striking": 40,
-        "can_be_one": 36.3
-      },
-      "score": 36.3,
-      "kind": "new",
-      "lane": "can_be_one",
-      "reasons": [
-        "easy-win neighbour of \"black female psychologist near me\" (top 1 with 1 impressions)",
-        "people search it (autocomplete or impressions)"
-      ]
-    },
-    {
-      "query": "black female counseling near me",
-      "variants": [],
-      "signals": {
-        "words": 5,
-        "question": false,
-        "google_suggest": true,
-        "neighbour": {
-          "sim": 0.75,
-          "of": "black female psychologist near me",
-          "why": "top 1 with 1 impressions"
-        },
-        "top10": "not read: no BRAVE_SEARCH_API_KEY"
-      },
-      "scores": {
-        "striking": 25,
-        "can_be_one": 36.3
-      },
-      "score": 36.3,
-      "kind": "new",
-      "lane": "can_be_one",
-      "reasons": [
-        "easy-win neighbour of \"black female psychologist near me\" (top 1 with 1 impressions)",
-        "people search it (autocomplete or impressions)"
-      ]
-    },
-    {
-      "query": "pet loss grief counselor memphis",
-      "variants": [],
-      "signals": {
-        "words": 5,
-        "question": false,
-        "gsc_position": 11,
-        "gsc_impressions": 4,
-        "gsc_page": "https://www.hicksconsulting.org/questions/grief-counseling-memphis-online/",
-        "top10": "not read: no BRAVE_SEARCH_API_KEY"
-      },
-      "scores": {
-        "striking": 53.8,
+        "striking": 50.4,
         "can_be_one": 0
       },
-      "score": 53.8,
+      "score": 50.4,
       "kind": "new",
       "lane": "striking",
       "reasons": [
-        "already ranks 11 in Search Console (4 impressions)"
+        "already ranks 10 in Search Console (1 impressions)"
       ]
     },
     {
@@ -328,247 +331,12 @@
         "google_suggest": true,
         "neighbour": {
           "sim": 0.75,
-          "of": "black therapist near me",
-          "why": "top 1 with 1 impressions"
-        },
-        "top10": "not read: no BRAVE_SEARCH_API_KEY"
-      },
-      "scores": {
-        "striking": 25,
-        "can_be_one": 36.3
-      },
-      "score": 36.3,
-      "kind": "new",
-      "lane": "can_be_one",
-      "reasons": [
-        "easy-win neighbour of \"black therapist near me\" (top 1 with 1 impressions)",
-        "people search it (autocomplete or impressions)"
-      ]
-    },
-    {
-      "query": "black therapist near me online",
-      "variants": [
-        "black therapist online near me"
-      ],
-      "signals": {
-        "words": 5,
-        "question": false,
-        "bing_suggest": true,
-        "neighbour": {
-          "sim": 0.75,
-          "of": "black therapist near me",
-          "why": "top 1 with 1 impressions"
-        },
-        "top10": "not read: no BRAVE_SEARCH_API_KEY"
-      },
-      "scores": {
-        "striking": 20,
-        "can_be_one": 36.3
-      },
-      "score": 36.3,
-      "kind": "new",
-      "lane": "can_be_one",
-      "reasons": [
-        "easy-win neighbour of \"black therapist near me\" (top 1 with 1 impressions)",
-        "people search it (autocomplete or impressions)"
-      ]
-    },
-    {
-      "query": "nearest therapist near me",
-      "variants": [],
-      "signals": {
-        "words": 4,
-        "question": false,
-        "gsc_position": 11,
-        "gsc_impressions": 1,
-        "gsc_page": "https://www.hicksconsulting.org/resources/guides/how-to-choose-a-therapist-near-you/",
-        "neighbour": {
-          "sim": 0.67,
-          "of": "black therapist near me",
-          "why": "top 1 with 1 impressions"
-        },
-        "top10": "not read: no BRAVE_SEARCH_API_KEY"
-      },
-      "scores": {
-        "striking": 48.5,
-        "can_be_one": 33.5
-      },
-      "score": 48.5,
-      "kind": "new",
-      "lane": "striking",
-      "reasons": [
-        "already ranks 11 in Search Console (1 impressions)",
-        "can-be-#1 score 33.5 too (taken by the striking lane's turn)"
-      ]
-    },
-    {
-      "query": "black therapist near me for couples",
-      "variants": [],
-      "signals": {
-        "words": 6,
-        "question": false,
-        "bing_suggest": true,
-        "neighbour": {
-          "sim": 0.75,
-          "of": "black therapist near me",
-          "why": "top 1 with 1 impressions"
-        },
-        "top10": "not read: no BRAVE_SEARCH_API_KEY"
-      },
-      "scores": {
-        "striking": 20,
-        "can_be_one": 36.3
-      },
-      "score": 36.3,
-      "kind": "new",
-      "lane": "can_be_one",
-      "reasons": [
-        "easy-win neighbour of \"black therapist near me\" (top 1 with 1 impressions)",
-        "people search it (autocomplete or impressions)"
-      ]
-    },
-    {
-      "query": "black therapist near me for anxiety",
-      "variants": [],
-      "signals": {
-        "words": 6,
-        "question": false,
-        "bing_suggest": true,
-        "neighbour": {
-          "sim": 0.75,
-          "of": "black therapist near me",
-          "why": "top 1 with 1 impressions"
-        },
-        "top10": "not read: no BRAVE_SEARCH_API_KEY"
-      },
-      "scores": {
-        "striking": 20,
-        "can_be_one": 36.3
-      },
-      "score": 36.3,
-      "kind": "new",
-      "lane": "can_be_one",
-      "reasons": [
-        "easy-win neighbour of \"black therapist near me\" (top 1 with 1 impressions)",
-        "people search it (autocomplete or impressions)"
-      ]
-    },
-    {
-      "query": "memphis negotiation training",
-      "variants": [],
-      "signals": {
-        "words": 3,
-        "question": false,
-        "gsc_position": 12.3,
-        "gsc_impressions": 4,
-        "gsc_page": "https://www.hicksconsulting.org/resources/guides/memphis-organizational-mental-health-training/",
-        "top10": "not read: no BRAVE_SEARCH_API_KEY"
-      },
-      "scores": {
-        "striking": 41.5,
-        "can_be_one": 0
-      },
-      "score": 41.5,
-      "kind": "new",
-      "lane": "striking",
-      "reasons": [
-        "already ranks 12.3 in Search Console (4 impressions)"
-      ]
-    },
-    {
-      "query": "black relationship therapist near me",
-      "variants": [],
-      "signals": {
-        "words": 5,
-        "question": false,
-        "bing_suggest": true,
-        "neighbour": {
-          "sim": 0.75,
-          "of": "black therapist near me",
-          "why": "top 1 with 1 impressions"
-        },
-        "top10": "not read: no BRAVE_SEARCH_API_KEY"
-      },
-      "scores": {
-        "striking": 20,
-        "can_be_one": 36.3
-      },
-      "score": 36.3,
-      "kind": "new",
-      "lane": "can_be_one",
-      "reasons": [
-        "easy-win neighbour of \"black therapist near me\" (top 1 with 1 impressions)",
-        "people search it (autocomplete or impressions)"
-      ]
-    },
-    {
-      "query": "black woman therapist near me",
-      "variants": [],
-      "signals": {
-        "words": 5,
-        "question": false,
-        "bing_suggest": true,
-        "neighbour": {
-          "sim": 0.75,
-          "of": "black therapist near me",
-          "why": "top 1 with 1 impressions"
-        },
-        "top10": "not read: no BRAVE_SEARCH_API_KEY"
-      },
-      "scores": {
-        "striking": 20,
-        "can_be_one": 36.3
-      },
-      "score": 36.3,
-      "kind": "new",
-      "lane": "can_be_one",
-      "reasons": [
-        "easy-win neighbour of \"black therapist near me\" (top 1 with 1 impressions)",
-        "people search it (autocomplete or impressions)"
-      ]
-    },
-    {
-      "query": "african american women therapist near me",
-      "variants": [],
-      "signals": {
-        "words": 6,
-        "question": false,
-        "google_suggest": true,
-        "bing_suggest": true,
-        "neighbour": {
-          "sim": 0.6,
           "of": "black women therapist near me",
           "why": "top 1 with 1 impressions"
         },
         "top10": "not read: no BRAVE_SEARCH_API_KEY"
       },
       "scores": {
-        "striking": 40,
-        "can_be_one": 31
-      },
-      "score": 40,
-      "kind": "new",
-      "lane": "striking",
-      "reasons": [
-        "autocomplete demand (google/bing)",
-        "can-be-#1 score 31 too (taken by the striking lane's turn)"
-      ]
-    },
-    {
-      "query": "top black therapist near me",
-      "variants": [],
-      "signals": {
-        "words": 5,
-        "question": false,
-        "google_suggest": true,
-        "neighbour": {
-          "sim": 0.75,
-          "of": "black therapist near me",
-          "why": "top 1 with 1 impressions"
-        },
-        "top10": "not read: no BRAVE_SEARCH_API_KEY"
-      },
-      "scores": {
         "striking": 25,
         "can_be_one": 36.3
       },
@@ -576,7 +344,7 @@
       "kind": "new",
       "lane": "can_be_one",
       "reasons": [
-        "easy-win neighbour of \"black therapist near me\" (top 1 with 1 impressions)",
+        "easy-win neighbour of \"black women therapist near me\" (top 1 with 1 impressions)",
         "people search it (autocomplete or impressions)"
       ]
     },
@@ -607,12 +375,242 @@
       ]
     },
     {
-      "query": "african american female therapist near me",
-      "variants": [
-        "female african american therapist near me"
-      ],
+      "query": "nearest therapist near me",
+      "variants": [],
+      "signals": {
+        "words": 4,
+        "question": false,
+        "gsc_position": 11,
+        "gsc_impressions": 1,
+        "gsc_page": "https://www.hicksconsulting.org/resources/guides/how-to-choose-a-therapist-near-you/",
+        "neighbour": {
+          "sim": 0.5,
+          "of": "black women therapist near me",
+          "why": "top 1 with 1 impressions"
+        },
+        "top10": "not read: no BRAVE_SEARCH_API_KEY"
+      },
+      "scores": {
+        "striking": 48.5,
+        "can_be_one": 27.5
+      },
+      "score": 48.5,
+      "kind": "new",
+      "lane": "striking",
+      "reasons": [
+        "already ranks 11 in Search Console (1 impressions)",
+        "can-be-#1 score 27.5 too (taken by the striking lane's turn)"
+      ]
+    },
+    {
+      "query": "find a black therapist near me",
+      "variants": [],
       "signals": {
         "words": 6,
+        "question": false,
+        "bing_suggest": true,
+        "neighbour": {
+          "sim": 0.75,
+          "of": "black women therapist near me",
+          "why": "top 1 with 1 impressions"
+        },
+        "top10": "not read: no BRAVE_SEARCH_API_KEY"
+      },
+      "scores": {
+        "striking": 20,
+        "can_be_one": 36.3
+      },
+      "score": 36.3,
+      "kind": "new",
+      "lane": "can_be_one",
+      "reasons": [
+        "easy-win neighbour of \"black women therapist near me\" (top 1 with 1 impressions)",
+        "people search it (autocomplete or impressions)"
+      ]
+    },
+    {
+      "query": "black women therapist website",
+      "variants": [],
+      "signals": {
+        "words": 4,
+        "question": false,
+        "bing_suggest": true,
+        "neighbour": {
+          "sim": 0.75,
+          "of": "black women therapist near me",
+          "why": "top 1 with 1 impressions"
+        },
+        "top10": "not read: no BRAVE_SEARCH_API_KEY"
+      },
+      "scores": {
+        "striking": 20,
+        "can_be_one": 36.3
+      },
+      "score": 36.3,
+      "kind": "new",
+      "lane": "can_be_one",
+      "reasons": [
+        "easy-win neighbour of \"black women therapist near me\" (top 1 with 1 impressions)",
+        "people search it (autocomplete or impressions)"
+      ]
+    },
+    {
+      "query": "memphis negotiation training",
+      "variants": [],
+      "signals": {
+        "words": 3,
+        "question": false,
+        "gsc_position": 12.3,
+        "gsc_impressions": 4,
+        "gsc_page": "https://www.hicksconsulting.org/resources/guides/memphis-organizational-mental-health-training/",
+        "top10": "not read: no BRAVE_SEARCH_API_KEY"
+      },
+      "scores": {
+        "striking": 41.5,
+        "can_be_one": 0
+      },
+      "score": 41.5,
+      "kind": "new",
+      "lane": "striking",
+      "reasons": [
+        "already ranks 12.3 in Search Console (4 impressions)"
+      ]
+    },
+    {
+      "query": "black therapist near me online",
+      "variants": [],
+      "signals": {
+        "words": 5,
+        "question": false,
+        "bing_suggest": true,
+        "neighbour": {
+          "sim": 0.75,
+          "of": "black women therapist near me",
+          "why": "top 1 with 1 impressions"
+        },
+        "top10": "not read: no BRAVE_SEARCH_API_KEY"
+      },
+      "scores": {
+        "striking": 20,
+        "can_be_one": 36.3
+      },
+      "score": 36.3,
+      "kind": "new",
+      "lane": "can_be_one",
+      "reasons": [
+        "easy-win neighbour of \"black women therapist near me\" (top 1 with 1 impressions)",
+        "people search it (autocomplete or impressions)"
+      ]
+    },
+    {
+      "query": "african american women therapist near me",
+      "variants": [],
+      "signals": {
+        "words": 6,
+        "question": false,
+        "google_suggest": true,
+        "bing_suggest": true,
+        "neighbour": {
+          "sim": 0.6,
+          "of": "black women therapist near me",
+          "why": "top 1 with 1 impressions"
+        },
+        "top10": "not read: no BRAVE_SEARCH_API_KEY"
+      },
+      "scores": {
+        "striking": 40,
+        "can_be_one": 31
+      },
+      "score": 31,
+      "kind": "new",
+      "lane": "can_be_one",
+      "reasons": [
+        "easy-win neighbour of \"black women therapist near me\" (top 1 with 1 impressions)",
+        "people search it (autocomplete or impressions)"
+      ]
+    },
+    {
+      "query": "integrator overwhelmed",
+      "variants": [],
+      "signals": {
+        "words": 2,
+        "question": false,
+        "gsc_position": 10,
+        "gsc_impressions": 1,
+        "gsc_page": "https://www.hicksconsulting.org/resources/insights/how-to-notice-when-overwhelm-is-turning-into-shutdown-a-gentler-truth-to-consider/",
+        "top10": "not read: no BRAVE_SEARCH_API_KEY"
+      },
+      "scores": {
+        "striking": 40.4,
+        "can_be_one": 0
+      },
+      "score": 40.4,
+      "kind": "new",
+      "lane": "striking",
+      "reasons": [
+        "already ranks 10 in Search Console (1 impressions)"
+      ]
+    },
+    {
+      "query": "black female therapist near me online",
+      "variants": [],
+      "signals": {
+        "words": 6,
+        "question": false,
+        "bing_suggest": true,
+        "neighbour": {
+          "sim": 0.6,
+          "of": "black women therapist near me",
+          "why": "top 1 with 1 impressions"
+        },
+        "top10": "not read: no BRAVE_SEARCH_API_KEY"
+      },
+      "scores": {
+        "striking": 20,
+        "can_be_one": 31
+      },
+      "score": 31,
+      "kind": "new",
+      "lane": "can_be_one",
+      "reasons": [
+        "easy-win neighbour of \"black women therapist near me\" (top 1 with 1 impressions)",
+        "people search it (autocomplete or impressions)"
+      ]
+    },
+    {
+      "query": "black woman counselor near me",
+      "variants": [],
+      "signals": {
+        "words": 5,
+        "question": false,
+        "google_suggest": true,
+        "neighbour": {
+          "sim": 0.5,
+          "of": "black women therapist near me",
+          "why": "top 1 with 1 impressions"
+        },
+        "top10": "not read: no BRAVE_SEARCH_API_KEY"
+      },
+      "scores": {
+        "striking": 25,
+        "can_be_one": 27.5
+      },
+      "score": 27.5,
+      "kind": "new",
+      "lane": "can_be_one",
+      "reasons": [
+        "easy-win neighbour of \"black women therapist near me\" (top 1 with 1 impressions)",
+        "people search it (autocomplete or impressions)"
+      ]
+    },
+    {
+      "query": "black women therapist near me",
+      "variants": [
+        "black therapist near me for women",
+        "black women therapists near me"
+      ],
+      "signals": {
+        "words": 5,
         "question": false,
         "google_suggest": true,
         "bing_suggest": true,
@@ -630,158 +628,10 @@
       ]
     },
     {
-      "query": "therapist for black girls",
-      "variants": [],
-      "signals": {
-        "words": 4,
-        "question": false,
-        "bing_suggest": true,
-        "neighbour": {
-          "sim": 0.67,
-          "of": "black therapist near me",
-          "why": "top 1 with 1 impressions"
-        },
-        "top10": "not read: no BRAVE_SEARCH_API_KEY"
-      },
-      "scores": {
-        "striking": 20,
-        "can_be_one": 33.5
-      },
-      "score": 33.5,
-      "kind": "new",
-      "lane": "can_be_one",
-      "reasons": [
-        "easy-win neighbour of \"black therapist near me\" (top 1 with 1 impressions)",
-        "people search it (autocomplete or impressions)"
-      ]
-    },
-    {
-      "query": "black female therapist near me online",
-      "variants": [],
-      "signals": {
-        "words": 6,
-        "question": false,
-        "bing_suggest": true,
-        "neighbour": {
-          "sim": 0.6,
-          "of": "black female psychologist near me",
-          "why": "top 1 with 1 impressions"
-        },
-        "top10": "not read: no BRAVE_SEARCH_API_KEY"
-      },
-      "scores": {
-        "striking": 20,
-        "can_be_one": 31
-      },
-      "score": 31,
-      "kind": "new",
-      "lane": "can_be_one",
-      "reasons": [
-        "easy-win neighbour of \"black female psychologist near me\" (top 1 with 1 impressions)",
-        "people search it (autocomplete or impressions)"
-      ]
-    },
-    {
-      "query": "how to map key experts in a therapy area",
-      "variants": [],
-      "signals": {
-        "words": 9,
-        "question": true,
-        "gsc_position": 20,
-        "gsc_impressions": 1,
-        "gsc_page": "https://www.hicksconsulting.org/resources/guides/how-to-choose-a-therapist-near-you/",
-        "top10": "not read: no BRAVE_SEARCH_API_KEY"
-      },
-      "scores": {
-        "striking": 37.2,
-        "can_be_one": 0
-      },
-      "score": 37.2,
-      "kind": "new",
-      "lane": "striking",
-      "reasons": [
-        "already ranks 20 in Search Console (1 impressions)"
-      ]
-    },
-    {
-      "query": "black woman counselor near me",
-      "variants": [],
-      "signals": {
-        "words": 5,
-        "question": false,
-        "google_suggest": true,
-        "neighbour": {
-          "sim": 0.5,
-          "of": "black female psychologist near me",
-          "why": "top 1 with 1 impressions"
-        },
-        "top10": "not read: no BRAVE_SEARCH_API_KEY"
-      },
-      "scores": {
-        "striking": 25,
-        "can_be_one": 27.5
-      },
-      "score": 27.5,
-      "kind": "new",
-      "lane": "can_be_one",
-      "reasons": [
-        "easy-win neighbour of \"black female psychologist near me\" (top 1 with 1 impressions)",
-        "people search it (autocomplete or impressions)"
-      ]
-    },
-    {
       "query": "black female mental health therapist near me",
       "variants": [],
       "signals": {
         "words": 7,
-        "question": false,
-        "bing_suggest": true,
-        "neighbour": {
-          "sim": 0.5,
-          "of": "black female psychologist near me",
-          "why": "top 1 with 1 impressions"
-        },
-        "top10": "not read: no BRAVE_SEARCH_API_KEY"
-      },
-      "scores": {
-        "striking": 20,
-        "can_be_one": 27.5
-      },
-      "score": 27.5,
-      "kind": "new",
-      "lane": "can_be_one",
-      "reasons": [
-        "easy-win neighbour of \"black female psychologist near me\" (top 1 with 1 impressions)",
-        "people search it (autocomplete or impressions)"
-      ]
-    },
-    {
-      "query": "online therapy in tennessee",
-      "variants": [],
-      "signals": {
-        "words": 4,
-        "question": false,
-        "gsc_position": 21,
-        "gsc_impressions": 1,
-        "gsc_page": "https://www.hicksconsulting.org/resources/guides/online-therapy-memphis-how-virtual-sessions-work/",
-        "top10": "not read: no BRAVE_SEARCH_API_KEY"
-      },
-      "scores": {
-        "striking": 30.4,
-        "can_be_one": 0
-      },
-      "score": 30.4,
-      "kind": "new",
-      "lane": "striking",
-      "reasons": [
-        "already ranks 21 in Search Console (1 impressions)"
-      ]
-    },
-    {
-      "query": "counselling for black women",
-      "variants": [],
-      "signals": {
-        "words": 4,
         "question": false,
         "bing_suggest": true,
         "neighbour": {
@@ -830,19 +680,22 @@
       ]
     },
     {
-      "query": "african american female counselors near me",
-      "variants": [],
+      "query": "african american female therapist near me",
+      "variants": [
+        "female african american therapist near me"
+      ],
       "signals": {
         "words": 6,
         "question": false,
+        "bing_suggest": true,
         "google_suggest": true,
         "top10": "not read: no BRAVE_SEARCH_API_KEY"
       },
       "scores": {
-        "striking": 25,
+        "striking": 40,
         "can_be_one": 0
       },
-      "score": 25,
+      "score": 40,
       "kind": "new",
       "lane": "striking",
       "reasons": [
@@ -874,22 +727,325 @@
         "easy-win neighbour of \"black women therapist near me\" (top 1 with 1 impressions)",
         "people search it (autocomplete or impressions)"
       ]
+    },
+    {
+      "query": "therapist for black girls",
+      "variants": [],
+      "signals": {
+        "words": 4,
+        "question": false,
+        "bing_suggest": true,
+        "neighbour": {
+          "sim": 0.5,
+          "of": "black women therapist near me",
+          "why": "top 1 with 1 impressions"
+        },
+        "top10": "not read: no BRAVE_SEARCH_API_KEY"
+      },
+      "scores": {
+        "striking": 20,
+        "can_be_one": 27.5
+      },
+      "score": 27.5,
+      "kind": "new",
+      "lane": "can_be_one",
+      "reasons": [
+        "easy-win neighbour of \"black women therapist near me\" (top 1 with 1 impressions)",
+        "people search it (autocomplete or impressions)"
+      ]
+    },
+    {
+      "query": "how to map key experts in a therapy area",
+      "variants": [],
+      "signals": {
+        "words": 9,
+        "question": true,
+        "gsc_position": 20,
+        "gsc_impressions": 1,
+        "gsc_page": "https://www.hicksconsulting.org/resources/guides/how-to-choose-a-therapist-near-you/",
+        "top10": "not read: no BRAVE_SEARCH_API_KEY"
+      },
+      "scores": {
+        "striking": 37.2,
+        "can_be_one": 0
+      },
+      "score": 37.2,
+      "kind": "new",
+      "lane": "striking",
+      "reasons": [
+        "already ranks 20 in Search Console (1 impressions)"
+      ]
+    },
+    {
+      "query": "workplace wellness consultant training",
+      "variants": [],
+      "signals": {
+        "words": 4,
+        "question": false,
+        "bing_suggest": true,
+        "neighbour": {
+          "sim": 0.5,
+          "of": "corporate wellness consultant",
+          "why": "top 1 with 2 impressions"
+        },
+        "top10": "not read: no BRAVE_SEARCH_API_KEY"
+      },
+      "scores": {
+        "striking": 20,
+        "can_be_one": 27.5
+      },
+      "score": 27.5,
+      "kind": "new",
+      "lane": "can_be_one",
+      "reasons": [
+        "easy-win neighbour of \"corporate wellness consultant\" (top 1 with 2 impressions)",
+        "people search it (autocomplete or impressions)"
+      ]
+    },
+    {
+      "query": "counselor memphis tn online",
+      "variants": [],
+      "signals": {
+        "words": 4,
+        "question": false,
+        "local": true,
+        "place_variant_of": "counselor cordova tn online",
+        "neighbour": {
+          "sim": 0.75,
+          "of": "counselor cordova tn online",
+          "why": "engine page in the top 3 within 14 days"
+        },
+        "top10": "not read: no BRAVE_SEARCH_API_KEY"
+      },
+      "scores": {
+        "striking": 15,
+        "can_be_one": 26.3
+      },
+      "score": 26.3,
+      "kind": "new",
+      "lane": "can_be_one",
+      "reasons": [
+        "easy-win neighbour of \"counselor cordova tn online\" (engine page in the top 3 within 14 days)"
+      ]
+    },
+    {
+      "query": "online therapy in tennessee",
+      "variants": [],
+      "signals": {
+        "words": 4,
+        "question": false,
+        "gsc_position": 21,
+        "gsc_impressions": 1,
+        "gsc_page": "https://www.hicksconsulting.org/resources/guides/online-therapy-memphis-how-virtual-sessions-work/",
+        "top10": "not read: no BRAVE_SEARCH_API_KEY"
+      },
+      "scores": {
+        "striking": 30.4,
+        "can_be_one": 0
+      },
+      "score": 30.4,
+      "kind": "new",
+      "lane": "striking",
+      "reasons": [
+        "already ranks 21 in Search Console (1 impressions)"
+      ]
+    },
+    {
+      "query": "counselor germantown tn online",
+      "variants": [],
+      "signals": {
+        "words": 4,
+        "question": false,
+        "local": true,
+        "place_variant_of": "counselor cordova tn online",
+        "neighbour": {
+          "sim": 0.75,
+          "of": "counselor cordova tn online",
+          "why": "engine page in the top 3 within 14 days"
+        },
+        "top10": "not read: no BRAVE_SEARCH_API_KEY"
+      },
+      "scores": {
+        "striking": 15,
+        "can_be_one": 26.3
+      },
+      "score": 26.3,
+      "kind": "new",
+      "lane": "can_be_one",
+      "reasons": [
+        "easy-win neighbour of \"counselor cordova tn online\" (engine page in the top 3 within 14 days)"
+      ]
+    },
+    {
+      "query": "counselor collierville tn online",
+      "variants": [],
+      "signals": {
+        "words": 4,
+        "question": false,
+        "local": true,
+        "place_variant_of": "counselor cordova tn online",
+        "neighbour": {
+          "sim": 0.75,
+          "of": "counselor cordova tn online",
+          "why": "engine page in the top 3 within 14 days"
+        },
+        "top10": "not read: no BRAVE_SEARCH_API_KEY"
+      },
+      "scores": {
+        "striking": 15,
+        "can_be_one": 26.3
+      },
+      "score": 26.3,
+      "kind": "new",
+      "lane": "can_be_one",
+      "reasons": [
+        "easy-win neighbour of \"counselor cordova tn online\" (engine page in the top 3 within 14 days)"
+      ]
+    },
+    {
+      "query": "counselor bartlett tn online",
+      "variants": [],
+      "signals": {
+        "words": 4,
+        "question": false,
+        "local": true,
+        "place_variant_of": "counselor cordova tn online",
+        "neighbour": {
+          "sim": 0.75,
+          "of": "counselor cordova tn online",
+          "why": "engine page in the top 3 within 14 days"
+        },
+        "top10": "not read: no BRAVE_SEARCH_API_KEY"
+      },
+      "scores": {
+        "striking": 15,
+        "can_be_one": 26.3
+      },
+      "score": 15,
+      "kind": "new",
+      "lane": "striking",
+      "reasons": [
+        "autocomplete demand (google/bing)",
+        "can-be-#1 score 26.3 too (taken by the striking lane's turn)"
+      ]
+    },
+    {
+      "query": "counselor shelby county tn online",
+      "variants": [],
+      "signals": {
+        "words": 5,
+        "question": false,
+        "local": true,
+        "place_variant_of": "counselor cordova tn online",
+        "neighbour": {
+          "sim": 0.6,
+          "of": "counselor cordova tn online",
+          "why": "engine page in the top 3 within 14 days"
+        },
+        "top10": "not read: no BRAVE_SEARCH_API_KEY"
+      },
+      "scores": {
+        "striking": 15,
+        "can_be_one": 21
+      },
+      "score": 21,
+      "kind": "new",
+      "lane": "can_be_one",
+      "reasons": [
+        "easy-win neighbour of \"counselor cordova tn online\" (engine page in the top 3 within 14 days)"
+      ]
     }
   ],
   "strengthen": [
     {
-      "query": "black therapist near me",
-      "variants": [
-        "black therapists near me",
-        "best black therapist near me"
-      ],
+      "query": "black therapist memphis tn",
+      "variants": [],
       "signals": {
         "words": 4,
         "question": false,
-        "gsc_position": 8.3,
-        "gsc_impressions": 3,
+        "gsc_position": 9.3,
+        "gsc_impressions": 16,
         "gsc_page": "https://www.hicksconsulting.org/black-therapist-memphis/",
-        "google_suggest": true,
+        "neighbour": {
+          "sim": 0.5,
+          "of": "black women therapist near me",
+          "why": "top 1 with 1 impressions"
+        }
+      },
+      "scores": {
+        "striking": 64,
+        "can_be_one": 27.5
+      },
+      "score": 64,
+      "page": "/black-therapist-memphis/"
+    },
+    {
+      "query": "black therapist",
+      "variants": [],
+      "signals": {
+        "words": 2,
+        "question": false,
+        "gsc_position": 9,
+        "gsc_impressions": 2,
+        "gsc_page": "https://www.hicksconsulting.org/black-therapist-memphis/",
+        "neighbour": {
+          "sim": 0.5,
+          "of": "black women therapist near me",
+          "why": "top 1 with 1 impressions"
+        }
+      },
+      "scores": {
+        "striking": 44.5,
+        "can_be_one": 27.5
+      },
+      "score": 44.5,
+      "page": "/black-therapist-memphis/"
+    },
+    {
+      "query": "black christian therapist near me",
+      "variants": [],
+      "signals": {
+        "words": 5,
+        "question": false,
+        "gsc_position": 20,
+        "gsc_impressions": 1,
+        "gsc_page": "https://www.hicksconsulting.org/",
+        "neighbour": {
+          "sim": 0.75,
+          "of": "black women therapist near me",
+          "why": "top 1 with 1 impressions"
+        }
+      },
+      "scores": {
+        "striking": 32.2,
+        "can_be_one": 36.3
+      },
+      "score": 32.2,
+      "page": "/questions/black-christian-therapist-near-me-cost/"
+    },
+    {
+      "query": "online therapy memphis",
+      "variants": [],
+      "signals": {
+        "words": 3,
+        "question": false,
+        "gsc_position": 20,
+        "gsc_impressions": 1,
+        "gsc_page": "https://www.hicksconsulting.org/therapy/"
+      },
+      "scores": {
+        "striking": 22.2,
+        "can_be_one": 0
+      },
+      "score": 22.2,
+      "page": "/resources/guides/online-therapy-memphis-how-virtual-sessions-work/"
+    },
+    {
+      "query": "black therapist near me",
+      "variants": [],
+      "signals": {
+        "words": 4,
+        "question": false,
         "bing_suggest": true,
         "neighbour": {
           "sim": 0.75,
@@ -898,50 +1054,11 @@
         }
       },
       "scores": {
-        "striking": 87.5,
+        "striking": 20,
         "can_be_one": 36.3
       },
-      "score": 87.5,
+      "score": 20,
       "page": "/questions/black-christian-therapist-near-me-cost/"
-    },
-    {
-      "query": "black therapist memphis tn",
-      "variants": [],
-      "signals": {
-        "words": 4,
-        "question": false,
-        "gsc_position": 10,
-        "gsc_impressions": 1,
-        "gsc_page": "https://www.hicksconsulting.org/therapy/",
-        "neighbour": {
-          "sim": 0.5,
-          "of": "black therapist near me",
-          "why": "top 1 with 1 impressions"
-        }
-      },
-      "scores": {
-        "striking": 50.4,
-        "can_be_one": 27.5
-      },
-      "score": 50.4,
-      "page": "/black-therapist-memphis/"
-    },
-    {
-      "query": "online therapy memphis",
-      "variants": [],
-      "signals": {
-        "words": 3,
-        "question": false,
-        "gsc_position": 21.3,
-        "gsc_impressions": 3,
-        "gsc_page": "https://www.hicksconsulting.org/therapy/"
-      },
-      "scores": {
-        "striking": 23.8,
-        "can_be_one": 0
-      },
-      "score": 23.8,
-      "page": "/resources/guides/online-therapy-memphis-how-virtual-sessions-work/"
     },
     {
       "query": "black therapist for women",
@@ -967,7 +1084,9 @@
     },
     {
       "query": "black women and therapy",
-      "variants": [],
+      "variants": [
+        "therapy for black women"
+      ],
       "signals": {
         "words": 4,
         "question": false,
@@ -995,14 +1114,14 @@
         "gsc_impressions": 2,
         "gsc_page": "https://www.hicksconsulting.org/",
         "neighbour": {
-          "sim": 0.67,
-          "of": "black therapist near me",
+          "sim": 0.5,
+          "of": "black women therapist near me",
           "why": "top 1 with 1 impressions"
         }
       },
       "scores": {
         "striking": 15.4,
-        "can_be_one": 33.5
+        "can_be_one": 27.5
       },
       "score": 15.4,
       "page": "/questions/black-christian-therapist-near-me-cost/"
