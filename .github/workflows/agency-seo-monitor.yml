@@ -21,7 +21,8 @@ permissions:
 
 jobs:
   monitor:
-    if: ${{ !inputs.search_truth_only }}
+    environment: reviewed-main
+    if: github.ref == 'refs/heads/main' && (!inputs.search_truth_only)
     timeout-minutes: 5  # ~3x median 0.3m over 8 green runs; fault detector, not a budget
     runs-on: ubuntu-latest
     env:
@@ -89,6 +90,8 @@ jobs:
   # later decision reads a file, not a one-off pull. Measurement only: qualifying
   # demand families are recorded as client proposals; nothing on the site changes.
   search-truth:
+    if: github.ref == 'refs/heads/main'
+    environment: reviewed-main
     timeout-minutes: 10  # new job: ~139 URL inspections at 8 parallel (~6 s each) plus two Search Analytics calls; fault detector, not a budget
     runs-on: ubuntu-latest
     env:

@@ -15,6 +15,8 @@ permissions:
 
 jobs:
   ingest:
+    if: github.ref == 'refs/heads/main'
+    environment: reviewed-main
     timeout-minutes: 6  # ~3x median 1.8m over 8 green runs; fault detector, not a budget
     runs-on: ubuntu-latest
 
