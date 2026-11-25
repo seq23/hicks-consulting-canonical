@@ -3399,7 +3399,7 @@
           "reason": "Candidate admitted inside the existing content policy and ownership boundaries."
         }
       ],
-      "updatedAt": "2026-11-20T15:45:09.197Z",
+      "updatedAt": "2026-11-25T00:06:35.944Z",
       "providerGate": "LLM_PROVIDER_NOT_CONFIGURED"
     },
     {
@@ -3556,7 +3556,7 @@
         "What not to do",
         "When it is time to talk to someone"
       ],
-      "state": "DISCOVERED",
+      "state": "SKIPPED_PROHIBITED_ACTION",
       "routineApprovalRequired": true,
       "publicOnlyAfterApproval": true,
       "source": "legacy_generated_queue_migration",
@@ -3571,8 +3571,21 @@
           "to": "DISCOVERED",
           "at": "2026-09-28T10:47:27.741Z",
           "reason": "Migrated from the prior approval-only generated queue."
+        },
+        {
+          "from": "DISCOVERED",
+          "to": "SCORED",
+          "at": "2026-11-25T00:06:35.944Z",
+          "reason": "Candidate score normalized for autonomous admission."
+        },
+        {
+          "from": "SCORED",
+          "to": "SKIPPED_PROHIBITED_ACTION",
+          "at": "2026-11-25T00:06:35.944Z",
+          "reason": "Candidate did not meet the configured admission score."
         }
-      ]
+      ],
+      "updatedAt": "2026-11-25T00:06:35.944Z"
     },
     {
       "id": "continuity-insight-2027-01-25-e19a560888d9",
