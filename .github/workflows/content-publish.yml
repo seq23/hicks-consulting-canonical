@@ -27,6 +27,8 @@ permissions:
   contents: write
 jobs:
   publish:
+    if: github.ref == 'refs/heads/main'
+    environment: reviewed-main
     timeout-minutes: 40  # release ~0.3m; the calendar writer is budgeted at 20m of free-model calls (25m step cap)
     runs-on: ubuntu-latest
     steps:

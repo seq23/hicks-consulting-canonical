@@ -12,6 +12,8 @@ concurrency:
 
 jobs:
   autonomy:
+    if: github.ref == 'refs/heads/main'
+    environment: reviewed-main
     runs-on: ubuntu-latest
     timeout-minutes: 30
     steps:

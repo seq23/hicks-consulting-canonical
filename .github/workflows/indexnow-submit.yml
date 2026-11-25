@@ -2,6 +2,7 @@ name: Post-Publish Distribution
 
 on:
   workflow_run:
+    branches: [main]
     workflows: ["Content Publish"]
     types: [completed]
   workflow_dispatch:
@@ -15,8 +16,9 @@ concurrency:
 
 jobs:
   distribute:
+    environment: reviewed-main
     timeout-minutes: 7  # ~3x median 2.1m over 8 green runs; fault detector, not a budget
-    if: ${{ github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success' }}
+    if: github.ref == 'refs/heads/main' && (github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success')
     runs-on: ubuntu-latest
     env:
       SITE_URL: https://www.hicksconsulting.org
