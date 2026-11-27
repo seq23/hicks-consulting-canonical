@@ -30,3 +30,10 @@ if (!publish.includes("checkoutStatus: item.productType === 'premium' ? 'live' :
 if (!update.includes('validateProductForPublication(product)')) fail('Update endpoint must validate publish attempts before writing.');
 if (!update.includes('upsertProduct(catalog, product)')) fail('Update endpoint must merge product records instead of replacing blindly.');
 console.log('Digital product API behavior contract OK');
+
+// The public file route serves only free downloads and covers, never a paid product's file
+// (27 Nov 2026: the paid workbook downloaded free by its key). Behaviour, on the real worker.
+const fileBehavior = require('child_process').spawnSync(process.execPath,
+  ['_ops/validators/deep/verify_digital_product_files.mjs'], { encoding: 'utf8' });
+if (fileBehavior.status !== 0) fail(`Digital product file route behavior failed: ${fileBehavior.stderr || fileBehavior.stdout || fileBehavior.error}`);
+process.stdout.write(fileBehavior.stdout);
