@@ -246,10 +246,32 @@ async function handleDigitalProductRevoke(request, env) {
   if (!write.ok) return write.response;
   return jsonResponse({ ok: true, products });
 }
+// What the public file route may serve (27 Nov 2026): a FREE product's own download (unless it was
+// revoked) and any catalogued product's cover. A paid product's file is never served here, by id or
+// by key: Gumroad delivers it after payment, so nothing on this site hands it out. Anything else —
+// an uncatalogued key, a paid product's source, a catalog that cannot be read — is a 404.
+function digitalProductFileKey(url) {
+  if (typeof url !== 'string' || !url) return null;
+  let pathname;
+  try { pathname = new URL(url, 'https://local.invalid').pathname; } catch { return null; }
+  if (!pathname.startsWith('/api/digital-products/file/')) return null;
+  try { return decodeURIComponent(pathname.slice('/api/digital-products/file/'.length)); } catch { return null; }
+}
+function digitalProductFileServable(catalog, key) {
+  const products = Array.isArray(catalog && catalog.products) ? catalog.products : [];
+  if (!key) return false;
+  // A paid product's own folder is closed whatever the catalog says about anything else.
+  if (products.some((p) => p && p.productType !== 'free' && p.id && key.startsWith(`digital-products/${p.id}/`) && !(p.coverImageUrl && digitalProductFileKey(p.coverImageUrl) === key))) return false;
+  return products.some((p) => p && (
+    (p.coverImageUrl && digitalProductFileKey(p.coverImageUrl) === key)
+    || (p.productType === 'free' && p.status !== 'revoked' && digitalProductFileKey(p.downloadUrl) === key)));
+}
 async function handleDigitalProductFile(request, env, url) {
   if (!env.DIGITAL_PRODUCT_FILES || typeof env.DIGITAL_PRODUCT_FILES.get !== 'function') return jsonResponse({ ok: false, error: 'DIGITAL_PRODUCT_FILES R2 binding is not configured.' }, 503);
-  const key = decodeURIComponent(url.pathname.replace(/^\/api\/digital-products\/file\//, ''));
+  const key = digitalProductFileKey(url.pathname);
   if (!key) return jsonResponse({ ok: false, error: 'Missing file key.' }, 400);
+  const catalog = await readDigitalProductsCatalog(request, env).catch(() => null);
+  if (!digitalProductFileServable(catalog, key)) return jsonResponse({ ok: false, error: 'File not found.' }, 404);
   const object = await env.DIGITAL_PRODUCT_FILES.get(key);
   if (!object) return jsonResponse({ ok: false, error: 'File not found.' }, 404);
   const headers = new Headers();
