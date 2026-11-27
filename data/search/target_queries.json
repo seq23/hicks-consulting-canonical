@@ -6369,7 +6369,7 @@
     }
   ],
   "discovery_gap_pass": {
-    "at": "2026-11-25T00:06:34.774Z",
+    "at": "2026-11-27T23:44:22.769Z",
     "by": "scripts/queries/score_discovery_gap.mjs",
     "why": "The observer read a 7-query hand-written list while Search Console reported 46 queries that actually put this practice in front of someone. The measured list is now the target list, ordered so the observer spends its 25-query budget on the queries a client arrives through.",
     "expansion_sources": [
@@ -6395,6 +6395,7 @@
     "quarantined_awaiting_targeting_decision": {
       "queries": [
         "addiction therapy near me",
+        "african american grief counselors near me",
         "african american therapist near me in person",
         "black behavioral therapist near me",
         "black family therapist near me",
@@ -6408,8 +6409,7 @@
         "nearest therapist near me",
         "therapist near me black",
         "therapist near me black female",
-        "therapy near me",
-        "african american grief counselors near me"
+        "therapy near me"
       ],
       "window_days": 14,
       "why": "A query that implies a place and names none cannot be answered as typed. These arrived from a Search Console refresh nobody reviewed, so they are measured but not admitted: blue_ocean_eligible is false and no generator may draft against them until a localized variant or a recorded non-target decision exists.",
@@ -6440,7 +6440,7 @@
     },
     "counts": {
       "total_targets": 207,
-      "added_this_pass": 2,
+      "added_this_pass": 0,
       "with_openness_reading": 16,
       "lead_intent": {
         "T1_LOCAL_READY": 59,

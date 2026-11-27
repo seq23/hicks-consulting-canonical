@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-25T00:00:00.000Z",
+  "generatedAt": "2026-11-27T23:44:23.907Z",
   "policy": "full_safe_autonomy_llm_humanized_prewrite_validated",
   "candidates": [
     {
@@ -40,7 +40,7 @@
       },
       "targetWords": 2500,
       "minimumWords": 2000,
-      "sourceSignalCount": 9,
+      "sourceSignalCount": 10,
       "score": 100,
       "publishMode": "full_safe_autonomy",
       "autonomyStatus": "SYSTEM_BLOCKED",
@@ -97,7 +97,7 @@
       },
       "targetWords": 1400,
       "minimumWords": 1120,
-      "sourceSignalCount": 9,
+      "sourceSignalCount": 7,
       "score": 100,
       "publishMode": "full_safe_autonomy",
       "autonomyStatus": "SYSTEM_BLOCKED",
@@ -153,7 +153,7 @@
       },
       "targetWords": 1400,
       "minimumWords": 1120,
-      "sourceSignalCount": 224,
+      "sourceSignalCount": 226,
       "score": 100,
       "publishMode": "full_safe_autonomy",
       "autonomyStatus": "SYSTEM_BLOCKED",
@@ -4626,6 +4626,442 @@
       "queueType": "content_brief"
     },
     {
+      "id": "continuity-insight-2027-03-19-986622255bc4",
+      "clusterId": "hicks_fanout_010390_19dcbbe98e",
+      "clusterTitle": "AI, social media, and digital emotional overload",
+      "demandPhrasing": {
+        "source": "config/demand_phrasings.json",
+        "familyId": "ai_digital_wellness",
+        "clusterId": null,
+        "form": "how",
+        "groundedIn": [
+          "data/intake/query_clusters.json#ai_digital_wellness",
+          "data/intake/normalized_query_signals.json tag:ai_digital_wellness"
+        ],
+        "evidence": [
+          {
+            "kind": "cluster",
+            "id": "ai_digital_wellness",
+            "title": "AI, social media, and digital emotional overload",
+            "score": 100,
+            "queryCount": 9
+          }
+        ]
+      },
+      "contentType": "insight",
+      "cadence": "daily",
+      "title": "How do I come back from a week of numbing out?",
+      "suggestedRoute": "/resources/insights/how-do-i-come-back-from-a-week-of-numbing-out/",
+      "proposedScheduledAt": "2027-03-19T13:00:00.000Z",
+      "targetWords": 900,
+      "minimumWords": 720,
+      "sourceSignalCount": 1,
+      "score": 46.33,
+      "publishMode": "full_safe_autonomy",
+      "autonomyStatus": "DISCOVERED",
+      "llmGeneratedRequired": true,
+      "routineApprovalRequired": false,
+      "publicOnlyAfterApproval": false,
+      "continuity_generated": true,
+      "continuityAfter": "2027-01-01",
+      "continuityPolicy": "rolling_120_day_candidate_runway_existing_cadence",
+      "humanizationChecklist": [
+        "Use plain human language rather than generic therapy marketing copy.",
+        "Vary sentence rhythm and paragraph length.",
+        "Include concrete examples without inventing client stories.",
+        "Avoid exaggerated claims, guarantees, diagnosis, or pressure language.",
+        "Keep Monika Hicks / Hicks Consulting entity references consistent.",
+        "End with an approved conversion path only after value is delivered."
+      ],
+      "conversionPath": "https://monika-hicks.clientsecure.me/",
+      "sections": [
+        "Short answer",
+        "Before you start",
+        "Step by step",
+        "What to say",
+        "What gets in the way",
+        "How to tell it is working",
+        "Next step"
+      ],
+      "llmPrompt": "Create a humanized insight draft for Hicks Consulting.\nTitle: How do I come back from a week of numbing out?\nThis page exists to answer exactly one real question a person typed or said: \"How do I come back from a week of numbing out?\". Answer THAT question, in that person's words, in the first two sentences. Do not broaden it into a general overview of AI, social media, and digital emotional overload; other pages on this site cover other questions in the same area and this one must not overlap them.\nMinimum words: 720. Target words: 900.\nWrite in a warm, grounded, specific voice. Do not diagnose. Do not guarantee outcomes. Do not invent client stories.\nInclude these sections: Short answer; Before you start; Step by step; What to say; What gets in the way; How to tell it is working; Next step.\nApproved conversion path after value is delivered: https://monika-hicks.clientsecure.me/",
+      "queueType": "content_brief"
+    },
+    {
+      "id": "continuity-whitepaper-2027-03-20-6f0e08e5d824",
+      "clusterId": "hicks_fanout_062514_ac3994e341",
+      "clusterTitle": "General emotional wellness and intentional living",
+      "demandPhrasing": {
+        "source": "config/demand_phrasings.json",
+        "familyId": "general_emotional_wellness",
+        "clusterId": null,
+        "form": "why",
+        "groundedIn": [
+          "data/intake/query_clusters.json#general_emotional_wellness",
+          "data/intake/normalized_query_signals.json tag:general_emotional_wellness"
+        ],
+        "evidence": [
+          {
+            "kind": "cluster",
+            "id": "general_emotional_wellness",
+            "title": "General emotional wellness and intentional living",
+            "score": 100,
+            "queryCount": 224
+          }
+        ]
+      },
+      "contentType": "whitepaper",
+      "cadence": "quarterly",
+      "title": "Why does my chest get tight before a meeting?",
+      "suggestedRoute": "/resources/white-papers/why-does-my-chest-get-tight-before-a-meeting/",
+      "proposedScheduledAt": "2027-03-20T13:00:00.000Z",
+      "targetWords": 2500,
+      "minimumWords": 2000,
+      "sourceSignalCount": 1,
+      "score": 46.06,
+      "publishMode": "full_safe_autonomy",
+      "autonomyStatus": "DISCOVERED",
+      "llmGeneratedRequired": true,
+      "routineApprovalRequired": false,
+      "publicOnlyAfterApproval": false,
+      "continuity_generated": true,
+      "continuityAfter": "2027-01-01",
+      "continuityPolicy": "rolling_120_day_candidate_runway_existing_cadence",
+      "humanizationChecklist": [
+        "Use plain human language rather than generic therapy marketing copy.",
+        "Vary sentence rhythm and paragraph length.",
+        "Include concrete examples without inventing client stories.",
+        "Avoid exaggerated claims, guarantees, diagnosis, or pressure language.",
+        "Keep Monika Hicks / Hicks Consulting entity references consistent.",
+        "End with an approved conversion path only after value is delivered."
+      ],
+      "conversionPath": "https://monika-hicks.clientsecure.me/",
+      "sections": [
+        "Executive summary",
+        "The question people are actually asking",
+        "What the evidence shows",
+        "Audience analysis",
+        "Framework",
+        "Implementation guidance",
+        "Risks and limitations",
+        "Recommended next steps"
+      ],
+      "llmPrompt": "Create a humanized whitepaper draft for Hicks Consulting.\nTitle: Why does my chest get tight before a meeting?\nThis page exists to answer exactly one real question a person typed or said: \"Why does my chest get tight before a meeting?\". Answer THAT question, in that person's words, in the first two sentences. Do not broaden it into a general overview of General emotional wellness and intentional living; other pages on this site cover other questions in the same area and this one must not overlap them.\nMinimum words: 2000. Target words: 2500.\nWrite in a warm, grounded, specific voice. Do not diagnose. Do not guarantee outcomes. Do not invent client stories.\nInclude these sections: Executive summary; The question people are actually asking; What the evidence shows; Audience analysis; Framework; Implementation guidance; Risks and limitations; Recommended next steps.\nApproved conversion path after value is delivered: https://monika-hicks.clientsecure.me/",
+      "queueType": "content_brief"
+    },
+    {
+      "id": "continuity-insight-2027-03-22-95c96aca172c",
+      "clusterId": "hicks_fanout_031449_6db512f185",
+      "clusterTitle": "Workplace emotional intelligence and mental health training",
+      "demandPhrasing": {
+        "source": "config/demand_phrasings.json",
+        "familyId": "workplace_emotional_intelligence",
+        "clusterId": null,
+        "form": "what",
+        "groundedIn": [
+          "data/intake/query_clusters.json#workplace_emotional_intelligence",
+          "data/intake/normalized_query_signals.json tag:workplace_emotional_intelligence",
+          "data/search/target_queries.json query:'memphis small business consulting', 'consultant mental health'"
+        ],
+        "evidence": [
+          {
+            "kind": "cluster",
+            "id": "workplace_emotional_intelligence",
+            "title": "Workplace emotional intelligence and mental health training",
+            "score": 100,
+            "queryCount": 9
+          }
+        ]
+      },
+      "contentType": "insight",
+      "cadence": "daily",
+      "title": "What does psychological safety look like in a team of eight?",
+      "suggestedRoute": "/resources/insights/what-does-psychological-safety-look-like-in-a-team-of-eight/",
+      "proposedScheduledAt": "2027-03-22T13:00:00.000Z",
+      "targetWords": 900,
+      "minimumWords": 720,
+      "sourceSignalCount": 1,
+      "score": 45.6,
+      "publishMode": "full_safe_autonomy",
+      "autonomyStatus": "DISCOVERED",
+      "llmGeneratedRequired": true,
+      "routineApprovalRequired": false,
+      "publicOnlyAfterApproval": false,
+      "continuity_generated": true,
+      "continuityAfter": "2027-01-01",
+      "continuityPolicy": "rolling_120_day_candidate_runway_existing_cadence",
+      "humanizationChecklist": [
+        "Use plain human language rather than generic therapy marketing copy.",
+        "Vary sentence rhythm and paragraph length.",
+        "Include concrete examples without inventing client stories.",
+        "Avoid exaggerated claims, guarantees, diagnosis, or pressure language.",
+        "Keep Monika Hicks / Hicks Consulting entity references consistent.",
+        "End with an approved conversion path only after value is delivered."
+      ],
+      "conversionPath": "https://monika-hicks.clientsecure.me/",
+      "sections": [
+        "Short answer",
+        "Who this is for",
+        "What it looks like",
+        "How to tell the difference",
+        "Common mistakes",
+        "What to do next",
+        "When to seek support"
+      ],
+      "llmPrompt": "Create a humanized insight draft for Hicks Consulting.\nTitle: What does psychological safety look like in a team of eight?\nThis page exists to answer exactly one real question a person typed or said: \"What does psychological safety look like in a team of eight?\". Answer THAT question, in that person's words, in the first two sentences. Do not broaden it into a general overview of Workplace emotional intelligence and mental health training; other pages on this site cover other questions in the same area and this one must not overlap them.\nMinimum words: 720. Target words: 900.\nWrite in a warm, grounded, specific voice. Do not diagnose. Do not guarantee outcomes. Do not invent client stories.\nInclude these sections: Short answer; Who this is for; What it looks like; How to tell the difference; Common mistakes; What to do next; When to seek support.\nApproved conversion path after value is delivered: https://monika-hicks.clientsecure.me/",
+      "queueType": "content_brief"
+    },
+    {
+      "id": "continuity-insight-2027-03-23-c14ef0b6a873",
+      "clusterId": "hicks_fanout_045624_2e1e411c8c",
+      "clusterTitle": "Black women healing beyond survival",
+      "demandPhrasing": {
+        "source": "config/demand_phrasings.json",
+        "familyId": "black_women_healing",
+        "clusterId": null,
+        "form": "what",
+        "groundedIn": [
+          "data/intake/query_clusters.json#black_women_healing",
+          "data/intake/normalized_query_signals.json tag:black_women",
+          "data/search/target_queries.json query:'black female therapist near me', 'therapy for high-achieving Black women Memphis'"
+        ],
+        "evidence": [
+          {
+            "kind": "cluster",
+            "id": "black_women_healing",
+            "title": "Black women healing beyond survival",
+            "score": 20,
+            "queryCount": 1
+          }
+        ]
+      },
+      "contentType": "insight",
+      "cadence": "daily",
+      "title": "What does healing look like when survival is all I have practiced?",
+      "suggestedRoute": "/resources/insights/what-does-healing-look-like-when-survival-is-all-i-have-practiced/",
+      "proposedScheduledAt": "2027-03-23T13:00:00.000Z",
+      "targetWords": 900,
+      "minimumWords": 720,
+      "sourceSignalCount": 1,
+      "score": 45.14,
+      "publishMode": "full_safe_autonomy",
+      "autonomyStatus": "DISCOVERED",
+      "llmGeneratedRequired": true,
+      "routineApprovalRequired": false,
+      "publicOnlyAfterApproval": false,
+      "continuity_generated": true,
+      "continuityAfter": "2027-01-01",
+      "continuityPolicy": "rolling_120_day_candidate_runway_existing_cadence",
+      "humanizationChecklist": [
+        "Use plain human language rather than generic therapy marketing copy.",
+        "Vary sentence rhythm and paragraph length.",
+        "Include concrete examples without inventing client stories.",
+        "Avoid exaggerated claims, guarantees, diagnosis, or pressure language.",
+        "Keep Monika Hicks / Hicks Consulting entity references consistent.",
+        "End with an approved conversion path only after value is delivered."
+      ],
+      "conversionPath": "https://monika-hicks.clientsecure.me/",
+      "sections": [
+        "Short answer",
+        "Who this is for",
+        "What it looks like",
+        "How to tell the difference",
+        "Common mistakes",
+        "What to do next",
+        "When to seek support"
+      ],
+      "llmPrompt": "Create a humanized insight draft for Hicks Consulting.\nTitle: What does healing look like when survival is all I have practiced?\nThis page exists to answer exactly one real question a person typed or said: \"What does healing look like when survival is all I have practiced?\". Answer THAT question, in that person's words, in the first two sentences. Do not broaden it into a general overview of Black women healing beyond survival; other pages on this site cover other questions in the same area and this one must not overlap them.\nMinimum words: 720. Target words: 900.\nWrite in a warm, grounded, specific voice. Do not diagnose. Do not guarantee outcomes. Do not invent client stories.\nInclude these sections: Short answer; Who this is for; What it looks like; How to tell the difference; Common mistakes; What to do next; When to seek support.\nApproved conversion path after value is delivered: https://monika-hicks.clientsecure.me/",
+      "queueType": "content_brief"
+    },
+    {
+      "id": "continuity-article-2027-03-23-ab9f2dce7672",
+      "clusterId": "hicks_fanout_073578_d7e04e79ba",
+      "clusterTitle": "Burnout, boundaries, and over-functioning",
+      "demandPhrasing": {
+        "source": "config/demand_phrasings.json",
+        "familyId": "burnout_boundaries",
+        "clusterId": null,
+        "form": "why",
+        "groundedIn": [
+          "data/intake/query_clusters.json#burnout_boundaries",
+          "data/intake/normalized_query_signals.json tag:burnout",
+          "data/search/target_queries.json query:'burnout therapist Memphis'"
+        ],
+        "evidence": [
+          {
+            "kind": "cluster",
+            "id": "burnout_boundaries",
+            "title": "Burnout, boundaries, and over-functioning",
+            "score": 20,
+            "queryCount": 1
+          }
+        ]
+      },
+      "contentType": "article",
+      "cadence": "weekly",
+      "title": "Why does taking a day off make me feel worse?",
+      "suggestedRoute": "/resources/articles/why-does-taking-a-day-off-make-me-feel-worse/",
+      "proposedScheduledAt": "2027-03-23T13:00:00.000Z",
+      "targetWords": 1200,
+      "minimumWords": 960,
+      "sourceSignalCount": 1,
+      "score": 44.92,
+      "publishMode": "full_safe_autonomy",
+      "autonomyStatus": "DISCOVERED",
+      "llmGeneratedRequired": true,
+      "routineApprovalRequired": false,
+      "publicOnlyAfterApproval": false,
+      "continuity_generated": true,
+      "continuityAfter": "2027-01-01",
+      "continuityPolicy": "rolling_120_day_candidate_runway_existing_cadence",
+      "humanizationChecklist": [
+        "Use plain human language rather than generic therapy marketing copy.",
+        "Vary sentence rhythm and paragraph length.",
+        "Include concrete examples without inventing client stories.",
+        "Avoid exaggerated claims, guarantees, diagnosis, or pressure language.",
+        "Keep Monika Hicks / Hicks Consulting entity references consistent.",
+        "End with an approved conversion path only after value is delivered."
+      ],
+      "conversionPath": "https://monika-hicks.clientsecure.me/",
+      "sections": [
+        "Short answer",
+        "What is actually happening",
+        "Why it shows up this way",
+        "What it is not",
+        "What usually makes it worse",
+        "What helps",
+        "When to get support"
+      ],
+      "llmPrompt": "Create a humanized article draft for Hicks Consulting.\nTitle: Why does taking a day off make me feel worse?\nThis page exists to answer exactly one real question a person typed or said: \"Why does taking a day off make me feel worse?\". Answer THAT question, in that person's words, in the first two sentences. Do not broaden it into a general overview of Burnout, boundaries, and over-functioning; other pages on this site cover other questions in the same area and this one must not overlap them.\nMinimum words: 960. Target words: 1200.\nWrite in a warm, grounded, specific voice. Do not diagnose. Do not guarantee outcomes. Do not invent client stories.\nInclude these sections: Short answer; What is actually happening; Why it shows up this way; What it is not; What usually makes it worse; What helps; When to get support.\nApproved conversion path after value is delivered: https://monika-hicks.clientsecure.me/",
+      "queueType": "content_brief"
+    },
+    {
+      "id": "continuity-insight-2027-03-24-8d239efdf51d",
+      "clusterId": "hicks_fanout_091079_00e2c4c10d",
+      "clusterTitle": "Gen Z and millennial mental health language",
+      "demandPhrasing": {
+        "source": "config/demand_phrasings.json",
+        "familyId": "genz_millennial_mental_health",
+        "clusterId": null,
+        "form": "why",
+        "groundedIn": [
+          "data/intake/query_clusters.json#genz_millennial_mental_health",
+          "data/intake/normalized_query_signals.json tag:genz_millennial"
+        ],
+        "evidence": [
+          {
+            "kind": "cluster",
+            "id": "genz_millennial_mental_health",
+            "title": "Gen Z and millennial mental health language",
+            "score": 20,
+            "queryCount": 1
+          }
+        ]
+      },
+      "contentType": "insight",
+      "cadence": "daily",
+      "title": "Why do I feel behind when I am objectively doing fine?",
+      "suggestedRoute": "/resources/insights/why-do-i-feel-behind-when-i-am-objectively-doing-fine/",
+      "proposedScheduledAt": "2027-03-24T13:00:00.000Z",
+      "targetWords": 900,
+      "minimumWords": 720,
+      "sourceSignalCount": 1,
+      "score": 44.67,
+      "publishMode": "full_safe_autonomy",
+      "autonomyStatus": "DISCOVERED",
+      "llmGeneratedRequired": true,
+      "routineApprovalRequired": false,
+      "publicOnlyAfterApproval": false,
+      "continuity_generated": true,
+      "continuityAfter": "2027-01-01",
+      "continuityPolicy": "rolling_120_day_candidate_runway_existing_cadence",
+      "humanizationChecklist": [
+        "Use plain human language rather than generic therapy marketing copy.",
+        "Vary sentence rhythm and paragraph length.",
+        "Include concrete examples without inventing client stories.",
+        "Avoid exaggerated claims, guarantees, diagnosis, or pressure language.",
+        "Keep Monika Hicks / Hicks Consulting entity references consistent.",
+        "End with an approved conversion path only after value is delivered."
+      ],
+      "conversionPath": "https://monika-hicks.clientsecure.me/",
+      "sections": [
+        "Short answer",
+        "What is actually happening",
+        "Why it shows up this way",
+        "What it is not",
+        "What usually makes it worse",
+        "What helps",
+        "When to get support"
+      ],
+      "llmPrompt": "Create a humanized insight draft for Hicks Consulting.\nTitle: Why do I feel behind when I am objectively doing fine?\nThis page exists to answer exactly one real question a person typed or said: \"Why do I feel behind when I am objectively doing fine?\". Answer THAT question, in that person's words, in the first two sentences. Do not broaden it into a general overview of Gen Z and millennial mental health language; other pages on this site cover other questions in the same area and this one must not overlap them.\nMinimum words: 720. Target words: 900.\nWrite in a warm, grounded, specific voice. Do not diagnose. Do not guarantee outcomes. Do not invent client stories.\nInclude these sections: Short answer; What is actually happening; Why it shows up this way; What it is not; What usually makes it worse; What helps; When to get support.\nApproved conversion path after value is delivered: https://monika-hicks.clientsecure.me/",
+      "queueType": "content_brief"
+    },
+    {
+      "id": "continuity-insight-2027-03-25-c116cc2aa9db",
+      "clusterId": "hicks_fanout_043548_fd6832acf7",
+      "clusterTitle": "How to End the Year More Honest Than You Began It: What This Looks Like In Real Life",
+      "demandPhrasing": {
+        "source": "config/demand_phrasings.json",
+        "familyId": "local_access",
+        "clusterId": null,
+        "form": "what",
+        "groundedIn": [
+          "data/search/target_queries.json lead_intent_tier T1/T2/T3 with gsc_measured.impressions > 0",
+          "data/search/free_wins.json"
+        ],
+        "evidence": [
+          {
+            "kind": "measured_queries",
+            "count": 37,
+            "impressions": 56,
+            "examples": [
+              "black mental health therapist near me",
+              "african american female therapist near me",
+              "black female therapist near me",
+              "african american psychologist near me",
+              "african american therapist near me"
+            ]
+          }
+        ]
+      },
+      "contentType": "insight",
+      "cadence": "daily",
+      "title": "Does my insurance cover therapy in Tennessee?",
+      "suggestedRoute": "/resources/insights/does-my-insurance-cover-therapy-in-tennessee/",
+      "proposedScheduledAt": "2027-03-25T13:00:00.000Z",
+      "targetWords": 900,
+      "minimumWords": 720,
+      "sourceSignalCount": 1,
+      "score": 44.3,
+      "publishMode": "full_safe_autonomy",
+      "autonomyStatus": "DISCOVERED",
+      "llmGeneratedRequired": true,
+      "routineApprovalRequired": false,
+      "publicOnlyAfterApproval": false,
+      "continuity_generated": true,
+      "continuityAfter": "2027-01-01",
+      "continuityPolicy": "rolling_120_day_candidate_runway_existing_cadence",
+      "humanizationChecklist": [
+        "Use plain human language rather than generic therapy marketing copy.",
+        "Vary sentence rhythm and paragraph length.",
+        "Include concrete examples without inventing client stories.",
+        "Avoid exaggerated claims, guarantees, diagnosis, or pressure language.",
+        "Keep Monika Hicks / Hicks Consulting entity references consistent.",
+        "End with an approved conversion path only after value is delivered."
+      ],
+      "conversionPath": "https://monika-hicks.clientsecure.me/",
+      "sections": [
+        "Short answer",
+        "Who this is for",
+        "What it looks like",
+        "How to tell the difference",
+        "Common mistakes",
+        "What to do next",
+        "When to seek support"
+      ],
+      "llmPrompt": "Create a humanized insight draft for Hicks Consulting.\nTitle: Does my insurance cover therapy in Tennessee?\nThis page exists to answer exactly one real question a person typed or said: \"Does my insurance cover therapy in Tennessee?\". Answer THAT question, in that person's words, in the first two sentences. Do not broaden it into a general overview of How to End the Year More Honest Than You Began It: What This Looks Like In Real Life; other pages on this site cover other questions in the same area and this one must not overlap them.\nMinimum words: 720. Target words: 900.\nWrite in a warm, grounded, specific voice. Do not diagnose. Do not guarantee outcomes. Do not invent client stories.\nInclude these sections: Short answer; Who this is for; What it looks like; How to tell the difference; Common mistakes; What to do next; When to seek support.\nApproved conversion path after value is delivered: https://monika-hicks.clientsecure.me/",
+      "queueType": "content_brief"
+    },
+    {
       "id": "brief-black_women_healing-article",
       "clusterId": "black_women_healing",
       "clusterTitle": "Black women healing beyond survival",
@@ -5374,435 +5810,6 @@
       "conversionPath": "https://monika-hicks.clientsecure.me/",
       "llmPrompt": "Create a humanized fanout draft for Hicks Consulting.\nTitle: How do I forgive someone who has not apologized?\nThis page exists to answer exactly one real question a person typed or said: \"How do I forgive someone who has not apologized?\". Answer THAT question, in that person's words, in the first two sentences. Do not broaden it into a general overview of Faith-centered emotional support; other pages on this site cover other questions in the same area and this one must not overlap them.\nMinimum words: 720. Target words: 900.\nWrite in a warm, grounded, specific voice. Do not diagnose. Do not guarantee outcomes. Do not invent client stories.\nInclude these sections: Short answer; Before you start; Step by step; What to say; What gets in the way; How to tell it is working; Next step.\nApproved conversion path after value is delivered: https://monika-hicks.clientsecure.me/",
       "queueType": "content_brief"
-    },
-    {
-      "id": "continuity-insight-2027-03-19-986622255bc4",
-      "clusterId": "hicks_fanout_010390_19dcbbe98e",
-      "clusterTitle": "AI, social media, and digital emotional overload",
-      "demandPhrasing": {
-        "source": "config/demand_phrasings.json",
-        "familyId": "ai_digital_wellness",
-        "clusterId": null,
-        "form": "how",
-        "groundedIn": [
-          "data/intake/query_clusters.json#ai_digital_wellness",
-          "data/intake/normalized_query_signals.json tag:ai_digital_wellness"
-        ],
-        "evidence": [
-          {
-            "kind": "cluster",
-            "id": "ai_digital_wellness",
-            "title": "AI, social media, and digital emotional overload",
-            "score": 100,
-            "queryCount": 9
-          }
-        ]
-      },
-      "contentType": "insight",
-      "cadence": "daily",
-      "title": "How do I come back from a week of numbing out?",
-      "suggestedRoute": "/resources/insights/how-do-i-come-back-from-a-week-of-numbing-out/",
-      "proposedScheduledAt": "2027-03-19T13:00:00.000Z",
-      "targetWords": 900,
-      "minimumWords": 720,
-      "sourceSignalCount": 1,
-      "score": 46.33,
-      "publishMode": "full_safe_autonomy",
-      "autonomyStatus": "DISCOVERED",
-      "llmGeneratedRequired": true,
-      "routineApprovalRequired": false,
-      "publicOnlyAfterApproval": false,
-      "continuity_generated": true,
-      "continuityAfter": "2027-01-01",
-      "continuityPolicy": "rolling_120_day_candidate_runway_existing_cadence",
-      "humanizationChecklist": [
-        "Use plain human language rather than generic therapy marketing copy.",
-        "Vary sentence rhythm and paragraph length.",
-        "Include concrete examples without inventing client stories.",
-        "Avoid exaggerated claims, guarantees, diagnosis, or pressure language.",
-        "Keep Monika Hicks / Hicks Consulting entity references consistent.",
-        "End with an approved conversion path only after value is delivered."
-      ],
-      "conversionPath": "https://monika-hicks.clientsecure.me/",
-      "sections": [
-        "Short answer",
-        "Before you start",
-        "Step by step",
-        "What to say",
-        "What gets in the way",
-        "How to tell it is working",
-        "Next step"
-      ],
-      "llmPrompt": "Create a humanized insight draft for Hicks Consulting.\nTitle: How do I come back from a week of numbing out?\nThis page exists to answer exactly one real question a person typed or said: \"How do I come back from a week of numbing out?\". Answer THAT question in its own words in the first two sentences. Do not widen it into a general overview of AI, social media, and digital emotional overload; other pages on this site answer other questions in the same area and this one must not restate them.\nCadence: daily. Proposed future slot: 2027-03-19T13:00:00.000Z.\nMinimum words: 720. Target words: 900.\nUse an answer-first opening, exact-intent headings, concrete examples, and a checklist or decision framework where useful.\nWrite in a warm, grounded, specific voice. Do not diagnose, guarantee outcomes, or invent client stories.\nInclude these sections: Short answer; Before you start; Step by step; What to say; What gets in the way; How to tell it is working; Next step.\nApproved conversion path after value is delivered: https://monika-hicks.clientsecure.me/.\nThis is an autonomous candidate. It must pass Safe Harbor, duplicate, source, cadence, build, and release validation before it can be scheduled."
-    },
-    {
-      "id": "continuity-whitepaper-2027-03-20-6f0e08e5d824",
-      "clusterId": "hicks_fanout_062514_ac3994e341",
-      "clusterTitle": "General emotional wellness and intentional living",
-      "demandPhrasing": {
-        "source": "config/demand_phrasings.json",
-        "familyId": "general_emotional_wellness",
-        "clusterId": null,
-        "form": "why",
-        "groundedIn": [
-          "data/intake/query_clusters.json#general_emotional_wellness",
-          "data/intake/normalized_query_signals.json tag:general_emotional_wellness"
-        ],
-        "evidence": [
-          {
-            "kind": "cluster",
-            "id": "general_emotional_wellness",
-            "title": "General emotional wellness and intentional living",
-            "score": 100,
-            "queryCount": 224
-          }
-        ]
-      },
-      "contentType": "whitepaper",
-      "cadence": "quarterly",
-      "title": "Why does my chest get tight before a meeting?",
-      "suggestedRoute": "/resources/white-papers/why-does-my-chest-get-tight-before-a-meeting/",
-      "proposedScheduledAt": "2027-03-20T13:00:00.000Z",
-      "targetWords": 2500,
-      "minimumWords": 2000,
-      "sourceSignalCount": 1,
-      "score": 46.06,
-      "publishMode": "full_safe_autonomy",
-      "autonomyStatus": "DISCOVERED",
-      "llmGeneratedRequired": true,
-      "routineApprovalRequired": false,
-      "publicOnlyAfterApproval": false,
-      "continuity_generated": true,
-      "continuityAfter": "2027-01-01",
-      "continuityPolicy": "rolling_120_day_candidate_runway_existing_cadence",
-      "humanizationChecklist": [
-        "Use plain human language rather than generic therapy marketing copy.",
-        "Vary sentence rhythm and paragraph length.",
-        "Include concrete examples without inventing client stories.",
-        "Avoid exaggerated claims, guarantees, diagnosis, or pressure language.",
-        "Keep Monika Hicks / Hicks Consulting entity references consistent.",
-        "End with an approved conversion path only after value is delivered."
-      ],
-      "conversionPath": "https://monika-hicks.clientsecure.me/",
-      "sections": [
-        "Executive summary",
-        "The question people are actually asking",
-        "What the evidence shows",
-        "Audience analysis",
-        "Framework",
-        "Implementation guidance",
-        "Risks and limitations",
-        "Recommended next steps"
-      ],
-      "llmPrompt": "Create a humanized whitepaper draft for Hicks Consulting.\nTitle: Why does my chest get tight before a meeting?\nThis page exists to answer exactly one real question a person typed or said: \"Why does my chest get tight before a meeting?\". Answer THAT question in its own words in the first two sentences. Do not widen it into a general overview of General emotional wellness and intentional living; other pages on this site answer other questions in the same area and this one must not restate them.\nCadence: quarterly. Proposed future slot: 2027-03-20T13:00:00.000Z.\nMinimum words: 2000. Target words: 2500.\nUse an answer-first opening, exact-intent headings, concrete examples, and a checklist or decision framework where useful.\nWrite in a warm, grounded, specific voice. Do not diagnose, guarantee outcomes, or invent client stories.\nInclude these sections: Executive summary; The question people are actually asking; What the evidence shows; Audience analysis; Framework; Implementation guidance; Risks and limitations; Recommended next steps.\nApproved conversion path after value is delivered: https://monika-hicks.clientsecure.me/.\nThis is an autonomous candidate. It must pass Safe Harbor, duplicate, source, cadence, build, and release validation before it can be scheduled."
-    },
-    {
-      "id": "continuity-insight-2027-03-22-95c96aca172c",
-      "clusterId": "hicks_fanout_031449_6db512f185",
-      "clusterTitle": "Workplace emotional intelligence and mental health training",
-      "demandPhrasing": {
-        "source": "config/demand_phrasings.json",
-        "familyId": "workplace_emotional_intelligence",
-        "clusterId": null,
-        "form": "what",
-        "groundedIn": [
-          "data/intake/query_clusters.json#workplace_emotional_intelligence",
-          "data/intake/normalized_query_signals.json tag:workplace_emotional_intelligence",
-          "data/search/target_queries.json query:'memphis small business consulting', 'consultant mental health'"
-        ],
-        "evidence": [
-          {
-            "kind": "cluster",
-            "id": "workplace_emotional_intelligence",
-            "title": "Workplace emotional intelligence and mental health training",
-            "score": 100,
-            "queryCount": 9
-          }
-        ]
-      },
-      "contentType": "insight",
-      "cadence": "daily",
-      "title": "What does psychological safety look like in a team of eight?",
-      "suggestedRoute": "/resources/insights/what-does-psychological-safety-look-like-in-a-team-of-eight/",
-      "proposedScheduledAt": "2027-03-22T13:00:00.000Z",
-      "targetWords": 900,
-      "minimumWords": 720,
-      "sourceSignalCount": 1,
-      "score": 45.6,
-      "publishMode": "full_safe_autonomy",
-      "autonomyStatus": "DISCOVERED",
-      "llmGeneratedRequired": true,
-      "routineApprovalRequired": false,
-      "publicOnlyAfterApproval": false,
-      "continuity_generated": true,
-      "continuityAfter": "2027-01-01",
-      "continuityPolicy": "rolling_120_day_candidate_runway_existing_cadence",
-      "humanizationChecklist": [
-        "Use plain human language rather than generic therapy marketing copy.",
-        "Vary sentence rhythm and paragraph length.",
-        "Include concrete examples without inventing client stories.",
-        "Avoid exaggerated claims, guarantees, diagnosis, or pressure language.",
-        "Keep Monika Hicks / Hicks Consulting entity references consistent.",
-        "End with an approved conversion path only after value is delivered."
-      ],
-      "conversionPath": "https://monika-hicks.clientsecure.me/",
-      "sections": [
-        "Short answer",
-        "Who this is for",
-        "What it looks like",
-        "How to tell the difference",
-        "Common mistakes",
-        "What to do next",
-        "When to seek support"
-      ],
-      "llmPrompt": "Create a humanized insight draft for Hicks Consulting.\nTitle: What does psychological safety look like in a team of eight?\nThis page exists to answer exactly one real question a person typed or said: \"What does psychological safety look like in a team of eight?\". Answer THAT question in its own words in the first two sentences. Do not widen it into a general overview of Workplace emotional intelligence and mental health training; other pages on this site answer other questions in the same area and this one must not restate them.\nCadence: daily. Proposed future slot: 2027-03-22T13:00:00.000Z.\nMinimum words: 720. Target words: 900.\nUse an answer-first opening, exact-intent headings, concrete examples, and a checklist or decision framework where useful.\nWrite in a warm, grounded, specific voice. Do not diagnose, guarantee outcomes, or invent client stories.\nInclude these sections: Short answer; Who this is for; What it looks like; How to tell the difference; Common mistakes; What to do next; When to seek support.\nApproved conversion path after value is delivered: https://monika-hicks.clientsecure.me/.\nThis is an autonomous candidate. It must pass Safe Harbor, duplicate, source, cadence, build, and release validation before it can be scheduled."
-    },
-    {
-      "id": "continuity-insight-2027-03-23-c14ef0b6a873",
-      "clusterId": "hicks_fanout_045624_2e1e411c8c",
-      "clusterTitle": "Black women healing beyond survival",
-      "demandPhrasing": {
-        "source": "config/demand_phrasings.json",
-        "familyId": "black_women_healing",
-        "clusterId": null,
-        "form": "what",
-        "groundedIn": [
-          "data/intake/query_clusters.json#black_women_healing",
-          "data/intake/normalized_query_signals.json tag:black_women",
-          "data/search/target_queries.json query:'black female therapist near me', 'therapy for high-achieving Black women Memphis'"
-        ],
-        "evidence": [
-          {
-            "kind": "cluster",
-            "id": "black_women_healing",
-            "title": "Black women healing beyond survival",
-            "score": 20,
-            "queryCount": 1
-          }
-        ]
-      },
-      "contentType": "insight",
-      "cadence": "daily",
-      "title": "What does healing look like when survival is all I have practiced?",
-      "suggestedRoute": "/resources/insights/what-does-healing-look-like-when-survival-is-all-i-have-practiced/",
-      "proposedScheduledAt": "2027-03-23T13:00:00.000Z",
-      "targetWords": 900,
-      "minimumWords": 720,
-      "sourceSignalCount": 1,
-      "score": 45.14,
-      "publishMode": "full_safe_autonomy",
-      "autonomyStatus": "DISCOVERED",
-      "llmGeneratedRequired": true,
-      "routineApprovalRequired": false,
-      "publicOnlyAfterApproval": false,
-      "continuity_generated": true,
-      "continuityAfter": "2027-01-01",
-      "continuityPolicy": "rolling_120_day_candidate_runway_existing_cadence",
-      "humanizationChecklist": [
-        "Use plain human language rather than generic therapy marketing copy.",
-        "Vary sentence rhythm and paragraph length.",
-        "Include concrete examples without inventing client stories.",
-        "Avoid exaggerated claims, guarantees, diagnosis, or pressure language.",
-        "Keep Monika Hicks / Hicks Consulting entity references consistent.",
-        "End with an approved conversion path only after value is delivered."
-      ],
-      "conversionPath": "https://monika-hicks.clientsecure.me/",
-      "sections": [
-        "Short answer",
-        "Who this is for",
-        "What it looks like",
-        "How to tell the difference",
-        "Common mistakes",
-        "What to do next",
-        "When to seek support"
-      ],
-      "llmPrompt": "Create a humanized insight draft for Hicks Consulting.\nTitle: What does healing look like when survival is all I have practiced?\nThis page exists to answer exactly one real question a person typed or said: \"What does healing look like when survival is all I have practiced?\". Answer THAT question in its own words in the first two sentences. Do not widen it into a general overview of Black women healing beyond survival; other pages on this site answer other questions in the same area and this one must not restate them.\nCadence: daily. Proposed future slot: 2027-03-23T13:00:00.000Z.\nMinimum words: 720. Target words: 900.\nUse an answer-first opening, exact-intent headings, concrete examples, and a checklist or decision framework where useful.\nWrite in a warm, grounded, specific voice. Do not diagnose, guarantee outcomes, or invent client stories.\nInclude these sections: Short answer; Who this is for; What it looks like; How to tell the difference; Common mistakes; What to do next; When to seek support.\nApproved conversion path after value is delivered: https://monika-hicks.clientsecure.me/.\nThis is an autonomous candidate. It must pass Safe Harbor, duplicate, source, cadence, build, and release validation before it can be scheduled."
-    },
-    {
-      "id": "continuity-article-2027-03-23-ab9f2dce7672",
-      "clusterId": "hicks_fanout_073578_d7e04e79ba",
-      "clusterTitle": "Burnout, boundaries, and over-functioning",
-      "demandPhrasing": {
-        "source": "config/demand_phrasings.json",
-        "familyId": "burnout_boundaries",
-        "clusterId": null,
-        "form": "why",
-        "groundedIn": [
-          "data/intake/query_clusters.json#burnout_boundaries",
-          "data/intake/normalized_query_signals.json tag:burnout",
-          "data/search/target_queries.json query:'burnout therapist Memphis'"
-        ],
-        "evidence": [
-          {
-            "kind": "cluster",
-            "id": "burnout_boundaries",
-            "title": "Burnout, boundaries, and over-functioning",
-            "score": 20,
-            "queryCount": 1
-          }
-        ]
-      },
-      "contentType": "article",
-      "cadence": "weekly",
-      "title": "Why does taking a day off make me feel worse?",
-      "suggestedRoute": "/resources/articles/why-does-taking-a-day-off-make-me-feel-worse/",
-      "proposedScheduledAt": "2027-03-23T13:00:00.000Z",
-      "targetWords": 1200,
-      "minimumWords": 960,
-      "sourceSignalCount": 1,
-      "score": 44.92,
-      "publishMode": "full_safe_autonomy",
-      "autonomyStatus": "DISCOVERED",
-      "llmGeneratedRequired": true,
-      "routineApprovalRequired": false,
-      "publicOnlyAfterApproval": false,
-      "continuity_generated": true,
-      "continuityAfter": "2027-01-01",
-      "continuityPolicy": "rolling_120_day_candidate_runway_existing_cadence",
-      "humanizationChecklist": [
-        "Use plain human language rather than generic therapy marketing copy.",
-        "Vary sentence rhythm and paragraph length.",
-        "Include concrete examples without inventing client stories.",
-        "Avoid exaggerated claims, guarantees, diagnosis, or pressure language.",
-        "Keep Monika Hicks / Hicks Consulting entity references consistent.",
-        "End with an approved conversion path only after value is delivered."
-      ],
-      "conversionPath": "https://monika-hicks.clientsecure.me/",
-      "sections": [
-        "Short answer",
-        "What is actually happening",
-        "Why it shows up this way",
-        "What it is not",
-        "What usually makes it worse",
-        "What helps",
-        "When to get support"
-      ],
-      "llmPrompt": "Create a humanized article draft for Hicks Consulting.\nTitle: Why does taking a day off make me feel worse?\nThis page exists to answer exactly one real question a person typed or said: \"Why does taking a day off make me feel worse?\". Answer THAT question in its own words in the first two sentences. Do not widen it into a general overview of Burnout, boundaries, and over-functioning; other pages on this site answer other questions in the same area and this one must not restate them.\nCadence: weekly. Proposed future slot: 2027-03-23T13:00:00.000Z.\nMinimum words: 960. Target words: 1200.\nUse an answer-first opening, exact-intent headings, concrete examples, and a checklist or decision framework where useful.\nWrite in a warm, grounded, specific voice. Do not diagnose, guarantee outcomes, or invent client stories.\nInclude these sections: Short answer; What is actually happening; Why it shows up this way; What it is not; What usually makes it worse; What helps; When to get support.\nApproved conversion path after value is delivered: https://monika-hicks.clientsecure.me/.\nThis is an autonomous candidate. It must pass Safe Harbor, duplicate, source, cadence, build, and release validation before it can be scheduled."
-    },
-    {
-      "id": "continuity-insight-2027-03-24-8d239efdf51d",
-      "clusterId": "hicks_fanout_091079_00e2c4c10d",
-      "clusterTitle": "Gen Z and millennial mental health language",
-      "demandPhrasing": {
-        "source": "config/demand_phrasings.json",
-        "familyId": "genz_millennial_mental_health",
-        "clusterId": null,
-        "form": "why",
-        "groundedIn": [
-          "data/intake/query_clusters.json#genz_millennial_mental_health",
-          "data/intake/normalized_query_signals.json tag:genz_millennial"
-        ],
-        "evidence": [
-          {
-            "kind": "cluster",
-            "id": "genz_millennial_mental_health",
-            "title": "Gen Z and millennial mental health language",
-            "score": 20,
-            "queryCount": 1
-          }
-        ]
-      },
-      "contentType": "insight",
-      "cadence": "daily",
-      "title": "Why do I feel behind when I am objectively doing fine?",
-      "suggestedRoute": "/resources/insights/why-do-i-feel-behind-when-i-am-objectively-doing-fine/",
-      "proposedScheduledAt": "2027-03-24T13:00:00.000Z",
-      "targetWords": 900,
-      "minimumWords": 720,
-      "sourceSignalCount": 1,
-      "score": 44.67,
-      "publishMode": "full_safe_autonomy",
-      "autonomyStatus": "DISCOVERED",
-      "llmGeneratedRequired": true,
-      "routineApprovalRequired": false,
-      "publicOnlyAfterApproval": false,
-      "continuity_generated": true,
-      "continuityAfter": "2027-01-01",
-      "continuityPolicy": "rolling_120_day_candidate_runway_existing_cadence",
-      "humanizationChecklist": [
-        "Use plain human language rather than generic therapy marketing copy.",
-        "Vary sentence rhythm and paragraph length.",
-        "Include concrete examples without inventing client stories.",
-        "Avoid exaggerated claims, guarantees, diagnosis, or pressure language.",
-        "Keep Monika Hicks / Hicks Consulting entity references consistent.",
-        "End with an approved conversion path only after value is delivered."
-      ],
-      "conversionPath": "https://monika-hicks.clientsecure.me/",
-      "sections": [
-        "Short answer",
-        "What is actually happening",
-        "Why it shows up this way",
-        "What it is not",
-        "What usually makes it worse",
-        "What helps",
-        "When to get support"
-      ],
-      "llmPrompt": "Create a humanized insight draft for Hicks Consulting.\nTitle: Why do I feel behind when I am objectively doing fine?\nThis page exists to answer exactly one real question a person typed or said: \"Why do I feel behind when I am objectively doing fine?\". Answer THAT question in its own words in the first two sentences. Do not widen it into a general overview of Gen Z and millennial mental health language; other pages on this site answer other questions in the same area and this one must not restate them.\nCadence: daily. Proposed future slot: 2027-03-24T13:00:00.000Z.\nMinimum words: 720. Target words: 900.\nUse an answer-first opening, exact-intent headings, concrete examples, and a checklist or decision framework where useful.\nWrite in a warm, grounded, specific voice. Do not diagnose, guarantee outcomes, or invent client stories.\nInclude these sections: Short answer; What is actually happening; Why it shows up this way; What it is not; What usually makes it worse; What helps; When to get support.\nApproved conversion path after value is delivered: https://monika-hicks.clientsecure.me/.\nThis is an autonomous candidate. It must pass Safe Harbor, duplicate, source, cadence, build, and release validation before it can be scheduled."
-    },
-    {
-      "id": "continuity-insight-2027-03-25-c116cc2aa9db",
-      "clusterId": "hicks_fanout_043548_fd6832acf7",
-      "clusterTitle": "How to End the Year More Honest Than You Began It: What This Looks Like In Real Life",
-      "demandPhrasing": {
-        "source": "config/demand_phrasings.json",
-        "familyId": "local_access",
-        "clusterId": null,
-        "form": "what",
-        "groundedIn": [
-          "data/search/target_queries.json lead_intent_tier T1/T2/T3 with gsc_measured.impressions > 0",
-          "data/search/free_wins.json"
-        ],
-        "evidence": [
-          {
-            "kind": "measured_queries",
-            "count": 37,
-            "impressions": 56,
-            "examples": [
-              "black mental health therapist near me",
-              "african american female therapist near me",
-              "black female therapist near me",
-              "african american psychologist near me",
-              "african american therapist near me"
-            ]
-          }
-        ]
-      },
-      "contentType": "insight",
-      "cadence": "daily",
-      "title": "Does my insurance cover therapy in Tennessee?",
-      "suggestedRoute": "/resources/insights/does-my-insurance-cover-therapy-in-tennessee/",
-      "proposedScheduledAt": "2027-03-25T13:00:00.000Z",
-      "targetWords": 900,
-      "minimumWords": 720,
-      "sourceSignalCount": 1,
-      "score": 44.3,
-      "publishMode": "full_safe_autonomy",
-      "autonomyStatus": "DISCOVERED",
-      "llmGeneratedRequired": true,
-      "routineApprovalRequired": false,
-      "publicOnlyAfterApproval": false,
-      "continuity_generated": true,
-      "continuityAfter": "2027-01-01",
-      "continuityPolicy": "rolling_120_day_candidate_runway_existing_cadence",
-      "humanizationChecklist": [
-        "Use plain human language rather than generic therapy marketing copy.",
-        "Vary sentence rhythm and paragraph length.",
-        "Include concrete examples without inventing client stories.",
-        "Avoid exaggerated claims, guarantees, diagnosis, or pressure language.",
-        "Keep Monika Hicks / Hicks Consulting entity references consistent.",
-        "End with an approved conversion path only after value is delivered."
-      ],
-      "conversionPath": "https://monika-hicks.clientsecure.me/",
-      "sections": [
-        "Short answer",
-        "Who this is for",
-        "What it looks like",
-        "How to tell the difference",
-        "Common mistakes",
-        "What to do next",
-        "When to seek support"
-      ],
-      "llmPrompt": "Create a humanized insight draft for Hicks Consulting.\nTitle: Does my insurance cover therapy in Tennessee?\nThis page exists to answer exactly one real question a person typed or said: \"Does my insurance cover therapy in Tennessee?\". Answer THAT question in its own words in the first two sentences. Do not widen it into a general overview of local_access; other pages on this site answer other questions in the same area and this one must not restate them.\nCadence: daily. Proposed future slot: 2027-03-25T13:00:00.000Z.\nMinimum words: 720. Target words: 900.\nUse an answer-first opening, exact-intent headings, concrete examples, and a checklist or decision framework where useful.\nWrite in a warm, grounded, specific voice. Do not diagnose, guarantee outcomes, or invent client stories.\nInclude these sections: Short answer; Who this is for; What it looks like; How to tell the difference; Common mistakes; What to do next; When to seek support.\nApproved conversion path after value is delivered: https://monika-hicks.clientsecure.me/.\nThis is an autonomous candidate. It must pass Safe Harbor, duplicate, source, cadence, build, and release validation before it can be scheduled."
     }
   ]
 }
