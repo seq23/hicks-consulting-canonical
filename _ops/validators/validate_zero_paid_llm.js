@@ -124,9 +124,13 @@ const engineConsumers = (cfg && cfg.engine_consumers) || [];
 for (const c of engineConsumers) if (!exists(c.script)) fail(`engine consumer missing: ${c.script}`);
 const ENGINE_CHECKOUT = /^\s+repository:\s*seq23\/search-loop\s*\n\s+ref:\s*v1(?:\.\d+){0,2}\s*$/m;
 
-// A job that is nothing but a call to the shared search-loop engine pinned @v1,
-// with the key inside that job's secrets: block.
-const ENGINE_CALL = /^\s+uses:\s*seq23\/search-loop\/\.github\/workflows\/search-loop\.yml@v1(?:\.\d+){0,2}\s*$/;
+// A job that is nothing but a call to the shared search-loop engine, with the key inside that
+// job's secrets: block. The engine ref is a v1 tag or a full 40-character commit sha of
+// seq23/search-loop's own workflow (boss-os #574 pins callers that way; a sha is stricter than a
+// moving tag). Any other repo, workflow path, branch name or short sha is not the engine.
+const ENGINE_WORKFLOW = 'seq23\\/search-loop\\/\\.github\\/workflows\\/search-loop\\.yml';
+const ENGINE_CALL = new RegExp(`^\\s+uses:\\s*${ENGINE_WORKFLOW}@(?:v1(?:\\.\\d+){0,2}|[0-9a-f]{40})\\s*$`);
+const ENGINE_CALLER = new RegExp(`^\\s+uses:\\s*${ENGINE_WORKFLOW}@(?:v\\d+(?:\\.\\d+){0,2}|[0-9a-f]{40})\\s*$`, 'm');
 function isEngineCall(lines, i) {
   const ind = lines[i].search(/\S/);
   let secretsLine = -1;
@@ -164,6 +168,24 @@ function stepOf(lines, i) {
   return null;
 }
 
+// Engine-ref self-test: the real isEngineCall() and ENGINE_CALLER on synthetic callers, so a
+// rule loosened to another repo, path, branch or short sha (or tightened back to tags only) fails.
+{
+  const SHA = '56a1b11eb0262dd00dd4c379db7ff45dfebde4b6';
+  const W = 'seq23/search-loop/.github/workflows/search-loop.yml';
+  const cases = [
+    [`${W}@${SHA}`, true], [`${W}@v1`, true], [`${W}@v1.12.0`, true],
+    [`seq23/other-loop/.github/workflows/search-loop.yml@${SHA}`, false],
+    [`seq23/search-loop/.github/workflows/other.yml@${SHA}`, false],
+    [`${W}@main`, false], [`${W}@${SHA.slice(0, 12)}`, false], [`${W}@${SHA}0`, false],
+  ];
+  for (const [ref, want] of cases) {
+    const lines = ['jobs:', '  search-loop:', `    uses: ${ref}`, '    secrets:', '      OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}'];
+    if (isEngineCall(lines, 4) !== want) fail(`engine-ref self-test: isEngineCall should be ${want} for ${ref}`);
+    if (ENGINE_CALLER.test(lines.join('\n')) !== want) fail(`engine-ref self-test: ENGINE_CALLER should be ${want} for ${ref}`);
+  }
+}
+
 for (const wf of wfs) {
   const text = read(wf);
   const scheduled = /^\s*schedule:/m.test(text);
@@ -185,7 +207,7 @@ for (const wf of wfs) {
   // `GEMINI_API_KEY: ${{ secrets.SEARCH_LOOP_GEMINI_API_KEY }}` in an engine caller is that lane.
   // Any other Gemini/OpenAI/Anthropic/Perplexity key, or that line outside an engine caller, fails.
   const engineCheckout = ENGINE_CHECKOUT.test(text) && engineConsumers.some((c) => invokes(text, c.script));
-  const engineCaller = engineCheckout || /^\s+uses:\s*seq23\/search-loop\/\.github\/workflows\/search-loop\.yml@v\d+(?:\.\d+){0,2}\s*$/m.test(text);
+  const engineCaller = engineCheckout || ENGINE_CALLER.test(text);
   const keyText = engineCaller ? text.split('\n').filter((l) => !/^\s+GEMINI_API_KEY:\s*\$\{\{\s*secrets\.SEARCH_LOOP_GEMINI_API_KEY\s*\}\}\s*$/.test(l)).join('\n') : text;
   if (OTHER_MODEL_KEYS.test(keyText)) fail(`${wf} is scheduled and passes a non-router model key (${keyText.match(OTHER_MODEL_KEYS)[1]})`);
   const lines = text.split('\n');
