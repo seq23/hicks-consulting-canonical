@@ -1104,6 +1104,21 @@
       "createdAt": "2026-11-26T23:01:22.983Z",
       "blocksOtherWork": false,
       "clientActionRequired": false
+    },
+    {
+      "id": "exception-metadata-daily-030-5-1795819405617",
+      "candidateId": "daily-030-5",
+      "decision": "SKIPPED_UNSAFE_SEARCH_METADATA",
+      "findings": [
+        {
+          "code": "SEARCH_METADATA_UNRESOLVED",
+          "severity": "hard",
+          "route": "/resources/insights/when-your-nervous-system-is-tired-but-your-life-keeps-demanding-more-next-step-reflec/"
+        }
+      ],
+      "createdAt": "2026-11-27T22:43:25.617Z",
+      "blocksOtherWork": false,
+      "clientActionRequired": false
     }
   ]
 }
